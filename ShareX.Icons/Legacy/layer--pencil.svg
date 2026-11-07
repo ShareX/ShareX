@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3377bb" stop-opacity="0.36"/>
+<stop offset="1" stop-color="#14589c" stop-opacity="0.5"/>
+</linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#acc7e3" stop-opacity="0.55"/>
+<stop offset="1" stop-color="#b1cce5" stop-opacity="0.63"/>
+</linearGradient>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.52"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
+</linearGradient>
+<linearGradient id="pb" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#c2b236"/>
+<stop offset="0.3" stop-color="#f7e679"/>
+<stop offset="0.62" stop-color="#e8d35a"/>
+<stop offset="1" stop-color="#8f8226"/>
+</linearGradient>
+<linearGradient id="pf" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#a3abb4"/>
+<stop offset="0.4" stop-color="#ffffff"/>
+<stop offset="1" stop-color="#5f6770"/>
+</linearGradient>
+<linearGradient id="pe" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ff9a9a"/>
+<stop offset="0.45" stop-color="#ff7070"/>
+<stop offset="1" stop-color="#c3121d"/>
+</linearGradient>
+</defs>
+<rect x="2" y="2" width="12" height="12" fill="url(#b)"/>
+<path d="M2,2H14V6Q6,6 2,10Z" fill="url(#s)"/>
+<rect x="2.5" y="2.5" width="11" height="11" fill="none" stroke="#ffffff" stroke-opacity=".2"/>
+<rect x="1.5" y="1.5" width="13" height="13" rx="1" fill="none" stroke="url(#o)"/>
+<g transform="translate(7.2,15.8) rotate(-45)">
+<path d="M0,0L2.5,-1.05V1.05Z" fill="#fff1d0" stroke="#7b6f2a" stroke-width=".4" stroke-linejoin="round"/>
+<path d="M0,0L.95,-.4V.4Z" fill="#111111"/>
+<rect x="2.5" y="-1.05" width="5.4" height="2.1" fill="url(#pb)" stroke="#857a22" stroke-width=".4"/>
+<rect x="7.9" y="-1.05" width="1.2" height="2.1" fill="url(#pf)" stroke="#5c646c" stroke-width=".4"/>
+<rect x="9.1" y="-1.05" width="2" height="2.1" rx=".7" fill="url(#pe)" stroke="#b40d16" stroke-width=".4"/>
+</g>
+</svg>

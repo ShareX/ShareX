@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recognize ข้อความ (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>เปิดในตัวแก้ไขภาพถ่าย</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>ดำเนินการ การดำเนินการ</value>
   </data>
@@ -785,6 +788,9 @@
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>จับภาพ พื้นที่</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>จับภาพ พื้นที่ (โปร่งใส)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>ไม้บรรทัด</value>

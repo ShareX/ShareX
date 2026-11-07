@@ -32,8 +32,10 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Tools.Localization;
 using System.ComponentModel;
 using WindowState = Avalonia.Controls.WindowState;
@@ -207,7 +209,7 @@ public partial class VideoPlayerWindow : Window
         string actionText = fullscreen ? Strings.VideoPlayer_ExitFullscreen : Strings.VideoPlayer_Fullscreen;
         ToolTip.SetTip(button, actionText);
         AutomationProperties.SetName(button, actionText);
-        this.FindControl<TextBlock>("FullscreenIcon")!.Text = fullscreen ? LucideIcons.minimize : LucideIcons.maximize;
+        this.FindControl<IconPresenter>("FullscreenIcon")!.Icon = fullscreen ? AppIcons.Shrink : AppIcons.Expand;
         ShowControls();
     }
 

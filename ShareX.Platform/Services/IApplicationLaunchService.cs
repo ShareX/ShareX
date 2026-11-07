@@ -25,6 +25,8 @@
 
 using System.Collections.Generic;
 
+using Microsoft.Win32.SafeHandles;
+
 namespace ShareX.Platform;
 
 /// <summary>Starts an application independently of the calling application's lifetime.</summary>
@@ -41,4 +43,12 @@ public interface IApplicationLaunchService
     /// Throws on failure; the caller owns any input files handed to the application.
     /// </summary>
     int LaunchDetached(string executablePath, IReadOnlyList<string> arguments);
+
+    /// <summary>
+    /// Lets the process serving a named pipe bring its window to the front. On Windows only the foreground process may do that,
+    /// so a second instance passes the right on to the first. Does nothing elsewhere.
+    /// </summary>
+    void AllowPipeServerToTakeForeground(SafePipeHandle pipe)
+    {
+    }
 }

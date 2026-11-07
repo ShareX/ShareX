@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.Tools.PinToScreenWindow"
         Title="{x:Static localization:Strings.PinToScreenWindow_Pinned_image}"
         WindowDecorations="None"
@@ -29,16 +30,16 @@
                     PointerPressed="OnToolbarPointerPressed">
                 <StackPanel Orientation="Horizontal" Spacing="2">
                     <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCopyClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Copy_image}">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                     </Button>
                     <Button Classes="picker-button" Height="32" Padding="8,4" Click="OnResetScaleClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Reset_scale_and_opacity}">
                         <TextBlock x:Name="ScaleText" Text="100%" FontWeight="Normal"/>
                     </Button>
                     <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnOptionsClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Options}">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings}"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                     </Button>
                     <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCloseClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Close}">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"/>
                     </Button>
                 </StackPanel>
             </Border>

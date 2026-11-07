@@ -38,10 +38,10 @@ namespace ShareX.PhotoEditor.UI;
 
 public sealed partial class PhotoEditorWindow
 {
-    public void OpenDocument(PhotoDocument doc, string historyName = "Open")
+    public void OpenDocument(PhotoDocument doc, string? historyName = null)
     {
         doc.History.MaxStates = Math.Clamp(Settings.HistoryStates, 5, 1000);
-        doc.History.Initialize(historyName);
+        doc.History.Initialize(historyName ?? Strings.EditorCommands_Open);
         doc.IsDirty = false;
         DocumentView view = new(doc);
         doc.StructureChanged += () => Canvas.InvalidateOutline();
@@ -65,16 +65,32 @@ public sealed partial class PhotoEditorWindow
         ApplyVisibility();
     }
 
+    /// <summary>The document opened by a ShareX after capture task; its flattened image is handed back to the task when it closes.</summary>
+    public PhotoDocument? TaskDocument { get; set; }
+
+    /// <summary>The flattened task document, captured when it closed.</summary>
+    public SKBitmap? TaskResult { get; private set; }
+
+    private void CaptureTaskResult(DocumentView view)
+    {
+        if (TaskDocument == null || view.Document != TaskDocument) return;
+        TaskResult?.Dispose();
+        TaskResult = Compositor.Flatten(view.Document);
+        TaskDocument = null;
+    }
+
     public async Task<bool> CloseViewAsync(DocumentView view)
     {
         if (IsBusy) return false;
-        if (view.Document.IsDirty)
+        // The task document continues to ShareX after capture tasks, so closing it needs no save prompt.
+        if (view.Document.IsDirty && view.Document != TaskDocument)
         {
             ActivateView(view);
-            bool? save = await DialogBuilder.ConfirmAsync(this, "Photo editor", $"Save changes to \"{view.Document.DisplayName.TrimEnd('*')}\" before closing?", "Save", "Don't Save");
+            bool? save = await DialogBuilder.ConfirmAsync(this, Strings.PhotoEditorWindow_PhotoEditor, string.Format(Strings.PhotoEditorWindow_SaveChangesPrompt, view.Document.DisplayName.TrimEnd('*')), Strings.EditorCommands_Save, Strings.PhotoEditorWindow_DontSave);
             if (save == null) return false;
             if (save == true && !await EditorCommands.SaveAsync(this, false)) return false;
         }
+        CaptureTaskResult(view);
         int index = _views.IndexOf(view);
         _views.Remove(view);
         view.Dispose();
@@ -108,12 +124,12 @@ public sealed partial class PhotoEditorWindow
             bool active = view == _view;
             DocumentView captured = view;
             PhotoDocument doc = view.Document;
-            string layer = doc.ActiveLayer?.Name ?? "Background";
-            string mode = doc.EditingMask && doc.ActiveLayer?.Mask != null ? "Layer Mask/8" : doc.QuickMask ? "Quick Mask/8" : "RGB/8";
+            string layer = doc.ActiveLayer?.Name ?? Strings.LayerNames_Background;
+            string mode = doc.EditingMask && doc.ActiveLayer?.Mask != null ? Strings.PhotoEditorWindow_ModeLayerMask : doc.QuickMask ? Strings.PhotoEditorWindow_ModeQuickMask : "RGB/8";
             string text = $"{doc.DisplayName.TrimEnd('*')} @ {view.Zoom * 100:0.#}% ({layer}, {mode}){(doc.IsDirty ? " *" : string.Empty)}";
 
-            Button close = new() { Classes = { "icon" }, Content = ToolIcons.Create("close", 10), Padding = new Thickness(3), Width = 16, Height = 16, VerticalAlignment = VerticalAlignment.Center, Opacity = active ? 1 : 0.6 };
-            ToolTip.SetTip(close, "Close");
+            Button close = new() { Classes = { "icon" }, Content = new IconView(PhotoEditorIcons.Close, 10), Padding = new Thickness(3), Width = 16, Height = 16, VerticalAlignment = VerticalAlignment.Center, Opacity = active ? 1 : 0.6 };
+            ToolTip.SetTip(close, Strings.EditorCommands_Close);
             close.Click += async (_, e) =>
             {
                 e.Handled = true;
@@ -155,7 +171,7 @@ public sealed partial class PhotoEditorWindow
 
     private void UpdateTitle()
     {
-        Title = Document != null ? $"{Document.DisplayName} - Photo editor - ShareX" : "ShareX - Photo editor";
-        _titleText.Text = Document?.DisplayName ?? "Photo editor";
+        Title = Document != null ? string.Format(Strings.PhotoEditorWindow_DocumentWindowTitle, Document.DisplayName) : Strings.PhotoEditorWindow_WindowTitle;
+        _titleText.Text = Document?.DisplayName ?? Strings.PhotoEditorWindow_PhotoEditor;
     }
 }

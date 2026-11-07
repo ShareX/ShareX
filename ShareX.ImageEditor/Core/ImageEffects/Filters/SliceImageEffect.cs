@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class SliceImageEffect : ImageEffectBase
     public override string Id => "slice";
     public override string Name => "Slice";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.slice;
+    public override string IconKey => ImageEffectIcons.Slice;
     public override string Description => "Slices the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

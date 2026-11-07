@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>متن را تشخیص بده (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>بازکردن در ویرایشگر عکس</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>انجام اعمال</value>
   </data>
@@ -785,6 +788,9 @@
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>ضبط ناحیه</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>ضبط ناحیه (شفاف)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>خط کش</value>

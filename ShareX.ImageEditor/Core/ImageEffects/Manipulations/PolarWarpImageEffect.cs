@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -41,7 +41,7 @@ public sealed class PolarWarpImageEffect : ImageEffectBase
     public override string Id => "polar_warp";
     public override string Name => "Polar warp";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.orbit;
+    public override string IconKey => ImageEffectIcons.Orbit;
     public override string Description => "Converts between Cartesian and polar coordinate systems.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

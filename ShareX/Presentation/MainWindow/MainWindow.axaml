@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chrome="using:Avalonia.Controls.Chrome"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:icons="using:ShareX.Icons"
         xmlns:res="using:ShareX.Localization"
         xmlns:local="using:ShareX"
         x:Class="ShareX.MainWindow"
@@ -88,8 +89,8 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        <Style Selector="TextBlock.theme-toggle-icon">
-            <Setter Property="FontSize" Value="14"/>
+        <Style Selector="controls|IconPresenter.theme-toggle-icon">
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Opacity" Value="0"/>
@@ -166,12 +167,12 @@
                                 Click="OnThemeToggleClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid Width="20" Height="20" ClipToBounds="True" IsHitTestVisible="False">
-                                <TextBlock Classes="icon theme-toggle-icon moon"
-                                           Classes.active="{Binding IsDarkTheme}"
-                                           Text="{x:Static theming:LucideIcons.moon}"/>
-                                <TextBlock Classes="icon theme-toggle-icon sun"
-                                           Classes.active="{Binding !IsDarkTheme}"
-                                           Text="{x:Static theming:LucideIcons.sun}"/>
+                                <controls:IconPresenter Classes="theme-toggle-icon moon"
+                                                        Classes.active="{Binding IsDarkTheme}"
+                                                        Icon="{x:Static icons:AppIcons.CaptionMoon}"/>
+                                <controls:IconPresenter Classes="theme-toggle-icon sun"
+                                                        Classes.active="{Binding !IsDarkTheme}"
+                                                        Icon="{x:Static icons:AppIcons.CaptionSun}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
@@ -179,37 +180,32 @@
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.pin}"
-                                           FontSize="13"
-                                           IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.pin_off}"
-                                           FontSize="13"
-                                           IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionPin}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionUnpin}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.minus}"
-                                       FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMinimize}"
+                                                    FontSize="16"/>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_MaximizeOrRestore}"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.square}"
-                                           FontSize="12"
-                                           IsVisible="{Binding !IsWindowMaximized}"/>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.copy}"
-                                           FontSize="12"
-                                           IsVisible="{Binding IsWindowMaximized}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMaximize}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding !IsWindowMaximized}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionRestore}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding IsWindowMaximized}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button caption-close"
@@ -217,9 +213,8 @@
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.x}"
-                                       FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionClose}"
+                                                    FontSize="16"/>
                         </Button>
                     </StackPanel>
                 </Grid>
@@ -243,6 +238,7 @@
 
         <Grid x:Name="ThumbnailPanel"
               Grid.Column="1"
+              ClipToBounds="True"
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
@@ -301,22 +297,19 @@
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center"
                                                         IsHitTestVisible="False">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.play}"
-                                                               Foreground="#A9A9A9"
-                                                               FontSize="18"
-                                                               Width="18"
-                                                               TextAlignment="Center"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
+                                                                            Foreground="#A9A9A9"
+                                                                            FontSize="18"
+                                                                            Width="18"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                 </Border>
-                                                <TextBlock Classes="icon"
-                                                           Text="{Binding PlaceholderIcon}"
-                                                           IsVisible="{Binding HasNoThumbnail}"
-                                                           FontSize="42"
-                                                           Opacity="0.45"
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{Binding PlaceholderIcon}"
+                                                                        IsVisible="{Binding HasNoThumbnail}"
+                                                                        FontSize="42"
+                                                                        Opacity="0.45"
+                                                                        HorizontalAlignment="Center"
+                                                                        VerticalAlignment="Center"/>
                                                 <Border IsVisible="{Binding IsFailed}"
                                                         Background="#C8B91C1C"
                                                         CornerRadius="4"
@@ -324,7 +317,7 @@
                                                         HorizontalAlignment="Right"
                                                         VerticalAlignment="Top"
                                                         Margin="5">
-                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.triangle_alert}" Foreground="White"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}" Foreground="White"/>
                                                 </Border>
                                                 <ProgressBar IsVisible="{Binding IsProgressVisible}"
                                                              Value="{Binding Progress}"
@@ -355,11 +348,10 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <TextBlock Classes="icon"
-                                                                               Text="{x:Static theming:LucideIcons.columns_2}"
-                                                                               Foreground="White"
-                                                                               FontSize="20"
-                                                                               HorizontalAlignment="Center"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Columns}"
+                                                                                            Foreground="White"
+                                                                                            FontSize="20"
+                                                                                            HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Horizontal}"
                                                                                Foreground="White"
                                                                                FontSize="11"
@@ -380,11 +372,10 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <TextBlock Classes="icon"
-                                                                               Text="{x:Static theming:LucideIcons.rows_2}"
-                                                                               Foreground="White"
-                                                                               FontSize="20"
-                                                                               HorizontalAlignment="Center"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rows}"
+                                                                                            Foreground="White"
+                                                                                            FontSize="20"
+                                                                                            HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Vertical}"
                                                                                Foreground="White"
                                                                                FontSize="11"
@@ -424,13 +415,13 @@
 
                 <Grid IsVisible="{Binding IsEmpty}" Margin="28">
                     <Border Classes="hotkey-panel"
-                            Width="530"
+                            MaxWidth="530"
                             MaxHeight="430"
-                            HorizontalAlignment="Center"
+                            HorizontalAlignment="Stretch"
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                 <TextBlock Text="{x:Static res:Strings.MainWindow_ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
@@ -440,25 +431,28 @@
                                        TextWrapping="Wrap"
                                        Margin="8,0,8,8"/>
                             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
-                                <ItemsControl ItemsSource="{Binding HotkeyTips}">
+                                <ItemsControl ItemsSource="{Binding HotkeyTips}" Grid.IsSharedSizeScope="True">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate DataType="local:HotkeyTipViewModel">
                                             <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0" Padding="6,8">
-                                                <Grid ColumnDefinitions="24,155,*" ColumnSpacing="10">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.circle_check}"
-                                                               IsVisible="{Binding IsRegistered}"
-                                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                               FontSize="17"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.circle_x}"
-                                                               IsVisible="{Binding !IsRegistered}"
-                                                               Foreground="#C65F5F"
-                                                               FontSize="17"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="24"/>
+                                                        <ColumnDefinition Width="Auto" MinWidth="155" SharedSizeGroup="HotkeyTipHotkey"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                                            IsVisible="{Binding IsRegistered}"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                            FontSize="17"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleX}"
+                                                                            IsVisible="{Binding !IsRegistered}"
+                                                                            Foreground="#C65F5F"
+                                                                            FontSize="17"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="1"
                                                                Text="{Binding Hotkey}"
                                                                FontFamily="{DynamicResource ShareX.FontFamily.Monospace}"
@@ -466,6 +460,7 @@
                                                                VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="2"
                                                                Text="{Binding Description}"
+                                                               ToolTip.Tip="{Binding Description}"
                                                                FontWeight="Normal"
                                                                TextTrimming="CharacterEllipsis"
                                                                VerticalAlignment="Center"/>
@@ -494,11 +489,10 @@
                     BorderThickness="2"
                     CornerRadius="12">
                 <StackPanel Spacing="12" HorizontalAlignment="Center">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.upload}"
-                               FontSize="48"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
+                                            FontSize="48"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayTitle"
                                Text="{x:Static res:Strings.MainWindow_ReleaseToUploadFiles}"
                                FontSize="22"

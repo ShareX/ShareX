@@ -25,6 +25,7 @@
 
 using ShareX.ImageEditor.Integration;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib
 {
@@ -41,12 +42,14 @@ namespace ShareX.ScreenCaptureLib
         public const int MoveSpeedMaximum = 10;
 
         public bool QuickCapture = true;
+        public bool MultiRegionMode = false;
         public bool DetectWindows = true;
         public bool DetectControls = true;
         public bool ActiveMonitorMode = false;
         public int BackgroundDimStrength = 20;
         public bool DimAllExceptSelection = false;
         public List<ImageEditorToolbarItemOptions> ToolbarItems = new List<ImageEditorToolbarItemOptions>();
+        public bool CompactToolbar = false;
 
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;
@@ -62,5 +65,8 @@ namespace ShareX.ScreenCaptureLib
         public int MagnifierPixelCount = 15; // Must be odd number like 11, 13, 15 etc.
         public bool ShowCenterCrosshair = true;
         public bool ShowScreenCrosshair = false;
+
+        // Desktop position of the toolbar's top centre, in physical pixels. Empty means centred on the active monitor.
+        public Point ToolbarPosition = Point.Empty;
     }
 }

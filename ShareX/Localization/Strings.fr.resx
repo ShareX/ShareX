@@ -472,6 +472,18 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Intervalle de répétition des raccourcis (millisecondes)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Pack d’icônes :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Classique</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Moderne</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Icônes</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Paramètres d’impression d’image...</value>
   </data>
@@ -632,7 +644,7 @@
     <value>Afficher « Modifier avec ShareX » dans le menu contextuel du gestionnaire de fichiers</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Afficher le bouton « Modifier avec ShareX » dans le menu contextuel de l’Explorateur Windows</value>
+    <value>Afficher le bouton « Modifier dans l’éditeur d’images ShareX » dans le menu contextuel de l’Explorateur Windows</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Modifier dans l’éditeur de photos ShareX » dans le menu contextuel de l’Explorateur Windows</value>
@@ -1341,7 +1353,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Impossible d'écrire l'image à l'emplacement spécifié :</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Modifier avec ShareX</value>
+    <value>Modifier dans l’éditeur d’images ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>Modifier dans l’éditeur de photos ShareX</value>
@@ -1538,6 +1550,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Moniteur réseau...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nouveau</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Aucun préréglage d’effet d’image</value>
   </data>
@@ -1564,6 +1579,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Région...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Région (transparente)...</value>
   </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Navigateur de stockage distant...</value>
@@ -2312,6 +2330,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Fermer la fenêtre OCR après l’ouverture du lien du service</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Barre d'outils compacte de capture de région</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configurer...</value>
   </data>
@@ -2536,6 +2557,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Monter</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Mode multi-région</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Nom</value>
@@ -3034,6 +3058,18 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Audio Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Effort de compression WebP :</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Les valeurs faibles accélèrent l’encodage. Les valeurs élevées produisent des fichiers plus petits. Toutes les valeurs préservent la qualité de l’image.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Sans perte</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Qualité WebP :</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Largeur :</value>

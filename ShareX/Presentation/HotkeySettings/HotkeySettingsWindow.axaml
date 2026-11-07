@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="680"
         d:DesignHeight="600"
@@ -78,41 +79,41 @@
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,Auto">
                         <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_Add}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Classes="compact" Click="OnRemoveClick" IsEnabled="{Binding HasSelection}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_Remove}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Classes="compact" Click="OnEditClick" IsEnabled="{Binding HasSelection}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.settings_2}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_EditTask}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="3" Classes="compact" Click="OnDuplicateClick" IsEnabled="{Binding HasSelection}">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy_plus}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Duplicate}"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_Duplicate}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="4" Classes="toolbar-button" Click="OnMoveUpClick"
                                 Height="34" Width="34" MinWidth="34" Padding="0"
                                 IsEnabled="{Binding CanMove}" ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_MoveUp}">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_up}" FontSize="16"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronUp}" FontSize="16"/>
                         </Button>
                         <Button Grid.Column="5" Classes="toolbar-button" Click="OnMoveDownClick"
                                 Height="34" Width="34" MinWidth="34" Padding="0"
                                 IsEnabled="{Binding CanMove}" ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_MoveDown}">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.chevron_down}" FontSize="16"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}" FontSize="16"/>
                         </Button>
                         <Button Grid.Column="7" Classes="compact" Click="OnResetClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_ResetWithEllipsis}"/>
                             </StackPanel>
                         </Button>
@@ -127,10 +128,9 @@
                         CornerRadius="4"
                         Padding="8,6">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                                   FontSize="18"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                                FontSize="18"/>
                         <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                             <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_GlobalHotkeysAreCurrentlyDisabled}"
                                        IsVisible="{Binding AreHotkeysDisabled}"
@@ -184,38 +184,32 @@
                                                             Click="OnTaskClick"
                                                             HorizontalAlignment="Stretch">
                                                         <Grid ColumnDefinitions="Auto,*,Auto,Auto" ColumnSpacing="7">
-                                                            <TextBlock Classes="icon"
-                                                                       Text="{Binding SelectedTask.Icon}"
-                                                                       FontSize="16"
-                                                                       Width="18"
-                                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                                       TextAlignment="Center"/>
+                                                            <controls:IconPresenter Icon="{Binding SelectedTask.Icon}"
+                                                                                    FontSize="16"
+                                                                                    Width="18"
+                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                                                             <TextBlock Grid.Column="1"
                                                                        Text="{Binding SelectedTask.Name}"
                                                                        FontWeight="Normal"
                                                                        TextTrimming="CharacterEllipsis"/>
-                                                            <TextBlock Grid.Column="2"
-                                                                       Classes="icon"
-                                                                       IsVisible="{Binding IsCustomized}"
-                                                                       Text="{x:Static theming:LucideIcons.pencil}"
-                                                                       FontSize="14"
-                                                                       FontWeight="Normal"
-                                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                                       VerticalAlignment="Center"
-                                                                       ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_ThisTaskHasCustomSettings}"/>
-                                                            <TextBlock Grid.Column="3"
-                                                                       Classes="icon"
-                                                                       Text="{x:Static theming:LucideIcons.chevron_down}"
-                                                                       FontSize="14"/>
+                                                            <controls:IconPresenter Grid.Column="2"
+                                                                                    IsVisible="{Binding IsCustomized}"
+                                                                                    Icon="{x:Static icons:AppIcons.Edit}"
+                                                                                    FontSize="14"
+                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                                    VerticalAlignment="Center"
+                                                                                    ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_ThisTaskHasCustomSettings}"/>
+                                                            <controls:IconPresenter Grid.Column="3"
+                                                                                    Icon="{x:Static icons:AppIcons.ChevronDown}"
+                                                                                    FontSize="14"/>
                                                         </Grid>
                                                     </Button>
                                                     <Button Grid.Column="1"
                                                             Classes="row-icon-button"
                                                             Click="OnEditRowClick"
                                                             ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_EditTaskSettings}">
-                                                        <TextBlock Classes="icon"
-                                                                   Text="{x:Static theming:LucideIcons.pencil}"
-                                                                   FontSize="17"/>
+                                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Edit}"
+                                                                                FontSize="17"/>
                                                     </Button>
                                                 </Grid>
 
@@ -242,24 +236,21 @@
                                                           Width="32"
                                                           Height="34"
                                                           ToolTip.Tip="{Binding StatusText}">
-                                                        <TextBlock IsVisible="{Binding IsRegistered}"
-                                                                   Classes="icon"
-                                                                   Text="{x:Static theming:LucideIcons.circle_check}"
-                                                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Continue.Border}"
-                                                                   FontSize="19"
-                                                                   HorizontalAlignment="Center"/>
-                                                        <TextBlock IsVisible="{Binding IsFailed}"
-                                                                   Classes="icon"
-                                                                   Text="{x:Static theming:LucideIcons.circle_x}"
-                                                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                                                                   FontSize="19"
-                                                                   HorizontalAlignment="Center"/>
-                                                        <TextBlock IsVisible="{Binding IsNotConfigured}"
-                                                                   Classes="icon"
-                                                                   Text="{x:Static theming:LucideIcons.circle_dashed}"
-                                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                                   FontSize="19"
-                                                                   HorizontalAlignment="Center"/>
+                                                        <controls:IconPresenter IsVisible="{Binding IsRegistered}"
+                                                                                Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                                                Foreground="{DynamicResource ShareX.Brush.TaskMode.Continue.Border}"
+                                                                                FontSize="19"
+                                                                                HorizontalAlignment="Center"/>
+                                                        <controls:IconPresenter IsVisible="{Binding IsFailed}"
+                                                                                Icon="{x:Static icons:AppIcons.CircleX}"
+                                                                                Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                                                                FontSize="19"
+                                                                                HorizontalAlignment="Center"/>
+                                                        <controls:IconPresenter IsVisible="{Binding IsNotConfigured}"
+                                                                                Icon="{x:Static icons:AppIcons.CircleDashed}"
+                                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                                FontSize="19"
+                                                                                HorizontalAlignment="Center"/>
                                                     </Grid>
                                                 </Grid>
                                             </Grid>
@@ -272,11 +263,10 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Spacing="8">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.keyboard}"
-                                           FontSize="42"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}"
+                                                        FontSize="42"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static res:Strings.HotkeySettingsWindow_AddAHotkeyToCreateAWorkflow}"
                                            FontWeight="Normal"/>
                             </StackPanel>
@@ -295,10 +285,9 @@
                         VerticalAlignment="Center">
                     <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.rotate_ccw}"
-                                       FontSize="20"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"
+                                                    FontSize="20"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
                             <TextBlock Grid.Column="1"
                                        Classes="section-heading"
                                        Text="{x:Static res:Strings.HotkeySettingsWindow_ResetHotkeysQuestion}"/>

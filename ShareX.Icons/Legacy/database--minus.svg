@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="d1" x1="0" y1="0" x2="1" y2="0"><stop offset=".05" stop-color="#e6e6e6"/><stop offset=".15" stop-color="#d0d0d0"/><stop offset=".25" stop-color="#bdbdbd"/><stop offset=".35" stop-color="#b9b9ba"/><stop offset=".45" stop-color="#a3a4ad"/><stop offset=".55" stop-color="#9a9cab"/><stop offset=".65" stop-color="#a5a8b6"/><stop offset=".75" stop-color="#b7bac8"/><stop offset=".85" stop-color="#caccdb"/><stop offset=".95" stop-color="#e0e2f0"/></linearGradient>
+    <linearGradient id="d2" x1="0" y1="0" x2="1" y2="0"><stop offset=".05" stop-color="#e6e6e6"/><stop offset=".15" stop-color="#d0d0d0"/><stop offset=".25" stop-color="#bdbdbd"/><stop offset=".35" stop-color="#b9b9ba"/><stop offset=".45" stop-color="#a2a6aa"/><stop offset=".55" stop-color="#969fa3"/><stop offset=".65" stop-color="#9faaab"/><stop offset=".75" stop-color="#b0bcbb"/><stop offset=".85" stop-color="#c4cdcd"/><stop offset=".95" stop-color="#dae2e2"/></linearGradient>
+    <linearGradient id="d3" x1="0" y1="0" x2="1" y2="0"><stop offset=".05" stop-color="#e6e6e6"/><stop offset=".15" stop-color="#d0d0d0"/><stop offset=".25" stop-color="#bdbdbd"/><stop offset=".35" stop-color="#b9b9b9"/><stop offset=".45" stop-color="#a2a8a8"/><stop offset=".55" stop-color="#93a29d"/><stop offset=".65" stop-color="#9eaba9"/><stop offset=".75" stop-color="#afbcb8"/><stop offset=".85" stop-color="#c2cdca"/><stop offset=".95" stop-color="#d8e2df"/></linearGradient>
+    <linearGradient id="sp" x1="0" y1="0" x2="1" y2="0"><stop offset=".05" stop-color="#6c6c6c"/><stop offset=".15" stop-color="#9b9b9b"/><stop offset=".25" stop-color="#999999"/><stop offset=".35" stop-color="#8f8f8f"/><stop offset=".45" stop-color="#7c7c7c"/><stop offset=".55" stop-color="#787878"/><stop offset=".65" stop-color="#808080"/><stop offset=".75" stop-color="#8c8c8c"/><stop offset=".85" stop-color="#9b9b9b"/><stop offset=".95" stop-color="#757575"/></linearGradient>
+    <linearGradient id="do" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555"/><stop offset=".6" stop-color="#4c4c4c"/><stop offset="1" stop-color="#0a0a0a"/></linearGradient>
+    <linearGradient id="mf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f86a6a"/><stop offset="1" stop-color="#f25454"/></linearGradient>
+    <linearGradient id="ms" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a70000"/><stop offset="1" stop-color="#800000"/></linearGradient>
+  </defs>
+  <rect x="2.5" y=".5" width="11" height="15" fill="#ffffff" fill-opacity="0" stroke="url(#do)" stroke-opacity=".42"/>
+  <rect x="3" y="1" width="10" height="4" fill="url(#d1)"/>
+  <path d="M3 1.5h10" stroke="#ffffff" stroke-opacity=".3"/>
+  <rect x="3" y="6" width="10" height="4" fill="url(#d2)"/>
+  <path d="M3 6.5h10" stroke="#ffffff" stroke-opacity=".3"/>
+  <rect x="3" y="11" width="10" height="4" fill="url(#d3)"/>
+  <path d="M3 11.5h10" stroke="#ffffff" stroke-opacity=".3"/>
+  <path d="M3 14.5h10" stroke="#ffffff" stroke-opacity=".3"/>
+  <rect x="3" y="5" width="10" height="1" fill="url(#sp)"/>
+  <rect x="3" y="10" width="10" height="1" fill="url(#sp)"/>
+  <rect x="8.5" y="11.5" width="7" height="2" rx=".5" fill="url(#mf)" stroke="url(#ms)"/>
+</svg>

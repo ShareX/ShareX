@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>อัตโนมัติ</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>ดำ:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>โทนดำ</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>น้ำเงิน</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>น้ำเงิน:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>โทนน้ำเงิน</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>โทนน้ำเงิน:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>ความสว่าง:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>ช่องสัญญาณ:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>เติมสี</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>สี:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>ค่าคงที่:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>คอนทราสต์:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มจุด ลากเพื่อปรับ และลากจุดออกนอกกราฟเพื่อลบ</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>ฟ้าอมเขียว:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>ฟ้าอมเขียว / แดง:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>โทนฟ้าอมเขียว</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>โทนฟ้าอมเขียว:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>ความหนาแน่น:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>แก้ไขการไล่ระดับสี...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>การรับแสง:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>สีฟิลเตอร์:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>แกมมา:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>การแก้ไขแกมมา:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>เขียว</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>เขียว:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>โทนเขียว</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>โทนเขียว:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>ส่วนสว่าง</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>ฮิว:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>ดำอินพุต:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>ขาวอินพุต:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>ระดับ:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>ความสว่างของสี:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>ม่วงแดง:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>ม่วงแดง / เขียว:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>โทนม่วงแดง</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>โทนม่วงแดง:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>โทนกลาง</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>ขาวดำ</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>โทนกลาง</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>การปรับแต่งนี้ไม่มีตัวเลือก</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>ระยะเลื่อน:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>ดำเอาต์พุต:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>ช่องสัญญาณเอาต์พุต:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>ขาวเอาต์พุต:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>รักษาความสว่าง</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>แดง</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>แดง:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>โทนแดง</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>โทนแดง:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>รีเซ็ตช่องสัญญาณ</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>กลับด้าน</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>ความอิ่มตัว:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>ส่วนมืด</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>ระดับเกณฑ์:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>ย้อมสี</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>สีย้อม:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>โทน:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>ใช้วิธีแบบเดิม</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>ความสดใส:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>โทนขาว</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>เหลือง / น้ำเงิน:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>เหลือง:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>โทนเหลือง</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>โทนเหลือง:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>เพิ่มการปรับแต่ง</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>สร้างเลเยอร์ปรับแต่ง {0} ใหม่</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>ดำ &amp; ขาว</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>ความสว่าง/คอนทราสต์</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>มิกเซอร์ช่องสัญญาณ</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>สมดุลสี</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>ค้นหาสี</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>เส้นโค้ง</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>ลดความอิ่มตัว</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>การเปิดรับแสง</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>แมปการไล่ระดับสี</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>การปรับโทน HDR</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>ฮิว/ความอิ่มตัว</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>กลับสี</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>ระดับ</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>จับคู่สี</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>ฟิลเตอร์ภาพถ่าย</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>ทำแบบโปสเตอร์</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>แทนที่ สี</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>สีแบบเลือก</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>เกณฑ์</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>ความสดใส</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>ผู้เขียน:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>ผู้เขียน: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>ล้างทั้งหมด</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>ล้างการนับ</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>ล้างบันทึก</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>กลุ่มการนับ {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>คลิกเพื่อวางเครื่องหมายนับแบบมีหมายเลข ลากเพื่อย้าย Alt+คลิกเพื่อลบออก</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>จำนวน: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>เครื่องมือนับ</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>ลบการนับ</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>ลบบันทึก</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>แก้ไขบันทึก</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>กลุ่ม:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>สีของกลุ่ม</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>ขนาดป้ายกำกับ:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>ขนาดเครื่องหมาย:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>ย้ายการนับ</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>ย้ายบันทึก</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>สร้างกลุ่มการนับใหม่</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>สีของบันทึก</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มบันทึก คลิกบันทึกเพื่อแก้ไข ลากเพื่อย้าย Alt+คลิกเพื่อลบ</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>เครื่องมือบันทึก</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>เพิ่มอาร์ตบอร์ดใหม่</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>อาร์ตบอร์ด {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>พื้นหลังอาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>ลากบนผืนผ้าใบว่างเพื่อสร้างอาร์ตบอร์ด ลากชื่ออาร์ตบอร์ดเพื่อย้ายพร้อมกับเนื้อหา</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>ย้ายอาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>เครื่องมืออาร์ตบอร์ด</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>อาร์ตบอร์ดใหม่</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (โทรศัพท์)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (สี่เหลี่ยมจัตุรัส)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (แท็บเล็ต)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>เพิ่ม</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>ปรับปรุงขอบ</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>บ่วงบาศ</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>ไม้กายสิทธิ์</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกสีที่คล้ายกัน Shift เพิ่ม Alt ลบออก</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>เครื่องมือไม้กายสิทธิ์</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>การเลือกวัตถุ</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>ลากสี่เหลี่ยมหรือบ่วงบาศรอบวัตถุเพื่อเลือก</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกวัตถุ</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>การเลือกด่วน</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>ระบายทับพื้นที่เพื่อเลือก การเลือกจะขยายออกจนพบขอบ Alt ลบออก</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกด่วน</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>กำลังเลือกวัตถุ...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>แปรงเลือก</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มในส่วนที่เลือก Alt (หรือโหมดลบออก) จะนำออกจากส่วนที่เลือก</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงเลือก</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>ด้านหลัง</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>สี</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>เบิร์นสี</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>ดอดจ์สี</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>มืดลง</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>สีที่มืดกว่า</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>ผลต่าง</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>ละลาย</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>หาร</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>ยกเว้น</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>แสงจ้า</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>ผสมแบบแข็ง</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>เฉดสี</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>สว่างขึ้น</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>สีที่สว่างกว่า</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>เบิร์นเชิงเส้น</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>ดอดจ์เชิงเส้น (เพิ่ม)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>แสงเชิงเส้น</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>ความสว่าง</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>คูณ</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>ปกติ</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>ซ้อนทับ</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>ส่งผ่าน</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>แสงจุด</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>ความอิ่มตัวของสี</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>หน้าจอ</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>แสงนุ่ม</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>แสงสด</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>เปิดใช้เอฟเฟกต์การสะสมสีแบบแอร์บรัช</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0}ไม่สามารถระบายบนมาสก์เลเยอร์ได้</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>ปริมาณสีที่ใช้ต่อการแตะแต่ละครั้ง</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>การปกคลุมของสีสูงสุดต่อเส้น (ปุ่ม 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>ขนาดตามแรงกด</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>การทำให้เรียบ:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>แปรงปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>ระบายการปรับแต่งเฉพาะที่ แต่ละเส้นจะแก้ไขมาสก์ของเลเยอร์ปรับแต่ง Alt ลบการปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>แปรง{0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงปรับแต่ง</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>การปรับแต่ง:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>ปริมาณ:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>ลบอัตโนมัติ</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>ระบายด้วยสีพื้นหน้า Shift+คลิกเพื่อวาดเส้นตรง [ ] เปลี่ยนขนาด</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรง</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>ทำความสะอาดหลังแต่ละเส้น</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>แทนที่สีที่คล้ายกับสีตัวอย่างด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>เครื่องมือแทนที่สี</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>โหลด:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>สีที่โหลด (พื้นหน้า)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>ผสม:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>ผสมสีที่โหลดกับสีบนผืนผ้าใบเหมือนสีจริง</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงผสม</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>เลเยอร์ใหม่ต่อเส้น</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>ระบายเส้นขอบคมแบบไม่ลบรอยหยักด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>เครื่องมือดินสอ</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>การสุ่มตัวอย่าง:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>ความเปียก:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>มุม</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>ความแข็ง</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>ค่าล่วงหน้าของแปรงใหม่...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>แรงกดปากกาควบคุมการไหล</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>แรงกดปากกาควบคุมขนาด</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>ความกลม</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>การกระจาย</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>เลือกเครื่องมือระบายสีเพื่อแก้ไขแปรงของเครื่องมือนั้น</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>ขนาด</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>ความแปรผันของขนาด</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>ระยะห่าง</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>ปลายเหลี่ยม</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>จุดยึด:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>ขนาดปัจจุบัน: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>สีของส่วนขยายแคนวาส:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>พื้นหน้า</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>เทา</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>สัมพัทธ์</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>การแก้ไขถูกยกเลิกเนื่องจากเอกสารมีการเปลี่ยนแปลง</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>เปิดหรือสร้างเอกสารเพื่อเริ่มแก้ไข (Ctrl+O / Ctrl+N) หรือวางภาพที่นี่</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>ตัวเลือกช่องสัญญาณ</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>ลบช่องสัญญาณปัจจุบัน</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>โหลดช่องสัญญาณเป็นส่วนที่เลือก</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>สร้างช่องสัญญาณใหม่</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>มาสก์ด่วน</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>บันทึกส่วนที่เลือกเป็นช่องสัญญาณ</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>แสดงช่องสัญญาณเป็นภาพซ้อน</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>ไม่สามารถโหลด 3D LUT ได้: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>โหลด 3D LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>โหลด 3D LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>ไฟล์ 3D LUT:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>ไฟล์ 3D LUT</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>ไม่รองรับตารางค้นหาแบบ 1D</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>ข้อมูลตารางไม่ตรงกับขนาดของตาราง</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>โดเมนของตารางไม่ถูกต้อง</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>ไฟล์ไม่มีรายการ LUT_3D_SIZE</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>ไม่รองรับขนาดตาราง {0}</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>สีพื้นหลัง</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>สีพื้นหลัง ดับเบิลคลิกเพื่อเปิดตัวเลือกสี</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>สีพื้นหน้า</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>สีพื้นหน้า ดับเบิลคลิกเพื่อเปิดตัวเลือกสี</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>เพิ่มลงในตัวอย่างสี</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>ไม่ใช่สีเว็บ คลิกตัวอย่างสีเพื่อใช้สีที่ใกล้ที่สุด</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>เฉพาะสีเว็บ</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>รีเซ็ต</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>คลิกเพื่อคืนค่าสีปัจจุบัน</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>ตัวเลือกสี</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>ตัวเลือกสี ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>ลากเพื่อกำหนดพื้นที่ครอบตัด ลากด้านนอกเพื่อหมุน Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>ก: {0:0} px  ส: {1:0} px  มุม: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>เครื่องมือครอบตัด</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>ลบพิกเซลที่ถูกครอบตัด</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>ส:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>อัตราส่วนเดิม</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>ครอบตัดแบบเปอร์สเปกทีฟ</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>ลากเพื่อสร้างกรอบครอบตัด แล้วลากมุมให้ตรงกับเปอร์สเปกทีฟของวัตถุ Enter ครอบตัดและปรับให้ตรง</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>เครื่องมือครอบตัดแบบเปอร์สเปกทีฟ</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>อัตราส่วน</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>อัตราส่วน:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (สี่เหลี่ยมจัตุรัส)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>กฎสามส่วน</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>แสดงเส้นตาราง</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>สลับความกว้างและความสูง</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>ก:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>ยกเลิก</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>ไม่</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>ตกลง</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>ใช่</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>กลุ่มการนับ 1</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° ตามเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° ทวนเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>ใช้การปรับแต่ง</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>เปลี่ยนขนาดแคนวาส</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>ครอบตัดภาพ</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>ปรับให้เท่ากัน</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>เติม</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>เติมเส้นทาง</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>พลิกแคนวาส</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>ปรับขนาดภาพ</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>แสดงทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>หมุนแคนวาส</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>ใช้ฟิลเตอร์</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>วาดเส้นขอบ</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>วาดเส้นขอบเส้นทาง</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>ตัดขอบภาพ</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>เพิ่มมาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>เพิ่มมาสก์เวกเตอร์</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>การปรับ</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>อีกครั้ง</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>จัดแนว</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>ทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>เลเยอร์ทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>อัลฟา {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>มุม (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>การลบรอยหยัก</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>นำไปใช้</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>ใช้มาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>กำหนดเอง...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>จัดลำดับ</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>จัดลำดับเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>สีอัตโนมัติ</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>คอนทราสต์อัตโนมัติ</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>โทนอัตโนมัติ</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>เลเยอร์พื้นหลังไม่สามารถมีมาสก์ได้ โปรดแปลงเป็นเลเยอร์ก่อน</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>เลเยอร์พื้นหลังไม่สามารถมีสไตล์เลเยอร์ได้ โปรดแปลงเป็นเลเยอร์ก่อน (เลเยอร์ &gt; ใหม่ &gt; เลเยอร์จากพื้นหลัง)</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>พื้นหลังจากเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>อิงจาก:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>น้ำเงิน</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>โทนน้ำเงิน</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>เส้นขอบ</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>เส้นขอบ...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>ขอบล่าง</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>สีของพิกเซลมุมขวาล่าง</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>นำไปข้างหน้า</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>นำไปหน้าสุด</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>ชื่อแปรง</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>แปรง</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>ไม่สามารถ{0}ได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>ไม่สามารถ{0}ได้ เนื่องจากไม่มีเลเยอร์ที่ใช้งานอยู่</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>ไม่สามารถ{0}ได้ เนื่องจากเลเยอร์ที่ใช้งานอยู่ไม่ใช่เลเยอร์พิกเซล โปรดแรสเตอร์ไรซ์ก่อน (เลเยอร์ &gt; แรสเตอร์ไรซ์)</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>ไม่สามารถแปลงเป็นออบเจ็กต์อัจฉริยะได้ เนื่องจากเลเยอร์ว่างเปล่า</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>ไม่สามารถตัดได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>ไม่สามารถทำให้การดำเนินการล่าสุดจางลงได้</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>ไม่สามารถรวมลงได้ เนื่องจากไม่มีเลเยอร์ด้านล่าง</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>ไม่สามารถรวมลงได้ เนื่องจากเลเยอร์ด้านล่างไม่ใช่เลเยอร์พิกเซล</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>ขนาดแคนวาส</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>ขนาดแคนวาส...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>กึ่งกลาง</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>เปลี่ยนการวางแนวข้อความ</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>ช่องสัญญาณ</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>ช่องสัญญาณ</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>ล้าง</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>ล้างเส้นนำ</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>ล้างสไตล์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>ล้างรายการไฟล์ล่าสุด</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>คลิปบอร์ด</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>คลิปบอร์ด ไม่ มี รูปภาพ.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>ตามเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>ปิดทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>สี</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>สี:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>การเติมสี</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>ช่วงสี</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>ช่วงสี...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>เคล็ดลับ: ใช้เครื่องมือดูดสีเก็บตัวอย่างสีก่อน สีนั้นจะถูกใช้เป็นสีพื้นหน้า</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>คอลัมน์:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>เติมตามเนื้อหา</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>เติมตามเนื้อหา...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>หดเข้า</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>หดเข้า (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>หดเข้า...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>คอนทราสต์:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>แปลงสำหรับฟิลเตอร์อัจฉริยะ</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>แปลงเป็นรูปร่าง</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>แปลงเป็นออบเจ็กต์อัจฉริยะ</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>คัดลอก</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>คัดลอกสไตล์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>คัดลอกแบบรวม</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>ไม่สามารถ{0}ได้: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>ไม่สามารถสร้างเอกสารได้: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>ไม่สามารถส่งออกได้: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>ไม่สามารถส่งออกเลเยอร์ได้: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>ไม่สามารถวาง "{0}" ได้ เนื่องจากไม่รองรับรูปแบบไฟล์</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>ไม่สามารถย้อนกลับได้: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>ไม่สามารถบันทึกได้: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>ไม่สามารถบันทึก "{0}" ได้: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>ไม่สามารถบันทึกส่วนแบ่งได้: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>การนับ</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>ทวนเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>สร้างคลิปปิงมาสก์</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>สร้างเส้นทางทำงาน</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>ครอบตัด</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>ตัด</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>สลับโหมดหน้าจอ</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>ลดขนาดฟอนต์</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>สีพื้นหน้าและพื้นหลังเริ่มต้น</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>กำหนดค่าล่วงหน้าของแปรง...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>กำหนดรูปร่างแบบกำหนดเอง...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>กำหนดลวดลาย...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>ลบ</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>ลบช่องสัญญาณ</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>ลบเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>ลบมาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>ลบเลเยอร์หลายรายการ</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>ลบเส้นทาง</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>ยกเลิกการเลือก</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>ทิศทาง:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>ปิดใช้งาน</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>ปิดใช้งานมาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>บิดเบือน</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>ขอบเขตเอกสาร</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>ทำซ้ำ...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>ทำซ้ำภาพ</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>ทำซ้ำเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>แก้ไขในโหมดมาสก์ด่วน</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>แก้ไขมาสก์</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>ไม่มีเอฟเฟกต์นี้</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>คลังเอฟเฟกต์</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>เปิดใช้งานมาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>เข้าสู่มาสก์ด่วน</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>ปรับให้เท่ากัน</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>ออก</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>ออกจากมาสก์ด่วน</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>ขยาย</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>ขยายออก (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>ขยาย...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>ส่งออก</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>ส่งออกเป็น</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>ส่งออกเป็น...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>ส่งออก {0} เลเยอร์ไปยัง {1} แล้ว</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>ส่งออก {0} แล้ว</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>ส่วนเสริม</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>ทำให้จางลง</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>ทำให้จางลง...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>ทำให้{0}จางลง</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>ขอบนุ่ม</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>ขอบนุ่ม:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>ขอบนุ่ม...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>รัศมีขอบนุ่ม (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>เติม</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>เติม...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>เติมเส้นทาง</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>เติมเต็มหน้าจอ</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>เติมด้วยสีพื้นหลัง</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>เติมด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>พอดีหน้าจอ</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>รวมชั้น</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>รวมภาพเป็นชั้นเดียว</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>พลิกแคนวาสแนวนอน</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>พลิกแคนวาสแนวตั้ง</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>พลิกแนวนอน</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>พลิกแนวตั้ง</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>"{0}" ไม่รองรับเลเยอร์ ต้องการบันทึกสำเนาที่รวมเป็นชั้นเดียวในรูปแบบนี้ หรือบันทึกเป็นโปรเจกต์ ShareX Photo Editor เพื่อเก็บเลเยอร์ไว้?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>แปลงรูปแบบอิสระ</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>จากความโปร่งใส</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>ความคลุมเครือ:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>ไล่ระดับสี...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>การเติมไล่ระดับสี</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>ระดับสีเทา</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>เขียว</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>โทนเขียว</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>เส้นตาราง</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>จัดกลุ่มเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>กลุ่ม {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>ขยายส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>เส้นนำ</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>ระยะห่าง (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>ความสูง (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>ซ่อนทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>ซ่อนเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>ซ่อนส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>ส่วนสว่าง</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>ประวัติ</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>แนวนอน</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>กึ่งกลางแนวนอน</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>ตัวเลือกภาพ</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>การหมุนภาพ</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>ขนาดภาพ</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>ขนาดภาพ...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>เพิ่มขนาดฟอนต์</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>ข้อมูล</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>ด้านใน</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>กลับด้าน</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>แป้นพิมพ์ลัด...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>ฟิลเตอร์ล่าสุด</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>เลเยอร์จากพื้นหลัง</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>มาสก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>เลเยอร์ {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>คุณสมบัติเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>สไตล์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>สไตล์เลเยอร์...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>เลเยอร์จากการคัดลอก</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>เลเยอร์จากการตัด</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>เลเยอร์เป็นไฟล์</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>เลเยอร์เป็นไฟล์...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>ขอบซ้าย</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>ลิงก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>ลิงก์/ยกเลิกลิงก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>โหลดส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>โหลดส่วนที่เลือก...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>ตำแหน่ง:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>ล็อกทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>ล็อกเส้นนำ</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>ล็อกเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>สร้างส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>โปรดเลือกพื้นที่ก่อน</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>สร้างเส้นทางทำงาน</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>ระยะขอบ (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>แก้ไข(_E)</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>ไฟล์(_F)</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>ฟิลเตอร์(_T)</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>ภาพ(_I)</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>เลเยอร์(_L)</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>เลือก(_S)</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>ข้อความ(_Y)</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>มุมมอง(_V)</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>หน้าต่าง(_W)</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>รวมลง</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>รวมกลุ่ม</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>รวมเลเยอร์ที่มองเห็น</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>รวมแล้ว</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>โทนกลาง</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>โหมด</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>โหมด:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>ปรับเปลี่ยน</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>ส่วนที่เลือก: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>ย้ายเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>ชื่อ:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>ตัวนำทาง</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>ใหม่</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>เลเยอร์ปรับแต่งใหม่</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>เลเยอร์ {0} ใหม่</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>ช่องสัญญาณใหม่</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>ใหม่...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>เลเยอร์เติมใหม่</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>สร้างใหม่จากคลิปบอร์ด</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>สร้างใหม่จากภาพหน้าจอ (เต็มหน้าจอ)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>สร้างใหม่จากภาพหน้าจอ (พื้นที่)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>กลุ่มใหม่</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>เส้นนำใหม่</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>เส้นนำใหม่...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>เลย์เอาต์เส้นนำใหม่</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>เลย์เอาต์เส้นนำใหม่...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>เส้นนำใหม่จากรูปร่าง</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>เลเยอร์ใหม่</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>เลเยอร์ใหม่...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>เส้นทางใหม่</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>เลเยอร์รูปร่างใหม่</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>เอกสารถัดไป</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>ไม่มีเส้นทางที่จะโหลดเป็นส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>ไม่มีส่วนที่เลือกที่บันทึกไว้ (ช่องอัลฟา)</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>บันทึกย่อ</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>ระยะเลื่อน X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>ระยะเลื่อน Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>ความทึบ:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>เปิด...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>เปิดล่าสุด</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>ตัวเลือก</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>การวางแนว</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>การวางแนว:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>ด้านนอก</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>แผง</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>วาง</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>วางเป็นเอกสารใหม่</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>วางในตำแหน่งเดิม</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>วางลงใน</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>วางสไตล์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>วางแบบพิเศษ</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>วางแล้ว</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>เส้นทาง {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>เส้นทาง</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>ลวดลาย</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>ลวดลาย...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>การเติมลวดลาย</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>ชื่อลวดลาย</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>ลวดลาย {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>มุมมองภาพ</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>ปักหมุดบนหน้าจอ</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>เส้นตารางพิกเซล</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>วางแบบฝัง</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>วางแบบฝัง...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>วางภาพลงในกรอบ</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>วางลงในกรอบ</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>ตำแหน่ง (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>การตั้งค่า...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>แสดงตัวอย่าง</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>เอกสารก่อนหน้า</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>พิมพ์...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>คุณสมบัติ</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>ล้างหน่วยความจำ</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>ล้างคลิปบอร์ด</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>ล้างประวัติ</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>คุณภาพ:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>ส่งออกด่วนเป็น PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>แรสเตอร์ไรซ์</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>แรสเตอร์ไรซ์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>แรสเตอร์ไรซ์สไตล์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>แรสเตอร์ไรซ์เลเยอร์ข้อความ</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>แดง</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>ทำซ้ำ</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>โทนแดง</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>ปลดคลิปปิงมาสก์</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>เปลี่ยนชื่อเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>เปลี่ยนชื่อเลเยอร์...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>เลือกอีกครั้ง</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>รีเซ็ตพื้นที่ทำงานพื้นฐาน</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>รีเซ็ตการหมุนมุมมอง</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>แสดงทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>แสดงส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>ย้อนกลับ</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>ขอบขวา</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>หมุน</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>หมุน 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>หมุน 90° ตามเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>หมุน 90° ทวนเข็มนาฬิกา</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>หมุนแคนวาส</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>หมุนแคนวาส {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>หมุน {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>แถว:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>ไม้บรรทัด</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>รัศมีการสุ่มตัวอย่าง (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>แปรงตัวอย่าง {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>สีตัวอย่าง (พื้นหน้า)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>บันทึก</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>บันทึกสำเนา</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>บันทึกสำเนา...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>บันทึกเป็น</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>บันทึกเป็น...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>บันทึกเป็นโปรเจกต์</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>บันทึกส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>บันทึกส่วนที่เลือก...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>บันทึกส่วนแบ่ง</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>บันทึกส่วนแบ่ง...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>บันทึกพื้นที่ทำงาน</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>บันทึกสำเนาไปยัง {0} แล้ว</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>บันทึก {0} แล้ว</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>บันทึก {0} ส่วนแบ่งไปยัง {1} แล้ว</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>มาตราส่วน</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>ภาพหน้าจอ</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>เลือกทั้งหมด</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>เลือกและมาสก์</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>เลือกและมาสก์...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>เลือก:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>โปรดเลือกเลเยอร์กรอบก่อน (วาดด้วยเครื่องมือกรอบ)</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>เลือกเลเยอร์ตั้งแต่สองเลเยอร์ขึ้นไป (Ctrl+คลิกในแผงเลเยอร์) เพื่อลิงก์เข้าด้วยกัน</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>เลือกเลเยอร์ถัดไป</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>โปรดสร้างส่วนที่เลือกสี่เหลี่ยมของแผ่นลวดลายก่อน</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>เลือกเลเยอร์ก่อนหน้า</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>เลือกวัตถุหลัก</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>กำลังเลือกวัตถุหลัก...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>ขอบส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>ส่งไปข้างหลัง</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>ส่งไปหลังสุด</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>ส่งไปยัง ShareX (งานหลังการจับภาพ)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>ตั้งค่าขนาดฟอนต์</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>ส่วนมืด</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>ส่วนมืด/ส่วนสว่าง...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>ชื่อรูปร่าง</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>รูปร่าง {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>แชร์ด้วย ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>แสดง</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>คล้ายกัน</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>เอียง</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>โทนสีผิว</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>ส่วนแบ่ง</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (ฟิลเตอร์อัจฉริยะ)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>ออบเจ็กต์อัจฉริยะ</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>เรียบเนียน</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>ความเรียบ:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>ทำให้เรียบ...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>สแนป</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>สแนปไปยัง</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>สีทึบ</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>สีทึบ...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>ประทับเลเยอร์ที่มองเห็น</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>ถอยหลังหนึ่งขั้น</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>เดินหน้าหนึ่งขั้น</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>ปรับเลเยอร์ให้ตรง</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>เส้นขอบ</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>สีเส้นขอบ</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>เส้นขอบ...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>วาดเส้นขอบเส้นทาง</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>วัตถุหลัก</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>ตัวอย่างสี</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>สลับสีพื้นหน้าและพื้นหลัง</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>แถบเครื่องมือ...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>เครื่องมือ</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>ขอบบน</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>สีของพิกเซลมุมซ้ายบน</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>แปลงรูปแบบ</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>แปลงรูปแบบส่วนที่เลือก</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>แปลงรูปแบบส่วนที่เลือก...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>พิกเซลโปร่งใส</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>ตัดขอบ</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>ตัดขอบ...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>แถบเครื่องมือสองคอลัมน์</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>เลิกทำ</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>ยกเลิกการจัดกลุ่มเลเยอร์</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>ยกเลิกลิงก์เลเยอร์</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>อัปโหลด ด้วย ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>แนวตั้ง</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>กึ่งกลางแนวตั้ง</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>ความกว้าง:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>ความกว้าง (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>ความกว้าง (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>พื้นที่ทำงาน</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>บันทึกพื้นที่ทำงานแล้ว</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>ขยาย</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>ย่อ</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>แตะ</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>ม้วนหลวม</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>ยาวหลวม</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>กลางหลวม</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>ม้วนแน่น</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>ยาวแน่น</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>กลางแน่น</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>สั้นแน่น</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>ด้านล่าง</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>ล่างซ้าย</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>ล่างขวา</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>กึ่งกลาง</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>ซ้าย</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>ขวา</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>ด้านบน</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>บนซ้าย</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>บนขวา</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>บล็อก</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>แปรง</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>ดินสอ</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>ไล่ระดับสี</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>ลวดลาย</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>สีทึบ</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>มุม</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>ข้าวหลามตัด</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>เชิงเส้น</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>รัศมี</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>สะท้อน</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>ตามเนื้อหา</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>สร้างพื้นผิว</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>จับคู่ตามความใกล้เคียง</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>อัตราส่วนคงที่</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>ขนาดคงที่</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>ปกติ</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>รวมรูปร่าง</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>ไม่รวมส่วนที่ซ้อนทับกัน</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>ตัดกันของพื้นที่รูปร่าง</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>เลเยอร์ใหม่</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>ลบรูปร่างด้านหน้า</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>เส้นทาง</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>รูปร่าง</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>สี</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>เฉดสี</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>ความสว่าง</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>ความอิ่มตัวของสี</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>ไบคิวบิก</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>ไบคิวบิก (คมชัดขึ้น)</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>ไบคิวบิก (เรียบขึ้น)</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>ไบลิเนียร์</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>เพื่อนบ้านใกล้ที่สุด</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>ตัวอย่างสีพื้นหลัง</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>ต่อเนื่อง</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>ครั้งเดียว</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>รูปร่างกำหนดเอง</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>วงรี</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>เส้น</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>รูปหลายเหลี่ยม</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>สี่เหลี่ยมผืนผ้า</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>สามเหลี่ยม</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>เส้นทาง</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>พิกเซล</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>รูปร่าง</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>กึ่งกลาง</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>ด้านใน</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>ด้านนอก</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>กึ่งกลาง</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>จัดเต็มบรรทัด</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>ซ้าย</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>ขวา</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>ชัด</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>ไม่มี</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>คม</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>เรียบ</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>เข้ม</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>ส่วนสว่าง</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>โทนกลาง</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>ส่วนมืด</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>ลบพิกเซลที่ตรงกับสีใต้จุดกึ่งกลางแปรง (ฮอตสปอต)</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบพื้นหลัง</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>ไม่ต่อเนื่อง</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>ลบกลับสู่ประวัติ</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>ลบจนโปร่งใส หรือเป็นสีพื้นหลังบนเลเยอร์ที่ล็อก Alt ลบกลับสู่ประวัติ</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบ</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>ขีดจำกัด:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>ป้องกันสีพื้นหน้า</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>ส่งออก...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>รูปแบบ:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>ความสูง (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>ไม่สูญเสียคุณภาพ</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>สี...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>เนื้อหา:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>สีเติม</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>เทา 50%</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>ความทึบ (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>ลวดลาย:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>รักษาความโปร่งใส</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>ดิเธอร์</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>แก้ไข...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>ไล่ระดับสี:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>ลากเพื่อวาดการไล่ระดับสี Shift จำกัดมุมที่ 45 องศา</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>มุม: {0:0.0}°  ระยะทาง: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>เครื่องมือไล่ระดับสี</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>ไล่ระดับสีแบบ{0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>ยางลบวิเศษ</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>คลิกเพื่อลบพิกเซลที่มีสีคล้ายกันจนโปร่งใส</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>เครื่องมือยางลบวิเศษ</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>ถังสี</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>คลิกเพื่อเติมพิกเซลที่มีสีคล้ายกันด้วยสีพื้นหน้าหรือลวดลาย</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>เครื่องมือถังสี</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>ความโปร่งใส</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>เพิ่มนอยส์</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>เฉลี่ย</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>เบลอ</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>เบลอมากขึ้น</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>เบลอแบบกล่อง</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>เบลอ</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>บิดเบือน</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>นอยส์</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>อื่น</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>ทำเป็นพิกเซล</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>เรนเดอร์</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>ทำให้คม</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>สไตไลซ์</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>เมฆ</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>คริสตัล</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>ลดจุดรบกวน</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>เมฆแบบส่วนต่าง</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>กระจาย</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>ฝุ่นและรอยขีดข่วน</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>ทำให้นูน</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>เหลี่ยมมุม</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>เส้นใย</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>ค้นหาขอบ</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>เบลอแบบเกาส์เซียน</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>ไฮพาส</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>ขอบมืดจากแสง</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>สูงสุด</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>มัธยฐาน</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>ต่ำสุด</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>โมเสก</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>เบลอแบบเคลื่อนไหว</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>ระยะเยื้อง</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>ภาพสีน้ำมัน</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>เกาส์เซียน</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>ใหญ่</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>ปานกลาง</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>ปิด</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>เปิด</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>พิกัดเชิงขั้วเป็นสี่เหลี่ยม</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>สี่เหลี่ยมเป็นพิกัดเชิงขั้ว</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>เล็ก</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>หมุนวน</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>สม่ำเสมอ</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>ซูม</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>ปริมาณ</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>แอมพลิจูด</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>มุม</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>ขนาดเซลล์</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>ระยะทาง</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>การกระจาย</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>ความสูง</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>แนวนอน</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>ระดับ</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>ระยะเลื่อนสูงสุด %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>วิธีการ</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>โหมด</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>สีเดียว</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>จำนวนแผ่น</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>รักษารายละเอียด</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>รัศมี</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>ลดนอยส์</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>ขนาด</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>ความแรง</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>เกณฑ์</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>ความแปรปรวน</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>แนวตั้ง</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>ความยาวคลื่น</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>บีบ</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>ลายจุด</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>พิกัดเชิงขั้ว</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>เบลอแบบรัศมี</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>ลดนอยส์</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>ระลอกคลื่น</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>ทำให้คม</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>เพิ่มความคมที่ขอบ</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>เพิ่มความคมมากขึ้น</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>เพิ่มความคมอัจฉริยะ</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>โซลาไรซ์</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>ทรงกลม</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>เบลอพื้นผิว</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>แผ่นกระเบื้อง</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>หมุนวน</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>อันชาร์ปมาสก์</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>คลื่น</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>ล้างกรอบ</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>ล้างเนื้อหาในกรอบ</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>กรอบวงรี</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>กรอบ {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>ลากเพื่อสร้างตัวยึดตำแหน่งกรอบ วางหรือแปะภาพเพื่อเติมกรอบที่ใช้งานอยู่</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>เครื่องมือกรอบ</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>วางไฟล์ภาพลงในกรอบที่ใช้งานอยู่</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>กรอบสี่เหลี่ยม</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>เพิ่มจุดหยุด</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>กำหนดเอง</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>ตำแหน่ง</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>ค่าที่ตั้งไว้</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>สีจุดหยุด</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>ตัวแก้ไขการไล่ระดับสี</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>ขั้นสูง</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>รายละเอียด:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>แสงเรืองที่ขอบ</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>ปรับฮิสโทแกรมให้เท่ากัน</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>การรับแสงและแกมมา</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>ส่วนสว่าง:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>บีบอัดส่วนสว่าง</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>การปรับตัวเฉพาะที่</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>วิธีการ:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>วิธีการนี้ไม่มีตัวเลือก</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>ค่าล่วงหน้า:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>รัศมี:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>รีเซ็ตเส้นโค้ง</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>ส่วนมืด:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>ทำขอบให้เรียบ</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>ความแรง:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>โทนและรายละเอียด</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>เส้นโค้งการปรับโทนและฮิสโทแกรม</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>ค่าเริ่มต้น</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>แบน</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>สีเดียว</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>เสมือนจริง</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>อิ่มตัว</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>เหนือจริง</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>พื้นที่:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>ระบายเส้นแบบมีสไตล์ที่สุ่มตัวอย่างจากแหล่งประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงประวัติศิลป์</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>ไม่สามารถใช้แปรงประวัติได้ เนื่องจากสถานะประวัติมีขนาดผืนผ้าใบไม่เท่ากัน</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>ระบายพิกเซลกลับจากสถานะประวัติที่เลือกเป็นแหล่งในแผงประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงประวัติ</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>กำหนดแหล่งประวัติในแผงประวัติก่อน</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>ลบสแนปช็อต</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>ลบสถานะหลังจากสถานะปัจจุบัน</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>ตั้งค่าแหล่งที่มาสำหรับแปรงประวัติ</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>สร้างเอกสารใหม่จากสถานะปัจจุบัน</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>สร้างสแนปช็อตใหม่</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>เปลี่ยนชื่อสแนปช็อต</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>เปลี่ยนชื่อสแนปช็อต...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>สแนปช็อต {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>ภาพที่รองรับทั้งหมด</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>ไม่สามารถเปิด "{0}" ได้: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>ไม่มีไฟล์นี้</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>ไม่สามารถเปิด "{0}" ได้ เนื่องจากไม่ใช่โปรเจกต์ ShareX Photo Editor ที่ถูกต้อง หรือไฟล์เสียหาย</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>โปรเจกต์ ShareX Photo Editor</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>การส่งออก TIFF ต้องใช้ Windows</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>ไม่สามารถเปิด "{0}" ได้ เนื่องจากไม่ใช่ภาพที่รองรับ หรือไฟล์เสียหาย</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>การเข้ารหัส WebP ล้มเหลว</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>จำกัดสัดส่วน</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>เปอร์เซ็นต์:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>สุ่มตัวอย่างใหม่:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>ความถี่:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>ลากเพื่อวาดส่วนที่เลือกแบบอิสระ ปล่อยเพื่อปิด</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศ</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>บ่วงบาศแม่เหล็ก</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>คลิกเพื่อเริ่ม แล้วเลื่อนไปตามขอบ คลิกเพื่อเพิ่มจุดยึด ดับเบิลคลิกหรือ Enter เพื่อปิด Backspace ลบจุดยึด</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศแม่เหล็ก</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>บ่วงบาศหลายเหลี่ยม</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มจุด ดับเบิลคลิก Enter หรือคลิกจุดเริ่มต้นเพื่อปิด Backspace ลบจุดสุดท้าย</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>เครื่องมือบ่วงบาศหลายเหลี่ยม</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>พื้นหลัง</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>สำเนา {0}</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>เลเยอร์ 0</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>เลเยอร์</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>ข้อความ</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>มุม:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>โหมดการผสม:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>ตัวเลือกการผสม</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>ซ้อนทับสี</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>ระยะทาง:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>เงาตกกระทบ</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>ความทึบของการเติม:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>สีแสงเรือง</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>เงาด้านใน</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>สีเงาด้านใน</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>แสงเรืองด้านนอก</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>สีซ้อนทับ</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>ตำแหน่ง:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>สีเงา</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>เพิ่มมาสก์เลเยอร์ (Alt: ซ่อนทั้งหมด)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>เพิ่มสไตล์เลเยอร์</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>การเปลี่ยนการผสม</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>ตัวเลือกการผสม...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>เปลี่ยนการล็อกเลเยอร์</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>ลบเลเยอร์</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>ทำซ้ำเลเยอร์...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>การเปลี่ยนความทึบของการเติม</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>ระบุว่าเลเยอร์ถูกล็อกทั้งหมด</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>กลุ่มจากเลเยอร์...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>ซ่อนเลเยอร์</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>คุณสมบัติเลเยอร์...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>ลิงก์หรือยกเลิกลิงก์เลเยอร์ที่เลือก (เลือกหลายรายการด้วย Ctrl+คลิก) เพื่อให้เคลื่อนที่ไปด้วยกัน</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>ล็อกทั้งหมด</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>ล็อก:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>ล็อกพิกเซลของภาพ</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>ล็อก ตำแหน่ง</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>ล็อกพิกเซลโปร่งใส</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>คลิกเพื่อแก้ไขมาสก์ Shift+คลิกเพื่อปิดใช้งาน Ctrl+คลิกเพื่อโหลดเป็นส่วนที่เลือก</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>สร้างเลเยอร์เติมหรือเลเยอร์ปรับแต่งใหม่</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>สร้างกลุ่มใหม่</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>สร้างเลเยอร์ใหม่</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>การเปลี่ยนความทึบ</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>ระบุว่าเลเยอร์ถูกล็อกบางส่วน</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>แสดงเลเยอร์</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>สลับการมองเห็น (Alt+คลิกเพื่อแสดงเฉพาะเลเยอร์นี้)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>กรอบเลือกวงรี</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกวงรี</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>ลากเพื่อเลือก Shift จำกัด Alt วาดจากจุดกึ่งกลาง ลากภายในส่วนที่เลือกเพื่อย้าย</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>กรอบเลือกสี่เหลี่ยม</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกสี่เหลี่ยม</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>ปรับขอบของส่วนที่เลือก</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกคอลัมน์ขนาด 1 พิกเซล</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกคอลัมน์เดียว</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกแถวขนาด 1 พิกเซล</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>เครื่องมือกรอบเลือกแถวเดียว</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>สไตล์:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>ความเข้มของสี:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>ภาพปลายทาง</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>จางลง:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>สถิติของภาพ</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>เลเยอร์:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>ความสว่าง:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>ทำให้เป็นกลาง</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>แหล่งที่มา:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>เป้าหมาย:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>ใช้ส่วนที่เลือกในแหล่งที่มาเพื่อคำนวณสี</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>ใช้ส่วนที่เลือกในเป้าหมายเพื่อคำนวณการปรับแต่ง</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(ว่าง)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>พอดีหน้าจอ</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>ลากเพื่อเลื่อนมุมมอง กด Space ค้างไว้ขณะใช้เครื่องมือใดก็ได้เพื่อใช้เครื่องมือมือชั่วคราว ดับเบิลคลิกเพื่อให้พอดีหน้าจอ</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>เครื่องมือมือ</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>รีเซ็ตมุมมอง</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>ลากเพื่อหมุนมุมมองผืนผ้าใบโดยไม่เปลี่ยนพิกเซล Shift สแนปทีละ 15 องศา Esc หรือรีเซ็ตมุมมองเพื่อคืนค่า</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>เครื่องมือหมุนมุมมอง</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>มุมการหมุน:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>ซูมแบบลาก</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>คลิกเพื่อซูมเข้า Alt+คลิกเพื่อซูมออก ลากซ้าย/ขวาเพื่อซูมแบบลาก หรือลากสี่เหลี่ยมเมื่อปิดซูมแบบลาก</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>ซูมเข้า</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>ซูมออก</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>เครื่องมือซูม</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>ดำ</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>สร้าง</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>ค่าเริ่มต้น (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>ไอคอน 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>สี่เหลี่ยมจัตุรัส 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>เว็บ 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>ความละเอียด (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>เอกสารใหม่</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>โปร่งใส</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>ไม่มีชื่อ</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>ขาว</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>เพิ่มลงในส่วนที่เลือก (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>คลิกเพื่อเปิดตัวเลือกค่าล่วงหน้าของแปรง</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>ความแข็ง:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>ตัดกันกับส่วนที่เลือก (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>ส่วนที่เลือกใหม่</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>ไม่มีสี</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>ลบออกจากส่วนที่เลือก (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>ปิดกลุ่มแท็บ</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>ยุบกลุ่มแผง</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>ขยายกลุ่มแผง</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>ย้ายไปยังกลุ่มที่มี {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>ย้ายไปยังกลุ่มใหม่</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>เมนูแผง</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>เพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>คลิกส่วนของเส้นพาธเพื่อเพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>เครื่องมือเพิ่มจุดยึด</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>รวม</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>ผสานส่วนประกอบพาธที่ซ้อนทับกัน</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>แปลงจุด</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>คลิกจุดโค้งเพื่อเปลี่ยนเป็นมุม ลากจุดมุมเพื่อดึงจุดจับโค้งออกมา ลากจุดจับเพื่อแยก</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>เครื่องมือแปลงจุด</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>ลบจุดยึด</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>คลิกจุดยึดเพื่อลบ</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>เครื่องมือลบจุดยึด</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>คลิกหรือลากกรอบเลือกเพื่อเลือกจุดยึด ลากจุดหรือจุดจับเพื่อปรับรูปร่าง Alt ลากจุดจับแยกอิสระ</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกโดยตรง</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>ลากจุดยึด</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>ยกเว้น</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>ตัดกัน</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>ย้ายพาธ</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>ขยับจุดยึด</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>คลิกส่วนประกอบพาธเพื่อเลือก ลากเพื่อย้าย Alt+ลากเพื่อทำซ้ำ Delete เพื่อลบ</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>เครื่องมือเลือกพาธ</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>ลบส่วนประกอบถัดไปออกจากส่วนประกอบแรก</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>เส้นทางทำงาน</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>เพิ่มมาสก์เวกเตอร์ (เลเยอร์รูปร่างจากเส้นทาง)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>ลบเส้นทางปัจจุบัน</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>เติมเส้นทางด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>โหลดเส้นทางเป็นส่วนที่เลือก</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>สร้างเส้นทางทำงานจากส่วนที่เลือก</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>สร้างเส้นทางใหม่</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>เปลี่ยนชื่อเส้นทาง</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>บันทึกเส้นทาง</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>เส้นทางรูปร่าง {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>วาดเส้นขอบเส้นทางด้วยแปรง</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>เพิ่ม/ลบอัตโนมัติ</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>ปิดพาธ</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>ปากกาส่วนโค้ง</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>คลิกเพื่อวางจุด เส้นโค้งจะไหลผ่านจุดอย่างราบรื่น คลิกจุดแรกเพื่อปิด Enter หรือ Esc เพื่อเสร็จสิ้น</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>เครื่องมือปากกาส่วนโค้ง</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>ความพอดีของเส้นโค้ง:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>ปากกาอิสระ</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>ลากเพื่อวาดพาธแบบอิสระ ระบบจะปรับให้เป็นเส้นโค้งเรียบ แม่เหล็กจะสแนปกับขอบ</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>เครื่องมือปากกาอิสระ</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>แม่เหล็ก</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>สร้าง:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>มาสก์</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>ปากกา</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มจุดมุม ลากเพื่อเพิ่มจุดโค้ง คลิกจุดแรกเพื่อปิด Ctrl แก้ไขจุด Alt แปลงจุด</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>เครื่องมือปากกา</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>ยางยืด</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>ส่วนที่เลือก...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>ไม่มีชื่อ-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>ไม่สามารถทำ "{0}" ให้เสร็จได้: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   เอกสาร: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - โปรแกรมแก้ไขรูปภาพ - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>ไม่บันทึก</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>มาสก์เลเยอร์/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>มาสก์ด่วน/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>ไม่มีเอกสารที่เปิดอยู่</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} ล้มเหลว: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>ไม่มีตัวเลือก: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>ตัวแก้ไขภาพถ่าย</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>บันทึกการเปลี่ยนแปลงใน "{0}" ก่อนปิดหรือไม่?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>มุมมอง: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - โปรแกรมแก้ไขรูปภาพ</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>การแบ่งย่อย:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>เส้นตารางทุก (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>สีเส้นนำ (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>จำนวนสถานะประวัติ:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>การประมาณค่าภาพ:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>จดจำขนาดและตำแหน่งหน้าต่าง</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>การตั้งค่า</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>ขนาดตารางความโปร่งใส:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>โปรเจกต์นี้สร้างด้วยโปรแกรมแก้ไขรูปภาพเวอร์ชันที่ใหม่กว่า</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>เพิ่มมาสก์</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>จัดแนว:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>จัดแนวข้อความ</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>ใช้มาสก์</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>อาร์ตบอร์ด</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>พื้นหลังอาร์ตบอร์ด</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>พื้นหลัง:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>ตัวหนา</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>เปลี่ยนการเติม</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>อักขระ</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>ตัดตามเลเยอร์ด้านล่าง</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>คลิปปิงมาสก์</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>มีภาพอยู่</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>แปลงเป็นเลเยอร์</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>เส้นประ</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>ลบมาสก์</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>ลบฟิลเตอร์อัจฉริยะ</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>ลบฟิลเตอร์อัจฉริยะ</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>เอกสาร</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>ก: {0} px   ส: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>แก้ไขเลเยอร์ข้อความ</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>กรอบว่าง</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>เลเยอร์ว่าง</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>เปิดใช้งาน</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>ทำขอบมาสก์ให้นุ่ม</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>การเติม:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>เลเยอร์เติม</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>ฟอนต์:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>กรอบ</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>เส้นขอบกรอบ</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>กลับสี</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>กลับด้านมาสก์</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>ตัวเอียง</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>ระยะห่างบรรทัด:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>โหลดเป็นส่วนที่เลือก</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>ตอนนี้เครื่องมือระบายสีจะแก้ไขมาสก์: สีดำซ่อน สีขาวแสดง</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>ปรับเปลี่ยน {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>ไม่มีเอกสาร</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>ไม่มี</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>ย่อหน้า</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>เลเยอร์พิกเซล</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>วางภาพ...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>รัศมี (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>แรสเตอร์ไรซ์ข้อความ</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>รีเซ็ตการแปลงรูปแบบ</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>ปรับขนาดอาร์ตบอร์ด</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>ความละเอียด: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>ตั้งค่าการเติม</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>ตั้งค่าฟอนต์</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>ตั้งค่าระยะห่างบรรทัด</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>ตั้งค่าเส้นขอบ</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>ตั้งค่าการจัดแนวเส้นขอบ</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>ตั้งค่าชนิดเส้นขอบ</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>ตั้งค่าความกว้างเส้นขอบ</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>ตั้งค่าสีข้อความ</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>ตั้งค่าระยะห่างตัวอักษร</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>คุณสมบัติรูปร่าง</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>ขนาด:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>ฟิลเตอร์อัจฉริยะ</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>ออบเจ็กต์อัจฉริยะ</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>เส้นขอบ:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>สีข้อความ</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>สลับฟิลเตอร์อัจฉริยะ</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>ระยะห่างตัวอักษร:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>ขีดเส้นใต้</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>เพิ่มลงในตัวอย่าง (Shift+คลิก)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>คลิกเพื่อเก็บตัวอย่างสี</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>ดูดสี</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>รูปภาพ</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>การแทนที่</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>ผลลัพธ์:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>เลือกสีที่จะแทนที่</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>การเลือก</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>ลบออกจากตัวอย่าง (Alt+คลิก)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>แอร์บรัชนุ่ม</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>ดำ, ขาว</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>อิฐ</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>คัลลิกราฟีแบน</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>ชอล์ก</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>ลายตารางหมากรุก</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>โครม</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>ทองแดง</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>เส้นทแยง</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>จุด</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>พื้นหน้าไปพื้นหลัง</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>พื้นหน้าไปโปร่งใส</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>พิกเซลแข็ง</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>กลมแข็ง</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>กลมแข็งตามแรงกด</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>หกเหลี่ยม</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>มหาสมุทร</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>กลมนุ่ม</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>กลมนุ่มตามแรงกด</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>กระเซ็น</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>สเปกตรัม</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>เหลี่ยมแข็ง</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>พระอาทิตย์ตก</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>แถบโปร่งใส</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>ลายไม้</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>ย้ายแบบรับรู้เนื้อหา</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>ย้ายแบบรับรู้เนื้อหา...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>เครื่องมือย้ายแบบรับรู้เนื้อหา</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>ปริมาณการทำให้มืด:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>ปลายทาง</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>วาดส่วนที่เลือก (หรือใช้เครื่องมือเลือกใดก็ได้) แล้วลากส่วนที่เลือก</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>ขยาย</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>ย้าย</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>แพตช์</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>แพตช์:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>เครื่องมือแพตช์</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>ขนาดรูม่านตา:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>ตาแดง</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>คลิกที่ตาแดง (หรือลากรอบ) เพื่อลบแสงสะท้อนสีแดง</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>เครื่องมือแก้ตาแดง</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>แหล่ง</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>โครงสร้าง:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>ลากเพื่อวัดระยะทางและมุม ลากจุดปลายเพื่อปรับ</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>เครื่องมือไม้บรรทัด</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>หมุนเลเยอร์ที่ใช้งานอยู่เพื่อให้เส้นไม้บรรทัดอยู่ในแนวระดับ</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>ใช้มาตราส่วนการวัด</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>ล้างตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>ตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>คลิกเพื่อวางตัวสุ่มตัวอย่างสีได้สูงสุด 10 ตัว (แสดงในแผงข้อมูล) ลากเพื่อย้าย Alt+คลิกเพื่อลบ</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>เครื่องมือสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>เลเยอร์ปัจจุบัน</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>ลบตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>คลิกเพื่อสุ่มตัวอย่างสีพื้นหน้า Alt+คลิกเพื่อสุ่มตัวอย่างสีพื้นหลัง</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>เครื่องมือดูดสี</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>อนุญาตตัวสุ่มตัวอย่างสีได้สูงสุด 10 ตัว</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>ย้ายตัวสุ่มตัวอย่างสี</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>ตัวอย่าง:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>แสดงวงแหวนสุ่มตัวอย่าง</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>ย้ายส่วนที่เลือก</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>ลูกศร</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>เครื่องหมายถูก</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>เมฆ</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>กากบาท</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>มงกุฎ</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>เครื่องมือรูปร่างกำหนดเอง</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>หยดน้ำ</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>เครื่องมือวงรี</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>ลูกศรปลาย</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>สีเติม (คลิกขวาเพื่อไม่มี)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>เฟือง</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>หัวใจ</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>ความยาว: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>สายฟ้า</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>ลากเพื่อวาดเส้น Shift จำกัดที่ 45 องศา</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>เครื่องมือเส้น</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>การดำเนินการพาธ:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>เครื่องมือรูปหลายเหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>จิ๊กซอว์</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>เครื่องมือสี่เหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>รูปร่าง:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>ลากเพื่อวาดรูปร่าง Shift รักษาสัดส่วน Alt วาดจากจุดกึ่งกลาง</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>จำนวนด้าน:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>กล่องคำพูด</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>ดาว</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>อัตราส่วนดาว:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>ลูกศรต้น</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>สีเส้นขอบ (คลิกขวาเพื่อไม่มี)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>เครื่องมือสามเหลี่ยม</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>ความหนา:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>ค้นหาคำสั่ง</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>แป้นพิมพ์ลัด</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>ใช้ค่าเริ่มต้น</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>ล้างชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>ลบชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>แบ่ง...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>แบ่งชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>แก้ไขชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>แก้ไขตัวเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>ก คงที่:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>ไม่ได้เลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>แถว x คอลัมน์ (เช่น 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>ชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>ลากเพื่อสร้างชิ้นส่วน ใช้ ไฟล์ &gt; ส่งออก &gt; บันทึกชิ้นส่วน เพื่อส่งออก</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>ตัวเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>คลิกเพื่อเลือกชิ้นส่วน ลากเพื่อย้ายหรือปรับขนาด Delete เพื่อลบ ดับเบิลคลิกเพื่อเปลี่ยนชื่อ</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>เครื่องมือเลือกชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>เครื่องมือชิ้นส่วน</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>ชิ้นส่วนจากเส้นไกด์</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>จัดแนว</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>แหล่งโคลน: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>เครื่องมือตราประทับโคลน</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>กำลังซ่อมแซม...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงซ่อมแซม</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>อิมเพรสชันนิสม์</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>ไม่สามารถใช้เครื่องมือตราประทับโคลนได้ เนื่องจากยังไม่ได้กำหนดพื้นที่ที่จะโคลน (Alt+คลิกเพื่อกำหนดจุดแหล่ง)</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>ระบายด้วยลวดลายที่เลือก</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>เครื่องมือตราประทับลวดลาย</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>ระบายทับสิ่งรบกวนเพื่อลบออก พื้นที่จะถูกสร้างขึ้นใหม่จากบริเวณรอบข้าง</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>เครื่องมือลบออก</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>กำลังลบออก...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>เครื่องมือแปรงซ่อมแซมจุด</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>ระบายทับจุดและตำหนิเพื่อซ่อมแซมโดยอัตโนมัติ</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>ประเภท:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>ล้างไฟล์ล่าสุด</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>ไฟล์ใหม่</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>สร้างใหม่จากภาพหน้าจอ (พื้นที่)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>ไฟล์ที่คุณเปิดจะแสดงที่นี่</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>ล่าสุด</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>แสดงไฟล์ล่าสุดเป็นรายการ</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>แสดงไฟล์ล่าสุดเป็นไทล์</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>สร้างตัวอย่างสีใหม่จากสีพื้นหน้า</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — คลิก: พื้นหน้า, Alt/Ctrl+คลิก: พื้นหลัง, คลิกขวา: ลบ</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>พิมพ์ข้อความ Ctrl+Enter เพื่อยืนยัน Esc เพื่อยกเลิก</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>เครื่องมือข้อความ</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>ขยายใหญ่สุด</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>ย่อเล็กสุด</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>คืนค่า</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้ขอบและรายละเอียดนุ่มนวลขึ้น</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>เครื่องมือเบลอ</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้พื้นที่มืดลง Alt ทำให้สว่างขึ้น</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>เครื่องมือเบิร์น</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>ระบายเพื่อทำให้พื้นที่สว่างขึ้น Alt ทำให้มืดลง</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>เครื่องมือดอดจ์</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>การระบายด้วยนิ้ว</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>ป้องกันรายละเอียด</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>ป้องกันโทนสี</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>ช่วง:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>เพิ่มความอิ่มตัว</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มคอนทราสต์เฉพาะที่และทำให้รายละเอียดคมชัด</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>เครื่องมือเพิ่มความคมชัด</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>ลากเพื่อป้ายสี การระบายด้วยนิ้วจะเริ่มด้วยสีพื้นหน้า</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>เครื่องมือป้าย</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>ระบายเพื่อเพิ่มหรือลดความอิ่มตัวของสี</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>เครื่องมือฟองน้ำ</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์เป้าหมายถูกซ่อนอยู่</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>ไม่สามารถใช้{0}ได้ เนื่องจากเลเยอร์เป้าหมายไม่ใช่เลเยอร์พิกเซล แรสเตอร์ไรซ์เลเยอร์ก่อน (เลเยอร์ &gt; แรสเตอร์ไรซ์)</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>ยุบเป็นคอลัมน์เดียว</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>สีพื้นหน้าและพื้นหลังเริ่มต้น (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>แก้ไขแถบเครื่องมือ...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>ขยายเป็นสองคอลัมน์</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>แก้ไขในโหมดมาสก์ด่วน (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>เปลี่ยนโหมดหน้าจอ (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>ตั้งค่าสีพื้นหลัง</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>ตั้งค่าสีพื้นหน้า</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>สลับสีพื้นหน้าและพื้นหลัง (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>แถบเครื่องมือ (แต่ละแถวคือช่องบนแถบเครื่องมือพร้อมเครื่องมือแบบป๊อปเอาต์) เลือกเครื่องมือแล้วใช้ปุ่มเพื่อจัดเรียงใหม่</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>เสร็จแล้ว</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>เครื่องมือเพิ่มเติม (ซ่อนจากแถบเครื่องมือ):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>ซ่อนเครื่องมือ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>รวมกับกลุ่มด้านบน</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>ย้ายขึ้นก่อนในกลุ่ม</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>ย้ายกลุ่มลง</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>ย้ายกลุ่มขึ้น</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>กลุ่มของตัวเอง</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>คืนค่าเริ่มต้น</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>คลิกเพื่อคืนไปยังแถบเครื่องมือ</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>ปรับแต่ง แถบเครื่องมือ</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>ลบรอยหยัก</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>ยืนยัน</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>ต่อเนื่อง</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>การไหล:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>ตัวอย่างจุดเดียว</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>สุ่มตัวอย่างทุกเลเยอร์</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>ค่าเฉลี่ย {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>ขนาดตัวอย่าง:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>ก: {0:0} px  ส: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>ความคลาดเคลื่อน:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>จัดขอบล่าง</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>จัดกึ่งกลางแนวนอน</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>จัดขอบซ้าย</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>จัดขอบขวา</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>จัดขอบบน</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>จัดกึ่งกลางแนวตั้ง</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>เลือกอัตโนมัติ:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>คลิกเพื่อเลือกเลเยอร์บนสุดใต้ตัวชี้ (Ctrl ชั่วคราว)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>ยกเลิกการแปลง (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>ไม่สามารถแปลงได้ เนื่องจากเลเยอร์ว่างเปล่า</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>ไม่สามารถแปลงได้ เนื่องจากเลเยอร์ถูกล็อกหรือไม่มีเนื้อหา</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>ไม่สามารถแปลงส่วนที่เลือกได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>ยืนยันการแปลง (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>ลบเส้นไกด์</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>ลอย</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>ส่วนที่เลือกแบบลอย</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>ลากจุดจับเพื่อปรับขนาด (Shift: ตามสัดส่วน, Alt: จากจุดกึ่งกลาง) ลากด้านนอกเพื่อหมุน Ctrl+ลากมุมเพื่อบิดเบือน Ctrl+ลากขอบเพื่อเอียง Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>กลุ่ม</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>การประมาณค่า:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>ไม่สามารถดำเนินการตามคำขอได้ เนื่องจากเลเยอร์ถูกล็อก</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>ย้ายเส้นไกด์</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>ลากเพื่อย้ายเลเยอร์หรือพิกเซลที่เลือก Alt+ลากเพื่อทำซ้ำ Shift จำกัด ปุ่มลูกศรขยับ</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>เครื่องมือย้าย</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>ขยับ</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>แสดงตัวควบคุมการแปลง</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>ใช้ แก้ไข &gt; แปลงอิสระ (Ctrl+T) เพื่อแปลงเลเยอร์ที่ใช้งานอยู่หรือส่วนที่เลือก</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>ตัวพิมพ์ใหญ่ทั้งหมด</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>ตัวหนาเอียง</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>ยกเลิกการแก้ไขปัจจุบัน (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>จัดข้อความกึ่งกลาง</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>ยืนยันการแก้ไขปัจจุบัน (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>ตัวหนาจำลอง</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>ตัวเอียงจำลอง</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>คลิกเพื่อเพิ่มข้อความแบบจุด ลากเพื่อเพิ่มข้อความแบบย่อหน้า คลิกข้อความที่มีอยู่เพื่อแก้ไข Ctrl+Enter ยืนยัน Esc ยกเลิก</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>เครื่องมือมาสก์ข้อความแนวนอน</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>เครื่องมือข้อความแนวนอน</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>จัดข้อความชิดซ้าย</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>คลิกเพื่อพิมพ์ เมื่อยืนยันจะสร้างส่วนที่เลือกเป็นรูปข้อความ</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>ปกติ</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>จัดข้อความชิดขวา</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>ตั้งค่าการลบรอยหยัก</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>ตั้งค่าสไตล์ฟอนต์</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>ขีดทับ</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>สีข้อความ</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>สลับการวางแนวข้อความ</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>มาสก์ข้อความ</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>เครื่องมือมาสก์ข้อความแนวตั้ง</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>เครื่องมือข้อความแนวตั้ง</value>
+  </data>
+</root>

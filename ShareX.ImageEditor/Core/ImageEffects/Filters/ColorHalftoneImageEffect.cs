@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ColorHalftoneImageEffect : ImageEffectBase
     public override string Id => "color_halftone";
     public override string Name => "Color halftone";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.circle_dot;
+    public override string IconKey => ImageEffectIcons.CircleDot;
     public override string Description => "Simulates CMYK color halftone printing with rotated dot grids.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

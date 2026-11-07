@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="ppGlass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ebf1f8"/><stop offset="0.45" stop-color="#a7c4e2"/><stop offset="1" stop-color="#b9d0e8"/></linearGradient>
+<linearGradient id="ppBulb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc9090"/><stop offset="0.4" stop-color="#e14f4f"/><stop offset="0.75" stop-color="#dd5656"/><stop offset="1" stop-color="#a20000"/></linearGradient>
+<linearGradient id="ppFlange" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffa8a8"/><stop offset="0.5" stop-color="#dc0101"/><stop offset="1" stop-color="#950000"/></linearGradient>
+</defs>
+<g transform="translate(1.3 14.4) rotate(-45)"><path d="M.1 -.6 L1.2 -1.3 H9.6 V1.3 H1.2 L.1 .6 Z" fill="url(#ppGlass)" fill-opacity=".9" stroke="#3a3a3a" stroke-opacity=".42" stroke-width=".7" stroke-linejoin="round"/><path d="M2 -.55 H9" stroke="#ffffff" stroke-opacity=".7" stroke-width=".5"/><path d="M10.6 -1.7 H16.6 Q18 -1.7 18 0 Q18 1.7 16.6 1.7 H10.6 Z" fill="url(#ppBulb)" stroke="#a20000" stroke-opacity=".75" stroke-width=".7"/><rect x="9.4" y="-2.9" width="1.4" height="5.8" rx=".5" fill="url(#ppFlange)" stroke="#9a0000" stroke-opacity=".8" stroke-width=".6"/></g>
+</svg>

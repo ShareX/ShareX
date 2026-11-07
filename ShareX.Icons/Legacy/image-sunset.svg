@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3f3f3"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset=".85" stop-color="#1f4242"/><stop offset="1" stop-color="#0d2e2e"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ceac13"/><stop offset=".25" stop-color="#d4b219"/><stop offset=".45" stop-color="#ddbb22"/><stop offset="1" stop-color="#e6c62c"/></linearGradient>
+    <radialGradient id="g4" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffff7a"/><stop offset=".45" stop-color="#fbf466"/><stop offset="1" stop-color="#e9cd32" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#634141"/><stop offset="1" stop-color="#3b1919"/></linearGradient>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#593735"/><stop offset="1" stop-color="#caaa35" stop-opacity=".2"/></linearGradient>
+    <linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fcfb5a" stop-opacity="0"/><stop offset=".5" stop-color="#fcfb5a" stop-opacity=".85"/><stop offset="1" stop-color="#fcfb5a" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect x=".5" y="2.5" width="15" height="11" fill="url(#g1)" stroke="url(#g2)" stroke-opacity=".46"/>
+  <g transform="translate(2 4) scale(1 1)">
+    <rect width="12" height="5" fill="url(#g3)"/>
+    <ellipse cx="8.5" cy="3.9" rx="3" ry="2.6" fill="url(#g4)"/>
+    <path d="M0 4.2C2 4.4 4 4.7 6.5 5H0z" fill="url(#g6)"/>
+    <path d="M0 2.4C1.3 2.6 2.2 3.3 3 4.1C3.4 4.5 3.8 4.8 4.2 5H0z" fill="url(#g5)"/>
+    <rect y="5" width="12" height="1" fill="#72500c"/>
+    <rect y="6" width="12" height="1" fill="#c2a010"/>
+    <rect y="7" width="12" height="1" fill="#8a6806"/>
+    <rect x="6.8" y="5" width="3.4" height="3" fill="url(#g7)"/>
+  </g>
+</svg>

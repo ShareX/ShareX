@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class AutoContrastImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "auto_contrast";
     public override string Name => "Auto contrast";
-    public override string IconKey => LucideIcons.wand_sparkles;
+    public override string IconKey => AppIcons.MagicWand;
     public override string Description => "Automatically adjusts the contrast.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

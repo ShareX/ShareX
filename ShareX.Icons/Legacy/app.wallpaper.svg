@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="frame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d4e5e5"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190e8"/><stop offset=".65" stop-color="#b5d4ff"/><stop offset="1" stop-color="#e2eeff"/></linearGradient>
+    <linearGradient id="far" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8cba87"/><stop offset="1" stop-color="#56864e"/></linearGradient>
+    <linearGradient id="near" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a896b"/><stop offset="1" stop-color="#195d3b"/></linearGradient>
+    <radialGradient id="sun" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#fffbd3"/><stop offset="1" stop-color="#f6dc7c"/></radialGradient>
+  </defs>
+  <rect x=".5" y="1.5" width="15" height="13" rx="1" fill="url(#frame)" stroke="#7f9a9b"/>
+  <rect x="2" y="3" width="12" height="10" fill="url(#sky)"/>
+  <circle cx="10.5" cy="5.5" r="1.5" fill="url(#sun)" stroke="#debc52" stroke-width=".4"/>
+  <path d="M6 12l4-4 4 3v2H6z" fill="url(#far)"/>
+  <path d="M2 10l3.5-4 6.5 7H2z" fill="url(#near)"/>
+  <path d="M5.5 6L12 13H7.5L4.8 7z" fill="#216345" fill-opacity=".35"/>
+  <path d="M2.5 10.5l3-3.4" fill="none" stroke="#acd2b1" stroke-opacity=".7" stroke-width=".7" stroke-linecap="round"/>
+  <path d="M1.5 13.5v-11h13" fill="none" stroke="#ffffff" stroke-opacity=".8"/>
+</svg>

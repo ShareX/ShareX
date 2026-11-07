@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
         d:DesignWidth="1000"
@@ -107,15 +108,15 @@
 
                             <StackPanel Spacing="12">
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.camera}" FontSize="18" Foreground="White"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="White"/>
                                     <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.wand_sparkles}" FontSize="18" Foreground="White"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="White"/>
                                     <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.zap}" FontSize="18" Foreground="White"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="White"/>
                                     <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                             </StackPanel>
@@ -152,12 +153,11 @@
                         <Border Classes="setting-card">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.languages}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Language}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding LanguageLabel}"/>
@@ -170,11 +170,10 @@
                                         <DataTemplate x:DataType="local:StartScreenLanguageOption">
                                             <StackPanel Orientation="Horizontal" Spacing="8">
                                                 <Grid Width="16" Height="16">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{Binding IconGlyph}"
-                                                               FontSize="16"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
+                                                    <controls:IconPresenter Icon="{Binding IconGlyph}"
+                                                                            FontSize="16"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                     <Image Source="{Binding Flag}" Stretch="Uniform"/>
                                                 </Grid>
                                                 <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
@@ -188,12 +187,11 @@
                         <Border Classes="setting-card">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.rocket}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rocket}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding StartWithWindowsText}"/>
@@ -209,12 +207,11 @@
                         <Border Classes="setting-card">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.monitor}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding FollowSystemThemeLabel}"/>
@@ -229,12 +226,11 @@
                                 Classes.hidden="{Binding UseSystemTheme}">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.sun_moon}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding ThemeLabel}"/>
@@ -256,12 +252,11 @@
                         <Border Classes="setting-card">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.palette}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Palette}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding FollowSystemAccentColorLabel}"/>
@@ -276,12 +271,11 @@
                                 Classes.hidden="{Binding UseSystemAccentColor}">
                             <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                                 <Border Classes="setting-icon">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.swatch_book}"
-                                               FontSize="19"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Swatches}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
                                 </Border>
                                 <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
                                     <TextBlock Classes="setting-title" Text="{Binding AccentColorLabel}"/>
@@ -312,10 +306,9 @@
                             Click="OnGetStartedClick">
                         <StackPanel Orientation="Horizontal" Spacing="9">
                             <TextBlock Text="{Binding GetStartedText}" VerticalAlignment="Center"/>
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.arrow_right}"
-                                       FontSize="16"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRight}"
+                                                    FontSize="16"
+                                                    VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                 </Grid>

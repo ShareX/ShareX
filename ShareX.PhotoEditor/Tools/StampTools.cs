@@ -64,7 +64,7 @@ public sealed class CloneStampTool : SourceBrushToolBase
 
     public override ToolId Id => ToolId.CloneStamp;
 
-    public override string Name => "Clone Stamp Tool";
+    public override string Name => Strings.StampTools_CloneStampTool;
 
     public override string Hint => "Alt-click to set the source point, then paint to clone it.";
 
@@ -76,12 +76,12 @@ public sealed class CloneStampTool : SourceBrushToolBase
         {
             _source = input.Doc;
             _offset = null;
-            Host.SetStatus($"Clone source: {input.Doc.X:0}, {input.Doc.Y:0}");
+            Host.SetStatus(string.Format(Strings.StampTools_CloneSourceInfo, input.Doc.X, input.Doc.Y));
             return false;
         }
         if (_source == null)
         {
-            Host.ShowMessage("Could not use the Clone Stamp tool because the area to clone has not been defined (Alt-click to define a source point).");
+            Host.ShowMessage(Strings.StampTools_NoCloneSource);
             return false;
         }
         return true;
@@ -111,8 +111,8 @@ public sealed class CloneStampTool : SourceBrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         BuildBrushOptions(options);
-        options.Check("Aligned", () => Aligned, v => Aligned = v);
-        options.Combo("Sample:", [("Current Layer", false), ("All Layers", true)], () => SampleAllLayers, v => SampleAllLayers = v, 130);
+        options.Check(Strings.StampTools_Aligned, () => Aligned, v => Aligned = v);
+        options.Combo(Strings.SamplingTools_SampleColon, [(Strings.SamplingTools_CurrentLayer, false), (Strings.EditorCommands_AllLayers, true)], () => SampleAllLayers, v => SampleAllLayers = v, 130);
     }
 }
 
@@ -126,9 +126,9 @@ public sealed class PatternStampTool : BrushToolBase
 
     public override ToolId Id => ToolId.PatternStamp;
 
-    public override string Name => "Pattern Stamp Tool";
+    public override string Name => Strings.StampTools_PatternStampTool;
 
-    public override string Hint => "Paint with the selected pattern.";
+    public override string Hint => Strings.StampTools_PatternStampHint;
 
     public bool Aligned { get; set; } = true;
 
@@ -153,9 +153,9 @@ public sealed class PatternStampTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         BuildBrushOptions(options);
-        options.Combo("Pattern:", Host.Patterns.Select(p => (p.Name, p)), () => Host.Pattern ?? Host.Patterns[0], p => Host.Pattern = p, 130);
-        options.Check("Aligned", () => Aligned, v => Aligned = v);
-        options.Check("Impressionist", () => Impressionist, v => Impressionist = v);
+        options.Combo(Strings.FillDialog_PatternColon, Host.Patterns.Select(p => (p.Name, p)), () => Host.Pattern ?? Host.Patterns[0], p => Host.Pattern = p, 130);
+        options.Check(Strings.StampTools_Aligned, () => Aligned, v => Aligned = v);
+        options.Check(Strings.StampTools_Impressionist, () => Impressionist, v => Impressionist = v);
     }
 }
 
@@ -172,7 +172,7 @@ public sealed class HealingBrushTool : SourceBrushToolBase
 
     public override ToolId Id => ToolId.HealingBrush;
 
-    public override string Name => "Healing Brush Tool";
+    public override string Name => Strings.StampTools_HealingBrushTool;
 
     public override string Hint => "Alt-click to set a source, then paint. Texture comes from the source; color and lighting blend with the destination.";
 
@@ -236,8 +236,8 @@ public sealed class HealingBrushTool : SourceBrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Check("Aligned", () => Aligned, v => Aligned = v);
-        options.Combo("Sample:", [("Current Layer", false), ("All Layers", true)], () => SampleAllLayers, v => SampleAllLayers = v, 130);
+        options.Check(Strings.StampTools_Aligned, () => Aligned, v => Aligned = v);
+        options.Combo(Strings.SamplingTools_SampleColon, [(Strings.SamplingTools_CurrentLayer, false), (Strings.EditorCommands_AllLayers, true)], () => SampleAllLayers, v => SampleAllLayers = v, 130);
     }
 }
 
@@ -256,11 +256,11 @@ public sealed class SpotHealingTool : BrushToolBase
 
     public override ToolId Id => _remove ? ToolId.Remove : ToolId.SpotHealingBrush;
 
-    public override string Name => _remove ? "Remove Tool" : "Spot Healing Brush Tool";
+    public override string Name => _remove ? Strings.StampTools_RemoveTool : Strings.StampTools_SpotHealingBrushTool;
 
     public override string Hint => _remove
-        ? "Paint over distractions to remove them. The area is reconstructed from its surroundings."
-        : "Paint over spots and blemishes to heal them automatically.";
+        ? Strings.StampTools_RemoveHint
+        : Strings.StampTools_SpotHealingHint;
 
     public enum HealType { ContentAware, CreateTexture, ProximityMatch }
 
@@ -290,7 +290,7 @@ public sealed class SpotHealingTool : BrushToolBase
         SKBitmap bitmap = target.Surface.Bitmap;
         int patch = Type switch { HealType.CreateTexture => 2, HealType.ProximityMatch => 4, _ => 3 };
         Host.InvalidateCanvas(stroke.Dirty);
-        await Host.RunBusyAsync(_remove ? "Removing..." : "Healing...", progress => Task.Run(() => Inpainting.Fill(bitmap, grown, patch, null, progress)));
+        await Host.RunBusyAsync(_remove ? Strings.StampTools_Removing : Strings.StampTools_Healing, progress => Task.Run(() => Inpainting.Fill(bitmap, grown, patch, null, progress)));
         grown.Dispose();
         target.Apply?.Invoke();
         PushHistory(HistoryName);
@@ -300,7 +300,7 @@ public sealed class SpotHealingTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        if (!_remove) options.EnumCombo("Type:", () => Type, v => Type = v, 130);
-        options.Check("Sample All Layers", () => SampleAllLayers, v => SampleAllLayers = v);
+        if (!_remove) options.EnumCombo(Strings.StampTools_TypeColon, () => Type, v => Type = v, 130);
+        options.Check(Strings.Tools_SampleAllLayers, () => SampleAllLayers, v => SampleAllLayers = v);
     }
 }

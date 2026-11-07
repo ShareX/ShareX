@@ -28,8 +28,8 @@
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Imaging;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using ShareX.Platform;
 using System;
@@ -50,7 +50,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     private string _title = string.Empty;
     private string _status = string.Empty;
     private string _details = string.Empty;
-    private string _placeholderIcon = LucideIcons.file;
+    private string _placeholderIcon = AppIcons.File;
     private double _progress;
     private bool _isProgressVisible;
     private bool _isFailed;
@@ -290,11 +290,11 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
     private static string GetPlaceholderIcon(string? filePath)
     {
-        if (string.IsNullOrEmpty(filePath)) return LucideIcons.file;
-        if (FileHelpers.IsVideoFile(filePath)) return LucideIcons.file_video;
-        if (FileHelpers.IsTextFile(filePath)) return LucideIcons.file_text;
-        if (FileHelpers.IsImageFile(filePath)) return LucideIcons.file_image;
-        return LucideIcons.file;
+        if (string.IsNullOrEmpty(filePath)) return AppIcons.File;
+        if (FileHelpers.IsVideoFile(filePath)) return AppIcons.FileVideo;
+        if (FileHelpers.IsTextFile(filePath)) return AppIcons.FileText;
+        if (FileHelpers.IsImageFile(filePath)) return AppIcons.FileImage;
+        return AppIcons.File;
     }
 
     public void Dispose()

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class PixelateImageEffect : ImageEffectBase
     public override string Id => "pixelate";
     public override string Name => "Pixelate";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.grid_2x2;
+    public override string IconKey => AppIcons.Split;
     public override string Description => "Pixelates the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

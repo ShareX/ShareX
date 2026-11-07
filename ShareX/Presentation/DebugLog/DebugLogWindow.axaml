@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.DebugLogWindow"
         Title="{x:Static res:Strings.DebugLogWindow_Title}"
         Width="850"
@@ -24,13 +25,13 @@
                     <Grid ColumnDefinitions="Auto,Auto,Auto,*,Auto" ColumnSpacing="6">
                         <Button Grid.Column="0" Classes="compact" Click="OnLoadedAssembliesClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.blocks}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Blocks}"/>
                                 <TextBlock Text="{x:Static res:Strings.DebugLogWindow_LoadedAssemblies}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Classes="compact" Click="OnCopyAllClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                 <TextBlock Text="{x:Static res:Strings.DebugLogWindow_CopyAll}"/>
                             </StackPanel>
                         </Button>
@@ -39,7 +40,7 @@
                                 Classes="compact"
                                 Click="OnOpenLogFileClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_text}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileText}"/>
                                 <TextBlock Text="{x:Static res:Strings.DebugLogWindow_OpenLogFile}"/>
                             </StackPanel>
                         </Button>
@@ -48,7 +49,7 @@
                                 Classes="compact"
                                 Click="OnUploadLogClick">
                             <StackPanel Orientation="Horizontal" Spacing="7">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                                 <TextBlock Text="{x:Static res:Strings.DebugLogWindow_UploadLog}"/>
                             </StackPanel>
                         </Button>
@@ -96,10 +97,9 @@
                         VerticalAlignment="Center">
                     <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                       FontSize="20"
-                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                    FontSize="20"
+                                                    Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
                             <TextBlock Grid.Column="1"
                                        Classes="section-heading"
                                        Text="{x:Static res:Strings.DebugLogWindow_UploadPrompt}"/>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class SplitToningImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "split_toning";
     public override string Name => "Split Toning";
-    public override string IconKey => LucideIcons.blend;
+    public override string IconKey => AppIcons.Blend;
     public override string Description => "Tints shadows and highlights with different colors.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

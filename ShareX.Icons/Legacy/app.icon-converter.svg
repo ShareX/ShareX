@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="tf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset=".5" stop-color="#4a9be6"/><stop offset="1" stop-color="#2a74c8"/></linearGradient>
+    <linearGradient id="to" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a7fc4"/><stop offset="1" stop-color="#0d4689"/></linearGradient>
+    <linearGradient id="sh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity=".05"/></linearGradient>
+    <linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffd0"/><stop offset=".6" stop-color="#ffe14a"/><stop offset="1" stop-color="#f5b800"/></linearGradient>
+    <linearGradient id="gu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4ffb8"/><stop offset=".5" stop-color="#6be078"/><stop offset="1" stop-color="#3cc44e"/></linearGradient>
+    <linearGradient id="bu" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe8ff"/><stop offset=".5" stop-color="#6cbcff"/><stop offset="1" stop-color="#3f9cf0"/></linearGradient>
+  </defs>
+  <rect x=".5" y=".5" width="12" height="12" rx="2.5" fill="url(#tf)" stroke="url(#to)"/>
+  <path d="M2 3.2C2 2.3 2.4 2 3.3 2H9.7C10.6 2 11 2.3 11 3.2V5.5C8 5.2 5 6.2 2 7.5Z" fill="url(#sh)"/>
+  <path d="M6.5 2.3Q7 5.9 10.6 6.5Q7 7.1 6.5 10.7Q6 7.1 2.4 6.5Q6 5.9 6.5 2.3Z" fill="url(#st)" stroke="#b07a00" stroke-opacity=".6" stroke-width=".6" stroke-linejoin="round"/>
+  <polygon points="9.5,7.6 12.4,11 11,11 11,16 8,16 8,11 6.6,11" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-linejoin="round"/>
+  <polygon points="12,8 15,8 15,13 16,13 13.5,16 11,13 12,13" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-linejoin="round"/>
+  <polygon points="9.5,7.6 12.4,11 11,11 11,16 8,16 8,11 6.6,11" fill="#16812a"/>
+  <polygon points="9.5,8.9 11.1,10.6 10,10.6 10,15 9,15 9,10.6 7.9,10.6" fill="url(#gu)"/>
+  <polygon points="12,8 15,8 15,13 16,13 13.5,16 11,13 12,13" fill="#0b4f9e"/>
+  <polygon points="13,8.6 14,8.6 14,13.4 15,13.4 13.5,15.1 12,13.4 13,13.4" fill="url(#bu)"/>
+</svg>

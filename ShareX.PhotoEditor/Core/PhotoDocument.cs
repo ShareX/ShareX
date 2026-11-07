@@ -36,12 +36,12 @@ public sealed class PhotoDocument : IDisposable
         Height = Math.Max(1, height);
         Resolution = resolution;
         Root = new GroupLayer("Root") { BlendMode = LayerBlendMode.Normal };
-        Title = $"Untitled-{Interlocked.Increment(ref _untitledCounter)}";
+        Title = string.Format(Strings.PhotoDocument_UntitledNumber, Interlocked.Increment(ref _untitledCounter));
         History = new History(this);
         if (createBackground)
         {
             SKColor fill = background ?? SKColors.White;
-            RasterLayer layer = new(fill.Alpha == 255 ? "Background" : "Layer 0", PixelSurface.CreateColor(Width, Height, fill))
+            RasterLayer layer = new(fill.Alpha == 255 ? Strings.LayerNames_Background : Strings.LayerNames_Layer0, PixelSurface.CreateColor(Width, Height, fill))
             {
                 IsBackground = fill.Alpha == 255,
                 LockPosition = fill.Alpha == 255,
@@ -276,7 +276,7 @@ public sealed class PhotoDocument : IDisposable
         Slices = state.Slices.Select(s => s.Clone()).ToList();
         Paths = state.Paths.Select(p => p.Clone()).ToList();
         WorkPath = state.WorkPath?.Clone();
-        ActivePath = activeWasWork && WorkPath != null ? new NamedPath("Work Path", WorkPath) : Paths.FirstOrDefault(p => p.Name == activePathName);
+        ActivePath = activeWasWork && WorkPath != null ? new NamedPath(Strings.PathNames_WorkPath, WorkPath) : Paths.FirstOrDefault(p => p.Name == activePathName);
         NotifyStructureChanged();
         Invalidate();
     }

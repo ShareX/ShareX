@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -47,7 +47,7 @@ public sealed class PixelSortingImageEffect : ImageEffectBase
     public override string Id => "pixel_sorting";
     public override string Name => "Pixel sorting";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.arrow_down_wide_narrow;
+    public override string IconKey => ImageEffectIcons.SortDescending;
     public override string Description => "Sorts pixels along rows or columns based on brightness or hue thresholds.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

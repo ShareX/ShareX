@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         xmlns:controls="using:ShareX.HelpersLib"
         xmlns:localization="using:ShareX.HelpersLib.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.HelpersLib.ColorPickerWindow"
         Title="{x:Static localization:Strings.ColorPickerWindow_Title}"
         Width="790" MinWidth="760" SizeToContent="Height"
@@ -122,7 +123,7 @@
                                                 <MenuItem Header="{x:Static localization:Strings.ColorPickerWindow_Copy_decimal}" Click="OnCopyDecimalClick"/>
                                             </MenuFlyout>
                                         </Button.Flyout>
-                                        <StackPanel Orientation="Horizontal" Spacing="8"><TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}"/><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Copy}"/><TextBlock Classes="icon" FontSize="11" Text="{x:Static theming:LucideIcons.chevron_down}"/></StackPanel>
+                                        <StackPanel Orientation="Horizontal" Spacing="8"><iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/><TextBlock Text="{x:Static localization:Strings.ColorPickerWindow_Copy}"/><iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}" FontSize="11"/></StackPanel>
                                     </Button>
                                 </Grid>
                             </Grid>
@@ -146,14 +147,14 @@
                                 Padding="8,4"
                                 ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_screen}"
                                 Click="OnPickScreenClick">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.pipette}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ScreenColorPicker}"/>
                         </Button>
                     </Border>
                     <Button Width="38"
                             Padding="8,4"
                             ToolTip.Tip="{x:Static localization:Strings.ColorPickerWindow_Pick_from_clipboard}"
                             Click="OnClipboardClick">
-                        <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.clipboard_paste}"/>
+                        <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ClipboardPaste}"/>
                     </Button>
                     <Button x:Name="AcceptButton"
                             Width="96"

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class HueImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "hue";
     public override string Name => "Hue";
-    public override string IconKey => LucideIcons.pipette;
+    public override string IconKey => AppIcons.ScreenColorPicker;
     public override string Description => "Adjusts the hue of the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

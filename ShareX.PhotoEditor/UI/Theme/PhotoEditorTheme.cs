@@ -57,5 +57,8 @@ public static class PhotoEditorTheme
         window.Bind(Window.BackgroundProperty, window.GetResourceObservable("PE.Brush.Chrome"));
         window.FontFamily = new FontFamily("Segoe UI");
         window.FontSize = 12;
+
+        // The photo editor keeps its own icons whatever icon pack the app uses.
+        IconPackScope.SetPack(window, IconPack.Modern);
     }
 }

@@ -1,5 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -22,9 +23,7 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
     </Style>
 
-    <Style Selector="TextBlock.icon">
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style Selector="controls|IconPresenter">
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
@@ -92,6 +91,10 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
+        <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="Opacity" Value="0.35"/>
@@ -141,13 +144,15 @@
         <Style Selector="^.active TextBlock">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+
+        <Style Selector="^.active controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Style>
 
     <Style Selector="Button.toolbar-button">
         <Setter Property="Width" Value="40"/>
         <Setter Property="MinWidth" Value="40"/>
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="18"/>
     </Style>
 
@@ -374,14 +379,11 @@
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
-    <Style Selector="TextBlock.category-tip-icon">
-        <Setter Property="FontFamily" Value="{DynamicResource ShareX.FontFamily.Icon}"/>
-        <Setter Property="FontWeight" Value="Normal"/>
+    <Style Selector="controls|IconPresenter.category-tip-icon">
         <Setter Property="FontSize" Value="18"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="Margin" Value="0,1,0,0"/>
     </Style>
 
@@ -974,6 +976,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
     </Style>
 
+    <Style Selector="MenuItem.compact-menu-item:pointerover controls|IconPresenter.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+    </Style>
+
     <Style Selector="MenuItem.bold-when-checked">
         <Setter Property="FontWeight" Value="Normal"/>
     </Style>
@@ -1045,6 +1051,19 @@
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
+    <Style Selector="Border.tool-grid-badge">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="CornerRadius" Value="999"/>
+        <Setter Property="Padding" Value="6,1"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style Selector="Border.tool-grid-badge > TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+    </Style>
+
     <Style Selector="ToggleButton.tool-grid-visibility-button">
         <Setter Property="Height" Value="34"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -1098,6 +1117,10 @@
     <Style Selector="TextBlock.accent-menu-icon">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         <Setter Property="FontWeight" Value="Normal"/>
+    </Style>
+
+    <Style Selector="controls|IconPresenter.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
     </Style>
 
     <Style Selector="MenuFlyoutPresenter MenuItem">

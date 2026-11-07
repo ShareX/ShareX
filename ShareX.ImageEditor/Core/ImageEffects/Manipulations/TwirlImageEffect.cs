@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class TwirlImageEffect : ImageEffectBase
     public override string Id => "twirl";
     public override string Name => "Twirl";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.loader_pinwheel;
+    public override string IconKey => ImageEffectIcons.Pinwheel;
     public override string Description => "Applies a twirl distortion to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

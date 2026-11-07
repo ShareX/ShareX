@@ -133,18 +133,26 @@ public sealed class AdjustmentSettings
 
     public static string GetName(AdjustmentKind kind) => kind switch
     {
-        AdjustmentKind.BrightnessContrast => "Brightness/Contrast",
-        AdjustmentKind.HueSaturation => "Hue/Saturation",
-        AdjustmentKind.ColorBalance => "Color Balance",
-        AdjustmentKind.BlackAndWhite => "Black & White",
-        AdjustmentKind.PhotoFilter => "Photo Filter",
-        AdjustmentKind.ChannelMixer => "Channel Mixer",
-        AdjustmentKind.ColorLookup => "Color Lookup",
-        AdjustmentKind.HdrToning => "HDR Toning",
-        AdjustmentKind.MatchColor => "Match Color",
-        AdjustmentKind.ReplaceColor => "Replace Color",
-        AdjustmentKind.GradientMap => "Gradient Map",
-        AdjustmentKind.SelectiveColor => "Selective Color",
+        AdjustmentKind.BrightnessContrast => Strings.Adjustments_BrightnessContrast,
+        AdjustmentKind.Levels => Strings.Adjustments_Levels,
+        AdjustmentKind.Curves => Strings.Adjustments_Curves,
+        AdjustmentKind.Exposure => Strings.Adjustments_Exposure,
+        AdjustmentKind.Vibrance => Strings.Adjustments_Vibrance,
+        AdjustmentKind.HueSaturation => Strings.Adjustments_HueSaturation,
+        AdjustmentKind.ColorBalance => Strings.Adjustments_ColorBalance,
+        AdjustmentKind.BlackAndWhite => Strings.Adjustments_BlackAndWhite,
+        AdjustmentKind.PhotoFilter => Strings.Adjustments_PhotoFilter,
+        AdjustmentKind.ChannelMixer => Strings.Adjustments_ChannelMixer,
+        AdjustmentKind.ColorLookup => Strings.Adjustments_ColorLookup,
+        AdjustmentKind.Invert => Strings.Adjustments_Invert,
+        AdjustmentKind.Posterize => Strings.Adjustments_Posterize,
+        AdjustmentKind.Threshold => Strings.Adjustments_Threshold,
+        AdjustmentKind.GradientMap => Strings.Adjustments_GradientMap,
+        AdjustmentKind.SelectiveColor => Strings.Adjustments_SelectiveColor,
+        AdjustmentKind.HdrToning => Strings.Adjustments_HdrToning,
+        AdjustmentKind.Desaturate => Strings.Adjustments_Desaturate,
+        AdjustmentKind.MatchColor => Strings.Adjustments_MatchColor,
+        AdjustmentKind.ReplaceColor => Strings.Adjustments_ReplaceColor,
         _ => kind.ToString()
     };
 }

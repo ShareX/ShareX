@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Filters;
@@ -33,7 +33,7 @@ public sealed class HeatMapImageEffect : ImageEffectBase
     public override string Id => "heat_map";
     public override string Name => "Heat map";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.flame;
+    public override string IconKey => ImageEffectIcons.Flame;
     public override string Description => "Maps image luminance to a fire-like color gradient.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

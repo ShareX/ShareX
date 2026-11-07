@@ -345,6 +345,9 @@ namespace ShareX
         public int ImageJPEGQuality = 90;
         public SKJpegEncoderDownsample ImageJPEGSubsampling = SKJpegEncoderDownsample.Downsample420;
         public GIFQuality ImageGIFQuality = GIFQuality.Adaptive;
+        public int ImageWebPQuality = 90;
+        public bool ImageWebPLossless = true;
+        public int ImageWebPCompressionEffort = 100;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
         public bool ImageAutoJPEGQuality = false;

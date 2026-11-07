@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class ThresholdImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "threshold";
     public override string Name => "Threshold";
-    public override string IconKey => LucideIcons.binary;
+    public override string IconKey => ImageEffectIcons.Binary;
     public override string Description => "Applies a contrast threshold.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

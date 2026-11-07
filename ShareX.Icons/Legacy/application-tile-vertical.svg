@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454" stop-opacity="0.4"/><stop offset="1" stop-color="#252525" stop-opacity="0.49"/></linearGradient>
+    <linearGradient id="ab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f5f5"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+    <linearGradient id="at1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dcdcdc"/><stop offset="1" stop-color="#cbcbd7"/></linearGradient>
+    <linearGradient id="at2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bbbbbb"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+    <linearGradient id="bo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454" stop-opacity="0.4"/><stop offset="1" stop-color="#252525" stop-opacity="0.49"/></linearGradient>
+    <linearGradient id="bb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5f5f5"/><stop offset="1" stop-color="#ececec"/></linearGradient>
+    <linearGradient id="bt1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dcdcdc"/><stop offset="1" stop-color="#cbcbd7"/></linearGradient>
+    <linearGradient id="bt2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bbbbbb"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+  </defs>
+  <rect x="0" y="0" width="16" height="7" rx="1" fill="url(#ao)"/>
+  <rect x="1" y="1" width="14" height="1" fill="url(#at1)"/>
+  <rect x="1" y="2" width="14" height="1" fill="url(#at2)"/>
+  <rect x="1" y="3" width="14" height="3" fill="url(#ab)"/>
+  <rect x="1" y="3" width="14" height="1" fill="#fff"/>
+  <path d="M1.5 4V6M14.5 4V6" stroke="#fff" stroke-opacity=".3"/>
+  <rect x="0" y="8" width="16" height="7" rx="1" fill="url(#bo)"/>
+  <rect x="1" y="9" width="14" height="1" fill="url(#bt1)"/>
+  <rect x="1" y="10" width="14" height="1" fill="url(#bt2)"/>
+  <rect x="1" y="11" width="14" height="3" fill="url(#bb)"/>
+  <rect x="1" y="11" width="14" height="1" fill="#fff"/>
+  <path d="M1.5 12V14M14.5 12V14" stroke="#fff" stroke-opacity=".3"/>
+</svg>

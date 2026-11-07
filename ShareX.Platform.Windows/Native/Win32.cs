@@ -324,6 +324,16 @@ internal static unsafe partial class Win32
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool GetWindowRect(IntPtr hwnd, out RECT rect);
 
+    public const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
+
+    [LibraryImport("user32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool AllowSetForegroundWindow(uint processId);
+
+    [LibraryImport("kernel32.dll", SetLastError = true)]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool GetNamedPipeServerProcessId(Microsoft.Win32.SafeHandles.SafePipeHandle pipe, out uint processId);
+
     public const uint WDA_EXCLUDEFROMCAPTURE = 0x11;
 
     [LibraryImport("user32.dll", SetLastError = true)]
@@ -363,6 +373,9 @@ internal static unsafe partial class Win32
     // dwmapi
     [LibraryImport("dwmapi.dll")]
     public static partial int DwmGetWindowAttribute(IntPtr hwnd, int attribute, void* value, int size);
+
+    [LibraryImport("dwmapi.dll")]
+    public static partial int DwmSetWindowAttribute(IntPtr hwnd, int attribute, void* value, int size);
 
     // shcore
     [LibraryImport("shcore.dll")]

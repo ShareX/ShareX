@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class GradientFadeBorderImageEffect : ImageEffectBase
     public override string Id => "gradient_fade_border";
     public override string Name => "Gradient fade border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.blend;
+    public override string IconKey => AppIcons.Blend;
     public override string Description => "Adds a multi-stop gradient border that smoothly fades between configurable colors.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

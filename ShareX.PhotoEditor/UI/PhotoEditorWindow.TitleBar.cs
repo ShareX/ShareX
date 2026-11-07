@@ -59,15 +59,15 @@ public sealed partial class PhotoEditorWindow
         left.Children.Add(icon);
         left.Children.Add(_menuHost);
 
-        _titleText = new TextBlock { TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0), Text = "Photo editor", Classes = { "dim" } };
+        _titleText = new TextBlock { TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0), Text = Strings.PhotoEditorWindow_PhotoEditor, Classes = { "dim" } };
 
-        Button minimize = CreateCaptionButton("Minimize", "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
+        Button minimize = CreateCaptionButton(Strings.TitleBar_Minimize, "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
         minimize.Click += (_, _) => WindowState = WindowState.Minimized;
-        Button maximize = CreateCaptionButton("Maximize", MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
+        Button maximize = CreateCaptionButton(Strings.TitleBar_Maximize, MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
         _maximizeButton = maximize;
         _maximizeGlyph = (Path)maximize.Content!;
         maximize.Click += (_, _) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-        Button close = CreateCaptionButton("Close", "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
+        Button close = CreateCaptionButton(Strings.EditorCommands_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
         close.Classes.Add("close");
         close.Click += (_, _) => Close();
         StackPanel right = new() { Orientation = Orientation.Horizontal };
@@ -98,7 +98,7 @@ public sealed partial class PhotoEditorWindow
     {
         bool maximized = WindowState == WindowState.Maximized;
         _maximizeGlyph.Data = Geometry.Parse(maximized ? RestoreGlyph : MaximizeGlyph);
-        ToolTip.SetTip(_maximizeButton, maximized ? "Restore" : "Maximize");
+        ToolTip.SetTip(_maximizeButton, maximized ? Strings.TitleBar_Restore : Strings.TitleBar_Maximize);
     }
 
     private static Button CreateCaptionButton(string tip, string glyph, WindowDecorationsElementRole role)

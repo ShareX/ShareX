@@ -35,9 +35,9 @@ public sealed class BlurTool : BrushToolBase
 
     public override ToolId Id => ToolId.Blur;
 
-    public override string Name => "Blur Tool";
+    public override string Name => Strings.ToningTools_BlurTool;
 
-    public override string Hint => "Paint to soften edges and details.";
+    public override string Hint => Strings.ToningTools_BlurHint;
 
     public float Strength { get; set; } = 0.5f;
 
@@ -50,7 +50,7 @@ public sealed class BlurTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Percent("Strength:", () => Strength, v => Strength = v);
+        options.Percent(Strings.HdrToningEditor_StrengthColon, () => Strength, v => Strength = v);
     }
 }
 
@@ -62,9 +62,9 @@ public sealed class SharpenTool : BrushToolBase
 
     public override ToolId Id => ToolId.Sharpen;
 
-    public override string Name => "Sharpen Tool";
+    public override string Name => Strings.ToningTools_SharpenTool;
 
-    public override string Hint => "Paint to increase local contrast and sharpen details.";
+    public override string Hint => Strings.ToningTools_SharpenHint;
 
     public float Strength { get; set; } = 0.5f;
 
@@ -79,8 +79,8 @@ public sealed class SharpenTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Percent("Strength:", () => Strength, v => Strength = v);
-        options.Check("Protect Detail", () => ProtectDetail, v => ProtectDetail = v);
+        options.Percent(Strings.HdrToningEditor_StrengthColon, () => Strength, v => Strength = v);
+        options.Check(Strings.ToningTools_ProtectDetail, () => ProtectDetail, v => ProtectDetail = v);
     }
 }
 
@@ -93,9 +93,9 @@ public sealed class SmudgeTool : BrushToolBase
 
     public override ToolId Id => ToolId.Smudge;
 
-    public override string Name => "Smudge Tool";
+    public override string Name => Strings.ToningTools_SmudgeTool;
 
-    public override string Hint => "Drag to smear paint. Finger Painting starts with the foreground color.";
+    public override string Hint => Strings.ToningTools_SmudgeHint;
 
     public float Strength { get; set; } = 0.5f;
 
@@ -114,8 +114,8 @@ public sealed class SmudgeTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Percent("Strength:", () => Strength, v => Strength = v);
-        options.Check("Finger Painting", () => FingerPainting, v => FingerPainting = v);
+        options.Percent(Strings.HdrToningEditor_StrengthColon, () => Strength, v => Strength = v);
+        options.Check(Strings.ToningTools_FingerPainting, () => FingerPainting, v => FingerPainting = v);
     }
 }
 
@@ -131,9 +131,9 @@ public sealed class DodgeBurnTool : BrushToolBase
 
     public override ToolId Id => _dodge ? ToolId.Dodge : ToolId.Burn;
 
-    public override string Name => _dodge ? "Dodge Tool" : "Burn Tool";
+    public override string Name => _dodge ? Strings.ToningTools_DodgeTool : Strings.ToningTools_BurnTool;
 
-    public override string Hint => _dodge ? "Paint to lighten areas. Alt burns." : "Paint to darken areas. Alt dodges.";
+    public override string Hint => _dodge ? Strings.ToningTools_DodgeHint : Strings.ToningTools_BurnHint;
 
     public DabProcessors.ToneRange Range { get; set; } = DabProcessors.ToneRange.Midtones;
 
@@ -151,10 +151,10 @@ public sealed class DodgeBurnTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.EnumCombo("Range:", () => Range, v => Range = v, 110);
-        options.Percent("Exposure:", () => Exposure, v => Exposure = v);
-        options.IconButton("airbrush", "Enable airbrush-style build-up effects", () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
-        options.Check("Protect Tones", () => ProtectTones, v => ProtectTones = v);
+        options.EnumCombo(Strings.ToningTools_RangeColon, () => Range, v => Range = v, 110);
+        options.Percent(Strings.AdjustmentEditor_ExposureColon, () => Exposure, v => Exposure = v);
+        options.IconButton(PhotoEditorIcons.Airbrush, Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
+        options.Check(Strings.ToningTools_ProtectTones, () => ProtectTones, v => ProtectTones = v);
     }
 }
 
@@ -167,9 +167,9 @@ public sealed class SpongeTool : BrushToolBase
 
     public override ToolId Id => ToolId.Sponge;
 
-    public override string Name => "Sponge Tool";
+    public override string Name => Strings.ToningTools_SpongeTool;
 
-    public override string Hint => "Paint to saturate or desaturate colors.";
+    public override string Hint => Strings.ToningTools_SpongeHint;
 
     public bool Saturate { get; set; }
 
@@ -184,8 +184,8 @@ public sealed class SpongeTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Combo("Mode:", [("Desaturate", false), ("Saturate", true)], () => Saturate, v => Saturate = v, 110);
-        options.Percent("Flow:", () => Flow, v => Flow = v);
-        options.Check("Vibrance", () => Vibrance, v => Vibrance = v);
+        options.Combo(Strings.EditorCommands_ModeColon, [(Strings.Adjustments_Desaturate, false), (Strings.ToningTools_Saturate, true)], () => Saturate, v => Saturate = v, 110);
+        options.Percent(Strings.Tools_FlowColon, () => Flow, v => Flow = v);
+        options.Check(Strings.Adjustments_Vibrance, () => Vibrance, v => Vibrance = v);
     }
 }

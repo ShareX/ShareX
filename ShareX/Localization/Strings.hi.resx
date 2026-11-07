@@ -472,6 +472,18 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>हॉटकी पुनरावृत्ति अंतराल (मिलीसेकंड)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>आइकन पैक:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>पुराना</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>आधुनिक</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>आइकन</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>छवि मुद्रण सेटिंग...</value>
   </data>
@@ -632,7 +644,7 @@
     <value>फ़ाइल प्रबंधक के संदर्भ मेनू में "ShareX से संपादित करें" दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Windows Explorer संदर्भ मेनू में "ShareX से संपादित करें" बटन दिखाएँ</value>
+    <value>Windows Explorer संदर्भ मेनू में "ShareX छवि संपादक में संपादित करें" बटन दिखाएँ</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Explorer संदर्भ मेनू में "ShareX फ़ोटो संपादक में संपादित करें" बटन दिखाएँ</value>
@@ -1341,7 +1353,7 @@
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX से संपादित करें</value>
+    <value>ShareX छवि संपादक में संपादित करें</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ShareX फ़ोटो संपादक में संपादित करें</value>
@@ -1538,6 +1550,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>नेटवर्क मॉनिटर...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>नया</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>कोई छवि प्रभाव प्रीसेट नहीं</value>
   </data>
@@ -1564,6 +1579,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>क्षेत्र...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>क्षेत्र (पारदर्शी)...</value>
   </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>रिमोट स्टोरेज ब्राउज़र...</value>
@@ -2312,6 +2330,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>सेवा लिंक खोलने के बाद OCR विंडो बंद करें</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>क्षेत्र कैप्चर के लिए कॉम्पैक्ट टूलबार</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>कॉन्फ़िगर करें...</value>
   </data>
@@ -2536,6 +2557,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>ऊपर ले जाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>बहु-क्षेत्र मोड</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>नाम</value>
@@ -3034,6 +3058,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>वेव ऑडियो</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP संपीड़न प्रयास:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>कम मानों पर एन्कोडिंग तेज़ होती है। अधिक मान छोटे आकार की फ़ाइलें बनाते हैं। सभी मान छवि की गुणवत्ता बनाए रखते हैं।</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>दोषरहित</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP गुणवत्ता:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>चौड़ाई:</value>

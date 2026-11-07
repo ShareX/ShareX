@@ -51,7 +51,7 @@ public sealed partial class PhotoEditorWindow
             SuggestedStartLocation = start,
             FileTypeFilter =
             [
-                new FilePickerFileType("All supported images") { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
+                new FilePickerFileType(Strings.ImageIO_AllSupportedImages) { Patterns = ImageIO.Formats.SelectMany(f => f.Extensions).Select(x => "*" + x).ToArray() },
                 .. ImageIO.Formats.Select(f => new FilePickerFileType(f.Name) { Patterns = f.Extensions.Select(x => "*" + x).ToArray() }),
                 FilePickerFileTypes.All
             ]
@@ -84,6 +84,24 @@ public sealed partial class PhotoEditorWindow
 
     private bool _windowPlacementApplied;
     private bool _windowPlacementSavePending;
+    private WindowState _restoreWindowState = WindowState.Normal;
+
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+        if (change.Property == WindowStateProperty && change.GetNewValue<WindowState>() != WindowState.Minimized)
+        {
+            _restoreWindowState = change.GetNewValue<WindowState>();
+        }
+    }
+
+    /// <summary>Shows the window, restores it when minimized to the state it had before, and brings it to the front.</summary>
+    public void BringToFront()
+    {
+        if (!IsVisible) Show();
+        if (WindowState == WindowState.Minimized) WindowState = _restoreWindowState;
+        Activate();
+    }
 
     // ------------------------------------------------------------------ closing
 
@@ -99,7 +117,7 @@ public sealed partial class PhotoEditorWindow
             SaveSettings();
             return;
         }
-        if (_views.Any(v => v.Document.IsDirty))
+        if (_views.Any(v => v.Document.IsDirty && v.Document != TaskDocument))
         {
             e.Cancel = true;
             foreach (DocumentView view in _views.ToList())
@@ -115,6 +133,7 @@ public sealed partial class PhotoEditorWindow
         _view = null;
         foreach (DocumentView view in _views.ToList())
         {
+            CaptureTaskResult(view);
             view.Dispose();
             view.Document.Dispose();
         }

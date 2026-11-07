@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class MinecraftGrassImageEffect : ImageEffectBase
     public override string Id => "minecraft_grass";
     public override string Name => "Minecraft grass";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.flower;
+    public override string IconKey => ImageEffectIcons.Grass;
     public override string Description => "Adds a Minecraft-style pixelated grass border to the top or bottom of the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

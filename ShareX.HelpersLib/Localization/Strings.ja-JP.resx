@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字認識 (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>フォトエディターで開く</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>アクションを実行</value>
   </data>
@@ -785,6 +788,9 @@
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>領域をキャプチャー</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>領域をキャプチャー (透過モード)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>定規</value>

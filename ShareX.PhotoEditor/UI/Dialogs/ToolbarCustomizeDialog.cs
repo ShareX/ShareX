@@ -56,7 +56,7 @@ public static class ToolbarCustomizeDialog
                     bool isSelected = selected == (gi, ii);
                     Button b = new()
                     {
-                        Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { ToolIcons.Create(tool.Id, 16), new TextBlock { Text = tool.Name.Replace(" Tool", string.Empty), FontSize = 11 } } },
+                        Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { new IconView(IconMap.ForTool(tool.Id), 16), new TextBlock { Text = tool.Name.Replace(" Tool", string.Empty), FontSize = 11 } } },
                         Margin = new Thickness(1),
                         Background = isSelected ? new SolidColorBrush(Color.FromRgb(0x4B, 0x4B, 0x4B)) : Brushes.Transparent
                     };
@@ -68,8 +68,8 @@ public static class ToolbarCustomizeDialog
             foreach (ToolId id in hidden)
             {
                 ToolId captured = id;
-                Button b = new() { Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { ToolIcons.Create(id, 16), new TextBlock { Text = owner.Tools.Get(id).Name, FontSize = 11 } } }, Margin = new Thickness(1) };
-                ToolTip.SetTip(b, "Click to restore to the toolbar");
+                Button b = new() { Content = new StackPanel { Orientation = Orientation.Horizontal, Spacing = 4, Children = { new IconView(IconMap.ForTool(id), 16), new TextBlock { Text = owner.Tools.Get(id).Name, FontSize = 11 } } }, Margin = new Thickness(1) };
+                ToolTip.SetTip(b, Strings.ToolbarCustomizeDialog_RestoreTip);
                 b.Click += (_, _) =>
                 {
                     hidden.Remove(captured);
@@ -87,19 +87,19 @@ public static class ToolbarCustomizeDialog
             groups.RemoveAll(x => x.Count == 0);
             Build();
         }
-        Button up = new() { Content = "Move Group Up" };
+        Button up = new() { Content = Strings.ToolbarCustomizeDialog_MoveGroupUp };
         up.Click += (_, _) => Act((g, i) => { if (g > 0) { (groups[g - 1], groups[g]) = (groups[g], groups[g - 1]); selected = (g - 1, i); } });
-        Button down = new() { Content = "Move Group Down" };
+        Button down = new() { Content = Strings.ToolbarCustomizeDialog_MoveGroupDown };
         down.Click += (_, _) => Act((g, i) => { if (g < groups.Count - 1) { (groups[g + 1], groups[g]) = (groups[g], groups[g + 1]); selected = (g + 1, i); } });
-        Button left = new() { Content = "Move Earlier in Group" };
+        Button left = new() { Content = Strings.ToolbarCustomizeDialog_MoveEarlierInGroup };
         left.Click += (_, _) => Act((g, i) => { if (i > 0) { (groups[g][i - 1], groups[g][i]) = (groups[g][i], groups[g][i - 1]); selected = (g, i - 1); } });
-        Button split = new() { Content = "Own Group" };
+        Button split = new() { Content = Strings.ToolbarCustomizeDialog_OwnGroup };
         split.Click += (_, _) => Act((g, i) => { ToolId id = groups[g][i]; groups[g].RemoveAt(i); groups.Insert(g + 1, [id]); selected = (g + 1, 0); });
-        Button merge = new() { Content = "Merge With Group Above" };
+        Button merge = new() { Content = Strings.ToolbarCustomizeDialog_MergeWithGroupAbove };
         merge.Click += (_, _) => Act((g, i) => { if (g > 0) { ToolId id = groups[g][i]; groups[g].RemoveAt(i); groups[g - 1].Add(id); selected = null; } });
-        Button hide = new() { Content = "Hide Tool" };
+        Button hide = new() { Content = Strings.ToolbarCustomizeDialog_HideTool };
         hide.Click += (_, _) => Act((g, i) => { if (groups[g][i] != ToolId.Move) { hidden.Add(groups[g][i]); groups[g].RemoveAt(i); selected = null; } });
-        Button restore = new() { Content = "Restore Defaults" };
+        Button restore = new() { Content = Strings.ToolbarCustomizeDialog_RestoreDefaults };
         restore.Click += (_, _) =>
         {
             groups = owner.Tools.DefaultGroups.Select(g => g.Tools.Select(t => t.Id).ToList()).ToList();
@@ -111,12 +111,12 @@ public static class ToolbarCustomizeDialog
         WrapPanel actions = new() { Children = { up, down, left, split, merge, hide, restore } };
         foreach (Control c in actions.Children) c.Margin = new Thickness(2);
         StackPanel content = new() { Spacing = 8 };
-        content.Children.Add(new TextBlock { Text = "Toolbar (each row is a toolbar slot with its flyout tools). Select a tool, then use the buttons to rearrange.", TextWrapping = TextWrapping.Wrap });
+        content.Children.Add(new TextBlock { Text = Strings.ToolbarCustomizeDialog_Description, TextWrapping = TextWrapping.Wrap });
         content.Children.Add(new ScrollViewer { Content = toolbar, Height = 360 });
         content.Children.Add(actions);
-        content.Children.Add(new TextBlock { Text = "Extra Tools (hidden from the toolbar):" });
+        content.Children.Add(new TextBlock { Text = Strings.ToolbarCustomizeDialog_ExtraTools });
         content.Children.Add(extra);
-        if (!await DialogBuilder.ShowAsync(owner, "Customize Toolbar", content, 760, "Done")) return;
+        if (!await DialogBuilder.ShowAsync(owner, Strings.ToolbarCustomizeDialog_Title, content, 760, Strings.ToolbarCustomizeDialog_Done)) return;
         owner.Settings.Toolbar = groups.Select(g => new ToolbarGroupLayout { Tools = g.Select(t => t.ToString()).ToList() }).ToList();
         owner.Settings.HiddenTools = hidden.Select(t => t.ToString()).ToList();
         owner.RebuildToolbar();

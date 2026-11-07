@@ -26,15 +26,15 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Documents;
-using Avalonia.Layout;
 using Avalonia.Media;
-using ShareX.AvaloniaUI.Theming;
+using Avalonia.Styling;
+using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI.Controls;
 
 /// <summary>
-/// Shows an icon string in the Foreground at FontSize: a vector <see cref="ShareXIcons"/> icon, or otherwise
-/// a glyph of the icon font, such as a <see cref="LucideIcons"/> constant.
+/// Shows a ShareX icon, a key of one of the icon sets such as <see cref="AppIcons"/>, in the Foreground as a square
+/// of FontSize, so it lines up with the text around it.
 /// </summary>
 public class IconPresenter : Control
 {
@@ -47,8 +47,7 @@ public class IconPresenter : Control
     public static readonly StyledProperty<double> FontSizeProperty =
         TextElement.FontSizeProperty.AddOwner<IconPresenter>();
 
-    private ShareXIcons.Shape[]? _shapes;
-    private TextBlock? _glyph;
+    private VectorIcon? _icon;
 
     static IconPresenter()
     {
@@ -78,84 +77,64 @@ public class IconPresenter : Control
     {
         base.OnPropertyChanged(change);
 
-        if (change.Property == IconProperty)
+        if (change.Property == IconProperty || change.Property == IconPackScope.PackProperty)
         {
             UpdateIcon();
         }
+        else if (change.Property == ThemeVariantScope.ActualThemeVariantProperty)
+        {
+            InvalidateVisual();
+        }
     }
+
+    protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        base.OnAttachedToVisualTree(e);
+        IconCatalog.PackChanged += OnPackChanged;
+        UpdateIcon();
+    }
+
+    protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+    {
+        IconCatalog.PackChanged -= OnPackChanged;
+        base.OnDetachedFromVisualTree(e);
+    }
+
+    private void OnPackChanged(object? sender, EventArgs e) => UpdateIcon();
 
     private void UpdateIcon()
     {
-        _shapes = ShareXIcons.GetShapes(Icon);
-
-        if (_shapes == null && _glyph == null)
-        {
-            _glyph = new TextBlock
-            {
-                FontWeight = FontWeight.Normal,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center
-            };
-
-            _glyph.Bind(TextBlock.FontFamilyProperty, _glyph.GetResourceObservable("ShareX.FontFamily.Icon"));
-            // Bound rather than inherited, so TextBlock styles (such as an active button's text color)
-            // don't recolor the glyph: glyphs and vector icons both follow the presenter.
-            _glyph.Bind(TextBlock.ForegroundProperty, this.GetObservable(ForegroundProperty));
-            _glyph.Bind(TextBlock.FontSizeProperty, this.GetObservable(FontSizeProperty));
-            LogicalChildren.Add(_glyph);
-            VisualChildren.Add(_glyph);
-        }
-        else if (_shapes != null && _glyph != null)
-        {
-            LogicalChildren.Remove(_glyph);
-            VisualChildren.Remove(_glyph);
-            _glyph = null;
-        }
-
-        if (_glyph != null)
-        {
-            _glyph.Text = Icon;
-        }
-
+        _icon = IconCatalog.Find(Icon, IconPackScope.GetPack(this) ?? IconCatalog.Pack);
         InvalidateMeasure();
         InvalidateVisual();
     }
 
-    protected override Size MeasureOverride(Size availableSize)
-    {
-        if (_glyph != null)
-        {
-            _glyph.Measure(availableSize);
-            return _glyph.DesiredSize;
-        }
-
-        // A vector icon fills the same em square as a glyph of the icon font.
-        return _shapes == null ? default : new Size(FontSize, FontSize);
-    }
-
-    protected override Size ArrangeOverride(Size finalSize)
-    {
-        _glyph?.Arrange(new Rect(finalSize));
-        return finalSize;
-    }
+    protected override Size MeasureOverride(Size availableSize) =>
+        _icon == null ? default : new Size(FontSize, FontSize);
 
     public override void Render(DrawingContext context)
     {
-        if (_shapes == null || Foreground is not IBrush foreground)
+        if (_icon != null && Foreground is IBrush foreground)
         {
-            return;
+            _icon.Draw(context, new Rect(Bounds.Size), foreground, IsDarkTheme(ActualThemeVariant));
         }
+    }
 
-        double size = Math.Min(Bounds.Width, Bounds.Height);
-        double scale = size / ShareXIcons.GridSize;
-        Matrix transform = Matrix.CreateScale(scale, scale) * Matrix.CreateTranslation((Bounds.Width - size) / 2, (Bounds.Height - size) / 2);
-
-        using (context.PushTransform(transform))
+    private static bool? IsDarkTheme(ThemeVariant? theme)
+    {
+        for (; theme != null; theme = theme.InheritVariant)
         {
-            foreach (ShareXIcons.Shape shape in _shapes)
+            if (theme == ThemeVariant.Dark)
             {
-                shape.Draw(context, foreground);
+                return true;
+            }
+
+            if (theme == ThemeVariant.Light)
+            {
+                return false;
             }
         }
+
+        return null;
     }
 }

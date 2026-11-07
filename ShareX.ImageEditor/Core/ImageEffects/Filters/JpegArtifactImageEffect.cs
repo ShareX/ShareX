@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class JpegArtifactImageEffect : ImageEffectBase
     public override string Id => "jpeg_artifact";
     public override string Name => "JPEG artifact";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.file_image;
+    public override string IconKey => AppIcons.FileImage;
     public override string Description => "Simulates JPEG compression artifacts with blocking and ringing.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

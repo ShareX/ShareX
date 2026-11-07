@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>पाठ पहचानें (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>फ़ोटो संपादक में खोलें</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>क्रियाएँ निष्पादित करें</value>
   </data>
@@ -785,6 +788,9 @@
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>क्षेत्र कैप्चर करें</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>क्षेत्र कैप्चर करें (पारदर्शी)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>मापनी</value>

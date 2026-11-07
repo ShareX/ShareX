@@ -1,9 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="940"
         d:DesignHeight="720"
@@ -106,12 +107,11 @@
                             Height="44"
                             CornerRadius="10"
                             Background="{DynamicResource ShareX.Brush.Accent}">
-                        <TextBlock Text="{x:Static theming:LucideIcons.video}"
-                                   Classes="icon"
-                                   FontSize="22"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Video}"
+                                                FontSize="22"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel Grid.Column="1" Spacing="3" VerticalAlignment="Center">
                         <TextBlock Classes="page-title" Text="{x:Static localization:Strings.FFmpegOptionsWindow_Screen_recording}"/>
@@ -123,9 +123,8 @@
                             <Button x:Name="ResetOptionsButton"
                                     ToolTip.Tip="{x:Static localization:Strings.FFmpegOptionsWindow_Reset_encoding_options}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.rotate_ccw}"
-                                               FontSize="15"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"
+                                                            FontSize="15"/>
                                     <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Reset_options}"/>
                                 </StackPanel>
                             </Button>
@@ -167,33 +166,29 @@
                         </ListBox.ItemsPanel>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.monitor}"
-                                           FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
+                                                        FontSize="15"/>
                                 <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Sources}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.video}"
-                                           FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Video}"
+                                                        FontSize="15"/>
                                 <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Video}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.audio_lines}"
-                                           FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Audio}"
+                                                        FontSize="15"/>
                                 <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Audio}"/>
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem>
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.terminal}"
-                                           FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Terminal}"
+                                                        FontSize="15"/>
                                 <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Advanced}"/>
                             </StackPanel>
                         </ListBoxItem>
@@ -218,9 +213,8 @@
                                                 Grid.Column="1"
                                                 Classes="icon-button"
                                                 ToolTip.Tip="{x:Static localization:Strings.FFmpegOptionsWindow_Browse_for_ffmpeg}">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.folder_open}"
-                                                       FontSize="16"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"
+                                                                    FontSize="16"/>
                                         </Button>
                                     </Grid>
                                 </StackPanel>
@@ -236,9 +230,8 @@
                                         <Border x:Name="RefreshDevicesSurface" Grid.Column="1" Background="Transparent" VerticalAlignment="Center">
                                             <Button x:Name="RefreshDevicesButton">
                                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.refresh_cw}"
-                                                               FontSize="15"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Refresh}"
+                                                                            FontSize="15"/>
                                                     <TextBlock Text="{x:Static localization:Strings.FFmpegOptionsWindow_Refresh_devices}"/>
                                                 </StackPanel>
                                             </Button>
@@ -262,11 +255,10 @@
 
                                     <Border Classes="info-card">
                                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
-                                            <TextBlock Grid.Column="0"
-                                                       Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.info}"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                                       VerticalAlignment="Center"/>
+                                            <controls:IconPresenter Grid.Column="0"
+                                                                    Icon="{x:Static icons:AppIcons.Info}"
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                                    VerticalAlignment="Center"/>
                                             <TextBlock x:Name="DeviceStatusTextBlock"
                                                        Grid.Column="1"
                                                        Classes="hint"
@@ -320,9 +312,8 @@
                                                 Classes="info-card"
                                                 BorderBrush="Goldenrod">
                                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                                <TextBlock Classes="icon"
-                                                           Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                                           Foreground="Goldenrod"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                                        Foreground="Goldenrod"/>
                                                 <TextBlock Grid.Column="1"
                                                            Classes="hint"
                                                            Text="{x:Static localization:Strings.FFmpegOptionsWindow_Slow_presets_warning}"/>
@@ -457,9 +448,8 @@
 
                                     <Border x:Name="NoVideoSettingsPanel" Classes="info-card">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.circle_check}"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
                                                        Text="{x:Static localization:Strings.FFmpegOptionsWindow_No_additional_settings}"/>
@@ -484,9 +474,8 @@
                                             Classes="info-card"
                                             BorderBrush="Goldenrod">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                                       Foreground="Goldenrod"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                                    Foreground="Goldenrod"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
                                                        Text="{x:Static localization:Strings.FFmpegOptionsWindow_Animated_formats_no_audio}"/>

@@ -35,27 +35,27 @@ public static partial class EditorCommands
 {
     private static void RegisterFile()
     {
-        R("file.new", "New...", "Ctrl+N", w => _ = NewDocumentAsync(w));
-        R("file.open", "Open...", "Ctrl+O", w => _ = OpenAsync(w));
-        R("file.newFromClipboard", "New from Clipboard", "Ctrl+Alt+N", NewFromClipboard);
-        R("file.newFromRegion", "New from Screenshot (Region)...", null, w => _ = NewFromCaptureAsync(w, false), w => w.Services.CaptureRegion != null);
-        R("file.newFromScreen", "New from Screenshot (Full Screen)", null, w => _ = NewFromCaptureAsync(w, true), w => w.Services.CaptureFullscreen != null);
-        R("file.close", "Close", "Ctrl+W", w => { if (w.View != null) _ = w.CloseViewAsync(w.View); }, HasDoc);
-        R("file.closeAll", "Close All", "Ctrl+Alt+W", w => _ = CloseAllAsync(w), HasDoc);
-        R("file.save", "Save", "Ctrl+S", w => _ = SaveAsync(w, false), HasDoc);
-        R("file.saveAs", "Save As...", "Ctrl+Shift+S", w => _ = SaveAsync(w, true), HasDoc);
-        R("file.saveCopy", "Save a Copy...", "Ctrl+Alt+S", w => _ = SaveCopyAsync(w), HasDoc);
-        R("file.revert", "Revert", "F12", Revert, w => w.Document?.FilePath != null);
-        R("file.quickExport", "Quick Export as PNG", "Ctrl+Shift+Alt+Q", w => _ = QuickExportAsync(w), HasDoc);
-        R("file.exportAs", "Export As...", "Ctrl+Shift+Alt+W", w => _ = ExportAsAsync(w), HasDoc);
-        R("file.exportSlices", "Save Slices...", null, w => _ = ExportSlicesAsync(w), w => w.Document?.Slices.Count > 0);
-        R("file.exportLayers", "Layers to Files...", null, w => _ = ExportLayersAsync(w), HasDoc);
-        R("file.place", "Place Embedded...", "Ctrl+Shift+P", w => _ = PlaceAsync(w), HasDoc);
-        R("file.upload", "Upload with ShareX", null, w => SendFlat(w, w.Services.UploadImage), w => HasDoc(w) && w.Services.UploadImage != null);
-        R("file.runTasks", "Send to ShareX (After Capture Tasks)", "Ctrl+Shift+Alt+U", w => SendFlat(w, b => w.Services.RunImageTask?.Invoke(b, w.Document?.FilePath)), w => HasDoc(w) && w.Services.RunImageTask != null);
-        R("file.pin", "Pin to Screen", null, w => SendFlat(w, w.Services.PinImage), w => HasDoc(w) && w.Services.PinImage != null);
-        R("file.print", "Print...", "Ctrl+P", w => SendFlat(w, w.Services.PrintImage), w => HasDoc(w) && w.Services.PrintImage != null);
-        R("file.exit", "Exit", "Ctrl+Q", w => w.Close());
+        R("file.new", Strings.EditorCommands_NewEllipsis, "Ctrl+N", w => _ = NewDocumentAsync(w));
+        R("file.open", Strings.EditorCommands_OpenEllipsis, "Ctrl+O", w => _ = OpenAsync(w));
+        R("file.newFromClipboard", Strings.EditorCommands_NewFromClipboard, "Ctrl+Alt+N", NewFromClipboard);
+        R("file.newFromRegion", Strings.EditorCommands_NewFromScreenshotRegionEllipsis, null, w => _ = NewFromCaptureAsync(w, false), w => w.Services.CaptureRegion != null);
+        R("file.newFromScreen", Strings.EditorCommands_NewFromScreenshotFullScreen, null, w => _ = NewFromCaptureAsync(w, true), w => w.Services.CaptureFullscreen != null);
+        R("file.close", Strings.EditorCommands_Close, "Ctrl+W", w => { if (w.View != null) _ = w.CloseViewAsync(w.View); }, HasDoc);
+        R("file.closeAll", Strings.EditorCommands_CloseAll, "Ctrl+Alt+W", w => _ = CloseAllAsync(w), HasDoc);
+        R("file.save", Strings.EditorCommands_Save, "Ctrl+S", w => _ = SaveAsync(w, false), HasDoc);
+        R("file.saveAs", Strings.EditorCommands_SaveAsEllipsis, "Ctrl+Shift+S", w => _ = SaveAsync(w, true), HasDoc);
+        R("file.saveCopy", Strings.EditorCommands_SaveACopyEllipsis, "Ctrl+Alt+S", w => _ = SaveCopyAsync(w), HasDoc);
+        R("file.revert", Strings.EditorCommands_Revert, "F12", Revert, w => w.Document?.FilePath != null);
+        R("file.quickExport", Strings.EditorCommands_QuickExportAsPng, "Ctrl+Shift+Alt+Q", w => _ = QuickExportAsync(w), HasDoc);
+        R("file.exportAs", Strings.EditorCommands_ExportAsEllipsis, "Ctrl+Shift+Alt+W", w => _ = ExportAsAsync(w), HasDoc);
+        R("file.exportSlices", Strings.EditorCommands_SaveSlicesEllipsis, null, w => _ = ExportSlicesAsync(w), w => w.Document?.Slices.Count > 0);
+        R("file.exportLayers", Strings.EditorCommands_LayersToFilesEllipsis, null, w => _ = ExportLayersAsync(w), HasDoc);
+        R("file.place", Strings.EditorCommands_PlaceEmbeddedEllipsis, "Ctrl+Shift+P", w => _ = PlaceAsync(w), HasDoc);
+        R("file.upload", Strings.EditorCommands_UploadWithShareX, null, w => SendFlat(w, w.Services.UploadImage), w => HasDoc(w) && w.Services.UploadImage != null);
+        R("file.runTasks", Strings.EditorCommands_SendToShareX, "Ctrl+Shift+Alt+U", w => SendFlat(w, b => w.Services.RunImageTask?.Invoke(b, w.Document?.FilePath)), w => HasDoc(w) && w.Services.RunImageTask != null);
+        R("file.pin", Strings.EditorCommands_PinToScreen, null, w => SendFlat(w, w.Services.PinImage), w => HasDoc(w) && w.Services.PinImage != null);
+        R("file.print", Strings.EditorCommands_PrintEllipsis, "Ctrl+P", w => SendFlat(w, w.Services.PrintImage), w => HasDoc(w) && w.Services.PrintImage != null);
+        R("file.exit", Strings.EditorCommands_Exit, "Ctrl+Q", w => w.Close());
     }
 
     private static IEnumerable<MenuNode> RecentFiles(PhotoEditorWindow w)
@@ -66,7 +66,7 @@ public static partial class EditorCommands
         if (items.Count > 0)
         {
             items.Add(MenuNode.Separator);
-            items.Add(new MenuNode { Header = "Clear Recent File List", Action = ClearRecentFiles });
+            items.Add(new MenuNode { Header = Strings.EditorCommands_ClearRecentFileList, Action = ClearRecentFiles });
         }
         return items;
     }
@@ -91,16 +91,16 @@ public static partial class EditorCommands
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not create the document: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotCreateDocument, ex.Message));
             return;
         }
         doc.Title = result.Name;
-        w.OpenDocument(doc, "New");
+        w.OpenDocument(doc, Strings.EditorCommands_New);
     }
 
     public static async Task OpenAsync(PhotoEditorWindow w)
     {
-        foreach (string path in await w.PickOpenFilesAsync("Open")) OpenFile(w, path);
+        foreach (string path in await w.PickOpenFilesAsync(Strings.EditorCommands_Open)) OpenFile(w, path);
     }
 
     public static void OpenFile(PhotoEditorWindow w, string path)
@@ -119,7 +119,7 @@ public static partial class EditorCommands
         }
         catch (Exception ex)
         {
-            w.ShowMessage(ex.Message.StartsWith("Could not open", StringComparison.Ordinal) ? ex.Message : $"Could not open \"{Path.GetFileName(path)}\": {ex.Message}");
+            w.ShowMessage(ex is DocumentOpenException ? ex.Message : string.Format(Strings.ImageIO_CouldNotOpenReason, Path.GetFileName(path), ex.Message));
         }
     }
 
@@ -148,10 +148,10 @@ public static partial class EditorCommands
         using SKBitmap? image = TryGetClipboardImage();
         if (image == null)
         {
-            w.ShowMessage("The clipboard does not contain an image.");
+            w.ShowMessage(Strings.EditorCommands_ClipboardHasNoImage);
             return;
         }
-        OpenBitmap(w, image, "Clipboard");
+        OpenBitmap(w, image, Strings.EditorCommands_Clipboard);
     }
 
     private static async Task NewFromCaptureAsync(PhotoEditorWindow w, bool fullscreen)
@@ -163,7 +163,7 @@ public static partial class EditorCommands
         {
             await Task.Delay(250);
             using SKBitmap? image = await capture();
-            if (image != null) OpenBitmap(w, image, "Screenshot");
+            if (image != null) OpenBitmap(w, image, Strings.EditorCommands_Screenshot);
         }
         finally
         {
@@ -189,15 +189,15 @@ public static partial class EditorCommands
         bool layered = doc.AllLayers.Count() > 1 || doc.AllLayers.Any(l => l is not RasterLayer) || doc.Channels.Count > 0 || doc.Paths.Count > 0;
         if (!saveAs && path != null && !ImageIO.IsProject(path) && layered)
         {
-            bool? keep = await DialogBuilder.ConfirmAsync(w, "Save", $"\"{Path.GetFileName(path)}\" does not support layers. Save a flattened copy in this format, or save as a ShareX Photo Editor project to keep the layers?",
-                "Flatten", "Save as Project");
+            bool? keep = await DialogBuilder.ConfirmAsync(w, Strings.EditorCommands_Save, string.Format(Strings.EditorCommands_FormatDoesNotSupportLayers, Path.GetFileName(path)),
+                Strings.EditorCommands_Flatten, Strings.EditorCommands_SaveAsProject);
             if (keep == null) return false;
             if (keep == false) saveAs = true;
         }
         if (saveAs || path == null)
         {
             string name = Path.GetFileNameWithoutExtension(doc.FilePath ?? doc.Title);
-            path = await w.PickSaveFileAsync("Save As", name + (layered ? ImageIO.ProjectExtension : ".png"), layered);
+            path = await w.PickSaveFileAsync(Strings.EditorCommands_SaveAs, name + (layered ? ImageIO.ProjectExtension : ".png"), layered);
             if (path == null) return false;
         }
         int quality = 90;
@@ -215,12 +215,12 @@ public static partial class EditorCommands
             doc.IsDirty = false;
             w.Settings.AddRecentFile(path);
             w.RefreshPanels();
-            w.SetStatus($"Saved {path}");
+            w.SetStatus(string.Format(Strings.EditorCommands_SavedPath, path));
             return true;
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not save \"{Path.GetFileName(path)}\": {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotSaveFile, Path.GetFileName(path), ex.Message));
             return false;
         }
     }
@@ -229,24 +229,24 @@ public static partial class EditorCommands
     {
         int quality = 90;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Quality:", DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
-        return await DialogBuilder.ShowAsync(w, "Image Options", form, 380) ? quality : null;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_QualityColon, DialogBuilder.SliderNumber(1, 100, quality, v => quality = (int)v));
+        return await DialogBuilder.ShowAsync(w, Strings.EditorCommands_ImageOptions, form, 380) ? quality : null;
     }
 
     private static async Task SaveCopyAsync(PhotoEditorWindow w)
     {
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        string? path = await w.PickSaveFileAsync("Save a Copy", Path.GetFileNameWithoutExtension(doc.Title) + " copy.png", false);
+        string? path = await w.PickSaveFileAsync(Strings.EditorCommands_SaveACopy, string.Format(Strings.LayerNames_Copy, Path.GetFileNameWithoutExtension(doc.Title)) + ".png", false);
         if (path == null) return;
         try
         {
             ImageIO.Save(doc, path);
-            w.SetStatus($"Saved a copy to {path}");
+            w.SetStatus(string.Format(Strings.EditorCommands_SavedCopyTo, path));
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not save: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotSave, ex.Message));
         }
     }
 
@@ -259,13 +259,13 @@ public static partial class EditorCommands
             // The reverted document is not disposed: the restored state shares its pixel surfaces.
             PhotoDocument reverted = ImageIO.Open(doc.FilePath);
             doc.RestoreState(reverted.CaptureState());
-            doc.History.Push("Revert");
+            doc.History.Push(Strings.EditorCommands_Revert);
             doc.IsDirty = false;
             w.AfterHistoryChange();
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not revert: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotRevert, ex.Message));
         }
     }
 
@@ -273,17 +273,17 @@ public static partial class EditorCommands
     {
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        string? path = await w.PickSaveFileAsync("Quick Export as PNG", Path.GetFileNameWithoutExtension(doc.Title) + ".png", false);
+        string? path = await w.PickSaveFileAsync(Strings.EditorCommands_QuickExportAsPng, Path.GetFileNameWithoutExtension(doc.Title) + ".png", false);
         if (path == null) return;
         try
         {
             using SKBitmap flat = Compositor.Flatten(doc);
             ImageIO.SaveBitmap(flat, path);
-            w.SetStatus($"Exported {path}");
+            w.SetStatus(string.Format(Strings.EditorCommands_ExportedPath, path));
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not export: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotExport, ex.Message));
         }
     }
 
@@ -293,7 +293,7 @@ public static partial class EditorCommands
         if (doc == null) return;
         ExportDialog.Result? options = await ExportDialog.ShowAsync(w, doc, w.Settings);
         if (options == null) return;
-        string? path = await w.PickSaveFileAsync("Export As", Path.GetFileNameWithoutExtension(doc.Title) + options.Extension, false);
+        string? path = await w.PickSaveFileAsync(Strings.EditorCommands_ExportAs, Path.GetFileNameWithoutExtension(doc.Title) + options.Extension, false);
         if (path == null) return;
         using SKBitmap flat = Compositor.Flatten(doc);
         SKBitmap output = flat;
@@ -301,11 +301,11 @@ public static partial class EditorCommands
         try
         {
             ImageIO.SaveBitmap(output, path, options.Quality, options.Lossless);
-            w.SetStatus($"Exported {path}");
+            w.SetStatus(string.Format(Strings.EditorCommands_ExportedPath, path));
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not export: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotExport, ex.Message));
         }
         finally
         {
@@ -323,7 +323,7 @@ public static partial class EditorCommands
     {
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        string? folder = await PickFolderAsync(w, "Save Slices");
+        string? folder = await PickFolderAsync(w, Strings.EditorCommands_SaveSlices);
         if (folder == null) return;
         try
         {
@@ -339,11 +339,11 @@ public static partial class EditorCommands
                 ImageIO.SaveBitmap(part, Path.Combine(folder, name + ".png"));
                 index++;
             }
-            w.SetStatus($"Saved {index - 1} slices to {folder}");
+            w.SetStatus(string.Format(Strings.EditorCommands_SavedSlicesTo, index - 1, folder));
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not save slices: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotSaveSlices, ex.Message));
         }
     }
 
@@ -351,7 +351,7 @@ public static partial class EditorCommands
     {
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        string? folder = await PickFolderAsync(w, "Layers to Files");
+        string? folder = await PickFolderAsync(w, Strings.EditorCommands_LayersToFiles);
         if (folder == null) return;
         try
         {
@@ -362,11 +362,11 @@ public static partial class EditorCommands
                 string name = $"{index++:000}_{string.Concat(layer.Name.Split(Path.GetInvalidFileNameChars()))}.png";
                 ImageIO.SaveBitmap(image, Path.Combine(folder, name));
             }
-            w.SetStatus($"Exported {index} layers to {folder}");
+            w.SetStatus(string.Format(Strings.EditorCommands_ExportedLayersTo, index, folder));
         }
         catch (Exception ex)
         {
-            w.ShowMessage($"Could not export layers: {ex.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotExportLayers, ex.Message));
         }
     }
 
@@ -378,7 +378,7 @@ public static partial class EditorCommands
         SKBitmap? bitmap = ImageIO.DecodeImage(path);
         if (bitmap == null)
         {
-            w.ShowMessage($"Could not place \"{Path.GetFileName(path)}\" because the file format is not supported.");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotPlaceUnsupported, Path.GetFileName(path)));
             return;
         }
         using (bitmap) PlaceBitmap(w, bitmap, Path.GetFileNameWithoutExtension(path));
@@ -390,19 +390,19 @@ public static partial class EditorCommands
         if (doc.ActiveLayer is FrameLayer frame)
         {
             frame.PlaceContent(PixelSurface.FromBitmap(bitmap));
-            w.Commit("Place Into Frame");
+            w.Commit(Strings.EditorCommands_PlaceIntoFrame);
             return;
         }
         SmartObjectLayer layer = new(name, PixelSurface.FromBitmap(bitmap));
         float scale = Math.Min(1, Math.Min(doc.Width / (float)bitmap.Width, doc.Height / (float)bitmap.Height));
         layer.Transform = SKMatrix.CreateScale(scale, scale).PostConcat(SKMatrix.CreateTranslation((doc.Width - bitmap.Width * scale) / 2, (doc.Height - bitmap.Height * scale) / 2));
         doc.AddLayer(layer);
-        w.Commit("Place Embedded");
+        w.Commit(Strings.EditorCommands_PlaceEmbedded);
     }
 
     private static async Task PlaceAsync(PhotoEditorWindow w)
     {
-        IReadOnlyList<string> files = await w.PickOpenFilesAsync("Place Embedded", false);
+        IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.EditorCommands_PlaceEmbedded, false);
         if (files.Count > 0) PlaceFile(w, files[0]);
     }
 
@@ -411,10 +411,10 @@ public static partial class EditorCommands
         PhotoEditorWindow w = W(host);
         if (w.Document?.ActiveLayer is not FrameLayer)
         {
-            w.ShowMessage("Select a frame layer first (draw one with the Frame tool).");
+            w.ShowMessage(Strings.EditorCommands_SelectFrameLayerFirst);
             return;
         }
-        IReadOnlyList<string> files = await w.PickOpenFilesAsync("Place Image Into Frame", false);
+        IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.EditorCommands_PlaceImageIntoFrame, false);
         if (files.Count > 0) PlaceFile(w, files[0]);
     }
 

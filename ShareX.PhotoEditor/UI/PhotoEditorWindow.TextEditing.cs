@@ -72,7 +72,7 @@ public sealed partial class PhotoEditorWindow
         _textEditor.AttachedToVisualTree += (_, _) => _textEditor?.Focus();
         RefreshOptions();
         InvalidateCanvas();
-        SetStatus("Type the text. Ctrl+Enter commits, Esc cancels.");
+        SetStatus(Strings.TextEditing_Hint);
     }
 
     private void PositionTextEditor()
@@ -136,12 +136,12 @@ public sealed partial class PhotoEditorWindow
             else if (string.IsNullOrWhiteSpace(layer.Text))
             {
                 if (_editingIsNew) doc.RemoveLayer(layer);
-                else doc.History.Push("Edit Type Layer");
+                else doc.History.Push(Strings.PropertiesPanel_EditTypeLayer);
             }
             else
             {
-                if (_editingIsNew || layer.Name == "Layer") layer.Name = layer.Text.Split('\n')[0].Trim() is { Length: > 0 } first ? first[..Math.Min(first.Length, 32)] : "Text";
-                doc.History.Push(_editingIsNew ? "Type Tool" : "Edit Type Layer");
+                if (_editingIsNew || layer.Name == Strings.LayerNames_NewTypeLayer) layer.Name = layer.Text.Split('\n')[0].Trim() is { Length: > 0 } first ? first[..Math.Min(first.Length, 32)] : Strings.LayerNames_Text;
+                doc.History.Push(_editingIsNew ? Strings.TextEditing_TypeTool : Strings.PropertiesPanel_EditTypeLayer);
             }
         }
         _editingOriginal = null;

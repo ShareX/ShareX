@@ -28,6 +28,7 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -90,7 +91,7 @@ public partial class ActionsToolbarEditorWindow : Window
             MenuItem item = new()
             {
                 Header = title,
-                Icon = CreateIcon(TaskHelpers.FindMenuLucideIcon(action))
+                Icon = CreateIcon(TaskHelpers.FindMenuIcon(action))
             };
             item.Click += (_, _) => AddAction(action);
 
@@ -118,13 +119,11 @@ public partial class ActionsToolbarEditorWindow : Window
         return new ContextMenu { ItemsSource = rootItems };
     }
 
-    private static TextBlock CreateIcon(string icon) => new()
+    private static IconPresenter CreateIcon(string icon) => new()
     {
-        Classes = { "icon" },
-        Text = icon,
+        Icon = icon,
         FontSize = 15,
-        Width = 18,
-        TextAlignment = Avalonia.Media.TextAlignment.Center
+        Width = 18
     };
 
     private void AddAction(HotkeyType action)
@@ -215,7 +214,7 @@ public sealed class ActionsToolbarItem
     public HotkeyType Action { get; }
     public bool IsSeparator => Action == HotkeyType.None;
     public string Title => IsSeparator ? Strings.ActionsToolbarEditorWindow_Separator : Action.GetLocalizedDescription();
-    public string Icon => TaskHelpers.FindMenuLucideIcon(Action);
+    public string Icon => TaskHelpers.FindMenuIcon(Action);
 
     public ActionsToolbarItem(HotkeyType action)
     {

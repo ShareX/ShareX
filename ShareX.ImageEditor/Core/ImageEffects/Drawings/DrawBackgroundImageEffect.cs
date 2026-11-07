@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DrawBackgroundImageEffect : ImageEffectBase
     public override string Id => "draw_background_image";
     public override string Name => "Background image";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.image;
+    public override string IconKey => AppIcons.Image;
     public override string Description => "Draws a background image behind the source image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

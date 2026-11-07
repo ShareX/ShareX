@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="qo" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0330ba"/>
+<stop offset="1" stop-color="#000572"/>
+</linearGradient>
+<linearGradient id="qf" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7a9cf6"/>
+<stop offset="0.25" stop-color="#5576dc"/>
+<stop offset="0.5" stop-color="#2a4fbd"/>
+<stop offset="0.72" stop-color="#3460d8"/>
+<stop offset="1" stop-color="#4374f6"/>
+</linearGradient>
+<linearGradient id="qs" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.05"/>
+</linearGradient>
+<linearGradient id="qg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff"/>
+<stop offset="0.6" stop-color="#d0d0d4"/>
+<stop offset="1" stop-color="#dbdbdb"/>
+</linearGradient>
+</defs>
+<circle cx="8" cy="8" r="6.6" fill="url(#qf)"/>
+<circle cx="8" cy="8" r="5.6" fill="none" stroke="#7d9cff" stroke-opacity=".35"/>
+<path d="M2.6,7.2C3,4.4 5.2,2.5 8,2.5C10.8,2.5 13,4.4 13.4,7.2C11.2,5.9 9.6,6.2 8,6.8C6.4,7.3 4.6,7.6 2.6,7.2Z" fill="url(#qs)"/>
+<circle cx="8" cy="8" r="6.5" fill="none" stroke="url(#qo)" stroke-opacity=".8"/>
+<path d="M6.3,5.3C6.3,3.9 10.3,3.7 9.9,5.6C9.7,6.6 8,7 8,8.3V8.8" fill="none" stroke="url(#qg)" stroke-width="1.55" stroke-linejoin="round"/>
+<rect x="7" y="10" width="2" height="2" rx=".35" fill="#eeeeee"/>
+</svg>

@@ -63,7 +63,7 @@ public sealed class NavigatorPanel : EditorPanel
 
     public override string Id => "navigator";
 
-    public override string Title => "Navigator";
+    public override string Title => Strings.EditorCommands_Navigator;
 
     private void PanTo(Point p)
     {

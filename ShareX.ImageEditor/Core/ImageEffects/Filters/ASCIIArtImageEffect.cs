@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class ASCIIArtImageEffect : ImageEffectBase
     public override string Id => "ascii_art";
     public override string Name => "ASCII art";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.square_terminal;
+    public override string IconKey => AppIcons.Terminal;
     public override string Description => "Converts the image into ASCII character art.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

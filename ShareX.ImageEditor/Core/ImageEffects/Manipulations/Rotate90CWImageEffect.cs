@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Manipulations;
@@ -33,7 +33,7 @@ public sealed class Rotate90CWImageEffect : ImageEffectBase
     public override string Id => "rotate_90_clockwise";
     public override string Name => "Rotate 90\u00b0 clockwise";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.rotate_cw;
+    public override string IconKey => ImageEffectIcons.RotateClockwise;
     public override string Description => "Rotates the image 90 degrees clockwise.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

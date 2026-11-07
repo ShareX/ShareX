@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class InnerShadowImageEffect : ImageEffectBase
     public override string Id => "inner_shadow";
     public override string Name => "Inner shadow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.square_dashed;
+    public override string IconKey => ImageEffectIcons.SquareDashed;
     public override string Description => "Adds an inner shadow along the edges of opaque regions.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

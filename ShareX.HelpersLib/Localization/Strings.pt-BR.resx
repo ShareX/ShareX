@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconhecer texto (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Abrir no editor de fotos</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Realizar ações</value>
   </data>
@@ -785,6 +788,9 @@ Mesmo assim, deseja executá-lo?</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Capturar região</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capturar região (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Régua</value>

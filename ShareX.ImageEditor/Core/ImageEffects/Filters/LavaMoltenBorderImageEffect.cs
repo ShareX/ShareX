@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class LavaMoltenBorderImageEffect : ImageEffectBase
     public override string Id => "lava_molten_border";
     public override string Name => "Lava molten border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.flame;
+    public override string IconKey => ImageEffectIcons.Flame;
     public override string Description => "Adds a volcanic border with dark cracked rock and glowing molten lava seams.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+<defs>
+<linearGradient id="exFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfabc"/><stop offset="0.25" stop-color="#f6e576"/><stop offset="0.48" stop-color="#eedd66"/><stop offset="0.52" stop-color="#d4d13c"/><stop offset="0.7" stop-color="#dad436"/><stop offset="1" stop-color="#eedf2c"/></linearGradient>
+<linearGradient id="exEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccb301"/><stop offset="1" stop-color="#957f00"/></linearGradient>
+<linearGradient id="exMark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#787878"/><stop offset="0.35" stop-color="#606060"/><stop offset="0.6" stop-color="#161607"/><stop offset="1" stop-color="#5f5e1a"/></linearGradient>
+</defs>
+<path d="M14.6 2.9 Q16 1.4 17.4 2.9 L30.2 27.7 Q30.9 29.5 29.2 29.5 H2.8 Q1.1 29.5 1.8 27.7 Z" fill="url(#exFill)"/>
+<path d="M2.9 27.8 L15.4 3.8 Q16 3.2 16.6 3.8 L29.1 27.8" fill="none" stroke="#ffffff" stroke-opacity=".5"/>
+<path d="M14.6 2.9 Q16 1.4 17.4 2.9 L30.2 27.7 Q30.9 29.5 29.2 29.5 H2.8 Q1.1 29.5 1.8 27.7 Z" fill="none" stroke="url(#exEdge)" stroke-opacity=".8" stroke-linejoin="round"/>
+<rect x="14.8" y="20" width="2.4" height="1" rx=".5" fill="#ece982" opacity=".8"/>
+<rect x="14.8" y="26" width="2.4" height="1" rx=".5" fill="#f7f28e" opacity=".8"/>
+<path d="M14.3 10.6 Q14.3 10 14.9 10 H17.1 Q17.7 10 17.7 10.6 L16.8 19.6 Q16.8 20 16.4 20 H15.6 Q15.2 20 15.2 19.6 Z" fill="url(#exMark)"/>
+<rect x="14.3" y="22" width="3.4" height="3.8" rx="1.3" fill="#000000"/>
+</svg>

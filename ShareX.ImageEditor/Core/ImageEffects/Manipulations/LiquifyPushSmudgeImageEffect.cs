@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class LiquifyPushSmudgeImageEffect : ImageEffectBase
     public override string Id => "liquify_push_smudge";
     public override string Name => "Liquify push / smudge";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.droplet;
+    public override string IconKey => ImageEffectIcons.Droplet;
     public override string Description => "Pushes and smudges pixels in a direction.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

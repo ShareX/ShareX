@@ -47,18 +47,18 @@ public sealed class HdrToningEditor : UserControl
         _histogram = source != null ? Adjustments.Histogram(source)[0] : new int[256];
 
         Grid top = DialogBuilder.Form();
-        DialogBuilder.AddRow(top, "Preset:", DialogBuilder.Combo(HdrToning.Presets.Select((preset, index) => (preset.Name, index)), 0, index =>
+        DialogBuilder.AddRow(top, Strings.HdrToningEditor_PresetColon, DialogBuilder.Combo(HdrToning.Presets.Select((preset, index) => (preset.Name, index)), 0, index =>
         {
             HdrToning.ApplyPreset(_settings, index);
             Rebuild();
             _changed();
         }));
-        DialogBuilder.AddRow(top, "Method:", DialogBuilder.Combo(
+        DialogBuilder.AddRow(top, Strings.HdrToningEditor_MethodColon, DialogBuilder.Combo(
         [
-            ("Local Adaptation", HdrMethod.LocalAdaptation),
-            ("Equalize Histogram", HdrMethod.EqualizeHistogram),
-            ("Exposure and Gamma", HdrMethod.ExposureAndGamma),
-            ("Highlight Compression", HdrMethod.HighlightCompression)
+            (Strings.HdrToningEditor_LocalAdaptation, HdrMethod.LocalAdaptation),
+            (Strings.HdrToningEditor_EqualizeHistogram, HdrMethod.EqualizeHistogram),
+            (Strings.HdrToningEditor_ExposureAndGamma, HdrMethod.ExposureAndGamma),
+            (Strings.HdrToningEditor_HighlightCompression, HdrMethod.HighlightCompression)
         ], (HdrMethod)(int)settings.Get("method"), method =>
         {
             _settings.Set("method", (float)method);
@@ -84,22 +84,22 @@ public sealed class HdrToningEditor : UserControl
                 break;
             case HdrMethod.ExposureAndGamma:
                 Grid form = DialogBuilder.Form();
-                AddSlider(form, "Exposure:", "globalExposure", -20, 20, 0, 0.01, "0.00");
-                AddSlider(form, "Gamma:", "globalGamma", 0.01, 9.99, 1, 0.01, "0.00");
+                AddSlider(form, Strings.AdjustmentEditor_ExposureColon, "globalExposure", -20, 20, 0, 0.01, "0.00");
+                AddSlider(form, Strings.AdjustmentEditor_GammaColon, "globalGamma", 0.01, 9.99, 1, 0.01, "0.00");
                 _body.Children.Add(form);
                 break;
             default:
-                _body.Children.Add(new TextBlock { Text = "This method has no options.", Classes = { "dim" } });
+                _body.Children.Add(new TextBlock { Text = Strings.HdrToningEditor_NoOptions, Classes = { "dim" } });
                 break;
         }
     }
 
     private void BuildLocalAdaptation()
     {
-        Grid glow = Section("Edge Glow");
-        AddSlider(glow, "Radius:", "radius", 1, 500, 300);
-        AddSlider(glow, "Strength:", "strength", 0.1, 4, 0.52, 0.01, "0.00");
-        CheckBox smooth = new() { Content = "Smooth Edges", IsChecked = _settings.Get("smoothEdges") > 0 };
+        Grid glow = Section(Strings.HdrToningEditor_EdgeGlow);
+        AddSlider(glow, Strings.HdrToningEditor_RadiusColon, "radius", 1, 500, 300);
+        AddSlider(glow, Strings.HdrToningEditor_StrengthColon, "strength", 0.1, 4, 0.52, 0.01, "0.00");
+        CheckBox smooth = new() { Content = Strings.HdrToningEditor_SmoothEdges, IsChecked = _settings.Get("smoothEdges") > 0 };
         smooth.IsCheckedChanged += (_, _) =>
         {
             _settings.Set("smoothEdges", smooth.IsChecked == true ? 1 : 0);
@@ -107,24 +107,24 @@ public sealed class HdrToningEditor : UserControl
         };
         DialogBuilder.AddFull(glow, smooth);
 
-        Grid tone = Section("Tone and Detail");
-        AddSlider(tone, "Gamma:", "gamma", 0.1, 2, 1, 0.01, "0.00");
-        AddSlider(tone, "Exposure:", "exposure", -5, 5, 0, 0.01, "0.00");
-        AddSlider(tone, "Detail:", "detail", -100, 300, 30);
+        Grid tone = Section(Strings.HdrToningEditor_ToneAndDetail);
+        AddSlider(tone, Strings.AdjustmentEditor_GammaColon, "gamma", 0.1, 2, 1, 0.01, "0.00");
+        AddSlider(tone, Strings.AdjustmentEditor_ExposureColon, "exposure", -5, 5, 0, 0.01, "0.00");
+        AddSlider(tone, Strings.HdrToningEditor_DetailColon, "detail", -100, 300, 30);
 
-        Grid advanced = Section("Advanced");
-        AddSlider(advanced, "Shadow:", "shadow", -100, 100, 0);
-        AddSlider(advanced, "Highlight:", "highlight", -100, 100, 0);
-        AddSlider(advanced, "Vibrance:", "vibrance", -100, 100, 0);
-        AddSlider(advanced, "Saturation:", "saturation", -100, 100, 20);
+        Grid advanced = Section(Strings.HdrToningEditor_Advanced);
+        AddSlider(advanced, Strings.HdrToningEditor_ShadowColon, "shadow", -100, 100, 0);
+        AddSlider(advanced, Strings.HdrToningEditor_HighlightColon, "highlight", -100, 100, 0);
+        AddSlider(advanced, Strings.AdjustmentEditor_VibranceColon, "vibrance", -100, 100, 0);
+        AddSlider(advanced, Strings.AdjustmentEditor_SaturationColon, "saturation", -100, 100, 20);
 
         CurveControl curve = new(_settings, 0, _histogram, _changed) { Width = 256, Height = 256 };
-        Button reset = new() { Content = "Reset Curve" };
+        Button reset = new() { Content = Strings.HdrToningEditor_ResetCurve };
         reset.Click += (_, _) => curve.ResetChannel();
         StackPanel curvePanel = new() { Spacing = 6 };
         curvePanel.Children.Add(new Border { BorderBrush = Brushes.Gray, BorderThickness = new Thickness(1), Child = curve, HorizontalAlignment = HorizontalAlignment.Left });
         curvePanel.Children.Add(reset);
-        _body.Children.Add(new Expander { Header = "Toning Curve and Histogram", Content = curvePanel, HorizontalAlignment = HorizontalAlignment.Stretch });
+        _body.Children.Add(new Expander { Header = Strings.HdrToningEditor_ToningCurveAndHistogram, Content = curvePanel, HorizontalAlignment = HorizontalAlignment.Stretch });
     }
 
     private Grid Section(string title)

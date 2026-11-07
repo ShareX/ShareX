@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class FrostedGlassIceEdgesImageEffect : ImageEffectBase
     public override string Id => "frosted_glass_ice_edges";
     public override string Name => "Frosted glass + ice edges";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.snowflake;
+    public override string IconKey => ImageEffectIcons.Snowflake;
     public override string Description => "Combines frosted glass distortion with icy edge highlights and cool tinting.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class GammaImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "gamma";
     public override string Name => "Gamma";
-    public override string IconKey => LucideIcons.gauge;
+    public override string IconKey => ImageEffectIcons.Gauge;
     public override string Description => "Adjusts the gamma level.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

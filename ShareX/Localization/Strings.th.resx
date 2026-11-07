@@ -472,6 +472,18 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>ปุ่มลัด ทำซ้ำ ช่วงเวลา (มิลลิวินาที)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>ชุดไอคอน:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>แบบดั้งเดิม</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>สมัยใหม่</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>รูปภาพ พิมพ์ การตั้งค่า...</value>
   </data>
@@ -632,7 +644,7 @@
     <value>แสดง "แก้ไขด้วย ShareX" ในเมนูบริบทของตัวจัดการไฟล์</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>แสดงปุ่ม "แก้ไขด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขรูปภาพ ShareX" ในเมนูบริบทของ Windows Explorer</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขภาพถ่าย ShareX" ในเมนูบริบทของ Windows Explorer</value>
@@ -1341,7 +1353,7 @@
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>แก้ไข ด้วย ShareX</value>
+    <value>แก้ไขในตัวแก้ไขรูปภาพ ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>แก้ไขในตัวแก้ไขภาพถ่าย ShareX</value>
@@ -1538,6 +1550,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>ตัวตรวจสอบเครือข่าย...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>ใหม่</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>ไม่มีค่าที่ตั้งไว้ของเอฟเฟกต์รูปภาพ</value>
   </data>
@@ -1564,6 +1579,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>พื้นที่...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>พื้นที่ (โปร่งใส)...</value>
   </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>เบราว์เซอร์จัดเก็บข้อมูลระยะไกล...</value>
@@ -2312,6 +2330,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>ปิดหน้าต่าง OCR หลังเปิดลิงก์บริการ</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>แถบเครื่องมือจับภาพพื้นที่แบบกะทัดรัด</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>กำหนดค่า...</value>
   </data>
@@ -2536,6 +2557,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>ย้ายขึ้น</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>โหมดหลายพื้นที่</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>ชื่อ</value>
@@ -3034,6 +3058,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>คลื่น เสียง</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>ความพยายามในการบีบอัด WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ค่าที่ต่ำกว่าจะเข้ารหัสได้เร็วกว่า ค่าที่สูงกว่าจะสร้างไฟล์ที่เล็กกว่า ทุกค่ารักษาคุณภาพของภาพไว้</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>ไม่สูญเสียคุณภาพ</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>คุณภาพ WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>ความกว้าง:</value>

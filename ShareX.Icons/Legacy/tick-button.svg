@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="tbFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5de56e"/><stop offset="0.25" stop-color="#46ce57"/><stop offset="0.5" stop-color="#16a827"/><stop offset="0.75" stop-color="#11be22"/><stop offset="1" stop-color="#11d922"/></linearGradient>
+<linearGradient id="tbEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aa15"/><stop offset="1" stop-color="#005d02"/></linearGradient>
+<linearGradient id="tbMark" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#c8c8c8"/><stop offset="0.3" stop-color="#d8d8d8"/><stop offset="1" stop-color="#f4f4f4"/></linearGradient>
+</defs>
+<rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="url(#tbFill)"/>
+<rect x="2" y="2" width="12" height="12" rx="1.5" fill="none" stroke="#ffffff" stroke-opacity=".22" stroke-width=".8"/>
+<rect x="1.5" y="1.5" width="13" height="13" rx="2" fill="none" stroke="url(#tbEdge)" stroke-opacity=".8"/>
+<path d="M3.1 8.4 L4.4 7.1 L6.5 9.2 L10.6 4.8 L11.9 6.1 L6.5 11.9 Z" fill="url(#tbMark)" stroke="#ffffff" stroke-opacity=".35" stroke-width=".5" stroke-linejoin="round"/>
+<path d="M3.6 8.6 L4.4 7.8" stroke="#ffffff" stroke-opacity=".6" stroke-width=".6"/>
+</svg>

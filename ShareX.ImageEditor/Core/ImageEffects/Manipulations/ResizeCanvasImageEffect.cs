@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ResizeCanvasImageEffect : ImageEffectBase
     public override string Id => "resize_canvas";
     public override string Name => "Resize canvas";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.expand;
+    public override string IconKey => AppIcons.Expand;
     public override string Description => "Resizes the canvas.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

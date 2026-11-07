@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class TrianglePixelateImageEffect : ImageEffectBase
     public override string Id => "triangle_pixelate";
     public override string Name => "Triangle pixelate";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.triangle;
+    public override string IconKey => ImageEffectIcons.Triangle;
     public override string Description => "Pixelates the image using triangular tiles.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

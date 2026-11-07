@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7f7f7f"/><stop offset=".75" stop-color="#4c4c4c"/><stop offset="1" stop-color="#171717"/></linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e6e6"/></linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bdbdbd"/><stop offset="1" stop-color="#cbcbcb"/></linearGradient>
+    <linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff"/><stop offset=".5" stop-color="#5dd1ff"/><stop offset="1" stop-color="#30c2ff"/></linearGradient>
+    <linearGradient id="as" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c7bbe"/><stop offset="1" stop-color="#06519c"/></linearGradient>
+  </defs>
+  <rect x=".5" y="3.5" width="15" height="8" rx=".4" fill="url(#bg)" stroke="url(#fl)" stroke-opacity=".42"/>
+  <path d="M2 5.5h2M2 7.5h2M2 9.5h2" stroke="url(#grip)"/>
+  <polygon points="8.5,11.5 12.5,11.5 12.5,9.7 15.4,12.5 12.5,15.3 12.5,13.5 8.5,13.5" fill="url(#af)" stroke="url(#as)" stroke-linejoin="round"/>
+  <path d="M9.5 12.5h3.6" stroke="#9de6ff" stroke-opacity=".6"/>
+</svg>

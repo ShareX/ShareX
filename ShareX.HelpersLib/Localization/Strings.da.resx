@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Registrér tekst (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Åbn i fotoredigering</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Udfør handlinger</value>
   </data>
@@ -785,6 +788,9 @@ Vil du stadig køre den?</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Tag billede af område</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Tag billede af område (gennemsigtigt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Lineal</value>

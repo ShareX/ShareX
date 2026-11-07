@@ -63,7 +63,7 @@ public static class MenuBuilder
         int staticCount = parent.Items.Count;
         if (node.Dynamic != null)
         {
-            parent.Items.Add(new MenuItem { Header = "(empty)", IsEnabled = false });
+            parent.Items.Add(new MenuItem { Header = Strings.MenuBuilder_Empty, IsEnabled = false });
         }
         parent.SubmenuOpened += (_, e) =>
         {
@@ -82,7 +82,7 @@ public static class MenuBuilder
         {
             while (parent.Items.Count > staticCount) parent.Items.RemoveAt(parent.Items.Count - 1);
             List<MenuNode> dynamic = node.Dynamic(editor).ToList();
-            if (dynamic.Count == 0) parent.Items.Add(new MenuItem { Header = "(empty)", IsEnabled = false });
+            if (dynamic.Count == 0) parent.Items.Add(new MenuItem { Header = Strings.MenuBuilder_Empty, IsEnabled = false });
             foreach (MenuNode child in dynamic) parent.Items.Add(CreateItem(editor, child));
         }
         foreach (object? item in parent.Items)

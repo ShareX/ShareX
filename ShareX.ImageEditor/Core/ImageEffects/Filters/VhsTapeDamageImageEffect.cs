@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class VhsTapeDamageImageEffect : ImageEffectBase
     public override string Id => "vhs_tape_damage";
     public override string Name => "VHS tape damage";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.videotape;
+    public override string IconKey => ImageEffectIcons.Videotape;
     public override string Description => "Simulates VHS tape degradation with distortion, noise, and color bleeding.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

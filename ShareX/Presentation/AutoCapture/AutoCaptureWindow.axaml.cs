@@ -31,6 +31,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using System;
@@ -75,7 +76,7 @@ public partial class AutoCaptureWindow : Window
             ToolTipText = Strings.AutoCaptureWindow_Title,
             IsVisible = false
         };
-        _trayIconBinding = LucideTrayIcon.Bind(_trayIcon, LucideIcons.clock);
+        _trayIconBinding = TrayIconImage.Bind(_trayIcon, AppIcons.Clock);
         _trayIcon.Clicked += OnTrayIconClick;
         _trayIconRegistration = DesktopServices.RegisterTrayIcon(_trayIcon);
 
@@ -120,8 +121,8 @@ public partial class AutoCaptureWindow : Window
     {
         if (!_viewModel.TryStart(ApplicationState.Settings.AutoCaptureRegion)) { RefreshAvailability(); return; }
         ExecuteText.Text = Strings.AutoCaptureWindow_Stop;
-        ExecuteIcon.Text = LucideIcons.square;
-        StatusIcon.Text = LucideIcons.timer;
+        ExecuteIcon.Icon = AppIcons.Stop;
+        StatusIcon.Icon = AppIcons.Timer;
         _screenshotTimer.Interval = TimeSpan.FromSeconds(1);
         _delay = AutoCaptureWindowViewModel.GetRepeatDelayMilliseconds(ApplicationState.Settings.AutoCaptureRepeatTime);
         _waitUploads = ApplicationState.Settings.AutoCaptureWaitUpload;
@@ -145,10 +146,10 @@ public partial class AutoCaptureWindow : Window
         if (_viewModel.IsClosed) return;
         StatusProgress.Value = 0;
         StatusText.Text = Strings.AutoCaptureWindow_Ready;
-        StatusIcon.Text = LucideIcons.timer;
+        StatusIcon.Icon = AppIcons.Timer;
         StatusIcon.Foreground = Avalonia.Media.Brushes.Gray;
         ExecuteText.Text = Strings.AutoCaptureWindow_Start;
-        ExecuteIcon.Text = LucideIcons.play;
+        ExecuteIcon.Icon = AppIcons.Play;
         RefreshAvailability();
     }
 
@@ -200,7 +201,7 @@ public partial class AutoCaptureWindow : Window
         TaskSettings taskSettings = TaskSettings;
         await _viewModel.TryCaptureAsync(rectangle, region => TaskHelpers.GetScreenshot(taskSettings).CaptureRectangleAsync(region), bitmap =>
         {
-            taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage);
+            taskSettings.AfterCaptureJob = taskSettings.AfterCaptureJob.Remove(AfterCaptureTasks.AnnotateImage, AfterCaptureTasks.OpenInPhotoEditor);
             taskSettings.GeneralSettings.PlaySoundAfterUpload = false;
             taskSettings.GeneralSettings.PlaySoundAfterAction = false;
             taskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted = false;

@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Media;
+using ShareX.Icons;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -38,6 +39,7 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     private bool _useSystemTheme = false;
     private string _accentColorHex = DefaultAccentColorHex;
     private bool _useSystemAccentColor = false;
+    private IconPack _iconPack = IconPack.Modern;
 
     public string Theme
     {
@@ -72,6 +74,12 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     {
         get => _useSystemAccentColor;
         set => SetField(ref _useSystemAccentColor, value);
+    }
+
+    public IconPack IconPack
+    {
+        get => _iconPack;
+        set => SetField(ref _iconPack, value);
     }
 
     private void SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)

@@ -40,9 +40,9 @@ public sealed class LassoTool : SelectionToolBase
 
     public override ToolId Id => ToolId.Lasso;
 
-    public override string Name => "Lasso Tool";
+    public override string Name => Strings.LassoTools_LassoTool;
 
-    public override string Hint => "Drag to draw a freehand selection. Release to close it.";
+    public override string Hint => Strings.LassoTools_LassoHint;
 
     public override ToolCursor Cursor => ToolCursor.Precise;
 
@@ -85,7 +85,7 @@ public sealed class LassoTool : SelectionToolBase
         using SKPath path = new();
         path.AddPoly(_points.ToArray(), true);
         _points.Clear();
-        ApplyPath(path, _mode, "Lasso");
+        ApplyPath(path, _mode, Strings.AutoSelectionTools_Lasso);
     }
 
     public override void DrawOverlay(OverlayContext context)
@@ -97,7 +97,7 @@ public sealed class LassoTool : SelectionToolBase
     {
         BuildCommonOptions(options);
         options.Separator();
-        options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host));
+        options.Button(Strings.EditorCommands_SelectAndMaskEllipsis, () => UI.Commands.EditorCommands.SelectAndMask(Host));
     }
 }
 
@@ -113,9 +113,9 @@ public sealed class PolygonalLassoTool : SelectionToolBase
 
     public override ToolId Id => ToolId.PolygonalLasso;
 
-    public override string Name => "Polygonal Lasso Tool";
+    public override string Name => Strings.LassoTools_PolygonalLassoTool;
 
-    public override string Hint => "Click to add points. Double-click, Enter or click the start point to close. Backspace removes the last point.";
+    public override string Hint => Strings.LassoTools_PolygonalLassoHint;
 
     public override ToolCursor Cursor => ToolCursor.Precise;
 
@@ -169,7 +169,7 @@ public sealed class PolygonalLassoTool : SelectionToolBase
         using SKPath path = new();
         path.AddPoly(_points.ToArray(), true);
         _points.Clear();
-        ApplyPath(path, _mode, "Polygonal Lasso");
+        ApplyPath(path, _mode, Strings.LassoTools_PolygonalLasso);
     }
 
     public override void Cancel()
@@ -204,9 +204,9 @@ public sealed class MagneticLassoTool : SelectionToolBase
 
     public override ToolId Id => ToolId.MagneticLasso;
 
-    public override string Name => "Magnetic Lasso Tool";
+    public override string Name => Strings.LassoTools_MagneticLassoTool;
 
-    public override string Hint => "Click to start, then move along an edge. Click to add anchors, double-click or Enter to close, Backspace removes an anchor.";
+    public override string Hint => Strings.LassoTools_MagneticLassoHint;
 
     public override ToolCursor Cursor => ToolCursor.Precise;
 
@@ -296,7 +296,7 @@ public sealed class MagneticLassoTool : SelectionToolBase
         if (points.Count < 3) return;
         using SKPath path = new();
         path.AddPoly(points.ToArray(), true);
-        ApplyPath(path, _mode, "Magnetic Lasso");
+        ApplyPath(path, _mode, Strings.LassoTools_MagneticLasso);
     }
 
     public override void Cancel()
@@ -318,8 +318,8 @@ public sealed class MagneticLassoTool : SelectionToolBase
     {
         BuildCommonOptions(options);
         options.Separator();
-        options.Number("Width:", 1, 256, () => Width, v => Width = (int)v, "0", "px");
-        options.Number("Contrast:", 1, 100, () => Contrast, v => Contrast = (int)v, "0", "%");
-        options.Number("Frequency:", 0, 100, () => Frequency, v => Frequency = (int)v);
+        options.Number(Strings.EditorCommands_WidthColon, 1, 256, () => Width, v => Width = (int)v, "0", "px");
+        options.Number(Strings.EditorCommands_ContrastColon, 1, 100, () => Contrast, v => Contrast = (int)v, "0", "%");
+        options.Number(Strings.LassoTools_FrequencyColon, 0, 100, () => Frequency, v => Frequency = (int)v);
     }
 }

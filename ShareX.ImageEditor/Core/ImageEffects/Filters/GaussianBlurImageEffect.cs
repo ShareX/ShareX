@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GaussianBlurImageEffect : ImageEffectBase
     public override string Id => "gaussian_blur";
     public override string Name => "Gaussian blur";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.circle_gauge;
+    public override string IconKey => ImageEffectIcons.Gauge;
     public override string Description => "Applies a Gaussian blur effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

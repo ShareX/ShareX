@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class PinchBulgeImageEffect : ImageEffectBase
     public override string Id => "pinch_bulge";
     public override string Name => "Pinch / bulge";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.maximize;
+    public override string IconKey => AppIcons.Expand;
     public override string Description => "Applies a pinch or bulge distortion to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="560" d:DesignHeight="300"
         x:Class="ShareX.Tools.PinToScreenStartupWindow"
         x:DataType="vm:PinToScreenStartupViewModel"
@@ -29,7 +30,7 @@
                         <Button Command="{Binding CaptureRegionCommand}" IsEnabled="{Binding CanCaptureRegion}"
                                 Height="88" HorizontalAlignment="Stretch">
                             <StackPanel Spacing="8" VerticalAlignment="Center">
-                                <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.scan}" HorizontalAlignment="Center"/>
+                                <controls:IconPresenter FontSize="24" Icon="{x:Static icons:AppIcons.Region}" HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_region}"/>
                             </StackPanel>
                         </Button>
@@ -37,14 +38,14 @@
                     <Button Grid.Column="1" Command="{Binding FromClipboardCommand}" IsEnabled="{Binding IsIdle}"
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">
-                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.clipboard_paste}" HorizontalAlignment="Center"/>
+                            <controls:IconPresenter FontSize="24" Icon="{x:Static icons:AppIcons.ClipboardPaste}" HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_From_clipboard}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding FromFileCommand}" IsEnabled="{Binding IsIdle}"
                             Height="88" HorizontalAlignment="Stretch">
                         <StackPanel Spacing="8" VerticalAlignment="Center">
-                            <TextBlock Classes="icon" FontSize="24" FontWeight="Normal" Text="{x:Static theming:LucideIcons.folder_open}" HorizontalAlignment="Center"/>
+                            <controls:IconPresenter FontSize="24" Icon="{x:Static icons:AppIcons.FolderOpen}" HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.PinToScreenStartupWindow_Select_image}"/>
                         </StackPanel>
                     </Button>

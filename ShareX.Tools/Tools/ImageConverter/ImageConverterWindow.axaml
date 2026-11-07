@@ -1,12 +1,13 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
         xmlns:controls="using:ShareX.Tools.Controls"
         xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="1180" d:DesignHeight="650"
         x:Class="ShareX.Tools.ImageConverterWindow"
         x:DataType="vm:ImageConverterViewModel"
@@ -25,12 +26,12 @@
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,*" ColumnSpacing="8">
                             <Button Grid.Column="0" Command="{Binding AddCommand}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.plus}" Classes="icon"/>
+                                    <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                     <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Add}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
-                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" Classes="icon"/>
+                                <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                             </Button>
                             <TextBlock Grid.Column="2" Text="{Binding ImageCountText}"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -46,10 +47,9 @@
                                 <ListBox.ItemTemplate>
                                     <DataTemplate x:CompileBindings="False">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
-                                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
-                                                       Classes="icon"
-                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                       VerticalAlignment="Center"/>
+                                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"
+                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                        VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1" Text="{Binding}"
                                                        TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
                                         </Grid>
@@ -59,10 +59,9 @@
                             <StackPanel IsVisible="{Binding !HasImages}"
                                         HorizontalAlignment="Center" VerticalAlignment="Center"
                                         Spacing="8" IsHitTestVisible="False">
-                                <TextBlock Text="{x:Static theming:LucideIcons.square_dashed}"
-                                           Classes="icon" FontSize="42"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.DragDropUpload}" FontSize="42"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                            HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button}"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             </StackPanel>
@@ -82,15 +81,28 @@
                                               ItemsSource="{Binding OutputFormatOptions}"
                                               SelectedIndex="{Binding SelectedOutputFormatIndex}"/>
                                 </Grid>
-                                <Grid Grid.Row="2" ColumnDefinitions="110,*,Auto" ColumnSpacing="10"
-                                      IsVisible="{Binding HasQuality}">
-                                    <TextBlock x:Name="QualityLabel" Classes="row-label" TextWrapping="Wrap"
-                                               Text="{Binding QualityLabel}" ToolTip.Tip="{Binding QualityHint}"/>
-                                    <Slider x:Name="QualitySlider" Grid.Column="1" Minimum="0" Maximum="100"
-                                            Value="{Binding Quality}" ToolTip.Tip="{Binding QualityHint}"/>
-                                    <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
-                                               MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                </Grid>
+                                <StackPanel Grid.Row="2" Spacing="10">
+                                    <CheckBox x:Name="WebpLosslessBox" IsVisible="{Binding IsWebp}"
+                                              IsChecked="{Binding WebpLossless, Mode=TwoWay}"
+                                              Content="{x:Static localization:Strings.ImageConverterWindow_WebPLossless}"/>
+                                    <Grid ColumnDefinitions="110,*,Auto" ColumnSpacing="10" IsVisible="{Binding HasQuality}">
+                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   Text="{x:Static localization:Strings.ImageConverterWindow_Quality}"/>
+                                        <Slider Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Quality}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding Quality, StringFormat={}{0:0}%}"
+                                                   MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid ColumnDefinitions="110,*,Auto" ColumnSpacing="10" IsVisible="{Binding HasCompressionEffort}">
+                                        <TextBlock Classes="row-label" TextWrapping="Wrap"
+                                                   ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
+                                                   Text="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffort}"/>
+                                        <Slider Grid.Column="1" Minimum="0" Maximum="100"
+                                                ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_WebPCompressionEffortHint}"
+                                                Value="{Binding WebpCompressionEffort}"/>
+                                        <TextBlock Grid.Column="2" Text="{Binding WebpCompressionEffort, StringFormat={}{0:0}}"
+                                                   MinWidth="40" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </StackPanel>
                                 <StackPanel x:Name="PngOptionsPanel" Grid.Row="2" Spacing="8" IsVisible="{Binding IsPng}">
                                     <TextBlock Classes="row-label"
                                                Text="{x:Static localization:Strings.ImageConverterWindow_PNGBitDepth}"/>
@@ -127,9 +139,6 @@
                                               ToolTip.Tip="{x:Static localization:Strings.ImageConverterWindow_JPEGSubsamplingHint}"
                                               SelectedIndex="{Binding SelectedJpegSubsamplingIndex, Mode=TwoWay}"/>
                                 </StackPanel>
-                                <CheckBox x:Name="WebpLosslessBox" Grid.Row="3" IsVisible="{Binding IsWebp}"
-                                          IsChecked="{Binding WebpLossless, Mode=TwoWay}"
-                                          Content="{x:Static localization:Strings.ImageConverterWindow_WebPLossless}"/>
                                 <Grid Grid.Row="4" ColumnDefinitions="110,*" ColumnSpacing="10"
                                       IsVisible="{Binding HasBackgroundColor}">
                                     <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageConverterWindow_BackgroundColor}"/>
@@ -187,11 +196,10 @@
                                                                 StretchDirection="DownOnly"
                                                                 IsHitTestVisible="False"/>
                             </Border>
-                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
-                                       IsVisible="{Binding !HasImages}"
-                                       Classes="icon" FontSize="54"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"
+                                                        IsVisible="{Binding !HasImages}" FontSize="54"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Grid>
                 </Border>
@@ -200,7 +208,7 @@
             <Button Grid.Row="1" Command="{Binding ConvertCommand}" IsEnabled="{Binding CanConvert}"
                     HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal" Spacing="8">
-                    <TextBlock Text="{x:Static theming:LucideIcons.refresh_cw}" Classes="icon"/>
+                    <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Refresh}"/>
                     <TextBlock Text="{x:Static localization:Strings.ImageConverterWindow_Convert_images}"/>
                 </StackPanel>
             </Button>

@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform;
 using System;
 using System.IO;
 using System.IO.Pipes;
@@ -142,6 +143,8 @@ namespace ShareX.HelpersLib
                 {
                     namedPipeClient.Connect(ConnectTimeout);
 
+                    AllowFirstInstanceToSetForeground(namedPipeClient);
+
                     using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8))
                     {
                         writer.Write(args.Length);
@@ -152,6 +155,20 @@ namespace ShareX.HelpersLib
                         }
                     }
                 }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
+        }
+
+        // Only the foreground process may bring a window to front; others just flash in the taskbar.
+        // This instance was usually started by the foreground process (for example Explorer), so it passes that right on to the first instance.
+        private static void AllowFirstInstanceToSetForeground(NamedPipeClientStream namedPipeClient)
+        {
+            try
+            {
+                PlatformServices.Current.ApplicationLaunch.AllowPipeServerToTakeForeground(namedPipeClient.SafePipeHandle);
             }
             catch (Exception e)
             {

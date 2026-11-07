@@ -192,6 +192,15 @@ public sealed unsafe class WindowsWindowService : IWindowService
         windowHandle != 0 && aboveWindowHandle != 0 && Win32.SetWindowPos((IntPtr)windowHandle, (IntPtr)aboveWindowHandle, 0, 0, 0, 0,
             Win32.SWP_NOMOVE | Win32.SWP_NOSIZE | Win32.SWP_NOACTIVATE);
 
+    public void DisableTransitions(long windowHandle)
+    {
+        if (windowHandle != 0)
+        {
+            int disabled = 1;
+            Win32.DwmSetWindowAttribute((IntPtr)windowHandle, Win32.DWMWA_TRANSITIONS_FORCEDISABLED, &disabled, sizeof(int));
+        }
+    }
+
     public bool ExcludeFromCapture(long windowHandle) =>
         windowHandle != 0 && Win32.SetWindowDisplayAffinity((IntPtr)windowHandle, Win32.WDA_EXCLUDEFROMCAPTURE);
 

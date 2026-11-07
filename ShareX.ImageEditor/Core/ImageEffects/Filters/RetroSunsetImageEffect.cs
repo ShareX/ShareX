@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class RetroSunsetImageEffect : ImageEffectBase
     public override string Id => "retro_sunset";
     public override string Name => "Retro sunset";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sunset;
+    public override string IconKey => ImageEffectIcons.Sunset;
     public override string Description => "Overlays retro 80s-style sunset gradient bands.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

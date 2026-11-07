@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="860" d:DesignHeight="570"
         x:Class="ShareX.Tools.IconConverterWindow"
         x:DataType="vm:IconConverterViewModel"
@@ -102,12 +103,10 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Spacing="10">
-                                <TextBlock Text="{x:Static theming:LucideIcons.file_image}"
-                                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                           FontWeight="Normal"
-                                           FontSize="46"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileImage}"
+                                                        FontSize="46"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_Drop_an_image_here}"
                                            FontSize="16"
                                            Foreground="{DynamicResource ShareX.Brush.Text}"
@@ -140,9 +139,8 @@
                     <Button Grid.Column="1"
                             Command="{Binding ConvertCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.file_down}"
-                                       Classes="icon"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileDownload}"
+                                                    VerticalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.IconConverterWindow_Convert}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>

@@ -37,7 +37,7 @@ public static class ShortcutsDialog
     public static async Task ShowAsync(PhotoEditorWindow owner)
     {
         Dictionary<string, string> edits = new(owner.Settings.Shortcuts);
-        TextBox filter = new() { PlaceholderText = "Search commands" };
+        TextBox filter = new() { PlaceholderText = Strings.ShortcutsDialog_SearchCommands };
         StackPanel list = new() { Spacing = 2 };
         void Build()
         {
@@ -83,13 +83,13 @@ public static class ShortcutsDialog
         }
         filter.TextChanged += (_, _) => Build();
         Build();
-        Button reset = new() { Content = "Use Defaults" };
+        Button reset = new() { Content = Strings.ShortcutsDialog_UseDefaults };
         reset.Click += (_, _) => { edits.Clear(); Build(); };
         DockPanel content = new() { Height = 520 };
         DockPanel.SetDock(filter, Dock.Top);
         content.Children.Add(filter);
         content.Children.Add(new ScrollViewer { Content = list, Margin = new Thickness(0, 8, 0, 0) });
-        if (!await DialogBuilder.ShowAsync(owner, "Keyboard Shortcuts", content, 640, "OK", null, [reset])) return;
+        if (!await DialogBuilder.ShowAsync(owner, Strings.ShortcutsDialog_Title, content, 640, Strings.DialogBuilder_OK, null, [reset])) return;
         // Store only gestures that differ from the defaults.
         owner.Settings.Shortcuts = edits.Where(e => CommandRegistry.Get(e.Key)?.DefaultGesture != e.Value).ToDictionary(e => e.Key, e => e.Value);
         owner.SaveSettings();

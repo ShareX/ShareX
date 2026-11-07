@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class AlphaImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "alpha";
     public override string Name => "Alpha";
-    public override string IconKey => LucideIcons.droplet;
+    public override string IconKey => ImageEffectIcons.Droplet;
     public override string Description => "Adjusts the alpha transparency.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

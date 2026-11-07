@@ -45,7 +45,7 @@ public sealed class CountItem
 
 public sealed class CountGroup
 {
-    public string Name { get; set; } = "Count Group 1";
+    public string Name { get; set; } = Strings.DocumentItems_CountGroup1;
     public SKColor Color { get; set; } = new(0x2E, 0x9B, 0xFF);
     public float MarkerSize { get; set; } = 6;
     public float LabelSize { get; set; } = 12;

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="as" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d9a6f2"/><stop offset="1" stop-color="#bd8ad6"/></linearGradient>
+<linearGradient id="al" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.8" stop-color="#dfecec"/><stop offset="1" stop-color="#e4f4f4"/></linearGradient>
+<linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8c59a5"/><stop offset="1" stop-color="#9865b1"/></linearGradient>
+<linearGradient id="am" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c7c7c8"/><stop offset="1" stop-color="#ababb9"/></linearGradient>
+<linearGradient id="ah" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c4995"/><stop offset="1" stop-color="#9865b1"/></linearGradient>
+<linearGradient id="ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#620390"/><stop offset="1" stop-color="#440066"/></linearGradient>
+</defs>
+<path d="M4 4h7v7H4l0 0z" fill="url(#as)"/>
+<rect x="5" y="4" width="5" height="3" fill="url(#al)"/>
+<rect x="5" y="7" width="5" height="1" fill="#8855a1"/>
+<rect x="5" y="8" width="5" height="3" fill="url(#ar)"/>
+<rect x="5" y="8" width="4" height="4" fill="url(#am)"/>
+<rect x="6" y="9" width="1" height="2" fill="url(#ah)"/>
+<path d="M5 3.5h5" stroke="#557f7f" stroke-opacity=".4"/>
+<path d="M5 3.5H3.5V10.5l1 1H11.5V3.5H10" fill="none" stroke="url(#ao)" stroke-opacity="0.62"/>
+<rect x="5" y="11" width="4" height="1" fill="#040404" fill-opacity=".45"/>
+</svg>

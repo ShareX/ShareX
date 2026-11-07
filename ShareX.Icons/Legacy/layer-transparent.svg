@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3377bb" stop-opacity="0.36"/>
+<stop offset="1" stop-color="#14589c" stop-opacity="0.5"/>
+</linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#bdd3e9" stop-opacity="0.72"/>
+<stop offset="1" stop-color="#bdd4e9" stop-opacity="0.72"/>
+</linearGradient>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.5"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
+</linearGradient>
+<linearGradient id="k" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#405f86" stop-opacity="0.26"/>
+<stop offset="1" stop-color="#405f86" stop-opacity="0.32"/>
+</linearGradient>
+</defs>
+<rect x="2" y="2" width="12" height="12" fill="url(#b)"/>
+<path d="M2,2h3v3h-3zM8,2h3v3h-3zM5,5h3v3h-3zM11,5h3v3h-3zM2,8h3v3h-3zM8,8h3v3h-3zM5,11h3v3h-3zM11,11h3v3h-3z" fill="url(#k)"/>
+<path d="M2,2H14V6Q6,6 2,10Z" fill="url(#s)"/>
+<rect x="2.5" y="2.5" width="11" height="11" fill="none" stroke="#ffffff" stroke-opacity=".15"/>
+<rect x="1.5" y="1.5" width="13" height="13" rx="1" fill="none" stroke="url(#o)"/>
+</svg>

@@ -54,7 +54,7 @@ public sealed class ColorPanel : EditorPanel
         {
             if (e.ClickCount >= 2)
             {
-                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, "Foreground Color", Editor);
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, Strings.ColorPanel_ForegroundColor, Editor);
                 if (c is SKColor col) Editor.Foreground = col;
                 return;
             }
@@ -65,15 +65,15 @@ public sealed class ColorPanel : EditorPanel
         {
             if (e.ClickCount >= 2)
             {
-                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, "Background Color", Editor);
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, Strings.ColorPanel_BackgroundColor, Editor);
                 if (c is SKColor col) Editor.Background = col;
                 return;
             }
             _editBackground = true;
             Refresh();
         };
-        ToolTip.SetTip(_fg, "Foreground color. Double-click opens the Color Picker.");
-        ToolTip.SetTip(_bg, "Background color. Double-click opens the Color Picker.");
+        ToolTip.SetTip(_fg, Strings.ColorPanel_ForegroundTip);
+        ToolTip.SetTip(_bg, Strings.ColorPanel_BackgroundTip);
 
         // Saturation/brightness field: hue fill with white and black gradient overlays.
         Grid field = new() { Cursor = new Cursor(StandardCursorType.Cross), MinHeight = 90, ClipToBounds = true };
@@ -153,7 +153,7 @@ public sealed class ColorPanel : EditorPanel
 
     public override string Id => "color";
 
-    public override string Title => "Color";
+    public override string Title => Strings.EditorCommands_Color;
 
     private SKColor Current => _editBackground ? Editor.Background : Editor.Foreground;
 

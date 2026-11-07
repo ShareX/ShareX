@@ -25,7 +25,7 @@
 
 /* TODO: SkiaSharp bug
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Manipulations;
@@ -35,7 +35,7 @@ public sealed class Rotate3DImageEffect : ImageEffectBase
     public override string Id => "rotate_3d";
     public override string Name => "Rotate 3D";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.rotate_3d;
+    public override string IconKey => ImageEffectIcons.Rotate3d;
     public override string Description => "Rotates the image in 3D space with perspective.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

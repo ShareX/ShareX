@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.Platform.Windows.Native;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -40,6 +41,14 @@ public sealed class WindowsApplicationLaunchService : IApplicationLaunchService
     private const int ErrorAccessDenied = 5;
 
     public FeatureSupport Support => FeatureSupport.Supported;
+
+    public void AllowPipeServerToTakeForeground(Microsoft.Win32.SafeHandles.SafePipeHandle pipe)
+    {
+        if (Win32.GetNamedPipeServerProcessId(pipe, out uint processId))
+        {
+            Win32.AllowSetForegroundWindow(processId);
+        }
+    }
 
     public string GetExecutablePath(string directory, string applicationName)
     {

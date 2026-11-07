@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class PaperStencilMaskImageEffect : ImageEffectBase
     public override string Id => "paper_stencil_mask";
     public override string Name => "Paper stencil mask";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.stamp;
+    public override string IconKey => AppIcons.Stamp;
     public override string Description => "Applies a paper stencil mask effect with adjustable threshold and edge strength.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

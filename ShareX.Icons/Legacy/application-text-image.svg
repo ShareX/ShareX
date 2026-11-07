@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" stop-opacity="0.4"/><stop offset="1" stop-color="#101010" stop-opacity="0.52"/></linearGradient>
+    <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc"/><stop offset="0.86" stop-color="#e2e2e2"/><stop offset="1" stop-color="#e7e7e7"/></linearGradient>
+    <linearGradient id="ft1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dcdcdc"/><stop offset="1" stop-color="#cbcbd7"/></linearGradient>
+    <linearGradient id="ft2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bbbbbb"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+    <linearGradient id="ti" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d3b118"/><stop offset="0.4" stop-color="#efd94a"/><stop offset="0.7" stop-color="#c4ad20"/><stop offset="1" stop-color="#94720a"/></linearGradient>
+  </defs>
+  <rect x="0" y="1" width="16" height="13" rx="1" fill="url(#fo)"/>
+  <rect x="1" y="2" width="14" height="1" fill="url(#ft1)"/>
+  <rect x="1" y="3" width="14" height="1" fill="url(#ft2)"/>
+  <rect x="1" y="4" width="14" height="9" fill="url(#fb)"/>
+  <rect x="1" y="4" width="14" height="1" fill="#fff"/>
+  <path d="M1.5 5V13M14.5 5V13" stroke="#fff" stroke-opacity=".3"/>
+  <rect x="2" y="7" width="4" height="3" fill="url(#ti)"/>
+  <rect x="2" y="8" width="1" height="1" fill="#68472f"/>
+  <rect x="4" y="8" width="1" height="1" fill="#f6ea70"/>
+  <rect x="2" y="5" width="8" height="1" fill="#c4c4c4"/>
+  <rect x="7" y="7" width="7" height="1" fill="#b8b8b8"/>
+  <rect x="7" y="8" width="7" height="1" fill="#dadada"/>
+  <rect x="7" y="9" width="7" height="1" fill="#bababa"/>
+  <rect x="7" y="10" width="4" height="1" fill="#d6d6d6"/>
+  <rect x="2" y="11" width="9" height="1" fill="#b4b4b4"/>
+</svg>

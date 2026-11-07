@@ -40,9 +40,9 @@ public sealed class NoteTool : ToolBase
 
     public override ToolId Id => ToolId.Note;
 
-    public override string Name => "Note Tool";
+    public override string Name => Strings.AnnotationTools_NoteTool;
 
-    public override string Hint => "Click to add a note. Click a note to edit it, drag to move it, Alt-click to delete it.";
+    public override string Hint => Strings.AnnotationTools_NoteHint;
 
     public override ToolCursor Cursor => ToolCursor.Arrow;
 
@@ -64,7 +64,7 @@ public sealed class NoteTool : ToolBase
         if (hit != null && input.Alt)
         {
             Doc.Notes.Remove(hit);
-            PushHistory("Delete Note");
+            PushHistory(Strings.AnnotationTools_DeleteNote);
             Host.InvalidateOverlay();
             return;
         }
@@ -80,10 +80,10 @@ public sealed class NoteTool : ToolBase
 
     private async Task AddNoteAsync(SKPoint position)
     {
-        string? text = await Host.PromptTextAsync("Note", $"Author: {Author}", string.Empty);
+        string? text = await Host.PromptTextAsync(Strings.AnnotationTools_Note, string.Format(Strings.AnnotationTools_AuthorLabel, Author), string.Empty, multiline: true);
         if (text == null || Doc == null) return;
         Doc.Notes.Add(new NoteItem { Position = position, Text = text, Author = Author, Color = Color });
-        PushHistory("Note");
+        PushHistory(Strings.AnnotationTools_Note);
         Host.InvalidateOverlay();
     }
 
@@ -102,25 +102,25 @@ public sealed class NoteTool : ToolBase
         if (note == null) return;
         if (_moved)
         {
-            PushHistory("Move Note");
+            PushHistory(Strings.AnnotationTools_MoveNote);
             return;
         }
-        string? text = await Host.PromptTextAsync("Note", $"Author: {note.Author}", note.Text);
+        string? text = await Host.PromptTextAsync(Strings.AnnotationTools_Note, string.Format(Strings.AnnotationTools_AuthorLabel, note.Author), note.Text, multiline: true);
         if (text == null) return;
         note.Text = text;
-        PushHistory("Edit Note");
+        PushHistory(Strings.AnnotationTools_EditNote);
         Host.InvalidateOverlay();
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Text("Author:", () => Author, v => Author = v, 140);
-        options.ColorButton("Note color", () => Color, c => Color = c);
-        options.Button("Clear All", () =>
+        options.Text(Strings.AnnotationTools_AuthorColon, () => Author, v => Author = v, 140);
+        options.ColorButton(Strings.AnnotationTools_NoteColorTip, () => Color, c => Color = c);
+        options.Button(Strings.AnnotationTools_ClearAll, () =>
         {
             if (Doc == null || Doc.Notes.Count == 0) return;
             Doc.Notes.Clear();
-            PushHistory("Clear Notes");
+            PushHistory(Strings.AnnotationTools_ClearNotes);
             Host.InvalidateOverlay();
         });
     }
@@ -136,9 +136,9 @@ public sealed class CountTool : ToolBase
 
     public override ToolId Id => ToolId.Count;
 
-    public override string Name => "Count Tool";
+    public override string Name => Strings.AnnotationTools_CountTool;
 
-    public override string Hint => "Click to place numbered count markers. Drag to move, Alt-click to remove.";
+    public override string Hint => Strings.AnnotationTools_CountHint;
 
     private CountItem? Hit(SKPoint p) => Doc?.Counts.LastOrDefault(c => SKPoint.Distance(c.Position, p) * Host.View!.Zoom < 8);
 
@@ -149,7 +149,7 @@ public sealed class CountTool : ToolBase
         if (hit != null && input.Alt)
         {
             Doc.Counts.Remove(hit);
-            PushHistory("Delete Count");
+            PushHistory(Strings.AnnotationTools_DeleteCount);
             Host.RefreshOptions();
             Host.InvalidateOverlay();
             return;
@@ -160,7 +160,7 @@ public sealed class CountTool : ToolBase
             return;
         }
         Doc.Counts.Add(new CountItem { Position = input.Doc, Group = Doc.ActiveCountGroup });
-        PushHistory("Count");
+        PushHistory(Strings.EditorCommands_Count);
         Host.RefreshOptions();
         Host.InvalidateOverlay();
     }
@@ -176,28 +176,28 @@ public sealed class CountTool : ToolBase
     {
         if (_dragging == null) return;
         _dragging = null;
-        PushHistory("Move Count");
+        PushHistory(Strings.AnnotationTools_MoveCount);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
         if (Doc == null) return;
         CountGroup group = Doc.CountGroups[Math.Clamp(Doc.ActiveCountGroup, 0, Doc.CountGroups.Count - 1)];
-        options.Label($"Count: {Doc.Counts.Count(c => c.Group == Doc.ActiveCountGroup)}");
-        options.Combo("Group:", Doc.CountGroups.Select((g, i) => (g.Name, i)), () => Doc.ActiveCountGroup, v => { Doc.ActiveCountGroup = v; Host.RefreshOptions(); }, 140);
+        options.Label(string.Format(Strings.AnnotationTools_CountLabel, Doc.Counts.Count(c => c.Group == Doc.ActiveCountGroup)));
+        options.Combo(Strings.AnnotationTools_GroupColon, Doc.CountGroups.Select((g, i) => (g.Name, i)), () => Doc.ActiveCountGroup, v => { Doc.ActiveCountGroup = v; Host.RefreshOptions(); }, 140);
         options.Button("+", () =>
         {
-            Doc.CountGroups.Add(new CountGroup { Name = $"Count Group {Doc.CountGroups.Count + 1}", Color = ColorMath.FromHsv(Doc.CountGroups.Count * 67 % 360, 0.8f, 0.95f) });
+            Doc.CountGroups.Add(new CountGroup { Name = string.Format(Strings.AnnotationTools_CountGroupNumber, Doc.CountGroups.Count + 1), Color = ColorMath.FromHsv(Doc.CountGroups.Count * 67 % 360, 0.8f, 0.95f) });
             Doc.ActiveCountGroup = Doc.CountGroups.Count - 1;
             Host.RefreshOptions();
-        }, "Create a new count group");
-        options.ColorButton("Group color", () => group.Color, c => { group.Color = c; Host.InvalidateOverlay(); });
-        options.Number("Marker Size:", 1, 10, () => group.MarkerSize, v => { group.MarkerSize = (float)v; Host.InvalidateOverlay(); }, "0", "px");
-        options.Number("Label Size:", 8, 72, () => group.LabelSize, v => { group.LabelSize = (float)v; Host.InvalidateOverlay(); }, "0", "pt");
-        options.Button("Clear", () =>
+        }, Strings.AnnotationTools_NewCountGroupTip);
+        options.ColorButton(Strings.AnnotationTools_GroupColorTip, () => group.Color, c => { group.Color = c; Host.InvalidateOverlay(); });
+        options.Number(Strings.AnnotationTools_MarkerSizeColon, 1, 10, () => group.MarkerSize, v => { group.MarkerSize = (float)v; Host.InvalidateOverlay(); }, "0", "px");
+        options.Number(Strings.AnnotationTools_LabelSizeColon, 8, 72, () => group.LabelSize, v => { group.LabelSize = (float)v; Host.InvalidateOverlay(); }, "0", "pt");
+        options.Button(Strings.EditorCommands_Clear, () =>
         {
             Doc.Counts.RemoveAll(c => c.Group == Doc.ActiveCountGroup);
-            PushHistory("Clear Count");
+            PushHistory(Strings.AnnotationTools_ClearCount);
             Host.RefreshOptions();
             Host.InvalidateOverlay();
         });

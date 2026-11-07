@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class NebulaStarfieldImageEffect : ImageEffectBase
     public override string Id => "nebula_starfield";
     public override string Name => "Nebula starfield";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sparkles;
+    public override string IconKey => AppIcons.Sparkles;
     public override string Description => "Generates a procedural nebula and starfield overlay.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

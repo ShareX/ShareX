@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class FilmStripFrameImageEffect : ImageEffectBase
     public override string Id => "film_strip_frame";
     public override string Name => "Film strip frame";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.film;
+    public override string IconKey => AppIcons.Film;
     public override string Description => "Wraps the image in a cinema film strip frame with sprocket holes.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

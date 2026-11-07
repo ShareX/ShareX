@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class AddNoiseImageEffect : ImageEffectBase
     public override string Id => "add_noise";
     public override string Name => "Add noise";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.spray_can;
+    public override string IconKey => ImageEffectIcons.SprayCan;
     public override string Description => "Adds random noise to the image.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

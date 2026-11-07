@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GlassSphereImageEffect : ImageEffectBase
     public override string Id => "glass_sphere";
     public override string Name => "Glass sphere";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.globe;
+    public override string IconKey => ImageEffectIcons.Sphere;
     public override string Description => "Applies a spherical glass lens distortion at the center.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

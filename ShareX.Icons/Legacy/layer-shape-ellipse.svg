@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3377bb" stop-opacity="0.36"/>
+<stop offset="1" stop-color="#14589c" stop-opacity="0.5"/>
+</linearGradient>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#acc7e3" stop-opacity="0.55"/>
+<stop offset="1" stop-color="#b1cce5" stop-opacity="0.63"/>
+</linearGradient>
+<linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffffff" stop-opacity="0.52"/>
+<stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
+</linearGradient>
+<linearGradient id="hh" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3b7cbd" stop-opacity="0.38"/>
+<stop offset="1" stop-color="#22609f" stop-opacity="0.48"/>
+</linearGradient>
+</defs>
+<ellipse cx="8" cy="7.5" rx="6.2" ry="5.7" fill="url(#b)"/>
+<path d="M2.428,10C1.396,8.055 1.65,5.74 3.086,4.024 C4.521,2.309 6.89,1.489 9.2,1.908 C11.509,2.327 13.362,3.912 13.981,6Q6.5,6.1 2.428,10Z" fill="url(#s)"/>
+<ellipse cx="8" cy="7.5" rx="5.5" ry="5" fill="none" stroke="#ffffff" stroke-opacity=".2"/>
+<ellipse cx="8" cy="7.5" rx="6.5" ry="6" fill="none" stroke="url(#o)"/>
+<rect x="0.5" y="6.5" width="2" height="2" rx=".45" fill="none" stroke="#2569ad" stroke-opacity=".42"/>
+<rect x="1" y="7" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
+<rect x="13.5" y="6.5" width="2" height="2" rx=".45" fill="none" stroke="#2569ad" stroke-opacity=".42"/>
+<rect x="14" y="7" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
+<rect x="6.5" y="0.5" width="2" height="2" rx=".45" fill="none" stroke="#3276ba" stroke-opacity=".42"/>
+<rect x="7" y="1" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
+<rect x="7.5" y="12.5" width="2" height="2" rx=".45" fill="none" stroke="#175b9f" stroke-opacity=".42"/>
+<rect x="8" y="13" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
+</svg>

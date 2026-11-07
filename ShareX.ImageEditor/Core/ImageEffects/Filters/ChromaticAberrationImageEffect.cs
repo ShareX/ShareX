@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class ChromaticAberrationImageEffect : ImageEffectBase
     public override string Id => "chromatic_aberration";
     public override string Name => "Chromatic aberration";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.aperture;
+    public override string IconKey => ImageEffectIcons.Aperture;
     public override string Description => "Simulates lens chromatic aberration with RGB channel splitting.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

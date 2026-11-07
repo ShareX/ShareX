@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class AnimeSpeedLinesImageEffect : ImageEffectBase
     public override string Id => "anime_speed_lines";
     public override string Name => "Anime speed lines";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scan_line;
+    public override string IconKey => AppIcons.ScanLine;
     public override string Description => "Overlays radial speed lines in a manga/anime style.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

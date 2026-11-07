@@ -472,6 +472,18 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>מרווח החזרה של מקשי קיצור (אלפיות שנייה)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>ערכת סמלים:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>קלאסי</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>מודרני</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>סמלים</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>הגדרות הדפסת תמונה...</value>
   </data>
@@ -632,7 +644,7 @@
     <value>הצג "ערוך באמצעות ShareX" בתפריט ההקשר של מנהל הקבצים</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>הצג את כפתור "ערוך עם ShareX" בתפריט ההקשר של סייר הקבצים</value>
+    <value>הצג את כפתור "ערוך בעורך התמונה של ShareX" בתפריט ההקשר של סייר הקבצים</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "ערוך בעורך התמונות של ShareX" בתפריט ההקשר של סייר הקבצים</value>
@@ -1341,7 +1353,7 @@
     <value>לא ניתן היה לכתוב תמונה לנתיב:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ערוך עם ShareX</value>
+    <value>ערוך בעורך התמונה של ShareX</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
     <value>ערוך בעורך התמונות של ShareX</value>
@@ -1538,6 +1550,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>מנטר רשת...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>חדש</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>אין הגדרות קבועות מראש לאפקטי תמונה</value>
   </data>
@@ -1564,6 +1579,9 @@
   </data>
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>אזור...</value>
+  </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>אזור (שקוף)...</value>
   </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>דפדפן אחסון מרוחק...</value>
@@ -2312,6 +2330,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>סגירת חלון OCR לאחר פתיחת קישור השירות</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>סרגל כלים קומפקטי ללכידת אזור</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>הגדרה...</value>
   </data>
@@ -2536,6 +2557,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>העברה למעלה</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>מצב ריבוי אזורים</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>שם</value>
@@ -3034,6 +3058,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>שמע Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>מאמץ דחיסת WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ערכים נמוכים מאפשרים קידוד מהיר יותר. ערכים גבוהים יוצרים קבצים קטנים יותר. כל הערכים שומרים על איכות התמונה.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>ללא אובדן</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>איכות WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>רוחב:</value>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class MeanRemovalImageEffect : ImageEffectBase
     public override string Id => "mean_removal";
     public override string Name => "Mean removal";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sigma;
+    public override string IconKey => ImageEffectIcons.Sigma;
     public override string Description => "Removes the mean value from colors.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

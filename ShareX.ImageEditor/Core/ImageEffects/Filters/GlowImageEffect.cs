@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GlowImageEffect : ImageEffectBase
     public override string Id => "glow";
     public override string Name => "Glow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.lightbulb;
+    public override string IconKey => AppIcons.Lightbulb;
     public override string Description => "Applies a glowing effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

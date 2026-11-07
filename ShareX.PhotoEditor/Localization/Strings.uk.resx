@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>Чорний:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>Чорні</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>Синій</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>Синій:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>Сині</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>Сині:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>Яскравість:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>Канал:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>Розфарбування</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>Кольори:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>Константа:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>Контраст:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>Клацніть, щоб додати точки, перетягніть для налаштування, перетягніть точку за межі графіка, щоб видалити її.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>Блакитний:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>Блакитний / Червоний:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>Блакитні</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>Блакитні:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>Щільність:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>Редагувати градієнт...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>Експозиція:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>Колір фільтра:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>Гамма:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>Гамма-корекція:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>Зелений:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>Зелені</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>Зелені:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>Світлі ділянки</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>Відтінок:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>Вхідний чорний:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>Вхідний білий:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>Рівні:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>Освітленість:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>Пурпуровий:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>Пурпуровий / Зелений:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>Пурпурові</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>Пурпурові:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>Середні тони</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>Монохромний</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>Нейтральні</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>Ця корекція не має параметрів.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>Зсув:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>Вихідний чорний:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>Вихідний канал:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>Вихідний білий:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>Зберегти яскравість</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>Червоний:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>Червоні</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>Червоні:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>Скинути канал</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>Інвертувати</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>Насиченість:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>Тіні</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>Рівень порогу:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>Тонування</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>Колір тонування:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>Тон:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>Використовувати попередню версію</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>Соковитість:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>Білі</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>Жовтий / Синій:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>Жовтий:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>Жовті</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>Жовті:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>Додати корекцію</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>Створити коригувальний шар «{0}»</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>Чорно-біле</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>Яскравість/контраст</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>Мікшер каналів</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>Баланс кольорів</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>Пошук кольору</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>Криві</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>Знебарвити</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>Експозиція</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>Карта градієнта</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR-тонування</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>Відтінок/насиченість</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>Інвертувати</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>Рівні</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>Підібрати колір</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>Фотофільтр</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>Постеризація</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>Заміна кольору</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>Вибіркова корекція кольору</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>Поріг</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>Барвистість</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Автор:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Автор: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Очистити все</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Очистити підрахунок</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Очистити нотатки</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Група підрахунку {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Клацніть, щоб поставити нумеровані мітки підрахунку. Перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Кількість: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Інструмент «Лічильник»</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Видалити мітку підрахунку</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Видалити нотатку</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Редагувати нотатку</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Група:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Колір групи</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Розмір підпису:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Розмір мітки:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Перемістити мітку підрахунку</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Перемістити нотатку</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Створити нову групу підрахунку</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Нотатка</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Колір нотатки</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Клацніть, щоб додати нотатку. Клацніть нотатку для редагування, перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Інструмент «Нотатка»</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Додати нову монтажну область</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Монтажна область {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Фон монтажної області</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Перетягніть на порожньому полотні, щоб створити монтажну область. Перетягніть заголовок монтажної області, щоб перемістити її разом із вмістом.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Перемістити монтажну область</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Інструмент «Монтажна область»</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Нова монтажна область</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (телефон)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (квадрат)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (планшет)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Додати</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Покращити край</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Ласо</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Чарівна паличка</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити схожі кольори. Shift додає, Alt віднімає.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Інструмент «Чарівна паличка»</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Виділення об’єкта</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Обведіть об’єкт прямокутником або ласо, щоб виділити його.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Інструмент «Виділення об’єкта»</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Швидке виділення</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Проведіть по області, щоб виділити її; виділення розширюється до країв. Alt віднімає.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Інструмент «Швидке виділення»</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Виділення об’єкта...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Пензель виділення</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Малюйте, щоб додати до виділення. Alt (або режим «Відняти») прибирає з нього.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Інструмент «Пензель виділення»</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>Позаду</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>Очистити</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>Затемнення основи</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>Освітлення основи</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>Затемнення</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>Темніший колір</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>Різниця</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>Розчинення</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>Ділення</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>Виключення</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>Жорстке світло</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>Жорстке змішування</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>Відтінок</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>Освітлення</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>Світліший колір</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>Лінійне затемнення</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>Лінійне освітлення (додати)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>Лінійне світло</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>Яскравість</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>Множення</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>Звичайний</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>Перекриття</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>Пропуск</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>Точкове світло</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>Насиченість</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>Екран</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>М’яке світло</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>Віднімання</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>Яскраве світло</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Увімкнути ефекти накопичення в стилі аерографа</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>«{0}» не може малювати на масці шару.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Фарба, що наноситься за один мазок</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Максимальне покриття фарбою за штрих (клавіші 0–9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Розмір від натиску</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Згладжування:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Коригувальний пензель</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Малюйте локальну корекцію. Кожен штрих змінює маску коригувального шару. Alt стирає корекцію.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Пензель «{0}»</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Інструмент «Коригувальний пензель»</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Корекція:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Ефект:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Автостирання</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Малюйте основним кольором. Shift+клацання проводить пряму лінію. [ ] змінюють розмір.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Інструмент «Пензель»</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Очищати після кожного штриха</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Замінює кольори, схожі на зразок, основним кольором.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Інструмент «Заміна кольору»</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Завантаження:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Завантажити колір (основний)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Змішування:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Змішує завантажену фарбу з кольорами полотна, як справжня фарба.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Інструмент «Змішувальний пензель»</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Новий шар для кожного штриха</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Малюйте жорсткі незгладжені лінії основним кольором.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Інструмент «Олівець»</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Зразок:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Вологість:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>Кут</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>Жорсткість</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>Новий набір пензля...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>Натиск пера керує потоком</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>Натиск пера керує розміром</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>Округлість</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>Розсіювання</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>Виберіть інструмент малювання, щоб редагувати його пензель.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>Розмір:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>Коливання розміру</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>Інтервал</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>Квадратний відбиток</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>Прив’язка:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>Поточний розмір: {0} × {1} пкс</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>Колір розширення полотна:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>Основний колір</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>Сірий</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>Відносно</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>Редагування скасовано, оскільки документ змінився.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>Відкрийте або створіть документ, щоб почати редагування (Ctrl+O / Ctrl+N), або перетягніть сюди зображення.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>Параметри каналу</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>Видалити поточний канал</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Завантажити канал як виділення</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>Створити новий канал</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>Швидка маска</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>Зберегти виділення як канал</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>Показувати канал як накладання</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>Не вдалося завантажити 3D LUT: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>Завантажити 3D LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>Завантажити 3D LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>Файл 3D LUT:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>Файли 3D LUT</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>Одновимірні таблиці пошуку не підтримуються.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>Дані таблиці не відповідають її розміру.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>Недійсний діапазон таблиці.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>У файлі немає запису LUT_3D_SIZE.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>Розмір таблиці {0} не підтримується.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>Колір фону</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>Колір фону. Подвійне клацання відкриває палітру кольорів.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>Основний колір</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>Основний колір. Подвійне клацання відкриває палітру кольорів.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>Додати до зразків</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Не вебколір. Клацніть зразок, щоб використати найближчий.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Лише вебкольори</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>Скинути</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>Клацніть, щоб відновити поточний колір</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>Палітра кольорів</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>Палітра кольорів ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Перетягніть, щоб задати область кадрування; перетягніть ззовні, щоб повернути. Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>Ш: {0:0} пкс  В: {1:0} пкс  Кут: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Інструмент «Кадрування»</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Видалити обрізані пікселі</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>В:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Початкові пропорції</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Кадрування перспективи</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Створіть рамку кадрування й перетягніть її кути за перспективою об’єкта. Enter кадрує та вирівнює.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Інструмент «Кадрування перспективи»</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Співвідношення</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Співвідношення:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (квадрат)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Правило третин</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Показати сітку</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Поміняти місцями ширину й висоту</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>Ш:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>Ні</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>Так</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>Група підрахунку 1</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° за годинниковою стрілкою</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° проти годинникової стрілки</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>застосувати корекцію</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>змінити розмір полотна</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>очистити</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>кадрувати зображення</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>вирівняти яскравість</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>виконати заливку</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>виконати заливку контуру</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>віддзеркалити полотно</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>змінити розмір зображення</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>показати все</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>повернути полотно</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>застосувати фільтр</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>виконати обведення</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>виконати обведення контуру</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>обрізати зображення</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Додати маску шару</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Додати векторну маску</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Коригування</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Повторити</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Вирівняти</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Усі</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Усі шари</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Альфа {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Кут (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Згладжування</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Застосувати маску шару</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Довільно...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Упорядкувати</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Упорядкувати шар</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Автоматичний колір</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Автоматичний контраст</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Автоматичний тон</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>Фоновий шар не може мати маску. Спочатку перетворіть його на звичайний шар.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>Фоновий шар не може мати стилі шару. Спочатку перетворіть його на звичайний шар (Шар &gt; Новий &gt; Шар із фону).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Фон із шару</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>На основі:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Синій</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Сині</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Рамка</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Межа...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Нижні краї</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Колір правого нижнього пікселя</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Перемістити вперед</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>На передній план</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Назва пензля</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Пензлі</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Не вдалося {0}, оскільки шар заблоковано.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Не вдалося {0}, оскільки немає активного шару.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Не вдалося {0}, оскільки активний шар не є піксельним. Спочатку растеризуйте його (Шар &gt; Растеризувати).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Не вдалося перетворити на смарт-об’єкт, оскільки шар порожній.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Не вдалося вирізати, оскільки шар заблоковано.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Останню операцію не можна послабити.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Не вдалося об’єднати з нижнім, оскільки під шаром немає іншого шару.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Не вдалося об’єднати з нижнім, оскільки нижній шар не є піксельним.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Розмір полотна</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Розмір полотна...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>По центру</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Змінити орієнтацію тексту</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Канал</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Канали</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Очистити</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Видалити напрямні</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Очистити стиль шару</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Очистити список останніх файлів</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Буфер обміну</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>Буфер обміну не містить зображення.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>За годинниковою стрілкою</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Закрити все</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Колір:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Заливка кольором</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Діапазон кольорів</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Діапазон кольорів...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Порада: спочатку візьміть зразок кольору піпеткою; він використовується як основний колір.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Стовпці:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Заливка з урахуванням вмісту</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Заливка з урахуванням вмісту...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Стиснути</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Стиснути на (пкс):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Стиснути...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Контраст:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Перетворити для смарт-фільтрів</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Перетворити на фігуру</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Перетворити на смарт-об’єкт</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Копіювати</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Копіювати стиль шару</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Копіювати об’єднане</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Не вдалося {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Не вдалося створити документ: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Не вдалося експортувати: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Не вдалося експортувати шари: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>Не вдалося розмістити «{0}», оскільки формат файлу не підтримується.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Не вдалося відновити: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Не вдалося зберегти: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>Не вдалося зберегти «{0}»: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Не вдалося зберегти фрагменти: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Підрахунок</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>Проти годинникової стрілки</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Створити відсічну маску</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Створити робочий контур</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Обрізати</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Вирізати</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Змінити режим екрана</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Зменшити розмір шрифту</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Типові основний і фоновий кольори</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Визначити набір пензля...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Визначити довільну фігуру...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Визначити візерунок...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Видалити</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Видалити канал</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Видалити шар</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Видалити маску шару</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Видалити шари</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Видалити контур</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Скасувати виділення</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Напрямок:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Вимкнути</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Вимкнути маску шару</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Спотворення</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Межі документа</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Дублювати...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Дублювати зображення</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Дублювати шар</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Редагувати в режимі швидкої маски</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Редагувати маску</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Цей ефект недоступний.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Бібліотека ефектів</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Увімкнути маску шару</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Увімкнути швидку маску</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Вирівняти яскравість</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Вийти</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Вимкнути швидку маску</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Розширити</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Розширити на (пкс):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Розширити...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Експорт</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Експортувати як</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Експортувати як...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>Експортовано шарів: {0} до {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Експортовано: {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Допоміжні елементи</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Послабити</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Послабити...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Послабити: {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Розтушовування</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Розтушовування:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Розтушовування...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Радіус розтушовування (пкс):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Заливка</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Виконати заливку...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Виконати заливку контуру</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Заповнити екран</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Залити фоновим кольором</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Залити основним кольором</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Припасувати до екрана</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Об’єднати шари</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Звести зображення</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Віддзеркалити полотно по горизонталі</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Віддзеркалити полотно по вертикалі</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Віддзеркалити по горизонталі</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Віддзеркалити по вертикалі</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>«{0}» не підтримує шари. Зберегти зведену копію в цьому форматі чи зберегти як проєкт ShareX Photo Editor, щоб зберегти шари?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Вільне трансформування</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Із прозорості</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Розкид:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Градієнт...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Заливка градієнтом</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Відтінки сірого</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Зелений</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Зелені</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Сітка</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Згрупувати шари</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Група {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Суміжні пікселі</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Напрямні</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Проміжок (пкс):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Висота (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Приховати все</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Приховати шари</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Приховати виділення</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Світлі ділянки</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Історія</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Горизонтальний</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Центри по горизонталі</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Параметри зображення</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Обертання зображення</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Розмір зображення</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Розмір зображення...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Збільшити розмір шрифту</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Інформація</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Усередині</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Інверсія</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Комбінації клавіш...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Останній фільтр</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Шар із фону</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Маска шару</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Шар {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Властивості шару</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Стиль шару</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Стиль шару...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Скопіювати на новий шар</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Вирізати на новий шар</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Шари</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Шари у файли</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Шари у файли...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Ліві краї</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Зв’язати шари</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Зв’язати/роз’єднати шари</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Завантажити виділення</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Завантажити виділення...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Розташування:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Заблокувати все</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Заблокувати напрямні</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Заблокувати шар</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Створити виділення</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Спочатку створіть виділення.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Створити робочий контур</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Поле (пкс):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Редагування</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Файл</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Фільтр</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Зображення</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Шар</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Виділення</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Текст</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_Перегляд</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>_Вікно</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Об’єднати з нижнім</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Об’єднати групу</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Об’єднати видимі</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Об’єднаний</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Середні тони</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Режим:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Змінити</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Виділення: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Перемістити шар</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Назва:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Навігатор</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Новий коригувальний шар</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Новий шар «{0}»</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Новий канал</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Створити...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Новий шар-заливка</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Новий із буфера обміну</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Новий зі знімка екрана (весь екран)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Новий зі знімка екрана (область)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Нова група</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Нова напрямна</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Нова напрямна...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Новий макет напрямних</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Новий макет напрямних...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Нові напрямні з фігури</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Новий шар</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Новий шар...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Новий контур</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Новий шар фігури</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Наступний документ</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Немає контуру, який можна завантажити як виділення.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Немає збережених виділень (альфа-каналів).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Нотатки</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>Зсув X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Зсув Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Непрозорість:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Відкрити</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Відкрити...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Відкрити останні</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Параметри</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Орієнтація</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Орієнтація:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Зовні</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Панелі</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Вставити</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Вставити як новий документ</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Вставити на місце</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Вставити в</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Вставити стиль шару</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Спеціальна вставка</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Вставлено</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Контур {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Контури</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Візерунок</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Візерунок...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Заливка візерунком</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Назва візерунка</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Візерунок {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Перспектива</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Закріпити на екрані</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Піксельна сітка</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Розмістити вбудоване</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Розмістити вбудоване...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Розмістити зображення в рамці</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Розмістити в рамці</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Позиція (пкс):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Налаштування...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Попередній перегляд</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Попередній документ</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Друк...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Властивості</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Очистити пам’ять</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Очистити буфер обміну</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Очистити історії</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Якість:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Швидкий експорт у PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Растеризувати</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Растеризувати шар</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Растеризувати стиль шару</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Растеризувати текстовий шар</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Червоний</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Повторити</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Червоні</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Звільнити відсічну маску</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Перейменувати шар</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Перейменувати шар...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Виділити знову</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Скинути «Основне»</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Скинути обертання перегляду</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Показати все</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Показати виділення</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Праві краї</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Обертання</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Повернути на 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Повернути на 90° за годинниковою стрілкою</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Повернути на 90° проти годинникової стрілки</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Повернути полотно</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Повернути полотно на {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Повернути на {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Рядки:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Лінійки</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Радіус зразка (пкс):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Зразок пензля {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Зразки кольорів (основний колір)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Зберегти</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Зберегти копію</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Зберегти копію...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Зберегти як</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Зберегти як...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Зберегти як проєкт</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Зберегти виділення</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Зберегти виділення...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Зберегти фрагменти</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Зберегти фрагменти...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Зберегти робоче середовище</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Копію збережено в {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Збережено: {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>Збережено фрагментів: {0} у {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Масштабування</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Знімок екрана</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Виділити все</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Виділення й маска</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Виділення й маска...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Вибрати:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Спочатку виберіть шар-рамку (намалюйте її інструментом «Рамка»).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Виберіть два або більше шарів (Ctrl+клацання на панелі «Шари»), щоб зв’язати їх.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Вибрати наступний шар</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Спочатку створіть прямокутне виділення плитки візерунка.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Вибрати попередній шар</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Виділити об’єкт</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Виділення об’єкта...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Краї виділення</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Перемістити назад</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>На задній план</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Надіслати до ShareX (завдання після захоплення)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Задати розмір шрифту</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Тіні</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Тіні/світлі ділянки...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Назва фігури</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Фігура {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Поділитися через ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Показати</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Подібні</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Нахил</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Тілесні тони</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Фрагменти</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (смарт-фільтр)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Смарт-об’єкти</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Згладжування</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Згладжування:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Згладити...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Прив’язка</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Прив’язати до</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Суцільний колір</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Суцільний колір...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Відбиток видимих</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Крок назад</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Крок уперед</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Вирівняти шар</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Обведення</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Колір обведення</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Обведення...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Виконати обведення контуру</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Об’єкт</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Зразки</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Поміняти місцями основний і фоновий кольори</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Панель інструментів...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Інструменти</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Верхні краї</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Колір лівого верхнього пікселя</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Трансформування</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Трансформувати виділення</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Трансформувати виділення...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Прозорі пікселі</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Обрізати</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Обрізати...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Панель інструментів у два стовпці</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Розгрупувати шари</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Роз’єднати шари</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Вивантажити з ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Вертикальний</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Центри по вертикалі</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Ширина:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Ширина (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Ширина (пкс):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Робоче середовище</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Робоче середовище збережено.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Збільшити</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Зменшити</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>Мазок</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>Вільні завитки</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>Вільний довгий</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>Вільний середній</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>Щільні завитки</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>Щільний довгий</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>Щільний середній</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>Щільний короткий</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>Внизу</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>Внизу ліворуч</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>Внизу праворуч</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>По центру</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>Ліворуч</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>Праворуч</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>Зверху</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>Угорі ліворуч</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>Угорі праворуч</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>Квадрат</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>Пензель</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>Олівець</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>Градієнт</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>Візерунок</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>Суцільний колір</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>Кут</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>Ромбоподібний</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>Лінійний</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>Радіальний</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>Дзеркальний</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>З урахуванням вмісту</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>Створення текстури</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>Відповідність наближенню</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>Фіксовані пропорції</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>Фіксований розмір</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>Звичайний</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>Об’єднати фігури</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>Виключити фігури, що перекриваються</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>Перетнути області фігур</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>Новий шар</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>Відняти передню фігуру</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>Контур</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>Фігура</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>Колір</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>Відтінок</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>Яскравість</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>Насиченість</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>Бікубічна</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>Бікубічна (різкіша)</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>Бікубічна (м’якша)</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>Білінійна</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Ланцош</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>За сусідніми пікселями</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>Зразок фону</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>Безперервно</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>Одноразово</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Довільна фігура</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Еліпс</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Лінія</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Багатокутник</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Прямокутник</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Трикутник</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>Контур</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>Пікселі</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>Фігура</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>По центру</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>Усередині</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>Зовні</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>По центру</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>За шириною</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>Ліворуч</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>Праворуч</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>Чітке</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>Немає</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>Різке</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>Плавне</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>Насичене</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>Світлі ділянки</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>Середні тони</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>Тіні</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Стирає пікселі, що збігаються з кольором під центром пензля (точкою проби).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Інструмент «Фонова гумка»</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Несуміжні</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Стирати до історії</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Стирає до прозорості або до кольору фону на заблокованих шарах. Alt стирає до історії.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Інструмент «Гумка»</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Обмеження:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Захистити основний колір</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>Експорт...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>Висота (пкс):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>Без втрат</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>Колір...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>Вміст:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>Колір заливки</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50% сірого</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>Непрозорість (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>Візерунок:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>Зберегти прозорість</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Дизеринг</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Редагувати...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Градієнт:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати градієнт. Shift обмежує кут кроком 45 градусів.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Кут: {0:0.0}°  Відстань: {1:0.0} пкс</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Інструмент «Градієнт»</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Градієнт: {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Чарівна гумка</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Клацніть, щоб стерти до прозорості пікселі схожого кольору.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Інструмент «Чарівна гумка»</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Заливка</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Клацніть, щоб залити пікселі схожого кольору основним кольором або візерунком.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Інструмент «Заливка»</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Прозорість</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Додати шум</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Середнє</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Розмиття</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Сильніше розмиття</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Розмиття рамкою</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Розмиття</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Спотворення</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Шум</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Інші</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Пікселювання</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Візуалізація</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Підвищення різкості</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Стилізація</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Хмари</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Кристалізація</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Усунення плям</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Різницеві хмари</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Дифузія</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Пил і подряпини</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Тиснення</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Фасет</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Волокна</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Виділення країв</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Розмиття за Гаусом</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Високочастотний фільтр</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Віньєтка освітлення</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Максимум</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Медіана</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Мінімум</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Мозаїка</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Розмиття в русі</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Зміщення</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Олійна фарба</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>За Гаусом</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Велике</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Середньо</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Вимк.</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Увімк.</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Полярні в прямокутні</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Прямокутні в полярні</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Мале</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Кругове</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Рівномірне</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Масштабування</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Ефект</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Амплітуда</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Кут</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Розмір комірки</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Відстань</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Розподіл</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Висота</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Горизонтальний</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Рівні</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Максимальний зсув %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Метод</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Режим</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Монохромний</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Кількість плиток</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Зберегти деталі</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Радіус</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Зменшити шум</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Розмір:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Сила</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Поріг</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Розкид</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Вертикальний</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Довжина хвилі</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Стискання</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Пуантилізм</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Полярні координати</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Радіальне розмиття</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Зменшення шуму</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>пульсація</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Підвищення різкості</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Різкість країв</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Сильніша різкість</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Розумна різкість</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Соляризація</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Сферизація</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Розмиття поверхні</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Плитки</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Закручування</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Контурна різкість</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Хвиля</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Очистити рамку</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Очистити вміст рамки</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Еліптична рамка</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Рамка {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Перетягніть, щоб створити заповнювач-рамку. Розмістіть або вставте зображення, щоб заповнити активну рамку.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Інструмент «Рамка»</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Розмістити файл зображення в активній рамці</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Прямокутна рамка</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>Додати контрольну точку</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>Користувацькі</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>Розташування</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>Попередні налаштування</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>Колір контрольної точки</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>Редактор градієнтів</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>Розширені</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>Деталізація:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>Світіння країв</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>Вирівнювання гістограми</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>Експозиція та гамма</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>Світлі ділянки:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>Стиснення світлих ділянок</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>Локальна адаптація</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>Метод:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>Цей метод не має параметрів.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>Набір:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>Радіус:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>Скинути криву</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>Тіні:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>Згладжування країв</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>Інтенсивність:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>Тон і деталізація</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>Крива тонування та гістограма</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>За замовчуванням</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>Плаский</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>Монохромний</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>Фотореалістичний</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>Насичений</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>Сюрреалістичний</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Область:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Малює стилізовані мазки за зразком джерела історії.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Інструмент «Архівний художній пензель»</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Не вдалося використати архівний пензель, оскільки розмір полотна в стані історії відрізняється.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Відновлює пікселі зі стану історії, вибраного джерелом на панелі «Історія».</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Інструмент «Архівний пензель»</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Спочатку задайте джерело історії на панелі «Історія».</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>Видалити знімок</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>Видалити стани після поточного</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>Задати джерело для архівного пензля</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>Створити новий документ із поточного стану</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>Створити новий знімок</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>Перейменувати знімок</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>Перейменувати знімок...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>Знімок {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>Усі підтримувані зображення</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>Не вдалося відкрити «{0}»: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>Файл не існує.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>Не вдалося відкрити «{0}», оскільки це не дійсний проєкт ShareX Photo Editor або файл пошкоджено.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>Проєкт ShareX Photo Editor</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>Для експорту в TIFF потрібна Windows.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>Не вдалося відкрити «{0}», оскільки це не підтримуване зображення або файл пошкоджено.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>Не вдалося виконати кодування WebP.</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>Зберігати пропорції</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>Відсоток:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>Повторна дискретизація:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Частота:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати виділення від руки. Відпустіть, щоб замкнути його.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Інструмент «Ласо»</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Магнітне ласо</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Клацніть для початку й ведіть уздовж краю. Клацання додає опорні точки, подвійне клацання або Enter замикає, Backspace видаляє точку.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Інструмент «Магнітне ласо»</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Прямолінійне ласо</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Клацніть, щоб додати точки. Подвійне клацання, Enter або клацання початкової точки замикає. Backspace видаляє останню точку.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Інструмент «Прямолінійне ласо»</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Тло</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} копія</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Шар 0</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>Шар</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>Текст</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>Кут:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>Режим накладання:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>Параметри накладання</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>Накладання кольору</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>Відстань:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>Тінь</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>Непрозорість заливки:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>Колір світіння</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>Внутрішня тінь</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>Колір внутрішньої тіні</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>Зовнішнє світіння</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>Колір накладання</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>Положення:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>Колір тіні</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>Додати маску шару (Alt: приховати все)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>Додати стиль шару</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>Зміна накладання</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>Параметри накладання...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>Зміна блокування шару</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>Видалити шар</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>Дублювати шар...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>Зміна непрозорості заливки</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>Шар повністю заблоковано</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>Група з шарів...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>Приховати шар</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>Властивості шару...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>Зв’язати або роз’єднати вибрані шари (виберіть кілька, клацаючи з Ctrl), щоб вони переміщувалися разом</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>Заблокувати все</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>Блокування:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>Заблокувати пікселі зображення</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>Зафіксувати положення</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>Заблокувати прозорі пікселі</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>Клацніть, щоб редагувати маску, Shift+клацання — вимкнути її, Ctrl+клацання — завантажити як виділення</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>Створити новий шар-заливку або коригувальний шар</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>Створити нову групу</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>Створити новий шар</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>Зміна непрозорості</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>Шар частково заблоковано</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>Показати шар</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>Перемкнути видимість (Alt+клацання показує лише цей шар)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Овальна область</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Овальна область»</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Перетягніть для виділення. Shift обмежує, Alt малює від центру. Перетягніть усередині виділення, щоб перемістити його.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Прямокутна область</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Прямокутна область»</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Уточнити край виділення</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити стовпець шириною 1 піксель.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Область (вертикальний рядок)»</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Клацніть, щоб виділити рядок висотою 1 піксель.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Інструмент «Область (горизонтальний рядок)»</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Стиль:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>Інтенсивність кольору:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>Цільове зображення</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>Послаблення:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>Статистика зображення</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>Шар:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>Яскравість:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>Нейтралізувати</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>Джерело:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>Ціль:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>Використовувати виділення в джерелі для розрахунку кольорів</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>Використовувати виділення в цілі для розрахунку корекції</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(порожньо)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Припасувати до екрана</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Перетягніть, щоб прокрутити вигляд. Утримуйте пробіл із будь-яким інструментом, щоб тимчасово використати «Руку». Подвійне клацання припасовує до екрана.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Інструмент «Рука»</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Скинути вигляд</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Перетягніть, щоб повернути вигляд полотна без зміни пікселів. Shift прив’язує кроком 15 градусів. Esc або «Скинути вигляд» відновлює його.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Інструмент «Обертання вигляду»</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Кут обертання:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Масштаб перетягуванням</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Клацніть для збільшення, Alt+клацання для зменшення. Перетягуйте ліворуч/праворуч для масштабування або намалюйте прямокутник, якщо цю функцію вимкнено.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Збільшити</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Зменшити</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Інструмент «Масштаб»</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>Чорний</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>Створити</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>Типовий (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>Значок 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>Квадрат 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Веб 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>Роздільна здатність (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>Новий документ</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>Прозорий</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>Без назви</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>Білий</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>Додати до виділення (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>Клацніть, щоб відкрити вибір наборів пензлів</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>Жорсткість:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>Перетнути з виділенням (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>Нове виділення</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>Без кольору</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>Відняти від виділення (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>Закрити групу вкладок</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>Згорнути групу панелей</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>Розгорнути групу панелей</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>Перемістити до групи з {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>Перемістити до нової групи</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>Меню панелі</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Додати опорну точку</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Клацніть сегмент контуру, щоб додати опорну точку.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Інструмент «Додати опорну точку»</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Об’єднати</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Об’єднати компоненти контуру, що перекриваються</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Перетворити точку</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Клацніть гладку точку, щоб зробити її кутовою; перетягніть кутову точку, щоб витягнути маркери. Перетягніть маркер, щоб зламати його.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Інструмент «Перетворити точку»</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Видалити опорну точку</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Клацніть опорну точку, щоб видалити її.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Інструмент «Видалити опорну точку»</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Клацніть або обведіть рамкою опорні точки для вибору; перетягуйте точки чи маркери для зміни форми. Alt перетягує маркер незалежно.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Інструмент «Пряме виділення»</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Перетягнути опорну точку</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Виключити</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Перетнути</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Перемістити контур</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Зсунути опорну точку</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Клацніть компонент контуру, щоб вибрати його, і перетягніть для переміщення. Alt+перетягування дублює, Delete видаляє.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Інструмент «Виділення контуру»</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Відняти наступні компоненти від першого</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Робочий контур</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>Додати векторну маску (шар фігури з контуру)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>Видалити поточний контур</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>Залити контур основним кольором</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Завантажити контур як виділення</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>Створити робочий контур із виділення</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>Створити новий контур</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>Перейменувати контур</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>Зберегти контур</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>Контур фігури {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>Обвести контур пензлем</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Автододавання/видалення</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Замкнути контур</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Перо кривизни</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Клацайте, щоб ставити точки; крива плавно проходить через них. Клацніть першу точку для замикання, Enter або Esc для завершення.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Інструмент «Перо кривизни»</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Апроксимація:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Довільне перо</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати контур від руки; його буде апроксимовано гладкими кривими. «Магнітне» прив’язує до країв.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Інструмент «Довільне перо»</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Магнітне</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Створити:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Маска</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Перо</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Клацніть, щоб додати кутові точки, перетягніть для гладких. Клацніть першу точку для замикання. Ctrl редагує точки, Alt перетворює їх.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Інструмент «Перо»</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Гумова стрічка</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Виділення...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>Без назви-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>Не вдалося виконати «{0}»: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} пкс ({2:0} ppi)   Док: {3:0.0} МБ</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - Фоторедактор - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>Не зберігати</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>Маска шару/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>Швидка маска/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>Немає відкритих документів.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>Помилка «{0}»: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>Параметри недоступні: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>Фоторедактор</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>Зберегти зміни в «{0}» перед закриттям?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>Вигляд: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Фоторедактор</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>Поділки:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>Лінія сітки кожні (пкс):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>Колір напрямних (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>Стани історії:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>Інтерполяція зображення:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>Запам’ятовувати розмір і положення вікна</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>Налаштування</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>Розмір сітки прозорості:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>Проєкт створено в новішій версії фоторедактора.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>Додати маску</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>Вирівнювання:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>Вирівняти текст</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>Застосувати маску</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>Монтажна область</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>Фон монтажної області</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>Тло:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>Жирний</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>Змінити заливку</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>Символ</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>Відсікти за нижнім шаром</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>Відсічна маска</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>Містить зображення</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>Перетворити на шар</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>Пунктир</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>Видалити маску</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>Видалити смарт-фільтр</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>Видалити смарт-фільтр</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>Документ</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>Ш: {0} пкс   В: {1} пкс</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>Редагувати текстовий шар</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>Порожня рамка</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>Порожній шар</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>Увімкнути</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>Розтушувати маску</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>Заливка:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>Шар-заливка</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>Шрифт:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>Рамка</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>Обведення рамки</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>Інвертувати</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>Інвертувати маску</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>Курсив</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>Інтерліньяж:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>Завантажити як виділення</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>Інструменти малювання тепер редагують маску: чорний приховує, білий показує.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>Змінити: {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>Немає документа</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>Немає</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>Абзац</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>Піксельний шар</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>Розмістити зображення...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>Радіус (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>Растеризувати текст</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>Скинути трансформування</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>Змінити розмір монтажної області</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>Роздільна здатність: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>Задати заливку</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>Задати шрифт</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>Задати інтерліньяж</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>Задати обведення</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>Задати вирівнювання обведення</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>Задати тип обведення</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>Задати товщину обведення</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>Задати колір тексту</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>Задати трекінг</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>Властивості фігури</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>Розмір:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>Смарт-фільтри</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>Смарт-об’єкт</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>Обведення:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>Колір тексту</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>Перемкнути смарт-фільтр</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>Трекінг:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>Підкреслений</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>Додати до зразка (Shift+клацання)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>Клацніть, щоб узяти зразок кольору</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>Піпетка</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>Зображення</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>Заміна</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>Результат:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>Виберіть колір для заміни</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>Виділення</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>Відняти від зразка (Alt+клацання)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>М’який аерограф</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>Чорний, білий</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>Цеглини</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>Плаский каліграфічний</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>Крейда</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>Шахівниця</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>Хром</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>Мідь</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>Діагональні лінії</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>Крапки</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>Від основного до фонового</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>Від основного до прозорого</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>Жорсткий піксель</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>Жорсткий круглий</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>Жорсткий круглий із натиском</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>Шестикутники</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>Океан</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>М’який круглий</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>М’який круглий із натиском</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>Бризки</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>Спектр</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>Жорсткий квадратний</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>Захід сонця</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>Прозорі смуги</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>Текстура деревини</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Переміщення з урахуванням вмісту</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Переміщення з урахуванням вмісту...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Інструмент «Переміщення з урахуванням вмісту»</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Рівень затемнення:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Призначення</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Створіть виділення (або скористайтеся будь-яким інструментом виділення), а потім перетягніть його.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Розширення</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Переміщення</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Латка</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Латка:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Інструмент «Латка»</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Розмір зіниці:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Червоні очі</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Клацніть червоне око (або обведіть його), щоб усунути червоний відблиск.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Інструмент «Червоні очі»</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Джерело</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Структура:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Перетягніть, щоб виміряти відстань і кут. Перетягніть кінцеву точку, щоб змінити її.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Інструмент «Лінійка»</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Повернути активний шар так, щоб лінія лінійки стала горизонтальною</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Використовувати шкалу вимірювань</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Очистити колірні еталони</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Колірний еталон</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Клацніть, щоб поставити до 10 колірних еталонів (показуються на панелі «Інформація»). Перетягніть для переміщення, Alt+клацання для видалення.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Інструмент «Колірний еталон»</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Поточний шар</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Видалити колірний еталон</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Клацніть, щоб узяти зразок основного кольору. Alt+клацання бере зразок кольору фону.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Інструмент «Піпетка»</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Дозволено не більше 10 колірних еталонів.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Перемістити колірний еталон</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Зразок:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Показувати кільце проби</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Перемістити виділення</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Стрілка</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Позначка</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Хмара</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Хрест</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Корона</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Інструмент «Довільна фігура»</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Крапля</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Інструмент «Еліпс»</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Стрілка в кінці</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Колір заливки (правий клік — без кольору)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Шестерня</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Серце</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Довжина: {0:0.0} пкс</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Блискавка</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати лінію. Shift обмежує кроком 45 градусів.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Інструмент «Лінія»</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Операція з контуром:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Інструмент «Багатокутник»</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Пазл</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Інструмент «Прямокутник»</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Форма:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Перетягніть, щоб намалювати фігуру. Shift зберігає пропорції, Alt малює від центру.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Сторони:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Хмаринка з текстом</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Зірка</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Співвідношення променів:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Стрілка на початку</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Колір обведення (правий клік — без кольору)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Інструмент «Трикутник»</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Товщина:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>Пошук команд</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>Комбінації клавіш</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>Використати типові</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Очистити фрагменти</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Видалити фрагмент</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Поділити...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Поділити фрагмент</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Редагувати фрагмент</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Редагувати параметри фрагмента</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Фікс. Ш:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Фрагмент не вибрано</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Рядки x стовпці (наприклад, 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Фрагмент</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Перетягніть, щоб створити фрагмент. Експортуйте їх через «Файл &gt; Експорт &gt; Зберегти фрагменти».</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Параметри фрагмента</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Клацніть, щоб вибрати фрагмент, перетягніть для переміщення або зміни розміру. Delete видаляє, подвійне клацання перейменовує.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Інструмент «Вибір фрагмента»</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Інструмент «Фрагмент»</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Фрагменти за напрямними</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Вирівнювання</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Джерело клонування: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Інструмент «Штамп»</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Відновлення...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Інструмент «Відновлювальний пензель»</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Імпресіонізм</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Не вдалося використати штамп, оскільки область для клонування не задано (Alt+клацання задає точку джерела).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Малюйте вибраним візерунком.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Інструмент «Візерунковий штамп»</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Проведіть по зайвих елементах, щоб видалити їх. Область відновлюється за оточенням.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Інструмент «Видалення»</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Видалення...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Інструмент «Точковий відновлювальний пензель»</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Проведіть по плямах і дефектах, щоб автоматично їх усунути.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Тип:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>Очистити останні файли</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>Новий файл</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>Новий зі знімка екрана (область)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>Тут з’являтимуться файли, які ви відкриваєте.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>Нещодавні</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>Показувати останні файли списком</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>Показувати останні файли плитками</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>Створити новий зразок з основного кольору</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — клацання: основний колір, Alt/Ctrl+клацання: фон, правий клік: видалити</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>Введіть текст. Ctrl+Enter — застосувати, Esc — скасувати.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>Інструмент «Текст»</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Розгорнути</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Згорнути</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Відновити</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Малюйте, щоб пом’якшити краї та деталі.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Інструмент «Розмиття»</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Малюйте, щоб затемнити області. Alt освітлює.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Інструмент «Затемнення»</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Малюйте, щоб освітлити області. Alt затемнює.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Інструмент «Освітлення»</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Малювання пальцем</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Захистити деталі</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Захистити тони</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Діапазон:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Підвищити насиченість</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Малюйте, щоб підвищити локальний контраст і різкість деталей.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Інструмент «Різкість»</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Перетягніть, щоб розмазати фарбу. «Малювання пальцем» починає з основного кольору.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Інструмент «Палець»</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Малюйте, щоб підвищити або знизити насиченість кольорів.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Інструмент «Губка»</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки цільовий шар приховано.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки шар заблоковано.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Не вдалося використати «{0}», оскільки цільовий шар не є піксельним. Спочатку растеризуйте шар (Шар &gt; Растеризувати).</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>Згорнути в один стовпець</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>Типові основний і фоновий кольори (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>Редагувати панель інструментів...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>Розгорнути у два стовпці</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>Редагувати в режимі швидкої маски (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>Змінити режим екрана (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>Задати колір фону</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>Задати основний колір</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>Поміняти місцями основний і фоновий кольори (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>Панель інструментів (кожен рядок — комірка панелі з її спливними інструментами). Виберіть інструмент і переставляйте його кнопками.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>Зроблено</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>Додаткові інструменти (приховані з панелі інструментів):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>Приховати інструмент</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>Об’єднати з групою вище</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>Перемістити раніше в групі</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>Перемістити групу вниз</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>Перемістити групу вгору</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>Окрема група</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>Відновити типові</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>Клацніть, щоб повернути на панель інструментів</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>Налаштувати панель інструментів</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Згладжування</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Застосувати</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Суміжні</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Потік:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Точковий зразок</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Зразок з усіх шарів</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Середнє {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Розмір зразка:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>Ш: {0:0} пкс  В: {1:0} пкс</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Допуск:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Вирівняти нижні краї</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Вирівняти центри по горизонталі</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Вирівняти ліві краї</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Вирівняти праві краї</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Вирівняти верхні краї</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Вирівняти центри по вертикалі</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Автовибір:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Клацання вибирає найвищий шар під вказівником (тимчасово з Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Скасувати трансформування (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Не вдалося трансформувати, оскільки шар порожній.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Не вдалося трансформувати, оскільки шар заблоковано або він порожній.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Не вдалося трансформувати виділення, оскільки шар заблоковано.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Застосувати трансформування (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Видалити напрямну</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Плаваючий</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Плаваюче виділення</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Перетягуйте маркери для масштабування (Shift: пропорційно, Alt: від центру), ззовні для повороту, Ctrl+перетягування кута для спотворення, Ctrl+перетягування сторони для нахилу. Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Група</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Інтерполяція:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Не вдалося виконати запит, оскільки шар заблоковано.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Перемістити напрямну</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Перетягніть, щоб перемістити шар або виділені пікселі. Alt+перетягування дублює, Shift обмежує. Стрілки зсувають.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Інструмент «Переміщення»</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Зсув</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Показувати елементи трансформування</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Скористайтеся «Редагування &gt; Вільне трансформування» (Ctrl+T), щоб трансформувати активний шар або виділення.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Усі великі</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Жирний курсив</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Скасувати поточні зміни (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Вирівняти текст по центру</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Застосувати поточні зміни (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Псевдожирний</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Псевдокурсив</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Клацніть, щоб додати точковий текст, перетягніть для тексту абзацу, клацніть наявний текст для редагування. Ctrl+Enter застосовує, Esc скасовує.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Інструмент «Горизонтальна текстова маска»</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Інструмент «Горизонтальний текст»</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Вирівняти текст ліворуч</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Клацніть, щоб ввести текст; під час застосування створюється виділення у формі тексту.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Звичайний</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Вирівняти текст праворуч</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Задати згладжування</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Задати накреслення</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Закреслений</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Колір тексту</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Перемкнути орієнтацію тексту</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Текстова маска</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Інструмент «Вертикальна текстова маска»</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Інструмент «Вертикальний текст»</value>
+  </data>
+</root>

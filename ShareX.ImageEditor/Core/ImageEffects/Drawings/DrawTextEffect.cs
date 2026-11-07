@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DrawTextEffect : ImageEffectBase
     public override string Id => "draw_text";
     public override string Name => "Text";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.type;
+    public override string IconKey => ImageEditorIcons.Text;
     public override string Description => "Draws text on the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

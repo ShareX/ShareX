@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DisplacementMapImageEffect : ImageEffectBase
     public override string Id => "displacement_map";
     public override string Name => "Displacement map";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.map;
+    public override string IconKey => ImageEffectIcons.Map;
     public override string Description => "Displaces pixels using a map image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

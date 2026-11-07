@@ -58,18 +58,18 @@ public sealed record CustomShape(string Name, string SvgPath)
 {
     public static List<CustomShape> Defaults { get; } =
     [
-        new("Heart", "M50 88 C20 66 4 48 4 30 C4 16 15 6 28 6 C38 6 46 12 50 20 C54 12 62 6 72 6 C85 6 96 16 96 30 C96 48 80 66 50 88 Z"),
-        new("Star", "M50 4 L61 37 L96 37 L68 58 L79 92 L50 71 L21 92 L32 58 L4 37 L39 37 Z"),
-        new("Arrow", "M4 36 L58 36 L58 14 L96 50 L58 86 L58 64 L4 64 Z"),
-        new("Check Mark", "M8 54 L22 40 L40 58 L80 14 L94 28 L40 86 Z"),
-        new("Speech Bubble", "M12 10 L88 10 Q96 10 96 18 L96 62 Q96 70 88 70 L44 70 L24 90 L28 70 L12 70 Q4 70 4 62 L4 18 Q4 10 12 10 Z"),
-        new("Lightning", "M58 4 L18 56 L44 56 L36 96 L82 38 L54 38 Z"),
-        new("Cloud", "M26 80 C12 80 4 70 4 60 C4 48 14 40 26 42 C28 26 40 16 56 16 C72 16 84 28 84 44 C92 46 96 54 96 62 C96 72 88 80 78 80 Z"),
-        new("Cross", "M36 4 L64 4 L64 36 L96 36 L96 64 L64 64 L64 96 L36 96 L36 64 L4 64 L4 36 L36 36 Z"),
-        new("Gear", "M44 4 L56 4 L58 16 Q64 18 68 21 L78 14 L86 22 L79 32 Q82 36 84 42 L96 44 L96 56 L84 58 Q82 64 79 68 L86 78 L78 86 L68 79 Q64 82 58 84 L56 96 L44 96 L42 84 Q36 82 32 79 L22 86 L14 78 L21 68 Q18 64 16 58 L4 56 L4 44 L16 42 Q18 36 21 32 L14 22 L22 14 L32 21 Q36 18 42 16 Z M50 34 A16 16 0 1 0 50.1 34 Z"),
-        new("Crown", "M6 80 L12 26 L34 50 L50 14 L66 50 L88 26 L94 80 Z"),
-        new("Droplet", "M50 4 C50 4 16 46 16 64 C16 82 31 96 50 96 C69 96 84 82 84 64 C84 46 50 4 50 4 Z"),
-        new("Puzzle", "M8 30 L36 30 C32 22 34 10 46 10 C58 10 60 22 56 30 L84 30 L84 54 C92 50 96 56 96 64 C96 72 92 78 84 74 L84 96 L8 96 Z")
+        new(Strings.ShapeTools_Heart, "M50 88 C20 66 4 48 4 30 C4 16 15 6 28 6 C38 6 46 12 50 20 C54 12 62 6 72 6 C85 6 96 16 96 30 C96 48 80 66 50 88 Z"),
+        new(Strings.ShapeTools_Star, "M50 4 L61 37 L96 37 L68 58 L79 92 L50 71 L21 92 L32 58 L4 37 L39 37 Z"),
+        new(Strings.ShapeTools_Arrow, "M4 36 L58 36 L58 14 L96 50 L58 86 L58 64 L4 64 Z"),
+        new(Strings.ShapeTools_CheckMark, "M8 54 L22 40 L40 58 L80 14 L94 28 L40 86 Z"),
+        new(Strings.ShapeTools_SpeechBubble, "M12 10 L88 10 Q96 10 96 18 L96 62 Q96 70 88 70 L44 70 L24 90 L28 70 L12 70 Q4 70 4 62 L4 18 Q4 10 12 10 Z"),
+        new(Strings.ShapeTools_Lightning, "M58 4 L18 56 L44 56 L36 96 L82 38 L54 38 Z"),
+        new(Strings.ShapeTools_Cloud, "M26 80 C12 80 4 70 4 60 C4 48 14 40 26 42 C28 26 40 16 56 16 C72 16 84 28 84 44 C92 46 96 54 96 62 C96 72 88 80 78 80 Z"),
+        new(Strings.ShapeTools_Cross, "M36 4 L64 4 L64 36 L96 36 L96 64 L64 64 L64 96 L36 96 L36 64 L4 64 L4 36 L36 36 Z"),
+        new(Strings.ShapeTools_Gear, "M44 4 L56 4 L58 16 Q64 18 68 21 L78 14 L86 22 L79 32 Q82 36 84 42 L96 44 L96 56 L84 58 Q82 64 79 68 L86 78 L78 86 L68 79 Q64 82 58 84 L56 96 L44 96 L42 84 Q36 82 32 79 L22 86 L14 78 L21 68 Q18 64 16 58 L4 56 L4 44 L16 42 Q18 36 21 32 L14 22 L22 14 L32 21 Q36 18 42 16 Z M50 34 A16 16 0 1 0 50.1 34 Z"),
+        new(Strings.ShapeTools_Crown, "M6 80 L12 26 L34 50 L50 14 L66 50 L88 26 L94 80 Z"),
+        new(Strings.ShapeTools_Droplet, "M50 4 C50 4 16 46 16 64 C16 82 31 96 50 96 C69 96 84 82 84 64 C84 46 50 4 50 4 Z"),
+        new(Strings.ShapeTools_Puzzle, "M8 30 L36 30 C32 22 34 10 46 10 C58 10 60 22 56 30 L84 30 L84 54 C92 50 96 56 96 64 C96 72 92 78 84 74 L84 96 L8 96 Z")
     ];
 
     public SKPath CreatePath(SKRect bounds)
@@ -105,11 +105,19 @@ public sealed class ShapeTool : ToolBase
         _ => ToolId.CustomShape
     };
 
-    public override string Name => _kind == ShapeKind.Custom ? "Custom Shape Tool" : $"{_kind} Tool";
+    public override string Name => _kind switch
+    {
+        ShapeKind.Rectangle => Strings.ShapeTools_RectangleTool,
+        ShapeKind.Ellipse => Strings.ShapeTools_EllipseTool,
+        ShapeKind.Triangle => Strings.ShapeTools_TriangleTool,
+        ShapeKind.Polygon => Strings.ShapeTools_PolygonTool,
+        ShapeKind.Line => Strings.ShapeTools_LineTool,
+        _ => Strings.ShapeTools_CustomShapeTool
+    };
 
     public override string Hint => _kind == ShapeKind.Line
-        ? "Drag to draw a line. Shift constrains to 45 degrees."
-        : "Drag to draw the shape. Shift keeps proportions, Alt draws from the center.";
+        ? Strings.ShapeTools_LineHint
+        : Strings.ShapeTools_ShapeHint;
 
     public static ShapeToolMode Mode { get; set; } = ShapeToolMode.Shape;
 
@@ -152,7 +160,7 @@ public sealed class ShapeTool : ToolBase
         _square = input.Shift;
         _center = input.Alt;
         SKRect r = DragRect(_start, _current, _square, _center);
-        Host.SetStatus(_kind == ShapeKind.Line ? $"Length: {SKPoint.Distance(_start, _current):0.0} px" : $"W: {r.Width:0} px  H: {r.Height:0} px");
+        Host.SetStatus(_kind == ShapeKind.Line ? string.Format(Strings.ShapeTools_LengthInfo, SKPoint.Distance(_start, _current)) : string.Format(Strings.Tools_SizeInfo, r.Width, r.Height));
         Host.InvalidateOverlay();
     }
 
@@ -262,7 +270,7 @@ public sealed class ShapeTool : ToolBase
                 using PixelSurface mask = MaskOps.FromPath(path, doc.Width, doc.Height);
                 uint color = ColorMath.FromColor(Host.Foreground);
                 SKRectI changed = LayerOps.CompositeMasked(doc, layer, (_, _) => color, mask, 1, LayerBlendMode.Normal);
-                PushHistory(Name.Replace(" Tool", string.Empty));
+                PushHistory(EnumNames.Get(_kind));
                 Host.InvalidateCanvas(changed);
                 return;
             }
@@ -271,8 +279,8 @@ public sealed class ShapeTool : ToolBase
                 doc.WorkPath ??= new VectorPath();
                 VectorPath target = doc.ActivePath?.Path ?? doc.WorkPath;
                 target.SubPaths.AddRange(VectorPath.FromSKPath(path).SubPaths);
-                if (doc.ActivePath == null) doc.ActivePath = new NamedPath("Work Path", doc.WorkPath);
-                PushHistory(Name.Replace(" Tool", string.Empty));
+                if (doc.ActivePath == null) doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
+                PushHistory(EnumNames.Get(_kind));
                 Host.InvalidateOverlay();
                 return;
             }
@@ -290,12 +298,12 @@ public sealed class ShapeTool : ToolBase
             };
             using SKPath? combined = current.Op(path, op);
             if (combined != null) existing.Path = VectorPath.FromSKPath(combined);
-            PushHistory(Name.Replace(" Tool", string.Empty));
+            PushHistory(EnumNames.Get(_kind));
             Host.InvalidateCanvas();
             return;
         }
 
-        string name = _kind == ShapeKind.Custom ? Custom.Name : _kind.ToString();
+        string name = _kind == ShapeKind.Custom ? Custom.Name : EnumNames.Get(_kind);
         int number = doc.AllLayers.Count(l => l.Name.StartsWith(name, StringComparison.Ordinal)) + 1;
         ShapeLayer shape = new($"{name} {number}", VectorPath.FromSKPath(path))
         {
@@ -307,7 +315,7 @@ public sealed class ShapeTool : ToolBase
         if (Fill == null && Stroke == null) shape.FillColor = Host.Foreground;
         doc.ActivePath = null;
         doc.AddLayer(shape);
-        PushHistory(Name.Replace(" Tool", string.Empty));
+        PushHistory(EnumNames.Get(_kind));
         Host.InvalidateCanvas();
     }
 
@@ -323,33 +331,33 @@ public sealed class ShapeTool : ToolBase
         options.EnumCombo(null, () => Mode, v => { Mode = v; Host.RefreshOptions(); }, 80);
         if (Mode == ShapeToolMode.Shape)
         {
-            options.Label("Fill:");
-            options.ColorButton("Fill color (right-click for none)", () => Fill ?? Host.Foreground, c => Fill = c, true, () => Fill == null && Stroke != null, () => Fill = null);
-            options.Label("Stroke:");
-            options.ColorButton("Stroke color (right-click for none)", () => Stroke ?? SKColors.Black, c => Stroke = c, true, () => Stroke == null, () => Stroke = null);
+            options.Label(Strings.PropertiesPanel_FillColon);
+            options.ColorButton(Strings.ShapeTools_FillColorTip, () => Fill ?? Host.Foreground, c => Fill = c, true, () => Fill == null && Stroke != null, () => Fill = null);
+            options.Label(Strings.PropertiesPanel_StrokeColon);
+            options.ColorButton(Strings.ShapeTools_StrokeColorTip, () => Stroke ?? SKColors.Black, c => Stroke = c, true, () => Stroke == null, () => Stroke = null);
             options.Number(string.Empty, 0, 1000, () => StrokeWidth, v => StrokeWidth = (float)v, "0.#", "px", 0.5, 56);
             options.EnumCombo(null, () => StrokeAlign, v => StrokeAlign = v, 80);
-            options.EnumCombo("Path op:", () => Combine, v => Combine = v, 100);
+            options.EnumCombo(Strings.ShapeTools_PathOpColon, () => Combine, v => Combine = v, 100);
         }
         options.Separator();
         switch (_kind)
         {
             case ShapeKind.Rectangle:
             case ShapeKind.Triangle:
-                options.Number("Radius:", 0, 10000, () => CornerRadius, v => CornerRadius = (float)v, "0", "px");
+                options.Number(Strings.HdrToningEditor_RadiusColon, 0, 10000, () => CornerRadius, v => CornerRadius = (float)v, "0", "px");
                 break;
             case ShapeKind.Polygon:
-                options.Number("Sides:", 3, 100, () => Sides, v => Sides = (int)v);
-                options.Number("Star Ratio:", 1, 100, () => StarRatio, v => StarRatio = (float)v, "0", "%");
-                options.Number("Radius:", 0, 10000, () => CornerRadius, v => CornerRadius = (float)v, "0", "px");
+                options.Number(Strings.ShapeTools_SidesColon, 3, 100, () => Sides, v => Sides = (int)v);
+                options.Number(Strings.ShapeTools_StarRatioColon, 1, 100, () => StarRatio, v => StarRatio = (float)v, "0", "%");
+                options.Number(Strings.HdrToningEditor_RadiusColon, 0, 10000, () => CornerRadius, v => CornerRadius = (float)v, "0", "px");
                 break;
             case ShapeKind.Line:
-                options.Number("Weight:", 0.5, 1000, () => LineWeight, v => LineWeight = (float)v, "0.#", "px", 0.5);
-                options.Check("Start Arrow", () => ArrowStart, v => ArrowStart = v);
-                options.Check("End Arrow", () => ArrowEnd, v => ArrowEnd = v);
+                options.Number(Strings.ShapeTools_WeightColon, 0.5, 1000, () => LineWeight, v => LineWeight = (float)v, "0.#", "px", 0.5);
+                options.Check(Strings.ShapeTools_StartArrow, () => ArrowStart, v => ArrowStart = v);
+                options.Check(Strings.ShapeTools_EndArrow, () => ArrowEnd, v => ArrowEnd = v);
                 break;
             case ShapeKind.Custom:
-                options.Combo("Shape:", CustomShape.Defaults.Select(s => (s.Name, s)), () => Custom, v => Custom = v, 140);
+                options.Combo(Strings.ShapeTools_ShapeColon, CustomShape.Defaults.Select(s => (s.Name, s)), () => Custom, v => Custom = v, 140);
                 break;
         }
     }

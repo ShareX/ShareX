@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class TemperatureTintImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "temperature_tint";
     public override string Name => "Temperature / Tint";
-    public override string IconKey => LucideIcons.thermometer;
+    public override string IconKey => ImageEffectIcons.Thermometer;
     public override string Description => "Adjusts the color temperature and tint.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

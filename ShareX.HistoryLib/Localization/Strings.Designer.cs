@@ -970,6 +970,11 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_VsPrevious7Days", resourceCulture);
             }
         }
+        public static string HistoryWindows_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("HistoryWindows_EditImageInPhotoEditor", resourceCulture);
+            }
+        }
     }
 }
 

@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>Negru:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>Negre</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>Albastru</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>Albastru:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>Albaștri</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>Albaștri:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>Luminozitate:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>Canal:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>Colorare</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>Culori:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>Constantă:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>Contrast:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>Faceți clic pentru a adăuga puncte, trageți pentru a ajusta și trageți un punct în afara graficului pentru a-l șterge.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>Cyan:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>Cyan / Roșu:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>Cyan</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>Cyan:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>Densitate:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>Editați degradeul...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>Expunere:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>Culoarea filtrului:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>Gamma:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>Corecție gamma:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>Verde:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>Verzi</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>Verzi:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>Lumini</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>Nuanță:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>Negru de intrare:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>Alb de intrare:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>Niveluri:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>Luminozitate:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>Magenta / Verde:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>Magenta</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>Tonuri medii</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>Monocrom</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>Neutre</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>Această ajustare nu are opțiuni.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>Decalaj:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>Negru de ieșire:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>Canal de ieșire:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>Alb de ieșire:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>Păstrați luminozitatea</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>Roșu</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>Roșu:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>Roșii</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>Roșii:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>Resetați canalul</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>Inversare</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>Saturație:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>Umbre</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>Nivel prag:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>Nuanțare</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>Culoarea nuanțării:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>Ton:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>Folosiți metoda veche</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>Vibranță:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>Albe</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>Galben / Albastru:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>Galben:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>Galbene</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>Galbene:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>Adăugați o ajustare</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>Creați un strat nou de ajustare {0}</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>Alb-negru</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>Luminozitate/contrast</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>Mixer de canale</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>Echilibru de culori</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>Căutare culoare</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>Curbe</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>Desaturare</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>Expunere</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>Hartă degrade</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>Tonifiere HDR</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>Nuanță/saturație</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>Inversează</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>Niveluri</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>Potrivire culoare</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>Filtru foto</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>Posterizare</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>Înlocuire culoare</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>Culoare selectivă</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>Prag</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>Intensitate</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Autor:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Autor: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Golește tot</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Golește numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Golește notele</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Grup de numărare {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa marcaje de numărare numerotate. Trageți pentru a muta, Alt+clic pentru a elimina.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Număr: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Instrument Numărare</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Șterge numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Șterge nota</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Editează nota</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Grup:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Culoarea grupului</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Dimensiune etichetă:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Dimensiune marcaj:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Mută numărătoarea</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Mută nota</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Creează un grup de numărare nou</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Notă</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Culoarea notei</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Faceți clic pentru a adăuga o notă. Faceți clic pe o notă pentru a o edita, trageți pentru a o muta, Alt+clic pentru a o șterge.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Instrument Notă</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Adaugă o planșetă nouă</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Planșeta {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Fundalul planșetei</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Trageți pe pânza goală pentru a crea o planșetă. Trageți titlul unei planșete pentru a o muta împreună cu conținutul ei.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Mută planșeta</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Instrument Planșetă</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Planșetă nouă</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (pătrat)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (tabletă)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Adaugă</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Îmbunătățește marginea</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasou</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Baghetă magică</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta culori similare. Shift adaugă, Alt scade.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Instrument Baghetă magică</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Selecție de obiect</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Trageți un dreptunghi sau un lasou în jurul unui obiect pentru a-l selecta.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție de obiect</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Selecție rapidă</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Pictați peste o zonă pentru a o selecta; selecția se extinde până la margini. Alt scade.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție rapidă</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Se selectează obiectul...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Pensulă de selecție</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Pictați pentru a adăuga la selecție. Alt (sau modul Scădere) elimină din ea.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de selecție</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>În spate</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>Golește</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>Culoare</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>Ardere culoare</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>Estompare culoare</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>Întunecare</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>Culoare mai închisă</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>Diferență</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>Dizolvare</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>Împărțire</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>Excludere</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>Lumină puternică</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>Amestec dur</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>Nuanță</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>Luminare</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>Culoare mai deschisă</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>Ardere liniară</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>Estompare liniară (adăugare)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>Lumină liniară</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>Luminozitate</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>Multiplicare</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>Suprapunere</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>Trecere</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>Lumină punctuală</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>Saturație</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>Ecran</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>Lumină slabă</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>Scădere</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>Lumină vie</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Activează efecte de acumulare de tip aerograf</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>Instrumentul „{0}” nu poate picta pe o mască de strat.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Vopsea aplicată pe fiecare atingere</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Acoperirea maximă a vopselei pe tușă (tastele 0-9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Dimensiune după presiune</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Netezire:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Pensulă de ajustare</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Pictează o ajustare locală. Fiecare tușă editează masca unui strat de ajustare. Alt șterge ajustarea.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>Pensulă {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de ajustare</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Ajustare:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Cantitate:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Ștergere automată</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Pictează cu culoarea de prim-plan. Shift+clic trasează o linie dreaptă. [ ] schimbă dimensiunea.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Instrument Pensulă</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Curăță după fiecare tușă</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Înlocuiește culorile similare cu culoarea eșantionată cu culoarea de prim-plan.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Instrument Înlocuire culoare</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Încărcare:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Culoare încărcată (prim-plan)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Amestec:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Amestecă vopseaua încărcată cu culorile pânzei, ca vopseaua reală.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de amestec</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Strat nou pentru fiecare tușă</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Pictează linii cu margini dure, fără anti-aliere, cu culoarea de prim-plan.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Instrument Creion</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Eșantionare:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Umezeală:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>Unghi</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>Duritate</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>Presetare nouă de pensulă...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>Presiunea stiloului controlează fluxul</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>Presiunea stiloului controlează dimensiunea</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>Rotunjime</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>Dispersie</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>Selectați un instrument de pictură pentru a-i edita pensula.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>Dimensiune:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>Variație de dimensiune</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>Spațiere</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>Vârf pătrat</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>Ancoră:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>Dimensiune curentă: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>Culoarea extinderii pânzei:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>Prim-plan</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>Gri</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>Relativ</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>Editarea a fost anulată deoarece documentul s-a modificat.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>Deschideți sau creați un document pentru a începe editarea (Ctrl+O / Ctrl+N) sau plasați o imagine aici.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>Opțiuni canal</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>Ștergeți canalul curent</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Încărcați canalul ca selecție</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>Creați un canal nou</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>Mască rapidă</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>Salvați selecția ca și canal</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>Afișați canalul ca suprapunere</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>LUT 3D nu a putut fi încărcat: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>Încărcați LUT 3D</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>Încărcați LUT 3D...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>Fișier LUT 3D:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>Fișiere LUT 3D</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>Tabelele de căutare 1D nu sunt acceptate.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>Datele tabelului nu corespund dimensiunii sale.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>Domeniul tabelului nu este valid.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>Fișierul nu are nicio intrare LUT_3D_SIZE.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>Dimensiunea de tabel {0} nu este acceptată.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>Culoare de fundal</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>Culoare de fundal. Dublu clic deschide selectorul de culori.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>Culoare de prim-plan</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>Culoare de prim-plan. Dublu clic deschide selectorul de culori.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>Adăugați la mostre</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Nu este o culoare web. Faceți clic pe mostră pentru a o folosi pe cea mai apropiată.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Doar culori web</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>Resetare</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>Faceți clic pentru a restaura culoarea curentă</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>Selector de culori</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>Selector de culori ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Trageți pentru a defini zona de decupare; trageți în afara ei pentru a roti. Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>L: {0:0} px  Î: {1:0} px  Unghi: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Instrument Decupare</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Șterge pixelii decupați</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>Î:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Raport original</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Decupare în perspectivă</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Trageți pentru a crea o casetă de decupare, apoi trageți colțurile ei pentru a se potrivi cu perspectiva unui obiect. Enter decupează și îndreaptă.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Instrument Decupare în perspectivă</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Raport</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Raport:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (pătrat)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Regula treimilor</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Afișează grila</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Inversează lățimea și înălțimea</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>L:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>Nu</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>Da</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>Grup de numărare 1</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° în sens orar</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° în sens antiorar</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>aplica ajustarea</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>modifica dimensiunea pânzei</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>goli</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>decupa imaginea</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>egaliza</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>umple</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>umple traseul</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>oglindi pânza</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>redimensiona imaginea</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>afișa tot</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>roti pânza</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>aplica filtrul</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>contura</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>contura traseul</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>tăia marginile imaginii</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Adăugați mască de strat</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Adăugați mască vectorială</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Ajustări</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Din nou</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Aliniere</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Toate</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Toate straturile</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Unghi (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Anti-aliasing</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Aplicare</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Aplicați masca de strat</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Arbitrar...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Aranjare</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Aranjați stratul</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Culoare automată</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Contrast automat</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Ton automat</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>Stratul de fundal nu poate avea mască. Convertiți-l mai întâi într-un strat.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>Stratul de fundal nu poate avea stiluri de strat. Convertiți-l mai întâi într-un strat (Strat &gt; Nou &gt; Strat din fundal).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Fundal din strat</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Pe baza:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Albastru</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Albaștri</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Chenar</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Bordură...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Marginile de jos</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Culoarea pixelului din dreapta jos</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Aduceți înainte</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>Aduceți în față</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Numele pensulei</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Pensule</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Nu se poate {0}, deoarece stratul este blocat.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Nu se poate {0}, deoarece nu există niciun strat activ.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Nu se poate {0}, deoarece stratul activ nu este un strat de pixeli. Rasterizați-l mai întâi (Strat &gt; Rasterizare).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Nu se poate converti în obiect inteligent, deoarece stratul este gol.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Nu se poate decupa, deoarece stratul este blocat.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Ultima operație nu poate fi estompată.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Nu se poate îmbina în jos, deoarece nu există niciun strat dedesubt.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Nu se poate îmbina în jos, deoarece stratul de dedesubt nu este un strat de pixeli.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Dimensiune pânză</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Dimensiune pânză...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Centru</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Schimbați orientarea textului</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Canal</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Canale</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Golește</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Ștergeți ghidajele</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Ștergeți stilul de strat</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Goliți lista fișierelor recente</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Clipboard</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>Clipboardul nu conține o imagine.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>În sens orar</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Închide</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Închideți tot</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Culoare</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Culoare:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Umplere cu culoare</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Gamă de culori</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Gamă de culori...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Sfat: eșantionați mai întâi o culoare cu pipeta; aceasta este folosită drept culoare de prim-plan.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Coloane:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Umplere în funcție de conținut</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Umplere în funcție de conținut...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Contractare</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Contractare cu (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Contractare...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Contrast:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Convertiți pentru filtre inteligente</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Convertiți în formă</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Convertiți în obiect inteligent</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Copiere</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Copiați stilul de strat</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Copiați îmbinat</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Nu se poate {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Documentul nu a putut fi creat: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Exportul nu a reușit: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Straturile nu au putut fi exportate: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>„{0}” nu a putut fi plasat, deoarece formatul fișierului nu este acceptat.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Revenirea nu a reușit: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Salvarea nu a reușit: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>„{0}” nu a putut fi salvat: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Feliile nu au putut fi salvate: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Numărare</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>În sens antiorar</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Creați mască de decupare</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Creați traseu de lucru</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Decupează</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Tăiere</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Comutați modul ecran</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Micșorați dimensiunea fontului</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Culori implicite de prim-plan și fundal</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Definiți presetare de pensulă...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Definiți formă personalizată...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Definiți model...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Ștergere</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Ștergeți canalul</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Ștergeți stratul</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Ștergeți masca de strat</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Ștergeți straturile</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Ștergeți traseul</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Deselectați</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Direcție:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Dezactivați</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Dezactivați masca de strat</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Distorsionare</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Limitele documentului</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Duplicați...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Duplicați imaginea</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Duplicați stratul</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Editați în modul mască rapidă</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Editați masca</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Acest efect nu este disponibil.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Bibliotecă de efecte</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Activați masca de strat</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Intrați în mască rapidă</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Egalizare</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Ieșire</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Ieșiți din mască rapidă</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Extindere</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Extindere cu (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Extindere...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Exportați ca</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Exportați ca...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>{0} straturi exportate în {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Exportat {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Elemente suplimentare</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Estompare</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Estompare...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Estompare {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Difuzare</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Difuzare:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Difuzare...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Rază de difuzare (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Umplere</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Umplere...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Umpleți traseul</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Umpleți ecranul</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Umpleți cu culoarea de fundal</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Umpleți cu culoarea de prim-plan</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Potrivire pe ecran</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Aplatizare</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Aplatizați imaginea</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Oglindiți pânza pe orizontală</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Oglindiți pânza pe verticală</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Oglindire pe orizontală</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Oglindire pe verticală</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>„{0}” nu acceptă straturi. Salvați o copie aplatizată în acest format sau salvați ca proiect ShareX Photo Editor pentru a păstra straturile?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Transformare liberă</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Din transparență</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Toleranță:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Degrade...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Umplere cu degrade</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Tonuri de gri</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Verde</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Verzi</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Grilă</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Grupați straturile</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Grupul {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Extindere selecție</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Ghidaje</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Spațiere (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Înălțime (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Ascundeți tot</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Ascundeți straturile</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Ascundeți selecția</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Lumini</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Istoric</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Orizontal</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Centre orizontale</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Opțiuni imagine</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Rotire imagine</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Dimensiune imagine</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Dimensiune imagine...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Măriți dimensiunea fontului</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Informații</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Interior</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Inversare</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Comenzi rapide de la tastatură...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Ultimul filtru</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Strat din fundal</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Mască de strat</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Stratul {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Proprietățile stratului</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Stil de strat</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Stil de strat...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Strat prin copiere</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Strat prin decupare</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Straturi</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Straturi în fișiere</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Straturi în fișiere...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Marginile din stânga</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Legați straturile</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Legați/dezlegați straturile</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Încărcați selecția</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Încărcați selecția...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Locație:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Blocați tot</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Blocați ghidajele</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Blocați stratul</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Creați selecție</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Faceți mai întâi o selecție.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Creați traseu de lucru</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Margine (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Editare</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Fișier</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Filtru</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Imagine</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Strat</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>Se_lectare</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Text</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_Vizualizare</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>Fe_reastră</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Îmbinare în jos</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Îmbinați grupul</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Îmbinați vizibilele</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Îmbinat</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Tonuri medii</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Mod:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Modificare</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Selecție: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Mutați stratul</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Nume:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Navigator</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Nou</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Strat de ajustare nou</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Strat nou {0}</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Canal nou</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Nou...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Strat de umplere nou</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Nou din clipboard</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nou din captură de ecran (ecran complet)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nou din captură de ecran (regiune)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Grup nou</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Ghidaj nou</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Ghidaj nou...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Aspect nou de ghidaje</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Aspect nou de ghidaje...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Ghidaje noi din formă</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Strat nou</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Strat nou...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Traseu nou</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Strat de formă nou</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Documentul următor</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Nu există niciun traseu de încărcat ca selecție.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Nu există selecții salvate (canale alfa).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>Decalaj X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Decalaj Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Opacitate:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Deschide</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Deschideți...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Deschideți recente</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Opțiuni</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Orientare</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Orientare:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Exterior</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Panouri</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Lipire</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Lipiți ca document nou</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Lipiți pe loc</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Lipiți în interior</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Lipiți stilul de strat</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Lipire specială</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Lipit</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Traseul {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Trasee</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Model...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Umplere cu model</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Numele modelului</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Modelul {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspectivă</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Fixați pe ecran</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Grilă de pixeli</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Plasați încorporat</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Plasați încorporat...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Plasați imaginea în cadru</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Plasați în cadru</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Poziție (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Preferințe...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Previzualizare</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Documentul anterior</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Imprimare...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Proprietăți</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Golire</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Goliți clipboardul</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Goliți istoricele</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Calitate:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Export rapid ca PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Rasterizare</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Rasterizați stratul</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Rasterizați stilul de strat</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Rasterizați stratul text</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Roșu</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Refă</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Roșii</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Eliberați masca de decupare</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Redenumiți stratul</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Redenumiți stratul...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Reselectați</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Resetați Elemente esențiale</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Resetați rotirea vizualizării</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Afișați tot</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Afișați selecția</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Revenire</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Marginile din dreapta</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Rotire</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Rotește la 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Rotiți 90° în sens orar</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Rotiți 90° în sens antiorar</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Rotiți pânza</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Rotiți pânza cu {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Rotiți cu {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Rânduri:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Rigle</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Rază de eșantionare (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Pensulă eșantionată {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Culori eșantionate (prim-plan)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Salvare</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Salvați o copie</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Salvați o copie...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Salvare ca</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Salvare ca...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Salvați ca proiect</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Salvați selecția</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Salvați selecția...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Salvați feliile</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Salvați feliile...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Salvați spațiul de lucru</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Copie salvată în {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Salvat {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>{0} felii salvate în {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Scalare</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Captură de ecran</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Selectați tot</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Selectare și mascare</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Selectare și mascare...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Selectare:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Selectați mai întâi un strat de cadru (desenați unul cu instrumentul Cadru).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Selectați două sau mai multe straturi (Ctrl+clic în panoul Straturi) pentru a le lega.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Selectați stratul următor</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Faceți mai întâi o selecție dreptunghiulară a plăcii modelului.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Selectați stratul anterior</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Selectați subiectul</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Se selectează subiectul...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Marginile selecției</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Trimiteți înapoi</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>Trimiteți în spate</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Trimiteți la ShareX (sarcini după captură)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Setați dimensiunea fontului</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Umbre</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Umbre/lumini...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Numele formei</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Forma {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Partajați cu ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Afișare</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Similare</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Înclinare</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Tonuri de piele</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Felii</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (filtru inteligent)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Obiecte inteligente</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Netezire</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Netezire:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Netezire...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Aliniere automată</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Aliniere automată la</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Culoare uniformă</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Culoare uniformă...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Ștampilați vizibilele</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Pas înapoi</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Pas înainte</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Îndreptați stratul</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Contur</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Culoarea conturului</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Contur...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Conturați traseul</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Subiect</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Mostre</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Comutați culorile de prim-plan și fundal</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Bară de instrumente...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Marginile de sus</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Culoarea pixelului din stânga sus</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Transformare</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Transformați selecția</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Transformați selecția...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Pixeli transparenți</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Tăiere margini</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Tăiere margini...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Bară de instrumente pe două coloane</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Anulați gruparea straturilor</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Dezlegați straturile</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Încărcați cu ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Centre verticale</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Lățime:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Lățime (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Lățime (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Spațiu de lucru</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Spațiul de lucru a fost salvat.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Mărire</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Micșorare</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>Tamponare</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>Buclă lejeră</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>Lung lejer</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>Mediu lejer</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>Buclă strânsă</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>Lung strâns</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>Mediu strâns</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>Scurt strâns</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>Partea de jos</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>Stânga jos</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>Dreapta jos</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>Centru</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>Stânga</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>Dreapta</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>Sus</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>Stânga sus</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>Dreapta sus</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>Bloc</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>Pensulă</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>Creion</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>Culoare uniformă</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>Unghi</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>Romb</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>Liniar</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>Radial</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>Reflectat</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>În funcție de conținut</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>Creare textură</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>Potrivire după proximitate</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>Raport fix</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>Dimensiune fixă</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>Combinare forme</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>Excludere forme suprapuse</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>Intersectare zone de formă</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>Strat nou</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>Scădere formă din față</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>Traseu</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>Formă</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>Culoare</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>Nuanță</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>Luminozitate</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>Saturație</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>Bicubică</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>Bicubic mai clar</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>Bicubic mai neted</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>Bilineară</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>Cel mai apropiat vecin</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>Mostră de fundal</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>Continuu</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>O dată</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Formă personalizată</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Elipsă</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Linie</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Poligon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Dreptunghi</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Triunghi</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>Traseu</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>Pixeli</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>Formă</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>Centru</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>Interior</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>Exterior</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>Centru</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>Aliniere stânga-dreapta</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>Stânga</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>Dreapta</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>Clar</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>Nici unul</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>Ascuțit</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>Neted</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>Puternic</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>Lumini</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>Tonuri medii</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>Umbre</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Șterge pixelii care se potrivesc cu culoarea de sub centrul pensulei (punctul fierbinte).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Instrument Radieră de fundal</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Discontinuu</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Șterge până la istoric</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Șterge până la transparență sau până la culoarea de fundal pe straturile blocate. Alt șterge până la istoric.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Instrument Radieră</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Limite:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Protejează culoarea de prim-plan</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>Înălțime (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>Fără pierderi</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>Culoare...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>Conținut:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>Culoare de umplere</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>Gri 50%</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>Opacitate (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>Model:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>Păstrați transparența</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Editează...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Degradeu:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Trageți pentru a desena un degradeu. Shift limitează unghiul la 45 de grade.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Unghi: {0:0.0}°  Distanță: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Instrument Degradeu</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>Degradeu {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Radieră magică</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Faceți clic pentru a șterge până la transparență pixelii de culoare similară.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Instrument Radieră magică</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Găleată de vopsea</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Faceți clic pentru a umple pixelii de culoare similară cu culoarea de prim-plan sau cu un model.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Instrument Găleată de vopsea</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparență</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Adăugare zgomot</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Medie</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Încețoșare</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Estompare mai puternică</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Estompare în casetă</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Încețoșare</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Distorsionare</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Zgomot</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Altele</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pixelare</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Randare</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Accentuare</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stilizare</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Nori</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Cristalizare</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Eliminare pete</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Nori de diferență</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Difuzie</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Praf și zgârieturi</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Relief</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Fațete</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Fibre</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Găsire margini</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Estompare gaussiană</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Trece-sus</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Vignetă de iluminare</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maxim</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Median</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minim</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mozaic</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Estompare de mișcare</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Decalaj</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Pictură în ulei</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gaussiană</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Mare</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Mediu</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Dezactivat</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Activat</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Polar în dreptunghiular</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Dreptunghiular în polar</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Mic</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Rotire</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Uniformă</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Cantitate</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Amplitudine</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Unghi</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Dimensiunea celulei</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Distanță</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Distribuție</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Înălțime</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Orizontal</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Niveluri</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Decalaj maxim %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Metodă</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Mod</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Monocromatic</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Numărul de plăci</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Păstrare detalii</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Rază</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Reducere zgomot</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Dimensiune:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Intensitate</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Prag</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Varianță</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Lungime de undă</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Ciupire</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Punctare</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Coordonate polare</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Estompare radială</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Reducere zgomot</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Undă</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Accentuare</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Accentuare margini</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Accentuare mai puternică</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Accentuare inteligentă</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Solarizare</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Sferizare</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Estompare de suprafață</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Plăci</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Vârtej</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Mască de accentuare</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Undă</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Golește cadrul</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Golește conținutul cadrului</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Cadru eliptic</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Cadrul {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Trageți pentru a crea un substituent de cadru. Plasați sau lipiți o imagine pentru a umple cadrul activ.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Instrument Cadru</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Plasează un fișier imagine în cadrul activ</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Cadru dreptunghiular</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>Adăugați un punct de culoare</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>Personalizat</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>Locație</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>Presetări</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>Culoarea punctului</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>Editor de degrade</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>Avansat</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>Detaliu:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>Strălucire margini</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>Egalizare histogramă</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>Expunere și gamma</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>Lumini:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>Comprimare lumini</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>Adaptare locală</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>Metodă:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>Această metodă nu are opțiuni.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>Presetare:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>Rază:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>Resetați curba</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>Umbră:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>Netezire margini</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>Intensitate:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>Ton și detaliu</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>Curbă de tonifiere și histogramă</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>Plat</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>Monocromatic</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>Fotorealist</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>Saturat</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>Suprarealist</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Zonă:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Pictează tușe stilizate eșantionate din sursa de istoric.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă istoric artistic</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Nu s-a putut folosi Pensula istoric deoarece starea din istoric nu are aceeași dimensiune a pânzei.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Pictează înapoi pixelii din starea de istoric selectată ca sursă în panoul Istoric.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă istoric</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Setați mai întâi o sursă de istoric în panoul Istoric.</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>Ștergeți instantaneul</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>Ștergeți stările de după cea curentă</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>Setați sursa pentru pensula de istoric</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>Creați un document nou din starea curentă</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>Creați un instantaneu nou</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>Redenumiți instantaneul</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>Redenumiți instantaneul...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>Instantaneu {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>Toate imaginile acceptate</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>„{0}” nu a putut fi deschis: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>Fișierul nu există.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>„{0}” nu a putut fi deschis, deoarece nu este un proiect ShareX Photo Editor valid sau fișierul este deteriorat.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>Proiect ShareX Photo Editor</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>Exportul TIFF necesită Windows.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>„{0}” nu a putut fi deschis, deoarece nu este o imagine acceptată sau fișierul este deteriorat.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>Codificarea WebP a eșuat.</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>Păstrați proporțiile</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>Procent:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>Reeșantionare:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frecvență:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Trageți pentru a desena o selecție liberă. Eliberați pentru a o închide.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Instrument Lasou</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Lasou magnetic</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Faceți clic pentru a începe, apoi deplasați-vă de-a lungul unei margini. Clic adaugă ancore, dublu clic sau Enter închide, Backspace elimină o ancoră.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Instrument Lasou magnetic</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Lasou poligonal</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Faceți clic pentru a adăuga puncte. Dublu clic, Enter sau clic pe punctul de start închide. Backspace elimină ultimul punct.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Instrument Lasou poligonal</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Fundal</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} copie</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Stratul 0</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>Strat</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>Unghi:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>Mod de amestecare:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>Opțiuni de amestecare</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>Suprapunere culoare</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>Distanță:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>Umbră proiectată</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>Opacitate umplere:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>Culoarea strălucirii</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>Umbră interioară</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>Culoarea umbrei interioare</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>Strălucire exterioară</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>Culoarea suprapunerii</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>Poziție:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>Culoarea umbrei</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>Adăugați mască de strat (Alt: ascundeți tot)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>Adăugați un stil de strat</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>Modificare amestecare</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>Opțiuni de amestecare...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>Modificare blocare strat</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>Ștergeți stratul</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>Duplicați stratul...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>Modificare opacitate umplere</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>Stratul este blocat complet</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>Grup din straturi...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>Ascundeți stratul</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>Proprietățile stratului...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>Legați sau dezlegați straturile selectate (selectați mai multe cu Ctrl+clic) pentru a se mișca împreună</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>Blocați tot</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>Blocare:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>Blocați pixelii imaginii</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>Blochează poziția</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>Blocați pixelii transparenți</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>Faceți clic pentru a edita masca, Shift+clic pentru a o dezactiva, Ctrl+clic pentru a o încărca drept selecție</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>Creați un strat nou de umplere sau de ajustare</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>Creați un grup nou</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>Creați un strat nou</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>Modificare opacitate</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>Stratul este blocat parțial</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>Afișați stratul</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>Comutați vizibilitatea (Alt+clic afișează doar acest strat)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Marcaj eliptic</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj eliptic</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Trageți pentru a selecta. Shift limitează, Alt desenează din centru. Trageți în interiorul unei selecții pentru a o muta.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Marcaj dreptunghiular</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj dreptunghiular</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Rafinează marginea selecției</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta o coloană de 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj coloană unică</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta un rând de 1 pixel.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Instrument Marcaj rând unic</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stil:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>Intensitatea culorii:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>Imagine de destinație</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>Estompare:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>Statistici imagine</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>Strat:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>Luminanță:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>Neutralizare</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>Sursă:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>Țintă:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>Folosiți selecția din sursă pentru a calcula culorile</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>Folosiți selecția din țintă pentru a calcula ajustarea</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(gol)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Potrivire pe ecran</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Trageți pentru a derula vizualizarea. Țineți apăsat Space cu orice instrument pentru a folosi temporar instrumentul Mână. Dublu clic pentru potrivire pe ecran.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Instrument Mână</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Resetează vizualizarea</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Trageți pentru a roti vizualizarea pânzei fără a modifica pixelii. Shift fixează la 15 grade. Esc sau Resetează vizualizarea o restabilește.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Instrument Rotire vizualizare</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Unghi de rotire:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Zoom prin glisare</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Clic pentru mărire, Alt+clic pentru micșorare. Trageți stânga/dreapta pentru zoom prin glisare sau trageți un dreptunghi când acesta este dezactivat.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Mărește</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Micșorează</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Instrument Zoom</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>Negru</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>Creați</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>Implicit (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>Pictogramă 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>Pătrat 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Web 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>Rezoluție (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>Document nou</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>Fără titlu</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>Alb</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>Adăugați la selecție (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>Faceți clic pentru a deschide selectorul de presetări de pensulă</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>Duritate:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>Intersectați cu selecția (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>Selecție nouă</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>Fără culoare</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>Scădeți din selecție (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>Închideți grupul de file</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>Restrângeți grupul de panouri</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>Extindeți grupul de panouri</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>Mutați în grupul cu {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>Mutați într-un grup nou</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>Meniul panoului</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Adaugă punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Faceți clic pe un segment de traseu pentru a adăuga un punct de ancorare.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Instrument Adăugare punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Combină</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Unește componentele de traseu suprapuse</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Convertește punctul</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Faceți clic pe un punct neted pentru a-l transforma în colț; trageți un punct de colț pentru a scoate mânere netede. Trageți un mâner pentru a-l rupe.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Instrument Convertire punct</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Șterge punctul de ancorare</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Faceți clic pe un punct de ancorare pentru a-l șterge.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Instrument Ștergere punct de ancorare</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Faceți clic sau trageți un marcaj pentru a selecta puncte de ancorare; trageți punctele sau mânerele pentru a remodela. Alt trage un mâner independent.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție directă</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Trage ancora</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Intersectează</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Mută traseul</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Deplasează ancora</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Faceți clic pe o componentă de traseu pentru a o selecta, trageți pentru a o muta. Alt+tragere duplică, Delete elimină.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Instrument Selecție traseu</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Scade componentele ulterioare din prima</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Traseu de lucru</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>Adăugați o mască vectorială (strat de formă din traseu)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>Ștergeți traseul curent</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>Umpleți traseul cu culoarea de prim-plan</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Încărcați traseul ca selecție</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>Creați un traseu de lucru din selecție</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>Creați un traseu nou</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>Redenumiți traseul</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>Salvați traseul</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>Traseu de formă {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>Conturați traseul cu pensula</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Adăugare/ștergere automată</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Închide traseul</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Peniță de curbură</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa puncte; curba trece lin prin ele. Clic pe primul punct închide, Enter sau Esc finalizează.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Instrument Peniță de curbură</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Ajustare curbă:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Peniță liberă</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Trageți pentru a desena un traseu liber; acesta este aproximat cu curbe netede. Magnetic se aliniază la margini.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Instrument Peniță liberă</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetic</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Creează:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Mască</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Peniță</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Clic adaugă puncte de colț, tragerea adaugă puncte netede. Clic pe primul punct închide. Ctrl editează punctele, Alt le convertește.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Instrument Peniță</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Bandă elastică</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Selecție...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>Fără titlu-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>„{0}” nu a putut fi finalizat: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   Doc: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - Editor foto - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>Nu salvați</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>Mască de strat/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>Mască rapidă/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>Niciun document nu este deschis.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} nu a reușit: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>Opțiuni indisponibile: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>Editor foto</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>Salvați modificările din „{0}” înainte de închidere?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>Vizualizare: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Editor foto</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>Subdiviziuni:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>Linie de grilă la fiecare (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>Culoarea ghidajelor (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>Stări de istoric:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>Interpolare imagine:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>Reține dimensiunea și poziția ferestrei</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>Preferințe</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>Dimensiunea grilei de transparență:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>Proiectul a fost creat cu o versiune mai nouă a editorului foto.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>Adăugați mască</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>Aliniere:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>Aliniați textul</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>Aplicați masca</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>Planșetă</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>Fundalul planșetei</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>Fundal:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>Aldin</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>Modificați umplerea</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>Caracter</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>Decupați după stratul de dedesubt</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>Mască de decupare</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>Conține o imagine</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>Convertiți în strat</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>Întrerupt</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>Ștergeți masca</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>Ștergeți filtrul inteligent</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>Ștergeți filtrul inteligent</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>L: {0} px   Î: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>Editați stratul text</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>Cadru gol</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>Strat gol</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>Activați</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>Difuzați masca</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>Umplere:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>Strat de umplere</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>Font:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>Cadru</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>Contur cadru</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>Inversează</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>Inversați masca</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>Cursiv</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>Spațiere rânduri:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>Încărcați ca selecție</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>Instrumentele de pictură editează acum masca: negrul ascunde, albul dezvăluie.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>Modificați {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>Niciun document</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>Nici unul</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>Paragraf</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>Strat de pixeli</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>Plasați o imagine...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>Raza (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>Rasterizați textul</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>Resetați transformarea</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>Redimensionați planșeta</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>Rezoluție: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>Setați umplerea</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>Setați fontul</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>Setați spațierea rândurilor</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>Setați conturul</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>Setați alinierea conturului</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>Setați tipul conturului</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>Setați lățimea conturului</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>Setați culoarea textului</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>Setați spațierea caracterelor</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>Proprietățile formei</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>Dimensiune:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>Filtre inteligente</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>Obiect inteligent</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>Contur:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>Culoarea textului</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>Comutați filtrul inteligent</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>Spațiere caractere:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>Subliniat</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>Adăugați la eșantion (Shift+clic)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>Faceți clic pentru a eșantiona o culoare</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>Pipetă</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>Imagine</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>Înlocuire</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>Rezultat:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>Selectați culoarea de înlocuit</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>Selecție</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>Scădeți din eșantion (Alt+clic)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>Aerograf moale</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>Negru, alb</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>Cărămizi</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>Caligrafic plat</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>Cretă</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>Tablă de șah</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>Crom</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>Cupru</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>Linii diagonale</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>Puncte</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>Prim-plan spre fundal</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>Prim-plan spre transparent</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>Pixel dur</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>Rotund dur</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>Rotund dur cu presiune</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>Hexagoane</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>Ocean</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>Rotund moale</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>Rotund moale cu presiune</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>Stropi</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>Spectru</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>Pătrat dur</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>Apus</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>Dungi transparente</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>Fibra lemnului</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Mutare conștientă de conținut</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Mutare conștientă de conținut...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Instrument Mutare conștientă de conținut</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Cantitate de întunecare:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Destinație</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Desenați o selecție (sau folosiți orice instrument de selecție), apoi trageți selecția.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Extinde</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Mută</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Petic</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Petic:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Instrument Petic</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Dimensiunea pupilei:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Ochi roșii</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Faceți clic pe un ochi roșu (sau trageți în jurul lui) pentru a elimina reflexia roșie.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Instrument Ochi roșii</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Sursă</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Structură:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Trageți pentru a măsura distanța și unghiul. Trageți un capăt pentru a-l ajusta.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Instrument Riglă</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Rotește stratul activ astfel încât linia riglei să devină orizontală</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Folosește scara de măsurare</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Golește eșantionatoarele de culoare</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Eșantionator de culoare</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Faceți clic pentru a plasa până la 10 eșantionatoare de culoare (afișate în panoul Informații). Trageți pentru a muta, Alt+clic pentru a șterge.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Instrument Eșantionator de culoare</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Stratul curent</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Șterge eșantionatorul de culoare</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Faceți clic pentru a eșantiona culoarea de prim-plan. Alt+clic eșantionează culoarea de fundal.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Instrument Pipetă</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Sunt permise cel mult 10 eșantionatoare de culoare.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Mută eșantionatorul de culoare</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Eșantion:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Afișează inelul de eșantionare</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Mută selecția</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Săgeată</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Bifă</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Nor</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Cruce</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Coroană</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Instrument Formă personalizată</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Picătură</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Instrument Elipsă</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Săgeată la final</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Culoare de umplere (clic dreapta pentru niciuna)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Roată dințată</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Inimă</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Lungime: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Fulger</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Trageți pentru a desena o linie. Shift limitează la 45 de grade.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Instrument Linie</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Operație traseu:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Instrument Poligon</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzle</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Instrument Dreptunghi</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Formă:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Trageți pentru a desena forma. Shift păstrează proporțiile, Alt desenează din centru.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Laturi:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Bulă de dialog</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Stea</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Raportul stelei:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Săgeată la început</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Culoare contur (clic dreapta pentru niciuna)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Instrument Triunghi</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Grosime:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>Căutați comenzi</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>Comenzi rapide de la tastatură</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>Folosiți valorile implicite</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Golește feliile</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Șterge felia</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Împarte...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Împarte felia</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Editează felia</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Editează opțiunile feliei</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>L fixă:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Nicio felie selectată</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rânduri x coloane (de exemplu 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Felie</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Trageți pentru a crea o felie. Folosiți Fișier &gt; Export &gt; Salvează feliile pentru a le exporta.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Opțiuni felie</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Faceți clic pentru a selecta o felie, trageți pentru a o muta sau redimensiona. Delete o elimină, dublu clic o redenumește.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Instrument Selectare felie</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Instrument Felie</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Felii din ghidaje</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Aliniat</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Sursă de clonare: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Instrument Ștampilă de clonare</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Se corectează...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de corectare</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresionist</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Nu s-a putut folosi instrumentul Ștampilă de clonare deoarece zona de clonat nu a fost definită (Alt+clic pentru a defini un punct sursă).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Pictează cu modelul selectat.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Instrument Ștampilă de model</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Pictați peste elementele deranjante pentru a le elimina. Zona este reconstruită din împrejurimi.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Instrument Eliminare</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Se elimină...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Instrument Pensulă de corectare punctuală</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Pictați peste pete și imperfecțiuni pentru a le corecta automat.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Tip:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>Goliți fișierele recente</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>Fișier nou</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>Nou din captură de ecran (regiune)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>Fișierele pe care le deschideți vor apărea aici.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>Recente</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>Afișați fișierele recente ca listă</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>Afișați fișierele recente ca dale</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>Creați o mostră nouă din culoarea de prim-plan</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — clic: prim-plan, Alt/Ctrl+clic: fundal, clic dreapta: ștergere</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>Introduceți textul. Ctrl+Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>Instrument Text</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maximizare</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimizați</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Restaurare</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Pictați pentru a înmuia marginile și detaliile.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Instrument Estompare</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Pictați pentru a întuneca zonele. Alt luminează.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Instrument Ardere</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Pictați pentru a lumina zonele. Alt întunecă.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Instrument Atenuare</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Pictură cu degetul</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Protejează detaliile</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Protejează tonurile</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Interval:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Saturează</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Pictați pentru a crește contrastul local și a clarifica detaliile.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Instrument Clarificare</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Trageți pentru a întinde vopseaua. Pictura cu degetul începe cu culoarea de prim-plan.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Instrument Întindere</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Pictați pentru a satura sau desatura culorile.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Instrument Burete</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul țintă este ascuns.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul este blocat.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Nu s-a putut folosi „{0}” deoarece stratul țintă nu este un strat de pixeli. Rasterizați mai întâi stratul (Strat &gt; Rasterizare).</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>Restrângeți la o singură coloană</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>Culori implicite de prim-plan și fundal (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>Editați bara de instrumente...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>Extindeți la două coloane</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>Editați în modul mască rapidă (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>Schimbați modul ecran (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>Setați culoarea de fundal</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>Setați culoarea de prim-plan</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>Comutați culorile de prim-plan și fundal (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>Bara de instrumente (fiecare rând este o poziție din bară cu instrumentele sale derulante). Selectați un instrument, apoi rearanjați-l cu ajutorul butoanelor.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>Finalizat</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>Instrumente suplimentare (ascunse din bara de instrumente):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>Ascundeți instrumentul</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>Îmbinați cu grupul de deasupra</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>Mutați mai devreme în grup</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>Mutați grupul în jos</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>Mutați grupul în sus</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>Grup propriu</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>Restaurați valorile implicite</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>Faceți clic pentru a restaura în bara de instrumente</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>Personalizare bară de instrumente</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Anti-aliere</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Confirmă</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Contiguu</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flux:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Eșantion punctual</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Eșantionează toate straturile</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>Medie {0} x {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Dimensiune eșantion:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>L: {0:0} px  Î: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Toleranță:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Aliniază marginile de jos</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Aliniază centrele pe orizontală</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Aliniază marginile din stânga</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Aliniază marginile din dreapta</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Aliniază marginile de sus</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Aliniază centrele pe verticală</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Selecție automată:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Clic selectează stratul cel mai de sus de sub cursor (temporar cu Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Anulează transformarea (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Nu s-a putut transforma deoarece stratul este gol.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Nu s-a putut transforma deoarece stratul este blocat sau nu are conținut.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Nu s-a putut transforma selecția deoarece stratul este blocat.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Confirmă transformarea (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Șterge ghidajul</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Flotant</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Selecție flotantă</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Trageți mânerele pentru a scala (Shift: proporțional, Alt: din centru), în afară pentru a roti, Ctrl+tragere pe un colț pentru a distorsiona, Ctrl+tragere pe o margine pentru a înclina. Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolare:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Nu s-a putut finaliza solicitarea deoarece stratul este blocat.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Mută ghidajul</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Trageți pentru a muta stratul sau pixelii selectați. Alt+tragere duplică, Shift limitează. Tastele săgeți deplasează.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Instrument Mutare</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Deplasare</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Afișează controalele de transformare</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Folosiți Editare &gt; Transformare liberă (Ctrl+T) pentru a transforma stratul activ sau selecția.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Numai majuscule</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Aldin cursiv</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Anulează editările curente (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Centrează textul</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Confirmă editările curente (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Aldin simulat</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Cursiv simulat</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Clic adaugă text punctual, tragerea adaugă text de paragraf, clic pe un text existent îl editează. Ctrl+Enter confirmă, Esc anulează.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Instrument Mască de text orizontal</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Instrument Text orizontal</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Aliniază textul la stânga</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Faceți clic pentru a tasta; la confirmare se creează o selecție în forma textului.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Aliniază textul la dreapta</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Setează anti-alierea</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Setează stilul fontului</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Tăiat</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Culoare text</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Comută orientarea textului</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Mască de text</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Instrument Mască de text vertical</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Instrument Text vertical</value>
+  </data>
+</root>

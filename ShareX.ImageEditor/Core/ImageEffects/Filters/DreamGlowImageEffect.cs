@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DreamGlowImageEffect : ImageEffectBase
     public override string Id => "dream_glow";
     public override string Name => "Dream glow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.cloud;
+    public override string IconKey => AppIcons.Cloud;
     public override string Description => "Creates a dreamy soft glow by blending a blurred copy over the original.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -60,7 +60,7 @@ public abstract class BrushToolBase : ToolBase
 
     protected SKPoint? Hover { get; private set; }
 
-    public BrushPreset Tip { get; set; } = new() { Name = "Soft Round", Hardness = 0, Spacing = 0.1f };
+    public BrushPreset Tip { get; set; } = new() { Name = Strings.Resources_SoftRound, Hardness = 0, Spacing = 0.1f };
 
     public float Size { get; set; } = 30;
 
@@ -122,7 +122,7 @@ public abstract class BrushToolBase : ToolBase
         {
             if (!SupportsMaskTargets)
             {
-                Host.ShowMessage($"The {Name} cannot paint on a layer mask.");
+                Host.ShowMessage(string.Format(Strings.BrushToolBase_CannotPaintOnMask, Name));
                 return null;
             }
             return new PaintTarget { Surface = masked.GetWritableMask(doc.Width, doc.Height), Description = "Layer Mask" };
@@ -310,10 +310,10 @@ public abstract class BrushToolBase : ToolBase
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
         options.Separator();
         if (blendMode) options.BlendMode(() => BlendMode, m => BlendMode = m);
-        if (opacity) options.Percent("Opacity:", () => Opacity, v => Opacity = v, "Maximum paint coverage per stroke (0-9 keys)");
-        if (flow && ShowFlow) options.Percent("Flow:", () => Flow, v => Flow = v, "Paint applied per dab");
-        if (flow && ShowFlow) options.IconButton("airbrush", "Enable airbrush-style build-up effects", () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
-        options.Percent("Smoothing:", () => Smoothing, v => Smoothing = v);
-        options.Check("Pressure Size", () => Tip.PressureSize, v => Tip.PressureSize = v, "Pen pressure controls size");
+        if (opacity) options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v, Strings.BrushToolBase_OpacityTip);
+        if (flow && ShowFlow) options.Percent(Strings.Tools_FlowColon, () => Flow, v => Flow = v, Strings.BrushToolBase_FlowTip);
+        if (flow && ShowFlow) options.IconButton(PhotoEditorIcons.Airbrush, Strings.BrushToolBase_AirbrushTip, () => { Airbrush = !Airbrush; Host.RefreshOptions(); }, Airbrush);
+        options.Percent(Strings.BrushToolBase_SmoothingColon, () => Smoothing, v => Smoothing = v);
+        options.Check(Strings.BrushToolBase_PressureSize, () => Tip.PressureSize, v => Tip.PressureSize = v, Strings.BrushesPanel_PressureSize);
     }
 }

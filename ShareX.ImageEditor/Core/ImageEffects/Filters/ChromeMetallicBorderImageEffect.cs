@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class ChromeMetallicBorderImageEffect : ImageEffectBase
     public override string Id => "chrome_metallic_border";
     public override string Name => "Chrome metallic border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sparkles;
+    public override string IconKey => AppIcons.Sparkles;
     public override string Description => "Adds a shiny chrome metallic border with realistic specular highlights and reflections.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

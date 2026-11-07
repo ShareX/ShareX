@@ -55,6 +55,7 @@ internal sealed class MainMenuEntry
     public Func<IReadOnlyList<MainMenuCategory>>? CreateCategories { get; }
     public string? Id { get; }
     public string? ToolTip { get; }
+    public string? BadgeText { get; }
     public bool IsSeparator { get; }
     public bool IsEnabled { get; }
     public bool IsVisible { get; }
@@ -81,13 +82,15 @@ internal sealed class MainMenuEntry
         Func<string>? createAccentText = null,
         bool boldWhenChecked = false,
         string? id = null,
-        string? toolTip = null)
+        string? toolTip = null,
+        string? badgeText = null)
     {
         _header = header;
         _createHeader = createHeader;
         _createAccentText = createAccentText;
         Icon = icon;
         BitmapIcon = bitmapIcon;
+        BadgeText = badgeText;
         ExecuteAsync = execute == null ? null : () =>
         {
             execute();
@@ -123,13 +126,15 @@ internal sealed class MainMenuEntry
         Func<string>? createAccentText = null,
         bool boldWhenChecked = false,
         string? id = null,
-        string? toolTip = null)
+        string? toolTip = null,
+        string? badgeText = null)
     {
         _header = header;
         _createHeader = createHeader;
         _createAccentText = createAccentText;
         Icon = icon;
         BitmapIcon = bitmapIcon;
+        BadgeText = badgeText;
         ExecuteAsync = executeAsync;
         CreateChildren = createChildren;
         CreateCategories = createCategories;

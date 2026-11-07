@@ -3,7 +3,6 @@
                     xmlns:helpers="clr-namespace:ShareX.AvaloniaUI.Theming">
     
     <FontFamily x:Key="ShareX.FontFamily.Default">Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter</FontFamily>
-    <FontFamily x:Key="ShareX.FontFamily.Icon">avares://ShareX.Avalonia/Assets#lucide</FontFamily>
     <FontFamily x:Key="ShareX.FontFamily.Monospace">Cascadia Mono, Consolas, Courier New, Monospace</FontFamily>
     <x:Double x:Key="ShareX.FontSize.Default">13</x:Double>
     <x:Double x:Key="ShareX.Value.Accent.Foreground.DarkSwitchRatio">1.75</x:Double>
@@ -15,6 +14,7 @@
             <Color x:Key="ShareX.Color.Accent.Start">#3E83F2</Color>
             <Color x:Key="ShareX.Color.Accent.End">#3975D5</Color>
             <Color x:Key="ShareX.Color.Accent.Foreground">#D8DADB</Color>
+            <Color x:Key="ShareX.Color.Link">#518FF3</Color>
 
             <Color x:Key="ShareX.Color.Text">#D8DADB</Color>
             <Color x:Key="ShareX.Color.Text.Secondary">#D8DADB</Color>
@@ -44,6 +44,7 @@
             </LinearGradientBrush>
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Start" Color="{StaticResource ShareX.Color.Accent.Start}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Foreground" Color="{StaticResource ShareX.Color.Accent.Foreground}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Link" Color="{StaticResource ShareX.Color.Link}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Text.Secondary" Color="{StaticResource ShareX.Color.Text.Secondary}" />
@@ -117,6 +118,7 @@
             <Color x:Key="ShareX.Color.Accent.Start">#3E83F2</Color>
             <Color x:Key="ShareX.Color.Accent.End">#3975D5</Color>
             <Color x:Key="ShareX.Color.Accent.Foreground">#D8DADB</Color>
+            <Color x:Key="ShareX.Color.Link">#3269C2</Color>
 
             <Color x:Key="ShareX.Color.Text">#4E4E4E</Color>
             <Color x:Key="ShareX.Color.Text.Secondary">#4E4E4E</Color>
@@ -146,6 +148,7 @@
             </LinearGradientBrush>
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Start" Color="{StaticResource ShareX.Color.Accent.Start}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Foreground" Color="{StaticResource ShareX.Color.Accent.Foreground}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Link" Color="{StaticResource ShareX.Color.Link}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Text.Secondary" Color="{StaticResource ShareX.Color.Text.Secondary}" />

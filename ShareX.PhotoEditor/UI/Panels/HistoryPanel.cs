@@ -23,6 +23,9 @@
 
 #endregion License Information (GPL v3)
 
+using System.Collections;
+using System.Globalization;
+using System.Resources;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -42,13 +45,13 @@ public sealed class HistoryPanel : EditorPanel
     public HistoryPanel(PhotoEditorWindow editor) : base(editor)
     {
         StackPanel footer = new() { Orientation = Orientation.Horizontal, HorizontalAlignment = HorizontalAlignment.Right, Spacing = 2, Margin = new Thickness(4) };
-        footer.Children.Add(IconButton("new-document", "Create new document from current state", () => EditorCommands.NewDocumentFromState(Editor)));
-        footer.Children.Add(IconButton("snapshot", "Create new snapshot", () =>
+        footer.Children.Add(IconButton(PhotoEditorIcons.NewDocument, Strings.HistoryPanel_NewDocumentTip, () => EditorCommands.NewDocumentFromState(Editor)));
+        footer.Children.Add(IconButton(PhotoEditorIcons.Snapshot, Strings.HistoryPanel_NewSnapshotTip, () =>
         {
             Doc?.History.CreateSnapshot();
             Refresh();
         }));
-        footer.Children.Add(IconButton("trash", "Delete the states after the current one", () =>
+        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.HistoryPanel_DeleteStatesTip, () =>
         {
             Doc?.History.DiscardRedo();
             Refresh();
@@ -62,26 +65,50 @@ public sealed class HistoryPanel : EditorPanel
 
     public override string Id => "history";
 
-    public override string Title => "History";
+    public override string Title => Strings.EditorCommands_History;
+
+    private static Dictionary<string, string>? _iconsByName;
 
     /// <summary>Picks an icon for a history state from the name of the operation.</summary>
     private static string HistoryIcon(string name)
     {
+        _iconsByName ??= BuildIconMap();
+        return _iconsByName.TryGetValue(name, out string? icon) ? icon : IconFromEnglishName(name);
+    }
+
+    /// <summary>History names are localized, so each translation gets the icon its English resource text selects.</summary>
+    private static Dictionary<string, string> BuildIconMap()
+    {
+        Dictionary<string, string> map = new(StringComparer.Ordinal);
+        ResourceSet? english = Strings.ResourceManager.GetResourceSet(CultureInfo.InvariantCulture, true, false);
+        if (english == null) return map;
+        foreach (DictionaryEntry entry in english)
+        {
+            if (entry.Key is string key && entry.Value is string value && Strings.ResourceManager.GetString(key, Strings.Culture) is { } localized)
+            {
+                map.TryAdd(localized, IconFromEnglishName(value));
+            }
+        }
+        return map;
+    }
+
+    private static string IconFromEnglishName(string name)
+    {
         string n = name.ToLowerInvariant();
-        if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return "new-document";
-        if (n.Contains("brush") || n.Contains("pencil") || n.Contains("paint") || n.Contains("stamp") || n.Contains("healing") || n.Contains("smudge") || n.Contains("blur") || n.Contains("dodge") || n.Contains("burn") || n.Contains("sponge")) return "brush";
-        if (n.Contains("eras")) return "eraser";
-        if (n.Contains("select") || n.Contains("marquee") || n.Contains("lasso") || n.Contains("wand") || n.Contains("deselect")) return "rectangularmarquee";
-        if (n.Contains("type") || n.Contains("text")) return "horizontaltype";
-        if (n.Contains("move") || n.Contains("nudge") || n.Contains("align")) return "move";
-        if (n.Contains("crop") || n.Contains("trim")) return "crop";
-        if (n.Contains("transform") || n.Contains("rotate") || n.Contains("flip") || n.Contains("scale")) return "freetransform";
-        if (n.Contains("gradient")) return "gradient";
-        if (n.Contains("fill") || n.Contains("bucket")) return "paintbucket";
-        if (n.Contains("layer") || n.Contains("merge") || n.Contains("flatten") || n.Contains("group")) return "new-layer";
-        if (n.Contains("shape") || n.Contains("rectangle") || n.Contains("ellipse") || n.Contains("polygon")) return "rectangle";
-        if (n.Contains("path") || n.Contains("pen") || n.Contains("anchor")) return "pen";
-        return "adjust";
+        if (n.Contains("open") || n.Contains("new document") || n.Contains("duplicate image")) return PhotoEditorIcons.NewDocument;
+        if (n.Contains("brush") || n.Contains("pencil") || n.Contains("paint") || n.Contains("stamp") || n.Contains("healing") || n.Contains("smudge") || n.Contains("blur") || n.Contains("dodge") || n.Contains("burn") || n.Contains("sponge")) return PhotoEditorIcons.Brush;
+        if (n.Contains("eras")) return PhotoEditorIcons.Eraser;
+        if (n.Contains("select") || n.Contains("marquee") || n.Contains("lasso") || n.Contains("wand") || n.Contains("deselect")) return PhotoEditorIcons.RectangularMarquee;
+        if (n.Contains("type") || n.Contains("text")) return PhotoEditorIcons.HorizontalType;
+        if (n.Contains("move") || n.Contains("nudge") || n.Contains("align")) return PhotoEditorIcons.Move;
+        if (n.Contains("crop") || n.Contains("trim")) return PhotoEditorIcons.Crop;
+        if (n.Contains("transform") || n.Contains("rotate") || n.Contains("flip") || n.Contains("scale")) return PhotoEditorIcons.FreeTransform;
+        if (n.Contains("gradient")) return PhotoEditorIcons.Gradient;
+        if (n.Contains("fill") || n.Contains("bucket")) return PhotoEditorIcons.PaintBucket;
+        if (n.Contains("layer") || n.Contains("merge") || n.Contains("flatten") || n.Contains("group")) return PhotoEditorIcons.NewLayer;
+        if (n.Contains("shape") || n.Contains("rectangle") || n.Contains("ellipse") || n.Contains("polygon")) return PhotoEditorIcons.Rectangle;
+        if (n.Contains("path") || n.Contains("pen") || n.Contains("anchor")) return PhotoEditorIcons.Pen;
+        return PhotoEditorIcons.Adjustment;
     }
 
     public override void Refresh()
@@ -113,12 +140,12 @@ public sealed class HistoryPanel : EditorPanel
             Width = 22,
             Height = 22,
             Background = Brushes.Transparent,
-            Child = isSource ? ToolIcons.Create("historybrush", 16) : null,
+            Child = isSource ? new IconView(PhotoEditorIcons.HistoryBrush, 16) : null,
             Cursor = new Cursor(StandardCursorType.Hand),
             BorderBrush = new SolidColorBrush(Color.FromRgb(0x28, 0x28, 0x28)),
             BorderThickness = new Thickness(0, 0, 1, 0)
         };
-        ToolTip.SetTip(source, "Set the source for the history brush");
+        ToolTip.SetTip(source, Strings.HistoryPanel_HistoryBrushSourceTip);
         source.PointerPressed += (_, e) =>
         {
             history.Source = entry;
@@ -129,7 +156,7 @@ public sealed class HistoryPanel : EditorPanel
         name.Margin = new Thickness(4, 0, 0, 0);
         bool future = !snapshot && index > history.Index;
         if (future) name.Opacity = 0.45;
-        Control icon = snapshot ? ToolIcons.Create("snapshot", 16) : ToolIcons.Create(HistoryIcon(entry.Name), 16);
+        Control icon = snapshot ? new IconView(PhotoEditorIcons.Snapshot, 16) : new IconView(HistoryIcon(entry.Name), 16);
         icon.Opacity = future ? 0.45 : 0.85;
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6, VerticalAlignment = VerticalAlignment.Center };
         content.Children.Add(source);
@@ -150,13 +177,13 @@ public sealed class HistoryPanel : EditorPanel
         if (snapshot)
         {
             ContextMenu menu = new();
-            MenuItem rename = new() { Header = "Rename Snapshot..." };
+            MenuItem rename = new() { Header = Strings.HistoryPanel_RenameSnapshotEllipsis };
             rename.Click += async (_, _) =>
             {
-                string? text = await DialogBuilder.PromptAsync(Editor, "Rename Snapshot", "Name:", entry.Name);
+                string? text = await DialogBuilder.PromptAsync(Editor, Strings.HistoryPanel_RenameSnapshot, Strings.EditorCommands_NameColon, entry.Name);
                 if (!string.IsNullOrWhiteSpace(text)) { entry.Name = text; Refresh(); }
             };
-            MenuItem delete = new() { Header = "Delete Snapshot" };
+            MenuItem delete = new() { Header = Strings.HistoryPanel_DeleteSnapshot };
             delete.Click += (_, _) => { history.DeleteSnapshot(entry); Refresh(); };
             menu.Items.Add(rename);
             menu.Items.Add(delete);

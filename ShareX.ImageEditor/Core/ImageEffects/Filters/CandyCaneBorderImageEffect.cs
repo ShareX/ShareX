@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CandyCaneBorderImageEffect : ImageEffectBase
     public override string Id => "candy_cane_border";
     public override string Name => "Candy Cane Border";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.candy_cane;
+    public override string IconKey => ImageEffectIcons.CandyCane;
     public override string Description => "Adds a candy cane striped border around the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

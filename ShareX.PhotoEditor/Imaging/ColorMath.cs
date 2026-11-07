@@ -144,7 +144,7 @@ public static class ColorMath
         return new SKColor((byte)MathF.Round(r * 255), (byte)MathF.Round(g * 255), (byte)MathF.Round(b * 255), alpha);
     }
 
-    /// <summary>Converts sRGB in 0..1 to CIE Lab (D50, like Photoshop) with L in 0..100.</summary>
+    /// <summary>Converts sRGB in 0..1 to CIE Lab (D50) with L in 0..100.</summary>
     public static void RgbToLab(float r, float g, float b, out float labL, out float labA, out float labB)
     {
         float lr = ToLinear(r), lg = ToLinear(g), lb = ToLinear(b);

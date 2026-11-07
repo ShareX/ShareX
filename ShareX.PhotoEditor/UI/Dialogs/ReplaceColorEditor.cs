@@ -68,10 +68,10 @@ public sealed class ReplaceColorEditor : UserControl
         if (settings.SampleColors.Count == 0) settings.SampleColors.Add(host?.Foreground ?? SKColors.Black);
 
         StackPanel root = new() { Spacing = 8 };
-        root.Children.Add(new TextBlock { Text = "Selection", Classes = { "header" } });
+        root.Children.Add(new TextBlock { Text = Strings.ReplaceColorEditor_Selection, Classes = { "header" } });
         root.Children.Add(BuildSampleRow());
         Grid selection = DialogBuilder.Form();
-        AddSlider(selection, "Fuzziness:", "fuzziness", 0, 200, 40);
+        AddSlider(selection, Strings.EditorCommands_FuzzinessColon, "fuzziness", 0, 200, 40);
         root.Children.Add(selection);
         if (source != null)
         {
@@ -80,12 +80,12 @@ public sealed class ReplaceColorEditor : UserControl
             root.Children.Add(BuildPreview());
         }
         root.Children.Add(new Border { Classes = { "hsep" } });
-        root.Children.Add(new TextBlock { Text = "Replacement", Classes = { "header" } });
+        root.Children.Add(new TextBlock { Text = Strings.ReplaceColorEditor_Replacement, Classes = { "header" } });
         Grid replacement = DialogBuilder.Form();
-        AddSlider(replacement, "Hue:", "hue", -180, 180, 0);
-        AddSlider(replacement, "Saturation:", "saturation", -100, 100, 0);
-        AddSlider(replacement, "Lightness:", "lightness", -100, 100, 0);
-        DialogBuilder.AddRow(replacement, "Result:", _resultSwatch);
+        AddSlider(replacement, Strings.AdjustmentEditor_HueColon, "hue", -180, 180, 0);
+        AddSlider(replacement, Strings.AdjustmentEditor_SaturationColon, "saturation", -100, 100, 0);
+        AddSlider(replacement, Strings.AdjustmentEditor_LightnessColon, "lightness", -100, 100, 0);
+        DialogBuilder.AddRow(replacement, Strings.ReplaceColorEditor_ResultColon, _resultSwatch);
         root.Children.Add(replacement);
         Content = root;
         RefreshVisuals();
@@ -114,18 +114,18 @@ public sealed class ReplaceColorEditor : UserControl
     private Control BuildSampleRow()
     {
         Button swatchButton = new() { Content = _sampleSwatch, Padding = new Thickness(2) };
-        ToolTip.SetTip(swatchButton, "Select the color to replace");
+        ToolTip.SetTip(swatchButton, Strings.ReplaceColorEditor_SelectColorTip);
         swatchButton.Click += async (_, _) =>
         {
             if (TopLevel.GetTopLevel(swatchButton) is not Window owner) return;
-            SKColor? color = await ColorPickerDialog.ShowAsync(owner, _settings.SampleColors[^1], "Color", _host);
+            SKColor? color = await ColorPickerDialog.ShowAsync(owner, _settings.SampleColors[^1], Strings.EditorCommands_Color, _host);
             if (color is SKColor picked) ApplySample(picked, SampleMode.Replace);
         };
         StackPanel row = new() { Orientation = Orientation.Horizontal, Spacing = 4 };
-        row.Children.Add(ModeButton("Eyedropper", null, SampleMode.Replace));
-        row.Children.Add(ModeButton("Add to Sample (Shift-click)", "+", SampleMode.Add));
-        row.Children.Add(ModeButton("Subtract from Sample (Alt-click)", "-", SampleMode.Subtract));
-        row.Children.Add(new TextBlock { Text = "Color:", VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0, 2, 0) });
+        row.Children.Add(ModeButton(Strings.ReplaceColorEditor_EyedropperTip, null, SampleMode.Replace));
+        row.Children.Add(ModeButton(Strings.ReplaceColorEditor_AddToSampleTip, "+", SampleMode.Add));
+        row.Children.Add(ModeButton(Strings.ReplaceColorEditor_SubtractFromSampleTip, "-", SampleMode.Subtract));
+        row.Children.Add(new TextBlock { Text = Strings.EditorCommands_ColorColon, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0, 2, 0) });
         row.Children.Add(swatchButton);
         return row;
     }
@@ -133,7 +133,7 @@ public sealed class ReplaceColorEditor : UserControl
     private Button ModeButton(string tip, string? suffix, SampleMode mode)
     {
         StackPanel content = new() { Orientation = Orientation.Horizontal };
-        content.Children.Add(ToolIcons.Create("eyedropper", 16));
+        content.Children.Add(new IconView(PhotoEditorIcons.Eyedropper, 16));
         if (suffix != null) content.Children.Add(new TextBlock { Text = suffix, VerticalAlignment = VerticalAlignment.Center });
         Button button = new() { Classes = { "icon" }, Content = content };
         ToolTip.SetTip(button, tip);
@@ -162,7 +162,7 @@ public sealed class ReplaceColorEditor : UserControl
             HorizontalAlignment = HorizontalAlignment.Center,
             Cursor = new Cursor(StandardCursorType.Cross)
         };
-        ToolTip.SetTip(frame, "Click to sample a color");
+        ToolTip.SetTip(frame, Strings.ReplaceColorEditor_ClickToSample);
         frame.PointerPressed += (_, e) =>
         {
             Point position = e.GetPosition(frame);
@@ -173,8 +173,8 @@ public sealed class ReplaceColorEditor : UserControl
             e.Handled = true;
         };
 
-        RadioButton selection = new() { Content = "Selection", GroupName = "ReplaceColorPreview", IsChecked = true };
-        RadioButton image = new() { Content = "Image", GroupName = "ReplaceColorPreview" };
+        RadioButton selection = new() { Content = Strings.ReplaceColorEditor_Selection, GroupName = "ReplaceColorPreview", IsChecked = true };
+        RadioButton image = new() { Content = Strings.ReplaceColorEditor_Image, GroupName = "ReplaceColorPreview" };
         image.IsCheckedChanged += (_, _) =>
         {
             _showImage = image.IsChecked == true;

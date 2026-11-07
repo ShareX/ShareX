@@ -30,6 +30,7 @@ using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Styling;
 using Avalonia.Threading;
+using ShareX.Icons;
 using System.ComponentModel;
 
 namespace ShareX.AvaloniaUI.Theming
@@ -137,7 +138,8 @@ namespace ShareX.AvaloniaUI.Theming
                 accentColor = colorValues.AccentColor1;
             }
 
-            ApplyAccentColor(application, accentColor);
+            ApplyAccentColor(application, accentColor, theme);
+            IconCatalog.Pack = _options.IconPack;
         }
 
         private static void SetPlatformSettings(IPlatformSettings? platformSettings)
@@ -186,7 +188,7 @@ namespace ShareX.AvaloniaUI.Theming
                 theme.Contains("Light", StringComparison.OrdinalIgnoreCase);
         }
 
-        private static void ApplyAccentColor(Application? application, Color startColor)
+        private static void ApplyAccentColor(Application? application, Color startColor, ThemeVariant theme)
         {
             if (application == null)
             {
@@ -195,6 +197,15 @@ namespace ShareX.AvaloniaUI.Theming
 
             Color endColor = DarkenColor(startColor, 0.10);
             Color foregroundColor = GetAccentForegroundColor(startColor, endColor);
+            Color linkColor = GetLinkColor(application, startColor, theme);
+
+            // Links are drawn on the window background rather than on the accent, so a dark or grey
+            // accent would make them unreadable on the dark theme (and a pale one on the light theme).
+            application.Resources["ShareX.Color.Link"] = linkColor;
+            application.Resources["ShareX.Brush.Link"] = new SolidColorBrush(linkColor);
+            application.Resources["HyperlinkButtonForeground"] = new SolidColorBrush(linkColor);
+            application.Resources["HyperlinkButtonForegroundPointerOver"] = new SolidColorBrush(linkColor);
+            application.Resources["HyperlinkButtonForegroundPressed"] = new SolidColorBrush(linkColor);
 
             application.Resources["SystemAccentColor"] = startColor;
             application.Resources["ShareX.Color.Accent.Start"] = startColor;
@@ -232,6 +243,38 @@ namespace ShareX.AvaloniaUI.Theming
             double lightContrast = Math.Min(GetContrastRatio(light, startColor), GetContrastRatio(light, endColor));
             double darkContrast = Math.Min(GetContrastRatio(dark, startColor), GetContrastRatio(dark, endColor));
             return darkContrast >= lightContrast * 1.75 ? dark : light;
+        }
+
+        private static Color GetLinkColor(Application application, Color accentColor, ThemeVariant theme)
+        {
+            const double minimumContrast = 4.5;
+            const int steps = 20;
+
+            Color background = application.TryGetResource("ShareX.Color.Background.Main", theme, out object? value) && value is Color color
+                ? color
+                : IsLightTheme(theme.ToString()) ? Colors.White : Colors.Black;
+            Color target = GetRelativeLuminance(background) < 0.5 ? Colors.White : Colors.Black;
+            Color opaqueAccent = Color.FromRgb(accentColor.R, accentColor.G, accentColor.B);
+
+            for (int step = 0; step <= steps; step++)
+            {
+                Color candidate = BlendColor(opaqueAccent, target, step / (double)steps);
+
+                if (GetContrastRatio(candidate, background) >= minimumContrast)
+                {
+                    return candidate;
+                }
+            }
+
+            return target;
+        }
+
+        private static Color BlendColor(Color from, Color to, double amount)
+        {
+            return Color.FromRgb(
+                (byte)Math.Round(from.R + ((to.R - from.R) * amount)),
+                (byte)Math.Round(from.G + ((to.G - from.G) * amount)),
+                (byte)Math.Round(from.B + ((to.B - from.B) * amount)));
         }
 
         private static double GetContrastRatio(Color first, Color second)

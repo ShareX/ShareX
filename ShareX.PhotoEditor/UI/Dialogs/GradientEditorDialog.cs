@@ -62,7 +62,7 @@ public static class GradientEditorDialog
                 Button color = new() { Content = swatch, Padding = new Thickness(2) };
                 color.Click += async (_, _) =>
                 {
-                    SKColor? picked = await ColorPickerDialog.ShowAsync(owner, gradient.Stops[index].Color, "Stop Color", host);
+                    SKColor? picked = await ColorPickerDialog.ShowAsync(owner, gradient.Stops[index].Color, Strings.GradientEditorDialog_StopColor, host);
                     if (picked is SKColor c)
                     {
                         gradient.Stops[index] = gradient.Stops[index] with { Color = c };
@@ -75,7 +75,7 @@ public static class GradientEditorDialog
                     gradient.Stops[index] = gradient.Stops[index] with { Position = (float)(e.NewValue / 100) };
                     RefreshPreview();
                 };
-                Button remove = new() { Content = "Delete", IsEnabled = gradient.Stops.Count > 2 };
+                Button remove = new() { Content = Strings.EditorCommands_Delete, IsEnabled = gradient.Stops.Count > 2 };
                 remove.Click += (_, _) =>
                 {
                     gradient.Stops.RemoveAt(index);
@@ -83,7 +83,7 @@ public static class GradientEditorDialog
                 };
                 StackPanel row = new() { Orientation = Orientation.Horizontal, Spacing = 8 };
                 row.Children.Add(color);
-                row.Children.Add(new TextBlock { Text = "Location", VerticalAlignment = VerticalAlignment.Center });
+                row.Children.Add(new TextBlock { Text = Strings.GradientEditorDialog_Location, VerticalAlignment = VerticalAlignment.Center });
                 row.Children.Add(position);
                 row.Children.Add(remove);
                 stops.Children.Add(row);
@@ -105,7 +105,7 @@ public static class GradientEditorDialog
                 RebuildStops();
             }
         };
-        Button addStop = new() { Content = "Add Stop" };
+        Button addStop = new() { Content = Strings.GradientEditorDialog_AddStop };
         addStop.Click += (_, _) =>
         {
             gradient.Stops.Add(new GradientStop(0.5f, gradient.Sample(0.5f)));
@@ -113,24 +113,24 @@ public static class GradientEditorDialog
         };
 
         StackPanel content = new() { Spacing = 10 };
-        content.Children.Add(new TextBlock { Text = "Presets" });
+        content.Children.Add(new TextBlock { Text = Strings.GradientEditorDialog_Presets });
         content.Children.Add(presets);
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Name:", name);
+        DialogBuilder.AddRow(form, Strings.EditorCommands_NameColon, name);
         content.Children.Add(form);
         content.Children.Add(preview);
         content.Children.Add(stops);
         content.Children.Add(addStop);
         RebuildStops();
 
-        bool ok = await DialogBuilder.ShowAsync(owner, "Gradient Editor", content, 520);
+        bool ok = await DialogBuilder.ShowAsync(owner, Strings.GradientEditorDialog_Title, content, 520);
         if (!ok) return null;
-        gradient.Name = string.IsNullOrWhiteSpace(name.Text) ? "Custom" : name.Text;
+        gradient.Name = string.IsNullOrWhiteSpace(name.Text) ? Strings.GradientEditorDialog_Custom : name.Text;
         // Editing the stops of a foreground preset turns it into a fixed custom gradient.
         if (gradient.IsDynamic)
         {
             GradientStop[] expected = gradient.ResolveColors(host.Foreground, host.Background).Stops.ToArray();
-            if (!gradient.Stops.SequenceEqual(expected) && expected.Length > 0) gradient.Name = "Custom";
+            if (!gradient.Stops.SequenceEqual(expected) && expected.Length > 0) gradient.Name = Strings.GradientEditorDialog_Custom;
         }
         return gradient;
     }

@@ -98,7 +98,7 @@ public sealed class CanvasView : Control
             catch (ObjectDisposedException)
             {
             }
-            _editor.SetStatus("The edit was cancelled because the document changed.");
+            _editor.SetStatus(Strings.CanvasView_EditCancelled);
             _editor.InvalidateCanvas();
         }
     }
@@ -164,7 +164,7 @@ public sealed class CanvasView : Control
         DocumentView? view = _editor.View;
         if (view == null)
         {
-            FormattedText hint = new("Open or create a document to start editing (Ctrl+O / Ctrl+N), or drop an image here.",
+            FormattedText hint = new(Strings.CanvasView_EmptyHint,
                 System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 14, Brushes.Gray);
             context.DrawText(hint, new Point((Bounds.Width - hint.Width) / 2, (Bounds.Height - hint.Height) / 2));
             return;
@@ -642,7 +642,7 @@ public sealed class RulerControl : Control
         if (p.X >= 0 && p.Y >= 0 && p.X <= _editor.Canvas.Bounds.Width && p.Y <= _editor.Canvas.Bounds.Height)
         {
             _editor.Document.Guides.Add(guide);
-            _editor.Document.History.Push("New Guide");
+            _editor.Document.History.Push(Strings.EditorCommands_NewGuide);
             _editor.Settings.ShowGuides = true;
             _editor.RefreshPanels();
         }

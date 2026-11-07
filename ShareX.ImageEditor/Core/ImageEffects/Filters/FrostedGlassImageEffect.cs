@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class FrostedGlassImageEffect : ImageEffectBase
     public override string Id => "frosted_glass";
     public override string Name => "Frosted glass";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.snowflake;
+    public override string IconKey => ImageEffectIcons.Snowflake;
     public override string Description => "Simulates looking through frosted glass by randomizing nearby pixels.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

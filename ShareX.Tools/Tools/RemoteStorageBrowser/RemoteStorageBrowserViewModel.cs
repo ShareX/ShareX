@@ -25,6 +25,7 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using System.Collections.ObjectModel;
 
 namespace ShareX.Tools;
@@ -54,8 +55,8 @@ public sealed class RemoteStorageBrowserItemViewModel
     public string Name => Item.Name;
     public bool IsFolder => Item.IsFolder;
     public bool IsImage => !IsFolder && FileHelpers.IsImageFile(Name);
-    public string Icon => IsFolder ? AvaloniaUI.Theming.LucideIcons.folder :
-        IsImage ? AvaloniaUI.Theming.LucideIcons.file_image : AvaloniaUI.Theming.LucideIcons.file;
+    public string Icon => IsFolder ? AppIcons.Folder :
+        IsImage ? AppIcons.FileImage : AppIcons.File;
     public string SizeText => Item.Size.HasValue ? Item.Size.Value.ToSizeString() : string.Empty;
     public string ModifiedText => Item.Modified?.LocalDateTime.ToString("g") ?? string.Empty;
 
@@ -150,8 +151,8 @@ public sealed partial class RemoteStorageBrowserViewModel : ViewModelBase, IDisp
     public bool IsSizeSortColumn => _sortColumn == RemoteStorageSortColumn.Size;
     public bool IsModifiedSortColumn => _sortColumn == RemoteStorageSortColumn.Modified;
     public string SortIndicator => _sortDescending
-        ? AvaloniaUI.Theming.LucideIcons.arrow_down
-        : AvaloniaUI.Theming.LucideIcons.arrow_up;
+        ? AppIcons.ArrowDown
+        : AppIcons.ArrowUp;
 
     public RemoteStorageBrowserViewModel(IEnumerable<IRemoteStorageProvider> providers)
     {

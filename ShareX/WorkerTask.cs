@@ -588,11 +588,29 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
+                // The editor blocks the task until it closes, so copy the capture now and let the user paste it without having to edit it.
+                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
+                {
+                    ClipboardHelpers.CopyImage(Image, Info.FileName);
+                    DebugHelper.WriteLine("Image copied to clipboard before opening the image editor.");
+                }
+
                 Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
 
                 if (Image == null)
                 {
                     return false;
+                }
+            }
+
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.OpenInPhotoEditor))
+            {
+                Bitmap editedImage = TaskHelpers.OpenPhotoEditorTask(Image, Info.TaskSettings);
+
+                if (editedImage != null)
+                {
+                    Image.Dispose();
+                    Image = editedImage;
                 }
             }
 
@@ -620,7 +638,7 @@ namespace ShareX
             {
                 ImageData imageData = TaskHelpers.PrepareImage(Image, Info.TaskSettings);
                 Data = imageData.ImageStream;
-                Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetDescription());
+                Info.FileName = Path.ChangeExtension(Info.FileName, imageData.ImageFormat.GetFileExtension());
 
                 if (Info.TaskSettings.AfterCaptureJob.HasFlagAny(AfterCaptureTasks.SaveImageToFile, AfterCaptureTasks.AnalyzeImage))
                 {

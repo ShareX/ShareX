@@ -35,16 +35,16 @@ public static class ColorLookupEditor
 {
     public static Control Build(AdjustmentSettings s, Action changed)
     {
-        TextBlock name = new() { Text = s.Lut?.Name ?? "None", VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
-        Button load = new() { Content = "Load 3D LUT..." };
+        TextBlock name = new() { Text = s.Lut?.Name ?? Strings.PropertiesPanel_None, VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis };
+        Button load = new() { Content = Strings.ColorLookupEditor_LoadLutEllipsis };
         load.Click += async (_, _) =>
         {
             if (TopLevel.GetTopLevel(load) is not Window owner) return;
             IReadOnlyList<IStorageFile> files = await owner.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
-                Title = "Load 3D LUT",
+                Title = Strings.ColorLookupEditor_LoadLut,
                 AllowMultiple = false,
-                FileTypeFilter = [new FilePickerFileType("3D LUT files") { Patterns = ["*.cube", "*.3dl"] }, FilePickerFileTypes.All]
+                FileTypeFilter = [new FilePickerFileType(Strings.ColorLookupEditor_LutFiles) { Patterns = ["*.cube", "*.3dl"] }, FilePickerFileTypes.All]
             });
             string? path = files.FirstOrDefault()?.TryGetLocalPath();
             if (path == null) return;
@@ -54,7 +54,7 @@ public static class ColorLookupEditor
             }
             catch (Exception ex) when (ex is IOException or InvalidDataException or UnauthorizedAccessException or FormatException or OverflowException or IndexOutOfRangeException)
             {
-                await DialogBuilder.ShowMessageAsync(owner, "Color Lookup", $"Could not load the 3D LUT: {ex.Message}");
+                await DialogBuilder.ShowMessageAsync(owner, Strings.Adjustments_ColorLookup, string.Format(Strings.ColorLookupEditor_CouldNotLoad, ex.Message));
                 return;
             }
             name.Text = s.Lut.Name;
@@ -65,7 +65,7 @@ public static class ColorLookupEditor
         row.Children.Add(name);
         row.Children.Add(load);
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "3DLUT File:", row);
+        DialogBuilder.AddRow(form, Strings.ColorLookupEditor_LutFileColon, row);
         return form;
     }
 }

@@ -161,6 +161,11 @@ public interface IWindowService
     /// </summary>
     bool ExcludeFromCapture(long windowHandle) => false;
 
+    /// <summary>Turns off a window's fade animations, which would still be on screen when a capture is taken (Windows).</summary>
+    void DisableTransitions(long windowHandle)
+    {
+    }
+
     /// <summary>Puts one of ShareX's windows directly below another of its windows, without moving or activating either.</summary>
     bool PlaceBelow(long windowHandle, long aboveWindowHandle) => false;
 

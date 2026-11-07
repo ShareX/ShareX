@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ReflectionImageEffect : ImageEffectBase
     public override string Id => "reflection";
     public override string Name => "Reflection";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.flip_vertical_2;
+    public override string IconKey => ImageEffectIcons.FlipVertical;
     public override string Description => "Adds a reflection to the bottom of the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

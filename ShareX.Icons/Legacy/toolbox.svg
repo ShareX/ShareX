@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="ts" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aa0000" stop-opacity="0.8"/><stop offset="1" stop-color="#610000" stop-opacity="0.8"/></linearGradient>
+    <linearGradient id="tl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f87070"/><stop offset="1" stop-color="#e05858"/></linearGradient>
+    <linearGradient id="tb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c23434"/><stop offset="0.5" stop-color="#c92626"/><stop offset="1" stop-color="#dc2222"/></linearGradient>
+    <linearGradient id="tk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dbdbdb"/><stop offset="0.5" stop-color="#9a9a9a"/><stop offset="1" stop-color="#c2c2c2"/></linearGradient>
+  </defs>
+  <path d="M5.5 4.5V2.6Q5.5 1.5 6.6 1.5H9.4Q10.5 1.5 10.5 2.6V4.5" fill="none" stroke="#000" stroke-opacity=".7"/>
+  <path d="M6.3 2.4H9.7" stroke="#000" stroke-opacity=".3" stroke-width=".8"/>
+  <rect x="1" y="5" width="14" height="2" fill="url(#tl)"/>
+  <rect x="1" y="7" width="14" height="1" fill="#ff7777"/>
+  <rect x="1" y="8" width="14" height="1" fill="#c43c3c"/>
+  <rect x="1" y="9" width="14" height="1" fill="#991111"/>
+  <rect x="1" y="10" width="14" height="3" fill="url(#tb)"/>
+  <rect x=".5" y="4.5" width="15" height="9" fill="none" stroke="url(#ts)"/>
+  <rect x="4" y="4" width="3" height="2" fill="#a84a4a"/><rect x="9" y="4" width="3" height="2" fill="#a84a4a"/>
+  <rect x="5" y="4" width="1" height="1.4" fill="#999"/><rect x="10" y="4" width="1" height="1.4" fill="#999"/>
+  <rect x="7" y="8" width="2" height="3" fill="url(#tk)"/>
+  <rect x="9" y="8" width="1" height="3" fill="#880909" fill-opacity=".55"/>
+  <rect x="7" y="11" width="2" height="1" fill="#991111"/>
+</svg>

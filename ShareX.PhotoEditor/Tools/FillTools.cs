@@ -39,9 +39,9 @@ public sealed class GradientTool : ToolBase
 
     public override ToolId Id => ToolId.Gradient;
 
-    public override string Name => "Gradient Tool";
+    public override string Name => Strings.FillTools_GradientTool;
 
-    public override string Hint => "Drag to draw a gradient. Shift constrains the angle to 45 degrees.";
+    public override string Hint => Strings.FillTools_GradientHint;
 
     public GradientType Type { get; set; } = GradientType.Linear;
 
@@ -67,7 +67,7 @@ public sealed class GradientTool : ToolBase
         if (!_dragging) return;
         _end = input.Shift ? Constrain45(_start, input.Doc) : input.Doc;
         SKPoint d = _end - _start;
-        Host.SetStatus($"Angle: {-MathF.Atan2(d.Y, d.X) * 180 / MathF.PI:0.0}°  Distance: {d.Length:0.0} px");
+        Host.SetStatus(string.Format(Strings.FillTools_GradientInfo, -MathF.Atan2(d.Y, d.X) * 180 / MathF.PI, d.Length));
         Host.InvalidateOverlay();
     }
 
@@ -107,14 +107,14 @@ public sealed class GradientTool : ToolBase
                 }
             }
             if (doc.QuickMask) doc.SetSelectionLive(target);
-            PushHistory("Gradient");
+            PushHistory(Strings.Enum_FillKind_Gradient);
             Host.InvalidateCanvas();
             return;
         }
         if (!RequireEditableLayer(out RasterLayer layer)) return;
         using SKBitmap gradientBitmap = LayerOps.RenderGradient(gradient, start, end, doc.Width, doc.Height, Dither);
         SKRectI changed = LayerOps.CompositeMasked(doc, layer, (x, y) => ImageOps.GetPixel(gradientBitmap, x, y), null, Opacity, BlendMode);
-        PushHistory("Gradient");
+        PushHistory(Strings.Enum_FillKind_Gradient);
         Host.InvalidateCanvas(changed);
     }
 
@@ -128,13 +128,13 @@ public sealed class GradientTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Gradient:", GradientDefinition.CreatePresets(Host.Foreground, Host.Background).Select(g => (g.Name, g.Name)),
+        options.Combo(Strings.FillTools_GradientColon, GradientDefinition.CreatePresets(Host.Foreground, Host.Background).Select(g => (g.DisplayName, g.Name)),
             () => Host.Gradient.Name, name =>
             {
                 GradientDefinition? preset = GradientDefinition.CreatePresets(Host.Foreground, Host.Background).FirstOrDefault(g => g.Name == name);
                 if (preset != null) Host.Gradient = preset;
             }, 170);
-        options.Button("Edit...", async () =>
+        options.Button(Strings.FillTools_EditEllipsis, async () =>
         {
             GradientDefinition? edited = await UI.Dialogs.GradientEditorDialog.ShowAsync(Host.Window, Host.Gradient, Host);
             if (edited != null) Host.Gradient = edited;
@@ -143,14 +143,14 @@ public sealed class GradientTool : ToolBase
         foreach (GradientType type in Enum.GetValues<GradientType>())
         {
             GradientType captured = type;
-            options.IconButton("gradient-" + type.ToString().ToLowerInvariant(), $"{type} Gradient", () => { Type = captured; Host.RefreshOptions(); }, Type == type);
+            options.IconButton(IconMap.ForGradient(type), string.Format(Strings.FillTools_GradientTypeTip, EnumNames.Get(type)), () => { Type = captured; Host.RefreshOptions(); }, Type == type);
         }
         options.Separator();
         options.BlendMode(() => BlendMode, m => BlendMode = m);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.Check("Reverse", () => Reverse, v => Reverse = v);
-        options.Check("Dither", () => Dither, v => Dither = v);
-        options.Check("Transparency", () => Transparency, v => Transparency = v);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.Check(Strings.AdjustmentEditor_Reverse, () => Reverse, v => Reverse = v);
+        options.Check(Strings.FillTools_Dither, () => Dither, v => Dither = v);
+        options.Check(Strings.FillTools_Transparency, () => Transparency, v => Transparency = v);
     }
 }
 
@@ -162,9 +162,9 @@ public sealed class PaintBucketTool : ToolBase
 
     public override ToolId Id => ToolId.PaintBucket;
 
-    public override string Name => "Paint Bucket Tool";
+    public override string Name => Strings.FillTools_PaintBucketTool;
 
-    public override string Hint => "Click to fill similarly colored pixels with the foreground color or a pattern.";
+    public override string Hint => Strings.FillTools_PaintBucketHint;
 
     public override ToolCursor Cursor => ToolCursor.Bucket;
 
@@ -202,20 +202,20 @@ public sealed class PaintBucketTool : ToolBase
             source = (_, _) => color;
         }
         SKRectI changed = LayerOps.CompositeMasked(Doc, layer, source, mask, Opacity, BlendMode);
-        PushHistory("Paint Bucket");
+        PushHistory(Strings.FillTools_PaintBucket);
         Host.InvalidateCanvas(changed);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Fill:", [("Foreground", false), ("Pattern", true)], () => UsePattern, v => { UsePattern = v; Host.RefreshOptions(); }, 110);
+        options.Combo(Strings.PropertiesPanel_FillColon, [(Strings.CanvasSizeDialog_Foreground, false), (Strings.EditorCommands_Pattern, true)], () => UsePattern, v => { UsePattern = v; Host.RefreshOptions(); }, 110);
         if (UsePattern) options.Combo(null, Host.Patterns.Select(p => (p.Name, p)), () => Host.Pattern ?? Host.Patterns[0], p => Host.Pattern = p, 120);
         options.BlendMode(() => BlendMode, m => BlendMode = m);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.Number("Tolerance:", 0, 255, () => Tolerance, v => Tolerance = (int)v);
-        options.Check("Anti-alias", () => AntiAlias, v => AntiAlias = v);
-        options.Check("Contiguous", () => Contiguous, v => Contiguous = v);
-        options.Check("All Layers", () => AllLayers, v => AllLayers = v);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.Number(Strings.Tools_ToleranceColon, 0, 255, () => Tolerance, v => Tolerance = (int)v);
+        options.Check(Strings.Tools_AntiAlias, () => AntiAlias, v => AntiAlias = v);
+        options.Check(Strings.Tools_Contiguous, () => Contiguous, v => Contiguous = v);
+        options.Check(Strings.EditorCommands_AllLayers, () => AllLayers, v => AllLayers = v);
     }
 }
 
@@ -227,9 +227,9 @@ public sealed class MagicEraserTool : ToolBase
 
     public override ToolId Id => ToolId.MagicEraser;
 
-    public override string Name => "Magic Eraser Tool";
+    public override string Name => Strings.FillTools_MagicEraserTool;
 
-    public override string Hint => "Click to erase similarly colored pixels to transparency.";
+    public override string Hint => Strings.FillTools_MagicEraserHint;
 
     public int Tolerance { get; set; } = 32;
 
@@ -251,16 +251,16 @@ public sealed class MagicEraserTool : ToolBase
         using SKBitmap sample = Host.GetSampleImage(AllLayers);
         using PixelSurface mask = FloodFill.Select(sample, p.X, p.Y, Tolerance, Contiguous, AntiAlias);
         SKRectI changed = LayerOps.EraseMasked(Doc, layer, mask, Opacity);
-        PushHistory("Magic Eraser");
+        PushHistory(Strings.FillTools_MagicEraser);
         Host.InvalidateCanvas(changed);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Number("Tolerance:", 0, 255, () => Tolerance, v => Tolerance = (int)v);
-        options.Check("Anti-alias", () => AntiAlias, v => AntiAlias = v);
-        options.Check("Contiguous", () => Contiguous, v => Contiguous = v);
-        options.Check("Sample All Layers", () => AllLayers, v => AllLayers = v);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
+        options.Number(Strings.Tools_ToleranceColon, 0, 255, () => Tolerance, v => Tolerance = (int)v);
+        options.Check(Strings.Tools_AntiAlias, () => AntiAlias, v => AntiAlias = v);
+        options.Check(Strings.Tools_Contiguous, () => Contiguous, v => Contiguous = v);
+        options.Check(Strings.Tools_SampleAllLayers, () => AllLayers, v => AllLayers = v);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
     }
 }

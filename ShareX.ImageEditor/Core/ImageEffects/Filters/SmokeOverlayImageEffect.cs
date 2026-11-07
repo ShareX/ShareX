@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class SmokeOverlayImageEffect : ImageEffectBase
     public override string Id => "smoke_overlay";
     public override string Name => "Smoke overlay";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.haze;
+    public override string IconKey => ImageEffectIcons.Fog;
     public override string Description => "Adds a soft procedural smoke overlay to the image.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class GrayscaleImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "grayscale";
     public override string Name => "Grayscale";
-    public override string IconKey => LucideIcons.eclipse;
+    public override string IconKey => ImageEffectIcons.Eclipse;
     public override string Description => "Converts the image to grayscale.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

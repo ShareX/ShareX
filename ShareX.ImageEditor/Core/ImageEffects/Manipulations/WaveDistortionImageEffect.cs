@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -41,7 +41,7 @@ public sealed class WaveDistortionImageEffect : ImageEffectBase
     public override string Id => "wave_distortion";
     public override string Name => "Wave distortion";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.waves;
+    public override string IconKey => ImageEffectIcons.Waves;
     public override string Description => "Applies a sine wave distortion to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

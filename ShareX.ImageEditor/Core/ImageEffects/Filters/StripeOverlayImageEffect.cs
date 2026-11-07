@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class StripeOverlayImageEffect : ImageEffectBase
     public override string Id => "stripe_overlay";
     public override string Name => "Stripe overlay";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.blinds;
+    public override string IconKey => ImageEffectIcons.Blinds;
     public override string Description => "Overlays diagonal stripes on the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

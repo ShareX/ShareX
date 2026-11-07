@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -41,7 +41,7 @@ public sealed class TiltShiftImageEffect : ImageEffectBase
     public override string Id => "tilt_shift";
     public override string Name => "Tilt-shift";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.focus;
+    public override string IconKey => ImageEditorIcons.Blur;
     public override string Description => "Simulates a tilt-shift lens with selective focus.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

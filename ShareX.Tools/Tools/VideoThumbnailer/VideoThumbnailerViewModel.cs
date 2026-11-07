@@ -51,7 +51,7 @@ public sealed partial class VideoThumbnailerViewModel : ViewModelBase, IDisposab
     ];
 
     public IReadOnlyList<VideoThumbnailFormatChoice> ImageFormats { get; } = Enum.GetValues<EImageFormat>()
-        .Select(x => new VideoThumbnailFormatChoice(x.GetDescription().ToUpperInvariant(), x))
+        .Select(x => new VideoThumbnailFormatChoice(x.GetDescription(), x))
         .ToArray();
 
     [ObservableProperty]

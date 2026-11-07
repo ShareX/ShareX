@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class BlueprintDrawingImageEffect : ImageEffectBase
     public override string Id => "blueprint_drawing";
     public override string Name => "Blueprint drawing";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.drafting_compass;
+    public override string IconKey => ImageEffectIcons.Compass;
     public override string Description => "Transforms the image into a blueprint-style drawing.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

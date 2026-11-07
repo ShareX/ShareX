@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
@@ -11,8 +12,6 @@
         <!-- Dropdown Button -->
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
-                MinWidth="60"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 <!-- Color Preview -->
@@ -59,16 +58,14 @@
                 <!-- Spacer -->
                 <Border Grid.Column="1"/>
 
-                <!-- Chevron Icon (Lucide ChevronDown) -->
-                <TextBlock Grid.Column="2"
-                           Classes="dropdown-chevron"
-                           Classes.open="{Binding #ColorPopup.IsOpen}"
-                           Text="{x:Static theming:EditorIcons.ChevronDown}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="10"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"/>
+                <!-- Chevron icon -->
+                <iconControls:IconPresenter Grid.Column="2"
+                                            Classes="dropdown-chevron"
+                                            Classes.open="{Binding #ColorPopup.IsOpen}"
+                                            Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                            FontSize="10"
+                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                            VerticalAlignment="Center"/>
             </Grid>
         </Button>
 

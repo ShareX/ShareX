@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -34,7 +34,7 @@ public sealed class DuotoneGradientMapImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "duotone_gradient_map";
     public override string Name => "Duotone / Gradient map";
-    public override string IconKey => LucideIcons.blend;
+    public override string IconKey => AppIcons.Blend;
     public override string Description => "Maps grayscale tones to a custom multi-color gradient.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

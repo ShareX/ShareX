@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="650"
         x:Class="ShareX.Tools.MetadataWindow"
         x:DataType="vm:MetadataViewModel"
@@ -36,12 +37,11 @@
                 <Border Grid.Row="0" Classes="tool-panel">
                     <Grid RowDefinitions="Auto,Auto" RowSpacing="8">
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,*,Auto,Auto,Auto" ColumnSpacing="10">
-                            <TextBlock Grid.Column="0"
-                                       Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.file_search}"
-                                       FontSize="28"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Grid.Column="0"
+                                                    Icon="{x:Static icons:AppIcons.FileSearch}"
+                                                    FontSize="28"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                                 <TextBlock Text="{Binding FileName}"
                                            Classes="section-heading"
@@ -52,22 +52,19 @@
                             </StackPanel>
                             <Button Grid.Column="2" Command="{Binding BrowseCommand}" IsEnabled="{Binding CanOpen}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                                               Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                                     <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Open}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="3" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanCopy}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.copy}"
-                                               Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                                     <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Copy_all}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="4" Command="{Binding RequestStripCommand}" IsEnabled="{Binding CanStrip}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
-                                               Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Eraser}"/>
                                     <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_metadata}"/>
                                 </StackPanel>
                             </Button>
@@ -93,13 +90,12 @@
                                      Text="{Binding SearchText}"
                                      PlaceholderText="{x:Static localization:Strings.MetadataWindow_Search_metadata}"
                                      IsEnabled="{Binding CanCopy}"/>
-                            <TextBlock Grid.Column="2"
-                                       Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.search}"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       VerticalAlignment="Center"
-                                       Margin="-38,0,12,0"
-                                       IsHitTestVisible="False"/>
+                            <controls:IconPresenter Grid.Column="2"
+                                                    Icon="{x:Static icons:AppIcons.Search}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    VerticalAlignment="Center"
+                                                    Margin="-38,0,12,0"
+                                                    IsHitTestVisible="False"/>
                         </Grid>
 
                         <Grid Grid.Row="1" Margin="12,0,12,12">
@@ -165,11 +161,10 @@
                                         VerticalAlignment="Center"
                                         Spacing="10"
                                         MaxWidth="420">
-                                <TextBlock Text="{x:Static theming:LucideIcons.tags}"
-                                           Classes="icon"
-                                           FontSize="48"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Tag}"
+                                                        FontSize="48"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{Binding EmptyMessage}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -190,10 +185,9 @@
                         VerticalAlignment="Center">
                     <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="14">
                         <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
-                            <TextBlock Text="{x:Static theming:LucideIcons.triangle_alert}"
-                                       Classes="icon"
-                                       FontSize="24"
-                                       Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                    FontSize="24"
+                                                    Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"/>
                             <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_all_metadata}" Classes="section-heading" VerticalAlignment="Center"/>
                         </StackPanel>
                         <TextBlock Grid.Row="1"
@@ -203,8 +197,7 @@
                         <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
                             <Button Command="{Binding ConfirmStripCommand}">
                                 <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.eraser}"
-                                               Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Eraser}"/>
                                     <TextBlock Text="{x:Static localization:Strings.MetadataWindow_Strip_metadata_2}" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>

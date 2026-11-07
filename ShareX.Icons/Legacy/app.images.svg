@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="mat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190ff"/><stop offset=".5" stop-color="#b5d4ff"/><stop offset="1" stop-color="#e2eeff"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a896b"/><stop offset="1" stop-color="#195d3b"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34679a"/><stop offset="1" stop-color="#a6d9fc"/></linearGradient>
+  </defs>
+  <rect x="3.5" y="1.5" width="12" height="10" fill="url(#mat)" stroke="url(#edge)" stroke-opacity=".55"/>
+  <rect x="5" y="3" width="9" height="7" fill="url(#sky)"/>
+  <circle cx="12" cy="4.5" r="1" fill="#fff7b3"/>
+  <path d="M5 8Q7 5 9 8L12 6L14 8V10H5Z" fill="url(#hill)"/>
+  <rect x=".5" y="5.5" width="12" height="9" fill="url(#mat)" stroke="url(#edge)" stroke-opacity=".55"/>
+  <path d="M1.5 13.5V6.5H11.5" fill="none" stroke="#fff" stroke-opacity=".7"/>
+  <rect x="2" y="7" width="9" height="6" fill="url(#sky)"/>
+  <circle cx="8.5" cy="8.5" r=".8" fill="#fff7b3"/>
+  <path d="M2 9.5Q4 9 6 11L7.5 12H2Z" fill="url(#hill)"/>
+  <rect x="2" y="12" width="9" height="1" fill="url(#sea)"/>
+</svg>

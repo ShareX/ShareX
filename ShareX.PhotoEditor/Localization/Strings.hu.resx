@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>Automatikus</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>Fekete:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>Feketék</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>Kék</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>Kék:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>Kékek</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>Kékek:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>Fényerő:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>Csatorna:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>Színezés</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>Színek:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>Állandó:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>Kontraszt:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>Kattintással pontokat adhat hozzá, húzással igazíthat, a pontot a grafikonon kívülre húzva pedig törölheti.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>Cián:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>Cián / Vörös:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>Ciánok</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>Ciánok:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>Sűrűség:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>Színátmenet szerkesztése...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>Expozíció:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>Szűrő színe:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>Gamma:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>Gammakorrekció:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>Zöld</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>Zöld:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>Zöldek</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>Zöldek:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>Csúcsfények</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>Színezet:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>Bemeneti fekete:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>Bemeneti fehér:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>Szintek:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>Világosság:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>Bíbor:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>Bíbor / Zöld:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>Bíborok</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>Bíborok:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>Középtónusok</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>Monokróm</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>Semlegesek</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>Ennek a korrekciónak nincsenek beállításai.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>Eltolás:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>Kimeneti fekete:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>Kimeneti csatorna:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>Kimeneti fehér:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>Fénysűrűség megőrzése</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>Piros</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>Vörös:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>Vörösek</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>Vörösek:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>Csatorna visszaállítása</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>Megfordítás</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>Telítettség:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>Árnyékok</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>Küszöbszint:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>Színezés</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>Színezés színe:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>Tónus:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>Régi módszer használata</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>Élénkség:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>Fehérek</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>Sárga / Kék:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>Sárga:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>Sárgák</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>Sárgák:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>Korrekció hozzáadása</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>Új {0} korrekciós réteg létrehozása</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>Fekete-fehér</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>Fényerő/kontraszt</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>Csatornakeverő</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>Színegyensúly</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>Színkeresés</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>Görbék</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>Telítetlenítés</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>Expozíció</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>Színátmenet-leképezés</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR-tónusozás</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>Színezet/telítettség</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>Invertálás</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>Szintek</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>Szín egyeztetése</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>Fotószűrő</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>Poszterizálás</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>Színcsere</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>Szelektív szín</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>Küszöbérték</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>Élénkség</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Szerző:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Szerző: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Összes törlése</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Számlálás törlése</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Jegyzetek törlése</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>{0}. számlálócsoport</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Kattintással számozott számlálójelölőket helyezhet el. Húzással áthelyezheti, Alt+kattintással eltávolíthatja őket.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Darabszám: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Számláló eszköz</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Számlálójelölő törlése</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Jegyzet törlése</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Jegyzet szerkesztése</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Csoport:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Csoport színe</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Címke mérete:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Jelölő mérete:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Számlálójelölő áthelyezése</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Jegyzet áthelyezése</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Új számlálócsoport létrehozása</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Jegyzet</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Jegyzet színe</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Kattintással jegyzetet adhat hozzá. Egy jegyzetre kattintva szerkesztheti, húzással áthelyezheti, Alt+kattintással törölheti.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Jegyzet eszköz</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Új rajztábla hozzáadása</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>{0}. rajztábla</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Rajztábla háttere</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Üres vásznon húzva rajztáblát hozhat létre. A rajztábla címét húzva a tartalmával együtt helyezheti át.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Rajztábla áthelyezése</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Rajztábla eszköz</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>Új rajztábla</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (telefon)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (négyzet)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (táblagép)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Hozzáadás</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Él javítása</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasszó</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Varázspálca</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Kattintással hasonló színeket jelölhet ki. A Shift hozzáad, az Alt kivon.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Varázspálca eszköz</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Objektumkijelölés</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Húzzon téglalapot vagy lasszót egy objektum köré a kijelöléséhez.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Objektumkijelölő eszköz</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Gyorskijelölés</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Fessen át egy területet a kijelöléséhez; a kijelölés az élekig bővül. Az Alt kivon.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Gyorskijelölő eszköz</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Objektum kijelölése...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Kijelölőecset</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Festéssel bővítheti a kijelölést. Az Alt (vagy a Kivonás mód) eltávolít belőle.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Kijelölőecset eszköz</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>Mögötte</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>Színégetés</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>Színfakítás</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>Sötétítés</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>Sötétebb szín</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>Különbség</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>Feloldás</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>Osztás</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>Kizárás</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>Kemény fény</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>Kemény keverés</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>Árnyalat</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>Világosítás</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>Világosabb szín</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>Lineáris égetés</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>Lineáris fakítás (összeadás)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>Lineáris fény</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>Fénysűrűség</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>Szorzás</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>Normál</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>Átfedés</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>Átengedés</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>Pontfény</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>Telítettség</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>Szitanyomás</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>Lágy fény</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>Kivonás</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>Élénk fény</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Airbrush-szerű rárakódási effektusok engedélyezése</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>A(z) „{0}” nem festhet rétegmaszkra.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Érintésenként felvitt festék</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Vonásonkénti legnagyobb festékfedés (0–9 billentyűk)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Méret nyomás szerint</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Simítás:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Korrekciós ecset</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Helyi korrekciót fest. Minden vonás egy korrekciós réteg maszkját szerkeszti. Az Alt törli a korrekciót.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0} ecset</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Korrekciós ecset eszköz</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Korrekció:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Mérték:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Automatikus törlés</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Festés az előtérszínnel. Shift+kattintás egyenes vonalat húz. A [ ] a méretet módosítja.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Ecset eszköz</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Tisztítás minden vonás után</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>A mintavételezett színhez hasonló színeket az előtérszínre cseréli.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Színcserélő eszköz</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Betöltés:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Szín betöltése (előtér)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Keverés:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>A betöltött festéket valódi festékként keveri a vászon színeivel.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Keverőecset eszköz</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>Új réteg vonásonként</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Éles, élsimítás nélküli vonalakat fest az előtérszínnel.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Ceruza eszköz</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Mintavétel:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Nedvesség:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>Szög</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>Keménység</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>Új ecsetkészlet...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>A tollnyomás a folyást vezérli</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>A tollnyomás a méretet vezérli</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>Kerekség</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>Szórás</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>Válasszon festőeszközt az ecsetének szerkesztéséhez.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>Méretingadozás</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>Térköz</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>Négyzetes hegy</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>Horgony:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>Jelenlegi méret: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>Vászonbővítés színe:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>Előtér</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>Szürke</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>Relatív</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>A szerkesztés megszakadt, mert a dokumentum megváltozott.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>Nyisson meg vagy hozzon létre egy dokumentumot a szerkesztés elkezdéséhez (Ctrl+O / Ctrl+N), vagy húzzon ide egy képet.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>Csatornabeállítások</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>Aktuális csatorna törlése</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Csatorna betöltése kijelölésként</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>Új csatorna létrehozása</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>Gyorsmaszk</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>Kijelölés mentése csatornaként</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>A csatorna megjelenítése rátétként</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>Nem sikerült betölteni a 3D LUT-ot: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>3D LUT betöltése</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>3D LUT betöltése...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>3D LUT-fájl:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>3D LUT-fájlok</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>Az 1D keresőtáblák nem támogatottak.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>A tábla adatai nem egyeznek a méretével.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>A tábla tartománya érvénytelen.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>A fájlban nincs LUT_3D_SIZE bejegyzés.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>A(z) {0} táblaméret nem támogatott.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>Háttérszín</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>Háttérszín. Dupla kattintás megnyitja a színválasztót.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>Előtérszín</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>Előtérszín. Dupla kattintás megnyitja a színválasztót.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>Hozzáadás a színmintákhoz</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Nem webes szín. Kattintson a színmintára a legközelebbi használatához.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Csak webes színek</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>Kattintson a jelenlegi szín visszaállításához</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>Színválasztó</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>Színválasztó ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Húzással jelölje ki a körülvágási területet; azon kívül húzva elforgathatja. Az Enter jóváhagy, az Esc megszakít.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>Sz: {0:0} px  M: {1:0} px  Szög: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Körülvágó eszköz</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Levágott képpontok törlése</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>M:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Eredeti arány</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspektivikus körülvágás</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Rajzoljon körülvágási keretet, majd húzza a sarkait egy objektum perspektívájához. Az Enter körülvág és kiegyenesít.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Perspektivikus körülvágó eszköz</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Arány</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Arány:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (négyzet)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Harmadolási szabály</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Rács megjelenítése</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Szélesség és magasság felcserélése</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>Sz:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>Nem</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>Igen</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>1. számlálócsoport</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° az óramutató járásával megegyezően</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° az óramutató járásával ellentétesen</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>a korrekció alkalmazása</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>a vászonméret módosítása</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>a törlés</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>a kép körülvágása</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>a kiegyenlítés</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>a kitöltés</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>a görbe kitöltése</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>a vászon tükrözése</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>a képméret módosítása</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>az összes megjelenítése</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>a vászon elforgatása</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>a szűrő alkalmazása</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>a körvonalazás</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>a görbe körvonalazása</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>a kép szélének levágása</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Rétegmaszk hozzáadása</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Vektormaszk hozzáadása</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Korrekciók</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Ismét</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Igazítás</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>Mind</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>Összes réteg</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alfa {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Szög (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Élsimítás</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Rétegmaszk alkalmazása</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Tetszőleges...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Elrendezés</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Réteg elrendezése</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Automatikus szín</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Automatikus kontraszt</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Automatikus tónus</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>A háttérréteg nem kaphat maszkot. Előbb alakítsa át réteggé.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>A háttérréteg nem kaphat rétegstílust. Előbb alakítsa át réteggé (Réteg &gt; Új &gt; Réteg a háttérből).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Háttér rétegből</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Alapja:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Kék</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Kékek</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Szegély</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Szegély...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Alsó élek</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>A jobb alsó képpont színe</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Előbbre hozás</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>Legelőre hozás</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Ecset neve</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Ecsetek</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Nem sikerült: {0}, mert a réteg zárolva van.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Nem sikerült: {0}, mert nincs aktív réteg.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Nem sikerült: {0}, mert az aktív réteg nem képpontréteg. Előbb raszterizálja (Réteg &gt; Raszterizálás).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Nem lehet intelligens objektummá alakítani, mert a réteg üres.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Nem lehet kivágni, mert a réteg zárolva van.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>Az utolsó művelet nem halványítható.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Nem lehet lefelé egyesíteni, mert nincs alatta réteg.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Nem lehet lefelé egyesíteni, mert az alatta lévő réteg nem képpontréteg.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Vászonméret</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Vászonméret...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Szöveg tájolásának módosítása</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Csatorna</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Csatornák</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Segédvonalak törlése</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Rétegstílus törlése</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Legutóbbi fájlok listájának törlése</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Vágólap</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>A vágólap nem tartalmaz képet.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>Az óramutató járásával megegyezően</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Összes bezárása</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Szín:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Színkitöltés</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Színtartomány</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Színtartomány...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Tipp: előbb vegyen mintát egy színből a pipettával; ez lesz az előtérszín.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Oszlopok:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Tartalomérzékeny kitöltés</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Tartalomérzékeny kitöltés...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Szűkítés</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Szűkítés mértéke (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Szűkítés...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Kontraszt:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Átalakítás intelligens szűrőkhöz</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Átalakítás alakzattá</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Átalakítás intelligens objektummá</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Másolás</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Rétegstílus másolása</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Egyesített másolása</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Nem sikerült: {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Nem sikerült létrehozni a dokumentumot: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Nem sikerült exportálni: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Nem sikerült exportálni a rétegeket: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>Nem sikerült elhelyezni ezt: „{0}”, mert a fájlformátum nem támogatott.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Nem sikerült visszaállítani: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Nem sikerült menteni: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>Nem sikerült menteni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Nem sikerült menteni a szeleteket: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Számlálás</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>Az óramutató járásával ellentétesen</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Vágómaszk létrehozása</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Munkagörbe létrehozása</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Körülvágás</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Kivágás</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Képernyőmód váltása</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Betűméret csökkentése</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Alapértelmezett elő- és háttérszín</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Ecsetkészlet meghatározása...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Egyéni alakzat meghatározása...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Minta meghatározása...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Csatorna törlése</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Réteg törlése</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Rétegmaszk törlése</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Rétegek törlése</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Görbe törlése</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Kijelölés megszüntetése</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Irány:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Letiltás</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Rétegmaszk letiltása</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Torzítás</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Dokumentum határai</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Kettőzés...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Kép kettőzése</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Réteg kettőzése</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Szerkesztés gyorsmaszk módban</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Maszk szerkesztése</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>Ez az effektus nem érhető el.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Effektustár</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Rétegmaszk engedélyezése</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Gyorsmaszk bekapcsolása</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Kiegyenlítés</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Kilépés a gyorsmaszkból</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Bővítés</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Bővítés mértéke (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Bővítés...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Exportálás</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Exportálás másként</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Exportálás másként...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>{0} réteg exportálva ide: {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Exportálva: {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Extrák</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Halványítás</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Halványítás...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Halványítás: {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Elmosás</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Elmosás:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Elmosás...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Elmosás sugara (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Kitöltés</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Kitöltés...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Görbe kitöltése</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Képernyő kitöltése</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Kitöltés háttérszínnel</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Kitöltés előtérszínnel</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Igazítás a képernyőhöz</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Lapítás</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Kép egy rétegre simítása</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Vászon vízszintes tükrözése</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Vászon függőleges tükrözése</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Vízszintes tükrözés</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Függőleges tükrözés</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>A(z) „{0}” nem támogatja a rétegeket. Menti egy rétegre simított másolatként ebben a formátumban, vagy ShareX Photo Editor-projektként a rétegek megtartásához?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Szabad alakítás</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>Átlátszóságból</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Tűrés:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Színátmenet...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Színátmenetes kitöltés</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Szürkeárnyalatos</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Zöld</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Zöldek</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Rács</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Rétegek csoportosítása</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>{0}. csoport</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Növelés</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Segédvonalak</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Térköz (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Magasság (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Összes elrejtése</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Rétegek elrejtése</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Kijelölés elrejtése</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Csúcsfények</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>Előzmények</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Vízszintes</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Vízszintes középpontok</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Képbeállítások</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Kép forgatása</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Képméret</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Képméret...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Betűméret növelése</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Információ</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Belül</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Inverz</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Billentyűparancsok...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Utolsó szűrő</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Réteg a háttérből</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Rétegmaszk</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>{0}. réteg</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Réteg tulajdonságai</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Rétegstílus</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Rétegstílus...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Réteg másolással</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Réteg kivágással</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Rétegek</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Rétegek fájlokba</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Rétegek fájlokba...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Bal élek</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Rétegek összekapcsolása</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Rétegek összekapcsolása/szétválasztása</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Kijelölés betöltése</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Kijelölés betöltése...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Hely:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Összes zárolása</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Segédvonalak zárolása</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Réteg zárolása</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Kijelölés létrehozása</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Előbb hozzon létre egy kijelölést.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Munkagörbe létrehozása</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Margó (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>S_zerkesztés</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_Fájl</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_Szűrő</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Kép</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Réteg</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Kijelölés</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>Sz_öveg</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_Nézet</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>_Ablak</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Egyesítés lefelé</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Csoport egyesítése</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Láthatók egyesítése</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Egyesített</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Középtónusok</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Mód</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Mód:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Módosítás</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>Kijelölés: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Réteg áthelyezése</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Név:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Navigátor</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>Új</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>Új korrekciós réteg</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>Új {0} réteg</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>Új csatorna</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>Új...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>Új kitöltőréteg</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>Új a vágólapról</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Új képernyőképből (teljes képernyő)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Új képernyőképből (terület)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>Új csoport</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>Új segédvonal</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>Új segédvonal...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>Új segédvonal-elrendezés</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>Új segédvonal-elrendezés...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>Új segédvonalak alakzatból</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>Új réteg</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>Új réteg...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>Új görbe</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>Új alakzatréteg</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Következő dokumentum</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>Nincs olyan görbe, amely kijelölésként betölthető.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>Nincsenek mentett kijelölések (alfacsatornák).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Jegyzetek</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>X eltolás:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Y eltolás:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Átlátszatlanság:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Megnyitás</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Megnyitás...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Legutóbbiak megnyitása</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Tájolás</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Tájolás:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Kívül</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Panelek</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Beillesztés</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Beillesztés új dokumentumként</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Beillesztés a helyére</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Beillesztés ebbe</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Rétegstílus beillesztése</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Speciális beillesztés</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Beillesztve</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>{0}. görbe</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Görbék</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Minta</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Minta...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Mintakitöltés</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Minta neve</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>{0}. minta</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspektíva</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Rögzítés a képernyőn</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Képpontrács</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Beágyazott elhelyezése</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Beágyazott elhelyezése...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Kép elhelyezése a keretben</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Elhelyezés keretben</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Pozíció (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Beállítások...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Előnézet</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Előző dokumentum</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Nyomtatás...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Tulajdonságok</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Kiürítés</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Vágólap kiürítése</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Előzmények kiürítése</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Minőség:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Gyors exportálás PNG formátumba</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Raszterizálás</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Réteg raszterizálása</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Rétegstílus raszterizálása</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Szövegréteg raszterizálása</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Piros</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Újra</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Vörösek</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Vágómaszk feloldása</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Réteg átnevezése</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Réteg átnevezése...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Újrakijelölés</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Alapok visszaállítása</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Nézet elforgatásának visszaállítása</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Összes megjelenítése</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Kijelölés megjelenítése</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Jobb élek</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Forgatás</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Elforgatás 180°-kal</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Forgatás 90°-kal az óramutató járásával megegyezően</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Forgatás 90°-kal az óramutató járásával ellentétesen</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Vászon forgatása</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Vászon forgatása {0}°-kal</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Forgatás {0}°-kal</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Sorok:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Vonalzók</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Mintavételi sugár (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>{0}. mintavételezett ecset</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Mintavételezett színek (előtér)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Másolat mentése</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Másolat mentése...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Mentés másként</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Mentés másként...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Mentés projektként</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Kijelölés mentése</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Kijelölés mentése...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Szeletek mentése</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Szeletek mentése...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Munkaterület mentése</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Másolat mentve ide: {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Mentve: {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>{0} szelet mentve ide: {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Méretezés</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Képernyőkép</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Összes kijelölése</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Kijelölés és maszkolás</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Kijelölés és maszkolás...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Kijelölés:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Előbb jelöljön ki egy keretréteget (rajzoljon egyet a Keret eszközzel).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Jelöljön ki két vagy több réteget (Ctrl+kattintás a Rétegek panelen) az összekapcsolásukhoz.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Következő réteg kijelölése</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Előbb készítsen téglalap alakú kijelölést a mintacsempéről.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Előző réteg kijelölése</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Téma kijelölése</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Téma kijelölése...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Kijelölés élei</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Hátrébb küldés</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>Leghátra küldés</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Küldés a ShareX-nek (rögzítés utáni feladatok)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Betűméret beállítása</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Árnyékok</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Árnyékok/csúcsfények...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Alakzat neve</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>{0}. alakzat</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Megosztás a ShareX-szel</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Megjelenítés</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Hasonló</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Döntés</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Bőrtónusok</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Szeletek</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (intelligens szűrő)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Intelligens objektumok</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Simítás</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Simítás:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Simítás...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Illesztés</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Illesztés ehhez</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Egyszínű</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Egyszínű...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Láthatók leképezése</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Lépés vissza</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Lépés előre</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Réteg kiegyenesítése</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Körvonal</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Körvonal színe</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Körvonal...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Görbe körvonalazása</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Téma</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Színminták</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Elő- és háttérszín felcserélése</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Eszköztár...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Felső élek</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>A bal felső képpont színe</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Alakítás</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Kijelölés alakítása</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Kijelölés alakítása...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Átlátszó képpontok</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Szélek levágása</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Szélek levágása...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Kétoszlopos eszköztár</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Visszavonás</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Rétegcsoport bontása</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Rétegek szétválasztása</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Feltöltés with ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Függőleges</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Függőleges középpontok</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Szélesség:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Szélesség (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Szélesség (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Munkaterület</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Munkaterület mentve.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Nagyítás</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Kicsinyítés</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>Folt</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>Laza fodor</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>Laza hosszú</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>Laza közepes</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>Szoros fodor</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>Szoros hosszú</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>Szoros közepes</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>Szoros rövid</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>Alsó</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>Bal alsó</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>Jobb alsó</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>Felső</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>Bal felső</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>Jobb felső</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>Blokk</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>Ecset</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>Ceruza</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>Színátmenet</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>Minta</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>Egyszínű</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>Szög</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>Rombusz</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>Lineáris</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>Sugaras</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>Tükrözött</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>Tartalomérzékeny</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>Textúra létrehozása</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>Közelségi egyezés</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>Rögzített arány</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>Rögzített méret</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>Normál</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>Alakzatok egyesítése</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>Átfedő alakzatok kizárása</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>Alakzatterületek metszete</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>Új réteg</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>Elülső alakzat kivonása</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>Görbe</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>Alakzat</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>Árnyalat</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>Fénysűrűség</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>Telítettség</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>Bikubikus</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>Bikubikus élesebb</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>Bikubikus simább</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>Bilineáris</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>Legközelebbi szomszéd</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>Háttér-színminta</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>Folyamatos</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>Egyszer</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Egyéni alakzat</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Ellipszis</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Vonal</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Sokszög</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Téglalap</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Háromszög</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>Görbe</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>Képpontok</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>Alakzat</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>Belül</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>Kívül</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>Közép</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>Sorkizárt</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>Balra</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>Jobbra</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>Éles</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>Pontos</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>Sima</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>Erős</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>Csúcsfények</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>Középtónusok</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>Árnyékok</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Törli azokat a képpontokat, amelyek az ecset közepe (forró pont) alatti színnel egyeznek.</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Háttérradír eszköz</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Nem összefüggő</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Törlés az előzményekig</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Átlátszóságig törli, zárolt rétegeken pedig a háttérszínig. Az Alt az előzményekig töröl.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Radír eszköz</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Korlátok:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Előtérszín védelme</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>Exportálás...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>Formátum:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>Magasság (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>Veszteségmentes</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>Szín...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>Tartalom:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>Kitöltőszín</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50%-os szürke</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>Átlátszatlanság (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>Minta:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>Átlátszóság megőrzése</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Szórás</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Szerkesztés...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Színátmenet:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Húzással színátmenetet rajzolhat. A Shift 45 fokra korlátozza a szöget.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Szög: {0:0.0}°  Távolság: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Színátmenet eszköz</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} színátmenet</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Varázsradír</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Kattintással átlátszóra törölheti a hasonló színű képpontokat.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Varázsradír eszköz</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Festékesvödör</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Kattintással kitöltheti a hasonló színű képpontokat az előtérszínnel vagy egy mintával.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Festékesvödör eszköz</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Átlátszóság</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Zaj hozzáadása</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Átlag</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Elmosás</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Erősebb elmosás</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Dobozelmosás</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Elmosás</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Torzítás</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Zaj</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Egyéb</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pixelesítés</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Leképezés</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Élesítés</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stilizálás</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Felhők</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Kristályosítás</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Foltmentesítés</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Különbségfelhők</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Diffúzió</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Por és karcolás</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Domborítás</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Fazettázás</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Szálak</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Élek keresése</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Gauss-elmosás</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>Felüláteresztő</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Megvilágítási vignetta</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Medián</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mozaik</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Mozgási elmosódás</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Eltolás</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Olajfestmény</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gauss-eloszlás</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Nagy</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Közepes</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Ki</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>Be</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Polárisból derékszögűbe</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Derékszögűből polárisba</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Kicsi</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Forgó</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Egyenletes</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Nagyító</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Mérték</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Amplitúdó</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Szög</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Cellaméret</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Távolság</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Eloszlás</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Magasság</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Vízszintes</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Szintek</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Legnagyobb eltolás %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Módszer</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Mód</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Egyszínű</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Csempék száma</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Részletek megőrzése</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Sugár</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Zajcsökkentés</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Erősség</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Küszöbérték</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Szórás</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Függőleges</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Hullámhossz</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Csípés</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Pointillizálás</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Polárkoordináták</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Sugaras elmosás</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Zajcsökkentés</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Hullám</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Élesítés</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Élek élesítése</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Erősebb élesítés</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Intelligens élesítés</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Szolarizálás</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Gömbösítés</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Felületi elmosás</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Csempék</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Örvény</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Életlenítő maszk</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Hullám</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Keret ürítése</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Kerettartalom törlése</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Ellipszis alakú keret</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>{0}. keret</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Húzással helyőrző keretet hozhat létre. Helyezzen el vagy illesszen be egy képet az aktív keret kitöltéséhez.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Keret eszköz</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Képfájl elhelyezése az aktív keretben</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Téglalap alakú keret</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>Színpont hozzáadása</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>Egyéni</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>Hely</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>Előbeállítások</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>Színpont színe</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>Színátmenet-szerkesztő</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>Haladó</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>Részletek:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>Élragyogás</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>Hisztogram kiegyenlítése</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>Expozíció és gamma</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>Csúcsfény:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>Csúcsfények tömörítése</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>Helyi alkalmazkodás</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>Módszer:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>Ennek a módszernek nincsenek beállításai.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>Készlet:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>Sugár:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>Görbe visszaállítása</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>Árnyék:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>Élek simítása</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>Erősség:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>Tónus és részletek</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>Tónusgörbe és hisztogram</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>Lapos</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>Egyszínű</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>Fotórealisztikus</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>Telített</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>Szürrealisztikus</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Terület:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Stilizált vonásokat fest az előzményforrásból vett mintával.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Művészi előzményecset eszköz</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Az előzményecset nem használható, mert az előzményállapot vászonmérete eltér.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Visszafesti a képpontokat az Előzmények panelen forrásként kijelölt előzményállapotból.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>Előzményecset eszköz</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Előbb állítson be előzményforrást az Előzmények panelen.</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>Pillanatkép törlése</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>A jelenlegi utáni állapotok törlése</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>Az előzményecset forrásának beállítása</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>Új dokumentum létrehozása a jelenlegi állapotból</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>Új pillanatkép létrehozása</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>Pillanatkép átnevezése</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>Pillanatkép átnevezése...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>{0}. pillanatkép</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>Minden támogatott kép</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>Nem sikerült megnyitni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>A fájl nem létezik.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>Nem sikerült megnyitni ezt: „{0}”, mert nem érvényes ShareX Photo Editor-projekt, vagy a fájl sérült.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>ShareX Photo Editor-projekt</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>A TIFF-exportáláshoz Windows szükséges.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>Nem sikerült megnyitni ezt: „{0}”, mert nem támogatott kép, vagy a fájl sérült.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>A WebP-kódolás sikertelen.</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>Arányok megtartása</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>Százalék:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>Újramintavételezés:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Gyakoriság:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Húzással szabadkézi kijelölést rajzolhat. Elengedéskor bezárul.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Lasszó eszköz</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Mágneses lasszó</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Kattintson a kezdéshez, majd haladjon egy él mentén. Kattintással horgonyokat adhat hozzá, dupla kattintással vagy Enterrel bezárhatja, a Backspace eltávolít egy horgonyt.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Mágneses lasszó eszköz</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Sokszöglasszó</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Kattintással pontokat adhat hozzá. Dupla kattintás, Enter vagy a kezdőpontra kattintás bezárja. A Backspace eltávolítja az utolsó pontot.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Sokszöglasszó eszköz</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Háttér</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} másolat</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>0. réteg</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>Réteg</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>Szög:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>Keverési mód:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>Keverési beállítások</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>Színrátét</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>Távolság:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>Vetett árnyék</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>Kitöltés átlátszatlansága:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>Ragyogás színe</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>Belső árnyék</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>Belső árnyék színe</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>Külső ragyogás</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>Rátét színe</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>Pozíció:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>Árnyék színe</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>Rétegmaszk hozzáadása (Alt: mind elrejtése)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>Rétegstílus hozzáadása</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>Keverés módosítása</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>Keverési beállítások...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>Rétegzárolás módosítása</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>Réteg törlése</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>Réteg kettőzése...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>Kitöltés átlátszatlanságának módosítása</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>A réteg teljesen zárolva van</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>Csoport rétegekből...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>Réteg elrejtése</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>Réteg tulajdonságai...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>A kijelölt rétegek összekapcsolása vagy szétválasztása (többet Ctrl+kattintással jelölhet ki), hogy együtt mozogjanak</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>Összes zárolása</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>Zárolás:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>Képpontok zárolása</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>Pozíció zárolása</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>Átlátszó képpontok zárolása</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>Kattintással szerkesztheti a maszkot, Shift+kattintással letilthatja, Ctrl+kattintással kijelölésként töltheti be</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>Új kitöltő- vagy korrekciós réteg létrehozása</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>Új csoport létrehozása</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>Új réteg létrehozása</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>Átlátszatlanság módosítása</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>A réteg részlegesen zárolva van</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>Réteg megjelenítése</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>Láthatóság váltása (Alt+kattintás csak ezt a réteget mutatja)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Ellipszis alakú kijelölés</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Ellipszis alakú kijelölő eszköz</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Húzással kijelölhet. A Shift korlátoz, az Alt a középpontból rajzol. A kijelölésen belül húzva áthelyezheti.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Téglalap alakú kijelölés</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Téglalap alakú kijelölő eszköz</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>A kijelölés élének finomítása</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Kattintással 1 képpont széles oszlopot jelölhet ki.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Egyoszlopos kijelölő eszköz</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Kattintással 1 képpont magas sort jelölhet ki.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Egysoros kijelölő eszköz</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Stílus:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>Színintenzitás:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>Célkép</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>Halványítás:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>Képstatisztika</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>Réteg:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>Fénysűrűség:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>Semlegesítés</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>Forrás:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>Cél:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>A forrás kijelölésének használata a színek kiszámításához</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>A cél kijelölésének használata a korrekció kiszámításához</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(üres)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Képernyőhöz igazítás</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Húzással görgetheti a nézetet. Bármely eszközzel tartsa lenyomva a szóközt a Kéz eszköz ideiglenes használatához. Dupla kattintással a képernyőhöz igazít.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Kéz eszköz</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Nézet visszaállítása</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Húzással a képpontok módosítása nélkül forgathatja a vászon nézetét. A Shift 15 fokonként illeszt. Az Esc vagy a Nézet visszaállítása visszaállítja.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Nézetforgató eszköz</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Forgatási szög:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Görgetéses nagyítás</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Kattintással nagyíthat, Alt+kattintással kicsinyíthet. Balra/jobbra húzva görgetéses nagyítást végezhet, vagy húzzon téglalapot, ha ez ki van kapcsolva.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Nagyítás</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Kicsinyítés</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Nagyító eszköz</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>Fekete</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>Létrehozás</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>Alapértelmezett (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>Ikon 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>Négyzet 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Web 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>Felbontás (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>Új dokumentum</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>Átlátszó</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>Névtelen</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>Fehér</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>Hozzáadás a kijelöléshez (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>Kattintson az ecsetkészlet-választó megnyitásához</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>Keménység:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>Metszet a kijelöléssel (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>Új kijelölés</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>Nincs szín</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>Kivonás a kijelölésből (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>Lapcsoport bezárása</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>Panelcsoport összecsukása</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>Panelcsoport kibontása</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>Áthelyezés ebbe a csoportba: {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>Áthelyezés új csoportba</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>Panelmenü</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Horgonypont hozzáadása</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Kattintson egy görbeszakaszra horgonypont hozzáadásához.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Horgonypont-hozzáadó eszköz</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Egyesítés</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Átfedő görbeösszetevők egyesítése</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Pont átalakítása</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Kattintson egy simított pontra, hogy sarokponttá alakítsa; egy sarokpontot húzva simító fogantyúkat húzhat ki. Egy fogantyút húzva megtörheti.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Pontátalakító eszköz</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Horgonypont törlése</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Kattintson egy horgonypontra a törléséhez.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Horgonypont-törlő eszköz</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Kattintással vagy keret húzásával horgonypontokat jelölhet ki; a pontok vagy fogantyúk húzásával alakíthat. Az Alt egymástól függetlenül húzza a fogantyút.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Közvetlen kijelölő eszköz</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Horgony húzása</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Kizárás</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Metszet</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Görbe áthelyezése</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Horgony léptetése</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Kattintson egy görbeösszetevőre a kijelöléséhez, húzza az áthelyezéséhez. Alt+húzás kettőz, a Delete eltávolít.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Görbekijelölő eszköz</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>A későbbi összetevők kivonása az elsőből</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Munkagörbe</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>Vektormaszk hozzáadása (alakzatréteg görbéből)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>Aktuális görbe törlése</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>Görbe kitöltése előtérszínnel</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Görbe betöltése kijelölésként</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>Munkagörbe létrehozása a kijelölésből</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>Új görbe létrehozása</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>Görbe átnevezése</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>Görbe mentése</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>{0} alakzatgörbe</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>Görbe körvonalazása ecsettel</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Automatikus hozzáadás/törlés</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Görbe bezárása</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Görbületi toll</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Kattintással pontokat helyezhet el; a görbe simán halad át rajtuk. Az első pontra kattintva bezárhatja, Enterrel vagy Esc-pel befejezheti.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Görbületi toll eszköz</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Görbeillesztés:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Szabadkézi toll</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Húzással szabadkézi görbét rajzolhat; simított görbékkel lesz közelítve. A Mágneses az élekhez illeszt.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Szabadkézi toll eszköz</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Mágneses</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Létrehozás:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Maszk</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Toll</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Kattintással sarokpontokat, húzással simított pontokat adhat hozzá. Az első pontra kattintva bezárhatja. A Ctrl szerkeszti a pontokat, az Alt átalakítja őket.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Toll eszköz</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Gumiszalag</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Kijelölés...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>Névtelen-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>Nem sikerült befejezni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   Dok.: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - Fotószerkesztő - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>Nem menti</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>Rétegmaszk/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>Gyorsmaszk/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>Nincs megnyitott dokumentum.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>Sikertelen: {0}: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>A beállítások nem érhetők el: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>Fotószerkesztő</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>Menti a(z) „{0}” módosításait bezárás előtt?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>Nézet: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Fotószerkesztő</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>Felosztások:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>Rácsvonal minden (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>Segédvonal színe (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>Előzményállapotok:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>Képinterpoláció:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>Ablakméret és -pozíció megjegyzése</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>Beállítások</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>Átlátszósági rács mérete:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>A projekt a fotószerkesztő egy újabb verziójával készült.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>Maszk hozzáadása</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>Igazítás:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>Szöveg igazítása</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>Maszk alkalmazása</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>Rajztábla</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>Rajztábla háttere</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>Háttér:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>Félkövér</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>Kitöltés módosítása</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>Karakter</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>Vágás az alatta lévő réteghez</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>Vágómaszk</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>Képet tartalmaz</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>Átalakítás réteggé</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>Szaggatott</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>Maszk törlése</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>Intelligens szűrő törlése</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>Intelligens szűrő törlése</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>Dokumentum</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>Sz: {0} px   M: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>Szövegréteg szerkesztése</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>Üres keret</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>Üres réteg</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>Engedélyezés</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>Maszk elmosása</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>Kitöltés:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>Kitöltőréteg</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>Betűtípus:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>Keret</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>Keret körvonala</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>Invertálás</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>Maszk invertálása</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>Dőlt</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>Sortávolság:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>Betöltés kijelölésként</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>A festőeszközök most a maszkot szerkesztik: a fekete elrejt, a fehér felfed.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>{0} módosítása</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>Nincs dokumentum</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>Bekezdés</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>Képpontréteg</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>Kép elhelyezése...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>Sugár (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>Szöveg raszterizálása</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>Átalakítás visszaállítása</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>Rajztábla átméretezése</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>Felbontás: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>Kitöltés beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>Betűtípus beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>Sortávolság beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>Körvonal beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>Körvonal igazításának beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>Körvonal típusának beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>Körvonal szélességének beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>Szövegszín beállítása</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>Betűköz beállítása</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>Alakzat tulajdonságai</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>Intelligens szűrők</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>Intelligens objektum</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>Körvonal:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>Szövegszín</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>Intelligens szűrő be-/kikapcsolása</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>Betűköz:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>Aláhúzott</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>Hozzáadás a mintához (Shift+kattintás)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>Kattintson egy szín mintavételezéséhez</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>Pipetta</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>Kép</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>Csere</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>Eredmény:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>Válassza ki a lecserélendő színt</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>Kijelölés</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>Kivonás a mintából (Alt+kattintás)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>Lágy airbrush</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>Fekete, fehér</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>Téglák</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>Lapos kalligrafikus</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>Kréta</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>Sakktábla</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>Króm</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>Réz</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>Átlós vonalak</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>Pöttyök</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>Előtérből háttérbe</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>Előtérből átlátszóba</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>Kemény képpont</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>Kemény kerek</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>Kemény kerek nyomásérzékeny</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>Hatszögek</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>Óceán</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>Lágy kerek</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>Lágy kerek nyomásérzékeny</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>Fröccsenés</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>Spektrum</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>Kemény négyzetes</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>Naplemente</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>Átlátszó csíkok</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>Faerezet</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Tartalomérzékeny áthelyezés</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Tartalomérzékeny áthelyezés...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Tartalomérzékeny áthelyező eszköz</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Sötétítés mértéke:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Cél</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Hozzon létre kijelölést (vagy használjon bármely kijelölő eszközt), majd húzza el a kijelölést.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Kiterjesztés</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Áthelyezés</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Folt</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Folt:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Folt eszköz</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Pupilla mérete:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Vörösszem</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Kattintson egy vörös szemre (vagy húzzon köré) a vörös visszaverődés eltávolításához.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Vörösszem eszköz</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Forrás</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Szerkezet:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Húzással távolságot és szöget mérhet. Egy végpontot húzva módosíthatja.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Vonalzó eszköz</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Az aktív réteg elforgatása úgy, hogy a vonalzó vonala vízszintes legyen</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Mérési skála használata</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Színmintavételezők törlése</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Színmintavételező</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Kattintással legfeljebb 10 színmintavételezőt helyezhet el (az Információ panelen láthatók). Húzással áthelyezheti, Alt+kattintással törölheti őket.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Színmintavételező eszköz</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Aktuális réteg</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Színmintavételező törlése</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Kattintással mintát vehet az előtérszínhez. Alt+kattintással a háttérszínhez vesz mintát.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Pipetta eszköz</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>Legfeljebb 10 színmintavételező engedélyezett.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Színmintavételező áthelyezése</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Minta:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Mintavételi gyűrű megjelenítése</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Kijelölés áthelyezése</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Nyíl</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Pipa</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Felhő</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Kereszt</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Korona</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Egyéni alakzat eszköz</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Csepp</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Ellipszis eszköz</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>Záró nyíl</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Kitöltőszín (jobb kattintás: nincs)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Fogaskerék</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Szív</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Hossz: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Villám</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Húzással vonalat rajzolhat. A Shift 45 fokra korlátoz.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Vonal eszköz</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Görbeművelet:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Sokszög eszköz</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Kirakós</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Téglalap eszköz</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Alakzat:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Húzással megrajzolhatja az alakzatot. A Shift megtartja az arányokat, az Alt a középpontból rajzol.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Oldalak:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Szövegbuborék</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Csillag</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Csillagarány:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Kezdő nyíl</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Körvonal színe (jobb kattintás: nincs)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Háromszög eszköz</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Vastagság:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>Parancsok keresése</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>Billentyűparancsok</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>Alapértelmezések használata</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Szeletek törlése</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Szelet törlése</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Felosztás...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Szelet felosztása</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Szelet szerkesztése</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Szeletbeállítások szerkesztése</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Rögzített Sz:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>Nincs kijelölt szelet</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Sorok x oszlopok (például 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Szelet</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Húzással szeletet hozhat létre. Exportálásukhoz használja a Fájl &gt; Exportálás &gt; Szeletek mentése parancsot.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Szeletbeállítások</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Kattintással kijelölhet egy szeletet, húzással áthelyezheti vagy átméretezheti. A Delete eltávolítja, dupla kattintással átnevezheti.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Szeletkijelölő eszköz</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Szelet eszköz</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Szeletek segédvonalakból</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Igazítva</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Klónozási forrás: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Klónozóbélyegző eszköz</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Javítás...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Javító ecset eszköz</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impresszionista</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>A klónozóbélyegző nem használható, mert a klónozandó terület nincs megadva (Alt+kattintással adhat meg forráspontot).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Festés a kijelölt mintával.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Mintabélyegző eszköz</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Fessen át a zavaró elemeken az eltávolításukhoz. A terület a környezetéből lesz helyreállítva.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Eltávolító eszköz</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Eltávolítás...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Helyi javító ecset eszköz</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Fessen át foltokon és hibákon az automatikus javításukhoz.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Típus:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>Legutóbbi fájlok törlése</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>Új fájl</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>Új képernyőképből (terület)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>A megnyitott fájlok itt jelennek meg.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>Legutóbbiak</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>Legutóbbi fájlok megjelenítése listaként</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>Legutóbbi fájlok megjelenítése csempékként</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>Új színminta létrehozása az előtérszínből</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — kattintás: előtér, Alt/Ctrl+kattintás: háttér, jobb kattintás: törlés</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>Írja be a szöveget. Ctrl+Enter jóváhagy, Esc megszakít.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>Szöveg eszköz</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Teljes méret</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimalizálás</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Festéssel lágyíthatja az éleket és a részleteket.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Elmosás eszköz</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Festéssel sötétíthet területeket. Az Alt világosít.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Égetés eszköz</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Festéssel világosíthat területeket. Az Alt sötétít.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Fakítás eszköz</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Ujjfestés</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Részletek védelme</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Tónusok védelme</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Tartomány:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Telítés</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Festéssel növelheti a helyi kontrasztot és élesítheti a részleteket.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Élesítés eszköz</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Húzással szétkenheti a festéket. Az Ujjfestés az előtérszínnel kezd.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Maszatolás eszköz</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Festéssel telítheti vagy telítetlenítheti a színeket.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Szivacs eszköz</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>A(z) „{0}” nem használható, mert a célréteg rejtett.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>A(z) „{0}” nem használható, mert a réteg zárolva van.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>A(z) „{0}” nem használható, mert a célréteg nem képpontréteg. Előbb raszterizálja a réteget (Réteg &gt; Raszterizálás).</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>Összecsukás egy oszlopba</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>Alapértelmezett elő- és háttérszín (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>Eszköztár szerkesztése...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>Kibontás két oszlopba</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>Szerkesztés gyorsmaszk módban (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>Képernyőmód módosítása (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>Háttérszín beállítása</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>Előtérszín beállítása</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>Elő- és háttérszín felcserélése (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>Eszköztár (minden sor egy eszköztárhely a lenyíló eszközeivel). Jelöljön ki egy eszközt, majd a gombokkal rendezze át.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>Kész</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>További eszközök (az eszköztárról elrejtve):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>Eszköz elrejtése</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>Egyesítés a fenti csoporttal</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>Előbbre mozgatás a csoportban</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>Csoport lejjebb</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>Csoport feljebb</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>Saját csoport</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>Alapértelmezések visszaállítása</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>Kattintson az eszköztárra való visszaállításhoz</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>Eszköztár testreszabása</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Élsimítás</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Jóváhagyás</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Összefüggő</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Folyás:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Pontminta</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Minta az összes rétegből</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} x {0} átlag</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Mintaméret:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>Sz: {0:0} px  M: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tűrés:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Alsó élek igazítása</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Vízszintes középpontok igazítása</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Bal élek igazítása</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Jobb élek igazítása</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Felső élek igazítása</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Függőleges középpontok igazítása</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Automatikus kijelölés:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Kattintással a mutató alatti legfelső réteget jelöli ki (ideiglenesen a Ctrl billentyűvel)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Alakítás megszakítása (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Nem alakítható, mert a réteg üres.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Nem alakítható, mert a réteg zárolva van, vagy nincs tartalma.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>A kijelölés nem alakítható, mert a réteg zárolva van.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Alakítás jóváhagyása (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Segédvonal törlése</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Lebegő</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Lebegő kijelölés</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>A fogantyúkat húzva méretezhet (Shift: arányosan, Alt: a középpontból), kívül húzva forgathat, sarkot Ctrl+húzással torzíthat, élt Ctrl+húzással dönthet. Az Enter jóváhagy, az Esc megszakít.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Csoport</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpoláció:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>A kérés nem teljesíthető, mert a réteg zárolva van.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Segédvonal áthelyezése</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Húzással áthelyezheti a réteget vagy a kijelölt képpontokat. Alt+húzás kettőz, a Shift korlátoz. A nyílbillentyűk léptetnek.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Mozgató eszköz</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Léptetés</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Alakítási vezérlők megjelenítése</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Az aktív réteg vagy kijelölés alakításához használja a Szerkesztés &gt; Szabad alakítás (Ctrl+T) parancsot.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>Csupa nagybetű</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Félkövér dőlt</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Aktuális szerkesztések elvetése (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Szöveg középre igazítása</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Aktuális szerkesztések jóváhagyása (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Álfélkövér</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Áldőlt</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Kattintással pontszöveget, húzással bekezdésszöveget adhat hozzá, meglévő szövegre kattintva szerkesztheti. A Ctrl+Enter jóváhagy, az Esc megszakít.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Vízszintes szövegmaszk eszköz</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Vízszintes szöveg eszköz</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Szöveg balra igazítása</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Kattintson a gépeléshez; jóváhagyáskor a szöveg alakjában jön létre kijelölés.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Normál</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Szöveg jobbra igazítása</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Élsimítás beállítása</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Betűstílus beállítása</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Áthúzott</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Szövegszín</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Szöveg tájolásának váltása</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Szövegmaszk</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Függőleges szövegmaszk eszköz</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Függőleges szöveg eszköz</value>
+  </data>
+</root>

@@ -1,10 +1,11 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icons="using:ShareX.Icons"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="using:ShareX"
              xmlns:res="using:ShareX.Localization"
-             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              mc:Ignorable="d"
              x:Class="ShareX.CustomUploaderKeyValueEditor"
              x:Name="Root">
@@ -22,7 +23,7 @@
                         Classes="key-value-button"
                         ToolTip.Tip="{x:Static res:Strings.CustomUploaderKeyValueEditor_Add}"
                         Click="OnAddClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}" FontSize="15"/>
                 </Button>
             </Grid>
 
@@ -43,7 +44,7 @@
                                         Classes="key-value-button danger"
                                         ToolTip.Tip="{x:Static res:Strings.CustomUploaderKeyValueEditor_Remove}"
                                         Click="OnRemoveClick">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}" FontSize="14"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}" FontSize="14"/>
                                 </Button>
                             </Grid>
                         </DataTemplate>

@@ -29,6 +29,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.ImageEditor.Integration;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 
@@ -37,7 +38,17 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 /// <summary>UI-thread boundary for the Avalonia region capture experience.</summary>
 public static class RegionCaptureIntegration
 {
-    public static Rectangle LastRegionRectangle { get; internal set; }
+    /// <summary>Bounds of the last captured region, or of all regions when several were captured.</summary>
+    public static Rectangle LastRegionRectangle { get; private set; }
+
+    /// <summary>Screen rectangles of the last captured regions. Holds more than one item after a multi region capture.</summary>
+    public static IReadOnlyList<Rectangle> LastRegionRectangles { get; private set; } = [];
+
+    internal static void SetLastRegion(Rectangle bounds, IReadOnlyList<Rectangle> regions)
+    {
+        LastRegionRectangle = bounds;
+        LastRegionRectangles = regions;
+    }
 
     public static Task<AvaloniaRegionCaptureResult?> CaptureAsync(AvaloniaRegionCaptureRequest request)
     {
@@ -75,6 +86,39 @@ public static class RegionCaptureIntegration
                     request.CursorBitmap?.Dispose();
                 }
 
+                completion.TrySetException(ex);
+            }
+        });
+
+        return completion.Task;
+    }
+
+    /// <summary>
+    /// Lets the user draw a rectangle over the live desktop and returns it in screen pixels, or null when cancelled.
+    /// The selection window is closed when the task completes, so the caller can capture the screen right after.
+    /// </summary>
+    public static Task<Rectangle?> SelectTransparentRegionAsync(Rectangle screenBounds, bool lockCursorToWindow)
+    {
+        AvaloniaBootstrapper.EnsureInitialized();
+
+        TaskCompletionSource<Rectangle?> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+
+        Dispatcher.UIThread.Post(async () =>
+        {
+            try
+            {
+                RegionCaptureTransparentWindow window = new(screenBounds, lockCursorToWindow);
+                Rectangle? selection = await window.SelectAsync();
+
+                if (selection is Rectangle rectangle)
+                {
+                    SetLastRegion(rectangle, [rectangle]);
+                }
+
+                completion.TrySetResult(selection);
+            }
+            catch (Exception ex)
+            {
                 completion.TrySetException(ex);
             }
         });

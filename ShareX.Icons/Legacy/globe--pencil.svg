@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="glSea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6eefc"/><stop offset="0.22" stop-color="#9fd2f0"/><stop offset="0.4" stop-color="#4fa2d8"/><stop offset="0.55" stop-color="#2a8bcd"/><stop offset="0.72" stop-color="#3a95de"/><stop offset="1" stop-color="#7ab8f6"/></linearGradient>
+<linearGradient id="glRim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#038be6"/><stop offset="0.5" stop-color="#00407f"/><stop offset="1" stop-color="#0067ba"/></linearGradient>
+<linearGradient id="glLand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfedff"/><stop offset="0.35" stop-color="#77c5fd"/><stop offset="0.6" stop-color="#46a5f5"/><stop offset="1" stop-color="#6ec6ff"/></linearGradient>
+<radialGradient id="glGloss" cx="0.5" cy="0.3" r="0.6"><stop offset="0" stop-color="#ffffff" stop-opacity="0.38"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+<linearGradient id="pnBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6c45a"/><stop offset="0.45" stop-color="#f7e679"/><stop offset="0.55" stop-color="#f7e679"/><stop offset="1" stop-color="#8e8f3d"/></linearGradient>
+<linearGradient id="pnRub" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8080"/><stop offset="0.5" stop-color="#de0101"/><stop offset="1" stop-color="#9f0000"/></linearGradient>
+</defs>
+<circle cx="7.5" cy="7.5" r="7" fill="url(#glSea)"/>
+<g transform="translate(0.0 0.0) scale(1.0)"><path d="M8.6 4.6 C9.6 4 10.6 3.4 11.6 3.6 C12.6 4.4 13.2 5.4 13.1 6.4 C12.6 6.8 12 6.6 11.6 7.4 C11.4 8.4 12.4 8.6 12.9 9.6 C12.8 10.8 12 11.6 11.4 11.6 C11 10.6 10.4 9.8 10.2 8.8 C9.8 7.8 9.2 7 8.4 6.4 C8 5.8 8 5 8.6 4.6 Z" fill="url(#glLand)" opacity=".95"/><path d="M3.5 3.6 C4.6 2.6 6.4 2.2 7.6 2.6 C7.4 3.4 6.6 4 5.6 4.2 C4.8 4.4 4.2 4.8 3.4 5.2 C3 4.6 3.1 4 3.5 3.6 Z" fill="#c8f0ff" opacity=".55"/><path d="M11.4 6.9 L11.5 8.7" stroke="#1d6fb9" stroke-opacity=".9" stroke-width="1"/><path d="M2.2 9.6 C3.4 9 4.6 9.4 5.4 10.4 C5.2 11.2 4.2 11.6 3.2 11.2 C2.6 10.8 2.2 10.2 2.2 9.6 Z" fill="#62b0f0" opacity=".6"/></g>
+<ellipse cx="7.5" cy="4.35" rx="5.46" ry="3.5" fill="url(#glGloss)"/>
+<circle cx="7.5" cy="7.5" r="7" fill="none" stroke="url(#glRim)" stroke-opacity=".8"/>
+<g transform="translate(7.2 8.8) rotate(-45)"><path d="M2.4 -1.25 H8.6 V1.25 H2.4 Z" fill="url(#pnBody)" stroke="#5b5a1e" stroke-opacity=".55" stroke-width=".6"/><path d="M0 0 L2.4 -1.25 V1.25 Z" fill="#fff4d9" stroke="#5d5034" stroke-opacity=".55" stroke-width=".5" stroke-linejoin="round"/><path d="M-.2 0 L1.1 -.6 V.6 Z" fill="#000000"/><path d="M8.6 -1.25 H10.4 Q11.3 -1.25 11.3 0 Q11.3 1.25 10.4 1.25 H8.6 Z" fill="url(#pnRub)" stroke="#6f1010" stroke-opacity=".6" stroke-width=".5"/></g>
+</svg>

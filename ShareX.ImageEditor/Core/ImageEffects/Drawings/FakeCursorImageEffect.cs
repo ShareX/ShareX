@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class FakeCursorImageEffect : ImageEffectBase
     public override string Id => "fake_cursor";
     public override string Name => "Fake cursor";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.mouse_pointer;
+    public override string IconKey => ImageEditorIcons.Cursor;
     public override string Description => "Draws fake mouse cursors at random positions on the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

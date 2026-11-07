@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class HexagonalPixelateImageEffect : ImageEffectBase
     public override string Id => "hexagonal_pixelate";
     public override string Name => "Hexagonal pixelate";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.hexagon;
+    public override string IconKey => ImageEffectIcons.Hexagon;
     public override string Description => "Pixelates the image using hexagonal tiles.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

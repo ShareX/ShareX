@@ -34,9 +34,11 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Diagnostics;
@@ -264,14 +266,14 @@ public partial class NotificationWindow : Window
             string label = string.IsNullOrWhiteSpace(definition.Label)
                 ? definition.Action.GetLocalizedDescription()
                 : definition.Label;
-            string icon = string.IsNullOrWhiteSpace(definition.Icon)
-                ? NotificationActionButton.GetDefaultIcon(definition.Action)
-                : definition.Icon;
+            // A saved icon that is not an icon key, such as one from an older version, falls back to the default.
+            string icon = IconCatalog.Find(definition.Icon) != null
+                ? definition.Icon!
+                : NotificationActionButton.GetDefaultIcon(definition.Action);
 
-            TextBlock iconText = new()
+            IconPresenter iconText = new()
             {
-                Text = icon,
-                FontFamily = (FontFamily)Application.Current!.FindResource("ShareX.FontFamily.Icon")!,
+                Icon = icon,
                 FontSize = iconSize,
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                 VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center

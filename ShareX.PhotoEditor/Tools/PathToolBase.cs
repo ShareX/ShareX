@@ -52,12 +52,12 @@ public abstract class PathToolBase : ToolBase
         if (doc.ActivePath != null) return doc.ActivePath.Path;
         if (doc.WorkPath != null)
         {
-            doc.ActivePath = new NamedPath("Work Path", doc.WorkPath);
+            doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
             return doc.WorkPath;
         }
         if (!create) return null;
         doc.WorkPath = new VectorPath();
-        doc.ActivePath = new NamedPath("Work Path", doc.WorkPath);
+        doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
         return doc.WorkPath;
     }
 
@@ -83,7 +83,7 @@ public abstract class PathToolBase : ToolBase
     {
         PhotoDocument doc = Doc!;
         int number = doc.AllLayers.OfType<ShapeLayer>().Count() + 1;
-        ShapeLayer layer = new($"Shape {number}", path) { FillColor = Host.Foreground };
+        ShapeLayer layer = new(string.Format(Strings.EditorCommands_ShapeNumber, number), path) { FillColor = Host.Foreground };
         doc.ActivePath = null;
         doc.AddLayer(layer);
         return layer;

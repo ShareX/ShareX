@@ -74,7 +74,7 @@ public static class ExportDialog
         Grid jpegQualitySection = AddSection();
         Grid webpQualitySection = AddSection();
         Grid sizeSection = AddSection();
-        CheckBox lossless = new() { Content = "Lossless", IsChecked = settings.ExportWebPLossless };
+        CheckBox lossless = new() { Content = Strings.ExportDialog_Lossless, IsChecked = settings.ExportWebPLossless };
         void UpdateOptions()
         {
             losslessSection.IsVisible = extension == ".webp";
@@ -82,7 +82,7 @@ public static class ExportDialog
             jpegQualitySection.IsVisible = extension == ".jpg";
             webpQualitySection.IsVisible = extension == ".webp" && lossless.IsChecked != true;
         }
-        DialogBuilder.AddRow(formatSection, "Format:", DialogBuilder.Combo(Formats, extension, v =>
+        DialogBuilder.AddRow(formatSection, Strings.ExportDialog_FormatColon, DialogBuilder.Combo(Formats, extension, v =>
         {
             extension = v;
             UpdateOptions();
@@ -90,12 +90,12 @@ public static class ExportDialog
         lossless.IsCheckedChanged += (_, _) => UpdateOptions();
         DialogBuilder.AddFull(losslessSection, lossless);
         // Each lossy format keeps its own quality.
-        DialogBuilder.AddRow(jpegQualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, jpegQuality, v => jpegQuality = (int)v));
-        DialogBuilder.AddRow(webpQualitySection, "Quality:", DialogBuilder.SliderNumber(1, 100, webpQuality, v => webpQuality = (int)v));
-        DialogBuilder.AddRow(sizeSection, "Width (px):", width);
-        DialogBuilder.AddRow(sizeSection, "Height (px):", height);
+        DialogBuilder.AddRow(jpegQualitySection, Strings.EditorCommands_QualityColon, DialogBuilder.SliderNumber(1, 100, jpegQuality, v => jpegQuality = (int)v));
+        DialogBuilder.AddRow(webpQualitySection, Strings.EditorCommands_QualityColon, DialogBuilder.SliderNumber(1, 100, webpQuality, v => webpQuality = (int)v));
+        DialogBuilder.AddRow(sizeSection, Strings.EditorCommands_WidthPxColon, width);
+        DialogBuilder.AddRow(sizeSection, Strings.ExportDialog_HeightPxColon, height);
         UpdateOptions();
-        if (!await DialogBuilder.ShowAsync(owner, "Export As", form, 420, "Export...")) return null;
+        if (!await DialogBuilder.ShowAsync(owner, Strings.EditorCommands_ExportAs, form, 420, Strings.ExportDialog_ExportEllipsis)) return null;
         settings.ExportFormat = extension;
         settings.ExportJpegQuality = jpegQuality;
         settings.ExportWebPQuality = webpQuality;

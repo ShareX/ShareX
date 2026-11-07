@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#f6fbfb"/></linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ecf7f7"/><stop offset="1" stop-color="#e3f3f3"/></linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3d8eff"/><stop offset=".5" stop-color="#7ab2ff"/><stop offset="1" stop-color="#b9d6ff"/></linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a9fff"/><stop offset="1" stop-color="#e1eeff"/></linearGradient>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#124e56"/><stop offset="1" stop-color="#39747d"/></linearGradient>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34679a"/><stop offset="1" stop-color="#588bbd"/></linearGradient>
+    <linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5c95a0"/><stop offset="1" stop-color="#b6d8f0"/></linearGradient>
+    <linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#7eb1e4"/><stop offset="1" stop-color="#b8ebff"/></linearGradient>
+  </defs>
+  <rect x="0" y="2" width="7" height="5" fill="url(#g1)"/>
+  <rect x="0" y="9" width="7" height="5" fill="url(#g2)"/>
+  <rect x="9" y="2" width="7" height="5" fill="url(#g1)"/>
+  <rect x="9" y="9" width="7" height="5" fill="url(#g2)"/>
+  <rect x="2" y="4" width="5" height="3" fill="url(#g3)"/>
+  <rect x="9" y="4" width="5" height="3" fill="url(#g4)"/>
+  <rect x="2" y="9" width="5" height="1" fill="url(#g5)"/>
+  <rect x="2" y="10" width="5" height="2" fill="url(#g6)"/>
+  <rect x="9" y="9" width="5" height="1" fill="url(#g7)"/>
+  <rect x="9" y="10" width="5" height="2" fill="url(#g8)"/>
+  <path d="M7 2.5H.5V7M9 2.5H15.5V7" fill="none" stroke="#4f7878" stroke-opacity=".45"/>
+  <path d="M.5 9V13.5H7M15.5 9V13.5H9" fill="none" stroke="#1f4242" stroke-opacity=".5"/>
+</svg>

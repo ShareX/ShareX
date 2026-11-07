@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recunoaștere text (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Deschideți în editorul foto</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Efectuați acțiuni</value>
   </data>
@@ -785,6 +788,9 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Regiune de captură</value>
+  </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Regiune de captură (Transparentă)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Riglă</value>

@@ -26,9 +26,9 @@
 #nullable enable
 
 using Avalonia.Data.Converters;
-using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Globalization;
+using ShareX.Icons;
 
 namespace ShareX.HistoryLib;
 
@@ -38,20 +38,20 @@ public sealed class HistoryItemIconConverter : IValueConverter
     {
         if (value is not HistoryItem item)
         {
-            return LucideIcons.file;
+            return AppIcons.File;
         }
 
         if (item.Favorite)
         {
-            return LucideIcons.star;
+            return AppIcons.Star;
         }
 
         return item.Type?.ToLowerInvariant() switch
         {
-            "image" => LucideIcons.image,
-            "text" => LucideIcons.file_text,
-            "file" => LucideIcons.file,
-            _ => LucideIcons.link
+            "image" => AppIcons.Image,
+            "text" => AppIcons.FileText,
+            "file" => AppIcons.File,
+            _ => AppIcons.Link
         };
     }
 
