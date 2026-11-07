@@ -1568,6 +1568,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>منطقة...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>منطقة (شفافة)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>متصفح التخزين البعيد...</value>
   </data>

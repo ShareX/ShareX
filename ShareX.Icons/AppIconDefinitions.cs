@@ -267,6 +267,15 @@ internal static partial class AppIconDefinitions
             Stroke(Brackets),
             Stroke("M12 9v6M9 12h6")
         },
+        // The region brackets around a transparency checkerboard.
+        {
+            Icon.RegionTransparent,
+            Stroke(Brackets),
+            Fill(Rectangle(7, 7, 5, 5, 1)),
+            Fill(Rectangle(12, 7, 5, 5, 1), 0.35),
+            Fill(Rectangle(7, 12, 5, 5, 1), 0.35),
+            Fill(Rectangle(12, 12, 5, 5, 1))
+        },
         // The region brackets around a repeat arrow.
         {
             Icon.LastRegion,

@@ -128,6 +128,7 @@ internal sealed class MainMenuBuilder
             Parent(Strings.MainMenuBuilder_Window, AppIcons.Window, BuildWindowMenu),
             Parent(Strings.MainMenuBuilder_Monitor, AppIcons.Monitor, BuildMonitorMenu),
             Item(Strings.MainMenuBuilder_Region, AppIcons.Region, () => new CaptureRegion().Capture(autoHide)),
+            Item(Strings.MainMenuBuilder_RegionTransparent, AppIcons.RegionTransparent, () => new CaptureRegionTransparent().Capture(autoHide)),
             Item(Strings.MainMenuBuilder_LastRegion, AppIcons.LastRegion, () => new CaptureLastRegion().Capture(autoHide)),
             Item(Strings.MainMenuBuilder_ScreenRecording, AppIcons.ScreenRecording,
                 () => TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region)),

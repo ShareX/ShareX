@@ -1568,6 +1568,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Область...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Область (прозрачный фон)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Браузер удаленного хранилища...</value>
   </data>

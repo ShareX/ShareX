@@ -789,6 +789,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Regiune de captură</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Regiune de captură (Transparentă)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Riglă</value>
   </data>

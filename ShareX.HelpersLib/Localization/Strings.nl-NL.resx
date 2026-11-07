@@ -789,6 +789,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Leg rechthoekige regio vast</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Leg rechthoekige regio vast (Transparant)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Meetlat</value>
   </data>

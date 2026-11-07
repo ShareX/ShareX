@@ -789,6 +789,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Bölge yakala</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Bölge yakala (Saydam)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Cetvel</value>
   </data>

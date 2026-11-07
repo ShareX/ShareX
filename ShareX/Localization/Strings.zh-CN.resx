@@ -1568,6 +1568,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>区域...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>区域（透明）...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>远程存储浏览器...</value>
   </data>

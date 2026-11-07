@@ -789,6 +789,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Capture region</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capture region (Transparent)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Ruler</value>
   </data>

@@ -72,6 +72,7 @@ public static class AppIcons
     public const string Window = Prefix + "window";
     public const string Monitor = Prefix + "monitor";
     public const string Region = Prefix + "region";
+    public const string RegionTransparent = Prefix + "region-transparent";
     public const string LastRegion = Prefix + "last-region";
     public const string Video = Prefix + "video";
     public const string Film = Prefix + "film";

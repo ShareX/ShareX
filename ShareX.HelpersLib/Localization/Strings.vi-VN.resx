@@ -789,6 +789,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Chụp theo vùng</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Chụp theo vùng (Trong suốt)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>Thước đo</value>
   </data>

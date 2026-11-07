@@ -789,6 +789,9 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>צלם אזור</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>צלם אזור (שקוף)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
     <value>סרגל</value>
   </data>

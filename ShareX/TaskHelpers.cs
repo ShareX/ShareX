@@ -132,6 +132,9 @@ namespace ShareX
                 case HotkeyType.RectangleRegion:
                     new CaptureRegion().Capture(safeTaskSettings);
                     break;
+                case HotkeyType.RectangleTransparent:
+                    new CaptureRegionTransparent().Capture(safeTaskSettings);
+                    break;
                 case HotkeyType.CustomRegion:
                     new CaptureCustomRegion().Capture(safeTaskSettings);
                     break;
@@ -2335,6 +2338,7 @@ namespace ShareX
                 HotkeyType.CustomWindow => AppIcons.Window,
                 HotkeyType.ActiveMonitor => AppIcons.Monitor,
                 HotkeyType.RectangleRegion => AppIcons.Region,
+                HotkeyType.RectangleTransparent => AppIcons.RegionTransparent,
                 HotkeyType.CustomRegion => AppIcons.Crop,
                 HotkeyType.LastRegion => AppIcons.LastRegion,
                 HotkeyType.ScrollingCapture => AppIcons.ScrollingCapture,

@@ -168,6 +168,7 @@ internal static class LegacyIconMap
         [AppIcons.Redo] = "arrow-circle-315",
         [AppIcons.Refresh] = "arrow-circle-double-135",
         [AppIcons.Region] = "layer-shape",
+        [AppIcons.RegionTransparent] = "layer-transparent",
         [AppIcons.RemoteStorageBrowser] = "app.remote-storage-browser",
         [AppIcons.Resize] = "image-select",
         [AppIcons.RestartAsAdmin] = "uac",
