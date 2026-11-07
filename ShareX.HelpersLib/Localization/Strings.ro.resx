@@ -642,6 +642,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Încărcați</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Riglă (clasică)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Încărcați din clipboard</value>
   </data>

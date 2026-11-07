@@ -642,6 +642,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Carica</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Righello (classico)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Carica dagli Appunti</value>
   </data>

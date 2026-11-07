@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:localization="using:ShareX.Tools.Localization"
+        xmlns:controls="using:ShareX.Tools.Controls"
+        x:Class="ShareX.Tools.ClassicRulerWindow"
+        Title="{x:Static localization:Strings.ClassicRulerWindow_Title}"
+        CanResize="False"
+        ShowInTaskbar="False"
+        WindowDecorations="None"
+        Background="Black"
+        FontFamily="{DynamicResource ShareX.FontFamily.Default}">
+
+    <!-- Content is laid out in physical pixels and scaled once, so one screenshot pixel is one screen pixel. -->
+    <LayoutTransformControl x:Name="PixelTransform"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top">
+        <Grid>
+            <Image x:Name="ScreenshotImage"
+                   Stretch="Fill"
+                   RenderOptions.BitmapInterpolationMode="None"/>
+            <controls:ClassicRulerOverlayControl x:Name="RulerOverlay"/>
+        </Grid>
+    </LayoutTransformControl>
+</Window>

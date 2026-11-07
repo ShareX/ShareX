@@ -1490,6 +1490,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>कैप्चर करें</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>मापनी (क्लासिक)...</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>क्लिपबोर्ड दर्शक...</value>
   </data>

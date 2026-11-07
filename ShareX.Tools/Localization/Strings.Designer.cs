@@ -4952,6 +4952,42 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
+        ///   Looks up a localized string similar to ShareX - Ruler (classic).
+        /// </summary>
+        public static string ClassicRulerWindow_Title {
+            get {
+                return ResourceManager.GetString("ClassicRulerWindow_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0} | Y: {1} | Right: {2} | Bottom: {3}.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Position {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Position", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Width: {0} px | Height: {1} px | Area: {2} px | Perimeter: {3} px.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Size {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Size", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Distance: {0:0.00} px | Angle: {1:0.00}°.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Distance {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Distance", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Looks up a localized string similar to ShareX - Ruler.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {

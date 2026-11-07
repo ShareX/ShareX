@@ -642,6 +642,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Yükle</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Cetvel (klasik)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Panodan yükle</value>
   </data>

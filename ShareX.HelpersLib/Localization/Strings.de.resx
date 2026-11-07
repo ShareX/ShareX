@@ -642,6 +642,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Hochladen</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Lineal (klassisch)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Aus Zwischenablage hochladen</value>
   </data>

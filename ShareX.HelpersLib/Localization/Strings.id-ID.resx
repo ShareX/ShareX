@@ -642,6 +642,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Unggah</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Penggaris (klasik)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Unggah dari papan klip</value>
   </data>

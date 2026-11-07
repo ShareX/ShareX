@@ -1490,6 +1490,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>キャプチャー</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>定規（クラシック）</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>クリップボードビューアー</value>
   </data>

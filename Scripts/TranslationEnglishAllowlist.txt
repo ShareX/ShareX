@@ -822,3 +822,4 @@ ShareX.PhotoEditor|TransformTools_InterpolationColon|d45a90e88418798718e0724d9da
 ShareX|ApplicationSettingsWindow_IconPackModern|eef6c7f6ddd4067eb8afcea1a2104116ed5c09287b11433ed96a2b3c47cbb55c|de,hu,id-ID,nl-NL,ro,sv,tr
 ShareX|TaskListView_Status|920e413c7d411b61ef3e8c63b1cb6ad058d5f95f8b481dbafe60248387d8c355|da,de,id-ID,nl-NL,pl,pt-BR,sv
 ShareX|TaskListView_URL|e7a241debad56609ee660a5d2ef258a1aceb7357ff210ac66d7280b3add02a9a|da,de,es-MX,es,fa-IR,fr,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pt-BR,pt-PT,ro,sv,th,vi-VN
+ShareX.Tools|ClassicRulerOverlayControl_Distance|e3e0a1db97bcb1d578895bb00f19f10cff09bfa381955ddf866535b2417dd1df|fr

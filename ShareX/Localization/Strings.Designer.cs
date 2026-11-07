@@ -655,6 +655,15 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("MainMenuBuilder_Ruler", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ruler (classic)....
+        /// </summary>
+        public static string MainMenuBuilder_ClassicRuler {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ClassicRuler", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized string similar to Screen color picker....

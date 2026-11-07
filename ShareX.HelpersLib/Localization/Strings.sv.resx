@@ -642,6 +642,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uppladdning</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linjal (klassisk)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Ladda upp från urklipp</value>
   </data>

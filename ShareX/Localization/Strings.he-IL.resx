@@ -1490,6 +1490,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>צלם מסך</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>סרגל (קלאסי)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>מציג לוח הגזירה</value>
   </data>

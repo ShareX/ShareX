@@ -1490,6 +1490,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Захопити</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Лінійка (класична)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Переглядач буфера обміну</value>
   </data>

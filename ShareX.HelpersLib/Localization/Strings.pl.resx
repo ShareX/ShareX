@@ -642,6 +642,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Przeslij</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linijka (klasyczna)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Prześlij ze schowka</value>
   </data>

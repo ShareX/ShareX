@@ -642,6 +642,9 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Règle (classique)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Mise en ligne depuis le presse-papier</value>
   </data>
