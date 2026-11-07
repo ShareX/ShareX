@@ -1385,6 +1385,21 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Tastenkürzeleinstellungen</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Sie können dies jederzeit in den Anwendungseinstellungen ändern.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Die farbenfrohen Symbole aus ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Klare Liniensymbole, die den Farben Ihres Designs folgen.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX hat neue Symbole. Wählen Sie das Aussehen, das Ihnen am besten gefällt.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Wählen Sie Ihre Symbole</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Konnte das Bild nicht in den Pfad schreiben:</value>
   </data>

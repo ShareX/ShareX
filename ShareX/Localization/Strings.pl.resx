@@ -1385,6 +1385,21 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Ustawienia skrótów klawiszowych</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Możesz to zmienić w dowolnej chwili w ustawieniach aplikacji.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Kolorowe ikony z ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Proste ikony liniowe w kolorach motywu.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX ma nowe ikony. Wybierz wygląd, który wolisz.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Wybierz ikony</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Nie można zapisać obrazu do ścieżki:</value>
   </data>

@@ -1385,6 +1385,21 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Setări taste rapide</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Puteți modifica oricând această opțiune din setările aplicației.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Pictogramele colorate din ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Pictograme simple, din linii, care urmează culorile temei.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX are pictograme noi. Alegeți aspectul preferat.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Alegeți pictogramele</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Nu s-a putut scrie imaginea în calea:</value>
   </data>

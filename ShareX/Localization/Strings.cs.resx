@@ -1385,6 +1385,21 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Nastavení klávesových zkratek</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Toto můžete kdykoli změnit v nastavení aplikace.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Barevné ikony ze ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Čisté obrysové ikony, které přebírají barvy motivu.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX má nové ikony. Vyberte si vzhled, který se vám líbí.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vyberte si ikony</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Obrázek nelze zapsat do cesty:</value>
   </data>

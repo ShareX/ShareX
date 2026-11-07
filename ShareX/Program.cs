@@ -150,6 +150,8 @@ internal static class Program
             MainWindowIntegration.Activate();
         }
 
+        IconPackPromptWindow.ShowOnceWithMainWindow();
+
         DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
         await ApplicationCommandLine.ExecuteInitialAsync();
 

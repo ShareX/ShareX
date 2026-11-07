@@ -1385,6 +1385,21 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Configurações de atalhos</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Você pode alterar isso a qualquer momento nas configurações do aplicativo.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Os ícones coloridos do ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Ícones de linhas limpas que seguem as cores do seu tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>O ShareX tem novos ícones. Escolha a aparência que preferir.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Escolha seus ícones</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Não foi possível salvar a imagem no caminho:</value>
   </data>

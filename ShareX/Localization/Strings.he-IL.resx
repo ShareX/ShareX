@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - הגדרות מקשי קיצור</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>ניתן לשנות זאת בכל עת בהגדרות היישום.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>הסמלים הצבעוניים מ-ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>סמלי קו נקיים שתואמים לצבעי ערכת הנושא שלך.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ל-ShareX יש סמלים חדשים. בחר את המראה המועדף עליך.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>בחר את הסמלים שלך</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>לא ניתן היה לכתוב תמונה לנתיב:</value>
   </data>

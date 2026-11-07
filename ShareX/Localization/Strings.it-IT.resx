@@ -1385,6 +1385,21 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Impostazioni delle scorciatoie</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Puoi modificarlo in qualsiasi momento nelle impostazioni dell'applicazione.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Le icone colorate di ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Icone a linee pulite che seguono i colori del tuo tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX ha nuove icone. Scegli l'aspetto che preferisci.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Scegli le tue icone</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write immagine to percorso:</value>
   </data>

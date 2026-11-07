@@ -1385,6 +1385,21 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Pengaturan tombol pintas</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Anda dapat mengubahnya kapan saja di pengaturan aplikasi.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Ikon berwarna dari ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Ikon garis yang bersih dan mengikuti warna tema Anda.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX memiliki ikon baru. Pilih tampilan yang Anda sukai.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Pilih ikon Anda</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Tidak dapat menulis gambar ke jalur:</value>
   </data>

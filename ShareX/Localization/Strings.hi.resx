@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - हॉटकी सेटिंग</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>आप इसे कभी भी ऐप्लिकेशन सेटिंग्स में बदल सकते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21 के रंगीन आइकन।</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>साफ़ रेखा वाले आइकन जो आपकी थीम के रंगों का पालन करते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX में नए आइकन हैं। अपनी पसंद का रूप चुनें।</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>अपने आइकन चुनें</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>

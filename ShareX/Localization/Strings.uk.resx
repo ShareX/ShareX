@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Налаштування гарячих клавіш</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Це можна будь-коли змінити в налаштуваннях програми.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Кольорові значки з ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Акуратні контурні значки в кольорах вашої теми.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>У ShareX з'явилися нові значки. Виберіть вигляд, який вам до вподоби.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Виберіть значки</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Не вдалося записати зображення до шляху:</value>
   </data>

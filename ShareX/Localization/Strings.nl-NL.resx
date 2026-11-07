@@ -1385,6 +1385,21 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Sneltoetsinstellingen</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Je kunt dit op elk moment wijzigen in de applicatie-instellingen.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>De kleurrijke pictogrammen uit ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Strakke lijnpictogrammen die de kleuren van je thema volgen.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX heeft nieuwe pictogrammen. Kies de stijl die je het mooist vindt.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Kies je pictogrammen</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write afbeelding to path:</value>
   </data>

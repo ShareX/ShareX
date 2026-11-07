@@ -1385,6 +1385,21 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Configuración de atajos de teclado</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Puedes cambiar esto en cualquier momento en la configuración de la aplicación.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Los íconos coloridos de ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Íconos de líneas limpias que siguen los colores de tu tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX tiene íconos nuevos. Elige el aspecto que prefieras.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Elige tus íconos</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>No se pudo escribir la imagen en la ruta:</value>
   </data>

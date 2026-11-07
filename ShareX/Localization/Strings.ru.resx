@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Настройки горячих клавиш</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Это можно изменить в любое время в настройках приложения.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Цветные значки из ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Аккуратные контурные значки в цветах вашей темы.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>В ShareX появились новые значки. Выберите вид, который вам больше нравится.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Выберите значки</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Не удалось сохранить изображение по пути:</value>
   </data>

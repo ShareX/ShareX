@@ -1385,6 +1385,21 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - تنظیمات کلیدهای میانبر</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>می‌توانید این را هر زمان در تنظیمات برنامه تغییر دهید.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>نمادهای رنگارنگ ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>نمادهای خطی ساده که از رنگ‌های پوسته شما پیروی می‌کنند.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX نمادهای جدیدی دارد. ظاهری را که ترجیح می‌دهید انتخاب کنید.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>نمادهای خود را انتخاب کنید</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write تصویر to مسیر:</value>
   </data>

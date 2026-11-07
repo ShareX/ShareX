@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - 快速鍵設定</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>你可以隨時在應用程式設定中變更此項。</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21 的彩色圖示。</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>簡潔的線條圖示，隨主題色彩變化。</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX 有了新圖示。請選擇你喜歡的樣式。</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>選擇圖示</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>無法寫入圖片至路徑：</value>
   </data>
