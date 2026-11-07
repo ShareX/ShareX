@@ -1389,8 +1389,14 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Birincil</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Araç çubuğunu varsayılana sıfırla</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>İkincil</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Göster / Gizle</value>

@@ -1389,8 +1389,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>확인</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>기본</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>도구 모음을 기본값으로 초기화</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>보조</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>표시 / 숨기기</value>

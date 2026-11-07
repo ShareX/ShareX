@@ -31,5 +31,8 @@ namespace ShareX.ImageEditor.Integration
         public bool? BeginGroup { get; set; }
         public bool IsVisible { get; set; } = true;
         public string Hotkey { get; set; } = "";
+
+        /// <summary>Alternate shortcut. Null means the item's default, so older settings pick up the ShareX 21 numpad keys.</summary>
+        public string? SecondaryHotkey { get; set; }
     }
 }
