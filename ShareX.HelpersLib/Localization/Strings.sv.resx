@@ -643,7 +643,7 @@ Vill du ändå köra det?</value>
     <value>Uppladdning</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Linjal (klassisk)</value>
+    <value>Linjal</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Ladda upp från urklipp</value>
@@ -796,7 +796,7 @@ Vill du ändå köra det?</value>
     <value>Ta bild av område (genomskinligt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linjal</value>
+    <value>Mät</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare</value>

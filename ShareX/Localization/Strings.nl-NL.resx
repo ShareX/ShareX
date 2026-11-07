@@ -1488,7 +1488,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Vastleggen</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Meetlat (klassiek)</value>
+    <value>Liniaal</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Klembord weergaveer</value>
@@ -1653,7 +1653,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Opnieuw starten als beheerder</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Meetlat</value>
+    <value>Meten</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>

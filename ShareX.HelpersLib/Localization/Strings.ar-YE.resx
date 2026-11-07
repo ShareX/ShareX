@@ -643,7 +643,7 @@
     <value>رفع</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>المسطرة (الكلاسيكية)</value>
+    <value>المسطرة</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>رفع من الحافظة</value>
@@ -796,7 +796,7 @@
     <value>التقاط مساحة (شفافة)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>المسطرة</value>
+    <value>قياس</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>منتقي الألوان</value>

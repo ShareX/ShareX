@@ -1488,7 +1488,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Cattura</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Righello (classico)</value>
+    <value>Righello</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visualizzatore appunti</value>
@@ -1653,7 +1653,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Riavvia come amministratore</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Righello</value>
+    <value>Misura</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Cattura Colore</value>

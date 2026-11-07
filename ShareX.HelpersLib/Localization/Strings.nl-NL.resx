@@ -643,7 +643,7 @@ Wilt u het toch uitvoeren?</value>
     <value>Uploaden</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Meetlat (klassiek)</value>
+    <value>Liniaal</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Uploaden van klembord</value>
@@ -796,7 +796,7 @@ Wilt u het toch uitvoeren?</value>
     <value>Leg rechthoekige regio vast (Transparant)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Meetlat</value>
+    <value>Meten</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>

@@ -441,7 +441,7 @@ Dateipfad: {0}</value>
     <value>Breite: {0} px | Höhe: {1} px | Fläche: {2} px | Umfang: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Lineal (klassisch)</value>
+    <value>ShareX - Lineal</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Zwischenablageinhalt</value>
@@ -2051,7 +2051,7 @@ Dateipfad: {0}</value>
     <value>Toleranz: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Lineal</value>
+    <value>ShareX - Messen</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Wählen Sie ein Video aus, um zu beginnen.</value>

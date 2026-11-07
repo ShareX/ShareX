@@ -643,7 +643,7 @@ Czy mimo to chcesz go uruchomić?</value>
     <value>Przeslij</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Linijka (klasyczna)</value>
+    <value>Linijka</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Prześlij ze schowka</value>
@@ -796,7 +796,7 @@ Czy mimo to chcesz go uruchomić?</value>
     <value>Przechwytywanie regionu (przezroczysty)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linijka</value>
+    <value>Pomiar</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>

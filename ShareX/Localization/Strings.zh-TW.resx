@@ -1488,7 +1488,7 @@
     <value>擷取</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>標尺（經典）</value>
+    <value>標尺</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>剪貼簿檢視器</value>
@@ -1653,7 +1653,7 @@
     <value>以系統管理員身分重新啟動</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>標尺</value>
+    <value>測量</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>螢幕檢色器</value>

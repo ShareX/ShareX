@@ -1488,7 +1488,7 @@
     <value>Захопити</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Лінійка (класична)</value>
+    <value>Лінійка</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Переглядач буфера обміну</value>
@@ -1653,7 +1653,7 @@
     <value>Перезапустити від імені адміністратора</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Лінійка</value>
+    <value>Вимірювання</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Вибір кольору з екрана</value>

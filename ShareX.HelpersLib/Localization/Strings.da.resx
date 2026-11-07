@@ -643,7 +643,7 @@ Vil du stadig køre den?</value>
     <value>Upload</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Lineal (klassisk)</value>
+    <value>Lineal</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload fra udklipsholder</value>
@@ -796,7 +796,7 @@ Vil du stadig køre den?</value>
     <value>Tag billede af område (gennemsigtigt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Lineal</value>
+    <value>Mål</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Skærmfarvevælger</value>

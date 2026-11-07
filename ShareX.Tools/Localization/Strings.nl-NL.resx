@@ -441,7 +441,7 @@ Bestandspad: {0}</value>
     <value>Breedte: {0} px | Hoogte: {1} px | Oppervlakte: {2} px | Omtrek: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Liniaal (klassiek)</value>
+    <value>ShareX - Liniaal</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Klembordinhoud</value>
@@ -2051,7 +2051,7 @@ Bestandspad: {0}</value>
     <value>Tolerantie: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Liniaal</value>
+    <value>ShareX - Meten</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Kies een video om te beginnen.</value>

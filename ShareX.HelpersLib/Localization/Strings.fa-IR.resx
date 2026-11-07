@@ -643,7 +643,7 @@
     <value>آپلود</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>خط کش (کلاسیک)</value>
+    <value>خط‌کش</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>آپلود از کلیپ بورد</value>
@@ -796,7 +796,7 @@
     <value>ضبط ناحیه (شفاف)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>خط کش</value>
+    <value>اندازه‌گیری</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>انتخاب گر رنگ صفحه</value>

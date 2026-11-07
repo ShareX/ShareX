@@ -1488,7 +1488,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Capturați</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Riglă (clasică)</value>
+    <value>Riglă</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Vizualizator de clipboard</value>
@@ -1653,7 +1653,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Repornește ca administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Riglă</value>
+    <value>Măsurare</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Alegător de culori pe ecran</value>

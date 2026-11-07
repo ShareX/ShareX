@@ -440,7 +440,7 @@
     <value>Szerokość: {0} px | Wysokość: {1} px | Pole: {2} px | Obwód: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX — linijka (klasyczna)</value>
+    <value>ShareX — linijka</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Zawartość schowka</value>
@@ -2045,7 +2045,7 @@
     <value>Tolerancja: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX — linijka</value>
+    <value>ShareX — pomiar</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Wybierz film, aby rozpocząć.</value>

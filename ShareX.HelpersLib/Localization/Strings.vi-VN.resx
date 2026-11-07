@@ -643,7 +643,7 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
     <value>Tải lên</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Thước đo (cổ điển)</value>
+    <value>Thước đo</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Tải lên từ vùng nhớ tạm</value>
@@ -796,7 +796,7 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
     <value>Chụp theo vùng (Trong suốt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Thước đo</value>
+    <value>Đo</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Lấy màu từ màn hình</value>

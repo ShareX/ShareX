@@ -1488,7 +1488,7 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Tag billede</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Lineal (klassisk)...</value>
+    <value>Lineal...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Udklipsholdervisning...</value>
@@ -1653,7 +1653,7 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
     <value>Genstart som administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Lineal...</value>
+    <value>Mål...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Skærmfarvevælger...</value>

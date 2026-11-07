@@ -441,7 +441,7 @@ Ruta del archivo: {0}</value>
     <value>Ancho: {0} px | Alto: {1} px | Área: {2} px | Perímetro: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Regla (clásica)</value>
+    <value>ShareX - Regla</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Contenido del portapapeles</value>
@@ -2051,7 +2051,7 @@ Ruta del archivo: {0}</value>
     <value>Tolerancia: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Regla</value>
+    <value>ShareX - Medir</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Elija un vídeo para comenzar.</value>

@@ -643,7 +643,7 @@
     <value>アップロード</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>定規（クラシック）</value>
+    <value>定規</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>クリップボードからアップロード</value>
@@ -796,7 +796,7 @@
     <value>領域をキャプチャー (透過モード)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>定規</value>
+    <value>計測</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>スクリーン カラー ピッカー</value>

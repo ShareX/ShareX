@@ -441,7 +441,7 @@ Dosya yolu: {0}</value>
     <value>Genişlik: {0} px | Yükseklik: {1} px | Alan: {2} px | Çevre: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Cetvel (klasik)</value>
+    <value>ShareX - Cetvel</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Pano içeriği</value>
@@ -2051,7 +2051,7 @@ Dosya yolu: {0}</value>
     <value>Tolerans: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Cetvel</value>
+    <value>ShareX - Ölç</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Başlamak için bir video seçin.</value>

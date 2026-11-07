@@ -4952,7 +4952,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to ShareX - Ruler (classic).
+        ///   Looks up a localized string similar to ShareX - Ruler.
         /// </summary>
         public static string ClassicRulerWindow_Title {
             get {
@@ -4988,7 +4988,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to ShareX - Ruler.
+        ///   Looks up a localized string similar to ShareX - Measure.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {
             get {

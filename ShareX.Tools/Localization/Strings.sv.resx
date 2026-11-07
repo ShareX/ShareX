@@ -441,7 +441,7 @@ Filsökväg: {0}</value>
     <value>Bredd: {0} px | Höjd: {1} px | Area: {2} px | Omkrets: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX – Linjal (klassisk)</value>
+    <value>ShareX – Linjal</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Innehåll i Urklipp</value>
@@ -2051,7 +2051,7 @@ Filsökväg: {0}</value>
     <value>Tolerans: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Linjal</value>
+    <value>ShareX – Mät</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Välj en video för att börja.</value>

@@ -1488,7 +1488,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Captura</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Regla (clásica)</value>
+    <value>Regla</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Portapapeles viewer</value>
@@ -1653,7 +1653,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Reiniciar como administrador</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Regla</value>
+    <value>Medir</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Pantalla de selector de color</value>
