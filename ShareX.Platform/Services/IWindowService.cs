@@ -147,6 +147,14 @@ public interface IWindowService
     bool CoverScreen(long windowHandle, PlatformRectangle screenBounds) => false;
 
     /// <summary>
+    /// Keeps one of ShareX's own full-screen overlays (region capture) at the scale it was created with while it is open. On
+    /// Windows an overlay that spans monitors with different scaling is otherwise switched between their DPIs whenever it is moved
+    /// or resized; following each switch resizes it again, so it flickers between scales and selections miss the screenshot.
+    /// The overlay is sized in device pixels anyway. False where the system does not change a window's scale this way.
+    /// </summary>
+    bool KeepScaleFixed(long windowHandle) => false;
+
+    /// <summary>
     /// Moves one of ShareX's own windows so its top-left corner is at <paramref name="position"/> if it is not there already. On
     /// Windows, Avalonia's resizing can shift a window by a monitor's work-area inset; moving it natively keeps Avalonia's cached
     /// DPI scale. Does nothing elsewhere.

@@ -204,6 +204,31 @@ public sealed unsafe class WindowsWindowService : IWindowService
     public bool ExcludeFromCapture(long windowHandle) =>
         windowHandle != 0 && Win32.SetWindowDisplayAffinity((IntPtr)windowHandle, Win32.WDA_EXCLUDEFROMCAPTURE);
 
+    public bool KeepScaleFixed(long windowHandle) =>
+        windowHandle != 0 && Win32.SetWindowSubclass((IntPtr)windowHandle, &FixedScaleWindowProcedure, FixedScaleSubclassId, 0);
+
+    private const nuint FixedScaleSubclassId = 0x53585343; // "SXSC"
+
+    /// <summary>
+    /// Drops WM_DPICHANGED before Avalonia sees it, so the window keeps its scale and its size in device pixels. Windows does not
+    /// resize a window that leaves WM_DPICHANGED unhandled.
+    /// </summary>
+    [UnmanagedCallersOnly]
+    private static nint FixedScaleWindowProcedure(IntPtr hwnd, uint message, nuint wParam, nint lParam, nuint id, nuint data)
+    {
+        if (message == Win32.WM_DPICHANGED)
+        {
+            return 0;
+        }
+
+        if (message == Win32.WM_NCDESTROY)
+        {
+            Win32.RemoveWindowSubclass(hwnd, &FixedScaleWindowProcedure, id);
+        }
+
+        return Win32.DefSubclassProc(hwnd, message, wParam, lParam);
+    }
+
     public void EnsureWindowPosition(long windowHandle, PlatformPoint position)
     {
         if (windowHandle != 0 && Win32.GetWindowRect((IntPtr)windowHandle, out Win32.RECT rect) && (rect.Left != position.X || rect.Top != position.Y))

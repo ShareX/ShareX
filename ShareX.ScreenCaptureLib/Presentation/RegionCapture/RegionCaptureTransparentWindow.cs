@@ -88,7 +88,13 @@ public sealed class RegionCaptureTransparentWindow : Window
     public Task<DrawingRectangle?> SelectAsync()
     {
         // Set Position once while the window is still small, so Win32 picks the DPI of the monitor at the
-        // desktop origin; see RegionCaptureWindow.ConfigureInitialPixelBounds.
+        // desktop origin; see RegionCaptureWindow.ConfigureInitialPixelBounds. Keep that DPI while the window spans monitors
+        // with different scaling, as region capture does.
+        if (PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
+        {
+            PlatformServices.Current.Windows.KeepScaleFixed(handle.ToInt64());
+        }
+
         Position = new PixelPoint(_screenBounds.X, _screenBounds.Y);
         ApplyPixelSize();
         Show();
@@ -200,24 +206,6 @@ public sealed class RegionCaptureTransparentWindow : Window
 
         Activate();
         Focus();
-    }
-
-    /// <summary>
-    /// Windows can change the window's DPI after it opens (monitors with different scaling); keep it covering the screen bounds
-    /// in device pixels, as region capture does.
-    /// </summary>
-    private void OnScalingChanged(object? sender, EventArgs e)
-    {
-        Dispatcher.UIThread.Post(() =>
-        {
-            if (_closing)
-            {
-                return;
-            }
-
-            ApplyPixelSize();
-            Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
-        }, DispatcherPriority.Loaded);
     }
 
     private void UpdateSelection(DrawingPoint position)

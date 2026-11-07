@@ -85,6 +85,22 @@ internal static unsafe partial class Win32
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool EnumChildWindows(IntPtr parent, delegate* unmanaged<IntPtr, nint, int> callback, nint data);
 
+    public const uint WM_NCDESTROY = 0x0082;
+    public const uint WM_DPICHANGED = 0x02E0;
+
+    [LibraryImport("comctl32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool SetWindowSubclass(IntPtr hwnd, delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> procedure,
+        nuint id, nuint data);
+
+    [LibraryImport("comctl32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    public static partial bool RemoveWindowSubclass(IntPtr hwnd, delegate* unmanaged<IntPtr, uint, nuint, nint, nuint, nuint, nint> procedure,
+        nuint id);
+
+    [LibraryImport("comctl32.dll")]
+    public static partial nint DefSubclassProc(IntPtr hwnd, uint message, nuint wParam, nint lParam);
+
     [LibraryImport("user32.dll", EntryPoint = "GetClassNameW")]
     public static partial int GetClassName(IntPtr hwnd, char* className, int maxCount);
 
