@@ -64,7 +64,7 @@
             <Setter Property="RenderTransform" Value="translateX(18px)"/>
         </Style>
 
-        <Style Selector="^.left > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
+        <Style Selector="^.left > :is(UserControl) > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>

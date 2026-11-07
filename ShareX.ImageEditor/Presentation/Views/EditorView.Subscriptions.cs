@@ -63,6 +63,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.PropertyChanged += OnViewModelPropertyChanged;
             vm.DeselectRequested += OnDeselectRequested;
             vm.CanvasFocusRequested += OnCanvasFocusRequested;
+
+            if (vm.IsSettingsPanelOpen)
+            {
+                EnsureBackgroundSettingsPanel();
+            }
         }
 
         private void DetachViewModel()

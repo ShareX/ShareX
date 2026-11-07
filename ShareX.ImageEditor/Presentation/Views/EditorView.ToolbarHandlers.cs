@@ -323,11 +323,6 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private void OnSidebarScrollChanged(object? sender, ScrollChangedEventArgs e)
-        {
-            // TODO: Restore sidebar scrollbar overlay logic
-        }
-
         private void OnToolbarScrollChanged(object? sender, ScrollChangedEventArgs e)
         {
             // TODO: Restore toolbar scrollbar overlay logic
