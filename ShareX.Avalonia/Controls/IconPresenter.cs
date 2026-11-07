@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Documents;
 using Avalonia.Media;
+using Avalonia.Styling;
 using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI.Controls;
@@ -80,6 +81,10 @@ public class IconPresenter : Control
         {
             UpdateIcon();
         }
+        else if (change.Property == ThemeVariantScope.ActualThemeVariantProperty)
+        {
+            InvalidateVisual();
+        }
     }
 
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
@@ -111,7 +116,25 @@ public class IconPresenter : Control
     {
         if (_icon != null && Foreground is IBrush foreground)
         {
-            _icon.Draw(context, new Rect(Bounds.Size), foreground);
+            _icon.Draw(context, new Rect(Bounds.Size), foreground, IsDarkTheme(ActualThemeVariant));
         }
+    }
+
+    private static bool? IsDarkTheme(ThemeVariant? theme)
+    {
+        for (; theme != null; theme = theme.InheritVariant)
+        {
+            if (theme == ThemeVariant.Dark)
+            {
+                return true;
+            }
+
+            if (theme == ThemeVariant.Light)
+            {
+                return false;
+            }
+        }
+
+        return null;
     }
 }

@@ -52,12 +52,16 @@ public sealed class VectorIcon
     /// <summary>The size of the grid the icon is drawn on, which is also the size it is sharpest at.</summary>
     public double GridSize { get; }
 
-    /// <summary>Draws the icon in <paramref name="foreground"/>, centered in the largest square that fits <paramref name="bounds"/>.</summary>
-    public void Draw(DrawingContext context, Rect bounds, IBrush foreground)
+    /// <summary>
+    /// Draws the icon in <paramref name="foreground"/>, centered in the largest square that fits <paramref name="bounds"/>.
+    /// <paramref name="darkTheme"/> picks the variant of a legacy icon made for dark backgrounds; when null, it is
+    /// picked by how light <paramref name="foreground"/> is.
+    /// </summary>
+    public void Draw(DrawingContext context, Rect bounds, IBrush foreground, bool? darkTheme = null)
     {
         if (_legacy != null)
         {
-            _legacy.Draw(context, bounds, foreground);
+            _legacy.Draw(context, bounds, foreground, darkTheme);
             return;
         }
 

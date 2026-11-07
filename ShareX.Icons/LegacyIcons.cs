@@ -73,13 +73,13 @@ internal static class LegacyIcons
 
 /// <summary>
 /// A legacy icon, with the version ShareX 21 used on dark backgrounds when it had one, chosen when the icon is
-/// drawn in a light Foreground.
+/// shown in a dark theme, or, when the theme is not known, drawn in a light Foreground.
 /// </summary>
 internal sealed class LegacyIcon(SvgIconDrawing light, SvgIconDrawing? dark)
 {
-    public void Draw(DrawingContext context, Rect bounds, IBrush foreground)
+    public void Draw(DrawingContext context, Rect bounds, IBrush foreground, bool? darkTheme)
     {
-        SvgIconDrawing drawing = dark != null && IsLight(foreground) ? dark : light;
+        SvgIconDrawing drawing = dark != null && (darkTheme ?? IsLight(foreground)) ? dark : light;
         drawing.Draw(context, bounds, foreground);
     }
 
