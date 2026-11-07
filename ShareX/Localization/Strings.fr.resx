@@ -1385,6 +1385,21 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Paramètres des raccourcis clavier</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Vous pouvez modifier ce choix à tout moment dans les paramètres de l'application.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Les icônes colorées de ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Des icônes au trait épuré qui suivent les couleurs de votre thème.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX a de nouvelles icônes. Choisissez l'apparence que vous préférez.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Choisissez vos icônes</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Impossible d'écrire l'image à l'emplacement spécifié :</value>
   </data>

@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - إعدادات اختصارات لوحة المفاتيح</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>يمكنك تغيير هذا في أي وقت من إعدادات التطبيق.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>الأيقونات الملونة من ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>أيقونات خطية بسيطة تتبع ألوان السمة.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>يحتوي ShareX على أيقونات جديدة. اختر المظهر الذي تفضله.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>اختر أيقوناتك</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>فشل إنشاء الصورة إلى:</value>
   </data>

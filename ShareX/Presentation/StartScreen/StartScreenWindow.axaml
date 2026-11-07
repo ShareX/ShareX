@@ -288,6 +288,38 @@
                             </Grid>
                         </Border>
 
+                        <Border Classes="setting-card">
+                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
+                                <Border Classes="setting-icon">
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Images}"
+                                                            FontSize="19"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            HorizontalAlignment="Center"
+                                                            VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+                                    <TextBlock Classes="setting-title" Text="{Binding IconPackLabel}"/>
+                                </StackPanel>
+                                <ComboBox Grid.Column="2"
+                                          Classes="option-control"
+                                          ItemsSource="{Binding IconPackOptions}"
+                                          SelectedItem="{Binding SelectedIconPack, Mode=TwoWay}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate x:DataType="local:StartScreenIconPackOption">
+                                            <StackPanel Orientation="Horizontal"
+                                                        Spacing="5"
+                                                        icons:IconPackScope.Pack="{Binding Value}">
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Region}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ImageUpload}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.History}" FontSize="15" VerticalAlignment="Center"/>
+                                                <TextBlock Text="{Binding DisplayName}" Margin="4,0,0,0" VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </Grid>
+                        </Border>
+
                     </StackPanel>
                 </ScrollViewer>
 

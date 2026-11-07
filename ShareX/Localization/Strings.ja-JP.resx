@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - ホットキー設定</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>これはアプリケーション設定でいつでも変更できます。</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21 のカラフルなアイコン。</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>テーマの色に合わせたシンプルな線画アイコン。</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX のアイコンが新しくなりました。お好みの見た目を選んでください。</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>アイコンを選択</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>次のパスへ画像を書き込めません:</value>
   </data>

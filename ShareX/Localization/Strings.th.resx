@@ -1385,6 +1385,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - การตั้งค่าปุ่มลัด</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ไอคอนสีสันสดใสจาก ShareX 21</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>ไอคอนเส้นเรียบง่ายที่ใช้สีตามธีมของคุณ</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX มีไอคอนใหม่ เลือกรูปแบบที่คุณชอบ</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>เลือกไอคอนของคุณ</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>

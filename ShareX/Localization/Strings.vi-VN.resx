@@ -1385,6 +1385,21 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Cài đặt phím tắt</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Bạn có thể thay đổi tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Các biểu tượng nhiều màu sắc từ ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Biểu tượng nét mảnh gọn gàng, theo màu chủ đề của bạn.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX có biểu tượng mới. Hãy chọn giao diện bạn thích.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Chọn biểu tượng của bạn</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Không thể ghi hình ảnh vào đường dẫn:</value>
   </data>

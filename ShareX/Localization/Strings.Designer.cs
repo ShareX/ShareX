@@ -5736,5 +5736,10 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_MultiRegionMode => ResourceManager.GetString("TaskSettingsWindow_MultiRegionMode", resourceCulture);
         public static string TaskSettingsWindow_CompactRegionCaptureToolbar => ResourceManager.GetString("TaskSettingsWindow_CompactRegionCaptureToolbar", resourceCulture);
         public static string MainMenuBuilder_RegionTransparent => ResourceManager.GetString("MainMenuBuilder_RegionTransparent", resourceCulture);
+        public static string IconPackPrompt_ChangeLater => ResourceManager.GetString("IconPackPrompt_ChangeLater", resourceCulture);
+        public static string IconPackPrompt_LegacyDescription => ResourceManager.GetString("IconPackPrompt_LegacyDescription", resourceCulture);
+        public static string IconPackPrompt_ModernDescription => ResourceManager.GetString("IconPackPrompt_ModernDescription", resourceCulture);
+        public static string IconPackPrompt_Subtitle => ResourceManager.GetString("IconPackPrompt_Subtitle", resourceCulture);
+        public static string IconPackPrompt_Title => ResourceManager.GetString("IconPackPrompt_Title", resourceCulture);
     }
 }

@@ -1385,6 +1385,21 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Genvejstastindstillinger</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Du kan altid ændre dette under programindstillinger.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>De farverige ikoner fra ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Enkle stregikoner, der følger dit temas farver.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX har nye ikoner. Vælg det udseende, du foretrækker.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vælg dine ikoner</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Det var ikke muligt at skrive billedet til stien:</value>
   </data>
