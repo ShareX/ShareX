@@ -46,6 +46,7 @@ internal sealed class GpuVideoProcessor : IDisposable
     private ID3D11Texture2D? composite;
     private bool supportsCameraComposition;
     public ID3D11Texture2D Canvas { get; private set; } = null!;
+    public ID3D11RenderTargetView CanvasView => canvasView;
     public int Width { get; }
     public int Height { get; }
 

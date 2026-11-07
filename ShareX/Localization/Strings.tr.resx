@@ -2573,8 +2573,8 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Genel</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR ekran görüntüsü renk düzeltici</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Ekran görüntüleri ve kayıtlar için HDR renk düzeltme</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Yükseklik:</value>

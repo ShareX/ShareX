@@ -2573,8 +2573,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>ทั่วไป</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR ภาพหน้าจอ สี ตัวแก้ไข</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>การแก้ไขสี HDR สำหรับภาพหน้าจอและการบันทึก</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>ความสูง:</value>

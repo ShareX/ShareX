@@ -2573,8 +2573,8 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Algemeen</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR-kleurcorrectie voor schermafbeeldingen</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>HDR-kleurcorrectie voor schermafbeeldingen en opnamen</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Hoogte:</value>

@@ -2573,8 +2573,8 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Generale</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Correttore colore screenshot HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Correzione colore HDR per screenshot e registrazioni</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Altezza:</value>

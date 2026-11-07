@@ -2573,8 +2573,8 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Általános</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR-képernyőkép színkorrekciója</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>HDR-színkorrekció képernyőképekhez és felvételekhez</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Magasság:</value>

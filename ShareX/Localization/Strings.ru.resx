@@ -2573,8 +2573,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Общие</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Корректор цвета снимков HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Коррекция цвета HDR для снимков и записей экрана</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Высота:</value>

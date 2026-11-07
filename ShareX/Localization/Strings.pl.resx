@@ -2573,8 +2573,8 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Ogólne</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Korektor kolorów zrzutów HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Korekcja kolorów HDR dla zrzutów i nagrań ekranu</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Wysokość:</value>

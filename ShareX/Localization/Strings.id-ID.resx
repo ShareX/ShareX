@@ -2573,8 +2573,8 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Umum</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Korektor warna tangkapan layar HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Koreksi warna HDR untuk tangkapan layar dan rekaman</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Tinggi:</value>

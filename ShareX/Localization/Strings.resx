@@ -2581,8 +2581,8 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>General</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR screenshot color corrector</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>HDR color correction for screenshots and recordings</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Height:</value>

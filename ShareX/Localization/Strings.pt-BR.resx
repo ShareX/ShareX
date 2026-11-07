@@ -2573,8 +2573,8 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Geral</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Corretor de cores de capturas HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Correção de cores HDR para capturas e gravações</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Altura:</value>

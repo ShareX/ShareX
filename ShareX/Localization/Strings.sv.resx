@@ -2573,8 +2573,8 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Allmänt</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Färgkorrigering för HDR-skärmbilder</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>HDR-färgkorrigering för skärmbilder och inspelningar</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Höjd:</value>

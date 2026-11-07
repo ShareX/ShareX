@@ -3095,9 +3095,9 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyHideDesktopIcons", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_HDRScreenshotColorCorrector {
+        public static string TaskSettingsWindow_HDRColorCorrection {
             get {
-                return ResourceManager.GetString("TaskSettingsWindow_HDRScreenshotColorCorrector", resourceCulture);
+                return ResourceManager.GetString("TaskSettingsWindow_HDRColorCorrection", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_WindowTitle {

@@ -2573,8 +2573,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>常规</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR 截图色彩校正器</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>截图和录制的 HDR 色彩校正</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>高度：</value>
