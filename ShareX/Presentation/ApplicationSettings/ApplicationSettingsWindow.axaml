@@ -232,6 +232,9 @@
                                                   ItemsSource="{Binding ThemeOptions}"
                                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
                                     </Grid>
+                                    <CheckBox Classes="setting"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_CompactMode}"
+                                              IsChecked="{Binding CompactMode, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
 

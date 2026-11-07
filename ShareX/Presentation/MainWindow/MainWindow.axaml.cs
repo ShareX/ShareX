@@ -133,6 +133,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady += OnTaskImageReady;
         TaskManager.TaskCollectionChanged += OnTaskCollectionChanged;
         ThemeManager.ThemeChanged += OnThemeChanged;
+        ThemeManager.CompactModeChanged += OnCompactModeChanged;
 
         Closing += OnClosing;
         PositionChanged += (_, _) => SaveWindowBounds();
@@ -431,16 +432,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private static Control CreateNavigationContent(MainNavigationSection section)
     {
-        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,7,*,Auto") };
+        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,*,Auto") };
         grid.Children.Add(CreateAccentMenuIcon(section.Icon, 16));
 
         TextBlock label = new()
         {
             Text = section.Header,
             FontWeight = FontWeight.Normal,
-            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
+            Classes = { "nav-label" }
         };
-        Grid.SetColumn(label, 2);
+        Grid.SetColumn(label, 1);
         grid.Children.Add(label);
 
         if (section.CreateChildren != null || section.CreateCategories != null)
@@ -448,7 +450,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             IconPresenter chevron = CreateAccentMenuIcon(AppIcons.ChevronRight, 14);
             chevron.Margin = new Thickness(5, 0, 0, 0);
             chevron.Opacity = 0.7;
-            Grid.SetColumn(chevron, 3);
+            Grid.SetColumn(chevron, 2);
             grid.Children.Add(chevron);
         }
 
@@ -561,9 +563,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             TextBlock categoryHeader = new()
             {
                 Text = category.Header,
-                Classes = { "tool-grid-category-header" },
-                Margin = new Thickness(7, hasCategory ? 3 : 1, 7, 3)
+                Classes = { "tool-grid-category-header" }
             };
+            categoryHeader.Classes.Set("first", !hasCategory);
             content.Children.Add(categoryHeader);
 
             UniformGrid itemGrid = new()
@@ -695,7 +697,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 8
+            Classes = { "tool-grid-item-content" }
         };
         IconPresenter icon = CreateAccentMenuIcon(entry.Icon, 16);
         icon.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center;
@@ -1014,7 +1016,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void AddLazyGridSubmenu(MenuItem item, Func<IReadOnlyList<MainMenuCategory>> createCategories, ContextMenu menu)
     {
         item.Resources["FlyoutThemeMaxWidth"] = double.PositiveInfinity;
-        item.Resources["MenuFlyoutPresenterThemePadding"] = new Thickness(10);
+        // Menus are rebuilt every time they open, so reading the current value keeps this in step with compact mode.
+        item.Resources["MenuFlyoutPresenterThemePadding"] =
+            this.TryFindResource("ShareX.Density.ToolGrid.Padding", out object? padding) && padding is Thickness thickness
+                ? thickness
+                : new Thickness(10);
         item.Resources["MenuFlyoutScrollerMargin"] = new Thickness(0);
 
         // Keep the submenu indicator while deferring the grid construction until it is opened.
@@ -1185,6 +1191,20 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             OnPropertyChanged(nameof(IsDarkTheme));
             OnPropertyChanged(nameof(ThemeToggleText));
         });
+
+    private void OnCompactModeChanged(object? sender, bool compactMode) =>
+        Dispatcher.UIThread.Post(() =>
+        {
+            // The sidebar spacing changed, so the window's minimum height (and its height, when it
+            // was sized to fit the sidebar) has to follow it.
+            bool fitsNavigation = Math.Abs(Height - MinHeight) < 1;
+            ConfigureWindowHeightFromNavigation();
+
+            if (fitsNavigation)
+            {
+                Height = MinHeight;
+            }
+        }, DispatcherPriority.Background);
 
     private void NotifyTaskCollectionChanged()
     {
@@ -2208,6 +2228,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        ThemeManager.CompactModeChanged -= OnCompactModeChanged;
         ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();

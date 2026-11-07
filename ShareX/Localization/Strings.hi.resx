@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>क्लिपबोर्ड प्रारूप</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>कॉम्पैक्ट मोड</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>अनुकूलित हॉटकी कॉन्फ़िगरेशन पथ</value>
   </data>

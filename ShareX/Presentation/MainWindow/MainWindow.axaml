@@ -23,13 +23,16 @@
 
     <Window.Styles>
         <Style Selector="Button.nav-button">
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Nav.ButtonHeight}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="8,2"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Nav.ButtonPadding}"/>
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="Button.nav-button TextBlock.nav-label">
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Nav.LabelMargin}"/>
         </Style>
         <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
@@ -284,7 +287,7 @@
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
         <Border Grid.Column="0"
-                MinWidth="210"
+                MinWidth="{DynamicResource ShareX.Density.Nav.MinWidth}"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,0,1,0">
@@ -292,7 +295,7 @@
                           HorizontalScrollBarVisibility="Disabled"
                           HorizontalContentAlignment="Stretch">
                 <StackPanel x:Name="NavigationPanel"
-                            Margin="6,6,6,0"
+                            Margin="{DynamicResource ShareX.Density.Nav.PanelMargin}"
                             Spacing="0"
                             HorizontalAlignment="Stretch"/>
             </ScrollViewer>

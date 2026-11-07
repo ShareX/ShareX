@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
+using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Styling;
@@ -42,9 +43,11 @@ namespace ShareX.AvaloniaUI.Theming
         private static ThemeVariant _currentTheme = ShareXDark;
         private static ApplicationThemeOptions? _options;
         private static IPlatformSettings? _platformSettings;
+        private static ResourceInclude? _compactResources;
 
         public static event EventHandler<ThemeVariant>? ThemeChanged;
         public static event EventHandler<Color>? AccentColorChanged;
+        public static event EventHandler<bool>? CompactModeChanged;
 
         public static void Configure(ApplicationThemeOptions options)
         {
@@ -140,6 +143,40 @@ namespace ShareX.AvaloniaUI.Theming
 
             ApplyAccentColor(application, accentColor, theme);
             IconCatalog.Pack = _options.IconPack;
+            ApplyCompactMode(application, _options.CompactMode);
+        }
+
+        private static void ApplyCompactMode(Application? application, bool compactMode)
+        {
+            if (application == null)
+            {
+                return;
+            }
+
+            IList<IResourceProvider> dictionaries = application.Resources.MergedDictionaries;
+            int index = _compactResources == null ? -1 : dictionaries.IndexOf(_compactResources);
+
+            if (compactMode == (index >= 0))
+            {
+                return;
+            }
+
+            if (compactMode)
+            {
+                // Application resources are looked up before application styles, so these values
+                // override the comfortable defaults declared in ControlStyles.axaml.
+                _compactResources ??= new ResourceInclude(new Uri("avares://ShareX.Avalonia/"))
+                {
+                    Source = new Uri("avares://ShareX.Avalonia/Theming/CompactMode.axaml")
+                };
+                dictionaries.Add(_compactResources);
+            }
+            else
+            {
+                dictionaries.RemoveAt(index);
+            }
+
+            CompactModeChanged?.Invoke(null, compactMode);
         }
 
         private static void SetPlatformSettings(IPlatformSettings? platformSettings)
