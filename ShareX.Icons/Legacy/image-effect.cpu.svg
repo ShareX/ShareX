@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a7a88"/><stop offset=".5" stop-color="#4e4e5a"/><stop offset="1" stop-color="#34343e"/></linearGradient>
+    <linearGradient id="dv" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff2b0"/><stop offset=".5" stop-color="#e8c254"/><stop offset="1" stop-color="#b88a20"/></linearGradient>
+    <linearGradient id="pv" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a8acb8"/></linearGradient>
+    <linearGradient id="ph" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a8acb8"/></linearGradient>
+  </defs>
+  <g fill="url(#pv)">
+    <rect x="4" y="0" width="1" height="2"/><rect x="6" y="0" width="1" height="2"/><rect x="9" y="0" width="1" height="2"/><rect x="11" y="0" width="1" height="2"/>
+    <rect x="4" y="14" width="1" height="2"/><rect x="6" y="14" width="1" height="2"/><rect x="9" y="14" width="1" height="2"/><rect x="11" y="14" width="1" height="2"/>
+  </g>
+  <g fill="url(#ph)">
+    <rect x="0" y="4" width="2" height="1"/><rect x="0" y="6" width="2" height="1"/><rect x="0" y="9" width="2" height="1"/><rect x="0" y="11" width="2" height="1"/>
+    <rect x="14" y="4" width="2" height="1"/><rect x="14" y="6" width="2" height="1"/><rect x="14" y="9" width="2" height="1"/><rect x="14" y="11" width="2" height="1"/>
+  </g>
+  <rect x="2.5" y="2.5" width="11" height="11" rx=".8" fill="url(#bd)" stroke="#1c1c24"/>
+  <path d="M3.5 12V3.5H12" fill="none" stroke="#9a9aaa" stroke-opacity=".8"/>
+  <rect x="5.5" y="5.5" width="5" height="5" fill="url(#dv)" stroke="#8a6410"/>
+  <path d="M6.5 9V6.5H9" fill="none" stroke="#fffbe0" stroke-opacity=".8"/>
+</svg>

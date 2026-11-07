@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.45" stop-color="#e2e7ec"/><stop offset="0.5" stop-color="#9aa4b0"/><stop offset="1" stop-color="#c8cfd8"/></linearGradient>
+    <linearGradient id="guard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff3a6"/><stop offset="0.5" stop-color="#e4b530"/><stop offset="1" stop-color="#9a6a08"/></linearGradient>
+    <linearGradient id="grip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f07070"/><stop offset="0.5" stop-color="#b01818"/><stop offset="1" stop-color="#640000"/></linearGradient>
+    <radialGradient id="pom" cx=".4" cy=".35" r=".65"><stop offset="0" stop-color="#fff8c0"/><stop offset="0.5" stop-color="#e8b830"/><stop offset="1" stop-color="#9a6a08"/></radialGradient>
+  </defs>
+  <g transform="translate(1.3 1.3) rotate(45)">
+    <path d="M0 0L2.2-1.5H11.6V1.5H2.2Z" fill="url(#blade)" stroke="#4a5462" stroke-width=".75" stroke-linejoin="round"/>
+    <path d="M2.6 0H11" fill="none" stroke="#7d8896" stroke-width=".45"/>
+    <rect x="13.1" y="-1" width="3.7" height="2" fill="url(#grip)" stroke="#4a0000" stroke-width=".65"/>
+    <rect x="11.5" y="-3.5" width="1.7" height="7" rx=".6" fill="url(#guard)" stroke="#6e4800" stroke-width=".65"/>
+    <circle cx="17.7" cy="0" r="1.25" fill="url(#pom)" stroke="#6e4800" stroke-width=".65"/>
+  </g>
+</svg>

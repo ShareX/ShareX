@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <polygon points=".5,5.5 3.5,1.5 5,5.5" fill="#bfeaff"/>
+  <polygon points="3.5,1.5 8,1.5 5,5.5" fill="#effbff"/>
+  <polygon points="8,1.5 11,5.5 5,5.5" fill="#a2dcfa"/>
+  <polygon points="8,1.5 12.5,1.5 11,5.5" fill="#cdeffe"/>
+  <polygon points="12.5,1.5 15.5,5.5 11,5.5" fill="#86c8ee"/>
+  <polygon points=".5,5.5 5,5.5 8,15.5" fill="#78c6f2"/>
+  <polygon points="5,5.5 11,5.5 8,15.5" fill="#b2e4fe"/>
+  <polygon points="11,5.5 15.5,5.5 8,15.5" fill="#3f98da"/>
+  <path d="M3.5 1.5L5 5.5L8 1.5L11 5.5L12.5 1.5M5 5.5L8 15.5L11 5.5" fill="none" stroke="#3a86c4" stroke-opacity=".55" stroke-width=".7" stroke-linejoin="round"/>
+  <rect x="1" y="5.2" width="14" height=".6" fill="#3a86c4" fill-opacity=".55"/>
+  <path d="M2 5L3.8 2.6" fill="none" stroke="#ffffff" stroke-linecap="round"/>
+  <polygon points="3.5,1.5 12.5,1.5 15.5,5.5 8,15.5 .5,5.5" fill="none" stroke="#1a5f9e" stroke-opacity=".9" stroke-linejoin="round"/>
+</svg>

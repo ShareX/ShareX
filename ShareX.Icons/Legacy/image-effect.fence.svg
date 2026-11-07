@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="st" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f6f8"/><stop offset=".5" stop-color="#c3cad2"/><stop offset="1" stop-color="#8a949e"/></linearGradient>
+  </defs>
+  <path d="M2.5 2.5L13.5 13.5M6 2.5L13.5 10M9.5 2.5L13.5 6.5M2.5 6L10 13.5M2.5 9.5L6.5 13.5M2.5 13.5L13.5 2.5M2.5 10L10 2.5M2.5 6.5L6.5 2.5M6 13.5L13.5 6M9.5 13.5L13.5 9.5" fill="none" stroke="#6c7682" stroke-width="1.1"/>
+  <path d="M2 .5H14Q15.5 .5 15.5 2V14Q15.5 15.5 14 15.5H2Q.5 15.5 .5 14V2Q.5 .5 2 .5zM2.5 2.5V13.5H13.5V2.5z" fill="url(#st)" fill-rule="evenodd" stroke="#47515c" stroke-linejoin="round"/>
+  <path d="M1.5 13V2.5Q1.5 1.5 2.5 1.5H13" fill="none" stroke="#ffffff" stroke-opacity=".85"/>
+</svg>

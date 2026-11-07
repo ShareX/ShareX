@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Legacy\*.svg" LogicalName="ShareX.Icons.Legacy.%(Filename)%(Extension)" />
+    <!-- WithCulture="false": names like app.sun.svg would otherwise be read as a culture ("sun") and go to a satellite assembly. -->
+    <EmbeddedResource Include="Legacy\*.svg" LogicalName="ShareX.Icons.Legacy.%(Filename)%(Extension)" WithCulture="false" />
   </ItemGroup>
 </Project>

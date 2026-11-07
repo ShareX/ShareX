@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="vhs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a6a70"/><stop offset="0.5" stop-color="#3c3c42"/><stop offset="1" stop-color="#222226"/></linearGradient>
+    <linearGradient id="lab" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dcdcdc"/></linearGradient>
+    <radialGradient id="reel" cx=".4" cy=".35" r=".65"><stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#e6e6e6"/><stop offset="1" stop-color="#9a9a9a"/></radialGradient>
+  </defs>
+  <rect x=".5" y="3.5" width="15" height="9.5" rx="1" fill="url(#vhs)" stroke="#111114" stroke-opacity=".9"/>
+  <rect x="1" y="4" width="14" height="1" fill="#9a9aa2" fill-opacity=".6"/>
+  <rect x="2" y="5" width="12" height="3" fill="url(#lab)"/>
+  <rect x="2" y="5" width="12" height="1" fill="#e04040"/>
+  <rect x="3" y="7" width="6" height=".6" fill="#8a8a8a"/>
+  <rect x="3.5" y="8.5" width="9" height="3.5" rx=".6" fill="#1a1a1e" stroke="#76767e" stroke-width=".6"/>
+  <rect x="5.3" y="9.6" width="5.4" height="1.3" fill="#6a3a1a"/>
+  <circle cx="5.4" cy="10.25" r="1.3" fill="url(#reel)"/>
+  <circle cx="10.6" cy="10.25" r="1.3" fill="url(#reel)"/>
+  <circle cx="5.4" cy="10.25" r=".45" fill="#3a3a3a"/><circle cx="10.6" cy="10.25" r=".45" fill="#3a3a3a"/>
+</svg>

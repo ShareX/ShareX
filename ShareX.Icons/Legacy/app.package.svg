@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="tp" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8e2b0"/><stop offset="1" stop-color="#e6c084"/></linearGradient>
+    <linearGradient id="lf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2b46c"/><stop offset="1" stop-color="#c8944a"/></linearGradient>
+    <linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c48a44"/><stop offset="1" stop-color="#a06a2c"/></linearGradient>
+  </defs>
+  <polygon points="1,4.5 8,8 8,15.5 1,12" fill="url(#lf)"/>
+  <polygon points="8,8 15,4.5 15,12 8,15.5" fill="url(#rf)"/>
+  <polygon points="8,1 15,4.5 8,8 1,4.5" fill="url(#tp)"/>
+  <polygon points="3.7,3.15 5.3,2.35 12.3,5.85 12.3,13.35 10.7,14.15 10.7,6.65" fill="#f4dca6" fill-opacity=".9"/>
+  <path d="M10.7 6.65V14.15" stroke="#8a5a22" stroke-width=".5" stroke-opacity=".5"/>
+  <path d="M1.6 5.4L8 8.6V15" fill="none" stroke="#fff4d8" stroke-opacity=".55" stroke-linejoin="round"/>
+  <polygon points="8,1 15,4.5 15,12 8,15.5 1,12 1,4.5" fill="none" stroke="#6e4512" stroke-opacity=".85" stroke-linejoin="round"/>
+  <path d="M1 4.5L8 8L15 4.5M8 8V15.5" fill="none" stroke="#6e4512" stroke-opacity=".55" stroke-linejoin="round"/>
+</svg>

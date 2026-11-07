@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="hw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3c98a"/><stop offset=".45" stop-color="#d9973f"/><stop offset="1" stop-color="#9c5c14"/></linearGradient>
+    <linearGradient id="fe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dfe3"/><stop offset="1" stop-color="#8a949d"/></linearGradient>
+    <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0ff"/><stop offset=".5" stop-color="#3c8fe0"/><stop offset="1" stop-color="#1a5ab0"/></linearGradient>
+  </defs>
+  <g transform="translate(1.2 14.8) rotate(-45)">
+    <path d="M0 0Q.6 -2.1 5 -2.2V2.2Q.6 2.1 0 0Z" fill="url(#br)" stroke="#123f80" stroke-width=".8" stroke-linejoin="round"/>
+    <path d="M1.4 -.7Q2.6 -1.4 4.6 -1.4" fill="none" stroke="#d6efff" stroke-width=".6" stroke-linecap="round"/>
+    <rect x="5" y="-2.3" width="3" height="4.6" rx=".4" fill="url(#fe)" stroke="#5c666e" stroke-width=".8"/>
+    <path d="M8 -1.5H18.4Q19.4 -1.5 19.4 0Q19.4 1.5 18.4 1.5H8Z" fill="url(#hw)" stroke="#7a4408" stroke-width=".8" stroke-linejoin="round"/>
+    <path d="M8.6 -.7H18" fill="none" stroke="#ffe3b8" stroke-width=".6" stroke-linecap="round"/>
+  </g>
+</svg>

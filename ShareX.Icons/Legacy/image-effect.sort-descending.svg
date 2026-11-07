@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff"/><stop offset="0.3" stop-color="#6ab6f0"/><stop offset="0.55" stop-color="#4590cd"/><stop offset="0.8" stop-color="#1ca4ea"/><stop offset="1" stop-color="#0eb7ff"/></linearGradient>
+    <linearGradient id="as" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409ee9"/><stop offset="1" stop-color="#04509b"/></linearGradient>
+    <linearGradient id="b0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a8a"/><stop offset="0.5" stop-color="#d42c2c"/><stop offset="1" stop-color="#d42c2c"/></linearGradient>
+    <linearGradient id="b1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc87a"/><stop offset="0.5" stop-color="#f08a18"/><stop offset="1" stop-color="#f08a18"/></linearGradient>
+    <linearGradient id="b2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff08a"/><stop offset="0.5" stop-color="#e8c81a"/><stop offset="1" stop-color="#e8c81a"/></linearGradient>
+    <linearGradient id="b3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a8ec8a"/><stop offset="0.5" stop-color="#4cb030"/><stop offset="1" stop-color="#4cb030"/></linearGradient>
+  </defs>
+  <rect x=".5" y="0.5" width="13" height="2.5" fill="url(#b0)" stroke="#9a1010" stroke-opacity=".8"/>
+  <rect x="1" y="1" width="12" height=".6" fill="#ffffff" fill-opacity=".45"/>
+  <rect x=".5" y="4.5" width="10" height="2.5" fill="url(#b1)" stroke="#b25a00" stroke-opacity=".8"/>
+  <rect x="1" y="5" width="9" height=".6" fill="#ffffff" fill-opacity=".45"/>
+  <rect x=".5" y="8.5" width="7" height="2.5" fill="url(#b2)" stroke="#a88a00" stroke-opacity=".8"/>
+  <rect x="1" y="9" width="6" height=".6" fill="#ffffff" fill-opacity=".45"/>
+  <rect x=".5" y="12.5" width="4" height="2.5" fill="url(#b3)" stroke="#2a7a12" stroke-opacity=".8"/>
+  <rect x="1" y="13" width="3" height=".6" fill="#ffffff" fill-opacity=".45"/>
+  <polygon points="11.8,5.5 14.2,5.5 14.2,10.5 15.5,10.5 13,14.5 10.5,10.5 11.8,10.5" fill="url(#af)" stroke="url(#as)" stroke-linejoin="round"/>
+  <path d="M12.8 6.5V11" fill="none" stroke="#b8f2ff" stroke-opacity=".5"/>
+</svg>
