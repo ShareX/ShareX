@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="gf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4f5a0"/><stop offset=".5" stop-color="#4ec83a"/><stop offset="1" stop-color="#1fa214"/></linearGradient>
+    <linearGradient id="bf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff"/><stop offset=".5" stop-color="#4590cd"/><stop offset="1" stop-color="#0eb7ff"/></linearGradient>
+  </defs>
+  <path d="M.5 12H3.5C7 12 7.5 4.5 11 4.5H12" fill="none" stroke="#14640c" stroke-width="2.8"/>
+  <path d="M.5 12H3.5C7 12 7.5 4.5 11 4.5H12" fill="none" stroke="#5ccf48" stroke-width="1.3"/>
+  <polygon points="11.5,1.5 15.5,4.5 11.5,7.5" fill="url(#gf)" stroke="#14640c" stroke-width=".8" stroke-linejoin="round"/>
+  <path d="M.5 4.5H3.5C7 4.5 7.5 12 11 12H12" fill="none" stroke="#04509b" stroke-width="2.8"/>
+  <path d="M.5 4.5H3.5C7 4.5 7.5 12 11 12H12" fill="none" stroke="#5aaee8" stroke-width="1.3"/>
+  <polygon points="11.5,9 15.5,12 11.5,15" fill="url(#bf)" stroke="#04509b" stroke-width=".8" stroke-linejoin="round"/>
+</svg>

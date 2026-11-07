@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a8a"/><stop offset=".5" stop-color="#f04040"/><stop offset="1" stop-color="#c81818"/></linearGradient>
+    <linearGradient id="y" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff5a0"/><stop offset=".5" stop-color="#ffd630"/><stop offset="1" stop-color="#eca800"/></linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8f080"/><stop offset=".5" stop-color="#6cc430"/><stop offset="1" stop-color="#3e9a14"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ad4ff"/><stop offset=".5" stop-color="#3a90e8"/><stop offset="1" stop-color="#1a62c4"/></linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="6" height="6" rx="1" fill="url(#r)" stroke="#9a1010"/>
+  <rect x="8.5" y="1.5" width="6" height="6" rx="1" fill="url(#y)" stroke="#b07800"/>
+  <rect x="1.5" y="8.5" width="6" height="6" rx="1" fill="url(#g)" stroke="#2e7210"/>
+  <rect x="8.5" y="8.5" width="6" height="6" rx="1" fill="url(#b)" stroke="#0e4698"/>
+  <path d="M2.5 5V3.5Q2.5 2.5 3.5 2.5H5M9.5 5V3.5Q9.5 2.5 10.5 2.5H12M2.5 12V10.5Q2.5 9.5 3.5 9.5H5M9.5 12V10.5Q9.5 9.5 10.5 9.5H12" fill="none" stroke="#ffffff" stroke-opacity=".65"/>
+</svg>

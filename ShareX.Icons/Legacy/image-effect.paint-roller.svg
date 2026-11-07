@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="rl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc59a"/><stop offset=".35" stop-color="#f58a45"/><stop offset=".8" stop-color="#d4581c"/><stop offset="1" stop-color="#b04414"/></linearGradient>
+    <linearGradient id="hd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5a5a5a"/><stop offset=".35" stop-color="#8a8a8a"/><stop offset="1" stop-color="#2a2a2a"/></linearGradient>
+  </defs>
+  <path d="M12.5 3.8H14.5V8H8.5V10" fill="none" stroke="#4e5860" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M12.5 3.8H14.5V8H8.5V10" fill="none" stroke="#d9dfe3" stroke-width=".8" stroke-linejoin="round"/>
+  <rect x=".5" y="1.5" width="12" height="5" rx="1.2" fill="url(#rl)" stroke="#8c3208" stroke-linejoin="round"/>
+  <path d="M1.8 2.8H11.2" stroke="#ffe4cc" stroke-opacity=".75" stroke-linecap="round"/>
+  <rect x="7" y="9.5" width="3" height="6" rx="1" fill="url(#hd)" stroke="#1a1a1a" stroke-opacity=".9"/>
+  <path d="M8 10.5V14.5" stroke="#b0b0b0" stroke-opacity=".6" stroke-width=".6"/>
+</svg>

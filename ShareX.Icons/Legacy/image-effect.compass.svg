@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#c4cad4"/><stop offset="1" stop-color="#8a92a0"/></linearGradient>
+    <radialGradient id="hg" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#b8c0cc"/><stop offset="1" stop-color="#6c7484"/></radialGradient>
+    <linearGradient id="pc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset="1" stop-color="#d8b830"/></linearGradient>
+  </defs>
+  <path d="M4.4 10.6Q8 11.9 11.6 10.6" fill="none" stroke="#3a4250" stroke-width="1" stroke-linecap="round"/>
+  <path d="M7.5 4.5L2.6 14.4M8.5 4.5L13.4 14.4" fill="none" stroke="#323a48" stroke-width="3" stroke-linecap="round"/>
+  <path d="M7.5 4.5L2.6 14.4M8.5 4.5L13.4 14.4" fill="none" stroke="url(#lg)" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M2.7 13.6L2.2 15.2" fill="none" stroke="#323a48" stroke-width="1" stroke-linecap="round"/>
+  <path d="M12 11.8L13.3 14.4" fill="none" stroke="#7a6410" stroke-width="2.8" stroke-linecap="round"/>
+  <path d="M12 11.8L13 13.8" fill="none" stroke="url(#pc)" stroke-width="1.4" stroke-linecap="round"/>
+  <rect x="7" y=".5" width="2" height="2.5" rx=".6" fill="#9aa2b0" stroke="#3a4250" stroke-width=".8"/>
+  <circle cx="8" cy="4.5" r="2.1" fill="url(#hg)" stroke="#323a48"/>
+  <circle cx="8" cy="4.5" r=".6" fill="#3a4250"/>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <linearGradient id="paperEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset="1" stop-color="#0b2a2a"/></linearGradient>
+    <linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ee3ff"/><stop offset=".3" stop-color="#83caf1"/><stop offset=".55" stop-color="#65ccf9"/><stop offset="1" stop-color="#02b1fe"/></linearGradient>
+    <linearGradient id="ao" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9ee9"/><stop offset=".35" stop-color="#2b83ce"/><stop offset="1" stop-color="#05509b"/></linearGradient>
+  </defs>
+  <path d="M2.5 .5H11L13.5 3V15.5H2.5Z" fill="url(#paper)" stroke="url(#paperEdge)" stroke-opacity=".6"/>
+  <path d="M3.5 15V1M12.5 3.5V15" fill="none" stroke="#fff" stroke-opacity=".55"/>
+  <path d="M10.5 .9V3.5H13.2" fill="#fff" stroke="#9fb0b0"/>
+  <path d="M6.5 4.5H9.5V8.5H12L8 13L4 8.5H6.5Z" fill="url(#af)" stroke="url(#ao)" stroke-linejoin="round"/>
+  <path d="M7.5 5.5V9" stroke="#c4efff" stroke-opacity=".6"/>
+</svg>

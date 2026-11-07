@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="pb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5cbf6a"/><stop offset=".5" stop-color="#2f9a44"/><stop offset="1" stop-color="#1c7030"/></linearGradient>
+    <linearGradient id="po" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#227a34"/><stop offset="1" stop-color="#0c4a1a"/></linearGradient>
+  </defs>
+  <rect x=".5" y=".5" width="15" height="15" rx="1.5" fill="url(#pb)" stroke="url(#po)"/>
+  <path d="M1.5 3V1.5H14.5" fill="none" stroke="#9fe0a8" stroke-opacity=".6"/>
+  <g fill="none" stroke="#f6d36a" stroke-linejoin="round">
+    <path d="M4.5 1V5.5L7.5 8.5V11"/>
+    <path d="M1 8.5H4.5L6 10"/>
+    <path d="M15 5.5H11.5L10.5 6.5V9.5L12.5 11.5V15"/>
+    <path d="M9.5 1V3.5"/>
+  </g>
+  <g fill="#ffe9a0" stroke="#a0781a" stroke-width=".7">
+    <circle cx="7.5" cy="11.8" r="1.2"/>
+    <circle cx="6.4" cy="10.4" r=".9"/>
+    <circle cx="9.5" cy="4.3" r="1.2"/>
+    <circle cx="4.5" cy="12.5" r=".9"/>
+  </g>
+</svg>

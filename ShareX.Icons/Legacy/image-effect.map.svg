@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="land" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2f5c4"/><stop offset="1" stop-color="#b6dc84"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b6e2ff"/><stop offset="1" stop-color="#6ab4ec"/></linearGradient>
+  </defs>
+  <polygon points=".5,3.5 5.5,1.5 10.5,3.5 15.5,1.5 15.5,12.5 10.5,14.5 5.5,12.5 .5,14.5" fill="url(#land)"/>
+  <path d="M.5 3.5L5.5 1.5L8.5 2.7Q7.4 5.4 4.6 6.3Q2.6 7 .5 8.6z" fill="url(#sea)"/>
+  <path d="M15.5 9.4Q13.2 9.2 12.2 11.2Q11.6 12.6 11.9 13.9L15.5 12.5z" fill="url(#sea)"/>
+  <polygon points="5.5,1.5 10.5,3.5 10.5,14.5 5.5,12.5" fill="#3c5a1c" fill-opacity=".2"/>
+  <path d="M2.5 12L5.5 9L8.5 10.5L13 5" fill="none" stroke="#d42020" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="5" y="1.5" width="1" height="11" fill="#5a7a2a" fill-opacity=".7"/>
+  <rect x="10" y="3.5" width="1" height="11" fill="#5a7a2a" fill-opacity=".7"/>
+  <polygon points=".5,3.5 5.5,1.5 10.5,3.5 15.5,1.5 15.5,12.5 10.5,14.5 5.5,12.5 .5,14.5" fill="none" stroke="#4a6420" stroke-opacity=".9" stroke-linejoin="round"/>
+</svg>

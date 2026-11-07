@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="gl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e4f2fb"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe2ef"/></linearGradient>
+    <linearGradient id="lq" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fd0fb"/><stop offset=".5" stop-color="#3ea0ea"/><stop offset="1" stop-color="#1a70c8"/></linearGradient>
+  </defs>
+  <path d="M2.5 1.5H13.5L12.3 14.2Q12.2 15.5 11 15.5H5Q3.8 15.5 3.7 14.2z" fill="url(#gl)" fill-opacity=".9"/>
+  <path d="M3.4 7.6Q5.2 6.6 7 7.6T10.6 7.6Q11.7 8.1 12.6 7.6L11.8 14Q11.7 14.6 11 14.6H5Q4.3 14.6 4.2 14z" fill="url(#lq)"/>
+  <path d="M3.6 8.1Q5.2 7.3 7 8.2T10.6 8.2" fill="none" stroke="#c8f0ff" stroke-opacity=".9" stroke-width=".7" stroke-linecap="round"/>
+  <path d="M4.3 2.8L5.3 13.4" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M2.5 1.5H13.5L12.3 14.2Q12.2 15.5 11 15.5H5Q3.8 15.5 3.7 14.2z" fill="none" stroke="#3a6e94" stroke-opacity=".85" stroke-linejoin="round"/>
+</svg>

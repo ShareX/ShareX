@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8ecf0"/><stop offset=".5" stop-color="#a8b0ba"/><stop offset="1" stop-color="#6c7480"/></linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dde4ea"/></linearGradient>
+    <radialGradient id="hub" cx=".35" cy=".3" r=".7"><stop offset="0" stop-color="#9a9aa6"/><stop offset="1" stop-color="#2c2c34"/></radialGradient>
+  </defs>
+  <circle cx="8" cy="8" r="7.5" fill="url(#rim)" stroke="#3a434e" stroke-opacity=".9"/>
+  <circle cx="8" cy="8" r="5.7" fill="url(#face)" stroke="#5a6470" stroke-opacity=".6" stroke-width=".6"/>
+  <path d="M4.9 11.1A4.4 4.4 0 0 1 4.9 4.9" fill="none" stroke="#3fae2a" stroke-width="1.6"/>
+  <path d="M4.9 4.9A4.4 4.4 0 0 1 11.1 4.9" fill="none" stroke="#f0c020" stroke-width="1.6"/>
+  <path d="M11.1 4.9A4.4 4.4 0 0 1 11.1 11.1" fill="none" stroke="#e03a1e" stroke-width="1.6"/>
+  <path d="M8 8L10.9 4" fill="none" stroke="#c01a1a" stroke-width="1.3" stroke-linecap="round"/>
+  <circle cx="8" cy="8" r="1.4" fill="url(#hub)"/>
+  <path d="M2.4 7Q3 3.4 6.4 2.4" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-linecap="round"/>
+</svg>

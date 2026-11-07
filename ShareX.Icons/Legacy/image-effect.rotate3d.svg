@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffbe0"/><stop offset="1" stop-color="#fbe48a"/></linearGradient>
+    <linearGradient id="lf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d460"/><stop offset="1" stop-color="#dba420"/></linearGradient>
+    <linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d49a1c"/><stop offset="1" stop-color="#a86c0c"/></linearGradient>
+    <linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff"/><stop offset=".5" stop-color="#4590cd"/><stop offset="1" stop-color="#0eb7ff"/></linearGradient>
+  </defs>
+  <path d="M8.5 5.5L12.5 3.5V8.5L8.5 10.5Z" fill="url(#rf)"/>
+  <path d="M4.5 3.5L8.5 5.5V10.5L4.5 8.5Z" fill="url(#lf)"/>
+  <path d="M8.5 1.5L12.5 3.5L8.5 5.5L4.5 3.5Z" fill="url(#tp)"/>
+  <path d="M8.5 1.5L12.5 3.5V8.5L8.5 10.5L4.5 8.5V3.5Z M4.5 3.5L8.5 5.5L12.5 3.5M8.5 5.5V10.5" fill="none" stroke="#8a5e06" stroke-linejoin="round"/>
+  <path d="M5.5 4.6V7.9" stroke="#fff6c8" stroke-opacity=".7" stroke-width=".7"/>
+  <path d="M2.2 7.6Q.4 9.6 2.6 11.6Q5.6 14 10 13.4Q12.4 13 13.4 11.6" fill="none" stroke="#04509b" stroke-width="2.6" stroke-linecap="round"/>
+  <path d="M2.2 7.6Q.4 9.6 2.6 11.6Q5.6 14 10 13.4Q12.4 13 13.4 11.6" fill="none" stroke="#5aaee8" stroke-width="1.2" stroke-linecap="round"/>
+  <polygon points="11.4,9.6 15.6,8.6 14.6,12.8" fill="url(#af)" stroke="#04509b" stroke-width=".8" stroke-linejoin="round"/>
+</svg>

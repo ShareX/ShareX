@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="r" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ffb0a8"/><stop offset=".5" stop-color="#f03a2c"/><stop offset="1" stop-color="#b01a10"/></radialGradient>
+    <radialGradient id="g" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#c4f7b0"/><stop offset=".5" stop-color="#3cc82a"/><stop offset="1" stop-color="#1a7a10"/></radialGradient>
+    <radialGradient id="b" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#b0d4ff"/><stop offset=".5" stop-color="#2f78e6"/><stop offset="1" stop-color="#1240a0"/></radialGradient>
+  </defs>
+  <circle cx="8" cy="5" r="4.4" fill="url(#r)" fill-opacity=".85" stroke="#8c1008" stroke-width=".9"/>
+  <circle cx="5" cy="10.6" r="4.4" fill="url(#g)" fill-opacity=".75" stroke="#145e0c" stroke-width=".9"/>
+  <circle cx="11" cy="10.6" r="4.4" fill="url(#b)" fill-opacity=".7" stroke="#0e3080" stroke-width=".9"/>
+  <path d="M5.4 3.6Q6.2 1.8 8.2 1.6M2.2 9.4Q2.8 7.6 4.6 7.2" fill="none" stroke="#ffffff" stroke-width=".7" stroke-opacity=".7" stroke-linecap="round"/>
+</svg>

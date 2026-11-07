@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b9c4ce"/><stop offset="0.35" stop-color="#ffffff"/><stop offset="0.7" stop-color="#eef2f5"/><stop offset="1" stop-color="#b3bec8"/></linearGradient>
+    <linearGradient id="merc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a50000"/><stop offset="0.4" stop-color="#ff6a6a"/><stop offset="1" stop-color="#b00000"/></linearGradient>
+    <radialGradient id="bulb" cx=".4" cy=".35" r=".65" fx=".35" fy=".3"><stop offset="0" stop-color="#ffc0c0"/><stop offset="0.35" stop-color="#f04040"/><stop offset="1" stop-color="#a00000"/></radialGradient>
+  </defs>
+  <g transform="translate(0 0)">
+    <path d="M6.1 2.6A1.9 1.9 0 0 1 9.9 2.6V9.6A3.2 3.2 0 1 1 6.1 9.6Z" fill="url(#glass)" stroke="#4e5a66" stroke-opacity=".85" stroke-linejoin="round"/>
+    <rect x="7.1" y="4.5" width="1.8" height="6.5" fill="url(#merc)"/>
+    <circle cx="8" cy="12.3" r="2.35" fill="url(#bulb)"/>
+    <path d="M7.1 2.7Q7.1 1.7 8 1.6" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-linecap="round" stroke-width=".8"/>
+    <ellipse cx="7.1" cy="11.4" rx=".75" ry=".55" fill="#ffffff" fill-opacity=".75"/>
+    <g fill="#4e5a66" fill-opacity=".8"><rect x="10.5" y="3" width="1.8" height="1"/><rect x="10.5" y="5.5" width="1.2" height="1"/><rect x="10.5" y="8" width="1.8" height="1"/></g>
+  </g>
+</svg>

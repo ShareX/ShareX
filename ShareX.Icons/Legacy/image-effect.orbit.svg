@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="pl" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#d8f0ff"/><stop offset=".35" stop-color="#6fb4f0"/><stop offset=".8" stop-color="#2f6fc2"/><stop offset="1" stop-color="#1d4f99"/></radialGradient>
+    <radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" stop-opacity=".9"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path d="M2.5 .5L3 2 4.5 2.5 3 3 2.5 4.5 2 3 .5 2.5 2 2Z" fill="#fff3a0" stroke="#c49a10" stroke-width=".5" stroke-linejoin="round"/>
+  <g transform="rotate(-30 8 8)">
+    <ellipse cx="8" cy="8" rx="7.2" ry="2.5" fill="none" stroke="#8a5a06" stroke-width="2.2"/>
+    <ellipse cx="8" cy="8" rx="7.2" ry="2.5" fill="none" stroke="#f6c64a" stroke-width="1.1"/>
+  </g>
+  <circle cx="8" cy="8" r="4.5" fill="url(#pl)" stroke="#1a4a8c"/>
+  <ellipse cx="6.6" cy="6.1" rx="2" ry="1.3" fill="url(#gl)"/>
+  <g transform="rotate(-30 8 8)">
+    <path d="M.8 8A7.2 2.5 0 0 0 15.2 8" fill="none" stroke="#8a5a06" stroke-width="2.2"/>
+    <path d="M.8 8A7.2 2.5 0 0 0 15.2 8" fill="none" stroke="#f6c64a" stroke-width="1.1"/>
+    <path d="M3 9.6Q8 11.2 13 9.6" fill="none" stroke="#fff3c4" stroke-width=".5" stroke-opacity=".9"/>
+  </g>
+</svg>
