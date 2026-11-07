@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
@@ -498,7 +499,11 @@ public partial class HistoryWindow : Window
             HistoryList.SelectedItem = item;
         }
 
-        if (point.Properties.IsLeftButtonPressed)
+        // Only arm file drag-and-drop when the press lands on an item; otherwise dragging the
+        // scrollbar thumb would start a drag of the selected files and steal the pointer.
+        bool onScrollBar = (e.Source as Visual)?.GetSelfAndVisualAncestors().OfType<ScrollBar>().Any() == true;
+
+        if (point.Properties.IsLeftButtonPressed && container != null && !onScrollBar)
         {
             _dragPointerPressed = e;
             _dragStart = e.GetPosition(HistoryList);
