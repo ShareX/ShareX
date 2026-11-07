@@ -1664,6 +1664,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Enregistrement d’écran (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Une seule fois</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Dossier des captures d’écran...</value>
   </data>

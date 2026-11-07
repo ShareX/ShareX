@@ -1664,6 +1664,9 @@
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>تسجيل الشاشة (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>مرة واحدة فقط</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>مجلد لقطات الشاشة...</value>
   </data>

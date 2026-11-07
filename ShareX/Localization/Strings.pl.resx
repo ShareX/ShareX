@@ -1664,6 +1664,9 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Nagrywanie ekranu (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Tylko raz</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Folder zrzutów ekranu...</value>
   </data>

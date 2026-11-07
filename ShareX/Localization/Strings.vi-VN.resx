@@ -1664,6 +1664,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Ghi màn hình (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Chỉ một lần</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Thư mục ảnh chụp màn hình...</value>
   </data>

@@ -1664,6 +1664,9 @@
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Запис екрана (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Лише один раз</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Папка знімків екрана...</value>
   </data>

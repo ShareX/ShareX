@@ -1664,6 +1664,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Nahrávání obrazovky (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Pouze jednou</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Složka snímků obrazovky...</value>
   </data>

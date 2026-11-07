@@ -1664,6 +1664,9 @@
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>螢幕錄影 (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>僅一次</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>螢幕擷取畫面資料夾...</value>
   </data>
