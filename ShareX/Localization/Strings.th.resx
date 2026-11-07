@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>คลิปบอร์ด รูปแบบ</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>โหมดกะทัดรัด</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>กำหนดเอง ปุ่มลัด การกำหนดค่า เส้นทาง</value>
   </data>
