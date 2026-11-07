@@ -1251,10 +1251,10 @@ internal sealed class TaskSettingsPageBuilder
     {
         StackPanel content = new()
         {
-            Margin = new Thickness(28, 24, 28, 32),
             HorizontalAlignment = HorizontalAlignment.Stretch,
             Spacing = 0
         };
+        content.Classes.Add("settings-page");
 
         Grid header = new()
         {
@@ -1581,11 +1581,10 @@ internal sealed class TaskSettingsPageBuilder
         {
             Content = content,
             MinWidth = 250,
-            MinHeight = 32,
-            Padding = new Thickness(8, 4),
             HorizontalAlignment = HorizontalAlignment.Left,
             HorizontalContentAlignment = HorizontalAlignment.Stretch
         };
+        button.Classes.Add("form-control");
 
         void UpdateSelectedTask(HotkeyType task)
         {
@@ -1669,11 +1668,10 @@ internal sealed class TaskSettingsPageBuilder
         {
             Content = content,
             MinWidth = 300,
-            MinHeight = 32,
-            Padding = new Thickness(8, 4),
             HorizontalAlignment = HorizontalAlignment.Stretch,
             HorizontalContentAlignment = HorizontalAlignment.Stretch
         };
+        button.Classes.Add("form-control");
 
         void UpdateSelectedTasks()
         {
@@ -1769,11 +1767,10 @@ internal sealed class TaskSettingsPageBuilder
         {
             Content = content,
             MinWidth = 300,
-            MinHeight = 32,
-            Padding = new Thickness(8, 4),
             HorizontalAlignment = HorizontalAlignment.Stretch,
             HorizontalContentAlignment = HorizontalAlignment.Stretch
         };
+        button.Classes.Add("form-control");
 
         button.Click += (_, _) =>
         {

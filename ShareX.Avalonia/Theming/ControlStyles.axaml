@@ -28,6 +28,22 @@
         <Thickness x:Key="ShareX.Density.ToolGrid.HeaderMargin">7,3,7,3</Thickness>
         <Thickness x:Key="ShareX.Density.ToolGrid.FirstHeaderMargin">7,1,7,3</Thickness>
         <Thickness x:Key="ShareX.Density.ToolGrid.SeparatorMargin">7,9,7,7</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.PageMargin">28,24,28,32</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.PageTitleMargin">0,0,0,14</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.PageTitleFontSize">24</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.PageTitleIconSize">22</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.SectionTitleFontSize">15</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.CardPadding">12</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.CardMargin">0,0,0,8</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.CheckBoxMinHeight">32</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.ControlMinHeight">32</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.ControlPadding">8,4</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NumberBoxHeight">40</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.ButtonPadding">10,4</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NavItemMinHeight">32</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.NavItemMargin">2,3</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,8,8,8</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NavSpacing">10</x:Double>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />

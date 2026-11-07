@@ -20,6 +20,7 @@
             <Setter Property="IsVisible" Value="{ReflectionBinding IsVisible}"/>
             <Setter Property="IsExpanded" Value="{ReflectionBinding IsExpanded, Mode=TwoWay}"/>
             <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NavItemMinHeight}"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="CornerRadius" Value="4"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -45,7 +46,7 @@
         </Style>
     </UserControl.Styles>
 
-    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+    <Grid RowDefinitions="Auto,*" RowSpacing="{DynamicResource ShareX.Density.Settings.NavSpacing}">
         <Grid ColumnDefinitions="Auto,*">
             <controls:IconPresenter Margin="8,0,0,0"
                                     Icon="{x:Static icons:AppIcons.Search}"
@@ -54,7 +55,7 @@
                                     VerticalAlignment="Center"
                                     ZIndex="1"/>
             <TextBox Grid.ColumnSpan="2"
-                     Padding="30,8,8,8"
+                     Padding="{DynamicResource ShareX.Density.Settings.SearchPadding}"
                      PlaceholderText="{x:Static localization:Strings.SettingsNavigation_Search_settings}"
                      Text="{Binding SearchText, ElementName=Root, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
@@ -66,7 +67,7 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate DataType="controls:SettingsNavigationItem"
                                   ItemsSource="{Binding Children}">
-                    <Grid ColumnDefinitions="Auto,*" Margin="2,3">
+                    <Grid ColumnDefinitions="Auto,*" Margin="{DynamicResource ShareX.Density.Settings.NavItemMargin}">
                         <controls:IconPresenter Icon="{Binding Icon}"
                                                 IsVisible="{Binding HasIcon}"
                                                 FontSize="16"
