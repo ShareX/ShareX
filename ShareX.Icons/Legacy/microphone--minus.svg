@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<radialGradient id="sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".2"/><stop offset=".6" stop-color="#000" stop-opacity=".14"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<linearGradient id="uf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dddddd"/><stop offset=".2" stop-color="#bcbcbd"/><stop offset=".34" stop-color="#c1c1c3"/><stop offset=".48" stop-color="#bbbbc0"/><stop offset=".62" stop-color="#a6a6ac"/><stop offset=".76" stop-color="#b5b5bd"/><stop offset=".9" stop-color="#d4d4e2"/><stop offset="1" stop-color="#c7c7d5"/></linearGradient>
+<linearGradient id="uo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454" stop-opacity=".35"/><stop offset=".5" stop-color="#3a3a3a" stop-opacity=".44"/><stop offset="1" stop-color="#050505" stop-opacity=".45"/></linearGradient>
+<linearGradient id="gap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#595959"/><stop offset=".5" stop-color="#6a6a6c"/><stop offset="1" stop-color="#9c9c9f"/></linearGradient>
+<linearGradient id="bf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a9a9c"/><stop offset=".5" stop-color="#c8c8c9"/><stop offset="1" stop-color="#9c9ca0"/></linearGradient>
+<linearGradient id="hf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bdbdbd"/><stop offset="1" stop-color="#787878"/></linearGradient>
+<linearGradient id="ho" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#535353" stop-opacity=".3"/><stop offset=".5" stop-color="#383838" stop-opacity=".45"/><stop offset="1" stop-color="#121212" stop-opacity=".52"/></linearGradient>
+<linearGradient id="tb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dddddd"/><stop offset=".22" stop-color="#bbbbbb"/><stop offset=".28" stop-color="#e1e1e1"/><stop offset=".5" stop-color="#fefefe"/><stop offset=".72" stop-color="#e4e4e4"/><stop offset=".78" stop-color="#bbbbbb"/><stop offset="1" stop-color="#dddddd"/></linearGradient>
+<linearGradient id="st" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9999a2"/><stop offset="1" stop-color="#aaaabb"/></linearGradient>
+<linearGradient id="mo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a70000" stop-opacity=".82"/><stop offset="1" stop-color="#800000" stop-opacity=".82"/></linearGradient>
+</defs>
+<ellipse cx="7.5" cy="14.9" rx="7" ry="1.1" fill="url(#sh)"/>
+<path d="M3 6H12V9A4.5 4 0 0 1 3 9Z" fill="url(#uf)"/>
+<path d="M2.5 5.5H12.5V9A5 4.5 0 0 1 2.5 9Z" fill="none" stroke="url(#uo)"/>
+<rect x="5" y="6" width="5" height="4.5" fill="url(#bf)"/>
+<rect x="5" y="10" width="5" height="1" fill="#000" fill-opacity=".12"/>
+<path d="M4.5 7V9A3 2.2 0 0 0 10.5 9V7" fill="none" stroke="url(#gap)"/>
+<path d="M5 6V2.5A1.5 1.5 0 0 1 6.5 1H8.5A1.5 1.5 0 0 1 10 2.5V6Z" fill="url(#hf)"/>
+<path d="M4.5 6V2.5A2 2 0 0 1 6.5 .5H8.5A2 2 0 0 1 10.5 2.5V6" fill="none" stroke="url(#ho)"/>
+<rect x="6" y="1" width="1" height="1" fill="#d3d3d3"/>
+<rect x="8" y="1" width="1" height="1" fill="#d0d0d0"/>
+<rect x="5" y="2" width="1" height="1" fill="#b1b1b1"/>
+<rect x="7" y="2" width="1" height="1" fill="#f5f5f5"/>
+<rect x="9" y="2" width="1" height="1" fill="#acacac"/>
+<rect x="6" y="3" width="1" height="1" fill="#dbdbdb"/>
+<rect x="8" y="3" width="1" height="1" fill="#d7d7d7"/>
+<rect x="5" y="4" width="1" height="1" fill="#b7b7b7"/>
+<rect x="7" y="4" width="1" height="1" fill="#dfdfdf"/>
+<rect x="9" y="4" width="1" height="1" fill="#b1b1b1"/>
+<rect x="6" y="5" width="1" height="1" fill="#bdbdbd"/>
+<rect x="8" y="5" width="1" height="1" fill="#bababa"/>
+<rect x="3" y="6" width="9" height="1" fill="url(#tb)"/>
+<rect x="7" y="13" width="1" height="2" fill="url(#st)"/>
+<path d="M6.5 14V15M8.5 14V15M7 15.5H8" stroke="#040404" stroke-opacity=".54"/>
+<path d="M6 15.5H7M8 15.5H9" stroke="#010101" stroke-opacity=".3"/>
+<rect x="10" y="12" width="5" height="1" fill="#f75e5e"/>
+<rect x="9.5" y="11.5" width="6" height="2" rx=".4" fill="none" stroke="url(#mo)"/>
+</svg>
