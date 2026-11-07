@@ -740,6 +740,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Simultaneous upload limit:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menus</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menus:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Settings windows:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Sidebar:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Tool menus</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Tool menus:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>

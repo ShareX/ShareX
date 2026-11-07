@@ -1,8 +1,9 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <!--
-        Merged into the application resources by ThemeManager while compact mode is on.
-        Brings the main window and its menus closer to the ShareX 21 spacing.
+        The compact end of the spacing settings, close to the ShareX 21 spacing. ThemeManager blends each
+        value here with the default of the same key in ControlStyles.axaml, so every key listed here needs a
+        default there, and new keys need a spacing area in ThemeManager.TryGetSpacingArea.
     -->
     <x:Double x:Key="ShareX.Density.Nav.MinWidth">180</x:Double>
     <Thickness x:Key="ShareX.Density.Nav.PanelMargin">4,4,4,0</Thickness>

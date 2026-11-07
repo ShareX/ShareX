@@ -144,7 +144,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady += OnTaskImageReady;
         TaskManager.TaskCollectionChanged += OnTaskCollectionChanged;
         ThemeManager.ThemeChanged += OnThemeChanged;
-        ThemeManager.CompactModeChanged += OnCompactModeChanged;
+        ThemeManager.SpacingChanged += OnSpacingChanged;
 
         Closing += OnClosing;
         PositionChanged += (_, _) => SaveWindowBounds();
@@ -546,7 +546,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private static Control CreateNavigationContent(MainNavigationSection section)
+    internal static Control CreateNavigationContent(MainNavigationSection section)
     {
         Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,*,Auto") };
         grid.Children.Add(CreateAccentMenuIcon(section.Icon, 16));
@@ -651,7 +651,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         return root;
     }
 
-    private static void PopulateGridMenuCategories(StackPanel content, IReadOnlyList<MainMenuCategory> categories,
+    internal static void PopulateGridMenuCategories(StackPanel content, IReadOnlyList<MainMenuCategory> categories,
         bool isEditing, Action<MainMenuEntry> execute)
     {
         content.Children.Clear();
@@ -1190,7 +1190,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         };
     }
 
-    private static IconPresenter CreateAccentMenuIcon(string icon, double size)
+    internal static IconPresenter CreateAccentMenuIcon(string icon, double size)
     {
         IconPresenter presenter = new()
         {
@@ -1316,7 +1316,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             OnPropertyChanged(nameof(ThemeToggleText));
         });
 
-    private void OnCompactModeChanged(object? sender, bool compactMode) =>
+    private void OnSpacingChanged(object? sender, EventArgs e) =>
         Dispatcher.UIThread.Post(() =>
         {
             // The sidebar spacing changed, so the window's minimum height (and its height, when it
@@ -2356,7 +2356,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
-        ThemeManager.CompactModeChanged -= OnCompactModeChanged;
+        ThemeManager.SpacingChanged -= OnSpacingChanged;
         ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();

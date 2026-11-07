@@ -28,6 +28,7 @@
 using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Icons;
 using ShareX.Localization;
@@ -261,7 +262,98 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public bool CompactMode
     {
         get => Settings.ThemeOptions.CompactMode;
-        set => SetSetting(Settings.ThemeOptions.CompactMode, value, x => Settings.ThemeOptions.CompactMode = x);
+        set
+        {
+            if (Settings.ThemeOptions.CompactMode == value)
+            {
+                return;
+            }
+
+            // Compact mode is a preset for the spacing sliders, so switching it drops any slider adjustments.
+            Settings.ThemeOptions.ResetSpacing();
+            SetSetting(Settings.ThemeOptions.CompactMode, value, x => Settings.ThemeOptions.CompactMode = x);
+            RaiseSpacingChanged();
+        }
+    }
+
+    public IReadOnlyList<EnumOption<SpacingArea>> SpacingPreviewOptions { get; } =
+    [
+        new(SpacingArea.Sidebar, Strings.ApplicationSettingsWindow_SpacingSidebar),
+        new(SpacingArea.Menus, Strings.ApplicationSettingsWindow_SpacingMenus),
+        new(SpacingArea.ToolMenus, Strings.ApplicationSettingsWindow_SpacingToolMenus)
+    ];
+
+    private EnumOption<SpacingArea>? _selectedSpacingPreview;
+
+    // Which part of the main window the spacing preview draws. Not saved; it follows the last slider moved.
+    public EnumOption<SpacingArea>? SelectedSpacingPreview
+    {
+        get => _selectedSpacingPreview ??= SpacingPreviewOptions[0];
+        set
+        {
+            if (value != null && !Equals(_selectedSpacingPreview, value))
+            {
+                _selectedSpacingPreview = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public double SpacingMinimum => ApplicationThemeOptions.CompactSpacing;
+    public double SpacingMaximum => ApplicationThemeOptions.MaximumSpacing;
+
+    public double SidebarSpacing { get => GetSpacing(SpacingArea.Sidebar); set => SetSpacing(SpacingArea.Sidebar, value); }
+    public double MenuSpacing { get => GetSpacing(SpacingArea.Menus); set => SetSpacing(SpacingArea.Menus, value); }
+    public double ToolMenuSpacing { get => GetSpacing(SpacingArea.ToolMenus); set => SetSpacing(SpacingArea.ToolMenus, value); }
+    public double SettingsSpacing { get => GetSpacing(SpacingArea.SettingsWindows); set => SetSpacing(SpacingArea.SettingsWindows, value); }
+
+    public string SidebarSpacingText => FormatSpacing(SpacingArea.Sidebar);
+    public string MenuSpacingText => FormatSpacing(SpacingArea.Menus);
+    public string ToolMenuSpacingText => FormatSpacing(SpacingArea.ToolMenus);
+    public string SettingsSpacingText => FormatSpacing(SpacingArea.SettingsWindows);
+
+    public void ResetSpacing()
+    {
+        Settings.ThemeOptions.ResetSpacing();
+        RaiseSpacingChanged();
+    }
+
+    private double GetSpacing(SpacingArea area) => Settings.ThemeOptions.GetSpacing(area);
+
+    private void SetSpacing(SpacingArea area, double value, [CallerMemberName] string? propertyName = null)
+    {
+        int spacing = (int)Math.Clamp(Math.Round(value / 5) * 5, ApplicationThemeOptions.CompactSpacing, ApplicationThemeOptions.MaximumSpacing);
+
+        if (Settings.ThemeOptions.GetSpacing(area) == spacing)
+        {
+            return;
+        }
+
+        Settings.ThemeOptions.SetSpacing(area, spacing);
+        OnPropertyChanged(propertyName);
+        OnPropertyChanged(propertyName + "Text");
+
+        // Show the part being adjusted. The settings windows have no preview because this window is one.
+        if (SpacingPreviewOptions.FirstOrDefault(x => x.Value == area) is { } preview)
+        {
+            SelectedSpacingPreview = preview;
+        }
+    }
+
+    private string FormatSpacing(SpacingArea area) => Settings.ThemeOptions.GetSpacing(area) switch
+    {
+        ApplicationThemeOptions.CompactSpacing => Strings.ApplicationSettingsWindow_SpacingCompact,
+        ApplicationThemeOptions.DefaultSpacing => Strings.ApplicationSettingsWindow_SpacingDefault,
+        int spacing => $"{spacing}%"
+    };
+
+    private void RaiseSpacingChanged()
+    {
+        foreach (string name in new[] { nameof(SidebarSpacing), nameof(MenuSpacing), nameof(ToolMenuSpacing), nameof(SettingsSpacing) })
+        {
+            OnPropertyChanged(name);
+            OnPropertyChanged(name + "Text");
+        }
     }
 
     public void RefreshThemeSettings()

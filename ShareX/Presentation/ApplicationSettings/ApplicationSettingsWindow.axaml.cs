@@ -95,6 +95,7 @@ public partial class ApplicationSettingsWindow : Window
     private void OnOpenPersonalFolderClick(object? sender, RoutedEventArgs e) => ViewModel.OpenPersonalFolder();
     private void OnOpenScreenshotsFolderClick(object? sender, RoutedEventArgs e) => ViewModel.OpenScreenshotsFolder();
     private void OnResetThumbnailSizeClick(object? sender, RoutedEventArgs e) => ViewModel.ResetThumbnailSize();
+    private void OnResetSpacingClick(object? sender, RoutedEventArgs e) => ViewModel.ResetSpacing();
     private void OnAddClipboardFormatClick(object? sender, RoutedEventArgs e) => ShowClipboardFormatEditor(null);
     private void OnEditClipboardFormatClick(object? sender, RoutedEventArgs e)
     {

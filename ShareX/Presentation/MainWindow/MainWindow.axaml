@@ -22,22 +22,6 @@
         DragDrop.Drop="OnDrop">
 
     <Window.Styles>
-        <Style Selector="Button.nav-button">
-            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Nav.ButtonHeight}"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Nav.ButtonPadding}"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="CornerRadius" Value="4"/>
-        </Style>
-        <Style Selector="Button.nav-button TextBlock.nav-label">
-            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Nav.LabelMargin}"/>
-        </Style>
-        <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
         <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
