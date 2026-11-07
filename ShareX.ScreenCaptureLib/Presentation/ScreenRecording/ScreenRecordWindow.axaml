@@ -4,15 +4,14 @@
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="using:ShareX.ScreenCaptureLib"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
         mc:Ignorable="d"
         d:DesignWidth="700"
         d:DesignHeight="420"
         x:Class="ShareX.ScreenCaptureLib.ScreenRecordWindow"
         Title="{x:Static localization:Strings.ScreenRecordWindow_Title}"
-        Width="430"
-        Height="180"
+        Width="461"
+        Height="42"
         CanResize="False"
         ShowInTaskbar="False"
         ShowActivated="True"
@@ -89,13 +88,7 @@
 
     <ThemeVariantScope>
         <Canvas x:Name="WindowCanvas" Background="Transparent">
-            <local:RecordingRegionBorder x:Name="RegionBorder"
-                                         Canvas.Left="0"
-                                         Canvas.Top="0"
-                                         IsHitTestVisible="False"/>
-
             <Border x:Name="Toolbar"
-                    Canvas.Left="0"
                     Width="461"
                     Height="42"
                     Padding="0"

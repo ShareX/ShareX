@@ -91,12 +91,15 @@ namespace ShareX.ScreenCaptureLib
                 bestIgnoreBottomOffset = 0;
                 Reset();
 
-                ScrollingCaptureRegionWindow regionWindow = null;
+                RegionFrame regionFrame = null;
 
                 if (Options.ShowRegion)
                 {
-                    regionWindow = new ScrollingCaptureRegionWindow(selectedRectangle);
-                    regionWindow.Show();
+                    regionFrame = new RegionFrame(selectedRectangle, Avalonia.Media.Brushes.Lime)
+                    {
+                        Title = Localization.Strings.ScrollingCaptureWindow_Title
+                    };
+                    regionFrame.Show();
                 }
 
                 try
@@ -192,7 +195,7 @@ namespace ShareX.ScreenCaptureLib
                 }
                 finally
                 {
-                    regionWindow?.Close();
+                    regionFrame?.Close();
 
                     Reset(true);
                     IsCapturing = false;

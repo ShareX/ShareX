@@ -59,7 +59,7 @@ internal partial class ScreenRecorderBarWindow : Window
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
     private ToggleButton _startDelayToggle = null!;
-    private ScrollingCaptureRegionWindow? _regionWindow;
+    private RegionFrame? _regionFrame;
     private string? _activePanel;
     private bool _closed;
 
@@ -133,8 +133,8 @@ internal partial class ScreenRecorderBarWindow : Window
         Closed += (_, _) =>
         {
             _closed = true;
-            _regionWindow?.Close();
-            _regionWindow = null;
+            _regionFrame?.Close();
+            _regionFrame = null;
             _completion.TrySetResult(false);
         };
     }
@@ -462,17 +462,10 @@ internal partial class ScreenRecorderBarWindow : Window
     private void ShowRegion()
     {
         if (_closed) return;
-        _regionWindow ??= new ScrollingCaptureRegionWindow(RecordingRegion) { Title = Title };
-        _regionWindow.FindControl<RecordingRegionBorder>("RegionBorder")!.AccentBrush = Brushes.Goldenrod;
-        _regionWindow.Show();
+        _regionFrame ??= new RegionFrame(RecordingRegion, Brushes.Goldenrod) { Title = Title };
+        _regionFrame.Show();
         // Keep the outline behind the interactive bar when the windows overlap.
-        IntPtr barHandle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        IntPtr regionHandle = _regionWindow.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (barHandle != IntPtr.Zero && regionHandle != IntPtr.Zero)
-        {
-            NativeMethods.SetWindowPos(regionHandle, barHandle, 0, 0, 0, 0,
-                SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);
-        }
+        _regionFrame.PlaceBehind(TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
     }
 
     private void ShowPanel(string id, string title, Func<Control> build)
