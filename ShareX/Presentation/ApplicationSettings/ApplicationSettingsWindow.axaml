@@ -404,6 +404,18 @@
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_MainWindow}"/>
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
+                                    <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_TaskViewModeLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                    <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding TaskViewModeOptions}" SelectedItem="{Binding SelectedTaskViewMode, Mode=TwoWay}"/>
+                                </Grid>
+                            </Border>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ListView}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowColumns}" IsChecked="{Binding ShowColumns, Mode=TwoWay}"/>
+                                </StackPanel>
+                            </Border>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ThumbnailView}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowTitle}" IsChecked="{Binding ShowThumbnailTitle, Mode=TwoWay}"/>

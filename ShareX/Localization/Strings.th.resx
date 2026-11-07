@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>สว่าง</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>หน้าต่างหลัก</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>แสดงคอลัมน์</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขรูปภาพ ShareX" ในเมนูบริบทของ Windows Explorer</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>รูปแบบโฟลเดอร์ย่อย:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>โหมดมุมมองงาน:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>ธีม</value>
@@ -1757,6 +1766,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>ตกแต่ง รูปภาพ...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>ล้างรายการงาน</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>ล้าง ภาพขนาดย่อ มุมมอง</value>
   </data>
@@ -1918,6 +1930,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>หยุด อัปโหลด</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>สลับเป็นมุมมองรายการ</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>สลับเป็นมุมมองภาพขนาดย่อ</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>ข้อความ</value>
@@ -2218,6 +2236,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>เปิดใช้งานปุ่มลัดแล้ว</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>เวลาที่ผ่านไป</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>ชื่อไฟล์</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>ประวัติ</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>อยู่ในคิว</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>ความคืบหน้า</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>เวลาที่เหลือ</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>ความเร็ว</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>อัปโหลดเสร็จสมบูรณ์ URL: {0}</value>

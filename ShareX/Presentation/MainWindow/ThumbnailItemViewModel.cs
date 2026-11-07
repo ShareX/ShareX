@@ -54,8 +54,16 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     private bool _isProgressVisible;
     private bool _isFailed;
     private bool _isCombineTarget;
+    private string _listStatus = string.Empty;
+    private string _listStatusIcon = AppIcons.Clock;
+    private string _listProgress = string.Empty;
+    private string _listSpeed = string.Empty;
+    private string _listElapsed = string.Empty;
+    private string _listRemaining = string.Empty;
+    private string _listUrl = string.Empty;
 
     public WorkerTask Task { get; }
+    private static bool IsListView => ApplicationState.Settings.TaskViewMode == TaskViewMode.ListView;
     public int Width => Math.Max(96, ApplicationState.Settings.ThumbnailSize.Width);
     public int Height => Math.Max(72, ApplicationState.Settings.ThumbnailSize.Height);
     public bool ShowTitle => ApplicationState.Settings.ShowThumbnailTitle;
@@ -169,6 +177,58 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         set => SetField(ref _isCombineTarget, value);
     }
 
+    public string ListStatus
+    {
+        get => _listStatus;
+        private set => SetField(ref _listStatus, value);
+    }
+
+    public string ListStatusIcon
+    {
+        get => _listStatusIcon;
+        private set => SetField(ref _listStatusIcon, value);
+    }
+
+    public string ListProgress
+    {
+        get => _listProgress;
+        private set => SetField(ref _listProgress, value);
+    }
+
+    public string ListSpeed
+    {
+        get => _listSpeed;
+        private set => SetField(ref _listSpeed, value);
+    }
+
+    public string ListElapsed
+    {
+        get => _listElapsed;
+        private set => SetField(ref _listElapsed, value);
+    }
+
+    public string ListRemaining
+    {
+        get => _listRemaining;
+        private set => SetField(ref _listRemaining, value);
+    }
+
+    public string ListUrl
+    {
+        get => _listUrl;
+        private set
+        {
+            if (_listUrl != value)
+            {
+                _listUrl = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ListUrlToolTip));
+            }
+        }
+    }
+
+    public string? ListUrlToolTip => string.IsNullOrEmpty(_listUrl) ? null : _listUrl;
+
     public ThumbnailItemViewModel(WorkerTask task)
     {
         Task = task;
@@ -178,6 +238,12 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     public void Refresh()
     {
         RefreshMetadata();
+
+        // The list view never shows image content, so don't decode any.
+        if (IsListView)
+        {
+            return;
+        }
 
         string? filePath = Task.Info?.FilePath;
 
@@ -191,6 +257,13 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     public void RefreshFromOwnedImage(DrawingBitmap image)
     {
         RefreshMetadata();
+
+        if (IsListView)
+        {
+            image.Dispose();
+            return;
+        }
+
         StartThumbnailRefresh(null, image);
     }
 
@@ -205,9 +278,69 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         IsProgressVisible = Task.IsWorking && info?.Progress != null;
         IsFailed = Task.Status == TaskStatus.Failed;
         PlaceholderIcon = GetPlaceholderIcon(info?.FilePath ?? info?.FileName);
+        RefreshListColumns(info);
         OnPropertyChanged(nameof(IsVideo));
         OnPropertyChanged(nameof(ShowPlayIcon));
         OnPropertyChanged(nameof(IsClickable));
+    }
+
+    // Mirrors the ShareX 21 task list: transfer columns keep their last values once a task finishes.
+    private void RefreshListColumns(TaskInfo? info)
+    {
+        TaskStatus status = Task.Status;
+        ListStatusIcon = status switch
+        {
+            TaskStatus.InQueue => AppIcons.Clock,
+            TaskStatus.Preparing or TaskStatus.Working or TaskStatus.Stopping => AppIcons.Upload,
+            TaskStatus.Stopped => AppIcons.CircleStop,
+            TaskStatus.Failed => AppIcons.CircleX,
+            TaskStatus.History => AppIcons.History,
+            _ => AppIcons.CircleCheck
+        };
+
+        if (status == TaskStatus.History)
+        {
+            ListStatus = Strings.TaskListView_History;
+            ListProgress = info?.TaskEndTime.ToString() ?? string.Empty;
+            ListUrl = info?.ToString() ?? string.Empty;
+            return;
+        }
+
+        if (status == TaskStatus.InQueue)
+        {
+            ListStatus = Strings.TaskListView_InQueue;
+            return;
+        }
+
+        bool binaryUnits = ApplicationState.Settings.BinaryUnits;
+        var progress = info?.Progress;
+
+        if (status == TaskStatus.Working && progress != null && progress.Length > 0)
+        {
+            ListStatus = string.Format("{0:0.0}%", progress.Percentage);
+            ListProgress = string.Format("{0} / {1}", progress.Position.ToSizeString(binaryUnits), progress.Length.ToSizeString(binaryUnits));
+
+            if (progress.Speed > 0)
+            {
+                ListSpeed = ((long)progress.Speed).ToSizeString(binaryUnits) + "/s";
+            }
+
+            ListElapsed = Helpers.ProperTimeSpan(progress.Elapsed);
+            ListRemaining = Helpers.ProperTimeSpan(progress.Remaining);
+        }
+        else
+        {
+            ListStatus = !string.IsNullOrEmpty(info?.Status) ? info.Status : string.Empty;
+        }
+
+        if (status == TaskStatus.Failed)
+        {
+            ListUrl = string.Empty;
+        }
+        else if (status == TaskStatus.Completed || status == TaskStatus.Stopped)
+        {
+            ListUrl = info?.ToString() ?? string.Empty;
+        }
     }
 
     public void RefreshSettings()
@@ -217,6 +350,14 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         OnPropertyChanged(nameof(ShowTitle));
         OnPropertyChanged(nameof(ShowTitleAbove));
         OnPropertyChanged(nameof(ShowTitleBelow));
+
+        if (IsListView)
+        {
+            // Release decoded previews when switching to the list view.
+            _refreshVersion++;
+            Thumbnail = null;
+        }
+
         Refresh();
     }
 

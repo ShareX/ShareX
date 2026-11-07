@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>밝게</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>목록 보기</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>메인 창</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>클립보드 내용 뷰어 표시</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>열 표시</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX 이미지 편집기에서 편집" 버튼 표시</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>하위 폴더명 패턴:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>작업 보기 모드:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>테마</value>
@@ -1757,6 +1766,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>이미지 꾸미기</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>목록 전부 제거</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>축소판 보기 지우기</value>
   </data>
@@ -1918,6 +1930,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>업로드 중지</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>목록 뷰로 전환</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>썸네일 보기로 전환</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>텍스트</value>
@@ -2218,6 +2236,33 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>단축키 비활성화됨.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>지난 시간</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>파일 이름</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>히스토리</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>대기열에서 대기 중</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>진행 상황</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>남은 시간</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>속도</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>업로드 완료. URL: {0}</value>

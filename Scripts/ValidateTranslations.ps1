@@ -97,6 +97,7 @@ $projects = @(
             'RegionCaptureAction_'
             'ScrollMethod_'
             'SupportedLanguage_'
+            'TaskViewMode_'
             'TextDestination_'
             'ThumbnailTitleLocation_'
             'ThumbnailViewClickAction_'

@@ -1227,6 +1227,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automático</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vista de lista</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vista de miniaturas</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Cargador de texto personalizado</value>
   </data>

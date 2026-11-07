@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>ライト</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>リスト表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>メインウィンドウ</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>クリップボード内容ビューアーを表示する</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>カラム名を表示</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>エクスプローラのコンテキストメニューに「ShareX 画像エディターで編集」を表示</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>サブフォルダー名の規則:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>タスクの表示方法:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>テーマ</value>
@@ -1757,6 +1766,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>画像装飾</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>一覧を消去</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>サムネイル表示をクリア</value>
   </data>
@@ -1918,6 +1930,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>アップロードを停止</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>リスト表示に切り替え</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>サムネイル表示に切り替え</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>テキスト</value>
@@ -2218,6 +2236,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>ホットキーを有効にしました。</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>経過時間</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>処理待ち</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>進行状況</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>残り</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>状態</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>アップロードが完了しました。URL: {0}</value>

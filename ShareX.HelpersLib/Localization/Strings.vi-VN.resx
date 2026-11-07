@@ -1227,6 +1227,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Tự động</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Chế độ xem danh sách</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Chế độ xem hình thu nhỏ</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Dịch vụ tải lên văn bản tùy chọn</value>
   </data>

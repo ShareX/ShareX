@@ -1227,6 +1227,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatik</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Özel yazı yükleyici</value>
   </data>

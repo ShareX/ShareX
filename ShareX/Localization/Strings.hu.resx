@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Világos</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listanézet</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Főablak</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>A vágólap tartalommegjelenítőjének megjelenítése</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Oszlopok megjelenítése</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>"Szerkesztés a ShareX képszerkesztőben" gomb megjelenítése a Windows Intéző helyi menüjében</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Almappa sablon:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Feladatnézet mód:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Téma</value>
@@ -1757,6 +1766,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Beautify kép</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Lista törlése</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Miniatűrnézet törlése</value>
   </data>
@@ -1918,6 +1930,12 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Feltöltés leállítása</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Váltás listanézetre</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Váltás miniatűr nézetre</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Szöveg</value>
@@ -2218,6 +2236,33 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Gyorsbillentyűk engedélyezve.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Eltelt</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Fájlnév</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Előzmények</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Várakozik</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Folyamat</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Hátralévő</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Sebesség</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Állapot</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>A feltöltés befejeződött. URL: {0}</value>

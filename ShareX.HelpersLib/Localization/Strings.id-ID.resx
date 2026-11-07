@@ -1227,6 +1227,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatis</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Tampilan daftar</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Tampilan thumbnail</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Pengunggah teks khusus</value>
   </data>

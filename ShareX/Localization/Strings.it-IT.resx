@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Chiaro</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Vista elenco</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Finestra principale</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostra il visualizzatore del contenuto degli appunti</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Mostra colonne</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostra pulsante "Modifica nell'editor di immagini di ShareX" nel menu contestuale di Esplora file</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Modello sottocartella:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Modalità vista attività:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1757,6 +1766,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Abbellisci immagine</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Pulisci Lista</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Cancella visualizzazione miniature</value>
   </data>
@@ -1918,6 +1930,12 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Interrompi caricamento</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Passa alla vista elenco</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Passa alla vista miniature</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Testo</value>
@@ -2218,6 +2236,33 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Scorciatoie Attivate</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Trascorsi</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Nome File</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Cronologia</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>In Attesa</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Avanzamento</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Rimanenti</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Velocità</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Caricamento completato. URL: {0}</value>
