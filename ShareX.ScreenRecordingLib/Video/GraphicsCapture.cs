@@ -59,7 +59,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
 
     private readonly GraphicsDevice graphics;
     private readonly GpuVideoProcessor processor;
-    private readonly bool cursor, borderless;
+    private readonly bool cursor, borderless, hdrToneMapping;
     private readonly int fps;
     private readonly List<Source> sources = new();
     private HdrToneMapShader? toneMapper;
@@ -137,12 +137,13 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         finally { NativeMethods.WindowsDeleteString(className); }
     }
 
-    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor, int fps)
+    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor, int fps, bool hdrToneMapping)
     {
         this.graphics = graphics;
         this.processor = processor;
         this.cursor = cursor;
         this.fps = fps;
+        this.hdrToneMapping = hdrToneMapping;
         Width = processor.Width;
         Height = processor.Height;
         try
@@ -158,7 +159,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         foreach (Target target in targets)
         {
             // On an HDR display, Windows' 8-bit conversion blows out HDR-aware apps, so capture FP16 and tone map.
-            MonitorColorInfo color = MonitorColorInfo.Get(target.Monitor);
+            MonitorColorInfo color = hdrToneMapping ? MonitorColorInfo.Get(target.Monitor) : MonitorColorInfo.Sdr;
             Direct3D11CaptureFramePool pool = Direct3D11CaptureFramePool.CreateFreeThreaded(graphics.WinRTDevice,
                 color.IsHdr ? DirectXPixelFormat.R16G16B16A16Float : DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, target.Item.Size);
             GraphicsCaptureSession session;

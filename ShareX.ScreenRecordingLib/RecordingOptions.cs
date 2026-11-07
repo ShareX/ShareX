@@ -39,6 +39,8 @@ public sealed record RecordingOptions
     public int VideoBitrate { get; init; } = 8_000_000;
     public int AudioBitrate { get; init; } = 192_000;
     public bool IncludeCursor { get; init; } = true;
+    /// <summary>On HDR displays, capture HDR frames and tone map them so HDR-aware apps are not blown out.</summary>
+    public bool HdrToneMapping { get; init; }
     public bool CaptureSystemAudio { get; init; } = true;
     public bool CaptureMicrophone { get; init; }
     /// <summary>WASAPI endpoint ID; null selects the default multimedia render endpoint.</summary>
