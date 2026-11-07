@@ -99,7 +99,7 @@ internal partial class ScreenRecorderBarWindow : Window
         }
         if (native)
         {
-            _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, AppIcons.Video,
+            _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, AppIcons.Webcam,
                 () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
                 () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
                 () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
@@ -604,7 +604,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         AppIcons.Volume => AppIcons.Mute,
         AppIcons.Microphone => AppIcons.MicrophoneOff,
-        AppIcons.Video => AppIcons.VideoOff,
+        AppIcons.Webcam => AppIcons.WebcamOff,
         AppIcons.Timer => AppIcons.TimerOff,
         _ => icon
     };

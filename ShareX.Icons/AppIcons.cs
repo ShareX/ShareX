@@ -281,6 +281,8 @@ public static class AppIcons
     public const string Mouse = Prefix + "mouse";
     public const string Microphone = Prefix + "microphone";
     public const string MicrophoneOff = Prefix + "microphone-off";
+    public const string Webcam = Prefix + "webcam";
+    public const string WebcamOff = Prefix + "webcam-off";
     public const string MessageCheck = Prefix + "message-check";
     public const string Locate = Prefix + "locate";
     public const string ListRestart = Prefix + "list-restart";

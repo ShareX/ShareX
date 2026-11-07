@@ -141,6 +141,15 @@ internal static partial class AppIconDefinitions
             Overlay([Stroke(VideoBody), Stroke(VideoLens)], Slash)
         },
         {
+            Icon.Webcam,
+            Stroke(VideoBody),
+            Stroke(VideoLens)
+        },
+        {
+            Icon.WebcamOff,
+            Overlay([Stroke(VideoBody), Stroke(VideoLens)], Slash)
+        },
+        {
             Icon.Microphone,
             Stroke(Rectangle(8.5, 2, 7, 12.5, 3.5)),
             Stroke("M5 11a7 7 0 0 0 14 0M12 18v3.5M8.5 21.5h7")
