@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>השתמש בשם ייחודי</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX לא הצליח לפתוח את קובץ ההיסטוריה. ההיסטוריה של הפעלה זו לא תישמר.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>רישום מקשי קיצור נכשל</value>
   </data>

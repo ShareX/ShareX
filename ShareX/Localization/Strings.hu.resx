@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Egyedi név használata</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>A ShareX nem tudta megnyitni az előzményfájlt. Ennek a munkamenetnek az előzményei nem lesznek mentve.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>A gyorsbillentyű regisztrációja sikertelen</value>
   </data>

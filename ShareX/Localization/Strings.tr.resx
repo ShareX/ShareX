@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Benzersiz ad kullan</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX geçmiş dosyasını açamadı. Bu oturumun geçmişi kaydedilmeyecek.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Kısayol kaydı başarısız</value>
   </data>

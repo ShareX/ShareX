@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>Eindeutigen Namen verwenden</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX konnte die Verlaufsdatei nicht öffnen. Der Verlauf dieser Sitzung wird nicht gespeichert.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>Hotkeyregistrierung fehlgeschlagen</value>
   </data>

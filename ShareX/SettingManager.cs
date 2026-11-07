@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia.Threading;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
@@ -271,8 +272,57 @@ namespace ShareX
 
         public static void HistoryConnect()
         {
+            // After the history file failed to open, keep the in-memory history until restart so its items aren't lost.
+            if (ApplicationState.HistoryManager?.IsInMemory == true)
+            {
+                return;
+            }
+
             HistoryClose();
-            ApplicationState.HistoryManager = new HistoryManagerSQLite(AppPaths.HistoryFilePath);
+            ApplicationState.HistoryManager = OpenHistoryManager(AppPaths.HistoryFilePath);
+        }
+
+        // Closes the history file so it can be archived or replaced. The in-memory history doesn't hold the file, so it is kept.
+        private static void ReleaseHistoryFile()
+        {
+            if (ApplicationState.HistoryManager?.IsInMemory != true)
+            {
+                HistoryClose();
+            }
+        }
+
+        private static HistoryManagerSQLite OpenHistoryManager(string historyFilePath)
+        {
+            // SQLite already retries sharing violations internally, so one extra attempt is enough for
+            // antivirus, backup or cloud sync software that briefly locks the history file.
+            const int maxAttempts = 2;
+
+            for (int attempt = 1; ; attempt++)
+            {
+                try
+                {
+                    return new HistoryManagerSQLite(historyFilePath);
+                }
+                catch (Exception e) when (attempt < maxAttempts)
+                {
+                    DebugHelper.WriteLine($"Failed to open history file \"{historyFilePath}\" (attempt {attempt} of {maxAttempts}): {e.Message}");
+                    Thread.Sleep(500);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e, $"Failed to open history file \"{historyFilePath}\". Falling back to in-memory history.");
+                    ShowHistoryOpenFailed(historyFilePath);
+                    return HistoryManagerSQLite.CreateInMemory();
+                }
+            }
+        }
+
+        private static void ShowHistoryOpenFailed(string historyFilePath)
+        {
+            // This can run before the Avalonia dispatcher starts and before the configured language is applied,
+            // so the notification and its text are created when the dispatcher runs it.
+            Dispatcher.UIThread.Post(() => TaskHelpers.ShowNotificationTip($"{Strings.HistoryFileCouldNotBeOpened}\r\n\r\n{historyFilePath}",
+                "ShareX - " + Strings.Error, 15000));
         }
 
         public static void HistoryClose()
@@ -447,7 +497,7 @@ namespace ShareX
                 if (history)
                 {
                     entries.Add(new ZipEntryInfo(AppPaths.HistoryFilePath));
-                    HistoryClose();
+                    ReleaseHistoryFile();
                 }
 
                 ZipManager.Compress(archivePath, entries);
@@ -477,7 +527,7 @@ namespace ShareX
         {
             try
             {
-                HistoryClose();
+                ReleaseHistoryFile();
 
                 ZipManager.Extract(archivePath, AppPaths.PersonalFolder, true, entry =>
                 {

@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>अद्वितीय नाम उपयोग करें</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX इतिहास फ़ाइल नहीं खोल सका। इस सत्र का इतिहास सहेजा नहीं जाएगा।</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>हॉटकी पंजीकरण विफल</value>
   </data>

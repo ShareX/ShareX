@@ -33,17 +33,37 @@ namespace ShareX.HistoryLib
 {
     public class HistoryManagerSQLite : HistoryManager, IDisposable
     {
+        private const string InMemoryDataSource = ":memory:";
+
         private SqliteConnection connection;
+
+        public bool IsInMemory => FilePath == InMemoryDataSource;
 
         public HistoryManagerSQLite(string filePath) : base(filePath)
         {
-            Connect(filePath);
-            EnsureDatabase();
+            try
+            {
+                Connect(filePath);
+                EnsureDatabase();
+            }
+            catch
+            {
+                Dispose();
+                throw;
+            }
+        }
+
+        public static HistoryManagerSQLite CreateInMemory()
+        {
+            return new HistoryManagerSQLite(InMemoryDataSource);
         }
 
         private void Connect(string filePath)
         {
-            FileHelpers.CreateDirectoryFromFilePath(filePath);
+            if (filePath != InMemoryDataSource)
+            {
+                FileHelpers.CreateDirectoryFromFilePath(filePath);
+            }
 
             string connectionString = $"Data Source={filePath}";
             connection = new SqliteConnection(connectionString);
@@ -224,6 +244,7 @@ WHERE Id = @Id;";
                 connection.Close();
                 connection.Dispose();
                 SqliteConnection.ClearPool(connection);
+                connection = null;
             }
         }
     }

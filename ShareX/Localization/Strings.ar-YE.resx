@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>استخدام اسم فريد</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>تعذّر على ShareX فتح ملف السجل. لن يتم حفظ سجل هذه الجلسة.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>خطأ في إعداد الاختصارات</value>
   </data>

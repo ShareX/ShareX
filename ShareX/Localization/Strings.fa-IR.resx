@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>استفاده از نام یکتا</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX نتوانست فایل تاریخچه را باز کند. تاریخچه این جلسه ذخیره نخواهد شد.</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>تنظیم کلیدهای میانبر با مشکل مواجه شد.</value>
   </data>

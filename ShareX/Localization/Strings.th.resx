@@ -1315,6 +1315,9 @@
   <data name="FileExistWindow_UseUniqueName" xml:space="preserve">
     <value>ใช้ ไม่ซ้ำ ชื่อ</value>
   </data>
+  <data name="HistoryFileCouldNotBeOpened" xml:space="preserve">
+    <value>ShareX ไม่สามารถเปิดไฟล์ประวัติได้ ประวัติของเซสชันนี้จะไม่ถูกบันทึก</value>
+  </data>
   <data name="HotkeyManager_ShowFailedHotkeys_Hotkey_registration_failed" xml:space="preserve">
     <value>ปุ่มลัด การลงทะเบียน ล้มเหลว</value>
   </data>
