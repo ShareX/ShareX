@@ -170,6 +170,8 @@ public class EditorCore : IDisposable
     /// </summary>
     public void LoadImage(SKBitmap bitmap)
     {
+        _liveExpandOriginal?.Dispose();
+        _liveExpandOriginal = null;
         SourceImage?.Dispose();
         SourceImage = bitmap;
         CanvasSize = new SKSize(bitmap.Width, bitmap.Height);
@@ -304,6 +306,232 @@ public class EditorCore : IDisposable
             clearAnnotations: false,
             transformAnnotations: () => TranslateAnnotations(left, top));
     }
+
+    #region Auto-expand canvas
+
+    /// <summary>
+    /// Upper limit for a single auto-expansion step on each side, to guard against runaway growth.
+    /// </summary>
+    private const int MaxAutoExpandPerSide = 20000;
+
+    /// <summary>
+    /// Image as it was before the live (history-free) expansion started. Null when no live expansion is active.
+    /// </summary>
+    private SKBitmap? _liveExpandOriginal;
+
+    /// <summary>
+    /// True while the canvas is temporarily enlarged for a text box that is still being typed.
+    /// </summary>
+    public bool IsLiveCanvasExpansionActive => _liveExpandOriginal != null;
+
+    /// <summary>
+    /// Returns true if the canvas should grow to keep this annotation visible.
+    /// Effects (blur, pixelate, highlight, spotlight...) and region tools only make sense inside the image.
+    /// </summary>
+    public static bool CanAutoExpandFor(Annotation annotation)
+    {
+        return annotation is not (BaseEffectAnnotation or SpotlightAnnotation or CropAnnotation or CutOutAnnotation or SmartEraserAnnotation);
+    }
+
+    /// <summary>
+    /// Bounds of the annotation as drawn on the canvas: includes stroke, rotation and speech balloon tail.
+    /// </summary>
+    public static SKRect GetAutoExpandBounds(Annotation annotation)
+    {
+        SKRect bounds = annotation.GetBounds();
+        bounds = new SKRect(
+            Math.Min(bounds.Left, bounds.Right),
+            Math.Min(bounds.Top, bounds.Bottom),
+            Math.Max(bounds.Left, bounds.Right),
+            Math.Max(bounds.Top, bounds.Bottom));
+
+        if (annotation.RotationAngle % 360 != 0)
+        {
+            float rad = annotation.RotationAngle * (float)Math.PI / 180f;
+            float cos = (float)Math.Cos(rad);
+            float sin = (float)Math.Sin(rad);
+            float cx = bounds.MidX;
+            float cy = bounds.MidY;
+            float minX = float.MaxValue, minY = float.MaxValue, maxX = float.MinValue, maxY = float.MinValue;
+
+            foreach (SKPoint p in new[] { new SKPoint(bounds.Left, bounds.Top), new SKPoint(bounds.Right, bounds.Top),
+                                          new SKPoint(bounds.Right, bounds.Bottom), new SKPoint(bounds.Left, bounds.Bottom) })
+            {
+                float x = cx + (p.X - cx) * cos - (p.Y - cy) * sin;
+                float y = cy + (p.X - cx) * sin + (p.Y - cy) * cos;
+                minX = Math.Min(minX, x); maxX = Math.Max(maxX, x);
+                minY = Math.Min(minY, y); maxY = Math.Max(maxY, y);
+            }
+
+            bounds = new SKRect(minX, minY, maxX, maxY);
+        }
+
+        if (annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && balloon.HasTailPoint)
+        {
+            SKPoint tail = balloon.TailPoint;
+            bounds = SKRect.Union(bounds, new SKRect(tail.X, tail.Y, tail.X, tail.Y));
+        }
+
+        float stroke = Math.Max(0, annotation.StrokeWidth) / 2f;
+        bounds.Inflate(stroke, stroke);
+        return bounds;
+    }
+
+    /// <summary>
+    /// Grows the canvas so the given annotations fit inside it. Only sides that the annotations
+    /// actually cross are expanded, with <paramref name="margin"/> pixels of extra space.
+    /// Recorded as one undoable step. Annotations are shifted when the canvas grows left or up.
+    /// </summary>
+    /// <returns>True if the canvas was expanded.</returns>
+    public bool AutoExpandCanvasToFit(IEnumerable<Annotation> annotations, float margin, SKColor backgroundColor, out int addedLeft, out int addedTop)
+    {
+        addedLeft = 0;
+        addedTop = 0;
+
+        if (SourceImage == null || annotations == null)
+        {
+            return false;
+        }
+
+        SKRect? union = null;
+        foreach (Annotation annotation in annotations)
+        {
+            if (annotation == null || !CanAutoExpandFor(annotation) || !_annotations.Contains(annotation))
+            {
+                continue;
+            }
+
+            SKRect b = GetAutoExpandBounds(annotation);
+            if (float.IsNaN(b.Left) || float.IsNaN(b.Top) || float.IsNaN(b.Right) || float.IsNaN(b.Bottom))
+            {
+                continue;
+            }
+
+            union = union == null ? b : SKRect.Union(union.Value, b);
+        }
+
+        if (union == null)
+        {
+            return false;
+        }
+
+        SKRect u = union.Value;
+        float width = SourceImage.Width;
+        float height = SourceImage.Height;
+
+        // Small tolerance so sub-pixel rounding does not trigger an expansion.
+        const float tolerance = 0.5f;
+        int left = u.Left < -tolerance ? (int)Math.Ceiling(margin - u.Left) : 0;
+        int top = u.Top < -tolerance ? (int)Math.Ceiling(margin - u.Top) : 0;
+        int right = u.Right > width + tolerance ? (int)Math.Ceiling(u.Right + margin - width) : 0;
+        int bottom = u.Bottom > height + tolerance ? (int)Math.Ceiling(u.Bottom + margin - height) : 0;
+
+        left = Math.Clamp(left, 0, MaxAutoExpandPerSide);
+        top = Math.Clamp(top, 0, MaxAutoExpandPerSide);
+        right = Math.Clamp(right, 0, MaxAutoExpandPerSide);
+        bottom = Math.Clamp(bottom, 0, MaxAutoExpandPerSide);
+
+        if (left == 0 && top == 0 && right == 0 && bottom == 0)
+        {
+            return false;
+        }
+
+        bool needsShift = left > 0 || top > 0;
+        int dx = left;
+        int dy = top;
+
+        bool expanded = ApplyImageOperation(
+            img => ImageHelpers.ResizeCanvas(img, dx, dy, right, bottom, backgroundColor),
+            clearAnnotations: false,
+            transformAnnotations: needsShift ? () => TranslateAnnotations(dx, dy) : null);
+
+        if (expanded)
+        {
+            addedLeft = left;
+            addedTop = top;
+        }
+
+        return expanded;
+    }
+
+    /// <summary>
+    /// Temporarily grows the canvas to the right and/or bottom while a text box is being typed.
+    /// Not recorded in history: call <see cref="EndLiveCanvasExpansion"/> when typing ends.
+    /// </summary>
+    public bool ExpandCanvasLive(int right, int bottom, SKColor backgroundColor)
+    {
+        right = Math.Clamp(right, 0, MaxAutoExpandPerSide);
+        bottom = Math.Clamp(bottom, 0, MaxAutoExpandPerSide);
+
+        if (SourceImage == null || (right == 0 && bottom == 0))
+        {
+            return false;
+        }
+
+        SKBitmap result;
+        try
+        {
+            result = ImageHelpers.ResizeCanvas(SourceImage, 0, 0, right, bottom, backgroundColor);
+        }
+        catch (Exception ex)
+        {
+            EditorServices.ReportError(nameof(EditorCore), "Live canvas expansion failed.", ex);
+            return false;
+        }
+
+        if (_liveExpandOriginal == null)
+        {
+            _liveExpandOriginal = SourceImage;
+        }
+        else
+        {
+            SourceImage.Dispose();
+        }
+
+        SourceImage = result;
+        CanvasSize = new SKSize(SourceImage.Width, SourceImage.Height);
+        RefreshAnnotationsForCurrentImage();
+        ImageChanged?.Invoke();
+        InvalidateRequested?.Invoke();
+        return true;
+    }
+
+    /// <summary>
+    /// Puts back the image from before <see cref="ExpandCanvasLive"/>.
+    /// </summary>
+    /// <param name="notify">Raise change events. Pass false when another image operation follows immediately.</param>
+    /// <returns>True if a live expansion was active.</returns>
+    public bool EndLiveCanvasExpansion(bool notify = true)
+    {
+        if (_liveExpandOriginal == null)
+        {
+            return false;
+        }
+
+        SourceImage?.Dispose();
+        SourceImage = _liveExpandOriginal;
+        _liveExpandOriginal = null;
+        CanvasSize = new SKSize(SourceImage.Width, SourceImage.Height);
+        RefreshAnnotationsForCurrentImage();
+
+        if (notify)
+        {
+            NotifyImageReplaced();
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Raises the events the UI needs after the source image was swapped without an image operation.
+    /// </summary>
+    public void NotifyImageReplaced()
+    {
+        ImageChanged?.Invoke();
+        InvalidateRequested?.Invoke();
+    }
+
+    #endregion
 
     public bool Rotate90Clockwise()
     {

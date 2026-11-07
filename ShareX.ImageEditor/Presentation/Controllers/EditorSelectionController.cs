@@ -485,6 +485,8 @@ public partial class EditorSelectionController
             {
                 RequestUpdateEffect?.Invoke(_selectedShape);
             }
+
+            _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
             return true;
         }
 
@@ -500,6 +502,8 @@ public partial class EditorSelectionController
             {
                 RequestUpdateEffect?.Invoke(_selectedShape);
             }
+
+            _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
             return true;
         }
 
@@ -907,6 +911,8 @@ public partial class EditorSelectionController
         {
             RequestUpdateEffect?.Invoke(_selectedShape);
         }
+
+        _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
     }
 
     private void HandleMove(Point currentPoint)

@@ -1485,4 +1485,16 @@ Favorite image effects (Right click)</value>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Zoom to Fit</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Canvas size</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Fill color for the added area</value>
+  </data>
 </root>

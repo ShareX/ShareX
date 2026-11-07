@@ -1479,4 +1479,16 @@
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Вписать в окно</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Размер холста</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Цвет заливки нового места</value>
+  </data>
 </root>

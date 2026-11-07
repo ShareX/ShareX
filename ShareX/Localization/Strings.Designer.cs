@@ -3655,6 +3655,16 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutoCopyImageToClipboard", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_CanvasFillColor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CanvasFillColor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoExpandCanvas {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoExpandCanvas", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_ShowInsertImageDialog {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowInsertImageDialog", resourceCulture);
