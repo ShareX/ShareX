@@ -33,6 +33,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
@@ -105,6 +106,8 @@ public partial class RegionCaptureWindow : Window
     // while the screenshot has the monitor's pixels, so the overlay works in screenshot pixels and converts at the edges.
     private double _pixelsPerScreenX = 1;
     private double _pixelsPerScreenY = 1;
+    // The render scaling the window size and the region transform were last set for; 0 until the window has opened.
+    private double _appliedScaling;
     private bool _regionToolActive = true;
     private bool _keyboardInputEnabled;
     private bool _isMovingSelectionDuringCreation;
@@ -142,6 +145,7 @@ public partial class RegionCaptureWindow : Window
         }
         InitializeCaptureWorkspace();
         Opened += OnOpened;
+        ScalingChanged += OnScalingChanged;
     }
 
     public Task<AvaloniaRegionCaptureResult?> CaptureAsync()
@@ -2029,9 +2033,44 @@ public partial class RegionCaptureWindow : Window
         Height = _imageHeight / scaling;
     }
 
+    /// <summary>
+    /// Windows can give the overlay a different DPI after it opens, for example when it spans monitors with different scaling
+    /// and the system picks the scale of another monitor. The editor workspace follows the new scale on its own, so the frozen
+    /// screenshot keeps one image pixel per device pixel, but the window size, the region transform and the position were set
+    /// for the old scale: pointer positions then map to the wrong image pixels and the capture misses the selection.
+    /// </summary>
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        // Let the native DPI change (and the size and position Windows suggests with it) settle first.
+        Dispatcher.UIThread.Post(ApplyChangedScaling, DispatcherPriority.Loaded);
+    }
+
+    private void ApplyChangedScaling()
+    {
+        if (_closing || _request == null || _appliedScaling <= 0)
+        {
+            return;
+        }
+
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        if (Math.Abs(scaling - _appliedScaling) < 0.0001)
+        {
+            return;
+        }
+
+        ApplyPixelSize();
+        CoverScreen();
+        Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
+        UpdatePixelTransforms();
+        UpdateHud(_lastPointerPoint);
+        UpdateSelectionInfo();
+        UpdateToolbarPosition(ImageToScreen(_lastPointerPoint.X, _lastPointerPoint.Y));
+    }
+
     private void UpdatePixelTransforms()
     {
         double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        _appliedScaling = scaling;
         _regionTransform.LayoutTransform = new ScaleTransform(1 / scaling, 1 / scaling);
         if (_viewModel != null)
         {

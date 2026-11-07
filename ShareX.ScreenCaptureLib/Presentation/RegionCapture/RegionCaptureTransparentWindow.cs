@@ -202,6 +202,24 @@ public sealed class RegionCaptureTransparentWindow : Window
         Focus();
     }
 
+    /// <summary>
+    /// Windows can change the window's DPI after it opens (monitors with different scaling); keep it covering the screen bounds
+    /// in device pixels, as region capture does.
+    /// </summary>
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (_closing)
+            {
+                return;
+            }
+
+            ApplyPixelSize();
+            Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
+        }, DispatcherPriority.Loaded);
+    }
+
     private void UpdateSelection(DrawingPoint position)
     {
         DrawingRectangle selection = GetSelectionRectangle(position);

@@ -53,6 +53,7 @@ The first attempt lived on a branch also named `cross-platform` (frozen at `55e0
 32. **GStreamer: `gst_bus_pop_filtered` discards the messages it skips.** Polling errors first silently dropped `ASYNC_DONE`. Pop every message once and branch on its type.
 33. **GStreamer GL follows `WAYLAND_DISPLAY`** and crashes drawing into an X11 window; set `GST_GL_WINDOW=x11` in the native environment (`setenv`, not `Environment.SetEnvironmentVariable`) before `gst_init`.
 34. **Prove it on the real artifact.** Both GStreamer faults passed compilation and unit tests; a small probe against a real video and window, and `coredumpctl` for the crash, found them. Keep such probes as opt-in tests (`SHAREX_GSTREAMER_WINDOW_TEST=1`).
+35. **A window's DPI can change after it opens.** On Windows with monitors at different scaling, the region capture overlay spans them and Windows can switch it to another monitor's DPI once it is shown. Anything sized or transformed from `RenderScaling` at open time must be redone on `ScalingChanged`; the region overlay missed this and selected areas about 25% off in scale while the editor beneath it stayed correct.
 
 ## Reusable work on the first branch
 
