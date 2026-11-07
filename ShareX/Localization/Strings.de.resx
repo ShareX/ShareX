@@ -1463,6 +1463,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Aufnahme</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Lineal (klassisch)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Zwischenablage-Betrachter</value>
   </data>

@@ -1463,6 +1463,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Yakala</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Cetvel (klasik)...</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Pano görüntüleyici...</value>
   </data>

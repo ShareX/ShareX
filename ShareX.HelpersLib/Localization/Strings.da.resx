@@ -642,6 +642,9 @@ Vil du stadig køre den?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Lineal (klassisk)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload fra udklipsholder</value>
   </data>

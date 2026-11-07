@@ -642,6 +642,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Meetlat (klassiek)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Uploaden van klembord</value>
   </data>

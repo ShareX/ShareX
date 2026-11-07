@@ -642,6 +642,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Nahrávání</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Pravítko (klasické)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Nahrát ze schránky</value>
   </data>

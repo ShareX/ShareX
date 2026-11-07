@@ -237,6 +237,11 @@ public static class ToolsIntegration
         Show(() => new RulerWindow());
     }
 
+    public static void ShowClassicRulerWindow(ClassicRulerOptions options)
+    {
+        Show(() => new ClassicRulerWindow(options));
+    }
+
     public static void ShowMouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged = null)
     {
         MouseHighlighterManager.ShowWindow(options, settingsChanged);

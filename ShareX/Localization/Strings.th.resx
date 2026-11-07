@@ -1463,6 +1463,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>จับภาพ</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>ไม้บรรทัด (แบบคลาสสิก)...</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>คลิปบอร์ด ตัวแสดง...</value>
   </data>

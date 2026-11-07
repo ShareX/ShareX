@@ -1463,6 +1463,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>촬영</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>측정 (클래식)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>클립보드 뷰어</value>
   </data>

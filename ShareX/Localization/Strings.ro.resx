@@ -1463,6 +1463,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Capturați</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Riglă (clasică)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Vizualizator de clipboard</value>
   </data>

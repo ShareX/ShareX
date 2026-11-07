@@ -431,6 +431,18 @@ Chemin du fichier : {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Titre de la fenêtre</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Distance : {0:0.00} px | Angle : {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X : {0} | Y : {1} | Droite : {2} | Bas : {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Largeur : {0} px | Hauteur : {1} px | Surface : {2} px | Périmètre : {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Règle (classique)</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Contenu du presse-papiers</value>
   </data>

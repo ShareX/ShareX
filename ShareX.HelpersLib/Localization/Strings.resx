@@ -642,6 +642,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Ruler (classic)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload from clipboard</value>
   </data>

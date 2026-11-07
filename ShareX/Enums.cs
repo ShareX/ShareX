@@ -275,6 +275,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Ruler,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ClassicRuler,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         MouseHighlighter,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreen,

@@ -1463,6 +1463,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>截图</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>测量尺（经典）</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>剪贴板查看器</value>
   </data>

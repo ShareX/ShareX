@@ -642,6 +642,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Feltöltés</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Vonalzó (klasszikus)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Feltöltés vágólapról</value>
   </data>

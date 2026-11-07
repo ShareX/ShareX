@@ -1463,6 +1463,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Captura</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Regla (clásica)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Portapapeles viewer</value>
   </data>

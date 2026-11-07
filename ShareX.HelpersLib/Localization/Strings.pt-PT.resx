@@ -642,6 +642,9 @@ Ainda assim, pretende executá-lo?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Envio</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Régua (clássica)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Envio através da área de transferência</value>
   </data>

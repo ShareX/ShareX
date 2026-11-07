@@ -1463,6 +1463,9 @@
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>لقطة شاشة</value>
   </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>المسطرة (الكلاسيكية)</value>
+  </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>عارض الحافظة</value>
   </data>

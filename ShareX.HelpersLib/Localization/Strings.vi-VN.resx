@@ -642,6 +642,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Tải lên</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Thước đo (cổ điển)</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Tải lên từ vùng nhớ tạm</value>
   </data>
