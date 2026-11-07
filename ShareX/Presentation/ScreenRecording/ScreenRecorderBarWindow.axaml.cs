@@ -44,7 +44,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DrawingPoint = System.Drawing.Point;
 using DrawingRectangle = System.Drawing.Rectangle;
+using DrawingSize = System.Drawing.Size;
 
 namespace ShareX;
 
@@ -60,6 +62,9 @@ internal partial class ScreenRecorderBarWindow : Window
     private ScrollingCaptureRegionWindow? _regionWindow;
     private string? _activePanel;
     private bool _closed;
+    private bool _dragging;
+    private PixelPoint _dragPointerOrigin;
+    private PixelPoint _dragWindowOrigin;
 
     public DrawingRectangle RecordingRegion { get; private set; }
     public IntPtr CaptureWindow { get; }
@@ -177,8 +182,36 @@ internal partial class ScreenRecorderBarWindow : Window
         };
         grip.PointerPressed += (_, e) =>
         {
-            if (e.GetCurrentPoint(grip).Properties.IsLeftButtonPressed) BeginMoveDrag(e);
+            if (!e.GetCurrentPoint(grip).Properties.IsLeftButtonPressed) return;
+            e.Handled = true;
+            if (e.ClickCount >= 2)
+            {
+                _dragging = false;
+                ApplicationState.Settings.ScreenRecordToolbarOffset = null;
+                PositionNearRegion();
+                return;
+            }
+            _dragging = true;
+            _dragPointerOrigin = this.PointToScreen(e.GetPosition(this));
+            _dragWindowOrigin = Position;
+            e.Pointer.Capture(grip);
         };
+        grip.PointerMoved += (_, e) =>
+        {
+            if (!_dragging) return;
+            PixelPoint pointer = this.PointToScreen(e.GetPosition(this));
+            Position = new PixelPoint(_dragWindowOrigin.X + pointer.X - _dragPointerOrigin.X,
+                _dragWindowOrigin.Y + pointer.Y - _dragPointerOrigin.Y);
+            e.Handled = true;
+        };
+        grip.PointerReleased += (_, e) =>
+        {
+            if (!_dragging) return;
+            e.Pointer.Capture(null);
+            EndToolbarDrag();
+            e.Handled = true;
+        };
+        grip.PointerCaptureLost += (_, _) => EndToolbarDrag();
         actions.Children.Add(grip);
         // Rebuild toolbar content when its labels change, keeping the active settings panel open.
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
@@ -491,17 +524,22 @@ internal partial class ScreenRecorderBarWindow : Window
         if (screen == null) return;
         PixelRect work = screen.WorkingArea;
         double scaling = screen.Scaling;
-        int width = (int)Math.Ceiling(Bounds.Width * scaling);
-        int height = (int)Math.Ceiling(Bounds.Height * scaling);
-        int gap = (int)Math.Ceiling(8 * scaling);
-        int top = RecordingRegion.Top - height - gap;
-        // Regions at the screen's top edge keep the bar just inside that edge.
-        if (top < work.Y) top = Math.Max(RecordingRegion.Top, work.Y) + gap;
-        int left = Math.Max(RecordingRegion.Left, work.X);
-        int right = Math.Min(RecordingRegion.Right, work.Right);
-        if (right <= left) { left = work.X; right = work.Right; }
-        Position = new PixelPoint(left + (right - left - width) / 2, top);
+        DrawingSize size = new((int)Math.Ceiling(Bounds.Width * scaling), (int)Math.Ceiling(Bounds.Height * scaling));
+        DrawingPoint location = RecordingToolbarPlacement.GetLocation(RecordingRegion, size, (int)Math.Ceiling(8 * scaling),
+            new DrawingRectangle(work.X, work.Y, work.Width, work.Height), ApplicationState.Settings.ScreenRecordToolbarOffset);
+        Position = new PixelPoint(location.X, location.Y);
         ClampToScreen();
+    }
+
+    private void EndToolbarDrag()
+    {
+        if (!_dragging) return;
+        _dragging = false;
+        ClampToScreen();
+        if (Position == _dragWindowOrigin) return;
+        double scaling = (Screens.ScreenFromPoint(Position) ?? Screens.Primary)?.Scaling ?? 1;
+        DrawingRectangle bar = new(Position.X, Position.Y, (int)Math.Ceiling(Bounds.Width * scaling), (int)Math.Ceiling(Bounds.Height * scaling));
+        ApplicationState.Settings.ScreenRecordToolbarOffset = RecordingToolbarPlacement.GetOffset(RecordingRegion, bar);
     }
 
     private void ClampToScreen()

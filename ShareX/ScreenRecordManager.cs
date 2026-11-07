@@ -249,6 +249,7 @@ namespace ShareX
             };
             recordForm.UseInProcessPause = useNative;
             recordForm.ExcludeFromCapture = useNative;
+            recordForm.ToolbarOffset = ApplicationState.Settings.ScreenRecordToolbarOffset;
             recordForm.PauseRequested += () => nativeRecorder?.Pause();
             recordForm.ResumeRequested += () =>
             {
