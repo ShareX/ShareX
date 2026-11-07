@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>ทำซ้ำ (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>มุมโค้งมน</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>บันทึก</value>
   </data>

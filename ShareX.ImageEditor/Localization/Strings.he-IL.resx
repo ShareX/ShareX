@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>ביצוע חוזר (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>פינות מעוגלות</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>שמור</value>
   </data>

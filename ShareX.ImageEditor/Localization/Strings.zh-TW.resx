@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>重做 (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>圓角</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>儲存</value>
   </data>

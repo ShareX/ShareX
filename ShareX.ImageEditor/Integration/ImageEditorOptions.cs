@@ -87,6 +87,7 @@ namespace ShareX.ImageEditor.Integration
         public double ShadowOffsetY { get; set; } = Annotation.DefaultShadowOffsetY;
         public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
         public ArrowStyle ArrowStyle { get; set; } = ArrowStyle.Classic;
+        public bool ArrowRoundedCorners { get; set; } = true;
         public CursorType CursorType { get; set; } = CursorType.Default;
 
         // Text

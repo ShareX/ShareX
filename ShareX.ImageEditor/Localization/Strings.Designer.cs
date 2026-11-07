@@ -430,6 +430,11 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_ToggleshadowShadowoptionsRightclick", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_Roundedcorners {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Roundedcorners", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Toggletail {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Toggletail", resourceCulture);

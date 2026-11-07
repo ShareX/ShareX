@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Újra (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Lekerekített sarkok</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Mentés</value>
   </data>
