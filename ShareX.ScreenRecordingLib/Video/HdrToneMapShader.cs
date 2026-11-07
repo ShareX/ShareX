@@ -117,11 +117,11 @@ internal sealed class HdrToneMapShader : IDisposable
     private static readonly Lazy<byte[]> vertexCode = new(() => ShaderCompiler.Compile(Source, "HDR tone mapping", "VS", "vs_5_0"));
     private static readonly Lazy<byte[]> pixelCode = new(() => ShaderCompiler.Compile(Source, "HDR tone mapping", "PS", "ps_5_0"));
     private readonly GraphicsDevice graphics;
-    private ID3D11Multithread multithread = null!;
-    private ID3D11VertexShader vertexShader = null!;
-    private ID3D11PixelShader pixelShader = null!;
-    private ID3D11Buffer constants = null!;
-    private ID3D11RasterizerState rasterizer = null!;
+    private readonly ID3D11Multithread multithread = null!;
+    private readonly ID3D11VertexShader vertexShader = null!;
+    private readonly ID3D11PixelShader pixelShader = null!;
+    private readonly ID3D11Buffer constants = null!;
+    private readonly ID3D11RasterizerState rasterizer = null!;
 
     public HdrToneMapShader(GraphicsDevice graphics)
     {
