@@ -146,7 +146,8 @@ jobs:
           plutil -lint "$RUNNER_TEMP/app/ShareX.app/Contents/Info.plist"
           codesign --verify --strict --deep "$RUNNER_TEMP/app/ShareX.app"
           hdiutil verify "$RUNNER_TEMP"/package/ShareX-*-macos-${{ matrix.arch }}.dmg
-          if [ -n "${MACOS_NOTARY_KEY:-}" ]; then spctl --assess --type execute --verbose "$RUNNER_TEMP/app/ShareX.app"; fi
+          # Gatekeeper accepts the app only once Apple has notarized it, which can still be pending for a new Developer ID team.
+          if xcrun stapler validate -q "$RUNNER_TEMP/app/ShareX.app" 2>/dev/null; then spctl --assess --type execute --verbose "$RUNNER_TEMP/app/ShareX.app"; fi
 
       # Starts the bundle with a clean home (welcome screen off, as for a returning user), waits for startup and closes it with
       # SIGTERM, which must save the settings. Nothing is captured or uploaded.

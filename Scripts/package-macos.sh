@@ -113,12 +113,32 @@ cat >"$app/Contents/Info.plist" <<PLIST
 </plist>
 PLIST
 
-notarize() {
+notarytool() {
   if [ -n "${MACOS_NOTARY_PROFILE:-}" ]; then
-    xcrun notarytool submit "$1" --keychain-profile "$MACOS_NOTARY_PROFILE" --wait
+    xcrun notarytool "$@" --keychain-profile "$MACOS_NOTARY_PROFILE"
   else
-    xcrun notarytool submit "$1" --key "$MACOS_NOTARY_KEY" --key-id "$MACOS_NOTARY_KEY_ID" --issuer "$MACOS_NOTARY_ISSUER" --wait
+    xcrun notarytool "$@" --key "$MACOS_NOTARY_KEY" --key-id "$MACOS_NOTARY_KEY_ID" --issuer "$MACOS_NOTARY_ISSUER"
   fi
+}
+
+# Submits a file and polls for Apple's verdict, retrying through network drops (notarytool --wait gives up on the first one).
+# Returns 0 when accepted, 1 when rejected (the log is printed), and 2 when Apple is still reviewing after
+# MACOS_NOTARY_TIMEOUT seconds: a new Developer ID team's first submissions can take hours. The file is signed either way, and
+# Gatekeeper asks Apple online, so it opens without a warning as soon as the review passes; only the stapled ticket is missing.
+notarize() {
+  local id status deadline=$((SECONDS + ${MACOS_NOTARY_TIMEOUT:-1200}))
+  id="$(notarytool submit "$1" --output-format plist | plutil -extract id raw -)"
+  echo "Notarization submission $id for $(basename "$1")"
+  while [ "$SECONDS" -lt "$deadline" ]; do
+    sleep 30
+    status="$(notarytool info "$id" --output-format plist 2>/dev/null | plutil -extract status raw - 2>/dev/null)" || continue
+    case "$status" in
+      Accepted) echo "Notarization accepted"; return 0 ;;
+      Invalid|Rejected) echo "Notarization $status" >&2; notarytool log "$id" >&2 || true; return 1 ;;
+    esac
+  done
+  echo "::warning::Apple is still reviewing notarization submission $id; the build is signed but not stapled"
+  return 2
 }
 can_notarize() { [ -n "${MACOS_NOTARY_PROFILE:-}" ] || [ -n "${MACOS_NOTARY_KEY:-}" ]; }
 
@@ -141,12 +161,6 @@ elif [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
   codesign --force --timestamp --options runtime --entitlements "$entitlements" --sign "$MACOS_SIGN_IDENTITY" "$app"
   codesign --verify --strict --deep "$app"
   signed="signed by $MACOS_SIGN_IDENTITY"
-  if can_notarize; then
-    (cd "$staging" && ditto -c -k --keepParent ShareX.app notarize.zip)
-    notarize "$staging/notarize.zip"
-    xcrun stapler staple "$app"
-    signed="$signed, notarized"
-  fi
 else
   codesign --force --deep --sign - "$app"
   signed="signed ad hoc"
@@ -154,14 +168,6 @@ fi
 
 mkdir -p "$out"
 out="$(cd "$out" && pwd)"
-zip_path="$out/ShareX-$version-macos-$arch.zip"
-rm -f "$zip_path"
-if command -v ditto >/dev/null; then
-  ditto -c -k --keepParent "$app" "$zip_path"
-else
-  (cd "$staging" && zip -qry "$zip_path" ShareX.app)
-fi
-echo "Package: $zip_path ($signed)"
 
 # The disk image opens to ShareX.app beside a link to /Applications to drag it onto.
 if command -v hdiutil >/dev/null; then
@@ -173,10 +179,25 @@ if command -v hdiutil >/dev/null; then
   hdiutil create -quiet -volname "ShareX $version" -srcfolder "$staging/dmg" -fs HFS+ -format UDZO "$dmg_path"
   if [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
     codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" "$dmg_path"
+    # One submission covers the disk image and the app inside it, so the app is stapled from the same ticket before it is zipped.
     if can_notarize; then
-      notarize "$dmg_path"
-      xcrun stapler staple "$dmg_path"
+      rc=0; notarize "$dmg_path" || rc=$?
+      case $rc in
+        0) xcrun stapler staple "$dmg_path"; xcrun stapler staple "$app"; signed="$signed, notarized" ;;
+        2) signed="$signed, notarization pending" ;;
+        *) exit 1 ;;
+      esac
     fi
   fi
   echo "Disk image: $dmg_path ($signed)"
 fi
+
+zip_path="$out/ShareX-$version-macos-$arch.zip"
+rm -f "$zip_path"
+if command -v ditto >/dev/null; then
+  ditto -c -k --keepParent "$app" "$zip_path"
+else
+  (cd "$staging" && zip -qry "$zip_path" ShareX.app)
+fi
+echo "Package: $zip_path ($signed)"
+
