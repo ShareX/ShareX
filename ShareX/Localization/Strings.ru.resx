@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Светлая</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Режим списка</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Главное окно</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Показывать просмотр содержимого буфера обмена</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Показывать колонки</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Показывать пункт "Редактировать в редакторе изображений ShareX" в контекстном меню проводника Windows</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Шаблон имени подпапок:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Отображение задач:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Тема</value>
@@ -1757,6 +1766,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Украсить изображение</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Очистить список</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Очистить представление миниатюр</value>
   </data>
@@ -1918,6 +1930,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Остановить загрузку</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Перейти в режим списка</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Перейти в режим миниатюр</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Текст</value>
@@ -2218,6 +2236,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Горячие клавиши включены.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Затрачено</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>В очереди</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Осталось</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Ссылка</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Загрузка завершена. URL: {0}</value>

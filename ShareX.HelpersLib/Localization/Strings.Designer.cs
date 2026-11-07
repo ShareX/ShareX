@@ -1354,5 +1354,7 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_AnimatedGifTrimmer => ResourceManager.GetString("HotkeyType_AnimatedGifTrimmer", resourceCulture);
         public static string AfterCaptureTasks_OpenInPhotoEditor => ResourceManager.GetString("AfterCaptureTasks_OpenInPhotoEditor", resourceCulture);
         public static string HotkeyType_RectangleTransparent => ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture);
+        public static string TaskViewMode_ListView => ResourceManager.GetString("TaskViewMode_ListView", resourceCulture);
+        public static string TaskViewMode_ThumbnailView => ResourceManager.GetString("TaskViewMode_ThumbnailView", resourceCulture);
     }
 }

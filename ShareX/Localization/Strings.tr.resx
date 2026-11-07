@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Açık</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Ana pencere</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Pano içerik görüntüleyicisini göster</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Kolonları göster</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows Gezgini bağlam menüsünde "ShareX resim düzenleyicide düzenle" düğmesini göster</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Alt klasör deseni:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Görev görünümü modu:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1757,6 +1766,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Resmi güzelleştir...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Listeyi temizle</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Küçük resim görünümünü temizle</value>
   </data>
@@ -1918,6 +1930,12 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Yüklemeyi durdur</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Liste görünümüne geç</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümüne geç</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Metin</value>
@@ -2218,6 +2236,33 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Kısayollar aktif edildi.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Geçen</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Dosya adı</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Sırada</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>İlerleme</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Kalan</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hız</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Adres</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Yükleme tamamlandı. URL: {0}</value>

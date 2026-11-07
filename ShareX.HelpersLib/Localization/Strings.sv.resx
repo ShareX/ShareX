@@ -1227,6 +1227,12 @@ Vill du ändå köra det?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatiskt</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listvy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatyrvy</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Anpassad textuppladdare</value>
   </data>

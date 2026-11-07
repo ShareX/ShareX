@@ -1227,6 +1227,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>清單模式</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>縮圖模式</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>自訂文字上傳工具</value>
   </data>

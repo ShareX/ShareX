@@ -61,6 +61,68 @@
         <Style Selector="Border.combine-drop-zone.drag-over">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
         </Style>
+        <Style Selector="Border.task-list-header">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Toolbar}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Separator}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        </Style>
+        <Style Selector="TextBlock.task-header">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Thumb.column-resizer">
+            <Setter Property="Width" Value="7"/>
+            <Setter Property="Margin" Value="0,0,-4,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}">
+                        <Rectangle Width="1" Margin="0,5" HorizontalAlignment="Center" Fill="{DynamicResource ShareX.Brush.Separator}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="Border.task-row">
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.task-row:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="Border.task-row.selected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
+        <Style Selector="TextBlock.task-cell">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.task-status">
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.task-status.failed">
+            <Setter Property="Foreground" Value="#C65F5F"/>
+        </Style>
+        <Style Selector="Border.task-row.selected TextBlock.task-cell">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Border.task-row.selected controls|IconPresenter.task-status">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="Border.hotkey-panel">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
@@ -242,7 +304,89 @@
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <Grid IsVisible="{Binding IsListView}" RowDefinitions="Auto,*">
+                    <Border Classes="task-list-header" IsVisible="{Binding ShowListColumns}">
+                        <DockPanel>
+                            <Panel DockPanel.Dock="Left" Width="22"/>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.FilenameWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Filename}"/>
+                                <Thumb Classes="column-resizer" Tag="0" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.StatusWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Status}"/>
+                                <Thumb Classes="column-resizer" Tag="1" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.ProgressWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Progress}"/>
+                                <Thumb Classes="column-resizer" Tag="2" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.SpeedWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Speed}"/>
+                                <Thumb Classes="column-resizer" Tag="3" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.ElapsedWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Elapsed}"/>
+                                <Thumb Classes="column-resizer" Tag="4" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.RemainingWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Remaining}"/>
+                                <Thumb Classes="column-resizer" Tag="5" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_URL}"/>
+                        </DockPanel>
+                    </Border>
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="TaskList" ItemsSource="{Binding ThumbnailItems}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="local:ThumbnailItemViewModel">
+                                    <Border Classes="task-row"
+                                            Classes.selected="{Binding IsSelected}"
+                                            PointerPressed="OnThumbnailPointerPressed"
+                                            PointerMoved="OnThumbnailPointerMoved"
+                                            PointerReleased="OnTaskRowPointerReleased"
+                                            PointerCaptureLost="OnThumbnailPointerCaptureLost"
+                                            DoubleTapped="OnTaskRowDoubleTapped">
+                                        <DockPanel>
+                                            <controls:IconPresenter DockPanel.Dock="Left"
+                                                                    Classes="task-status"
+                                                                    Classes.failed="{Binding IsFailed}"
+                                                                    Icon="{Binding ListStatusIcon}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.FilenameWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding Title}"
+                                                       ToolTip.Tip="{Binding Title}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.StatusWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListStatus}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.ProgressWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListProgress}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.SpeedWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListSpeed}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.ElapsedWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListElapsed}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.RemainingWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListRemaining}"/>
+                                            <TextBlock Classes="task-cell"
+                                                       Text="{Binding ListUrl}"
+                                                       ToolTip.Tip="{Binding ListUrlToolTip}"/>
+                                        </DockPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+
+                <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding ThumbnailItems}" Margin="6">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
