@@ -1667,6 +1667,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Képernyőfelvétel (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Csak egyszer</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Képernyőképek mappája...</value>
   </data>

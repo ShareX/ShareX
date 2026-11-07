@@ -1667,6 +1667,9 @@ Por favor, selecione uma tecla de atalho diferente ou feche o programa que está
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Gravação de ecrã (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Apenas uma vez</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Pasta de capturas de ecrã...</value>
   </data>

@@ -1667,6 +1667,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Bildschirmaufnahme (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Nur einmal</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Screenshot-Ordner...</value>
   </data>

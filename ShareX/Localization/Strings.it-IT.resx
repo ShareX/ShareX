@@ -1667,6 +1667,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Registrazione schermo (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Solo una volta</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Cartella schermate...</value>
   </data>

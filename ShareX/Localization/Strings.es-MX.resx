@@ -1667,6 +1667,9 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Grabación de pantalla (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Solo una vez</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Carpeta de capturas de pantalla...</value>
   </data>

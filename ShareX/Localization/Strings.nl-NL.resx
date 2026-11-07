@@ -1667,6 +1667,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Schermopname (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Slechts één keer</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Schermafbeeldingenmap...</value>
   </data>

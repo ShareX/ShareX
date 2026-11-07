@@ -1667,6 +1667,9 @@
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>הקלטת מסך (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>פעם אחת בלבד</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>תיקיית צילומי מסך...</value>
   </data>

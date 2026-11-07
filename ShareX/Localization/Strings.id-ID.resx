@@ -1667,6 +1667,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Perekaman layar (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Hanya sekali</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Folder tangkapan layar...</value>
   </data>

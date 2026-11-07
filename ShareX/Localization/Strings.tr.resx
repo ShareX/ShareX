@@ -1667,6 +1667,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Ekran kaydı (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Yalnızca bir kez</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Ekran görüntüsü dizini...</value>
   </data>

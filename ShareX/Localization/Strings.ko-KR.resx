@@ -1667,6 +1667,9 @@
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>화면 녹화 (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>한 번만</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>스크린샷 폴더...</value>
   </data>
