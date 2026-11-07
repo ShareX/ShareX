@@ -59,14 +59,16 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnHotkeyKeyDown(object? sender, KeyEventArgs e)
         {
-            if (e.Source is not TextBox { DataContext: ToolbarCustomizationItemViewModel { IsHotkeyEditable: true } item })
+            if (e.Source is not TextBox { DataContext: ToolbarCustomizationItemViewModel { IsHotkeyEditable: true } item } textBox)
             {
                 return;
             }
 
+            bool isSecondary = textBox.Tag is SecondaryHotkeyTag;
+
             if (e.Key is Key.Back or Key.Delete || e.Key.ToString().Equals("Backspace", StringComparison.OrdinalIgnoreCase))
             {
-                item.Hotkey = "";
+                SetHotkey(item, isSecondary, "");
                 e.Handled = true;
                 return;
             }
@@ -77,8 +79,22 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            item.Hotkey = ToolbarHotkeyHelper.Format(e.Key, e.KeyModifiers);
+            SetHotkey(item, isSecondary, ToolbarHotkeyHelper.Format(e.Key, e.KeyModifiers));
             e.Handled = true;
+        }
+
+        private const string SecondaryHotkeyTag = "Secondary";
+
+        private static void SetHotkey(ToolbarCustomizationItemViewModel item, bool isSecondary, string hotkey)
+        {
+            if (isSecondary)
+            {
+                item.SecondaryHotkey = hotkey;
+            }
+            else
+            {
+                item.Hotkey = hotkey;
+            }
         }
 
         private static bool IsModifierKey(Key key)
