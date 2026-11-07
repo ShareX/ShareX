@@ -38,6 +38,7 @@ namespace ShareX;
 public sealed class TaskListColumnLayout : INotifyPropertyChanged
 {
     private const double MinColumnWidth = 24;
+    private const double StatusIconWidth = 22;
     private static readonly double[] DefaultWidths = [150, 65, 125, 80, 55, 70];
 
     private readonly double[] _widths = (double[])DefaultWidths.Clone();
@@ -48,6 +49,9 @@ public sealed class TaskListColumnLayout : INotifyPropertyChanged
     public double SpeedWidth => _widths[3];
     public double ElapsedWidth => _widths[4];
     public double RemainingWidth => _widths[5];
+
+    // Rows and the header never get narrower than their fixed columns, so a narrow list clips the columns instead of stacking them.
+    public double MinRowWidth => StatusIconWidth + _widths.Sum();
 
     public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -76,6 +80,7 @@ public sealed class TaskListColumnLayout : INotifyPropertyChanged
         {
             _widths[column] = width;
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(GetPropertyName(column)));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(MinRowWidth)));
         }
     }
 

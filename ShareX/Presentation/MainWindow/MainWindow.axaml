@@ -325,8 +325,8 @@
                     <Thumb Classes="preview-resizer" DragDelta="OnImagePreviewResizerDragDelta"/>
                 </Panel>
                 <Grid RowDefinitions="Auto,*">
-                    <Border Classes="task-list-header" IsVisible="{Binding ShowListColumns}">
-                        <DockPanel>
+                    <Border Classes="task-list-header" IsVisible="{Binding ShowListColumns}" ClipToBounds="True">
+                        <DockPanel HorizontalAlignment="Left" MinWidth="{Binding TaskListColumns.MinRowWidth}">
                             <Panel DockPanel.Dock="Left" Width="22"/>
                             <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.FilenameWidth}">
                                 <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Filename}"/>
@@ -370,8 +370,10 @@
                                             PointerMoved="OnThumbnailPointerMoved"
                                             PointerReleased="OnTaskRowPointerReleased"
                                             PointerCaptureLost="OnThumbnailPointerCaptureLost"
-                                            DoubleTapped="OnTaskRowDoubleTapped">
-                                        <DockPanel>
+                                            DoubleTapped="OnTaskRowDoubleTapped"
+                                            ClipToBounds="True">
+                                        <DockPanel HorizontalAlignment="Left"
+                                                   MinWidth="{Binding TaskListColumns.MinRowWidth, RelativeSource={RelativeSource AncestorType=Window}}">
                                             <controls:IconPresenter DockPanel.Dock="Left"
                                                                     Classes="task-status"
                                                                     Classes.failed="{Binding IsFailed}"
