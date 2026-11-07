@@ -2531,8 +2531,8 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Obecné</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Korekce barev snímku HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Korekce barev HDR pro snímky a nahrávky obrazovky</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Výška:</value>

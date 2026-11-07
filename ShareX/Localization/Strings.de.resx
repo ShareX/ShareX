@@ -2531,8 +2531,8 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Allgemein</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR-Screenshot-Farbkorrektur</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>HDR-Farbkorrektur für Screenshots und Aufnahmen</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Höhe:</value>

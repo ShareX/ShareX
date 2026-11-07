@@ -2531,8 +2531,8 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>Chung</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>Bộ hiệu chỉnh màu ảnh chụp HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>Hiệu chỉnh màu HDR cho ảnh chụp và bản ghi màn hình</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>Chiều cao:</value>

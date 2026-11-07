@@ -2531,8 +2531,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>सामान्य</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>HDR स्क्रीनशॉट रंग सुधारक</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>स्क्रीनशॉट और रिकॉर्डिंग के लिए HDR रंग सुधार</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>ऊँचाई:</value>

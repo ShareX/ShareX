@@ -2531,8 +2531,8 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>عمومی</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>تصحیح‌کننده رنگ تصویر صفحه HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>تصحیح رنگ HDR برای تصاویر صفحه و ضبط‌ها</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>ارتفاع:</value>

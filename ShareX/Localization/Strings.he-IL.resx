@@ -2531,8 +2531,8 @@
   <data name="TaskSettingsWindow_General" xml:space="preserve">
     <value>כללי</value>
   </data>
-  <data name="TaskSettingsWindow_HDRScreenshotColorCorrector" xml:space="preserve">
-    <value>מתקן צבע לצילומי מסך HDR</value>
+  <data name="TaskSettingsWindow_HDRColorCorrection" xml:space="preserve">
+    <value>תיקון צבע HDR לצילומי מסך ולהקלטות</value>
   </data>
   <data name="TaskSettingsWindow_Height" xml:space="preserve">
     <value>גובה:</value>
