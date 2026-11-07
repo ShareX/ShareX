@@ -309,8 +309,18 @@
                             BorderBrush="{DynamicResource ShareX.Brush.Separator}"
                             BorderThickness="1,0,0,0"
                             PointerPressed="OnImagePreviewPointerPressed">
-                        <Image Margin="6" Source="{Binding ImagePreview}" Stretch="Uniform" StretchDirection="DownOnly"
-                               RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                        <Border Margin="6"
+                                Background="{DynamicResource ShareX.Brush.Checkered}"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                ClipToBounds="True"
+                                Cursor="Hand"
+                                IsVisible="{Binding ImagePreview, Converter={x:Static ObjectConverters.IsNotNull}}">
+                            <Image Source="{Binding ImagePreview}" Stretch="Uniform" StretchDirection="DownOnly"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                        </Border>
                     </Border>
                     <Thumb Classes="preview-resizer" DragDelta="OnImagePreviewResizerDragDelta"/>
                 </Panel>

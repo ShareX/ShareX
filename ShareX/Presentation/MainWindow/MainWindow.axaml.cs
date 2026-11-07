@@ -440,8 +440,24 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         previous?.Dispose();
     }
 
-    // Keep the selection (and so the preview) when the preview itself is clicked.
-    private void OnImagePreviewPointerPressed(object? sender, PointerPressedEventArgs e) => e.Handled = true;
+    // Keep the selection (and so the preview) when the preview itself is clicked, and open the image like the history window does.
+    private void OnImagePreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        e.Handled = true;
+
+        if (ImagePreview != null && _imagePreviewPath != null && e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        {
+            ShowImagesInViewer(_imagePreviewPath);
+        }
+    }
+
+    private void ShowImagesInViewer(string filePath)
+    {
+        string[] images = ThumbnailItems.Select(x => x.Task.Info?.FilePath)
+            .Where(x => !string.IsNullOrEmpty(x) && File.Exists(x) && FileHelpers.IsImageFile(x))
+            .Cast<string>().ToArray();
+        ImageViewerWindowIntegration.ShowImage(images, Math.Max(0, Array.IndexOf(images, filePath)), this);
+    }
 
     private void OnImagePreviewResizerDragDelta(object? sender, VectorEventArgs e)
     {
@@ -1667,13 +1683,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 {
                     if (FileHelpers.IsImageFile(filePath))
                     {
-                        string[] images = ThumbnailItems.Select(x => x.Task.Info?.FilePath)
-                            .Where(x => !string.IsNullOrEmpty(x) && File.Exists(x) && FileHelpers.IsImageFile(x))
-                            .Cast<string>().ToArray();
-                        ImageViewerWindowIntegration.ShowImage(
-                            images,
-                            Math.Max(0, Array.IndexOf(images, filePath)),
-                            this);
+                        ShowImagesInViewer(filePath);
                     }
                     else
                     {
