@@ -739,6 +739,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>同时上传限制：</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>间距</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>紧凑</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>菜单：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>预览：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>设置窗口：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>侧边栏</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>侧边栏：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>工具菜单</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>工具菜单：</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>

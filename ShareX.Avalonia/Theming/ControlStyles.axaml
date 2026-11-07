@@ -10,7 +10,7 @@
         <Thickness x:Key="ComboBoxDropdownContentMargin">6</Thickness>
         <Thickness x:Key="MenuFlyoutPresenterThemePadding">6,2</Thickness>
 
-        <!-- Spacing used by the main window and its menus. CompactMode.axaml overrides these. -->
+        <!-- Default spacing. ThemeManager blends these with CompactMode.axaml for the configured spacing. -->
         <x:Double x:Key="ShareX.Density.Nav.MinWidth">210</x:Double>
         <Thickness x:Key="ShareX.Density.Nav.PanelMargin">6,6,6,0</Thickness>
         <x:Double x:Key="ShareX.Density.Nav.ButtonHeight">30</x:Double>
@@ -984,6 +984,24 @@
 
     <Style Selector="ContextMenu Separator">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
+    </Style>
+
+    <!-- Main window sidebar buttons (also drawn by the spacing preview in Application settings). -->
+    <Style Selector="Button.nav-button">
+        <Setter Property="Height" Value="{DynamicResource ShareX.Density.Nav.ButtonHeight}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Nav.ButtonPadding}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+    <Style Selector="Button.nav-button TextBlock.nav-label">
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Nav.LabelMargin}"/>
+    </Style>
+    <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
     </Style>
 
     <!-- Shared compact menu treatment used by main-window, thumbnail and tray menus. -->

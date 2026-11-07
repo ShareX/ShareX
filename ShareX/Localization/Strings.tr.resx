@@ -739,6 +739,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Eşzamanlı yükleme sınırı:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menüler</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menüler:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Ayar pencereleri:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Kenar çubuğu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Kenar çubuğu:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Araç menüleri</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Araç menüleri:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>

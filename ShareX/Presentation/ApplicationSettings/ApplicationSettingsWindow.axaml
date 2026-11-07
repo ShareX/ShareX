@@ -93,6 +93,21 @@
             <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
             <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ButtonPadding}"/>
         </Style>
+        <Style Selector="Slider.spacing-slider">
+            <Setter Property="TickFrequency" Value="5"/>
+            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+            <Setter Property="SmallChange" Value="5"/>
+            <Setter Property="LargeChange" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Border.spacing-preview">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="ClipToBounds" Value="True"/>
+        </Style>
         <Style Selector="ListBox.settings-list">
             <Setter Property="MinHeight" Value="170"/>
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
@@ -245,9 +260,54 @@
                                                   ItemsSource="{Binding ThemeOptions}"
                                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
                                     </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Spacing}"/>
                                     <CheckBox Classes="setting"
                                               Content="{x:Static res:Strings.ApplicationSettingsWindow_CompactMode}"
                                               IsChecked="{Binding CompactMode, Mode=TwoWay}"/>
+                                    <StackPanel Spacing="2">
+                                        <StackPanel.Resources>
+                                            <!-- The Fluent slider reserves 15px above and below the track; the rows only need the track. -->
+                                            <GridLength x:Key="SliderPreContentMargin">2</GridLength>
+                                            <GridLength x:Key="SliderPostContentMargin">2</GridLength>
+                                        </StackPanel.Resources>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingSidebarLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding SidebarSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding SidebarSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingMenusLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding MenuSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding MenuSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingToolMenusLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding ToolMenuSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding ToolMenuSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingSettingsWindowsLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding SettingsSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding SettingsSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                    </StackPanel>
+                                    <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_Reset}" Click="OnResetSpacingClick"/>
+                                    <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingPreviewLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1"
+                                                  Classes="form-control"
+                                                  MinWidth="130"
+                                                  ItemsSource="{Binding SpacingPreviewOptions}"
+                                                  SelectedItem="{Binding SelectedSpacingPreview, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Border Classes="spacing-preview">
+                                        <local:SpacingPreview Area="{Binding SelectedSpacingPreview.Value}"/>
+                                    </Border>
                                 </StackPanel>
                             </Border>
 

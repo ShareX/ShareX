@@ -5768,5 +5768,16 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_CompactMode => ResourceManager.GetString("ApplicationSettingsWindow_CompactMode", resourceCulture);
         public static string MainMenuBuilder_ScreenshotDelayJustOnce => ResourceManager.GetString("MainMenuBuilder_ScreenshotDelayJustOnce", resourceCulture);
         public static string ApplicationSettingsWindow_ImagePreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_Spacing => ResourceManager.GetString("ApplicationSettingsWindow_Spacing", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingCompact => ResourceManager.GetString("ApplicationSettingsWindow_SpacingCompact", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingDefault => ResourceManager.GetString("ApplicationSettingsWindow_SpacingDefault", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenusLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingMenus => ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenus", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingPreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingPreviewLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSidebar => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebar", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingToolMenus => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenus", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSettingsWindowsLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSettingsWindowsLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSidebarLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebarLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingToolMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenusLabel", resourceCulture);
     }
 }

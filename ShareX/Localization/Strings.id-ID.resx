@@ -739,6 +739,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Batas unggahan secara bersamaan:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Jarak</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Ringkas</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Bawaan</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menu:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Pratinjau:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Jendela pengaturan:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Bilah samping</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Bilah samping:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Menu alat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Menu alat:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>

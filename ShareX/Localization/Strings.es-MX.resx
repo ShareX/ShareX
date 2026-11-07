@@ -739,6 +739,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Límite de subidas simultáneas:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Espaciado</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compacto</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Predeterminado</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menús</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menús:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Vista previa:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Ventanas de configuración:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Barra lateral</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Barra lateral:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Menús de herramientas</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Menús de herramientas:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>

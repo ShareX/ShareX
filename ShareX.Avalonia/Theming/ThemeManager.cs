@@ -44,10 +44,11 @@ namespace ShareX.AvaloniaUI.Theming
         private static ApplicationThemeOptions? _options;
         private static IPlatformSettings? _platformSettings;
         private static ResourceInclude? _compactResources;
+        private static readonly ResourceDictionary SpacingResources = new();
 
         public static event EventHandler<ThemeVariant>? ThemeChanged;
         public static event EventHandler<Color>? AccentColorChanged;
-        public static event EventHandler<bool>? CompactModeChanged;
+        public static event EventHandler? SpacingChanged;
 
         public static void Configure(ApplicationThemeOptions options)
         {
@@ -113,6 +114,14 @@ namespace ShareX.AvaloniaUI.Theming
 
         private static void OnOptionsPropertyChanged(object? sender, PropertyChangedEventArgs e)
         {
+            // Spacing changes arrive continuously while a slider is dragged, so they skip the theme and
+            // accent refresh, which replaces brushes across the whole application.
+            if (ApplicationThemeOptions.IsSpacingProperty(e.PropertyName))
+            {
+                RunOnUIThread(() => ApplySpacing(Application.Current));
+                return;
+            }
+
             RunOnUIThread(ApplyConfiguredSettings);
         }
 
@@ -143,40 +152,107 @@ namespace ShareX.AvaloniaUI.Theming
 
             ApplyAccentColor(application, accentColor, theme);
             IconCatalog.Pack = _options.IconPack;
-            ApplyCompactMode(application, _options.CompactMode);
+            ApplySpacing(application);
         }
 
-        private static void ApplyCompactMode(Application? application, bool compactMode)
+        private static void ApplySpacing(Application? application)
         {
-            if (application == null)
+            if (application == null || _options == null)
             {
                 return;
             }
 
+            // Application resources are looked up before application styles, so these values
+            // override the default spacing declared in ControlStyles.axaml.
             IList<IResourceProvider> dictionaries = application.Resources.MergedDictionaries;
-            int index = _compactResources == null ? -1 : dictionaries.IndexOf(_compactResources);
-
-            if (compactMode == (index >= 0))
+            if (!dictionaries.Contains(SpacingResources))
             {
-                return;
+                dictionaries.Add(SpacingResources);
             }
 
-            if (compactMode)
+            _compactResources ??= new ResourceInclude(new Uri("avares://ShareX.Avalonia/"))
             {
-                // Application resources are looked up before application styles, so these values
-                // override the comfortable defaults declared in ControlStyles.axaml.
-                _compactResources ??= new ResourceInclude(new Uri("avares://ShareX.Avalonia/"))
+                Source = new Uri("avares://ShareX.Avalonia/Theming/CompactMode.axaml")
+            };
+
+            bool changed = false;
+
+            // CompactMode.axaml lists every spacing value with its compact size; the default size of the same
+            // key comes from the application styles, and the configured spacing picks a point between the two.
+            foreach (object key in _compactResources.Loaded.Keys.ToArray())
+            {
+                if (key is not string name || !TryGetSpacingArea(name, out SpacingArea area) ||
+                    !_compactResources.TryGetResource(key, _currentTheme, out object? compactValue) ||
+                    !application.Styles.TryGetResource(key, _currentTheme, out object? defaultValue))
                 {
-                    Source = new Uri("avares://ShareX.Avalonia/Theming/CompactMode.axaml")
-                };
-                dictionaries.Add(_compactResources);
+                    continue;
+                }
+
+                double amount = _options.GetSpacing(area) / (double)ApplicationThemeOptions.DefaultSpacing;
+                object? value = InterpolateSpacing(name, compactValue, defaultValue, amount);
+
+                if (value != null && (!SpacingResources.TryGetValue(key, out object? current) || !Equals(current, value)))
+                {
+                    SpacingResources[key] = value;
+                    changed = true;
+                }
+            }
+
+            if (changed)
+            {
+                SpacingChanged?.Invoke(null, EventArgs.Empty);
+            }
+        }
+
+        private static bool TryGetSpacingArea(string key, out SpacingArea area)
+        {
+            if (key.StartsWith("ShareX.Density.Nav.", StringComparison.Ordinal))
+            {
+                area = SpacingArea.Sidebar;
+            }
+            else if (key.StartsWith("ShareX.Density.Menu.", StringComparison.Ordinal) ||
+                key is "MenuFlyoutPresenterThemePadding" or "MenuIconPresenterMargin")
+            {
+                area = SpacingArea.Menus;
+            }
+            else if (key.StartsWith("ShareX.Density.ToolGrid.", StringComparison.Ordinal))
+            {
+                area = SpacingArea.ToolMenus;
+            }
+            else if (key.StartsWith("ShareX.Density.Settings.", StringComparison.Ordinal))
+            {
+                area = SpacingArea.SettingsWindows;
             }
             else
             {
-                dictionaries.RemoveAt(index);
+                area = default;
+                return false;
             }
 
-            CompactModeChanged?.Invoke(null, compactMode);
+            return true;
+        }
+
+        private static object? InterpolateSpacing(string key, object? compactValue, object? defaultValue, double amount)
+        {
+            // Text sizes move in half-pixel steps so they stay readable; everything else snaps to whole pixels.
+            bool isTextSize = key.EndsWith("FontSize", StringComparison.Ordinal) || key.EndsWith("IconSize", StringComparison.Ordinal);
+
+            double Lerp(double compact, double comfortable)
+            {
+                double value = Math.Max(0, compact + ((comfortable - compact) * amount));
+                return isTextSize ? Math.Round(value * 2) / 2 : Math.Round(value);
+            }
+
+            return (compactValue, defaultValue) switch
+            {
+                (double compact, double comfortable) => Lerp(compact, comfortable),
+                (Thickness compact, Thickness comfortable) => new Thickness(
+                    Lerp(compact.Left, comfortable.Left),
+                    Lerp(compact.Top, comfortable.Top),
+                    Lerp(compact.Right, comfortable.Right),
+                    Lerp(compact.Bottom, comfortable.Bottom)),
+                _ => null
+            };
         }
 
         private static void SetPlatformSettings(IPlatformSettings? platformSettings)
