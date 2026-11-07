@@ -125,12 +125,17 @@ can_notarize() { [ -n "${MACOS_NOTARY_PROFILE:-}" ] || [ -n "${MACOS_NOTARY_KEY:
 if ! command -v codesign >/dev/null; then
   signed="NOT signed: run 'codesign --force --deep --sign - ShareX.app' on a Mac before it will start on Apple silicon"
 elif [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
-  # Inside out, as Apple asks (--deep is not used for release signing): every Mach-O file (native libraries, the browser host,
-  # .NET's createdump), then the bundle, whose main executable gets the entitlements.
+  # Inside out, as Apple asks (--deep is not used for release signing): every file in Contents/MacOS, then the bundle, whose main
+  # executable gets the entitlements. Mach-O files (native libraries, the browser host, .NET's createdump) get the hardened
+  # runtime. .NET keeps its managed assemblies there too, and codesign counts every file in Contents/MacOS as code, so the
+  # .dll and .json files are signed as well (the signature goes into extended attributes, which ditto and the DMG keep);
+  # otherwise `codesign --verify --strict` rejects the bundle ("code object is not signed at all").
   entitlements="$repo/Scripts/macos/ShareX.entitlements"
   find "$app/Contents/MacOS" -type f ! -path "$app/Contents/MacOS/ShareX" -print0 | while IFS= read -r -d '' file; do
     if file -b "$file" | grep -q '^Mach-O'; then
       codesign --force --timestamp --options runtime --entitlements "$entitlements" --sign "$MACOS_SIGN_IDENTITY" "$file"
+    else
+      codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" "$file"
     fi
   done
   codesign --force --timestamp --options runtime --entitlements "$entitlements" --sign "$MACOS_SIGN_IDENTITY" "$app"
