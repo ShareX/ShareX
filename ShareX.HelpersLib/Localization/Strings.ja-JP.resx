@@ -873,6 +873,15 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>画像ファイル</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>表示しない</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>表示</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>画像を開く</value>
   </data>

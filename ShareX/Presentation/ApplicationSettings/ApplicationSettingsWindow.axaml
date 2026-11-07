@@ -429,6 +429,10 @@
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ListView}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowColumns}" IsChecked="{Binding ShowColumns, Mode=TwoWay}"/>
+                                    <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ImagePreviewLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ImagePreviewOptions}" SelectedItem="{Binding SelectedImagePreview, Mode=TwoWay}"/>
+                                    </Grid>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">

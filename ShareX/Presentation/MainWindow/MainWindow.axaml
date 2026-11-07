@@ -92,6 +92,18 @@
                 </ControlTemplate>
             </Setter>
         </Style>
+        <Style Selector="Thumb.preview-resizer">
+            <Setter Property="Width" Value="6"/>
+            <Setter Property="Margin" Value="-3,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter>
+        </Style>
         <Style Selector="Border.task-row">
             <Setter Property="Height" Value="22"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -307,7 +319,18 @@
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
-                <Grid IsVisible="{Binding IsListView}" RowDefinitions="Auto,*">
+                <Grid IsVisible="{Binding IsListView}" ColumnDefinitions="*,Auto">
+                <Panel Grid.Column="1" Width="{Binding ImagePreviewWidth}" IsVisible="{Binding IsImagePreviewVisible}" ZIndex="1">
+                    <Border Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                            BorderBrush="{DynamicResource ShareX.Brush.Separator}"
+                            BorderThickness="1,0,0,0"
+                            PointerPressed="OnImagePreviewPointerPressed">
+                        <Image Margin="6" Source="{Binding ImagePreview}" Stretch="Uniform" StretchDirection="DownOnly"
+                               RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                    </Border>
+                    <Thumb Classes="preview-resizer" DragDelta="OnImagePreviewResizerDragDelta"/>
+                </Panel>
+                <Grid RowDefinitions="Auto,*">
                     <Border Classes="task-list-header" IsVisible="{Binding ShowListColumns}">
                         <DockPanel>
                             <Panel DockPanel.Dock="Left" Width="22"/>
@@ -387,6 +410,7 @@
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
                     </ScrollViewer>
+                </Grid>
                 </Grid>
 
                 <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">

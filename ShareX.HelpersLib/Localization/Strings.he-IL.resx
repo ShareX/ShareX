@@ -873,6 +873,15 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>קובצי תמונה</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>הסתר</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>הצג</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>פתיחת תמונה</value>
   </data>

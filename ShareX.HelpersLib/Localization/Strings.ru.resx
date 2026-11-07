@@ -873,6 +873,15 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Файлы изображений</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Автоматически</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Скрыть</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Показать</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Открыть изображение</value>
   </data>
