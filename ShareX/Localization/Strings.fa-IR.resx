@@ -1664,6 +1664,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>ضبط صفحه (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>فقط یک بار</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>پوشه نماگرفت‌ها...</value>
   </data>

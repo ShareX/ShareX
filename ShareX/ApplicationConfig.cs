@@ -46,6 +46,7 @@ namespace ShareX
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;
+        public bool ScreenshotDelayJustOnce = false;
 
         public ApplicationConfig()
         {

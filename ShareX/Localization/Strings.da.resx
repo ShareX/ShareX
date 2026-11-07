@@ -1664,6 +1664,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Skærmoptagelse (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Kun én gang</value>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Skærmbilledmappe...</value>
   </data>

@@ -1667,6 +1667,10 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Screen recording (GIF)...</value>
   </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Just once</value>
+    <comment>Toggle in the Screenshot delay menu: the selected delay applies only to the next capture, then resets to 0s.</comment>
+  </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Screenshots folder...</value>
   </data>
