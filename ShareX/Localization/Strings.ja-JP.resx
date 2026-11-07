@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>アップロード後</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>その他</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -178,11 +181,56 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>ファイル名</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>ファイルをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>保存したファイルをクリップボードに入れます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>ファイルパスをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>保存したファイルのパスをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>フォルダーパスをコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>保存したファイルのフォルダーをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>画像をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>画像をクリップボードに入れます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL をコピー</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>アップロードしてリンクをコピーします。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>必要な手順は目的に応じて決まります。追加の操作は自由に選べます。</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>クリップボードに何を入れますか?</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
+    <value>クリップボードを変更しない</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
+    <value>何もコピーせず、アップロードもしません。</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>キャプチャ後</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>画像プレビューを利用できません</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>この目的に必要</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>キャプチャした内容を確認し、次の処理を選択してください。</value>

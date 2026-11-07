@@ -4271,6 +4271,86 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("AfterCaptureWindow_CopyPreviewImage", resourceCulture);
             }
         }
+        public static string AfterCaptureWindow_GoalHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalHeading", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyImage {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyImage", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyImageDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyImageDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFile {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFile", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFileDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFileDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFilePath {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFilePath", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFilePathDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFilePathDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFolderPath {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFolderPath", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyFolderPathDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyFolderPathDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyUrl {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyUrl", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalCopyUrlDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalCopyUrlDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalLeaveClipboard {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalLeaveClipboard", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_GoalLeaveClipboardDescription {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_GoalLeaveClipboardDescription", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_RequiredHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_RequiredHeading", resourceCulture);
+            }
+        }
+        public static string AfterCaptureWindow_AlsoHeading {
+            get {
+                return ResourceManager.GetString("AfterCaptureWindow_AlsoHeading", resourceCulture);
+            }
+        }
         public static string AfterCaptureWindow_NoPreview {
             get {
                 return ResourceManager.GetString("AfterCaptureWindow_NoPreview", resourceCulture);

@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Na het uploaden</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Ook</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
   </data>
@@ -178,11 +181,56 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Bestandsnaam</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Bestand kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Zet het opgeslagen bestand op het klembord.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Bestandspad kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Kopieert het pad van het opgeslagen bestand.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Mappad kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Kopieert de map van het opgeslagen bestand.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Afbeelding kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Zet de afbeelding op het klembord.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL kopiëren</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Uploadt het en kopieert daarna de link.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>De vereiste stappen volgen uit je doel. Voeg naar wens extra's toe.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>Wat wil je op het klembord?</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
+    <value>Klembord ongemoeid laten</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
+    <value>Kopieert niets en uploadt niets.</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Na de opname</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Geen afbeeldingsvoorbeeld beschikbaar</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Vereist voor dit doel</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Controleer de opgenomen inhoud en kies wat er vervolgens gebeurt.</value>
