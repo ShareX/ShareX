@@ -67,6 +67,8 @@ public partial class StartScreenWindow : Window
     {
         ThemeManager.ThemeChanged -= OnThemeChanged;
         ApplicationState.Settings.ShowStartScreen = false;
+        // The start screen has its own icon pack choice, so the update prompt is not needed.
+        ApplicationState.Settings.ShowIconPackPrompt = false;
         SettingManager.SaveApplicationConfigAsync();
         _viewModel.Dispose();
     }

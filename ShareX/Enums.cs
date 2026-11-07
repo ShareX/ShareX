@@ -415,6 +415,12 @@ namespace ShareX
         Top, Bottom
     }
 
+    public enum TaskViewMode // Localized
+    {
+        ListView,
+        ThumbnailView
+    }
+
     public enum ScreenTearingTestMode
     {
         VerticalLines,

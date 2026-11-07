@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Clair</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Vue liste</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Fenêtre principale</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Afficher la visionneuse du contenu du presse-papiers</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Afficher les colonnes</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Modifier dans l’éditeur d’images ShareX » dans le menu contextuel de l’Explorateur Windows</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Modèle de sous-dossier :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Mode d'affichage d'une tâche :</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Thème</value>
@@ -1385,6 +1394,21 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Paramètres des raccourcis clavier</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Vous pouvez modifier ce choix à tout moment dans les paramètres de l'application.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Les icônes colorées de ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Des icônes au trait épuré qui suivent les couleurs de votre thème.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX a de nouvelles icônes. Choisissez l'apparence que vous préférez.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Choisissez vos icônes</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Impossible d'écrire l'image à l'emplacement spécifié :</value>
   </data>
@@ -1745,6 +1769,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Embellir l’image</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Vider la liste des tâches</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Effacer la vue des miniatures</value>
   </data>
@@ -1906,6 +1933,12 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Arrêter le téléversement</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Basculer vers la vue liste</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Basculer vers la vue miniatures</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Texte</value>
@@ -2206,6 +2239,33 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Raccourcis clavier activés.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Écoulé</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Nom du fichier</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>En attente</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Progression</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Restant</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Vitesse</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Statut</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Envoi terminé. URL : {0}</value>

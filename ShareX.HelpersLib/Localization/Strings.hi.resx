@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>स्वचालित</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>सूची दृश्य</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>अनुकूलित पाठ अपलोडर</value>
   </data>

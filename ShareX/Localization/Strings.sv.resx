@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Ljust</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listvy</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Huvudfönster</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Visa Urklippsvisaren</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Visa kolumner</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Visa knappen ”Redigera i ShareX bildredigerare” i Utforskarens snabbmeny</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Mönster för undermapp:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Visningsläge för uppgifter:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1385,6 +1394,21 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Snabbtangentsinställningar</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Du kan ändra detta när som helst i programinställningarna.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>De färgglada ikonerna från ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Rena linjeikoner som följer temats färger.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX har nya ikoner. Välj det utseende du föredrar.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Välj dina ikoner</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Det gick inte att skriva bilden till sökvägen:</value>
   </data>
@@ -1745,6 +1769,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Försköna bild...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Rensa uppgiftslistan</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Rensa miniatyrvyn</value>
   </data>
@@ -1906,6 +1933,12 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Stoppa uppladdning</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Växla till listvy</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Växla till miniatyrvy</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2206,6 +2239,33 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Snabbtangenter har aktiverats.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Förfluten tid</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>I kö</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Förlopp</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Återstår</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hastighet</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Uppladdningen slutfördes. URL: {0}</value>

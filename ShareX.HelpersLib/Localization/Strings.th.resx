@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>อัตโนมัติ</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>มุมมองภาพขนาดย่อ</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>กำหนดเอง ตัวอัปโหลดข้อความ</value>
   </data>

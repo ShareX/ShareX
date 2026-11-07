@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Claro</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Exibição de lista</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Janela principal</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostrar o visualizador de conteúdo da área de transferência</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Mostrar colunas</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar o botão "Editar no editor de imagens do ShareX" no menu de contexto do Explorador de Arquivos</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Padrão de subpasta:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Modo de exibição de tarefas:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1385,6 +1394,21 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Configurações de atalhos</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Você pode alterar isso a qualquer momento nas configurações do aplicativo.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Os ícones coloridos do ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Ícones de linhas limpas que seguem as cores do seu tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>O ShareX tem novos ícones. Escolha a aparência que preferir.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Escolha seus ícones</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Não foi possível salvar a imagem no caminho:</value>
   </data>
@@ -1745,6 +1769,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Embelezar imagem</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Limpar lista</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Limpar vista de miniaturas</value>
   </data>
@@ -1906,6 +1933,12 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Parar carregamento</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Alternar para exibição de lista</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Alternar para exibição de miniaturas</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Texto</value>
@@ -2206,6 +2239,33 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Atalhos ativados.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Transcorrido</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Na fila</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Progresso</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Restante</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Velocidade</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Envio concluído. URL: {0}</value>

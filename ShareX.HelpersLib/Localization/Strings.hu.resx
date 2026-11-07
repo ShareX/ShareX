@@ -1230,6 +1230,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatikus</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listanézet</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatűr nézet</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Egyedi szöveg feltöltő</value>
   </data>

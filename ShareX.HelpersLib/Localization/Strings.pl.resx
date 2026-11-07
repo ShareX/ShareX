@@ -1230,6 +1230,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Widok listy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Widok miniatur</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Własny serwis tekstu</value>
   </data>

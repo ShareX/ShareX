@@ -1230,6 +1230,12 @@ Chcete jej přesto spustit?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automaticky</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Zobrazení seznamu</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Zobrazení miniatur</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Vlastní nahrávání textu</value>
   </data>

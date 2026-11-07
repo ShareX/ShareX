@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自动</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>缩略图视图</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>自定义文本上传器</value>
   </data>

@@ -1230,6 +1230,12 @@ Vil du stadig køre den?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisk</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listevisning</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniaturevisning</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Brugerdefineret tekstuploadere</value>
   </data>

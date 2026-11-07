@@ -1230,6 +1230,12 @@ Do you still want to run it?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatic</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>List view</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Thumbnail view</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Custom text uploader</value>
   </data>

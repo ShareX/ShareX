@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Světlý</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Zobrazení seznamu</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hlavní okno</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Zobrazit prohlížeč obsahu schránky</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Zobrazit sloupce</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Zobrazit tlačítko „Upravit v editoru obrázků ShareX“ v místní nabídce Průzkumníka Windows</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Vzor podsložky:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Režim zobrazení úloh:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Motiv</value>
@@ -1385,6 +1394,21 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Nastavení klávesových zkratek</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Toto můžete kdykoli změnit v nastavení aplikace.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Barevné ikony ze ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Čisté obrysové ikony, které přebírají barvy motivu.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX má nové ikony. Vyberte si vzhled, který se vám líbí.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vyberte si ikony</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Obrázek nelze zapsat do cesty:</value>
   </data>
@@ -1745,6 +1769,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Vylepšit obrázek...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Vymazat seznam úloh</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Vymazat zobrazení miniatur</value>
   </data>
@@ -1906,6 +1933,12 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Zastavit nahrávání</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Přepnout na zobrazení seznamu</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Přepnout na zobrazení miniatur</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2206,6 +2239,33 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Klávesové zkratky byly povoleny.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Uplynulo</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Název souboru</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Ve frontě</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Průběh</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Zbývá</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Rychlost</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Stav</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Adresa URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Nahrávání dokončeno. Adresa URL: {0}</value>

@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Lys</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listevisning</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hovedvindue</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Vis Udklipsvisningen</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Vis kolonner</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Vis knappen ”Rediger i ShareX-billedredigering” i Stifinders hurtigmenu</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Mønster for undermappe:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Visningstilstand for opgaver:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1385,6 +1394,21 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Genvejstastindstillinger</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Du kan altid ændre dette under programindstillinger.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>De farverige ikoner fra ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Enkle stregikoner, der følger dit temas farver.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX har nye ikoner. Vælg det udseende, du foretrækker.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vælg dine ikoner</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Det var ikke muligt at skrive billedet til stien:</value>
   </data>
@@ -1745,6 +1769,9 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Forskøn billede...</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Ryd opgavelisten</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Ryd miniaturevisningen</value>
   </data>
@@ -1906,6 +1933,12 @@ Vælg en anden genvejstast, eller afslut det program, der forårsager konflikten
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Stop upload</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Skift til listevisning</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Skift til miniaturevisning</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Tekst</value>
@@ -2206,6 +2239,33 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Genvejstaster har aktiveret.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Forløbet</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Filnavn</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>I kø</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Fremskridt</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Resterende</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hastighed</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Uploaden blev fuldført. URL: {0}</value>

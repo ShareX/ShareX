@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>목록 보기</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>썸네일 보기</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>사용자 정의 텍스트 업로더</value>
   </data>

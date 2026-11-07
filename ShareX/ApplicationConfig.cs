@@ -39,6 +39,7 @@ namespace ShareX
 
         public DateTime FirstTimeRunDate = DateTime.Now;
         public bool ShowStartScreen = true;
+        public bool ShowIconPackPrompt = true;
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
@@ -103,6 +104,13 @@ namespace ShareX
 
         #region Main window
 
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
+
+        // List view
+        public bool ShowColumns = true;
+        public List<int> TaskListViewColumnWidths = new List<int>();
+
+        // Thumbnail view
         public bool ShowThumbnailTitle = true;
         public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
         public Size ThumbnailSize = new Size(200, 150);

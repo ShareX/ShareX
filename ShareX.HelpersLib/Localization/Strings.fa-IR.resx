@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>خودکار</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>نمای فهرست</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>نمای بندانگشتی</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>آپلود کننده متن سفارشی</value>
   </data>

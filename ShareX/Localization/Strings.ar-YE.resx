@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>فاتح</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>عرض كقائمة</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>النافذة الرئيسية</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>عرض عارض محتوى الحافظة</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>عرض الأعمدة</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>عرض الخيار "تعديل في محرر الصور الخاص بـ ShareX" على قائمة خيارات الملفات</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>نمط المجلدات الفرعية:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>طريقة عرض المهام:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>المظهر</value>
@@ -1385,6 +1394,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - إعدادات اختصارات لوحة المفاتيح</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>يمكنك تغيير هذا في أي وقت من إعدادات التطبيق.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>الأيقونات الملونة من ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>أيقونات خطية بسيطة تتبع ألوان السمة.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>يحتوي ShareX على أيقونات جديدة. اختر المظهر الذي تفضله.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>اختر أيقوناتك</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>فشل إنشاء الصورة إلى:</value>
   </data>
@@ -1745,6 +1769,9 @@
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>تحسين صورة</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>مسح قائمة المهام</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>مسح عرض الصور المصغرة</value>
   </data>
@@ -1906,6 +1933,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>إيقاف الرفع</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>تبديل إلى طريقة عرض القائمة</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>تبديل إلى طريقة عرض الشبكة</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>النص</value>
@@ -2206,6 +2239,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>تم تعطيل اختصارات لوحة المفاتيح.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>المنقضي</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>إدراج في الطابور</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>التقدّم</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>المتبقي</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>السرعة</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>عنوان URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>اكتمل الرفع. الرابط: {0}</value>

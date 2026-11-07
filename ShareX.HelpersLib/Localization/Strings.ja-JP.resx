@@ -1230,6 +1230,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>リスト表示</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>サムネイル表示</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>独自のテキスト アップローダー</value>
   </data>

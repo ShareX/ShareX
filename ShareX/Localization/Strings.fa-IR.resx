@@ -565,6 +565,9 @@
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>روشن</value>
   </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>نمای فهرست</value>
+  </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>پنجره اصلی</value>
   </data>
@@ -685,6 +688,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>نمایش مشاهده‌گر محتوای کلیپ‌بورد</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>نمایش ستون‌ها</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>دکمه «ویرایش در ویرایشگر تصویر ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
   </data>
@@ -735,6 +741,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>الگوی زیرپوشه:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>حالت نمای وظیفه:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>تم</value>
@@ -1385,6 +1394,21 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - تنظیمات کلیدهای میانبر</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>می‌توانید این را هر زمان در تنظیمات برنامه تغییر دهید.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>نمادهای رنگارنگ ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>نمادهای خطی ساده که از رنگ‌های پوسته شما پیروی می‌کنند.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX نمادهای جدیدی دارد. ظاهری را که ترجیح می‌دهید انتخاب کنید.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>نمادهای خود را انتخاب کنید</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write تصویر to مسیر:</value>
   </data>
@@ -1745,6 +1769,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>زیباسازی تصویر</value>
   </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>پاک کردن لیست وظایف</value>
+  </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>پاک کردن نمای تصاویر بندانگشتی</value>
   </data>
@@ -1906,6 +1933,12 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>توقف بارگذاری</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>سوییچ کردن به حالت نمایش لیستی</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>تغییر به نمای بندانگشتی</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>متن</value>
@@ -2206,6 +2239,33 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>کلیدهای میانبر غیرفعال شدند.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>زمان گذشته</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>نام فایل</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>تاریخچه</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>در صف</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>پیشرفت</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>باقیمانده</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>سرعت</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>وضعیت</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>بارگذاری کامل شد. نشانی: {0}</value>
