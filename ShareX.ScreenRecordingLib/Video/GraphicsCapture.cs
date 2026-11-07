@@ -28,6 +28,7 @@ using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Vortice.Direct3D11;
+using Vortice.DXGI;
 using Windows.Graphics.Capture;
 using Windows.Graphics.DirectX;
 using Windows.Security.Authorization.AppCapabilityAccess;
@@ -46,10 +47,14 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         public required GraphicsCaptureSession Session;
         public required int InitialWidth;
         public required int InitialHeight;
+        public required MonitorColorInfo Color;
+        /// <summary>HDR sources only: the cropped FP16 frame the tone mapper reads.</summary>
+        public ID3D11Texture2D? HdrFrame;
+        public ID3D11ShaderResourceView? HdrFrameView;
         public Windows.Foundation.TypedEventHandler<GraphicsCaptureItem, object>? ClosedHandler;
         public bool HasFrame;
         public int Closed;
-        public void Dispose() { Target.Item.Closed -= ClosedHandler; Session.Dispose(); Pool.Dispose(); }
+        public void Dispose() { Target.Item.Closed -= ClosedHandler; Session.Dispose(); Pool.Dispose(); HdrFrameView?.Dispose(); HdrFrame?.Dispose(); }
     }
 
     private readonly GraphicsDevice graphics;
@@ -57,6 +62,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
     private readonly bool cursor, borderless;
     private readonly int fps;
     private readonly List<Source> sources = new();
+    private HdrToneMapShader? toneMapper;
     public int Width { get; }
     public int Height { get; }
     public bool HasFrame => sources.All(x => x.HasFrame);
@@ -151,13 +157,21 @@ internal sealed unsafe class GraphicsCapture : IDisposable
     {
         foreach (Target target in targets)
         {
+            // On an HDR display, Windows' 8-bit conversion blows out HDR-aware apps, so capture FP16 and tone map.
+            MonitorColorInfo color = MonitorColorInfo.Get(target.Monitor);
             Direct3D11CaptureFramePool pool = Direct3D11CaptureFramePool.CreateFreeThreaded(graphics.WinRTDevice,
-                DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, target.Item.Size);
+                color.IsHdr ? DirectXPixelFormat.R16G16B16A16Float : DirectXPixelFormat.B8G8R8A8UIntNormalized, 2, target.Item.Size);
             GraphicsCaptureSession session;
             try { session = pool.CreateCaptureSession(target.Item); }
             catch { pool.Dispose(); throw; }
-            Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height };
+            Source source = new() { Target = target, Pool = pool, Session = session, InitialWidth = target.Item.Size.Width, InitialHeight = target.Item.Size.Height, Color = color };
             sources.Add(source);
+            if (color.IsHdr)
+            {
+                toneMapper ??= new HdrToneMapShader(graphics);
+                source.HdrFrame = graphics.CreateTexture(target.Source.Width, target.Source.Height, Format.R16G16B16A16_Float, BindFlags.ShaderResource);
+                source.HdrFrameView = graphics.Device.CreateShaderResourceView(source.HdrFrame);
+            }
             ConfigureCaptureInterval(session, fps);
             session.IsCursorCaptureEnabled = cursor;
             if (borderless) session.IsBorderRequired = false;
@@ -257,8 +271,18 @@ internal sealed unsafe class GraphicsCapture : IDisposable
                 // Clear padding outside the source (odd dimensions are cropped to even NV12 dimensions).
                 if (sources.Count == 1 && source.Target.Source.Location == Point.Empty) processor.Clear();
                 Box box = new(crop.X, crop.Y, 0, crop.X + copyWidth, crop.Y + copyHeight, 1);
-                graphics.Context.CopySubresourceRegion(processor.Canvas, 0,
-                    (uint)source.Target.Destination.X, (uint)source.Target.Destination.Y, 0, texture, 0, box);
+                if (source.HdrFrame != null)
+                {
+                    // Frame-pool surfaces are not guaranteed to be shader readable, so copy the crop first.
+                    graphics.Context.CopySubresourceRegion(source.HdrFrame, 0, 0, 0, 0, texture, 0, box);
+                    toneMapper!.Draw(processor.CanvasView, source.HdrFrameView!,
+                        new Rectangle(source.Target.Destination, new Size(copyWidth, copyHeight)), source.Color);
+                }
+                else
+                {
+                    graphics.Context.CopySubresourceRegion(processor.Canvas, 0,
+                        (uint)source.Target.Destination.X, (uint)source.Target.Destination.Y, 0, texture, 0, box);
+                }
                 source.HasFrame = true;
                 LatestTimestamp = Math.Max(LatestTimestamp, latest.SystemRelativeTime.Ticks);
             }
@@ -275,5 +299,9 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         sources.Clear();
     }
 
-    public void Dispose() => DisposeSources();
+    public void Dispose()
+    {
+        DisposeSources();
+        toneMapper?.Dispose();
+    }
 }
