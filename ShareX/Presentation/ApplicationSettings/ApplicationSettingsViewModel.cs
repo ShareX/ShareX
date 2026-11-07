@@ -83,6 +83,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public IReadOnlyList<EnumOption<HotkeyType>> HotkeyTypeOptions { get; } = CreateEnumOptions<HotkeyType>();
     public IReadOnlyList<EnumOption<UpdateChannel>> UpdateChannelOptions { get; } = CreateEnumOptions<UpdateChannel>();
     public IReadOnlyList<EnumOption<TaskViewMode>> TaskViewModeOptions { get; } = CreateEnumOptions<TaskViewMode>();
+    public IReadOnlyList<EnumOption<ImagePreviewVisibility>> ImagePreviewOptions { get; } = CreateEnumOptions<ImagePreviewVisibility>();
     public IReadOnlyList<EnumOption<ThumbnailTitleLocation>> ThumbnailTitleLocationOptions { get; } = CreateEnumOptions<ThumbnailTitleLocation>();
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
@@ -541,6 +542,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     }
 
     public bool ShowColumns { get => Settings.ShowColumns; set => SetSetting(Settings.ShowColumns, value, x => Settings.ShowColumns = x); }
+
+    public EnumOption<ImagePreviewVisibility>? SelectedImagePreview
+    {
+        get => Find(ImagePreviewOptions, Settings.ImagePreview);
+        set { if (value != null) SetSetting(Settings.ImagePreview, value.Value, x => Settings.ImagePreview = x); }
+    }
 
     public bool ShowThumbnailTitle { get => Settings.ShowThumbnailTitle; set => SetSetting(Settings.ShowThumbnailTitle, value, x => Settings.ShowThumbnailTitle = x); }
 

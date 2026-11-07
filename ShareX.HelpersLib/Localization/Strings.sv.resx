@@ -876,6 +876,15 @@ Vill du ändå köra det?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bildfiler</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Dölj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Visa</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Öppna bild</value>
   </data>

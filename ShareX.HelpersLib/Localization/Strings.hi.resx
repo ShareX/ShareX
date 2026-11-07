@@ -876,6 +876,15 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>छवि फ़ाइलें</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>स्वचालित</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>छिपाएँ</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>दिखाएँ</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>छवि खोलें</value>
   </data>

@@ -87,6 +87,7 @@ $projects = @(
             'GIFQuality_'
             'HotkeyType_'
             'ImageDestination_'
+            'ImagePreviewVisibility_'
             'ImgurThumbnailType_'
             'PastebinExpiration_'
             'PastebinPrivacy_'
