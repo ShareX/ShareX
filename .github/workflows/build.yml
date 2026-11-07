@@ -107,6 +107,11 @@ jobs:
       - name: Build
         run: dotnet build --no-restore --configuration "${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" --self-contained true /m "${{ env.SOLUTION_FILE_PATH }}"
 
+      - name: Publish
+        # Publishes into the build output so ReadyToRun precompiles the assemblies that get packaged and signed
+        if: matrix.configuration == 'Release' || matrix.configuration == 'Steam' || matrix.configuration == 'MicrosoftStore'
+        run: dotnet publish --no-build --configuration "${{ matrix.configuration }}" -p:Platform="${{ matrix.platform }}" --self-contained true -o "ShareX\bin\${{ matrix.configuration }}\${{ env.RUNTIME_ID }}" "ShareX\ShareX.csproj"
+
       - name: Download FFmpeg
         run: |
           $archivePath = Join-Path $env:RUNNER_TEMP "ffmpeg.zip"
