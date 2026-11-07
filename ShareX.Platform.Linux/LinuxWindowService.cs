@@ -178,6 +178,40 @@ public sealed class LinuxWindowService : IWindowService
 
     internal static string FormatHyprlandAddress(long handle) => HyprlandDispatcher.Address(handle);
 
+    /// <summary>
+    /// KWin on Wayland ignores the position of an XWayland window larger than one monitor and moves the region capture overlay onto
+    /// the primary or active monitor (issue #8867), so ShareX asks KWin to place it. Other desktops place it where Avalonia asked.
+    /// </summary>
+    public bool CoverScreen(long windowHandle, PlatformRectangle screenBounds)
+    {
+        if (platform is not { IsWayland: true, DesktopEnvironment: DesktopEnvironment.Kde } || !DBus.DBusSession.IsAvailable)
+        {
+            return false;
+        }
+
+        string? caption = null;
+        PlatformRectangle xDesktop = screenBounds;
+
+        using (X11Display? display = X11Display.TryOpen())
+        {
+            if (display != null)
+            {
+                caption = display.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display.GetStringProperty((nuint)windowHandle, "WM_NAME");
+                IReadOnlyList<ScreenInfo> monitors = display.GetMonitors();
+
+                if (monitors.Count > 0)
+                {
+                    int left = monitors.Min(m => m.Bounds.X), top = monitors.Min(m => m.Bounds.Y);
+                    int right = monitors.Max(m => m.Bounds.X + m.Bounds.Width), bottom = monitors.Max(m => m.Bounds.Y + m.Bounds.Height);
+                    xDesktop = new PlatformRectangle(left, top, right - left, bottom - top);
+                }
+            }
+        }
+
+        KWinWindowPlacement.Place(Environment.ProcessId, string.IsNullOrEmpty(caption) ? null : caption, screenBounds, xDesktop);
+        return true;
+    }
+
     // ShareX's own windows are X11 windows (Avalonia uses X11, through XWayland on Wayland sessions), so the SHAPE extension works
     // in both kinds of session. Hiding from the task bar is left to Avalonia's ShowInTaskbar.
     public bool SetOverlayStyle(long windowHandle, bool clickThrough)

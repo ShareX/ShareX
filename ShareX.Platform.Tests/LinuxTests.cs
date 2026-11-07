@@ -1186,3 +1186,28 @@ public class TrayIconAreaTests
         Assert.True(new UnsupportedTrayService().IconAreaSupport.IsSupported);
     }
 }
+
+public class KWinWindowPlacementTests
+{
+    [Fact]
+    public void BuildScript_EmbedsWindowAndCoordinates()
+    {
+        string script = ShareX.Platform.Linux.Desktop.KWinWindowPlacement.BuildScript(1234, "Region \"capture\"",
+            new PlatformRectangle(0, 0, 3840, 1080), new PlatformRectangle(-10, 0, 3850, 1080));
+
+        Assert.Contains("const pid=1234;", script);
+        Assert.Contains("const caption=\"Region \\u0022capture\\u0022\";", script);
+        Assert.Contains("const target={x:0,y:0,w:3840,h:1080};", script);
+        Assert.Contains("const desktop={x:-10,y:0,w:3850,h:1080};", script);
+        Assert.Contains("workspace.windowAdded.connect(place);", script);
+    }
+
+    [Fact]
+    public void BuildScript_WithoutCaptionMatchesByProcess()
+    {
+        string script = ShareX.Platform.Linux.Desktop.KWinWindowPlacement.BuildScript(1, null,
+            new PlatformRectangle(0, 0, 1, 1), new PlatformRectangle(0, 0, 1, 1));
+
+        Assert.Contains("const caption=null;", script);
+    }
+}
