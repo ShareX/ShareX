@@ -54,6 +54,7 @@ public sealed class RegionCaptureTransparentWindow : Window
     private readonly SelectionSurface _surface;
     private DrawingPoint _startPoint;
     private bool _isSelecting;
+    private bool _suppressRightRelease;
     private bool _closing;
     private DrawingRectangle? _result;
 
@@ -111,36 +112,19 @@ public sealed class RegionCaptureTransparentWindow : Window
         }
     }
 
+    // A button pressed while another is held arrives as a pointer move, so every handler goes by which
+    // button changed rather than by the kind of event.
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
         base.OnPointerPressed(e);
-
-        if (_closing)
-        {
-            return;
-        }
-
-        PointerPoint point = e.GetCurrentPoint(this);
-
-        if (point.Properties.IsLeftButtonPressed)
-        {
-            e.Handled = true;
-            _startPoint = ToScreenPixel(point.Position);
-            _isSelecting = true;
-            e.Pointer.Capture(this);
-            UpdateSelection(_startPoint);
-        }
-        else if (point.Properties.IsRightButtonPressed)
-        {
-            e.Handled = true;
-        }
+        HandlePointerUpdate(e);
     }
 
     protected override void OnPointerMoved(PointerEventArgs e)
     {
         base.OnPointerMoved(e);
 
-        if (_isSelecting && !_closing)
+        if (!HandlePointerUpdate(e) && _isSelecting && !_closing)
         {
             UpdateSelection(ToScreenPixel(e.GetPosition(this)));
         }
@@ -149,45 +133,75 @@ public sealed class RegionCaptureTransparentWindow : Window
     protected override void OnPointerReleased(PointerReleasedEventArgs e)
     {
         base.OnPointerReleased(e);
+        HandlePointerUpdate(e);
+    }
 
+    /// <summary>Handles a button press or release. Returns false when no button changed.</summary>
+    private bool HandlePointerUpdate(PointerEventArgs e)
+    {
         if (_closing)
         {
-            return;
+            return false;
         }
 
-        if (e.InitialPressMouseButton == MouseButton.Left)
+        PointerPoint point = e.GetCurrentPoint(this);
+
+        switch (point.Properties.PointerUpdateKind)
         {
-            e.Handled = true;
-            e.Pointer.Capture(null);
-
-            if (_isSelecting)
-            {
-                DrawingRectangle selection = GetSelectionRectangle(ToScreenPixel(e.GetPosition(this)));
-
-                if (IsValidSelection(selection))
-                {
-                    Complete(selection);
-                    return;
-                }
-            }
-
-            ResetSelection();
-        }
-        else if (e.InitialPressMouseButton == MouseButton.Right)
-        {
-            e.Handled = true;
-
-            // Right click cancels the current selection first, then the capture.
-            if (_isSelecting)
-            {
+            case PointerUpdateKind.LeftButtonPressed:
+                _startPoint = ToScreenPixel(point.Position);
+                _isSelecting = true;
+                _suppressRightRelease = false;
+                e.Pointer.Capture(this);
+                UpdateSelection(_startPoint);
+                break;
+            case PointerUpdateKind.LeftButtonReleased:
                 e.Pointer.Capture(null);
+
+                if (_isSelecting)
+                {
+                    DrawingRectangle selection = GetSelectionRectangle(ToScreenPixel(point.Position));
+
+                    if (IsValidSelection(selection))
+                    {
+                        Complete(selection);
+                        break;
+                    }
+                }
+
                 ResetSelection();
-            }
-            else
-            {
-                Complete(null);
-            }
+                break;
+            case PointerUpdateKind.RightButtonPressed:
+                // Right click while the left button is held cancels the selection being drawn; releasing the
+                // right button afterwards must not also cancel the capture.
+                if (_isSelecting)
+                {
+                    e.Pointer.Capture(null);
+                    ResetSelection();
+                    _suppressRightRelease = true;
+                }
+                break;
+            case PointerUpdateKind.RightButtonReleased:
+                if (_suppressRightRelease)
+                {
+                    _suppressRightRelease = false;
+                }
+                else if (_isSelecting)
+                {
+                    e.Pointer.Capture(null);
+                    ResetSelection();
+                }
+                else
+                {
+                    Complete(null);
+                }
+                break;
+            default:
+                return false;
         }
+
+        e.Handled = true;
+        return true;
     }
 
     private void OnOpened(object? sender, EventArgs e)
