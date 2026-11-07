@@ -873,6 +873,15 @@ Vil du stadig køre den?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Billedfiler</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Skjul</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Vis</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Åbn billede</value>
   </data>

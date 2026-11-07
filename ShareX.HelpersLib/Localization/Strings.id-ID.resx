@@ -873,6 +873,15 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Berkas gambar</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Sembunyikan</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Tampilkan</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Buka gambar</value>
   </data>

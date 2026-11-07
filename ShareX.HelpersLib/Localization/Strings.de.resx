@@ -873,6 +873,15 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bilddateien</value>
   </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Verstecken</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Anzeigen</value>
+  </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Bild öffnen</value>
   </data>
