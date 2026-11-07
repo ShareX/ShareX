@@ -2455,5 +2455,15 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EffectBrowserPanel_Effect_wave_distortion", resourceCulture);
             }
         }
+        public static string ToolbarCustomizationDialogView_Primary {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Primary", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_Secondary {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Secondary", resourceCulture);
+            }
+        }
     }
 }

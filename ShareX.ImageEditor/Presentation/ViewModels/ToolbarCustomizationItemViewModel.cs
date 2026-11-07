@@ -43,28 +43,30 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         string DefaultHotkey,
         bool IsHotkeyEditable,
         bool IsVisibilityEditable,
-        bool BeginGroupByDefault);
+        bool BeginGroupByDefault,
+        string DefaultSecondaryHotkey = "");
 
+    // Secondary defaults are the ShareX 21 numpad tool keys.
     private static readonly IReadOnlyList<ToolbarItemDefinition> ItemDefinitions = new[]
     {
         new ToolbarItemDefinition(FileItemId, null, Strings.ToolbarCustomizationItemViewModel_File, EditorIcons.FileMenu, "", true, false, false),
         CreateToolDefinition(EditorTool.Select, Strings.ToolbarCustomizationItemViewModel_Select, EditorIcons.ToolSelect, "V", beginGroupByDefault: true),
-        CreateToolDefinition(EditorTool.Rectangle, Strings.ToolbarCustomizationItemViewModel_Rectangle, EditorIcons.ToolRectangle, "R"),
-        CreateToolDefinition(EditorTool.Ellipse, Strings.ToolbarCustomizationItemViewModel_Ellipse, EditorIcons.ToolEllipse, "E"),
-        CreateToolDefinition(EditorTool.Line, Strings.ToolbarCustomizationItemViewModel_Line, EditorIcons.ToolLine, "L"),
-        CreateToolDefinition(EditorTool.Arrow, Strings.ToolbarCustomizationItemViewModel_Arrow, EditorIcons.ToolArrow, "A"),
-        CreateToolDefinition(EditorTool.Freehand, Strings.ToolbarCustomizationItemViewModel_Freehand, EditorIcons.ToolFreehand, "F"),
-        CreateToolDefinition(EditorTool.Text, Strings.ToolbarCustomizationItemViewModel_Text, EditorIcons.ToolText, "T"),
+        CreateToolDefinition(EditorTool.Rectangle, Strings.ToolbarCustomizationItemViewModel_Rectangle, EditorIcons.ToolRectangle, "R", "NumPad1"),
+        CreateToolDefinition(EditorTool.Ellipse, Strings.ToolbarCustomizationItemViewModel_Ellipse, EditorIcons.ToolEllipse, "E", "NumPad2"),
+        CreateToolDefinition(EditorTool.Line, Strings.ToolbarCustomizationItemViewModel_Line, EditorIcons.ToolLine, "L", "NumPad4"),
+        CreateToolDefinition(EditorTool.Arrow, Strings.ToolbarCustomizationItemViewModel_Arrow, EditorIcons.ToolArrow, "A", "NumPad5"),
+        CreateToolDefinition(EditorTool.Freehand, Strings.ToolbarCustomizationItemViewModel_Freehand, EditorIcons.ToolFreehand, "F", "NumPad3"),
+        CreateToolDefinition(EditorTool.Text, Strings.ToolbarCustomizationItemViewModel_Text, EditorIcons.ToolText, "T", "NumPad6"),
         CreateToolDefinition(EditorTool.SpeechBalloon, Strings.ToolbarCustomizationItemViewModel_SpeechBalloon, EditorIcons.ToolSpeechBalloon, "O"),
-        CreateToolDefinition(EditorTool.Step, Strings.ToolbarCustomizationItemViewModel_Step, EditorIcons.ToolStep, "N"),
+        CreateToolDefinition(EditorTool.Step, Strings.ToolbarCustomizationItemViewModel_Step, EditorIcons.ToolStep, "N", "NumPad7"),
         CreateToolDefinition(EditorTool.Image, Strings.ToolbarCustomizationItemViewModel_Image, EditorIcons.ToolImage, "I"),
         CreateToolDefinition(EditorTool.Clone, Strings.ToolbarCustomizationItemViewModel_Clone, EditorIcons.ToolClone, "D"),
         CreateToolDefinition(EditorTool.Emoji, Strings.ToolbarCustomizationItemViewModel_Emoji, EditorIcons.ToolEmoji, "J"),
         CreateToolDefinition(EditorTool.Cursor, Strings.ToolbarCustomizationItemViewModel_Cursor, EditorIcons.ToolCursor, "K"),
         CreateToolDefinition(EditorTool.Highlight, Strings.ToolbarCustomizationItemViewModel_Highlight, EditorIcons.ToolHighlight, "H"),
         CreateToolDefinition(EditorTool.SmartEraser, Strings.ToolbarCustomizationItemViewModel_SmartEraser, EditorIcons.ToolSmartEraser, "W"),
-        CreateToolDefinition(EditorTool.Blur, Strings.ToolbarCustomizationItemViewModel_Blur, EditorIcons.ToolBlur, "B"),
-        CreateToolDefinition(EditorTool.Pixelate, Strings.ToolbarCustomizationItemViewModel_Pixelate, EditorIcons.ToolPixelate, "P"),
+        CreateToolDefinition(EditorTool.Blur, Strings.ToolbarCustomizationItemViewModel_Blur, EditorIcons.ToolBlur, "B", "NumPad8"),
+        CreateToolDefinition(EditorTool.Pixelate, Strings.ToolbarCustomizationItemViewModel_Pixelate, EditorIcons.ToolPixelate, "P", "NumPad9"),
         CreateToolDefinition(EditorTool.Magnify, Strings.ToolbarCustomizationItemViewModel_Magnify, EditorIcons.ToolMagnify, "M"),
         CreateToolDefinition(EditorTool.Spotlight, Strings.ToolbarCustomizationItemViewModel_Spotlight, EditorIcons.ToolSpotlight, "S"),
         CreateToolDefinition(EditorTool.Crop, Strings.ToolbarCustomizationItemViewModel_Crop, EditorIcons.ToolCrop, "C", beginGroupByDefault: true),
@@ -82,6 +84,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     private bool _canMoveDown;
     private bool _beginGroup;
     private string _hotkey = "";
+    private string _secondaryHotkey = "";
 
     private ToolbarCustomizationItemViewModel(
         string id,
@@ -89,6 +92,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         string name,
         string icon,
         string hotkey,
+        string secondaryHotkey,
         bool isVisible,
         bool beginGroup,
         bool isHotkeyEditable,
@@ -99,6 +103,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         Name = name;
         Icon = icon;
         _hotkey = hotkey;
+        _secondaryHotkey = secondaryHotkey;
         _isVisible = isVisible;
         _beginGroup = beginGroup;
         IsHotkeyEditable = isHotkeyEditable;
@@ -141,6 +146,19 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         }
     }
 
+    public string SecondaryHotkey
+    {
+        get => _secondaryHotkey;
+        set
+        {
+            if (SetProperty(ref _secondaryHotkey, value ?? ""))
+            {
+                OnPropertyChanged(nameof(ToolTip));
+                OnPropertyChanged(nameof(SecondaryHotkeyDisplayText));
+            }
+        }
+    }
+
     public bool IsActive
     {
         get => _isActive;
@@ -174,25 +192,45 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     public bool IsButtonVisible => IsVisible;
     public bool IsGroupSeparatorVisible => IsVisible && BeginGroup;
     public string HotkeyDisplayText => Hotkey;
+    public string SecondaryHotkeyDisplayText => SecondaryHotkey;
+
+    public IEnumerable<string> Hotkeys
+    {
+        get
+        {
+            if (!IsHotkeyEditable)
+            {
+                yield break;
+            }
+
+            if (!string.IsNullOrWhiteSpace(Hotkey))
+            {
+                yield return Hotkey.Trim();
+            }
+
+            if (!string.IsNullOrWhiteSpace(SecondaryHotkey))
+            {
+                yield return SecondaryHotkey.Trim();
+            }
+        }
+    }
 
     public string ToolTip
     {
         get
         {
-            string hotkey = Hotkey.Trim();
-            if (Id == ImageEffectsItemId)
-            {
-                string header = IsHotkeyEditable && hotkey.Length > 0 ? $"{Name} ({hotkey})" : Name;
-                return string.Format(Strings.ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick, header);
-            }
+            string hotkeys = string.Join(", ", Hotkeys.Distinct(StringComparer.OrdinalIgnoreCase));
+            string header = hotkeys.Length > 0 ? $"{Name} ({hotkeys})" : Name;
 
-            return IsHotkeyEditable && hotkey.Length > 0 ? $"{Name} ({hotkey})" : Name;
+            return Id == ImageEffectsItemId
+                ? string.Format(Strings.ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick, header)
+                : header;
         }
     }
 
     public ToolbarCustomizationItemViewModel Clone()
     {
-        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, IsVisible, BeginGroup, IsHotkeyEditable, IsVisibilityEditable)
+        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, IsHotkeyEditable, IsVisibilityEditable)
         {
             IsActive = IsActive,
             CanMoveUp = CanMoveUp,
@@ -207,7 +245,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             Id = Id,
             BeginGroup = BeginGroup,
             IsVisible = !IsVisibilityEditable || IsVisible,
-            Hotkey = IsHotkeyEditable ? Hotkey.Trim() : ""
+            Hotkey = IsHotkeyEditable ? Hotkey.Trim() : "",
+            SecondaryHotkey = IsHotkeyEditable ? SecondaryHotkey.Trim() : ""
         };
     }
 
@@ -230,7 +269,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         {
             if (ItemDefinitionsById.TryGetValue(option.Id, out ToolbarItemDefinition? definition))
             {
-                items.Add(CreateItem(definition, option.IsVisible, option.Hotkey ?? definition.DefaultHotkey, option.BeginGroup));
+                items.Add(CreateItem(definition, option.IsVisible, option.Hotkey, option.SecondaryHotkey, option.BeginGroup));
                 usedToolIds.Add(option.Id);
             }
         }
@@ -252,7 +291,12 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         return items.Count > 0 ? items : CreateDefaultItems();
     }
 
-    private static ToolbarCustomizationItemViewModel CreateItem(ToolbarItemDefinition definition, bool isVisible = true, string? hotkey = null, bool? beginGroup = null)
+    private static ToolbarCustomizationItemViewModel CreateItem(
+        ToolbarItemDefinition definition,
+        bool isVisible = true,
+        string? hotkey = null,
+        string? secondaryHotkey = null,
+        bool? beginGroup = null)
     {
         return new ToolbarCustomizationItemViewModel(
             definition.Id,
@@ -260,6 +304,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             definition.Name,
             definition.Icon,
             definition.IsHotkeyEditable ? hotkey ?? definition.DefaultHotkey : "",
+            definition.IsHotkeyEditable ? secondaryHotkey ?? definition.DefaultSecondaryHotkey : "",
             definition.IsVisibilityEditable ? isVisible : true,
             beginGroup ?? definition.BeginGroupByDefault,
             definition.IsHotkeyEditable,
@@ -271,8 +316,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         string name,
         string icon,
         string defaultHotkey,
+        string defaultSecondaryHotkey = "",
         bool beginGroupByDefault = false)
     {
-        return new ToolbarItemDefinition(tool.ToString(), tool, name, icon, defaultHotkey, true, true, beginGroupByDefault);
+        return new ToolbarItemDefinition(tool.ToString(), tool, name, icon, defaultHotkey, true, true, beginGroupByDefault, defaultSecondaryHotkey);
     }
 }

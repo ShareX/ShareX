@@ -1389,8 +1389,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>تأیید</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>اصلی</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>بازنشانی نوار ابزار به حالت پیش‌فرض</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>ثانویه</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>نمایش / پنهان کردن</value>

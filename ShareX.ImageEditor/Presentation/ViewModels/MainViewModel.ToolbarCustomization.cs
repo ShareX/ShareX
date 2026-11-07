@@ -78,7 +78,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             foreach (ToolbarCustomizationItemViewModel item in _toolbarItems)
             {
-                if (item.IsVisible && item.IsHotkeyEditable && ToolbarHotkeyHelper.Matches(item.Hotkey, key, modifiers))
+                if (item.IsVisible && item.Hotkeys.Any(hotkey => ToolbarHotkeyHelper.Matches(hotkey, key, modifiers)))
                 {
                     ExecuteToolbarItem(item);
                     return true;

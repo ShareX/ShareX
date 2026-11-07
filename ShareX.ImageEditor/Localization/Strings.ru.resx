@@ -1389,8 +1389,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>ОК</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Основное</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Восстановить панель инструментов по умолчанию</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Дополнительное</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Показать / Скрыть</value>

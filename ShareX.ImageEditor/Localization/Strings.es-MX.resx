@@ -1389,8 +1389,14 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principal</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Restablecer barra de herramientas</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secundario</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Mostrar / Ocultar</value>
