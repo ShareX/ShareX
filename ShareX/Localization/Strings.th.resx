@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>หลังอัปโหลด</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>เพิ่มเติม</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>
@@ -178,11 +181,56 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>ชื่อไฟล์</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>คัดลอกไฟล์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>วางไฟล์ที่บันทึกไว้ลงในคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>คัดลอกเส้นทางไฟล์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>คัดลอกเส้นทางของไฟล์ที่บันทึกไว้</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>คัดลอกเส้นทางโฟลเดอร์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>คัดลอกโฟลเดอร์ของไฟล์ที่บันทึกไว้</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>คัดลอกรูปภาพ</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>วางรูปภาพลงในคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>คัดลอก URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>อัปโหลดแล้วคัดลอกลิงก์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>ขั้นตอนที่จำเป็นขึ้นอยู่กับเป้าหมายของคุณ เพิ่มรายการเสริมได้ตามต้องการ</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>คุณต้องการให้มีอะไรในคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
+    <value>ไม่เปลี่ยนคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
+    <value>ไม่คัดลอกและไม่อัปโหลดสิ่งใด</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>หลังจับภาพ</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>ไม่มี ตัวอย่างรูปภาพ พร้อมใช้งาน</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>จำเป็นสำหรับเป้าหมายนี้</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>ตรวจสอบเนื้อหาที่จับภาพและเลือกสิ่งที่จะทำต่อไป</value>

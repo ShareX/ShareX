@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>अपलोड के बाद</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>इसके अलावा</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>
@@ -178,11 +181,56 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>फ़ाइल नाम</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>फ़ाइल कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल को क्लिपबोर्ड पर रखता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>फ़ाइल पथ कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल का पथ कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>फ़ोल्डर पथ कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>सहेजी गई फ़ाइल का फ़ोल्डर कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>छवि कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>चित्र को क्लिपबोर्ड पर रखता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>URL कॉपी करें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>इसे अपलोड करता है, फिर लिंक कॉपी करता है।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>ज़रूरी चरण आपके लक्ष्य से तय होते हैं। अपनी पसंद के अतिरिक्त विकल्प जोड़ें।</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>आप क्लिपबोर्ड पर क्या चाहते हैं?</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड को वैसा ही रहने दें</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
+    <value>न कुछ कॉपी करता है, न अपलोड करता है।</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>चित्र लेने के बाद</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>कोई छवि पूर्वावलोकन उपलब्ध नहीं</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>इस लक्ष्य के लिए आवश्यक</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>कैप्चर की गई सामग्री की समीक्षा करें और आगे क्या हो चुनें।</value>

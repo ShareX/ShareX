@@ -15,6 +15,11 @@
     <PackageReference Include="xunit.runner.visualstudio" />
   </ItemGroup>
   <ItemGroup>
+    <!-- The after capture goal rules are plain logic in the application project. -->
+    <Compile Include="..\ShareX\Presentation\AfterCapture\AfterCaptureGoals.cs" Link="AfterCapture\AfterCaptureGoals.cs" />
+    <Compile Include="..\ShareX\Enums.cs" Link="AfterCapture\Enums.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ShareX.Tools\ShareX.Tools.csproj" />
     <ProjectReference Include="..\ShareX.Platform.Windows\ShareX.Platform.Windows.csproj" />
   </ItemGroup>
