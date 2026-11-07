@@ -146,7 +146,7 @@ Progress as of 4 November 2026:
 | Linux | Complete for X11, Hyprland, sway, GNOME and KDE (OCR with Tesseract, recording with FFmpeg, portals on Wayland). Verified end to end on Hyprland, X11 and KDE. | Self-contained `sharex-linux-<arch>.tar.gz` with installer (`Scripts/install-linux.sh`). |
 | macOS 13+ (Apple silicon and Intel) | Feature complete (Vision OCR, Carbon hotkeys, Finder Quick Actions, Keychain, menu bar icon). Two rounds of testing on a real Mac; the round 2 findings are fixed in code and wait for a third round. | `ShareX.app` as `.zip` and `.dmg` (`Scripts/package-macos.sh`); Developer ID signing and notarization when the signing secrets are set. |
 
-CI (`.github/workflows/platform.yml`, `linux.yml`) builds and tests on all three systems on every push, and packages and launches the Linux and macOS applications.
+CI (`.github/workflows/platform.yml`) runs only when started by hand, usually through the `publish-release` skill. It builds and tests on all three systems, packages and launches the Linux and macOS applications, and keeps the packages as run artifacts for 90 days.
 
 What is left before a cross-platform release:
 
