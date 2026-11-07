@@ -44,7 +44,9 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using DrawingColor = System.Drawing.Color;
+using DrawingPoint = System.Drawing.Point;
 using DrawingRectangle = System.Drawing.Rectangle;
+using DrawingSize = System.Drawing.Size;
 
 namespace ShareX.ScreenCaptureLib;
 
@@ -81,7 +83,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private PixelPoint _dragWindowOrigin;
     private double _windowScaling = 1;
     private int _frameLeftPixels;
+    private int _frameTopPixels;
     private int _toolbarLeftPixels;
+    private int _toolbarTopPixels;
     private int _lastIconStatus = -1;
     private int _restartRequested;
     private bool _configuringGeometry;
@@ -94,6 +98,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     public event Action? ResumeRequested;
     public bool UseInProcessPause { get; set; }
     public bool ExcludeFromCapture { get; set; }
+    public RecordingToolbarOffset? ToolbarOffset { get; set; }
 
     public ScreenRecordingStatus Status
     {
@@ -175,7 +180,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public DrawingRectangle RecordingRegion => new(
         Position.X + _frameLeftPixels + BorderPixels,
-        Position.Y + BorderPixels,
+        Position.Y + _frameTopPixels + BorderPixels,
         _captureWidth,
         _captureHeight);
 
@@ -602,7 +607,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         double scaling = GetScreenScaling(_initialPosition);
         ConfigureGeometry(scaling);
-        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y);
+        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels);
         ApplyToolWindowStyle();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
@@ -634,40 +639,37 @@ public partial class ScreenRecordWindow : Window, IDisposable
         try
         {
             int recordingLeft = Position.X + _frameLeftPixels + BorderPixels;
+            int recordingTop = Position.Y + _frameTopPixels + BorderPixels;
 
             _windowScaling = Math.Max(0.5, scaling);
 
-            int frameWidthPixels = _captureWidth + BorderPixels * 2;
-            int frameHeightPixels = _captureHeight + BorderPixels * 2;
-            int toolbarWidthPixels = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
-            int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
+            DrawingRectangle region = new(recordingLeft, recordingTop, _captureWidth, _captureHeight);
+            DrawingRectangle frame = DrawingRectangle.Inflate(region, BorderPixels, BorderPixels);
+            DrawingRectangle toolbar = GetToolbarBounds(region, new DrawingSize(
+                (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling),
+                (int)Math.Ceiling(ToolbarHeight * _windowScaling)));
+            DrawingRectangle content = DrawingRectangle.Union(frame, toolbar);
 
-            _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
-            _toolbarLeftPixels = (contentWidthPixels - toolbarWidthPixels) / 2;
+            _frameLeftPixels = frame.X - content.X;
+            _frameTopPixels = frame.Y - content.Y;
+            _toolbarLeftPixels = toolbar.X - content.X;
+            _toolbarTopPixels = toolbar.Y - content.Y;
 
-            double frameLeft = _frameLeftPixels / _windowScaling;
-            double toolbarLeft = _toolbarLeftPixels / _windowScaling;
-            double frameWidth = frameWidthPixels / _windowScaling;
-            double frameHeight = frameHeightPixels / _windowScaling;
-            double gap = ToolbarGapPixels / _windowScaling;
-
-            PixelPoint centeredPosition = new(
-                recordingLeft - _frameLeftPixels - BorderPixels,
-                Position.Y);
-
-            if (Position != centeredPosition)
+            PixelPoint contentPosition = new(content.X, content.Y);
+            if (Position != contentPosition)
             {
-                Position = centeredPosition;
+                Position = contentPosition;
             }
 
-            Avalonia.Controls.Canvas.SetLeft(RegionBorder, frameLeft);
-            RegionBorder.Width = frameWidth;
-            RegionBorder.Height = frameHeight;
-            Avalonia.Controls.Canvas.SetLeft(Toolbar, toolbarLeft);
-            Avalonia.Controls.Canvas.SetTop(Toolbar, frameHeight + gap);
+            Avalonia.Controls.Canvas.SetLeft(RegionBorder, _frameLeftPixels / _windowScaling);
+            Avalonia.Controls.Canvas.SetTop(RegionBorder, _frameTopPixels / _windowScaling);
+            RegionBorder.Width = frame.Width / _windowScaling;
+            RegionBorder.Height = frame.Height / _windowScaling;
+            Avalonia.Controls.Canvas.SetLeft(Toolbar, _toolbarLeftPixels / _windowScaling);
+            Avalonia.Controls.Canvas.SetTop(Toolbar, _toolbarTopPixels / _windowScaling);
 
-            Width = contentWidthPixels / _windowScaling;
-            Height = frameHeight + gap + ToolbarHeight;
+            Width = content.Width / _windowScaling;
+            Height = content.Height / _windowScaling;
 
             if (IsVisible)
             {
@@ -678,6 +680,29 @@ public partial class ScreenRecordWindow : Window, IDisposable
         {
             _configuringGeometry = false;
         }
+    }
+
+    private DrawingRectangle GetToolbarBounds(DrawingRectangle region, DrawingSize size)
+    {
+        // Inside the region and saved offsets that can overlap it are only used when the window is excluded
+        // from capture, so the controls are never recorded.
+        DrawingRectangle? work = GetWorkingArea(region);
+        int gap = ToolbarGapPixels + BorderPixels;
+        if (work == null)
+        {
+            return new DrawingRectangle(region.Left + (region.Width - size.Width) / 2, region.Bottom + gap, size.Width, size.Height);
+        }
+
+        DrawingPoint location = RecordingToolbarPlacement.GetLocation(region, size, gap, work.Value,
+            ExcludeFromCapture ? ToolbarOffset : null, ExcludeFromCapture);
+        DrawingRectangle toolbar = new(location, size);
+        return RecordingToolbarPlacement.Clamp(toolbar, GetWorkingArea(toolbar) ?? work.Value, ExcludeFromCapture);
+    }
+
+    private DrawingRectangle? GetWorkingArea(DrawingRectangle bounds)
+    {
+        PixelRect? area = Screens.ScreenFromBounds(new PixelRect(bounds.X, bounds.Y, bounds.Width, bounds.Height))?.WorkingArea;
+        return area is PixelRect work ? new DrawingRectangle(work.X, work.Y, work.Width, work.Height) : null;
     }
 
     private double GetScreenScaling(PixelPoint point)
@@ -711,21 +736,20 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
-        int toolbarTop = frameHeight + ToolbarGapPixels;
         int toolbarWidth = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
-        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);
+        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, _frameTopPixels, _frameLeftPixels + frameWidth, _frameTopPixels + frameHeight);
         IntPtr apertureRegion = CreateRectRgn(
             _frameLeftPixels + BorderPixels,
-            BorderPixels,
+            _frameTopPixels + BorderPixels,
             _frameLeftPixels + frameWidth - BorderPixels,
-            frameHeight - BorderPixels);
+            _frameTopPixels + frameHeight - BorderPixels);
         IntPtr toolbarRegion = CreateRectRgn(
             _toolbarLeftPixels,
-            toolbarTop,
+            _toolbarTopPixels,
             _toolbarLeftPixels + toolbarWidth,
-            toolbarTop + toolbarHeight);
+            _toolbarTopPixels + toolbarHeight);
 
         if (windowRegion == IntPtr.Zero || apertureRegion == IntPtr.Zero || toolbarRegion == IntPtr.Zero)
         {
@@ -774,7 +798,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             _dragWindowOrigin.Y + pointer.Y - _dragPointerOrigin.Y);
         DrawingRectangle recordingRegion = new(
             candidate.X + _frameLeftPixels + BorderPixels,
-            candidate.Y + BorderPixels,
+            candidate.Y + _frameTopPixels + BorderPixels,
             _captureWidth,
             _captureHeight);
 
@@ -793,12 +817,20 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void OnTimerPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
+        // Releasing capture raises PointerCaptureLost, which clears _dragging.
+        bool wasDragging = _dragging;
         if (e.Pointer.Captured == TimerDragHandle)
         {
             e.Pointer.Capture(null);
         }
 
-        _dragging = false;
+        if (wasDragging)
+        {
+            _dragging = false;
+            // Pick the toolbar side again for the region's new position.
+            ConfigureGeometry(_windowScaling);
+        }
+
         e.Handled = true;
     }
 

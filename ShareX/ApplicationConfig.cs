@@ -281,6 +281,9 @@ namespace ShareX
 
         public Rectangle ScreenRecordRegion = Rectangle.Empty;
 
+        // Null places the recording bars below the region.
+        public ShareX.ScreenCaptureLib.RecordingToolbarOffset ScreenRecordToolbarOffset = null;
+
         #endregion ScreenRecord Form
 
         #region Actions toolbar
