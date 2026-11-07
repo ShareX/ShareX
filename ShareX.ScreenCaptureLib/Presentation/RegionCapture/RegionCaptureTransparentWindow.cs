@@ -192,6 +192,7 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
+        ApplyToolWindowStyle();
         ApplyPixelSize();
         Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
         DisableWindowTransitions();
@@ -269,6 +270,21 @@ public sealed class RegionCaptureTransparentWindow : Window
     private double GetScaling()
     {
         return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+    }
+
+    /// <summary>
+    /// Chrome treats a window covering it as occluding unless it is a tool window, and stops showing video while
+    /// occluded, so without this a YouTube video loaded under the selection does not appear.
+    /// </summary>
+    private void ApplyToolWindowStyle()
+    {
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+
+        if (OperatingSystem.IsWindows() && handle != IntPtr.Zero)
+        {
+            WindowInfo info = new(handle);
+            info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
+        }
     }
 
     private void DisableWindowTransitions()
