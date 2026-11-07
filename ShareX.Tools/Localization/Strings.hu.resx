@@ -440,7 +440,7 @@
     <value>Szélesség: {0} px | Magasság: {1} px | Terület: {2} px | Kerület: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX – Vonalzó (klasszikus)</value>
+    <value>ShareX – Vonalzó</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Vágólap tartalma</value>
@@ -2045,7 +2045,7 @@
     <value>Tűrés: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Vonalzó</value>
+    <value>ShareX – Mérés</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>A kezdéshez válasszon videót.</value>

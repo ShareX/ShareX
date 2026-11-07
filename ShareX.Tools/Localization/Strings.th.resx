@@ -440,7 +440,7 @@
     <value>ความกว้าง: {0} px | ความสูง: {1} px | พื้นที่: {2} px | เส้นรอบรูป: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - ไม้บรรทัด (แบบคลาสสิก)</value>
+    <value>ShareX - ไม้บรรทัด</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>เนื้อหาคลิปบอร์ด</value>
@@ -2045,7 +2045,7 @@
     <value>ค่าความคลาดเคลื่อน: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - ไม้บรรทัด</value>
+    <value>ShareX - วัดขนาด</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>เลือกวิดีโอเพื่อเริ่มต้น</value>

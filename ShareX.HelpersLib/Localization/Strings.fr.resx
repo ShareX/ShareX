@@ -643,7 +643,7 @@ Voulez-vous quand même l’exécuter ?</value>
     <value>Mise en ligne</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Règle (classique)</value>
+    <value>Règle</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Mise en ligne depuis le presse-papier</value>
@@ -796,7 +796,7 @@ Voulez-vous quand même l’exécuter ?</value>
     <value>Capturer une région (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Règle</value>
+    <value>Mesurer</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>

@@ -643,7 +643,7 @@
     <value>Загрузка</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Линейка (классическая)</value>
+    <value>Линейка</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Загрузка из буфера обмена</value>
@@ -796,7 +796,7 @@
     <value>Захват области (Прозрачный фон)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Линейка</value>
+    <value>Измерение</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Пипетка</value>

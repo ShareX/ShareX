@@ -1491,7 +1491,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>ضبط</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>خط کش (کلاسیک)</value>
+    <value>خط کش</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>نمایشگر کلیپ‌بورد</value>
@@ -1656,7 +1656,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>راه‌اندازی مجدد به‌عنوان مدیر</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>خط کش</value>
+    <value>اندازه‌گیری</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>انتخاب گر رنگ صفحه</value>

@@ -1491,7 +1491,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Ta bild</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Linjal (klassisk)...</value>
+    <value>Linjal...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Urklippsvisare...</value>
@@ -1656,7 +1656,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Starta om som administratör</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Linjal...</value>
+    <value>Mätning...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare...</value>

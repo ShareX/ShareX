@@ -643,7 +643,7 @@ Chcete jej přesto spustit?</value>
     <value>Nahrávání</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Pravítko (klasické)</value>
+    <value>Pravítko</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Nahrát ze schránky</value>
@@ -796,7 +796,7 @@ Chcete jej přesto spustit?</value>
     <value>Zachytit oblast (průhledná)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Pravítko</value>
+    <value>Měření</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Výběr barvy z obrazovky</value>

@@ -1491,7 +1491,7 @@
     <value>截图</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>测量尺（经典）</value>
+    <value>标尺</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>剪贴板查看器</value>
@@ -1656,7 +1656,7 @@
     <value>以管理员身份重启</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>测量尺</value>
+    <value>测量</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>

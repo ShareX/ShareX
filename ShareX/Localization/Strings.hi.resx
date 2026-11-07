@@ -1491,7 +1491,7 @@
     <value>कैप्चर करें</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>मापनी (क्लासिक)...</value>
+    <value>मापनी...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>क्लिपबोर्ड दर्शक...</value>
@@ -1656,7 +1656,7 @@
     <value>व्यवस्थापक के रूप में पुनः आरंभ करें</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>मापनी...</value>
+    <value>मापन...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता...</value>

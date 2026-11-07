@@ -1491,7 +1491,7 @@
     <value>จับภาพ</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>ไม้บรรทัด (แบบคลาสสิก)...</value>
+    <value>ไม้บรรทัด...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>คลิปบอร์ด ตัวแสดง...</value>
@@ -1656,7 +1656,7 @@
     <value>เริ่มใหม่ในฐานะผู้ดูแลระบบ</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด...</value>
+    <value>วัดขนาด...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี...</value>

@@ -440,7 +440,7 @@
     <value>Lebar: {0} px | Tinggi: {1} px | Luas: {2} px | Keliling: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Penggaris (klasik)</value>
+    <value>ShareX - Penggaris</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Isi papan klip</value>
@@ -2045,7 +2045,7 @@
     <value>Toleransi: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Penggaris</value>
+    <value>ShareX - Ukur</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Pilih video untuk memulai.</value>

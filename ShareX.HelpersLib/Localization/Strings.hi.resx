@@ -643,7 +643,7 @@
     <value>अपलोड करें</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>मापनी (क्लासिक)</value>
+    <value>मापनी</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>क्लिपबोर्ड से अपलोड करें</value>
@@ -796,7 +796,7 @@
     <value>क्षेत्र कैप्चर करें (पारदर्शी)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>मापनी</value>
+    <value>मापन</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता</value>

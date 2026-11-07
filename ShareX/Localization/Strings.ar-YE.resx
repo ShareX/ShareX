@@ -1491,7 +1491,7 @@
     <value>لقطة شاشة</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>المسطرة (الكلاسيكية)</value>
+    <value>المسطرة</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>عارض الحافظة</value>
@@ -1656,7 +1656,7 @@
     <value>إعادة التشغيل كمسؤول</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>المسطرة</value>
+    <value>القياس</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>منتقي الألوان</value>

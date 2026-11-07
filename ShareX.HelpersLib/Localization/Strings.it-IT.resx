@@ -643,7 +643,7 @@ Vuoi eseguirlo comunque?</value>
     <value>Carica</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Righello (classico)</value>
+    <value>Righello</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Carica dagli Appunti</value>
@@ -796,7 +796,7 @@ Vuoi eseguirlo comunque?</value>
     <value>Cattura Regione (Trasparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Righello</value>
+    <value>Misura</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Cattura Colore</value>

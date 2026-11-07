@@ -441,7 +441,7 @@ Percorso file: {0}</value>
     <value>Larghezza: {0} px | Altezza: {1} px | Area: {2} px | Perimetro: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - Righello (classico)</value>
+    <value>ShareX - Righello</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Contenuto degli appunti</value>
@@ -2051,7 +2051,7 @@ Percorso file: {0}</value>
     <value>Tolleranza: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Righello</value>
+    <value>ShareX - Misura</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Scegli un video per iniziare.</value>

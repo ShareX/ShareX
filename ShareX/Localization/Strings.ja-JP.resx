@@ -1491,7 +1491,7 @@
     <value>キャプチャー</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>定規（クラシック）</value>
+    <value>定規</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>クリップボードビューアー</value>
@@ -1656,7 +1656,7 @@
     <value>管理者として再起動</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>定規</value>
+    <value>計測</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>スクリーン カラー ピッカー</value>

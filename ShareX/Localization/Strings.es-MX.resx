@@ -1491,7 +1491,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>Capturar</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Regla (clásica)</value>
+    <value>Regla</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visualizador de portapapeles</value>
@@ -1656,7 +1656,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>Reiniciar como administrador</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Regla</value>
+    <value>Medir</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Pantalla de selector de color</value>

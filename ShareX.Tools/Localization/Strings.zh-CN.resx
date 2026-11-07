@@ -441,7 +441,7 @@
     <value>宽度: {0} px | 高度: {1} px | 面积: {2} px | 周长: {3} px</value>
   </data>
   <data name="ClassicRulerWindow_Title" xml:space="preserve">
-    <value>ShareX - 标尺（经典）</value>
+    <value>ShareX - 标尺</value>
   </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>剪贴板内容</value>
@@ -2051,7 +2051,7 @@
     <value>容差：{0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - 标尺</value>
+    <value>ShareX - 测量</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>选择视频以开始。</value>

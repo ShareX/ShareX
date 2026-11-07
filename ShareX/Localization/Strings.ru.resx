@@ -1491,7 +1491,7 @@
     <value>Захват</value>
   </data>
   <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
-    <value>Линейка (классическая)</value>
+    <value>Линейка</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Буфер обмена</value>
@@ -1656,7 +1656,7 @@
     <value>Перезапустить от имени администратора</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Линейка</value>
+    <value>Измерение</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Пипетка</value>

@@ -643,7 +643,7 @@
     <value>업로드</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>측정 (클래식)</value>
+    <value>눈금자</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>클립보드 내용 업로드</value>

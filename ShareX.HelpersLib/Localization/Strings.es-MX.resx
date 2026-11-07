@@ -643,7 +643,7 @@
     <value>Subir</value>
   </data>
   <data name="HotkeyType_ClassicRuler" xml:space="preserve">
-    <value>Regla (clásica)</value>
+    <value>Regla</value>
   </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Subir desde el portapapeles</value>
@@ -796,7 +796,7 @@
     <value>Capturar región (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Regla</value>
+    <value>Medir</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Pantalla de selector de color</value>

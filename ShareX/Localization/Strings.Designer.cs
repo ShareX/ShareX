@@ -648,7 +648,7 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ruler....
+        ///   Looks up a localized string similar to Measure....
         /// </summary>
         public static string MainMenuBuilder_Ruler {
             get {
@@ -657,7 +657,7 @@ namespace ShareX.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Ruler (classic)....
+        ///   Looks up a localized string similar to Ruler....
         /// </summary>
         public static string MainMenuBuilder_ClassicRuler {
             get {
