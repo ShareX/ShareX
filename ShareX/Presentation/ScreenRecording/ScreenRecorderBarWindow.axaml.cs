@@ -571,7 +571,7 @@ internal partial class ScreenRecorderBarWindow : Window
     private Control ButtonContent(string label, string icon, bool? enabled = null, bool toolbar = false)
     {
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6 };
-        content.Children.Add(CreateIcon(icon));
+        content.Children.Add(CreateIcon(enabled == false ? OffIcon(icon) : icon));
         if (toolbar && !Capture.ScreenRecordShowButtonLabels) return content;
         content.Children.Add(new TextBlock { Text = label, VerticalAlignment = VerticalAlignment.Center });
         if (enabled != null) content.Children.Add(new TextBlock
@@ -583,6 +583,16 @@ internal partial class ScreenRecorderBarWindow : Window
         });
         return content;
     }
+
+    // A toggle that is off shows a muted or crossed out icon, so its state reads without relying on the highlight.
+    private static string OffIcon(string icon) => icon switch
+    {
+        AppIcons.Volume => AppIcons.Mute,
+        AppIcons.Microphone => AppIcons.MicrophoneOff,
+        AppIcons.Video => AppIcons.VideoOff,
+        AppIcons.Timer => AppIcons.TimerOff,
+        _ => icon
+    };
 
     private static IconPresenter CreateIcon(string icon) =>
         new() { Icon = icon, FontSize = 16, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Center };

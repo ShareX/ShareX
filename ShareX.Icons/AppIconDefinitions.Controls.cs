@@ -146,6 +146,10 @@ internal static partial class AppIconDefinitions
             Stroke("M5 11a7 7 0 0 0 14 0M12 18v3.5M8.5 21.5h7")
         },
         {
+            Icon.MicrophoneOff,
+            Overlay([Stroke(Rectangle(8.5, 2, 7, 12.5, 3.5)), Stroke("M5 11a7 7 0 0 0 14 0M12 18v3.5M8.5 21.5h7")], Slash)
+        },
+        {
             Icon.Audio,
             Stroke("M3 10v4M7.5 6v12M12 3v18M16.5 7.5v9M21 10v4")
         },
