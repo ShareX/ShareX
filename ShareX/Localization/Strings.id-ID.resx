@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Tampilkan "Edit di editor foto ShareX" di menu konteks Windows Explorer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Minta konfirmasi sebelum menghapus file</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Ambang peringatan berkas besar (MB)</value>
   </data>
@@ -1323,6 +1326,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Gagal menyimpan pengaturan</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Jangan ingatkan saya lagi</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Batal</value>

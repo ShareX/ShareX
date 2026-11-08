@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afficher le bouton « Modifier dans l’éditeur de photos ShareX » dans le menu contextuel de l’Explorateur Windows</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Demander une confirmation avant de supprimer des fichiers</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Seuil d’avertissement pour les fichiers volumineux (Mo)</value>
   </data>
@@ -1323,6 +1326,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Échec de l'enregistrement des paramètres</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Ne plus me le rappeler</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Annuler</value>
