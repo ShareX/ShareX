@@ -13,9 +13,9 @@
         x:Class="ShareX.ApplicationSettingsWindow"
         x:DataType="local:ApplicationSettingsViewModel"
         Title="{x:Static res:Strings.ApplicationSettingsWindow_WindowTitle}"
-        Width="950"
+        Width="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         Height="720"
-        MinWidth="950"
+        MinWidth="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         MinHeight="600"
         WindowStartupLocation="CenterScreen">
 

@@ -189,6 +189,13 @@ namespace ShareX.AvaloniaUI.Theming
                 }
 
                 double amount = _options.GetSpacing(area) / (double)ApplicationThemeOptions.DefaultSpacing;
+
+                // Wider spacing doesn't need a wider settings window, so the window width only shrinks.
+                if (name == "ShareX.Density.Settings.WindowWidth")
+                {
+                    amount = Math.Min(amount, 1);
+                }
+
                 object? value = InterpolateSpacing(name, compactValue, defaultValue, amount);
 
                 if (value != null && (!SpacingResources.TryGetValue(key, out object? current) || !Equals(current, value)))

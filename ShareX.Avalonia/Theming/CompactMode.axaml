@@ -38,6 +38,8 @@
     <Thickness x:Key="ShareX.Density.Settings.NavItemMargin">2,1</Thickness>
     <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,4,8,4</Thickness>
     <x:Double x:Key="ShareX.Density.Settings.NavSpacing">6</x:Double>
+    <!-- Starting and minimum width of the application and task settings windows. -->
+    <x:Double x:Key="ShareX.Density.Settings.WindowWidth">840</x:Double>
 
     <!-- Avalonia Fluent menu keys -->
     <Thickness x:Key="MenuFlyoutPresenterThemePadding">2</Thickness>
