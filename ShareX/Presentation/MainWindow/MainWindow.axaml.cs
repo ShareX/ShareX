@@ -124,6 +124,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         DataContext = this;
         ThumbnailPanel.SizeChanged += (_, _) => OnPropertyChanged(nameof(ImagePreviewWidth));
         ScheduleImagePreviewUpdate();
+        ThumbnailItemViewModel.RenderScaling = RenderScaling;
+        ScalingChanged += OnScalingChanged;
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
@@ -337,6 +339,21 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         NotifyTaskViewModeChanged();
         NotifyTaskCollectionChanged();
+    }
+
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        if (ThumbnailItemViewModel.RenderScaling == RenderScaling)
+        {
+            return;
+        }
+
+        ThumbnailItemViewModel.RenderScaling = RenderScaling;
+
+        foreach (ThumbnailItemViewModel item in ThumbnailItems)
+        {
+            item.Refresh();
+        }
     }
 
     private void NotifyTaskViewModeChanged()

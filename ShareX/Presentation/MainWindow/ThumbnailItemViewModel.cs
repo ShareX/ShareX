@@ -361,11 +361,15 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         Refresh();
     }
 
+    // Width and Height are layout units; decode at the monitor's pixel density so previews stay sharp on high-DPI displays.
+    internal static double RenderScaling { get; set; } = 1;
+
     private void StartThumbnailRefresh(string? filePath, DrawingBitmap? image)
     {
         int version = ++_refreshVersion;
-        int width = Width;
-        int height = Height;
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 1 ? RenderScaling : 1;
+        int width = (int)Math.Ceiling(Width * scaling);
+        int height = (int)Math.Ceiling(Height * scaling);
         _ = RefreshThumbnailAsync(version, width, height, filePath, image);
     }
 
@@ -401,7 +405,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
             {
                 using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+                return DecodeToFit(stream, width, height);
             }
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsVideoFile(filePath))
@@ -424,6 +428,34 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         }
 
         return null;
+    }
+
+    // Decode only as large as the thumbnail box needs, without enlarging small images.
+    private static Bitmap DecodeToFit(Stream stream, int width, int height)
+    {
+        SkiaSharp.SKSizeI size = default;
+
+        using (SkiaSharp.SKCodec? codec = SkiaSharp.SKCodec.Create(new SkiaSharp.SKManagedStream(stream, false)))
+        {
+            if (codec != null)
+            {
+                size = codec.Info.Size;
+            }
+        }
+
+        stream.Position = 0;
+
+        if (size.Width <= 0 || size.Height <= 0)
+        {
+            return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+        }
+
+        if ((long)size.Width * height > (long)size.Height * width)
+        {
+            return Bitmap.DecodeToWidth(stream, Math.Min(width, size.Width), BitmapInterpolationMode.HighQuality);
+        }
+
+        return Bitmap.DecodeToHeight(stream, Math.Min(height, size.Height), BitmapInterpolationMode.HighQuality);
     }
 
     private static string GetPlaceholderIcon(string? filePath)
