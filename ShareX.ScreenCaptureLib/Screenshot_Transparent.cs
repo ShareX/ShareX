@@ -197,8 +197,14 @@ namespace ShareX.ScreenCaptureLib
 
         private void TrimShadow(Bitmap bitmap)
         {
-            int cornerSize = 10;
+            // The auto-cropped image has no minimum size, and SkiaPixelBuffer does not check bounds, so the corners must fit in it.
+            int cornerSize = Math.Min(10, Math.Min(bitmap.Width, bitmap.Height));
             int alphaOffset = 200;
+
+            if (cornerSize <= 0)
+            {
+                return;
+            }
 
             using (SkiaPixelBuffer unsafeBitmap = new SkiaPixelBuffer(bitmap, true))
             {

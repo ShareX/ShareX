@@ -42,6 +42,11 @@ public sealed class PreviewSession
     private Func<SKBitmap, SKBitmap>? _pending;
     private int _version;
     private bool _finished;
+    // _backup is read by Compute on the thread pool. Cancel and Commit run on the UI thread and cannot wait for it, so the
+    // backup is released by whichever comes last: the session ending, or the last Compute still drawing from it.
+    private readonly object _backupLock = new();
+    private int _backupReaders;
+    private bool _backupReleased;
 
     public PreviewSession(PhotoEditorWindow editor, RasterLayer layer, int margin = 64)
     {
@@ -99,6 +104,11 @@ public sealed class PreviewSession
 
     private SKBitmap? Compute(Func<SKBitmap, SKBitmap> filter)
     {
+        lock (_backupLock)
+        {
+            if (_backupReleased) return null;
+            _backupReaders++;
+        }
         try
         {
             using SKBitmap input = ImageOps.Crop(_backup, _region);
@@ -116,6 +126,22 @@ public sealed class PreviewSession
         catch (Exception)
         {
             return null;
+        }
+        finally
+        {
+            lock (_backupLock)
+            {
+                if (--_backupReaders == 0 && _backupReleased) _backup.Dispose();
+            }
+        }
+    }
+
+    private void ReleaseBackup()
+    {
+        lock (_backupLock)
+        {
+            _backupReleased = true;
+            if (_backupReaders == 0) _backup.Dispose();
         }
     }
 
@@ -156,7 +182,7 @@ public sealed class PreviewSession
     public void Restore()
     {
         // The layer may have been replaced or disposed while the dialog was open (for example by closing the document).
-        if (_layer.Surface.IsDisposed || _backup.Handle == IntPtr.Zero) return;
+        if (_backupReleased || _layer.Surface.IsDisposed || _backup.Handle == IntPtr.Zero) return;
         using SKCanvas canvas = new(_layer.Surface.Bitmap);
         using SKPaint paint = new() { BlendMode = SKBlendMode.Src };
         canvas.DrawBitmap(_backup, 0, 0, paint);
@@ -178,7 +204,7 @@ public sealed class PreviewSession
             WriteBack(result);
             result.Dispose();
         }
-        _backup.Dispose();
+        ReleaseBackup();
         _editor.Commit(historyName);
     }
 
@@ -188,6 +214,6 @@ public sealed class PreviewSession
         _version++;
         _finished = true;
         Restore();
-        _backup.Dispose();
+        ReleaseBackup();
     }
 }

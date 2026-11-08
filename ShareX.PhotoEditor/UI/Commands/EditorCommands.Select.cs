@@ -84,11 +84,14 @@ public static partial class EditorCommands
         w.Commit(Strings.EditorCommands_CreateWorkPath);
     }
 
+    // A selection made before the document was cropped or resized no longer matches it, so it cannot be restored.
+    private static bool CanReselect(PhotoEditorWindow w) => w.Document?.LastSelection is PixelSurface last && last.Width == w.Document.Width && last.Height == w.Document.Height;
+
     private static void RegisterSelect()
     {
         R("select.all", Strings.EditorCommands_All, "Ctrl+A", w => { w.Document!.SetSelection(MaskOps.FromRect(w.Document.Bounds, w.Document.Width, w.Document.Height)); w.Commit(Strings.EditorCommands_SelectAll); }, HasDoc);
         R("select.deselect", Strings.EditorCommands_Deselect, "Ctrl+D", w => { w.Document!.SetSelection(null); w.Commit(Strings.EditorCommands_Deselect); }, HasSelection);
-        R("select.reselect", Strings.EditorCommands_Reselect, "Ctrl+Shift+D", w => { w.Document!.SetSelection(w.Document.LastSelection?.Clone()); w.Commit(Strings.EditorCommands_Reselect); }, w => w.Document?.LastSelection != null);
+        R("select.reselect", Strings.EditorCommands_Reselect, "Ctrl+Shift+D", w => { if (!CanReselect(w)) return; w.Document!.SetSelection(w.Document.LastSelection!.Clone()); w.Commit(Strings.EditorCommands_Reselect); }, CanReselect);
         R("select.inverse", Strings.EditorCommands_Inverse, "Ctrl+Shift+I", Inverse, HasDoc);
         R("select.allLayers", Strings.EditorCommands_AllLayers, "Ctrl+Alt+A", w => { PhotoDocument d = w.Document!; foreach (Layer l in d.AllLayers.Where(l => !l.IsBackground)) d.SelectedLayerIds.Add(l.Id); w.RefreshPanels(); }, HasDoc);
         R("select.colorRange", Strings.EditorCommands_ColorRangeEllipsis, null, w => _ = ColorRangeAsync(w), HasDoc);
