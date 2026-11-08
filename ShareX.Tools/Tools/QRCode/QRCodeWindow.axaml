@@ -46,13 +46,18 @@
                     <Border Grid.Column="0" Classes="tool-panel" Padding="16">
                         <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
                             <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.QRCodeWindow_Content}"/>
-                            <TextBox Grid.Row="1"
-                                     Text="{Binding Text}"
-                                     PlaceholderText="{x:Static localization:Strings.QRCodeWindow_Enter_text_or_a_URL_to_encode}"
-                                     AcceptsReturn="True"
-                                     TextWrapping="Wrap"
-                                     VerticalContentAlignment="Top"
-                                     MaxLength="2952"/>
+                            <Panel Grid.Row="1">
+                                <TextBox x:Name="ContentTextBox"
+                                         Text="{Binding Text}"
+                                         PlaceholderText="{x:Static localization:Strings.QRCodeWindow_Enter_text_or_a_URL_to_encode}"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"
+                                         VerticalContentAlignment="Top"
+                                         MaxLength="2952"/>
+                                <controls:TextBoxLinkHighlighter x:Name="ContentLinkHighlighter"
+                                                                 Target="{Binding #ContentTextBox}"
+                                                                 LinkBrush="{DynamicResource ShareX.Brush.Link}"/>
+                            </Panel>
                             <Grid Grid.Row="2" ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
                                 <TextBlock Grid.Column="0"
                                            Text="{x:Static localization:Strings.QRCodeWindow_QR_code_size}"
