@@ -73,6 +73,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.ShadowChanged += OnToolbarShadowChanged;
             toolbar.ShadowSettingsChanged += OnToolbarShadowSettingsChanged;
             toolbar.ArrowRoundedCornersChanged += OnToolbarArrowRoundedCornersChanged;
+            toolbar.FreehandArrowChanged += OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged += OnToolbarSpeechBalloonTailChanged;
             toolbar.EffectEllipseChanged += OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested += OnFavoriteEffectsMenuRequested;
@@ -114,6 +115,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.ShadowChanged -= OnToolbarShadowChanged;
             toolbar.ShadowSettingsChanged -= OnToolbarShadowSettingsChanged;
             toolbar.ArrowRoundedCornersChanged -= OnToolbarArrowRoundedCornersChanged;
+            toolbar.FreehandArrowChanged -= OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged -= OnToolbarSpeechBalloonTailChanged;
             toolbar.EffectEllipseChanged -= OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested -= OnFavoriteEffectsMenuRequested;
@@ -291,6 +293,17 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 arrowAnnotation.RoundedCorners = isEnabled;
                 AnnotationVisualFactory.UpdateVisualControl(arrowPath, arrowAnnotation);
+            }
+        }
+
+        private void OnToolbarFreehandArrowChanged(object? sender, bool isEnabled)
+        {
+            var selected = _selectionController.SelectedShape;
+
+            if (selected?.Tag is FreehandAnnotation freehandAnnotation && selected is global::Avalonia.Controls.Shapes.Path freehandPath)
+            {
+                freehandAnnotation.ShowArrowHead = isEnabled;
+                AnnotationVisualFactory.UpdateVisualControl(freehandPath, freehandAnnotation);
             }
         }
 

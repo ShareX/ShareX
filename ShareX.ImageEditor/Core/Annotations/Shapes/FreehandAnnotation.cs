@@ -38,6 +38,11 @@ public partial class FreehandAnnotation : Annotation, IPointBasedAnnotation
     public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
 
     /// <summary>
+    /// Draws a classic arrow head at the end of the stroke (the freehand arrow from ShareX 21).
+    /// </summary>
+    public bool ShowArrowHead { get; set; }
+
+    /// <summary>
     /// Simplification tolerance for smoothing
     /// </summary>
     public float SmoothingTolerance { get; set; } = 2.0f;

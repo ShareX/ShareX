@@ -506,6 +506,8 @@ public class EditorInputController
                     StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(vm.SelectedBorderStyle),
                     StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(vm.SelectedBorderStyle),
                     StrokeJoin = PenLineJoin.Round,
+                    // Fills the arrow head when the freehand arrow option is on.
+                    Fill = brush,
                     UseLayoutRounding = false,
                     IsHitTestVisible = false
                     // Data will be set on move
@@ -513,7 +515,7 @@ public class EditorInputController
 
                 path.SetValue(Panel.ZIndexProperty, 1);
 
-                var freehand = new FreehandAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, BorderStyle = vm.SelectedBorderStyle, Points = new List<SKPoint> { ToSKPoint(_startPoint) } };
+                var freehand = new FreehandAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, BorderStyle = vm.SelectedBorderStyle, ShowArrowHead = vm.FreehandArrow, Points = new List<SKPoint> { ToSKPoint(_startPoint) } };
                 ApplyShadowOptions(freehand, vm);
                 if (freehand.ShadowEnabled)
                 {

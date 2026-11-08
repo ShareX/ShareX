@@ -451,6 +451,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                     else if (vm.SelectedAnnotation is FreehandAnnotation freehand)
                     {
                         vm.SelectedBorderStyle = freehand.BorderStyle;
+                        vm.FreehandArrow = freehand.ShowArrowHead;
                     }
                     else if (vm.SelectedAnnotation is CursorAnnotation cursor)
                     {
