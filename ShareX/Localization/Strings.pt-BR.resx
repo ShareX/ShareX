@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>O que você quer na área de transferência?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>Não alterar a área de transferência</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>Não copia nem envia nada.</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Após a captura</value>
   </data>

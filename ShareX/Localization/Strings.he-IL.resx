@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>מה ברצונך שיהיה בלוח?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>השארת הלוח ללא שינוי</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>לא מעתיק ולא מעלה דבר.</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>לאחר הלכידה</value>
   </data>

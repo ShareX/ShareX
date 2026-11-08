@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>Wat wil je op het klembord?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>Klembord ongemoeid laten</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>Kopieert niets en uploadt niets.</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Na de opname</value>
   </data>

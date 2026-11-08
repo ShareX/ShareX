@@ -357,7 +357,7 @@ public sealed class AfterCaptureGoalOption
             AfterCaptureGoal.CopyFilePath => (Strings.AfterCaptureWindow_GoalCopyFilePath, Strings.AfterCaptureWindow_GoalCopyFilePathDescription),
             AfterCaptureGoal.CopyFolderPath => (Strings.AfterCaptureWindow_GoalCopyFolderPath, Strings.AfterCaptureWindow_GoalCopyFolderPathDescription),
             AfterCaptureGoal.CopyUrl => (Strings.AfterCaptureWindow_GoalCopyUrl, Strings.AfterCaptureWindow_GoalCopyUrlDescription),
-            _ => (Strings.AfterCaptureWindow_GoalLeaveClipboard, Strings.AfterCaptureWindow_GoalLeaveClipboardDescription)
+            _ => throw new ArgumentOutOfRangeException(nameof(goal), goal, null)
         };
     }
 }

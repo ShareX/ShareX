@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>What do you want on the clipboard?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>Leave clipboard alone</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>Copies nothing and does not upload.</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>After capture</value>
   </data>

@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>Apa yang ingin Anda taruh di papan klip?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>Biarkan papan klip</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>Tidak menyalin dan tidak mengunggah apa pun.</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Setelah menangkap</value>
   </data>

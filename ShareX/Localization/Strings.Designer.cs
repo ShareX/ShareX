@@ -4350,16 +4350,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("AfterCaptureWindow_GoalCopyUrlDescription", resourceCulture);
             }
         }
-        public static string AfterCaptureWindow_GoalLeaveClipboard {
-            get {
-                return ResourceManager.GetString("AfterCaptureWindow_GoalLeaveClipboard", resourceCulture);
-            }
-        }
-        public static string AfterCaptureWindow_GoalLeaveClipboardDescription {
-            get {
-                return ResourceManager.GetString("AfterCaptureWindow_GoalLeaveClipboardDescription", resourceCulture);
-            }
-        }
         public static string AfterCaptureWindow_RequiredHeading {
             get {
                 return ResourceManager.GetString("AfterCaptureWindow_RequiredHeading", resourceCulture);
