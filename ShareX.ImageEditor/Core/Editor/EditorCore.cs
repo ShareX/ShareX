@@ -1806,6 +1806,8 @@ public class EditorCore : IDisposable
         }
 
         _annotations.Clear();
+        _liveExpandOriginal?.Dispose();
+        _liveExpandOriginal = null;
         SourceImage?.Dispose();
         SourceImage = null;
     }
