@@ -660,11 +660,24 @@ namespace ShareX
                     bool imageSaved;
                     do
                     {
+                        // List every image format, with the one from the task settings selected.
                         string selectedPath = FileDialogHelpers.SaveFile(
                             Strings.UploadTask_DoAfterCaptureJobs_Choose_a_folder_to_save + " " + Path.GetFileName(Info.FileName),
-                            string.Format("*{0}|*{0}|{1}|*.*", Path.GetExtension(Info.FileName), Strings.WorkerTask_AllFilesFilter),
-                            Info.FileName, initialDirectory, Path.GetExtension(Info.FileName).TrimStart('.'));
+                            SkiaImageHelpers.SaveImageFilter + "|" + Strings.WorkerTask_AllFilesFilter + "|*.*",
+                            Info.FileName, initialDirectory, Path.GetExtension(Info.FileName).TrimStart('.'),
+                            SkiaImageHelpers.GetSaveImageFilterIndex(imageData.ImageFormat));
                         if (string.IsNullOrEmpty(selectedPath)) break;
+
+                        // If another format was picked, encode the image in that format. Later steps, such as
+                        // uploading, then use the same data as the saved file.
+                        if (SkiaImageHelpers.TryGetImageFormat(selectedPath, out EImageFormat selectedFormat) && selectedFormat != imageData.ImageFormat)
+                        {
+                            imageData.ImageStream.Dispose();
+                            imageData.ImageStream = TaskHelpers.SaveImageAsStream(Image, selectedFormat, Info.TaskSettings);
+                            imageData.ImageFormat = selectedFormat;
+                            Data = imageData.ImageStream;
+                        }
+
                         Info.FilePath = selectedPath;
                         HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(Info.FilePath);
                         imageSaved = imageData.Write(Info.FilePath);
