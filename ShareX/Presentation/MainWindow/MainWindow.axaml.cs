@@ -343,11 +343,6 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnScalingChanged(object? sender, EventArgs e)
     {
-        if (ThumbnailItemViewModel.RenderScaling == RenderScaling)
-        {
-            return;
-        }
-
         ThumbnailItemViewModel.RenderScaling = RenderScaling;
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
