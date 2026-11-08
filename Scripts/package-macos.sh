@@ -187,7 +187,13 @@ if command -v hdiutil >/dev/null; then
   cp -R "$app" "$staging/dmg/"
   ln -s /Applications "$staging/dmg/Applications"
   rm -f "$dmg_path"
-  hdiutil create -quiet -volname "ShareX $version" -srcfolder "$staging/dmg" -fs HFS+ -format UDZO "$dmg_path"
+  # hdiutil fails now and then with "Resource busy" on GitHub's Intel runners; a retry a few seconds later works.
+  for attempt in 1 2 3; do
+    hdiutil create -volname "ShareX $version" -srcfolder "$staging/dmg" -fs HFS+ -format UDZO "$dmg_path" >/dev/null && break
+    [ "$attempt" = 3 ] && { echo "hdiutil could not create $dmg_path" >&2; exit 1; }
+    rm -f "$dmg_path"
+    sleep 10
+  done
   if [ -n "${MACOS_SIGN_IDENTITY:-}" ]; then
     codesign --force --timestamp --sign "$MACOS_SIGN_IDENTITY" "$dmg_path"
     # One submission covers the disk image and the app inside it, so the app is stapled from the same ticket before it is zipped.
