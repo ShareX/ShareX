@@ -60,7 +60,7 @@ public partial class TextBoxLinkHighlighter : Control
     private string? _linksText;
     private IReadOnlyList<TextLink> _links = [];
     private Point? _lastPointerPosition;
-    private bool _showingHandCursor;
+    private TextPresenter? _handCursorElement;
 
     static TextBoxLinkHighlighter()
     {
@@ -182,7 +182,6 @@ public partial class TextBoxLinkHighlighter : Control
         textBox.RemoveHandler(PointerExitedEvent, OnTargetPointerExited);
         textBox.RemoveHandler(KeyDownEvent, OnTargetModifierKeyChanged);
         textBox.RemoveHandler(KeyUpEvent, OnTargetModifierKeyChanged);
-        SetHandCursor(textBox, false);
         SetTemplateParts(null, null);
     }
 
@@ -193,6 +192,8 @@ public partial class TextBoxLinkHighlighter : Control
 
     private void SetTemplateParts(ScrollViewer? scrollViewer, TextPresenter? presenter)
     {
+        SetHandCursor(false);
+
         if (_presenter != null)
         {
             _presenter.LayoutUpdated -= OnTargetLayoutUpdated;
@@ -313,56 +314,46 @@ public partial class TextBoxLinkHighlighter : Control
 
     private void OnTargetPointerMoved(object? sender, PointerEventArgs e)
     {
-        if (sender is not TextBox textBox)
-        {
-            return;
-        }
-
         _lastPointerPosition = _presenter == null ? null : e.GetPosition(_presenter);
-        UpdateCursor(textBox, e.KeyModifiers);
+        UpdateCursor(e.KeyModifiers.HasFlag(KeyModifiers.Control));
     }
 
     private void OnTargetPointerExited(object? sender, PointerEventArgs e)
     {
         _lastPointerPosition = null;
-
-        if (sender is TextBox textBox)
-        {
-            SetHandCursor(textBox, false);
-        }
+        SetHandCursor(false);
     }
 
     private void OnTargetModifierKeyChanged(object? sender, KeyEventArgs e)
     {
-        if (sender is TextBox textBox && e.Key is Key.LeftCtrl or Key.RightCtrl)
+        if (e.Key is Key.LeftCtrl or Key.RightCtrl)
         {
-            UpdateCursor(textBox, e.KeyModifiers);
+            UpdateCursor(e.RoutedEvent == KeyDownEvent);
         }
     }
 
-    private void UpdateCursor(TextBox textBox, KeyModifiers modifiers)
+    private void UpdateCursor(bool controlPressed)
     {
-        bool overLink = modifiers.HasFlag(KeyModifiers.Control) && _lastPointerPosition is { } position &&
-            HitTestLink(position) != null;
-        SetHandCursor(textBox, overLink);
+        SetHandCursor(controlPressed && _lastPointerPosition is { } position && HitTestLink(position) != null);
     }
 
-    private void SetHandCursor(TextBox textBox, bool show)
+    // The hand goes on the text presenter, the element under the pointer. Setting it on the text box does nothing,
+    // because the text box template gives the presenter's parent its own I-beam cursor.
+    private void SetHandCursor(bool show)
     {
-        if (show == _showingHandCursor)
+        TextPresenter? element = show ? _presenter : null;
+
+        if (element == _handCursorElement)
         {
             return;
         }
 
-        _showingHandCursor = show;
+        _handCursorElement?.ClearValue(CursorProperty);
+        _handCursorElement = element;
 
-        if (show)
+        if (element != null)
         {
-            textBox.Cursor = HandCursor;
-        }
-        else
-        {
-            textBox.ClearValue(CursorProperty);
+            element.Cursor = HandCursor;
         }
     }
 
