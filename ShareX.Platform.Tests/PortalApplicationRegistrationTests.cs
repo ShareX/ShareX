@@ -145,7 +145,8 @@ public class PortalApplicationRegistrationTests
             () => Task.FromException(new TimeoutException()), hasSandboxIdentity: false));
     }
 
-    [Fact]
+    // Linux paths: Windows reads "/home/..." differently, and this only runs on Linux.
+    [LinuxFact]
     public void GnomesHandOverCopyInPicturesIsDeletedButTheUsersScreenshotsAreKept()
     {
         DateTime requested = new DateTime(2026, 11, 8, 10, 0, 0, DateTimeKind.Utc);
