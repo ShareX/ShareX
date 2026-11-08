@@ -51,7 +51,10 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
         {
             (int hevcWidth, int hevcHeight) = FitSize(width, height, 8192, 8192 * 4352); // HEVC Level 6.2 and common hardware limits
             try { return new(graphics, options, hevcWidth, hevcHeight, VideoFormatGuids.Hevc); }
-            catch (Exception ex) when (ex is SharpGenException or NotSupportedException) { }
+            catch (Exception ex) when (ex is SharpGenException or NotSupportedException)
+            {
+                // No usable HEVC encoder for this size. Fall back to downscaled H.264 below.
+            }
         }
         return new(graphics, options, h264Width, h264Height, VideoFormatGuids.H264);
     }
