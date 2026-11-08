@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Presentation.Helpers;
+using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -45,6 +46,8 @@ public partial class FreehandAnnotation
             StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(BorderStyle),
             StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(BorderStyle),
             StrokeJoin = PenLineJoin.Round,
+            // Only the arrow head figure is filled; the stroke itself is an unfilled figure.
+            Fill = brush,
             Data = CreateSmoothedGeometry(),
             Tag = this
         };
@@ -90,7 +93,41 @@ public partial class FreehandAnnotation
         }
 
         context.EndFigure(false);
+
+        if (ShowArrowHead)
+        {
+            AppendArrowHead(context);
+        }
+
         return geometry;
+    }
+
+    private void AppendArrowHead(StreamGeometryContext context)
+    {
+        double headHalfWidth = StrokeWidth * ArrowAnnotation.ClassicArrowHeadWidthMultiplier;
+        SKPoint tip = Points[Points.Count - 1];
+
+        // Aim the head along the last stretch of the stroke, about one head length back,
+        // so jitter in the final few mouse points does not swing it around.
+        double headLength = headHalfWidth * 3;
+        SKPoint from = Points[0];
+        double travelled = 0;
+        for (int i = Points.Count - 2; i >= 0; i--)
+        {
+            SKPoint next = Points[i + 1];
+            travelled += Math.Sqrt(Math.Pow(next.X - Points[i].X, 2) + Math.Pow(next.Y - Points[i].Y, 2));
+            if (travelled >= headLength)
+            {
+                from = Points[i];
+                break;
+            }
+        }
+
+        var cap = ArrowAnnotation.ComputeArrowCapPointsFromTangent(tip.X, tip.Y, tip.X - from.X, tip.Y - from.Y, headHalfWidth);
+        if (cap is { } capPoints)
+        {
+            ArrowAnnotation.AppendArrowCapFigure(context, new Point(tip.X, tip.Y), capPoints);
+        }
     }
 
     internal void UpdateVisual(Avalonia.Controls.Shapes.Path freehandPath)

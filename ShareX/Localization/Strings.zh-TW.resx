@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>在檔案總管的右鍵選單中顯示「使用 ShareX 相片編輯器編輯」按鈕</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>刪除檔案前要求確認</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>大型檔案警告閾值（MB）</value>
   </data>
@@ -1329,6 +1332,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>儲存設定失敗</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>不再提醒</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>取消</value>
@@ -2396,6 +2402,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>自動將影像複製到剪貼簿</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>文字或圖形超出邊緣時自動擴展畫布</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>自動遞增編號：</value>
   </data>
@@ -2428,6 +2437,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>取消</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>新增畫布區域的填滿色彩：</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>擷取</value>

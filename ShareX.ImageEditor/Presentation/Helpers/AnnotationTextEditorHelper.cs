@@ -51,11 +51,19 @@ internal static class AnnotationTextEditorHelper
 
             args.Handled = true;
 
-            if (args.Key == Key.Enter && args.KeyModifiers.HasFlag(KeyModifiers.Control))
+            // Shift+Enter (common in chat apps and websites) or Ctrl+Enter inserts a new line; plain Enter finishes editing.
+            if (args.Key == Key.Enter && (args.KeyModifiers.HasFlag(KeyModifiers.Shift) || args.KeyModifiers.HasFlag(KeyModifiers.Control)))
             {
-                int caretIndex = textBox.CaretIndex;
-                textBox.Text = (textBox.Text ?? string.Empty).Insert(caretIndex, "\n");
-                textBox.CaretIndex = caretIndex + 1;
+                string text = textBox.Text ?? string.Empty;
+                int selectionStart = Math.Min(textBox.SelectionStart, textBox.SelectionEnd);
+                int selectionLength = Math.Abs(textBox.SelectionEnd - textBox.SelectionStart);
+                int insertIndex = selectionLength > 0 ? selectionStart : textBox.CaretIndex;
+                insertIndex = Math.Clamp(insertIndex, 0, text.Length);
+                selectionLength = Math.Min(selectionLength, text.Length - insertIndex);
+
+                textBox.Text = text.Remove(insertIndex, selectionLength).Insert(insertIndex, "\n");
+                textBox.ClearSelection();
+                textBox.CaretIndex = insertIndex + 1;
             }
             else
             {

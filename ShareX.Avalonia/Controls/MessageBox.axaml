@@ -45,10 +45,19 @@
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,1,0,0">
-            <StackPanel x:Name="ButtonPanel"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Right"
-                        Spacing="8"/>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <CheckBox x:Name="OptionCheckBox"
+                          IsVisible="False"
+                          Margin="8,0,0,0"
+                          FontWeight="Normal"
+                          Foreground="{DynamicResource ShareX.Brush.Text}"
+                          VerticalAlignment="Center"/>
+                <StackPanel x:Name="ButtonPanel"
+                            Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="8"/>
+            </Grid>
         </Border>
     </Grid>
 </Window>

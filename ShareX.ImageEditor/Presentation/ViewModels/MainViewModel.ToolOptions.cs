@@ -751,6 +751,24 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         }
 
         [ObservableProperty]
+        private bool _freehandArrow;
+
+        partial void OnFreehandArrowChanged(bool value)
+        {
+            bool isFreehand = ActiveTool == EditorTool.Freehand;
+
+            if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
+            {
+                isFreehand = SelectedAnnotation is FreehandAnnotation;
+            }
+
+            if (isFreehand)
+            {
+                Options.FreehandArrow = value;
+            }
+        }
+
+        [ObservableProperty]
         private bool _speechBalloonTail = true;
 
         partial void OnSpeechBalloonTailChanged(bool value)
@@ -988,6 +1006,13 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowArrowRoundedCorners => ShowArrowStyle;
 
+        public bool ShowFreehandArrow => ActiveTool switch
+        {
+            EditorTool.Freehand => true,
+            EditorTool.Select => _selectedAnnotation is FreehandAnnotation,
+            _ => false
+        };
+
         public bool ShowSpeechBalloonTail => ActiveTool switch
         {
             EditorTool.SpeechBalloon or EditorTool.Step => true,
@@ -1100,6 +1125,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OnPropertyChanged(nameof(ShowBorderStyle));
             OnPropertyChanged(nameof(ShowArrowStyle));
             OnPropertyChanged(nameof(ShowArrowRoundedCorners));
+            OnPropertyChanged(nameof(ShowFreehandArrow));
             OnPropertyChanged(nameof(ShowCursorType));
             OnPropertyChanged(nameof(ShowCornerRadius));
             OnPropertyChanged(nameof(ShowStrength));
@@ -1224,6 +1250,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     ShadowEnabled = Options.Shadow;
                     SelectedBorderStyle = NormalizeBorderStyle(Options.BorderStyle);
                     FontSize = Options.TextFontSize;
+                    FreehandArrow = Options.FreehandArrow;
                     break;
                 case EditorTool.Arrow:
                     SelectedColorValue = Options.BorderColor;

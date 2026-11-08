@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Afișați butonul "Editați în editorul foto ShareX" în meniul contextual al Windows Explorer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Solicită confirmare înainte de ștergerea fișierelor</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Prag de avertizare pentru fișiere mari (MB)</value>
   </data>
@@ -1329,6 +1332,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Nu s-a reușit salvarea setărilor</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Nu-mi mai aminti</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Anulare</value>
@@ -2396,6 +2402,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiază automat imaginea în clipboard</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Extinde automat pânza când textul sau formele depășesc marginea</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Număr cu incrementare automată:</value>
   </data>
@@ -2428,6 +2437,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Anulează</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Culoarea de umplere pentru zona de pânză adăugată:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Captură</value>

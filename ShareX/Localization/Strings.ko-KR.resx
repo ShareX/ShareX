@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX 사진 편집기에서 편집" 버튼 표시</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>파일을 삭제하기 전에 확인 요청</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>대용량 파일 경고 기준(MB)</value>
   </data>
@@ -1329,6 +1332,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to 저장 설정</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>다시 알리지 않음</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>취소</value>
@@ -2396,6 +2402,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>이미지를 클립보드에 자동 복사</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>텍스트나 도형이 가장자리를 벗어나면 캔버스를 자동으로 확장</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>자동 증가 번호:</value>
   </data>
@@ -2428,6 +2437,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>취소</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>추가된 캔버스 영역의 채우기 색:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>캡처</value>

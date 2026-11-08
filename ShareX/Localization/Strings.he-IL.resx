@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>הצג את כפתור "ערוך בעורך התמונות של ShareX" בתפריט ההקשר של סייר הקבצים</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>בקש אישור לפני מחיקת קבצים</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>סף אזהרה לקבצים גדולים (MB)</value>
   </data>
@@ -1329,6 +1332,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>שמירת ההגדרות נכשלה</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>אל תזכיר לי שוב</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>ביטול</value>
@@ -2396,6 +2402,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>העתק אוטומטית את התמונה ללוח</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>הרחבה אוטומטית של בד הציור כשטקסט או צורות חורגים מהקצה</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>מספר הגדל אוטומטית:</value>
   </data>
@@ -2428,6 +2437,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>ביטול</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>צבע מילוי לאזור בד הציור שנוסף:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>לכידה</value>

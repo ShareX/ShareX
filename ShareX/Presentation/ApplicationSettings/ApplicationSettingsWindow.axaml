@@ -13,9 +13,9 @@
         x:Class="ShareX.ApplicationSettingsWindow"
         x:DataType="local:ApplicationSettingsViewModel"
         Title="{x:Static res:Strings.ApplicationSettingsWindow_WindowTitle}"
-        Width="950"
+        Width="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         Height="720"
-        MinWidth="950"
+        MinWidth="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         MinHeight="600"
         WindowStartupLocation="CenterScreen">
 
@@ -689,6 +689,9 @@
                                     </StackPanel>
                                     <StackPanel>
                                         <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_TrayAutoExpandCaptureMenu}" IsChecked="{Binding TrayAutoExpandCaptureMenu, Mode=TwoWay}"/>
+                                    </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowFileDeleteConfirmation}" IsChecked="{Binding ShowFileDeleteConfirmation, Mode=TwoWay}"/>
                                     </StackPanel>
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
                                         <StackPanel VerticalAlignment="Center">

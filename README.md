@@ -189,3 +189,13 @@ What is left before a cross-platform release:
 * Google Cloud Storage guide: https://getsharex.com/docs/google-cloud-storage
 * Cloudflare R2 guide: https://getsharex.com/docs/cloudflare-r2
 * Brand assets: https://getsharex.com/brand-assets
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=sharex%2Fsharex&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=sharex/sharex&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=sharex/sharex&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=sharex/sharex&type=date&legend=top-left" />
+ </picture>
+</a>

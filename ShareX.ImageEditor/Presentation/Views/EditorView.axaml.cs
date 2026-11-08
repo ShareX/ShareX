@@ -458,6 +458,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                     else if (vm.SelectedAnnotation is FreehandAnnotation freehand)
                     {
                         vm.SelectedBorderStyle = freehand.BorderStyle;
+                        vm.FreehandArrow = freehand.ShowArrowHead;
                     }
                     else if (vm.SelectedAnnotation is CursorAnnotation cursor)
                     {
@@ -620,8 +621,13 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.PreviewImage))
                 {
                     bool isInitialImageLoad = vm.PreviewImage != null && _editorCore.SourceImage == null;
+                    OnImageChangedDuringCanvasResize();
                     ClearEffectPreviewCache();
-                    _zoomController.ResetScrollViewerOffset();
+                    // Auto canvas expansion keeps the current scroll position.
+                    if (!_suppressScrollResetForAutoExpand)
+                    {
+                        _zoomController.ResetScrollViewerOffset();
+                    }
                     // During smart padding, use UpdateSourceImage to preserve history and annotations
                     if (vm.IsSmartPaddingInProgress)
                     {
@@ -644,6 +650,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.ActiveTool))
                 {
                     _editorCore.ActiveTool = vm.ActiveTool;
+                    CancelCanvasResize();
                     _inputController.CancelClone();
                     _inputController.CancelCrop();
 
@@ -1045,7 +1052,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 }
             }
 
-            if (_inputController.CancelClone() || _inputController.CancelCrop())
+            if (CancelCanvasResize() || _inputController.CancelClone() || _inputController.CancelCrop())
             {
                 return true;
             }
@@ -1470,7 +1477,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                             case Key.PageDown: _editorCore.SendBackward(); e.Handled = true; break;
 
                             case Key.Enter:
-                                if (_inputController.TryConfirmCrop())
+                                if (TryConfirmCanvasResize() || _inputController.TryConfirmCrop())
                                 {
                                     e.Handled = true;
                                 }
@@ -1525,7 +1532,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 switch (e.Key)
                 {
                     case Key.Escape:
-                        if (_inputController.CancelClone() || _inputController.CancelCrop())
+                        if (CancelCanvasResize() || _inputController.CancelClone() || _inputController.CancelCrop())
                         {
                             e.Handled = true;
                         }

@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Cỡ chữ</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Mũi tên tự do</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Căn chỉnh ngang</value>
   </data>
@@ -290,6 +293,15 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Hủy (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Áp dụng</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Màu tô cho vùng được thêm</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Không thể tải ảnh từ bảng nhớ tạm.
@@ -1415,6 +1427,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Làm mờ</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Kích thước vùng vẽ</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Nhân bản</value>

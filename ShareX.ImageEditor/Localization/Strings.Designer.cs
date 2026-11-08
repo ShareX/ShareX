@@ -435,6 +435,11 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Roundedcorners", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_Freehandarrow {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Freehandarrow", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Toggletail {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Toggletail", resourceCulture);
@@ -1278,6 +1283,26 @@ namespace ShareX.ImageEditor.Localization {
         public static string EditorView_AchievementUnlocked {
             get {
                 return ResourceManager.GetString("EditorView_AchievementUnlocked", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationItemViewModel_CanvasSize {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationItemViewModel_CanvasSize", resourceCulture);
+            }
+        }
+        public static string EditorView_CanvasSizeApply {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeApply", resourceCulture);
+            }
+        }
+        public static string EditorView_CanvasSizeCancel {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeCancel", resourceCulture);
+            }
+        }
+        public static string EditorView_CanvasSizeFillColor {
+            get {
+                return ResourceManager.GetString("EditorView_CanvasSizeFillColor", resourceCulture);
             }
         }
         public static string EditorView_Crop {

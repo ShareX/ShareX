@@ -40,6 +40,9 @@ public interface IOcrService
 
     IReadOnlyList<OcrLanguage> GetLanguages();
 
+    /// <summary>The largest width or height, in pixels, the engine reads. Larger images are not enlarged past it.</summary>
+    int MaxImageDimension => int.MaxValue;
+
     /// <summary>
     /// The text in <paramref name="png"/>, one line per recognised line, or joined with spaces when <paramref name="singleLine"/>.
     /// A tag the platform does not know is matched on its language (for example "en-US" or "en" picks "eng" on Linux).

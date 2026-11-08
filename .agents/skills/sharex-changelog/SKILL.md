@@ -88,9 +88,20 @@ Never add a `Bug fixes` line to a release that has feature entries, and never ad
 
 Nest when an area has three or more entries, using a parent that ends in a colon, such as `Image editor improvements:`, `Scrolling capture improvements:`, or `Screen recording changes:`. A new feature can also carry its details as children, such as `Added "Step type" option for Step tool, with this options:`. Plain value and option lists have no trailing period, and their items are bare names.
 
-Order by what users care about most, with the headline features first. After those, keep related entries together and otherwise roughly follow commit order, with uploaders, languages, and removals grouped near each other.
+## Order the entries
 
-Do not write an intro paragraph unless the user asks for one. Only rare, milestone releases have one.
+Order entries from most to least interesting to users, not by commit order. Someone who reads only the first few lines should see the release's biggest features. Rank each entry by how many users it affects and how much it changes their daily use:
+
+1. Headline features: new capture or recording modes, new windows or tools, and major reworks of tools many users use every day, such as region capture, the image editor, screen recording, and uploading.
+2. Behavior changes users will notice right away, such as changed defaults, swapped keybinds, and moved settings, so they are not surprised.
+3. Smaller additions: new options, buttons, hotkeys, annotation tools, image effects, and after capture tasks.
+4. Uploaders and destinations, languages and translation milestones, platform and dependency upgrades, and removals, each kind grouped together.
+
+A nested group such as `Image editor improvements:` is ranked by its most important child, and its children are ordered the same way. Keep related entries next to each other when that does not push a major feature down. When two entries rank about the same, keep commit order.
+
+In an in-progress draft, keep the maintainer's existing order and place each added entry where its importance puts it.
+
+Do not write an intro paragraph unless the user asks for one. Only rare, milestone releases have one, and it goes above the list.
 
 ## Credit contributors
 

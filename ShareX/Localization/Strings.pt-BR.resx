@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Mostrar o botão "Editar no editor de fotos do ShareX" no menu de contexto do Explorador de Arquivos</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Pedir confirmação antes de excluir arquivos</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Limite de aviso para arquivos grandes (MB)</value>
   </data>
@@ -1329,6 +1332,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Falha ao salvar as configurações</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Não me lembrar novamente</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -2396,6 +2402,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiar imagem automaticamente para a área de transferência</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Expandir a tela automaticamente quando texto ou formas ultrapassarem a borda</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Número autoincremental:</value>
   </data>
@@ -2428,6 +2437,9 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Cor de preenchimento da área de tela adicionada:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Captura</value>

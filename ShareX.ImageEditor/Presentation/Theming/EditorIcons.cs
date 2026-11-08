@@ -48,6 +48,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ToolSmartEraser = ImageEditorIcons.SmartEraser;
         public const string ToolCrop = ImageEditorIcons.Crop;
         public const string ToolCutOut = ImageEditorIcons.CutOut;
+        public const string ToolCanvasSize = AppIcons.Expand;
         public const string ToolImage = ImageEditorIcons.Image;
         public const string ToolClone = ImageEditorIcons.Clone;
         public const string ToolEmoji = ImageEditorIcons.Emoji;
@@ -85,6 +86,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ToggleSpeechBalloonTail = AppIcons.MessageCheck;
         public const string ToggleRoundedCorners = ImageEffectIcons.RoundedCorner;
         public const string ToggleEllipseShape = ToolEllipse;
+        public const string ToggleFreehandArrow = ToolArrow;
         public const string PanelBackground = AppIcons.Wallpaper;
         public const string PanelEffects = AppIcons.Sparkles;
         public const string LayerFlatten = AppIcons.Layers;

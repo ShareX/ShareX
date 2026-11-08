@@ -72,6 +72,7 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     double ShadowOffsetX { get; set; }
     double ShadowOffsetY { get; set; }
     bool ArrowRoundedCorners { get; set; }
+    bool FreehandArrow { get; set; }
     bool SpeechBalloonTail { get; set; }
     bool EffectEllipse { get; set; }
     bool TextBold { get; set; }
@@ -101,6 +102,7 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool ShowTextItalic { get; }
     bool ShowShadow { get; }
     bool ShowArrowRoundedCorners { get; }
+    bool ShowFreehandArrow { get; }
     bool ShowSpeechBalloonTail { get; }
     bool ShowEffectEllipse { get; }
     bool ShowToolOptions { get; }

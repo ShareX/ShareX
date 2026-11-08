@@ -48,6 +48,8 @@ public sealed class WindowsOcrService : IOcrService
 {
     public FeatureSupport Support => FeatureSupport.Supported;
 
+    public int MaxImageDimension => (int)OcrEngine.MaxImageDimension;
+
     public IReadOnlyList<OcrLanguage> GetLanguages()
     {
         return OcrEngine.AvailableRecognizerLanguages.Select(language => new OcrLanguage(language.LanguageTag, language.DisplayName)).ToList();

@@ -3694,6 +3694,16 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutoCopyImageToClipboard", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_CanvasFillColor {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CanvasFillColor", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_AutoExpandCanvas {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoExpandCanvas", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_ShowInsertImageDialog {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ShowInsertImageDialog", resourceCulture);
@@ -5824,5 +5834,7 @@ namespace ShareX.Localization {
         public static string ApplicationSettingsWindow_SpacingSidebarLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebarLabel", resourceCulture);
         public static string ApplicationSettingsWindow_SpacingToolMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenusLabel", resourceCulture);
         public static string TaskSettingsWindow_NativeRecorderHDRToneMapping => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
+        public static string ApplicationSettingsWindow_ShowFileDeleteConfirmation => ResourceManager.GetString("ApplicationSettingsWindow_ShowFileDeleteConfirmation", resourceCulture);
+        public static string FileDeleteConfirmation_DontRemindAgain => ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
     }
 }

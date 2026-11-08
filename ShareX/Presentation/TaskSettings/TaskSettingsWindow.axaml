@@ -11,9 +11,9 @@
         d:DesignHeight="720"
         x:Class="ShareX.TaskSettingsWindow"
         x:DataType="local:TaskSettingsViewModel"
-        Width="950"
+        Width="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         Height="720"
-        MinWidth="950"
+        MinWidth="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         MinHeight="600"
         WindowStartupLocation="CenterScreen">
 

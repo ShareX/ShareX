@@ -415,6 +415,14 @@
                         <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleRoundedCorners}"/>
                     </Button>
                     <Button Classes="toolbar-button"
+                            Classes.active="{Binding FreehandArrow}"
+                            Click="OnFreehandArrowClick"
+                            IsVisible="{Binding ShowFreehandArrow}"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Freehandarrow}"
+                            AutomationProperties.Name="{x:Static res:Strings.AnnotationToolbar_Freehandarrow}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleFreehandArrow}"/>
+                    </Button>
+                    <Button Classes="toolbar-button"
                             Classes.active="{Binding SpeechBalloonTail}"
                             Click="OnSpeechBalloonTailClick"
                             IsVisible="{Binding ShowSpeechBalloonTail}"

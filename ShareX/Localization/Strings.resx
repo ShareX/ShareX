@@ -710,6 +710,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>Show "Edit with ShareX Photo editor" button in Windows Explorer context menu</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Ask for confirmation before deleting files</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Large-file warning threshold (MB)</value>
   </data>
@@ -1333,6 +1336,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to save settings</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Don't remind me again</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
@@ -2409,6 +2415,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Auto copy image to clipboard</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Auto-expand canvas when text or shapes go beyond the edge</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Auto increment number:</value>
   </data>
@@ -2441,6 +2450,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Fill color for added canvas area:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Capture</value>

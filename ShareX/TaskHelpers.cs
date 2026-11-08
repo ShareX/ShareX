@@ -711,6 +711,34 @@ namespace ShareX
             });
         }
 
+        /// <summary>
+        /// Asks before deleting local files unless the user turned the confirmation off with "Don't remind me again"
+        /// (it can be turned back on in Application settings).
+        /// </summary>
+        public static bool ConfirmFileDelete()
+        {
+            if (!ApplicationState.Settings.ShowFileDeleteConfirmation)
+            {
+                return true;
+            }
+
+            MessageBoxResult result = MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+                MessageBoxButtons.YesNo, Strings.FileDeleteConfirmation_DontRemindAgain, out bool dontRemindAgain);
+
+            if (result != MessageBoxResult.Yes)
+            {
+                return false;
+            }
+
+            if (dontRemindAgain)
+            {
+                ApplicationState.Settings.ShowFileDeleteConfirmation = false;
+            }
+
+            return true;
+        }
+
         public static void PrintImage(Image img)
         {
             if (ApplicationState.Settings.DontShowPrintSettingsDialog)

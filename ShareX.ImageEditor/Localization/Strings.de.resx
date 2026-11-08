@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Schriftgröße</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freihandpfeil</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Horizontale Ausrichtung</value>
   </data>
@@ -290,6 +293,15 @@ Möchten Sie die Änderungen speichern, bevor Sie den Bildeditor schließen?</va
   </data>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Abbrechen (Esc)</value>
+  </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Anwenden</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Füllfarbe für den hinzugefügten Bereich</value>
   </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Bild konnte nicht aus der Zwischenablage geladen werden.
@@ -1415,6 +1427,9 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Unschärfe</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Leinwandgröße</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonen</value>

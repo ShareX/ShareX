@@ -990,6 +990,8 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_AutoCloseEditorOnTask, () => options.AutoCloseEditorOnTask, value => options.AutoCloseEditorOnTask = value),
                 Check(Strings.TaskSettingsWindow_AutoCopyImageToClipboard, () => options.AutoCopyImageToClipboard, value => options.AutoCopyImageToClipboard = value),
                 Check(Strings.TaskSettingsWindow_ShowInsertImageDialog, () => options.ShowInsertImageDialog, value => options.ShowInsertImageDialog = value),
+                Check(Strings.TaskSettingsWindow_AutoExpandCanvas, () => options.AutoExpandCanvas, value => options.AutoExpandCanvas = value),
+                Row(Strings.TaskSettingsWindow_CanvasFillColor, CanvasFillColorPicker(options)),
                 Check(Strings.TaskSettingsWindow_ShowNotifications, () => options.ShowNotifications, value => options.ShowNotifications = value),
                 Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowImageEditorToolbarEditor(options))));
     }
@@ -1981,6 +1983,25 @@ internal sealed class TaskSettingsPageBuilder
             row.Children.Add(button);
         }
         return row;
+    }
+
+    private static Control CanvasFillColorPicker(ImageEditorOptions options)
+    {
+        var picker = new ShareX.ImageEditor.Presentation.Controls.ColorPickerDropdown
+        {
+            SelectedColorValue = options.CanvasFillColor,
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 130
+        };
+        picker.ColorChanged += (_, brush) =>
+        {
+            if (brush is ISolidColorBrush solid)
+            {
+                options.CanvasFillColor = solid.Color;
+            }
+        };
+        return picker;
     }
 
     private static Button Button(string text, Action action)

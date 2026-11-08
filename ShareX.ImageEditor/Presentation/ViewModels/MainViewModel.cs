@@ -99,6 +99,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         [ObservableProperty]
         private bool _showStartScreen = true;
 
+        /// <summary>
+        /// Lets the host turn off automatic canvas expansion, e.g. region capture where the canvas is the screen.
+        /// </summary>
+        public bool AllowAutoExpandCanvas { get; set; } = true;
+
         public bool AreToolbarsHidden => !ShowToolbars;
 
         public string ToggleToolbarsMenuHeader => ShowToolbars ? Strings.MainViewModel_HideToolbars : Strings.MainViewModel_ShowToolbars;

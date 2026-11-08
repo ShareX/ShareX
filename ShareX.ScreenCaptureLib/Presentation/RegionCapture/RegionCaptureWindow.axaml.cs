@@ -364,7 +364,8 @@ public partial class RegionCaptureWindow : Window
             ShowBottomToolbar = false,
             ShowToolbars = false,
             ShowStartScreen = false,
-            UseContinueWorkflow = false
+            UseContinueWorkflow = false,
+            AllowAutoExpandCanvas = false
         };
         _viewModel.SetHostToolbarItems(_request.EnableAnnotations
             ? RegionCaptureToolbar.CreateItems(_request.RegionCaptureOptions.ToolbarItems)
@@ -1242,6 +1243,14 @@ public partial class RegionCaptureWindow : Window
 
     private void UpdateHover(Point imagePoint)
     {
+        UpdateHoverRectangle(imagePoint);
+
+        // The size label also covers the hovered window, so refresh it whenever the hover changes.
+        UpdateSelectionInfo();
+    }
+
+    private void UpdateHoverRectangle(Point imagePoint)
+    {
         bool hoverBlocked = IsMultiRegionMode ? IsPointInAnyRegion(imagePoint) : HasValidSelection();
         if (_request == null || hoverBlocked || _interaction != RegionInteraction.None)
         {
@@ -1585,7 +1594,8 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Rect selection = _regionOverlay.SelectionRectangle;
+        // Show the size of the selection, or of the hovered window when nothing is selected yet.
+        Rect selection = _regionOverlay.ActiveRectangle;
         if (!RegionSelectionOverlay.IsValid(selection))
         {
             _selectionInfoPanel.IsVisible = false;
@@ -1594,7 +1604,10 @@ public partial class RegionCaptureWindow : Window
 
         int width = Math.Max(1, (int)Math.Round(selection.Width));
         int height = Math.Max(1, (int)Math.Round(selection.Height));
-        _selectionInfoText.Text = $"{width} × {height}";
+        // Same format as ShareX 21. X and Y are screen coordinates, matching the cursor info label.
+        int screenX = _request.ScreenBounds.X + (int)Math.Round(selection.X);
+        int screenY = _request.ScreenBounds.Y + (int)Math.Round(selection.Y);
+        _selectionInfoText.Text = $"X: {screenX} Y: {screenY} W: {width} H: {height}";
         _selectionInfoPanel.IsVisible = true;
 
         double scale = Math.Max(1, RenderScaling);

@@ -1900,9 +1900,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void DeleteSelectedFiles()
     {
-        if (MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
-            "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
-            MessageBoxButtons.YesNo) == MessageBoxResult.Yes)
+        if (TaskHelpers.ConfirmFileDelete())
         {
             _uploadInfoManager.DeleteFiles();
             RemoveSelectedTasks();
