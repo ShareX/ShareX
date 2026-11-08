@@ -31,15 +31,18 @@ using System.Linq;
 
 namespace ShareX;
 
-/// <summary>What the capture should leave on the clipboard. Each goal stands for the tasks needed to reach it.</summary>
+/// <summary>
+/// What the capture should leave on the clipboard. Each goal stands for the tasks needed to reach it. <see cref="None"/> is not
+/// offered as a choice: it means the saved tasks copy nothing, so no goal is selected and the clipboard is left alone.
+/// </summary>
 public enum AfterCaptureGoal
 {
+    None,
     CopyImage,
     CopyFile,
     CopyFilePath,
     CopyFolderPath,
-    CopyUrl,
-    LeaveClipboard
+    CopyUrl
 }
 
 public readonly record struct AfterCaptureJobs(AfterCaptureTasks Capture, AfterUploadTasks Upload);
@@ -74,7 +77,6 @@ public static class AfterCaptureGoals
             goals.Add(AfterCaptureGoal.CopyUrl);
         }
 
-        goals.Add(AfterCaptureGoal.LeaveClipboard);
         return goals;
     }
 
@@ -88,10 +90,10 @@ public static class AfterCaptureGoals
             _ when capture.HasFlag(AfterCaptureTasks.CopyFilePathToClipboard) => AfterCaptureGoal.CopyFilePath,
             _ when capture.HasFlag(AfterCaptureTasks.CopyFolderPathToClipboard) => AfterCaptureGoal.CopyFolderPath,
             _ when capture.HasFlag(AfterCaptureTasks.CopyImageToClipboard) => AfterCaptureGoal.CopyImage,
-            _ => AfterCaptureGoal.LeaveClipboard
+            _ => AfterCaptureGoal.None
         };
 
-        return available.Contains(goal) ? goal : AfterCaptureGoal.LeaveClipboard;
+        return available.Contains(goal) ? goal : AfterCaptureGoal.None;
     }
 
     public static bool NeedsSavedFile(AfterCaptureGoal goal) =>

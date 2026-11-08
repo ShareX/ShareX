@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>आप क्लिपबोर्ड पर क्या चाहते हैं?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>क्लिपबोर्ड को वैसा ही रहने दें</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>न कुछ कॉपी करता है, न अपलोड करता है।</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>चित्र लेने के बाद</value>
   </data>

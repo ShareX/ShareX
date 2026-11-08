@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>คุณต้องการให้มีอะไรในคลิปบอร์ด</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>ไม่เปลี่ยนคลิปบอร์ด</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>ไม่คัดลอกและไม่อัปโหลดสิ่งใด</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>หลังจับภาพ</value>
   </data>

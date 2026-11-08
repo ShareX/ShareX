@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>您想在剪贴板中放入什么?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>不更改剪贴板</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>不复制也不上传任何内容。</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>捕获后</value>
   </data>

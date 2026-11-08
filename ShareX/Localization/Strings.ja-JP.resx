@@ -217,12 +217,6 @@
   <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
     <value>クリップボードに何を入れますか?</value>
   </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboard" xml:space="preserve">
-    <value>クリップボードを変更しない</value>
-  </data>
-  <data name="AfterCaptureWindow_GoalLeaveClipboardDescription" xml:space="preserve">
-    <value>何もコピーせず、アップロードもしません。</value>
-  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>キャプチャ後</value>
   </data>
