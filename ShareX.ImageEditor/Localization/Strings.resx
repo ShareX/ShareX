@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Font size</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freehand arrow</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Horizontal alignment</value>
   </data>
@@ -83,9 +86,6 @@
   </data>
   <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
     <value>Rounded corners</value>
-  </data>
-  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
-    <value>Freehand arrow</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Save</value>
