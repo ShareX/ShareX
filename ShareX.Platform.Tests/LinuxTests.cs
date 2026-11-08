@@ -217,6 +217,59 @@ public class LinuxShellIntegrationTests
     }
 
     [Fact]
+    public void NautilusAndCajaScriptsGoInAShareXSubmenu()
+    {
+        string root = Path.Combine(Path.GetTempPath(), "sharex-tests-" + Guid.NewGuid().ToString("N"));
+
+        try
+        {
+            LinuxShellIntegrationService service = new LinuxShellIntegrationService(Path.Combine(root, "data"), Path.Combine(root, "config"));
+            service.Register(Edit);
+
+            Assert.Equal(Path.Combine(root, "data", "nautilus", "scripts", "ShareX", "Edit with ShareX"), service.NautilusScriptPath(Edit));
+            Assert.True(File.Exists(service.NautilusScriptPath(Edit)));
+            Assert.True(File.Exists(service.CajaScriptPath(Edit)));
+            Assert.True(service.IsRegistered(Edit));
+
+            service.Unregister(Edit);
+
+            Assert.False(Directory.Exists(Path.GetDirectoryName(service.NautilusScriptPath(Edit))));
+            Assert.False(Directory.Exists(Path.GetDirectoryName(service.CajaScriptPath(Edit))));
+        }
+        finally
+        {
+            if (Directory.Exists(root)) Directory.Delete(root, true);
+        }
+    }
+
+    [Fact]
+    public void ScriptsFromEarlierBuildsAreMovedButTheUsersOwnAreKept()
+    {
+        string root = Path.Combine(Path.GetTempPath(), "sharex-tests-" + Guid.NewGuid().ToString("N"));
+
+        try
+        {
+            LinuxShellIntegrationService service = new LinuxShellIntegrationService(Path.Combine(root, "data"), Path.Combine(root, "config"));
+            Directory.CreateDirectory(Path.GetDirectoryName(service.LegacyNautilusScriptPath(Edit))!);
+            Directory.CreateDirectory(Path.GetDirectoryName(service.LegacyCajaScriptPath(Edit))!);
+            File.WriteAllText(service.LegacyNautilusScriptPath(Edit), LinuxShellIntegrationService.CreateScript(Edit));
+            File.WriteAllText(service.LegacyCajaScriptPath(Edit), "#!/bin/sh\nexec my-editor \"$@\"\n");
+
+            Assert.True(service.IsRegistered(Edit));
+
+            service.Register(Edit);
+
+            Assert.False(File.Exists(service.LegacyNautilusScriptPath(Edit)));
+            Assert.True(File.Exists(service.LegacyCajaScriptPath(Edit)));
+            Assert.True(File.Exists(service.NautilusScriptPath(Edit)));
+        }
+        finally
+        {
+            if (Directory.Exists(root)) Directory.Delete(root, true);
+        }
+    }
+
+    [Fact]
     public void CreateNemoAction_UsesExtensions()
     {
         Assert.Contains("Extensions=any;dir;\n", LinuxShellIntegrationService.CreateNemoAction(Upload));
