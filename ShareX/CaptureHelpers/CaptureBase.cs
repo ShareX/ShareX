@@ -24,10 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.Localization;
 using ShareX.Platform;
 using System;
 using System.Drawing;
 using System.Threading.Tasks;
+using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
+using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
 
 namespace ShareX
 {
@@ -119,9 +123,16 @@ namespace ShareX
                 AllowAnnotation = true;
                 metadata = await ExecuteAsync(taskSettings);
             }
+            catch (OperationCanceledException ex)
+            {
+                // The user cancelled, for example in the desktop's own screenshot dialog.
+                DebugHelper.WriteException(ex);
+            }
             catch (Exception ex)
             {
                 DebugHelper.WriteException(ex);
+                // Say why nothing happened: the desktop refused the screenshot, or its screenshot service did not answer.
+                MessageBox.Show(ex.Message, "ShareX - " + Strings.ScreenCaptureFailed, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {

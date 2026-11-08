@@ -2215,6 +2215,9 @@ Please run ShareX as administrator to change personal folder path.</value>
   <data name="ScreenRecorderBar_Volume" xml:space="preserve">
     <value>Recording volume (%)</value>
   </data>
+  <data name="ScreenCaptureFailed" xml:space="preserve">
+    <value>Screen capture failed</value>
+  </data>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot delay: {0}s</value>
   </data>

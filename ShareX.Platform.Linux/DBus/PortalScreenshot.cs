@@ -37,6 +37,12 @@ internal static class PortalScreenshot
 {
     public const string Interface = "org.freedesktop.portal.Screenshot";
 
+    internal const string PermissionDeniedMessage =
+        "The desktop did not allow ShareX to take a screenshot. On GNOME this happens when \"Allow Apps to Take Screenshots?\" " +
+        "was denied or closed. To allow it again, run: gdbus call --session --dest org.freedesktop.impl.portal.PermissionStore " +
+        "--object-path /org/freedesktop/impl/portal/PermissionStore " +
+        "--method org.freedesktop.impl.portal.PermissionStore.SetPermission screenshot true screenshot '' \"['yes']\"";
+
     /// <summary>Takes a screenshot and returns the PNG file content. The portal writes the file, which is deleted afterwards when it is in a temporary location.</summary>
     /// <param name="interactive">Let the user pick the area or window in the desktop's own dialog.</param>
     public static async Task<byte[]> CaptureAsync(bool interactive, CancellationToken cancellationToken)
@@ -74,6 +80,14 @@ internal static class PortalScreenshot
         if (response.Cancelled)
         {
             throw new OperationCanceledException("The screenshot was cancelled.");
+        }
+
+        // GNOME asks once whether apps may take screenshots without the user picking the area ("Allow Apps to Take
+        // Screenshots?"), and for an app that is not sandboxed it remembers the answer for every such app. After a "Deny",
+        // or a dialog closed without an answer, every non-interactive screenshot fails with response 2 and no dialog.
+        if (!interactive && response.Code == 2)
+        {
+            throw new UnauthorizedAccessException(PermissionDeniedMessage);
         }
 
         if (!response.Success || !response.Results.TryGetValue("uri", out VariantValue uriValue))

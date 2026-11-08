@@ -677,6 +677,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string Helpers_OpenFolder_Folder_not_exist_ {
             get { return ResourceManager.GetString("Helpers_OpenFolder_Folder_not_exist_", resourceCulture); }
         }
+        public static string Helpers_OpenPath_Failed {
+            get { return ResourceManager.GetString("Helpers_OpenPath_Failed", resourceCulture); }
+        }
         public static string HotkeyType_AbortScreenRecording {
             get { return ResourceManager.GetString("HotkeyType_AbortScreenRecording", resourceCulture); }
         }

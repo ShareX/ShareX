@@ -258,21 +258,16 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    using (Process process = new Process())
+                    // The default app on Windows, xdg-open or gio on Linux, open on macOS. Linux and macOS report whether it opened.
+                    if (PlatformServices.Current.Shell.OpenPath(filePath))
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo()
-                        {
-                            FileName = filePath,
-                            UseShellExecute = true
-                        };
-
-                        process.StartInfo = psi;
-                        process.Start();
+                        DebugHelper.WriteLine("File opened: " + filePath);
+                        return true;
                     }
 
-                    DebugHelper.WriteLine("File opened: " + filePath);
-
-                    return true;
+                    DebugHelper.WriteLine($"OpenFile({filePath}) failed: no application opened it.");
+                    MessageBox.Show(Localization.Strings.Helpers_OpenPath_Failed + Environment.NewLine + filePath, "ShareX",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 catch (Exception e)
                 {
@@ -292,28 +287,29 @@ namespace ShareX.HelpersLib
         {
             if (!string.IsNullOrEmpty(folderPath) && Directory.Exists(folderPath))
             {
-                if (!folderPath.EndsWith(@"\"))
+                // The trailing separator makes Explorer open the folder itself. On Linux and macOS a backslash is part of the
+                // name, so xdg-open or open would be asked for a folder that does not exist.
+                if (OperatingSystem.IsWindows() && !folderPath.EndsWith(@"\"))
                 {
                     folderPath += @"\";
                 }
 
                 try
                 {
-                    using (Process process = new Process())
+                    // Explorer on Windows, the file manager through xdg-open or gio on Linux, Finder on macOS.
+                    if (PlatformServices.Current.Shell.OpenPath(folderPath))
                     {
-                        ProcessStartInfo psi = new ProcessStartInfo()
-                        {
-                            FileName = folderPath,
-                            UseShellExecute = true
-                        };
-
-                        process.StartInfo = psi;
-                        process.Start();
+                        DebugHelper.WriteLine("Folder opened: " + folderPath);
+                        return true;
                     }
 
-                    DebugHelper.WriteLine("Folder opened: " + folderPath);
+                    DebugHelper.WriteLine($"OpenFolder({folderPath}) failed: no file manager opened it.");
 
-                    return true;
+                    if (allowMessageBox)
+                    {
+                        MessageBox.Show(Localization.Strings.Helpers_OpenPath_Failed + Environment.NewLine + folderPath, "ShareX",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 catch (Exception e)
                 {

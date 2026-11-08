@@ -5629,6 +5629,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("HotkeyManager_ShowFailedHotkeys_Unable_to_register_hotkey", resourceCulture);
             }
         }
+        public static string ScreenCaptureFailed {
+            get {
+                return ResourceManager.GetString("ScreenCaptureFailed", resourceCulture);
+            }
+        }
         public static string ScreenshotDelay0S {
             get {
                 return ResourceManager.GetString("ScreenshotDelay0S", resourceCulture);

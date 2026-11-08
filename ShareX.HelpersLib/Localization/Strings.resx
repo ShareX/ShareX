@@ -564,6 +564,9 @@ Do you still want to run it?</value>
   <data name="Helpers_OpenFolder_Folder_not_exist_" xml:space="preserve">
     <value>Folder does not exist:</value>
   </data>
+  <data name="Helpers_OpenPath_Failed" xml:space="preserve">
+    <value>Could not open this. Check that a default application (or file manager, for a folder) is set for it:</value>
+  </data>
   <data name="Helpers_Timeout" xml:space="preserve">
     <value>Timeout</value>
   </data>
