@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Aucun élément ne correspond aux filtres actuels</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Nom du processus</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Renommer</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Renommer le fichier</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Réinitialiser les colonnes</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Sélectionnez le dossier à importer</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} fichiers importés avec succès.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Étiquette</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>ces {0:N0} fichiers</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Retirer des favoris</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Titre de la fenêtre</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Avancé</value>

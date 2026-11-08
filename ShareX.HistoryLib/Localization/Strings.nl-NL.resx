@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Geen items komen overeen met de huidige filters</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Procesnaam</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Naam wijzigen</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Bestandsnaam wijzigen</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Kolommen herstellen</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Selecteer de te importeren map</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} bestanden geïmporteerd.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Tag</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>deze {0:N0} bestanden</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Uit favorieten verwijderen</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Venstertitel</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Geavanceerd</value>
