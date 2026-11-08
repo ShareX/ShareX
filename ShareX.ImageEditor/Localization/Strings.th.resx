@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>ระยะขอบ</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>สร้างใหม่จากภาพหน้าจอ (เต็มหน้าจอ)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>สร้างใหม่จากภาพหน้าจอ (พื้นที่)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>เปิดรูปภาพ</value>
   </data>

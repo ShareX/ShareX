@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>邊界</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>從螢幕擷取畫面新增 (全螢幕)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>從螢幕擷取畫面新增 (區域)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>開啟影像</value>
   </data>

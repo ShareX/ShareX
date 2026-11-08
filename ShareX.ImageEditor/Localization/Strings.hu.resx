@@ -351,6 +351,12 @@ A vágólap nem tartalmaz képet.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margó</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Új képernyőképből (teljes képernyő)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Új képernyőképből (terület)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Kép megnyitása</value>
   </data>

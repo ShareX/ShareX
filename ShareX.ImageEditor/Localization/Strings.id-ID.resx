@@ -351,6 +351,12 @@ Papan klip tidak berisi gambar.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Baru dari tangkapan layar (layar penuh)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Baru dari tangkapan layar (wilayah)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Buka gambar</value>
   </data>

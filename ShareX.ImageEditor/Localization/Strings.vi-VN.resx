@@ -351,6 +351,12 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Lề</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Mới từ ảnh chụp màn hình (toàn màn hình)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Mới từ ảnh chụp màn hình (vùng)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Mở ảnh</value>
   </data>

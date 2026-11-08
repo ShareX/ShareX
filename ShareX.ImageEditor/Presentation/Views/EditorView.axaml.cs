@@ -1978,7 +1978,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 onOpenRecentFile: path =>
                 {
                     vm.RequestLoadRecentFile(path);
-                });
+                })
+            {
+                NewFromScreenshotRegionCommand = vm.CanCaptureRegion ? vm.NewFromScreenshotRegionCommand : null,
+                NewFromScreenshotFullscreenCommand = vm.CanCaptureFullscreen ? vm.NewFromScreenshotFullscreenCommand : null
+            };
 
             vm.ModalContent = dialog;
             vm.IsModalOpen = true;
@@ -2090,6 +2094,51 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 EditorServices.ReportError(nameof(EditorView), "Failed to load image from clipboard.", ex);
                 ShowStartScreenStatus(vm, Strings.EditorView_FailedToLoadImageFromClipboard);
+            }
+        }
+
+        private bool _isCapturingScreenshot;
+
+        private async void OnNewFromScreenshotRequested(object? sender, Func<Task<SKBitmap?>> capture)
+        {
+            if (DataContext is not MainViewModel vm || _isCapturingScreenshot) return;
+
+            _isCapturingScreenshot = true;
+            Window? window = TopLevel.GetTopLevel(this) as Window;
+            SKBitmap? skBitmap = null;
+
+            try
+            {
+                if (window != null)
+                {
+                    window.Hide();
+
+                    // Give the window time to disappear from the screen before it is captured.
+                    await Task.Delay(250);
+                }
+
+                skBitmap = await capture();
+            }
+            catch (Exception ex)
+            {
+                EditorServices.ReportError(nameof(EditorView), "Failed to capture screenshot.", ex);
+            }
+            finally
+            {
+                if (window != null)
+                {
+                    window.Show();
+                    window.Activate();
+                }
+
+                _isCapturingScreenshot = false;
+            }
+
+            // A cancelled capture returns null and leaves the current image untouched.
+            if (skBitmap != null)
+            {
+                vm.CloseModalCommand.Execute(null);
+                LoadBitmapIntoEditor(vm, skBitmap, null);
             }
         }
 

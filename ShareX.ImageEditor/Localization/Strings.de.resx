@@ -351,6 +351,12 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Außenabstand</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Neu aus Screenshot (Vollbild)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Neu aus Screenshot (Bereich)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Bild öffnen</value>
   </data>

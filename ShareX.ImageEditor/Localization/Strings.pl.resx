@@ -351,6 +351,12 @@ Schowek nie zawiera obrazu.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margines</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (pełny ekran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nowy ze zrzutu ekranu (obszar)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Otwórz obraz</value>
   </data>

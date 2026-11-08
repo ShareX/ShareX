@@ -34,6 +34,7 @@ using ShareX.ImageEditor.Core.Editor;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Emoji;
+using SkiaSharp;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels
@@ -132,6 +133,43 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public event EventHandler? LoadFromClipboardRequested;
         public event EventHandler<string>? LoadFromUrlRequested;
         public event EventHandler<string>? LoadRecentFileRequested;
+        public event EventHandler<Func<Task<SKBitmap?>>>? NewFromScreenshotRequested;
+
+        private Func<Task<SKBitmap?>>? _captureRegionHandler;
+        /// <summary>
+        /// Host-provided region capture. The New from screenshot (region) actions are shown only when it is set.
+        /// </summary>
+        public Func<Task<SKBitmap?>>? CaptureRegionHandler
+        {
+            get => _captureRegionHandler;
+            set
+            {
+                _captureRegionHandler = value;
+                OnPropertyChanged(nameof(CanCaptureRegion));
+                OnPropertyChanged(nameof(CanCaptureScreenshot));
+                NewFromScreenshotRegionCommand.NotifyCanExecuteChanged();
+            }
+        }
+
+        private Func<Task<SKBitmap?>>? _captureFullscreenHandler;
+        /// <summary>
+        /// Host-provided full screen capture. The New from screenshot (full screen) actions are shown only when it is set.
+        /// </summary>
+        public Func<Task<SKBitmap?>>? CaptureFullscreenHandler
+        {
+            get => _captureFullscreenHandler;
+            set
+            {
+                _captureFullscreenHandler = value;
+                OnPropertyChanged(nameof(CanCaptureFullscreen));
+                OnPropertyChanged(nameof(CanCaptureScreenshot));
+                NewFromScreenshotFullscreenCommand.NotifyCanExecuteChanged();
+            }
+        }
+
+        public bool CanCaptureRegion => _captureRegionHandler != null;
+        public bool CanCaptureFullscreen => _captureFullscreenHandler != null;
+        public bool CanCaptureScreenshot => CanCaptureRegion || CanCaptureFullscreen;
 
         [ObservableProperty]
         private bool _useContinueWorkflow;
@@ -1335,6 +1373,24 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private void OpenImage()
         {
             OpenImageRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        [RelayCommand(CanExecute = nameof(CanCaptureRegion))]
+        private void NewFromScreenshotRegion()
+        {
+            if (_captureRegionHandler != null)
+            {
+                NewFromScreenshotRequested?.Invoke(this, _captureRegionHandler);
+            }
+        }
+
+        [RelayCommand(CanExecute = nameof(CanCaptureFullscreen))]
+        private void NewFromScreenshotFullscreen()
+        {
+            if (_captureFullscreenHandler != null)
+            {
+                NewFromScreenshotRequested?.Invoke(this, _captureFullscreenHandler);
+            }
         }
 
         public void RequestStartScreen()

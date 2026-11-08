@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>हाशिया</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>स्क्रीनशॉट से नया (पूर्ण स्क्रीन)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>स्क्रीनशॉट से नया (क्षेत्र)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>छवि खोलें</value>
   </data>

@@ -191,6 +191,20 @@
                                                         <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.History}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotRegionEllipsis}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotRegionCommand}"
+                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureRegion}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureRegion}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotFullScreen}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotFullscreenCommand}"
+                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureFullscreen}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureFullscreen}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
                                                 <Separator/>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Save}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"

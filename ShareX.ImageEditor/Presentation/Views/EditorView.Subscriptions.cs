@@ -56,6 +56,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.LoadFromClipboardRequested += OnLoadFromClipboardRequested;
             vm.LoadFromUrlRequested += OnLoadFromUrlRequested;
             vm.LoadRecentFileRequested += OnLoadRecentFileRequested;
+            vm.NewFromScreenshotRequested += OnNewFromScreenshotRequested;
             vm.CopyRequested += OnCopyImageRequested;
             vm.SaveRequested += OnSaveRequested;
             vm.SaveAsRequested += OnSaveAsRequested;
@@ -94,6 +95,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.LoadFromClipboardRequested -= OnLoadFromClipboardRequested;
             vm.LoadFromUrlRequested -= OnLoadFromUrlRequested;
             vm.LoadRecentFileRequested -= OnLoadRecentFileRequested;
+            vm.NewFromScreenshotRequested -= OnNewFromScreenshotRequested;
             vm.CopyRequested -= OnCopyImageRequested;
             vm.SaveRequested -= OnSaveRequested;
             vm.SaveAsRequested -= OnSaveAsRequested;
