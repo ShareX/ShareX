@@ -285,6 +285,15 @@ Chcete před zavřením editoru obrázků změny uložit?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Zrušit (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Barva výplně přidané oblasti</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nepodařilo se načíst obrázek ze schránky.
 Schránka neobsahuje obrázek.</value>
@@ -1409,6 +1418,9 @@ Schránka neobsahuje obrázek.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmazání</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Velikost plátna</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonovat</value>

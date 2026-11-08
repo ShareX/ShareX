@@ -34,6 +34,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     public const string FileItemId = "File";
     public const string BackgroundItemId = "Background";
     public const string ImageEffectsItemId = "ImageEffects";
+    public const string CanvasSizeItemId = "CanvasSize";
 
     private sealed record ToolbarItemDefinition(
         string Id,
@@ -71,6 +72,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         CreateToolDefinition(EditorTool.Spotlight, Strings.ToolbarCustomizationItemViewModel_Spotlight, EditorIcons.ToolSpotlight, "S"),
         CreateToolDefinition(EditorTool.Crop, Strings.ToolbarCustomizationItemViewModel_Crop, EditorIcons.ToolCrop, "C", beginGroupByDefault: true),
         CreateToolDefinition(EditorTool.CutOut, Strings.ToolbarCustomizationItemViewModel_CutOut, EditorIcons.ToolCutOut, "U"),
+        new ToolbarItemDefinition(CanvasSizeItemId, null, Strings.ToolbarCustomizationItemViewModel_CanvasSize, EditorIcons.ToolCanvasSize, "X", true, true, false),
         new ToolbarItemDefinition(BackgroundItemId, null, Strings.ToolbarCustomizationItemViewModel_Background, EditorIcons.PanelBackground, "", true, true, false),
         new ToolbarItemDefinition(ImageEffectsItemId, null, Strings.ToolbarCustomizationItemViewModel_ImageEffects, EditorIcons.PanelEffects, "", true, true, false)
     };

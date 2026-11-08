@@ -2390,6 +2390,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>画像をクリップボードに自動コピー</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>テキストや図形が端からはみ出したらキャンバスを自動的に拡張する</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>自動増分番号:</value>
   </data>
@@ -2422,6 +2425,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>キャンセル</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>追加されたキャンバス領域の塗りつぶし色:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>キャプチャ</value>

@@ -285,6 +285,15 @@ Resim düzenleyiciyi kapatmadan önce değişiklikleri kaydetmek ister misiniz?<
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>İptal (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Eklenen alanın dolgu rengi</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Panodan görüntü yüklenemedi.
 Panoda görüntü yok.</value>
@@ -1409,6 +1418,9 @@ Panoda görüntü yok.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Bulanıklaştır</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonla</value>

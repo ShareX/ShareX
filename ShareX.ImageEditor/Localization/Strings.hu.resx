@@ -285,6 +285,15 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Mégse (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>A hozzáadott terület kitöltőszíne</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nem sikerült betölteni a képet a vágólapról.
 A vágólap nem tartalmaz képet.</value>
@@ -1409,6 +1418,9 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Elmosás</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Vászonméret</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klónozás</value>

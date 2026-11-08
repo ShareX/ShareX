@@ -2390,6 +2390,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copier automatiquement l’image dans le presse-papiers</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Agrandir automatiquement la toile lorsque du texte ou des formes dépassent le bord</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Numéro auto-incrémenté :</value>
   </data>
@@ -2422,6 +2425,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Annuler</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Couleur de remplissage de la zone de toile ajoutée :</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Capture</value>

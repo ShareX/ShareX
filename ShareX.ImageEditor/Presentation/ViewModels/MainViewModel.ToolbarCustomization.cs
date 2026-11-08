@@ -43,6 +43,23 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public ReadOnlyObservableCollection<ToolbarCustomizationItemViewModel> ToolbarItems { get; private set; } = null!;
         public ReadOnlyObservableCollection<ToolbarCustomizationItemViewModel> VisibleToolbarItems { get; private set; } = null!;
         public event EventHandler? FileMenuRequested;
+        /// <summary>Raised when the canvas size tool button (or its hotkey) is used.</summary>
+        public event EventHandler? CanvasSizeModeRequested;
+
+        private bool _isCanvasSizeModeActive;
+
+        /// <summary>True while the canvas size frame with handles is shown.</summary>
+        public bool IsCanvasSizeModeActive
+        {
+            get => _isCanvasSizeModeActive;
+            set
+            {
+                if (SetProperty(ref _isCanvasSizeModeActive, value))
+                {
+                    RefreshToolbarItemActiveStates();
+                }
+            }
+        }
 
         private void InitializeToolbarCustomization()
         {
@@ -124,6 +141,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case ToolbarCustomizationItemViewModel.BackgroundItemId:
                     ToggleSettingsPanelCommand.Execute(null);
                     break;
+                case ToolbarCustomizationItemViewModel.CanvasSizeItemId:
+                    CanvasSizeModeRequested?.Invoke(this, EventArgs.Empty);
+                    break;
                 case ToolbarCustomizationItemViewModel.ImageEffectsItemId:
                     if (ToggleEffectsPanelCommand.CanExecute(null))
                     {
@@ -168,6 +188,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     {
                         ToolbarCustomizationItemViewModel.BackgroundItemId => IsSettingsPanelOpen,
                         ToolbarCustomizationItemViewModel.ImageEffectsItemId => IsEffectsPanelOpen,
+                        ToolbarCustomizationItemViewModel.CanvasSizeItemId => IsCanvasSizeModeActive,
                         _ => false
                     };
             }

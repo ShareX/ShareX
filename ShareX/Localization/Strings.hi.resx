@@ -2390,6 +2390,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>छवि को क्लिपबोर्ड पर स्वतः कॉपी करें</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>टेक्स्ट या आकृतियाँ किनारे से बाहर जाने पर कैनवास अपने आप बढ़ाएँ</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>स्वतः बढ़ने वाली संख्या:</value>
   </data>
@@ -2422,6 +2425,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>जोड़े गए कैनवास क्षेत्र का भराव रंग:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>कैप्चर करें</value>

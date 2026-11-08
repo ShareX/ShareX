@@ -2390,6 +2390,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiar imagem automaticamente para a área de transferência</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Expandir a tela automaticamente quando texto ou formas ultrapassarem o limite</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Número autoincremental:</value>
   </data>
@@ -2422,6 +2425,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Cor de preenchimento da área de tela adicionada:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Captura</value>

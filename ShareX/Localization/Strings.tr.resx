@@ -2390,6 +2390,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Resmi otomatik olarak panoya kopyala</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Metin veya şekiller kenarı aştığında tuvali otomatik genişlet</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Otomatik artan sayı:</value>
   </data>
@@ -2422,6 +2425,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>İptal</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Eklenen tuval alanının dolgu rengi:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Yakalama</value>

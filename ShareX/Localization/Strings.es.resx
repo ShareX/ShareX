@@ -2390,6 +2390,9 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiar automáticamente la imagen al portapapeles</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Ampliar el lienzo automáticamente cuando el texto o las formas sobrepasen el borde</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Número autoincremental:</value>
   </data>
@@ -2422,6 +2425,9 @@ Do you want to abort the active grabación de pantalla?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Color de relleno del área de lienzo añadida:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Captura</value>

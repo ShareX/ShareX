@@ -285,6 +285,15 @@ Vil du gemme ændringerne, før billededitoren lukkes?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annuller (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Anvend</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Fyldfarve til det tilføjede område</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Det var ikke muligt at indlæse billedet fra Udklipsholder.
 Udklipsholder indeholder intet billede.</value>
@@ -1409,6 +1418,9 @@ Udklipsholder indeholder intet billede.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sløring</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Arbejdsområdets størrelse</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klon</value>

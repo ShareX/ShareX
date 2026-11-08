@@ -285,6 +285,15 @@ Vill du spara ändringarna innan bildredigeraren stängs?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Avbryt (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Tillämpa</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Fyllnadsfärg för det tillagda området</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Det gick inte att läsa in bilden från Urklipp.
 Urklipp innehåller ingen bild.</value>
@@ -1409,6 +1418,9 @@ Urklipp innehåller ingen bild.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Oskärpa</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Arbetsytans storlek</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klona</value>

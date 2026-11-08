@@ -996,6 +996,8 @@ public class EditorInputController
 
                         // Update HasAnnotations state for Clear button
                         vm.HasAnnotations = true;
+
+                        _view.ScheduleAutoExpandCanvas(annotation);
                     }
                 }
             }
@@ -1611,6 +1613,8 @@ public class EditorInputController
             {
                 tb.LostFocus -= OnCreationLostFocus;
 
+                tb.PropertyChanged -= OnCreationTextBoxPropertyChanged;
+
                 tb.BorderThickness = new Thickness(0);
                 if (string.IsNullOrWhiteSpace(tb.Text))
                 {
@@ -1618,6 +1622,9 @@ public class EditorInputController
                     {
                         panel.Children.Remove(tb);
                     }
+
+                    // Text discarded: drop the temporary canvas growth.
+                    _view?.FinishLiveTextExpansion(null);
                 }
                 else
                 {
@@ -1671,11 +1678,28 @@ public class EditorInputController
                             // Auto-select the newly created text
                             _selectionController.SetSelectedShape(control);
                         }
+
+                        // Replace the temporary growth with an exact, undoable fit.
+                        _view?.FinishLiveTextExpansion(annotation);
+                    }
+                    else
+                    {
+                        _view?.FinishLiveTextExpansion(null);
                     }
                 }
             }
         }
 
+        // Grow the canvas while typing so long captions are not cut off at the image edge.
+        void OnCreationTextBoxPropertyChanged(object? s, AvaloniaPropertyChangedEventArgs args)
+        {
+            if (args.Property == Visual.BoundsProperty && s is TextBox tb)
+            {
+                _view?.OnLiveTextEditorBoundsChanged(tb);
+            }
+        }
+
+        textBox.PropertyChanged += OnCreationTextBoxPropertyChanged;
         textBox.LostFocus += OnCreationLostFocus;
 
         AnnotationTextEditorHelper.AttachKeyHandlers(textBox, () => _view.Focus());

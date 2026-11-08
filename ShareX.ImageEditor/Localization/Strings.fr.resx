@@ -285,6 +285,15 @@ Voulez-vous les enregistrer avant de fermer l’éditeur d’images ?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annuler (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Couleur de remplissage de la zone ajoutée</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Impossible de charger l’image depuis le presse-papiers.
 Le presse-papiers ne contient aucune image.</value>
@@ -1409,6 +1418,9 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Flou</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Taille de la toile</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Cloner</value>
