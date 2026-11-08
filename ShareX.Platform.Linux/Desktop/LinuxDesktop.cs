@@ -102,7 +102,7 @@ public sealed class LinuxDesktop
         {
             LinuxScreenCaptureService.Backend.X11 => new X11CaptureBackend(),
             LinuxScreenCaptureService.Backend.Grim => new GrimCaptureBackend(runner),
-            LinuxScreenCaptureService.Backend.Portal => new PortalCaptureBackend(),
+            LinuxScreenCaptureService.Backend.Portal => new PortalCaptureBackend(tryKWin: Kind == LinuxDesktopKind.Kde && !info.IsSandboxed),
             _ => null
         };
 

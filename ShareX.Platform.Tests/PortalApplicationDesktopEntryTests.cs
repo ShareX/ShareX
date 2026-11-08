@@ -234,6 +234,40 @@ public class PortalApplicationDesktopEntryTests
         Assert.Null(result.Error);
     }
 
+    [UnixFact]
+    public void NativeBuildMayUseKWinScreenshotsButTheDotnetHostMayNot()
+    {
+        WithDirectory(root =>
+        {
+            string executable = CreateFile(root, "ShareX", "synthetic executable");
+            string nativeHome = Path.Combine(root, "native");
+            Assert.True(PortalApplicationDesktopEntry.EnsureExists(nativeHome, root, executable, ""));
+            Assert.Equal("org.kde.KWin.ScreenShot2", DesktopEntry.Parse(File.ReadAllText(EntryPath(nativeHome)))["X-KDE-DBUS-Restricted-Interfaces"]);
+
+            // KWin would match an Exec of "dotnet" to every .NET program.
+            string host = CreateFile(root, "dotnet", "synthetic host");
+            string assembly = CreateFile(root, "ShareX.dll", "synthetic assembly");
+            string hostedHome = Path.Combine(root, "hosted");
+            Assert.True(PortalApplicationDesktopEntry.EnsureExists(hostedHome, root, host, assembly));
+            Assert.DoesNotContain("X-KDE-DBUS-Restricted-Interfaces", File.ReadAllText(EntryPath(hostedHome)));
+        });
+    }
+
+    [UnixFact]
+    public void IdentityGeneratedBeforeKWinSupportIsUpgraded()
+    {
+        WithDirectory(root =>
+        {
+            string executable = CreateFile(root, "ShareX", "synthetic executable");
+            string dataHome = Path.Combine(root, "data");
+            Directory.CreateDirectory(Path.GetDirectoryName(EntryPath(dataHome))!);
+            File.WriteAllText(EntryPath(dataHome), "[Desktop Entry]\nType=Application\nName=ShareX\nExec=" + DesktopEntry.EscapeValue(DesktopEntry.BuildExec(executable, [])) +
+                "\nIcon=sharex\nTerminal=false\nNoDisplay=true\nX-ShareX-PortalIdentity=true\n");
+            Assert.True(PortalApplicationDesktopEntry.EnsureExists(dataHome, root, executable, ""));
+            Assert.Contains("X-KDE-DBUS-Restricted-Interfaces=org.kde.KWin.ScreenShot2", File.ReadAllText(EntryPath(dataHome)));
+        });
+    }
+
     private static string EntryPath(string dataHome) => Path.Combine(dataHome, "applications", "sharex.desktop");
 
     private static string CreateFile(string root, string name, string content)

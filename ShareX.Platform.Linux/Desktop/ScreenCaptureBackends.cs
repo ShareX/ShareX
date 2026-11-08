@@ -134,14 +134,32 @@ internal sealed class GrimCaptureBackend(ICommandRunner runner) : IScreenCapture
     public CursorCapture? CaptureCursor() => null;
 }
 
-/// <summary>GNOME, KDE Plasma and sandboxes: the xdg-desktop-portal Screenshot interface, which returns the whole desktop.</summary>
-internal sealed class PortalCaptureBackend : IScreenCaptureBackend
+/// <summary>
+/// GNOME, KDE Plasma and sandboxes: the xdg-desktop-portal Screenshot interface, which returns the whole desktop. On KDE Plasma,
+/// KWin's own screenshot interface is tried first: it needs no dialog, where the portal asks before the first capture.
+/// </summary>
+internal sealed class PortalCaptureBackend(bool tryKWin = false) : IScreenCaptureBackend
 {
     public LinuxScreenCaptureService.Backend Kind => LinuxScreenCaptureService.Backend.Portal;
 
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, IReadOnlyList<ScreenInfo> screens, CancellationToken cancellationToken)
     {
         bool interactive = request.Mode == ScreenCaptureMode.Interactive;
+
+        if (tryKWin && !interactive && KWinScreenShot.IsAvailable)
+        {
+            PixelBuffer? pixels = await KWinScreenShot.TryCaptureWorkspaceAsync(request.IncludeCursor, cancellationToken).ConfigureAwait(false);
+
+            if (pixels != null)
+            {
+                PlatformSize pixelSize = new PlatformSize(pixels.Width, pixels.Height);
+                (PlatformRectangle kwinArea, PlatformRectangle kwinCrop) = GetCrop(request, screens, pixelSize);
+                return kwinCrop.IsEmpty
+                    ? new ScreenCaptureResult(pixels, new PlatformRectangle(0, 0, pixels.Width, pixels.Height), "KWin")
+                    : new ScreenCaptureResult(pixels.Crop(kwinCrop), kwinArea, "KWin");
+            }
+        }
+
         byte[] png;
 
         try
@@ -166,23 +184,34 @@ internal sealed class PortalCaptureBackend : IScreenCaptureBackend
         PlatformSize size = PngCodec.ReadSize(png);
         PlatformRectangle full = new PlatformRectangle(0, 0, size.Width, size.Height);
 
-        if (interactive || request.Mode == ScreenCaptureMode.FullScreen)
+        if (interactive)
         {
             return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
         }
 
-        // The portal always returns the whole desktop in pixels, so crop for region, window and single screen requests.
+        (PlatformRectangle area, PlatformRectangle crop) = GetCrop(request, screens, size);
+        return crop.IsEmpty
+            ? new ScreenCaptureResult(png, full, "xdg-desktop-portal")
+            : new ScreenCaptureResult(PngCodec.Crop(png, crop), area, "xdg-desktop-portal");
+    }
+
+    /// <summary>
+    /// The portal and KWin always return the whole desktop in pixels, so region, window and single screen requests are cropped.
+    /// Returns the area in layout coordinates (as grim reports it) and the pixels to keep, or an empty crop for the whole image.
+    /// </summary>
+    private static (PlatformRectangle Area, PlatformRectangle Crop) GetCrop(ScreenCaptureRequest request, IReadOnlyList<ScreenInfo> screens, PlatformSize size)
+    {
+        PlatformRectangle full = new PlatformRectangle(0, 0, size.Width, size.Height);
+
+        if (request.Mode == ScreenCaptureMode.FullScreen)
+        {
+            return (full, PlatformRectangle.Empty);
+        }
+
         PlatformRectangle layout = screens.Count > 0 ? screens.Select(s => s.Bounds).Aggregate((a, b) => a.Union(b)) : full;
         PlatformRectangle area = LinuxScreenCaptureService.ResolveArea(request, screens, layout).Intersect(layout);
         PlatformRectangle crop = MapToPixels(area, layout, size);
-
-        if (area.IsEmpty || crop.IsEmpty || crop == full)
-        {
-            return new ScreenCaptureResult(png, full, "xdg-desktop-portal");
-        }
-
-        // Like grim, report the area in layout coordinates.
-        return new ScreenCaptureResult(PngCodec.Crop(png, crop), area, "xdg-desktop-portal");
+        return area.IsEmpty || crop.IsEmpty || crop == full ? (full, PlatformRectangle.Empty) : (area, crop);
     }
 
     /// <summary>

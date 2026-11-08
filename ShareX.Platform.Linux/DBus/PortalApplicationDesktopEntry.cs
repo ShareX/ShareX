@@ -36,6 +36,11 @@ internal static class PortalApplicationDesktopEntry
 {
     private const string Header = "[Desktop Entry]\nType=Application\nName=ShareX\nExec=";
     private const string Footer = "\nIcon=sharex\nTerminal=false\nNoDisplay=true\nX-ShareX-PortalIdentity=true\n";
+
+    // KWin grants its screenshot interface to the program named first in Exec. Only ShareX's own executable gets it, never the
+    // dotnet host, which would grant it to every .NET program. Entries generated before this line existed are still refreshed.
+    private const string KWinFooter = "\nIcon=sharex\nTerminal=false\nNoDisplay=true\nX-ShareX-PortalIdentity=true\n" +
+        KWinScreenShot.DesktopEntryKey + "=" + KWinScreenShot.BusName + "\n";
     internal static void EnsureExists()
     {
         Assembly? application = Assembly.GetEntryAssembly();
@@ -51,9 +56,11 @@ internal static class PortalApplicationDesktopEntry
             Environment.ProcessPath, application.Location);
     }
 
-    private static bool IsGeneratedEntry(string content) =>
-        content.StartsWith(Header, StringComparison.Ordinal) && content.EndsWith(Footer, StringComparison.Ordinal) &&
-        !content[Header.Length..^Footer.Length].Contains('\n');
+    private static bool IsGeneratedEntry(string content) => IsGeneratedEntry(content, Footer) || IsGeneratedEntry(content, KWinFooter);
+
+    private static bool IsGeneratedEntry(string content, string footer) =>
+        content.StartsWith(Header, StringComparison.Ordinal) && content.EndsWith(footer, StringComparison.Ordinal) &&
+        content.Length >= Header.Length + footer.Length && !content[Header.Length..^footer.Length].Contains('\n');
 
     internal static bool EnsureExists(string dataHome, string? dataDirectories, string? processPath, string applicationPath)
     {
@@ -103,7 +110,7 @@ internal static class PortalApplicationDesktopEntry
             }
 
             string[] arguments = frameworkHost ? [applicationPath] : [];
-            string content = Header + DesktopEntry.EscapeValue(DesktopEntry.BuildExec(processPath, arguments)) + Footer;
+            string content = Header + DesktopEntry.EscapeValue(DesktopEntry.BuildExec(processPath, arguments)) + (frameworkHost ? Footer : KWinFooter);
 
             if (previous == content)
             {

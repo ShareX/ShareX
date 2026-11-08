@@ -117,6 +117,8 @@ Terminal=false
 StartupWMClass=ShareX
 Categories=Graphics;Utility;
 Actions=Region;FullScreen;Window;
+# KDE Plasma: lets ShareX capture through KWin without the portal's permission dialog.
+X-KDE-DBUS-Restricted-Interfaces=org.kde.KWin.ScreenShot2
 
 [Desktop Action Region]
 Name=Capture region
