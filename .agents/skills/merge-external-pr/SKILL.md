@@ -13,7 +13,7 @@ Merge OWNER/REPO#NUMBER: PR_TITLE
 
 Invoking this skill with a PR URL authorizes this conditional local merge; proceed after a successful review without another routine confirmation. Do not push, merge through GitHub, or change the external PR. A URL provided only as an example while creating or discussing the skill is not an instruction to merge it.
 
-Code review cannot establish absolute safety. Report the evidence and limitations honestly; never equate a clean scan or passing tests with proof that code is completely safe.
+Code review cannot establish absolute safety. Never equate a clean scan or passing tests with proof that code is completely safe; when a concern or limitation matters, the report says so briefly.
 
 ## Resolve the request
 
@@ -70,7 +70,7 @@ For ShareX, focus the security review on:
 
 Keyword searches and scanners can help locate risks but cannot replace reading the code. Author reputation, PR descriptions, and CI results are supporting context only. Do not run PR-provided scripts, builds, tests, package restores, or applications before reviewing their execution paths and dependencies. Any necessary dynamic analysis must use an isolated environment without host access, real credentials, or personal ShareX data; disable or constrain network access to the analysis's needs.
 
-If malicious or suspicious behavior, unexplained sensitive operations, unreviewable content, incomplete coverage, or another unresolved security concern remains, stop before merging. Report concrete file/line evidence and what would resolve it. Do not silently repair the PR, cherry-pick only selected commits, or label it safe to force completion.
+If malicious or suspicious behavior, unexplained sensitive operations, unreviewable content, incomplete coverage, or another unresolved security concern remains, stop before merging and report it as described in [Report](#report). Do not silently repair the PR, cherry-pick only selected commits, or label it safe to force completion.
 
 ## Inspect the proposed merge result
 
@@ -91,7 +91,7 @@ Review the complete resulting delta for security regressions caused by interacti
 
 Before merging, require all of the following:
 
-- The review is complete, with no unresolved security concerns. Briefly state the reviewed scope, conclusion, and relevant validation limits.
+- The review is complete, with no unresolved security concerns.
 - The destination branch and `HEAD` still match the recorded branch and `$localHead`, the tree/index remain clean, and no Git operation is in progress. Check for incoming paths that would overwrite ignored local files as well. If anything changed or collides, stop and preserve the local work.
 - Fresh PR metadata still identifies the same head SHA. If it changed, fetch and restart the review for the new revision; stop if it moves again during this invocation. Use the latest verified title; reject control characters or an empty title.
 - The candidate tree is the result reviewed for this exact pair of commits. Do not fetch a newer head and merge it under an earlier review.
@@ -110,6 +110,22 @@ For `https://github.com/CubityFirst/ShareX/pull/2`, if its verified title is `Ad
 
 Do not bypass failing hooks, signing, or repository protections to finish. If the actual merge unexpectedly conflicts, abort only the merge started by this skill when doing so preserves the user's work; otherwise leave the state intact and report it. Never use a hard reset or force a merge through a failed security gate.
 
-Verify the resulting commit has exactly two parents, `$localHead` followed by `$reviewedHead`, its tree equals `$candidateTree`, its message matches `$mergeMessage`, and the working tree is clean. Report the PR link, reviewed SHA, security review outcome and limits, checks performed, destination branch, merge commit SHA, and message. If verification fails, report the discrepancy without claiming success or pushing anything.
+Verify the resulting commit has exactly two parents, `$localHead` followed by `$reviewedHead`, its tree equals `$candidateTree`, its message matches `$mergeMessage`, and the working tree is clean. If verification fails, report the discrepancy without claiming success or pushing anything.
+
+## Report
+
+Do not narrate progress while working. The final response is only this block, so the security result is the first thing the user sees, whether the skill merged or stopped:
+
+```text
+Security: PASS | FAIL | INCOMPLETE
+Merge: merged <short merge SHA> into <branch> | not merged: <short reason> | already merged
+PR: <OWNER>/<REPO>#<NUMBER>: <title> @ <short reviewed SHA>
+Summary: <one sentence, at most about 20 words: what the PR actually changes, from the reviewed code rather than the PR description>
+```
+
+- `PASS`: every incoming change and the merge result were reviewed and no concern remains. `FAIL`: malicious or unsafe behavior was found. `INCOMPLETE`: the review could not be finished (opaque binaries, unreadable content, unverifiable metadata, a stop before review completed, and similar).
+- After the block, add at most three one-line bullets, only for what the user must know or act on: for `FAIL` or `INCOMPLETE`, concrete `path:line` evidence and what would resolve it; for `PASS`, only a noteworthy security-relevant change (for example, a new dependency, process launch, or network destination) or a limitation beyond the usual static-only review. Omit bullets when there is nothing to add.
+- Do not list reviewed files, commands, verification steps, checks that passed, or generic caveats such as "code review cannot prove safety" or "not pushed".
+- If post-merge verification fails, use `Merge: merged <SHA>, verification failed` and one bullet stating the discrepancy.
 
 Git references: [merge options](https://git-scm.com/docs/git-merge), [merge-tree behavior and exit status](https://git-scm.com/docs/git-merge-tree), [diff helper controls](https://git-scm.com/docs/git-diff).
