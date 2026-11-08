@@ -145,6 +145,21 @@ public class PortalApplicationRegistrationTests
             () => Task.FromException(new TimeoutException()), hasSandboxIdentity: false));
     }
 
+    [Fact]
+    public void GnomesHandOverCopyInPicturesIsDeletedButTheUsersScreenshotsAreKept()
+    {
+        DateTime requested = new DateTime(2026, 11, 8, 10, 0, 0, DateTimeKind.Utc);
+        DateTime written = requested.AddSeconds(1);
+
+        Assert.True(PortalScreenshot.IsPortalCopy("/home/din/Pictures/Screenshot-1.png", written, requested, "/home/din/Pictures"));
+        Assert.True(PortalScreenshot.IsPortalCopy("/home/din/Bilder/Bildschirmfoto.png", written, requested, "/home/din/Bilder/"));
+        Assert.True(PortalScreenshot.IsPortalCopy("/tmp/Screenshot.png", requested.AddDays(-1), requested, "/home/din/Pictures"));
+
+        Assert.False(PortalScreenshot.IsPortalCopy("/home/din/Pictures/Screenshot.png", requested.AddMinutes(-5), requested, "/home/din/Pictures"));
+        Assert.False(PortalScreenshot.IsPortalCopy("/home/din/Pictures/Screenshots/Screenshot From 2026-11-08.png", written, requested, "/home/din/Pictures"));
+        Assert.False(PortalScreenshot.IsPortalCopy("/home/din/Screenshot.png", written, requested, ""));
+    }
+
     private static Task<PortalRegistrationResult> RejectRegistration(string name, string message) =>
         PortalApplicationRegistration.RegisterAsync(
             () => Task.FromException(new DBusErrorReplyException(name, message)), hasSandboxIdentity: false);

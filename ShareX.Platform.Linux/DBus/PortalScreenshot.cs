@@ -51,7 +51,7 @@ internal static class PortalScreenshot
             $"--method org.freedesktop.impl.portal.PermissionStore.SetPermission screenshot true screenshot '{permissionId}' \"['yes']\"";
     }
 
-    /// <summary>Takes a screenshot and returns the PNG file content. The portal writes the file, which is deleted afterwards when it is in a temporary location.</summary>
+    /// <summary>Takes a screenshot and returns the PNG file content. The file the portal writes to hand it over is deleted afterwards.</summary>
     /// <param name="interactive">Let the user pick the area or window in the desktop's own dialog.</param>
     public static async Task<byte[]> CaptureAsync(bool interactive, CancellationToken cancellationToken)
     {
@@ -72,6 +72,7 @@ internal static class PortalScreenshot
 
     private static async Task<byte[]> CaptureCoreAsync(bool interactive, CancellationToken cancellationToken)
     {
+        DateTime requested = DateTime.UtcNow;
         PortalResponse response = await DBusSession.CallPortalRequestAsync((bus, token) =>
             DBusSession.CreateMethodCall(bus, DBusSession.PortalBusName, DBusSession.PortalObjectPath, Interface, "Screenshot", "sa{sv}",
                 (ref MessageWriter writer) =>
@@ -112,16 +113,8 @@ internal static class PortalScreenshot
 
         string path = uri.LocalPath;
         byte[] png = await File.ReadAllBytesAsync(path, cancellationToken).ConfigureAwait(false);
-        TryDeleteTemporary(path);
-        return png;
-    }
 
-    private static void TryDeleteTemporary(string path)
-    {
-        // GNOME saves to ~/Pictures/Screenshots (the user may want it), KDE and wlroots backends to /tmp.
-        string temp = Path.GetTempPath();
-
-        if (path.StartsWith(temp, StringComparison.Ordinal) || path.StartsWith("/tmp/", StringComparison.Ordinal))
+        if (IsPortalCopy(path, File.GetLastWriteTimeUtc(path), requested, Environment.GetFolderPath(Environment.SpecialFolder.MyPictures)))
         {
             try
             {
@@ -131,5 +124,23 @@ internal static class PortalScreenshot
             {
             }
         }
+
+        return png;
+    }
+
+    /// <summary>Whether the file is the copy the portal wrote only to hand the screenshot over, so ShareX should delete it.</summary>
+    /// <remarks>KDE and wlroots backends write to /tmp. GNOME's backend writes Screenshot.png, Screenshot-1.png, ... (the name
+    /// may be translated) straight into the Pictures folder. Screenshots the user saves through GNOME go to Pictures/Screenshots
+    /// and are kept, and so is an older file in Pictures that happens to share the name.</remarks>
+    internal static bool IsPortalCopy(string path, DateTime lastWriteUtc, DateTime requestedUtc, string picturesFolder)
+    {
+        if (path.StartsWith(Path.GetTempPath(), StringComparison.Ordinal) || path.StartsWith("/tmp/", StringComparison.Ordinal))
+        {
+            return true;
+        }
+
+        return !string.IsNullOrEmpty(picturesFolder) &&
+            string.Equals(Path.GetDirectoryName(path), Path.TrimEndingDirectorySeparator(picturesFolder), StringComparison.Ordinal) &&
+            lastWriteUtc >= requestedUtc.AddSeconds(-2);
     }
 }
