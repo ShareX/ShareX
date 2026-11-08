@@ -126,8 +126,14 @@ notarytool() {
 # MACOS_NOTARY_TIMEOUT seconds: a new Developer ID team's first submissions can take hours. The file is signed either way, and
 # Gatekeeper asks Apple online, so it opens without a warning as soon as the review passes; only the stapled ticket is missing.
 notarize() {
-  local id status deadline=$((SECONDS + ${MACOS_NOTARY_TIMEOUT:-1200}))
-  id="$(notarytool submit "$1" --output-format plist | plutil -extract id raw -)"
+  local id status timeout_s="${MACOS_NOTARY_TIMEOUT:-1200}" deadline=$((SECONDS + ${MACOS_NOTARY_TIMEOUT:-1200}))
+  # The upload needs its own bound: a runner that cannot reach Apple hangs inside it, and the deadline below would then never
+  # get the chance to turn the build into a signed but unstapled one. A submission that fails outright is treated the same way.
+  id="$(notarytool submit "$1" --timeout "$(( timeout_s / 60 > 0 ? timeout_s / 60 : 1 ))m" --output-format plist 2>/dev/null | plutil -extract id raw - 2>/dev/null)" || id=""
+  if [ -z "$id" ]; then
+    echo "::warning::Could not submit $(basename "$1") for notarization; the build is signed but not stapled"
+    return 2
+  fi
   echo "Notarization submission $id for $(basename "$1")"
   while [ "$SECONDS" -lt "$deadline" ]; do
     sleep 30
