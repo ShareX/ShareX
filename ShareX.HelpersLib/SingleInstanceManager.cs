@@ -145,6 +145,8 @@ namespace ShareX.HelpersLib
 
                     AllowFirstInstanceToSetForeground(namedPipeClient);
 
+                    args = ResolveRelativePaths(args, Environment.CurrentDirectory);
+
                     using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8))
                     {
                         writer.Write(args.Length);
@@ -160,6 +162,32 @@ namespace ShareX.HelpersLib
             {
                 DebugHelper.WriteException(e);
             }
+        }
+
+        // The first instance has its own working directory, so a file named relative to this one (as Nautilus and Caja
+        // scripts receive the selection, or "sharex image.png" in a terminal) would not be found there.
+        public static string[] ResolveRelativePaths(string[] args, string workingDirectory)
+        {
+            string[] resolved = new string[args.Length];
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                string argument = args[i];
+
+                if (!string.IsNullOrEmpty(argument) && !argument.StartsWith('-') && !Path.IsPathRooted(argument))
+                {
+                    string path = Path.GetFullPath(argument, workingDirectory);
+
+                    if (File.Exists(path) || Directory.Exists(path))
+                    {
+                        argument = path;
+                    }
+                }
+
+                resolved[i] = argument;
+            }
+
+            return resolved;
         }
 
         // Only the foreground process may bring a window to front; others just flash in the taskbar.
