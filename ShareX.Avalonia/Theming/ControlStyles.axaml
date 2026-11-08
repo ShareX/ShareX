@@ -44,6 +44,7 @@
         <Thickness x:Key="ShareX.Density.Settings.NavItemMargin">2,3</Thickness>
         <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,8,8,8</Thickness>
         <x:Double x:Key="ShareX.Density.Settings.NavSpacing">10</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.WindowWidth">950</x:Double>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
