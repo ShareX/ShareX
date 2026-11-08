@@ -57,6 +57,7 @@
                 <TextBlock Text="{Binding HeaderText}"
                            FontSize="20"
                            FontWeight="SemiBold"
+                           TextWrapping="Wrap"
                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
             </StackPanel>
         </Grid>
