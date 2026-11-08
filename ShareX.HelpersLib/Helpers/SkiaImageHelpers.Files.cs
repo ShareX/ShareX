@@ -73,14 +73,37 @@ public static partial class SkiaImageHelpers
         return false;
     }
 
+    // Every format ShareX can save images in, in the same order as SaveImageFilter.
+    private static readonly EImageFormat[] SaveImageFormats = [EImageFormat.PNG, EImageFormat.JPEG, EImageFormat.WEBP, EImageFormat.GIF, EImageFormat.BMP];
+
+    public const string SaveImageFilter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|" +
+        "WebP (*.webp)|*.webp|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
+
+    // The 1-based position of the format in SaveImageFilter, to preselect it in a save dialog.
+    public static int GetSaveImageFilterIndex(EImageFormat format) => Math.Max(Array.IndexOf(SaveImageFormats, format), 0) + 1;
+
+    public static bool TryGetImageFormat(string filePath, out EImageFormat format)
+    {
+        EImageFormat? imageFormat = Path.GetExtension(filePath)?.ToLowerInvariant() switch
+        {
+            ".png" => EImageFormat.PNG,
+            ".jpg" or ".jpeg" or ".jpe" or ".jfif" => EImageFormat.JPEG,
+            ".webp" => EImageFormat.WEBP,
+            ".gif" => EImageFormat.GIF,
+            ".bmp" => EImageFormat.BMP,
+            _ => null
+        };
+
+        format = imageFormat ?? EImageFormat.PNG;
+        return imageFormat != null;
+    }
+
     public static string SaveImageFileDialog(SKBitmap img, string filePath = "", bool useLastDirectory = true)
     {
         string initialDirectory = useLastDirectory && Directory.Exists(HelpersOptions.LastSaveDirectory)
             ? HelpersOptions.LastSaveDirectory : Path.GetDirectoryName(filePath);
-        string extension = Path.GetExtension(filePath).TrimStart('.').ToLowerInvariant();
-        int filterIndex = extension switch { "jpg" or "jpeg" or "jpe" or "jfif" => 2, "gif" => 3, "bmp" => 4, _ => 1 };
-        string selectedPath = FileDialogHelpers.SaveFile(filter:
-            "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp",
+        int filterIndex = TryGetImageFormat(filePath, out EImageFormat imageFormat) ? GetSaveImageFilterIndex(imageFormat) : 1;
+        string selectedPath = FileDialogHelpers.SaveFile(filter: SaveImageFilter,
             fileName: Path.GetFileName(filePath), initialDirectory: initialDirectory, defaultExtension: "png", filterIndex: filterIndex);
         if (!string.IsNullOrEmpty(selectedPath) && SaveImage(img, selectedPath))
         {
