@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Tidak ada item yang cocok dengan filter saat ini</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Nama proses</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Ganti nama</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Ganti nama file</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Atur ulang kolom</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Pilih folder yang akan diimpor</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Berhasil mengimpor {0:N0} file.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Tag</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>{0:N0} file ini</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Hapus dari favorit</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Judul jendela</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Lanjutan</value>

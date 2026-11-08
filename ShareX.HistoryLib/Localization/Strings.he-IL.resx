@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>אין פריטים התואמים למסננים הנוכחיים</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>שם התהליך</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>שינוי שם</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>שינוי שם הקובץ</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>איפוס עמודות</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>בחר תיקייה לייבוא</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} קבצים יובאו בהצלחה.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>תג</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>{0:N0} הקבצים האלה</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>הסר מהמועדפים</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>כותרת החלון</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>מתקדם</value>

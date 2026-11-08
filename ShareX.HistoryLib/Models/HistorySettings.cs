@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using System.Collections.Generic;
 
 namespace ShareX.HistoryLib
 {
@@ -36,5 +37,6 @@ namespace ShareX.HistoryLib
         public string SearchText { get; set; } = "";
         public bool Favorites { get; set; } = false;
         public double HistoryListWidth { get; set; } = 720;
+        public List<HistoryColumnSettings> Columns { get; set; } = null;
     }
 }

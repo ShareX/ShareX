@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>현재 필터와 일치하는 항목이 없습니다</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>프로세스 이름</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>이름 바꾸기</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>파일 이름 바꾸기</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>열 초기화</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>가져올 폴더 선택</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>파일 {0:N0}개를 가져왔습니다.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>태그</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>이 파일 {0:N0}개</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>즐겨찾기에서 제거</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>창 제목</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>고급</value>
