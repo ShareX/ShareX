@@ -173,11 +173,8 @@
                 <Setter Property="RenderTransform" Value="translateY(0px) rotate(0deg)"/>
             </Style>
         </Style>
-        <Style Selector="Button.caption-close">
+        <Style Selector="Button.caption-close.rounded">
             <Setter Property="CornerRadius" Value="0,7,0,0"/>
-        </Style>
-        <Style Selector="Button.caption-close.maximized">
-            <Setter Property="CornerRadius" Value="0"/>
         </Style>
         <Style Selector="Button.caption-close:pointerover">
             <Setter Property="Foreground" Value="White"/>
@@ -270,7 +267,7 @@
                             </Grid>
                         </Button>
                         <Button Classes="caption-button caption-close"
-                                Classes.maximized="{Binding IsWindowMaximized}"
+                                Classes.rounded="{Binding IsCloseButtonRounded}"
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">

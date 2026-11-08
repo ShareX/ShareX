@@ -103,6 +103,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
     private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
+    // Only Windows 11 rounds window corners, so the close button hover must stay square elsewhere.
+    private static readonly bool HasRoundedWindowCorners = OperatingSystem.IsWindows() && Helpers.IsWindows11OrGreater();
+    public bool IsCloseButtonRounded => HasRoundedWindowCorners && !IsWindowMaximized;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
     public string ThemeToggleText => IsDarkTheme
         ? Strings.ApplicationSettingsWindow_Dark
@@ -2472,6 +2475,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (change.Property == WindowStateProperty)
         {
             OnPropertyChanged(nameof(IsWindowMaximized));
+            OnPropertyChanged(nameof(IsCloseButtonRounded));
         }
         else if (change.Property == IconProperty)
         {
