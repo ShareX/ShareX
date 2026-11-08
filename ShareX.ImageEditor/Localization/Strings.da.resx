@@ -351,6 +351,12 @@ Udklipsholder indeholder intet billede.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marginal</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ny fra skærmbillede (fuld skærm)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ny fra skærmbillede (område)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Åbn billede</value>
   </data>

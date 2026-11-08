@@ -351,6 +351,12 @@ Gli appunti non contengono un’immagine.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margine</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nuovo da screenshot (schermo intero)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nuovo da screenshot (area)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Apri immagine</value>
   </data>

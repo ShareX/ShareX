@@ -1483,7 +1483,9 @@ namespace ShareX
                 {
                     Bitmap bmp = skBitmap.Copy();
                     UploadImageOnUiThread(bmp, taskSettings);
-                }
+                },
+                CaptureRegionRequested = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureFullscreenRequested = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
 
             SKBitmap skBitmapResult = null;

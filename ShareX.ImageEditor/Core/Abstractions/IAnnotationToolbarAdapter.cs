@@ -113,6 +113,10 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool IsEffectsButtonActive { get; }
     ICommand NewImageCommand { get; }
     ICommand OpenImageCommand { get; }
+    bool CanCaptureRegion { get; }
+    bool CanCaptureFullscreen { get; }
+    ICommand NewFromScreenshotRegionCommand { get; }
+    ICommand NewFromScreenshotFullscreenCommand { get; }
     ICommand SaveCommand { get; }
     ICommand SaveAsCommand { get; }
     ICommand ExitEditorCommand { get; }

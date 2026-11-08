@@ -351,6 +351,12 @@ Het klembord bevat geen afbeelding.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marge</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nieuw vanaf schermafbeelding (volledig scherm)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nieuw vanaf schermafbeelding (gebied)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Afbeelding openen</value>
   </data>

@@ -393,6 +393,14 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
 
     public ICommand OpenImageCommand => _viewModel.OpenImageCommand;
 
+    public bool CanCaptureRegion => _viewModel.CanCaptureRegion;
+
+    public bool CanCaptureFullscreen => _viewModel.CanCaptureFullscreen;
+
+    public ICommand NewFromScreenshotRegionCommand => _viewModel.NewFromScreenshotRegionCommand;
+
+    public ICommand NewFromScreenshotFullscreenCommand => _viewModel.NewFromScreenshotFullscreenCommand;
+
     public ICommand OpenRecentImageCommand => _viewModel.OpenRecentImageCommand;
 
     public ICommand SaveCommand => _viewModel.SaveCommand;

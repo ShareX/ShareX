@@ -62,6 +62,16 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public IRelayCommand ExitCommand { get; }
         public IRelayCommand<string> OpenRecentFileCommand { get; }
 
+        /// <summary>Set by the editor when the host can capture a screen region; the button is hidden otherwise.</summary>
+        public IRelayCommand? NewFromScreenshotRegionCommand { get; init; }
+
+        /// <summary>Set by the editor when the host can capture the full screen; the button is hidden otherwise.</summary>
+        public IRelayCommand? NewFromScreenshotFullscreenCommand { get; init; }
+
+        public bool CanCaptureRegion => NewFromScreenshotRegionCommand != null;
+
+        public bool CanCaptureFullscreen => NewFromScreenshotFullscreenCommand != null;
+
         private readonly Action _onNewImage;
         private readonly Action _onOpenFile;
         private readonly Action _onLoadFromClipboard;

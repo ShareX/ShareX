@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>حاشیه</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>جدید از عکس صفحه (تمام صفحه)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>جدید از عکس صفحه (ناحیه)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>باز کردن تصویر</value>
   </data>

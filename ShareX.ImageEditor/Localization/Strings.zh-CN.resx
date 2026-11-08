@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>外边距</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>从截图新建（全屏）</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>从截图新建（区域）...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>打开图像</value>
   </data>

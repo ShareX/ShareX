@@ -72,6 +72,8 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ActionDownload = AppIcons.Download;
         public const string ActionPinToScreen = AppIcons.Pin;
         public const string ActionUpload = AppIcons.CloudUpload;
+        public const string ActionCaptureRegion = AppIcons.Region;
+        public const string ActionCaptureFullscreen = AppIcons.Fullscreen;
         public const string ActionCancel = AppIcons.Close;
         public const string ActionContinue = AppIcons.Play;
         public const string ActionReset = AppIcons.Refresh;

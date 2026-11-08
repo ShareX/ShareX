@@ -351,6 +351,12 @@ Clipboard does not contain an image.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>New from screenshot (full screen)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>New from screenshot (region)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Open image</value>
   </data>

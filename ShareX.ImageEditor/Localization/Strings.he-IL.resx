@@ -351,6 +351,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>שוליים</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>חדש מצילום מסך (מסך מלא)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>חדש מצילום מסך (אזור)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>פתיחת תמונה</value>
   </data>

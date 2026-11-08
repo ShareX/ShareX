@@ -351,6 +351,12 @@ Panoda görüntü yok.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Kenar boşluğu</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (tam ekran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (bölge)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Görüntü aç</value>
   </data>

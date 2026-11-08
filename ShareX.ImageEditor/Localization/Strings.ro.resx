@@ -351,6 +351,12 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margine</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nou din captură de ecran (ecran complet)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nou din captură de ecran (regiune)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Deschide imaginea</value>
   </data>
