@@ -349,7 +349,8 @@ public partial class RegionCaptureWindow : Window
             ShowBottomToolbar = false,
             ShowToolbars = false,
             ShowStartScreen = false,
-            UseContinueWorkflow = false
+            UseContinueWorkflow = false,
+            AllowAutoExpandCanvas = false
         };
         _viewModel.SetHostToolbarItems(_request.EnableAnnotations
             ? RegionCaptureToolbar.CreateItems(_request.RegionCaptureOptions.ToolbarItems)

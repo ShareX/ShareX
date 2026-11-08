@@ -49,7 +49,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         private bool _suppressScrollResetForAutoExpand;
 
         private bool IsAutoExpandCanvasEnabled =>
-            DataContext is MainViewModel vm && vm.Options != null && vm.Options.AutoExpandCanvas;
+            DataContext is MainViewModel vm && vm.AllowAutoExpandCanvas && vm.Options != null && vm.Options.AutoExpandCanvas;
 
         private SKColor AutoExpandCanvasColor
         {
