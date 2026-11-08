@@ -114,18 +114,16 @@ Verify the resulting commit has exactly two parents, `$localHead` followed by `$
 
 ## Report
 
-Do not narrate progress while working. The final response is only this block, so the security result is the first thing the user sees, whether the skill merged or stopped:
+Do not narrate progress while working. The final response is only this list, so the security result is the first thing the user sees, whether the skill merged or stopped. Write it as plain Markdown, never inside a code block or code fence:
 
-```text
-Security: PASS | FAIL | INCOMPLETE
-Merge: merged <short merge SHA> into <branch> | not merged: <short reason> | already merged
-PR: <OWNER>/<REPO>#<NUMBER>: <title> @ <short reviewed SHA>
-Summary: <one sentence, at most about 20 words: what the PR actually changes, from the reviewed code rather than the PR description>
-```
+- **Security:** PASS | FAIL | INCOMPLETE
+- **Merge:** merged <short merge SHA> into <branch> | not merged: <short reason> | already merged
+- **PR:** <OWNER>/<REPO>#<NUMBER>: <title> @ <short reviewed SHA>
+- **Summary:** <one sentence, at most about 20 words: what the PR actually changes, from the reviewed code rather than the PR description>
 
 - `PASS`: every incoming change and the merge result were reviewed and no concern remains. `FAIL`: malicious or unsafe behavior was found. `INCOMPLETE`: the review could not be finished (opaque binaries, unreadable content, unverifiable metadata, a stop before review completed, and similar).
-- After the block, add at most three one-line bullets, only for what the user must know or act on: for `FAIL` or `INCOMPLETE`, concrete `path:line` evidence and what would resolve it; for `PASS`, only a noteworthy security-relevant change (for example, a new dependency, process launch, or network destination) or a limitation beyond the usual static-only review. Omit bullets when there is nothing to add.
+- After the list, add a blank line and at most three one-line bullets, only for what the user must know or act on: for `FAIL` or `INCOMPLETE`, concrete `path:line` evidence and what would resolve it; for `PASS`, only a noteworthy security-relevant change (for example, a new dependency, process launch, or network destination) or a limitation beyond the usual static-only review. Omit bullets when there is nothing to add.
 - Do not list reviewed files, commands, verification steps, checks that passed, or generic caveats such as "code review cannot prove safety" or "not pushed".
-- If post-merge verification fails, use `Merge: merged <SHA>, verification failed` and one bullet stating the discrepancy.
+- If post-merge verification fails, use **Merge:** merged <SHA>, verification failed, and one bullet stating the discrepancy.
 
 Git references: [merge options](https://git-scm.com/docs/git-merge), [merge-tree behavior and exit status](https://git-scm.com/docs/git-merge-tree), [diff helper controls](https://git-scm.com/docs/git-diff).
