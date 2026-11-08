@@ -190,8 +190,27 @@ jobs:
           rm -f "$RUNNER_TEMP/notary.p8"
 
   linux:
-    name: Linux package (x64)
-    runs-on: ubuntu-latest
+    name: Linux packages (${{ matrix.arch }})
+    runs-on: ${{ matrix.runner }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            runner: ubuntu-latest
+            tools: x86_64
+            nfpm: nfpm_2.48.0_Linux_x86_64.tar.gz
+            nfpm_sha256: 6d7f9a28b2f397934403950fcbba83f598b08d02edbe79a0815b3b4897341750
+            appimagetool_sha256: ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0
+            runtime_sha256: 2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+            tools: aarch64
+            nfpm: nfpm_2.48.0_Linux_arm64.tar.gz
+            nfpm_sha256: a9a75213763783b7669719e505474c748c5ad7dc66591a195619deb50f85c2f4
+            appimagetool_sha256: f0837e7448a0c1e4e650a93bb3e85802546e60654ef287576f46c71c126a9158
+            runtime_sha256: 00cbdfcf917cc6c0ff6d3347d59e0ca1f7f45a6df1a428a0d6d8a78664d87444
 
     steps:
       - name: Checkout
@@ -206,54 +225,98 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
+      # The test job covers the libraries on every system; this checks the whole solution once.
       - name: Build ShareX.sln
+        if: matrix.arch == 'x64'
         run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
 
       - name: Test
+        if: matrix.arch == 'x64'
         run: |
           for project in ShareX.Platform.Tests ShareX.HistoryLib.Tests ShareX.ImageEditor.Tests ShareX.ImageEffectsLib.Tests ShareX.Tools.Tests; do
             dotnet test "$project/$project.csproj" --configuration Release -p:Platform=x64 --no-build --logger "console;verbosity=minimal"
           done
 
-      - name: Package
-        run: Scripts/install-linux.sh --package "$RUNNER_TEMP/package"
-
-      # Installs the package into a clean home, starts it on a virtual X server with its own D-Bus session, takes a full screen
-      # screenshot through the command line (default settings save it and copy it; nothing is uploaded) and closes it with
-      # SIGTERM, which must save the settings. The settings skip the welcome screen, as for a returning user: on a first run it
-      # waits for the user before command line work.
-      - name: Run the application
+      # Pinned releases, checked against their SHA-256.
+      - name: Install packaging tools
         run: |
+          tools="$RUNNER_TEMP/tools"
+          mkdir -p "$tools"
+          curl -fsSL -o "$tools/nfpm.tar.gz" "https://github.com/goreleaser/nfpm/releases/download/v2.48.0/${{ matrix.nfpm }}"
+          curl -fsSL -o "$tools/appimagetool" "https://github.com/AppImage/appimagetool/releases/download/1.9.1/appimagetool-${{ matrix.tools }}.AppImage"
+          curl -fsSL -o "$tools/runtime" "https://github.com/AppImage/type2-runtime/releases/download/20251108/runtime-${{ matrix.tools }}"
+          sha256sum -c - <<SUMS
+          ${{ matrix.nfpm_sha256 }}  $tools/nfpm.tar.gz
+          ${{ matrix.appimagetool_sha256 }}  $tools/appimagetool
+          ${{ matrix.runtime_sha256 }}  $tools/runtime
+          SUMS
+          tar -C "$tools" -xzf "$tools/nfpm.tar.gz" nfpm
+          chmod +x "$tools/appimagetool"
           sudo apt-get update -q && sudo apt-get install -yq xvfb dbus-x11 >/dev/null
-          export HOME="$RUNNER_TEMP/home" PREFIX="$RUNNER_TEMP/home/.local"
-          mkdir -p "$HOME/Documents/ShareX"
-          echo '{ "ShowStartScreen": false }' > "$HOME/Documents/ShareX/ApplicationConfig.json"
-          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-x64.tar.gz"
-          "$RUNNER_TEMP/ShareX-$SHAREX_VERSION-linux-x64/install.sh"
-          xvfb-run -a -s "-screen 0 1280x800x24" dbus-run-session -- bash -euo pipefail -c '
-            sharex="$PREFIX/bin/sharex"
-            "$sharex" -silent & pid=$!
-            for i in $(seq 1 60); do
-              ls "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt >/dev/null 2>&1 && grep -q "Startup time" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt && break
-              sleep 1
-            done
-            "$sharex" -PrintScreen
-            for i in $(seq 1 30); do
-              compgen -G "$HOME/Documents/ShareX/Screenshots/*/*" >/dev/null && break
-              sleep 1
-            done
-            kill -TERM "$pid"
-            wait "$pid" || true
-            cat "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
-            compgen -G "$HOME/Documents/ShareX/Screenshots/*/*" >/dev/null || { echo "No screenshot was saved." >&2; exit 1; }
-            file "$HOME"/Documents/ShareX/Screenshots/*/*
-            test -s "$HOME/Documents/ShareX/ApplicationConfig.json"
-            ! grep -q "Unhandled exception" "$HOME"/Documents/ShareX/Logs/ShareX-Log-*.txt
-          '
 
-      - name: Upload package
+      - name: Package
+        env:
+          NFPM: ${{ runner.temp }}/tools/nfpm
+          APPIMAGETOOL: ${{ runner.temp }}/tools/appimagetool
+          APPIMAGE_RUNTIME: ${{ runner.temp }}/tools/runtime
+          # The runner has no FUSE for appimagetool's own AppImage.
+          APPIMAGE_EXTRACT_AND_RUN: 1
+          SHAREX_PRERELEASE: dev${{ github.run_number }}
+        run: |
+          Scripts/install-linux.sh --package "$RUNNER_TEMP/package"
+          Scripts/package-linux.sh "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.tar.gz" "$RUNNER_TEMP/package"
+
+      # Each format is installed the way a user would and must start, take a screenshot and close.
+      - name: Run the tarball
+        run: |
+          tar -C "$RUNNER_TEMP" -xzf "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.tar.gz"
+          PREFIX="$RUNNER_TEMP/local" "$RUNNER_TEMP/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}/install.sh"
+          Scripts/smoke-test-linux.sh "$RUNNER_TEMP/local/bin/sharex"
+
+      - name: Run the .deb
+        run: |
+          sudo apt-get install -yq "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.deb"
+          Scripts/smoke-test-linux.sh /usr/bin/sharex
+          sudo apt-get remove -yq sharex
+
+      # The runner has no FUSE, so the AppImage is unpacked and started through its AppRun.
+      - name: Run the AppImage
+        run: |
+          cd "$RUNNER_TEMP"
+          "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.AppImage" --appimage-extract >/dev/null
+          "$GITHUB_WORKSPACE/Scripts/smoke-test-linux.sh" "$RUNNER_TEMP/squashfs-root/AppRun"
+
+      - name: Install the .rpm on Fedora
+        run: |
+          docker run --rm -v "$RUNNER_TEMP/package:/package:ro" fedora:latest \
+            dnf install -yq "/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.rpm"
+
+      # One artifact per format, so each download holds only the file wanted. The names are the file names; the tarball keeps
+      # the extensionless name earlier builds used.
+      - name: Upload tarball
         uses: actions/upload-artifact@v4
         with:
-          name: ShareX-${{ env.SHAREX_VERSION }}-linux-x64
-          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-x64.tar.gz
+          name: ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}
+          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.tar.gz
+          if-no-files-found: error
+
+      - name: Upload .deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.deb
+          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.deb
+          if-no-files-found: error
+
+      - name: Upload .rpm
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.rpm
+          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.rpm
+          if-no-files-found: error
+
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.AppImage
+          path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.AppImage
           if-no-files-found: error

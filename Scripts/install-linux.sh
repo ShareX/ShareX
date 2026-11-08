@@ -7,10 +7,13 @@
 #   Scripts/install-linux.sh --uninstall        remove it again (settings and screenshots are kept)
 #
 # Set PREFIX to install somewhere else than ~/.local. Building needs the .NET 10 SDK; the installed copy is self-contained.
+# Set DESTDIR as well to stage the files under another root, as Scripts/package-linux.sh does for the .deb, .rpm and AppImage:
+#   DESTDIR=/tmp/root PREFIX=/usr ./install.sh       files land in /tmp/root/usr, and refer to /usr
 # "Start ShareX when I log in" is a setting inside ShareX.
 set -euo pipefail
 
 prefix="${PREFIX:-$HOME/.local}"
+destdir="${DESTDIR:-}"
 app_dir="$prefix/lib/sharex/app"
 bin_link="$prefix/bin/sharex"
 # The portal looks ShareX up by this name (application id "sharex"); global hotkeys need it.
@@ -97,15 +100,16 @@ if [ -n "${out:-}" ]; then
   exit 0
 fi
 
-stop_running
-mkdir -p "$prefix/lib/sharex" "$prefix/bin" "$(dirname "$desktop_file")" "$(dirname "$icon_file")"
-rm -rf "$app_dir"
-cp -r "$source_app" "$app_dir"
-chmod +x "$app_dir/ShareX"
-ln -sf "$app_dir/ShareX" "$bin_link"
-cp "$icon_source" "$icon_file"
+[ -n "$destdir" ] || stop_running
+mkdir -p "$destdir$prefix/lib/sharex" "$destdir$prefix/bin" "$destdir$(dirname "$desktop_file")" "$destdir$(dirname "$icon_file")"
+rm -rf "$destdir$app_dir"
+cp -r "$source_app" "$destdir$app_dir"
+chmod +x "$destdir$app_dir/ShareX"
+ln -sf "$app_dir/ShareX" "$destdir$bin_link"
+cp "$icon_source" "$destdir$icon_file"
 
-cat >"$desktop_file" <<DESKTOP
+# KWin matches Exec against the running executable, so Exec must be an absolute path (a symlink to it is fine).
+cat >"$destdir$desktop_file" <<DESKTOP
 [Desktop Entry]
 Type=Application
 Name=ShareX
@@ -132,6 +136,11 @@ Exec=$bin_link -PrintScreen
 Name=Capture active window
 Exec=$bin_link -ActiveWindow
 DESKTOP
+
+if [ -n "$destdir" ]; then
+  echo "Staged in $destdir$prefix"
+  exit 0
+fi
 
 command -v update-desktop-database >/dev/null && update-desktop-database "$prefix/share/applications" 2>/dev/null || true
 
