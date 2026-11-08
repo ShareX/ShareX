@@ -362,7 +362,7 @@ public partial class ArrowAnnotation
         return geometry;
     }
 
-    private static void AppendArrowCapFigure(StreamGeometryContext context, Point tip, ArrowCapPoints cap)
+    internal static void AppendArrowCapFigure(StreamGeometryContext context, Point tip, ArrowCapPoints cap)
     {
         context.BeginFigure(tip, true);
         context.LineTo(new Point(cap.LeftBase.X, cap.LeftBase.Y));

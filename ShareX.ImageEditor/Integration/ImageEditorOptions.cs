@@ -106,6 +106,7 @@ namespace ShareX.ImageEditor.Integration
         public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
         public ArrowStyle ArrowStyle { get; set; } = ArrowStyle.Classic;
         public bool ArrowRoundedCorners { get; set; } = true;
+        public bool FreehandArrow { get; set; } = false;
         public CursorType CursorType { get; set; } = CursorType.Default;
 
         // Text

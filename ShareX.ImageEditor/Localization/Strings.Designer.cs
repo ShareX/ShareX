@@ -435,6 +435,11 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Roundedcorners", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_Freehandarrow {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Freehandarrow", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Toggletail {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Toggletail", resourceCulture);

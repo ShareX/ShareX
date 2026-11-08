@@ -225,6 +225,12 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
         set => _viewModel.ArrowRoundedCorners = value;
     }
 
+    public bool FreehandArrow
+    {
+        get => _viewModel.FreehandArrow;
+        set => _viewModel.FreehandArrow = value;
+    }
+
     public bool SpeechBalloonTail
     {
         get => _viewModel.SpeechBalloonTail;
@@ -294,6 +300,8 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public bool ShowShadow => _viewModel.ShowShadow;
 
     public bool ShowArrowRoundedCorners => _viewModel.ShowArrowRoundedCorners;
+
+    public bool ShowFreehandArrow => _viewModel.ShowFreehandArrow;
 
     public bool ShowSpeechBalloonTail => _viewModel.ShowSpeechBalloonTail;
 
