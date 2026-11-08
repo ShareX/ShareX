@@ -203,7 +203,7 @@ internal sealed class DesktopTrayIconService : ITrayIconService
     }
 
     /// <summary>A tray menu item with its submenu already expanded.</summary>
-    private sealed record TrayMenuNode(string Header, bool IsSeparator, bool IsEnabled, bool IsChecked, MainMenuToggleType ToggleType,
+    internal sealed record TrayMenuNode(string Header, bool IsSeparator, bool IsEnabled, bool IsChecked, MainMenuToggleType ToggleType,
         Func<System.Threading.Tasks.Task>? ExecuteAsync, System.Collections.Generic.IReadOnlyList<TrayMenuNode>? Children);
 
     /// <summary>Keeps the main window reachable and rebuilds changed menus without replacing an unchanged open menu.</summary>
@@ -223,6 +223,12 @@ internal sealed class DesktopTrayIconService : ITrayIconService
             }
 
             System.Collections.Generic.IReadOnlyList<TrayMenuNode> nodes = Expand(new MainMenuBuilder(true).BuildTrayMenu());
+
+            if (OperatingSystem.IsLinux())
+            {
+                nodes = FlattenNestedSubmenus(nodes);
+            }
+
             string signature = Describe(nodes);
 
             if (signature == _menuSignature)
@@ -271,6 +277,37 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         }
 
         return nodes;
+    }
+
+    /// <summary>
+    /// Keeps the tray menu to one level of submenus. GNOME Shell's AppIndicator menus open a submenu inline and cannot show a
+    /// submenu inside it, so Tools (Tools > Screen > Ruler) opened empty. A nested submenu becomes a section of its parent:
+    /// its name as a disabled heading, its items, and separators around it.
+    /// </summary>
+    internal static System.Collections.Generic.IReadOnlyList<TrayMenuNode> FlattenNestedSubmenus(System.Collections.Generic.IReadOnlyList<TrayMenuNode> nodes) =>
+        nodes.Select(node => node.Children == null ? node : node with { Children = Flatten(node.Children) }).ToList();
+
+    private static System.Collections.Generic.IReadOnlyList<TrayMenuNode> Flatten(System.Collections.Generic.IReadOnlyList<TrayMenuNode> nodes)
+    {
+        System.Collections.Generic.List<TrayMenuNode> flat = new();
+        TrayMenuNode separator = new("", true, true, false, MainMenuToggleType.None, null, null);
+
+        foreach (TrayMenuNode node in nodes)
+        {
+            if (node.Children == null)
+            {
+                flat.Add(node);
+                continue;
+            }
+
+            if (flat.Count > 0 && !flat[^1].IsSeparator) flat.Add(separator);
+            flat.Add(new TrayMenuNode(node.Header, false, false, false, MainMenuToggleType.None, null, null));
+            flat.AddRange(Flatten(node.Children));
+            flat.Add(separator);
+        }
+
+        while (flat.Count > 0 && flat[^1].IsSeparator) flat.RemoveAt(flat.Count - 1);
+        return flat;
     }
 
     private static string Describe(System.Collections.Generic.IReadOnlyList<TrayMenuNode> nodes) => string.Join("|", nodes.Select(node =>
