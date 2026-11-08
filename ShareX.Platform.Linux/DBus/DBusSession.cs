@@ -46,6 +46,12 @@ internal static class DBusSession
     /// <summary>Null when registration succeeded or was not needed; otherwise why the portal did not accept ShareX's application id.</summary>
     public static string? RegistrationError { get; private set; }
 
+    /// <summary>
+    /// The id the portal knows ShareX by when it is not sandboxed: <see cref="ApplicationId"/> after the host Registry accepted it,
+    /// otherwise "" (the portal stores the permissions of unidentified apps under the empty id).
+    /// </summary>
+    public static string HostPermissionId { get; private set; } = "";
+
     public static bool IsAvailable => !string.IsNullOrEmpty(DBusAddress.Session);
 
     public static async Task<DBusConnection> GetConnectionAsync(CancellationToken cancellationToken = default)
@@ -70,9 +76,10 @@ internal static class DBusSession
                     throw new PlatformNotSupportedException("No D-Bus session bus is available.");
                 }
 
-                (DBusConnection created, string? error) = await CreateConnectionAsync(address,
+                (DBusConnection created, string? error, bool registered) = await CreateConnectionAsync(address,
                     PortalApplicationRegistration.HasSandboxIdentity(), PortalApplicationDesktopEntry.EnsureExists).ConfigureAwait(false);
                 RegistrationError = error;
+                HostPermissionId = registered ? ApplicationId : "";
                 Volatile.Write(ref connection, created);
             }
 
@@ -85,7 +92,7 @@ internal static class DBusSession
     }
 
     /// <summary>Opens a peer, registering host identity or leaving sandbox identity to the portal.</summary>
-    internal static async Task<(DBusConnection Connection, string? Error)> CreateConnectionAsync(string address, bool hasSandboxIdentity, Action? prepareHostIdentity = null)
+    internal static async Task<(DBusConnection Connection, string? Error, bool Registered)> CreateConnectionAsync(string address, bool hasSandboxIdentity, Action? prepareHostIdentity = null)
     {
         DBusConnection created = new DBusConnection(address);
 
@@ -104,7 +111,7 @@ internal static class DBusSession
                 await created.ConnectAsync().ConfigureAwait(false);
             }
 
-            return (created, registration.Error);
+            return (created, registration.Error, registration.Registered);
         }
         catch
         {

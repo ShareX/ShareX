@@ -85,6 +85,7 @@ public class PortalApplicationRegistrationTests
         PortalRegistrationResult result = await registration;
         Assert.Null(result.Error);
         Assert.False(result.UseNewConnection);
+        Assert.True(result.Registered);
     }
 
     [Theory]
@@ -109,6 +110,18 @@ public class PortalApplicationRegistrationTests
         PortalRegistrationResult result = await RejectRegistration(name, "Unavailable");
         Assert.Null(result.Error);
         Assert.False(result.UseNewConnection);
+        Assert.False(result.Registered);
+    }
+
+    [Theory]
+    [InlineData("sharex", "Allow ShareX to Take Screenshots?")]
+    [InlineData("", "Allow Apps to Take Screenshots?")]
+    public void ScreenshotPermissionFixNamesTheIdThePortalChecks(string permissionId, string dialog)
+    {
+        // A registered ShareX is checked under "sharex"; setting the "" entry instead does nothing.
+        string message = PortalScreenshot.PermissionDeniedMessage(permissionId);
+        Assert.Contains(dialog, message);
+        Assert.Contains($"SetPermission screenshot true screenshot '{permissionId}' \"['yes']\"", message);
     }
 
     [Theory]

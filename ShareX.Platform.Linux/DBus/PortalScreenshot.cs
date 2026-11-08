@@ -37,11 +37,19 @@ internal static class PortalScreenshot
 {
     public const string Interface = "org.freedesktop.portal.Screenshot";
 
-    internal const string PermissionDeniedMessage =
-        "The desktop did not allow ShareX to take a screenshot. On GNOME this happens when \"Allow Apps to Take Screenshots?\" " +
-        "was denied or closed. To allow it again, run: gdbus call --session --dest org.freedesktop.impl.portal.PermissionStore " +
-        "--object-path /org/freedesktop/impl/portal/PermissionStore " +
-        "--method org.freedesktop.impl.portal.PermissionStore.SetPermission screenshot true screenshot '' \"['yes']\"";
+    /// <summary>
+    /// What to tell the user when the desktop refuses a screenshot. GNOME keeps the answer to "Allow ShareX to Take Screenshots?"
+    /// under the id the portal knows ShareX by: "sharex" when ShareX registered with the portal (xdg-desktop-portal 1.19 and later),
+    /// "" for every unidentified app before that. Setting the other id has no effect.
+    /// </summary>
+    internal static string PermissionDeniedMessage(string permissionId)
+    {
+        string dialog = permissionId.Length == 0 ? "Allow Apps to Take Screenshots?" : "Allow ShareX to Take Screenshots?";
+        return $"The desktop did not allow ShareX to take a screenshot. On GNOME this happens when \"{dialog}\" was denied or closed. " +
+            "To allow it, run: gdbus call --session --dest org.freedesktop.impl.portal.PermissionStore " +
+            "--object-path /org/freedesktop/impl/portal/PermissionStore " +
+            $"--method org.freedesktop.impl.portal.PermissionStore.SetPermission screenshot true screenshot '{permissionId}' \"['yes']\"";
+    }
 
     /// <summary>Takes a screenshot and returns the PNG file content. The portal writes the file, which is deleted afterwards when it is in a temporary location.</summary>
     /// <param name="interactive">Let the user pick the area or window in the desktop's own dialog.</param>
@@ -87,7 +95,7 @@ internal static class PortalScreenshot
         // or a dialog closed without an answer, every non-interactive screenshot fails with response 2 and no dialog.
         if (!interactive && response.Code == 2)
         {
-            throw new UnauthorizedAccessException(PermissionDeniedMessage);
+            throw new UnauthorizedAccessException(PermissionDeniedMessage(DBusSession.HostPermissionId));
         }
 
         if (!response.Success || !response.Results.TryGetValue("uri", out VariantValue uriValue))

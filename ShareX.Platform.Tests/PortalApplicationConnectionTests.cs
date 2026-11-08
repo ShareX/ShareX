@@ -148,7 +148,7 @@ public class PortalApplicationConnectionTests
             Portal portal = new Portal(server, rejection, requiredDesktopEntry);
             server.AddMethodHandler(portal);
             await server.RequestNameAsync(DBusSession.PortalBusName).WaitAsync(TimeSpan.FromSeconds(5));
-            (DBusConnection connection, string? error) = await DBusSession.CreateConnectionAsync(address, hasSandboxIdentity, prepareHostIdentity)
+            (DBusConnection connection, string? error, _) = await DBusSession.CreateConnectionAsync(address, hasSandboxIdentity, prepareHostIdentity)
                 .WaitAsync(TimeSpan.FromSeconds(5));
 
             using (connection)

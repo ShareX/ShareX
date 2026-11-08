@@ -88,7 +88,7 @@ internal static class PortalApplicationRegistration
         {
             prepareHostIdentity?.Invoke();
             await register().ConfigureAwait(false);
-            return new PortalRegistrationResult(null, false);
+            return new PortalRegistrationResult(null, false, true);
         }
         catch (DBusErrorReplyException e) when (e.ErrorName is "org.freedesktop.DBus.Error.UnknownMethod" or
             "org.freedesktop.DBus.Error.UnknownInterface" or "org.freedesktop.DBus.Error.ServiceUnknown")
@@ -116,4 +116,5 @@ internal static class PortalApplicationRegistration
     }
 }
 
-internal readonly record struct PortalRegistrationResult(string? Error, bool UseNewConnection);
+/// <param name="Registered">The portal accepted ShareX's application id, so it identifies ShareX as "sharex" from now on.</param>
+internal readonly record struct PortalRegistrationResult(string? Error, bool UseNewConnection, bool Registered = false);

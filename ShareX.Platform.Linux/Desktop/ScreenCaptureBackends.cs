@@ -142,7 +142,27 @@ internal sealed class PortalCaptureBackend : IScreenCaptureBackend
     public async Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, IReadOnlyList<ScreenInfo> screens, CancellationToken cancellationToken)
     {
         bool interactive = request.Mode == ScreenCaptureMode.Interactive;
-        byte[] png = await PortalScreenshot.CaptureAsync(interactive, cancellationToken).ConfigureAwait(false);
+        byte[] png;
+
+        try
+        {
+            png = await PortalScreenshot.CaptureAsync(interactive, cancellationToken).ConfigureAwait(false);
+        }
+        catch (UnauthorizedAccessException denied) when (!interactive)
+        {
+            // GNOME refuses screenshots taken without the user's involvement until they are allowed, and some setups never show
+            // the dialog that allows them. Its own screenshot UI needs no permission, so the user can still take the capture there.
+            try
+            {
+                png = await PortalScreenshot.CaptureAsync(true, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception e) when (e is InvalidOperationException or TimeoutException)
+            {
+                throw new UnauthorizedAccessException(denied.Message, e);
+            }
+
+            interactive = true;
+        }
         PlatformSize size = PngCodec.ReadSize(png);
         PlatformRectangle full = new PlatformRectangle(0, 0, size.Width, size.Height);
 
