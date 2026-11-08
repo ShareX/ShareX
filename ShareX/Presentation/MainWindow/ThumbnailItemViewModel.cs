@@ -45,6 +45,10 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 {
     private int _refreshVersion;
     private Bitmap? _thumbnail;
+    private Bitmap? _hoverFrame;
+    private int _hoverVersion;
+    private bool _isHoverAnimating;
+    private bool _disposed;
     private bool _isSelected;
     private string _title = string.Empty;
     private string _status = string.Empty;
@@ -85,11 +89,35 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             OnPropertyChanged();
             OnPropertyChanged(nameof(HasThumbnail));
             OnPropertyChanged(nameof(HasNoThumbnail));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
             OnPropertyChanged(nameof(ShowPlayIcon));
             old?.Dispose();
         }
     }
 
+    // The current frame of an animated GIF played while the pointer is over the thumbnail, shown on top of Thumbnail.
+    public Bitmap? HoverFrame
+    {
+        get => _hoverFrame;
+        private set
+        {
+            if (ReferenceEquals(_hoverFrame, value))
+            {
+                return;
+            }
+
+            Bitmap? old = _hoverFrame;
+            _hoverFrame = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(HasHoverFrame));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
+            old?.Dispose();
+        }
+    }
+
+    public bool HasHoverFrame => HoverFrame != null;
+    // Hidden while a GIF plays, so it doesn't show through the frames' transparent parts.
+    public bool ShowStillThumbnail => HasThumbnail && !HasHoverFrame;
     public bool HasThumbnail => Thumbnail != null;
     public bool HasNoThumbnail => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Task.Info?.FilePath ?? Task.Info?.FileName);
@@ -435,11 +463,43 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         return AppIcons.File;
     }
 
+    // Plays an animated GIF over its still thumbnail while the pointer is on it.
+    public void StartHoverAnimation()
+    {
+        string? filePath = Task.Info?.FilePath;
+
+        // Only formats that can be animated, so hovering a large PNG doesn't read the whole file.
+        if (_disposed || _isHoverAnimating || string.IsNullOrEmpty(filePath) ||
+            !AnimatedImagePreview.CanBeAnimated(filePath) || !File.Exists(filePath))
+        {
+            return;
+        }
+
+        _isHoverAnimating = true;
+        int version = ++_hoverVersion;
+
+        // Decode at twice the thumbnail size so frames stay sharp on high DPI screens.
+        _ = AnimatedImagePreview.PlayAsync(filePath, Math.Max(Width, Height) * 2,
+            () => version == _hoverVersion && !_disposed,
+            frame => HoverFrame = frame);
+    }
+
+    public void StopHoverAnimation()
+    {
+        _isHoverAnimating = false;
+        _hoverVersion++;
+        HoverFrame = null;
+    }
+
     public void Dispose()
     {
+        _disposed = true;
         _refreshVersion++;
+        _hoverVersion++;
         Thumbnail?.Dispose();
         _thumbnail = null;
+        _hoverFrame?.Dispose();
+        _hoverFrame = null;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

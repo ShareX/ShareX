@@ -83,6 +83,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
     private ThumbnailItemViewModel? _selectionAnchor;
     private const int MinImagePreviewWidth = 100;
+    // Animated previews are decoded at most this large, which is plenty for the pane and keeps playback cheap.
+    private const int MaxAnimatedImagePreviewSize = 1024;
     private string? _imagePreviewPath;
     private int _imagePreviewVersion;
     private bool _imagePreviewUpdatePending;
@@ -405,6 +407,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private async Task LoadImagePreviewAsync(int version, string filePath)
     {
+        // ShareX 21 played animated GIFs in the preview, so show each frame in turn until another file is selected.
+        // Frames nobody can see aren't decoded while ShareX is in the tray or minimized.
+        if (AnimatedImagePreview.CanBeAnimated(filePath) && await AnimatedImagePreview.PlayAsync(filePath, MaxAnimatedImagePreviewSize,
+            () => version == _imagePreviewVersion && !_disposed,
+            SetImagePreview,
+            () => !IsVisible || WindowState == Avalonia.Controls.WindowState.Minimized))
+        {
+            return;
+        }
+
         AvaloniaBitmap? bitmap = await Task.Run(() =>
         {
             try
@@ -1416,6 +1428,22 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ClearSelection();
         SetSelected(selected, true);
         _selectionAnchor = selected;
+    }
+
+    private void OnThumbnailPreviewPointerEntered(object? sender, PointerEventArgs e)
+    {
+        if (sender is Control { DataContext: ThumbnailItemViewModel item })
+        {
+            item.StartHoverAnimation();
+        }
+    }
+
+    private void OnThumbnailPreviewPointerExited(object? sender, PointerEventArgs e)
+    {
+        if (sender is Control { DataContext: ThumbnailItemViewModel item })
+        {
+            item.StopHoverAnimation();
+        }
     }
 
     private void OnThumbnailPointerPressed(object? sender, PointerPressedEventArgs e)
