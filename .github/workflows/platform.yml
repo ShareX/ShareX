@@ -87,6 +87,11 @@ jobs:
     runs-on: ${{ matrix.runner }}
     env:
       HAS_SIGNING_CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE != '' }}
+      # How long to wait for Apple's verdict on the notarization submission. The review of a new
+      # Developer ID team's first submissions can take hours, and the wait costs nothing: the job
+      # is idle either way, and without the verdict the build ships signed but unstapled, which
+      # Gatekeeper rejects. If the review still has not finished, the build is still published.
+      MACOS_NOTARY_TIMEOUT: 14400
 
     strategy:
       fail-fast: false

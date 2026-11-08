@@ -126,7 +126,7 @@ notarytool() {
 # MACOS_NOTARY_TIMEOUT seconds: a new Developer ID team's first submissions can take hours. The file is signed either way, and
 # Gatekeeper asks Apple online, so it opens without a warning as soon as the review passes; only the stapled ticket is missing.
 notarize() {
-  local id status timeout_s="${MACOS_NOTARY_TIMEOUT:-1200}" deadline=$((SECONDS + ${MACOS_NOTARY_TIMEOUT:-1200}))
+  local id status timeout_s="${MACOS_NOTARY_TIMEOUT:-3600}" deadline=$((SECONDS + ${MACOS_NOTARY_TIMEOUT:-3600}))
   # The upload needs its own bound: a runner that cannot reach Apple hangs inside it, and the deadline below would then never
   # get the chance to turn the build into a signed but unstapled one. A submission that fails outright is treated the same way.
   id="$(notarytool submit "$1" --timeout "$(( timeout_s / 60 > 0 ? timeout_s / 60 : 1 ))m" --output-format plist 2>/dev/null | plutil -extract id raw - 2>/dev/null)" || id=""
@@ -135,6 +135,11 @@ notarize() {
     return 2
   fi
   echo "Notarization submission $id for $(basename "$1")"
+  # Keep the submission id where it can be found later: if the review outlives this job, the id is what tells us that Apple
+  # already has the build and that a later run only has to wait for the verdict.
+  if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then
+    echo "Notarization submission \`$id\` for $(basename "$1")" >> "$GITHUB_STEP_SUMMARY"
+  fi
   while [ "$SECONDS" -lt "$deadline" ]; do
     sleep 30
     status="$(notarytool info "$id" --output-format plist 2>/dev/null | plutil -extract status raw - 2>/dev/null)" || continue
@@ -204,6 +209,21 @@ if command -v ditto >/dev/null; then
   ditto -c -k --keepParent "$app" "$zip_path"
 else
   (cd "$staging" && zip -qry "$zip_path" ShareX.app)
+fi
+# The zip is what the CI publishes, so the ticket has to be in the zip as well: Gatekeeper checks the file a user downloads,
+# and a zip without a stapled ticket is only accepted once Gatekeeper can reach Apple online. Stapling needs the app inside
+# the zip to be notarized already, which it is by the time this runs. The staple is done on a copy and the copy only replaces
+# the artifact when it worked, so a failed staple cannot leave a broken zip behind.
+if [ -n "${MACOS_SIGN_IDENTITY:-}" ] && can_notarize && xcrun stapler validate -q "$app" 2>/dev/null; then
+  stapling="$zip_path.stapling"
+  cp "$zip_path" "$stapling"
+  if xcrun stapler staple "$stapling" 2>/dev/null && [ -s "$stapling" ]; then
+    mv "$stapling" "$zip_path"
+    signed="$signed, zip stapled"
+  else
+    rm -f "$stapling"
+    echo "::warning::Could not staple the zip; it stays signed but without a ticket"
+  fi
 fi
 echo "Package: $zip_path ($signed)"
 
