@@ -103,6 +103,8 @@ public sealed class History
         {
             List<HistoryEntry> removed = Entries.GetRange(Index + 1, Entries.Count - Index - 1);
             Entries.RemoveRange(Index + 1, removed.Count);
+            // As in DiscardRedo: the history brush must not keep sampling a released state.
+            if (Source != null && removed.Contains(Source)) Source = Snapshots.FirstOrDefault() ?? Current;
             Release(removed);
         }
         Entries.Add(new HistoryEntry(name, _document.CaptureState()));

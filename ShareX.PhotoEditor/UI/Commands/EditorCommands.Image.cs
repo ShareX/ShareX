@@ -340,6 +340,10 @@ public static partial class EditorCommands
             copy.Root.Remove(layer);
             copy.Root.Add(layer.Duplicate());
         }
+        // RestoreState shares the selection and the channel masks, as history states do. A separate document disposes them when it
+        // closes, so it gets its own copies, like its layers.
+        copy.SetSelectionLive(source.Selection?.Clone());
+        foreach (AlphaChannel channel in copy.Channels) channel.Mask = channel.Mask.Clone();
         copy.ActiveLayer = copy.Root.Children.LastOrDefault();
         copy.Title = string.Format(Strings.LayerNames_Copy, source.DisplayName.TrimEnd('*'));
         w.OpenDocument(copy, Strings.EditorCommands_DuplicateImage);
