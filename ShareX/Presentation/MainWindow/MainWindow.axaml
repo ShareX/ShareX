@@ -451,11 +451,17 @@
                                                 Height="{Binding Height}"
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
                                                 CornerRadius="4"
-                                                ClipToBounds="True">
+                                                ClipToBounds="True"
+                                                PointerEntered="OnThumbnailPreviewPointerEntered"
+                                                PointerExited="OnThumbnailPreviewPointerExited">
                                             <Grid>
                                                 <Image Source="{Binding Thumbnail}"
-                                                       IsVisible="{Binding HasThumbnail}"
+                                                       IsVisible="{Binding ShowStillThumbnail}"
                                                        Stretch="Uniform"/>
+                                                <Image Source="{Binding HoverFrame}"
+                                                       IsVisible="{Binding HasHoverFrame}"
+                                                       Stretch="Uniform"
+                                                       RenderOptions.BitmapInterpolationMode="HighQuality"/>
                                                 <Border IsVisible="{Binding ShowPlayIcon}"
                                                         Width="50"
                                                         Height="50"
