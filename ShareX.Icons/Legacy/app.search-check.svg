@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="mr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" stop-opacity=".45"/><stop offset=".5" stop-color="#3e3e3e" stop-opacity=".55"/><stop offset="1" stop-color="#040404" stop-opacity=".6"/></linearGradient>
+    <linearGradient id="tkFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#66ee77"/><stop offset="0.5" stop-color="#3ccb4c"/><stop offset="1" stop-color="#0eb61d"/></linearGradient>
+  </defs>
+  <line x1="7.2" y1="8.8" x2="1.9" y2="14.1" stroke="#28292b" stroke-width="2.9" stroke-opacity=".8"/>
+  <line x1="6.4" y1="8.9" x2="1.6" y2="13.7" stroke="#606064" stroke-width="1.6" stroke-opacity=".9"/>
+  <line x1="6.7" y1="9.2" x2="2.2" y2="13.7" stroke="#c4c4cc" stroke-width="1"/>
+  <circle cx="10.5" cy="5.5" r="4.9" fill="#eef4fa" fill-opacity=".9" stroke="url(#mr)"/>
+  <ellipse cx="7.4" cy="5.2" rx=".7" ry="2" fill="#bbd2e8" opacity=".75"/>
+  <path d="M7.6 9.6a4.9 4.9 0 0 0 6.6-.4" fill="none" stroke="#040404" stroke-opacity=".35"/>
+  <path d="M7.4 5.6L8.6 4.5L10 5.8L12.8 2.8L14 3.9L10 8.3Z" fill="url(#tkFill)" stroke="#00800f" stroke-opacity=".85" stroke-width=".8" stroke-linejoin="round"/>
+</svg>

@@ -642,6 +642,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Carica</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Righello</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Carica dagli Appunti</value>
   </data>
@@ -793,7 +796,7 @@ Vuoi eseguirlo comunque?</value>
     <value>Cattura Regione (Trasparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Righello</value>
+    <value>Misura</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Cattura Colore</value>
@@ -872,6 +875,15 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>File immagine</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatico</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Nascondi</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Mostra</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Apri immagine</value>
@@ -1229,6 +1241,12 @@ Vuoi eseguirlo comunque?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatica</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vista elenco</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vista miniature</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Servizio Caricamento Testo Personalizzato</value>

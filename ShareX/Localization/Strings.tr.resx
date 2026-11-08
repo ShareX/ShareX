@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Pano biçimleri</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompakt mod</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Özel kısayol yapılandırma yolu</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Simgeler</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Resim ön izleme görünürlüğü:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Resim yazdırma ayarları...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Açık</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Ana pencere</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Pano içerik görüntüleyicisini göster</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Kolonları göster</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>Dosya yöneticisinin bağlam menüsünde "ShareX ile düzenle" seçeneğini göster</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Eşzamanlı yükleme sınırı:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Varsayılan</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menüler</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menüler:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Ön izleme:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Ayar pencereleri:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Kenar çubuğu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Kenar çubuğu:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Araç menüleri</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Araç menüleri:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Alt klasör deseni:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Görev görünümü modu:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1397,6 +1445,21 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Kısayol ayarları</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Bunu istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21'in renkli simgeleri.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Temanızın renklerine uyan sade çizgi simgeler.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX'in yeni simgeleri var. Beğendiğiniz görünümü seçin.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Simgelerinizi seçin</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Resim buraya kaydedilemedi:</value>
   </data>
@@ -1474,6 +1537,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Yakala</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Cetvel...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Pano görüntüleyici...</value>
@@ -1638,7 +1704,7 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
     <value>Yönetici olarak yeniden başlat</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Cetvel...</value>
+    <value>Ölçüm...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Ekrandan renk seçici...</value>
@@ -1648,6 +1714,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Ekran kaydı (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Yalnızca bir kez</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Ekran görüntüsü dizini...</value>
@@ -1753,6 +1822,9 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Resmi güzelleştir...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Listeyi temizle</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Küçük resim görünümünü temizle</value>
@@ -1915,6 +1987,12 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Yüklemeyi durdur</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Liste görünümüne geç</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümüne geç</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Metin</value>
@@ -2221,6 +2299,33 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Kısayollar aktif edildi.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Geçen</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Dosya adı</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Sırada</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>İlerleme</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Kalan</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hız</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Durum</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Adres</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Yükleme tamamlandı. URL: {0}</value>
@@ -2677,6 +2782,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Yerleşik ekran kaydedicisini kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR ton eşleme</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Donanım video kodlamasını zorunlu tut</value>

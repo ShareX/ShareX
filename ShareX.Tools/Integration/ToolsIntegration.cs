@@ -256,6 +256,11 @@ public static class ToolsIntegration
         });
     }
 
+    public static void ShowClassicRulerWindow(ClassicRulerOptions options)
+    {
+        Show(() => new ClassicRulerWindow(options));
+    }
+
     public static void ShowMouseHighlighterWindow(MouseHighlighterOptions options, Action? settingsChanged = null)
     {
         MouseHighlighterManager.ShowWindow(options, settingsChanged);

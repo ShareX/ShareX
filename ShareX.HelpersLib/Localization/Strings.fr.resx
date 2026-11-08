@@ -642,6 +642,9 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Règle</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Mise en ligne depuis le presse-papier</value>
   </data>
@@ -793,7 +796,7 @@ Voulez-vous quand même l’exécuter ?</value>
     <value>Capturer une région (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Règle</value>
+    <value>Mesurer</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>
@@ -872,6 +875,15 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fichiers image</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Masquer</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Afficher</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Ouvrir une image</value>
@@ -1229,6 +1241,12 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatique</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vue liste</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vue miniatures</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Service de mise en ligne de textes personnalisé</value>

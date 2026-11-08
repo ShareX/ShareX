@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Subir</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Regla</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Subir desde el portapapeles</value>
   </data>
@@ -793,7 +796,7 @@
     <value>Capturar región (transparente)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Regla</value>
+    <value>Medir</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Pantalla de selector de color</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Archivos de imagen</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automático</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ocultar</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Mostrar</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Abrir imagen</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automático</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vista de lista</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vista de miniatura</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Servidor personalizado de texto</value>

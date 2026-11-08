@@ -194,15 +194,15 @@
                                                 FontSize="15"/>
                     </Button>
                     <Button Grid.Column="2"
-                            Classes="compact"
-                            Content="{x:Static res:Strings.AfterCaptureWindow_Cancel}"
-                            IsCancel="True"
-                            Click="OnCancelClick"/>
-                    <Button Grid.Column="3"
                             Classes="compact primary"
                             Content="{x:Static res:Strings.AfterCaptureWindow_Continue}"
                             IsDefault="True"
                             Click="OnContinueClick"/>
+                    <Button Grid.Column="3"
+                            Classes="compact"
+                            Content="{x:Static res:Strings.AfterCaptureWindow_Cancel}"
+                            IsCancel="True"
+                            Click="OnCancelClick"/>
                 </Grid>
             </Grid>
 

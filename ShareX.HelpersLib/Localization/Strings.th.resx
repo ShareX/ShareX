@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>อัปโหลด</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>ไม้บรรทัด</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>อัปโหลด จากคลิปบอร์ด</value>
   </data>
@@ -793,7 +796,7 @@
     <value>จับภาพ พื้นที่ (โปร่งใส)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด</value>
+    <value>วัดขนาด</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>ไฟล์รูปภาพ</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>อัตโนมัติ</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>ซ่อน</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>แสดง</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>เปิดรูปภาพ</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>อัตโนมัติ</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>มุมมองภาพขนาดย่อ</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>กำหนดเอง ตัวอัปโหลดข้อความ</value>

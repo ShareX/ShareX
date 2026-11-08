@@ -642,6 +642,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Przeslij</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linijka</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Prześlij ze schowka</value>
   </data>
@@ -793,7 +796,7 @@ Czy mimo to chcesz go uruchomić?</value>
     <value>Przechwytywanie regionu (przezroczysty)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linijka</value>
+    <value>Pomiar</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Selektor kolorów ekranu</value>
@@ -872,6 +875,15 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Pliki obrazów</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatycznie</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ukryj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Pokaż</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Otwórz obraz</value>
@@ -1229,6 +1241,12 @@ Czy mimo to chcesz go uruchomić?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Widok listy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Widok miniatur</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Własny serwis tekstu</value>

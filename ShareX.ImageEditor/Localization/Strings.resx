@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Redo (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Rounded corners</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Save</value>
   </data>
@@ -1394,8 +1397,16 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primary</value>
+    <comment>Column header in the Customize Toolbar dialog for the main keyboard shortcut of a tool.</comment>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Reset toolbar to default</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondary</value>
+    <comment>Column header in the Customize Toolbar dialog for the alternate keyboard shortcut of a tool.</comment>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Show / Hide</value>

@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Wiederholen (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Abgerundete Ecken</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
@@ -1392,8 +1395,14 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primär</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Symbolleiste auf Standard zurücksetzen</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Sekundär</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Anzeigen / Ausblenden</value>

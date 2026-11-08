@@ -170,13 +170,13 @@ internal static unsafe partial class Win32
     [LibraryImport("gdi32.dll")]
     public static partial IntPtr CreateCompatibleDC(IntPtr hdc);
 
-    [LibraryImport("gdi32.dll")]
+    [LibraryImport("gdi32.dll", SetLastError = true)]
     public static partial IntPtr CreateDIBSection(IntPtr hdc, BITMAPINFOHEADER* bitmapInfo, uint usage, out IntPtr bits, IntPtr section, uint offset);
 
     [LibraryImport("gdi32.dll")]
     public static partial IntPtr SelectObject(IntPtr hdc, IntPtr obj);
 
-    [LibraryImport("gdi32.dll")]
+    [LibraryImport("gdi32.dll", SetLastError = true)]
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool BitBlt(IntPtr hdcDest, int x, int y, int width, int height, IntPtr hdcSrc, int xSrc, int ySrc, int rop);
 

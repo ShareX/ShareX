@@ -208,7 +208,8 @@ public partial class RegionCaptureWindow : Window
     protected override void OnKeyDown(KeyEventArgs e)
     {
         if (_keyboardInputEnabled && !_closing && _request != null &&
-            e.Key == Key.Tab && e.KeyModifiers == KeyModifiers.None && _viewModel?.IsModalOpen != true)
+            e.KeyModifiers == KeyModifiers.None && _viewModel?.IsModalOpen != true &&
+            (e.Key == Key.Tab || (e.Key == Key.NumPad0 && !e.Handled))) // NumPad0 matches ShareX 21; a toolbar hotkey on it wins.
         {
             ActivateRegionTool();
             e.Handled = true;

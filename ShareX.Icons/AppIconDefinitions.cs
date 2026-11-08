@@ -657,6 +657,12 @@ internal static partial class AppIconDefinitions
             Stroke(Rotate(Path("M6 8.5v3M9.5 8.5v2M13 8.5v3M16.5 8.5v2"), -45, 12, 12))
         },
         {
+            // A dimension line: the distance between two edges.
+            Icon.Measure,
+            Stroke("M3 5v14M21 5v14"),
+            Stroke("M6.5 12h11M9.5 9l-3 3 3 3M14.5 9l3 3-3 3")
+        },
+        {
             Icon.Robot,
             Stroke(Rectangle(4, 8, 16, 12, 3)),
             Stroke("M12 8V5"),

@@ -648,11 +648,20 @@ namespace ShareX.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Ruler....
+        ///   Looks up a localized string similar to Measure....
         /// </summary>
         public static string MainMenuBuilder_Ruler {
             get {
                 return ResourceManager.GetString("MainMenuBuilder_Ruler", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Ruler....
+        /// </summary>
+        public static string MainMenuBuilder_ClassicRuler {
+            get {
+                return ResourceManager.GetString("MainMenuBuilder_ClassicRuler", resourceCulture);
             }
         }
         
@@ -5785,5 +5794,40 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_MultiRegionMode => ResourceManager.GetString("TaskSettingsWindow_MultiRegionMode", resourceCulture);
         public static string TaskSettingsWindow_CompactRegionCaptureToolbar => ResourceManager.GetString("TaskSettingsWindow_CompactRegionCaptureToolbar", resourceCulture);
         public static string MainMenuBuilder_RegionTransparent => ResourceManager.GetString("MainMenuBuilder_RegionTransparent", resourceCulture);
+        public static string IconPackPrompt_ChangeLater => ResourceManager.GetString("IconPackPrompt_ChangeLater", resourceCulture);
+        public static string IconPackPrompt_LegacyDescription => ResourceManager.GetString("IconPackPrompt_LegacyDescription", resourceCulture);
+        public static string IconPackPrompt_ModernDescription => ResourceManager.GetString("IconPackPrompt_ModernDescription", resourceCulture);
+        public static string IconPackPrompt_Subtitle => ResourceManager.GetString("IconPackPrompt_Subtitle", resourceCulture);
+        public static string IconPackPrompt_Title => ResourceManager.GetString("IconPackPrompt_Title", resourceCulture);
+        public static string ApplicationSettingsWindow_ListView => ResourceManager.GetString("ApplicationSettingsWindow_ListView", resourceCulture);
+        public static string ApplicationSettingsWindow_ShowColumns => ResourceManager.GetString("ApplicationSettingsWindow_ShowColumns", resourceCulture);
+        public static string ApplicationSettingsWindow_TaskViewModeLabel => ResourceManager.GetString("ApplicationSettingsWindow_TaskViewModeLabel", resourceCulture);
+        public static string MainWindow_ClearTaskList => ResourceManager.GetString("MainWindow_ClearTaskList", resourceCulture);
+        public static string MainWindow_SwitchToListView => ResourceManager.GetString("MainWindow_SwitchToListView", resourceCulture);
+        public static string MainWindow_SwitchToThumbnailView => ResourceManager.GetString("MainWindow_SwitchToThumbnailView", resourceCulture);
+        public static string TaskListView_Elapsed => ResourceManager.GetString("TaskListView_Elapsed", resourceCulture);
+        public static string TaskListView_Filename => ResourceManager.GetString("TaskListView_Filename", resourceCulture);
+        public static string TaskListView_History => ResourceManager.GetString("TaskListView_History", resourceCulture);
+        public static string TaskListView_InQueue => ResourceManager.GetString("TaskListView_InQueue", resourceCulture);
+        public static string TaskListView_Progress => ResourceManager.GetString("TaskListView_Progress", resourceCulture);
+        public static string TaskListView_Remaining => ResourceManager.GetString("TaskListView_Remaining", resourceCulture);
+        public static string TaskListView_Speed => ResourceManager.GetString("TaskListView_Speed", resourceCulture);
+        public static string TaskListView_Status => ResourceManager.GetString("TaskListView_Status", resourceCulture);
+        public static string TaskListView_URL => ResourceManager.GetString("TaskListView_URL", resourceCulture);
+        public static string ApplicationSettingsWindow_CompactMode => ResourceManager.GetString("ApplicationSettingsWindow_CompactMode", resourceCulture);
+        public static string MainMenuBuilder_ScreenshotDelayJustOnce => ResourceManager.GetString("MainMenuBuilder_ScreenshotDelayJustOnce", resourceCulture);
+        public static string ApplicationSettingsWindow_ImagePreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_Spacing => ResourceManager.GetString("ApplicationSettingsWindow_Spacing", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingCompact => ResourceManager.GetString("ApplicationSettingsWindow_SpacingCompact", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingDefault => ResourceManager.GetString("ApplicationSettingsWindow_SpacingDefault", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenusLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingMenus => ResourceManager.GetString("ApplicationSettingsWindow_SpacingMenus", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingPreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingPreviewLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSidebar => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebar", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingToolMenus => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenus", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSettingsWindowsLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSettingsWindowsLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingSidebarLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingSidebarLabel", resourceCulture);
+        public static string ApplicationSettingsWindow_SpacingToolMenusLabel => ResourceManager.GetString("ApplicationSettingsWindow_SpacingToolMenusLabel", resourceCulture);
+        public static string TaskSettingsWindow_NativeRecorderHDRToneMapping => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
     }
 }

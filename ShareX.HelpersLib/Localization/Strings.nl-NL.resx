@@ -642,6 +642,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Meetlat</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Uploaden van klembord</value>
   </data>
@@ -793,7 +796,7 @@ Wilt u het toch uitvoeren?</value>
     <value>Leg rechthoekige regio vast (Transparant)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Meetlat</value>
+    <value>Meten</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>
@@ -872,6 +875,15 @@ Wilt u het toch uitvoeren?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Afbeeldingsbestanden</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Verbergen</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Weergeven</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Afbeelding openen</value>
@@ -1229,6 +1241,12 @@ Wilt u het toch uitvoeren?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisch</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Lijstweergave</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatuurweergave</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Aangepaste tekstuploader</value>

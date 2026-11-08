@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="sf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffeca0"/><stop offset=".3" stop-color="#fde27c"/><stop offset=".55" stop-color="#fac442"/><stop offset="1" stop-color="#f6b83a"/></linearGradient>
+  </defs>
+  <path d="M1.2 5V2.4Q1.2 1.2 2.4 1.2H5M11 1.2H13.6Q14.8 1.2 14.8 2.4V5M14.8 11V13.6Q14.8 14.8 13.6 14.8H11M5 14.8H2.4Q1.2 14.8 1.2 13.6V11" fill="none" stroke="#0a5a8c" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M1.2 5V2.4Q1.2 1.2 2.4 1.2H5M11 1.2H13.6Q14.8 1.2 14.8 2.4V5M14.8 11V13.6Q14.8 14.8 13.6 14.8H11M5 14.8H2.4Q1.2 14.8 1.2 13.6V11" fill="none" stroke="#3cd2f6" stroke-width="1" stroke-linecap="round"/>
+  <circle cx="8" cy="8" r="4.5" fill="url(#sf)" stroke="#a86400"/>
+  <ellipse cx="8" cy="5.6" rx="3" ry="1.5" fill="#fff6c0" fill-opacity=".6"/>
+  <rect x="6" y="6.2" width="1.2" height="1.6" rx=".6" fill="#5a3200"/>
+  <rect x="8.8" y="6.2" width="1.2" height="1.6" rx=".6" fill="#5a3200"/>
+  <path d="M5.8 9.4Q8 11.6 10.2 9.4" fill="none" stroke="#7a4600" stroke-width=".9" stroke-linecap="round"/>
+  <rect x="2" y="8" width="12" height="1" fill="#3cd2f6" fill-opacity=".55"/>
+</svg>

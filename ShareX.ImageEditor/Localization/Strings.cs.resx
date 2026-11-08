@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Znovu (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Zaoblené rohy</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Uložit</value>
   </data>
@@ -1392,8 +1395,14 @@ Schránka neobsahuje obrázek.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primární</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Obnovit výchozí panel nástrojů</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Sekundární</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Zobrazit / skrýt</value>

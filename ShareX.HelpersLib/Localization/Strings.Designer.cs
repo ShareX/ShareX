@@ -866,6 +866,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_Ruler {
             get { return ResourceManager.GetString("HotkeyType_Ruler", resourceCulture); }
         }
+        public static string HotkeyType_ClassicRuler {
+            get { return ResourceManager.GetString("HotkeyType_ClassicRuler", resourceCulture); }
+        }
         public static string HotkeyType_ScreenColorPicker {
             get { return ResourceManager.GetString("HotkeyType_ScreenColorPicker", resourceCulture); }
         }
@@ -1358,5 +1361,10 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_AnimatedGifTrimmer => ResourceManager.GetString("HotkeyType_AnimatedGifTrimmer", resourceCulture);
         public static string AfterCaptureTasks_OpenInPhotoEditor => ResourceManager.GetString("AfterCaptureTasks_OpenInPhotoEditor", resourceCulture);
         public static string HotkeyType_RectangleTransparent => ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture);
+        public static string TaskViewMode_ListView => ResourceManager.GetString("TaskViewMode_ListView", resourceCulture);
+        public static string TaskViewMode_ThumbnailView => ResourceManager.GetString("TaskViewMode_ThumbnailView", resourceCulture);
+        public static string ImagePreviewVisibility_Automatic => ResourceManager.GetString("ImagePreviewVisibility_Automatic", resourceCulture);
+        public static string ImagePreviewVisibility_Hide => ResourceManager.GetString("ImagePreviewVisibility_Hide", resourceCulture);
+        public static string ImagePreviewVisibility_Show => ResourceManager.GetString("ImagePreviewVisibility_Show", resourceCulture);
     }
 }

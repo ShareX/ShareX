@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a0"/><stop offset=".5" stop-color="#f6cf3a"/><stop offset="1" stop-color="#d49a0a"/></linearGradient>
+    <radialGradient id="c" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="#ffb8b0"/><stop offset=".5" stop-color="#ee4a3a"/><stop offset="1" stop-color="#b01e12"/></radialGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b4dcff"/><stop offset=".5" stop-color="#4a9ae6"/><stop offset="1" stop-color="#1a5ab0"/></linearGradient>
+  </defs>
+  <polygon points="4.6,.6 8.6,7.4 .6,7.4" fill="url(#t)" stroke="#94700a" stroke-linejoin="round"/>
+  <path d="M4.6 2.6L2.4 6.4" stroke="#fffbe0" stroke-opacity=".8" stroke-width=".7" stroke-linecap="round"/>
+  <circle cx="4.6" cy="11.6" r="3.8" fill="url(#c)" stroke="#8c1008"/>
+  <path d="M2.2 10.8Q2.6 8.9 4.6 8.7" fill="none" stroke="#ffffff" stroke-width=".7" stroke-opacity=".7" stroke-linecap="round"/>
+  <rect x="9.5" y="8.5" width="6" height="6.6" rx="1" fill="url(#s)" stroke="#123f80"/>
+  <path d="M10.5 13.6V9.5H14.5" fill="none" stroke="#e0f0ff" stroke-opacity=".6"/>
+</svg>

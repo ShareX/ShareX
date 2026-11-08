@@ -9,6 +9,41 @@
     <Styles.Resources>
         <Thickness x:Key="ComboBoxDropdownContentMargin">6</Thickness>
         <Thickness x:Key="MenuFlyoutPresenterThemePadding">6,2</Thickness>
+
+        <!-- Default spacing. ThemeManager blends these with CompactMode.axaml for the configured spacing. -->
+        <x:Double x:Key="ShareX.Density.Nav.MinWidth">210</x:Double>
+        <Thickness x:Key="ShareX.Density.Nav.PanelMargin">6,6,6,0</Thickness>
+        <x:Double x:Key="ShareX.Density.Nav.ButtonHeight">30</x:Double>
+        <Thickness x:Key="ShareX.Density.Nav.ButtonPadding">8,2</Thickness>
+        <Thickness x:Key="ShareX.Density.Nav.LabelMargin">7,0,0,0</Thickness>
+        <Thickness x:Key="ShareX.Density.Menu.Padding">6,2</Thickness>
+        <x:Double x:Key="ShareX.Density.Menu.ItemHeight">28</x:Double>
+        <Thickness x:Key="ShareX.Density.Menu.ItemPadding">7,2</Thickness>
+        <Thickness x:Key="ShareX.Density.Menu.SeparatorMargin">6,2</Thickness>
+        <Thickness x:Key="ShareX.Density.ToolGrid.Padding">10</Thickness>
+        <x:Double x:Key="ShareX.Density.ToolGrid.ButtonHeight">34</x:Double>
+        <Thickness x:Key="ShareX.Density.ToolGrid.ButtonPadding">8,4</Thickness>
+        <x:Double x:Key="ShareX.Density.ToolGrid.ItemSpacing">8</x:Double>
+        <x:Double x:Key="ShareX.Density.ToolGrid.HeaderFontSize">16</x:Double>
+        <Thickness x:Key="ShareX.Density.ToolGrid.HeaderMargin">7,3,7,3</Thickness>
+        <Thickness x:Key="ShareX.Density.ToolGrid.FirstHeaderMargin">7,1,7,3</Thickness>
+        <Thickness x:Key="ShareX.Density.ToolGrid.SeparatorMargin">7,9,7,7</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.PageMargin">28,24,28,32</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.PageTitleMargin">0,0,0,14</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.PageTitleFontSize">24</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.PageTitleIconSize">22</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.SectionTitleFontSize">15</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.CardPadding">12</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.CardMargin">0,0,0,8</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.CheckBoxMinHeight">32</x:Double>
+        <x:Double x:Key="ShareX.Density.Settings.ControlMinHeight">32</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.ControlPadding">8,4</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NumberBoxHeight">40</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.ButtonPadding">10,4</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NavItemMinHeight">32</x:Double>
+        <Thickness x:Key="ShareX.Density.Settings.NavItemMargin">2,3</Thickness>
+        <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,8,8,8</Thickness>
+        <x:Double x:Key="ShareX.Density.Settings.NavSpacing">10</x:Double>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
@@ -924,7 +959,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="6"/>
-        <Setter Property="Padding" Value="6,2"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Menu.Padding}"/>
     </Style>
 
     <Style Selector="ContextMenu MenuItem">
@@ -951,11 +986,29 @@
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
     </Style>
 
+    <!-- Main window sidebar buttons (also drawn by the spacing preview in Application settings). -->
+    <Style Selector="Button.nav-button">
+        <Setter Property="Height" Value="{DynamicResource ShareX.Density.Nav.ButtonHeight}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Nav.ButtonPadding}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="CornerRadius" Value="4"/>
+    </Style>
+    <Style Selector="Button.nav-button TextBlock.nav-label">
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Nav.LabelMargin}"/>
+    </Style>
+    <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
     <!-- Shared compact menu treatment used by main-window, thumbnail and tray menus. -->
     <Style Selector="MenuItem.compact-menu-item">
-        <Setter Property="Height" Value="28"/>
-        <Setter Property="MinHeight" Value="28"/>
-        <Setter Property="Padding" Value="7,2"/>
+        <Setter Property="Height" Value="{DynamicResource ShareX.Density.Menu.ItemHeight}"/>
+        <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Menu.ItemHeight}"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Menu.ItemPadding}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
     </Style>
@@ -989,7 +1042,7 @@
     </Style>
 
     <Style Selector="Separator.compact-menu-separator">
-        <Setter Property="Margin" Value="6,2"/>
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Menu.SeparatorMargin}"/>
     </Style>
 
     <Style Selector="FlyoutPresenter.tool-grid-flyout">
@@ -997,23 +1050,31 @@
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="CornerRadius" Value="8"/>
-        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.ToolGrid.Padding}"/>
         <Setter Property="MaxWidth" Value="Infinity"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Disabled"/>
     </Style>
 
     <Style Selector="TextBlock.tool-grid-category-header">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
-        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.ToolGrid.HeaderFontSize}"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="TextAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="7,3,7,3"/>
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.ToolGrid.HeaderMargin}"/>
+    </Style>
+
+    <Style Selector="TextBlock.tool-grid-category-header.first">
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.ToolGrid.FirstHeaderMargin}"/>
+    </Style>
+
+    <Style Selector="StackPanel.tool-grid-item-content">
+        <Setter Property="Spacing" Value="{DynamicResource ShareX.Density.ToolGrid.ItemSpacing}"/>
     </Style>
 
     <Style Selector="Border.tool-grid-category-separator">
         <Setter Property="Height" Value="1"/>
-        <Setter Property="Margin" Value="7,9,7,7"/>
+        <Setter Property="Margin" Value="{DynamicResource ShareX.Density.ToolGrid.SeparatorMargin}"/>
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
     </Style>
 
@@ -1035,10 +1096,10 @@
     </Style>
 
     <Style Selector="Button.tool-grid-button">
-        <Setter Property="Height" Value="34"/>
+        <Setter Property="Height" Value="{DynamicResource ShareX.Density.ToolGrid.ButtonHeight}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
-        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.ToolGrid.ButtonPadding}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
@@ -1065,11 +1126,11 @@
     </Style>
 
     <Style Selector="ToggleButton.tool-grid-visibility-button">
-        <Setter Property="Height" Value="34"/>
+        <Setter Property="Height" Value="{DynamicResource ShareX.Density.ToolGrid.ButtonHeight}"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="HorizontalContentAlignment" Value="Left"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="8,4"/>
+        <Setter Property="Padding" Value="{DynamicResource ShareX.Density.ToolGrid.ButtonPadding}"/>
         <Setter Property="Margin" Value="0"/>
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>

@@ -200,7 +200,9 @@ public sealed class WindowsPrintService : IPrintService
             {
                 int result = StretchDIBits(dc, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height,
                     0, 0, image.Width, image.Height, (IntPtr)pixels, ref header, 0, 0x00CC0020); // DIB_RGB_COLORS, SRCCOPY
-                if (result == -1) throw new Win32Exception(); // GDI_ERROR
+                // StretchDIBits returns the number of scan lines drawn: 0 is a failure, and GDI_ERROR (-1) applies only to JPEG and
+                // PNG sources. It does not set the last error, so there is no Windows error code to report.
+                if (result <= 0) throw new InvalidOperationException("The image could not be drawn on the printer page (StretchDIBits failed).");
             }
         }
         finally

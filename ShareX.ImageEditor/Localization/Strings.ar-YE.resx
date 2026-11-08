@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>إعادة (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>زوايا مستديرة</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>حفظ</value>
   </data>
@@ -1392,8 +1395,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>موافق</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>أساسي</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>إعادة تعيين شريط الأدوات إلى الافتراضي</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>ثانوي</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>إظهار / إخفاء</value>

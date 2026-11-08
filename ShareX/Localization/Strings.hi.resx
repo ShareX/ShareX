@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>क्लिपबोर्ड प्रारूप</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>कॉम्पैक्ट मोड</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>अनुकूलित हॉटकी कॉन्फ़िगरेशन पथ</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>आइकन</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>छवि पूर्वावलोकन दृश्यता:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>छवि मुद्रण सेटिंग...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>हल्का</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>सूची दृश्य</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>मुख्य विंडो</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>क्लिपबोर्ड सामग्री दर्शक दिखाएँ</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>कॉलम दिखाएँ</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>फ़ाइल प्रबंधक के संदर्भ मेनू में "ShareX से संपादित करें" दिखाएँ</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>एक साथ अपलोड सीमा:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>कॉम्पैक्ट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>डिफ़ॉल्ट</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>मेनू</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>मेनू:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>पूर्वावलोकन:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>सेटिंग विंडो:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>साइडबार</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>साइडबार:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>उपकरण मेनू</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>उपकरण मेनू:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>उपफ़ोल्डर पैटर्न:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>कार्य दृश्य मोड:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>थीम</value>
@@ -1397,6 +1445,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - हॉटकी सेटिंग</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>आप इसे कभी भी ऐप्लिकेशन सेटिंग्स में बदल सकते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21 के रंगीन आइकन।</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>साफ़ रेखा वाले आइकन जो आपकी थीम के रंगों का पालन करते हैं।</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX में नए आइकन हैं। अपनी पसंद का रूप चुनें।</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>अपने आइकन चुनें</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>इस पथ पर छवि नहीं लिखी जा सकी:</value>
   </data>
@@ -1474,6 +1537,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>कैप्चर करें</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>मापनी...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>क्लिपबोर्ड दर्शक...</value>
@@ -1638,7 +1704,7 @@
     <value>व्यवस्थापक के रूप में पुनः आरंभ करें</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>मापनी...</value>
+    <value>मापन...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता...</value>
@@ -1648,6 +1714,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>स्क्रीन रिकॉर्डिंग (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>केवल एक बार</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>स्क्रीनशॉट फ़ोल्डर...</value>
@@ -1753,6 +1822,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>छवि सुंदर बनाएँ...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>कार्य सूची साफ़ करें</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>थंबनेल दृश्य साफ़ करें</value>
@@ -1915,6 +1987,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>अपलोड रोकें</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>सूची दृश्य पर स्विच करें</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य पर स्विच करें</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>पाठ</value>
@@ -2221,6 +2299,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>हॉटकी सक्षम हैं।</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>बीता समय</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>फ़ाइल नाम</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>कतार में</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>प्रगति</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>शेष</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>गति</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>स्थिति</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>अपलोड पूरा हुआ। URL: {0}</value>
@@ -2677,6 +2782,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>अंतर्निहित स्क्रीन रिकॉर्डर का उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR टोन मैपिंग</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>हार्डवेयर वीडियो एन्कोडिंग आवश्यक करें</value>

@@ -466,6 +466,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                     else if (vm.SelectedAnnotation is ArrowAnnotation arrow)
                     {
                         vm.SelectedArrowStyle = arrow.Style;
+                        vm.ArrowRoundedCorners = arrow.RoundedCorners;
                     }
                     else if (vm.SelectedAnnotation is EllipseAnnotation ellipse)
                     {

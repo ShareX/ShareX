@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>העלה</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>סרגל</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>צילום מלוח הגזירה</value>
   </data>
@@ -793,7 +796,7 @@
     <value>צלם אזור (שקוף)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>סרגל</value>
+    <value>מדידה</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>בוחר צבעי מסך</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>קובצי תמונה</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>הסתר</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>הצג</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>פתיחת תמונה</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>אוטומטי</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>תצוגת רשימה</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>תצוגת תמונות ממוזערות</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>שירות העלאת טקסט מותאם אישית</value>

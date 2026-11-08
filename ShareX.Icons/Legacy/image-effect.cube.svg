@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="tp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c8"/><stop offset="1" stop-color="#fbd27a"/></linearGradient>
+    <linearGradient id="lf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8b450"/><stop offset="1" stop-color="#de8418"/></linearGradient>
+    <linearGradient id="rt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d27a1c"/><stop offset="1" stop-color="#a4560c"/></linearGradient>
+  </defs>
+  <polygon points="7.5,.5 14.5,4 7.5,7.5 .5,4" fill="url(#tp)"/>
+  <polygon points=".5,4 7.5,7.5 7.5,15.5 .5,12" fill="url(#lf)"/>
+  <polygon points="7.5,7.5 14.5,4 14.5,12 7.5,15.5" fill="url(#rt)"/>
+  <path d="M1.5 4.6L7.5 7.6M1.5 4.6V11.4" fill="none" stroke="#ffe2a8" stroke-opacity=".8"/>
+  <path d="M7.5 7.5L14.5 4M7.5 7.5V15.5" fill="none" stroke="#8a4a06" stroke-opacity=".75"/>
+  <polygon points="7.5,.5 14.5,4 14.5,12 7.5,15.5 .5,12 .5,4" fill="none" stroke="#7a3e04" stroke-opacity=".9" stroke-linejoin="round"/>
+</svg>

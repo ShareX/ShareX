@@ -170,6 +170,8 @@ internal static class Program
             executeInitialAsync: ApplicationCommandLine.ExecuteInitialAsync,
             finishPresentation: () =>
             {
+                IconPackPromptWindow.ShowOnceWithMainWindow();
+
                 if (ApplicationState.Settings.ActionsToolbarRunAtStartup)
                 {
                     TaskHelpers.OpenActionsToolbar();

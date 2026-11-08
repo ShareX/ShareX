@@ -48,7 +48,7 @@ internal static class TaskFeatureSupport
     public static FeatureSupport Get(HotkeyType task, TaskSettings taskSettings) => task switch
     {
         HotkeyType.PrintScreen or HotkeyType.ActiveMonitor or HotkeyType.RectangleRegion or
-        HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.Ruler or HotkeyType.PinToScreenFromScreen or
+        HotkeyType.CustomRegion or HotkeyType.LastRegion or HotkeyType.Ruler or HotkeyType.ClassicRuler or HotkeyType.PinToScreenFromScreen or
         HotkeyType.QRCodeDecodeFromScreen or HotkeyType.QRCodeScanRegion => PlatformServices.Current.ScreenCapture.Support,
 
         HotkeyType.ScreenColorPicker => ScreenColorPickerAvailability.Support,

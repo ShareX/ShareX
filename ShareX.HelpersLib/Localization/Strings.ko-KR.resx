@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>업로드</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>눈금자</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>클립보드 내용 업로드</value>
   </data>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>이미지 파일</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>자동</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>숨기기</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>표시</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>이미지 열기</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>자동</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>목록 보기</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>썸네일 보기</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>사용자 정의 텍스트 업로더</value>

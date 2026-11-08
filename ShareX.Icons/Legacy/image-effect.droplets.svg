@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="rf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffc2c2"/><stop offset=".35" stop-color="#f6706e"/><stop offset=".75" stop-color="#dc2626"/><stop offset="1" stop-color="#b81414"/></linearGradient>
+    <linearGradient id="bf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c6ecff"/><stop offset=".35" stop-color="#78c4f6"/><stop offset=".75" stop-color="#2a8ae0"/><stop offset="1" stop-color="#1468c4"/></linearGradient>
+    <radialGradient id="rg" cx=".65" cy=".75" r=".5"><stop offset="0" stop-color="#ffd0c8" stop-opacity=".8"/><stop offset="1" stop-color="#ffd0c8" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path d="M12 .5C12 .5 9.5 3.4 9.5 5.2A2.5 2.5 0 0 0 14.5 5.2C14.5 3.4 12 .5 12 .5z" fill="url(#bf)"/>
+  <path d="M10.7 5.6Q10.7 4.4 11.6 3.1" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width=".9" stroke-linecap="round"/>
+  <path d="M12 .5C12 .5 9.5 3.4 9.5 5.2A2.5 2.5 0 0 0 14.5 5.2C14.5 3.4 12 .5 12 .5z" fill="none" stroke="#0e4f9a" stroke-opacity=".85" stroke-linejoin="round"/>
+  <path d="M6 3.5C6 3.5 1.5 8.3 1.5 11A4.5 4.5 0 0 0 10.5 11C10.5 8.3 6 3.5 6 3.5z" fill="url(#rf)"/>
+  <ellipse cx="7.5" cy="12.8" rx="2.1" ry="1.6" fill="url(#rg)"/>
+  <path d="M3.3 11.4Q3.3 9.2 5.3 6.8" fill="none" stroke="#ffffff" stroke-opacity=".85" stroke-width="1.1" stroke-linecap="round"/>
+  <path d="M6 3.5C6 3.5 1.5 8.3 1.5 11A4.5 4.5 0 0 0 10.5 11C10.5 8.3 6 3.5 6 3.5z" fill="none" stroke="#8c0a0a" stroke-opacity=".85" stroke-linejoin="round"/>
+</svg>

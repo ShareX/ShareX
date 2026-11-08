@@ -194,9 +194,10 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
 
         if (bitmap == IntPtr.Zero)
         {
+            int error = Marshal.GetLastPInvokeError();
             Win32.DeleteDC(memoryDc);
             Win32.ReleaseDC(IntPtr.Zero, screenDc);
-            throw new InvalidOperationException("CreateDIBSection failed.");
+            throw new InvalidOperationException($"CreateDIBSection failed (Windows error {error}).");
         }
 
         IntPtr previous = Win32.SelectObject(memoryDc, bitmap);
@@ -206,7 +207,7 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
             int flags = Win32.SRCCOPY | (captureLayeredWindows ? Win32.CAPTUREBLT : 0);
             if (!Win32.BitBlt(memoryDc, 0, 0, area.Width, area.Height, screenDc, area.X, area.Y, flags))
             {
-                throw new InvalidOperationException("BitBlt failed.");
+                throw new InvalidOperationException($"BitBlt failed (Windows error {Marshal.GetLastPInvokeError()}).");
             }
 
             if (hdrToneMapping)
@@ -328,9 +329,10 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         IntPtr bitmap = Win32.CreateDIBSection(screenDc, &header, Win32.DIB_RGB_COLORS, out IntPtr bits, IntPtr.Zero, 0);
         if (bitmap == IntPtr.Zero)
         {
+            int error = Marshal.GetLastPInvokeError();
             Win32.DeleteDC(memoryDc);
             Win32.ReleaseDC(IntPtr.Zero, screenDc);
-            throw new InvalidOperationException("CreateDIBSection failed while rendering an icon.");
+            throw new InvalidOperationException($"CreateDIBSection failed while rendering an icon (Windows error {error}).");
         }
         IntPtr previous = Win32.SelectObject(memoryDc, bitmap);
 

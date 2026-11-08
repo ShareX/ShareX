@@ -82,11 +82,24 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private bool _disposed;
     private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
     private ThumbnailItemViewModel? _selectionAnchor;
+    private const int MinImagePreviewWidth = 100;
+    private string? _imagePreviewPath;
+    private int _imagePreviewVersion;
+    private bool _imagePreviewUpdatePending;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
     public AvaloniaBitmap? TitleBarIcon { get; private set; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
+    public bool IsListView => ApplicationState.Settings.TaskViewMode == TaskViewMode.ListView;
+    public bool IsThumbnailView => !IsListView;
+    public bool ShowListColumns => ApplicationState.Settings.ShowColumns;
+    public TaskListColumnLayout TaskListColumns { get; } = new();
+    public AvaloniaBitmap? ImagePreview { get; private set; }
+    public bool IsImagePreviewVisible { get; private set; }
+    // Keep room for the list when the window is smaller than when the width was saved.
+    public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
+    private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
     public string ThemeToggleText => IsDarkTheme
@@ -107,7 +120,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = ApplicationInfo.Title;
         UpdateTitleBarIcon();
+        TaskListColumns.Load(ApplicationState.Settings.TaskListViewColumnWidths);
         DataContext = this;
+        ThumbnailPanel.SizeChanged += (_, _) => OnPropertyChanged(nameof(ImagePreviewWidth));
+        ScheduleImagePreviewUpdate();
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
@@ -128,6 +144,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady += OnTaskImageReady;
         TaskManager.TaskCollectionChanged += OnTaskCollectionChanged;
         ThemeManager.ThemeChanged += OnThemeChanged;
+        ThemeManager.SpacingChanged += OnSpacingChanged;
 
         Closing += OnClosing;
         PositionChanged += (_, _) => SaveWindowBounds();
@@ -318,7 +335,170 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             item.RefreshSettings();
         }
 
+        NotifyTaskViewModeChanged();
         NotifyTaskCollectionChanged();
+    }
+
+    private void NotifyTaskViewModeChanged()
+    {
+        OnPropertyChanged(nameof(IsListView));
+        OnPropertyChanged(nameof(IsThumbnailView));
+        OnPropertyChanged(nameof(ShowListColumns));
+        ScheduleImagePreviewUpdate();
+    }
+
+    private void ScheduleImagePreviewUpdate()
+    {
+        if (_imagePreviewUpdatePending)
+        {
+            return;
+        }
+
+        _imagePreviewUpdatePending = true;
+        Dispatcher.UIThread.Post(() =>
+        {
+            _imagePreviewUpdatePending = false;
+            UpdateImagePreview();
+        });
+    }
+
+    // Like the ShareX 21 task list, preview the first selected image next to the list.
+    private void UpdateImagePreview()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        ImagePreviewVisibility visibility = ApplicationState.Settings.ImagePreview;
+        string? filePath = null;
+
+        if (IsListView && visibility != ImagePreviewVisibility.Hide)
+        {
+            string? path = GetSelectedItems().FirstOrDefault()?.Task.Info?.FilePath;
+
+            if (!string.IsNullOrEmpty(path) && FileHelpers.IsImageFile(path) && File.Exists(path))
+            {
+                filePath = path;
+            }
+        }
+
+        // An empty list shows the hotkey tips across the whole area instead.
+        IsImagePreviewVisible = IsListView && !IsEmpty &&
+            (visibility == ImagePreviewVisibility.Show || (visibility == ImagePreviewVisibility.Automatic && filePath != null));
+        OnPropertyChanged(nameof(IsImagePreviewVisible));
+
+        if (filePath == _imagePreviewPath)
+        {
+            return;
+        }
+
+        _imagePreviewPath = filePath;
+        int version = ++_imagePreviewVersion;
+        SetImagePreview(null);
+
+        if (filePath != null)
+        {
+            _ = LoadImagePreviewAsync(version, filePath);
+        }
+    }
+
+    private async Task LoadImagePreviewAsync(int version, string filePath)
+    {
+        AvaloniaBitmap? bitmap = await Task.Run(() =>
+        {
+            try
+            {
+                using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                return new AvaloniaBitmap(stream);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
+        });
+
+        await Dispatcher.UIThread.InvokeAsync(() =>
+        {
+            if (version == _imagePreviewVersion && !_disposed)
+            {
+                SetImagePreview(bitmap);
+            }
+            else
+            {
+                bitmap?.Dispose();
+            }
+        });
+    }
+
+    private void SetImagePreview(AvaloniaBitmap? bitmap)
+    {
+        AvaloniaBitmap? previous = ImagePreview;
+        ImagePreview = bitmap;
+        OnPropertyChanged(nameof(ImagePreview));
+        previous?.Dispose();
+    }
+
+    // Keep the selection (and so the preview) when the preview itself is clicked, and open the image like the history window does.
+    private void OnImagePreviewPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        e.Handled = true;
+
+        if (ImagePreview != null && _imagePreviewPath != null && e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        {
+            ShowImagesInViewer(_imagePreviewPath);
+        }
+    }
+
+    private void ShowImagesInViewer(string filePath)
+    {
+        string[] images = ThumbnailItems.Select(x => x.Task.Info?.FilePath)
+            .Where(x => !string.IsNullOrEmpty(x) && File.Exists(x) && FileHelpers.IsImageFile(x))
+            .Cast<string>().ToArray();
+        ImageViewerWindowIntegration.ShowImage(images, Math.Max(0, Array.IndexOf(images, filePath)), this);
+    }
+
+    private void OnImagePreviewResizerDragDelta(object? sender, VectorEventArgs e)
+    {
+        // The handle is on the pane's left edge, so dragging left widens it.
+        ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
+        OnPropertyChanged(nameof(ImagePreviewWidth));
+        e.Handled = true;
+    }
+
+    private void SwitchTaskViewMode()
+    {
+        ApplicationState.Settings.TaskViewMode = IsListView ? TaskViewMode.ThumbnailView : TaskViewMode.ListView;
+
+        foreach (ThumbnailItemViewModel item in ThumbnailItems)
+        {
+            item.RefreshSettings();
+        }
+
+        NotifyTaskViewModeChanged();
+        SettingManager.SaveApplicationConfigAsync();
+    }
+
+    private MainMenuEntry CreateSwitchTaskViewModeItem() => IsListView
+        ? Item(Strings.MainWindow_SwitchToThumbnailView, AppIcons.Grid, SwitchTaskViewMode)
+        : Item(Strings.MainWindow_SwitchToListView, AppIcons.Rows, SwitchTaskViewMode);
+
+    private string ClearTasksText => IsListView ? Strings.MainWindow_ClearTaskList : Strings.MainWindow_ClearThumbnailView;
+
+    private void OnTaskListColumnDragDelta(object? sender, VectorEventArgs e)
+    {
+        if (sender is Control { Tag: string tag } && int.TryParse(tag, out int column))
+        {
+            TaskListColumns.Resize(column, e.Vector.X);
+            e.Handled = true;
+        }
+    }
+
+    private void OnTaskListColumnDragCompleted(object? sender, VectorEventArgs e)
+    {
+        ApplicationState.Settings.TaskListViewColumnWidths = TaskListColumns.ToSettings();
+        e.Handled = true;
     }
 
     public void CloseFromHost()
@@ -382,18 +562,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private static Control CreateNavigationContent(MainNavigationSection section)
+    internal static Control CreateNavigationContent(MainNavigationSection section)
     {
-        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,7,*,Auto") };
+        Grid grid = new() { ColumnDefinitions = new ColumnDefinitions("20,*,Auto") };
         grid.Children.Add(CreateAccentMenuIcon(section.Icon, 16));
 
         TextBlock label = new()
         {
             Text = section.Header,
             FontWeight = FontWeight.Normal,
-            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
+            VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center,
+            Classes = { "nav-label" }
         };
-        Grid.SetColumn(label, 2);
+        Grid.SetColumn(label, 1);
         grid.Children.Add(label);
 
         if (section.CreateChildren != null || section.CreateCategories != null)
@@ -401,7 +582,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             IconPresenter chevron = CreateAccentMenuIcon(AppIcons.ChevronRight, 14);
             chevron.Margin = new Thickness(5, 0, 0, 0);
             chevron.Opacity = 0.7;
-            Grid.SetColumn(chevron, 3);
+            Grid.SetColumn(chevron, 2);
             grid.Children.Add(chevron);
         }
 
@@ -486,7 +667,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         return root;
     }
 
-    private static void PopulateGridMenuCategories(StackPanel content, IReadOnlyList<MainMenuCategory> categories,
+    internal static void PopulateGridMenuCategories(StackPanel content, IReadOnlyList<MainMenuCategory> categories,
         bool isEditing, Action<MainMenuEntry> execute)
     {
         content.Children.Clear();
@@ -514,9 +695,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             TextBlock categoryHeader = new()
             {
                 Text = category.Header,
-                Classes = { "tool-grid-category-header" },
-                Margin = new Thickness(7, hasCategory ? 3 : 1, 7, 3)
+                Classes = { "tool-grid-category-header" }
             };
+            categoryHeader.Classes.Set("first", !hasCategory);
             content.Children.Add(categoryHeader);
 
             UniformGrid itemGrid = new()
@@ -650,7 +831,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         StackPanel content = new()
         {
             Orientation = Avalonia.Layout.Orientation.Horizontal,
-            Spacing = 8
+            Classes = { "tool-grid-item-content" }
         };
         IconPresenter icon = CreateAccentMenuIcon(entry.Icon, 16);
         icon.VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center;
@@ -971,7 +1152,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void AddLazyGridSubmenu(MenuItem item, Func<IReadOnlyList<MainMenuCategory>> createCategories, ContextMenu menu)
     {
         item.Resources["FlyoutThemeMaxWidth"] = double.PositiveInfinity;
-        item.Resources["MenuFlyoutPresenterThemePadding"] = new Thickness(10);
+        // Menus are rebuilt every time they open, so reading the current value keeps this in step with compact mode.
+        item.Resources["MenuFlyoutPresenterThemePadding"] =
+            this.TryFindResource("ShareX.Density.ToolGrid.Padding", out object? padding) && padding is Thickness thickness
+                ? thickness
+                : new Thickness(10);
         item.Resources["MenuFlyoutScrollerMargin"] = new Thickness(0);
 
         // Keep the submenu indicator while deferring the grid construction until it is opened.
@@ -1025,7 +1210,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         };
     }
 
-    private static IconPresenter CreateAccentMenuIcon(string icon, double size)
+    internal static IconPresenter CreateAccentMenuIcon(string icon, double size)
     {
         IconPresenter presenter = new()
         {
@@ -1081,6 +1266,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
             ThumbnailItems.Remove(item);
             item.Dispose();
+            ScheduleImagePreviewUpdate();
         }
 
         NotifyTaskCollectionChanged();
@@ -1088,7 +1274,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnTaskChanged(WorkerTask task) => Dispatcher.UIThread.Post(() =>
     {
-        ThumbnailItems.FirstOrDefault(x => ReferenceEquals(x.Task, task))?.Refresh();
+        ThumbnailItemViewModel? item = ThumbnailItems.FirstOrDefault(x => ReferenceEquals(x.Task, task));
+        item?.Refresh();
+
+        // The selected task's image may only now exist on disk.
+        if (item?.IsSelected == true)
+        {
+            ScheduleImagePreviewUpdate();
+        }
     });
 
     private void OnTaskImageReady(WorkerTask task, DrawingBitmap image)
@@ -1143,9 +1336,24 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             OnPropertyChanged(nameof(ThemeToggleText));
         });
 
+    private void OnSpacingChanged(object? sender, EventArgs e) =>
+        Dispatcher.UIThread.Post(() =>
+        {
+            // The sidebar spacing changed, so the window's minimum height (and its height, when it
+            // was sized to fit the sidebar) has to follow it.
+            bool fitsNavigation = Math.Abs(Height - MinHeight) < 1;
+            ConfigureWindowHeightFromNavigation();
+
+            if (fitsNavigation)
+            {
+                Height = MinHeight;
+            }
+        }, DispatcherPriority.Background);
+
     private void NotifyTaskCollectionChanged()
     {
         OnPropertyChanged(nameof(IsEmpty));
+        ScheduleImagePreviewUpdate();
     }
 
     private void RefreshHotkeyTips()
@@ -1192,6 +1400,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             _selectionOrder.Remove(item);
         }
+
+        ScheduleImagePreviewUpdate();
     }
 
     private void ClearSelection()
@@ -1202,6 +1412,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         _selectionOrder.Clear();
+        ScheduleImagePreviewUpdate();
     }
 
     private void SelectOnly(ThumbnailItemViewModel selected)
@@ -1342,7 +1553,24 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
-    private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e)
+    private void OnThumbnailPointerReleased(object? sender, PointerReleasedEventArgs e) =>
+        HandleTaskPointerReleased(sender, e, allowClickAction: true);
+
+    // List rows select on click and open on double-click, like the ShareX 21 task list.
+    private void OnTaskRowPointerReleased(object? sender, PointerReleasedEventArgs e) =>
+        HandleTaskPointerReleased(sender, e, allowClickAction: false);
+
+    private void OnTaskRowDoubleTapped(object? sender, TappedEventArgs e)
+    {
+        if (sender is Control { DataContext: ThumbnailItemViewModel item } && !_suppressThumbnailClickAction)
+        {
+            _uploadInfoManager.UpdateSelectedItems([item.Task]);
+            _uploadInfoManager.TryOpen();
+            e.Handled = true;
+        }
+    }
+
+    private void HandleTaskPointerReleased(object? sender, PointerReleasedEventArgs e, bool allowClickAction)
     {
         if (sender is not Control control || control.DataContext is not ThumbnailItemViewModel item)
         {
@@ -1356,7 +1584,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             bool wasDragging = _thumbnailDragStarted;
             ResetThumbnailDrag();
 
-            if (!wasDragging &&
+            if (allowClickAction &&
+                !wasDragging &&
                 !_suppressThumbnailClickAction &&
                 ApplicationState.Settings.ThumbnailClickAction != ThumbnailViewClickAction.Select)
             {
@@ -1458,13 +1687,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 {
                     if (FileHelpers.IsImageFile(filePath))
                     {
-                        string[] images = ThumbnailItems.Select(x => x.Task.Info?.FilePath)
-                            .Where(x => !string.IsNullOrEmpty(x) && File.Exists(x) && FileHelpers.IsImageFile(x))
-                            .Cast<string>().ToArray();
-                        ImageViewerWindowIntegration.ShowImage(
-                            images,
-                            Math.Max(0, Array.IndexOf(images, filePath)),
-                            this);
+                        ShowImagesInViewer(filePath);
                     }
                     else
                     {
@@ -1565,7 +1788,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             Item(Strings.MainWindow_ShowResponse, AppIcons.FileText, _uploadInfoManager.ShowResponse,
                 hasSelection && !isWorking && !string.IsNullOrEmpty(selected!.Info.Result.Response)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainWindow_ClearThumbnailView, AppIcons.ClearList, ClearTasks, ThumbnailItems.Count > 0)
+            Item(ClearTasksText, AppIcons.ClearList, ClearTasks, ThumbnailItems.Count > 0),
+            CreateSwitchTaskViewModeItem()
         };
 
         return BuildContextMenu(entries);
@@ -1777,15 +2001,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        if (ThumbnailItems.Count == 0)
-        {
-            return;
-        }
-
         if (sender is Control control)
         {
             ContextMenu menu = BuildContextMenu([
-            Item(Strings.MainWindow_ClearThumbnailView, AppIcons.ClearList, ClearTasks)
+            Item(ClearTasksText, AppIcons.ClearList, ClearTasks, ThumbnailItems.Count > 0),
+            CreateSwitchTaskViewModeItem()
             ]);
             TryOpenContextMenu(menu, control, PlacementMode.Pointer);
             e.Handled = true;
@@ -1801,10 +2021,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return;
         }
 
-        _uploadInfoManager.UpdateSelectedItems(GetSelectedItems().Select(x => x.Task));
         bool control = e.KeyModifiers.HasFlag(KeyModifiers.Control);
         bool shift = e.KeyModifiers.HasFlag(KeyModifiers.Shift);
         bool alt = e.KeyModifiers.HasFlag(KeyModifiers.Alt);
+
+        if (IsListView && !control && !alt && TryMoveListSelection(e.Key, shift))
+        {
+            e.Handled = true;
+            return;
+        }
+
+        _uploadInfoManager.UpdateSelectedItems(GetSelectedItems().Select(x => x.Task));
 
         if (e.Key == Key.Enter && control) _uploadInfoManager.OpenFile();
         else if (e.Key == Key.Enter && shift) _uploadInfoManager.OpenFolder();
@@ -1823,6 +2050,60 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         else return;
 
         e.Handled = true;
+    }
+
+    private bool TryMoveListSelection(Key key, bool extend)
+    {
+        int count = ThumbnailItems.Count;
+
+        if (count == 0 || !TaskList.IsEffectivelyVisible || !ThumbnailPanel.IsKeyboardFocusWithin)
+        {
+            return false;
+        }
+
+        ThumbnailItemViewModel? focused = _selectionOrder.LastOrDefault(x => x.IsSelected);
+        int current = focused == null ? -1 : ThumbnailItems.IndexOf(focused);
+
+        int target = key switch
+        {
+            Key.Up => current < 0 ? count - 1 : current - 1,
+            Key.Down => current + 1,
+            Key.Home => 0,
+            Key.End => count - 1,
+            _ => int.MinValue
+        };
+
+        if (target == int.MinValue)
+        {
+            return false;
+        }
+
+        target = Math.Clamp(target, 0, count - 1);
+        ThumbnailItemViewModel item = ThumbnailItems[target];
+        int anchor = _selectionAnchor == null ? -1 : ThumbnailItems.IndexOf(_selectionAnchor);
+
+        if (extend && anchor >= 0)
+        {
+            ClearSelection();
+
+            int direction = target >= anchor ? 1 : -1;
+            for (int i = anchor; ; i += direction)
+            {
+                SetSelected(ThumbnailItems[i], true);
+                if (i == target) break;
+            }
+
+            // Keep the moving end last so the next key press continues from it.
+            SetSelected(item, false);
+            SetSelected(item, true);
+        }
+        else
+        {
+            SelectOnly(item);
+        }
+
+        TaskList.ScrollIntoView(target);
+        return true;
     }
 
     private void OnDragEnter(object? sender, DragEventArgs e) => UpdateDropOverlay(e);
@@ -1846,7 +2127,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         if (_thumbnailDragSource != null)
         {
-            ThumbnailItemViewModel? target = GetThumbnailItem(e.Source);
+            // Only thumbnail cards have combine drop zones.
+            ThumbnailItemViewModel? target = IsListView ? null : GetThumbnailItem(e.Source);
             bool canCombine = CanCombineThumbnails(_thumbnailDragSource, target);
             SetThumbnailCombineTarget(canCombine ? target : null);
             DropOverlay.IsVisible = false;
@@ -2095,6 +2377,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.TaskImageReady -= OnTaskImageReady;
         TaskManager.TaskCollectionChanged -= OnTaskCollectionChanged;
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        ThemeManager.SpacingChanged -= OnSpacingChanged;
         ResetThumbnailDrag();
         CloseActiveContextMenu();
         CloseTrayMenuAnchor();
@@ -2110,6 +2393,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         _selectionOrder.Clear();
         _selectionAnchor = null;
+        ImagePreview?.Dispose();
+        ImagePreview = null;
     }
 
     private void RestoreWindowBounds()

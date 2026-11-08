@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>剪贴板格式</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>紧凑模式</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>自定义快捷键配置路径</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>图标</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>图像预览可见性：</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>图片打印设置...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>浅色</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>列表视图</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>主窗口</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>显示剪贴板内容查看器</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>显示列</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>在文件管理器的右键菜单中显示“使用 ShareX 编辑”</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>同时上传限制：</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>间距</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>紧凑</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>菜单：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>预览：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>设置窗口：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>侧边栏</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>侧边栏：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>工具菜单</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>工具菜单：</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>子文件夹模式:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>任务视图模式：</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>主题</value>
@@ -1397,6 +1445,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - 快捷键设置</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>你可以随时在应用程序设置中更改此项。</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ShareX 21 的彩色图标。</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>简洁的线条图标，随主题颜色变化。</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX 有了新图标。请选择你喜欢的样式。</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>选择图标</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>图像无法写入路径：</value>
   </data>
@@ -1474,6 +1537,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>截图</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>标尺</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>剪贴板查看器</value>
@@ -1638,7 +1704,7 @@
     <value>以管理员身份重启</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>测量尺</value>
+    <value>测量</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>
@@ -1648,6 +1714,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>屏幕录制 (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>仅一次</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>屏幕截图文件夹...</value>
@@ -1753,6 +1822,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>美化图片</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>清除列表</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>清除缩略图视图</value>
@@ -1915,6 +1987,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>停止上传</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>切换到列表视图</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>切换到缩略图视图</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>文本</value>
@@ -2221,6 +2299,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>快捷键已启用。</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>已用</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>队列中</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>进度</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>剩余</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>速度</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>网址</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>上传完成。URL：{0}</value>
@@ -2677,6 +2782,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>使用内置屏幕录制功能</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR 色调映射</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>要求使用硬件视频编码</value>

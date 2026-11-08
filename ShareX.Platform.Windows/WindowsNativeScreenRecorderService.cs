@@ -64,6 +64,7 @@ public sealed class WindowsNativeScreenRecorderService : INativeScreenRecorderSe
         FramesPerSecond = request.FramesPerSecond,
         VideoBitrate = request.VideoBitrate,
         IncludeCursor = request.IncludeCursor,
+        HdrToneMapping = request.HdrToneMapping,
         CaptureSystemAudio = request.CaptureSystemAudio,
         SystemAudioDeviceId = request.SystemAudioDeviceId,
         SystemAudioGain = request.SystemAudioGain,

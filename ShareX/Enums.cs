@@ -275,6 +275,8 @@ namespace ShareX
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         Ruler,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
+        ClassicRuler,
+        [Category(EnumExtensions.HotkeyType_Category_Tools)]
         MouseHighlighter,
         [Category(EnumExtensions.HotkeyType_Category_Tools)]
         PinToScreen,
@@ -411,6 +413,17 @@ namespace ShareX
     public enum ThumbnailTitleLocation // Localized
     {
         Top, Bottom
+    }
+
+    public enum ImagePreviewVisibility // Localized
+    {
+        Show, Hide, Automatic
+    }
+
+    public enum TaskViewMode // Localized
+    {
+        ListView,
+        ThumbnailView
     }
 
     public enum ScreenTearingTestMode

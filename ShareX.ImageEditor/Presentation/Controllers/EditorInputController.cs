@@ -366,7 +366,7 @@ public class EditorInputController
                 _currentShape.IsHitTestVisible = false;
                 break;
             case EditorTool.Arrow:
-                var arrowAnnotation = new ArrowAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, Style = vm.SelectedArrowStyle, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
+                var arrowAnnotation = new ArrowAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, Style = vm.SelectedArrowStyle, RoundedCorners = vm.ArrowRoundedCorners, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
                 ApplyShadowOptions(arrowAnnotation, vm);
                 _currentShape = arrowAnnotation.CreateVisual();
                 _currentShape.IsHitTestVisible = false;

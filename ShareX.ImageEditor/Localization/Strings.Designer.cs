@@ -430,6 +430,11 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_ToggleshadowShadowoptionsRightclick", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_Roundedcorners {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Roundedcorners", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Toggletail {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Toggletail", resourceCulture);
@@ -2458,6 +2463,16 @@ namespace ShareX.ImageEditor.Localization {
         public static string EffectBrowserPanel_Effect_wave_distortion {
             get {
                 return ResourceManager.GetString("EffectBrowserPanel_Effect_wave_distortion", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_Primary {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Primary", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_Secondary {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Secondary", resourceCulture);
             }
         }
     }

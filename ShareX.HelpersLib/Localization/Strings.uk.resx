@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Вивантажити</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Лінійка</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Вивантажити з буфера обміну</value>
   </data>
@@ -793,7 +796,7 @@
     <value>Захоплення області (прозоре тло)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Лінійка</value>
+    <value>Вимірювання</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Вибір кольору з екрана</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Файли зображень</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Автоматично</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Приховати</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Показати</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Відкрити зображення</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Автоматично</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Режим списку</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Режим мініатюр</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Власний вивантажувач тексту</value>

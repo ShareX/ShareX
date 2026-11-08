@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190ff"/><stop offset="1" stop-color="#d4e6ff"/></linearGradient>
+    <linearGradient id="hill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a896b"/><stop offset="1" stop-color="#195d3b"/></linearGradient>
+    <linearGradient id="wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eab27e"/><stop offset="1" stop-color="#cf8b55"/></linearGradient>
+    <linearGradient id="wl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e0a06a"/><stop offset="1" stop-color="#c47e48"/></linearGradient>
+    <linearGradient id="wr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a86532"/><stop offset="1" stop-color="#b8743f"/></linearGradient>
+    <linearGradient id="wb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9c5826"/><stop offset="1" stop-color="#b06b36"/></linearGradient>
+  </defs>
+  <rect x="3" y="3" width="10" height="10" fill="url(#sky)"/>
+  <path d="M3 9.5C5 8 7 8.2 9 9.6C10.4 10.5 11.8 10.4 13 9.8V13H3z" fill="url(#hill)"/>
+  <polygon points=".5,.5 15.5,.5 12.5,3.5 3.5,3.5" fill="url(#wt)"/>
+  <polygon points=".5,.5 3.5,3.5 3.5,12.5 .5,15.5" fill="url(#wl)"/>
+  <polygon points="15.5,.5 15.5,15.5 12.5,12.5 12.5,3.5" fill="url(#wr)"/>
+  <polygon points=".5,15.5 3.5,12.5 12.5,12.5 15.5,15.5" fill="url(#wb)"/>
+  <path d="M1.5 14V1.5H14" fill="none" stroke="#f8d0a4" stroke-opacity=".9"/>
+  <path d="M.5 .5L3.5 3.5M15.5 .5L12.5 3.5M.5 15.5L3.5 12.5M15.5 15.5L12.5 12.5" fill="none" stroke="#7a3a0c" stroke-opacity=".45" stroke-width=".7"/>
+  <rect x="3.5" y="3.5" width="9" height="9" fill="none" stroke="#6a2f06" stroke-opacity=".75"/>
+  <rect x=".5" y=".5" width="15" height="15" fill="none" stroke="#6a2f06" stroke-opacity=".9"/>
+</svg>

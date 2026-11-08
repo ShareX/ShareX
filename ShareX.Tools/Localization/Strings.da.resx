@@ -434,6 +434,18 @@ Filsti: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Vinduestitel</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Afstand: {0:0.00} px | Vinkel: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Højre: {2} | Bund: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Bredde: {0} px | Højde: {1} px | Areal: {2} px | Omkreds: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX – Lineal</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Indhold i Udklipsholder</value>
   </data>
@@ -2045,7 +2057,7 @@ Filsti: {0}</value>
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Lineal</value>
+    <value>ShareX – Måling</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Vælg en video for at begynde.</value>

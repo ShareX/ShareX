@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上傳</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>標尺</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>從剪貼簿上傳</value>
   </data>
@@ -793,7 +796,7 @@
     <value>擷取區域 (透明)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>標尺</value>
+    <value>測量</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>螢幕檢色器</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>影像檔案</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>隱藏</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>顯示</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>開啟影像</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>清單模式</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>縮圖模式</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>自訂文字上傳工具</value>

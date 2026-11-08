@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Rétablir (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Coins arrondis</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
@@ -1392,8 +1395,14 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principal</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Rétablir la barre d’outils par défaut</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondaire</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Afficher / Masquer</value>

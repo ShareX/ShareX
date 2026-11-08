@@ -21,21 +21,21 @@
 
     <Window.Styles>
         <Style Selector="Grid.page-title">
-            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageTitleMargin}"/>
         </Style>
         <Style Selector="TextBlock.page-title-text">
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="controls|IconPresenter.page-title-icon">
-            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.SectionTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
             <Setter Property="Margin" Value="0,4,0,3"/>
@@ -51,34 +51,62 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Padding" Value="12"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.CardPadding}"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.CardMargin}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
+        <Style Selector="StackPanel.settings-page">
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageMargin}"/>
+        </Style>
         <Style Selector="CheckBox.setting">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="FontWeight" Value="Normal"/>
         </Style>
         <Style Selector="ComboBox.form-control">
             <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <Style Selector="TextBox.form-control">
             <Setter Property="MinWidth" Value="300"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="NumericUpDown.form-control">
             <Setter Property="Width" Value="130"/>
-            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
+        <Style Selector="NumericUpDown.form-control /template/ ButtonSpinner#PART_Spinner">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="NumericUpDown.form-control /template/ TextBox#PART_TextBox">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="CheckBox.setting /template/ Grid#RootGrid > Grid">
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
+        </Style>
         <Style Selector="Button.compact">
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ButtonPadding}"/>
+        </Style>
+        <Style Selector="Slider.spacing-slider">
+            <Setter Property="TickFrequency" Value="5"/>
+            <Setter Property="IsSnapToTickEnabled" Value="True"/>
+            <Setter Property="SmallChange" Value="5"/>
+            <Setter Property="LargeChange" Value="25"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Border.spacing-preview">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="ClipToBounds" Value="True"/>
         </Style>
         <Style Selector="ListBox.settings-list">
             <Setter Property="MinHeight" Value="170"/>
@@ -134,7 +162,7 @@
                 <Grid x:Name="SettingsPages" Grid.Row="2">
                     <!-- General -->
                     <ScrollViewer controls:SettingsSearch.PageId="general" IsVisible="{Binding IsGeneralPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Settings}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_General}"/>
@@ -211,7 +239,7 @@
 
                     <!-- Theme -->
                     <ScrollViewer controls:SettingsSearch.PageId="theme" IsVisible="{Binding IsThemePage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Palette}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Theme}"/>
@@ -234,6 +262,54 @@
                                                   ItemsSource="{Binding ThemeOptions}"
                                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
                                     </Grid>
+                                </StackPanel>
+                            </Border>
+
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Spacing}"/>
+                                    <CheckBox Classes="setting"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_CompactMode}"
+                                              IsChecked="{Binding CompactMode, Mode=TwoWay}"/>
+                                    <StackPanel Spacing="2">
+                                        <StackPanel.Resources>
+                                            <!-- The Fluent slider reserves 15px above and below the track; the rows only need the track. -->
+                                            <GridLength x:Key="SliderPreContentMargin">2</GridLength>
+                                            <GridLength x:Key="SliderPostContentMargin">2</GridLength>
+                                        </StackPanel.Resources>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingSidebarLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding SidebarSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding SidebarSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingMenusLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding MenuSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding MenuSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingToolMenusLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding ToolMenuSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding ToolMenuSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                        <Grid ColumnDefinitions="190,*,80" ColumnSpacing="8">
+                                            <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingSettingsWindowsLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                            <Slider Grid.Column="1" Classes="spacing-slider" Minimum="{Binding SpacingMinimum}" Maximum="{Binding SpacingMaximum}" Value="{Binding SettingsSpacing, Mode=TwoWay}"/>
+                                            <TextBlock Grid.Column="2" Text="{Binding SettingsSpacingText}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        </Grid>
+                                    </StackPanel>
+                                    <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_Reset}" Click="OnResetSpacingClick"/>
+                                    <Grid ColumnDefinitions="190,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_SpacingPreviewLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1"
+                                                  Classes="form-control"
+                                                  MinWidth="130"
+                                                  ItemsSource="{Binding SpacingPreviewOptions}"
+                                                  SelectedItem="{Binding SelectedSpacingPreview, Mode=TwoWay}"/>
+                                    </Grid>
+                                    <Border Classes="spacing-preview">
+                                        <local:SpacingPreview Area="{Binding SelectedSpacingPreview.Value}"/>
+                                    </Border>
                                 </StackPanel>
                             </Border>
 
@@ -274,7 +350,7 @@
 
                     <!-- Integration -->
                     <ScrollViewer controls:SettingsSearch.PageId="integration" IsVisible="{Binding IsIntegrationPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Plug}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Integration}"/>
@@ -320,7 +396,7 @@
 
                     <!-- Paths -->
                     <ScrollViewer controls:SettingsSearch.PageId="paths" IsVisible="{Binding IsPathsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Folder}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Paths}"/>
@@ -364,7 +440,7 @@
 
                     <!-- Settings backup and cleanup -->
                     <ScrollViewer controls:SettingsSearch.PageId="settings" IsVisible="{Binding IsSettingsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.DatabaseBackup}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Settings}"/>
@@ -400,11 +476,27 @@
 
                     <!-- Main window -->
                     <ScrollViewer controls:SettingsSearch.PageId="main-window" IsVisible="{Binding IsMainWindowPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Monitor}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_MainWindow}"/>
                             </Grid>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
+                                    <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_TaskViewModeLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                    <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding TaskViewModeOptions}" SelectedItem="{Binding SelectedTaskViewMode, Mode=TwoWay}"/>
+                                </Grid>
+                            </Border>
+                            <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
+                                <StackPanel Spacing="6">
+                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ListView}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowColumns}" IsChecked="{Binding ShowColumns, Mode=TwoWay}"/>
+                                    <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ImagePreviewLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ImagePreviewOptions}" SelectedItem="{Binding SelectedImagePreview, Mode=TwoWay}"/>
+                                    </Grid>
+                                </StackPanel>
+                            </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="6">
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_ThumbnailView}"/>
@@ -431,7 +523,7 @@
 
                     <!-- Clipboard formats -->
                     <ScrollViewer controls:SettingsSearch.PageId="clipboard-formats" IsVisible="{Binding IsClipboardFormatsPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.ClipboardList}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_ClipboardFormats}"/>
@@ -464,7 +556,7 @@
 
                     <!-- Upload -->
                     <ScrollViewer controls:SettingsSearch.PageId="upload" IsVisible="{Binding IsUploadPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Upload}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Upload}"/>
@@ -493,7 +585,7 @@
 
                     <!-- History -->
                     <ScrollViewer controls:SettingsSearch.PageId="history" IsVisible="{Binding IsHistoryPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.History}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_History}"/>
@@ -523,7 +615,7 @@
 
                     <!-- Print -->
                     <ScrollViewer controls:SettingsSearch.PageId="print" IsVisible="{Binding IsPrintPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Printer}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Print}"/>
@@ -544,7 +636,7 @@
 
                     <!-- Proxy -->
                     <ScrollViewer controls:SettingsSearch.PageId="proxy" IsVisible="{Binding IsProxyPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Network}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Proxy}"/>
@@ -578,7 +670,7 @@
 
                     <!-- Advanced -->
                     <ScrollViewer controls:SettingsSearch.PageId="advanced" IsVisible="{Binding IsAdvancedPage}" HorizontalContentAlignment="Stretch" HorizontalScrollBarVisibility="Disabled">
-                        <StackPanel Margin="28,24,28,32" HorizontalAlignment="Stretch">
+                        <StackPanel Classes="settings-page" HorizontalAlignment="Stretch">
                             <Grid Classes="page-title" controls:SettingsSearch.IsPageTitle="True" ColumnDefinitions="Auto,*" ColumnSpacing="9">
                                 <controls:IconPresenter Classes="page-title-icon" Icon="{x:Static icons:AppIcons.Sliders}"/>
                                 <TextBlock Grid.Column="1" Classes="page-title-text" Text="{x:Static res:Strings.ApplicationSettingsWindow_Advanced}"/>

@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formati appunti</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Modalità compatta</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Percorso personalizzato della configurazione delle scorciatoie</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Icone</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Visibilità anteprima immagine:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Impostazioni stampa immagine...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Chiaro</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Vista elenco</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Finestra principale</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostra il visualizzatore del contenuto degli appunti</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Mostra colonne</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>Mostra "Modifica con ShareX" nel menu contestuale del gestore file</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limite caricamenti simultanei:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Spaziatura</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compatta</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Predefinito</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menu:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Anteprima:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Finestre delle impostazioni:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Barra laterale</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Barra laterale:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Menu degli strumenti</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Menu degli strumenti:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Modello sottocartella:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Modalità vista attività:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1397,6 +1445,21 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Impostazioni delle scorciatoie</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Puoi modificarlo in qualsiasi momento nelle impostazioni dell'applicazione.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Le icone colorate di ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Icone a linee pulite che seguono i colori del tuo tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX ha nuove icone. Scegli l'aspetto che preferisci.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Scegli le tue icone</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write immagine to percorso:</value>
   </data>
@@ -1474,6 +1537,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Cattura</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Righello</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visualizzatore appunti</value>
@@ -1638,7 +1704,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Riavvia come amministratore</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Righello</value>
+    <value>Misura</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Cattura Colore</value>
@@ -1648,6 +1714,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Registrazione schermo (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Solo una volta</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Cartella schermate...</value>
@@ -1753,6 +1822,9 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Abbellisci immagine</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Pulisci Lista</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Cancella visualizzazione miniature</value>
@@ -1915,6 +1987,12 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Interrompi caricamento</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Passa alla vista elenco</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Passa alla vista miniature</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Testo</value>
@@ -2221,6 +2299,33 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Scorciatoie Attivate</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Trascorsi</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Nome File</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Cronologia</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>In Attesa</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Avanzamento</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Rimanenti</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Velocità</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Caricamento completato. URL: {0}</value>
@@ -2677,6 +2782,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Usa il registratore dello schermo integrato</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Mappatura dei toni HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Richiedi la codifica video hardware</value>

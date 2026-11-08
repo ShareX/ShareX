@@ -642,6 +642,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Încărcați</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Riglă</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Încărcați din clipboard</value>
   </data>
@@ -793,7 +796,7 @@ Doriți totuși să îl executați?</value>
     <value>Regiune de captură (Transparentă)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Riglă</value>
+    <value>Măsurare</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Alegător de culori pe ecran</value>
@@ -872,6 +875,15 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fișiere imagine</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ascunde</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Arată</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Deschideți imaginea</value>
@@ -1229,6 +1241,12 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automat</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vizualizare listă</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vizualizare în miniatură</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Destinație de text personalizat</value>

@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Vágólap-formátumok</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompakt mód</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Gyorsbillentyű-konfiguráció egyéni elérési útja</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Ikonok</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Kép előnézet láthatósága:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Kép nyomtatási beállítások...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Világos</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listanézet</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Főablak</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>A vágólap tartalommegjelenítőjének megjelenítése</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Oszlopok megjelenítése</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>A „Szerkesztés ShareX-szel” megjelenítése a fájlkezelő helyi menüjében</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Egyidejű feltöltési limit:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Térköz</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Alapértelmezett</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menük</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menük:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Előnézet:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Beállítási ablakok:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Oldalsáv</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Oldalsáv:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Eszközmenük</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Eszközmenük:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Almappa sablon:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Feladatnézet mód:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Téma</value>
@@ -1397,6 +1445,21 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Gyorsbillentyű-beállítások</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Ezt bármikor módosíthatja az alkalmazás beállításaiban.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>A ShareX 21 színes ikonjai.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Letisztult vonalas ikonok, amelyek a téma színeit követik.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>A ShareX új ikonokat kapott. Válassza ki az Önnek tetsző megjelenést.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Válassza ki az ikonokat</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write kép to elérési út:</value>
   </data>
@@ -1474,6 +1537,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Rögzítés</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Vonalzó</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Vágólap viewer</value>
@@ -1638,7 +1704,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Újraindítás rendszergazdaként</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Vonalzó</value>
+    <value>Mérés</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Színszedő</value>
@@ -1648,6 +1714,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Képernyőfelvétel (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Csak egyszer</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Képernyőképek mappája...</value>
@@ -1753,6 +1822,9 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Beautify kép</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Lista törlése</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Miniatűrnézet törlése</value>
@@ -1915,6 +1987,12 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Feltöltés leállítása</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Váltás listanézetre</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Váltás miniatűr nézetre</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Szöveg</value>
@@ -2221,6 +2299,33 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Gyorsbillentyűk engedélyezve.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Eltelt</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Fájlnév</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Előzmények</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Várakozik</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Folyamat</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Hátralévő</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Sebesség</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Állapot</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>A feltöltés befejeződött. URL: {0}</value>
@@ -2677,6 +2782,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>A beépített képernyőrögzítő használata</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR tónusleképezés</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Hardveres videókódolás megkövetelése</value>

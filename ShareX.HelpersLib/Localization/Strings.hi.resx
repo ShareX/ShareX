@@ -642,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>अपलोड करें</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>मापनी</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>क्लिपबोर्ड से अपलोड करें</value>
   </data>
@@ -793,7 +796,7 @@
     <value>क्षेत्र कैप्चर करें (पारदर्शी)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>मापनी</value>
+    <value>मापन</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>स्क्रीन रंग चयनकर्ता</value>
@@ -872,6 +875,15 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>छवि फ़ाइलें</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>स्वचालित</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>छिपाएँ</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>दिखाएँ</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>छवि खोलें</value>
@@ -1229,6 +1241,12 @@
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>स्वचालित</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>सूची दृश्य</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>थंबनेल दृश्य</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>अनुकूलित पाठ अपलोडर</value>

@@ -210,6 +210,9 @@ namespace ShareX
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
                     break;
+                case HotkeyType.ClassicRuler:
+                    OpenClassicRuler(safeTaskSettings);
+                    break;
                 case HotkeyType.MouseHighlighter:
                     MouseHighlighterManager.Toggle(safeTaskSettings.ToolsSettingsReference.MouseHighlighterOptions);
                     break;
@@ -1899,6 +1902,39 @@ namespace ShareX
             ToolsIntegration.ShowRulerWindow();
         }
 
+        public static void OpenClassicRuler(TaskSettings taskSettings = null)
+        {
+            taskSettings ??= ApplicationState.DefaultTaskSettings;
+            RegionCaptureOptions options = taskSettings.CaptureSettings.RegionCaptureOptions;
+
+            ToolsIntegration.ShowClassicRulerWindow(new ClassicRulerOptions
+            {
+                ShowInfo = options.ShowInfo,
+                UseCustomInfoText = options.UseCustomInfoText,
+                CustomInfoText = options.CustomInfoText,
+                ShowMagnifier = options.ShowMagnifier,
+                UseSquareMagnifier = options.UseSquareMagnifier,
+                MagnifierSize = options.MagnifierSize,
+                MagnifierPixelCount = options.MagnifierPixelCount,
+                BackgroundDimStrength = options.BackgroundDimStrength,
+                DimAllExceptSelection = options.DimAllExceptSelection,
+                ShowCenterCrosshair = options.ShowCenterCrosshair,
+                ShowScreenCrosshair = options.ShowScreenCrosshair,
+                // Window snapping goes through the platform window service, as in region capture.
+                GetWindowRectangles = options.DetectWindows && PlatformServices.Current.Windows.Support.IsSupported ? ignoredHandle =>
+                {
+                    bool detectControls = options.DetectControls &&
+                        PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.ChildControls).IsSupported;
+                    // Enumerating child controls of a hung application can stall; give up after five seconds.
+                    using CancellationTokenSource timeout = new CancellationTokenSource(TimeSpan.FromSeconds(5));
+
+                    return PlatformServices.Current.Windows.GetSnapTargets(detectControls, ignoredHandle.ToInt64(), timeout.Token)
+                        .Select(target => new Rectangle(target.Bounds.X, target.Bounds.Y, target.Bounds.Width, target.Bounds.Height))
+                        .ToList();
+                } : null
+            });
+        }
+
         public static void OpenMouseHighlighter(TaskSettings taskSettings = null)
         {
             taskSettings ??= ApplicationState.DefaultTaskSettings;
@@ -2402,7 +2438,8 @@ namespace ShareX
                 // Tools
                 HotkeyType.ColorPicker => AppIcons.Palette,
                 HotkeyType.ScreenColorPicker => AppIcons.ScreenColorPicker,
-                HotkeyType.Ruler => AppIcons.Ruler,
+                HotkeyType.Ruler => AppIcons.Measure,
+                HotkeyType.ClassicRuler => AppIcons.Ruler,
                 HotkeyType.MouseHighlighter => AppIcons.MouseHighlighter,
                 HotkeyType.PinToScreen => AppIcons.Pin,
                 HotkeyType.PinToScreenFromScreen => AppIcons.PictureInPicture,

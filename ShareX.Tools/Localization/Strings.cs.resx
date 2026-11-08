@@ -434,6 +434,18 @@ Cesta k souboru: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Název okna</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Vzdálenost: {0:0.00} px | Úhel: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Vpravo: {2} | Dole: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Šířka: {0} px | Výška: {1} px | Plocha: {2} px | Obvod: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX – Pravítko</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Obsah schránky</value>
   </data>
@@ -2045,7 +2057,7 @@ Cesta k souboru: {0}</value>
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Pravítko</value>
+    <value>ShareX – Měření</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Začněte výběrem videa.</value>

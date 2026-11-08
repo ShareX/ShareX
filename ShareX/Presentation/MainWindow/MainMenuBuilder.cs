@@ -217,14 +217,22 @@ internal sealed class MainMenuBuilder
     private IReadOnlyList<MainMenuEntry> BuildScreenshotDelayMenu()
     {
         decimal current = ApplicationState.DefaultTaskSettings.CaptureSettings.ScreenshotDelay;
-        return Enumerable.Range(0, 6)
+        List<MainMenuEntry> items = Enumerable.Range(0, 6)
             .Select(delay => new MainMenuEntry(
                 string.Format(Strings.ScreenshotDelay0S, delay),
                 delay == 0 ? AppIcons.TimerOff : AppIcons.Timer,
                 () => MainWindowIntegration.SetScreenshotDelay(delay),
                 isChecked: Math.Abs(current - delay) < 0.01m,
                 toggleType: MainMenuToggleType.Radio))
-            .ToArray();
+            .ToList();
+
+        items.Add(MainMenuEntry.Separator());
+        items.Add(new MainMenuEntry(Strings.MainMenuBuilder_ScreenshotDelayJustOnce, AppIcons.Timer,
+            () => ApplicationState.Settings.ScreenshotDelayJustOnce = !ApplicationState.Settings.ScreenshotDelayJustOnce,
+            isChecked: ApplicationState.Settings.ScreenshotDelayJustOnce,
+            toggleType: MainMenuToggleType.CheckBox));
+
+        return items;
     }
 
     private static IReadOnlyList<MainMenuEntry> BuildUploadMenu()
@@ -263,11 +271,13 @@ internal sealed class MainMenuBuilder
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
             Tool(nameof(Strings.MainMenuBuilder_ColorPicker), Strings.MainMenuBuilder_ColorPicker, AppIcons.Palette, () => TaskHelpers.ShowColorPickerDialog()),
+            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, AppIcons.Measure, () => TaskHelpers.OpenRuler(),
+                TaskFeatureSupport.Get(HotkeyType.Ruler)),
             Tool(nameof(Strings.MainMenuBuilder_MouseHighlighter), Strings.MainMenuBuilder_MouseHighlighter, AppIcons.MouseHighlighter, () => TaskHelpers.OpenMouseHighlighter(),
                 TaskFeatureSupport.Get(HotkeyType.MouseHighlighter)),
             Tool(nameof(Strings.MainMenuBuilder_PinToScreenDialog), Strings.MainMenuBuilder_PinToScreenDialog, AppIcons.Pin, () => TaskHelpers.PinToScreen()),
-            Tool(nameof(Strings.MainMenuBuilder_Ruler), Strings.MainMenuBuilder_Ruler, AppIcons.Ruler, () => TaskHelpers.OpenRuler(),
-                PlatformServices.Current.ScreenCapture.Support),
+            Tool(nameof(Strings.MainMenuBuilder_ClassicRuler), Strings.MainMenuBuilder_ClassicRuler, AppIcons.Ruler, () => TaskHelpers.OpenClassicRuler(),
+                TaskFeatureSupport.Get(HotkeyType.ClassicRuler)),
             Tool(nameof(Strings.MainMenuBuilder_ScreenColorPicker), Strings.MainMenuBuilder_ScreenColorPicker, AppIcons.ScreenColorPicker, () =>
             {
                 if (TaskFeatureSupport.Get(HotkeyType.ScreenColorPicker).IsSupported) TaskHelpers.OpenScreenColorPicker();

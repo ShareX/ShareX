@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Zwischenablageformate</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompakter Modus</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Benutzerdefinierter Pfad zur Tastenkürzel-Konfiguration</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Symbole</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Sichtbarkeit der Bildvorschau:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Bilddruckeinstellungen...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Hell</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listenansicht</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hauptfenster</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Zwischenablage-Inhaltsanzeige anzeigen</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Spalten anzeigen</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>„Mit ShareX bearbeiten“ im Kontextmenü des Dateimanagers anzeigen</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limit gleichzeitiger Uploads:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Abstand</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menüs</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menüs:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Vorschau:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Einstellungsfenster:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Seitenleiste</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Seitenleiste:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Werkzeugmenüs</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Werkzeugmenüs:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Unterordnermuster:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Aufgabenansichtsmodus:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Design</value>
@@ -1397,6 +1445,21 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Tastenkürzeleinstellungen</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Sie können dies jederzeit in den Anwendungseinstellungen ändern.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Die farbenfrohen Symbole aus ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Klare Liniensymbole, die den Farben Ihres Designs folgen.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX hat neue Symbole. Wählen Sie das Aussehen, das Ihnen am besten gefällt.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Wählen Sie Ihre Symbole</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Konnte das Bild nicht in den Pfad schreiben:</value>
   </data>
@@ -1474,6 +1537,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Aufnahme</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Lineal</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Zwischenablage-Betrachter</value>
@@ -1638,7 +1704,7 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
     <value>Als Administrator neu starten</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Lineal</value>
+    <value>Messen</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Bildschirmfarbenwähler</value>
@@ -1648,6 +1714,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Bildschirmaufnahme (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Nur einmal</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Screenshot-Ordner...</value>
@@ -1753,6 +1822,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Bild verschönern</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Liste leeren</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Miniaturansicht leeren</value>
@@ -1915,6 +1987,12 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Upload stoppen</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Zur Listenansicht wechseln</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Zur Bildvorschau wechseln</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2221,6 +2299,33 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Hotkeys aktiviert.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Verstrichen</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Dateiname</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Chronik</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>In Warteschlange</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Fortschritt</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Übrig</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Geschwindigkeit</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Upload abgeschlossen. URL: {0}</value>
@@ -2677,6 +2782,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Integrierten Bildschirmrekorder verwenden</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR-Tonemapping</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Hardware-Videokodierung voraussetzen</value>

@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Форматы буфера</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Компактный режим</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Пользовательский путь к конфигурации горячих клавиш</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Значки</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Видимость предпросмотра изображения:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Настройки печати изображений...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Светлая</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Режим списка</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Главное окно</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Показывать просмотр содержимого буфера обмена</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Показывать колонки</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>Показывать «Редактировать с помощью ShareX» в контекстном меню файлового менеджера</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Лимит одновременных загрузок:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Интервал</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Компактный</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Меню:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Предпросмотр:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Окна настроек:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Боковая панель</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Боковая панель:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Меню инструментов</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Меню инструментов:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Шаблон имени подпапок:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Отображение задач:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Тема</value>
@@ -1397,6 +1445,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Настройки горячих клавиш</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Это можно изменить в любое время в настройках приложения.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Цветные значки из ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Аккуратные контурные значки в цветах вашей темы.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>В ShareX появились новые значки. Выберите вид, который вам больше нравится.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Выберите значки</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Не удалось сохранить изображение по пути:</value>
   </data>
@@ -1474,6 +1537,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Захват</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Линейка</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Буфер обмена</value>
@@ -1638,7 +1704,7 @@
     <value>Перезапустить от имени администратора</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Линейка</value>
+    <value>Измерение</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Пипетка</value>
@@ -1648,6 +1714,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Запись экрана (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Только один раз</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Папка снимков экрана...</value>
@@ -1753,6 +1822,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Украсить изображение</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Очистить список</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Очистить представление миниатюр</value>
@@ -1915,6 +1987,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Остановить загрузку</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Перейти в режим списка</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Перейти в режим миниатюр</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Текст</value>
@@ -2221,6 +2299,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Горячие клавиши включены.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Затрачено</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Имя файла</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>История</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>В очереди</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Прогресс</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Осталось</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Скорость</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Состояние</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Ссылка</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Загрузка завершена. URL: {0}</value>
@@ -2677,6 +2782,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Использовать встроенную запись экрана</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Тональная компрессия HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Требовать аппаратное кодирование видео</value>

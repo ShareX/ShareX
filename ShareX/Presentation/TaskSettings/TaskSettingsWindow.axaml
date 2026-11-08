@@ -19,21 +19,21 @@
 
     <Window.Styles>
         <Style Selector="Grid.page-title">
-            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageTitleMargin}"/>
         </Style>
         <Style Selector="TextBlock.page-title-text">
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="controls|IconPresenter.page-title-icon">
-            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.SectionTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Margin" Value="0,1,0,3"/>
         </Style>
@@ -49,8 +49,8 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Padding" Value="12"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.CardPadding}"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.CardMargin}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="Border.override-card">
@@ -62,30 +62,47 @@
             <Setter Property="Margin" Value="0,0,0,8"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
+        <Style Selector="StackPanel.settings-page">
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageMargin}"/>
+        </Style>
         <Style Selector="CheckBox.setting">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="FontWeight" Value="Normal"/>
         </Style>
+        <Style Selector="Button.form-control">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
+        </Style>
         <Style Selector="ComboBox.form-control">
             <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <Style Selector="TextBox.form-control">
             <Setter Property="MinWidth" Value="300"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="NumericUpDown.form-control">
             <Setter Property="Width" Value="130"/>
-            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
+        <Style Selector="NumericUpDown.form-control /template/ ButtonSpinner#PART_Spinner">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="NumericUpDown.form-control /template/ TextBox#PART_TextBox">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="CheckBox.setting /template/ Grid#RootGrid > Grid">
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
+        </Style>
         <Style Selector="Button.compact">
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ButtonPadding}"/>
             <Setter Property="Margin" Value="0,4"/>
         </Style>
         <Style Selector="ListBox.settings-list">

@@ -642,6 +642,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Yükle</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Cetvel</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Panodan yükle</value>
   </data>
@@ -793,7 +796,7 @@ Yine de çalıştırmak istiyor musunuz?</value>
     <value>Bölge yakala (Saydam)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Cetvel</value>
+    <value>Ölçüm</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Renk seçici ekranı</value>
@@ -872,6 +875,15 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Görüntü dosyaları</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Gizle</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Göster</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Görüntü aç</value>
@@ -1229,6 +1241,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatik</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Özel yazı yükleyici</value>

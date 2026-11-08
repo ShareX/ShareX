@@ -50,6 +50,8 @@ public sealed record NativeRecordingRequest
     public int FramesPerSecond { get; init; } = 30;
     public int VideoBitrate { get; init; } = 8_000_000;
     public bool IncludeCursor { get; init; } = true;
+    /// <summary>Tone maps HDR displays to SDR, so browsers and videos on them are not blown out. Ignored where it is not supported.</summary>
+    public bool HdrToneMapping { get; init; }
     public bool CaptureSystemAudio { get; init; } = true;
     public string? SystemAudioDeviceId { get; init; }
     public float SystemAudioGain { get; init; } = 1;

@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>คลิปบอร์ด รูปแบบ</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>โหมดกะทัดรัด</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>กำหนดเอง ปุ่มลัด การกำหนดค่า เส้นทาง</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>ไอคอน</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>การแสดงตัวอย่างรูปภาพ:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>รูปภาพ พิมพ์ การตั้งค่า...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>สว่าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>หน้าต่างหลัก</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>แสดงคอลัมน์</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>แสดง "แก้ไขด้วย ShareX" ในเมนูบริบทของตัวจัดการไฟล์</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>พร้อมกัน ขีดจำกัดการอัปโหลด:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>ระยะห่าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>กะทัดรัด</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>ค่าเริ่มต้น</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>เมนู</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>เมนู:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>ตัวอย่าง:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>หน้าต่างการตั้งค่า:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>แถบด้านข้าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>แถบด้านข้าง:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>เมนูเครื่องมือ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>เมนูเครื่องมือ:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>รูปแบบโฟลเดอร์ย่อย:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>โหมดมุมมองงาน:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>ธีม</value>
@@ -1397,6 +1445,21 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - การตั้งค่าปุ่มลัด</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ไอคอนสีสันสดใสจาก ShareX 21</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>ไอคอนเส้นเรียบง่ายที่ใช้สีตามธีมของคุณ</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX มีไอคอนใหม่ เลือกรูปแบบที่คุณชอบ</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>เลือกไอคอนของคุณ</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>
@@ -1474,6 +1537,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>จับภาพ</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>ไม้บรรทัด...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>คลิปบอร์ด ตัวแสดง...</value>
@@ -1638,7 +1704,7 @@
     <value>เริ่มใหม่ในฐานะผู้ดูแลระบบ</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด...</value>
+    <value>วัดขนาด...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี...</value>
@@ -1648,6 +1714,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>บันทึกหน้าจอ (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>เพียงครั้งเดียว</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>โฟลเดอร์ภาพหน้าจอ...</value>
@@ -1753,6 +1822,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>ตกแต่ง รูปภาพ...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>ล้างรายการงาน</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>ล้าง ภาพขนาดย่อ มุมมอง</value>
@@ -1915,6 +1987,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>หยุด อัปโหลด</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>สลับเป็นมุมมองรายการ</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>สลับเป็นมุมมองภาพขนาดย่อ</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>ข้อความ</value>
@@ -2221,6 +2299,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>เปิดใช้งานปุ่มลัดแล้ว</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>เวลาที่ผ่านไป</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>ชื่อไฟล์</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>ประวัติ</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>อยู่ในคิว</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>ความคืบหน้า</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>เวลาที่เหลือ</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>ความเร็ว</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>อัปโหลดเสร็จสมบูรณ์ URL: {0}</value>
@@ -2677,6 +2782,9 @@
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>ใช้ตัวบันทึกหน้าจอในตัว</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>การแมปโทน HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>กำหนดให้เข้ารหัสวิดีโอด้วยฮาร์ดแวร์</value>

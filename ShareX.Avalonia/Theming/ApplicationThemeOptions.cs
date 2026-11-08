@@ -40,6 +40,7 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     private string _accentColorHex = DefaultAccentColorHex;
     private bool _useSystemAccentColor = false;
     private IconPack _iconPack = IconPack.Modern;
+    private bool _compactMode = false;
 
     public string Theme
     {
@@ -81,6 +82,95 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
         get => _iconPack;
         set => SetField(ref _iconPack, value);
     }
+
+    public bool CompactMode
+    {
+        get => _compactMode;
+        set => SetField(ref _compactMode, value);
+    }
+
+    // Spacing is a percentage between the compact layout (0) and the default layout (100); values above
+    // 100 go past the default. A null value follows CompactMode.
+    public const int CompactSpacing = 0;
+    public const int DefaultSpacing = 100;
+    public const int MaximumSpacing = 200;
+
+    private int? _sidebarSpacing;
+    private int? _menuSpacing;
+    private int? _toolMenuSpacing;
+    private int? _settingsSpacing;
+
+    public int? SidebarSpacing
+    {
+        get => _sidebarSpacing;
+        set => SetField(ref _sidebarSpacing, ClampSpacing(value));
+    }
+
+    public int? MenuSpacing
+    {
+        get => _menuSpacing;
+        set => SetField(ref _menuSpacing, ClampSpacing(value));
+    }
+
+    public int? ToolMenuSpacing
+    {
+        get => _toolMenuSpacing;
+        set => SetField(ref _toolMenuSpacing, ClampSpacing(value));
+    }
+
+    public int? SettingsSpacing
+    {
+        get => _settingsSpacing;
+        set => SetField(ref _settingsSpacing, ClampSpacing(value));
+    }
+
+    public int GetSpacing(SpacingArea area)
+    {
+        int? spacing = area switch
+        {
+            SpacingArea.Sidebar => SidebarSpacing,
+            SpacingArea.Menus => MenuSpacing,
+            SpacingArea.ToolMenus => ToolMenuSpacing,
+            SpacingArea.SettingsWindows => SettingsSpacing,
+            _ => null
+        };
+
+        return spacing ?? (CompactMode ? CompactSpacing : DefaultSpacing);
+    }
+
+    public void SetSpacing(SpacingArea area, int? spacing)
+    {
+        switch (area)
+        {
+            case SpacingArea.Sidebar:
+                SidebarSpacing = spacing;
+                break;
+            case SpacingArea.Menus:
+                MenuSpacing = spacing;
+                break;
+            case SpacingArea.ToolMenus:
+                ToolMenuSpacing = spacing;
+                break;
+            case SpacingArea.SettingsWindows:
+                SettingsSpacing = spacing;
+                break;
+        }
+    }
+
+    /// <summary>Drops the per-area adjustments so every area follows <see cref="CompactMode"/> again.</summary>
+    public void ResetSpacing()
+    {
+        foreach (SpacingArea area in Enum.GetValues<SpacingArea>())
+        {
+            SetSpacing(area, null);
+        }
+    }
+
+    public static bool IsSpacingProperty(string? propertyName) => propertyName is
+        nameof(CompactMode) or nameof(SidebarSpacing) or nameof(MenuSpacing) or nameof(ToolMenuSpacing) or nameof(SettingsSpacing);
+
+    private static int? ClampSpacing(int? spacing) =>
+        spacing.HasValue ? Math.Clamp(spacing.Value, CompactSpacing, MaximumSpacing) : null;
 
     private void SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
     {

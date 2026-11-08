@@ -81,6 +81,9 @@
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Yinele (Ctrl+Y)</value>
   </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Yuvarlatılmış köşeler</value>
+  </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Kaydet</value>
   </data>
@@ -1392,8 +1395,14 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Birincil</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Araç çubuğunu varsayılana sıfırla</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>İkincil</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Göster / Gizle</value>

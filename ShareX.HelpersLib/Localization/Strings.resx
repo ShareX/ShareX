@@ -642,6 +642,9 @@ Do you still want to run it?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Ruler</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Upload from clipboard</value>
   </data>
@@ -793,7 +796,7 @@ Do you still want to run it?</value>
     <value>Capture region (Transparent)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Ruler</value>
+    <value>Measure</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Screen color picker</value>
@@ -872,6 +875,15 @@ Do you still want to run it?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Image files</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Hide</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Show</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Open image</value>
@@ -1229,6 +1241,12 @@ Do you still want to run it?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatic</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>List view</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Thumbnail view</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Custom text uploader</value>

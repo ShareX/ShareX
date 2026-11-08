@@ -642,6 +642,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uppladdning</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linjal</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Ladda upp från urklipp</value>
   </data>
@@ -793,7 +796,7 @@ Vill du ändå köra det?</value>
     <value>Ta bild av område (genomskinligt)</value>
   </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linjal</value>
+    <value>Mätning</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare</value>
@@ -872,6 +875,15 @@ Vill du ändå köra det?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bildfiler</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Dölj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Visa</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Öppna bild</value>
@@ -1229,6 +1241,12 @@ Vill du ändå köra det?</value>
   </data>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatiskt</value>
+  </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listvy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatyrvy</value>
   </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Anpassad textuppladdare</value>

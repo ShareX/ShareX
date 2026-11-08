@@ -406,6 +406,9 @@
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formate de clipboard</value>
   </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Mod compact</value>
+  </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Cale personalizată pentru configurația tastelor rapide</value>
   </data>
@@ -532,6 +535,9 @@
   <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
     <value>Pictograme</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Vizibilitatea previzualizării imaginii:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Setări de imprimare a imaginii...</value>
   </data>
@@ -564,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Luminos</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Vizualizare listă</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Fereastra principală</value>
@@ -688,6 +697,9 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Afișează vizualizatorul conținutului din clipboard</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Afișați coloanele</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditInFileManager" xml:space="preserve">
     <value>Afișează „Editează folosind ShareX” în meniul contextual al managerului de fișiere</value>
   </data>
@@ -736,6 +748,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limita de încărcare simultană:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Spațiere</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Implicit</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Meniuri</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Meniuri:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Previzualizare:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Ferestre de setări:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Bară laterală</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Bară laterală:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Meniuri de instrumente</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Meniuri de instrumente:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -744,6 +789,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Model de subdosar:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Modul de vizualizare a sarcinilor:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1397,6 +1445,21 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Setări taste rapide</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Puteți modifica oricând această opțiune din setările aplicației.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Pictogramele colorate din ShareX 21.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Pictograme simple, din linii, care urmează culorile temei.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX are pictograme noi. Alegeți aspectul preferat.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Alegeți pictogramele</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Nu s-a putut scrie imaginea în calea:</value>
   </data>
@@ -1474,6 +1537,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Capturați</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Riglă</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Vizualizator de clipboard</value>
@@ -1638,7 +1704,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Repornește ca administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Riglă</value>
+    <value>Măsurare</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Alegător de culori pe ecran</value>
@@ -1648,6 +1714,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Înregistrare ecran (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Doar o dată</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Dosar capturi de ecran...</value>
@@ -1753,6 +1822,9 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Îmbunătățește imaginea</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Ștergeți lista de sarcini</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Șterge vizualizarea miniaturilor</value>
@@ -1915,6 +1987,12 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Oprește încărcarea</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Comutați la vizualizare listă</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Comutați la vizualizare miniaturi</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2221,6 +2299,33 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Taste rapide activate.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>A trecut</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Numele fișierului</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Istoric</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>În coadă</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Progres</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Rămas</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Viteză</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Încărcare finalizată. URL: {0}</value>
@@ -2677,6 +2782,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Folosește înregistratorul de ecran integrat</value>
+  </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Maparea tonurilor HDR</value>
   </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Solicită codificare video hardware</value>
