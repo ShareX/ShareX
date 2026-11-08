@@ -157,6 +157,7 @@
             </Grid>
 
             <Border x:Name="ToolbarEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -166,6 +167,7 @@
             </Border>
 
             <Border x:Name="ActionEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -279,6 +281,7 @@
             </Border>
 
             <Border x:Name="WatchFolderEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -360,6 +363,7 @@
             </Border>
 
             <Border x:Name="NotificationButtonsEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
