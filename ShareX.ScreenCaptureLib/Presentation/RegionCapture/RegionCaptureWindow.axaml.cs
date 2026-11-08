@@ -97,6 +97,9 @@ public partial class RegionCaptureWindow : Window
     private Size _positionedCaptureToolbarSize;
     private bool _draggingCaptureToolbar;
     private Point _captureToolbarDragOffset;
+    // Until the user interacts with the capture, the toolbar follows the pointer to whichever monitor it is on.
+    private bool _captureToolbarFollowsPointer = true;
+    private PixelRect _captureToolbarScreenBounds;
     private int _imageWidth;
     private int _imageHeight;
     private bool _regionToolActive = true;
@@ -121,6 +124,7 @@ public partial class RegionCaptureWindow : Window
         AddHandler(PointerPressedEvent, OnCaptureHostPointerPressed, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerMovedEvent, OnCaptureHostPointerMoved, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerReleasedEvent, OnCaptureHostPointerReleased, RoutingStrategies.Tunnel, handledEventsToo: true);
+        AddHandler(KeyDownEvent, OnCaptureHostKeyDown, RoutingStrategies.Tunnel, handledEventsToo: true);
     }
 
     public RegionCaptureWindow(AvaloniaRegionCaptureRequest request) : this()
@@ -939,6 +943,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        _captureToolbarScreenBounds = screen.Bounds;
         double monitorCenterX = screen.Bounds.X - _request.ScreenBounds.X + screen.Bounds.Width / 2d;
         double monitorTop = screen.Bounds.Y - _request.ScreenBounds.Y;
         SetCaptureToolbarAnchor(monitorCenterX / scale, monitorTop / scale);
@@ -1075,8 +1080,40 @@ public partial class RegionCaptureWindow : Window
             _request.ScreenBounds.Y + (int)Math.Round(top * scale));
     }
 
+    private void OnCaptureHostKeyDown(object? sender, KeyEventArgs e)
+    {
+        // Modifier keys alone are not an interaction, e.g. holding Shift while moving to another monitor.
+        if (_keyboardInputEnabled && e.Key is not (Key.LeftShift or Key.RightShift or Key.LeftCtrl or Key.RightCtrl or
+            Key.LeftAlt or Key.RightAlt or Key.LWin or Key.RWin))
+        {
+            _captureToolbarFollowsPointer = false;
+        }
+    }
+
+    private void FollowPointerWithCaptureToolbar(PointerEventArgs e)
+    {
+        // A position the user saved by dragging the toolbar always wins.
+        if (!_captureToolbarFollowsPointer || _draggingCaptureToolbar || _request == null ||
+            !_request.RegionCaptureOptions.ToolbarPosition.IsEmpty)
+        {
+            return;
+        }
+
+        double scale = GetToolbarScale();
+        Point pointer = e.GetPosition(this);
+        PixelPoint desktopPoint = new(
+            _request.ScreenBounds.X + (int)Math.Round(pointer.X * scale),
+            _request.ScreenBounds.Y + (int)Math.Round(pointer.Y * scale));
+        if (!_captureToolbarScreenBounds.Contains(desktopPoint))
+        {
+            UpdateToolbarPosition(desktopPoint);
+        }
+    }
+
     private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        _captureToolbarFollowsPointer = false;
+
         if (_regionToolActive || _closing || _request == null || !IsEditorWorkspaceSource(e.Source))
         {
             return;
@@ -1114,6 +1151,8 @@ public partial class RegionCaptureWindow : Window
 
     private void OnCaptureHostPointerMoved(object? sender, PointerEventArgs e)
     {
+        FollowPointerWithCaptureToolbar(e);
+
         if (!_annotationMiddleButtonPressed)
         {
             return;
