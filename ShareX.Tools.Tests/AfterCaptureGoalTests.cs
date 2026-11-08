@@ -47,8 +47,8 @@ public sealed class AfterCaptureGoalTests
     [InlineData(AfterCaptureTasks.CopyFileToClipboard | AfterCaptureTasks.CopyFilePathToClipboard, AfterCaptureGoal.CopyFile)]
     [InlineData(AfterCaptureTasks.CopyFilePathToClipboard | AfterCaptureTasks.CopyImageToClipboard, AfterCaptureGoal.CopyFilePath)]
     [InlineData(AfterCaptureTasks.CopyFolderPathToClipboard, AfterCaptureGoal.CopyFolderPath)]
-    [InlineData(AfterCaptureTasks.SaveImageToFile, AfterCaptureGoal.LeaveClipboard)]
-    [InlineData(AfterCaptureTasks.None, AfterCaptureGoal.LeaveClipboard)]
+    [InlineData(AfterCaptureTasks.SaveImageToFile, AfterCaptureGoal.None)]
+    [InlineData(AfterCaptureTasks.None, AfterCaptureGoal.None)]
     public void InferGoal_MatchesWhatWouldEndUpOnTheClipboard(AfterCaptureTasks capture, AfterCaptureGoal expected)
     {
         Assert.Equal(expected, AfterCaptureGoals.InferGoal(capture, AllGoals));
@@ -68,11 +68,19 @@ public sealed class AfterCaptureGoalTests
     }
 
     [Fact]
-    public void LeavingTheClipboardAloneCopiesAndUploadsNothing()
+    public void NoGoalCopiesAndUploadsNothing()
     {
-        AfterCaptureJobs jobs = AfterCaptureGoals.Resolve(AfterCaptureGoal.LeaveClipboard, AfterCaptureGoals.GoalCaptureTasks, AfterUploadTasks.None, false);
+        AfterCaptureJobs jobs = AfterCaptureGoals.Resolve(AfterCaptureGoal.None, AfterCaptureGoals.GoalCaptureTasks, AfterUploadTasks.None, false);
 
         Assert.Equal(AfterCaptureTasks.None, jobs.Capture);
+    }
+
+    [Theory]
+    [InlineData(true, true)]
+    [InlineData(false, false)]
+    public void NoGoalIsNeverOfferedAsAChoice(bool hasImage, bool canUpload)
+    {
+        Assert.DoesNotContain(AfterCaptureGoal.None, AfterCaptureGoals.GetAvailableGoals(hasImage, canUpload));
     }
 
     [Fact]
@@ -103,7 +111,7 @@ public sealed class AfterCaptureGoalTests
         AfterCaptureJobs jobs = AfterCaptureGoals.Resolve(AfterCaptureGoal.CopyFilePath, AfterCaptureTasks.PinToScreen, AfterUploadTasks.None, true);
 
         Assert.DoesNotContain(AfterCaptureGoal.CopyImage, goals);
-        Assert.Equal(AfterCaptureGoal.LeaveClipboard, AfterCaptureGoals.InferGoal(AfterCaptureTasks.CopyImageToClipboard, goals));
+        Assert.Equal(AfterCaptureGoal.None, AfterCaptureGoals.InferGoal(AfterCaptureTasks.CopyImageToClipboard, goals));
         Assert.Equal(AfterCaptureTasks.CopyFilePathToClipboard, jobs.Capture);
     }
 
@@ -113,6 +121,6 @@ public sealed class AfterCaptureGoalTests
         IReadOnlyList<AfterCaptureGoal> goals = AfterCaptureGoals.GetAvailableGoals(hasImage: true, canUpload: false);
 
         Assert.DoesNotContain(AfterCaptureGoal.CopyUrl, goals);
-        Assert.Equal(AfterCaptureGoal.LeaveClipboard, AfterCaptureGoals.InferGoal(AfterCaptureTasks.UploadImageToHost, goals));
+        Assert.Equal(AfterCaptureGoal.None, AfterCaptureGoals.InferGoal(AfterCaptureTasks.UploadImageToHost, goals));
     }
 }
