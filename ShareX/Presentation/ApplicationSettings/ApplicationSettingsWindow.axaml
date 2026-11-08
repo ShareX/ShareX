@@ -688,6 +688,9 @@
                                     <StackPanel>
                                         <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_TrayAutoExpandCaptureMenu}" IsChecked="{Binding TrayAutoExpandCaptureMenu, Mode=TwoWay}"/>
                                     </StackPanel>
+                                    <StackPanel>
+                                        <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowFileDeleteConfirmation}" IsChecked="{Binding ShowFileDeleteConfirmation, Mode=TwoWay}"/>
+                                    </StackPanel>
                                     <Grid ColumnDefinitions="240,*" ColumnSpacing="8">
                                         <StackPanel VerticalAlignment="Center">
                                             <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_BrowserPath}" FontWeight="Normal"/>

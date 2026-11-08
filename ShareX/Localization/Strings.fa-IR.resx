@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>دکمه «ویرایش در ویرایشگر عکس ShareX» را در منوی راست‌کلیک ویندوز اکسپلورر نمایش بده</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>درخواست تأیید پیش از حذف فایل‌ها</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>آستانه هشدار فایل بزرگ (مگابایت)</value>
   </data>
@@ -1323,6 +1326,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to ذخیره تنظیمات</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>دیگر یادآوری نکن</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>انصراف</value>

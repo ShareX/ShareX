@@ -703,6 +703,9 @@
   <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
     <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขภาพถ่าย ShareX" ในเมนูบริบทของ Windows Explorer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>ขอการยืนยันก่อนลบไฟล์</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>ใหญ่-ไฟล์ คำเตือน เกณฑ์ (MB)</value>
   </data>
@@ -1323,6 +1326,9 @@
   </data>
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>ไม่สามารถ บันทึก การตั้งค่า</value>
+  </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>ไม่ต้องเตือนอีก</value>
   </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
