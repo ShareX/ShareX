@@ -52,7 +52,7 @@ internal sealed class VideoTexturePool : IDisposable
         {
             for (int i = 0; i < 8; i++)
             {
-                ID3D11Texture2D texture = graphics.CreateTexture(processor.Width, processor.Height,
+                ID3D11Texture2D texture = graphics.CreateTexture(processor.OutputWidth, processor.OutputHeight,
                     Format.NV12, encoderBindFlags | BindFlags.RenderTarget);
                 ID3D11VideoProcessorOutputView view;
                 try { view = processor.CreateOutputView(texture); }
