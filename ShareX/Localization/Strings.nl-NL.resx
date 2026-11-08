@@ -2384,6 +2384,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Afbeelding automatisch naar klembord kopiëren</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Canvas automatisch vergroten als tekst of vormen buiten de rand komen</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Automatisch oplopend nummer:</value>
   </data>
@@ -2416,6 +2419,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Annuleren</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Opvulkleur voor toegevoegd canvasgebied:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Vastleggen</value>

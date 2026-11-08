@@ -2384,6 +2384,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Автоматически копировать изображение в буфер обмена</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Автоматически расширять холст, когда текст или фигуры выходят за край</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Автоматически увеличиваемый номер:</value>
   </data>
@@ -2416,6 +2419,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Отмена</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Цвет заливки нового места на холсте:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Захват</value>
@@ -3038,9 +3044,6 @@
   <data name="TaskSettingsWindow_ShowImageEffectsWindowAfterCapture" xml:space="preserve">
     <value>Показывать окно эффектов изображения после захвата</value>
   </data>
-  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
-    <value>Автоматически расширять холст, когда текст или фигуры выходят за край</value>
-  </data>
   <data name="TaskSettingsWindow_ShowInsertImageDialog" xml:space="preserve">
     <value>Показывать диалог вставки изображения</value>
   </data>
@@ -3331,8 +3334,5 @@
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ваш системный администратор отключил возможность загрузки.</value>
-  </data>
-  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
-    <value>Цвет заливки нового места на холсте:</value>
   </data>
 </root>

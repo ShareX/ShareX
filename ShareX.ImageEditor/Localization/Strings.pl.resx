@@ -285,6 +285,15 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Anuluj (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Zastosuj</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Kolor wypełnienia dodanego obszaru</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nie udało się wczytać obrazu ze schowka.
 Schowek nie zawiera obrazu.</value>
@@ -1409,6 +1418,9 @@ Schowek nie zawiera obrazu.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmycie</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Rozmiar płótna</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonuj</value>

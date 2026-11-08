@@ -285,6 +285,15 @@ Opciones de sombra (Clic derecho)</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancelar (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Color de relleno del área añadida</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>No se pudo cargar la imagen desde el portapapeles.
 El portapapeles no contiene ninguna imagen.</value>
@@ -1409,6 +1418,9 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Desenfoque</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tamaño del lienzo</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clonar</value>

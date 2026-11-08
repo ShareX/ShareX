@@ -285,6 +285,15 @@ Pretende guardar as alterações antes de fechar o editor de imagens?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancelar (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Cor de preenchimento da área adicionada</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Não foi possível carregar a imagem da área de transferência.
 A área de transferência não contém uma imagem.</value>
@@ -1409,6 +1418,9 @@ A área de transferência não contém uma imagem.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Desfoque</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tamanho da tela</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clonar</value>

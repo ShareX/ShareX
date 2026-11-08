@@ -285,6 +285,15 @@
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>لغو (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>رنگ پرکردن ناحیه افزوده‌شده</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>بارگیری تصویر از کلیپ‌بورد ناموفق بود.
 کلیپ‌بورد حاوی تصویر نیست.</value>
@@ -1409,6 +1418,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>تاری</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>اندازه بوم</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>تکثیر</value>

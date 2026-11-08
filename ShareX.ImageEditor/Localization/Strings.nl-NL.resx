@@ -285,6 +285,15 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annuleren (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Toepassen</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Opvulkleur voor het toegevoegde gebied</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Kan afbeelding niet laden vanaf het klembord.
 Het klembord bevat geen afbeelding.</value>
@@ -1409,6 +1418,9 @@ Het klembord bevat geen afbeelding.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Vervagen</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Canvasgrootte</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonen</value>

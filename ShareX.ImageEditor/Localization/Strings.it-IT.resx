@@ -285,6 +285,15 @@ Salvare le modifiche prima di chiudere l'editor di immagini?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annulla (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Colore di riempimento dell'area aggiunta</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Impossibile caricare l’immagine dagli appunti.
 Gli appunti non contengono un’immagine.</value>
@@ -1409,6 +1418,9 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sfocatura</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Dimensione tela</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clona</value>
