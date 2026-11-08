@@ -28,6 +28,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 
@@ -63,6 +64,11 @@ public partial class QRCodeWindow : Window
         if (previewHost != null)
         {
             previewHost.SizeChanged += (_, _) => UpdateAvailableSize(previewHost);
+        }
+
+        if (this.FindControl<TextBoxLinkHighlighter>("ContentLinkHighlighter") is { } linkHighlighter)
+        {
+            linkHighlighter.LinkClicked += (_, url) => URLHelpers.OpenURL(url);
         }
 
         Opened += OnOpened;
