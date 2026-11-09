@@ -911,13 +911,15 @@ public partial class RegionCaptureWindow : Window
 
         e.Handled = true;
 
-        if (e.Delta.Y == 0)
+        // Horizontal-only wheel events have no vertical direction.
+        int direction = Math.Sign(e.Delta.Y);
+        if (direction == 0)
         {
             return;
         }
 
         RegionCaptureOptions options = _request.RegionCaptureOptions;
-        bool scrollUp = e.Delta.Y > 0;
+        bool scrollUp = direction > 0;
 
         if (!options.ShowMagnifier)
         {
