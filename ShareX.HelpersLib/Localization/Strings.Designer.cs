@@ -1364,5 +1364,7 @@ namespace ShareX.HelpersLib.Localization {
         public static string ImagePreviewVisibility_Show => ResourceManager.GetString("ImagePreviewVisibility_Show", resourceCulture);
         public static string RegionCaptureMagnifierScrollAction_Resize => ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Resize", resourceCulture);
         public static string RegionCaptureMagnifierScrollAction_Zoom => ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Zoom", resourceCulture);
+        public static string ImagePreviewLocation_Bottom => ResourceManager.GetString("ImagePreviewLocation_Bottom", resourceCulture);
+        public static string ImagePreviewLocation_Side => ResourceManager.GetString("ImagePreviewLocation_Side", resourceCulture);
     }
 }

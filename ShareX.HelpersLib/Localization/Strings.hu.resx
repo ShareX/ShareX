@@ -876,6 +876,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Képfájlok</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alsó</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Oldalt</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatikus</value>
   </data>

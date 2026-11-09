@@ -506,6 +506,10 @@
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ImagePreviewLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ImagePreviewOptions}" SelectedItem="{Binding SelectedImagePreview, Mode=TwoWay}"/>
                                     </Grid>
+                                    <Grid ColumnDefinitions="180,*" ColumnSpacing="8">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_ImagePreviewLocationLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
+                                        <ComboBox Grid.Column="1" Classes="form-control" ItemsSource="{Binding ImagePreviewLocationOptions}" SelectedItem="{Binding SelectedImagePreviewLocation, Mode=TwoWay}"/>
+                                    </Grid>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">

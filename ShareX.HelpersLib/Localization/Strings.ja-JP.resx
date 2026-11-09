@@ -876,6 +876,12 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>画像ファイル</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>下</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>横</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>自動</value>
   </data>
