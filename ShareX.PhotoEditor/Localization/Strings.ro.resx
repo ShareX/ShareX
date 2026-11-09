@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Interpolare:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Nu s-a putut finaliza solicitarea deoarece stratul este blocat.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Mută ghidajul</value>
   </data>

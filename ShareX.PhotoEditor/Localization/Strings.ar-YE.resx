@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>الاستيفاء:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>تعذّر إكمال الطلب لأن الطبقة مقفلة.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>نقل الدليل</value>
   </data>

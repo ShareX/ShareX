@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Nội suy:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Không thể hoàn tất yêu cầu vì lớp bị khóa.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Di chuyển đường gióng</value>
   </data>

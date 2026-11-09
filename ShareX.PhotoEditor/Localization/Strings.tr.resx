@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Ara değerleme:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Katman kilitli olduğundan istek tamamlanamadı.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Kılavuzu taşı</value>
   </data>

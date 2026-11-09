@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Interpolação:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Não foi possível concluir a solicitação porque a camada está bloqueada.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Mover guia</value>
   </data>

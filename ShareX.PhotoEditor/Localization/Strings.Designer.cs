@@ -7105,11 +7105,6 @@ namespace ShareX.PhotoEditor.Localization {
                 return ResourceManager.GetString("TransformTools_InterpolationColon", resourceCulture);
             }
         }
-        public static string TransformTools_LayerLocked {
-            get {
-                return ResourceManager.GetString("TransformTools_LayerLocked", resourceCulture);
-            }
-        }
         public static string TransformTools_MoveGuide {
             get {
                 return ResourceManager.GetString("TransformTools_MoveGuide", resourceCulture);

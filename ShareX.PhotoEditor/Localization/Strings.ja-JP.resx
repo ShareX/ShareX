@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>補間方法:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>レイヤーがロックされているため、要求を完了できませんでした。</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>ガイドを移動</value>
   </data>

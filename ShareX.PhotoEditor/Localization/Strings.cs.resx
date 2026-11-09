@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Interpolace:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Požadavek nelze dokončit, protože vrstva je zamčená.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Přesunout vodítko</value>
   </data>

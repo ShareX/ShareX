@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Interpoláció:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>A kérés nem teljesíthető, mert a réteg zárolva van.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Segédvonal áthelyezése</value>
   </data>

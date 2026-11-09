@@ -494,7 +494,7 @@ public sealed class MoveTool : ToolBase
             return;
         }
 
-        if (ShowTransformControls && doc.ActiveLayer != null)
+        if (ShowTransformControls && doc.ActiveLayer is { CanMove: true })
         {
             TransformTool transform = Host.Tools.Get<TransformTool>();
             SKRect bounds = doc.ActiveLayer.GetContentBounds();
@@ -525,11 +525,8 @@ public sealed class MoveTool : ToolBase
 
         Layer? layer = doc.ActiveLayer;
         if (layer == null) return;
-        if (!layer.CanMove)
-        {
-            Host.ShowMessage(Strings.TransformTools_LayerLocked);
-            return;
-        }
+        // A locked layer ignores the click, like Photoshop, instead of interrupting with a message.
+        if (!layer.CanMove) return;
 
         _layers.Clear();
         if (layer is RasterLayer raster && doc.Selection != null)

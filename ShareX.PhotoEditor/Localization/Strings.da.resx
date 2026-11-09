@@ -4257,9 +4257,6 @@
   <data name="TransformTools_InterpolationColon" xml:space="preserve">
     <value>Interpolation:</value>
   </data>
-  <data name="TransformTools_LayerLocked" xml:space="preserve">
-    <value>Anmodningen kunne ikke fuldføres, fordi laget er låst.</value>
-  </data>
   <data name="TransformTools_MoveGuide" xml:space="preserve">
     <value>Flyt hjælpelinje</value>
   </data>
