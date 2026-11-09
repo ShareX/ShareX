@@ -1113,6 +1113,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Eszköztípus cseréje</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Nagyító átméretezése</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Nagyító nagyítása</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Számítógép</value>
   </data>

@@ -2690,6 +2690,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>マウス ハイライターのオプション...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>マウスホイール:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>スクロールで拡大鏡に対して行う操作です。Ctrl キーを押しながらスクロールすると、もう一方の操作になります。</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>下へ移動</value>
   </data>

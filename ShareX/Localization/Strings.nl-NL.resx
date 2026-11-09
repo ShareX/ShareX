@@ -2690,6 +2690,12 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opties voor muisklikmarkering...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Muiswiel:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Wat scrollen met het vergrootglas doet. Houd Ctrl ingedrukt tijdens het scrollen om de andere actie uit te voeren.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Omlaag</value>
   </data>

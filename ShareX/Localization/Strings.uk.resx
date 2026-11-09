@@ -2690,6 +2690,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Параметри підсвічування миші...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Коліщатко миші:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Що прокручування робить із лупою. Утримуйте Ctrl під час прокручування, щоб виконати іншу дію.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Перемістити вниз</value>
   </data>

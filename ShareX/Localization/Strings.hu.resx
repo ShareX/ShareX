@@ -2690,6 +2690,12 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Egérkiemelő opciók...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Egérgörgő:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Mit csinál a görgetés a nagyítóval. Görgetés közben tartsa lenyomva a Ctrl billentyűt a másik művelethez.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mozgatás lefelé</value>
   </data>

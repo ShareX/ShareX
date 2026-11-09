@@ -1113,6 +1113,12 @@ Vil du stadig køre den?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Skift værktøjstype</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Tilpas størrelsen på forstørrelsesglasset</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoom forstørrelsesglasset</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>

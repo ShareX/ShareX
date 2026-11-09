@@ -2690,6 +2690,12 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opções de marcador de mouse...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Roda do mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>O que a rolagem faz com a lupa. Mantenha Ctrl pressionado enquanto rola para fazer a outra ação.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mover para baixo</value>
   </data>

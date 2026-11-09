@@ -2690,6 +2690,12 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Tùy chọn tô sáng chuột...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Con lăn chuột:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Thao tác cuộn sẽ làm gì với kính lúp. Giữ Ctrl trong khi cuộn để thực hiện thao tác còn lại.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Di chuyển xuống</value>
   </data>

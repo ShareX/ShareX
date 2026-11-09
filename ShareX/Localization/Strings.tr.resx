@@ -2690,6 +2690,12 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Fare vurgulayıcı seçenekleri...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mouse tekerleği:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Kaydırmanın büyüteçte ne yaptığı. Diğer işlemi yapmak için kaydırırken Ctrl tuşunu basılı tutun.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Aşağı taşı</value>
   </data>

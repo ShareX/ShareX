@@ -1113,6 +1113,12 @@ Vuoi eseguirlo comunque?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Cambia Tipo di Strumento</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ridimensiona lente</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoom della lente</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>

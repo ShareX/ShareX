@@ -1113,6 +1113,12 @@ Doriți totuși să îl executați?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Schimbați tipul de instrument</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionare lupă</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Mărire lupă</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>

@@ -1113,6 +1113,12 @@ Vill du ändå köra det?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Byt verktygstyp</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ändra storlek på förstoringsglaset</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zooma förstoringsglaset</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Dator</value>
   </data>
