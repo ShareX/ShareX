@@ -532,6 +532,9 @@
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Visibilidade da pré-visualização da imagem:</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Localização da pré-visualização da imagem:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Configurações de impressão de imagem</value>
   </data>

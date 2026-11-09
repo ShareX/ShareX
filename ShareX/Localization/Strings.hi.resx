@@ -532,6 +532,9 @@
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>छवि पूर्वावलोकन दृश्यता:</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>छवि पूर्वावलोकन का स्थान:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>छवि मुद्रण सेटिंग...</value>
   </data>

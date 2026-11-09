@@ -76,6 +76,18 @@
                 </ControlTemplate>
             </Setter>
         </Style>
+        <Style Selector="Panel.image-preview">
+            <Setter Property="DockPanel.Dock" Value="Right"/>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom">
+            <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        </Style>
+        <Style Selector="Border.image-preview-frame">
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom > Border.image-preview-frame">
+            <Setter Property="BorderThickness" Value="0,1,0,0"/>
+        </Style>
         <Style Selector="Thumb.preview-resizer">
             <Setter Property="Width" Value="6"/>
             <Setter Property="Margin" Value="-3,0,0,0"/>
@@ -87,6 +99,14 @@
                     <Border Background="{TemplateBinding Background}"/>
                 </ControlTemplate>
             </Setter>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom > Thumb.preview-resizer">
+            <Setter Property="Width" Value="NaN"/>
+            <Setter Property="Height" Value="6"/>
+            <Setter Property="Margin" Value="0,-3,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Cursor" Value="SizeNorthSouth"/>
         </Style>
         <Style Selector="Border.task-row">
             <Setter Property="Height" Value="22"/>
@@ -303,11 +323,16 @@
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
-                <Grid IsVisible="{Binding IsListView}" ColumnDefinitions="*,Auto">
-                <Panel Grid.Column="1" Width="{Binding ImagePreviewWidth}" IsVisible="{Binding IsImagePreviewVisible}" ZIndex="1">
-                    <Border Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                <DockPanel IsVisible="{Binding IsListView}">
+                <Panel Classes="image-preview"
+                       Classes.bottom="{Binding IsImagePreviewAtBottom}"
+                       Width="{Binding ImagePreviewPaneWidth}"
+                       Height="{Binding ImagePreviewPaneHeight}"
+                       IsVisible="{Binding IsImagePreviewVisible}"
+                       ZIndex="1">
+                    <Border Classes="image-preview-frame"
+                            Background="{DynamicResource ShareX.Brush.Background.Panel}"
                             BorderBrush="{DynamicResource ShareX.Brush.Separator}"
-                            BorderThickness="1,0,0,0"
                             PointerPressed="OnImagePreviewPointerPressed">
                         <Border Margin="6"
                                 Background="{DynamicResource ShareX.Brush.Checkered}"
@@ -407,7 +432,7 @@
                         </ItemsControl>
                     </ScrollViewer>
                 </Grid>
-                </Grid>
+                </DockPanel>
 
                 <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding ThumbnailItems}" Margin="6">

@@ -876,6 +876,12 @@ Do you still want to run it?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Image files</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Side</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatic</value>
   </data>

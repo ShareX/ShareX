@@ -532,6 +532,9 @@
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>이미지 미리보기 표시 여부:</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>이미지 미리보기 위치:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>이미지 인쇄 설정...</value>
   </data>

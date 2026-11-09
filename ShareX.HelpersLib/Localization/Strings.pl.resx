@@ -876,6 +876,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Pliki obrazów</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dół</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Bok</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatycznie</value>
   </data>

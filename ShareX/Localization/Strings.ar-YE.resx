@@ -532,6 +532,9 @@
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>ظهور معاينة الصورة:</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>موقع معاينة الصورة:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>إعدادات طباعة الصورة...</value>
   </data>

@@ -532,6 +532,9 @@
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Visibilitas pratinjau gambar:</value>
   </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Lokasi pratinjau gambar:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Pengaturan cetak gambar...</value>
   </data>

@@ -876,6 +876,12 @@ Vill du ändå köra det?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bildfiler</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Nederkant</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Sidan</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatisk</value>
   </data>

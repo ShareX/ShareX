@@ -876,6 +876,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Berkas gambar</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Samping</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Otomatis</value>
   </data>

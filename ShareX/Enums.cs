@@ -420,6 +420,11 @@ namespace ShareX
         Show, Hide, Automatic
     }
 
+    public enum ImagePreviewLocation // Localized
+    {
+        Side, Bottom
+    }
+
     public enum TaskViewMode // Localized
     {
         ListView,

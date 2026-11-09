@@ -83,6 +83,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
     private ThumbnailItemViewModel? _selectionAnchor;
     private const int MinImagePreviewWidth = 100;
+    private const int MinImagePreviewHeight = 100;
     // Animated previews are decoded at most this large, which is plenty for the pane and keeps playback cheap.
     private const int MaxAnimatedImagePreviewSize = 1024;
     private string? _imagePreviewPath;
@@ -102,6 +103,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     // Keep room for the list when the window is smaller than when the width was saved.
     public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
     private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
+    public int ImagePreviewHeight => Math.Clamp(ApplicationState.Settings.ImagePreviewHeight, MinImagePreviewHeight, MaxImagePreviewHeight);
+    private int MaxImagePreviewHeight => Math.Max(MinImagePreviewHeight, (int)ThumbnailPanel.Bounds.Height - 100);
+    public bool IsImagePreviewAtBottom => ApplicationState.Settings.ImagePreviewLocation == ImagePreviewLocation.Bottom;
+    // The pane spans the list's width when docked at the bottom and its height when docked at the side.
+    public double ImagePreviewPaneWidth => IsImagePreviewAtBottom ? double.NaN : ImagePreviewWidth;
+    public double ImagePreviewPaneHeight => IsImagePreviewAtBottom ? ImagePreviewHeight : double.NaN;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
 
     // Dropped while maximized so the caption buttons reach the screen edge.
@@ -127,7 +134,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         UpdateTitleBarIcon();
         TaskListColumns.Load(ApplicationState.Settings.TaskListViewColumnWidths);
         DataContext = this;
-        ThumbnailPanel.SizeChanged += (_, _) => OnPropertyChanged(nameof(ImagePreviewWidth));
+        ThumbnailPanel.SizeChanged += (_, _) => NotifyImagePreviewLayoutChanged();
         ScheduleImagePreviewUpdate();
         ThumbnailItemViewModel.RenderScaling = RenderScaling;
         ScalingChanged += OnScalingChanged;
@@ -361,7 +368,15 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         OnPropertyChanged(nameof(IsListView));
         OnPropertyChanged(nameof(IsThumbnailView));
         OnPropertyChanged(nameof(ShowListColumns));
+        NotifyImagePreviewLayoutChanged();
         ScheduleImagePreviewUpdate();
+    }
+
+    private void NotifyImagePreviewLayoutChanged()
+    {
+        OnPropertyChanged(nameof(IsImagePreviewAtBottom));
+        OnPropertyChanged(nameof(ImagePreviewPaneWidth));
+        OnPropertyChanged(nameof(ImagePreviewPaneHeight));
     }
 
     private void ScheduleImagePreviewUpdate()
@@ -488,9 +503,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnImagePreviewResizerDragDelta(object? sender, VectorEventArgs e)
     {
-        // The handle is on the pane's left edge, so dragging left widens it.
-        ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
-        OnPropertyChanged(nameof(ImagePreviewWidth));
+        // The handle is on the pane's left or top edge, so dragging left or up grows it.
+        if (IsImagePreviewAtBottom)
+        {
+            ApplicationState.Settings.ImagePreviewHeight = Math.Clamp(ImagePreviewHeight - (int)Math.Round(e.Vector.Y), MinImagePreviewHeight, MaxImagePreviewHeight);
+        }
+        else
+        {
+            ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
+        }
+
+        NotifyImagePreviewLayoutChanged();
         e.Handled = true;
     }
 
