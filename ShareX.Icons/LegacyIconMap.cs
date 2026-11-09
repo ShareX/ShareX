@@ -175,6 +175,7 @@ internal static class LegacyIconMap
         [AppIcons.LineChart] = "app.line-chart",
         [AppIcons.Link] = "drive",
         [AppIcons.ListRestart] = "app.list-restart",
+        [AppIcons.ListView] = "application-list",
         [AppIcons.Loading] = "app.loading",
         [AppIcons.Locate] = "layout-center",
         [AppIcons.Lock] = "app.lock",

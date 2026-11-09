@@ -253,6 +253,7 @@ public static class AppIcons
     public const string Plug = Prefix + "plug";
     public const string Network = Prefix + "network";
     public const string Grid = Prefix + "grid";
+    public const string ListView = Prefix + "list-view";
     public const string FileEdit = Prefix + "file-edit";
     public const string Factory = Prefix + "factory";
     public const string Database = Prefix + "database";

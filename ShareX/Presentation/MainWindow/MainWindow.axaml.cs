@@ -509,7 +509,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private MainMenuEntry CreateSwitchTaskViewModeItem() => IsListView
         ? Item(Strings.MainWindow_SwitchToThumbnailView, AppIcons.Grid, SwitchTaskViewMode)
-        : Item(Strings.MainWindow_SwitchToListView, AppIcons.Rows, SwitchTaskViewMode);
+        : Item(Strings.MainWindow_SwitchToListView, AppIcons.ListView, SwitchTaskViewMode);
 
     private string ClearTasksText => IsListView ? Strings.MainWindow_ClearTaskList : Strings.MainWindow_ClearThumbnailView;
 

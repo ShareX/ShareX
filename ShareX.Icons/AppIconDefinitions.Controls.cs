@@ -348,6 +348,14 @@ internal static partial class AppIconDefinitions
             Stroke(Rectangle(3, 3, 18, 18, 3)),
             Stroke("M9 3v18M15 3v18M3 9h18M3 15h18")
         },
+        // Rows of items, each with a marker on the left.
+        {
+            Icon.ListView,
+            Fill(Circle(4.5, 6, 1.5)),
+            Fill(Circle(4.5, 12, 1.5)),
+            Fill(Circle(4.5, 18, 1.5)),
+            Stroke("M9 6h12M9 12h12M9 18h12")
+        },
         {
             Icon.Grip,
             Fill(Circle(9, 6, 1.5)),
