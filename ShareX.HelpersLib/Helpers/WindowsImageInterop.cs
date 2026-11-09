@@ -27,6 +27,7 @@ using SkiaSharp;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace ShareX.HelpersLib;
@@ -81,7 +82,8 @@ public static class WindowsImageInterop
         if (source == IntPtr.Zero) throw new Win32Exception();
         try
         {
-            return DrawNative(rectangle.Size, SKColors.Black, dc =>
+            // No background erase: BitBlt covers the whole surface, the DIB section starts zeroed and SetOpaque turns any gap black.
+            return DrawNative(rectangle.Size, null, dc =>
             {
                 if (!NativeMethods.BitBlt(dc, 0, 0, rectangle.Width, rectangle.Height, source,
                     rectangle.X, rectangle.Y, NativeRasterOperation.SourceCopy | NativeRasterOperation.CaptureBlt))
@@ -92,7 +94,7 @@ public static class WindowsImageInterop
         finally { NativeMethods.ReleaseDC(window, source); }
     }
 
-    private static unsafe SKBitmap DrawNative(Size size, SKColor background, Action<IntPtr> draw, Action<SKCanvas> drawBackground = null)
+    private static unsafe SKBitmap DrawNative(Size size, SKColor? background, Action<IntPtr> draw, Action<SKCanvas> drawBackground = null)
     {
         IntPtr dc = NativeMethods.CreateCompatibleDC(IntPtr.Zero);
         if (dc == IntPtr.Zero) throw new Win32Exception();
@@ -106,7 +108,7 @@ public static class WindowsImageInterop
             using SKBitmap surface = new();
             if (!surface.InstallPixels(new SKImageInfo(size.Width, size.Height, SKColorType.Bgra8888, SKAlphaType.Unpremul), pixels, size.Width * 4))
                 throw new InvalidOperationException("Unable to access Windows image pixels.");
-            surface.Erase(background);
+            if (background is SKColor color) surface.Erase(color);
             if (drawBackground != null)
             {
                 using SKCanvas canvas = new(surface);
@@ -118,7 +120,7 @@ public static class WindowsImageInterop
             // GDI mask operations can clear alpha. Restore it before Skia copies
             // the pixels, otherwise transparent RGB values are discarded.
             SetOpaque(surface);
-            return surface.Copy();
+            return CopyPixels(surface);
         }
         finally
         {
@@ -149,7 +151,7 @@ public static class WindowsImageInterop
         using SKBitmap black = DrawNative(size, SKColors.Black, draw);
         using SKBitmap white = DrawNative(size, SKColors.White, draw);
         using SKBitmap composited = background == null ? null : DrawNative(size, SKColors.Black, draw,
-            canvas => canvas.DrawBitmap(background, -position.X, -position.Y));
+            canvas => DrawBackgroundArea(canvas, background, new SKRectI(position.X, position.Y, position.X + size.Width, position.Y + size.Height)));
         SKBitmap result = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
         using SkiaPixelBuffer dark = new(black, true, PixelAccess.ReadOnly);
         using SkiaPixelBuffer light = new(white, true, PixelAccess.ReadOnly);
@@ -172,6 +174,20 @@ public static class WindowsImageInterop
         return result;
     }
 
+    // Drawing a whole mutable bitmap makes Skia copy all of its pixels first, so share only the area under the cursor.
+    private static void DrawBackgroundArea(SKCanvas canvas, SKBitmap background, SKRectI area)
+    {
+        SKRectI visible = SKRectI.Intersect(area, new SKRectI(0, 0, background.Width, background.Height));
+        if (visible.IsEmpty) return;
+        using SKBitmap subset = new();
+        if (!background.ExtractSubset(subset, visible))
+        {
+            canvas.DrawBitmap(background, -area.Left, -area.Top);
+            return;
+        }
+        canvas.DrawBitmap(subset, visible.Left - area.Left, visible.Top - area.Top);
+    }
+
     public static System.Drawing.Icon ToIcon(this SKBitmap bitmap)
     {
         using System.IO.MemoryStream stream = new(bitmap.GetIconBytes(), false);
@@ -179,13 +195,43 @@ public static class WindowsImageInterop
         return (System.Drawing.Icon)icon.Clone();
     }
 
+    // Width, Height, RowBytes and GetPixels are native calls, so read them once instead of per pixel.
     private static unsafe void SetOpaque(SKBitmap bitmap)
     {
-        for (int y = 0; y < bitmap.Height; y++)
+        int width = bitmap.Width, height = bitmap.Height, rowBytes = bitmap.RowBytes;
+        byte* pixels = (byte*)bitmap.GetPixels();
+        Vector<uint> alpha = new(0xFF000000);
+        for (int y = 0; y < height; y++)
         {
-            byte* row = (byte*)bitmap.GetPixels() + y * bitmap.RowBytes;
-            for (int x = 0; x < bitmap.Width; x++) row[x * 4 + 3] = 255;
+            Span<uint> row = new(pixels + (nint)y * rowBytes, width);
+            Span<Vector<uint>> vectors = MemoryMarshal.Cast<uint, Vector<uint>>(row);
+            for (int i = 0; i < vectors.Length; i++) vectors[i] |= alpha;
+            for (int x = vectors.Length * Vector<uint>.Count; x < width; x++) row[x] |= 0xFF000000;
         }
         bitmap.NotifyPixelsChanged();
+    }
+
+    // SKBitmap.Copy draws through a shader, which is several times slower than copying the rows for a same-format clone.
+    private static unsafe SKBitmap CopyPixels(SKBitmap source)
+    {
+        SKBitmap result = new(source.Info);
+        try
+        {
+            int height = source.Height, sourceRowBytes = source.RowBytes, resultRowBytes = result.RowBytes;
+            int rowLength = source.Width * source.BytesPerPixel;
+            byte* from = (byte*)source.GetPixels(), to = (byte*)result.GetPixels();
+            if (sourceRowBytes == resultRowBytes)
+            {
+                Buffer.MemoryCopy(from, to, (long)resultRowBytes * height, (long)sourceRowBytes * height);
+            }
+            else
+            {
+                for (int y = 0; y < height; y++)
+                    Buffer.MemoryCopy(from + (nint)y * sourceRowBytes, to + (nint)y * resultRowBytes, resultRowBytes, rowLength);
+            }
+            result.NotifyPixelsChanged();
+            return result;
+        }
+        catch { result.Dispose(); throw; }
     }
 }

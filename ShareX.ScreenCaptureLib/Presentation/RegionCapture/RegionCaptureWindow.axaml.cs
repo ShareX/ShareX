@@ -114,6 +114,7 @@ public partial class RegionCaptureWindow : Window
     private bool _workspaceOwnsScreenshot;
     private bool _closing;
     private Exception? _startupException;
+    private double _appliedPixelScaling;
 
     public RegionCaptureWindow()
     {
@@ -150,6 +151,19 @@ public partial class RegionCaptureWindow : Window
         }
 
         ConfigureInitialPixelBounds();
+
+        try
+        {
+            PrepareWorkspace();
+        }
+        catch (Exception ex)
+        {
+            // Close so OnClosed releases the workspace and bitmaps and completes the task with this exception.
+            _startupException = ex;
+            Close();
+            return _completionSource.Task;
+        }
+
         Show();
         return _completionSource.Task;
     }
@@ -478,6 +492,51 @@ public partial class RegionCaptureWindow : Window
         }
     }
 
+    /// <summary>
+    /// Runs the open path on a tiny workspace without showing the window: XAML, styles, templates, view model,
+    /// toolbar, icons and one layout pass. Used once at idle time so the first real capture opens as fast as later ones.
+    /// </summary>
+    internal void WarmUpHidden()
+    {
+        PrepareWorkspace();
+        ApplyPixelSize();
+
+        // A window that was never shown is invisible, so layout skips it. Measure and render its content directly.
+        if (Content is Control content)
+        {
+            Size size = new Size(Width, Height);
+            content.Measure(size);
+            content.Arrange(new Rect(size));
+            using RenderTargetBitmap target = new RenderTargetBitmap(
+                new PixelSize(Math.Max(1, (int)Math.Ceiling(size.Width)), Math.Max(1, (int)Math.Ceiling(size.Height))));
+            target.Render(content);
+        }
+    }
+
+    /// <summary>
+    /// Loads the screenshot before the window is shown, so the first layout pass and the first
+    /// rendered frame already contain it. OnOpened only corrects the scale if the monitor DPI differs.
+    /// </summary>
+    private void PrepareWorkspace()
+    {
+        if (_request == null || _viewModel == null)
+        {
+            return;
+        }
+
+        UpdatePixelTransforms();
+        _editorWorkspace.ConfigureForFullscreenWorkspace();
+        _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
+        _workspaceOwnsScreenshot = true;
+
+        if (_request.CursorBitmap != null)
+        {
+            _editorWorkspace.InsertWorkspaceImageAnnotation(
+                _request.CursorBitmap,
+                new Point(_request.CursorPosition.X, _request.CursorPosition.Y));
+        }
+    }
+
     private async void OnOpened(object? sender, EventArgs e)
     {
         try
@@ -490,16 +549,13 @@ public partial class RegionCaptureWindow : Window
 
             ApplyPixelSize();
             Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
-            UpdatePixelTransforms();
-            _editorWorkspace.ConfigureForFullscreenWorkspace();
-            _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
-            _workspaceOwnsScreenshot = true;
+            if (GetRenderScaling() != _appliedPixelScaling)
+            {
+                UpdatePixelTransforms();
+            }
 
             if (_request.CursorBitmap != null)
             {
-                _editorWorkspace.InsertWorkspaceImageAnnotation(
-                    _request.CursorBitmap,
-                    new Point(_request.CursorPosition.X, _request.CursorPosition.Y));
                 ActivateRegionTool();
             }
 
@@ -2090,9 +2146,12 @@ public partial class RegionCaptureWindow : Window
         Height = _request.ScreenBounds.Height / scaling;
     }
 
+    private double GetRenderScaling() => double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+
     private void UpdatePixelTransforms()
     {
-        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        double scaling = GetRenderScaling();
+        _appliedPixelScaling = scaling;
         _regionTransform.LayoutTransform = new ScaleTransform(1 / scaling, 1 / scaling);
         if (_viewModel != null)
         {
