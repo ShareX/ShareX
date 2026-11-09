@@ -239,7 +239,7 @@ internal sealed class MainMenuBuilder
         };
     }
 
-    private static IReadOnlyList<MainMenuEntry> BuildToolsMenu()
+    private IReadOnlyList<MainMenuEntry> BuildToolsMenu()
     {
         List<MainMenuEntry> items = new();
 
@@ -256,7 +256,7 @@ internal sealed class MainMenuBuilder
         return items;
     }
 
-    private static IReadOnlyList<MainMenuCategory> BuildToolCategories() =>
+    private IReadOnlyList<MainMenuCategory> BuildToolCategories() =>
     [
         new(Strings.MainMenuBuilder_ToolCategoryScreen,
         [
@@ -300,7 +300,7 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_HashChecker), Strings.MainMenuBuilder_HashChecker, AppIcons.Hash, () => TaskHelpers.OpenHashCheck()),
             Tool(nameof(Strings.MainMenuBuilder_IndexFolder), Strings.MainMenuBuilder_IndexFolder, AppIcons.FolderTree, () => TaskHelpers.OpenDirectoryIndexer()),
             Tool(nameof(Strings.MainMenuBuilder_Metadata), Strings.MainMenuBuilder_Metadata, AppIcons.Tag, () => TaskHelpers.OpenMetadataWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, AppIcons.TextRecognition, async () => await TaskHelpers.OCRImage()),
+            Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, AppIcons.TextRecognition, async () => await TaskHelpers.OCRImage(autoHideMainWindow: !_trayMenu)),
             Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, AppIcons.QrCode, () => TaskHelpers.OpenQRCode()),
             Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, AppIcons.RemoteStorageBrowser, () => TaskHelpers.OpenRemoteStorageBrowser())
         ]),
