@@ -3119,6 +3119,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notification</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Taille des boutons de la barre d'outils (pixels) :</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Outils</value>
   </data>
@@ -3166,6 +3169,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Utiliser un fuseau horaire personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Utiliser une taille personnalisée pour les boutons de la barre d'outils</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Utiliser une durée fixe</value>

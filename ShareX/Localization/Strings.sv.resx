@@ -3119,6 +3119,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Popupavisering</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Storlek på verktygsfältsknappar (pixlar):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Verktyg</value>
   </data>
@@ -3166,6 +3169,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Använd anpassad tidszon</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Använd anpassad storlek på verktygsfältsknappar</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Använd fast varaktighet</value>

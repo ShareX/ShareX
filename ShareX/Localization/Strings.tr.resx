@@ -3119,6 +3119,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Bildirim</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Araç çubuğu düğme boyutu (piksel):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Araçlar</value>
   </data>
@@ -3166,6 +3169,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Özel saat dilimi kullan</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Özel araç çubuğu düğme boyutu kullan</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Sabit süre kullan</value>

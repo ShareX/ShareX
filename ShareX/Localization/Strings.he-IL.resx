@@ -3119,6 +3119,9 @@
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>התראה</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>גודל לחצני סרגל הכלים (פיקסלים):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>כלים</value>
   </data>
@@ -3166,6 +3169,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>שימוש באזור זמן מותאם אישית</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>השתמש בגודל מותאם אישית ללחצני סרגל הכלים</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>שימוש במשך זמן קבוע</value>

@@ -3119,6 +3119,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Powiadomienie</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Rozmiar przycisków paska narzędzi (piksele):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Narzędzia</value>
   </data>
@@ -3166,6 +3169,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Użyj niestandardowej strefy czasowej</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Użyj niestandardowego rozmiaru przycisków paska narzędzi</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Użyj stałego czasu trwania</value>

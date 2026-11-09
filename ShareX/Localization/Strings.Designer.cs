@@ -5782,5 +5782,7 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_NativeRecorderHDRToneMapping => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
         public static string ApplicationSettingsWindow_ShowFileDeleteConfirmation => ResourceManager.GetString("ApplicationSettingsWindow_ShowFileDeleteConfirmation", resourceCulture);
         public static string FileDeleteConfirmation_DontRemindAgain => ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
+        public static string TaskSettingsWindow_ToolbarButtonSizePixels => ResourceManager.GetString("TaskSettingsWindow_ToolbarButtonSizePixels", resourceCulture);
+        public static string TaskSettingsWindow_UseCustomToolbarButtonSize => ResourceManager.GetString("TaskSettingsWindow_UseCustomToolbarButtonSize", resourceCulture);
     }
 }

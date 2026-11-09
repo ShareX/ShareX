@@ -3119,6 +3119,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Pop op-meddelelse</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Størrelse på værktøjslinjeknapper (pixels):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Værktøjer</value>
   </data>
@@ -3166,6 +3169,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Brug brugerdefineret tidszon</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Brug brugerdefineret størrelse på værktøjslinjeknapper</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Brug fast varighed</value>

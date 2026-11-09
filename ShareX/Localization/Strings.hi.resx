@@ -3119,6 +3119,9 @@
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>टोस्ट सूचना</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>टूलबार बटन का आकार (पिक्सेल):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>उपकरण</value>
   </data>
@@ -3166,6 +3169,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>अनुकूलित समय क्षेत्र उपयोग करें</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>टूलबार बटन के लिए कस्टम आकार का उपयोग करें</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>निश्चित अवधि उपयोग करें</value>

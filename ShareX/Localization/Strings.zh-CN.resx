@@ -3119,6 +3119,9 @@
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>通知</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>工具栏按钮大小（像素）：</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>工具</value>
   </data>
@@ -3166,6 +3169,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>使用自定义时区</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>使用自定义工具栏按钮大小</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>使用固定时长</value>

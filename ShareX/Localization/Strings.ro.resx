@@ -3119,6 +3119,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificare</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Dimensiunea butoanelor barei de instrumente (pixeli):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Instrumente</value>
   </data>
@@ -3166,6 +3169,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Folosește fus orar particularizat</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Folosește o dimensiune personalizată pentru butoanele barei de instrumente</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Folosește durată fixă</value>

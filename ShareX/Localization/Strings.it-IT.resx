@@ -3119,6 +3119,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notifica</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Dimensione dei pulsanti della barra degli strumenti (pixel):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Strumenti</value>
   </data>
@@ -3166,6 +3169,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Usa fuso orario personalizzato</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Usa una dimensione personalizzata per i pulsanti della barra degli strumenti</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Usa durata fissa</value>

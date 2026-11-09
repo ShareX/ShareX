@@ -3119,6 +3119,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>알림</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>도구 모음 단추 크기(픽셀):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>도구</value>
   </data>
@@ -3166,6 +3169,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>사용자 지정 시간대 사용</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>사용자 지정 도구 모음 단추 크기 사용</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>고정 시간 사용</value>

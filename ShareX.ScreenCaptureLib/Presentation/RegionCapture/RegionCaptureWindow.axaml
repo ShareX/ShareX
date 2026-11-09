@@ -130,35 +130,38 @@
             <Grid x:Name="CaptureToolbar"
                   Classes="capture-toolbar"
                   MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
-                <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
-                                                  MainToolbarBorderThickness="1"
-                                                  MainToolbarCornerRadius="0,0,4,4"
-                                                  ShowEditingActions="False">
-                    <editorControls:AnnotationToolbar.MainToolbarLeadingContent>
-                        <StackPanel Classes="toolbar-row">
-                            <Border x:Name="ToolbarDragHandle"
-                                    Classes="toolbar-drag-handle"
-                                    Cursor="SizeAll"
-                                    PointerPressed="OnToolbarDragHandlePointerPressed"
-                                    PointerMoved="OnToolbarDragHandlePointerMoved"
-                                    PointerReleased="OnToolbarDragHandlePointerReleased"
-                                    PointerCaptureLost="OnToolbarDragHandlePointerCaptureLost"
-                                    ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_MoveToolbar}"
-                                    AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_MoveToolbar}">
-                                <Path Data="M0,0h2v2h-2z M4,0h2v2h-2z M0,4h2v2h-2z M4,4h2v2h-2z M0,8h2v2h-2z M4,8h2v2h-2z M0,12h2v2h-2z M4,12h2v2h-2z"
-                                      HorizontalAlignment="Center"
-                                      VerticalAlignment="Center"/>
-                            </Border>
-                            <Button x:Name="RegionToolButton"
-                                    Classes="toolbar-button active"
-                                    Click="OnRegionToolClick"
-                                    ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}"
-                                    AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}">
-                                <iconControls:IconPresenter Icon="{x:Static icons:ImageEditorIcons.Region}"/>
-                            </Button>
-                        </StackPanel>
-                    </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
-                </editorControls:AnnotationToolbar>
+                <!-- Scales the whole toolbar when a custom toolbar button size is set. -->
+                <LayoutTransformControl x:Name="CaptureToolbarScale">
+                    <editorControls:AnnotationToolbar x:Name="CaptureAnnotationToolbar"
+                                                      MainToolbarBorderThickness="1"
+                                                      MainToolbarCornerRadius="0,0,4,4"
+                                                      ShowEditingActions="False">
+                        <editorControls:AnnotationToolbar.MainToolbarLeadingContent>
+                            <StackPanel Classes="toolbar-row">
+                                <Border x:Name="ToolbarDragHandle"
+                                        Classes="toolbar-drag-handle"
+                                        Cursor="SizeAll"
+                                        PointerPressed="OnToolbarDragHandlePointerPressed"
+                                        PointerMoved="OnToolbarDragHandlePointerMoved"
+                                        PointerReleased="OnToolbarDragHandlePointerReleased"
+                                        PointerCaptureLost="OnToolbarDragHandlePointerCaptureLost"
+                                        ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_MoveToolbar}"
+                                        AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_MoveToolbar}">
+                                    <Path Data="M0,0h2v2h-2z M4,0h2v2h-2z M0,4h2v2h-2z M4,4h2v2h-2z M0,8h2v2h-2z M4,8h2v2h-2z M0,12h2v2h-2z M4,12h2v2h-2z"
+                                          HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                                </Border>
+                                <Button x:Name="RegionToolButton"
+                                        Classes="toolbar-button active"
+                                        Click="OnRegionToolClick"
+                                        ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}"
+                                        AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}">
+                                    <iconControls:IconPresenter Icon="{x:Static icons:ImageEditorIcons.Region}"/>
+                                </Button>
+                            </StackPanel>
+                        </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
+                    </editorControls:AnnotationToolbar>
+                </LayoutTransformControl>
             </Grid>
         </Canvas>
     </Grid>
