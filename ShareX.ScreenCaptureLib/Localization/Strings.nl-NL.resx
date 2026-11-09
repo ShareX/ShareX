@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Pauzeren</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Ellipsvormige regio</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Regio uit de vrije hand</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Sleep om de werkbalk te verplaatsen, dubbelklik om de positie te herstellen</value>
   </data>

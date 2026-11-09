@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>השהה</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>אזור אליפסה</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>אזור ביד חופשית</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>גרור כדי להזיז את סרגל הכלים, לחץ פעמיים כדי לאפס את מיקומו</value>
   </data>

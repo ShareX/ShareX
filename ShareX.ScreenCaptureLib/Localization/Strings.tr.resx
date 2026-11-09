@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Duraklat</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Elips bölge</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Serbest bölge</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Araç çubuğunu taşımak için sürükleyin, konumunu sıfırlamak için çift tıklayın</value>
   </data>

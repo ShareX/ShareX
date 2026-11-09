@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>暫停</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>橢圓區域</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>手繪區域</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>拖曳以移動工具列，按兩下以重設其位置</value>
   </data>

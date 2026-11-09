@@ -50,6 +50,8 @@ public static class ImageEditorIcons
     public const string Pixelate = Prefix + "pixelate";
     public const string Rectangle = Prefix + "rectangle";
     public const string Region = Prefix + "region";
+    public const string RegionEllipse = Prefix + "region-ellipse";
+    public const string RegionFreehand = Prefix + "region-freehand";
     public const string Select = Prefix + "select";
     public const string SmartEraser = Prefix + "smart-eraser";
     public const string SpeechBalloon = Prefix + "speech-balloon";
