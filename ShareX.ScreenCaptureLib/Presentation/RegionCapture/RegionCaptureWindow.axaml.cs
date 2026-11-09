@@ -69,6 +69,7 @@ public partial class RegionCaptureWindow : Window
     private LayoutTransformControl _regionTransform = null!;
     private Grid _captureToolbar = null!;
     private LayoutTransformControl _captureToolbarScale = null!;
+    private const int ToolbarButtonSizeWheelStep = 4;
     private double _captureToolbarScaleFactor = 1;
     // See GetMonitorScaleFactor: corrects the toolbar for the scaling of the monitor it is on.
     private double _captureToolbarMonitorScale = 1;
@@ -1257,6 +1258,30 @@ public partial class RegionCaptureWindow : Window
             RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
         _captureToolbarScaleFactor = buttonSize / buttonHeight;
         ApplyCaptureToolbarScale();
+    }
+
+    /// <summary>
+    /// Ctrl + mouse wheel over the toolbar makes it bigger or smaller. It changes the toolbar button size
+    /// option from task settings, so the size is kept for the next capture.
+    /// </summary>
+    private void OnCaptureToolbarPointerWheelChanged(object? sender, PointerWheelEventArgs e)
+    {
+        if (_request == null || !e.KeyModifiers.HasFlag(KeyModifiers.Control) || e.Delta.Y == 0)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.RegionCaptureOptions;
+        int currentSize = options.UseCustomToolbarButtonSize
+            ? options.ToolbarButtonSize
+            : (int)Math.Round(_regionToolButton.Bounds.Height);
+        int newSize = Math.Clamp(currentSize + (e.Delta.Y > 0 ? ToolbarButtonSizeWheelStep : -ToolbarButtonSizeWheelStep),
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+
+        options.UseCustomToolbarButtonSize = true;
+        options.ToolbarButtonSize = newSize;
+        UpdateCaptureToolbarScale();
+        e.Handled = true;
     }
 
     /// <summary>Applies the custom button size together with the correction for the toolbar's monitor.</summary>
