@@ -103,6 +103,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
     private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
+
+    // Dropped while maximized so the caption buttons reach the screen edge.
+    private const double WindowFrameThickness = 1;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
     public string ThemeToggleText => IsDarkTheme
         ? Strings.ApplicationSettingsWindow_Dark
@@ -569,7 +572,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
         double titleBarHeight = Math.Ceiling(TitleBar.DesiredSize.Height);
-        double frameHeight = WindowFrame.BorderThickness.Top + WindowFrame.BorderThickness.Bottom;
+        double frameHeight = WindowFrameThickness * 2;
         double windowHeight = navigationHeight + titleBarHeight + frameHeight;
 
         if (windowHeight <= 0 || double.IsNaN(windowHeight) || double.IsInfinity(windowHeight))
@@ -2472,6 +2475,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (change.Property == WindowStateProperty)
         {
             OnPropertyChanged(nameof(IsWindowMaximized));
+            WindowFrame.BorderThickness = new Thickness(IsWindowMaximized ? 0 : WindowFrameThickness);
         }
         else if (change.Property == IconProperty)
         {
