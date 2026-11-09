@@ -68,6 +68,8 @@ public partial class RegionCaptureWindow : Window
     private AvaloniaCanvas _regionResizeNodeCanvas = null!;
     private LayoutTransformControl _regionTransform = null!;
     private Grid _captureToolbar = null!;
+    private LayoutTransformControl _captureToolbarScale = null!;
+    private double _captureToolbarScaleFactor = 1;
     private AnnotationToolbar _annotationToolbar = null!;
     private Button _regionToolButton = null!;
     private StackPanel _magnifierPanel = null!;
@@ -326,7 +328,8 @@ public partial class RegionCaptureWindow : Window
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
         _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
         _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
-        _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
+        _captureToolbarScale = this.FindControl<LayoutTransformControl>("CaptureToolbarScale")!;
+        _annotationToolbar =this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
         _magnifierPanel.RenderTransform = _magnifierTransform;
@@ -965,7 +968,37 @@ public partial class RegionCaptureWindow : Window
 
     private void OnCaptureToolbarLayoutUpdated(object? sender, EventArgs e)
     {
+        UpdateCaptureToolbarScale();
         PositionCaptureToolbar();
+    }
+
+    /// <summary>
+    /// Scales the whole toolbar so its buttons are the custom button size tall. The button is measured
+    /// inside the scale transform, so its height stays unscaled and the scale settles after one pass.
+    /// </summary>
+    private void UpdateCaptureToolbarScale()
+    {
+        if (_request == null || !_request.RegionCaptureOptions.UseCustomToolbarButtonSize)
+        {
+            return;
+        }
+
+        double buttonHeight = _regionToolButton.Bounds.Height;
+        if (!double.IsFinite(buttonHeight) || buttonHeight <= 0)
+        {
+            return;
+        }
+
+        int buttonSize = Math.Clamp(_request.RegionCaptureOptions.ToolbarButtonSize,
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+        double scale = buttonSize / buttonHeight;
+        if (Math.Abs(scale - _captureToolbarScaleFactor) < 0.001)
+        {
+            return;
+        }
+
+        _captureToolbarScaleFactor = scale;
+        _captureToolbarScale.LayoutTransform = new ScaleTransform(scale, scale);
     }
 
     private void PositionCaptureToolbar()

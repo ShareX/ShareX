@@ -3119,6 +3119,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Thông báo</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Kích thước nút thanh công cụ (pixel):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Công cụ</value>
   </data>
@@ -3166,6 +3169,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Dùng múi giờ tùy chỉnh</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Dùng kích thước nút thanh công cụ tùy chỉnh</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Dùng thời lượng cố định</value>

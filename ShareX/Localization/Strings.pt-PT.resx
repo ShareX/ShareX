@@ -3119,6 +3119,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificação</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Tamanho dos botões da barra de ferramentas (píxeis):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Ferramentas</value>
   </data>
@@ -3166,6 +3169,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Usar fuso horário personalizado</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Utilizar tamanho personalizado para os botões da barra de ferramentas</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Usar duração fixa</value>

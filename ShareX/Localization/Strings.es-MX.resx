@@ -3119,6 +3119,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificación emergente</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Tamaño de los botones de la barra de herramientas (píxeles):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Herramientas</value>
   </data>
@@ -3166,6 +3169,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Usar zona horaria personalizada</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Usar un tamaño personalizado para los botones de la barra de herramientas</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Usar duración fija</value>

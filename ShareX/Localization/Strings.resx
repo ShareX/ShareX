@@ -3128,6 +3128,10 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Toast notification</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Toolbar button size (pixels):</value>
+    <comment>Label for the number of pixels tall the region capture toolbar buttons are; the whole toolbar is scaled to match.</comment>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Tools</value>
   </data>
@@ -3175,6 +3179,10 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Use custom time zone</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Use custom toolbar button size</value>
+    <comment>Checkbox that lets the user set the size of the region capture toolbar buttons.</comment>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Use fixed duration</value>

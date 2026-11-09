@@ -3119,6 +3119,9 @@
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Уведомление</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Размер кнопок панели инструментов (пиксели):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Инструменты</value>
   </data>
@@ -3166,6 +3169,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Использовать пользовательский часовой пояс</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Использовать свой размер кнопок панели инструментов</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Использовать фиксированную длительность</value>

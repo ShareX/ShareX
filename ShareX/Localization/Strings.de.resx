@@ -3119,6 +3119,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Toast-Benachrichtigung</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Größe der Symbolleistenschaltflächen (Pixel):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Werkzeuge</value>
   </data>
@@ -3166,6 +3169,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Benutzerdefinierte Zeitzone verwenden</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Benutzerdefinierte Größe für Symbolleistenschaltflächen verwenden</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Feste Dauer verwenden</value>

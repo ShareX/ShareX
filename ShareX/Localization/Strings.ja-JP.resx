@@ -3119,6 +3119,9 @@
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>通知</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>ツールバーボタンのサイズ (ピクセル):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>ツール</value>
   </data>
@@ -3166,6 +3169,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>カスタムタイムゾーンを使用</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>ツールバーボタンのサイズをカスタマイズする</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>固定時間を使用</value>

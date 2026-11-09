@@ -3119,6 +3119,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notifikasi</value>
   </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Ukuran tombol bilah alat (piksel):</value>
+  </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Alat</value>
   </data>
@@ -3166,6 +3169,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Gunakan zona waktu khusus</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Gunakan ukuran tombol bilah alat khusus</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Gunakan durasi tetap</value>

@@ -520,6 +520,11 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(magnifierSize, magnifier);
         BindEnabled(pixelCount, magnifier);
 
+        BoundValue<bool> customToolbarButtonSize = new(options.UseCustomToolbarButtonSize, value => options.UseCustomToolbarButtonSize = value);
+        NumericUpDown toolbarButtonSize = Number(() => options.ToolbarButtonSize, value => options.ToolbarButtonSize = (int)value,
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+        BindEnabled(toolbarButtonSize, customToolbarButtonSize);
+
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, AppIcons.Crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
                 quickCapture,
@@ -529,6 +534,8 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100)),
                 Check(Strings.TaskSettingsWindow_DimHoveredWindowsAndControls, () => options.DimAllExceptSelection, value => options.DimAllExceptSelection = value),
                 Check(Strings.TaskSettingsWindow_CompactRegionCaptureToolbar, () => options.CompactToolbar, value => options.CompactToolbar = value),
+                Check(Strings.TaskSettingsWindow_UseCustomToolbarButtonSize, customToolbarButtonSize),
+                Row(Strings.TaskSettingsWindow_ToolbarButtonSizePixels, toolbarButtonSize),
                 Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowRegionCaptureToolbarEditor(options))),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_MouseActions,
                 Row(Strings.TaskSettingsWindow_RightClick, EnumCombo(() => options.RegionCaptureActionRightClick, value => options.RegionCaptureActionRightClick = value)),
