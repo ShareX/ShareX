@@ -67,8 +67,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="8"/>
             <Setter Property="MinHeight" Value="42"/>
             <Setter Property="Padding" Value="20,8"/>
@@ -95,29 +93,30 @@
                                 <TextBlock Text="{Binding WelcomeTitle}"
                                            FontSize="31"
                                            FontWeight="Bold"
-                                           Foreground="White"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
                                            TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding WelcomeSubtitle}"
                                            HorizontalAlignment="Left"
                                            FontSize="15"
                                            FontWeight="Normal"
-                                           Foreground="#E8FFFFFF"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                           Opacity="0.9"
                                            LineHeight="22"
                                            TextWrapping="Wrap"/>
                             </StackPanel>
 
                             <StackPanel Spacing="12">
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="White"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="White" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="White"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="White" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="White"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="White" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
                                 </Grid>
                             </StackPanel>
                         </StackPanel>
@@ -125,7 +124,8 @@
                         <TextBlock Grid.Row="1"
                                    Text="{Binding PlatformNote}"
                                    FontSize="11"
-                                   Foreground="#C8FFFFFF"
+                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                   Opacity="0.85"
                                    FontWeight="Normal"/>
                     </Grid>
                 </Grid>
@@ -155,7 +155,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Language}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -195,7 +195,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rocket}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -214,7 +214,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -233,7 +233,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -259,7 +259,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Palette}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -278,7 +278,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Swatches}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -299,7 +299,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Images}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>

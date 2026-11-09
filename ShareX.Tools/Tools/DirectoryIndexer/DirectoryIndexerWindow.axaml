@@ -154,7 +154,7 @@
                                            Text="{x:Static localization:Strings.DirectoryIndexerWindow_Ready_to_save_or_upload}"
                                            IsVisible="{Binding HasSource}"
                                            FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                            VerticalAlignment="Center"/>
                             </Grid>
                             <ProgressBar Grid.Row="1" Height="4" IsIndeterminate="True" IsVisible="{Binding IsBusy}"/>

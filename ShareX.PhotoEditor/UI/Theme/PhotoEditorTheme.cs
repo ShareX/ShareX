@@ -50,6 +50,26 @@ public static class PhotoEditorTheme
         return brush;
     }
 
+    /// <summary>Accent colored text on the editor's dark chrome, readable at 4.5:1; follows accent changes.</summary>
+    public static SolidColorBrush AccentTextBrush { get; } = CreatePaletteBrush(palette => palette.Text);
+
+    /// <summary>Accent colored indicators (tab bars, markers, borders) on the editor's dark chrome, visible at 3:1; follows accent changes.</summary>
+    public static SolidColorBrush AccentBorderBrush { get; } = CreatePaletteBrush(palette => palette.Border);
+
+    // The editor is always dark, so its accent text and indicators come from the dark palette whatever the app theme is.
+    private static SolidColorBrush CreatePaletteBrush(Func<AccentPalette, Color> select)
+    {
+        SolidColorBrush brush = new(GetDarkPaletteColor(select));
+        ThemeManager.AccentColorChanged += (_, _) => brush.Color = GetDarkPaletteColor(select);
+        return brush;
+    }
+
+    private static Color GetDarkPaletteColor(Func<AccentPalette, Color> select)
+    {
+        AccentPalette? palette = ThemeManager.GetAccentPalette(ThemeManager.ShareXDark);
+        return palette != null ? select(palette) : AccentBrush.Color;
+    }
+
     public static void Apply(Window window)
     {
         window.RequestedThemeVariant = ThemeVariant.Dark;

@@ -33,11 +33,16 @@
         </Style>
         <Style Selector="Button.notification-action:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Button.notification-action:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Button.notification-action:pointerover controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Button.notification-action:pressed">
             <Setter Property="RenderTransform" Value="scale(0.97)"/>
@@ -53,7 +58,7 @@
                     MinHeight="1"
                     CornerRadius="4"
                     ClipToBounds="True"
-                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                     BorderThickness="1"
                     PointerPressed="OnCardPointerPressed"
                     PointerMoved="OnCardPointerMoved"

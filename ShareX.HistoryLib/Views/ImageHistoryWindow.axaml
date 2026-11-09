@@ -42,11 +42,11 @@
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
         <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
         <Style Selector="controls|IconPresenter.loading-icon">
@@ -115,7 +115,7 @@
 
                 <Grid Grid.Row="1" Margin="6" ClipToBounds="True">
                         <ListBox x:Name="ThumbnailRows"
-                                 Classes="thumbnail-rows"
+                                 Classes="thumbnail-rows neutral-selection"
                                  SelectionMode="Single"
                                  SizeChanged="OnThumbnailRowsSizeChanged"
                                  ScrollViewer.BringIntoViewOnFocusChange="False"
@@ -201,7 +201,7 @@
                                                                                         HorizontalAlignment="Right"
                                                                                         VerticalAlignment="Top"
                                                                                         Margin="6"
-                                                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                                             </Grid>
                                                         </Border>
                                                         <Border Width="{Binding ThumbnailWidth}"
@@ -350,7 +350,7 @@
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Loading}"
                                                     Classes="loading-icon"
                                                     FontSize="44"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     HorizontalAlignment="Center">
                                 <controls:IconPresenter.RenderTransform>
                                     <RotateTransform Angle="0"/>

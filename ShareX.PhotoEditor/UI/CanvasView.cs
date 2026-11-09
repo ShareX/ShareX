@@ -283,7 +283,7 @@ public sealed class CanvasView : Control
             overlay.Rect(SKRect.Create(b.Left, b.Top, b.Width, b.Height), new Pen(new SolidColorBrush(Color.FromArgb(120, 200, 200, 200)), 1));
             Point p = overlay.ToScreen(new SKPoint(b.Left, b.Top));
             FormattedText text = new(artboard.Name, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 11,
-                artboard == doc.ActiveLayer ? OverlayContext.AccentBrush : Brushes.LightGray);
+                artboard == doc.ActiveLayer ? PhotoEditorTheme.AccentTextBrush : Brushes.LightGray);
             overlay.Drawing.DrawText(text, new Point(p.X, p.Y - 16));
         }
     }
@@ -605,7 +605,7 @@ public sealed class RulerControl : Control
         // Pointer position marker.
         SKPoint doc = _editor.Canvas.LastDocPoint;
         double marker = start0 + (_horizontal ? doc.X : doc.Y) * zoom;
-        Pen markerPen = new(OverlayContext.AccentBrush, 1);
+        Pen markerPen = new(PhotoEditorTheme.AccentBorderBrush, 1);
         if (_horizontal) context.DrawLine(markerPen, new Point(marker, 0), new Point(marker, 18));
         else context.DrawLine(markerPen, new Point(0, marker), new Point(18, marker));
     }

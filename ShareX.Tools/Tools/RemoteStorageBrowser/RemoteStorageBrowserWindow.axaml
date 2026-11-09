@@ -252,7 +252,7 @@
                                         <controls:IconPresenter Grid.Column="0"
                                                                 Icon="{Binding Icon}"
                                                                 FontSize="17"
-                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                Classes="list-icon"
                                                                 VerticalAlignment="Center"/>
                                         <TextBlock Grid.Column="1"
                                                    Text="{Binding Name}"
@@ -261,12 +261,10 @@
                                                    FontWeight="Normal"/>
                                         <TextBlock Grid.Column="2"
                                                    Text="{Binding SizeText}"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                    VerticalAlignment="Center"
                                                    FontWeight="Normal"/>
                                         <TextBlock Grid.Column="3"
                                                    Text="{Binding ModifiedText}"
-                                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                    VerticalAlignment="Center"
                                                    FontWeight="Normal"/>
                                     </Grid>
@@ -293,7 +291,7 @@
                             IsHitTestVisible="False"
                             Margin="8"
                             Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                            BorderBrush="{DynamicResource ShareX.Brush.Accent}"
+                            BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                             BorderThickness="2"
                             CornerRadius="8"
                             Opacity="0.96">
@@ -302,7 +300,7 @@
                                     Spacing="10">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                                     FontSize="42"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_DropFilesToUpload}"
                                        FontWeight="SemiBold"

@@ -34,6 +34,7 @@ using ShareX.PhotoEditor.Integration;
 using ShareX.PhotoEditor.Tools;
 using ShareX.PhotoEditor.UI.Dialogs;
 using ShareX.PhotoEditor.UI.Panels;
+using ShareX.PhotoEditor.UI.Theme;
 
 namespace ShareX.PhotoEditor.UI;
 
@@ -54,11 +55,10 @@ public sealed partial class PhotoEditorWindow
             AcceptsReturn = true,
             TextWrapping = layer.IsParagraph ? TextWrapping.Wrap : TextWrapping.NoWrap,
             Background = inline ? Brushes.Transparent : new SolidColorBrush(Color.FromArgb(220, 30, 30, 30)),
-            BorderBrush = OverlayContext.AccentBrush,
+            BorderBrush = PhotoEditorTheme.AccentBorderBrush,
             BorderThickness = new Thickness(1),
             Padding = new Thickness(0),
-            MinWidth = 20,
-            CaretBrush = OverlayContext.AccentBrush
+            MinWidth = 20
         };
         _textEditor.TextChanged += (_, _) =>
         {
@@ -117,6 +117,10 @@ public sealed partial class PhotoEditorWindow
             Avalonia.Controls.Canvas.SetLeft(_textEditor, below.X);
             Avalonia.Controls.Canvas.SetTop(_textEditor, below.Y + 8);
         }
+        // The caret sits over the image (inline) or the dark box, so it takes the opaque text color, which is already
+        // what the user sees there, rather than an accent that can vanish on either.
+        Color caret = _textEditor.Foreground is ISolidColorBrush foreground ? foreground.Color : Colors.White;
+        _textEditor.CaretBrush = new SolidColorBrush(Color.FromRgb(caret.R, caret.G, caret.B));
     }
 
     public void EndTextEditing(bool commit)

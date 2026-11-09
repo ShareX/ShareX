@@ -44,7 +44,7 @@
         <Style Selector="TextBlock.section-title">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
         </Style>
         <Style Selector="TextBlock.card-title">
             <Setter Property="FontSize" Value="14"/>
@@ -73,10 +73,6 @@
         <Style Selector="Button.compact">
             <Setter Property="MinHeight" Value="30"/>
             <Setter Property="Padding" Value="10,4"/>
-        </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Button.icon-button">
             <Setter Property="Width" Value="32"/>
@@ -157,6 +153,13 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -225,7 +228,7 @@
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}">
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Braces}"
                                                                     FontSize="15"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    Classes="list-icon accent"
                                                                     HorizontalAlignment="Center"
                                                                     VerticalAlignment="Center"/>
                                         </Border>
@@ -285,7 +288,7 @@
                     <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
                         <controls:IconPresenter Icon="{x:Static icons:AppIcons.Braces}"
                                                 FontSize="21"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"/>
                     </Border>
@@ -371,7 +374,7 @@
                                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.FilePath}"
                                                             FontSize="20"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             VerticalAlignment="Center"/>
                                     <StackPanel Grid.Column="1" Spacing="2">
                             <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Endpoint}"/>
@@ -557,7 +560,7 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ImageUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -569,7 +572,7 @@
                                 <Border Grid.Column="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileText}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileText}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TextUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -581,7 +584,7 @@
                                 <Border Grid.Row="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileCode}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileCode}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_FileUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -593,7 +596,7 @@
                                 <Border Grid.Row="1" Grid.Column="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_URLShortener}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -605,7 +608,7 @@
                                 <Border Grid.Row="2" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Share}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Share}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_URLSharingService}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -642,7 +645,7 @@
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
                         <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                 FontSize="14"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                 VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding StatusMessage}"
@@ -666,7 +669,7 @@
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Flask}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}" FontSize="19" FontWeight="SemiBold"/>

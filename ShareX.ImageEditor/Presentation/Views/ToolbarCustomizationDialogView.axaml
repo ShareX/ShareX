@@ -13,6 +13,26 @@
              x:Name="ToolbarCustomizationDialogRoot"
              x:DataType="vm:ToolbarCustomizationDialogViewModel">
 
+    <!-- ShareX's .active styles only target Button, so give the checked "Begin group" toggle the same accent
+         fill with readable content instead of Fluent's defaults. -->
+    <UserControl.Styles>
+        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ToggleButton:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ToggleButton:checked:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ToggleButton:checked iconControls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+    </UserControl.Styles>
+
     <Border Background="{DynamicResource ShareX.Brush.Background.Popup}"
             BorderBrush="{DynamicResource ShareX.Brush.Border}"
             BorderThickness="1"
@@ -126,7 +146,6 @@
                                                     </Button>
 
                                                     <ToggleButton
-                                                                  Classes.active="{Binding BeginGroup}"
                                                                   Width="32"
                                                                   Height="32"
                                                                   Padding="0"

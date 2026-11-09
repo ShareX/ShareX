@@ -45,7 +45,7 @@
             <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Download}"
                                         FontSize="21"
-                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"/>
             </Border>
@@ -53,7 +53,7 @@
                 <TextBlock Text="{x:Static localization:Strings.DownloaderWindow_Heading}"
                            FontSize="20"
                            FontWeight="SemiBold"
-                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                 <TextBlock Text="{x:Static localization:Strings.DownloaderWindow_Description}" Classes="secondary"/>
             </StackPanel>
         </Grid>

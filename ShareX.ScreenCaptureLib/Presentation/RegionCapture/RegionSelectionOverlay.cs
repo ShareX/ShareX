@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,10 +42,10 @@ public sealed class RegionSelectionOverlay : Control
     public static readonly StyledProperty<IBrush> AccentBrushProperty =
         AvaloniaProperty.Register<RegionSelectionOverlay, IBrush>(nameof(AccentBrush), Brushes.DodgerBlue);
 
-    private static readonly IPen AntDashPen = new Pen(
-        new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)),
-        1,
-        new DashStyle([5, 5], 0));
+    // The dashes and the crosshair shadow use the halo color of the accent, so a dark accent gets white
+    // dashes and stays visible over dark screen content. The defaults match the default DodgerBlue accent.
+    private IPen _antDashPen = CreateAntDashPen(Colors.Black);
+    private IBrush _haloBrush = Brushes.Black;
     private CaptureRegion _selection;
     private Rect _hoverRectangle;
     private RegionShape _hoverShape;
@@ -232,6 +233,23 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == AccentBrushProperty)
+        {
+            Color halo = AccentPalette.GetHaloColor(AccentBrush);
+            _antDashPen = CreateAntDashPen(halo);
+            _haloBrush = new SolidColorBrush(halo);
+        }
+    }
+
+    private static IPen CreateAntDashPen(Color color)
+    {
+        return new Pen(new SolidColorBrush(Color.FromArgb(230, color.R, color.G, color.B)), 1, new DashStyle([5, 5], 0));
+    }
+
     public Rect ActiveRectangle => IsValid(SelectionRectangle) ? SelectionRectangle : HoverRectangle;
 
     public override void Render(DrawingContext context)
@@ -356,17 +374,17 @@ public sealed class RegionSelectionOverlay : Control
         else if (geometry != null)
         {
             context.DrawGeometry(null, new Pen(AccentBrush, 1), geometry);
-            context.DrawGeometry(null, AntDashPen, geometry);
+            context.DrawGeometry(null, _antDashPen, geometry);
         }
     }
 
     private void DrawAntRectangle(DrawingContext context, Rect rectangle)
     {
         context.DrawRectangle(null, new Pen(AccentBrush, 1), rectangle);
-        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.TopRight);
-        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.BottomLeft);
-        context.DrawLine(AntDashPen, rectangle.TopRight, rectangle.BottomRight);
-        context.DrawLine(AntDashPen, rectangle.BottomLeft, rectangle.BottomRight);
+        context.DrawLine(_antDashPen, rectangle.TopLeft, rectangle.TopRight);
+        context.DrawLine(_antDashPen, rectangle.TopLeft, rectangle.BottomLeft);
+        context.DrawLine(_antDashPen, rectangle.TopRight, rectangle.BottomRight);
+        context.DrawLine(_antDashPen, rectangle.BottomLeft, rectangle.BottomRight);
     }
 
     private void DrawCursorCrosshair(DrawingContext context, Rect surface)
@@ -389,7 +407,7 @@ public sealed class RegionSelectionOverlay : Control
         }
 
         context.DrawLine(new Pen(AccentBrush, 1), start, end);
-        context.DrawLine(AntDashPen, start, end);
+        context.DrawLine(_antDashPen, start, end);
     }
 
     private void DrawCenterCrosshair(DrawingContext context, Rect rectangle)
@@ -397,7 +415,7 @@ public sealed class RegionSelectionOverlay : Control
         Point center = rectangle.Center;
         int centerX = (int)Math.Floor(center.X);
         int centerY = (int)Math.Floor(center.Y);
-        DrawPixelCross(context, Brushes.Black, centerX - 1, centerY - 1);
+        DrawPixelCross(context, _haloBrush, centerX - 1, centerY - 1);
         DrawPixelCross(context, AccentBrush, centerX, centerY);
     }
 

@@ -26,10 +26,6 @@
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <Grid RowDefinitions="Auto,Auto,Auto">
@@ -42,7 +38,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.ShortLink}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -50,7 +46,7 @@
                     <TextBlock Text="{x:Static res:Strings.ShortenURLWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                 </StackPanel>
             </Grid>
         </Border>

@@ -26,12 +26,12 @@
         <Style Selector="TextBlock.page-title-text">
             <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="controls|IconPresenter.page-title-icon">
             <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
@@ -114,6 +114,13 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -135,7 +142,7 @@
                         Margin="20,14,20,0"
                         Padding="12,8"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                        BorderBrush="{DynamicResource ShareX.Brush.Accent}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                         BorderThickness="1"
                         CornerRadius="5">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
@@ -542,7 +549,7 @@
                                         <ListBox.ItemTemplate>
                                             <DataTemplate x:DataType="local:ClipboardFormatItem">
                                                 <StackPanel Margin="4,2">
-                                                    <TextBlock Text="{Binding Description}" Foreground="{DynamicResource ShareX.Brush.Text}" FontWeight="Normal"/>
+                                                    <TextBlock Text="{Binding Description}" FontWeight="Normal"/>
                                                     <TextBlock Classes="hint" Text="{Binding Format}" TextTrimming="CharacterEllipsis"/>
                                                 </StackPanel>
                                             </DataTemplate>
@@ -866,7 +873,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.ClipboardList}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ClipboardFormatEditorTitle"

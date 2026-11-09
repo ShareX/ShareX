@@ -18,7 +18,8 @@
     <Window.Styles>
         <Style Selector="Border.drop-surface">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="#EFFFFFFF"/>
+            <!-- The border is drawn on the accent fill, so it takes the fill's text color to stay visible with light accents. -->
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="CornerRadius" Value="10"/>
         </Style>

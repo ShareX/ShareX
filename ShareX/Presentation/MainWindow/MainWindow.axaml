@@ -32,11 +32,11 @@
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
         <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
         <Style Selector="Border.thumbnail-preview.clickable">
@@ -45,8 +45,22 @@
         <Style Selector="Border.combine-drop-zone">
             <Setter Property="Background" Value="#CC2B2B2B"/>
         </Style>
+        <!-- The label and icon colours are set on the TextBlock and IconPresenter themselves, which the global
+             TextBlock style would otherwise override, and follow the accent fill while dragging over. -->
+        <Style Selector="Border.combine-drop-zone TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone controls|IconPresenter">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
         <Style Selector="Border.combine-drop-zone.drag-over">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone.drag-over TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone.drag-over controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Border.task-list-header">
             <Setter Property="Height" Value="24"/>
@@ -510,7 +524,7 @@
                                                         <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="6">
                                                             <Border Classes="combine-drop-zone"
                                                                     Tag="Horizontal"
-                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                                                                     BorderThickness="1"
                                                                     CornerRadius="4"
                                                                     DragDrop.AllowDrop="True"
@@ -522,11 +536,9 @@
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
                                                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Columns}"
-                                                                                            Foreground="White"
                                                                                             FontSize="20"
                                                                                             HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Horizontal}"
-                                                                               Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
                                                                 </StackPanel>
@@ -534,7 +546,7 @@
                                                             <Border Grid.Column="1"
                                                                     Classes="combine-drop-zone"
                                                                     Tag="Vertical"
-                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                                                                     BorderThickness="1"
                                                                     CornerRadius="4"
                                                                     DragDrop.AllowDrop="True"
@@ -546,11 +558,9 @@
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
                                                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rows}"
-                                                                                            Foreground="White"
                                                                                             FontSize="20"
                                                                                             HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Vertical}"
-                                                                               Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
                                                                 </StackPanel>
@@ -594,7 +604,7 @@
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                 <TextBlock Text="{x:Static res:Strings.MainWindow_ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
@@ -616,7 +626,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                                             IsVisible="{Binding IsRegistered}"
-                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                                             FontSize="17"
                                                                             HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"/>
@@ -658,13 +668,13 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                     BorderThickness="2"
                     CornerRadius="12">
                 <StackPanel Spacing="12" HorizontalAlignment="Center">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                             FontSize="48"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                             HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayTitle"
                                Text="{x:Static res:Strings.MainWindow_ReleaseToUploadFiles}"
