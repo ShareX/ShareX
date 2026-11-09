@@ -472,22 +472,12 @@ namespace ShareX.AvaloniaUI.Theming
 
         private static Color[] GetAccentSurfaces(Application application, ThemeVariant theme)
         {
-            List<Color> surfaces = new();
+            Color[] surfaces = AccentSurfaceKeys
+                .Select(key => application.TryGetResource(key, theme, out object? value) ? value : null)
+                .OfType<Color>()
+                .ToArray();
 
-            foreach (string key in AccentSurfaceKeys)
-            {
-                if (application.TryGetResource(key, theme, out object? value) && value is Color color)
-                {
-                    surfaces.Add(color);
-                }
-            }
-
-            if (surfaces.Count == 0)
-            {
-                surfaces.Add(IsLightTheme(theme.ToString()) ? Colors.White : Colors.Black);
-            }
-
-            return surfaces.ToArray();
+            return surfaces.Length > 0 ? surfaces : [IsLightTheme(theme.ToString()) ? Colors.White : Colors.Black];
         }
 
         private static void RunOnUIThread(Action action)
