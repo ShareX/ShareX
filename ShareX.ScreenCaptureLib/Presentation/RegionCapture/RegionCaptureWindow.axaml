@@ -129,6 +129,7 @@
         <Canvas>
             <Grid x:Name="CaptureToolbar"
                   Classes="capture-toolbar"
+                  PointerWheelChanged="OnCaptureToolbarPointerWheelChanged"
                   MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=Window}}">
                 <!-- Scales the whole toolbar when a custom toolbar button size is set. -->
                 <LayoutTransformControl x:Name="CaptureToolbarScale">
