@@ -35,6 +35,7 @@ public static partial class EditorCommands
     private static SKBitmap? _clipboard;
     private static SKPointI _clipboardOrigin;
     private static int _clipboardHash;
+    private static List<Layer>? _clipboardLayers;
 
     private static void RegisterEdit()
     {
@@ -72,7 +73,7 @@ public static partial class EditorCommands
         R("edit.definePattern", Strings.EditorCommands_DefinePatternEllipsis, null, w => _ = DefinePatternAsync(w), HasDoc);
         R("edit.defineShape", Strings.EditorCommands_DefineCustomShapeEllipsis, null, w => _ = DefineShapeAsync(w), w => w.Document?.ActivePath != null || w.Document?.ActiveLayer is ShapeLayer);
         R("edit.purge.history", Strings.EditorCommands_PurgeHistories, null, w => { w.Document!.History.Purge(); w.RefreshPanels(); }, HasDoc);
-        R("edit.purge.clipboard", Strings.EditorCommands_PurgeClipboard, null, w => { _clipboard?.Dispose(); _clipboard = null; });
+        R("edit.purge.clipboard", Strings.EditorCommands_PurgeClipboard, null, w => { _clipboard?.Dispose(); _clipboard = null; _clipboardLayers = null; });
         R("edit.preferences", Strings.EditorCommands_PreferencesEllipsis, "Ctrl+K", w => _ = PreferencesDialog.ShowAsync(w));
         R("edit.shortcuts", Strings.EditorCommands_KeyboardShortcutsEllipsis, "Ctrl+Shift+Alt+K", w => _ = ShortcutsDialog.ShowAsync(w));
         R("edit.toolbar", Strings.EditorCommands_ToolbarEllipsis, null, w => _ = ToolbarCustomizeDialog.ShowAsync(w));
@@ -109,10 +110,13 @@ public static partial class EditorCommands
         W(host).Commit(doc.QuickMask ? Strings.EditorCommands_EnterQuickMask : Strings.EditorCommands_ExitQuickMask);
     }
 
-    /// <summary>Copies (or cuts) the selected pixels of the active layer, or of all visible layers when merged.</summary>
+    /// <summary>Copies (or cuts) the selected pixels of the active layer, or of all visible layers when merged.
+    /// With no selection on a text, shape or other non-pixel layer, the layers themselves are kept too so pasting them
+    /// gives editable layers instead of pixels.</summary>
     private static void CopyCore(PhotoEditorWindow w, bool merged, bool cut)
     {
         PhotoDocument doc = w.Document!;
+        List<Layer>? layers = merged || doc.Selection != null || doc.EditingMask || doc.ActiveLayer is null or RasterLayer ? null : CopyLayers(doc);
         SKRectI bounds = doc.SelectionBounds;
         SKBitmap copy;
         if (merged || doc.ActiveLayer is not RasterLayer)
@@ -135,6 +139,7 @@ public static partial class EditorCommands
         _clipboard?.Dispose();
         _clipboard = copy;
         _clipboardOrigin = new SKPointI(bounds.Left, bounds.Top);
+        _clipboardLayers = layers;
         try
         {
             ClipboardHelpers.CopyImage(copy);
@@ -147,6 +152,21 @@ public static partial class EditorCommands
         if (cut) Clear(w);
     }
 
+    /// <summary>Snapshots the selected layers, bottom to top, skipping layers inside a selected group.</summary>
+    private static List<Layer> CopyLayers(PhotoDocument doc)
+    {
+        List<Layer> selected = doc.SelectedLayers.ToList();
+        return doc.Root.Descendants()
+            .Where(l => selected.Contains(l) && !l.IsBackground && !Ancestors(l).Any(selected.Contains))
+            .Select(l => l.Duplicate())
+            .ToList();
+
+        static IEnumerable<Layer> Ancestors(Layer layer)
+        {
+            for (Layer? p = layer.Parent; p != null; p = p.Parent) yield return p;
+        }
+    }
+
     private static int ClipboardSignature()
     {
         using SKBitmap? image = TryGetClipboardImage();
@@ -157,11 +177,14 @@ public static partial class EditorCommands
     {
         SKBitmap? image = null;
         SKPointI? origin = null;
+        List<Layer>? layers = null;
         using SKBitmap? system = TryGetClipboardImage();
         if (_clipboard != null && (system == null || HashCode.Combine(system.Width, system.Height, system.GetPixel(system.Width / 2, system.Height / 2)) == _clipboardHash))
         {
             image = _clipboard.Copy();
             origin = _clipboardOrigin;
+            // Layers only when our copy is still on the system clipboard, not after something else (like text) replaced it.
+            if (system != null) layers = _clipboardLayers;
         }
         else if (system != null)
         {
@@ -180,6 +203,11 @@ public static partial class EditorCommands
                 return;
             }
             PhotoDocument doc = w.Document;
+            if (layers is { Count: > 0 } && !into)
+            {
+                PasteLayers(w, layers);
+                return;
+            }
             if (doc.ActiveLayer is FrameLayer && !inPlace)
             {
                 PlaceBitmap(w, image, Strings.EditorCommands_Pasted);
@@ -198,6 +226,26 @@ public static partial class EditorCommands
             if (!into) doc.SetSelectionLive(null);
             w.Commit(into ? Strings.EditorCommands_PasteInto : Strings.EditorCommands_Paste);
         }
+    }
+
+    /// <summary>Adds copies of copied layers above the active layer, keeping their names and positions.</summary>
+    private static void PasteLayers(PhotoEditorWindow w, List<Layer> layers)
+    {
+        PhotoDocument doc = w.Document!;
+        List<int> pasted = [];
+        Layer? anchor = doc.ActiveLayer;
+        foreach (Layer layer in layers)
+        {
+            // An explicit anchor keeps pasted layers as siblings instead of nesting them in an empty group.
+            Layer copy = layer.Duplicate();
+            doc.AddLayer(copy, anchor);
+            pasted.Add(copy.Id);
+            anchor = copy;
+        }
+        doc.SelectedLayerIds.Clear();
+        foreach (int id in pasted) doc.SelectedLayerIds.Add(id);
+        doc.SetSelectionLive(null);
+        w.Commit(Strings.EditorCommands_Paste);
     }
 
     private static void Clear(PhotoEditorWindow w)
