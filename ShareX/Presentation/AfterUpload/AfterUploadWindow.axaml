@@ -42,8 +42,12 @@
         <Style Selector="ListBox.format-list > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.format-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
         <Style Selector="Button.compact">
