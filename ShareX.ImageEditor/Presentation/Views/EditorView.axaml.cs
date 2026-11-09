@@ -958,9 +958,10 @@ namespace ShareX.ImageEditor.Presentation.Views
         /// <summary>
         /// Loads an owned bitmap directly into the shared workspace without creating the
         /// normal editor preview and backup copies. This is intended for very large,
-        /// immutable capture backgrounds.
+        /// immutable capture backgrounds. Pass <paramref name="isOpaque"/> only when every pixel has alpha 255,
+        /// as in a screen capture: then the canvas draws the bitmap's own pixels instead of a full-size copy.
         /// </summary>
-        public void LoadWorkspaceImage(SKBitmap bitmap)
+        public void LoadWorkspaceImage(SKBitmap bitmap, bool isOpaque = false)
         {
             ArgumentNullException.ThrowIfNull(bitmap);
 
@@ -970,9 +971,26 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             _suppressNextHistoryDirtyMark = true;
-            // Drawn straight from the capture's pixels, without a second full-size copy. Captures are opaque
-            // (WindowsImageInterop sets alpha to 255). RenderCore goes back to the copy if the image is replaced.
-            _canvasControl.ShowDirectly(bitmap);
+            // RenderCore goes back to the copy if the image is replaced.
+            bool direct = false;
+            if (isOpaque)
+            {
+                try
+                {
+                    _canvasControl.ShowDirectly(bitmap);
+                    direct = true;
+                }
+                catch (Exception ex)
+                {
+                    EditorServices.ReportWarning(nameof(EditorView), "Could not draw the workspace image directly; using a copy.", ex);
+                }
+            }
+
+            if (!direct)
+            {
+                _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            }
+
             _editorCore.LoadImage(bitmap);
 
             if (DataContext is MainViewModel vm)

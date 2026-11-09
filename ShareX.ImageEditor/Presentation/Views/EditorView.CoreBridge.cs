@@ -79,10 +79,10 @@ namespace ShareX.ImageEditor.Presentation.Views
         {
             if (_workspaceDisposed || _canvasControl == null) return;
 
-            if (_canvasControl.DirectBitmap != null)
+            if (_canvasControl.HasDirectSource)
             {
                 // The canvas shows the source image's own pixels, which nothing changes in place.
-                if (ReferenceEquals(_canvasControl.DirectBitmap, _editorCore.SourceImage)) return;
+                if (_canvasControl.IsDirectSource(_editorCore.SourceImage)) return;
 
                 // The image was replaced: draw it into the canvas's own copy as usual.
                 _canvasControl.Initialize((int)_editorCore.CanvasSize.Width, (int)_editorCore.CanvasSize.Height);

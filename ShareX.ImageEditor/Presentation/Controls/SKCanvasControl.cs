@@ -28,6 +28,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
+using Avalonia.Rendering.Composition;
 using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
 using Avalonia.VisualTree;
@@ -45,30 +46,36 @@ public class SKCanvasControl : Control, IDisposable
     private DirectSource? _direct;
     private object _lock = new object();
 
+    /// <summary>True while a bitmap is shown by <see cref="ShowDirectly"/> instead of the backing store.</summary>
+    public bool HasDirectSource => _direct != null;
+
     /// <summary>
-    /// The bitmap shown by <see cref="ShowDirectly"/>, or null while the backing store is used.
+    /// True when <paramref name="bitmap"/> is the very bitmap shown by <see cref="ShowDirectly"/>.
+    /// Only compares references: the bitmap itself may already be disposed by its owner.
     /// </summary>
-    public SKBitmap? DirectBitmap => _direct?.Bitmap;
+    public bool IsDirectSource(SKBitmap? bitmap) => bitmap != null && ReferenceEquals(_direct?.Bitmap, bitmap);
 
     /// <summary>
     /// Shows a bitmap straight from its own pixels instead of a copy in the backing store.
     /// Every pixel must be opaque (alpha 255), as in a screen capture, and must not change while it is shown.
-    /// <see cref="Initialize"/> goes back to the backing store.
+    /// <see cref="Initialize"/> goes back to the backing store. Throws, changing nothing, if the pixels cannot be shared.
     /// </summary>
     public void ShowDirectly(SKBitmap bitmap)
     {
         ArgumentNullException.ThrowIfNull(bitmap);
 
         DirectSource direct = new(bitmap);
+        DirectSource? old;
 
         lock (_lock)
         {
             _bitmap?.Dispose();
             _bitmap = null;
-            _direct?.Dispose();
+            old = _direct;
             _direct = direct;
         }
 
+        RetireDirectSource(old);
         InvalidateVisual();
     }
 
@@ -81,7 +88,7 @@ public class SKCanvasControl : Control, IDisposable
 
         lock (_lock)
         {
-            _direct?.Dispose();
+            RetireDirectSource(_direct);
             _direct = null;
 
             if (_bitmap?.PixelSize.Width == width && _bitmap?.PixelSize.Height == height)
@@ -93,6 +100,32 @@ public class SKCanvasControl : Control, IDisposable
         }
 
         InvalidateVisual();
+    }
+
+    // A scene already sent to the render thread may still draw the old source, and drawing a disposed one leaves
+    // the area black for a frame. Dispose it once the next frame, which no longer uses it, has been rendered.
+    private void RetireDirectSource(DirectSource? source)
+    {
+        if (source == null) return;
+
+        Task? rendered = null;
+        try
+        {
+            rendered = ElementComposition.GetElementVisual(this)?.Compositor.RequestCompositionBatchCommitAsync().Rendered;
+        }
+        catch (Exception)
+        {
+            // Not attached to a compositor: nothing on screen uses it.
+        }
+
+        if (rendered == null)
+        {
+            source.Dispose();
+            return;
+        }
+
+        // A tray-only app may not render again soon; do not hold the pixels longer than a second.
+        Task.WhenAny(rendered, Task.Delay(1000)).ContinueWith(_ => source.Dispose(), TaskScheduler.Default);
     }
 
     public override void Render(DrawingContext context)
@@ -150,6 +183,7 @@ public class SKCanvasControl : Control, IDisposable
     {
         _bitmap?.Dispose();
         _bitmap = null;
+        // At once: the owner is closing, and the pixel memory is large.
         _direct?.Dispose();
         _direct = null;
     }

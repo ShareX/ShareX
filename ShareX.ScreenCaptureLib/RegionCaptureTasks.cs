@@ -123,6 +123,8 @@ public static class RegionCaptureTasks
         AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
         {
             Screenshot = frozenScreenshot,
+            // Screen captures are opaque: WindowsImageInterop.Capture and HDR correction set alpha to 255.
+            ScreenshotIsOpaque = true,
             ScreenBounds = screenBounds,
             RegionCaptureOptions = options,
             ImageEditorOptions = new ImageEditorOptions(),
