@@ -54,9 +54,8 @@ public static class CanvasSizeDialog
         List<Button> anchorButtons = [];
         foreach (CanvasAnchor a in Enum.GetValues<CanvasAnchor>())
         {
-            CanvasAnchor captured = a;
             Button b = new() { Margin = new Thickness(1), Padding = new Thickness(0), HorizontalAlignment = HorizontalAlignment.Stretch, VerticalAlignment = VerticalAlignment.Stretch, HorizontalContentAlignment = HorizontalAlignment.Center, VerticalContentAlignment = VerticalAlignment.Center };
-            b.Click += (_, _) => { anchor = captured; UpdateAnchors(); };
+            b.Click += (_, _) => { anchor = a; UpdateAnchors(); };
             anchorButtons.Add(b);
             anchors.Children.Add(b);
         }
