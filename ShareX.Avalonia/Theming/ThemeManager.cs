@@ -308,114 +308,186 @@ namespace ShareX.AvaloniaUI.Theming
                 theme.Contains("Light", StringComparison.OrdinalIgnoreCase);
         }
 
-        private static void ApplyAccentColor(Application? application, Color startColor, ThemeVariant theme)
+        // Theme backgrounds that accent colored text and indicators are drawn on.
+        private static readonly string[] AccentSurfaceKeys =
+        [
+            "ShareX.Color.Background.Main",
+            "ShareX.Color.Background.Panel",
+            "ShareX.Color.Background.Popup",
+            "ShareX.Color.Background.Menu",
+            "ShareX.Color.Background.Toolbar",
+            "ShareX.Color.Control.Background",
+            "ShareX.Color.Control.Background.Hover"
+        ];
+
+        // Accent colored text and indicators depend on the background they are drawn on, so they are computed for
+        // each theme and placed in theme dictionaries. Windows that force a variant (the photo editor uses plain Dark)
+        // still resolve them through the base Dark/Light entries.
+        private static AccentPalette? _darkPalette;
+        private static AccentPalette? _lightPalette;
+
+        /// <summary>The accent palette for the given theme, or null before the accent has been applied.</summary>
+        public static AccentPalette? GetAccentPalette(ThemeVariant? theme = null)
+        {
+            return IsLightTheme((theme ?? _currentTheme).ToString()) ? _lightPalette : _darkPalette;
+        }
+
+        private static void ApplyAccentColor(Application? application, Color accentColor, ThemeVariant theme)
         {
             if (application == null)
             {
                 return;
             }
 
-            Color endColor = DarkenColor(startColor, 0.10);
-            Color foregroundColor = GetAccentForegroundColor(startColor, endColor);
-            Color linkColor = GetLinkColor(application, startColor, theme);
+            _darkPalette = AccentPalette.Create(accentColor, GetAccentSurfaces(application, ShareXDark));
+            _lightPalette = AccentPalette.Create(accentColor, GetAccentSurfaces(application, ShareXLight));
+            AccentPalette palette = GetAccentPalette(theme)!;
+            IResourceDictionary resources = application.Resources;
 
-            // Links are drawn on the window background rather than on the accent, so a dark or grey
-            // accent would make them unreadable on the dark theme (and a pale one on the light theme).
-            application.Resources["ShareX.Color.Link"] = linkColor;
-            application.Resources["ShareX.Brush.Link"] = new SolidColorBrush(linkColor);
-            application.Resources["HyperlinkButtonForeground"] = new SolidColorBrush(linkColor);
-            application.Resources["HyperlinkButtonForegroundPointerOver"] = new SolidColorBrush(linkColor);
-            application.Resources["HyperlinkButtonForegroundPressed"] = new SolidColorBrush(linkColor);
-
-            application.Resources["SystemAccentColor"] = startColor;
-            application.Resources["ShareX.Color.Accent.Start"] = startColor;
-            application.Resources["ShareX.Color.Accent.End"] = endColor;
-            application.Resources["ShareX.Color.Accent.Foreground"] = foregroundColor;
-            application.Resources["ShareX.Brush.Accent.Start"] = new SolidColorBrush(startColor);
-            application.Resources["ShareX.Brush.Accent.Foreground"] = new SolidColorBrush(foregroundColor);
-            application.Resources["ShareX.Brush.Accent"] = new LinearGradientBrush
+            // Accent fills (buttons, selections, checked states) and the text drawn on them. These do not depend on
+            // the theme.
+            resources["ShareX.Color.Accent.Start"] = palette.FillStart;
+            resources["ShareX.Color.Accent.End"] = palette.FillEnd;
+            resources["ShareX.Color.Accent.Foreground"] = palette.OnFill;
+            resources["ShareX.Brush.Accent.Start"] = new SolidColorBrush(palette.FillStart);
+            resources["ShareX.Brush.Accent.Foreground"] = new SolidColorBrush(palette.OnFill);
+            resources["ShareX.Brush.Accent"] = new LinearGradientBrush
             {
                 StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
                 EndPoint = new RelativePoint(1, 1, RelativeUnit.Relative),
                 GradientStops =
                 {
-                    new GradientStop(startColor, 0),
-                    new GradientStop(endColor, 1)
+                    new GradientStop(palette.FillStart, 0),
+                    new GradientStop(palette.FillEnd, 1)
                 }
             };
 
-            AccentColorChanged?.Invoke(null, startColor);
+            // Accent colored text, icons and indicators drawn on the theme backgrounds rather than on the accent.
+            SetSurfaceAccentResources(GetThemeDictionary(resources, ShareXDark), _darkPalette);
+            SetSurfaceAccentResources(GetThemeDictionary(resources, ThemeVariant.Dark), _darkPalette);
+            SetSurfaceAccentResources(GetThemeDictionary(resources, ShareXLight), _lightPalette);
+            SetSurfaceAccentResources(GetThemeDictionary(resources, ThemeVariant.Light), _lightPalette);
+
+            ApplyFluentAccentResources(resources, palette);
+
+            AccentColorChanged?.Invoke(null, palette.FillStart);
         }
 
-        private static Color DarkenColor(Color color, double amount)
+        // A dictionary can only belong to one theme key, so each variant gets its own, created once and updated in place.
+        private static IResourceDictionary GetThemeDictionary(IResourceDictionary resources, ThemeVariant theme)
         {
-            double factor = Math.Clamp(1 - amount, 0, 1);
-            return Color.FromArgb(color.A,
-                (byte)Math.Round(color.R * factor),
-                (byte)Math.Round(color.G * factor),
-                (byte)Math.Round(color.B * factor));
-        }
-
-        private static Color GetAccentForegroundColor(Color startColor, Color endColor)
-        {
-            Color light = Color.Parse("#D8DADB");
-            Color dark = Color.Parse("#4E4E4E");
-            double lightContrast = Math.Min(GetContrastRatio(light, startColor), GetContrastRatio(light, endColor));
-            double darkContrast = Math.Min(GetContrastRatio(dark, startColor), GetContrastRatio(dark, endColor));
-            return darkContrast >= lightContrast * 1.75 ? dark : light;
-        }
-
-        private static Color GetLinkColor(Application application, Color accentColor, ThemeVariant theme)
-        {
-            const double minimumContrast = 4.5;
-            const int steps = 20;
-
-            Color background = application.TryGetResource("ShareX.Color.Background.Main", theme, out object? value) && value is Color color
-                ? color
-                : IsLightTheme(theme.ToString()) ? Colors.White : Colors.Black;
-            Color target = GetRelativeLuminance(background) < 0.5 ? Colors.White : Colors.Black;
-            Color opaqueAccent = Color.FromRgb(accentColor.R, accentColor.G, accentColor.B);
-
-            for (int step = 0; step <= steps; step++)
+            if (resources.ThemeDictionaries.TryGetValue(theme, out IThemeVariantProvider? provider) && provider is IResourceDictionary dictionary)
             {
-                Color candidate = BlendColor(opaqueAccent, target, step / (double)steps);
+                return dictionary;
+            }
 
-                if (GetContrastRatio(candidate, background) >= minimumContrast)
+            ResourceDictionary created = new();
+            resources.ThemeDictionaries[theme] = created;
+            return created;
+        }
+
+        private static void SetSurfaceAccentResources(IResourceDictionary resources, AccentPalette palette)
+        {
+            resources["ShareX.Color.Accent.Text"] = palette.Text;
+            resources["ShareX.Brush.Accent.Text"] = new SolidColorBrush(palette.Text);
+            resources["ShareX.Color.Accent.Border"] = palette.Border;
+            resources["ShareX.Brush.Accent.Border"] = new SolidColorBrush(palette.Border);
+            // Drawn inside selected items, so it outlines an accent fill that is too close to the background without
+            // changing layout. It matches the fill when the fill already stands out.
+            resources["ShareX.BoxShadow.Accent.Outline"] = new BoxShadows(new BoxShadow
+            {
+                IsInset = true,
+                Spread = 1,
+                Color = palette.Border
+            });
+            resources["ShareX.Color.Link"] = palette.Text;
+            resources["ShareX.Brush.Link"] = new SolidColorBrush(palette.Text);
+            resources["HyperlinkButtonForeground"] = new SolidColorBrush(palette.Text);
+            resources["HyperlinkButtonForegroundPointerOver"] = new SolidColorBrush(palette.Text);
+            resources["HyperlinkButtonForegroundPressed"] = new SolidColorBrush(palette.Text);
+        }
+
+        // Fluent's built-in controls derive their checked/selected fills from SystemAccentColor and its Light/Dark
+        // variants, and draw white glyphs and text on them. Point those at the palette so they stay readable, and
+        // make the list selection fills opaque so text contrast does not depend on what is behind them.
+        private static void ApplyFluentAccentResources(IResourceDictionary resources, AccentPalette palette)
+        {
+            resources["SystemAccentColor"] = palette.FillStart;
+            resources["SystemAccentColorLight1"] = palette.FillLight1;
+            resources["SystemAccentColorLight2"] = palette.FillLight2;
+            resources["SystemAccentColorLight3"] = palette.FillLight3;
+            resources["SystemAccentColorDark1"] = palette.FillDark1;
+            resources["SystemAccentColorDark2"] = palette.FillDark2;
+            resources["SystemAccentColorDark3"] = palette.FillDark3;
+
+            SolidColorBrush fill = new(palette.FillStart);
+            SolidColorBrush fillHover = new(palette.FillLight1);
+            SolidColorBrush fillPressed = new(palette.FillDark1);
+            SolidColorBrush onFill = new(palette.OnFill);
+
+            resources["SystemControlHighlightListAccentLowBrush"] = fill;
+            resources["SystemControlHighlightListAccentMediumBrush"] = fillHover;
+            resources["SystemControlHighlightListAccentHighBrush"] = fillPressed;
+            resources["TreeViewItemBackgroundSelected"] = fill;
+            resources["TreeViewItemBackgroundSelectedPointerOver"] = fillHover;
+            resources["TreeViewItemBackgroundSelectedPressed"] = fillPressed;
+            resources["TextControlSelectionHighlightColor"] = fill;
+
+            foreach (string key in FluentOnAccentKeys)
+            {
+                resources[key] = onFill;
+            }
+        }
+
+        private static readonly string[] FluentOnAccentKeys =
+        [
+            "AccentButtonForeground",
+            "AccentButtonForegroundPointerOver",
+            "AccentButtonForegroundPressed",
+            "ToggleButtonForegroundChecked",
+            "ToggleButtonForegroundCheckedPointerOver",
+            "ToggleButtonForegroundCheckedPressed",
+            "SplitButtonForegroundChecked",
+            "SplitButtonForegroundCheckedPointerOver",
+            "SplitButtonForegroundCheckedPressed",
+            "CheckBoxCheckGlyphForegroundChecked",
+            "CheckBoxCheckGlyphForegroundCheckedPointerOver",
+            "CheckBoxCheckGlyphForegroundCheckedPressed",
+            "CheckBoxCheckGlyphForegroundIndeterminate",
+            "CheckBoxCheckGlyphForegroundIndeterminatePointerOver",
+            "CheckBoxCheckGlyphForegroundIndeterminatePressed",
+            "RadioButtonCheckGlyphFill",
+            "RadioButtonCheckGlyphFillPointerOver",
+            "RadioButtonCheckGlyphFillPressed",
+            "ToggleSwitchKnobFillOn",
+            "ToggleSwitchKnobFillOnPointerOver",
+            "ToggleSwitchKnobFillOnPressed",
+            "TreeViewItemForegroundSelected",
+            "TreeViewItemForegroundSelectedPointerOver",
+            "TreeViewItemForegroundSelectedPressed",
+            "ComboBoxItemForegroundSelected",
+            "ComboBoxItemForegroundSelectedPointerOver",
+            "ComboBoxItemForegroundSelectedPressed"
+        ];
+
+        private static Color[] GetAccentSurfaces(Application application, ThemeVariant theme)
+        {
+            List<Color> surfaces = new();
+
+            foreach (string key in AccentSurfaceKeys)
+            {
+                if (application.TryGetResource(key, theme, out object? value) && value is Color color)
                 {
-                    return candidate;
+                    surfaces.Add(color);
                 }
             }
 
-            return target;
-        }
-
-        private static Color BlendColor(Color from, Color to, double amount)
-        {
-            return Color.FromRgb(
-                (byte)Math.Round(from.R + ((to.R - from.R) * amount)),
-                (byte)Math.Round(from.G + ((to.G - from.G) * amount)),
-                (byte)Math.Round(from.B + ((to.B - from.B) * amount)));
-        }
-
-        private static double GetContrastRatio(Color first, Color second)
-        {
-            double firstLuminance = GetRelativeLuminance(first);
-            double secondLuminance = GetRelativeLuminance(second);
-            return (Math.Max(firstLuminance, secondLuminance) + 0.05) /
-                (Math.Min(firstLuminance, secondLuminance) + 0.05);
-        }
-
-        private static double GetRelativeLuminance(Color color)
-        {
-            static double Linearize(byte channel)
+            if (surfaces.Count == 0)
             {
-                double value = channel / 255d;
-                return value <= 0.03928 ? value / 12.92 : Math.Pow((value + 0.055) / 1.055, 2.4);
+                surfaces.Add(IsLightTheme(theme.ToString()) ? Colors.White : Colors.Black);
             }
 
-            return (0.2126 * Linearize(color.R)) +
-                (0.7152 * Linearize(color.G)) +
-                (0.0722 * Linearize(color.B));
+            return surfaces.ToArray();
         }
 
         private static void RunOnUIThread(Action action)

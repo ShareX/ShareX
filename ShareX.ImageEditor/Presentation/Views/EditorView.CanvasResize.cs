@@ -33,6 +33,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -89,6 +90,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         private readonly Dictionary<CanvasResizeEdges, Border> _canvasResizeHandles = new();
         private readonly Dictionary<CanvasResizeEdges, Border> _canvasResizeEdgeStrips = new();
         private Rectangle? _canvasResizeFrame;
+        private Rectangle? _canvasResizeFrameHalo;
         private Border? _canvasResizePanel;
         private TextBlock? _canvasResizeSizeText;
 
@@ -345,6 +347,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             _canvasResizeHandles.Clear();
             _canvasResizeEdgeStrips.Clear();
             _canvasResizeFrame = null;
+            _canvasResizeFrameHalo = null;
             _canvasResizePanel = null;
             _canvasResizeSizeText = null;
 
@@ -668,10 +671,6 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void CreateCanvasResizeVisuals(Canvas overlayHost)
         {
-            IBrush accent = FindCanvasResizeBrush("ShareX.Brush.Accent") is IBrush accentBrush
-                ? accentBrush
-                : new SolidColorBrush(Color.FromRgb(0, 120, 215));
-
             for (int i = 0; i < 4; i++)
             {
                 var fill = new Rectangle { IsHitTestVisible = false, IsVisible = false };
@@ -682,9 +681,16 @@ namespace ShareX.ImageEditor.Presentation.Views
                 AddCanvasResizeVisual(overlayHost, shade, 1);
             }
 
+            // Black or white halo under the accent frame keeps it visible over any image, whatever the accent.
+            _canvasResizeFrameHalo = new Rectangle
+            {
+                StrokeThickness = 4,
+                IsHitTestVisible = false
+            };
+            AddCanvasResizeVisual(overlayHost, _canvasResizeFrameHalo, 2);
+
             _canvasResizeFrame = new Rectangle
             {
-                Stroke = accent,
                 StrokeThickness = 2,
                 IsHitTestVisible = false
             };
@@ -708,8 +714,6 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     Width = CanvasResizeHandleSize,
                     Height = CanvasResizeHandleSize,
-                    Background = Brushes.White,
-                    BorderBrush = accent,
                     BorderThickness = new Thickness(2),
                     CornerRadius = new CornerRadius(2),
                     Cursor = GetCanvasResizeCursor(kind)
@@ -720,6 +724,39 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             _canvasResizePanel = CreateCanvasResizePanel();
             AddCanvasResizeVisual(overlayHost, _canvasResizePanel, 5);
+
+            ApplyCanvasResizeAccent();
+            // Follow accent color changes while the tool is open. The frame is dropped when the tool closes,
+            // so this does not keep the view alive.
+            _canvasResizeFrame.ResourcesChanged += (_, _) => ApplyCanvasResizeAccent();
+        }
+
+        private void ApplyCanvasResizeAccent()
+        {
+            if (_canvasResizeFrame == null || _canvasResizeFrameHalo == null)
+            {
+                return;
+            }
+
+            Color accentColor = FindCanvasResizeBrush("ShareX.Brush.Accent.Start") is ISolidColorBrush accentBrush
+                ? accentBrush.Color
+                : Color.FromRgb(0, 120, 215);
+            var accent = new SolidColorBrush(accentColor);
+            var halo = new SolidColorBrush(AccentPalette.GetHaloColor(accentColor));
+
+            // Handles stay white unless the accent border would not stand out from white (e.g. a white accent).
+            IBrush handleFill = AccentPalette.GetContrastRatio(accentColor, Colors.White) >= AccentPalette.NonTextContrast
+                ? Brushes.White
+                : halo;
+
+            _canvasResizeFrame.Stroke = accent;
+            _canvasResizeFrameHalo.Stroke = halo;
+
+            foreach (Border handle in _canvasResizeHandles.Values)
+            {
+                handle.Background = handleFill;
+                handle.BorderBrush = accent;
+            }
         }
 
         private IBrush? FindCanvasResizeBrush(string key)
@@ -878,6 +915,11 @@ namespace ShareX.ImageEditor.Presentation.Views
             PlaceRects(_canvasResizeShadeRects, SubtractRect(image, frame), null);
 
             SetCanvasResizeRect(_canvasResizeFrame, frame);
+            // Shape strokes are drawn inside the bounds, so grow the halo by 1px to put it on both sides of the frame.
+            if (_canvasResizeFrameHalo != null)
+            {
+                SetCanvasResizeRect(_canvasResizeFrameHalo, frame.Inflate(1));
+            }
 
             double tolerance = CanvasResizeHitTolerance;
             SetCanvasResizeRect(_canvasResizeEdgeStrips[CanvasResizeEdges.Left], new Rect(frame.Left - tolerance, frame.Top, tolerance * 2, frame.Height));

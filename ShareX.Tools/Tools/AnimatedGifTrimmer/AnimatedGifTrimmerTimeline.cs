@@ -28,6 +28,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Theming;
 using System.ComponentModel;
 
 namespace ShareX.Tools;
@@ -118,13 +119,20 @@ public sealed class AnimatedGifTrimmerTimeline : Control
             context.DrawRectangle(shade, null, new Rect(X(model.End), TrackTop, X(model.Duration) - X(model.End), TrackHeight));
         }
 
+        // The frame and handles sit on the thumbnails, so outline them with the accent's halo color to keep them
+        // visible over any frame content, and draw the grip in the readable color on the accent.
+        Color accentColor = GetColor(Accent);
+        IBrush halo = new SolidColorBrush(AccentPalette.GetHaloColor(accentColor));
+        IPen gripPen = new Pen(new SolidColorBrush(AccentPalette.GetTextColorOn(accentColor)), 2);
         double left = X(model.Start);
         double right = X(model.End);
-        context.DrawRectangle(null, new Pen(Accent, 2), new Rect(left, TrackTop - 1, right - left, TrackHeight + 2), 4, 4);
+        Rect frame = new(left, TrackTop - 1, right - left, TrackHeight + 2);
+        context.DrawRectangle(null, new Pen(halo, 4), frame, 4, 4);
+        context.DrawRectangle(null, new Pen(Accent, 2), frame, 4, 4);
         foreach (double x in new[] { left, right })
         {
-            context.DrawRectangle(Accent, null, new Rect(x - 5, TrackTop - 3, 10, TrackHeight + 6), 3, 3);
-            context.DrawLine(new Pen(Brushes.White, 2), new Point(x, TrackTop + 16), new Point(x, TrackBottom - 16));
+            context.DrawRectangle(Accent, new Pen(halo, 1), new Rect(x - 5, TrackTop - 3, 10, TrackHeight + 6), 3, 3);
+            context.DrawLine(gripPen, new Point(x, TrackTop + 16), new Point(x, TrackBottom - 16));
         }
 
         double playhead = X(model.Position);
@@ -132,6 +140,13 @@ public sealed class AnimatedGifTrimmerTimeline : Control
         context.DrawLine(new Pen(Brushes.White, 2), new Point(playhead, 4), new Point(playhead, TrackBottom + 8));
         context.DrawEllipse(Brushes.White, null, new Point(playhead, 5), 4, 4);
     }
+
+    private static Color GetColor(IBrush? brush) => brush switch
+    {
+        ISolidColorBrush solid => solid.Color,
+        IGradientBrush { GradientStops.Count: > 0 } gradient => gradient.GradientStops[0].Color,
+        _ => Colors.DodgerBlue
+    };
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {

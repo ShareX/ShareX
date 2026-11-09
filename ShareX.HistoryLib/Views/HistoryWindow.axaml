@@ -60,6 +60,18 @@
             <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style Selector="TextBlock.history-cell.secondary">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.history-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem:selected TextBlock.history-cell">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem:selected controls|IconPresenter.history-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="controls|IconPresenter.loading-icon">
             <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
             <Style.Animations>
@@ -207,8 +219,8 @@
                                                                          Layout="{Binding ColumnLayout, RelativeSource={RelativeSource AncestorType=history:HistoryWindow}}">
                                                 <controls:IconPresenter history:HistoryColumnsPanel.Column="Icon"
                                                                         Icon="{Binding Converter={StaticResource HistoryItemIconConverter}}"
+                                                                        Classes="history-icon"
                                                                         FontSize="16"
-                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                                         HorizontalAlignment="Center"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="Date"
                                                            Classes="history-cell"
@@ -217,9 +229,8 @@
                                                            Classes="history-cell"
                                                            Text="{Binding FileName}"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="FilePath"
-                                                           Classes="history-cell"
-                                                           Text="{Binding FilePath}"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding FilePath}"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="Type"
                                                            Classes="history-cell"
                                                            Text="{Binding Type}"/>
@@ -227,13 +238,11 @@
                                                            Classes="history-cell"
                                                            Text="{Binding Host}"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="URL"
-                                                           Classes="history-cell"
-                                                           Text="{Binding URL}"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding URL}"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="ShortenedURL"
-                                                           Classes="history-cell"
-                                                           Text="{Binding ShortenedURL}"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding ShortenedURL}"/>
                                                 <TextBlock history:HistoryColumnsPanel.Column="ProcessName"
                                                            Classes="history-cell"
                                                            Text="{Binding TagsProcessName}"/>
@@ -374,7 +383,7 @@
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Loading}"
                                                             Classes="loading-icon"
                                                             FontSize="44"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center">
                                         <controls:IconPresenter.RenderTransform>
                                             <RotateTransform Angle="0"/>

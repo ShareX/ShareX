@@ -31,6 +31,7 @@ using Avalonia.Controls.Documents;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Styling;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HistoryLib.Localization;
 using System;
 using System.Collections.Generic;
@@ -42,9 +43,9 @@ using System.Text.RegularExpressions;
 namespace ShareX.HistoryLib;
 
 /// <summary>
-/// The stats charts' colors for one theme and accent: images in the accent color, recordings and other files in two hues
-/// kept well away from it, each a step further from the surface for the busiest mark, and a ramp from the empty day to
-/// the accent for the calendar.
+/// The stats charts' colors for one theme and accent: images in the accent's indicator color (3:1 on the surface),
+/// recordings and other files in two hues kept well away from it, each a step further from the surface for the busiest
+/// mark, and a ramp from the empty day to the accent for the calendar that moves steadily away from the surface.
 /// </summary>
 internal sealed class StatsPalette
 {
@@ -68,6 +69,8 @@ internal sealed class StatsPalette
         _peak = series.Select(color => ToBrush(ToPeak(color, dark))).ToArray();
 
         Color empty = Color.Parse(dark ? "#313131" : "#EBEBEF");
+        // The indicator color always stands further from the surface than the empty day, so blending toward it and
+        // then past it keeps each level further out than the one before.
         Ramp = new[]
         {
             empty,
@@ -92,9 +95,12 @@ internal sealed class StatsPalette
     public static StatsPalette Get(StyledElement element)
     {
         bool dark = IsDark(element);
-        Color accent = element.TryFindResource("ShareX.Color.Accent.Start", element.ActualThemeVariant, out object? value) && value is Color color
-            ? color
-            : DefaultAccent;
+        // The raw accent can sit too close to the panel (a dark accent on the dark theme), so the marks use the palette's
+        // indicator color for this theme, which keeps 3:1 against it whatever accent is picked.
+        Color accent = ThemeManager.GetAccentPalette(element.ActualThemeVariant)?.Border ??
+            (element.TryFindResource("ShareX.Color.Accent.Border", element.ActualThemeVariant, out object? value) && value is Color color
+                ? color
+                : DefaultAccent);
 
         StatsPalette? cached = _cached;
         if (cached == null || cached.IsDarkTheme != dark || cached.Accent != accent)

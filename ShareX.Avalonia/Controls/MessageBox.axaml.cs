@@ -266,8 +266,9 @@ internal partial class MessageBoxWindow : Window
         };
     }
 
+    // The icon sits on the dialog background, so it uses the surface accent color for the dialog's theme.
     private IBrush GetAccentBrush() =>
-        this.FindResource("ShareX.Brush.Accent.Start") as IBrush ?? Brushes.DodgerBlue;
+        this.FindResource("ShareX.Brush.Accent.Text") as IBrush ?? Brushes.DodgerBlue;
 
     private static (DialogResult Result, string Text)[] GetButtonDefinitions(MessageBoxButtons buttons) => buttons switch
     {

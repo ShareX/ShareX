@@ -1155,11 +1155,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return header;
         }
 
-        Run accentRun = new()
-        {
-            Text = accentText,
-            Foreground = this.FindResource("ShareX.Brush.Accent.Start") as IBrush
-        };
+        Run accentRun = new() { Text = accentText };
+        // The menu background is a theme surface, so this uses the surface accent color and follows theme and
+        // accent changes while the menu is open.
+        accentRun.Bind(Run.ForegroundProperty, this.GetResourceObservable("ShareX.Brush.Accent.Text"));
         InlineCollection inlines = new();
         inlines.Add(header[..accentIndex]);
         inlines.Add(accentRun);

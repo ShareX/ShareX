@@ -80,7 +80,9 @@ public partial class NotificationWindow : Window
     public NotificationWindow()
     {
         InitializeComponent();
-        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        // The card, caption and action bar are dark whatever the app theme, so the theme dependent accent brushes
+        // (the card border) must resolve for a dark background.
+        RequestedThemeVariant = ThemeManager.ShareXDark;
 
         _durationTimer = new DispatcherTimer();
         _durationTimer.Tick += OnDurationElapsed;

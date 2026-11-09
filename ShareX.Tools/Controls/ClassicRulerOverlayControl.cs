@@ -31,6 +31,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Rendering;
 using ShareX.AvaloniaUI.Input;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using System.Globalization;
 using DrawingColor = System.Drawing.Color;
@@ -82,7 +83,6 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
     private const double PointerPanelOffset = 18;
     private const double PointerPanelSpacing = 10;
 
-    private static readonly IPen AntDashPen = new Pen(new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)), 1, new DashStyle([5, 5], 0));
     private static readonly IBrush MagnifierGridBrush = new SolidColorBrush(Color.FromArgb(75, 0, 0, 0));
     private static readonly Color HandleShadowColor = Color.FromArgb(100, 0, 0, 0);
 
@@ -101,6 +101,11 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
     private int _height = 1;
     private double _hudScale = 1;
     private IBrush? _dimBrush;
+    // Dashes and crosshair shadow use the accent's halo color (black or white), so a dark accent stays visible
+    // over dark screen content.
+    private Color _haloColor = Colors.Black;
+    private IPen _antDashPen = CreateAntDashPen(Colors.Black);
+    private IBrush _haloBrush = Brushes.Black;
     private Cursor _crosshairCursor = CursorAssetLoader.GetCrosshairCursor();
     private Cursor _openHandCursor = CursorAssetLoader.GetOpenHandCursor();
     private Cursor _closedHandCursor = CursorAssetLoader.GetClosedHandCursor();
@@ -481,6 +486,7 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
         }
 
         IBrush accent = FindThemeResource<IBrush>("ShareX.Brush.Accent.Start") ?? Brushes.DodgerBlue;
+        UpdateHalo(accent);
         DrawingRectangle? selection = _selection is DrawingRectangle current && current.Width > 0 && current.Height > 0
             ? current
             : null;
@@ -555,18 +561,32 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
         }
     }
 
-    /// <summary>Region capture selection outline: a 1 px accent line with black dashes on top.</summary>
-    private static void DrawAntRectangle(DrawingContext context, DrawingRectangle rectangle, IBrush accent)
+    private void UpdateHalo(IBrush accent)
+    {
+        Color halo = accent is ISolidColorBrush solid ? AccentPalette.GetHaloColor(solid.Color) : Colors.Black;
+        if (halo != _haloColor)
+        {
+            _haloColor = halo;
+            _antDashPen = CreateAntDashPen(halo);
+            _haloBrush = new SolidColorBrush(halo);
+        }
+    }
+
+    private static IPen CreateAntDashPen(Color color) =>
+        new Pen(new SolidColorBrush(Color.FromArgb(230, color.R, color.G, color.B)), 1, new DashStyle([5, 5], 0));
+
+    /// <summary>Region capture selection outline: a 1 px accent line with halo colored dashes on top.</summary>
+    private void DrawAntRectangle(DrawingContext context, DrawingRectangle rectangle, IBrush accent)
     {
         Rect line = new(rectangle.X + 0.5, rectangle.Y + 0.5, Math.Max(0, rectangle.Width - 1), Math.Max(0, rectangle.Height - 1));
         context.DrawRectangle(null, new Pen(accent, 1), line);
-        context.DrawLine(AntDashPen, line.TopLeft, line.TopRight);
-        context.DrawLine(AntDashPen, line.TopLeft, line.BottomLeft);
-        context.DrawLine(AntDashPen, line.TopRight, line.BottomRight);
-        context.DrawLine(AntDashPen, line.BottomLeft, line.BottomRight);
+        context.DrawLine(_antDashPen, line.TopLeft, line.TopRight);
+        context.DrawLine(_antDashPen, line.TopLeft, line.BottomLeft);
+        context.DrawLine(_antDashPen, line.TopRight, line.BottomRight);
+        context.DrawLine(_antDashPen, line.BottomLeft, line.BottomRight);
     }
 
-    private static void DrawAntLine(DrawingContext context, Point start, Point end, IBrush accent)
+    private void DrawAntLine(DrawingContext context, Point start, Point end, IBrush accent)
     {
         if (end.X <= start.X && end.Y <= start.Y)
         {
@@ -574,7 +594,7 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
         }
 
         context.DrawLine(new Pen(accent, 1), start, end);
-        context.DrawLine(AntDashPen, start, end);
+        context.DrawLine(_antDashPen, start, end);
     }
 
     /// <summary>Ruler ticks along every edge: short ones every 10 px and long ones every 100 px.</summary>
@@ -600,11 +620,11 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
         }
     }
 
-    private static void DrawCenterCrosshair(DrawingContext context, DrawingRectangle rectangle, IBrush accent)
+    private void DrawCenterCrosshair(DrawingContext context, DrawingRectangle rectangle, IBrush accent)
     {
         int centerX = rectangle.X + rectangle.Width / 2;
         int centerY = rectangle.Y + rectangle.Height / 2;
-        DrawPixelCross(context, Brushes.Black, centerX - 1, centerY - 1);
+        DrawPixelCross(context, _haloBrush, centerX - 1, centerY - 1);
         DrawPixelCross(context, accent, centerX, centerY);
     }
 
