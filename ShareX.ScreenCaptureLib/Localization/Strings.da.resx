@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Sæt på pause</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Ellipseformet område</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Frihåndsområde</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Træk for at flytte værktøjslinjen, dobbeltklik for at nulstille dens placering</value>
   </data>

@@ -102,6 +102,30 @@ public static class RegionCaptureTasks
         return result;
     }
 
+    /// <summary>
+    /// Returns a copy of <paramref name="source"/> that keeps only the pixels inside <paramref name="paths"/>, with
+    /// antialiased edges, and makes everything else transparent. Paths are in <paramref name="source"/> pixel coordinates.
+    /// </summary>
+    public static Bitmap ApplyRegionMask(Bitmap source, IReadOnlyList<SKPath> paths)
+    {
+        Bitmap result = new Bitmap(new SKImageInfo(source.Width, source.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        result.Erase(SKColors.Transparent);
+
+        using SKCanvas canvas = new SKCanvas(result);
+        // Src replaces instead of blending, so where regions overlap their edges are not drawn twice.
+        using SKPaint paint = new SKPaint { BlendMode = SKBlendMode.Src };
+
+        foreach (SKPath path in paths)
+        {
+            canvas.Save();
+            canvas.ClipPath(path, SKClipOperation.Intersect, true);
+            canvas.DrawBitmap(source, 0, 0, paint);
+            canvas.Restore();
+        }
+
+        return result;
+    }
+
     private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
     {
         options ??= new RegionCaptureOptions();

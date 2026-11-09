@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>หยุดชั่วคราว</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>พื้นที่วงรี</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>พื้นที่วาดอิสระ</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>ลากเพื่อย้ายแถบเครื่องมือ ดับเบิลคลิกเพื่อรีเซ็ตตำแหน่ง</value>
   </data>
