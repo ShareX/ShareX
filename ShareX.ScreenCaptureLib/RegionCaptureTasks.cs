@@ -139,13 +139,10 @@ public static class RegionCaptureTasks
             ? CaptureHelpers.GetActiveScreenBounds()
             : CaptureHelpers.GetScreenBounds();
 
-        SKBitmap frozenScreenshot;
-        using (Bitmap canvas = options.ActiveMonitorMode
+        // The capture is already a new bitmap owned by this request, so it is handed over without a copy.
+        SKBitmap frozenScreenshot = options.ActiveMonitorMode
             ? screenshot.CaptureActiveMonitor()
-            : screenshot.CaptureFullscreen())
-        {
-            frozenScreenshot = canvas.Copy();
-        }
+            : screenshot.CaptureFullscreen();
 
         AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
         {

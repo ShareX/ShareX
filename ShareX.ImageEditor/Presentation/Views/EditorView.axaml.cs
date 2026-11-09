@@ -497,8 +497,8 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             if (_workspaceDisposed) return;
 
-            // Check clipboard initially
-            _ = CheckClipboardStatus();
+            // Check clipboard initially. Reading it can decode a full screenshot, so wait until the first frames are drawn.
+            QueueClipboardStatusCheck();
 
             // Attach key handlers to the parent Window so shortcuts work
             // regardless of which child control has focus (buttons, dropdowns, etc.).
@@ -566,7 +566,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnWindowActivated(object? sender, EventArgs e)
         {
-            _ = CheckClipboardStatus();
+            QueueClipboardStatusCheck();
         }
 
         private void OnEffectBrowserOverlayPointerPressed(object? sender, global::Avalonia.Input.PointerPressedEventArgs e)

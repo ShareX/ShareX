@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Platform.Storage;
+using Avalonia.Threading;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -275,13 +276,26 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
+        private void QueueClipboardStatusCheck()
+        {
+            Dispatcher.UIThread.Post(() => _ = CheckClipboardStatus(), DispatcherPriority.ApplicationIdle);
+        }
+
         /// <summary>
         /// Checks if there is content on the system clipboard or internal clipboard
         /// and updates the ViewModel's CanPaste property.
         /// </summary>
         private async Task CheckClipboardStatus()
         {
-            if (DataContext is not MainViewModel vm) return;
+            if (_workspaceDisposed || DataContext is not MainViewModel vm) return;
+
+            // Embedded hosts (region capture) open right after ShareX copied the previous capture to the clipboard,
+            // and decoding it would delay the first mouse moves. Ctrl+V does not check CanPaste either.
+            if (_isWorkspaceHostMode)
+            {
+                vm.CanPaste = true;
+                return;
+            }
 
             bool canPaste = false;
 

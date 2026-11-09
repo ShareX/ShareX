@@ -55,13 +55,10 @@ namespace ShareX
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
 
-            SKBitmap frozenScreenshot;
-            using (Bitmap canvas = activeMonitorMode
+            // The capture is already a new bitmap owned by this request, so it is handed over without a copy.
+            SKBitmap frozenScreenshot = activeMonitorMode
                 ? screenshot.CaptureActiveMonitor()
-                : screenshot.CaptureFullscreen())
-            {
-                frozenScreenshot = canvas.Copy();
-            }
+                : screenshot.CaptureFullscreen();
 
             SKBitmap cursorBitmap = null;
             Point cursorPosition = Point.Empty;
@@ -71,8 +68,7 @@ namespace ShareX
                 CursorData cursorData = new CursorData();
                 if (cursorData.IsVisible)
                 {
-                    using Bitmap cursor = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
-                    cursorBitmap = cursor.Copy();
+                    cursorBitmap = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
                     cursorPosition = new Point(
                         cursorData.DrawPosition.X - screenBounds.X,
                         cursorData.DrawPosition.Y - screenBounds.Y);
