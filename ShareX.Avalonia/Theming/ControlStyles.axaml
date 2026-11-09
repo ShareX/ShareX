@@ -45,11 +45,22 @@
         <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,8,8,8</Thickness>
         <x:Double x:Key="ShareX.Density.Settings.NavSpacing">10</x:Double>
         <x:Double x:Key="ShareX.Density.Settings.WindowWidth">950</x:Double>
+
+        <!-- ThemeManager sets this to False when scroll bars are configured to always stay expanded. -->
+        <x:Boolean x:Key="ShareX.ScrollBar.AllowAutoHide">True</x:Boolean>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
     <Style Selector=":is(Window)">
         <Setter Property="Icon" Value="{DynamicResource ShareX.WindowIcon}"/>
+    </Style>
+    <!--
+        Scroll bars only widen while hovered unless auto-hide is off. ScrollViewer.AllowAutoHide is passed down from
+        the control that hosts a ScrollViewer in its template (ListBox, TextBox, ...) to the ScrollViewer and then to
+        its scroll bars, so it is set on every templated control rather than on ScrollBar, which the ScrollViewer overrides.
+    -->
+    <Style Selector=":is(TemplatedControl)">
+        <Setter Property="ScrollViewer.AllowAutoHide" Value="{DynamicResource ShareX.ScrollBar.AllowAutoHide}"/>
     </Style>
     <!-- Base typography -->
     <Style Selector="TextBlock">

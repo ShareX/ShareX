@@ -266,6 +266,9 @@
                                                   ItemsSource="{Binding ThemeOptions}"
                                                   SelectedItem="{Binding SelectedTheme, Mode=TwoWay}"/>
                                     </Grid>
+                                    <CheckBox Classes="setting"
+                                              Content="{x:Static res:Strings.ApplicationSettingsWindow_AlwaysExpandScrollBars}"
+                                              IsChecked="{Binding AlwaysExpandScrollBars, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
 

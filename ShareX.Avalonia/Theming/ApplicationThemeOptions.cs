@@ -41,6 +41,7 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     private bool _useSystemAccentColor = false;
     private IconPack _iconPack = IconPack.Modern;
     private bool _compactMode = false;
+    private bool _alwaysExpandScrollBars = false;
 
     public string Theme
     {
@@ -87,6 +88,13 @@ public sealed class ApplicationThemeOptions : INotifyPropertyChanged
     {
         get => _compactMode;
         set => SetField(ref _compactMode, value);
+    }
+
+    // Keeps scroll bars at full width with their arrow buttons instead of a thin line that widens on hover.
+    public bool AlwaysExpandScrollBars
+    {
+        get => _alwaysExpandScrollBars;
+        set => SetField(ref _alwaysExpandScrollBars, value);
     }
 
     // Spacing is a percentage between the compact layout (0) and the default layout (100); values above
