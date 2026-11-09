@@ -6,6 +6,34 @@
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
              x:Class="ShareX.ImageEditor.Presentation.Controls.ColorPickerPanel"
              x:Name="ColorPickerPanelRoot">
+    <UserControl.Styles>
+        <Style Selector="Button.recent-color">
+            <Setter Property="Width" Value="28"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style Selector="Border.recent-color-fill">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
+        <Style Selector="Button.recent-color:pointerover Border.recent-color-fill">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+        <Style Selector="Border.recent-color-empty">
+            <Setter Property="Width" Value="28"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Opacity" Value="0.6"/>
+        </Style>
+    </UserControl.Styles>
+
     <StackPanel>
         <cp:ColorView x:Name="ColorViewControl"
                       Color="{Binding SelectedColorValue, ElementName=ColorPickerPanelRoot, Mode=TwoWay}"
@@ -14,21 +42,27 @@
                       SelectedIndex="1"
                       HsvColor="{Binding SelectedHsvColor, ElementName=ColorPickerPanelRoot, Mode=TwoWay}"/>
 
-        <Button
-                Margin="4"
-                Height="40"
-                HorizontalAlignment="Center"
-                HorizontalContentAlignment="Left"
-                Click="OnScreenColorPickerClick">
-            <StackPanel Orientation="Horizontal" Spacing="8">
+        <StackPanel Margin="4"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Spacing="12">
+            <Button Width="40"
+                    Height="32"
+                    Padding="0"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    ToolTip.Tip="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
+                    AutomationProperties.Name="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
+                    Click="OnScreenColorPickerClick">
                 <controls:IconPresenter Icon="{x:Static theming:EditorIcons.ScreenColorPicker}"
-                                        FontSize="16"
-                                        VerticalAlignment="Center"/>
-                <TextBlock Text="{x:Static res:Strings.ColorPickerPanel_Pickcolorfromscreen}"
-                           FontWeight="Normal"
-                           FontSize="16"
-                           VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
+                                        FontSize="16"/>
+            </Button>
+
+            <!-- Recently used colors, filled in code -->
+            <StackPanel x:Name="RecentColorsPanel"
+                        Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Spacing="6"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>

@@ -24,12 +24,15 @@
 #endregion License Information (GPL v3)
 
 using Avalonia;
+using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Windows;
+using ShareX.ImageEditor.Integration;
+using DrawingColor = System.Drawing.Color;
 
 namespace ShareX.ImageEditor.Presentation.Controls
 {
@@ -47,7 +50,16 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public static readonly StyledProperty<Popup?> HostPopupProperty =
             AvaloniaProperty.Register<ColorPickerPanel, Popup?>(nameof(HostPopup));
 
+        private const int RecentColorCount = 5;
+
         private bool _isScreenColorPickerOpen;
+        private Color _colorWhenOpened;
+
+        static ColorPickerPanel()
+        {
+            HostPopupProperty.Changed.AddClassHandler<ColorPickerPanel>((panel, e) =>
+                panel.OnHostPopupChanged(e.OldValue as Popup, e.NewValue as Popup));
+        }
 
         public Color SelectedColorValue
         {
@@ -71,6 +83,92 @@ namespace ShareX.ImageEditor.Presentation.Controls
         {
             AvaloniaXamlLoader.Load(this);
             Loaded += OnLoaded;
+            RefreshRecentColors();
+        }
+
+        private void OnHostPopupChanged(Popup? oldPopup, Popup? newPopup)
+        {
+            if (oldPopup != null)
+            {
+                oldPopup.Opened -= OnHostPopupOpened;
+                oldPopup.Closed -= OnHostPopupClosed;
+            }
+
+            if (newPopup != null)
+            {
+                newPopup.Opened += OnHostPopupOpened;
+                newPopup.Closed += OnHostPopupClosed;
+            }
+        }
+
+        private void OnHostPopupOpened(object? sender, EventArgs e)
+        {
+            _colorWhenOpened = SelectedColorValue;
+            RefreshRecentColors();
+        }
+
+        // Only the color the popup is closed with counts as used, so dragging across the spectrum does not fill the list.
+        private void OnHostPopupClosed(object? sender, EventArgs e)
+        {
+            if (SelectedColorValue != _colorWhenOpened)
+            {
+                AddRecentColor(SelectedColorValue);
+            }
+        }
+
+        private static void AddRecentColor(Color color)
+        {
+            EditorRecentColors.Add(DrawingColor.FromArgb(color.A, color.R, color.G, color.B));
+        }
+
+        private void RefreshRecentColors()
+        {
+            var panel = this.FindControl<StackPanel>("RecentColorsPanel");
+            if (panel == null)
+            {
+                return;
+            }
+
+            panel.Children.Clear();
+            List<DrawingColor> recentColors = EditorRecentColors.Colors;
+
+            for (int i = 0; i < RecentColorCount; i++)
+            {
+                if (i < recentColors.Count)
+                {
+                    DrawingColor color = recentColors[i];
+                    panel.Children.Add(CreateRecentColorButton(Color.FromArgb(color.A, color.R, color.G, color.B)));
+                }
+                else
+                {
+                    panel.Children.Add(new Border { Classes = { "recent-color-empty" } });
+                }
+            }
+        }
+
+        private Button CreateRecentColorButton(Color color)
+        {
+            string hex = color.A < 255
+                ? $"#{color.A:X2}{color.R:X2}{color.G:X2}{color.B:X2}"
+                : $"#{color.R:X2}{color.G:X2}{color.B:X2}";
+
+            var button = new Button
+            {
+                Classes = { "transparent-button", "recent-color" },
+                Content = new Grid
+                {
+                    Children =
+                    {
+                        new Border { Classes = { "checkered-surface" }, CornerRadius = new CornerRadius(4), ClipToBounds = true },
+                        new Border { Classes = { "recent-color-fill" }, Background = new SolidColorBrush(color) }
+                    }
+                }
+            };
+
+            ToolTip.SetTip(button, hex);
+            AutomationProperties.SetName(button, hex);
+            button.Click += (_, _) => SelectedColorValue = color;
+            return button;
         }
 
         private void OnLoaded(object? sender, RoutedEventArgs e)
@@ -120,6 +218,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 if (result != null)
                 {
                     SelectedColorValue = result.Color;
+                    AddRecentColor(result.Color);
                 }
             }
             finally
