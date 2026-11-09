@@ -1107,6 +1107,12 @@ Chcete jej přesto spustit?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Vyměnit typ nástroje</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Změnit velikost lupy</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Přiblížit lupu</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Počítač</value>
   </data>

@@ -2695,6 +2695,12 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Mouse highlighter options...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mouse wheel:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>What scrolling does to the magnifier. Hold Ctrl while scrolling to do the other one.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Move down</value>
   </data>

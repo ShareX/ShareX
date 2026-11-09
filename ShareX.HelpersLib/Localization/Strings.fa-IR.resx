@@ -1107,6 +1107,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>تعویض نوع ابزار</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>تغییر اندازه ذره‌بین</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>بزرگ‌نمایی ذره‌بین</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>کامیپوتر</value>
   </data>

@@ -1107,6 +1107,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Tukar jenis alat</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ubah ukuran kaca pembesar</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Perbesar kaca pembesar</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Komputer</value>
   </data>

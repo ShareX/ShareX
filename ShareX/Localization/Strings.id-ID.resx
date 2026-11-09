@@ -2687,6 +2687,12 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opsi penyorot mouse...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Roda mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Apa yang dilakukan gulir pada kaca pembesar. Tahan Ctrl saat menggulir untuk melakukan tindakan lainnya.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Pindah ke bawah</value>
   </data>

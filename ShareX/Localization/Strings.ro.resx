@@ -2687,6 +2687,12 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opțiuni pentru evidențierea mouse-ului...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Rotița mouse-ului:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Ce face derularea cu lupa. Țineți apăsat Ctrl în timpul derulării pentru a efectua cealaltă acțiune.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mută în jos</value>
   </data>

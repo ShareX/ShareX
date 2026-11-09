@@ -221,6 +221,12 @@ namespace ShareX.ScreenCaptureLib
         CaptureLastRegion
     }
 
+    public enum RegionCaptureMagnifierScrollAction // Localized
+    {
+        Zoom,
+        Resize
+    }
+
     public enum ScreenRecordState
     {
         Waiting,

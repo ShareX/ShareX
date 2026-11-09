@@ -909,14 +909,90 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int delta = e.Delta.Y > 0 ? -2 : 2;
-        int count = NormalizeMagnifierPixelCount(_request.RegionCaptureOptions.MagnifierPixelCount + delta);
-
-        _request.RegionCaptureOptions.MagnifierPixelCount = count;
-        _request.RegionCaptureOptions.ShowMagnifier = true;
-        RecreateMagnifierBitmap();
-        UpdateHud(_lastPointerPoint);
         e.Handled = true;
+
+        if (e.Delta.Y == 0)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.RegionCaptureOptions;
+        bool scrollUp = e.Delta.Y > 0;
+
+        if (!options.ShowMagnifier)
+        {
+            // A hidden magnifier comes back on scroll up, at the zoom and size it had before it was hidden.
+            if (scrollUp)
+            {
+                options.ShowMagnifier = true;
+                RecreateMagnifierBitmap();
+                UpdateHud(_lastPointerPoint);
+            }
+
+            return;
+        }
+
+        RegionCaptureMagnifierScrollAction action = options.MagnifierScrollAction;
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            action = action == RegionCaptureMagnifierScrollAction.Zoom
+                ? RegionCaptureMagnifierScrollAction.Resize
+                : RegionCaptureMagnifierScrollAction.Zoom;
+        }
+
+        if (action == RegionCaptureMagnifierScrollAction.Resize)
+        {
+            ResizeMagnifier(scrollUp);
+        }
+        else
+        {
+            ZoomMagnifier(scrollUp);
+        }
+
+        UpdateHud(_lastPointerPoint);
+    }
+
+    // Keeps the magnifier the same size and changes how many pixels it shows.
+    private void ZoomMagnifier(bool zoomIn)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        options.MagnifierPixelCount = NormalizeMagnifierPixelCount(
+            NormalizeMagnifierPixelCount(options.MagnifierPixelCount) + (zoomIn ? -2 : 2));
+        RecreateMagnifierBitmap();
+    }
+
+    // Keeps each magnified pixel the same size and grows or shrinks the magnifier around more or fewer pixels.
+    // Shrinking past the smallest size hides the magnifier.
+    private void ResizeMagnifier(bool grow)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        int currentSize = Math.Clamp(options.MagnifierSize,
+            RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMaximum);
+        int currentCount = NormalizeMagnifierPixelCount(options.MagnifierPixelCount);
+        int count = currentCount + (grow ? 2 : -2);
+        int size = (int)Math.Round((double)currentSize / currentCount * count);
+
+        if (size < RegionCaptureOptions.MagnifierSizeMinimum && currentSize == RegionCaptureOptions.MagnifierSizeMinimum)
+        {
+            options.ShowMagnifier = false;
+            return;
+        }
+
+        size = Math.Clamp(size, RegionCaptureOptions.MagnifierSizeMinimum, RegionCaptureOptions.MagnifierSizeMaximum);
+        if (size == currentSize)
+        {
+            return;
+        }
+
+        // Past the pixel count limits the frame still resizes, and the pixels scale with it.
+        options.MagnifierSize = size;
+        options.MagnifierPixelCount = Math.Clamp(count,
+            RegionCaptureOptions.MagnifierPixelCountMinimum,
+            RegionCaptureOptions.MagnifierPixelCountMaximum);
+        ApplyMagnifierShape();
+        RecreateMagnifierBitmap();
+        _magnifierPanel.UpdateLayout();
     }
 
     private void UpdateToolbarPosition(PixelPoint desktopPoint)

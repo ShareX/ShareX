@@ -96,6 +96,7 @@ $projects = @(
             'PrivateBinFormat_'
             'ProxyMethod_'
             'RegionCaptureAction_'
+            'RegionCaptureMagnifierScrollAction_'
             'ScrollMethod_'
             'SupportedLanguage_'
             'TaskViewMode_'

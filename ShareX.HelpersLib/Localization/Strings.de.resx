@@ -1107,6 +1107,12 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Werkzeugtyp tauschen</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Lupengröße ändern</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Lupe zoomen</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>

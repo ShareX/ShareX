@@ -1107,6 +1107,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Zmiana typu narzędzia</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Zmiana rozmiaru lupy</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Powiększanie lupy</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Komputer</value>
   </data>
