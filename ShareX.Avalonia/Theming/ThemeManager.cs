@@ -153,6 +153,11 @@ namespace ShareX.AvaloniaUI.Theming
             ApplyAccentColor(application, accentColor, theme);
             IconCatalog.Pack = _options.IconPack;
             ApplySpacing(application);
+
+            if (application != null)
+            {
+                application.Resources["ShareX.ScrollBar.AllowAutoHide"] = !_options.AlwaysExpandScrollBars;
+            }
         }
 
         private static void ApplySpacing(Application? application)

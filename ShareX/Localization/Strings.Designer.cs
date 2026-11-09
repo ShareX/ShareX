@@ -5766,6 +5766,7 @@ namespace ShareX.Localization {
         public static string TaskListView_Status => ResourceManager.GetString("TaskListView_Status", resourceCulture);
         public static string TaskListView_URL => ResourceManager.GetString("TaskListView_URL", resourceCulture);
         public static string ApplicationSettingsWindow_CompactMode => ResourceManager.GetString("ApplicationSettingsWindow_CompactMode", resourceCulture);
+        public static string ApplicationSettingsWindow_AlwaysExpandScrollBars => ResourceManager.GetString("ApplicationSettingsWindow_AlwaysExpandScrollBars", resourceCulture);
         public static string MainMenuBuilder_ScreenshotDelayJustOnce => ResourceManager.GetString("MainMenuBuilder_ScreenshotDelayJustOnce", resourceCulture);
         public static string ApplicationSettingsWindow_ImagePreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLabel", resourceCulture);
         public static string ApplicationSettingsWindow_Spacing => ResourceManager.GetString("ApplicationSettingsWindow_Spacing", resourceCulture);

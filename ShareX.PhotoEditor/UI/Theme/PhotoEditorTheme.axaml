@@ -590,7 +590,7 @@
         </Style>
     </Style>
     <Style Selector="ScrollBar">
-        <Setter Property="AllowAutoHide" Value="True"/>
+        <Setter Property="AllowAutoHide" Value="{DynamicResource ShareX.ScrollBar.AllowAutoHide}"/>
     </Style>
     <Style Selector="ScrollBar:vertical">
         <Setter Property="Width" Value="10"/>

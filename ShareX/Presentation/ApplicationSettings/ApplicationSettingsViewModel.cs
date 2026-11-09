@@ -257,6 +257,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 
     public bool CanEditTheme => !UseSystemTheme;
 
+    public bool AlwaysExpandScrollBars
+    {
+        get => Settings.ThemeOptions.AlwaysExpandScrollBars;
+        set => SetSetting(Settings.ThemeOptions.AlwaysExpandScrollBars, value, x => Settings.ThemeOptions.AlwaysExpandScrollBars = x);
+    }
+
     public bool CompactMode
     {
         get => Settings.ThemeOptions.CompactMode;
