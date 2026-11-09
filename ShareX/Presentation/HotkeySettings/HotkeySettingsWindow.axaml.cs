@@ -46,6 +46,11 @@ public partial class HotkeySettingsWindow : Window
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         AddHandler(WindowOpenedEvent, (_, _) => FitMinWidthToToolbar());
+
+        // The capture field is a Button, which clicks itself on Enter and Space before bubbling handlers run.
+        // Tunnel handlers see the key first, so combinations with those keys can be captured.
+        AddHandler(KeyDownEvent, OnHotkeyKeyDown, RoutingStrategies.Tunnel);
+        AddHandler(KeyUpEvent, OnHotkeyKeyUp, RoutingStrategies.Tunnel);
     }
 
     // Translated toolbar labels can be wider than the default window, which cuts off the Reset button.
@@ -173,9 +178,15 @@ public partial class HotkeySettingsWindow : Window
         }
     }
 
+    private static HotkeySettingsItem? GetCapturingItem(KeyEventArgs e)
+    {
+        return e.Source is Button { DataContext: HotkeySettingsItem { IsCapturing: true } item } button
+            && button.Classes.Contains("hotkey-capture") ? item : null;
+    }
+
     private void OnHotkeyKeyDown(object? sender, KeyEventArgs e)
     {
-        if (sender is not Control { DataContext: HotkeySettingsItem item } || !item.IsCapturing)
+        if (GetCapturingItem(e) is not HotkeySettingsItem item)
         {
             return;
         }
@@ -211,9 +222,7 @@ public partial class HotkeySettingsWindow : Window
 
     private void OnHotkeyKeyUp(object? sender, KeyEventArgs e)
     {
-        if (sender is Control { DataContext: HotkeySettingsItem item }
-            && item.IsCapturing
-            && e.Key == Key.PrintScreen)
+        if (e.Key == Key.PrintScreen && GetCapturingItem(e) != null)
         {
             e.Handled = true;
             OnHotkeyKeyDown(sender, e);
