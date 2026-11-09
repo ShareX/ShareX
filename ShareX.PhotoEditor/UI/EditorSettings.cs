@@ -63,6 +63,9 @@ public sealed class EditorSettings
     public bool SnapToGrid { get; set; }
     public bool SnapToDocument { get; set; } = true;
     public bool LockGuides { get; set; }
+    public bool MoveAutoSelect { get; set; }
+    public bool MoveAutoSelectGroups { get; set; }
+    public bool MoveShowTransformControls { get; set; } = true;
     public string Foreground { get; set; } = "#000000";
     public string Background { get; set; } = "#FFFFFF";
     public ResampleMethod DefaultResample { get; set; } = ResampleMethod.Bicubic;
