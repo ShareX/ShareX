@@ -78,6 +78,14 @@ public sealed class MagnifierPixelGrid : Control
         Point origin = topLevel != null ? this.TranslatePoint(default, topLevel) ?? default : default;
         double originPhysicalX = origin.X * scale;
         double originPhysicalY = origin.Y * scale;
+
+        // The region capture window scales the magnifier for monitors with different scaling than the window,
+        // so include that scale to keep the grid lines on physical pixels.
+        double transformScale = topLevel != null ? this.TransformToVisual(topLevel)?.M11 ?? 1 : 1;
+        if (double.IsFinite(transformScale) && transformScale > 0)
+        {
+            scale *= transformScale;
+        }
         int left = SnapPhysical(originPhysicalX);
         int top = SnapPhysical(originPhysicalY);
         int right = SnapPhysical(originPhysicalX + Bounds.Width * scale);
