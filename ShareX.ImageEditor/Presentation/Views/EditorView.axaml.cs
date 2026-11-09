@@ -970,7 +970,9 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             _suppressNextHistoryDirtyMark = true;
-            _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            // Drawn straight from the capture's pixels, without a second full-size copy. Captures are opaque
+            // (WindowsImageInterop sets alpha to 255). RenderCore goes back to the copy if the image is replaced.
+            _canvasControl.ShowDirectly(bitmap);
             _editorCore.LoadImage(bitmap);
 
             if (DataContext is MainViewModel vm)
