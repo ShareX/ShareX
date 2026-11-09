@@ -105,6 +105,8 @@ public partial class RegionCaptureWindow : Window
     private int _imageWidth;
     private int _imageHeight;
     private bool _regionToolActive = true;
+    // Scrolling the magnifier away only hides it for this capture and never changes the saved setting.
+    private bool _magnifierHiddenByWheel;
     private bool _keyboardInputEnabled;
     private bool _isMovingSelectionDuringCreation;
     private bool _wasControlHeldDuringCreation;
@@ -386,7 +388,7 @@ public partial class RegionCaptureWindow : Window
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
         InitializeRegionResizeNodes();
 
-        _magnifierView.IsVisible = _request.RegionCaptureOptions.ShowMagnifier;
+        _magnifierView.IsVisible = IsMagnifierShown;
         ApplyMagnifierShape();
         _pointerInfoPanel.IsVisible = _request.RegionCaptureOptions.ShowInfo;
         _magnifierPanel.IsVisible = _magnifierView.IsVisible || _pointerInfoPanel.IsVisible;
@@ -600,7 +602,7 @@ public partial class RegionCaptureWindow : Window
         _annotationToolbar.ShowToolOptions = false;
         _editorWorkspace.CancelActiveInteractionOrSelection();
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
-        bool showMagnifier = _request?.RegionCaptureOptions.ShowMagnifier == true;
+        bool showMagnifier = IsMagnifierShown;
         bool showInfo = _request?.RegionCaptureOptions.ShowInfo == true;
         _magnifierView.IsVisible = showMagnifier;
         _pointerInfoPanel.IsVisible = showInfo;
@@ -902,6 +904,8 @@ public partial class RegionCaptureWindow : Window
         return true;
     }
 
+    private bool IsMagnifierShown => _request?.RegionCaptureOptions.ShowMagnifier == true && !_magnifierHiddenByWheel;
+
     private void OnRegionPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
         if (_request == null || !_regionToolActive)
@@ -909,14 +913,98 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int delta = e.Delta.Y > 0 ? -2 : 2;
-        int count = NormalizeMagnifierPixelCount(_request.RegionCaptureOptions.MagnifierPixelCount + delta);
-
-        _request.RegionCaptureOptions.MagnifierPixelCount = count;
-        _request.RegionCaptureOptions.ShowMagnifier = true;
-        RecreateMagnifierBitmap();
-        UpdateHud(_lastPointerPoint);
         e.Handled = true;
+
+        // Horizontal-only wheel events have no vertical direction.
+        int direction = Math.Sign(e.Delta.Y);
+        if (direction == 0)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.RegionCaptureOptions;
+        bool scrollUp = direction > 0;
+
+        // A magnifier turned off in task settings stays off.
+        if (!options.ShowMagnifier)
+        {
+            return;
+        }
+
+        if (_magnifierHiddenByWheel)
+        {
+            // A magnifier scrolled away comes back on scroll up, at the zoom and size it had before it was hidden.
+            if (scrollUp)
+            {
+                _magnifierHiddenByWheel = false;
+                RecreateMagnifierBitmap();
+                UpdateHud(_lastPointerPoint);
+            }
+
+            return;
+        }
+
+        RegionCaptureMagnifierScrollAction action = options.MagnifierScrollAction;
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            action = action == RegionCaptureMagnifierScrollAction.Zoom
+                ? RegionCaptureMagnifierScrollAction.Resize
+                : RegionCaptureMagnifierScrollAction.Zoom;
+        }
+
+        if (action == RegionCaptureMagnifierScrollAction.Resize)
+        {
+            ResizeMagnifier(scrollUp);
+        }
+        else
+        {
+            ZoomMagnifier(scrollUp);
+        }
+
+        UpdateHud(_lastPointerPoint);
+    }
+
+    // Keeps the magnifier the same size and changes how many pixels it shows.
+    private void ZoomMagnifier(bool zoomIn)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        options.MagnifierPixelCount = NormalizeMagnifierPixelCount(
+            NormalizeMagnifierPixelCount(options.MagnifierPixelCount) + (zoomIn ? -2 : 2));
+        RecreateMagnifierBitmap();
+    }
+
+    // Keeps each magnified pixel the same size and grows or shrinks the magnifier around more or fewer pixels.
+    // Shrinking past the smallest size hides the magnifier.
+    private void ResizeMagnifier(bool grow)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        int currentSize = Math.Clamp(options.MagnifierSize,
+            RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMaximum);
+        int currentCount = NormalizeMagnifierPixelCount(options.MagnifierPixelCount);
+        int count = currentCount + (grow ? 2 : -2);
+        int size = (int)Math.Round((double)currentSize / currentCount * count);
+
+        if (size < RegionCaptureOptions.MagnifierSizeMinimum && currentSize == RegionCaptureOptions.MagnifierSizeMinimum)
+        {
+            _magnifierHiddenByWheel = true;
+            return;
+        }
+
+        size = Math.Clamp(size, RegionCaptureOptions.MagnifierSizeMinimum, RegionCaptureOptions.MagnifierSizeMaximum);
+        if (size == currentSize)
+        {
+            return;
+        }
+
+        // Past the pixel count limits the frame still resizes, and the pixels scale with it.
+        options.MagnifierSize = size;
+        options.MagnifierPixelCount = Math.Clamp(count,
+            RegionCaptureOptions.MagnifierPixelCountMinimum,
+            RegionCaptureOptions.MagnifierPixelCountMaximum);
+        ApplyMagnifierShape();
+        RecreateMagnifierBitmap();
+        _magnifierPanel.UpdateLayout();
     }
 
     private void UpdateToolbarPosition(PixelPoint desktopPoint)
@@ -1461,7 +1549,7 @@ public partial class RegionCaptureWindow : Window
 
         _regionOverlay.CursorPosition = imagePoint;
 
-        bool showMagnifier = _request.RegionCaptureOptions.ShowMagnifier;
+        bool showMagnifier = IsMagnifierShown;
         bool showInfo = _request.RegionCaptureOptions.ShowInfo;
 
         if (showMagnifier || showInfo)

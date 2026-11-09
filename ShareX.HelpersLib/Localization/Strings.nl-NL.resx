@@ -1107,6 +1107,12 @@ Wilt u het toch uitvoeren?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Gereedschapstype wisselen</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Grootte vergrootglas wijzigen</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Vergrootglas zoomen</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>

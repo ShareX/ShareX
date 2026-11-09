@@ -2687,6 +2687,12 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opciones del resaltador del mouse...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Rueda del mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Lo que hace el desplazamiento con la lupa. Mantén presionada la tecla Ctrl mientras te desplazas para hacer la otra acción.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Bajar</value>
   </data>

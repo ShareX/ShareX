@@ -2687,6 +2687,12 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Indstillinger for musemarkering...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Musehjul:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Hvad rulning gør ved forstørrelsesglasset. Hold Ctrl nede, mens du ruller, for at gøre det modsatte.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flyt ned</value>
   </data>

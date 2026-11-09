@@ -5784,5 +5784,7 @@ namespace ShareX.Localization {
         public static string FileDeleteConfirmation_DontRemindAgain => ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
         public static string TaskSettingsWindow_ToolbarButtonSizePixels => ResourceManager.GetString("TaskSettingsWindow_ToolbarButtonSizePixels", resourceCulture);
         public static string TaskSettingsWindow_UseCustomToolbarButtonSize => ResourceManager.GetString("TaskSettingsWindow_UseCustomToolbarButtonSize", resourceCulture);
+        public static string TaskSettingsWindow_MouseWheel => ResourceManager.GetString("TaskSettingsWindow_MouseWheel", resourceCulture);
+        public static string TaskSettingsWindow_MouseWheelTooltip => ResourceManager.GetString("TaskSettingsWindow_MouseWheelTooltip", resourceCulture);
     }
 }

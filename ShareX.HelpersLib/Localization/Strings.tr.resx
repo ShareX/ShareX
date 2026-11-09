@@ -1107,6 +1107,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Araç tipini değiştir</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Büyüteci yeniden boyutlandır</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Büyüteci yakınlaştır</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Bilgisayar</value>
   </data>

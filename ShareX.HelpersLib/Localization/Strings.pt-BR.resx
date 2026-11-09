@@ -1107,6 +1107,12 @@ Mesmo assim, deseja executá-lo?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Trocar tipo de ferramenta</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionar a lupa</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Ampliar a lupa</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computador</value>
   </data>

@@ -2687,6 +2687,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>خيارات تمييز الماوس...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>عجلة الفأرة:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>ما يفعله التمرير بالمكبر. اضغط مع الاستمرار على Ctrl أثناء التمرير لتنفيذ الإجراء الآخر.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>نقل إلى أسفل</value>
   </data>

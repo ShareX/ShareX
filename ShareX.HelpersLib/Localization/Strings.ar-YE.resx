@@ -1107,6 +1107,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>تبديل نوع الأدلة</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>تغيير حجم المكبر</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>تكبير/تصغير المكبر</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>الجهاز</value>
   </data>

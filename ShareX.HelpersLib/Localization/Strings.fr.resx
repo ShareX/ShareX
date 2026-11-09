@@ -1107,6 +1107,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Changer le type d'outil</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionner la loupe</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoomer la loupe</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
   </data>

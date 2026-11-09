@@ -2687,6 +2687,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>滑鼠螢光筆選項...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>滑鼠滾輪：</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>捲動對放大鏡執行的動作。捲動時按住 Ctrl 可執行另一種動作。</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>下移</value>
   </data>
