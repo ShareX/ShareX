@@ -215,8 +215,6 @@
                                                             Classes="hotkey-capture"
                                                             HorizontalAlignment="Stretch"
                                                             Click="OnHotkeyClick"
-                                                            KeyDown="OnHotkeyKeyDown"
-                                                            KeyUp="OnHotkeyKeyUp"
                                                             LostFocus="OnHotkeyLostFocus">
                                                         <TextBlock Text="{Binding DisplayHotkey}"
                                                                    FontWeight="Normal"
