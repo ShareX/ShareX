@@ -69,7 +69,14 @@ public sealed partial class PhotoEditorWindow
         };
         _overlayLayer.Children.Add(_textEditor);
         PositionTextEditor();
-        _textEditor.AttachedToVisualTree += (_, _) => _textEditor?.Focus();
+        // The overlay is already in the visual tree, so the box is attached by now; focus it once its template is applied so typing starts without another click.
+        TextBox editor = _textEditor;
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (_textEditor != editor) return;
+            editor.Focus();
+            editor.CaretIndex = editor.Text?.Length ?? 0;
+        }, DispatcherPriority.Loaded);
         RefreshOptions();
         InvalidateCanvas();
         SetStatus(Strings.TextEditing_Hint);
