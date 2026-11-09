@@ -49,6 +49,8 @@ public sealed class LayersPanel : EditorPanel
     private Point _dragStart;
     private bool _dragging;
     private (Layer Target, int Position)? _drop;
+    private bool _overTrash;
+    private readonly Button _trash;
     private readonly Dictionary<Layer, RowParts> _rows = [];
     private static readonly IBrush ThumbFrame = new SolidColorBrush(Color.FromRgb(0x1A, 0x1A, 0x1A));
 
@@ -121,7 +123,8 @@ public sealed class LayersPanel : EditorPanel
         footer.Children.Add(adjust);
         footer.Children.Add(IconButton(PhotoEditorIcons.Folder, Strings.LayersPanel_NewGroupTip, () => EditorCommands.NewGroup(Editor)));
         footer.Children.Add(IconButton(PhotoEditorIcons.NewLayer, Strings.LayersPanel_NewLayerTip, () => EditorCommands.NewLayer(Editor)));
-        footer.Children.Add(IconButton(PhotoEditorIcons.Trash, Strings.LayersPanel_DeleteLayerTip, () => EditorCommands.DeleteLayers(Editor)));
+        _trash = IconButton(PhotoEditorIcons.Trash, Strings.LayersPanel_DeleteLayerTip, () => EditorCommands.DeleteLayers(Editor));
+        footer.Children.Add(_trash);
 
         Grid listHost = new();
         listHost.Children.Add(_list);
@@ -377,17 +380,31 @@ public sealed class LayersPanel : EditorPanel
             Point p = e.GetPosition(this);
             if (!_dragging && Math.Abs(p.Y - _dragStart.Y) < 6) return;
             _dragging = true;
-            UpdateDrop(e.GetPosition(_list));
+            // The row keeps pointer capture during the drag, so the delete button is hit-tested by hand.
+            SetOverTrash(new Rect(_trash.Bounds.Size).Contains(e.GetPosition(_trash)));
+            if (_overTrash)
+            {
+                _drop = null;
+                _dropIndicator.IsVisible = false;
+            }
+            else
+            {
+                UpdateDrop(e.GetPosition(_list));
+            }
         };
         row.PointerReleased += (_, e) =>
         {
+            Layer? dragged = _dragging ? _dragLayer : null;
+            bool toTrash = _overTrash;
+            (Layer Target, int Position)? drop = _drop;
+            EndDrag();
             e.Pointer.Capture(null);
-            if (_dragging && _dragLayer != null && _drop is (Layer target, int position)) EditorCommands.MoveLayer(Editor, _dragLayer, target, position);
-            _dragLayer = null;
-            _dragging = false;
-            _drop = null;
-            _dropIndicator.IsVisible = false;
+            if (dragged == null) return;
+            // The press already selected the dragged layer, so deleting the selection deletes what was dragged.
+            if (toTrash) EditorCommands.DeleteLayers(Editor);
+            else if (drop is (Layer target, int position)) EditorCommands.MoveLayer(Editor, dragged, target, position);
         };
+        row.PointerCaptureLost += (_, _) => EndDrag();
         return row;
     }
 
@@ -441,6 +458,22 @@ public sealed class LayersPanel : EditorPanel
         {
             return new Border();
         }
+    }
+
+    private void EndDrag()
+    {
+        _dragLayer = null;
+        _dragging = false;
+        _drop = null;
+        _dropIndicator.IsVisible = false;
+        SetOverTrash(false);
+    }
+
+    /// <summary>Highlights the delete button while a dragged layer is over it.</summary>
+    private void SetOverTrash(bool over)
+    {
+        _overTrash = over;
+        _trash.Classes.Set("checked", over);
     }
 
     private void UpdateDrop(Point position)
