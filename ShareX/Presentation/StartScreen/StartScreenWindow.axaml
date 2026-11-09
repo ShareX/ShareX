@@ -174,7 +174,13 @@
                                                                             FontSize="16"
                                                                             HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"/>
-                                                    <Image Source="{Binding Flag}" Stretch="Uniform"/>
+                                                    <Border Width="16" Height="12" CornerRadius="2" ClipToBounds="True"
+                                                            IsVisible="{Binding Flag, Converter={x:Static ObjectConverters.IsNotNull}}">
+                                                        <Panel>
+                                                            <Image Source="{Binding Flag}" Stretch="Fill"/>
+                                                            <Border BorderBrush="#26000000" BorderThickness="1" CornerRadius="2"/>
+                                                        </Panel>
+                                                    </Border>
                                                 </Grid>
                                                 <TextBlock Text="{Binding DisplayName}" VerticalAlignment="Center"/>
                                             </StackPanel>

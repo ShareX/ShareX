@@ -25,7 +25,7 @@
 
 #nullable enable
 
-using Avalonia.Platform;
+using Avalonia.Media;
 using ShareX.HelpersLib;
 using ShareX.Icons;
 using ShareX.Localization;
@@ -33,15 +33,13 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX;
 
-public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
+public sealed class StartScreenViewModel : INotifyPropertyChanged
 {
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
@@ -246,21 +244,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
             .Select(x => new StartScreenLanguageOption(
                 x,
                 x.GetLocalizedDescription(),
-                LoadLanguageFlag(x),
+                LanguageFlags.Get(x),
                 x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
-
-    private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)
-    {
-        if (language == SupportedLanguage.Automatic)
-        {
-            return null;
-        }
-
-        string countryCode = LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
-        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/Flags/{countryCode}.png"));
-        return new AvaloniaBitmap(stream);
-    }
 
     private static string NormalizeTheme(string? theme) =>
         string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase) ? "Light" : "Dark";
@@ -283,23 +269,10 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         OnPropertyChanged(string.Empty);
     }
 
-    private void DisposeLanguageOptions()
-    {
-        foreach (StartScreenLanguageOption language in LanguageOptions)
-        {
-            language.Flag?.Dispose();
-        }
-    }
-
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public event PropertyChangedEventHandler? PropertyChanged;
-
-    public void Dispose()
-    {
-        DisposeLanguageOptions();
-    }
 }
 
 public sealed class StartScreenLanguageOption : INotifyPropertyChanged
@@ -308,10 +281,10 @@ public sealed class StartScreenLanguageOption : INotifyPropertyChanged
 
     public SupportedLanguage Value { get; }
     public string DisplayName => _displayName;
-    public AvaloniaBitmap? Flag { get; }
+    public IImage? Flag { get; }
     public string? IconGlyph { get; }
 
-    public StartScreenLanguageOption(SupportedLanguage value, string displayName, AvaloniaBitmap? flag, string? iconGlyph)
+    public StartScreenLanguageOption(SupportedLanguage value, string displayName, IImage? flag, string? iconGlyph)
     {
         Value = value;
         _displayName = displayName;

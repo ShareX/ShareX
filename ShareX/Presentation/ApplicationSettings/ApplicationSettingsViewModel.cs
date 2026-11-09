@@ -25,7 +25,6 @@
 
 #nullable enable
 
-using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
@@ -37,11 +36,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
@@ -1199,22 +1196,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             .Select(x => new LanguageOption(
                 x,
                 x.GetLocalizedDescription(),
-                LoadLanguageFlag(x),
+                LanguageFlags.Get(x),
                 x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
-
-    private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)
-    {
-        if (language == SupportedLanguage.Automatic)
-        {
-            return null;
-        }
-
-        string resourceName = LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
-
-        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/Flags/{resourceName}.png"));
-        return new AvaloniaBitmap(stream);
-    }
 
     private static LanguageOption? Find(IReadOnlyList<LanguageOption> options, SupportedLanguage value) =>
         options.FirstOrDefault(x => x.Value == value);
@@ -1269,10 +1253,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
 
         _disposed = true;
-        foreach (LanguageOption language in LanguageOptions)
-        {
-            language.Flag?.Dispose();
-        }
 
         if (!ApplicationLifecycle.IsClosing)
         {

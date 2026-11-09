@@ -34,7 +34,7 @@
     <PackageReference Include="ZXing.Net" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Resources\Flags\*.png" />
+    <AvaloniaResource Include="Resources\Flags\*.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">
