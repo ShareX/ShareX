@@ -132,6 +132,10 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
         byte r = highlightColor.Red;
         byte g = highlightColor.Green;
         byte b = highlightColor.Blue;
+        // The color's alpha sets how strongly the highlight is applied.
+        int alpha = highlightColor.Alpha;
+
+        if (alpha == 0) return;
 
         var pixels = (byte*)bitmap.GetPixels();
         int count = bitmap.Width * bitmap.Height;
@@ -144,9 +148,9 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
                 for (int i = 0; i < count; i++)
                 {
                     int offset = i * 4;
-                    pixels[offset] = Math.Min(pixels[offset], b);
-                    pixels[offset + 1] = Math.Min(pixels[offset + 1], g);
-                    pixels[offset + 2] = Math.Min(pixels[offset + 2], r);
+                    pixels[offset] = Highlight(pixels[offset], b, alpha);
+                    pixels[offset + 1] = Highlight(pixels[offset + 1], g, alpha);
+                    pixels[offset + 2] = Highlight(pixels[offset + 2], r, alpha);
                 }
             }
             else
@@ -154,9 +158,9 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
                 for (int i = 0; i < count; i++)
                 {
                     int offset = i * 4;
-                    pixels[offset] = Math.Min(pixels[offset], r);
-                    pixels[offset + 1] = Math.Min(pixels[offset + 1], g);
-                    pixels[offset + 2] = Math.Min(pixels[offset + 2], b);
+                    pixels[offset] = Highlight(pixels[offset], r, alpha);
+                    pixels[offset + 1] = Highlight(pixels[offset + 1], g, alpha);
+                    pixels[offset + 2] = Highlight(pixels[offset + 2], b, alpha);
                 }
             }
 
@@ -169,12 +173,21 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
             {
                 var color = bitmap.GetPixel(x, y);
                 var newColor = new SKColor(
-                    Math.Min(color.Red, r),
-                    Math.Min(color.Green, g),
-                    Math.Min(color.Blue, b),
+                    Highlight(color.Red, r, alpha),
+                    Highlight(color.Green, g, alpha),
+                    Highlight(color.Blue, b, alpha),
                     color.Alpha);
                 bitmap.SetPixel(x, y, newColor);
             }
         }
+    }
+
+    private static byte Highlight(byte value, byte limit, int alpha)
+    {
+        byte highlighted = Math.Min(value, limit);
+
+        if (alpha >= 255) return highlighted;
+
+        return (byte)(value - (((value - highlighted) * alpha) + 127) / 255);
     }
 }
