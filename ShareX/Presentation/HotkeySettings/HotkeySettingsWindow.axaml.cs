@@ -25,12 +25,13 @@
 
 #nullable enable
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -42,8 +43,19 @@ public partial class HotkeySettingsWindow : Window
 
     public HotkeySettingsWindow()
     {
-        AvaloniaXamlLoader.Load(this);
+        InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        AddHandler(WindowOpenedEvent, (_, _) => FitMinWidthToToolbar());
+    }
+
+    // Translated toolbar labels can be wider than the default window, which cuts off the Reset button.
+    // WindowOpenedEvent is raised before the window is sized and centered, so raising MinWidth here opens it wide enough.
+    private void FitMinWidthToToolbar()
+    {
+        ApplyStyling();
+        Toolbar.Measure(Size.Infinity);
+        double requiredWidth = Math.Ceiling(Toolbar.DesiredSize.Width + ContentGrid.Margin.Left + ContentGrid.Margin.Right);
+        MinWidth = Math.Max(MinWidth, requiredWidth);
     }
 
     public HotkeySettingsWindow(IHotkeySettingsService service) : this()
