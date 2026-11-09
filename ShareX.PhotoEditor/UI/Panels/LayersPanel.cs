@@ -528,6 +528,11 @@ public sealed class LayersPanel : EditorPanel
             item.Click += (_, _) => Editor.Execute(commandId);
             menu.Items.Add(item);
         }
+        if (Doc?.ActiveLayer is RasterLayer { IsBackground: true })
+        {
+            Add(Strings.EditorCommands_LayerFromBackground, "layer.fromBackground");
+            menu.Items.Add(new Separator());
+        }
         Add(Strings.LayersPanel_LayerPropertiesEllipsis, "layer.rename");
         Add(Strings.LayersPanel_BlendingOptionsEllipsis, "layer.style");
         menu.Items.Add(new Separator());
