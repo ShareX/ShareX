@@ -222,7 +222,7 @@ public sealed class RegionSelectionOverlay : Control
 
         if (change.Property == AccentBrushProperty)
         {
-            Color halo = AccentBrush is ISolidColorBrush solid ? AccentPalette.GetHaloColor(solid.Color) : Colors.Black;
+            Color halo = AccentPalette.GetHaloColor(AccentBrush);
             _antDashPen = CreateAntDashPen(halo);
             _haloBrush = new SolidColorBrush(halo);
         }

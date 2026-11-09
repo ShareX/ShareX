@@ -563,7 +563,7 @@ public sealed class ClassicRulerOverlayControl : Control, ICustomHitTest
 
     private void UpdateHalo(IBrush accent)
     {
-        Color halo = accent is ISolidColorBrush solid ? AccentPalette.GetHaloColor(solid.Color) : Colors.Black;
+        Color halo = AccentPalette.GetHaloColor(accent);
         if (halo != _haloColor)
         {
             _haloColor = halo;

@@ -121,6 +121,23 @@ namespace ShareX.AvaloniaUI.Theming
             return GetContrastRatio(color, Colors.Black) >= GetContrastRatio(color, Colors.White) ? Colors.Black : Colors.White;
         }
 
+        /// <summary>The halo color for a brush; black when the brush has no color to contrast with.</summary>
+        public static Color GetHaloColor(IBrush? brush)
+        {
+            return GetBrushColor(brush) is Color color ? GetHaloColor(color) : Colors.Black;
+        }
+
+        /// <summary>The color a brush mostly paints with: its solid color, or the first stop of a gradient.</summary>
+        public static Color? GetBrushColor(IBrush? brush)
+        {
+            return brush switch
+            {
+                ISolidColorBrush solid => solid.Color,
+                IGradientBrush { GradientStops.Count: > 0 } gradient => gradient.GradientStops[0].Color,
+                _ => null
+            };
+        }
+
         /// <summary>White or near-black text, whichever is more readable on the color.</summary>
         public static Color GetTextColorOn(Color background)
         {

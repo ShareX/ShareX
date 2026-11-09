@@ -738,9 +738,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            Color accentColor = FindCanvasResizeBrush("ShareX.Brush.Accent.Start") is ISolidColorBrush accentBrush
-                ? accentBrush.Color
-                : Color.FromRgb(0, 120, 215);
+            Color accentColor = AccentPalette.GetBrushColor(FindCanvasResizeBrush("ShareX.Brush.Accent.Start")) ?? Color.FromRgb(0, 120, 215);
             var accent = new SolidColorBrush(accentColor);
             var halo = new SolidColorBrush(AccentPalette.GetHaloColor(accentColor));
 

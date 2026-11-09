@@ -292,10 +292,7 @@ public sealed class OverlayContext
     // Overlays sit on the user's image, so each stroke gets a black or white halo that contrasts with the stroke
     // itself. Light strokes keep the dark shadow; dark ones (a black or navy accent) get a light one. The color is
     // read at draw time, so it follows accent changes.
-    private static Color GetHaloColor(IBrush? brush) =>
-        brush is ISolidColorBrush solid ? AccentPalette.GetHaloColor(solid.Color) : Colors.Black;
-
-    private static IPen GetHaloPen(IBrush? brush) => GetHaloColor(brush) == Colors.White ? LightHaloPen : DarkPen;
+    private static IPen GetHaloPen(IBrush? brush) => AccentPalette.GetHaloColor(brush) == Colors.White ? LightHaloPen : DarkPen;
 
     public OverlayContext(DrawingContext drawing, DocumentView view)
     {
@@ -363,7 +360,7 @@ public sealed class OverlayContext
     {
         Geometry geometry = ToGeometry(path);
         pen ??= AccentPen;
-        Color halo = GetHaloColor(pen.Brush);
+        Color halo = AccentPalette.GetHaloColor(pen.Brush);
         if (fill != null) Drawing.DrawGeometry(fill, null, geometry);
         Drawing.DrawGeometry(null, new Pen(new SolidColorBrush(Color.FromArgb(160, halo.R, halo.G, halo.B)), 2), geometry);
         Drawing.DrawGeometry(null, pen, geometry);
