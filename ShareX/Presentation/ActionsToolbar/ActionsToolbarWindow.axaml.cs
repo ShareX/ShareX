@@ -95,9 +95,10 @@ public partial class ActionsToolbarWindow : Window
             {
                 Icon = TaskHelpers.FindMenuIcon(action),
                 FontSize = 17,
-                Foreground = this.FindResource("ShareX.Brush.Accent") as Avalonia.Media.IBrush,
                 IsHitTestVisible = false
             };
+            // Icons sit on the toolbar surface, so they use the surface accent color and follow theme and accent changes.
+            icon.Bind(IconPresenter.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Text"));
 
             Button button = new()
             {

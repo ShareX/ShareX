@@ -2687,6 +2687,12 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>گزینه های هایلایت ماوس...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>چرخ ماوس:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>کاری که پیمایش با ذره‌بین انجام می‌دهد. هنگام پیمایش Ctrl را نگه دارید تا کار دیگر انجام شود.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>انتقال به پایین</value>
   </data>

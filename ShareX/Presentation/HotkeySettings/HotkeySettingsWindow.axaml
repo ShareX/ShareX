@@ -153,6 +153,7 @@
 
                         <Grid Grid.Row="1">
                             <ListBox ItemsSource="{Binding Items}"
+                                     Classes="neutral-selection"
                                      SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
                                      Background="Transparent"
                                      BorderThickness="0"
@@ -179,7 +180,7 @@
                                                             <controls:IconPresenter Icon="{Binding SelectedTask.Icon}"
                                                                                     FontSize="16"
                                                                                     Width="18"
-                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                                             <TextBlock Grid.Column="1"
                                                                        Text="{Binding SelectedTask.Name}"
                                                                        FontWeight="Normal"
@@ -188,7 +189,7 @@
                                                                                     IsVisible="{Binding IsCustomized}"
                                                                                     Icon="{x:Static icons:AppIcons.Edit}"
                                                                                     FontSize="14"
-                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                                                     VerticalAlignment="Center"
                                                                                     ToolTip.Tip="{x:Static res:Strings.HotkeySettingsWindow_ThisTaskHasCustomSettings}"/>
                                                             <controls:IconPresenter Grid.Column="3"
@@ -214,8 +215,6 @@
                                                             Classes="hotkey-capture"
                                                             HorizontalAlignment="Stretch"
                                                             Click="OnHotkeyClick"
-                                                            KeyDown="OnHotkeyKeyDown"
-                                                            KeyUp="OnHotkeyKeyUp"
                                                             LostFocus="OnHotkeyLostFocus">
                                                         <TextBlock Text="{Binding DisplayHotkey}"
                                                                    FontWeight="Normal"
@@ -279,7 +278,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"
                                                     FontSize="20"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                             <TextBlock Grid.Column="1"
                                        Classes="section-heading"
                                        Text="{x:Static res:Strings.HotkeySettingsWindow_ResetHotkeysQuestion}"/>

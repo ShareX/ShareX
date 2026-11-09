@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Pauza</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Region eliptyczny</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Region odręczny</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Przeciągnij, aby przenieść pasek narzędzi; kliknij dwukrotnie, aby przywrócić jego położenie</value>
   </data>

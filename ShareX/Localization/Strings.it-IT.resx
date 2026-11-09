@@ -2687,6 +2687,12 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opzioni dell'evidenziatore del mouse...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Rotellina mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Cosa fa lo scorrimento alla lente. Tieni premuto Ctrl durante lo scorrimento per eseguire l'altra azione.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Sposta giù</value>
   </data>

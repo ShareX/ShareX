@@ -159,6 +159,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         KeyDown += OnWindowKeyDown;
 
         Dispatcher.UIThread.Post(WarmUpTrayMenu, DispatcherPriority.Background);
+        DispatcherTimer.RunOnce(() => Dispatcher.UIThread.Post(WarmUpRegionCapture, DispatcherPriority.ApplicationIdle),
+            TimeSpan.FromSeconds(2));
     }
 
     public void ShowAndActivate()
@@ -270,6 +272,32 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             CloseTrayMenuAnchor();
             throw;
         }
+    }
+
+    // The first region capture after startup used to open several hundred ms slower than later ones because of
+    // JIT, XAML loading, templates, icons and font enumeration. Pay that once while the app is idle instead.
+    private void WarmUpRegionCapture()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        long start = System.Diagnostics.Stopwatch.GetTimestamp();
+
+        try
+        {
+            CaptureHelpers.GetScreenBounds();
+            WindowsImageInterop.Capture(new System.Drawing.Rectangle(0, 0, 1, 1))?.Dispose();
+        }
+        catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Screen capture warm-up failed.");
+        }
+
+        ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureIntegration.WarmUp();
+
+        DebugHelper.WriteLine($"Region capture warm-up: {System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds:0} ms");
     }
 
     private void WarmUpTrayMenu()
@@ -1155,11 +1183,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return header;
         }
 
-        Run accentRun = new()
-        {
-            Text = accentText,
-            Foreground = this.FindResource("ShareX.Brush.Accent.Start") as IBrush
-        };
+        Run accentRun = new() { Text = accentText };
+        // The menu background is a theme surface, so this uses the surface accent color and follows theme and
+        // accent changes while the menu is open.
+        accentRun.Bind(Run.ForegroundProperty, this.GetResourceObservable("ShareX.Brush.Accent.Text"));
         InlineCollection inlines = new();
         inlines.Add(header[..accentIndex]);
         inlines.Add(accentRun);

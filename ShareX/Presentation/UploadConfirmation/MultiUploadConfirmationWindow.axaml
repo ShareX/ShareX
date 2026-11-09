@@ -28,10 +28,6 @@
             <Setter Property="MinHeight" Value="32"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -47,7 +43,7 @@
                     <controls:IconPresenter Grid.RowSpan="2"
                                             Icon="{x:Static icons:AppIcons.Files}"
                                             FontSize="32"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Top"/>
                     <TextBlock x:Name="MessageText"

@@ -476,11 +476,42 @@ public sealed class MoveTool : ToolBase
 
     public override ToolCursor Cursor => ToolCursor.Move;
 
-    public bool AutoSelect { get; set; }
+    public bool AutoSelect
+    {
+        get => Host.Settings.MoveAutoSelect;
+        set => Host.Settings.MoveAutoSelect = value;
+    }
 
-    public bool AutoSelectGroups { get; set; }
+    public bool AutoSelectGroups
+    {
+        get => Host.Settings.MoveAutoSelectGroups;
+        set => Host.Settings.MoveAutoSelectGroups = value;
+    }
 
-    public bool ShowTransformControls { get; set; }
+    public bool ShowTransformControls
+    {
+        get => Host.Settings.MoveShowTransformControls;
+        set => Host.Settings.MoveShowTransformControls = value;
+    }
+
+    /// <summary>Bounds the transform controls are drawn around, or empty when they are hidden.</summary>
+    private SKRect ControlBounds
+    {
+        get
+        {
+            Layer? layer = Doc?.ActiveLayer;
+            // Only layers the free transform accepts get controls, so a locked background shows none.
+            if (!ShowTransformControls || layer == null || !layer.CanMove || layer is AdjustmentLayer or FillLayer) return SKRect.Empty;
+            return layer is RasterLayer r ? r.GetOpaqueBounds() : layer.GetContentBounds();
+        }
+    }
+
+    /// <summary>The four corners followed by the four edge midpoints, like the free transform handles.</summary>
+    private static SKPoint[] ControlHandles(SKRect b) =>
+    [
+        new(b.Left, b.Top), new(b.Right, b.Top), new(b.Right, b.Bottom), new(b.Left, b.Bottom),
+        new(b.MidX, b.Top), new(b.Right, b.MidY), new(b.MidX, b.Bottom), new(b.Left, b.MidY)
+    ];
 
     public override void PointerDown(ToolInput input)
     {
@@ -494,19 +525,14 @@ public sealed class MoveTool : ToolBase
             return;
         }
 
-        if (ShowTransformControls && doc.ActiveLayer is { CanMove: true })
+        SKRect bounds = ControlBounds;
+        if (!bounds.IsEmpty && Host.View != null && ControlHandles(bounds).Any(c => SKPoint.Distance(c, input.Doc) * Host.View.Zoom < 8))
         {
             TransformTool transform = Host.Tools.Get<TransformTool>();
-            SKRect bounds = doc.ActiveLayer.GetContentBounds();
-            if (!bounds.IsEmpty && Host.View != null)
+            if (transform.Begin(TransformMode.Free))
             {
-                bool nearEdge = new[] { new SKPoint(bounds.Left, bounds.Top), new SKPoint(bounds.Right, bounds.Top), new SKPoint(bounds.Right, bounds.Bottom), new SKPoint(bounds.Left, bounds.Bottom) }
-                    .Any(c => SKPoint.Distance(c, input.Doc) * Host.View.Zoom < 8);
-                if (nearEdge && transform.Begin(TransformMode.Free))
-                {
-                    transform.PointerDown(input);
-                    return;
-                }
+                transform.PointerDown(input);
+                return;
             }
         }
 
@@ -727,12 +753,10 @@ public sealed class MoveTool : ToolBase
 
     public override void DrawOverlay(OverlayContext context)
     {
-        if (!ShowTransformControls || Doc?.ActiveLayer == null) return;
-        SKRect bounds = Doc.ActiveLayer is RasterLayer r ? (SKRect)r.GetOpaqueBounds() : Doc.ActiveLayer.GetContentBounds();
+        SKRect bounds = ControlBounds;
         if (bounds.IsEmpty) return;
         context.Rect(bounds, OverlayContext.AccentPen);
-        foreach (SKPoint c in new[] { new SKPoint(bounds.Left, bounds.Top), new SKPoint(bounds.Right, bounds.Top), new SKPoint(bounds.Right, bounds.Bottom), new SKPoint(bounds.Left, bounds.Bottom) })
-            context.Handle(c);
+        foreach (SKPoint c in ControlHandles(bounds)) context.Handle(c);
     }
 
     public override void BuildOptions(OptionsBuilder options)

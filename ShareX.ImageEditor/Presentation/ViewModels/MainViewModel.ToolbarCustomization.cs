@@ -36,6 +36,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private readonly ObservableCollection<ToolbarCustomizationItemViewModel> _toolbarItems = new();
         private readonly ObservableCollection<ToolbarCustomizationItemViewModel> _visibleToolbarItems = new();
         private bool _hostToolbarToolsActive = true;
+        private string? _activeHostToolbarItemId;
 
         // One editor in ten shows sunglasses for the emoji tool.
         private readonly string _emojiToolIcon = Random.Shared.Next(10) == 0 ? EditorIcons.ToolEmojiSunglasses : EditorIcons.ToolEmoji;
@@ -45,6 +46,8 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public event EventHandler? FileMenuRequested;
         /// <summary>Raised when the canvas size tool button (or its hotkey) is used.</summary>
         public event EventHandler? CanvasSizeModeRequested;
+        /// <summary>Raised with the item's id when a host toolbar item (or its hotkey) is used.</summary>
+        public event EventHandler<string>? HostToolbarItemRequested;
 
         private bool _isCanvasSizeModeActive;
 
@@ -125,11 +128,29 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             RefreshToolbarItemActiveStates();
         }
 
+        /// <summary>Shows the host toolbar item with this id as the active one, or none when null.</summary>
+        public void SetActiveHostToolbarItem(string? id)
+        {
+            if (string.Equals(_activeHostToolbarItemId, id, StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            _activeHostToolbarItemId = id;
+            RefreshToolbarItemActiveStates();
+        }
+
         internal void ExecuteToolbarItem(ToolbarCustomizationItemViewModel item)
         {
             if (item.Tool.HasValue)
             {
                 SelectToolCommand.Execute(item.Tool.Value);
+                return;
+            }
+
+            if (item.IsHostItem)
+            {
+                HostToolbarItemRequested?.Invoke(this, item.Id);
                 return;
             }
 
@@ -184,6 +205,8 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 item.IsActive = item.Tool.HasValue
                     ? _hostToolbarToolsActive && item.Tool.Value == ActiveTool
+                    : item.IsHostItem
+                    ? string.Equals(item.Id, _activeHostToolbarItemId, StringComparison.OrdinalIgnoreCase)
                     : item.Id switch
                     {
                         ToolbarCustomizationItemViewModel.BackgroundItemId => IsSettingsPanelOpen,

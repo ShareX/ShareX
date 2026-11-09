@@ -87,8 +87,12 @@
         <Style Selector="ListBox.section-navigation > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.section-navigation > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
     </Window.Styles>
@@ -256,7 +260,7 @@
                                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
                                             <controls:IconPresenter Grid.Column="0"
                                                                     Icon="{x:Static icons:AppIcons.Info}"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                                     VerticalAlignment="Center"/>
                                             <TextBlock x:Name="DeviceStatusTextBlock"
                                                        Grid.Column="1"
@@ -447,7 +451,7 @@
                                     <Border x:Name="NoVideoSettingsPanel" Classes="info-card">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
                                                        Text="{x:Static localization:Strings.FFmpegOptionsWindow_No_additional_settings}"/>

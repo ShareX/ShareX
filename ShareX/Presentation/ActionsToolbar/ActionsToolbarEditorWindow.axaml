@@ -105,7 +105,7 @@
 
             <ListBox x:Name="ActionList"
                      Grid.Row="1"
-                     Classes="action-list"
+                     Classes="action-list neutral-selection"
                      SelectionChanged="OnSelectionChanged">
                 <ListBox.ItemTemplate>
                     <DataTemplate x:DataType="local:ActionsToolbarItem">
@@ -116,7 +116,7 @@
                                       ColumnSpacing="7">
                                     <controls:IconPresenter Icon="{Binding Icon}"
                                                             FontSize="16"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="1"
                                                Text="{Binding Title}"

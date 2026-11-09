@@ -46,7 +46,7 @@
                                         <DataTemplate x:CompileBindings="False">
                                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
                                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"
-                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                        Classes="list-icon"
                                                                         VerticalAlignment="Center"/>
                                                 <TextBlock Grid.Column="1" Text="{Binding}"
                                                            TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>

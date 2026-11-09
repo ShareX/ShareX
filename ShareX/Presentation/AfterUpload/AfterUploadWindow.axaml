@@ -42,8 +42,12 @@
         <Style Selector="ListBox.format-list > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.format-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
         <Style Selector="Button.compact">
@@ -70,7 +74,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -78,7 +82,7 @@
                     <TextBlock Text="{x:Static res:Strings.AfterUploadWindow_UploadComplete}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock Text="{Binding ResultText}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextTrimming="CharacterEllipsis"/>
@@ -100,7 +104,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}"
                                                     FontSize="16"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.AfterUploadWindow_ClipboardFormats}"
@@ -123,7 +127,7 @@
                                     <StackPanel Spacing="1" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding Group}"
                                                    FontSize="11"
-                                                   Opacity="0.72"/>
+                                                   Opacity="0.8"/>
                                         <TextBlock Text="{Binding Description}"
                                                    TextTrimming="CharacterEllipsis"/>
                                     </StackPanel>

@@ -497,8 +497,8 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             if (_workspaceDisposed) return;
 
-            // Check clipboard initially
-            _ = CheckClipboardStatus();
+            // Check clipboard initially. Reading it can decode a full screenshot, so wait until the first frames are drawn.
+            QueueClipboardStatusCheck();
 
             // Attach key handlers to the parent Window so shortcuts work
             // regardless of which child control has focus (buttons, dropdowns, etc.).
@@ -566,7 +566,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnWindowActivated(object? sender, EventArgs e)
         {
-            _ = CheckClipboardStatus();
+            QueueClipboardStatusCheck();
         }
 
         private void OnEffectBrowserOverlayPointerPressed(object? sender, global::Avalonia.Input.PointerPressedEventArgs e)
@@ -958,9 +958,10 @@ namespace ShareX.ImageEditor.Presentation.Views
         /// <summary>
         /// Loads an owned bitmap directly into the shared workspace without creating the
         /// normal editor preview and backup copies. This is intended for very large,
-        /// immutable capture backgrounds.
+        /// immutable capture backgrounds. Pass <paramref name="isOpaque"/> only when every pixel has alpha 255,
+        /// as in a screen capture: then the canvas draws the bitmap's own pixels instead of a full-size copy.
         /// </summary>
-        public void LoadWorkspaceImage(SKBitmap bitmap)
+        public void LoadWorkspaceImage(SKBitmap bitmap, bool isOpaque = false)
         {
             ArgumentNullException.ThrowIfNull(bitmap);
 
@@ -970,7 +971,26 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             _suppressNextHistoryDirtyMark = true;
-            _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            // RenderCore goes back to the copy if the image is replaced.
+            bool direct = false;
+            if (isOpaque)
+            {
+                try
+                {
+                    _canvasControl.ShowDirectly(bitmap);
+                    direct = true;
+                }
+                catch (Exception ex)
+                {
+                    EditorServices.ReportWarning(nameof(EditorView), "Could not draw the workspace image directly; using a copy.", ex);
+                }
+            }
+
+            if (!direct)
+            {
+                _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            }
+
             _editorCore.LoadImage(bitmap);
 
             if (DataContext is MainViewModel vm)

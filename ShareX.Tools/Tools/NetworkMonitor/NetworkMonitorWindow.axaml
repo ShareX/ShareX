@@ -79,6 +79,13 @@
         <Style Selector="Border.event-row.disconnected TextBlock.event-status">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Status.Error}"/>
         </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected iconControls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Window.Styles>
 
     <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
@@ -167,7 +174,7 @@
                 <Grid RowDefinitions="Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.LineChart}" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.LineChart}" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Latency_history}"/>
                         </StackPanel>
                         <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Range}" VerticalAlignment="Center"/>
@@ -193,7 +200,7 @@
                 <Grid RowDefinitions="Auto,Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ListRestart}" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ListRestart}" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
                         </StackPanel>
                         <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">

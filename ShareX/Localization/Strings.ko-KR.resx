@@ -2687,6 +2687,12 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>마우스 클릭 강조 표시 옵션...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>마우스 휠:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>스크롤할 때 돋보기에 적용되는 동작입니다. 스크롤하는 동안 Ctrl 키를 누르고 있으면 다른 동작을 합니다.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>아래로 이동</value>
   </data>

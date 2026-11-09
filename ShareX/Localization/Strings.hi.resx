@@ -2687,6 +2687,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>माउस हाइलाइटर विकल्प...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>माउस व्हील:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>स्क्रॉल करने से आवर्धक पर क्या होता है। दूसरी क्रिया करने के लिए स्क्रॉल करते समय Ctrl दबाए रखें।</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>नीचे ले जाएँ</value>
   </data>

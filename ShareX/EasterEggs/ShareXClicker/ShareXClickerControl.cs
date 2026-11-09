@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Documents;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
@@ -58,7 +59,6 @@ public sealed class ShareXClickerControl : IDisposable
     private readonly Control _normalContent;
     private readonly ContentControl _storeHost;
     private readonly IBrush? _panelBackground;
-    private readonly IBrush? _accentBrush;
     private readonly IReadOnlyList<Control> _aboutTextControls;
     private readonly DispatcherTimer _timer;
     private readonly Random _random = new();
@@ -96,17 +96,15 @@ public sealed class ShareXClickerControl : IDisposable
         _normalContent = normalContent ?? throw new ArgumentNullException(nameof(normalContent));
         _storeHost = storeHost ?? throw new ArgumentNullException(nameof(storeHost));
         _panelBackground = panelBackground;
-        _accentBrush = Application.Current?.Resources["ShareX.Brush.Accent"] as IBrush;
         _aboutTextControls = aboutTextControls ?? throw new ArgumentNullException(nameof(aboutTextControls));
 
-        _counter = new TextBlock
+        _counter = AccentText(new TextBlock
         {
             FontSize = 24,
             FontWeight = FontWeight.Bold,
-            Foreground = _accentBrush,
             TextAlignment = TextAlignment.Center,
             TextWrapping = TextWrapping.Wrap
-        };
+        });
         _rateText = new TextBlock
         {
             FontSize = 12,
@@ -270,7 +268,7 @@ public sealed class ShareXClickerControl : IDisposable
                         {
                             Orientation = Orientation.Horizontal,
                             Spacing = 7,
-                            Children = { Icon(AppIcons.Landmark, 18), new TextBlock { Text = "ShareX Clicker", FontSize = 18, Foreground = _accentBrush } }
+                            Children = { Icon(AppIcons.Landmark, 18), AccentText(new TextBlock { Text = "ShareX Clicker", FontSize = 18 }) }
                         },
                         new TextBlock { Text = "Build a tiny screenshot empire.", FontSize = 12, Opacity = 0.7 }
                     }
@@ -601,14 +599,13 @@ public sealed class ShareXClickerControl : IDisposable
 
     private void AddFloatingText(Canvas canvas, Point position, string content, double fontSize, double lifetime = 0.65)
     {
-        TextBlock text = new()
+        TextBlock text = AccentText(new TextBlock
         {
             Text = content,
             FontSize = fontSize,
-            Foreground = _accentBrush,
             IsHitTestVisible = false,
             TextAlignment = TextAlignment.Center
-        };
+        });
         double estimatedWidth = Math.Max(40, content.Length * fontSize * 0.55);
         double left = Math.Clamp(position.X - estimatedWidth / 2 + _random.Next(-8, 9), 0, Math.Max(0, canvas.Bounds.Width - estimatedWidth));
         Canvas.SetLeft(text, left);
@@ -740,8 +737,16 @@ public sealed class ShareXClickerControl : IDisposable
         }
     }
 
-    private IconPresenter Icon(string key, double size) =>
-        new() { Icon = key, FontSize = size, VerticalAlignment = VerticalAlignment.Center, Foreground = _accentBrush };
+    private static IconPresenter Icon(string key, double size) =>
+        AccentText(new IconPresenter { Icon = key, FontSize = size, VerticalAlignment = VerticalAlignment.Center });
+
+    // Accent text and icons are drawn on the About panel, so they use the surface accent color resolved for the
+    // control's theme, and follow theme and accent changes.
+    private static T AccentText<T>(T control) where T : Control
+    {
+        control.Bind(TextElement.ForegroundProperty, control.GetResourceObservable("ShareX.Brush.Accent.Text"));
+        return control;
+    }
 
     private static double ElapsedSeconds() => Stopwatch.GetTimestamp() / (double)Stopwatch.Frequency;
 

@@ -28,6 +28,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.Tools.Ruler;
 using System.Globalization;
 using DrawingRectangle = System.Drawing.Rectangle;
@@ -59,7 +60,6 @@ public sealed class RulerOverlayControl : Control
         AvaloniaProperty.Register<RulerOverlayControl, Color>(nameof(AccentColor), Color.Parse("#3E83F2"));
 
     private static readonly IBrush HitTestBrush = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
-    private static readonly IPen ShadowPen = new Pen(new SolidColorBrush(Color.FromArgb(125, 0, 0, 0)), 4);
     private static readonly Typeface LabelTypeface = new(FontFamily.Default, FontStyle.Normal, FontWeight.SemiBold);
     private static readonly DashStyle DragDashStyle = new([5, 4], 0);
 
@@ -72,7 +72,6 @@ public sealed class RulerOverlayControl : Control
     private const double LabelFontSize = 13;
     private const double LabelHorizontalPadding = 10;
     private const double LabelVerticalPadding = 5;
-    private const double LightAccentLuminanceThreshold = 0.45;
 
     private readonly DispatcherTimer _statusTimer;
     private readonly List<Measurement> _measurements = [];
@@ -86,6 +85,9 @@ public sealed class RulerOverlayControl : Control
     private bool _leftButtonPressed;
     private bool _isDragging;
     private string? _statusText;
+    // Under-stroke for accent lines, black or white whichever contrasts more with the accent, so a dark accent
+    // still shows over dark screen content. The default matches the default accent.
+    private IPen _shadowPen = CreateShadowPen(Colors.Black);
 
     public Color AccentColor
     {
@@ -150,9 +152,13 @@ public sealed class RulerOverlayControl : Control
         base.OnPropertyChanged(change);
         if (change.Property == AccentColorProperty)
         {
+            _shadowPen = CreateShadowPen(AccentPalette.GetHaloColor(AccentColor));
             InvalidateVisual();
         }
     }
+
+    private static IPen CreateShadowPen(Color color) =>
+        new Pen(new SolidColorBrush(Color.FromArgb(125, color.R, color.G, color.B)), 4);
 
     protected override void OnPointerPressed(PointerPressedEventArgs e)
     {
@@ -466,7 +472,7 @@ public sealed class RulerOverlayControl : Control
     {
         GetLineEndpoints(measurement, out Point start, out Point end);
 
-        context.DrawLine(ShadowPen, start, end);
+        context.DrawLine(_shadowPen, start, end);
         context.DrawLine(accentPen, start, end);
         DrawEndCap(context, start, measurement.Axis, accentPen);
         DrawEndCap(context, end, measurement.Axis, accentPen);
@@ -480,7 +486,7 @@ public sealed class RulerOverlayControl : Control
     {
         Rect rect = ToClient(measurement.Bounds);
         IBrush fill = new SolidColorBrush(Color.FromArgb(28, AccentColor.R, AccentColor.G, AccentColor.B));
-        context.DrawRectangle(fill, ShadowPen, rect);
+        context.DrawRectangle(fill, _shadowPen, rect);
         context.DrawRectangle(null, accentPen, rect);
 
         double halfCross = RectangleCrossSize / 2;
@@ -500,7 +506,8 @@ public sealed class RulerOverlayControl : Control
         Rect rect = ToClient(_dragSelection);
         IBrush fill = new SolidColorBrush(Color.FromArgb(22, accentColor.R, accentColor.G, accentColor.B));
         IPen pen = new Pen(accentBrush, 1, DragDashStyle);
-        context.DrawRectangle(fill, pen, rect);
+        context.DrawRectangle(fill, _shadowPen, rect);
+        context.DrawRectangle(null, pen, rect);
     }
 
     private void DrawStatus(DrawingContext context, string text, IBrush accentBrush)
@@ -636,11 +643,7 @@ public sealed class RulerOverlayControl : Control
             formattedText.Height + LabelVerticalPadding * 2);
     }
 
-    private IBrush GetContrastingTextBrush()
-    {
-        double luminance = GetRelativeLuminance(AccentColor);
-        return luminance >= LightAccentLuminanceThreshold ? Brushes.Black : Brushes.White;
-    }
+    private IBrush GetContrastingTextBrush() => new SolidColorBrush(AccentPalette.GetTextColorOn(AccentColor));
 
     private static FormattedText CreateText(string text, IBrush brush) => new(
         text,
@@ -708,18 +711,5 @@ public sealed class RulerOverlayControl : Control
         double y = Math.Clamp(rect.Y, container.Top + margin,
             Math.Max(container.Top + margin, container.Bottom - margin - rect.Height));
         return rect.WithX(x).WithY(y);
-    }
-
-    private static double GetRelativeLuminance(Color color)
-    {
-        static double Linearize(byte channel)
-        {
-            double value = channel / 255d;
-            return value <= 0.03928 ? value / 12.92 : Math.Pow((value + 0.055) / 1.055, 2.4);
-        }
-
-        return (0.2126 * Linearize(color.R)) +
-            (0.7152 * Linearize(color.G)) +
-            (0.0722 * Linearize(color.B));
     }
 }

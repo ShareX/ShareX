@@ -50,10 +50,6 @@
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <Grid RowDefinitions="Auto,*">
@@ -66,7 +62,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -74,7 +70,7 @@
                     <TextBlock Text="{x:Static res:Strings.BeforeUploadWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock x:Name="PromptText"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextWrapping="Wrap"/>
@@ -96,7 +92,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                                     FontSize="16"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.BeforeUploadWindow_Destination}"
@@ -107,7 +103,7 @@
 
                     <ListBox x:Name="DestinationList"
                              Grid.Row="1"
-                             Classes="destination-list"
+                             Classes="destination-list neutral-selection"
                              ItemsSource="{Binding DestinationOptions}"
                              Padding="4,2,4,8"
                              ScrollViewer.VerticalScrollBarVisibility="Auto"

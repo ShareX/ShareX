@@ -302,6 +302,8 @@ internal static class LegacyIconMap
         [ImageEditorIcons.Pixelate] = "grid",
         [ImageEditorIcons.Rectangle] = "layer-shape",
         [ImageEditorIcons.Region] = "layer-shape-region",
+        [ImageEditorIcons.RegionEllipse] = "layer-shape-ellipse-region",
+        [ImageEditorIcons.RegionFreehand] = "layer-shape-polygon",
         [ImageEditorIcons.Select] = "cursor",
         [ImageEditorIcons.SmartEraser] = "eraser",
         [ImageEditorIcons.SpeechBalloon] = "balloon-box-left",

@@ -430,6 +430,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Pausa</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Ellipsformat område</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Frihandsområde</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Dra för att flytta verktygsfältet, dubbelklicka för att återställa dess position</value>
   </data>

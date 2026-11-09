@@ -1107,6 +1107,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Hoán đổi kiểu công cụ</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Đổi kích thước kính lúp</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Thu phóng kính lúp</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Máy tính</value>
   </data>

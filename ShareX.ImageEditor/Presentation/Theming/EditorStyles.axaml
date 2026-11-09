@@ -67,7 +67,7 @@
         <Style Selector="^.left > :is(UserControl) > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="Padding" Value="0,0,0,16"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
@@ -75,7 +75,7 @@
         <Style Selector="^.right ContentControl > :is(UserControl) > StackPanel > StackPanel:nth-child(1) > TextBlock">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="Padding" Value="0,0,0,16"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
