@@ -1546,7 +1546,7 @@ public class EditorInputController
             {
                 using var stream = await files[0].OpenReadAsync();
                 var bitmap = new global::Avalonia.Media.Imaging.Bitmap(stream);
-                var imageControl = new Image { Source = bitmap, Width = bitmap.Size.Width, Height = bitmap.Size.Height };
+                var imageControl = new Image { Source = bitmap, Width = bitmap.Size.Width, Height = bitmap.Size.Height, Stretch = Stretch.Fill };
                 var annotation = new ImageAnnotation();
                 annotation.SetImage(BitmapConversionHelpers.ToSKBitmap(bitmap));
                 imageControl.Tag = annotation;
