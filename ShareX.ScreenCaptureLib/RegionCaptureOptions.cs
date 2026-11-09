@@ -61,7 +61,7 @@ namespace ShareX.ScreenCaptureLib
         public RegionCaptureAction RegionCaptureActionX1Click = RegionCaptureAction.CaptureFullscreen;
         public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
         // What the mouse wheel does to the magnifier. Holding Ctrl while scrolling does the other one.
-        public RegionCaptureMagnifierScrollAction MagnifierScrollAction = RegionCaptureMagnifierScrollAction.Zoom;
+        public RegionCaptureMagnifierScrollAction MagnifierScrollAction = RegionCaptureMagnifierScrollAction.Resize;
 
         public bool ShowInfo = true;
         public bool UseCustomInfoText = false;
