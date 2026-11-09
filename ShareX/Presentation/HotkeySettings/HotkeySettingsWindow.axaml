@@ -73,8 +73,9 @@
 
     <ThemeVariantScope>
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="10,0,10,10" RowDefinitions="Auto,Auto,*" RowSpacing="5">
-                <Border Grid.Row="0"
+            <Grid x:Name="ContentGrid" Margin="10,0,10,10" RowDefinitions="Auto,Auto,*" RowSpacing="5">
+                <Border x:Name="Toolbar"
+                        Grid.Row="0"
                         Classes="tool-panel docked-top-toolbar">
                     <Grid ColumnDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,*,Auto">
                         <Button Grid.Column="0" Classes="compact" Click="OnAddClick">
