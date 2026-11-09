@@ -1999,11 +1999,31 @@ namespace ShareX
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
-        public static async Task OCRImage(TaskSettings taskSettings = null)
+        public static async Task OCRImage(TaskSettings taskSettings = null, bool autoHideMainWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions))
+            Bitmap bmp;
+
+            if (autoHideMainWindow)
+            {
+                MainWindowIntegration.Hide();
+                await Task.Delay(250);
+            }
+
+            try
+            {
+                bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+            }
+            finally
+            {
+                if (autoHideMainWindow)
+                {
+                    MainWindowIntegration.Activate();
+                }
+            }
+
+            using (bmp)
             {
                 await OCRImage(bmp, taskSettings);
             }
