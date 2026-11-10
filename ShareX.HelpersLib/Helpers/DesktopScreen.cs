@@ -36,13 +36,22 @@ public sealed class DesktopScreen
     public Rectangle Bounds { get; }
     public Rectangle WorkingArea { get; }
     public bool Primary { get; }
+    /// <summary>Windows device name, such as \\.\DISPLAY2; null on other platforms.</summary>
+    public string DeviceName { get; }
+    /// <summary>Monitor model name; several monitors can share it.</summary>
+    public string DisplayName { get; }
 
     private DesktopScreen(Avalonia.Platform.Screen screen)
     {
         Bounds = new Rectangle(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
         WorkingArea = new Rectangle(screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height);
         Primary = screen.IsPrimary;
+        DeviceName = GetDeviceName(screen);
+        DisplayName = screen.DisplayName;
     }
+
+    public static string GetDeviceName(Avalonia.Platform.Screen screen) =>
+        NativeMethods.GetMonitorDeviceName(screen.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
 
     public static DesktopScreen[] AllScreens => DesktopServices.Run(() =>
         DesktopServices.GetWindow().Screens.All.Select(x => new DesktopScreen(x)).ToArray());

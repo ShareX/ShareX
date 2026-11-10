@@ -1326,6 +1326,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Feltöltés fájl</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktív monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Elsődleges monitor</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

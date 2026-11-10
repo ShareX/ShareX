@@ -33,6 +33,19 @@ namespace ShareX.HelpersLib
 {
     public static partial class NativeMethods
     {
+        /// <summary>Returns the GDI device name of a monitor, such as \\.\DISPLAY2, or null.</summary>
+        public static string GetMonitorDeviceName(IntPtr monitorHandle)
+        {
+            if (!OperatingSystem.IsWindows() || monitorHandle == IntPtr.Zero)
+            {
+                return null;
+            }
+
+            MONITORINFOEX info = new MONITORINFOEX();
+            info.cbSize = Marshal.SizeOf<MONITORINFOEX>();
+            return GetMonitorInfo(monitorHandle, ref info) ? info.szDevice : null;
+        }
+
         public static string GetForegroundWindowText()
         {
             IntPtr handle = GetForegroundWindow();

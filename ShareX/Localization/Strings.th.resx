@@ -2681,6 +2681,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>กึ่งกลาง การทำงานเมื่อคลิก:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>จอภาพ:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>เมาส์ 4 คลิก:</value>
   </data>
@@ -3127,6 +3130,12 @@
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>เขตเวลา:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>จอภาพ {0} (ไม่ได้เชื่อมต่อ)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>จอภาพ {0}: {1} ({2} ที่ {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>การแจ้งเตือนแบบป๊อปอัป</value>

@@ -2916,6 +2916,8 @@ namespace ShareX
                 Duration = duration,
                 FadeDuration = (int)(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
                 Placement = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
+                Monitor = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitor,
+                MonitorDeviceName = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitorDeviceName,
                 Size = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
                 ActionButtonSize = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtonSize,
                 ActionButtons = NotificationActionButton.CloneButtons(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),

@@ -1326,6 +1326,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Tải file lên</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Màn hình đang hoạt động</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Màn hình chính</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

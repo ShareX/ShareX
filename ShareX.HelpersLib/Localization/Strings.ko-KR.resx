@@ -1326,6 +1326,12 @@
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>업로드 파일</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>활성 모니터</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>기본 모니터</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>
