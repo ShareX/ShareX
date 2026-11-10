@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:icons="using:ShareX.Icons"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:toolControls="using:ShareX.Tools.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -17,135 +18,263 @@
         MinHeight="520"
         WindowStartupLocation="CenterScreen">
 
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="{x:Static theming:ThemeManager.ShareXDark}">
+                    <SolidColorBrush x:Key="OCR.Brush.Canvas" Color="#1C1C1C"/>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="{x:Static theming:ThemeManager.ShareXLight}">
+                    <SolidColorBrush x:Key="OCR.Brush.Canvas" Color="#E9E9EC"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Window.Styles>
+        <!-- The image sits on a recessed canvas, the text and actions on a raised sheet beside it. -->
+        <Style Selector="Border.ocr-canvas">
+            <Setter Property="Background" Value="{DynamicResource OCR.Brush.Canvas}"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="ClipToBounds" Value="True"/>
+        </Style>
+
+        <Style Selector="Border.ocr-sheet">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="ClipToBounds" Value="True"/>
+        </Style>
+
+        <Style Selector="Border.ocr-toolbar">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Popup}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="22"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="BoxShadow" Value="0 10 28 -8 #60000000"/>
+        </Style>
+
+        <!-- Borderless buttons inside the floating toolbar, rounded to match it. -->
+        <Style Selector="Border.ocr-toolbar Button">
+            <Setter Property="Height" Value="36"/>
+            <Setter Property="Padding" Value="14,0"/>
+            <Setter Property="CornerRadius" Value="18"/>
+
+            <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="CornerRadius" Value="18"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style Selector="^:pressed /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+        </Style>
+
+        <!-- The recognized text reads as part of the sheet rather than as a boxed input. -->
+        <Style Selector="TextBox.ocr-text">
+            <Setter Property="Padding" Value="18,4,18,12"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="CornerRadius" Value="0"/>
+
+            <Style Selector="^ /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style Selector="^:pointerover /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style Selector="^:focus /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+            <Style Selector="^:disabled /template/ Border#PART_BorderElement">
+                <Setter Property="Background" Value="Transparent"/>
+                <Setter Property="BorderThickness" Value="0"/>
+            </Style>
+        </Style>
+
+        <Style Selector="toolControls|OCRPreview[IsScanning=True]">
+            <Style.Animations>
+                <Animation Duration="0:0:1.4" IterationCount="Infinite" PlaybackDirection="Alternate" Easing="SineEaseInOut">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="ScanPosition" Value="0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="ScanPosition" Value="1"/>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+
+        <Style Selector="TextBlock.option-label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+        </Style>
+    </Window.Styles>
+
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="16" RowDefinitions="Auto,*,Auto" RowSpacing="12">
-                <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto" ColumnSpacing="8">
-                    <Button Grid.Column="0" Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
-                        <StackPanel Orientation="Horizontal" Spacing="8">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Crop}"/>
-                            <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_region}"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Grid.Column="1" Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
-                        <StackPanel Orientation="Horizontal" Spacing="8">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"/>
-                            <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_image}"/>
-                        </StackPanel>
-                    </Button>
-                </Grid>
+            <Grid Margin="12" ColumnDefinitions="*,12,360">
+                <Border Grid.Column="0" Classes="ocr-canvas">
+                    <Grid>
+                        <toolControls:OCRPreview Margin="28,28,28,84"
+                                                 Source="{Binding SourceImage}"
+                                                 Regions="{Binding TextRegions}"
+                                                 IsScanning="{Binding IsBusy}"
+                                                 HighlightBrush="{DynamicResource ShareX.Brush.Accent}"/>
 
-                <Grid Grid.Row="1" ColumnDefinitions="5*,12,4*">
-                    <Border Grid.Column="0" Classes="tool-panel" Padding="0" ClipToBounds="True">
-                        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-                            <toolControls:OCRPreview Margin="16"
-                                                     Source="{Binding SourceImage}"
-                                                     Regions="{Binding TextRegions}"
-                                                     HighlightBrush="{DynamicResource ShareX.Brush.Accent}"
-                                                     ImageBorderBrush="{DynamicResource ShareX.Brush.Border}"/>
-                            <ProgressBar Height="4"
-                                         VerticalAlignment="Top"
-                                         IsIndeterminate="True"
-                                         IsVisible="{Binding IsBusy}"/>
-                        </Grid>
-                    </Border>
-
-                    <GridSplitter Grid.Column="1"
-                                  Background="Transparent"
-                                  ResizeDirection="Columns"/>
-
-                    <Border Grid.Column="2" Classes="tool-panel" Padding="0" ClipToBounds="True">
-                        <Grid RowDefinitions="Auto,*">
-                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="12,10,10,10">
-                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}"/>
-                                <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding CanUseResult}">
+                        <Border Classes="ocr-toolbar"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Bottom"
+                                Margin="0,0,0,20">
+                            <StackPanel Orientation="Horizontal" Spacing="2">
+                                <Button Command="{Binding SelectRegionCommand}" IsEnabled="{Binding IsIdle}">
                                     <StackPanel Orientation="Horizontal" Spacing="8">
-                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
-                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_all}"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Crop}"/>
+                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_region}"/>
                                     </StackPanel>
                                 </Button>
-                            </Grid>
-                            <Grid Grid.Row="1" Margin="12,0,12,12">
-                                <TextBox Text="{Binding ResultText, Mode=TwoWay}"
-                                         AcceptsReturn="True"
-                                         TextWrapping="Wrap"
-                                         VerticalContentAlignment="Top"
-                                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                         ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                         FontSize="14"
-                                         FontFeatures="-calt, -liga"
-                                         IsEnabled="{Binding IsIdle}"/>
-                                <StackPanel IsVisible="{Binding NoTextFound}"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            Spacing="10"
-                                            IsHitTestVisible="False">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.TextRecognition}"
-                                                            FontSize="34"
-                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                            HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{x:Static localization:Strings.OCRWindow_No_text_found}"
-                                               FontWeight="Normal"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               HorizontalAlignment="Center"/>
-                                </StackPanel>
-                                <StackPanel IsVisible="{Binding HasError}"
-                                            HorizontalAlignment="Center"
-                                            VerticalAlignment="Center"
-                                            MaxWidth="380"
-                                            Spacing="10"
-                                            IsHitTestVisible="False">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
-                                                            FontSize="34"
-                                                            Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                                                            HorizontalAlignment="Center"/>
-                                    <TextBlock Text="{Binding ErrorMessage}"
-                                               FontWeight="Normal"
-                                               TextWrapping="Wrap"
-                                               TextAlignment="Center"/>
-                                </StackPanel>
-                            </Grid>
-                        </Grid>
-                    </Border>
-                </Grid>
-
-                <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="20">
-                    <CheckBox Grid.Column="0"
-                              Content="{x:Static localization:Strings.OCRWindow_Single_line}"
-                              IsChecked="{Binding SingleLine}"
-                              FontWeight="Normal"/>
-                    <CheckBox Grid.Column="1"
-                              Content="{x:Static localization:Strings.OCRWindow_Copy_recognized_text_automatically}"
-                              IsChecked="{Binding AutoCopy}"
-                              FontWeight="Normal"/>
-                    <StackPanel Grid.Column="3" Orientation="Horizontal" Spacing="6">
-                        <ComboBox ItemsSource="{Binding ServiceLinks}"
-                                  SelectedItem="{Binding SelectedServiceLink}"
-                                  IsEnabled="{Binding HasServices}"
-                                  MinWidth="180"
-                                  VerticalAlignment="Center"/>
-                        <Button Command="{Binding EditServicesCommand}"
-                                ToolTip.Tip="{x:Static localization:Strings.OCRWindow_Edit_services}"
-                                Padding="10,7">
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
-                        </Button>
-                        <Button Command="{Binding OpenServiceCommand}" IsEnabled="{Binding CanUseResult}">
-                            <StackPanel Orientation="Horizontal" Spacing="8">
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ExternalLink}"/>
-                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_Open_service}"/>
+                                <Button Command="{Binding SelectImageCommand}" IsEnabled="{Binding IsIdle}">
+                                    <StackPanel Orientation="Horizontal" Spacing="8">
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"/>
+                                        <TextBlock Text="{x:Static localization:Strings.OCRWindow_Select_image}"/>
+                                    </StackPanel>
+                                </Button>
                             </StackPanel>
-                        </Button>
-                    </StackPanel>
-                </Grid>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <GridSplitter Grid.Column="1"
+                              Background="Transparent"
+                              ResizeDirection="Columns"/>
+
+                <Border Grid.Column="2" Classes="ocr-sheet" MinWidth="300">
+                    <Grid RowDefinitions="Auto,*,Auto,Auto">
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="18,16,18,8">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.TextRecognition}"
+                                                    FontSize="18"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="1" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <TextBox Classes="ocr-text"
+                                     Text="{Binding ResultText, Mode=TwoWay}"
+                                     AcceptsReturn="True"
+                                     TextWrapping="Wrap"
+                                     VerticalContentAlignment="Top"
+                                     ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                     FontFeatures="-calt, -liga"
+                                     IsEnabled="{Binding IsIdle}"/>
+                            <StackPanel IsVisible="{Binding NoTextFound}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Spacing="10"
+                                        IsHitTestVisible="False">
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.TextRecognition}"
+                                                        FontSize="34"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
+                                <TextBlock Text="{x:Static localization:Strings.OCRWindow_No_text_found}"
+                                           FontWeight="Normal"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                           HorizontalAlignment="Center"/>
+                            </StackPanel>
+                            <StackPanel IsVisible="{Binding HasError}"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        Margin="24,0"
+                                        Spacing="10"
+                                        IsHitTestVisible="False">
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                                        FontSize="34"
+                                                        Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                                        HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding ErrorMessage}"
+                                           FontWeight="Normal"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Center"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Border Grid.Row="2"
+                                BorderBrush="{DynamicResource ShareX.Brush.Separator}"
+                                BorderThickness="0,1,0,0"
+                                Padding="18,10,14,6">
+                            <StackPanel Spacing="2">
+                                <Grid ColumnDefinitions="*,Auto" MinHeight="34">
+                                    <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Single_line}"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
+                                </Grid>
+                                <Grid ColumnDefinitions="*,Auto" MinHeight="34">
+                                    <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Copy_recognized_text_automatically}"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopy}" OnContent="" OffContent=""/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+
+                        <StackPanel Grid.Row="3" Margin="16,6,16,16" Spacing="10">
+                            <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="6">
+                                <ComboBox ItemsSource="{Binding ServiceLinks}"
+                                          SelectedItem="{Binding SelectedServiceLink}"
+                                          IsEnabled="{Binding HasServices}"
+                                          HorizontalAlignment="Stretch"
+                                          VerticalAlignment="Center"/>
+                                <Button Grid.Column="1"
+                                        Command="{Binding OpenServiceCommand}"
+                                        IsEnabled="{Binding CanUseResult}"
+                                        ToolTip.Tip="{x:Static localization:Strings.OCRWindow_Open_service}"
+                                        Width="40"
+                                        Padding="0">
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ExternalLink}"/>
+                                </Button>
+                                <Button Grid.Column="2"
+                                        Command="{Binding EditServicesCommand}"
+                                        ToolTip.Tip="{x:Static localization:Strings.OCRWindow_Edit_services}"
+                                        Width="40"
+                                        Padding="0">
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"/>
+                                </Button>
+                            </Grid>
+                            <Button Classes="primary"
+                                    Command="{Binding CopyAllCommand}"
+                                    IsEnabled="{Binding CanUseResult}"
+                                    HorizontalAlignment="Stretch"
+                                    Height="42">
+                                <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
+                                    <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_all}"/>
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </Border>
             </Grid>
 
             <Grid IsVisible="{Binding IsEditingServices}"
                   Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
-                <Border Classes="tool-panel"
+                <Border Classes="ocr-sheet"
                         Width="620"
-                        Padding="18"
+                        Padding="20"
+                        BoxShadow="0 20 48 -12 #70000000"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center">
-                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="12">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="14">
                         <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="10">
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Edit_services}" VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8">
@@ -190,6 +319,8 @@
                                       IsChecked="{Binding CloseAfterOpeningService}"
                                       FontWeight="Normal"/>
                             <Button Grid.Column="1"
+                                    Classes="primary"
+                                    MinWidth="96"
                                     Content="{x:Static localization:Strings.OCRWindow_Close}"
                                     Command="{Binding CloseServiceEditorCommand}"/>
                         </Grid>

@@ -48,14 +48,22 @@ public class OCRPreview : Control
     public static readonly StyledProperty<IBrush?> ImageBorderBrushProperty =
         AvaloniaProperty.Register<OCRPreview, IBrush?>(nameof(ImageBorderBrush));
 
+    // While recognition runs, a scan line sweeps over the image. ScanPosition (0 top, 1 bottom) is animated by a style.
+    public static readonly StyledProperty<bool> IsScanningProperty =
+        AvaloniaProperty.Register<OCRPreview, bool>(nameof(IsScanning));
+
+    public static readonly StyledProperty<double> ScanPositionProperty =
+        AvaloniaProperty.Register<OCRPreview, double>(nameof(ScanPosition));
+
     // Small captures such as a single button are enlarged so they are readable, but not so much they turn to blocks.
     private const double MaxZoom = 4;
-    private static readonly BoxShadows ImageShadow = new(new BoxShadow { Blur = 14, OffsetY = 2, Color = Color.FromArgb(70, 0, 0, 0) });
+    private const double ImageCornerRadius = 6;
+    private static readonly BoxShadows ImageShadow = new(new BoxShadow { Blur = 24, OffsetY = 6, Color = Color.FromArgb(90, 0, 0, 0) });
     private OCRTextRegion? _hoveredRegion;
 
     static OCRPreview()
     {
-        AffectsRender<OCRPreview>(SourceProperty, RegionsProperty, HighlightBrushProperty, ImageBorderBrushProperty);
+        AffectsRender<OCRPreview>(SourceProperty, RegionsProperty, HighlightBrushProperty, ImageBorderBrushProperty, IsScanningProperty, ScanPositionProperty);
     }
 
     public OCRPreview()
@@ -87,6 +95,18 @@ public class OCRPreview : Control
         set => SetValue(ImageBorderBrushProperty, value);
     }
 
+    public bool IsScanning
+    {
+        get => GetValue(IsScanningProperty);
+        set => SetValue(IsScanningProperty, value);
+    }
+
+    public double ScanPosition
+    {
+        get => GetValue(ScanPositionProperty);
+        set => SetValue(ScanPositionProperty, value);
+    }
+
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
@@ -107,11 +127,13 @@ public class OCRPreview : Control
         }
 
         // A soft shadow separates the image from a background of the same color, such as a white page on a light theme.
-        context.DrawRectangle(Brushes.Black, null, new RoundedRect(imageRect), ImageShadow);
+        RoundedRect roundedImageRect = new(imageRect, ImageCornerRadius);
+        context.DrawRectangle(Brushes.Black, null, roundedImageRect, ImageShadow);
 
         // Enlarged pixels stay sharp so the text looks like the capture; shrinking is smoothed.
         BitmapInterpolationMode interpolation = scale > 1 ? BitmapInterpolationMode.None : BitmapInterpolationMode.HighQuality;
 
+        using (context.PushClip(roundedImageRect))
         using (context.PushRenderOptions(new RenderOptions { BitmapInterpolationMode = interpolation }))
         {
             context.DrawImage(source, new Rect(source.Size), imageRect);
@@ -119,7 +141,14 @@ public class OCRPreview : Control
 
         if (ImageBorderBrush != null)
         {
-            context.DrawRectangle(null, new Pen(ImageBorderBrush, 1), imageRect.Inflate(0.5));
+            context.DrawRectangle(null, new Pen(ImageBorderBrush, 1), new RoundedRect(imageRect.Inflate(0.5), ImageCornerRadius));
+        }
+
+        Color color = HighlightBrush is ISolidColorBrush solid ? solid.Color : Colors.DodgerBlue;
+
+        if (IsScanning)
+        {
+            DrawScanLine(context, imageRect, color);
         }
 
         IReadOnlyList<OCRTextRegion>? regions = Regions;
@@ -129,7 +158,6 @@ public class OCRPreview : Control
             return;
         }
 
-        Color color = HighlightBrush is ISolidColorBrush solid ? solid.Color : Colors.DodgerBlue;
         IBrush fill = new SolidColorBrush(color, 0.14);
         IBrush hoverFill = new SolidColorBrush(color, 0.32);
         IPen pen = new Pen(new SolidColorBrush(color), 1.5);
@@ -139,6 +167,32 @@ public class OCRPreview : Control
         {
             Geometry geometry = CreateRegionGeometry(region, imageRect, regionScale);
             context.DrawGeometry(ReferenceEquals(region, _hoveredRegion) ? hoverFill : fill, pen, geometry);
+        }
+    }
+
+    private void DrawScanLine(DrawingContext context, Rect imageRect, Color color)
+    {
+        double y = imageRect.Top + (Math.Clamp(ScanPosition, 0, 1) * imageRect.Height);
+        double glow = Math.Clamp(imageRect.Height / 4, 8, 56);
+
+        using (context.PushClip(new RoundedRect(imageRect, ImageCornerRadius)))
+        {
+            context.FillRectangle(new SolidColorBrush(Colors.Black, 0.2), imageRect);
+
+            LinearGradientBrush glowBrush = new()
+            {
+                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
+                EndPoint = new RelativePoint(0, 1, RelativeUnit.Relative),
+                GradientStops =
+                {
+                    new GradientStop(Color.FromArgb(0, color.R, color.G, color.B), 0),
+                    new GradientStop(Color.FromArgb(110, color.R, color.G, color.B), 0.5),
+                    new GradientStop(Color.FromArgb(0, color.R, color.G, color.B), 1)
+                }
+            };
+
+            context.FillRectangle(glowBrush, new Rect(imageRect.Left, y - glow, imageRect.Width, glow * 2));
+            context.DrawLine(new Pen(new SolidColorBrush(color), 2), new Point(imageRect.Left, y), new Point(imageRect.Right, y));
         }
     }
 
