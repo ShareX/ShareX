@@ -2681,6 +2681,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>가운데 클릭 동작:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>모니터:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>마우스 4 클릭:</value>
   </data>
@@ -3127,6 +3130,12 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>시간대:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>모니터 {0} (연결되지 않음)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>모니터 {0}: {1} ({2}, 위치 {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>알림</value>

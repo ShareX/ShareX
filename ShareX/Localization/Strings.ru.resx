@@ -2681,6 +2681,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Действие средней кнопки мыши:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Монитор:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Кнопка мыши 4:</value>
   </data>
@@ -3127,6 +3130,12 @@
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Часовой пояс:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Монитор {0} (не подключён)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Монитор {0}: {1} ({2}, положение {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Уведомление</value>

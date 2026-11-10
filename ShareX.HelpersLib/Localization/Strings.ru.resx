@@ -1326,6 +1326,12 @@
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Загрузить файл</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Активный монитор</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Основной монитор</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

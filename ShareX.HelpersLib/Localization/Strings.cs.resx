@@ -1326,6 +1326,12 @@ Chcete jej přesto spustit?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Nahrát soubor</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktivní monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primární monitor</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

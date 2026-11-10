@@ -2681,6 +2681,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Aktion bei Mittelklick:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Maus-4-Klick:</value>
   </data>
@@ -3127,6 +3130,12 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Zeitzone:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (nicht verbunden)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} bei {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Toast-Benachrichtigung</value>

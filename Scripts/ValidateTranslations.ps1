@@ -105,6 +105,7 @@ $projects = @(
             'ThumbnailTitleLocation_'
             'ThumbnailViewClickAction_'
             'ToastClickAction_'
+            'ToastWindowMonitor_'
             'UpdateChannel_'
             'URLSharingServices_'
             'UrlShortenerType_'

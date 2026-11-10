@@ -828,3 +828,4 @@ ShareX|ApplicationSettingsWindow_SpacingMenus|93534e3e8a8dccfdd5aacfa441553783e6
 ShareX|ApplicationSettingsWindow_SpacingMenusLabel|5ba58caf54539d68edfaf4f959a439fc05298772d94adaaacb1efd5199dd968a|fr,nl-NL,pt-BR,pt-PT
 ShareX|TaskSettingsWindow_NativeRecorderHDRToneMapping|271782613fc25f9ba4f77c49471d6e8116b452d71bee48808ce579d1675ea22f|da,de,nl-NL
 ShareX.HistoryLib|HistoryWindow_Tag|1503916a2ab2b0fd6768d3455fd8f2d9aa3b31333a8507dadcad983704a975d7|de,id-ID,nl-NL,pl
+ShareX|TaskSettingsWindow_Monitor|e7628a65ec7ed4440649f94b31b95b0bc2f78d5569645a59cb96147f745f9056|cs,de,es-MX,es,hu,id-ID,it-IT,pl,pt-BR,pt-PT,ro

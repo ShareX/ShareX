@@ -1326,6 +1326,12 @@ Vil du stadig køre den?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Upload fil</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktiv skærm</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primær skærm</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

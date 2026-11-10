@@ -2681,6 +2681,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Akce prostředního tlačítka:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Tlačítko myši 4:</value>
   </data>
@@ -3127,6 +3130,12 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Časové pásmo:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (nepřipojen)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} na pozici {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Informační oznámení</value>

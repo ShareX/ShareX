@@ -1326,6 +1326,12 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Datei hochladen</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktiver Monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primärer Monitor</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

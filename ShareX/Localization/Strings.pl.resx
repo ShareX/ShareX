@@ -2681,6 +2681,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Akcja środkowego kliknięcia:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Kliknięcie przycisku myszy 4:</value>
   </data>
@@ -3127,6 +3130,12 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Strefa czasowa:</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (niepodłączony)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} w położeniu {3})</value>
   </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Powiadomienie</value>

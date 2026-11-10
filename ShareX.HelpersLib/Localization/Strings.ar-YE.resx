@@ -1326,6 +1326,12 @@
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>رفع الملف</value>
   </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>الشاشة النشطة</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>الشاشة الرئيسية</value>
+  </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>
   </data>

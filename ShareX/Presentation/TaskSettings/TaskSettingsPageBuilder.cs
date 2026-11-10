@@ -253,6 +253,7 @@ internal sealed class TaskSettingsPageBuilder
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_DurationSeconds, Number(() => (decimal)general.ToastWindowDuration, value => general.ToastWindowDuration = (float)value, 0, 60, 0.1m)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_FadeDurationSeconds, Number(() => (decimal)general.ToastWindowFadeDuration, value => general.ToastWindowFadeDuration = (float)value, 0, 10, 0.1m)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Placement, EnumCombo(() => general.ToastWindowPlacement, value => general.ToastWindowPlacement = value)));
+        toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Monitor, ToastMonitorCombo(general)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Width, Number(() => general.ToastWindowSize.Width, value => general.ToastWindowSize = new DrawingSize((int)value, general.ToastWindowSize.Height), 100, 2000)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Height, Number(() => general.ToastWindowSize.Height, value => general.ToastWindowSize = new DrawingSize(general.ToastWindowSize.Width, (int)value), 50, 2000)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_LeftClickAction, EnumCombo(() => general.ToastWindowLeftClickAction, value => general.ToastWindowLeftClickAction = value)));
@@ -1557,6 +1558,58 @@ internal sealed class TaskSettingsPageBuilder
     }
 
     private static BoundValue<decimal?> NumericValue(decimal initial, Action<decimal?> setter) => new(initial, setter);
+
+    private sealed record ToastMonitorChoice(ToastWindowMonitor Monitor, string DeviceName);
+
+    private static ComboBox ToastMonitorCombo(TaskSettingsGeneral general)
+    {
+        List<(ToastMonitorChoice Choice, string Title)> choices =
+        [
+            (new(ToastWindowMonitor.ActiveMonitor, ""), ToastWindowMonitor.ActiveMonitor.GetLocalizedDescription()),
+            (new(ToastWindowMonitor.PrimaryMonitor, ""), ToastWindowMonitor.PrimaryMonitor.GetLocalizedDescription())
+        ];
+
+        // The primary monitor already has its own entry, so list only the other monitors.
+        IEnumerable<DesktopScreen> otherScreens = DesktopScreen.AllScreens
+            .Where(x => !x.Primary && !string.IsNullOrEmpty(x.DeviceName))
+            .OrderBy(x => GetMonitorNumber(x.DeviceName).PadLeft(4, '0'), StringComparer.Ordinal);
+
+        foreach (DesktopScreen screen in otherScreens)
+        {
+            DrawingRectangle bounds = screen.Bounds;
+            string name = string.IsNullOrEmpty(screen.DisplayName) ? screen.DeviceName : screen.DisplayName;
+            string title = string.Format(Strings.TaskSettingsWindow_ToastMonitorScreen0123, GetMonitorNumber(screen.DeviceName), name,
+                $"{bounds.Width}x{bounds.Height}", $"{bounds.X}, {bounds.Y}");
+            choices.Add((new(ToastWindowMonitor.SpecificMonitor, screen.DeviceName), title));
+        }
+
+        // Keep a saved monitor selectable while it is disconnected, so opening the settings does not discard it.
+        string savedDeviceName = general.ToastWindowMonitorDeviceName ?? "";
+        if (general.ToastWindowMonitor == ToastWindowMonitor.SpecificMonitor && savedDeviceName.Length > 0 &&
+            !choices.Any(x => string.Equals(x.Choice.DeviceName, savedDeviceName, StringComparison.OrdinalIgnoreCase)))
+        {
+            choices.Add((new(ToastWindowMonitor.SpecificMonitor, savedDeviceName),
+                string.Format(Strings.TaskSettingsWindow_ToastMonitorNotConnected0, GetMonitorNumber(savedDeviceName))));
+        }
+
+        ToastMonitorChoice current = choices.Select(x => x.Choice).FirstOrDefault(x => x.Monitor == general.ToastWindowMonitor &&
+            (x.Monitor != ToastWindowMonitor.SpecificMonitor || string.Equals(x.DeviceName, savedDeviceName, StringComparison.OrdinalIgnoreCase)))
+            ?? choices[0].Choice;
+        Dictionary<ToastMonitorChoice, string> titles = choices.ToDictionary(x => x.Choice, x => x.Title);
+
+        return ObjectCombo(choices.Select(x => x.Choice), () => current, value =>
+        {
+            general.ToastWindowMonitor = value.Monitor;
+            general.ToastWindowMonitorDeviceName = value.DeviceName;
+        }, value => titles[value]);
+    }
+
+    // \\.\DISPLAY2 -> 2
+    private static string GetMonitorNumber(string deviceName)
+    {
+        string digits = new(deviceName.Reverse().TakeWhile(char.IsDigit).Reverse().ToArray());
+        return digits.Length > 0 ? digits : deviceName;
+    }
 
     private static ComboBox EnumCombo<T>(Func<T> getter, Action<T> setter) where T : struct, Enum =>
         ObjectCombo(Enum.GetValues<T>(), getter, setter, value => ((Enum)(object)value).GetLocalizedDescription());
