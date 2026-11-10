@@ -27,6 +27,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top"
                     IsVisible="False"
+                    Cursor="Arrow"
                     PointerPressed="OnToolbarPointerPressed">
                 <StackPanel Orientation="Horizontal" Spacing="2">
                     <Button Classes="picker-button" Width="34" Height="32" Padding="4" Click="OnCopyClick" ToolTip.Tip="{x:Static localization:Strings.PinToScreenWindow_Copy_image}">
