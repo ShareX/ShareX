@@ -4104,15 +4104,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OCR help.
-        /// </summary>
-        public static string OCRWindow_OCR_help {
-            get {
-                return ResourceManager.GetString("OCRWindow_OCR_help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Open service....
         /// </summary>
         public static string OCRWindow_Open_service {

@@ -2825,9 +2825,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Aide OCR...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Appliquer les effets uniquement aux captures de région</value>
   </data>

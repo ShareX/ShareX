@@ -2825,9 +2825,6 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-help...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Effecten alleen toepassen op gebiedsopname</value>
   </data>

@@ -736,8 +736,7 @@ internal sealed class TaskSettingsPageBuilder
         return Page("capture-ocr", Strings.TaskSettingsWindow_OCR, AppIcons.TextRecognition,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_OpticalCharacterRecognition,
                 Check(Strings.TaskSettingsWindow_ProcessOCRSilently, silent), autoCopy,
-                Check(Strings.TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink, () => options.CloseWindowAfterOpeningServiceLink, value => options.CloseWindowAfterOpeningServiceLink = value),
-                Button(Strings.TaskSettingsWindow_OCRHelp, () => URLHelpers.OpenURL(Links.DocsOCR))));
+                Check(Strings.TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink, () => options.CloseWindowAfterOpeningServiceLink, value => options.CloseWindowAfterOpeningServiceLink = value)));
     }
 
     private Control BuildFileNamingPage()

@@ -2825,9 +2825,6 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-Hilfe...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Effekte nur auf Bereichsaufnahmen anwenden</value>
   </data>

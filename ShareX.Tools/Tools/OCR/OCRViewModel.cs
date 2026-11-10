@@ -72,7 +72,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private readonly OCROptions _options;
     private readonly OCRRecognitionHandler _recognize;
     private readonly Action<OCROptions>? _optionsChanged;
-    private readonly Action? _openHelp;
     private byte[] _sourceImageData;
     private OCRResult? _lastResult;
     private int _recognitionVersion;
@@ -135,14 +134,12 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         byte[] sourceImageData,
         OCROptions options,
         OCRRecognitionHandler recognize,
-        Action<OCROptions>? optionsChanged = null,
-        Action? openHelp = null)
+        Action<OCROptions>? optionsChanged = null)
     {
         _sourceImageData = sourceImageData;
         _options = options;
         _recognize = recognize;
         _optionsChanged = optionsChanged;
-        _openHelp = openHelp;
 
         _singleLine = options.SingleLine;
         _autoCopy = options.AutoCopy;
@@ -239,9 +236,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
             }
         }
     }
-
-    [RelayCommand]
-    private void OpenHelp() => _openHelp?.Invoke();
 
     [RelayCommand]
     private void EditServices()

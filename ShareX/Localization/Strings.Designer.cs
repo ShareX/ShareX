@@ -3270,11 +3270,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_OCRHelp {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRHelp", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_CaptureOrClipboardUpload {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_CaptureOrClipboardUpload", resourceCulture);

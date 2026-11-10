@@ -2825,9 +2825,6 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Trợ giúp OCR...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Chỉ áp dụng hiệu ứng cho chụp vùng</value>
   </data>

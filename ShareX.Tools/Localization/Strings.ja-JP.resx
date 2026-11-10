@@ -1657,9 +1657,6 @@
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>テキストが見つかりません</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR ヘルプ</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>サービスを開く...</value>
   </data>

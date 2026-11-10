@@ -2825,9 +2825,6 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ajutor OCR...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Aplică efectele numai capturilor de regiune</value>
   </data>

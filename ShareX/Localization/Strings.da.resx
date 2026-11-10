@@ -2825,9 +2825,6 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-hjælp...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Anvend kun effekter ved områdeoptagelse</value>
   </data>

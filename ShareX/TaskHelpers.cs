@@ -2120,8 +2120,7 @@ namespace ShareX
                                 using MemoryStream regionStream = new MemoryStream();
                                 region.Save(regionStream, ImageFormat.Png);
                                 return regionStream.ToArray();
-                            },
-                            openHelp: () => URLHelpers.OpenURL(Links.DocsOCR));
+                            });
 
                         if (!string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(filePath))
                         {

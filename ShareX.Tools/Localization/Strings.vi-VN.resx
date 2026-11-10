@@ -1657,9 +1657,6 @@
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>Không tìm thấy văn bản</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Trợ giúp OCR</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Mở dịch vụ...</value>
   </data>

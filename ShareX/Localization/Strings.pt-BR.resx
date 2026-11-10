@@ -2825,9 +2825,6 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ajuda de OCR...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Aplicar efeitos somente à captura de região</value>
   </data>

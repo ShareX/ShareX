@@ -49,11 +49,10 @@ public partial class OCRWindow : Window
         OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
-        Action<OCROptions>? optionsChanged = null,
-        Action? openHelp = null)
+        Action<OCROptions>? optionsChanged = null)
     {
         _selectRegion = selectRegion;
-        _viewModel = new OCRViewModel(imageData, options, recognize, optionsChanged, openHelp);
+        _viewModel = new OCRViewModel(imageData, options, recognize, optionsChanged);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();

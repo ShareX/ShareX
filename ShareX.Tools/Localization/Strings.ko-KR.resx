@@ -1657,9 +1657,6 @@
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>텍스트를 찾을 수 없음</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR 도움말</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>서비스 열기...</value>
   </data>

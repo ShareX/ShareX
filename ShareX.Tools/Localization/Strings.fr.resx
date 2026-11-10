@@ -1663,9 +1663,6 @@ Chemin du fichier : {0}</value>
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>Aucun texte trouvé</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Aide OCR</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Ouvrir le service...</value>
   </data>

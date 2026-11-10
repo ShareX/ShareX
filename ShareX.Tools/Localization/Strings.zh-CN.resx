@@ -1663,9 +1663,6 @@
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>未找到文本</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR 帮助</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>打开服务...</value>
   </data>

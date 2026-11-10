@@ -2825,9 +2825,6 @@
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR วิธีใช้...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>ใช้เอฟเฟกต์เฉพาะกับการจับภาพพื้นที่</value>
   </data>

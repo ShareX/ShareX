@@ -2825,9 +2825,6 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
   </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>راهنمای OCR...</value>
-  </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>اعمال جلوه‌ها فقط روی ثبت ناحیه</value>
   </data>

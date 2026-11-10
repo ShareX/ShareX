@@ -1657,9 +1657,6 @@
   <data name="OCRWindow_No_text_found" xml:space="preserve">
     <value>Nie znaleziono tekstu</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Pomoc OCR</value>
-  </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Otwórz usługę...</value>
   </data>
