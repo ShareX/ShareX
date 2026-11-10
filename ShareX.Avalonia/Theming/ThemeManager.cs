@@ -156,7 +156,10 @@ namespace ShareX.AvaloniaUI.Theming
 
             if (application != null)
             {
-                application.Resources["ShareX.ScrollBar.AllowAutoHide"] = !_options.AlwaysExpandScrollBars;
+                SetResources(application.Resources, new Dictionary<object, object?>
+                {
+                    ["ShareX.ScrollBar.AllowAutoHide"] = !_options.AlwaysExpandScrollBars
+                });
             }
         }
 
@@ -349,33 +352,80 @@ namespace ShareX.AvaloniaUI.Theming
             AccentPalette palette = GetAccentPalette(theme)!;
             IResourceDictionary resources = application.Resources;
 
-            // Accent fills (buttons, selections, checked states) and the text drawn on them. These do not depend on
-            // the theme.
-            resources["ShareX.Color.Accent.Start"] = palette.FillStart;
-            resources["ShareX.Color.Accent.End"] = palette.FillEnd;
-            resources["ShareX.Color.Accent.Foreground"] = palette.OnFill;
-            resources["ShareX.Brush.Accent.Start"] = new SolidColorBrush(palette.FillStart);
-            resources["ShareX.Brush.Accent.Foreground"] = new SolidColorBrush(palette.OnFill);
-            resources["ShareX.Brush.Accent"] = new LinearGradientBrush
+            // Every resource write makes Avalonia re-resolve resources across all open windows, so the values are
+            // collected and written in one batch per dictionary rather than one key at a time.
+            Dictionary<object, object?> values = new()
             {
-                StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
-                EndPoint = new RelativePoint(1, 1, RelativeUnit.Relative),
-                GradientStops =
+                // Accent fills (buttons, selections, checked states) and the text drawn on them. These do not depend
+                // on the theme.
+                ["ShareX.Color.Accent.Start"] = palette.FillStart,
+                ["ShareX.Color.Accent.End"] = palette.FillEnd,
+                ["ShareX.Color.Accent.Foreground"] = palette.OnFill,
+                ["ShareX.Brush.Accent.Start"] = new SolidColorBrush(palette.FillStart),
+                ["ShareX.Brush.Accent.Foreground"] = new SolidColorBrush(palette.OnFill),
+                ["ShareX.Brush.Accent"] = new LinearGradientBrush
                 {
-                    new GradientStop(palette.FillStart, 0),
-                    new GradientStop(palette.FillEnd, 1)
+                    StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
+                    EndPoint = new RelativePoint(1, 1, RelativeUnit.Relative),
+                    GradientStops =
+                    {
+                        new GradientStop(palette.FillStart, 0),
+                        new GradientStop(palette.FillEnd, 1)
+                    }
                 }
             };
 
+            AddFluentAccentResources(values, palette);
+            bool changed = SetResources(resources, values);
+
             // Accent colored text, icons and indicators drawn on the theme backgrounds rather than on the accent.
-            SetSurfaceAccentResources(GetThemeDictionary(resources, ShareXDark), _darkPalette);
-            SetSurfaceAccentResources(GetThemeDictionary(resources, ThemeVariant.Dark), _darkPalette);
-            SetSurfaceAccentResources(GetThemeDictionary(resources, ShareXLight), _lightPalette);
-            SetSurfaceAccentResources(GetThemeDictionary(resources, ThemeVariant.Light), _lightPalette);
+            // ShareXDark and ShareXLight inherit Dark and Light, so they resolve these through the base entries.
+            changed |= SetResources(GetThemeDictionary(resources, ThemeVariant.Dark), GetSurfaceAccentResources(_darkPalette));
+            changed |= SetResources(GetThemeDictionary(resources, ThemeVariant.Light), GetSurfaceAccentResources(_lightPalette));
 
-            ApplyFluentAccentResources(resources, palette);
+            if (changed)
+            {
+                AccentColorChanged?.Invoke(null, palette.FillStart);
+            }
+        }
 
-            AccentColorChanged?.Invoke(null, palette.FillStart);
+        /// <summary>Writes the values that differ from what the dictionary already holds, raising at most one change notification.</summary>
+        private static bool SetResources(IResourceDictionary resources, IReadOnlyDictionary<object, object?> values)
+        {
+            KeyValuePair<object, object?>[] changed = values
+                .Where(pair => !resources.TryGetValue(pair.Key, out object? current) || !IsSameResource(current, pair.Value))
+                .ToArray();
+
+            if (changed.Length == 0)
+            {
+                return false;
+            }
+
+            if (resources is ResourceDictionary dictionary)
+            {
+                dictionary.SetItems(changed);
+            }
+            else
+            {
+                foreach (KeyValuePair<object, object?> pair in changed)
+                {
+                    resources[pair.Key] = pair.Value;
+                }
+            }
+
+            return true;
+        }
+
+        // Brushes are recreated on every refresh, so they are compared by what they paint.
+        private static bool IsSameResource(object? current, object? value)
+        {
+            return (current, value) switch
+            {
+                (ISolidColorBrush a, ISolidColorBrush b) => a.Color == b.Color && a.Opacity == b.Opacity,
+                (IGradientBrush a, IGradientBrush b) => a.Opacity == b.Opacity &&
+                    a.GradientStops.Select(stop => (stop.Color, stop.Offset)).SequenceEqual(b.GradientStops.Select(stop => (stop.Color, stop.Offset))),
+                _ => Equals(current, value)
+            };
         }
 
         // A dictionary can only belong to one theme key, so each variant gets its own, created once and updated in place.
@@ -391,31 +441,34 @@ namespace ShareX.AvaloniaUI.Theming
             return created;
         }
 
-        private static void SetSurfaceAccentResources(IResourceDictionary resources, AccentPalette palette)
+        private static Dictionary<object, object?> GetSurfaceAccentResources(AccentPalette palette)
         {
-            resources["ShareX.Color.Accent.Text"] = palette.Text;
-            resources["ShareX.Brush.Accent.Text"] = new SolidColorBrush(palette.Text);
-            resources["ShareX.Color.Accent.Border"] = palette.Border;
-            resources["ShareX.Brush.Accent.Border"] = new SolidColorBrush(palette.Border);
-            // Drawn inside selected items, so it outlines an accent fill that is too close to the background without
-            // changing layout. It matches the fill when the fill already stands out.
-            resources["ShareX.BoxShadow.Accent.Outline"] = new BoxShadows(new BoxShadow
+            return new Dictionary<object, object?>
             {
-                IsInset = true,
-                Spread = 1,
-                Color = palette.Border
-            });
-            resources["ShareX.Color.Link"] = palette.Text;
-            resources["ShareX.Brush.Link"] = new SolidColorBrush(palette.Text);
-            resources["HyperlinkButtonForeground"] = new SolidColorBrush(palette.Text);
-            resources["HyperlinkButtonForegroundPointerOver"] = new SolidColorBrush(palette.Text);
-            resources["HyperlinkButtonForegroundPressed"] = new SolidColorBrush(palette.Text);
+                ["ShareX.Color.Accent.Text"] = palette.Text,
+                ["ShareX.Brush.Accent.Text"] = new SolidColorBrush(palette.Text),
+                ["ShareX.Color.Accent.Border"] = palette.Border,
+                ["ShareX.Brush.Accent.Border"] = new SolidColorBrush(palette.Border),
+                // Drawn inside selected items, so it outlines an accent fill that is too close to the background
+                // without changing layout. It matches the fill when the fill already stands out.
+                ["ShareX.BoxShadow.Accent.Outline"] = new BoxShadows(new BoxShadow
+                {
+                    IsInset = true,
+                    Spread = 1,
+                    Color = palette.Border
+                }),
+                ["ShareX.Color.Link"] = palette.Text,
+                ["ShareX.Brush.Link"] = new SolidColorBrush(palette.Text),
+                ["HyperlinkButtonForeground"] = new SolidColorBrush(palette.Text),
+                ["HyperlinkButtonForegroundPointerOver"] = new SolidColorBrush(palette.Text),
+                ["HyperlinkButtonForegroundPressed"] = new SolidColorBrush(palette.Text)
+            };
         }
 
         // Fluent's built-in controls derive their checked/selected fills from SystemAccentColor and its Light/Dark
         // variants, and draw white glyphs and text on them. Point those at the palette so they stay readable, and
         // make the list selection fills opaque so text contrast does not depend on what is behind them.
-        private static void ApplyFluentAccentResources(IResourceDictionary resources, AccentPalette palette)
+        private static void AddFluentAccentResources(IDictionary<object, object?> resources, AccentPalette palette)
         {
             resources["SystemAccentColor"] = palette.FillStart;
             resources["SystemAccentColorLight1"] = palette.FillLight1;
