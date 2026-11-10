@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="tkFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#66ee77"/><stop offset="0.5" stop-color="#3ccb4c"/><stop offset="1" stop-color="#0eb61d"/></linearGradient>
+<linearGradient id="tkEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00aa15"/><stop offset="1" stop-color="#005f02"/></linearGradient>
+</defs>
+<path d="M1.8 8.2 L3.4 6.7 L6.3 9.4 L12.5 2.8 L14.2 4.4 L6.3 13.1 Z" fill="url(#tkFill)" stroke="url(#tkEdge)" stroke-opacity=".82" stroke-linejoin="round"/>
+</svg>

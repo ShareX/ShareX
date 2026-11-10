@@ -29,8 +29,9 @@ using Avalonia.Media;
 namespace ShareX.Icons;
 
 /// <summary>
-/// The icons of the <see cref="IconPack.Legacy"/> pack: the ShareX 21 icons, mostly from the Fugue icon set by
-/// Yusuke Kamiyamane (CC BY 3.0), redrawn as SVG files in the Legacy folder and embedded in this assembly.
+/// The icons of the <see cref="IconPack.Legacy"/> pack: full-colour icons, as SVG files in the Legacy folder named
+/// after their key like the <see cref="ModernIcons"/> (app/camera is app.camera.svg), embedded in this assembly. A
+/// file with the -white suffix (app.camera-white.svg) is the version for dark backgrounds.
 /// </summary>
 internal static class LegacyIcons
 {
@@ -38,11 +39,13 @@ internal static class LegacyIcons
 
     /// <summary>
     /// The legacy version of the icon with key <paramref name="key"/>, laid out like <paramref name="modern"/>, or
-    /// null if ShareX 21 had no icon for it.
+    /// null if the Legacy folder has no icon for it.
     /// </summary>
     public static VectorIcon? Find(string key, VectorIcon modern)
     {
-        if (!LegacyIconMap.Names.TryGetValue(key, out string? name) || GetDrawing(name) is not SvgIconDrawing light)
+        string name = key.Replace('/', '.');
+
+        if (GetDrawing(name) is not SvgIconDrawing light)
         {
             return null;
         }
@@ -54,8 +57,8 @@ internal static class LegacyIcons
 }
 
 /// <summary>
-/// A legacy icon, with the version ShareX 21 used on dark backgrounds when it had one, chosen when the icon is
-/// shown in a dark theme, or, when the theme is not known, drawn in a light Foreground.
+/// A legacy icon, with its version for dark backgrounds when it has one, chosen when the icon is shown in a dark
+/// theme, or, when the theme is not known, drawn in a light Foreground.
 /// </summary>
 internal sealed class LegacyIcon(SvgIconDrawing light, SvgIconDrawing? dark)
 {

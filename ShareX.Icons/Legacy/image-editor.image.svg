@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cc8800" stop-opacity=".5"/><stop offset="1" stop-color="#8b5c00" stop-opacity=".75"/></linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2ae"/><stop offset=".9" stop-color="#e8c77c"/><stop offset="1" stop-color="#edcb81"/></linearGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdfefe"/><stop offset="1" stop-color="#dbe9e9"/></linearGradient>
+    <linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#41c9fe"/><stop offset="1" stop-color="#2eb6f4"/></linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dec07b"/><stop offset="1" stop-color="#b18f4b"/></linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fefefe"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4794ff"/><stop offset="1" stop-color="#b2d3ff"/></linearGradient>
+    <linearGradient id="y" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfad15"/><stop offset=".55" stop-color="#ffff84"/><stop offset="1" stop-color="#a4860a"/></linearGradient>
+    <linearGradient id="e" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cdaf6d"/><stop offset="1" stop-color="#a88641"/></linearGradient>
+  </defs>
+  <path d="M2.5 .5h11v13h-11z" fill="url(#f)" stroke="url(#o)"/>
+  <path d="M3 1h4.5v1H3z" fill="#e9c160" opacity=".7"/>
+  <path d="M3.5 2v11" stroke="#fffbe0" stroke-opacity=".35"/>
+  <path d="M2 13.5h5.5v2z" fill="#ddb868"/>
+  <path d="M2.5 13.5l5 2" stroke="#8c5c00" stroke-opacity=".7"/>
+  <path d="M7.5 2.5h7v12h-7z" fill="url(#s)" stroke="#2c5252" stroke-opacity=".42"/>
+  <rect x="8" y="4" width="6" height="1" fill="url(#sky)"/>
+  <rect x="8" y="5" width="6" height="1" fill="#88aecb"/>
+  <rect x="8" y="7" width="3" height="6" fill="url(#y)"/>
+  <rect x="12" y="6" width="1" height="5" fill="#86aab8"/>
+  <rect x="13" y="8" width="1" height="2" fill="#a4d5fb"/>
+  <path d="M12 11h2v1.5l-1.5 1H12z" fill="#5e705e"/>
+  <rect x="7" y="2" width="1" height="13" fill="url(#e)"/>
+  <path d="M7.5 2.5h5" stroke="#bab78e"/>
+  <rect x="8" y="15" width="7" height="1" fill="#000" opacity=".1"/>
+</svg>

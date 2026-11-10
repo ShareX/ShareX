@@ -31,8 +31,6 @@ public enum IconPack
     /// <summary>The line art icons, drawn in the color of the text around them.</summary>
     Modern,
 
-    /// <summary>
-    /// The full-colour icons of ShareX 21, where ShareX 21 had an icon for the same command. Others stay modern.
-    /// </summary>
+    /// <summary>The full-colour icons, where the Legacy folder has one for the icon key. Others stay modern.</summary>
     Legacy
 }
