@@ -32,9 +32,9 @@ using Avalonia.Media.Immutable;
 namespace ShareX.Icons;
 
 /// <summary>
-/// A full-colour icon read from an SVG file. Only the small part of SVG that the legacy icon files use is
-/// understood: basic shapes and paths, solid and gradient fills and strokes, group opacity and transforms.
-/// <c>currentColor</c> is drawn in the Foreground the icon is drawn with.
+/// An icon read from an SVG file. Only the small part of SVG that the icon files use is understood: basic shapes
+/// and paths, solid and gradient fills and strokes, group opacity, transforms and masks. <c>currentColor</c> is
+/// drawn in the Foreground the icon is drawn with.
 /// </summary>
 internal sealed class SvgIconDrawing
 {
@@ -68,8 +68,12 @@ internal sealed class SvgIconDrawing
             .Where(element => element.Attribute("id") != null)
             .ToDictionary(element => element.Attribute("id")!.Value, StringComparer.Ordinal);
 
-        Parser parser = new(gradients);
-        SvgNode[] nodes = parser.ReadChildren(root, SvgStyle.Default);
+        Dictionary<string, XElement> masks = root.Descendants(Svg + "mask")
+            .Where(element => element.Attribute("id") != null)
+            .ToDictionary(element => element.Attribute("id")!.Value, StringComparer.Ordinal);
+
+        Parser parser = new(gradients, masks);
+        SvgNode[] nodes = parser.ReadChildren(root, SvgStyle.Default.With(root));
         Matrix offset = Matrix.CreateTranslation(-viewBox[0], -viewBox[1]);
         return new SvgIconDrawing(viewBox[2], viewBox[3], [new SvgGroup(offset, 1, nodes)]);
     }
@@ -241,8 +245,10 @@ internal sealed class SvgIconDrawing
         }
     }
 
-    private sealed class Parser(Dictionary<string, XElement> gradients)
+    private sealed class Parser(Dictionary<string, XElement> gradients, Dictionary<string, XElement> masks)
     {
+        private readonly Dictionary<string, Geometry> _maskAreas = new(StringComparer.Ordinal);
+
         public SvgNode[] ReadChildren(XElement parent, SvgStyle style)
         {
             List<SvgNode> nodes = [];
@@ -269,7 +275,7 @@ internal sealed class SvgIconDrawing
         {
             string name = element.Name.LocalName;
 
-            if (name is "defs" or "linearGradient" or "radialGradient" or "title" or "desc" or "metadata")
+            if (name is "defs" or "linearGradient" or "radialGradient" or "mask" or "title" or "desc" or "metadata")
             {
                 return null;
             }
@@ -277,10 +283,11 @@ internal sealed class SvgIconDrawing
             SvgStyle style = inherited.With(element);
             Matrix transform = ParseTransform(element.Attribute("transform")?.Value);
             double opacity = ParseNumber(element.Attribute("opacity")?.Value, 1);
+            Geometry? clip = GetMaskArea(element.Attribute("mask")?.Value);
 
             if (name == "g")
             {
-                return new SvgGroup(transform, opacity, ReadChildren(element, style));
+                return new SvgGroup(transform, opacity, ReadChildren(element, style), clip);
             }
 
             Geometry? geometry = CreateGeometry(element, style.FillRule);
@@ -293,7 +300,111 @@ internal sealed class SvgIconDrawing
             // A line has no area to fill.
             Paint fill = name == "line" ? Paint.None : CreatePaint(style.Fill, style.FillOpacity);
             Paint stroke = CreatePaint(style.Stroke, style.StrokeOpacity);
-            return new SvgShape(geometry, fill, stroke, style, transform, opacity);
+            return new SvgShape(geometry, fill, stroke, style, transform, opacity, clip);
+        }
+
+        /// <summary>
+        /// The area a mask shows, used as a clip: its light shapes show what they cover and its dark shapes hide it,
+        /// each over the ones before. The mask region is not used, so a mask shows nothing outside its light shapes.
+        /// </summary>
+        private Geometry? GetMaskArea(string? reference)
+        {
+            if (string.IsNullOrWhiteSpace(reference) || reference.Trim() == "none")
+            {
+                return null;
+            }
+
+            reference = reference.Trim();
+
+            if (!reference.StartsWith("url(#", StringComparison.Ordinal) || !masks.TryGetValue(reference[5..reference.IndexOf(')')], out XElement? mask))
+            {
+                return null;
+            }
+
+            string id = mask.Attribute("id")!.Value;
+
+            if (!_maskAreas.TryGetValue(id, out Geometry? area))
+            {
+                // Mask contents take the painting properties of the mask's own ancestors.
+                SvgStyle style = mask.AncestorsAndSelf().Reverse().Aggregate(SvgStyle.Default, (current, element) => current.With(element));
+                Geometry? shown = null;
+                AddMaskArea(mask, style, Matrix.Identity, ref shown);
+                area = shown ?? new RectangleGeometry(default);
+                _maskAreas[id] = area;
+            }
+
+            return area;
+        }
+
+        private static void AddMaskArea(XElement parent, SvgStyle inherited, Matrix parentTransform, ref Geometry? area)
+        {
+            foreach (XElement element in parent.Elements())
+            {
+                string name = element.Name.LocalName;
+
+                if (element.Name.Namespace != Svg || name is "title" or "desc" or "metadata")
+                {
+                    continue;
+                }
+
+                SvgStyle style = inherited.With(element);
+
+                // In SVG the transform of a parent applies after the transforms of its children.
+                Matrix transform = ParseTransform(element.Attribute("transform")?.Value) * parentTransform;
+
+                if (name == "g")
+                {
+                    AddMaskArea(element, style, transform, ref area);
+                    continue;
+                }
+
+                if (CreateGeometry(element, style.FillRule) is not Geometry geometry)
+                {
+                    continue;
+                }
+
+                if (name != "line" && IsPainted(style.Fill, style.FillOpacity))
+                {
+                    area = CombineMaskArea(area, geometry, transform, IsLight(style.Fill));
+                }
+
+                if (IsPainted(style.Stroke, style.StrokeOpacity) && style.StrokeWidth > 0)
+                {
+                    IDashStyle? dashStyle = style.Dashes is { Length: > 0 } dashes
+                        ? new ImmutableDashStyle(dashes.Select(length => length / style.StrokeWidth), 0)
+                        : null;
+                    Pen pen = new(Brushes.Black, style.StrokeWidth, dashStyle, style.LineCap, style.LineJoin, style.MiterLimit);
+                    area = CombineMaskArea(area, geometry.GetWidenedGeometry(pen), transform, IsLight(style.Stroke));
+                }
+            }
+        }
+
+        private static Geometry? CombineMaskArea(Geometry? area, Geometry part, Matrix transform, bool show)
+        {
+            if (!transform.IsIdentity)
+            {
+                part.Transform = new MatrixTransform(transform);
+            }
+
+            if (show)
+            {
+                return area == null ? part : new CombinedGeometry(GeometryCombineMode.Union, area, part);
+            }
+
+            return area == null ? null : new CombinedGeometry(GeometryCombineMode.Exclude, area, part);
+        }
+
+        private static bool IsPainted(string value, double opacity) => opacity > 0 && value.Trim() != "none";
+
+        // A mask is drawn as a clip, so each of its shapes either shows or hides: light colors show, dark ones hide.
+        private static bool IsLight(string value)
+        {
+            if (!Color.TryParse(value.Trim(), out Color color))
+            {
+                return true;
+            }
+
+            return (0.2126 * color.R + 0.7152 * color.G + 0.0722 * color.B) / 255 >= 0.5;
         }
 
         private static Geometry? CreateGeometry(XElement element, FillRule fillRule)
@@ -456,27 +567,43 @@ internal sealed class SvgIconDrawing
         }
     }
 
-    private abstract class SvgNode
+    /// <summary>An element with its transform, opacity and the area of its mask, if it has one.</summary>
+    private abstract class SvgNode(Matrix transform, double opacity, Geometry? clip)
     {
-        public abstract void Draw(DrawingContext context, IBrush currentColor);
-    }
-
-    private sealed class SvgGroup(Matrix transform, double opacity, SvgNode[] children) : SvgNode
-    {
-        public override void Draw(DrawingContext context, IBrush currentColor)
+        public void Draw(DrawingContext context, IBrush currentColor)
         {
             using (context.PushTransform(transform))
             using (context.PushOpacity(opacity))
             {
-                foreach (SvgNode child in children)
+                if (clip == null)
                 {
-                    child.Draw(context, currentColor);
+                    DrawContent(context, currentColor);
+                    return;
                 }
+
+                using (context.PushGeometryClip(clip))
+                {
+                    DrawContent(context, currentColor);
+                }
+            }
+        }
+
+        protected abstract void DrawContent(DrawingContext context, IBrush currentColor);
+    }
+
+    private sealed class SvgGroup(Matrix transform, double opacity, SvgNode[] children, Geometry? clip = null) : SvgNode(transform, opacity, clip)
+    {
+        protected override void DrawContent(DrawingContext context, IBrush currentColor)
+        {
+            foreach (SvgNode child in children)
+            {
+                child.Draw(context, currentColor);
             }
         }
     }
 
-    private sealed class SvgShape(Geometry geometry, Paint fill, Paint stroke, SvgStyle style, Matrix transform, double opacity) : SvgNode
+    private sealed class SvgShape(Geometry geometry, Paint fill, Paint stroke, SvgStyle style, Matrix transform, double opacity, Geometry? clip)
+        : SvgNode(transform, opacity, clip)
     {
         private readonly IDashStyle? _dashStyle = style.Dashes is { Length: > 0 } dashes && style.StrokeWidth > 0
             ? new ImmutableDashStyle(dashes.Select(length => length / style.StrokeWidth), 0)
@@ -484,23 +611,19 @@ internal sealed class SvgIconDrawing
 
         private IPen? _pen;
 
-        public override void Draw(DrawingContext context, IBrush currentColor)
+        protected override void DrawContent(DrawingContext context, IBrush currentColor)
         {
-            using (context.PushTransform(transform))
-            using (context.PushOpacity(opacity))
+            if (!fill.IsNone)
             {
-                if (!fill.IsNone)
-                {
-                    context.DrawGeometry(fill.Resolve(currentColor), null, geometry);
-                }
+                context.DrawGeometry(fill.Resolve(currentColor), null, geometry);
+            }
 
-                if (!stroke.IsNone && style.StrokeWidth > 0)
-                {
-                    IPen pen = stroke.UsesCurrentColor
-                        ? CreatePen(stroke.Resolve(currentColor)!)
-                        : _pen ??= CreatePen(stroke.Brush!);
-                    context.DrawGeometry(null, pen, geometry);
-                }
+            if (!stroke.IsNone && style.StrokeWidth > 0)
+            {
+                IPen pen = stroke.UsesCurrentColor
+                    ? CreatePen(stroke.Resolve(currentColor)!)
+                    : _pen ??= CreatePen(stroke.Brush!);
+                context.DrawGeometry(null, pen, geometry);
             }
         }
 
