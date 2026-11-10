@@ -1443,7 +1443,7 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
     <value>Anda dapat mengubahnya kapan saja di pengaturan aplikasi.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Ikon berwarna dari ShareX 21.</value>
+    <value>Ikon berwarna dan detail dengan gaya klasik.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Ikon garis yang bersih dan mengikuti warna tema Anda.</value>

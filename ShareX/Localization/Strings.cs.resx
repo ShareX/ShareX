@@ -1443,7 +1443,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Toto můžete kdykoli změnit v nastavení aplikace.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Barevné ikony ze ShareX 21.</value>
+    <value>Barevné a detailní ikony v klasickém stylu.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Čisté obrysové ikony, které přebírají barvy motivu.</value>

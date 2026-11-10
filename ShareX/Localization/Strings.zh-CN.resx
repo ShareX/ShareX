@@ -1443,7 +1443,7 @@
     <value>你可以随时在应用程序设置中更改此项。</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ShareX 21 的彩色图标。</value>
+    <value>经典风格的彩色精细图标。</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>简洁的线条图标，随主题颜色变化。</value>

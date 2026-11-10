@@ -1443,7 +1443,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Vous pouvez modifier ce choix à tout moment dans les paramètres de l'application.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Les icônes colorées de ShareX 21.</value>
+    <value>Des icônes colorées et détaillées au style classique.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Des icônes au trait épuré qui suivent les couleurs de votre thème.</value>

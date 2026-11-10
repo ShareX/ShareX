@@ -1443,7 +1443,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Puedes cambiar esto en cualquier momento en la configuración de la aplicación.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Los iconos coloridos de ShareX 21.</value>
+    <value>Iconos coloridos y detallados con un estilo clásico.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Iconos de líneas limpias que siguen los colores de tu tema.</value>

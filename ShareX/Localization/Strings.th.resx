@@ -1443,7 +1443,7 @@
     <value>คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ไอคอนสีสันสดใสจาก ShareX 21</value>
+    <value>ไอคอนสีสันสดใสและละเอียดในสไตล์คลาสสิก</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>ไอคอนเส้นเรียบง่ายที่ใช้สีตามธีมของคุณ</value>

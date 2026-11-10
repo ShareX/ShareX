@@ -1444,8 +1444,8 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>You can change this anytime in Application settings.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>The colorful icons from ShareX 21.</value>
-    <comment>Description of the Legacy icon pack. 21 is the ShareX version number.</comment>
+    <value>Colorful, detailed icons in a classic style.</value>
+    <comment>Description of the Legacy icon pack.</comment>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Clean line icons that follow your theme colors.</value>

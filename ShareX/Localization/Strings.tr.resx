@@ -1443,7 +1443,7 @@ Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve Share
     <value>Bunu istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ShareX 21'in renkli simgeleri.</value>
+    <value>Klasik tarzda renkli ve ayrıntılı simgeler.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Temanızın renklerine uyan sade çizgi simgeler.</value>

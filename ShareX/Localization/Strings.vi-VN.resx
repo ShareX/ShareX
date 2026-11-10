@@ -1443,7 +1443,7 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
     <value>Bạn có thể thay đổi tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Các biểu tượng nhiều màu sắc từ ShareX 21.</value>
+    <value>Các biểu tượng nhiều màu sắc, chi tiết theo phong cách cổ điển.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Biểu tượng nét mảnh gọn gàng, theo màu chủ đề của bạn.</value>

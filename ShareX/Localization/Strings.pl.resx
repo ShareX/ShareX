@@ -1443,7 +1443,7 @@ Proszę wybrać inny skrót klawiszowy lub zamknąć konfliktową aplikację i p
     <value>Możesz to zmienić w dowolnej chwili w ustawieniach aplikacji.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Kolorowe ikony z ShareX 21.</value>
+    <value>Kolorowe, szczegółowe ikony w klasycznym stylu.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Proste ikony liniowe w kolorach motywu.</value>

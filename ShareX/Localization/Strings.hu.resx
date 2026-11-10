@@ -1443,7 +1443,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Ezt bármikor módosíthatja az alkalmazás beállításaiban.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>A ShareX 21 színes ikonjai.</value>
+    <value>Színes, részletes ikonok klasszikus stílusban.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Letisztult vonalas ikonok, amelyek a téma színeit követik.</value>
