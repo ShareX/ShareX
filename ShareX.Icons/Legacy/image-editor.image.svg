@@ -1,21 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
   <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3f3f3"/></linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset=".85" stop-color="#1f4242"/><stop offset="1" stop-color="#0d2e2e"/></linearGradient>
-    <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190ff"/><stop offset=".45" stop-color="#b5d4ff"/><stop offset="1" stop-color="#e2eeff"/></linearGradient>
-    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity=".55"/></linearGradient>
-    <linearGradient id="g5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a896b"/><stop offset="1" stop-color="#195d3b"/></linearGradient>
-    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a7c5c"/><stop offset="1" stop-color="#b8d4dc" stop-opacity=".4"/></linearGradient>
-    <linearGradient id="g7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#124e56"/><stop offset=".5" stop-color="#447e88"/><stop offset="1" stop-color="#b6d8f0"/></linearGradient>
-    <linearGradient id="g8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34679a"/><stop offset=".5" stop-color="#5e91c4"/><stop offset="1" stop-color="#a6d9fc"/></linearGradient>
+    <linearGradient id="ag1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#e3f3f3" /></linearGradient>
+    <linearGradient id="ag2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f" /><stop offset=".85" stop-color="#1f4242" /><stop offset="1" stop-color="#0d2e2e" /></linearGradient>
+    <linearGradient id="ag3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4190ff" /><stop offset=".45" stop-color="#b5d4ff" /><stop offset="1" stop-color="#e2eeff" /></linearGradient>
+    <linearGradient id="ag4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0" /><stop offset=".55" stop-color="#fff" stop-opacity="0" /><stop offset="1" stop-color="#fff" stop-opacity=".55" /></linearGradient>
+    <linearGradient id="ag5" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a896b" /><stop offset="1" stop-color="#195d3b" /></linearGradient>
+    <linearGradient id="ag6" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3a7c5c" /><stop offset="1" stop-color="#b8d4dc" stop-opacity=".4" /></linearGradient>
+    <linearGradient id="ag7" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#124e56" /><stop offset=".5" stop-color="#447e88" /><stop offset="1" stop-color="#b6d8f0" /></linearGradient>
+    <linearGradient id="ag8" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34679a" /><stop offset=".5" stop-color="#5e91c4" /><stop offset="1" stop-color="#a6d9fc" /></linearGradient>
+    <linearGradient id="co" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cc8800" stop-opacity=".5" /><stop offset="1" stop-color="#8b5c00" stop-opacity=".75" /></linearGradient>
+    <linearGradient id="cf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2ae" /><stop offset=".9" stop-color="#e8c77c" /><stop offset="1" stop-color="#edcb81" /></linearGradient>
+    <linearGradient id="cp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdfefe" /><stop offset="1" stop-color="#dbe9e9" /></linearGradient>
+    <linearGradient id="ct" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#41c9fe" /><stop offset="1" stop-color="#2eb6f4" /></linearGradient>
+    <linearGradient id="cd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dec07b" /><stop offset="1" stop-color="#b18f4b" /></linearGradient>
   </defs>
-  <rect x=".5" y="2.5" width="15" height="11" fill="url(#g1)" stroke="url(#g2)" stroke-opacity=".46"/>
-  <g transform="translate(2 4) scale(1 1)">
-    <rect width="12" height="5" fill="url(#g3)"/>
-    <rect width="12" height="5" fill="url(#g4)"/>
-    <path d="M0 4C2 4.2 4 4.6 6 5H0z" fill="url(#g6)"/>
-    <path d="M0 2.6C1.4 2.6 2.4 3.4 3.4 4.2C3.8 4.5 4.2 4.8 4.6 5H0z" fill="url(#g5)"/>
-    <rect y="5" width="12" height="1" fill="url(#g7)"/>
-    <rect y="6" width="12" height="2" fill="url(#g8)"/>
+  <g transform="translate(-1 -1)">
+    <rect x=".5" y="2.5" width="15" height="11" fill="url(#ag1)" stroke="url(#ag2)" stroke-opacity=".46" />
+    <g transform="translate(2 4) scale(1 1)"><rect width="12" height="5" fill="url(#ag3)" /><rect width="12" height="5" fill="url(#ag4)" /><path d="M0 4C2 4.2 4 4.6 6 5H0z" fill="url(#ag6)" /><path d="M0 2.6C1.4 2.6 2.4 3.4 3.4 4.2C3.8 4.5 4.2 4.8 4.6 5H0z" fill="url(#ag5)" /><rect y="5" width="12" height="1" fill="url(#ag7)" /><rect y="6" width="12" height="2" fill="url(#ag8)" /></g>
+  </g>
+  <rect x="7.6" y="8.6" width="8.4" height="7.4" rx="1.2" fill="#ffffff" opacity=".85" />
+  <g transform="translate(8 8.6) scale(.5)">
+    <path d="M2.5 .5h11v7l1 1v5l-1 1v1h-11z" fill="url(#cf)" />
+    <path d="M3.5 1v14M12.5 1v6" stroke="#fffbe0" stroke-opacity=".35" />
+    <path d="M10.5 8.6V15M12.5 9V15" stroke="#fdf2b0" stroke-opacity=".6" />
+    <polyline points="13.6,7.3 11.5,8.5 11.5,15" fill="none" stroke="url(#cd)" />
+    <rect x="13" y="8" width="1" height="4" fill="url(#cp)" />
+    <rect x="13" y="12" width="1" height="2" fill="url(#ct)" />
+    <path d="M2.5 .5h11v7l1 1v5l-1 1v1h-11z" fill="none" stroke="url(#co)" />
   </g>
 </svg>

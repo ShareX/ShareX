@@ -1,5 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="3" y="3" width="18" height="18" rx="3"/>
-  <path d="m3 16.5 5.5-5.5 9.5 9.5M14 16.5l3-3 4 4"/>
-  <circle cx="15.5" cy="8.5" r="1.75" fill="currentColor" stroke="none"/>
+  <defs>
+    <mask id="gap" maskUnits="userSpaceOnUse">
+      <rect width="24" height="24" fill="#fff" stroke="none"/>
+      <circle cx="18" cy="18" r="6.25" fill="#000" stroke="none"/>
+    </mask>
+  </defs>
+  <g mask="url(#gap)">
+    <rect x="3" y="3" width="18" height="18" rx="3"/>
+    <path d="m3 16.5 5.5-5.5 9.5 9.5M14 16.5l3-3 4 4"/>
+    <circle cx="15.5" cy="8.5" r="1.75" fill="currentColor" stroke="none"/>
+  </g>
+  <path d="M13.5 15.25a1.5 1.5 0 0 1 1.5-1.5h1.75l1.2 1.5h2.55a1.5 1.5 0 0 1 1.5 1.5v3.5a1.5 1.5 0 0 1-1.5 1.5h-5.5a1.5 1.5 0 0 1-1.5-1.5z" stroke-width="1.75"/>
 </svg>
