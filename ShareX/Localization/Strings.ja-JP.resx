@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>右クリック時の動作:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>右クリックでカーソル下の図形を削除する</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>右クリックして入力または出力ファイルのトークンを挿入します。</value>
   </data>

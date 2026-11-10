@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Действие правой кнопки мыши:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Щелчок правой кнопкой удаляет фигуру под курсором</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Щёлкните правой кнопкой мыши, чтобы вставить токен входного или выходного файла.</value>
   </data>

@@ -2987,6 +2987,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Handling ved højreklik:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Højreklik sletter formen under markøren</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Højreklik for at indsætte et token for in- eller outputfil.</value>
   </data>

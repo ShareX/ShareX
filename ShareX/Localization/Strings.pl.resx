@@ -2987,6 +2987,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Akcja prawego kliknięcia:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Kliknięcie prawym przyciskiem usuwa kształt pod kursorem</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Kliknij prawym przyciskiem, aby wstawić token pliku wejściowego lub wyjściowego.</value>
   </data>

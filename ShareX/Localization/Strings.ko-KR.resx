@@ -2987,6 +2987,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>오른쪽 클릭 동작:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>마우스 오른쪽 버튼을 클릭하면 커서 아래의 모양 삭제</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>입력 또는 출력 파일 토큰을 삽입하려면 마우스 오른쪽 버튼을 클릭하세요.</value>
   </data>

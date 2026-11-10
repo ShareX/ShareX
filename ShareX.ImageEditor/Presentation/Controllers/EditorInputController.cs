@@ -184,6 +184,15 @@ public class EditorInputController
                     _selectionController.SetSelectedShape(hitTarget);
                 }
 
+                if (vm.Options.RightClickDeletesShape)
+                {
+                    // Same as pressing Delete, so it can be undone.
+                    vm.DeleteSelectedCommand.Execute(null);
+                    e.Pointer.Capture(null);
+                    e.Handled = true;
+                    return;
+                }
+
                 _view.OpenContextMenu(hitTarget);
                 e.Handled = true;
                 return;

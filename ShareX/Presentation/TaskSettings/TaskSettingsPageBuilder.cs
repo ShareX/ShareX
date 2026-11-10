@@ -932,6 +932,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_ShowExitConfirmation, () => options.ShowExitConfirmation, value => options.ShowExitConfirmation = value),
                 Check(Strings.TaskSettingsWindow_ZoomToFitOnOpen, () => options.ZoomToFitOnOpen, value => options.ZoomToFitOnOpen = value),
                 Check(Strings.TaskSettingsWindow_QuickCrop, () => options.QuickCrop, value => options.QuickCrop = value),
+                Check(Strings.TaskSettingsWindow_RightClickDeletesShape, () => options.RightClickDeletesShape, value => options.RightClickDeletesShape = value),
                 Check(Strings.TaskSettingsWindow_AutoCloseEditorOnTask, () => options.AutoCloseEditorOnTask, value => options.AutoCloseEditorOnTask = value),
                 Check(Strings.TaskSettingsWindow_AutoCopyImageToClipboard, () => options.AutoCopyImageToClipboard, value => options.AutoCopyImageToClipboard = value),
                 Check(Strings.TaskSettingsWindow_ShowInsertImageDialog, () => options.ShowInsertImageDialog, value => options.ShowInsertImageDialog = value),

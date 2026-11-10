@@ -2987,6 +2987,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Actie bij rechtsklikken:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Rechtsklikken verwijdert de vorm onder de cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Klik met de rechtermuisknop om een invoer- of uitvoerbestandstoken in te voegen.</value>
   </data>

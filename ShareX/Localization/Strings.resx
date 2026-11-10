@@ -2996,6 +2996,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Right click action:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Right-click deletes the shape under the cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Right-click to insert an input or output file token.</value>
   </data>

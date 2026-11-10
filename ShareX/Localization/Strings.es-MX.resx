@@ -2987,6 +2987,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Acción del clic derecho:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Al hacer clic derecho se elimina la forma bajo el cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Haz clic con el botón derecho para insertar un token de archivo de entrada o salida.</value>
   </data>

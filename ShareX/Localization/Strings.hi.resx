@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>दायाँ क्लिक क्रिया:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>राइट-क्लिक करने पर कर्सर के नीचे का आकार हट जाता है</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>इनपुट या आउटपुट फ़ाइल टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>
   </data>

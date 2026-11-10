@@ -2987,6 +2987,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Tindakan klik kanan:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Klik kanan menghapus bentuk di bawah kursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Klik kanan untuk menyisipkan token berkas masukan atau keluaran.</value>
   </data>

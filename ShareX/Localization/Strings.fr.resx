@@ -2987,6 +2987,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Action du clic droit :</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Le clic droit supprime la forme sous le curseur</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Cliquez avec le bouton droit pour insérer un jeton de fichier d’entrée ou de sortie.</value>
   </data>

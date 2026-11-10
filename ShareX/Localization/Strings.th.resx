@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>คลิกขวา การดำเนินการ:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>คลิกขวาเพื่อลบรูปร่างที่อยู่ใต้เคอร์เซอร์</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>คลิกขวาเพื่อแทรกโทเค็นไฟล์อินพุตหรือเอาต์พุต</value>
   </data>

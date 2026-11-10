@@ -2987,6 +2987,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Akce pravého tlačítka:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Kliknutí pravým tlačítkem odstraní tvar pod kurzorem</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Kliknutím pravým tlačítkem vložíte token vstupního nebo výstupního souboru.</value>
   </data>
