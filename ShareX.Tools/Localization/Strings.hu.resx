@@ -1654,14 +1654,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Új</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nem található szöveg</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>OCR-súgó</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Szolgáltatás megnyitása...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Felismerés</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Eltávolítás</value>
@@ -1683,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Terület kijelölése...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Szolgáltatások</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optikai karakterfelismerés</value>

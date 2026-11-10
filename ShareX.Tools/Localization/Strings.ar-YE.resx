@@ -1654,14 +1654,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>جديد</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>لم يتم العثور على نص</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>مساعدة OCR</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>فتح الخدمة...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>التعرّف</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>إزالة</value>
@@ -1683,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>تحديد منطقة...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>الخدمات</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - التعرف البصري على الأحرف</value>

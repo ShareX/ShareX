@@ -27,6 +27,7 @@ using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
+using ShareX.OCR;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -63,7 +64,7 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
     public override string ToString() => Name;
 }
 
-public delegate Task<string> OCRRecognitionHandler(byte[] imageData, bool singleLine);
+public delegate Task<OCRResult> OCRRecognitionHandler(byte[] imageData);
 public delegate Task<byte[]?> OCRRegionCaptureHandler();
 
 public sealed partial class OCRViewModel : ViewModelBase, IDisposable
@@ -73,13 +74,19 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private readonly Action<OCROptions>? _optionsChanged;
     private readonly Action? _openHelp;
     private byte[] _sourceImageData;
-    private bool _loaded;
+    private OCRResult? _lastResult;
     private int _recognitionVersion;
 
     public ObservableCollection<OCRServiceLinkOption> ServiceLinks { get; } = [];
 
     [ObservableProperty]
     private Bitmap? _sourceImage;
+
+    [ObservableProperty]
+    private IReadOnlyList<OCRTextRegion>? _textRegions;
+
+    [ObservableProperty]
+    private bool _noTextFound;
 
     [ObservableProperty]
     private bool _singleLine;
@@ -154,12 +161,20 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     public async Task StartAsync()
     {
-        _loaded = true;
         SaveOptions();
         await RecognizeAsync();
     }
 
-    partial void OnSingleLineChanged(bool value) => RerunRecognition();
+    // The recognized lines are kept, so switching between one line and many only reformats them.
+    partial void OnSingleLineChanged(bool value)
+    {
+        if (_lastResult != null && !IsBusy)
+        {
+            ResultText = _lastResult.GetText(value);
+        }
+
+        SaveOptions();
+    }
 
     partial void OnAutoCopyChanged(bool value) => SaveOptions();
     partial void OnCloseAfterOpeningServiceChanged(bool value) => SaveOptions();
@@ -299,16 +314,22 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         IsBusy = true;
         ErrorMessage = string.Empty;
         ResultText = string.Empty;
+        _lastResult = null;
+        TextRegions = null;
+        NoTextFound = false;
 
         try
         {
-            string result = await _recognize(_sourceImageData, SingleLine);
+            OCRResult result = await _recognize(_sourceImageData);
             if (version == _recognitionVersion)
             {
-                ResultText = result;
-                if (AutoCopy && !string.IsNullOrWhiteSpace(result) && CopyTextRequested != null)
+                _lastResult = result;
+                TextRegions = result.Regions;
+                NoTextFound = result.Regions.Count == 0;
+                ResultText = result.GetText(SingleLine);
+                if (AutoCopy && !string.IsNullOrWhiteSpace(ResultText) && CopyTextRequested != null)
                 {
-                    await CopyTextRequested(result);
+                    await CopyTextRequested(ResultText);
                 }
             }
         }
@@ -337,15 +358,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
             _sourceImageData = imageData;
             ReplaceSourcePreview(imageData);
             await RecognizeAsync();
-        }
-    }
-
-    private void RerunRecognition()
-    {
-        if (_loaded)
-        {
-            SaveOptions();
-            _ = RecognizeAsync();
         }
     }
 

@@ -1654,14 +1654,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>새로 만들기</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>텍스트를 찾을 수 없음</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>OCR 도움말</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>서비스 열기...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>인식</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>제거</value>
@@ -1683,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>영역 선택...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>서비스</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - 광학 문자 인식</value>

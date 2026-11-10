@@ -1654,14 +1654,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Baru</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Tidak ada teks yang ditemukan</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>Bantuan OCR</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Buka layanan...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Pengenalan</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Hapus</value>
@@ -1683,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Pilih area...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Layanan</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Pengenalan karakter optik</value>

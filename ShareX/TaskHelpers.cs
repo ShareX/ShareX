@@ -2104,10 +2104,10 @@ namespace ShareX
                         string result = await ToolsIntegration.ShowOCRWindowAsync(
                             imageStream.ToArray(),
                             options,
-                            async (imageData, singleLine) =>
+                            async imageData =>
                             {
                                 using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
-                                return await OCRHelper.OCR(source, singleLine);
+                                return await OCRHelper.Recognize(source);
                             },
                             async () =>
                             {

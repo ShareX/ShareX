@@ -4122,15 +4122,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Recognition.
-        /// </summary>
-        public static string OCRWindow_Recognition {
-            get {
-                return ResourceManager.GetString("OCRWindow_Recognition", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Remove.
         /// </summary>
         public static string OCRWindow_Remove {
@@ -4190,15 +4181,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Select_region {
             get {
                 return ResourceManager.GetString("OCRWindow_Select_region", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Services.
-        /// </summary>
-        public static string OCRWindow_Services {
-            get {
-                return ResourceManager.GetString("OCRWindow_Services", resourceCulture);
             }
         }
         
@@ -6219,5 +6201,6 @@ namespace ShareX.Tools.Localization {
         public static string VideoConverterWindow_File_size => ResourceManager.GetString("VideoConverterWindow_File_size", resourceCulture);
         public static string VideoConverterWindow_Resolution => ResourceManager.GetString("VideoConverterWindow_Resolution", resourceCulture);
         public static string VideoConverterWindow_Result => ResourceManager.GetString("VideoConverterWindow_Result", resourceCulture);
+        public static string OCRWindow_No_text_found => ResourceManager.GetString("OCRWindow_No_text_found", resourceCulture);
     }
 }

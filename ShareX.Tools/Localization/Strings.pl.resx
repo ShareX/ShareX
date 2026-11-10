@@ -1654,14 +1654,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nowa</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nie znaleziono tekstu</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>Pomoc OCR</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Otwórz usługę...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Rozpoznawanie</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Usuń</value>
@@ -1683,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Wybierz obszar...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Usługi</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX — optyczne rozpoznawanie znaków</value>

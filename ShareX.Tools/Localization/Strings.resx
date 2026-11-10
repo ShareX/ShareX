@@ -1655,14 +1655,14 @@
   <data name="OCRWindow_New" xml:space="preserve">
     <value>New</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>No text found</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>OCR help</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Open service...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Recognition</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Remove</value>
@@ -1684,9 +1684,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Select region...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Services</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optical character recognition</value>

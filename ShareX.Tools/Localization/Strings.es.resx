@@ -1660,14 +1660,14 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nuevo</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>No se encontró texto</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>Ayuda de OCR</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Abrir servicio...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Reconocimiento</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Quitar</value>
@@ -1689,9 +1689,6 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Seleccionar región...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Servicios</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconocimiento óptico de caracteres</value>

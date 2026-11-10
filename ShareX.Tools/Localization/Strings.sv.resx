@@ -1660,14 +1660,14 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Ny</value>
   </data>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Ingen text hittades</value>
+  </data>
   <data name="OCRWindow_OCR_help" xml:space="preserve">
     <value>OCR-hjälp</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Öppna tjänst...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Igenkänning</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Ta bort</value>
@@ -1689,9 +1689,6 @@ Filsökväg: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Välj område...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Tjänster</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optisk teckenigenkänning</value>

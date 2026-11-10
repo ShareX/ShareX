@@ -28,6 +28,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.OCR;
 
 namespace ShareX.Tools;
 
@@ -39,7 +40,7 @@ public partial class OCRWindow : Window
     public string Result => _viewModel.Result;
 
     public OCRWindow()
-        : this([], new OCROptions(), (_, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
+        : this([], new OCROptions(), _ => Task.FromResult(new OCRResult([])), () => Task.FromResult<byte[]?>(null))
     {
     }
 
