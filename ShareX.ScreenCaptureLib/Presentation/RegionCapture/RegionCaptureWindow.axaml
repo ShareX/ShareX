@@ -84,10 +84,10 @@
                         <Image x:Name="MagnifierImage"
                                Stretch="Fill"
                                RenderOptions.BitmapInterpolationMode="None"/>
-                        <iconControls:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
-                                                         AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                         RenderOptions.EdgeMode="Aliased"
-                                                         IsHitTestVisible="False"/>
+                        <capture:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
+                                                    AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    RenderOptions.EdgeMode="Aliased"
+                                                    IsHitTestVisible="False"/>
                     </Grid>
                     <Ellipse x:Name="MagnifierCircleInner"
                              Stroke="Black"
