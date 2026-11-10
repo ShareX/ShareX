@@ -31,7 +31,7 @@ namespace ShareX.Icons;
 /// </summary>
 public static class PhotoEditorIcons
 {
-    private const string Prefix = "photo-editor/";
+    internal const string Prefix = "photo-editor/";
 
     // Tools, 20 px.
     public const string Move = Prefix + "move";

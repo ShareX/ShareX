@@ -31,21 +31,43 @@ namespace ShareX.Icons;
 /// <summary>
 /// The icons of the <see cref="IconPack.Legacy"/> pack: full-colour icons, as SVG files in the Legacy folder named
 /// after their key like the <see cref="ModernIcons"/> (app/camera is app.camera.svg), embedded in this assembly. A
-/// file with the -white suffix (app.camera-white.svg) is the version for dark backgrounds.
+/// file with the -white suffix (app.camera-white.svg) is the version for dark backgrounds. Every key has a legacy
+/// icon except the <see cref="IsModernOnly">modern-only</see> ones; see README.md in this project.
 /// </summary>
 internal static class LegacyIcons
 {
     private const string DarkSuffix = "-white";
 
+    // The main window's title bar buttons match the window chrome in both packs.
+    private static readonly HashSet<string> ModernOnlyKeys = new(StringComparer.Ordinal)
+    {
+        AppIcons.CaptionMoon,
+        AppIcons.CaptionSun,
+        AppIcons.CaptionPin,
+        AppIcons.CaptionUnpin,
+        AppIcons.CaptionMinimize,
+        AppIcons.CaptionMaximize,
+        AppIcons.CaptionRestore,
+        AppIcons.CaptionClose
+    };
+
+    /// <summary>
+    /// Whether the icon with key <paramref name="key"/> always uses its modern icon, so the Legacy folder has no
+    /// file for it, and one added there is not used: the main window's title bar buttons, and all of the photo
+    /// editor, which keeps its own look in both packs.
+    /// </summary>
+    public static bool IsModernOnly(string key) =>
+        ModernOnlyKeys.Contains(key) || key.StartsWith(PhotoEditorIcons.Prefix, StringComparison.Ordinal);
+
     /// <summary>
     /// The legacy version of the icon with key <paramref name="key"/>, laid out like <paramref name="modern"/>, or
-    /// null if the Legacy folder has no icon for it.
+    /// null if the icon is modern-only or the Legacy folder has no icon for it.
     /// </summary>
     public static VectorIcon? Find(string key, VectorIcon modern)
     {
         string name = key.Replace('/', '.');
 
-        if (GetDrawing(name) is not SvgIconDrawing light)
+        if (IsModernOnly(key) || GetDrawing(name) is not SvgIconDrawing light)
         {
             return null;
         }
