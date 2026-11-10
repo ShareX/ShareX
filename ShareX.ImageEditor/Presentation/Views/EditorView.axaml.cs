@@ -105,6 +105,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             _selectionController = new EditorSelectionController(this);
             _inputController = new EditorInputController(this, _selectionController, _zoomController);
             InitializeEasterEggs();
+            InitializeMagnifier();
 
             // Subscribe to selection controller events
             _selectionController.RequestUpdateEffect += OnRequestUpdateEffect;
@@ -1085,6 +1086,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             DetachViewModel();
             UnhookAnnotationToolbarEvents();
             DisposeEasterEggs();
+            DisposeMagnifier();
             _selectionController.RequestUpdateEffect -= OnRequestUpdateEffect;
             ClearEffectPreviewCache();
             this.FindControl<SpotlightOverlayControl>("SpotlightOverlayControl")?.Dispose();

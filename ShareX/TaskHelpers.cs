@@ -1520,6 +1520,14 @@ namespace ShareX
                 CaptureFullscreenRequested = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
 
+            // The editor magnifier uses the same settings as the region capture magnifier.
+            ImageEditorOptions editorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions;
+            RegionCaptureOptions regionCaptureOptions = taskSettings.CaptureSettings.RegionCaptureOptions;
+            editorOptions.ShowMagnifier = regionCaptureOptions.ShowMagnifier;
+            editorOptions.UseSquareMagnifier = regionCaptureOptions.UseSquareMagnifier;
+            editorOptions.MagnifierSize = regionCaptureOptions.MagnifierSize;
+            editorOptions.MagnifierPixelCount = regionCaptureOptions.MagnifierPixelCount;
+
             SKBitmap skBitmapResult = null;
 
             if (bmp != null)

@@ -284,6 +284,37 @@
                                    Fill="#80000000" />
                     </Canvas>
                 </Canvas>
+
+                <!-- Magnifier near the cursor, the same as the region capture magnifier. -->
+                <Canvas Name="MagnifierHost"
+                        IsHitTestVisible="False"
+                        Panel.ZIndex="20">
+                    <Grid x:Name="MagnifierView" IsVisible="False">
+                        <Ellipse x:Name="MagnifierCircleOuter" Fill="White"/>
+                        <Border x:Name="MagnifierSquareOuter"
+                                Background="White"
+                                IsVisible="False"/>
+                        <Grid x:Name="MagnifierContent">
+                            <Image x:Name="MagnifierImage"
+                                   Stretch="Fill"
+                                   RenderOptions.BitmapInterpolationMode="None"/>
+                            <iconControls:MagnifierPixelGrid x:Name="MagnifierPixelGrid"
+                                                             AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                             RenderOptions.EdgeMode="Aliased"
+                                                             IsHitTestVisible="False"/>
+                        </Grid>
+                        <Ellipse x:Name="MagnifierCircleInner"
+                                 Stroke="Black"
+                                 StrokeThickness="1"
+                                 IsHitTestVisible="False"/>
+                        <Border x:Name="MagnifierSquareInner"
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                IsVisible="False"
+                                IsHitTestVisible="False"
+                                RenderOptions.EdgeMode="Aliased"/>
+                    </Grid>
+                </Canvas>
             </Grid>
 
             <!-- Right Sidebar (Effects Panel) -->
