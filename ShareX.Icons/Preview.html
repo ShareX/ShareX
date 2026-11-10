@@ -31,14 +31,39 @@
     position: sticky;
     top: 0;
     z-index: 1;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  .bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 12px 20px;
-    padding: 12px 16px;
-    background: var(--panel);
-    border-bottom: 1px solid var(--border);
+    padding: 12px 16px 8px;
   }
+  .tabs { display: flex; gap: 4px; padding: 0 8px; }
+  .tabs button.tab {
+    margin-bottom: -1px;
+    padding: 8px 14px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    background: none;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .tabs button.tab:hover { color: var(--text); }
+  .tabs button.tab.active { color: var(--text); border-bottom-color: var(--accent); }
+  .tab .badge {
+    margin-left: 6px;
+    padding: 1px 7px;
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+  }
+  .tab.active .badge { background: var(--accent); color: #fff; }
   h1 { margin: 0; font-size: 16px; font-weight: 600; }
   .count { color: var(--muted); }
   input[type=search] {
@@ -106,12 +131,14 @@
 </head>
 <body class="modern">
 <header>
-  <h1>ShareX Icons</h1>
-  <div class="group" id="packs"><span>Pack</span></div>
-  <span class="count" id="count"></span>
-  <input type="search" id="search" placeholder="Filter by name" autofocus>
-  <div class="group" id="sizes"><span>Size</span></div>
-  <div class="group"><span>Theme</span><button id="dark">Dark</button><button id="light">Light</button></div>
+  <div class="bar">
+    <h1>ShareX Icons</h1>
+    <input type="search" id="search" placeholder="Filter by name" autofocus>
+    <span class="count" id="count"></span>
+    <div class="group" id="sizes"><span>Size</span></div>
+    <div class="group"><span>Theme</span><button id="dark">Dark</button><button id="light">Light</button></div>
+  </div>
+  <nav class="tabs" id="packs" role="tablist"></nav>
 </header>
 <main id="grid"></main>
 <script>
@@ -176,7 +203,11 @@ function render() {
 function setPack(value) {
   pack = value;
   document.body.classList.toggle("modern", pack === "Modern");
-  for (const button of document.querySelectorAll("#packs button")) button.classList.toggle("on", button.dataset.pack === pack);
+  for (const tab of document.querySelectorAll("#packs .tab")) {
+    const selected = tab.dataset.pack === pack;
+    tab.classList.toggle("active", selected);
+    tab.setAttribute("aria-selected", selected);
+  }
   history.replaceState(null, "", pack === "Legacy" ? "#legacy" : location.pathname + location.search);
   render();
 }
@@ -195,8 +226,13 @@ function setTheme(dark) {
 
 for (const [name, { icons }] of Object.entries(packs)) {
   const button = document.createElement("button");
+  button.className = "tab";
+  button.setAttribute("role", "tab");
   button.textContent = name;
-  button.title = `${icons.length} icons`;
+  const badge = document.createElement("span");
+  badge.className = "badge";
+  badge.textContent = icons.length;
+  button.append(badge);
   button.dataset.pack = name;
   button.addEventListener("click", () => setPack(name));
   document.getElementById("packs").append(button);
