@@ -1,16 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
   <defs>
-    <linearGradient id="co" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" stop-opacity=".34"/><stop offset="1" stop-color="#0c0c0c" stop-opacity=".52"/></linearGradient>
-    <radialGradient id="cf" cx=".5" cy=".45" r=".5"><stop offset="0" stop-color="#ebf1f1"/><stop offset=".72" stop-color="#ebf1f1"/><stop offset="1" stop-color="#c9dada"/></radialGradient>
-    <linearGradient id="cr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa3a3"/><stop offset=".15" stop-color="#cfdcdc"/><stop offset=".85" stop-color="#d6dbdb"/><stop offset="1" stop-color="#8c8d8d"/></linearGradient>
-    <linearGradient id="hv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bec1c1"/><stop offset="1" stop-color="#383838"/></linearGradient>
-    <linearGradient id="hh" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#353535"/><stop offset=".7" stop-color="#6e6e6e"/><stop offset="1" stop-color="#a0a9a9"/></linearGradient>
+    <linearGradient id="g-blue-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409ee9" /><stop offset="1" stop-color="#04509b" /></linearGradient>
+    <radialGradient id="g-lens" cx=".4" cy=".35" r=".65"><stop offset="0" stop-color="#ffffff" /><stop offset=".6" stop-color="#e4f0fb" /><stop offset="1" stop-color="#bcd4ec" /></radialGradient>
+    <linearGradient id="acb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ececec" /><stop offset=".15" stop-color="#e4e4e4" /><stop offset=".6" stop-color="#bbbbc0" /><stop offset="1" stop-color="#bdbdcd" /></linearGradient>
+    <linearGradient id="aco" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" /><stop offset=".5" stop-color="#3e3e3e" /><stop offset="1" stop-color="#0d0d0d" /></linearGradient>
+    <linearGradient id="acg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5d5d5d" /><stop offset="1" stop-color="#3c3c3c" /></linearGradient>
+    <linearGradient id="acr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6d6d6" /><stop offset="1" stop-color="#b4b4c2" /></linearGradient>
+    <linearGradient id="acrs" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c2c2c2" /><stop offset=".4" stop-color="#7e7e81" /><stop offset="1" stop-color="#8a8a9a" /></linearGradient>
+    <radialGradient id="acl" cx=".5" cy=".6" r=".55"><stop offset="0" stop-color="#8899cc" /><stop offset=".6" stop-color="#556699" /><stop offset="1" stop-color="#3c4253" /></radialGradient>
   </defs>
-  <circle cx="8" cy="8" r="6.5" fill="url(#cf)" stroke="url(#co)"/>
-  <circle cx="8" cy="8" r="5.6" fill="none" stroke="url(#cr)" stroke-width=".8" stroke-opacity=".55"/>
-  <path d="M3 6.5h10" stroke="#ccdddd"/>
-  <path d="M8 9.5h4.5M7.5 10v1" stroke="#dcdfdf"/>
-  <rect x="7" y="3" width="1" height="7" fill="url(#hv)"/>
-  <rect x="6" y="8" width="7" height="1" fill="url(#hh)"/>
-  <rect x="7" y="8" width="1" height="1" fill="#777777"/>
+  <g transform="translate(-1 -1)">
+    <rect x="2" y="1.5" width="2" height="1.5" fill="#bbbbbb" />
+    <path d="M2 1.5h2" stroke="#2a2a2a" stroke-opacity=".3" />
+    <rect x=".5" y="2.5" width="15" height="11" rx=".4" fill="url(#acb)" stroke="url(#aco)" stroke-opacity=".5" />
+    <rect x=".5" y="4" width="3.5" height="8" fill="url(#acg)" />
+    <path d="M1 4.5h3M1 11.5h3M3.5 4v8" stroke="#333333" />
+    <path d="M.5 4v8" stroke="#000000" stroke-opacity=".8" />
+    <rect x="5" y="4" width="1" height="1" fill="#999999" />
+    <circle cx="10" cy="8" r="3.5" fill="url(#acr)" stroke="url(#acrs)" />
+    <circle cx="10" cy="8" r="1.7" fill="url(#acl)" stroke="#1c1d20" stroke-opacity=".75" />
+    <circle cx="9.4" cy="6.9" r=".55" fill="#ccddff" />
+  </g>
+  <circle cx="12" cy="12" r="4.3" fill="#fff" opacity=".85" />
+  <circle cx="12" cy="12" r="3.5" fill="url(#g-lens)" stroke="url(#g-blue-s)" />
+  <path d="M12 9.8V12H13.8" fill="none" stroke="#22222a" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="12" cy="12" r=".5" fill="#c02020" />
 </svg>

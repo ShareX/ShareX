@@ -1,12 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
   <defs>
-    <linearGradient id="pf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa8a8"/><stop offset=".35" stop-color="#f27676"/><stop offset=".7" stop-color="#d84141"/><stop offset="1" stop-color="#c43030"/></linearGradient>
-    <linearGradient id="ps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e50101"/><stop offset=".45" stop-color="#d00101"/><stop offset="1" stop-color="#950000"/></linearGradient>
-    <linearGradient id="nd" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7d7d7"/><stop offset="1" stop-color="#3c3c3c"/></linearGradient>
+    <linearGradient id="g-window" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc" /><stop offset=".86" stop-color="#e2e2e2" /><stop offset="1" stop-color="#e7e7e7" /></linearGradient>
+    <linearGradient id="g-title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#87d2fe" /><stop offset=".5" stop-color="#6cbbf3" /><stop offset="1" stop-color="#4793cf" /></linearGradient>
+    <linearGradient id="g-frame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409fea" stop-opacity=".8" /><stop offset="1" stop-color="#0956a1" stop-opacity=".82" /></linearGradient>
+    <linearGradient id="g-layer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6f5" /><stop offset="1" stop-color="#b1cce5" /></linearGradient>
+    <linearGradient id="g-layer-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a8fc4" /><stop offset="1" stop-color="#2a5f99" /></linearGradient>
   </defs>
-  <path d="M5.4 10.6L1.6 14.4" stroke="#040404" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/>
-  <path d="M5.4 10.6L1.8 14.2" stroke="url(#nd)" stroke-width=".9" stroke-linecap="round"/>
-  <polygon points="9.6,1.4 10.6,1.1 14.7,5.1 14.5,6.5 11.2,6.7 9.8,8.4 9.8,11.6 8.6,12.8 7.4,12.4 3.4,8.5 3.1,6.1 7.7,6 9.3,4.6" fill="url(#pf)" stroke="url(#ps)" stroke-opacity=".8" stroke-linejoin="round"/>
-  <path d="M4 7.1h4.2M10 5.6V2.6M5.3 8.6L8 11.2" fill="none" stroke="#ffb4b4" stroke-opacity=".75"/>
-  <path d="M11.3 6.2L13 4.5" stroke="#b80000" stroke-opacity=".35"/>
+  <rect x=".5" y="1.5" width="15" height="13" rx="1" fill="url(#g-window)" stroke="url(#g-frame)" />
+  <rect x="1" y="2" width="14" height="2.5" fill="url(#g-title)" />
+  <rect x="7.5" y="8" width="7" height="5.5" rx=".6" fill="url(#g-layer)" stroke="url(#g-layer-s)" />
+  <rect x="8" y="8.5" width="6" height="1.4" fill="url(#g-title)" />
+  <path d="M2.5 7.5 5.5 10.5M5.5 8V10.5H3" fill="none" stroke="#04509b" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

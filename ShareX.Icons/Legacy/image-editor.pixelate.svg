@@ -1,6 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#799cc3" stop-opacity=".67"/><stop offset="1" stop-color="#789bc4" stop-opacity=".9"/></linearGradient>
-  </defs>
-  <path d="M1 1.5h13M1 4.5h13M1 7.5h13M1 10.5h13M1 13.5h13M1.5 2v11M4.5 2v11M7.5 2v11M10.5 2v11M13.5 2v11" fill="none" stroke="url(#g)"/>
+  <rect x=".5" y=".5" width="15" height="15" fill="#3a3a44" />
+  <rect x="1" y="1" width="3.5" height="3.5" fill="#9ae6ff" />
+  <rect x="4.5" y="1" width="3.5" height="3.5" fill="#6ab6f0" />
+  <rect x="8" y="1" width="3.5" height="3.5" fill="#bfe8ff" />
+  <rect x="11.5" y="1" width="3.5" height="3.5" fill="#8ad0f8" />
+  <rect x="1" y="4.5" width="3.5" height="3.5" fill="#6ab6f0" />
+  <rect x="4.5" y="4.5" width="3.5" height="3.5" fill="#f8d046" />
+  <rect x="8" y="4.5" width="3.5" height="3.5" fill="#fff0a8" />
+  <rect x="11.5" y="4.5" width="3.5" height="3.5" fill="#9ae6ff" />
+  <rect x="1" y="8" width="3.5" height="3.5" fill="#40c050" />
+  <rect x="4.5" y="8" width="3.5" height="3.5" fill="#64ee75" />
+  <rect x="8" y="8" width="3.5" height="3.5" fill="#30a040" />
+  <rect x="11.5" y="8" width="3.5" height="3.5" fill="#64ee75" />
+  <rect x="1" y="11.5" width="3.5" height="3.5" fill="#208030" />
+  <rect x="4.5" y="11.5" width="3.5" height="3.5" fill="#40c050" />
+  <rect x="8" y="11.5" width="3.5" height="3.5" fill="#1a6028" />
+  <rect x="11.5" y="11.5" width="3.5" height="3.5" fill="#30a040" />
+  <path d="M4.5 1V15M8 1V15M11.5 1V15M1 4.5H15M1 8H15M1 11.5H15" fill="none" stroke="#000000" stroke-opacity=".18" stroke-width=".5" />
+  <rect x=".5" y=".5" width="15" height="15" fill="none" stroke="#3a3a44" />
 </svg>

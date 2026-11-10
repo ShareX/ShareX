@@ -1,11 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
   <defs>
-    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e3f3f3"/></linearGradient>
-    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset=".85" stop-color="#1f4242"/><stop offset="1" stop-color="#0d2e2e"/></linearGradient>
-    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#94aad1"/><stop offset=".5" stop-color="#8aa3cf"/><stop offset="1" stop-color="#839dca"/></linearGradient>
-    <linearGradient id="g4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ab3e0"/><stop offset="1" stop-color="#8aabe4"/></linearGradient>
+    <linearGradient id="g-green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#64ee75" /><stop offset="1" stop-color="#1adf2b" /></linearGradient>
+    <linearGradient id="g-green-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#18aa2b" /><stop offset="1" stop-color="#006905" /></linearGradient>
+    <linearGradient id="g-paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5" /><stop offset="1" stop-color="#ffffff" /></linearGradient>
+    <linearGradient id="g-paper-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f" /><stop offset="1" stop-color="#0b2a2a" /></linearGradient>
   </defs>
-  <rect x=".5" y="2.5" width="15" height="11" fill="url(#g1)" stroke="url(#g2)" stroke-opacity=".46"/>
-  <rect x="2" y="4" width="12" height="8" fill="url(#g3)"/>
-  <path d="M2 10.5C4 9.7 5.5 8.3 7 7.8C9.4 7.1 11.5 6.8 14 6.7V12H2z" fill="url(#g4)" opacity=".45"/>
+  <g transform="translate(-1 0)">
+    <path d="M2.5 .5H9.5L13.5 4.5V15.5H2.5Z" fill="url(#g-paper)" stroke="url(#g-paper-s)" stroke-opacity=".6" stroke-linejoin="round" />
+    <path d="M3.5 15V1.5M12.5 5V15" fill="none" stroke="#ffffff" stroke-opacity=".55" />
+    <path d="M9.1 .9V4.9H13.1" fill="#ffffff" stroke="#9fb0b0" stroke-linejoin="round" />
+  </g>
+  <path d="M11.5 9.5h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="#fff" stroke="#fff" stroke-width="2.4" stroke-linejoin="round" opacity=".85" />
+  <path d="M11.5 9.5h2v2h2v2h-2v2h-2v-2h-2v-2h2z" fill="url(#g-green)" stroke="url(#g-green-s)" />
+  <path d="M12.5 10.2v4.6M10.2 12.5h4.6" fill="none" stroke="#b4ffbc" stroke-opacity=".6" />
 </svg>

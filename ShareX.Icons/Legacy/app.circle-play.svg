@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-<defs>
-<linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f36a6a"/><stop offset="0.1" stop-color="#f36a6a"/><stop offset="0.2" stop-color="#de5656"/><stop offset="0.3" stop-color="#cd4545"/><stop offset="0.4" stop-color="#b52a2a"/><stop offset="0.5" stop-color="#a41111"/><stop offset="0.6" stop-color="#b11111"/><stop offset="0.7" stop-color="#bf1111"/><stop offset="0.8" stop-color="#cc1111"/><stop offset="0.92" stop-color="#d51111"/><stop offset="1" stop-color="#d51111"/></linearGradient>
-<linearGradient id="ro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aa0000"/><stop offset="0.5" stop-color="#950000"/><stop offset="1" stop-color="#600000"/></linearGradient>
-</defs>
-<circle cx="7.5" cy="7.5" r="5" fill="url(#r)" stroke="url(#ro)"/>
+  <defs>
+    <linearGradient id="g-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff" /><stop offset=".3" stop-color="#6ab6f0" /><stop offset=".55" stop-color="#4590cd" /><stop offset=".8" stop-color="#1ca4ea" /><stop offset="1" stop-color="#0eb7ff" /></linearGradient>
+    <linearGradient id="g-blue-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409ee9" /><stop offset="1" stop-color="#04509b" /></linearGradient>
+    <linearGradient id="g-shine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".75" /><stop offset="1" stop-color="#ffffff" stop-opacity=".1" /></linearGradient>
+  </defs>
+  <circle cx="8" cy="8" r="7" fill="url(#g-blue)" stroke="url(#g-blue-s)" />
+  <ellipse cx="8" cy="4.9" rx="4.6" ry="2.7" fill="url(#g-shine)" />
+  <path d="M6.3 4.6 11.4 8 6.3 11.4Z" fill="#ffffff" stroke="#04509b" stroke-width=".6" stroke-linejoin="round" />
 </svg>

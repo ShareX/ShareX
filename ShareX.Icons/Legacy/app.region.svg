@@ -1,28 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-<defs>
-<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#3377bb" stop-opacity="0.36"/>
-<stop offset="1" stop-color="#14589c" stop-opacity="0.5"/>
-</linearGradient>
-<linearGradient id="b" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#acc7e3" stop-opacity="0.55"/>
-<stop offset="1" stop-color="#b1cce5" stop-opacity="0.63"/>
-</linearGradient>
-<linearGradient id="s" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#ffffff" stop-opacity="0.52"/>
-<stop offset="1" stop-color="#ffffff" stop-opacity="0.4"/>
-</linearGradient>
-</defs>
-<rect x="2" y="3" width="12" height="10" fill="url(#b)"/>
-<path d="M2,3H14V6.333Q6,6.333 2,9.667Z" fill="url(#s)"/>
-<rect x="2.5" y="3.5" width="11" height="9" fill="none" stroke="#ffffff" stroke-opacity=".2"/>
-<rect x="1.5" y="2.5" width="13" height="11" rx="0" fill="none" stroke="url(#o)"/>
-<rect x="0.5" y="1.5" width="2" height="2" rx=".45" fill="none" stroke="#3074b8" stroke-opacity=".42"/>
-<rect x="1" y="2" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
-<rect x="13.5" y="1.5" width="2" height="2" rx=".45" fill="none" stroke="#3074b8" stroke-opacity=".42"/>
-<rect x="14" y="2" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
-<rect x="0.5" y="12.5" width="2" height="2" rx=".45" fill="none" stroke="#175b9f" stroke-opacity=".42"/>
-<rect x="1" y="13" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
-<rect x="13.5" y="12.5" width="2" height="2" rx=".45" fill="none" stroke="#175b9f" stroke-opacity=".42"/>
-<rect x="14" y="13" width="1" height="1" fill="#ffffff" fill-opacity=".8"/>
+  <defs>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#d3e2ff" /></linearGradient>
+  </defs>
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#04509b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#6ab6f0" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="4" y="4" width="8" height="8" fill="url(#g-glass)" opacity=".8" />
+  <path d="M8 4.5V11.5M4.5 8H11.5" fill="none" stroke="#e82020" stroke-width="1.1" stroke-linecap="round" />
+  <circle cx="8" cy="8" r="1.4" fill="none" stroke="#e82020" stroke-width=".9" />
 </svg>
