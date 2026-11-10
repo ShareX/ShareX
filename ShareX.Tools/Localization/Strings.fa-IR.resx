@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>در حال توقف تبدیل...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>میانگین نرخ بیت</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>مرور...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>نام فایل</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>اندازه فایل</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>پوشه</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>کیفیت</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>وضوح</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>نتیجه</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - تبدیل‌کننده ویدئو</value>

@@ -2095,6 +2095,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>रूपांतरण रोका जा रहा है...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>औसत बिटरेट</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>ब्राउज़ करें...</value>
   </data>
@@ -2113,6 +2116,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>फ़ाइल नाम</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>फ़ाइल का आकार</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>फ़ोल्डर</value>
   </data>
@@ -2130,6 +2136,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>गुणवत्ता</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>रिज़ॉल्यूशन</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>परिणाम</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - वीडियो रूपांतरक</value>

@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>変換を停止しています...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>平均ビットレート</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>参照...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>ファイル名</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>ファイルサイズ</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>フォルダー</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>品質</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>解像度</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>結果</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - 動画コンバーター</value>

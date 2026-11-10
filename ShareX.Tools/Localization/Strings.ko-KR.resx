@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>변환 중지 중...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>평균 비트레이트</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>찾아보기...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>파일 이름</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>파일 크기</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>폴더</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>품질</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>해상도</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>결과</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - 비디오 변환기</value>

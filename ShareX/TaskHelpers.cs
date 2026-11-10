@@ -1272,8 +1272,40 @@ namespace ShareX
                         .LastOrDefault();
                 }
 
-                return new VideoConversionResult(succeeded, wasCancelled, errorMessage);
+                VideoConversionOutputInfo outputInfo = null;
+                if (succeeded && !wasCancelled)
+                {
+                    outputInfo = GetVideoConversionOutputInfo(ffmpegFilePath, request.OutputFilePath);
+                }
+
+                return new VideoConversionResult(succeeded, wasCancelled, errorMessage, outputInfo);
             }, cancellationToken);
+        }
+
+        private static VideoConversionOutputInfo GetVideoConversionOutputInfo(string ffmpegFilePath, string outputFilePath)
+        {
+            try
+            {
+                FileInfo fileInfo = new FileInfo(outputFilePath);
+                if (!fileInfo.Exists)
+                {
+                    return null;
+                }
+
+                using FFmpegCLIManager probe = new FFmpegCLIManager(ffmpegFilePath)
+                {
+                    ShowError = false
+                };
+
+                // "ffmpeg -i" without an output exits with an error, but still prints the stream summary.
+                probe.Run($"-hide_banner -i \"{outputFilePath}\"");
+                return VideoConversionOutputInfo.FromFFmpegOutput(probe.Output.ToString(), fileInfo.Length);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
         }
 
         public static void OpenVideoPlayer(string inputFilePath = null)

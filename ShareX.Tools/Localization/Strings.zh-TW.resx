@@ -2095,6 +2095,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>正在停止轉換...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>平均位元速率</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>瀏覽...</value>
   </data>
@@ -2113,6 +2116,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>檔案名稱</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>檔案大小</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>資料夾</value>
   </data>
@@ -2130,6 +2136,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>品質</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>解析度</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>結果</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - 影片轉換器</value>

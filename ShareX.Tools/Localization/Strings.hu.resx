@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Átalakítás leállítása...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Átlagos bitráta</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Tallózás...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Fájlnév</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Fájlméret</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Mappa</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Minőség</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Felbontás</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Eredmény</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Videóátalakító</value>

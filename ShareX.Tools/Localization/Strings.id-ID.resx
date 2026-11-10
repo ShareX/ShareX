@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Menghentikan konversi...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Bitrate rata-rata</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Telusuri...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nama file</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Ukuran file</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Folder</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kualitas</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolusi</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Hasil</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Pengonversi video</value>

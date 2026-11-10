@@ -2090,6 +2090,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stopping conversion...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Average bitrate</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Browse...</value>
   </data>
@@ -2108,6 +2111,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>File name</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>File size</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Folder</value>
   </data>
@@ -2125,6 +2131,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Quality</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Result</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Video Converter</value>

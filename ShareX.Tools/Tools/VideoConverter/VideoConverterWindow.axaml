@@ -11,9 +11,9 @@
         x:DataType="vm:VideoConverterViewModel"
         Title="{x:Static localization:Strings.VideoConverterWindow_ShareX_Video_Converter}"
         Width="850"
-        Height="475"
+        Height="550"
         MinWidth="700"
-        MinHeight="475"
+        MinHeight="550"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
@@ -27,6 +27,13 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
+        <Style Selector="TextBlock.result-value">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.result-value.empty">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
         <Style Selector="TextBlock.path-text">
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
@@ -35,7 +42,7 @@
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid RowDefinitions="Auto,*,Auto" Margin="16" RowSpacing="12">
+            <Grid RowDefinitions="Auto,*,Auto,Auto" Margin="16" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel" Padding="12">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
@@ -153,7 +160,35 @@
 
                 </Grid>
 
-                <Grid Grid.Row="2" RowDefinitions="Auto,Auto">
+                <Border Grid.Row="2" Classes="tool-panel" Padding="16,12">
+                    <Grid ColumnDefinitions="Auto,*,*,*" ColumnSpacing="24">
+                        <TextBlock Grid.Column="0"
+                                   Classes="section-heading"
+                                   Text="{x:Static localization:Strings.VideoConverterWindow_Result}"
+                                   Margin="0,0,12,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Average_bitrate}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputBitrateText}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_size}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputFileSizeText}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Resolution}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputResolutionText}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="3" RowDefinitions="Auto,Auto">
                     <ProgressBar Grid.Row="0"
                                  Minimum="0"
                                  Maximum="100"

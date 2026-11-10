@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Se oprește conversia...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Rată de biți medie</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Răsfoire...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nume fișier</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Dimensiunea fișierului</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Dosar</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Calitate</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Rezoluție</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Rezultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertor video</value>
