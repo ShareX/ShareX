@@ -116,7 +116,7 @@ public class GStreamerVideoTests
 
                 playback.Seek(1.5);
                 context.Pump(TimeSpan.FromMilliseconds(300));
-                Assert.Equal(false, playing[^1]);
+                Assert.False(playing[^1]);
                 positions.Clear();
                 playback.StepFrame(true);
                 context.Pump(TimeSpan.FromMilliseconds(300));

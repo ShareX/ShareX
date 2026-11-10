@@ -18,7 +18,7 @@ The first attempt lived on a branch also named `cross-platform` (frozen at `55e0
 9. **CA1416 as an error in every shared project** turns a Linux run time crash into a build error. Do not suppress it; move the code behind a service.
 10. **Model results with portable types.** `PlatformWindow`, `SnapTarget`, `ScreenInfo`, `PlatformRectangle`, `PixelBuffer` (straight-alpha BGRA). Handles cross the interface as `long` and mean nothing outside their platform.
 11. **Keep pixels, not PNGs,** when a capture backend already has pixels (`ScreenCaptureResult.Pixels`). Encoding 4K captures to PNG just to decode them again was measurable.
-12. **WinRT needs the Windows SDK target framework.** OCR (`Windows.Media.Ocr`) only compiles for `net10.0-windows10.0.22621.0`. `ShareX.Platform.Windows` builds both `net10.0` (for hosts that run everywhere) and the Windows SDK target; the Windows application builds the Windows SDK target.
+12. **WinRT needs the Windows SDK target framework.** WinRT code (the native screen recorder; `Windows.Media.Ocr` until PaddleOCR replaced it) only compiles for `net10.0-windows10.0.22621.0`. `ShareX.Platform.Windows` builds both `net10.0` (for hosts that run everywhere) and the Windows SDK target; the Windows application builds the Windows SDK target.
 13. **The application chooses its platform at start up** (`PlatformServices.Initialize`) and nothing else does.
 
 ## Build and tooling
@@ -54,6 +54,8 @@ The first attempt lived on a branch also named `cross-platform` (frozen at `55e0
 33. **GStreamer GL follows `WAYLAND_DISPLAY`** and crashes drawing into an X11 window; set `GST_GL_WINDOW=x11` in the native environment (`setenv`, not `Environment.SetEnvironmentVariable`) before `gst_init`.
 34. **Prove it on the real artifact.** Both GStreamer faults passed compilation and unit tests; a small probe against a real video and window, and `coredumpctl` for the crash, found them. Keep such probes as opt-in tests (`SHAREX_GSTREAMER_WINDOW_TEST=1`).
 35. **Do not follow Windows' DPI changes on a window that spans monitors.** The region capture overlay covers monitors with different scaling, so Windows switches its DPI as soon as it is moved or resized. Re-applying the size on `ScalingChanged` (e651835) resized it again, which switched the DPI back: about 2,800 switches in 10 seconds, seen as flicker, with selections landing off the screenshot. The overlay is sized in device pixels, so it now drops `WM_DPICHANGED` (`IWindowService.KeepScaleFixed`) and keeps the scale it was created with. Log `ScalingChanged`, `PositionChanged` and `Resized` before theorising.
+36. **A flag merged from develop carries develop's assumptions.** `ScreenshotIsOpaque = true` was true on Windows because its capture set every alpha to 255; other platforms' captures did not promise that. When a merge brings a fast path that depends on a property of the data, establish the property in shared code (here `Screenshot` makes every screen capture opaque) instead of trusting each platform.
+37. **Do not warm up with a real capture.** A 1x1 screenshot at startup is silent on Windows but goes through the screenshot portal on GNOME and KDE and runs `screencapture` on macOS.
 
 ## Reusable work on the first branch
 

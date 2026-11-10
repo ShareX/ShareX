@@ -24,7 +24,6 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Platform.Imaging;
-using ShareX.Platform.Imaging;
 using Xunit;
 
 namespace ShareX.Platform.Tests;

@@ -360,7 +360,7 @@ public sealed class RegionSelectionOverlay : Control
     private void DrawAntRegion(DrawingContext context, CaptureRegion region)
     {
         // Outlines are offset by half a pixel so the 1px lines cover whole pixels.
-        Geometry? geometry = region.Shape switch
+        Geometry geometry = region.Shape switch
         {
             RegionShape.Ellipse => new EllipseGeometry(GetAntRectangle(region.Bounds)),
             RegionShape.Freehand => region.Offset(0.5, 0.5).CreateGeometry(),

@@ -51,9 +51,9 @@ internal sealed class CameraLayoutPreview(TaskSettingsCapture settings, Func<Dra
         base.OnDetachedFromVisualTree(e);
     }
 
-    private void OnAccentColorChanged(object? sender, Color color) => InvalidateVisual();
+    private void OnAccentColorChanged(object sender, Color color) => InvalidateVisual();
 
-    private void OnActualThemeVariantChanged(object? sender, EventArgs e) => InvalidateVisual();
+    private void OnActualThemeVariantChanged(object sender, EventArgs e) => InvalidateVisual();
 
     public override void Render(DrawingContext context)
     {
@@ -88,5 +88,5 @@ internal sealed class CameraLayoutPreview(TaskSettingsCapture settings, Func<Dra
     }
 
     private IBrush FindBrush(string key) =>
-        this.TryFindResource(key, ActualThemeVariant, out object? value) && value is IBrush brush ? brush : Brushes.DodgerBlue;
+        this.TryFindResource(key, ActualThemeVariant, out object value) && value is IBrush brush ? brush : Brushes.DodgerBlue;
 }

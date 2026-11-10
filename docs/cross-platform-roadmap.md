@@ -2,7 +2,7 @@
 
 How far each operating system is and what is left. Rules are in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md). The task and request IDs (R, W, H, B) in older entries refer to [cross-platform-delegation.md](cross-platform-delegation.md), which is now a historical record.
 
-Scope (McoreD and Jaex agree): Windows, Linux and macOS at 100%, with OCR and other features through each system's own support: Windows.Media.Ocr, Tesseract on Linux, Vision on macOS. Linux HDR is not supported.
+Scope (McoreD and Jaex agree): Windows, Linux and macOS at 100%, with features through each system's own support. OCR uses ShareX's own PaddleOCR engine (ShareX.OCR) since develop adopted it on 2026-11-11; Intel Macs, which ONNX Runtime has no build for, use Vision. Linux HDR is not supported.
 
 ## Progress
 
@@ -11,8 +11,8 @@ As of 2026-10-07. McoreD declared all three systems complete.
 | OS | Status | Basis |
 | --- | --- | --- |
 | Windows | **100%** | Behaves as v22. Windows code lives in `ShareX.Platform.Windows`; the Microsoft Store StartupTask code stays under its build flag (AGENTS.md). Built and tested in CI on every push. |
-| Linux | **100%** | Every service implemented for X11, Hyprland, sway, GNOME and KDE, OCR through Tesseract; verified end to end on Hyprland, X11 and KDE. Self-contained tar.gz with installer; CI builds, tests, packages and runs it on every push. |
-| macOS | **100%** | Every service implemented (Vision OCR, Carbon hotkeys, CoreGraphics capture, Keychain, LaunchAgents, Finder integration, application menu); real-Mac test of 2026-10-05 passed, and all its findings are fixed. ShareX.app as zip and disk image for arm64 and x64, Developer ID signing and notarization; CI packages and launches both on every push. |
+| Linux | **100%** | Every service implemented for X11, Hyprland, sway, GNOME and KDE, OCR through PaddleOCR; verified end to end on Hyprland, X11 and KDE. Self-contained tar.gz with installer; CI builds, tests, packages and runs it on every push. |
+| macOS | **100%** | Every service implemented (PaddleOCR, with Vision on Intel Macs, Carbon hotkeys, CoreGraphics capture, Keychain, LaunchAgents, Finder integration, application menu); real-Mac test of 2026-10-05 passed, and all its findings are fixed. ShareX.app as zip and disk image for arm64 and x64, Developer ID signing and notarization; CI packages and launches both on every push. |
 
 A feature a system cannot provide reports `FeatureSupport.NotSupported` with a reason (for example Wayland forbidding overlays over other windows, or HDR outside Windows). Those are system limits, not open work.
 
@@ -224,3 +224,4 @@ None open.
 - 2026-10-08, M: macOS round 2 report (2026-10-07) fixed in code: region overlay covers the menu bar and notch (F18) and the Dock (F22); overlay windows use points on macOS (recording frame F16, scrolling frame F23, ruler, pin, window picker); cursor position in region captures (F8); system crosshair (F22); recording finds Homebrew or the configured FFmpeg from the Dock (F15); image viewer covers the screen instead of a full-screen space (F20); scrolling capture window hides instead of minimizing, asks for Accessibility first and names it (F17, F23); native menu bar icon with left click action and right click menu (F24); update check links to the release page without a macOS package (F14); OCR language follows the system (F19); reasons on disabled settings (F11); ⌃⌥⇧⌘ order (F4). F21 is the editor design (⌘C image, ⌘⇧C shape, ⌘D duplicate). Needs a round 3 on a Mac.
 - 2026-11-04, M: Merged develop (v22.0.0, v22.1.0, Photo Editor, native Windows recorder, video player) with its Windows-only parts behind INativeScreenRecorderService, IVideoPlaybackService and IImageCodecService (f8c03a890). Branch renamed from `cross-platform-v2` to `cross-platform`; Jaex works on develop only.
 - 2026-11-04, M: Video playback on Linux through GStreamer (playbin in an X11 child window, filmstrip from an appsink), detected at run time; the video player tool and the trimmer's playback now work on Linux.
+- 2026-11-11, M: Merged develop (PaddleOCR, ellipse and freehand region capture, mixed-DPI region capture, toast monitor setting, full-width scroll bars). OCR is PaddleOCR on every platform ONNX Runtime runs on, Vision on Intel Macs; Windows.Media.Ocr and Tesseract removed. The Linux installer and the .deb and .rpm register the browser extension host.

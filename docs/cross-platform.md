@@ -9,7 +9,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | Project | Target | Purpose |
 | --- | --- | --- |
 | `ShareX.Platform` | `net10.0` | Interfaces, `PlatformServices`, `PlatformDetector`, `PlatformInfo`, `LinuxDistribution`, `LinuxPackages`, portable models and helpers. No operating system calls. |
-| `ShareX.Platform.Windows` | `net10.0` and `net10.0-windows10.0.22621.0` | Win32, COM and WinRT implementations. Behaviour is identical to the code they replace. The Windows SDK target adds WinRT features (OCR). |
+| `ShareX.Platform.Windows` | `net10.0` and `net10.0-windows10.0.22621.0` | Win32, COM and WinRT implementations. Behaviour is identical to the code they replace. The Windows SDK target adds WinRT features (the native screen recorder). |
 | `ShareX.Platform.MacOS` | `net10.0` | AppKit, CoreGraphics, Carbon, Keychain and LaunchAgent implementations. |
 | `ShareX.Platform.Linux` | `net10.0` | X11, Wayland (portals, wlroots tools, Hyprland and sway IPC), freedesktop.org (XDG, D-Bus, Secret Service, thumbnails). |
 | `ShareX.Platform.Tests` | `net10.0` | xUnit tests for parsers and argument building; run on all three operating systems. |

@@ -46,8 +46,6 @@ public enum LinuxTool
     /// <summary>xdg-desktop-portal plus a backend for the current desktop.</summary>
     XdgDesktopPortal,
     WfRecorder,
-    /// <summary>Tesseract OCR with at least one language's data.</summary>
-    Tesseract,
     /// <summary>The CUPS lp, lpstat and lpoptions commands.</summary>
     Cups,
     /// <summary>pw-play, PipeWire's sound player.</summary>
@@ -71,7 +69,6 @@ public static class LinuxPackages
         [LinuxTool.XdgUtils] = "xdg-open",
         [LinuxTool.XdgDesktopPortal] = "xdg-desktop-portal",
         [LinuxTool.WfRecorder] = "wf-recorder",
-        [LinuxTool.Tesseract] = "tesseract",
         [LinuxTool.Cups] = "lp",
         [LinuxTool.PipeWire] = "pw-play",
         [LinuxTool.GStreamerPipeWire] = "gst-launch-1.0"
@@ -94,9 +91,6 @@ public static class LinuxPackages
             (LinuxTool.XdgUtils, _) => "xdg-utils",
             (LinuxTool.XdgDesktopPortal, _) => "xdg-desktop-portal",
             (LinuxTool.WfRecorder, _) => "wf-recorder",
-            (LinuxTool.Tesseract, LinuxDistributionFamily.Debian) => "tesseract-ocr",
-            (LinuxTool.Tesseract, LinuxDistributionFamily.OpenSuse) => "tesseract-ocr",
-            (LinuxTool.Tesseract, LinuxDistributionFamily.Arch) => "tesseract tesseract-data-eng",
             (LinuxTool.Cups, LinuxDistributionFamily.Debian) => "cups-client",
             (LinuxTool.Cups, LinuxDistributionFamily.Fedora) => "cups-client",
             (LinuxTool.Cups, LinuxDistributionFamily.OpenSuse) => "cups-client",
