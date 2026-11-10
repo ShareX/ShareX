@@ -74,13 +74,13 @@ public sealed record VideoConversionOutputInfo(long FileSize, double? AverageBit
 
             if (durationMatch.Success)
             {
-                double seconds = int.Parse(durationMatch.Groups[1].Value, CultureInfo.InvariantCulture) * 3600
-                    + int.Parse(durationMatch.Groups[2].Value, CultureInfo.InvariantCulture) * 60
+                double seconds = double.Parse(durationMatch.Groups[1].Value, CultureInfo.InvariantCulture) * 3600
+                    + double.Parse(durationMatch.Groups[2].Value, CultureInfo.InvariantCulture) * 60
                     + double.Parse(durationMatch.Groups[3].Value, CultureInfo.InvariantCulture);
 
                 if (seconds > 0 && fileSize > 0)
                 {
-                    bitrate = fileSize * 8 / 1000d / seconds;
+                    bitrate = fileSize * 8d / 1000 / seconds;
                 }
             }
         }
