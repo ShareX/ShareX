@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>יעד</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>השפה {0} אינה זמינה במערכת זו עבור OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>זיהוי תווים אופטי זמין רק ב-Windows גרסה {0} ואילך.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>ערוך שירותים</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>שפה</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>שם</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>תוצאה</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>מקדם קנה מידה</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>בחר שירות</value>

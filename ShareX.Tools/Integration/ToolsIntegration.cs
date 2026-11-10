@@ -161,7 +161,6 @@ public static class ToolsIntegration
 
     public static Task<string?> ShowOCRWindowAsync(
         byte[] imageData,
-        IReadOnlyList<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
@@ -173,7 +172,7 @@ public static class ToolsIntegration
 
         Dispatcher.UIThread.Post(() =>
         {
-            OCRWindow window = new(imageData, languages, options, recognize, selectRegion, optionsChanged, openHelp);
+            OCRWindow window = new(imageData, options, recognize, selectRegion, optionsChanged, openHelp);
             window.Closed += (_, _) => completion.TrySetResult(window.Result);
             window.Show();
         });

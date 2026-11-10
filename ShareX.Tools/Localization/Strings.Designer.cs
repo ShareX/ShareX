@@ -3978,24 +3978,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} language is not available in this system for OCR..
-        /// </summary>
-        public static string OCRHelper_Language_unavailable {
-            get {
-                return ResourceManager.GetString("OCRHelper_Language_unavailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Optical character recognition is only available with Windows version {0} or newer..
-        /// </summary>
-        public static string OCRHelper_Requires_Windows_version {
-            get {
-                return ResourceManager.GetString("OCRHelper_Requires_Windows_version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bing.
         /// </summary>
         public static string OCROptions_Bing {
@@ -4104,15 +4086,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language.
-        /// </summary>
-        public static string OCRWindow_Language {
-            get {
-                return ResourceManager.GetString("OCRWindow_Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string OCRWindow_Name {
@@ -4181,15 +4154,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Result {
             get {
                 return ResourceManager.GetString("OCRWindow_Result", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Scale factor.
-        /// </summary>
-        public static string OCRWindow_Scale_factor {
-            get {
-                return ResourceManager.GetString("OCRWindow_Scale_factor", resourceCulture);
             }
         }
         

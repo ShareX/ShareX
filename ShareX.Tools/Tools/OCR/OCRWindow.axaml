@@ -35,41 +35,21 @@
                     </StackPanel>
 
                     <Border Grid.Row="1" Classes="tool-panel">
-                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" RowSpacing="9">
-                            <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Recognition}" Margin="0,0,0,1"/>
-                            <Grid Grid.Row="1" ColumnDefinitions="90,*,Auto" ColumnSpacing="8">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_Language}"/>
-                                <ComboBox Grid.Column="1"
-                                          ItemsSource="{Binding Languages}"
-                                          SelectedItem="{Binding SelectedLanguage}"
-                                          IsEnabled="{Binding HasLanguages}">
-                                    <ComboBox.ItemTemplate>
-                                        <DataTemplate x:DataType="vm:OCRLanguageOption">
-                                            <TextBlock Text="{Binding DisplayName}" FontWeight="Normal"/>
-                                        </DataTemplate>
-                                    </ComboBox.ItemTemplate>
-                                </ComboBox>
-                                <Button Grid.Column="2"
+                        <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="9">
+                            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" ColumnSpacing="8">
+                                <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Recognition}" VerticalAlignment="Center"/>
+                                <Button Grid.Column="1"
                                         Command="{Binding OpenHelpCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.OCRWindow_OCR_help}"
                                         Padding="10,7">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Help}"/>
                                 </Button>
                             </Grid>
-                            <Grid Grid.Row="2" ColumnDefinitions="90,*" ColumnSpacing="8">
-                                <TextBlock Classes="row-label" Text="{x:Static localization:Strings.OCRWindow_Scale_factor}"/>
-                                <NumericUpDown Grid.Column="1"
-                                               Minimum="1"
-                                               Maximum="4"
-                                               Increment="0.5"
-                                               FormatString="0.0"
-                                               Value="{Binding ScaleFactor}"/>
-                            </Grid>
-                            <Grid Grid.Row="3" ColumnDefinitions="*,Auto" MinHeight="30">
+                            <Grid Grid.Row="1" ColumnDefinitions="*,Auto" MinHeight="30">
                                 <TextBlock Text="{x:Static localization:Strings.OCRWindow_Single_line}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
                             </Grid>
-                            <Grid Grid.Row="4" ColumnDefinitions="*,Auto" MinHeight="30">
+                            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" MinHeight="30">
                                 <TextBlock Text="{x:Static localization:Strings.OCRWindow_Copy_recognized_text_automatically}" FontWeight="Normal" VerticalAlignment="Center"/>
                                 <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopy}" OnContent="" OffContent=""/>
                             </Grid>

@@ -1618,12 +1618,6 @@ Dateipfad: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Ziel</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Die Sprache {0} ist auf diesem System nicht für OCR verfügbar.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Die optische Zeichenerkennung ist nur ab Windows-Version {0} verfügbar.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Dateipfad: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Dienste bearbeiten</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Sprache</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -1686,9 +1677,6 @@ Dateipfad: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Ergebnis</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Skalierungsfaktor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Dienst auswählen</value>

@@ -3260,11 +3260,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyCopyResultsToClipboard", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_DefaultLanguage {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_DefaultLanguage", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ProcessOCRSilently {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessOCRSilently", resourceCulture);
@@ -3683,11 +3678,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_Advanced {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_Advanced", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_OCRLanguagesAreUnavailable {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRLanguagesAreUnavailable", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_X {

@@ -2492,9 +2492,6 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>도구 모음 사용자 지정...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>기본 언어:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>입력 파일 삭제</value>
   </data>
@@ -2830,9 +2827,6 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
     <value>OCR 도움말...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR 언어를 사용할 수 없습니다</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>영역 캡처에만 효과 적용</value>

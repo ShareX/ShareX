@@ -2492,9 +2492,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Налаштувати панель інструментів...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Стандартна мова:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Видалити вхідний файл</value>
   </data>
@@ -2830,9 +2827,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
     <value>Довідка OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Мови OCR недоступні</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Застосовувати ефекти лише до захоплення області</value>

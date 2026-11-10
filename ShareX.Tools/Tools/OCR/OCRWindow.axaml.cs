@@ -39,13 +39,12 @@ public partial class OCRWindow : Window
     public string Result => _viewModel.Result;
 
     public OCRWindow()
-        : this([], [], new OCROptions(), (_, _, _, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
+        : this([], new OCROptions(), (_, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
     {
     }
 
     public OCRWindow(
         byte[] imageData,
-        IEnumerable<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
@@ -53,7 +52,7 @@ public partial class OCRWindow : Window
         Action? openHelp = null)
     {
         _selectRegion = selectRegion;
-        _viewModel = new OCRViewModel(imageData, languages, options, recognize, optionsChanged, openHelp);
+        _viewModel = new OCRViewModel(imageData, options, recognize, optionsChanged, openHelp);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();

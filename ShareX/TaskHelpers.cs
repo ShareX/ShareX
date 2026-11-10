@@ -2085,8 +2085,6 @@ namespace ShareX
 
             try
             {
-                OCRHelper.ThrowIfNotSupported();
-
                 if (bmp != null)
                 {
                     if (options.Silent)
@@ -2103,16 +2101,13 @@ namespace ShareX
                         using MemoryStream imageStream = new MemoryStream();
                         bmp.Save(imageStream, ImageFormat.Png);
 
-                        OCRLanguageOption[] languages = OCRHelper.AvailableLanguages;
-
                         string result = await ToolsIntegration.ShowOCRWindowAsync(
                             imageStream.ToArray(),
-                            languages,
                             options,
-                            async (imageData, language, scaleFactor, singleLine) =>
+                            async (imageData, singleLine) =>
                             {
                                 using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
-                                return await OCRHelper.OCR(source, language, scaleFactor, singleLine);
+                                return await OCRHelper.OCR(source, singleLine);
                             },
                             async () =>
                             {
@@ -2150,7 +2145,7 @@ namespace ShareX
 
                 OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-                string result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor, options.SingleLine);
+                string result = await OCRHelper.OCR(bmp, options.SingleLine);
 
                 if (!string.IsNullOrEmpty(result))
                 {

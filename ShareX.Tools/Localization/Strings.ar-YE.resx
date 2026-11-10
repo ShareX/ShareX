@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>الهدف</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>اللغة {0} غير متاحة لنظام OCR في هذا النظام.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>التعرف البصري على الأحرف متاح فقط في الإصدار {0} من Windows أو أحدث.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>تحرير الخدمات</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>اللغة</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>النتيجة</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>عامل التحجيم</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>اختيار خدمة</value>

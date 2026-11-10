@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Țintă</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Limba {0} nu este disponibilă în acest sistem pentru OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Recunoașterea optică a caracterelor este disponibilă numai în Windows versiunea {0} sau mai nouă.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Editează serviciile</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Limbă</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nume</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Rezultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Factor de scalare</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Selectează un serviciu</value>

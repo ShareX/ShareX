@@ -1618,12 +1618,6 @@ Filsökväg: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Språket {0} är inte tillgängligt för OCR i det här systemet.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk teckenigenkänning är endast tillgänglig i Windows version {0} eller senare.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Redigera tjänster</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Språk</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Namn</value>
   </data>
@@ -1686,9 +1677,6 @@ Filsökväg: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Skalningsfaktor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Välj en tjänst</value>

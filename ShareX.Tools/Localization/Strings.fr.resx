@@ -1618,12 +1618,6 @@ Chemin du fichier : {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Cible</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>La langue {0} n’est pas disponible pour l’OCR sur ce système.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>La reconnaissance optique de caractères est uniquement disponible sous Windows version {0} ou ultérieure.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Chemin du fichier : {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Modifier les services</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Langue</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nom</value>
   </data>
@@ -1686,9 +1677,6 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Résultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Facteur d’échelle</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Sélectionnez un service</value>

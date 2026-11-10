@@ -2492,9 +2492,6 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>سفارشی‌سازی نوار ابزار...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>زبان پیش‌فرض:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>حذف فایل ورودی</value>
   </data>
@@ -2830,9 +2827,6 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
     <value>راهنمای OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>زبان‌های OCR در دسترس نیستند</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>اعمال جلوه‌ها فقط روی ثبت ناحیه</value>

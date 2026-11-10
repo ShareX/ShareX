@@ -729,28 +729,12 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildOcrPage()
     {
         OCROptions options = _settings.CaptureSettings.OCROptions;
-        ComboBox language;
-
-        try
-        {
-            OCRLanguageOption[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
-            OCRLanguageOption selected = languages.FirstOrDefault(x => x.LanguageTag.Equals(options.Language, StringComparison.OrdinalIgnoreCase)) ?? languages.First();
-            options.Language = selected.LanguageTag;
-            language = ObjectCombo(languages, () => selected, value => options.Language = value.LanguageTag, value => value.DisplayName);
-        }
-        catch
-        {
-            language = new ComboBox { IsEnabled = false, PlaceholderText = Strings.TaskSettingsWindow_OCRLanguagesAreUnavailable };
-            language.Classes.Add("form-control");
-        }
-
         BoundValue<bool> silent = new(options.Silent, value => options.Silent = value);
         CheckBox autoCopy = Check(Strings.TaskSettingsWindow_AutomaticallyCopyResultsToClipboard, () => options.AutoCopy, value => options.AutoCopy = value);
         BindEnabled(autoCopy, silent, invert: true);
 
         return Page("capture-ocr", Strings.TaskSettingsWindow_OCR, AppIcons.TextRecognition,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_OpticalCharacterRecognition,
-                Row(Strings.TaskSettingsWindow_DefaultLanguage, language),
                 Check(Strings.TaskSettingsWindow_ProcessOCRSilently, silent), autoCopy,
                 Check(Strings.TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink, () => options.CloseWindowAfterOpeningServiceLink, value => options.CloseWindowAfterOpeningServiceLink = value),
                 Button(Strings.TaskSettingsWindow_OCRHelp, () => URLHelpers.OpenURL(Links.DocsOCR))));

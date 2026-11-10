@@ -1618,12 +1618,6 @@ Filsti: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Sproget {0} er ikke tilgængeligt til OCR på dette system.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk tekstgenkendelse er kun tilgængelig i Windows version {0} eller senere.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Filsti: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Rediger tjenester</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Sprog</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Navn</value>
   </data>
@@ -1686,9 +1677,6 @@ Filsti: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Skaleringsfaktor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Vælg en tjeneste</value>

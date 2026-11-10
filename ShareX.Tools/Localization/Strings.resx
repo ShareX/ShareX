@@ -1613,12 +1613,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Target</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>{0} language is not available in this system for OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optical character recognition is only available with Windows version {0} or newer.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1655,9 +1649,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Edit services</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Name</value>
   </data>
@@ -1681,9 +1672,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Result</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Scale factor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Select a service</value>

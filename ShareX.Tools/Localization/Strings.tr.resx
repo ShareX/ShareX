@@ -1618,12 +1618,6 @@ Dosya yolu: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Hedef</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>{0} dili bu sistemde OCR için kullanılamıyor.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optik karakter tanıma yalnızca Windows {0} veya daha yeni sürümlerde kullanılabilir.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Dosya yolu: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Hizmetleri düzenle</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Dil</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Ad</value>
   </data>
@@ -1686,9 +1677,6 @@ Dosya yolu: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Sonuç</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Ölçek katsayısı</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Bir hizmet seçin</value>

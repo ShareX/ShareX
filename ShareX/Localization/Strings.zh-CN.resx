@@ -2492,9 +2492,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>自定义工具栏...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>默认语言：</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>删除输入文件</value>
   </data>
@@ -2830,9 +2827,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
     <value>OCR 帮助...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR 语言不可用</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>仅对区域捕获应用效果</value>

@@ -1618,12 +1618,6 @@ Bestandspad: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Doel</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>De taal {0} is op dit systeem niet beschikbaar voor OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optische tekenherkenning is alleen beschikbaar vanaf Windows-versie {0}.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@ Bestandspad: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Diensten bewerken</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Taal</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Naam</value>
   </data>
@@ -1686,9 +1677,6 @@ Bestandspad: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultaat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Schaalfactor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Selecteer een dienst</value>

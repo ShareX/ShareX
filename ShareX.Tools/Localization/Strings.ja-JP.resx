@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>ターゲット</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>このシステムでは OCR 用の {0} 言語を利用できません。</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>光学文字認識は Windows バージョン {0} 以降でのみ利用できます。</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>サービスを編集</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>言語</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>名前</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>結果</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>倍率</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>サービスを選択</value>

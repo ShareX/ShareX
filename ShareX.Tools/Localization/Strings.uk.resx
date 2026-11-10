@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Ціль</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Мова {0} недоступна в цій системі для OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Оптичне розпізнавання символів доступне лише у Windows версії {0} або новішої.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Змінити служби</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Мова</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Ім’я</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Результат</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Коефіцієнт масштабу</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Виберіть службу</value>

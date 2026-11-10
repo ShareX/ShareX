@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>เป้าหมาย</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>ภาษา {0} ไม่พร้อมใช้งานสำหรับ OCR ในระบบนี้</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>การรู้จำอักขระด้วยแสงพร้อมใช้งานเฉพาะใน Windows รุ่น {0} หรือใหม่กว่า</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>แก้ไข บริการ</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>ภาษา</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>ชื่อ</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>ผลลัพธ์</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>มาตราส่วน ตัวคูณ</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>เลือก บริการ</value>

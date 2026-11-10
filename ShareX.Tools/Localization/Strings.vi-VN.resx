@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Đích</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Ngôn ngữ {0} không khả dụng cho OCR trên hệ thống này.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Nhận dạng ký tự quang học chỉ khả dụng với Windows phiên bản {0} trở lên.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Chỉnh sửa dịch vụ</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Ngôn ngữ</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Tên</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Kết quả</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Hệ số tỷ lệ</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Chọn dịch vụ</value>

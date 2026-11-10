@@ -1618,12 +1618,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>目標</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>此系統不提供 {0} 語言用於 OCR。</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>光學字元辨識仅适用於 Windows {0} 或更高版本。</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>编辑服務</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>語言</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>名稱</value>
   </data>
@@ -1686,9 +1677,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>結果</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>縮放系數</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>選擇服務</value>

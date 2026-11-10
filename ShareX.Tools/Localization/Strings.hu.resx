@@ -1612,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Cél</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>A(z) {0} nyelv nem érhető el OCR-hez ezen a rendszeren.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Az optikai karakterfelismerés csak a Windows {0} vagy újabb verzióján érhető el.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1654,9 +1648,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Szolgáltatások szerkesztése</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Nyelv</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Név</value>
   </data>
@@ -1680,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Eredmény</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Méretezési tényező</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Szolgáltatás kiválasztása</value>

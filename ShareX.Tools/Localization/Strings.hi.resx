@@ -1618,12 +1618,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>लक्ष्य</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>OCR के लिए इस सिस्टम में {0} भाषा उपलब्ध नहीं है।</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>ऑप्टिकल वर्ण पहचान केवल Windows संस्करण {0} या नए में उपलब्ध है।</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1660,9 +1654,6 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>सेवाएँ संपादित करें</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>भाषा</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>नाम</value>
   </data>
@@ -1686,9 +1677,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>परिणाम</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>मापक्रम गुणक</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>सेवा चुनें</value>

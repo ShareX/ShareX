@@ -32,11 +32,6 @@ using System.ComponentModel;
 
 namespace ShareX.Tools;
 
-public sealed record OCRLanguageOption(string DisplayName, string LanguageTag)
-{
-    public override string ToString() => DisplayName;
-}
-
 public sealed partial class OCRServiceLinkOption : ObservableObject
 {
     [ObservableProperty]
@@ -68,7 +63,7 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
     public override string ToString() => Name;
 }
 
-public delegate Task<string> OCRRecognitionHandler(byte[] imageData, string languageTag, float scaleFactor, bool singleLine);
+public delegate Task<string> OCRRecognitionHandler(byte[] imageData, bool singleLine);
 public delegate Task<byte[]?> OCRRegionCaptureHandler();
 
 public sealed partial class OCRViewModel : ViewModelBase, IDisposable
@@ -81,17 +76,10 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private bool _loaded;
     private int _recognitionVersion;
 
-    public ObservableCollection<OCRLanguageOption> Languages { get; } = [];
     public ObservableCollection<OCRServiceLinkOption> ServiceLinks { get; } = [];
 
     [ObservableProperty]
     private Bitmap? _sourceImage;
-
-    [ObservableProperty]
-    private OCRLanguageOption? _selectedLanguage;
-
-    [ObservableProperty]
-    private decimal _scaleFactor;
 
     [ObservableProperty]
     private bool _singleLine;
@@ -132,14 +120,12 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     public bool IsIdle => !IsBusy;
     public bool CanUseResult => !IsBusy && !string.IsNullOrWhiteSpace(ResultText);
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
-    public bool HasLanguages => Languages.Count > 0;
     public bool HasServices => ServiceLinks.Count > 0;
     public bool HasEditingService => EditingServiceLink != null;
     public string Result => ResultText.Trim();
 
     public OCRViewModel(
         byte[] sourceImageData,
-        IEnumerable<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
         Action<OCROptions>? optionsChanged = null,
@@ -151,14 +137,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         _optionsChanged = optionsChanged;
         _openHelp = openHelp;
 
-        foreach (OCRLanguageOption language in languages.OrderBy(x => x.DisplayName, StringComparer.CurrentCultureIgnoreCase))
-        {
-            Languages.Add(language);
-        }
-
-        _selectedLanguage = Languages.FirstOrDefault(x => x.LanguageTag.Equals(options.Language, StringComparison.OrdinalIgnoreCase))
-            ?? Languages.FirstOrDefault();
-        _scaleFactor = (decimal)Math.Clamp(options.ScaleFactor, 1f, 4f);
         _singleLine = options.SingleLine;
         _autoCopy = options.AutoCopy;
         _closeAfterOpeningService = options.CloseWindowAfterOpeningServiceLink;
@@ -181,8 +159,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         await RecognizeAsync();
     }
 
-    partial void OnSelectedLanguageChanged(OCRLanguageOption? value) => RerunRecognition();
-    partial void OnScaleFactorChanged(decimal value) => RerunRecognition();
     partial void OnSingleLineChanged(bool value) => RerunRecognition();
 
     partial void OnAutoCopyChanged(bool value) => SaveOptions();
@@ -314,7 +290,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     private async Task RecognizeAsync()
     {
-        if (_sourceImageData.Length == 0 || SelectedLanguage == null)
+        if (_sourceImageData.Length == 0)
         {
             return;
         }
@@ -326,7 +302,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
         try
         {
-            string result = await _recognize(_sourceImageData, SelectedLanguage.LanguageTag, (float)ScaleFactor, SingleLine);
+            string result = await _recognize(_sourceImageData, SingleLine);
             if (version == _recognitionVersion)
             {
                 ResultText = result;
@@ -375,11 +351,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     private void SaveOptions()
     {
-        if (SelectedLanguage != null)
-        {
-            _options.Language = SelectedLanguage.LanguageTag;
-        }
-        _options.ScaleFactor = (float)ScaleFactor;
         _options.SingleLine = SingleLine;
         _options.AutoCopy = AutoCopy;
         _options.CloseWindowAfterOpeningServiceLink = CloseAfterOpeningService;

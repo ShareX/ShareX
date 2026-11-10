@@ -2492,9 +2492,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>टूलबार अनुकूलित करें...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>डिफ़ॉल्ट भाषा:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>इनपुट फ़ाइल हटाएँ</value>
   </data>
@@ -2830,9 +2827,6 @@
   </data>
   <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
     <value>OCR सहायता...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR भाषाएँ अनुपलब्ध हैं</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>केवल क्षेत्र कैप्चर पर प्रभाव लागू करें</value>
