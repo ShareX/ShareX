@@ -2095,6 +2095,9 @@ Cesta k souboru: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Převod se zastavuje...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Průměrný datový tok</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Procházet...</value>
   </data>
@@ -2113,6 +2116,9 @@ Cesta k souboru: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Název souboru</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Velikost souboru</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Složka</value>
   </data>
@@ -2130,6 +2136,12 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kvalita</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Rozlišení</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Výsledek</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Převodník videa</value>

@@ -2095,6 +2095,9 @@ Chemin du fichier : {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Arrêt de la conversion...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Débit moyen</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Parcourir...</value>
   </data>
@@ -2113,6 +2116,9 @@ Chemin du fichier : {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Taille du fichier</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Dossier</value>
   </data>
@@ -2130,6 +2136,12 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Qualité</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Résolution</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Résultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertisseur vidéo</value>

@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>עוצר את ההמרה...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>קצב סיביות ממוצע</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>עיון...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>שם קובץ</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>גודל הקובץ</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>תיקייה</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>איכות</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>רזולוציה</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>תוצאה</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - ממיר סרטונים</value>

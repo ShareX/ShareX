@@ -2095,6 +2095,9 @@ Bestandspad: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Conversie stoppen...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Gemiddelde bitrate</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Bladeren...</value>
   </data>
@@ -2113,6 +2116,9 @@ Bestandspad: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Bestandsnaam</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Bestandsgrootte</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Map</value>
   </data>
@@ -2130,6 +2136,12 @@ Bestandspad: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kwaliteit</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolutie</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultaat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Videoconverter</value>

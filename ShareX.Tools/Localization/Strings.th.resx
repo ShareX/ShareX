@@ -2089,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>กำลังหยุด การแปลง...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>บิตเรตเฉลี่ย</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>เรียกดู...</value>
   </data>
@@ -2107,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>ชื่อไฟล์</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>ขนาดไฟล์</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>โฟลเดอร์</value>
   </data>
@@ -2124,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>คุณภาพ</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>ความละเอียด</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>ผลลัพธ์</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - ตัวแปลงวิดีโอ</value>

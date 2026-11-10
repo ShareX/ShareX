@@ -2095,6 +2095,9 @@ Filsökväg: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stoppar konverteringen...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Genomsnittlig bithastighet</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Bläddra...</value>
   </data>
@@ -2113,6 +2116,9 @@ Filsökväg: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Filnamn</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Filstorlek</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Mapp</value>
   </data>
@@ -2130,6 +2136,12 @@ Filsökväg: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kvalitet</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Upplösning</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Videokonverterare</value>

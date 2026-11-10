@@ -2095,6 +2095,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Deteniendo la conversión...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Tasa de bits media</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Examinar...</value>
   </data>
@@ -2113,6 +2116,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nombre del archivo</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Tamaño del archivo</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Carpeta</value>
   </data>
@@ -2130,6 +2136,12 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Calidad</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolución</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultado</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertidor de vídeo</value>

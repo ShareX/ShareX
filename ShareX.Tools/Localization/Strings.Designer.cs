@@ -6251,5 +6251,9 @@ namespace ShareX.Tools.Localization {
         public static string VideoPlayer_Unmute => ResourceManager.GetString("VideoPlayer_Unmute", resourceCulture);
         public static string VideoPlayer_Seek => ResourceManager.GetString("VideoPlayer_Seek", resourceCulture);
         public static string VideoPlayer_Volume => ResourceManager.GetString("VideoPlayer_Volume", resourceCulture);
+        public static string VideoConverterWindow_Average_bitrate => ResourceManager.GetString("VideoConverterWindow_Average_bitrate", resourceCulture);
+        public static string VideoConverterWindow_File_size => ResourceManager.GetString("VideoConverterWindow_File_size", resourceCulture);
+        public static string VideoConverterWindow_Resolution => ResourceManager.GetString("VideoConverterWindow_Resolution", resourceCulture);
+        public static string VideoConverterWindow_Result => ResourceManager.GetString("VideoConverterWindow_Result", resourceCulture);
     }
 }
