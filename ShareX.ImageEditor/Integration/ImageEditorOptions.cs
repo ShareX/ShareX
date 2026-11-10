@@ -82,6 +82,16 @@ namespace ShareX.ImageEditor.Integration
             }
             set => CanvasFillColorHex = ColorToHex(value);
         }
+        // Magnifier near the cursor. ShareX copies these from the region capture settings when it opens the editor,
+        // so both magnifiers look the same. They are not saved with the editor settings.
+        [JsonIgnore]
+        public bool ShowMagnifier { get; set; } = true;
+        [JsonIgnore]
+        public bool UseSquareMagnifier { get; set; } = false;
+        [JsonIgnore]
+        public int MagnifierSize { get; set; } = 150;
+        [JsonIgnore]
+        public int MagnifierPixelCount { get; set; } = 15;
         public List<ImageEditorToolbarItemOptions> ToolbarItems { get; set; } = new List<ImageEditorToolbarItemOptions>();
 
         // Shared

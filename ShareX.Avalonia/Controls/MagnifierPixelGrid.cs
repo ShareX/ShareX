@@ -28,9 +28,9 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using System;
 
-namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+namespace ShareX.AvaloniaUI.Controls;
 
-/// <summary>Static pixel grid and center-cell outline for the region magnifier.</summary>
+/// <summary>Static pixel grid and center-cell outline for the region capture and image editor magnifiers.</summary>
 public sealed class MagnifierPixelGrid : Control
 {
     public static readonly StyledProperty<IBrush> AccentBrushProperty =
@@ -68,7 +68,7 @@ public sealed class MagnifierPixelGrid : Control
             return;
         }
 
-        TopLevel topLevel = TopLevel.GetTopLevel(this);
+        TopLevel? topLevel = TopLevel.GetTopLevel(this);
         double scale = topLevel?.RenderScaling ?? 1;
         if (!double.IsFinite(scale) || scale <= 0)
         {
