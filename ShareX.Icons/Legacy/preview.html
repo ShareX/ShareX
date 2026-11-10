@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Legacy icons</title>
+<style>
+  :root {
+    --bg: #f4f4f6;
+    --panel: #ffffff;
+    --text: #1e1e24;
+    --muted: #70707c;
+    --border: #dcdce2;
+    --accent: #2f7bc4;
+  }
+  body.dark {
+    --bg: #1c1c20;
+    --panel: #26262c;
+    --text: #e8e8ee;
+    --muted: #9a9aa6;
+    --border: #3a3a44;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font: 13px/1.4 "Segoe UI", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    padding: 12px 16px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  h1 { margin: 0; font-size: 16px; font-weight: 600; }
+  .count { color: var(--muted); }
+  input[type=search] {
+    flex: 1 1 200px;
+    max-width: 320px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+  }
+  .group { display: flex; gap: 4px; align-items: center; }
+  .group span { color: var(--muted); margin-right: 4px; }
+  button {
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+  }
+  button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--cell), 1fr));
+    gap: 8px;
+    padding: 16px;
+  }
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 6px 10px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 0;
+  }
+  .icon:hover { border-color: var(--accent); }
+  .icon img { width: var(--size); height: var(--size); image-rendering: auto; }
+  body.dark.modern .icon img { filter: invert(1) hue-rotate(180deg); }
+  .icon .name {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+  .icon.copied .name { color: var(--accent); }
+  .group-title {
+    grid-column: 1 / -1;
+    margin: 12px 0 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .group-title:first-child { margin-top: 0; }
+</style>
+</head>
+<body class="legacy">
+<header>
+  <h1>Legacy icons</h1>
+  <span class="count" id="count"></span>
+  <input type="search" id="search" placeholder="Filter by name" autofocus>
+  <div class="group" id="sizes"><span>Size</span></div>
+  <div class="group"><span>Background</span><button id="light">Light</button><button id="dark">Dark</button></div>
+</header>
+<main id="grid"></main>
+<script>
+// The SVG files in this folder. Regenerate this list when icons are added or removed.
+const icons = ["app.activity", "app.animated-gif-maker", "app.arrow-left-to-line", "app.arrow-right", "app.arrow-right-from-line", "app.audio", "app.bell", "app.blend", "app.blocks", "app.braces", "app.chevron-down", "app.chevron-left", "app.chevron-right", "app.chevron-up", "app.chevrons-up-down", "app.clipboard-clear", "app.cloud", "app.cloud-off", "app.code", "app.contrast", "app.contrast-white", "app.crosshair", "app.crosshair-white", "app.dashboard", "app.database", "app.database-backup", "app.expand", "app.factory", "app.file-code", "app.file-download", "app.file-image", "app.file-json", "app.file-search", "app.files", "app.flask", "app.folder-add", "app.grip", "app.grip-white", "app.icon-converter", "app.image-converter", "app.images", "app.key", "app.landmark", "app.layers", "app.lightbulb", "app.line-chart", "app.list-restart", "app.list-restart-white", "app.loading", "app.lock", "app.measure", "app.message", "app.message-check", "app.message-share", "app.messages", "app.mouse", "app.mouse-highlighter", "app.move-horizontal", "app.network", "app.package", "app.plug", "app.pointer-click", "app.remote-storage-browser", "app.reply", "app.rocket", "app.satellite", "app.scan-line", "app.scissors", "app.scissors-frame", "app.search-check", "app.send", "app.server", "app.shield", "app.shrink", "app.sparkles", "app.stamp", "app.step-back", "app.step-forward", "app.sun", "app.swatches", "app.target", "app.theme", "app.trophy", "app.wallpaper", "app.zap", "application--arrow", "application-block", "application-blog", "application-blue", "application-browser", "application-home", "application-icon-large", "application-list", "application-monitor", "application-resize-full", "application-search-result", "application-task", "application-terminal", "application-text-image", "application-tile-horizontal", "application-tile-vertical", "arrow-090", "arrow-270", "arrow-circle", "arrow-circle-135-left", "arrow-circle-225-left", "arrow-circle-315", "arrow-circle-double", "arrow-circle-double-135", "balloon-box-left", "balloon-white", "barcode-2d", "barcode-2d-white", "bin", "Bing", "camcorder--arrow", "camcorder--exclamation", "camcorder--minus", "camcorder--pencil", "camcorder-image", "camera", "categories", "chart", "checkbox_check", "checkbox_uncheck", "CircleNode", "clipboard", "clipboard-block", "clipboard-list", "clipboard-paste-document-text", "clipboard-paste-image", "clipboard-task", "clock", "clock--arrow", "clock--minus", "clock-select", "color", "control", "control-pause", "control-record", "control-record-green", "control-record-yellow", "counter-reset", "cross", "cross-button", "cross-circle", "crown", "cursor", "database--minus", "database--pencil", "Discord", "Discord-white", "disk", "disk-black", "disk-rename", "disk-small", "disks-black", "document", "document-break", "document-copy", "document-rename", "drive", "drive-download", "drive-globe", "drive-upload", "edit-alignment", "edit-alignment-center", "edit-alignment-center-white", "edit-alignment-right", "edit-alignment-right-white", "edit-alignment-white", "edit-bold", "edit-bold-white", "edit-drop-cap", "edit-drop-cap-white", "edit-italic", "edit-italic-white", "edit-outline", "edit-outline-white", "edit-scale", "edit-scale-white", "edit-shade", "edit-shade-white", "edit-underline", "edit-underline-white", "edit-vertical-alignment", "edit-vertical-alignment-middle", "edit-vertical-alignment-middle-white", "edit-vertical-alignment-top", "edit-vertical-alignment-top-white", "edit-vertical-alignment-white", "eraser", "exclamation", "Exclamation-16", "exclamation-button", "film", "film--arrow", "flashlight-shine", "folder", "folder-bookmark", "folder-network", "folder-open-document", "folder-open-image", "folder-search-result", "folder-stand", "folder-tree", "gear", "globe", "globe--arrow", "globe--pencil", "globe-network", "globe-share", "Google-Lens", "gradient", "grid", "grid-white", "heart", "highlighter-text", "image", "image--pencil", "image--plus", "image-crop", "image-editor.clone", "image-editor.clone-white", "image-effect.aperture", "image-effect.axe", "image-effect.binary", "image-effect.blinds", "image-effect.brick-wall", "image-effect.candy-cane", "image-effect.chalk-brush", "image-effect.checkerboard", "image-effect.circle-dot", "image-effect.circuit-board", "image-effect.cloud-moon", "image-effect.cloud-rain", "image-effect.cloud-snow", "image-effect.clover", "image-effect.coffee", "image-effect.compass", "image-effect.contours", "image-effect.cpu", "image-effect.cube", "image-effect.cylinder", "image-effect.diamond", "image-effect.droplet", "image-effect.droplets", "image-effect.eclipse", "image-effect.fence", "image-effect.flame", "image-effect.fog", "image-effect.frame", "image-effect.gauge", "image-effect.gem", "image-effect.ghost", "image-effect.glass", "image-effect.glasses", "image-effect.glasses-white", "image-effect.grass", "image-effect.hexagon", "image-effect.invert", "image-effect.invert-white", "image-effect.map", "image-effect.move-diagonal", "image-effect.newspaper", "image-effect.orbit", "image-effect.page-curl", "image-effect.paint-brush", "image-effect.paint-bucket", "image-effect.paint-roller", "image-effect.party-popper", "image-effect.pinwheel", "image-effect.rainbow", "image-effect.replace", "image-effect.rgb-split", "image-effect.rotate3d", "image-effect.rounded-corner", "image-effect.scan-face", "image-effect.scroll", "image-effect.shapes", "image-effect.shuffle", "image-effect.sigma", "image-effect.slice", "image-effect.sliders-vertical", "image-effect.snowflake", "image-effect.soft-glow", "image-effect.sort-descending", "image-effect.sparkle", "image-effect.sphere", "image-effect.spray-can", "image-effect.square-dashed", "image-effect.sticker", "image-effect.sunrise", "image-effect.sunset", "image-effect.sword", "image-effect.text-cursor", "image-effect.thermometer", "image-effect.thermometer-sun", "image-effect.torn-edge", "image-effect.triangle", "image-effect.tv", "image-effect.videotape", "image-effect.waves", "image-effect.wind", "image-empty", "image-export", "image-reflection", "image-resize", "image-resize-actual", "image-saturation", "image-select", "image-split", "image-sunset", "images-flickr", "images-stack", "inbox", "information", "keyboard", "keyboard--minus", "keyboard--plus", "keyboard-enter", "layer", "layer--arrow", "layer--minus", "layer--pencil", "layer-flip", "layer-flip-vertical", "layer-shade", "layer-shade-white", "layer-shape", "layer-shape-arrow", "layer-shape-arrow-white", "layer-shape-ellipse", "layer-shape-ellipse-region", "layer-shape-line", "layer-shape-line-white", "layer-shape-polygon", "layer-shape-region", "layer-shape-round", "layer-shape-round-region", "layer-shape-text", "layer-transparent", "layers", "layers-arrange", "layers-arrange-back", "layers-stack-arrange", "layers-stack-arrange-back", "layer_fullscreen", "layout-center", "layout-split", "layout-split-vertical", "magnifier", "magnifier--plus", "magnifier-zoom", "mail", "megaphone", "microphone", "microphone--minus", "minus", "minus-white", "monitor", "monitor-image", "monitor-window", "navigation-000-button", "navigation-090-button", "navigation-270-button-white", "network-cloud", "notebook", "pencil", "pencil--arrow", "picture-sunset", "pin", "pin--minus", "pipette", "Play", "plus", "plus-white", "printer", "question", "Rectangle", "robot", "ruler-triangle", "script--minus", "server-network", "smiley-cool", "smiley-yell", "speaker-volume", "speaker-volume-control-mute", "speaker-volume-white", "stamp-cursor", "star", "status", "status-away", "status-busy", "table-delete-column", "tag--minus", "tag-hash", "tick", "tick-button", "tick-circle", "toolbox", "traffic-cone", "uac", "ui-menu-blue", "ui-scroll-pane-image", "ui-splitter", "ui-toolbar--arrow", "upload-cloud", "wand-magic", "webcam", "webcam--minus", "wrench-screwdriver", "X", "X-white"];
+const sizes = [16, 20, 24, 32, 48, 64];
+const grid = document.getElementById("grid");
+const count = document.getElementById("count");
+const search = document.getElementById("search");
+let size = 32;
+
+function groupOf(name) {
+  const dot = name.indexOf(".");
+  return dot > 0 ? name.slice(0, dot) : "ShareX 21";
+}
+
+function render() {
+  const filter = search.value.trim().toLowerCase();
+  const shown = icons.filter(name => name.toLowerCase().includes(filter));
+  grid.replaceChildren();
+  let lastGroup = null;
+  for (const name of shown) {
+    const group = groupOf(name);
+    if (group !== lastGroup) {
+      const title = document.createElement("h2");
+      title.className = "group-title";
+      title.textContent = group;
+      grid.append(title);
+      lastGroup = group;
+    }
+    const cell = document.createElement("div");
+    cell.className = "icon";
+    cell.title = name + ".svg (click to copy the name)";
+    const img = document.createElement("img");
+    img.src = name + ".svg";
+    img.alt = name;
+    img.loading = "lazy";
+    const label = document.createElement("div");
+    label.className = "name";
+    label.textContent = name;
+    cell.append(img, label);
+    cell.addEventListener("click", () => {
+      navigator.clipboard?.writeText(name).catch(() => {});
+      cell.classList.add("copied");
+      setTimeout(() => cell.classList.remove("copied"), 800);
+    });
+    grid.append(cell);
+  }
+  count.textContent = shown.length === icons.length ? `${icons.length} icons` : `${shown.length} of ${icons.length} icons`;
+}
+
+function setSize(value) {
+  size = value;
+  document.documentElement.style.setProperty("--size", size + "px");
+  document.documentElement.style.setProperty("--cell", Math.max(110, size + 40) + "px");
+  for (const button of document.querySelectorAll("#sizes button")) button.classList.toggle("on", +button.dataset.size === size);
+}
+
+function setTheme(dark) {
+  document.body.classList.toggle("dark", dark);
+  document.getElementById("dark").classList.toggle("on", dark);
+  document.getElementById("light").classList.toggle("on", !dark);
+}
+
+for (const value of sizes) {
+  const button = document.createElement("button");
+  button.textContent = value;
+  button.dataset.size = value;
+  button.addEventListener("click", () => setSize(value));
+  document.getElementById("sizes").append(button);
+}
+document.getElementById("light").addEventListener("click", () => setTheme(false));
+document.getElementById("dark").addEventListener("click", () => setTheme(true));
+search.addEventListener("input", render);
+
+setSize(size);
+setTheme(false);
+render();
+</script>
+</body>
+</html>
