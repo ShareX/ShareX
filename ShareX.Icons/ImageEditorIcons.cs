@@ -27,7 +27,7 @@ namespace ShareX.Icons;
 
 /// <summary>
 /// Keys of the image editor and region capture toolbar icons. They are drawn in the same style as the
-/// <see cref="AppIcons"/>; see <see cref="ImageEditorIconDefinitions"/>.
+/// <see cref="AppIcons"/>; see <see cref="ModernIcons"/>.
 /// </summary>
 public static class ImageEditorIcons
 {

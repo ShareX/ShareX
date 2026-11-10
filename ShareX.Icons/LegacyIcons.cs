@@ -23,8 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using System.Collections.Concurrent;
-using System.Reflection;
 using Avalonia;
 using Avalonia.Media;
 
@@ -36,12 +34,7 @@ namespace ShareX.Icons;
 /// </summary>
 internal static class LegacyIcons
 {
-    private const string ResourcePrefix = "ShareX.Icons.Legacy.";
     private const string DarkSuffix = "-white";
-
-    private static readonly Assembly Assembly = typeof(LegacyIcons).Assembly;
-    private static readonly HashSet<string> Resources = new(Assembly.GetManifestResourceNames(), StringComparer.Ordinal);
-    private static readonly ConcurrentDictionary<string, SvgIconDrawing?> Drawings = new(StringComparer.Ordinal);
 
     /// <summary>
     /// The legacy version of the icon with key <paramref name="key"/>, laid out like <paramref name="modern"/>, or
@@ -57,18 +50,7 @@ internal static class LegacyIcons
         return new VectorIcon(modern.GridSize, new LegacyIcon(light, GetDrawing(name + DarkSuffix)));
     }
 
-    private static SvgIconDrawing? GetDrawing(string name) => Drawings.GetOrAdd(name, static name =>
-    {
-        string resource = ResourcePrefix + name + ".svg";
-
-        if (!Resources.Contains(resource))
-        {
-            return null;
-        }
-
-        using Stream stream = Assembly.GetManifestResourceStream(resource)!;
-        return SvgIconDrawing.Load(stream);
-    });
+    private static SvgIconDrawing? GetDrawing(string name) => IconResources.Find("Legacy", name);
 }
 
 /// <summary>

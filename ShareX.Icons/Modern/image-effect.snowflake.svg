@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 2v20M9.5 3.5 12 5.5l2.5-2M9.5 20.5l2.5-2 2.5 2"/>
+  <path d="M12 2v20M9.5 3.5 12 5.5l2.5-2M9.5 20.5l2.5-2 2.5 2" transform="rotate(60 12 12)"/>
+  <path d="M12 2v20M9.5 3.5 12 5.5l2.5-2M9.5 20.5l2.5-2 2.5 2" transform="rotate(120 12 12)"/>
+</svg>

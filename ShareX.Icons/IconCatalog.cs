@@ -29,7 +29,6 @@ namespace ShareX.Icons;
 public static class IconCatalog
 {
     private static readonly Lock LegacyLock = new();
-    private static Dictionary<string, VectorIcon>? _icons;
     private static readonly Dictionary<string, VectorIcon?> LegacyIconCache = new(StringComparer.Ordinal);
     private static IconPack _pack;
 
@@ -61,10 +60,8 @@ public static class IconCatalog
             return null;
         }
 
-        // Built on first use: geometries need the platform's render interface.
-        _icons ??= CreateIcons();
-
-        if (!_icons.TryGetValue(key, out VectorIcon? icon))
+        // Read on first use: geometries need the platform's render interface.
+        if (ModernIcons.Find(key) is not VectorIcon icon)
         {
             return null;
         }
@@ -84,28 +81,5 @@ public static class IconCatalog
 
             return icon;
         }
-    }
-
-    private static Dictionary<string, VectorIcon> CreateIcons()
-    {
-        Dictionary<string, VectorIcon> icons = new(StringComparer.Ordinal);
-
-        IEnumerable<IconGroup> groups =
-        [
-            .. ImageEditorIconDefinitions.CreateGroups(),
-            .. PhotoEditorIconDefinitions.CreateGroups(),
-            .. AppIconDefinitions.CreateGroups(),
-            .. ImageEffectIconDefinitions.CreateGroups()
-        ];
-
-        foreach (IconGroup group in groups)
-        {
-            foreach ((string key, VectorIcon icon) in group)
-            {
-                icons.Add(key, icon);
-            }
-        }
-
-        return icons;
     }
 }

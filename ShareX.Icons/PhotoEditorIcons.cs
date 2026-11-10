@@ -27,7 +27,7 @@ namespace ShareX.Icons;
 
 /// <summary>
 /// Keys of the Photo editor icons: pixel line art drawn at the size each group is shown at; see
-/// <see cref="PhotoEditorIconDefinitions"/>. Tool icons are named after the tools.
+/// <see cref="ModernIcons"/>. Tool icons are named after the tools.
 /// </summary>
 public static class PhotoEditorIcons
 {

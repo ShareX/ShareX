@@ -27,7 +27,7 @@ namespace ShareX.Icons;
 
 /// <summary>
 /// Keys of the main window icons: its menus, thumbnail and context menus, and title bar. They are drawn in the
-/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="AppIconDefinitions"/>.
+/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="ModernIcons"/>.
 /// </summary>
 public static class AppIcons
 {

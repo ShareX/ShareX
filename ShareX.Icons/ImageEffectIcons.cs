@@ -28,7 +28,7 @@ namespace ShareX.Icons;
 /// <summary>
 /// Keys of the image effect icons, shown in the effect browser and effect dialogs. Effects whose concept is already
 /// an interface icon, such as a crop or a camera, use the <see cref="AppIcons"/> key instead. Drawn in the same style
-/// as the <see cref="AppIcons"/>; see <see cref="ImageEffectIconDefinitions"/>.
+/// as the <see cref="AppIcons"/>; see <see cref="ModernIcons"/>.
 /// </summary>
 public static class ImageEffectIcons
 {
