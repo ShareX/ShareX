@@ -80,6 +80,18 @@ public partial class QRCodeWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
+    protected override void OnKeyDown(KeyEventArgs e)
+    {
+        base.OnKeyDown(e);
+
+        // Controls that use Escape themselves, such as an open drop-down, mark it handled first.
+        if (!e.Handled && e.Key == Key.Escape && e.KeyModifiers == KeyModifiers.None)
+        {
+            Close();
+            e.Handled = true;
+        }
+    }
+
     private async void OnOpened(object? sender, EventArgs e)
     {
         Opened -= OnOpened;
