@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using System;
+using System.Numerics;
+using System.Runtime.InteropServices;
 
 namespace ShareX.Platform.Imaging;
 
@@ -78,11 +80,34 @@ public sealed class PixelBuffer
         return buffer;
     }
 
+    /// <summary>
+    /// True after <see cref="MakeOpaque()"/> until the pixels are handed out for writing; then straight and premultiplied alpha are
+    /// the same bytes, so converters can copy rows instead of converting each pixel.
+    /// </summary>
+    public bool IsOpaque { get; private set; }
+
     public void MakeOpaque()
     {
-        for (int i = 3; i < Pixels.Length; i += 4)
+        MakeOpaque(Pixels);
+        IsOpaque = true;
+    }
+
+    /// <summary>Sets the alpha of every 32-bit BGRA or RGBA pixel to 255, a vector of pixels at a time.</summary>
+    public static void MakeOpaque(Span<byte> pixels)
+    {
+        // Alpha is the fourth byte of each pixel, the high byte of a little-endian uint.
+        Span<uint> values = MemoryMarshal.Cast<byte, uint>(pixels);
+        Span<Vector<uint>> vectors = MemoryMarshal.Cast<uint, Vector<uint>>(values);
+        Vector<uint> alpha = new(0xFF000000);
+
+        for (int i = 0; i < vectors.Length; i++)
         {
-            Pixels[i] = 255;
+            vectors[i] |= alpha;
+        }
+
+        for (int i = vectors.Length * Vector<uint>.Count; i < values.Length; i++)
+        {
+            values[i] |= 0xFF000000;
         }
     }
 

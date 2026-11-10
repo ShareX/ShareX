@@ -53,6 +53,19 @@ namespace ShareX.HelpersLib
 
             fixed (byte* data = pixels.Pixels)
             {
+                if (pixels.IsOpaque)
+                {
+                    // Every alpha is 255 (screen captures), so premultiplying changes nothing: copy the rows.
+                    byte* target = (byte*)bitmap.GetPixels();
+                    for (int y = 0; y < pixels.Height; y++)
+                    {
+                        Buffer.MemoryCopy(data + (long)y * pixels.Stride, target + (long)y * bitmap.RowBytes, bitmap.RowBytes, pixels.Stride);
+                    }
+
+                    bitmap.NotifyPixelsChanged();
+                    return bitmap;
+                }
+
                 using SKPixmap pixmap = new SKPixmap(source, (IntPtr)data, pixels.Stride);
                 pixmap.ReadPixels(bitmap.Info, bitmap.GetPixels(), bitmap.RowBytes, 0, 0);
             }

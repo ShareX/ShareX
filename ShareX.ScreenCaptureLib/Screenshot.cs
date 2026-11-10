@@ -27,6 +27,7 @@
 
 using ShareX.HelpersLib;
 using ShareX.Platform;
+using ShareX.Platform.Imaging;
 using SkiaSharp;
 using System;
 using System.Drawing;
@@ -160,7 +161,34 @@ namespace ShareX.ScreenCaptureLib
                 return null;
             }
 
-            return PlatformImageConverter.ToSKBitmap(result);
+            SKBitmap? bitmap = PlatformImageConverter.ToSKBitmap(result);
+
+            if (bitmap != null && request.Mode != ScreenCaptureMode.Window)
+            {
+                MakeOpaque(bitmap);
+            }
+
+            return bitmap;
+        }
+
+        // A screen has no transparency, but not every platform says so: X11 leaves the alpha byte of 24-bit visuals at 0, and
+        // portal and screencapture PNGs may carry an alpha channel. Region capture draws screen captures directly as opaque.
+        private static unsafe void MakeOpaque(SKBitmap bitmap)
+        {
+            if (bitmap.ColorType is not (SKColorType.Bgra8888 or SKColorType.Rgba8888) || bitmap.AlphaType == SKAlphaType.Opaque)
+            {
+                return;
+            }
+
+            int width = bitmap.Width, height = bitmap.Height, rowBytes = bitmap.RowBytes;
+            byte* pixels = (byte*)bitmap.GetPixels();
+
+            for (int y = 0; y < height; y++)
+            {
+                PixelBuffer.MakeOpaque(new Span<byte>(pixels + (nint)y * rowBytes, width * 4));
+            }
+
+            bitmap.NotifyPixelsChanged();
         }
     }
 }
