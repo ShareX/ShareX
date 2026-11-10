@@ -726,28 +726,9 @@ public partial class RegionCaptureWindow : Window
         _viewModel?.SetActiveHostToolbarItem(null);
         _viewModel?.SetHostToolbarToolsActive(true);
         _annotationToolbar.ShowToolOptions = true;
+        _magnifierPanel.IsVisible = false;
         _selectionInfoPanel.IsVisible = false;
-        // Like ShareX 21, the magnifier and cursor info stay while drawing, so tools such as
-        // blur, pixelate and the smart eraser can be placed precisely. See UpdateHudForDrawingTools.
-        UpdateHud(_lastPointerPoint);
         _editorWorkspace.Focus();
-    }
-
-    /// <summary>
-    /// While a drawing tool is active, the editor gets the pointer events instead of the region input surface,
-    /// so the magnifier and cursor info are updated from the window's pointer moves instead.
-    /// </summary>
-    private void UpdateHudForDrawingTools(PointerEventArgs e)
-    {
-        if (_regionToolActive || _closing || _request == null || !IsEditorWorkspaceSource(e.Source))
-        {
-            return;
-        }
-
-        double scaling = GetWindowScaling();
-        Point pointer = e.GetPosition(this);
-        _lastPointerPoint = ClampPoint(new Point(pointer.X * scaling, pointer.Y * scaling));
-        UpdateHud(_lastPointerPoint);
     }
 
     private void OnRegionPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -1506,7 +1487,6 @@ public partial class RegionCaptureWindow : Window
     private void OnCaptureHostPointerMoved(object? sender, PointerEventArgs e)
     {
         FollowPointerWithCaptureToolbar(e);
-        UpdateHudForDrawingTools(e);
 
         if (!_annotationMiddleButtonPressed)
         {
@@ -1835,11 +1815,7 @@ public partial class RegionCaptureWindow : Window
             _magnifierPanel.IsVisible = false;
         }
 
-        // The selection size label belongs to the region tool and stays hidden while drawing.
-        if (_regionToolActive)
-        {
-            UpdateSelectionInfo();
-        }
+        UpdateSelectionInfo();
     }
 
     private string GetPointerInfoText(Point imagePoint)
