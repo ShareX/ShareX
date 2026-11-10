@@ -13,6 +13,7 @@
     <PackageReference Include="SkiaSharp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\**\*" Exclude="Models\**\.gitkeep" CopyToOutputDirectory="PreserveNewest" LinkBase="Models" />
+    <!-- The models are copied next to the application, where PaddleOCREngine.DefaultModelsFolder looks for them. -->
+    <None Include="Models\**\*.onnx;Models\**\*.yml" CopyToOutputDirectory="PreserveNewest" Link="PaddleOCR\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 </Project>
