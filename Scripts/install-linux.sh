@@ -19,6 +19,9 @@ bin_link="$prefix/bin/sharex"
 # The portal looks ShareX up by this name (application id "sharex"); global hotkeys need it.
 desktop_file="$prefix/share/applications/sharex.desktop"
 icon_file="$prefix/share/icons/hicolor/256x256/apps/sharex.png"
+# The browser extension sends pages, images and text to ShareX through this program.
+browser_host="$app_dir/ShareX_NativeMessagingHost"
+config_home="${XDG_CONFIG_HOME:-$HOME/.config}"
 here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 repo="$(cd "$here/.." && pwd)"
 # An extracted package has the published application next to this script.
@@ -31,6 +34,30 @@ running_pids() {
     [ "$(readlink "/proc/$pid/exe" 2>/dev/null)" = "$app_dir/ShareX" ] && echo "$pid"
   done
   return 0
+}
+
+# The folders the browsers read native messaging manifests from, for this user. As in ShareX's own setting: the browsers that
+# are installed, or Chrome and Firefox when none is yet. Packages use the system folders instead.
+user_manifest_folders() {
+  local found=false folder
+  for folder in google-chrome google-chrome-beta google-chrome-unstable chromium BraveSoftware/Brave-Browser microsoft-edge vivaldi; do
+    [ -d "$config_home/$folder" ] && { echo "chrome $config_home/$folder/NativeMessagingHosts"; found=true; }
+  done
+  $found || echo "chrome $config_home/google-chrome/NativeMessagingHosts"
+  found=false
+  for folder in .mozilla .librewolf .waterfox; do
+    [ -d "$HOME/$folder" ] && { echo "firefox $HOME/$folder/native-messaging-hosts"; found=true; }
+  done
+  $found || echo "firefox $HOME/.mozilla/native-messaging-hosts"
+}
+
+manifest_name() { [ "$1" = chrome ] && echo com.getsharex.sharex.json || echo ShareX.json; }
+
+# Writes ShareX's manifest for a browser family into a folder, pointing at the installed host (browsers need an absolute path).
+write_manifest() {
+  mkdir -p "$2"
+  sed -e '1s/^\xEF\xBB\xBF//' -e "s|\"path\": \".*\"|\"path\": \"$browser_host\"|" \
+    "$source_app/host-manifest-$1.json" >"$2/$(manifest_name "$1")"
 }
 
 # ShareX saves its settings and closes when it receives SIGTERM.
@@ -51,6 +78,11 @@ case "${1:-}" in
     stop_running
     rm -rf "$app_dir"
     rm -f "$bin_link" "$desktop_file" "$icon_file"
+    # Only manifests for this copy; another ShareX install may own the others.
+    user_manifest_folders | while read -r family folder; do
+      manifest="$folder/$(manifest_name "$family")"
+      grep -qsF "\"$browser_host\"" "$manifest" && rm -f "$manifest"
+    done
     rmdir "$prefix/lib/sharex" 2>/dev/null || true
     command -v update-desktop-database >/dev/null && update-desktop-database "$prefix/share/applications" 2>/dev/null || true
     echo "ShareX removed. Settings and screenshots in ~/Documents/ShareX were kept."
@@ -137,10 +169,19 @@ Name=Capture active window
 Exec=$bin_link -ActiveWindow
 DESKTOP
 
+# Browser extension support is on by default, as in the Windows setup. For a user install, the "Enable Chrome extension support"
+# and "Enable Firefox add-on support" settings in ShareX turn it off again.
 if [ -n "$destdir" ]; then
+  # Packages register the host for every user in the folders Chrome, Chromium, Edge and Firefox read system wide.
+  for folder in /etc/opt/chrome/native-messaging-hosts /etc/chromium/native-messaging-hosts /etc/opt/edge/native-messaging-hosts; do
+    write_manifest chrome "$destdir$folder"
+  done
+  write_manifest firefox "$destdir$prefix/lib/mozilla/native-messaging-hosts"
   echo "Staged in $destdir$prefix"
   exit 0
 fi
+
+user_manifest_folders | while read -r family folder; do write_manifest "$family" "$folder"; done
 
 command -v update-desktop-database >/dev/null && update-desktop-database "$prefix/share/applications" 2>/dev/null || true
 

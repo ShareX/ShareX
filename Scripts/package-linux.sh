@@ -56,6 +56,15 @@ contents:
     dst: /usr/share/applications/sharex.desktop
   - src: $staging/root/usr/share/icons/hicolor/256x256/apps/sharex.png
     dst: /usr/share/icons/hicolor/256x256/apps/sharex.png
+# The browser extension's host, registered for Chrome, Chromium, Edge and Firefox.
+  - src: $staging/root/etc/opt/chrome/native-messaging-hosts/com.getsharex.sharex.json
+    dst: /etc/opt/chrome/native-messaging-hosts/com.getsharex.sharex.json
+  - src: $staging/root/etc/chromium/native-messaging-hosts/com.getsharex.sharex.json
+    dst: /etc/chromium/native-messaging-hosts/com.getsharex.sharex.json
+  - src: $staging/root/etc/opt/edge/native-messaging-hosts/com.getsharex.sharex.json
+    dst: /etc/opt/edge/native-messaging-hosts/com.getsharex.sharex.json
+  - src: $staging/root/usr/lib/mozilla/native-messaging-hosts/ShareX.json
+    dst: /usr/lib/mozilla/native-messaging-hosts/ShareX.json
 # The runtime is bundled. These are the command line tools ShareX uses for the clipboard, recording and notifications; it
 # says which one is missing when a feature needs it.
 overrides:
@@ -78,6 +87,8 @@ appdir="$staging/ShareX.AppDir"
 mkdir -p "$appdir"
 cp -a "$staging/root/usr" "$appdir/usr"
 rm "$appdir/usr/bin/sharex"
+# The image is mounted at a new path on every start, so browsers can't be pointed at its host.
+rm -r "$appdir/usr/lib/mozilla"
 ln -s ../lib/sharex/app/ShareX "$appdir/usr/bin/sharex"
 sed 's|/usr/bin/sharex|sharex|' "$staging/root/usr/share/applications/sharex.desktop" >"$appdir/sharex.desktop"
 cp "$staging/root/usr/share/icons/hicolor/256x256/apps/sharex.png" "$appdir/sharex.png"
