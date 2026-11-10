@@ -126,7 +126,7 @@
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid Margin="12" ColumnDefinitions="*,12,360">
+            <Grid x:Name="ContentGrid" Margin="12" ColumnDefinitions="*,12,360">
                 <Border Grid.Column="0" Classes="ocr-canvas">
                     <Grid>
                         <toolControls:OCRPreview Margin="28,28,28,84"
