@@ -70,9 +70,8 @@ public partial class NotificationWindow : Window
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
     private bool _pointerInside;
-    private bool _isCardPressed;
-    private bool _isDragCandidate;
-    private bool _fileDragStarted;
+    private CardGesture _gesture;
+    // The drag-and-drop operation itself; it can outlive the gesture, which a button press or release resets.
     private bool _isFileDragActive;
     private Point _dragStart;
     private PointerPressedEventArgs? _dragEvent;
@@ -499,16 +498,14 @@ public partial class NotificationWindow : Window
     private void OnCardPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         PointerPoint point = e.GetCurrentPoint(NotificationCard);
-        _isCardPressed = true;
-        _fileDragStarted = false;
         _dragStart = point.Position;
-        _isDragCandidate = point.Properties.IsLeftButtonPressed;
-        _dragEvent = _isDragCandidate ? e : null;
+        _gesture = point.Properties.IsLeftButtonPressed ? CardGesture.DragCandidate : CardGesture.Pressed;
+        _dragEvent = _gesture == CardGesture.DragCandidate ? e : null;
     }
 
     private async void OnCardPointerMoved(object? sender, PointerEventArgs e)
     {
-        if (!_isDragCandidate || _dragEvent == null || _config == null ||
+        if (_gesture != CardGesture.DragCandidate || _dragEvent == null || _config == null ||
             string.IsNullOrEmpty(_config.FilePath) || !File.Exists(_config.FilePath))
         {
             return;
@@ -520,8 +517,7 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        _isDragCandidate = false;
-        _fileDragStarted = true;
+        _gesture = CardGesture.Dragging;
         PointerPressedEventArgs dragEvent = _dragEvent;
         _isFileDragActive = true;
         _fadeTimer.Stop();
@@ -556,11 +552,11 @@ public partial class NotificationWindow : Window
 
     private void OnCardPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        bool wasCardPressed = _isCardPressed;
-        bool wasDragging = _fileDragStarted;
+        CardGesture gesture = _gesture;
         ResetPointerInteraction();
 
-        if (!wasCardPressed || wasDragging || _config == null)
+        // Only a press that did not turn into a drag is a click.
+        if (gesture is CardGesture.None or CardGesture.Dragging || _config == null)
         {
             return;
         }
@@ -604,11 +600,21 @@ public partial class NotificationWindow : Window
         e.Handled = true;
     }
 
+    /// <summary>What the pointer is doing on the card, from press to release.</summary>
+    private enum CardGesture
+    {
+        None,
+        /// <summary>Pressed with a button that cannot drag; releasing it is a click.</summary>
+        Pressed,
+        /// <summary>Pressed with the left button: a click when released, a file drag once it moves far enough.</summary>
+        DragCandidate,
+        /// <summary>The file is being dragged; releasing is not a click.</summary>
+        Dragging
+    }
+
     private void ResetPointerInteraction()
     {
-        _isCardPressed = false;
-        _isDragCandidate = false;
-        _fileDragStarted = false;
+        _gesture = CardGesture.None;
         _dragEvent = null;
     }
 

@@ -44,8 +44,7 @@ public sealed class StartupCommandRouter
     private readonly TaskCompletionSource closed = CreateSignal();
     private bool hasBeenReady;
     private bool closing;
-    private bool startupCompleted;
-    private bool startupFinished;
+    private StartupPhase startup;
     private int pauseCount;
     private int startupCommands;
 
@@ -96,7 +95,7 @@ public sealed class StartupCommandRouter
         lock (sync)
         {
             if (closing) return Task.CompletedTask;
-            acceptedDuringStartup = !startupFinished;
+            acceptedDuringStartup = startup != StartupPhase.Finished;
             if (acceptedDuringStartup) startupCommands++;
         }
         return RunAcceptedAsync(action, acceptedDuringStartup);
@@ -107,7 +106,7 @@ public sealed class StartupCommandRouter
         bool notify;
         lock (sync)
         {
-            startupCompleted = true;
+            if (startup == StartupPhase.Presenting) startup = StartupPhase.Presented;
             notify = TryFinishStartup();
         }
         if (notify) finishStartup(false);
@@ -122,8 +121,8 @@ public sealed class StartupCommandRouter
             closing = true;
             ready.TrySetResult();
             closed.TrySetResult();
-            notify = !startupFinished;
-            startupFinished = true;
+            notify = startup != StartupPhase.Finished;
+            startup = StartupPhase.Finished;
         }
         if (notify) finishStartup(true);
     }
@@ -206,9 +205,20 @@ public sealed class StartupCommandRouter
     // Called with sync held. Commands accepted after this boundary are normal running-application commands.
     private bool TryFinishStartup()
     {
-        if (closing || startupFinished || !startupCompleted || startupCommands != 0) return false;
-        startupFinished = true;
+        if (closing || startup != StartupPhase.Presented || startupCommands != 0) return false;
+        startup = StartupPhase.Finished;
         return true;
+    }
+
+    /// <summary>Startup only moves forward; closing jumps straight to <see cref="Finished"/>.</summary>
+    private enum StartupPhase
+    {
+        /// <summary>The startup presentation is still running.</summary>
+        Presenting,
+        /// <summary>The presentation is done; commands accepted during startup may still be running.</summary>
+        Presented,
+        /// <summary>Startup was reported as finished. Later commands are normal running-application commands.</summary>
+        Finished
     }
 
     private static TaskCompletionSource CreateSignal() => new(TaskCreationOptions.RunContinuationsAsynchronously);
