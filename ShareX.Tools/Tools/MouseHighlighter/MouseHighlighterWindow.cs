@@ -75,7 +75,7 @@ public sealed class MouseHighlighterWindow : Window
             FontSize = 18,
             VerticalAlignment = Avalonia.Layout.VerticalAlignment.Top
         };
-        icon.Bind(IconPresenter.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Accent.Start"));
+        icon.Bind(IconPresenter.ForegroundProperty, new DynamicResourceExtension("ShareX.Brush.Accent.Text"));
 
         TextBlock text = new()
         {

@@ -275,6 +275,38 @@ public partial class TaskSettingsWindow : Window
         }
     }
 
+    private void OnEditorOverlayPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        // Only clicks on the dimmed backdrop itself, not inside the dialog, cancel it.
+        if (!ReferenceEquals(e.Source, sender) || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        if (sender == ToolbarEditorOverlay)
+        {
+            HideToolbarEditor();
+        }
+        else if (sender == NotificationButtonsEditorOverlay)
+        {
+            HideNotificationButtonsEditor();
+        }
+        else if (sender == WatchFolderEditorOverlay)
+        {
+            HideWatchFolderEditor();
+        }
+        else if (sender == ActionEditorOverlay)
+        {
+            HideActionEditor();
+        }
+        else
+        {
+            return;
+        }
+
+        e.Handled = true;
+    }
+
     private void AttachActionArgumentsMenu()
     {
         ContextMenu menu = new();

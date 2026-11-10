@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>بارگذاری</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>همیشه نوارهای پیمایش با عرض کامل نمایش داده شوند</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>برنامه</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>نمایانی پیش‌نمایش تصویر:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>محل پیش‌نمایش تصویر:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>تنظیمات چاپ عکس ...</value>
@@ -1449,7 +1455,7 @@ Please select a different hotkey or quit the conflicting application and reبا�
     <value>می‌توانید این را هر زمان در تنظیمات برنامه تغییر دهید.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>نمادهای رنگارنگ ShareX 21.</value>
+    <value>نمادهای رنگارنگ و پرجزئیات با سبکی کلاسیک.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>نمادهای خطی ساده که از رنگ‌های پوسته شما پیروی می‌کنند.</value>
@@ -2507,9 +2513,6 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>سفارشی‌سازی نوار ابزار...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>زبان پیش‌فرض:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>حذف فایل ورودی</value>
   </data>
@@ -2696,6 +2699,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>عمل کلیک میانی:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>نمایشگر:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>کلیک دکمه ۴ ماوس:</value>
   </data>
@@ -2707,6 +2713,12 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>گزینه های هایلایت ماوس...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>چرخ ماوس:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>کاری که پیمایش با ذره‌بین انجام می‌دهد. هنگام پیمایش Ctrl را نگه دارید تا کار دیگر انجام شود.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>انتقال به پایین</value>
@@ -2833,12 +2845,6 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>راهنمای OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>زبان‌های OCR در دسترس نیستند</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>اعمال جلوه‌ها فقط روی ثبت ناحیه</value>
@@ -3140,8 +3146,17 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>منطقه زمانی:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>نمایشگر {0} (متصل نیست)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>نمایشگر {0}: {1} ({2} در {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>اعلان</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>اندازه دکمه‌های نوار ابزار (پیکسل):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>ابزارها</value>
@@ -3190,6 +3205,9 @@ Do you want to abort the active ضبط صفحه?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>استفاده از منطقه زمانی سفارشی</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>استفاده از اندازه سفارشی برای دکمه‌های نوار ابزار</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>استفاده از مدت ثابت</value>

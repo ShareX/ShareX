@@ -45,11 +45,22 @@
         <Thickness x:Key="ShareX.Density.Settings.SearchPadding">30,8,8,8</Thickness>
         <x:Double x:Key="ShareX.Density.Settings.NavSpacing">10</x:Double>
         <x:Double x:Key="ShareX.Density.Settings.WindowWidth">950</x:Double>
+
+        <!-- ThemeManager sets this to False when scroll bars are configured to always stay expanded. -->
+        <x:Boolean x:Key="ShareX.ScrollBar.AllowAutoHide">True</x:Boolean>
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
     <Style Selector=":is(Window)">
         <Setter Property="Icon" Value="{DynamicResource ShareX.WindowIcon}"/>
+    </Style>
+    <!--
+        Scroll bars only widen while hovered unless auto-hide is off. ScrollViewer.AllowAutoHide is passed down from
+        the control that hosts a ScrollViewer in its template (ListBox, TextBox, ...) to the ScrollViewer and then to
+        its scroll bars, so it is set on every templated control rather than on ScrollBar, which the ScrollViewer overrides.
+    -->
+    <Style Selector=":is(TemplatedControl)">
+        <Setter Property="ScrollViewer.AllowAutoHide" Value="{DynamicResource ShareX.ScrollBar.AllowAutoHide}"/>
     </Style>
     <!-- Base typography -->
     <Style Selector="TextBlock">
@@ -113,14 +124,17 @@
 
         <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active:pressed /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter TextBlock">
@@ -129,6 +143,43 @@
 
         <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter controls|IconPresenter">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <!-- Primary action button: the accent fill in every state, with text and icons kept readable on it. -->
+        <Style Selector="^.primary">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SystemAccentColorLight1}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource SystemAccentColorDark1}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+
+        <Style Selector="^.primary:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+            <Setter Property="Opacity" Value="0.35"/>
         </Style>
 
         <Style Selector="^:disabled /template/ ContentPresenter#PART_ContentPresenter">
@@ -167,14 +218,17 @@
 
         <Style Selector="^.active /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active:pressed /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
 
         <Style Selector="^.active TextBlock">
@@ -347,7 +401,7 @@
         <Setter Property="BoxShadow" Value="0 14 28 -16 #70000000"/>
 
         <Style Selector="^ TextBlock:first-child">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
         </Style>
     </Style>
 
@@ -456,6 +510,8 @@
 
     <!-- Common control overrides -->
     <Style Selector="TextBox">
+        <Setter Property="SelectionBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="SelectionForegroundBrush" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
         <Setter Property="BorderThickness" Value="1"/>
@@ -503,6 +559,11 @@
         <Style Selector="^:disabled /template/ TextPresenter">
             <Setter Property="TextElement.Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
+    </Style>
+
+    <Style Selector="SelectableTextBlock">
+        <Setter Property="SelectionBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="SelectionForegroundBrush" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
     <Style Selector="AutoCompleteBox">
@@ -609,23 +670,54 @@
 
     <Style Selector="ComboBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
     <Style Selector="ComboBoxItem:selected:pointerover /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
     <Style Selector="ComboBoxItem:selected:pressed /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
     <Style Selector="ComboBoxItem:selected TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <!-- Icons in list item templates. Defined before the selected rules below so a selected row overrides them. -->
+    <Style Selector="ListBoxItem controls|IconPresenter.list-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+    </Style>
+
+    <Style Selector="ListBoxItem controls|IconPresenter.list-icon.accent">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+    </Style>
+
+    <!-- Selected list items get an opaque accent fill. Item templates usually contain their own TextBlocks, which take
+         the global TextBlock color instead of inheriting it, so those are set too. Lists with a neutral selection
+         opt out with the neutral-selection class. The inset outline is only visible when the accent is close to the
+         background, and does not affect layout. -->
+    <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BoxShadow" Value="{DynamicResource ShareX.BoxShadow.Accent.Outline}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
@@ -725,10 +817,10 @@
     </Style>
 
     <Style Selector="Slider:horizontal">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
 
         <Style Selector="^ /template/ Thumb">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderThickness" Value="4"/>
         </Style>
@@ -762,8 +854,8 @@
 
         <Style Selector="^:checked /template/ Border#NormalRectangle">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
         </Style>
 
         <Style Selector="^:disabled">
@@ -779,12 +871,12 @@
 
     <Style Selector="RadioButton">
         <Style Selector="^:pointerover:not(:disabled) /template/ Ellipse#OuterEllipse">
-            <Setter Property="Stroke" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Stroke" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
 
         <Style Selector="^:checked:not(:disabled):pointerover /template/ Ellipse#CheckOuterEllipse">
             <Setter Property="Fill" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Stroke" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Stroke" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
 
         <Style Selector="^:checked:not(:disabled):pointerover /template/ Ellipse#CheckGlyph">
@@ -805,7 +897,7 @@
 
         <Style Selector="^:checked:not(:disabled) /template/ Border#SwitchKnobBounds">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
 
         <Style Selector="^:checked:not(:disabled) /template/ Ellipse#SwitchKnobOn">
@@ -814,7 +906,7 @@
 
         <Style Selector="^:checked:not(:disabled):pointerover /template/ Border#SwitchKnobBounds">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
 
         <Style Selector="^:checked:not(:disabled):pointerover /template/ Ellipse#SwitchKnobOn">
@@ -823,7 +915,7 @@
 
         <Style Selector="^:checked:not(:disabled):pressed /template/ Border#SwitchKnobBounds">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
 
         <Style Selector="^:checked:not(:disabled):pressed /template/ Ellipse#SwitchKnobOn">
@@ -911,7 +1003,7 @@
 
     <Style Selector="ToggleButton.side-panel-toggle-row:pointerover ToggleSwitch.side-panel-toggle-proxy /template/ Border#SwitchKnobBounds">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
     </Style>
 
     <Style Selector="ToggleButton.side-panel-toggle-row:pointerover ToggleSwitch.side-panel-toggle-proxy /template/ Grid#SwitchAreaGrid">
@@ -933,7 +1025,7 @@
 
     <Style Selector="ToggleButton.side-panel-toggle-row:pressed ToggleSwitch.side-panel-toggle-proxy /template/ Border#SwitchKnobBounds">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
     </Style>
 
     <Style Selector="ToggleButton.side-panel-toggle-row:pressed ToggleSwitch.side-panel-toggle-proxy /template/ Grid#SwitchAreaGrid">
@@ -983,6 +1075,10 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
+    <Style Selector="ContextMenu MenuItem:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
     <Style Selector="ContextMenu Separator">
         <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
     </Style>
@@ -1026,12 +1122,16 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
     </Style>
 
+    <Style Selector="MenuItem.compact-menu-item:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+    </Style>
+
     <Style Selector="MenuItem.compact-menu-item:pointerover TextBlock.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
     </Style>
 
     <Style Selector="MenuItem.compact-menu-item:pointerover controls|IconPresenter.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
     </Style>
 
     <Style Selector="MenuItem.bold-when-checked">
@@ -1057,7 +1157,7 @@
     </Style>
 
     <Style Selector="TextBlock.tool-grid-category-header">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
         <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.ToolGrid.HeaderFontSize}"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
@@ -1177,12 +1277,23 @@
     </Style>
 
     <Style Selector="TextBlock.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
         <Setter Property="FontWeight" Value="Normal"/>
     </Style>
 
     <Style Selector="controls|IconPresenter.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+    </Style>
+
+    <!-- Menu items that hover with the accent fill draw their accent icon in the fill's text color. -->
+    <Style Selector="ContextMenu MenuItem:not(.compact-menu-item):pointerover > TextBlock.accent-menu-icon,
+                     MenuFlyoutPresenter MenuItem:pointerover > TextBlock.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <Style Selector="ContextMenu MenuItem:not(.compact-menu-item):pointerover > controls|IconPresenter.accent-menu-icon,
+                     MenuFlyoutPresenter MenuItem:pointerover > controls|IconPresenter.accent-menu-icon">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 
     <Style Selector="MenuFlyoutPresenter MenuItem">
@@ -1202,6 +1313,10 @@
     </Style>
 
     <Style Selector="MenuFlyoutPresenter MenuItem:pointerover TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+    </Style>
+
+    <Style Selector="MenuFlyoutPresenter MenuItem:pointerover /template/ ContentPresenter#PART_HeaderPresenter">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
     </Style>
 

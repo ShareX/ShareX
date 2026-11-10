@@ -876,6 +876,12 @@ Chcete jej přesto spustit?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Obrazové soubory</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dole</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Po straně</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automaticky</value>
   </data>
@@ -1110,6 +1116,12 @@ Chcete jej přesto spustit?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Vyměnit typ nástroje</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Změnit velikost lupy</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Přiblížit lupu</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Počítač</value>
   </data>
@@ -1316,6 +1328,12 @@ Chcete jej přesto spustit?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Nahrát soubor</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktivní monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primární monitor</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

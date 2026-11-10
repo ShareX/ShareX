@@ -29,11 +29,13 @@ using System.Threading.Tasks;
 
 namespace ShareX.Platform;
 
-/// <param name="Tag">The identifier to pass back to <see cref="IOcrService.RecognizeAsync"/>: a BCP 47 tag on Windows, a Tesseract
-/// language code (eng, deu, chi_sim) on Linux.</param>
+/// <param name="Tag">The identifier to pass back to <see cref="IOcrService.RecognizeAsync"/>, a BCP 47 tag.</param>
 public sealed record OcrLanguage(string Tag, string DisplayName);
 
-/// <summary>Text recognition: Windows.Media.Ocr on Windows, Tesseract on Linux.</summary>
+/// <summary>
+/// The system's text recognition, for where ShareX's own engine (ShareX.OCR, PaddleOCR) cannot run: Vision on Intel Macs, which
+/// ONNX Runtime has no build for. Windows and Linux report it as unsupported.
+/// </summary>
 public interface IOcrService
 {
     FeatureSupport Support { get; }

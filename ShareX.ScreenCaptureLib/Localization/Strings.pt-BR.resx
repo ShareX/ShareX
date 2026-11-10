@@ -436,6 +436,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Pausar</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Região: Elipse</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Região: Mão livre</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Arraste para mover a barra de ferramentas; clique duas vezes para redefinir a posição</value>
   </data>

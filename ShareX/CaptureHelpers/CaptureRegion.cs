@@ -87,6 +87,8 @@ namespace ShareX
             AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
             {
                 Screenshot = frozenScreenshot,
+                // Screen captures are opaque: WindowsImageInterop.Capture and HDR correction set alpha to 255.
+                ScreenshotIsOpaque = true,
                 ScreenBounds = screenBounds,
                 RegionCaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
                 ImageEditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,

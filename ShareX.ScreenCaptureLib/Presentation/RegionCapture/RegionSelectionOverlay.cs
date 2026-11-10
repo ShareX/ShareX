@@ -26,8 +26,10 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
@@ -40,13 +42,14 @@ public sealed class RegionSelectionOverlay : Control
     public static readonly StyledProperty<IBrush> AccentBrushProperty =
         AvaloniaProperty.Register<RegionSelectionOverlay, IBrush>(nameof(AccentBrush), Brushes.DodgerBlue);
 
-    private static readonly IPen AntDashPen = new Pen(
-        new SolidColorBrush(Color.FromArgb(230, 0, 0, 0)),
-        1,
-        new DashStyle([5, 5], 0));
-    private Rect _selectionRectangle;
+    // The dashes and the crosshair shadow use the halo color of the accent, so a dark accent gets white
+    // dashes and stays visible over dark screen content. The defaults match the default DodgerBlue accent.
+    private IPen _antDashPen = CreateAntDashPen(Colors.Black);
+    private IBrush _haloBrush = Brushes.Black;
+    private CaptureRegion _selection;
     private Rect _hoverRectangle;
-    private IReadOnlyList<Rect> _regions = [];
+    private RegionShape _hoverShape;
+    private IReadOnlyList<CaptureRegion> _regions = [];
     private bool _showHoverWithSelection;
     private bool _showCenterCrosshair;
     private bool _showCursorCrosshair;
@@ -67,18 +70,19 @@ public sealed class RegionSelectionOverlay : Control
         set => SetValue(AccentBrushProperty, value);
     }
 
-    public Rect SelectionRectangle
+    /// <summary>The region being drawn or edited. Its bounds are <see cref="SelectionRectangle"/>.</summary>
+    internal CaptureRegion Selection
     {
-        get => _selectionRectangle;
+        get => _selection;
         set
         {
-            if (_selectionRectangle != value)
-            {
-                _selectionRectangle = value;
-                InvalidateVisual();
-            }
+            // Always redraw: a freehand region being drawn keeps the same point list while it grows.
+            _selection = value;
+            InvalidateVisual();
         }
     }
+
+    public Rect SelectionRectangle => _selection.Bounds;
 
     public Rect HoverRectangle
     {
@@ -93,11 +97,25 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    /// <summary>The shape a hovered window would be selected as.</summary>
+    public RegionShape HoverShape
+    {
+        get => _hoverShape;
+        set
+        {
+            if (_hoverShape != value)
+            {
+                _hoverShape = value;
+                InvalidateVisual();
+            }
+        }
+    }
+
     /// <summary>
     /// Regions that were already added in multi region mode. They stay undimmed and outlined next to the
     /// selection, which is the region currently being drawn or edited.
     /// </summary>
-    public IReadOnlyList<Rect> Regions
+    internal IReadOnlyList<CaptureRegion> Regions
     {
         get => _regions;
         set
@@ -215,6 +233,23 @@ public sealed class RegionSelectionOverlay : Control
         }
     }
 
+    protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+    {
+        base.OnPropertyChanged(change);
+
+        if (change.Property == AccentBrushProperty)
+        {
+            Color halo = AccentPalette.GetHaloColor(AccentBrush);
+            _antDashPen = CreateAntDashPen(halo);
+            _haloBrush = new SolidColorBrush(halo);
+        }
+    }
+
+    private static IPen CreateAntDashPen(Color color)
+    {
+        return new Pen(new SolidColorBrush(Color.FromArgb(230, color.R, color.G, color.B)), 1, new DashStyle([5, 5], 0));
+    }
+
     public Rect ActiveRectangle => IsValid(SelectionRectangle) ? SelectionRectangle : HoverRectangle;
 
     public override void Render(DrawingContext context)
@@ -223,6 +258,9 @@ public sealed class RegionSelectionOverlay : Control
 
         Rect surface = new Rect(Bounds.Size);
         Rect active = Intersect(ActiveRectangle, surface);
+        CaptureRegion activeRegion = IsValid(SelectionRectangle)
+            ? Selection with { Bounds = active }
+            : new CaptureRegion(HoverShape, active);
 
         // In multi region mode a window can be hovered while another region is selected.
         Rect extraHover = ShowHoverWithSelection && IsValid(SelectionRectangle) && HoverRectangle != SelectionRectangle
@@ -233,12 +271,29 @@ public sealed class RegionSelectionOverlay : Control
         {
             Rect undimmed = DimAllExceptSelection && (IsSelectionPending || !IsValid(SelectionRectangle)) ? default : active;
 
-            if (Regions.Count > 0 || IsValid(extraHover))
+            if (!activeRegion.IsRectangle || (IsValid(extraHover) && HoverShape != RegionShape.Rectangle) ||
+                Regions.Any(region => !region.IsRectangle))
+            {
+                List<CaptureRegion> clear = [.. Regions];
+
+                if (IsValid(undimmed))
+                {
+                    clear.Add(activeRegion);
+                }
+
+                if (!DimAllExceptSelection && IsValid(extraHover))
+                {
+                    clear.Add(new CaptureRegion(HoverShape, extraHover));
+                }
+
+                DrawDimmedOutside(context, surface, clear, _dimBrush);
+            }
+            else if (Regions.Count > 0 || IsValid(extraHover))
             {
                 List<Rect> clear = new(Regions.Count + 2);
-                foreach (Rect region in Regions)
+                foreach (CaptureRegion region in Regions)
                 {
-                    clear.Add(region);
+                    clear.Add(region.Bounds);
                 }
 
                 clear.Add(undimmed);
@@ -263,23 +318,23 @@ public sealed class RegionSelectionOverlay : Control
             }
         }
 
-        foreach (Rect region in Regions)
+        foreach (CaptureRegion region in Regions)
         {
-            Rect visible = Intersect(region, surface);
+            Rect visible = Intersect(region.Bounds, surface);
             if (IsValid(visible))
             {
-                DrawAntRectangle(context, GetAntRectangle(visible));
+                DrawAntRegion(context, region with { Bounds = visible });
             }
         }
 
         if (IsValid(extraHover))
         {
-            DrawAntRectangle(context, GetAntRectangle(extraHover));
+            DrawAntRegion(context, new CaptureRegion(HoverShape, extraHover));
         }
 
         if (IsValid(active))
         {
-            DrawAntRectangle(context, GetAntRectangle(active));
+            DrawAntRegion(context, activeRegion);
 
             if (ShowCenterCrosshair && IsValid(SelectionRectangle))
             {
@@ -302,13 +357,34 @@ public sealed class RegionSelectionOverlay : Control
             Math.Max(0, rectangle.Height - 1));
     }
 
+    private void DrawAntRegion(DrawingContext context, CaptureRegion region)
+    {
+        // Outlines are offset by half a pixel so the 1px lines cover whole pixels.
+        Geometry? geometry = region.Shape switch
+        {
+            RegionShape.Ellipse => new EllipseGeometry(GetAntRectangle(region.Bounds)),
+            RegionShape.Freehand => region.Offset(0.5, 0.5).CreateGeometry(),
+            _ => null
+        };
+
+        if (region.IsRectangle)
+        {
+            DrawAntRectangle(context, GetAntRectangle(region.Bounds));
+        }
+        else if (geometry != null)
+        {
+            context.DrawGeometry(null, new Pen(AccentBrush, 1), geometry);
+            context.DrawGeometry(null, _antDashPen, geometry);
+        }
+    }
+
     private void DrawAntRectangle(DrawingContext context, Rect rectangle)
     {
         context.DrawRectangle(null, new Pen(AccentBrush, 1), rectangle);
-        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.TopRight);
-        context.DrawLine(AntDashPen, rectangle.TopLeft, rectangle.BottomLeft);
-        context.DrawLine(AntDashPen, rectangle.TopRight, rectangle.BottomRight);
-        context.DrawLine(AntDashPen, rectangle.BottomLeft, rectangle.BottomRight);
+        context.DrawLine(_antDashPen, rectangle.TopLeft, rectangle.TopRight);
+        context.DrawLine(_antDashPen, rectangle.TopLeft, rectangle.BottomLeft);
+        context.DrawLine(_antDashPen, rectangle.TopRight, rectangle.BottomRight);
+        context.DrawLine(_antDashPen, rectangle.BottomLeft, rectangle.BottomRight);
     }
 
     private void DrawCursorCrosshair(DrawingContext context, Rect surface)
@@ -331,7 +407,7 @@ public sealed class RegionSelectionOverlay : Control
         }
 
         context.DrawLine(new Pen(AccentBrush, 1), start, end);
-        context.DrawLine(AntDashPen, start, end);
+        context.DrawLine(_antDashPen, start, end);
     }
 
     private void DrawCenterCrosshair(DrawingContext context, Rect rectangle)
@@ -339,7 +415,7 @@ public sealed class RegionSelectionOverlay : Control
         Point center = rectangle.Center;
         int centerX = (int)Math.Floor(center.X);
         int centerY = (int)Math.Floor(center.Y);
-        DrawPixelCross(context, Brushes.Black, centerX - 1, centerY - 1);
+        DrawPixelCross(context, _haloBrush, centerX - 1, centerY - 1);
         DrawPixelCross(context, AccentBrush, centerX, centerY);
     }
 
@@ -357,6 +433,22 @@ public sealed class RegionSelectionOverlay : Control
         DrawIfValid(context, brush, new Rect(surface.Left, clear.Top, clear.Left - surface.Left, clear.Height));
         DrawIfValid(context, brush, new Rect(clear.Right, clear.Top, surface.Right - clear.Right, clear.Height));
         DrawIfValid(context, brush, new Rect(surface.Left, clear.Bottom, surface.Width, surface.Bottom - clear.Bottom));
+    }
+
+    /// <summary>Dims <paramref name="surface"/> outside every region, for regions that are not all rectangles.</summary>
+    private static void DrawDimmedOutside(DrawingContext context, Rect surface, IReadOnlyList<CaptureRegion> clear, IBrush brush)
+    {
+        Geometry dimmed = new RectangleGeometry(surface);
+
+        foreach (CaptureRegion region in clear)
+        {
+            if (IsValid(region.Bounds) && region.CreateGeometry() is Geometry geometry)
+            {
+                dimmed = new CombinedGeometry(GeometryCombineMode.Exclude, dimmed, geometry);
+            }
+        }
+
+        context.DrawGeometry(brush, null, dimmed);
     }
 
     /// <summary>

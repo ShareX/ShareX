@@ -28,18 +28,17 @@ using Avalonia.Media;
 
 namespace ShareX.Icons;
 
-/// <summary>A ShareX icon: shapes drawn on a square grid, scaled to whatever size it is shown at.</summary>
+/// <summary>A ShareX icon: an SVG drawing on a square grid, scaled to whatever size it is shown at.</summary>
 public sealed class VectorIcon
 {
-    private readonly IconStyle _style = IconStyle.Rounded;
-    private readonly IconShape[] _shapes = [];
+    private readonly SvgIconDrawing? _drawing;
     private readonly LegacyIcon? _legacy;
 
-    internal VectorIcon(double gridSize, IconStyle style, IconShape[] shapes)
+    /// <summary>A modern icon, drawn in the Foreground; the grid is the drawing's viewBox.</summary>
+    internal VectorIcon(SvgIconDrawing drawing)
     {
-        GridSize = gridSize;
-        _style = style;
-        _shapes = shapes;
+        GridSize = drawing.Width;
+        _drawing = drawing;
     }
 
     /// <summary>A full-colour legacy icon, laid out on the grid of the modern icon it stands in for.</summary>
@@ -62,20 +61,10 @@ public sealed class VectorIcon
         if (_legacy != null)
         {
             _legacy.Draw(context, bounds, foreground, darkTheme);
-            return;
         }
-
-        double size = Math.Min(bounds.Width, bounds.Height);
-        double scale = size / GridSize;
-        Matrix transform = Matrix.CreateScale(scale, scale) *
-            Matrix.CreateTranslation(bounds.X + (bounds.Width - size) / 2, bounds.Y + (bounds.Height - size) / 2);
-
-        using (context.PushTransform(transform))
+        else
         {
-            foreach (IconShape shape in _shapes)
-            {
-                shape.Draw(context, _style, foreground);
-            }
+            _drawing!.Draw(context, bounds, foreground);
         }
     }
 }

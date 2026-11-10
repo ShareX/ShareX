@@ -134,6 +134,30 @@
                         </StackPanel>
                     </Border>
 
+                    <Button Command="{Binding NewFromScreenshotRegionCommand}"
+                            IsVisible="{Binding CanCaptureRegion}"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                            Padding="12,10" Height="42">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Region}"
+                                                    FontSize="18"
+                                                    VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.EditorView_NewFromScreenshotRegionEllipsis}" FontWeight="Normal" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
+                    <Button Command="{Binding NewFromScreenshotFullscreenCommand}"
+                            IsVisible="{Binding CanCaptureFullscreen}"
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
+                            Padding="12,10" Height="42">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Fullscreen}"
+                                                    FontSize="18"
+                                                    VerticalAlignment="Center"/>
+                            <TextBlock Text="{x:Static res:Strings.EditorView_NewFromScreenshotFullScreen}" FontWeight="Normal" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+
                     <Button Command="{Binding ExitCommand}"
                             HorizontalAlignment="Stretch" HorizontalContentAlignment="Left"
                             Padding="12,10" Height="42">

@@ -876,6 +876,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Képfájlok</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alsó</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Oldalt</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatikus</value>
   </data>
@@ -1110,6 +1116,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Eszköztípus cseréje</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Nagyító átméretezése</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Nagyító nagyítása</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Számítógép</value>
   </data>
@@ -1316,6 +1328,12 @@ Ennek ellenére szeretné futtatni?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Feltöltés fájl</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktív monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Elsődleges monitor</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

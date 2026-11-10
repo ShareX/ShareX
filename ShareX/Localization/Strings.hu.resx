@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Feltöltés</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Görgetősávok megjelenítése mindig teljes szélességben</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Alkalmazás</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Kép előnézet láthatósága:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Kép előnézet helye:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Kép nyomtatási beállítások...</value>
@@ -1449,7 +1455,7 @@ Kérlek, válassz egy másik gyorsbillentyűt vagy zárd be a problémát okozó
     <value>Ezt bármikor módosíthatja az alkalmazás beállításaiban.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>A ShareX 21 színes ikonjai.</value>
+    <value>Színes, részletes ikonok klasszikus stílusban.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Letisztult vonalas ikonok, amelyek a téma színeit követik.</value>
@@ -2507,9 +2513,6 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Eszköztár testreszabása...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Alapértelmezett nyelv:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Bemeneti fájl törlése</value>
   </data>
@@ -2696,6 +2699,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Középső kattintás művelete:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>4. egérgomb kattintása:</value>
   </data>
@@ -2707,6 +2713,12 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Egérkiemelő opciók...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Egérgörgő:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Mit csinál a görgetés a nagyítóval. Görgetés közben tartsa lenyomva a Ctrl billentyűt a másik művelethez.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mozgatás lefelé</value>
@@ -2833,12 +2845,6 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-súgó...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Az OCR-nyelvek nem érhetők el</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Effektusok alkalmazása csak területrögzítésre</value>
@@ -3140,8 +3146,17 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Időzóna:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>{0}. monitor (nincs csatlakoztatva)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>{0}. monitor: {1} ({2}, helye: {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Értesítés</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Eszköztárgombok mérete (képpont):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Eszközök</value>
@@ -3190,6 +3205,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Egyéni időzóna használata</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Egyéni eszköztárgomb-méret használata</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Rögzített időtartam használata</value>

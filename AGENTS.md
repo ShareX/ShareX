@@ -10,8 +10,8 @@ Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architectur
 
 - **Windows** behaves as in v22.
 - **Linux** (X11, Hyprland, sway, GNOME, KDE) and **macOS** (13 or later, Apple silicon and Intel) get every feature their system can support. Linux HDR is not supported.
-- **OCR** uses each system's engine: Windows.Media.Ocr on Windows, the distribution's Tesseract on Linux, the Vision framework on macOS.
-- **Dependencies.** ShareX runs on .NET with the libraries it ships (Avalonia, SkiaSharp, ONNX Runtime, …). Core flows (start, tray, hotkeys, capture, clipboard, editor, upload, history) use only those and the system's own APIs. Optional features may use programs the system provides, detected at run time (FFmpeg for recording and video tools, Tesseract for OCR, CUPS for printing, grim on wlroots desktops). Nothing extra is bundled or installed, and messages never contain install commands.
+- **OCR** uses ShareX's own PaddleOCR engine (ShareX.OCR, ONNX Runtime) everywhere it runs. Intel Macs, which ONNX Runtime has no build for, use the Vision framework.
+- **Dependencies.** ShareX runs on .NET with the libraries it ships (Avalonia, SkiaSharp, ONNX Runtime, …). Core flows (start, tray, hotkeys, capture, clipboard, editor, upload, history) use only those and the system's own APIs. Optional features may use programs the system provides, detected at run time (FFmpeg for recording and video tools, CUPS for printing, grim on wlroots desktops). Nothing extra is bundled or installed, and messages never contain install commands.
 - Where a system cannot do something, the service returns `FeatureSupport.NotSupported` with a short user-facing reason, and shared UI and task execution respect it.
 
 ## Git

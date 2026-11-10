@@ -76,6 +76,5 @@ public partial class StartScreenWindow : Window
         // The start screen has its own icon pack choice, so the update prompt is not needed.
         ApplicationState.Settings.ShowIconPackPrompt = false;
         SettingManager.SaveApplicationConfigAsync();
-        _viewModel.Dispose();
     }
 }

@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Ingen elementer matcher de aktuelle filtre</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Procesnavn</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Skift navn</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Skift navn på fil</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Nulstil kolonner</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Vælg mappe at importere</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} filer blev importeret.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Mærke</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>disse {0:N0} filer</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Fjern fra favoritter</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Vinduestitel</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Avanceret</value>

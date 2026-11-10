@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Încărcare</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Afișează întotdeauna barele de derulare la lățime completă</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Aplicație</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Vizibilitatea previzualizării imaginii:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Locația previzualizării imaginii:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Setări de imprimare a imaginii...</value>
@@ -1449,7 +1455,7 @@ Vă rugăm să selectați o altă tastatură rapidă sau să ieșiți din aplica
     <value>Puteți modifica oricând această opțiune din setările aplicației.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Pictogramele colorate din ShareX 21.</value>
+    <value>Pictograme colorate și detaliate, în stil clasic.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Pictograme simple, din linii, care urmează culorile temei.</value>
@@ -2507,9 +2513,6 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizare bară de instrumente...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Limba implicită:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Șterge fișierul de intrare</value>
   </data>
@@ -2696,6 +2699,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Acțiune clic mijloc:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Clic butonul 4 al mouse-ului:</value>
   </data>
@@ -2707,6 +2713,12 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opțiuni pentru evidențierea mouse-ului...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Rotița mouse-ului:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Ce face derularea cu lupa. Țineți apăsat Ctrl în timpul derulării pentru a efectua cealaltă acțiune.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mută în jos</value>
@@ -2833,12 +2845,6 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ajutor OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Limbile OCR nu sunt disponibile</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Aplică efectele numai capturilor de regiune</value>
@@ -3140,8 +3146,17 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Fus orar:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitorul {0} (neconectat)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitorul {0}: {1} ({2} la {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificare</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Dimensiunea butoanelor barei de instrumente (pixeli):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Instrumente</value>
@@ -3190,6 +3205,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Folosește fus orar particularizat</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Folosește o dimensiune personalizată pentru butoanele barei de instrumente</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Folosește durată fixă</value>

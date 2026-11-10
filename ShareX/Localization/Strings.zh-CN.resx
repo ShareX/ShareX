@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>上传</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>始终以完整宽度显示滚动条</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>应用程序</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>图像预览可见性：</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>图像预览位置：</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>图片打印设置...</value>
@@ -1449,7 +1455,7 @@
     <value>你可以随时在应用程序设置中更改此项。</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ShareX 21 的彩色图标。</value>
+    <value>经典风格的彩色精细图标。</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>简洁的线条图标，随主题颜色变化。</value>
@@ -2507,9 +2513,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>自定义工具栏...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>默认语言：</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>删除输入文件</value>
   </data>
@@ -2696,6 +2699,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>中键操作：</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>显示器：</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>鼠标第 4 键单击：</value>
   </data>
@@ -2707,6 +2713,12 @@
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>鼠标荧光笔选项...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>鼠标滚轮：</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>滚动对放大镜执行的操作。滚动时按住 Ctrl 可执行另一种操作。</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>下移</value>
@@ -2833,12 +2845,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR 帮助...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR 语言不可用</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>仅对区域捕获应用效果</value>
@@ -3140,8 +3146,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>时区：</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>显示器 {0}（未连接）</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>显示器 {0}：{1}（{2}，位置 {3}）</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>通知</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>工具栏按钮大小（像素）：</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>工具</value>
@@ -3190,6 +3205,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>使用自定义时区</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>使用自定义工具栏按钮大小</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>使用固定时长</value>

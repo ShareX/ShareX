@@ -139,9 +139,9 @@ public class EditorInputController
             return;
         }
 
-        if (_isDrawing && props.IsRightButtonPressed && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.Clone)
+        if (_isDrawing && props.IsRightButtonPressed)
         {
-            CancelActiveRegionDrawing(canvas);
+            CancelActiveDrawing(canvas);
             e.Pointer.Capture(null);
             e.Handled = true;
             return;
@@ -615,24 +615,22 @@ public class EditorInputController
         var canvas = _view.FindControl<Canvas>("AnnotationCanvas") ?? sender as Canvas;
         if (canvas == null) return;
 
+        // Right-clicking while the left button is held cancels the shape being drawn.
+        // Avalonia reports a second button press as a pointer move, not a press.
+        if (e.GetCurrentPoint(canvas).Properties.IsRightButtonPressed)
+        {
+            CancelActiveDrawing(canvas);
+            e.Pointer.Capture(null);
+            e.Handled = true;
+            return;
+        }
+
         var currentPoint = e.GetPosition(canvas);
 
         // Region-based tools cannot operate outside the image bitmap.
         var vm = ViewModel;
         if (vm != null && vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.SmartEraser or EditorTool.Clone)
         {
-            if (vm.ActiveTool is EditorTool.Crop or EditorTool.CutOut or EditorTool.Clone)
-            {
-                // Allow cancelling selection by right-clicking while holding left button
-                var props = e.GetCurrentPoint(canvas).Properties;
-                if (props.IsRightButtonPressed)
-                {
-                    CancelActiveRegionDrawing(canvas);
-                    e.Pointer.Capture(null);
-                    return;
-                }
-            }
-
             currentPoint = ClampPointToCanvasBounds(canvas, currentPoint);
         }
 
@@ -1027,6 +1025,35 @@ public class EditorInputController
 
         _isMovingShapeDuringCreation = false;
         _wasCtrlHeldDuringDraw = false;
+    }
+
+    /// <summary>
+    /// Discards the shape currently being drawn, for any tool.
+    /// </summary>
+    private void CancelActiveDrawing(Canvas canvas)
+    {
+        var shape = _currentShape;
+        if (shape is not global::Avalonia.Controls.Shapes.Rectangle { Name: "CropOverlay" or "CutOutOverlay" or "CloneOverlay" } && shape != null)
+        {
+            canvas.Children.Remove(shape);
+
+            // The step tool bumps the counter on press, so give the number back.
+            if (shape.Tag is NumberAnnotation && ViewModel is { } vm)
+            {
+                vm.NumberCounter--;
+            }
+        }
+
+        CancelActiveRegionDrawing(canvas);
+
+        _cachedSkBitmap?.Dispose();
+        _cachedSkBitmap = null;
+        _isCreatingEffect = false;
+        if (shape?.Tag is SpotlightAnnotation)
+        {
+            _view.RefreshSpotlightOverlay();
+        }
+        _view.ClearInteractiveEffectPreviewCache();
     }
 
     private void CancelActiveRegionDrawing(Canvas canvas)
@@ -1546,7 +1573,7 @@ public class EditorInputController
             {
                 using var stream = await files[0].OpenReadAsync();
                 var bitmap = new global::Avalonia.Media.Imaging.Bitmap(stream);
-                var imageControl = new Image { Source = bitmap, Width = bitmap.Size.Width, Height = bitmap.Size.Height };
+                var imageControl = new Image { Source = bitmap, Width = bitmap.Size.Width, Height = bitmap.Size.Height, Stretch = Stretch.Fill };
                 var annotation = new ImageAnnotation();
                 annotation.SetImage(BitmapConversionHelpers.ToSKBitmap(bitmap));
                 imageControl.Tag = annotation;

@@ -1663,23 +1663,17 @@ Bestandspad: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Diensten bewerken</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Taal</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Naam</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nieuw</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR-help</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Geen tekst gevonden</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Dienst openen...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Herkenning</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Verwijderen</value>
@@ -1689,9 +1683,6 @@ Bestandspad: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultaat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Schaalfactor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Selecteer een dienst</value>
@@ -1704,9 +1695,6 @@ Bestandspad: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Gebied selecteren...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Diensten</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optische tekenherkenning</value>
@@ -2101,6 +2089,9 @@ Bestandspad: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Conversie stoppen...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Gemiddelde bitrate</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Bladeren...</value>
   </data>
@@ -2119,6 +2110,9 @@ Bestandspad: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Bestandsnaam</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Bestandsgrootte</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Map</value>
   </data>
@@ -2136,6 +2130,12 @@ Bestandspad: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kwaliteit</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolutie</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultaat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Videoconverter</value>

@@ -876,6 +876,12 @@ Doriți totuși să îl executați?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fișiere imagine</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Partea de jos</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Lateral</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automat</value>
   </data>
@@ -1110,6 +1116,12 @@ Doriți totuși să îl executați?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Schimbați tipul de instrument</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionare lupă</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Mărire lupă</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
@@ -1316,6 +1328,12 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Încărcați fișierul</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Monitorul activ</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Monitorul principal</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

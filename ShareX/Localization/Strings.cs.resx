@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Nahrávání</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Vždy zobrazovat posuvníky v plné šířce</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Aplikace</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Viditelnost náhledu obrázku:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Umístění náhledu obrázku:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Nastavení tisku obrázku...</value>
@@ -1449,7 +1455,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Toto můžete kdykoli změnit v nastavení aplikace.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Barevné ikony ze ShareX 21.</value>
+    <value>Barevné a detailní ikony v klasickém stylu.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Čisté obrysové ikony, které přebírají barvy motivu.</value>
@@ -2507,9 +2513,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Přizpůsobit panel nástrojů...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Výchozí jazyk:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Odstranit vstupní soubor</value>
   </data>
@@ -2696,6 +2699,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Akce prostředního tlačítka:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Tlačítko myši 4:</value>
   </data>
@@ -2707,6 +2713,12 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Možnosti zvýrazňovače myši...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Kolečko myši:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Co dělá posouvání kolečkem s lupou. Podržením Ctrl při posouvání provedete druhou akci.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Přesunout dolů</value>
@@ -2833,12 +2845,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Nápověda k OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Jazyky OCR nejsou dostupné</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Použít efekty pouze na zachycení oblasti</value>
@@ -3140,8 +3146,17 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Časové pásmo:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (nepřipojen)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} na pozici {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Informační oznámení</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Velikost tlačítek panelu nástrojů (pixely):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Nástroje</value>
@@ -3190,6 +3205,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Použít vlastní časové pásmo</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Použít vlastní velikost tlačítek panelu nástrojů</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Použít pevnou dobu trvání</value>

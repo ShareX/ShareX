@@ -879,6 +879,12 @@ Do you still want to run it?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Image files</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Side</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatic</value>
   </data>
@@ -1113,6 +1119,12 @@ Do you still want to run it?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Swap tool type</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Resize magnifier</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoom magnifier</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
@@ -1319,6 +1331,12 @@ Do you still want to run it?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Upload file</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Active monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primary monitor</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

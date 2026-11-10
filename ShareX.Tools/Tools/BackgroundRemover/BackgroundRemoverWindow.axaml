@@ -40,11 +40,11 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
                 <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             </Style>
             <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
                 <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             </Style>
             <Style.Animations>
                 <Animation Duration="0:0:1.2" IterationCount="Infinite">

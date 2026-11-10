@@ -45,7 +45,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         bool IsHotkeyEditable,
         bool IsVisibilityEditable,
         bool BeginGroupByDefault,
-        string DefaultSecondaryHotkey = "");
+        string DefaultSecondaryHotkey = "",
+        bool IsVisibleByDefault = true,
+        bool IsHostItem = false);
 
     // Secondary defaults are the ShareX 21 numpad tool keys.
     private static readonly IReadOnlyList<ToolbarItemDefinition> ItemDefinitions = new[]
@@ -98,7 +100,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         bool isVisible,
         bool beginGroup,
         bool isHotkeyEditable,
-        bool isVisibilityEditable)
+        bool isVisibilityEditable,
+        bool isHostItem)
     {
         Id = id;
         Tool = tool;
@@ -110,6 +113,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         _beginGroup = beginGroup;
         IsHotkeyEditable = isHotkeyEditable;
         IsVisibilityEditable = isVisibilityEditable;
+        IsHostItem = isHostItem;
     }
 
     public string Id { get; }
@@ -119,6 +123,12 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     public EditorTool? Tool { get; }
     public bool IsHotkeyEditable { get; }
     public bool IsVisibilityEditable { get; }
+
+    /// <summary>
+    /// True for an item that an embedding host added with a <see cref="ToolbarHostItemDefinition"/>. Using it raises
+    /// <see cref="MainViewModel.HostToolbarItemRequested"/>.
+    /// </summary>
+    public bool IsHostItem { get; }
     public string Name { get; }
     public string Icon { get; internal set; }
 
@@ -232,7 +242,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     public ToolbarCustomizationItemViewModel Clone()
     {
-        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, IsHotkeyEditable, IsVisibilityEditable)
+        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, IsHotkeyEditable, IsVisibilityEditable, IsHostItem)
         {
             IsActive = IsActive,
             CanMoveUp = CanMoveUp,
@@ -254,14 +264,45 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     public static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateDefaultItems()
     {
-        return ItemDefinitions.Select(definition => CreateItem(definition)).ToList();
+        return CreateDefaultItems(ItemDefinitions);
     }
 
     public static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateFromOptions(IReadOnlyList<ImageEditorToolbarItemOptions>? options)
     {
+        return CreateFromOptions(options, ItemDefinitions, ItemDefinitionsById);
+    }
+
+    /// <summary>
+    /// Creates the toolbar items with <paramref name="hostItems"/> placed before the editor's own items. A host item
+    /// missing from <paramref name="options"/>, such as one added after the options were saved, gets its defaults.
+    /// </summary>
+    public static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateFromOptions(
+        IReadOnlyList<ImageEditorToolbarItemOptions>? options,
+        IReadOnlyList<ToolbarHostItemDefinition> hostItems)
+    {
+        List<ToolbarItemDefinition> definitions = hostItems
+            .Select(item => new ToolbarItemDefinition(item.Id, null, item.Name, item.Icon, item.DefaultHotkey, true, true,
+                item.BeginGroupByDefault, IsVisibleByDefault: item.IsVisibleByDefault, IsHostItem: true))
+            .Concat(ItemDefinitions)
+            .ToList();
+
+        return CreateFromOptions(options, definitions,
+            definitions.ToDictionary(definition => definition.Id, StringComparer.OrdinalIgnoreCase));
+    }
+
+    private static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateDefaultItems(IReadOnlyList<ToolbarItemDefinition> definitions)
+    {
+        return definitions.Select(definition => CreateItem(definition)).ToList();
+    }
+
+    private static IReadOnlyList<ToolbarCustomizationItemViewModel> CreateFromOptions(
+        IReadOnlyList<ImageEditorToolbarItemOptions>? options,
+        IReadOnlyList<ToolbarItemDefinition> definitions,
+        IReadOnlyDictionary<string, ToolbarItemDefinition> definitionsById)
+    {
         if (options == null || options.Count == 0)
         {
-            return CreateDefaultItems();
+            return CreateDefaultItems(definitions);
         }
 
         List<ToolbarCustomizationItemViewModel> items = new();
@@ -269,33 +310,33 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
         foreach (ImageEditorToolbarItemOptions option in options)
         {
-            if (ItemDefinitionsById.TryGetValue(option.Id, out ToolbarItemDefinition? definition))
+            if (definitionsById.TryGetValue(option.Id, out ToolbarItemDefinition? definition))
             {
                 items.Add(CreateItem(definition, option.IsVisible, option.Hotkey, option.SecondaryHotkey, option.BeginGroup));
                 usedToolIds.Add(option.Id);
             }
         }
 
-        for (int i = 0; i < ItemDefinitions.Count; i++)
+        for (int i = 0; i < definitions.Count; i++)
         {
-            ToolbarItemDefinition definition = ItemDefinitions[i];
+            ToolbarItemDefinition definition = definitions[i];
             if (usedToolIds.Contains(definition.Id))
             {
                 continue;
             }
 
             int previousIndex = i > 0
-                ? items.FindIndex(item => item.Id == ItemDefinitions[i - 1].Id)
+                ? items.FindIndex(item => item.Id == definitions[i - 1].Id)
                 : -1;
             items.Insert(previousIndex + 1, CreateItem(definition));
         }
 
-        return items.Count > 0 ? items : CreateDefaultItems();
+        return items.Count > 0 ? items : CreateDefaultItems(definitions);
     }
 
     private static ToolbarCustomizationItemViewModel CreateItem(
         ToolbarItemDefinition definition,
-        bool isVisible = true,
+        bool? isVisible = null,
         string? hotkey = null,
         string? secondaryHotkey = null,
         bool? beginGroup = null)
@@ -307,10 +348,11 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             definition.Icon,
             definition.IsHotkeyEditable ? hotkey ?? definition.DefaultHotkey : "",
             definition.IsHotkeyEditable ? secondaryHotkey ?? definition.DefaultSecondaryHotkey : "",
-            definition.IsVisibilityEditable ? isVisible : true,
+            definition.IsVisibilityEditable ? isVisible ?? definition.IsVisibleByDefault : true,
             beginGroup ?? definition.BeginGroupByDefault,
             definition.IsHotkeyEditable,
-            definition.IsVisibilityEditable);
+            definition.IsVisibilityEditable,
+            definition.IsHostItem);
     }
 
     private static ToolbarItemDefinition CreateToolDefinition(

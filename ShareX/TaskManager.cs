@@ -266,6 +266,8 @@ namespace ShareX
                                         Duration = (int)(info.TaskSettings.GeneralSettings.ToastWindowDuration * 1000),
                                         FadeDuration = (int)(info.TaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
                                         Placement = info.TaskSettings.GeneralSettings.ToastWindowPlacement,
+                                        Monitor = info.TaskSettings.GeneralSettings.ToastWindowMonitor,
+                                        MonitorDeviceName = info.TaskSettings.GeneralSettings.ToastWindowMonitorDeviceName,
                                         Size = info.TaskSettings.GeneralSettings.ToastWindowSize,
                                         LeftClickAction = info.TaskSettings.GeneralSettings.ToastWindowLeftClickAction,
                                         RightClickAction = info.TaskSettings.GeneralSettings.ToastWindowRightClickAction,

@@ -111,7 +111,9 @@ namespace ShareX
         public bool ShowColumns = true;
         public List<int> TaskListViewColumnWidths = new List<int>();
         public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
         public int ImagePreviewWidth = 300;
+        public int ImagePreviewHeight = 250;
 
         // Thumbnail view
         public bool ShowThumbnailTitle = true;

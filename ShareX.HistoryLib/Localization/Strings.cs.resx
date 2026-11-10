@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Žádné položky neodpovídají aktuálním filtrům</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Název procesu</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Přejmenovat</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Přejmenovat soubor</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Obnovit sloupce</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Vyberte složku k importu</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Úspěšně importováno souborů: {0:N0}.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Štítek</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>těchto {0:N0} souborů</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Odebrat z oblíbených</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Název okna</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Pokročilé</value>

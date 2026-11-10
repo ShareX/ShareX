@@ -191,6 +191,20 @@
                                                         <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.History}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotRegionEllipsis}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotRegionCommand}"
+                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureRegion}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureRegion}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotFullScreen}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotFullscreenCommand}"
+                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureFullscreen}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureFullscreen}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
                                                 <Separator/>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Save}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"
@@ -278,7 +292,7 @@
                     <Border Classes="option-indicator"
                             ToolTip.Tip="{Binding ActiveToolName}">
                         <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     </Border>
 
                     <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
@@ -455,7 +469,7 @@
                                     <TextBlock Text="{x:Static res:Strings.AnnotationToolbar_Shadow}"
                                                FontSize="16"
                                                FontWeight="SemiBold"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                                     <Grid ColumnDefinitions="90,*" RowDefinitions="Auto" RowSpacing="8" ColumnSpacing="8" Margin="0,0,0,8">
                                         <TextBlock Grid.Row="0" Grid.Column="0"
                                                    Text="{x:Static res:Strings.AnnotationToolbar_Color}"

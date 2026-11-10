@@ -44,6 +44,7 @@ using ShareX.Localization;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
@@ -81,7 +82,9 @@ public partial class NotificationWindow : Window
     public NotificationWindow()
     {
         InitializeComponent();
-        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        // The card, caption and action bar are dark whatever the app theme, so the theme dependent accent brushes
+        // (the card border) must resolve for a dark background.
+        RequestedThemeVariant = ThemeManager.ShareXDark;
 
         _durationTimer = new DispatcherTimer();
         _durationTimer.Tick += OnDurationElapsed;
@@ -343,8 +346,7 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
-        Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) ?? Screens.Primary;
+        Screen? screen = GetTargetScreen(_config.Monitor, _config.MonitorDeviceName);
         if (screen == null)
         {
             return;
@@ -356,6 +358,31 @@ public partial class NotificationWindow : Window
         int x = GetHorizontalPosition(_config.Placement, area, size.Width, offset);
         int y = GetVerticalPosition(_config.Placement, area, size.Height, offset);
         Position = new PixelPoint(x, y);
+    }
+
+    // A specific monitor that is no longer connected falls back to the primary monitor.
+    private Screen? GetTargetScreen(ToastWindowMonitor monitor, string? deviceName)
+    {
+        if (monitor == ToastWindowMonitor.SpecificMonitor && !string.IsNullOrEmpty(deviceName))
+        {
+            Screen? namedScreen = Screens.All.FirstOrDefault(x =>
+                string.Equals(DesktopScreen.GetDeviceName(x), deviceName, StringComparison.OrdinalIgnoreCase));
+            if (namedScreen != null)
+            {
+                return namedScreen;
+            }
+        }
+        else if (monitor == ToastWindowMonitor.ActiveMonitor)
+        {
+            System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
+            Screen? cursorScreen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y));
+            if (cursorScreen != null)
+            {
+                return cursorScreen;
+            }
+        }
+
+        return Screens.Primary;
     }
 
     private static int GetHorizontalPosition(DrawingContentAlignment placement, PixelRect area, int width, int offset) => placement switch

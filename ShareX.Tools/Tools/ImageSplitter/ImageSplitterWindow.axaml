@@ -56,7 +56,7 @@
                             </StackPanel>
                             <TextBlock Grid.Column="1" Text="{Binding GridSizeText}"
                                        FontSize="28" FontWeight="SemiBold"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                       Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                        VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="2" Spacing="6">
                                 <TextBlock Classes="row-label" Text="{x:Static localization:Strings.ImageSplitterWindow_Rows}"/>

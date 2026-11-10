@@ -1663,23 +1663,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>编辑服務</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>語言</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>名稱</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>新增</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR 說明</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>找不到文字</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>開啟服務...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>辨識</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>移除</value>
@@ -1689,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>結果</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>縮放系數</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>選擇服務</value>
@@ -1704,9 +1695,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>選擇區域...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>服務</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - 光學字元辨識</value>
@@ -2101,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>正在停止轉換...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>平均位元速率</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>瀏覽...</value>
   </data>
@@ -2119,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>檔案名稱</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>檔案大小</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>資料夾</value>
   </data>
@@ -2136,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>品質</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>解析度</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>結果</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - 影片轉換器</value>

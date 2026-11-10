@@ -654,34 +654,6 @@ public class LinuxParsingTests
     }
 
     [Fact]
-    public void Tesseract_ParsesLanguageList()
-    {
-        IReadOnlyList<OcrLanguage> languages = TesseractOcrService.ParseLanguages("List of available languages in \"/usr/share/tessdata/\" (3):\neng\nosd\ndeu\n");
-
-        Assert.Equal(new[] { "deu", "eng" }.Order(), languages.Select(l => l.Tag).Order());
-    }
-
-    [Theory]
-    [InlineData("en", "eng")]
-    [InlineData("en-US", "eng")]
-    [InlineData("de-DE", "deu")]
-    [InlineData("zh-Hans", "chi_sim")]
-    [InlineData("zh-TW", "chi_tra")]
-    [InlineData("eng", "eng")]
-    public void Tesseract_MatchesWindowsLanguageTags(string tag, string expected)
-    {
-        OcrLanguage[] installed = [new("eng", "English"), new("deu", "German"), new("chi_sim", "Chinese"), new("chi_tra", "Chinese (Traditional)")];
-
-        Assert.Equal(expected, TesseractOcrService.MatchLanguage(tag, installed));
-    }
-
-    [Fact]
-    public void Tesseract_FormatsSingleLine()
-    {
-        Assert.Equal("first second", TesseractOcrService.FormatText("first\n\nsecond\n\f", singleLine: true));
-    }
-
-    [Fact]
     public void FormatHyprlandAddress_IsHex()
     {
         Assert.Equal("address:0x55d0c2a6e3c0", LinuxWindowService.FormatHyprlandAddress(0x55d0c2a6e3c0));

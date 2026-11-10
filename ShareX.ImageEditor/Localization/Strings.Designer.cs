@@ -2500,5 +2500,15 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Secondary", resourceCulture);
             }
         }
+        public static string EditorView_NewFromScreenshotFullScreen {
+            get {
+                return ResourceManager.GetString("EditorView_NewFromScreenshotFullScreen", resourceCulture);
+            }
+        }
+        public static string EditorView_NewFromScreenshotRegionEllipsis {
+            get {
+                return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
+            }
+        }
     }
 }

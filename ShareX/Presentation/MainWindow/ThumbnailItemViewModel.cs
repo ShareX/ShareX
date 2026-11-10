@@ -46,6 +46,10 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 {
     private int _refreshVersion;
     private Bitmap? _thumbnail;
+    private Bitmap? _hoverFrame;
+    private int _hoverVersion;
+    private bool _isHoverAnimating;
+    private bool _disposed;
     private bool _isSelected;
     private string _title = string.Empty;
     private string _status = string.Empty;
@@ -86,11 +90,35 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             OnPropertyChanged();
             OnPropertyChanged(nameof(HasThumbnail));
             OnPropertyChanged(nameof(HasNoThumbnail));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
             OnPropertyChanged(nameof(ShowPlayIcon));
             old?.Dispose();
         }
     }
 
+    // The current frame of an animated GIF played while the pointer is over the thumbnail, shown on top of Thumbnail.
+    public Bitmap? HoverFrame
+    {
+        get => _hoverFrame;
+        private set
+        {
+            if (ReferenceEquals(_hoverFrame, value))
+            {
+                return;
+            }
+
+            Bitmap? old = _hoverFrame;
+            _hoverFrame = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(HasHoverFrame));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
+            old?.Dispose();
+        }
+    }
+
+    public bool HasHoverFrame => HoverFrame != null;
+    // Hidden while a GIF plays, so it doesn't show through the frames' transparent parts.
+    public bool ShowStillThumbnail => HasThumbnail && !HasHoverFrame;
     public bool HasThumbnail => Thumbnail != null;
     public bool HasNoThumbnail => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Task.Info?.FilePath ?? Task.Info?.FileName);
@@ -362,11 +390,15 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         Refresh();
     }
 
+    // Width and Height are layout units; decode at the monitor's pixel density so previews stay sharp on high-DPI displays.
+    internal static double RenderScaling { get; set; } = 1;
+
     private void StartThumbnailRefresh(string? filePath, DrawingBitmap? image)
     {
         int version = ++_refreshVersion;
-        int width = Width;
-        int height = Height;
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 1 ? RenderScaling : 1;
+        int width = (int)Math.Ceiling(Width * scaling);
+        int height = (int)Math.Ceiling(Height * scaling);
         _ = RefreshThumbnailAsync(version, width, height, filePath, image);
     }
 
@@ -402,7 +434,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
             {
                 using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+                return DecodeToFit(stream, width, height);
             }
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsVideoFile(filePath))
@@ -429,6 +461,34 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         return null;
     }
 
+    // Decode only as large as the thumbnail box needs, without enlarging small images.
+    private static Bitmap DecodeToFit(Stream stream, int width, int height)
+    {
+        SkiaSharp.SKSizeI size = default;
+
+        using (SkiaSharp.SKCodec? codec = SkiaSharp.SKCodec.Create(new SkiaSharp.SKManagedStream(stream, false)))
+        {
+            if (codec != null)
+            {
+                size = codec.Info.Size;
+            }
+        }
+
+        stream.Position = 0;
+
+        if (size.Width <= 0 || size.Height <= 0)
+        {
+            return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+        }
+
+        if ((long)size.Width * height > (long)size.Height * width)
+        {
+            return Bitmap.DecodeToWidth(stream, Math.Min(width, size.Width), BitmapInterpolationMode.HighQuality);
+        }
+
+        return Bitmap.DecodeToHeight(stream, Math.Min(height, size.Height), BitmapInterpolationMode.HighQuality);
+    }
+
     private static string GetPlaceholderIcon(string? filePath)
     {
         if (string.IsNullOrEmpty(filePath)) return AppIcons.File;
@@ -438,11 +498,43 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         return AppIcons.File;
     }
 
+    // Plays an animated GIF over its still thumbnail while the pointer is on it.
+    public void StartHoverAnimation()
+    {
+        string? filePath = Task.Info?.FilePath;
+
+        // Only formats that can be animated, so hovering a large PNG doesn't read the whole file.
+        if (_disposed || _isHoverAnimating || string.IsNullOrEmpty(filePath) ||
+            !AnimatedImagePreview.CanBeAnimated(filePath) || !File.Exists(filePath))
+        {
+            return;
+        }
+
+        _isHoverAnimating = true;
+        int version = ++_hoverVersion;
+
+        // Decode at twice the thumbnail size so frames stay sharp on high DPI screens.
+        _ = AnimatedImagePreview.PlayAsync(filePath, Math.Max(Width, Height) * 2,
+            () => version == _hoverVersion && !_disposed,
+            frame => HoverFrame = frame);
+    }
+
+    public void StopHoverAnimation()
+    {
+        _isHoverAnimating = false;
+        _hoverVersion++;
+        HoverFrame = null;
+    }
+
     public void Dispose()
     {
+        _disposed = true;
         _refreshVersion++;
+        _hoverVersion++;
         Thumbnail?.Dispose();
         _thumbnail = null;
+        _hoverFrame?.Dispose();
+        _hoverFrame = null;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

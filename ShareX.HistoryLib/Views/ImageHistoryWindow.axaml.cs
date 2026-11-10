@@ -91,6 +91,8 @@ public partial class ImageHistoryWindow : Window
         ThumbnailRows.AddHandler(KeyDownEvent, OnWindowKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
+        _thumbnailLoader.RenderScaling = RenderScaling;
+        ScalingChanged += (_, _) => _thumbnailLoader.RenderScaling = RenderScaling;
     }
 
     public ImageHistoryWindow(HistoryManagerSQLite historyManager, ImageHistorySettings settings,

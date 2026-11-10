@@ -391,6 +391,13 @@ namespace ShareX
         DeleteFile
     }
 
+    public enum ToastWindowMonitor // Localized
+    {
+        ActiveMonitor,
+        PrimaryMonitor,
+        SpecificMonitor
+    }
+
     public enum ThumbnailViewClickAction // Localized
     {
         Default,
@@ -418,6 +425,11 @@ namespace ShareX
     public enum ImagePreviewVisibility // Localized
     {
         Show, Hide, Automatic
+    }
+
+    public enum ImagePreviewLocation // Localized
+    {
+        Side, Bottom
     }
 
     public enum TaskViewMode // Localized

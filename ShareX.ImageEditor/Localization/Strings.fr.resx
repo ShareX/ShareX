@@ -357,6 +357,12 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marge</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nouveau à partir d’une capture (plein écran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nouveau à partir d’une capture (région)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Ouvrir une image</value>
   </data>

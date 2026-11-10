@@ -1657,23 +1657,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Szolgáltatások szerkesztése</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Nyelv</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Név</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Új</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR-súgó</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nem található szöveg</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Szolgáltatás megnyitása...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Felismerés</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Eltávolítás</value>
@@ -1683,9 +1677,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Eredmény</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Méretezési tényező</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Szolgáltatás kiválasztása</value>
@@ -1698,9 +1689,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Terület kijelölése...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Szolgáltatások</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optikai karakterfelismerés</value>
@@ -2095,6 +2083,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Átalakítás leállítása...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Átlagos bitráta</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Tallózás...</value>
   </data>
@@ -2113,6 +2104,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Fájlnév</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Fájlméret</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Mappa</value>
   </data>
@@ -2130,6 +2124,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Minőség</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Felbontás</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Eredmény</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Videóátalakító</value>

@@ -436,6 +436,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Jeda</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Area: Elips</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Area: Bebas</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Seret untuk memindahkan bilah alat, klik dua kali untuk mengatur ulang posisinya</value>
   </data>

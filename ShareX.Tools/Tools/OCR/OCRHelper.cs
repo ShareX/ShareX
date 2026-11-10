@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
+using ShareX.OCR;
 using ShareX.Platform;
 using SkiaSharp;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -31,112 +32,89 @@ using ImageFormat = SkiaSharp.SKEncodedImageFormat;
 
 namespace ShareX.Tools;
 
-/// <summary>OCR through <see cref="IOcrService"/>: Windows.Media.Ocr on Windows, Tesseract on Linux.</summary>
+public sealed record OCRLanguageOption(string DisplayName, string LanguageTag);
+
+/// <summary>
+/// Reads text with ShareX's own PaddleOCR engine. Where its ONNX runtime has no build (Intel Macs), the system's engine is used
+/// instead (Vision); it returns the text without the boxes, so the OCR window has nothing to outline there.
+/// </summary>
 public static class OCRHelper
 {
-    private static IOcrService Service => PlatformServices.Current.Ocr;
+    // OCR engines miss text that touches the image edges, so the system engine gets a border of background color.
+    private const int ImagePadding = 24;
 
-    public static bool IsSupported => Service.Support.IsSupported;
+    private static IOcrService SystemService => PlatformServices.Current.Ocr;
 
-    public static OCRLanguageOption[] AvailableLanguages
+    public static FeatureSupport Support => PaddleOCREngine.IsAvailable || !PlatformServices.IsInitialized
+        ? FeatureSupport.Supported
+        : SystemService.Support;
+
+    public static bool IsSupported => Support.IsSupported;
+
+    public static Task<OCRResult> Recognize(Bitmap bitmap)
     {
-        get
+        if (PaddleOCREngine.IsAvailable)
         {
-            ThrowIfNotSupported();
-            return Service.GetLanguages()
-                .Select(x => new OCRLanguageOption(x.DisplayName, x.Tag))
-                .ToArray();
+            return Task.Run(() => PaddleOCREngine.Shared.Recognize(bitmap));
         }
+
+        return RecognizeWithSystemEngine(bitmap);
     }
 
-    public static void ThrowIfNotSupported()
+    public static async Task<string> OCR(Bitmap bitmap, bool singleLine = false)
     {
-        FeatureSupport support = Service.Support;
+        OCRResult result = await Recognize(bitmap);
+        return result.GetText(singleLine);
+    }
+
+    private static async Task<OCRResult> RecognizeWithSystemEngine(Bitmap bitmap)
+    {
+        FeatureSupport support = SystemService.Support;
 
         if (!support.IsSupported)
         {
             throw new PlatformNotSupportedException(support.Reason);
         }
-    }
 
-    public static async Task<string> OCR(Bitmap bitmap, string languageTag = "en", float scaleFactor = 1f,
-        bool singleLine = false)
-    {
-        ThrowIfNotSupported();
-        scaleFactor = Math.Max(scaleFactor, 1f);
+        OCRLanguageOption? language = SelectLanguage(
+            SystemService.GetLanguages().Select(x => new OCRLanguageOption(x.DisplayName, x.Tag)).ToArray(),
+            null, System.Globalization.CultureInfo.CurrentUICulture.Name);
 
-        return await Task.Run(async () =>
+        byte[] png = await Task.Run(() =>
         {
-            float maxScale = GetMaxScaleFactor(bitmap);
-
-            if (bitmap.Height >= SmallImageHeight)
-            {
-                return await OCRScaled(bitmap, Math.Min(scaleFactor, maxScale), languageTag, singleLine);
-            }
-
-            // Small text is read differently at different sizes, so read it at several sizes and keep the result
-            // they agree on most. Each pass is fast because the image is small.
-            List<string> results = [];
-
-            IEnumerable<float> scales = SmallImageTargetHeights
-                .Select(targetHeight => Math.Min(Math.Max(scaleFactor, (float)targetHeight / bitmap.Height), maxScale))
-                .Distinct();
-
-            foreach (float scale in scales)
-            {
-                string result = await OCRScaled(bitmap, scale, languageTag, singleLine);
-
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    results.Add(result);
-                }
-            }
-
-            return results
-                .GroupBy(result => result)
-                .OrderByDescending(group => group.Count())
-                .ThenByDescending(group => group.Key.Length)
-                .Select(group => group.Key)
-                .FirstOrDefault() ?? string.Empty;
+            using Bitmap prepared = AddPadding(bitmap);
+            using SKData data = prepared.Encode(ImageFormat.Png, 100);
+            return data.ToArray();
         });
+
+        string text = await SystemService.RecognizeAsync(png, language?.LanguageTag ?? "en", singleLine: false);
+        return OCRResult.FromLines(text.Split(["\r\n", "\n"], StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries));
     }
 
-    private static async Task<string> OCRScaled(Bitmap bitmap, float scaleFactor, string languageTag, bool singleLine)
+    /// <summary>
+    /// The saved language when the engine has it; otherwise the system's language, then any variant of the saved one, then the
+    /// first. Engines name languages differently ("en-US" in Vision), so an inexact tag must not fall through to whatever sorts
+    /// first (German on a French Mac).
+    /// </summary>
+    internal static OCRLanguageOption? SelectLanguage(IReadOnlyList<OCRLanguageOption> languages, string? saved, string? systemCulture)
     {
-        byte[] png;
+        static string BaseOf(string? tag) => (tag ?? string.Empty).Split('-', '_')[0];
 
-        using (Bitmap preparedBitmap = PrepareImage(bitmap, scaleFactor))
-        using (SKData data = preparedBitmap.Encode(ImageFormat.Png, 100))
-        {
-            png = data.ToArray();
-        }
-
-        return await Service.RecognizeAsync(png, languageTag, singleLine);
+        return languages.FirstOrDefault(x => x.LanguageTag.Equals(saved, StringComparison.OrdinalIgnoreCase))
+            ?? languages.FirstOrDefault(x => x.LanguageTag.Equals(systemCulture, StringComparison.OrdinalIgnoreCase))
+            ?? (string.IsNullOrEmpty(BaseOf(systemCulture)) ? null
+                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(systemCulture), StringComparison.OrdinalIgnoreCase)))
+            ?? (string.IsNullOrEmpty(BaseOf(saved)) ? null
+                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(saved), StringComparison.OrdinalIgnoreCase)))
+            ?? languages.FirstOrDefault();
     }
 
-    // Images shorter than this are treated as small text (a button, a label, a single line).
-    private const int SmallImageHeight = 64;
-    private static readonly int[] SmallImageTargetHeights = [32, 40, 48, 64, 96];
-    // OCR engines miss text that touches the image edges, so a border of background color is added.
-    private const int ImagePadding = 24;
-
-    private static float GetMaxScaleFactor(Bitmap bitmap)
+    private static Bitmap AddPadding(Bitmap bitmap)
     {
-        long maxDimension = (long)Service.MaxImageDimension - (ImagePadding * 2);
-        float maxScale = (float)maxDimension / Math.Max(bitmap.Width, bitmap.Height);
-        return Math.Max(maxScale, 1f);
-    }
-
-    private static Bitmap PrepareImage(Bitmap bitmap, float scaleFactor)
-    {
-        int width = Math.Max(1, (int)Math.Round(bitmap.Width * scaleFactor));
-        int height = Math.Max(1, (int)Math.Round(bitmap.Height * scaleFactor));
-
-        Bitmap result = SkiaImageHelpers.CreateBitmap(width + (ImagePadding * 2), height + (ImagePadding * 2));
+        Bitmap result = SkiaImageHelpers.CreateBitmap(bitmap.Width + (ImagePadding * 2), bitmap.Height + (ImagePadding * 2));
         using SKCanvas canvas = new(result);
-        using SKImage image = SKImage.FromBitmap(bitmap);
         canvas.Clear(GetBackgroundColor(bitmap));
-        canvas.DrawImage(image, SKRect.Create(ImagePadding, ImagePadding, width, height), SkiaImageHelpers.HighQualitySampling);
+        canvas.DrawBitmap(bitmap, ImagePadding, ImagePadding);
         return result;
     }
 

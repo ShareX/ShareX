@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Carga</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Mostrar siempre las barras de desplazamiento con ancho completo</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Aplicación</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Visibilidad de previsualización de imagen:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Ubicación de previsualización de imagen:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Configuración de impresión de imagen...</value>
@@ -1449,7 +1455,7 @@ Por favor seleccione un atajo de teclado diferente o salga de la aplicación que
     <value>Puedes cambiar esto en cualquier momento en la configuración de la aplicación.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Los íconos coloridos de ShareX 21.</value>
+    <value>Íconos coloridos y detallados con un estilo clásico.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Íconos de líneas limpias que siguen los colores de tu tema.</value>
@@ -2507,9 +2513,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizar barra de herramientas...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Idioma predeterminado:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Eliminar archivo de entrada</value>
   </data>
@@ -2696,6 +2699,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Acción del clic central:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Clic del botón 4 del ratón:</value>
   </data>
@@ -2707,6 +2713,12 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opciones del resaltador del mouse...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Rueda del mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Lo que hace el desplazamiento con la lupa. Mantén presionada la tecla Ctrl mientras te desplazas para hacer la otra acción.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Bajar</value>
@@ -2833,12 +2845,6 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ayuda de OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Los idiomas de OCR no están disponibles</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Aplicar efectos únicamente a capturas de región</value>
@@ -3140,8 +3146,17 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Zona horaria:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (no conectado)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} en {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificación emergente</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Tamaño de los botones de la barra de herramientas (píxeles):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Herramientas</value>
@@ -3190,6 +3205,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Usar zona horaria personalizada</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Usar un tamaño personalizado para los botones de la barra de herramientas</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Usar duración fija</value>

@@ -436,6 +436,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Dừng</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Vùng: E-líp</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Vùng: Tự vẽ</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Kéo để di chuyển thanh công cụ, nhấp đúp để đặt lại vị trí</value>
   </data>

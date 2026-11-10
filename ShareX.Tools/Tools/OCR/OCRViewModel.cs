@@ -27,15 +27,11 @@ using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
+using ShareX.OCR;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 namespace ShareX.Tools;
-
-public sealed record OCRLanguageOption(string DisplayName, string LanguageTag)
-{
-    public override string ToString() => DisplayName;
-}
 
 public sealed partial class OCRServiceLinkOption : ObservableObject
 {
@@ -68,7 +64,7 @@ public sealed partial class OCRServiceLinkOption : ObservableObject
     public override string ToString() => Name;
 }
 
-public delegate Task<string> OCRRecognitionHandler(byte[] imageData, string languageTag, float scaleFactor, bool singleLine);
+public delegate Task<OCRResult> OCRRecognitionHandler(byte[] imageData);
 public delegate Task<byte[]?> OCRRegionCaptureHandler();
 
 public sealed partial class OCRViewModel : ViewModelBase, IDisposable
@@ -76,22 +72,20 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private readonly OCROptions _options;
     private readonly OCRRecognitionHandler _recognize;
     private readonly Action<OCROptions>? _optionsChanged;
-    private readonly Action? _openHelp;
     private byte[] _sourceImageData;
-    private bool _loaded;
+    private OCRResult? _lastResult;
     private int _recognitionVersion;
 
-    public ObservableCollection<OCRLanguageOption> Languages { get; } = [];
     public ObservableCollection<OCRServiceLinkOption> ServiceLinks { get; } = [];
 
     [ObservableProperty]
     private Bitmap? _sourceImage;
 
     [ObservableProperty]
-    private OCRLanguageOption? _selectedLanguage;
+    private IReadOnlyList<OCRTextRegion>? _textRegions;
 
     [ObservableProperty]
-    private decimal _scaleFactor;
+    private bool _noTextFound;
 
     [ObservableProperty]
     private bool _singleLine;
@@ -132,50 +126,21 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     public bool IsIdle => !IsBusy;
     public bool CanUseResult => !IsBusy && !string.IsNullOrWhiteSpace(ResultText);
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
-    public bool HasLanguages => Languages.Count > 0;
-
-    /// <summary>
-    /// The saved language when this engine has it; otherwise the system's language, then any variant of the saved one, then the
-    /// first. Engines name languages differently ("en" on Windows, "en-US" in Vision and "eng" in Tesseract's packs vary), so an
-    /// inexact saved tag must not fall through to whatever sorts first (German on a French Mac).
-    /// </summary>
-    internal static OCRLanguageOption? SelectLanguage(IReadOnlyList<OCRLanguageOption> languages, string? saved, string? systemCulture)
-    {
-        static string BaseOf(string? tag) => (tag ?? string.Empty).Split('-', '_')[0];
-
-        return languages.FirstOrDefault(x => x.LanguageTag.Equals(saved, StringComparison.OrdinalIgnoreCase))
-            ?? languages.FirstOrDefault(x => x.LanguageTag.Equals(systemCulture, StringComparison.OrdinalIgnoreCase))
-            ?? (string.IsNullOrEmpty(BaseOf(systemCulture)) ? null
-                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(systemCulture), StringComparison.OrdinalIgnoreCase)))
-            ?? (string.IsNullOrEmpty(BaseOf(saved)) ? null
-                : languages.FirstOrDefault(x => BaseOf(x.LanguageTag).Equals(BaseOf(saved), StringComparison.OrdinalIgnoreCase)))
-            ?? languages.FirstOrDefault();
-    }
     public bool HasServices => ServiceLinks.Count > 0;
     public bool HasEditingService => EditingServiceLink != null;
     public string Result => ResultText.Trim();
 
     public OCRViewModel(
         byte[] sourceImageData,
-        IEnumerable<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
-        Action<OCROptions>? optionsChanged = null,
-        Action? openHelp = null)
+        Action<OCROptions>? optionsChanged = null)
     {
         _sourceImageData = sourceImageData;
         _options = options;
         _recognize = recognize;
         _optionsChanged = optionsChanged;
-        _openHelp = openHelp;
 
-        foreach (OCRLanguageOption language in languages.OrderBy(x => x.DisplayName, StringComparer.CurrentCultureIgnoreCase))
-        {
-            Languages.Add(language);
-        }
-
-        _selectedLanguage = SelectLanguage(Languages, options.Language, System.Globalization.CultureInfo.CurrentUICulture.Name);
-        _scaleFactor = (decimal)Math.Clamp(options.ScaleFactor, 1f, 4f);
         _singleLine = options.SingleLine;
         _autoCopy = options.AutoCopy;
         _closeAfterOpeningService = options.CloseWindowAfterOpeningServiceLink;
@@ -193,14 +158,20 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     public async Task StartAsync()
     {
-        _loaded = true;
         SaveOptions();
         await RecognizeAsync();
     }
 
-    partial void OnSelectedLanguageChanged(OCRLanguageOption? value) => RerunRecognition();
-    partial void OnScaleFactorChanged(decimal value) => RerunRecognition();
-    partial void OnSingleLineChanged(bool value) => RerunRecognition();
+    // The recognized lines are kept, so switching between one line and many only reformats them.
+    partial void OnSingleLineChanged(bool value)
+    {
+        if (_lastResult != null && !IsBusy)
+        {
+            ResultText = _lastResult.GetText(value);
+        }
+
+        SaveOptions();
+    }
 
     partial void OnAutoCopyChanged(bool value) => SaveOptions();
     partial void OnCloseAfterOpeningServiceChanged(bool value) => SaveOptions();
@@ -267,9 +238,6 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     }
 
     [RelayCommand]
-    private void OpenHelp() => _openHelp?.Invoke();
-
-    [RelayCommand]
     private void EditServices()
     {
         EditingServiceLink = SelectedServiceLink ?? ServiceLinks.FirstOrDefault();
@@ -331,7 +299,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
 
     private async Task RecognizeAsync()
     {
-        if (_sourceImageData.Length == 0 || SelectedLanguage == null)
+        if (_sourceImageData.Length == 0)
         {
             return;
         }
@@ -340,16 +308,22 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         IsBusy = true;
         ErrorMessage = string.Empty;
         ResultText = string.Empty;
+        _lastResult = null;
+        TextRegions = null;
+        NoTextFound = false;
 
         try
         {
-            string result = await _recognize(_sourceImageData, SelectedLanguage.LanguageTag, (float)ScaleFactor, SingleLine);
+            OCRResult result = await _recognize(_sourceImageData);
             if (version == _recognitionVersion)
             {
-                ResultText = result;
-                if (AutoCopy && !string.IsNullOrWhiteSpace(result) && CopyTextRequested != null)
+                _lastResult = result;
+                TextRegions = result.Regions;
+                NoTextFound = result.Regions.Count == 0;
+                ResultText = result.GetText(SingleLine);
+                if (AutoCopy && !string.IsNullOrWhiteSpace(ResultText) && CopyTextRequested != null)
                 {
-                    await CopyTextRequested(result);
+                    await CopyTextRequested(ResultText);
                 }
             }
         }
@@ -381,22 +355,8 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         }
     }
 
-    private void RerunRecognition()
-    {
-        if (_loaded)
-        {
-            SaveOptions();
-            _ = RecognizeAsync();
-        }
-    }
-
     private void SaveOptions()
     {
-        if (SelectedLanguage != null)
-        {
-            _options.Language = SelectedLanguage.LanguageTag;
-        }
-        _options.ScaleFactor = (float)ScaleFactor;
         _options.SingleLine = SingleLine;
         _options.AutoCopy = AutoCopy;
         _options.CloseWindowAfterOpeningServiceLink = CloseAfterOpeningService;

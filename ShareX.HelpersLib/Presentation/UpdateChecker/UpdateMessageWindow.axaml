@@ -28,10 +28,6 @@
             <Setter Property="MinHeight" Value="32"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
         <Style Selector="HyperlinkButton.link">
             <Setter Property="Padding" Value="0"/>
             <Setter Property="MinHeight" Value="0"/>
@@ -49,7 +45,7 @@
             <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Download}"
                                         FontSize="21"
-                                        Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"/>
             </Border>
@@ -57,7 +53,8 @@
                 <TextBlock Text="{Binding HeaderText}"
                            FontSize="20"
                            FontWeight="SemiBold"
-                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                           TextWrapping="Wrap"
+                           Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
             </StackPanel>
         </Grid>
 

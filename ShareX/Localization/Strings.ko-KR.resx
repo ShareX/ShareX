@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>업로드</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>스크롤 막대를 항상 전체 너비로 표시</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>애플리케이션</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>이미지 미리보기 표시 여부:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>이미지 미리보기 위치:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>이미지 인쇄 설정...</value>
@@ -1449,7 +1455,7 @@
     <value>이 설정은 응용 프로그램 설정에서 언제든지 변경할 수 있습니다.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ShareX 21의 다채로운 아이콘입니다.</value>
+    <value>클래식한 스타일의 다채롭고 세밀한 아이콘입니다.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>테마 색상을 따르는 깔끔한 선 아이콘입니다.</value>
@@ -2507,9 +2513,6 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>도구 모음 사용자 지정...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>기본 언어:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>입력 파일 삭제</value>
   </data>
@@ -2696,6 +2699,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>가운데 클릭 동작:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>모니터:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>마우스 4 클릭:</value>
   </data>
@@ -2707,6 +2713,12 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>마우스 클릭 강조 표시 옵션...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>마우스 휠:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>스크롤할 때 돋보기에 적용되는 동작입니다. 스크롤하는 동안 Ctrl 키를 누르고 있으면 다른 동작을 합니다.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>아래로 이동</value>
@@ -2833,12 +2845,6 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR 도움말...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR 언어를 사용할 수 없습니다</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>영역 캡처에만 효과 적용</value>
@@ -3140,8 +3146,17 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>시간대:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>모니터 {0} (연결되지 않음)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>모니터 {0}: {1} ({2}, 위치 {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>알림</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>도구 모음 단추 크기(픽셀):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>도구</value>
@@ -3190,6 +3205,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>사용자 지정 시간대 사용</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>사용자 지정 도구 모음 단추 크기 사용</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>고정 시간 사용</value>

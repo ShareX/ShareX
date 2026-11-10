@@ -35,7 +35,7 @@ internal static class TaskFeatureSupport
 {
     public static FeatureSupport Get(AfterCaptureTasks task) => task switch
     {
-        AfterCaptureTasks.DoOCR => PlatformServices.Current.Ocr.Support,
+        AfterCaptureTasks.DoOCR => OCRHelper.Support,
         AfterCaptureTasks.SendImageToPrinter => PlatformServices.Current.Printing.Support,
         _ => FeatureSupport.Supported
     };
@@ -81,7 +81,7 @@ internal static class TaskFeatureSupport
         HotkeyType.ActiveWindowTopMost => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.TopMost),
         HotkeyType.BorderlessWindow or HotkeyType.ActiveWindowBorderless => PlatformServices.Current.WindowManagement.GetSupport(WindowManagementFeature.Borderless),
         // OCR tasks also accept image files; capture support is checked separately on the screen OCR menu.
-        HotkeyType.OCR => PlatformServices.Current.Ocr.Support,
+        HotkeyType.OCR => OCRHelper.Support,
         _ => FeatureSupport.Supported
     };
 

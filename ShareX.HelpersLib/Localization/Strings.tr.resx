@@ -876,6 +876,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Görüntü dosyaları</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Kenar</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Otomatik</value>
   </data>
@@ -1110,6 +1116,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Araç tipini değiştir</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Büyüteci yeniden boyutlandır</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Büyüteci yakınlaştır</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Bilgisayar</value>
   </data>
@@ -1316,6 +1328,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Karşıya dosya yükle</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Etkin monitör</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Birincil monitör</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

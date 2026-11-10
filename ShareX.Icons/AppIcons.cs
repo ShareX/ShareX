@@ -27,7 +27,7 @@ namespace ShareX.Icons;
 
 /// <summary>
 /// Keys of the main window icons: its menus, thumbnail and context menus, and title bar. They are drawn in the
-/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="AppIconDefinitions"/>.
+/// same style as the <see cref="ImageEditorIcons"/>; see <see cref="ModernIcons"/>.
 /// </summary>
 public static class AppIcons
 {
@@ -253,6 +253,7 @@ public static class AppIcons
     public const string Plug = Prefix + "plug";
     public const string Network = Prefix + "network";
     public const string Grid = Prefix + "grid";
+    public const string ListView = Prefix + "list-view";
     public const string FileEdit = Prefix + "file-edit";
     public const string Factory = Prefix + "factory";
     public const string Database = Prefix + "database";

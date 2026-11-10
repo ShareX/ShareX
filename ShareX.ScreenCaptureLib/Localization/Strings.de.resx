@@ -436,6 +436,12 @@
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Ellipsenbereich</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Freihandbereich</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Ziehen, um die Symbolleiste zu verschieben; Doppelklick setzt ihre Position zurück</value>
   </data>

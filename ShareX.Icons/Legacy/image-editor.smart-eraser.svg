@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a8" /><stop offset=".4" stop-color="#f8d046" /><stop offset=".55" stop-color="#eab420" /><stop offset="1" stop-color="#d89810" /></linearGradient>
+    <linearGradient id="awhite" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dedede" /><stop offset="1" stop-color="#f4f4f4" /></linearGradient>
+    <linearGradient id="apink" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e89dae" /><stop offset="1" stop-color="#eda8b9" /></linearGradient>
+    <linearGradient id="aside" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".15" /><stop offset=".6" stop-color="#000" stop-opacity=".12" /><stop offset="1" stop-color="#000" stop-opacity=".03" /></linearGradient>
+  </defs>
+  <g transform="translate(-1 -1)">
+    <g transform="translate(8 8) rotate(-45)"><path d="M1.77 -3.3H-6.7Q-7.45 -3.3 -7.45 -2.55V0.15Q-7.45 3.3 -4.3 3.3H1.77Z" fill="url(#awhite)" /><path d="M1.77 -3.3H6.55Q7.5 -3.3 7.5 -2.35V1.75Q7.5 3.3 5.95 3.3H1.77Z" fill="url(#apink)" /><path d="M-7.373 1.06H7.5V1.75Q7.5 3.3 5.95 3.3H-4.3Q-6.956 3.3 -7.373 1.06Z" fill="url(#aside)" /><path d="M-6.5 -2.65H1.77" stroke="#fff" stroke-opacity=".7" stroke-width=".8" /><path d="M1.77 -2.65H5.95Q6.85 -2.65 6.85 -1.75V.9" fill="none" stroke="#ffc4d4" stroke-width=".8" /><path d="M1.77 -3.55H-6.7Q-7.7 -3.55 -7.7 -2.55V0.15Q-7.7 3.55 -4.3 3.55H1.77" fill="none" stroke="#2a2a2a" stroke-opacity=".42" /><path d="M1.77 -3.55H6.55Q7.75 -3.55 7.75 -2.35V1.75Q7.75 3.55 5.95 3.55H1.77" fill="none" stroke="#a00222" stroke-opacity=".52" /></g>
+  </g>
+  <path d="M12.5 7.8Q13.15 10.85 16.2 11.5Q13.15 12.15 12.5 15.2Q11.85 12.15 8.8 11.5Q11.85 10.85 12.5 7.8Z" fill="#fff" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" opacity=".85" />
+  <path d="M12.5 7.8Q13.15 10.85 16.2 11.5Q13.15 12.15 12.5 15.2Q11.85 12.15 8.8 11.5Q11.85 10.85 12.5 7.8Z" fill="url(#g-gold)" stroke="#b07800" stroke-width=".6" stroke-linejoin="round" />
+  <path d="M8.8 12.8Q9.1 14.2 10.5 14.5Q9.1 14.8 8.8 16.2Q8.5 14.8 7.1 14.5Q8.5 14.2 8.8 12.8Z" fill="url(#g-gold)" stroke="#b07800" stroke-width=".5" stroke-linejoin="round" />
+  <circle cx="12.3" cy="11.2" r=".7" fill="#fffbe0" />
+</svg>

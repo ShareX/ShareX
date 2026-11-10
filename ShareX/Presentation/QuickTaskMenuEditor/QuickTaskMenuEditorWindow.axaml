@@ -123,7 +123,7 @@
 
                 <ListBox x:Name="TaskList"
                          Grid.Row="1"
-                         Classes="quick-task-list"
+                         Classes="quick-task-list neutral-selection"
                          DoubleTapped="OnTaskListDoubleTapped"
                          SelectionChanged="OnTaskSelectionChanged">
                     <ListBox.ItemTemplate>
@@ -189,7 +189,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Workflows}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ItemEditorTitle"
@@ -292,7 +292,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"
                                                     FontSize="20"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"/>
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.QuickTaskMenuEditorWindow_ResetPrompt}"
                                        FontSize="18"

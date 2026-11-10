@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Tải lên</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Luôn hiển thị thanh cuộn với độ rộng đầy đủ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Ứng dụng</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Khả năng hiển thị xem trước hình ảnh:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Vị trí xem trước hình ảnh:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Thiết lập cho in ấn...</value>
@@ -1449,7 +1455,7 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
     <value>Bạn có thể thay đổi tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Các biểu tượng nhiều màu sắc từ ShareX 21.</value>
+    <value>Các biểu tượng nhiều màu sắc, chi tiết theo phong cách cổ điển.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Biểu tượng nét mảnh gọn gàng, theo màu chủ đề của bạn.</value>
@@ -2507,9 +2513,6 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Tùy chỉnh thanh công cụ...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Ngôn ngữ mặc định:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Xóa tệp đầu vào</value>
   </data>
@@ -2696,6 +2699,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Hành động nhấp giữa:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Màn hình:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Nhấp nút chuột 4:</value>
   </data>
@@ -2707,6 +2713,12 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Tùy chọn tô sáng chuột...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Con lăn chuột:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Thao tác cuộn sẽ làm gì với kính lúp. Giữ Ctrl trong khi cuộn để thực hiện thao tác còn lại.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Di chuyển xuống</value>
@@ -2833,12 +2845,6 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Trợ giúp OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Không có ngôn ngữ OCR</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Chỉ áp dụng hiệu ứng cho chụp vùng</value>
@@ -3140,8 +3146,17 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Múi giờ:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Màn hình {0} (chưa kết nối)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Màn hình {0}: {1} ({2} tại {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Thông báo</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Kích thước nút thanh công cụ (pixel):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Công cụ</value>
@@ -3190,6 +3205,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Dùng múi giờ tùy chỉnh</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Dùng kích thước nút thanh công cụ tùy chỉnh</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Dùng thời lượng cố định</value>

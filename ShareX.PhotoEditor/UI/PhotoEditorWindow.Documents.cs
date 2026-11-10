@@ -33,6 +33,7 @@ using ShareX.PhotoEditor.Integration;
 using ShareX.PhotoEditor.Tools;
 using ShareX.PhotoEditor.UI.Commands;
 using ShareX.PhotoEditor.UI.Dialogs;
+using ShareX.PhotoEditor.UI.Theme;
 
 namespace ShareX.PhotoEditor.UI;
 
@@ -151,7 +152,7 @@ public sealed partial class PhotoEditorWindow
                 Height = 28,
                 Margin = new Thickness(0, 0, 1, 0),
                 Background = active ? new SolidColorBrush(Color.FromRgb(0x32, 0x32, 0x32)) : new SolidColorBrush(Color.FromRgb(0x2A, 0x2A, 0x2A)),
-                BorderBrush = active ? OverlayContext.AccentBrush : Brushes.Transparent,
+                BorderBrush = active ? PhotoEditorTheme.AccentBorderBrush : Brushes.Transparent,
                 BorderThickness = new Thickness(0, active ? 2 : 0, 0, 0),
                 Cursor = new Cursor(StandardCursorType.Hand)
             };

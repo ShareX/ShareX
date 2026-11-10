@@ -83,6 +83,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private readonly List<ThumbnailItemViewModel> _selectionOrder = new();
     private ThumbnailItemViewModel? _selectionAnchor;
     private const int MinImagePreviewWidth = 100;
+    private const int MinImagePreviewHeight = 100;
+    // Animated previews are decoded at most this large, which is plenty for the pane and keeps playback cheap.
+    private const int MaxAnimatedImagePreviewSize = 1024;
     private string? _imagePreviewPath;
     private int _imagePreviewVersion;
     private bool _imagePreviewUpdatePending;
@@ -100,7 +103,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     // Keep room for the list when the window is smaller than when the width was saved.
     public int ImagePreviewWidth => Math.Clamp(ApplicationState.Settings.ImagePreviewWidth, MinImagePreviewWidth, MaxImagePreviewWidth);
     private int MaxImagePreviewWidth => Math.Max(MinImagePreviewWidth, (int)ThumbnailPanel.Bounds.Width - 200);
+    public int ImagePreviewHeight => Math.Clamp(ApplicationState.Settings.ImagePreviewHeight, MinImagePreviewHeight, MaxImagePreviewHeight);
+    private int MaxImagePreviewHeight => Math.Max(MinImagePreviewHeight, (int)ThumbnailPanel.Bounds.Height - 100);
+    public bool IsImagePreviewAtBottom => ApplicationState.Settings.ImagePreviewLocation == ImagePreviewLocation.Bottom;
+    // The pane spans the list's width when docked at the bottom and its height when docked at the side.
+    public double ImagePreviewPaneWidth => IsImagePreviewAtBottom ? double.NaN : ImagePreviewWidth;
+    public double ImagePreviewPaneHeight => IsImagePreviewAtBottom ? ImagePreviewHeight : double.NaN;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
+
+    // Dropped while maximized so the caption buttons reach the screen edge.
+    private const double WindowFrameThickness = 1;
     public bool IsDarkTheme => ThemeManager.IsDarkTheme;
     public string ThemeToggleText => IsDarkTheme
         ? Strings.ApplicationSettingsWindow_Dark
@@ -122,8 +134,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         UpdateTitleBarIcon();
         TaskListColumns.Load(ApplicationState.Settings.TaskListViewColumnWidths);
         DataContext = this;
-        ThumbnailPanel.SizeChanged += (_, _) => OnPropertyChanged(nameof(ImagePreviewWidth));
+        ThumbnailPanel.SizeChanged += (_, _) => NotifyImagePreviewLayoutChanged();
         ScheduleImagePreviewUpdate();
+        ThumbnailItemViewModel.RenderScaling = RenderScaling;
+        ScalingChanged += OnScalingChanged;
 
         _trayIconService.RightButtonDown += OnTrayIconRightButtonDown;
         _trayIconService.RightButtonUp += OnTrayIconRightButtonUp;
@@ -152,6 +166,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         KeyDown += OnWindowKeyDown;
 
         Dispatcher.UIThread.Post(WarmUpTrayMenu, DispatcherPriority.Background);
+        DispatcherTimer.RunOnce(() => Dispatcher.UIThread.Post(WarmUpRegionCapture, DispatcherPriority.ApplicationIdle),
+            TimeSpan.FromSeconds(2));
     }
 
     public void ShowAndActivate()
@@ -265,6 +281,33 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
     }
 
+    // The first region capture after startup used to open several hundred ms slower than later ones because of
+    // JIT, XAML loading, templates, icons and font enumeration. Pay that once while the app is idle instead.
+    private void WarmUpRegionCapture()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        long start = System.Diagnostics.Stopwatch.GetTimestamp();
+
+        try
+        {
+            // Only the screen list: a warm-up screenshot is silent on Windows, but goes through the screenshot portal on GNOME
+            // and KDE and runs screencapture on macOS.
+            CaptureHelpers.GetScreenBounds();
+        }
+        catch (Exception e)
+        {
+            DebugHelper.WriteException(e, "Screen capture warm-up failed.");
+        }
+
+        ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureIntegration.WarmUp();
+
+        DebugHelper.WriteLine($"Region capture warm-up: {System.Diagnostics.Stopwatch.GetElapsedTime(start).TotalMilliseconds:0} ms");
+    }
+
     private void WarmUpTrayMenu()
     {
         if (_disposed)
@@ -339,12 +382,30 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         NotifyTaskCollectionChanged();
     }
 
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        ThumbnailItemViewModel.RenderScaling = RenderScaling;
+
+        foreach (ThumbnailItemViewModel item in ThumbnailItems)
+        {
+            item.Refresh();
+        }
+    }
+
     private void NotifyTaskViewModeChanged()
     {
         OnPropertyChanged(nameof(IsListView));
         OnPropertyChanged(nameof(IsThumbnailView));
         OnPropertyChanged(nameof(ShowListColumns));
+        NotifyImagePreviewLayoutChanged();
         ScheduleImagePreviewUpdate();
+    }
+
+    private void NotifyImagePreviewLayoutChanged()
+    {
+        OnPropertyChanged(nameof(IsImagePreviewAtBottom));
+        OnPropertyChanged(nameof(ImagePreviewPaneWidth));
+        OnPropertyChanged(nameof(ImagePreviewPaneHeight));
     }
 
     private void ScheduleImagePreviewUpdate()
@@ -405,6 +466,16 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private async Task LoadImagePreviewAsync(int version, string filePath)
     {
+        // ShareX 21 played animated GIFs in the preview, so show each frame in turn until another file is selected.
+        // Frames nobody can see aren't decoded while ShareX is in the tray or minimized.
+        if (AnimatedImagePreview.CanBeAnimated(filePath) && await AnimatedImagePreview.PlayAsync(filePath, MaxAnimatedImagePreviewSize,
+            () => version == _imagePreviewVersion && !_disposed,
+            SetImagePreview,
+            () => !IsVisible || WindowState == Avalonia.Controls.WindowState.Minimized))
+        {
+            return;
+        }
+
         AvaloniaBitmap? bitmap = await Task.Run(() =>
         {
             try
@@ -461,9 +532,17 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private void OnImagePreviewResizerDragDelta(object? sender, VectorEventArgs e)
     {
-        // The handle is on the pane's left edge, so dragging left widens it.
-        ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
-        OnPropertyChanged(nameof(ImagePreviewWidth));
+        // The handle is on the pane's left or top edge, so dragging left or up grows it.
+        if (IsImagePreviewAtBottom)
+        {
+            ApplicationState.Settings.ImagePreviewHeight = Math.Clamp(ImagePreviewHeight - (int)Math.Round(e.Vector.Y), MinImagePreviewHeight, MaxImagePreviewHeight);
+        }
+        else
+        {
+            ApplicationState.Settings.ImagePreviewWidth = Math.Clamp(ImagePreviewWidth - (int)Math.Round(e.Vector.X), MinImagePreviewWidth, MaxImagePreviewWidth);
+        }
+
+        NotifyImagePreviewLayoutChanged();
         e.Handled = true;
     }
 
@@ -482,7 +561,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private MainMenuEntry CreateSwitchTaskViewModeItem() => IsListView
         ? Item(Strings.MainWindow_SwitchToThumbnailView, AppIcons.Grid, SwitchTaskViewMode)
-        : Item(Strings.MainWindow_SwitchToListView, AppIcons.Rows, SwitchTaskViewMode);
+        : Item(Strings.MainWindow_SwitchToListView, AppIcons.ListView, SwitchTaskViewMode);
 
     private string ClearTasksText => IsListView ? Strings.MainWindow_ClearTaskList : Strings.MainWindow_ClearThumbnailView;
 
@@ -545,7 +624,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         double navigationHeight = Math.Ceiling(NavigationPanel.DesiredSize.Height);
         double titleBarHeight = Math.Ceiling(TitleBar.DesiredSize.Height);
-        double frameHeight = WindowFrame.BorderThickness.Top + WindowFrame.BorderThickness.Bottom;
+        double frameHeight = WindowFrameThickness * 2;
         double windowHeight = navigationHeight + titleBarHeight + frameHeight;
 
         if (windowHeight <= 0 || double.IsNaN(windowHeight) || double.IsInfinity(windowHeight))
@@ -1132,11 +1211,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             return header;
         }
 
-        Run accentRun = new()
-        {
-            Text = accentText,
-            Foreground = this.FindResource("ShareX.Brush.Accent.Start") as IBrush
-        };
+        Run accentRun = new() { Text = accentText };
+        // The menu background is a theme surface, so this uses the surface accent color and follows theme and
+        // accent changes while the menu is open.
+        accentRun.Bind(Run.ForegroundProperty, this.GetResourceObservable("ShareX.Brush.Accent.Text"));
         InlineCollection inlines = new();
         inlines.Add(header[..accentIndex]);
         inlines.Add(accentRun);
@@ -1420,6 +1498,22 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ClearSelection();
         SetSelected(selected, true);
         _selectionAnchor = selected;
+    }
+
+    private void OnThumbnailPreviewPointerEntered(object? sender, PointerEventArgs e)
+    {
+        if (sender is Control { DataContext: ThumbnailItemViewModel item })
+        {
+            item.StartHoverAnimation();
+        }
+    }
+
+    private void OnThumbnailPreviewPointerExited(object? sender, PointerEventArgs e)
+    {
+        if (sender is Control { DataContext: ThumbnailItemViewModel item })
+        {
+            item.StopHoverAnimation();
+        }
     }
 
     private void OnThumbnailPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -2443,6 +2537,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (change.Property == WindowStateProperty)
         {
             OnPropertyChanged(nameof(IsWindowMaximized));
+            WindowFrame.BorderThickness = new Thickness(IsWindowMaximized ? 0 : WindowFrameThickness);
         }
         else if (change.Property == IconProperty)
         {

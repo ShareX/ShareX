@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#d3e2ff" /></linearGradient>
+  </defs>
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#04509b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#6ab6f0" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="4" y="4" width="8" height="8" fill="url(#g-glass)" opacity=".8" />
+  <path d="M8 4.5V11.5M4.5 8H11.5" fill="none" stroke="#e82020" stroke-width="1.1" stroke-linecap="round" />
+  <circle cx="8" cy="8" r="1.4" fill="none" stroke="#e82020" stroke-width=".9" />
+</svg>

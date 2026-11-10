@@ -3294,11 +3294,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_AutomaticallyCopyResultsToClipboard", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_DefaultLanguage {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_DefaultLanguage", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_ProcessOCRSilently {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessOCRSilently", resourceCulture);
@@ -3307,11 +3302,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_OCRHelp {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRHelp", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_CaptureOrClipboardUpload {
@@ -3722,11 +3712,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_Advanced {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_Advanced", resourceCulture);
-            }
-        }
-        public static string TaskSettingsWindow_OCRLanguagesAreUnavailable {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_OCRLanguagesAreUnavailable", resourceCulture);
             }
         }
         public static string TaskSettingsWindow_X {
@@ -5820,6 +5805,7 @@ namespace ShareX.Localization {
         public static string TaskListView_Status => ResourceManager.GetString("TaskListView_Status", resourceCulture);
         public static string TaskListView_URL => ResourceManager.GetString("TaskListView_URL", resourceCulture);
         public static string ApplicationSettingsWindow_CompactMode => ResourceManager.GetString("ApplicationSettingsWindow_CompactMode", resourceCulture);
+        public static string ApplicationSettingsWindow_AlwaysExpandScrollBars => ResourceManager.GetString("ApplicationSettingsWindow_AlwaysExpandScrollBars", resourceCulture);
         public static string MainMenuBuilder_ScreenshotDelayJustOnce => ResourceManager.GetString("MainMenuBuilder_ScreenshotDelayJustOnce", resourceCulture);
         public static string ApplicationSettingsWindow_ImagePreviewLabel => ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLabel", resourceCulture);
         public static string ApplicationSettingsWindow_Spacing => ResourceManager.GetString("ApplicationSettingsWindow_Spacing", resourceCulture);
@@ -5836,5 +5822,13 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_NativeRecorderHDRToneMapping => ResourceManager.GetString("TaskSettingsWindow_NativeRecorderHDRToneMapping", resourceCulture);
         public static string ApplicationSettingsWindow_ShowFileDeleteConfirmation => ResourceManager.GetString("ApplicationSettingsWindow_ShowFileDeleteConfirmation", resourceCulture);
         public static string FileDeleteConfirmation_DontRemindAgain => ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
+        public static string TaskSettingsWindow_ToolbarButtonSizePixels => ResourceManager.GetString("TaskSettingsWindow_ToolbarButtonSizePixels", resourceCulture);
+        public static string TaskSettingsWindow_UseCustomToolbarButtonSize => ResourceManager.GetString("TaskSettingsWindow_UseCustomToolbarButtonSize", resourceCulture);
+        public static string TaskSettingsWindow_MouseWheel => ResourceManager.GetString("TaskSettingsWindow_MouseWheel", resourceCulture);
+        public static string TaskSettingsWindow_MouseWheelTooltip => ResourceManager.GetString("TaskSettingsWindow_MouseWheelTooltip", resourceCulture);
+        public static string ApplicationSettingsWindow_ImagePreviewLocationLabel => ResourceManager.GetString("ApplicationSettingsWindow_ImagePreviewLocationLabel", resourceCulture);
+        public static string TaskSettingsWindow_Monitor => ResourceManager.GetString("TaskSettingsWindow_Monitor", resourceCulture);
+        public static string TaskSettingsWindow_ToastMonitorNotConnected0 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorNotConnected0", resourceCulture);
+        public static string TaskSettingsWindow_ToastMonitorScreen0123 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorScreen0123", resourceCulture);
     }
 }

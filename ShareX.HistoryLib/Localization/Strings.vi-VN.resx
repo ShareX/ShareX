@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Không có mục nào khớp với các bộ lọc hiện tại</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Tên tiến trình</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Đổi tên</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Đổi tên tệp</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Đặt lại cột</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Chọn thư mục để nhập</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Đã nhập thành công {0:N0} tệp.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Thẻ</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>{0:N0} tệp này</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Bỏ yêu thích</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Tiêu đề cửa sổ</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Nâng cao</value>

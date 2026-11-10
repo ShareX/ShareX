@@ -876,6 +876,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fichiers image</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Côté</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatique</value>
   </data>
@@ -1110,6 +1116,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Changer le type d'outil</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionner la loupe</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoomer la loupe</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
   </data>
@@ -1316,6 +1328,12 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Téléverser le fichier</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Moniteur actif</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Moniteur principal</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

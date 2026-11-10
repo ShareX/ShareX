@@ -70,6 +70,12 @@ public partial class RegionCaptureWindow : Window
     private AvaloniaCanvas _regionResizeNodeCanvas = null!;
     private LayoutTransformControl _regionTransform = null!;
     private Grid _captureToolbar = null!;
+    private LayoutTransformControl _captureToolbarScale = null!;
+    private const int ToolbarButtonSizeWheelStep = 4;
+    private double _captureToolbarScaleFactor = 1;
+    // See GetMonitorScaleFactor: corrects the toolbar for the scaling of the monitor it is on.
+    private double _captureToolbarMonitorScale = 1;
+    private double _appliedCaptureToolbarScale = 1;
     private AnnotationToolbar _annotationToolbar = null!;
     private Button _regionToolButton = null!;
     private StackPanel _magnifierPanel = null!;
@@ -84,7 +90,7 @@ public partial class RegionCaptureWindow : Window
     private IReadOnlyList<SnapTarget> _windows = Array.Empty<SnapTarget>();
     private readonly Dictionary<SelectionResizeNodeKind, Border> _regionResizeNodes = [];
     // Regions already added in multi region mode. The region being drawn or edited is the overlay selection.
-    private readonly List<Rect> _regions = [];
+    private readonly List<CaptureRegion> _regions = [];
     private SnapTarget? _hoverCandidate;
     private SnapTarget? _selectedCandidate;
     private RegionInteraction _interaction;
@@ -92,13 +98,26 @@ public partial class RegionCaptureWindow : Window
     private Point _pressPoint;
     private Point _lastPointerPoint;
     private Point _lastCreationPoint;
-    private Rect _interactionStartRectangle;
+    private CaptureRegion _interactionStartRegion;
+    // The shape the region tool selects. Ellipse and freehand regions are hidden toolbar items by default.
+    private RegionShape _regionShape = RegionShape.Rectangle;
+    // Points of the freehand region being drawn; frozen into the selection when the button is released.
+    private List<Point>? _freehandPoints;
     private readonly TranslateTransform _magnifierTransform = new();
+    private readonly ScaleTransform _magnifierScale = new();
+    private readonly ScaleTransform _selectionInfoScale = new();
+    // Scaling of the monitor the custom cursors were last created for.
+    private double _cursorScaling = 1;
     private double _captureToolbarCenterX = double.NaN;
     private double _captureToolbarTop = double.NaN;
     private Size _positionedCaptureToolbarSize;
+    private Size _positionedCaptureToolbarClientSize;
     private bool _draggingCaptureToolbar;
     private Point _captureToolbarDragOffset;
+    // Until the user interacts with the capture, the toolbar follows the pointer to whichever monitor it is on.
+    private bool _captureToolbarFollowsPointer = true;
+    // In screen coordinates, like DesktopScreen.
+    private DrawingRectangle _captureToolbarScreenBounds;
     private int _imageWidth;
     private int _imageHeight;
     // Screenshot pixels per screen coordinate. 1 on Windows and X11; on Hyprland and sway screens are in layout coordinates
@@ -106,6 +125,8 @@ public partial class RegionCaptureWindow : Window
     private double _pixelsPerScreenX = 1;
     private double _pixelsPerScreenY = 1;
     private bool _regionToolActive = true;
+    // Scrolling the magnifier away only hides it for this capture and never changes the saved setting.
+    private bool _magnifierHiddenByWheel;
     private bool _keyboardInputEnabled;
     private bool _isMovingSelectionDuringCreation;
     private bool _wasControlHeldDuringCreation;
@@ -115,6 +136,7 @@ public partial class RegionCaptureWindow : Window
     private bool _workspaceOwnsScreenshot;
     private bool _closing;
     private Exception? _startupException;
+    private double _appliedPixelScaling;
 
     public RegionCaptureWindow()
     {
@@ -127,6 +149,7 @@ public partial class RegionCaptureWindow : Window
         AddHandler(PointerPressedEvent, OnCaptureHostPointerPressed, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerMovedEvent, OnCaptureHostPointerMoved, RoutingStrategies.Tunnel, handledEventsToo: true);
         AddHandler(PointerReleasedEvent, OnCaptureHostPointerReleased, RoutingStrategies.Tunnel, handledEventsToo: true);
+        AddHandler(KeyDownEvent, OnCaptureHostKeyDown, RoutingStrategies.Tunnel, handledEventsToo: true);
     }
 
     public RegionCaptureWindow(AvaloniaRegionCaptureRequest request) : this()
@@ -153,6 +176,19 @@ public partial class RegionCaptureWindow : Window
 
         KeepScaleFixed();
         ConfigureInitialPixelBounds();
+
+        try
+        {
+            PrepareWorkspace();
+        }
+        catch (Exception ex)
+        {
+            // Close so OnClosed releases the workspace and bitmaps and completes the task with this exception.
+            _startupException = ex;
+            Close();
+            return _completionSource.Task;
+        }
+
         Show();
         return _completionSource.Task;
     }
@@ -172,6 +208,7 @@ public partial class RegionCaptureWindow : Window
             {
                 _viewModel.PropertyChanged -= OnViewModelPropertyChanged;
                 _viewModel.ToolSelectionRequested -= OnAnnotationToolSelected;
+                _viewModel.HostToolbarItemRequested -= OnHostToolbarItemRequested;
             }
 
             if (_workspaceOwnsScreenshot)
@@ -337,16 +374,20 @@ public partial class RegionCaptureWindow : Window
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
         _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
         _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
-        _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
+        _captureToolbarScale = this.FindControl<LayoutTransformControl>("CaptureToolbarScale")!;
+        _annotationToolbar =this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
-        _magnifierPanel.RenderTransform = _magnifierTransform;
+        _magnifierPanel.RenderTransformOrigin = RelativePoint.TopLeft;
+        _magnifierPanel.RenderTransform = new TransformGroup { Children = { _magnifierScale, _magnifierTransform } };
         _magnifierView = this.FindControl<Grid>("MagnifierView")!;
         _magnifierImage = this.FindControl<Image>("MagnifierImage")!;
         _magnifierPixelGrid = this.FindControl<MagnifierPixelGrid>("MagnifierPixelGrid")!;
         _pointerInfoPanel = this.FindControl<Border>("PointerInfoPanel")!;
         _pointerInfoText = this.FindControl<TextBlock>("PointerInfoText")!;
         _selectionInfoPanel = this.FindControl<Border>("SelectionInfoPanel")!;
+        _selectionInfoPanel.RenderTransformOrigin = RelativePoint.TopLeft;
+        _selectionInfoPanel.RenderTransform = _selectionInfoScale;
         _selectionInfoText = this.FindControl<TextBlock>("SelectionInfoText")!;
     }
 
@@ -372,6 +413,7 @@ public partial class RegionCaptureWindow : Window
             : []);
         _viewModel.PropertyChanged += OnViewModelPropertyChanged;
         _viewModel.ToolSelectionRequested += OnAnnotationToolSelected;
+        _viewModel.HostToolbarItemRequested += OnHostToolbarItemRequested;
 
         _editorWorkspace.DataContext = _viewModel;
         _annotationToolbar.DataContext = _viewModel.ToolbarAdapter;
@@ -391,10 +433,11 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.DimAllExceptSelection = _request.RegionCaptureOptions.DimAllExceptSelection;
         _regionOverlay.ShowCenterCrosshair = _request.RegionCaptureOptions.ShowCenterCrosshair;
         _regionOverlay.ShowCursorCrosshair = _request.RegionCaptureOptions.ShowScreenCrosshair;
-        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(GetInitialScaling());
+        _cursorScaling = GetInitialScaling();
+        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(_cursorScaling);
         InitializeRegionResizeNodes();
 
-        _magnifierView.IsVisible = _request.RegionCaptureOptions.ShowMagnifier;
+        _magnifierView.IsVisible = IsMagnifierShown;
         ApplyMagnifierShape();
         _pointerInfoPanel.IsVisible = _request.RegionCaptureOptions.ShowInfo;
         _magnifierPanel.IsVisible = _magnifierView.IsVisible || _pointerInfoPanel.IsVisible;
@@ -486,6 +529,51 @@ public partial class RegionCaptureWindow : Window
         }
     }
 
+    /// <summary>
+    /// Runs the open path on a tiny workspace without showing the window: XAML, styles, templates, view model,
+    /// toolbar, icons and one layout pass. Used once at idle time so the first real capture opens as fast as later ones.
+    /// </summary>
+    internal void WarmUpHidden()
+    {
+        PrepareWorkspace();
+        ApplyPixelSize();
+
+        // A window that was never shown is invisible, so layout skips it. Measure and render its content directly.
+        if (Content is Control content)
+        {
+            Size size = new Size(Width, Height);
+            content.Measure(size);
+            content.Arrange(new Rect(size));
+            using RenderTargetBitmap target = new RenderTargetBitmap(
+                new PixelSize(Math.Max(1, (int)Math.Ceiling(size.Width)), Math.Max(1, (int)Math.Ceiling(size.Height))));
+            target.Render(content);
+        }
+    }
+
+    /// <summary>
+    /// Loads the screenshot before the window is shown, so the first layout pass and the first
+    /// rendered frame already contain it. OnOpened only corrects the scale if the monitor DPI differs.
+    /// </summary>
+    private void PrepareWorkspace()
+    {
+        if (_request == null || _viewModel == null)
+        {
+            return;
+        }
+
+        UpdatePixelTransforms();
+        _editorWorkspace.ConfigureForFullscreenWorkspace();
+        _editorWorkspace.LoadWorkspaceImage(_request.Screenshot, _request.ScreenshotIsOpaque);
+        _workspaceOwnsScreenshot = true;
+
+        if (_request.CursorBitmap != null)
+        {
+            _editorWorkspace.InsertWorkspaceImageAnnotation(
+                _request.CursorBitmap,
+                new Point(_request.CursorPosition.X, _request.CursorPosition.Y));
+        }
+    }
+
     private async void OnOpened(object? sender, EventArgs e)
     {
         try
@@ -499,16 +587,13 @@ public partial class RegionCaptureWindow : Window
             ApplyPixelSize();
             CoverScreen();
             Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
-            UpdatePixelTransforms();
-            _editorWorkspace.ConfigureForFullscreenWorkspace();
-            _editorWorkspace.LoadWorkspaceImage(_request.Screenshot);
-            _workspaceOwnsScreenshot = true;
+            if (GetRenderScaling() != _appliedPixelScaling)
+            {
+                UpdatePixelTransforms();
+            }
 
             if (_request.CursorBitmap != null)
             {
-                _editorWorkspace.InsertWorkspaceImageAnnotation(
-                    _request.CursorBitmap,
-                    new Point(_request.CursorPosition.X, _request.CursorPosition.Y));
                 ActivateRegionTool();
             }
 
@@ -591,24 +676,42 @@ public partial class RegionCaptureWindow : Window
 
     private void OnRegionToolClick(object? sender, RoutedEventArgs e)
     {
-        ActivateRegionTool();
+        ActivateRegionTool(RegionShape.Rectangle);
         e.Handled = true;
     }
 
-    private void ActivateRegionTool()
+    private void OnHostToolbarItemRequested(object? sender, string id)
     {
+        if (RegionCaptureToolbar.GetRegionShape(id) is RegionShape shape)
+        {
+            ActivateRegionTool(shape);
+        }
+    }
+
+    /// <summary>Switches to the region tool, selecting <paramref name="shape"/> or else the last used shape.</summary>
+    private void ActivateRegionTool(RegionShape? shape = null)
+    {
+        if (shape.HasValue && shape.Value != _regionShape &&
+            _interaction is RegionInteraction.Creating or RegionInteraction.PendingHover)
+        {
+            ClearSelection();
+        }
+
+        _regionShape = shape ?? _regionShape;
+        _regionOverlay.HoverShape = _regionShape == RegionShape.Ellipse ? RegionShape.Ellipse : RegionShape.Rectangle;
         _regionToolActive = true;
         _regionInputSurface.IsVisible = true;
         _regionInputSurface.IsHitTestVisible = true;
         _regionOverlay.IsVisible = true;
         _regionOverlay.ShowCursorCrosshair = _request?.RegionCaptureOptions.ShowScreenCrosshair == true;
-        SetRegionResizeNodesVisible(!IsQuickCapture && HasValidSelection());
-        _regionToolButton.Classes.Set("active", true);
+        SetRegionResizeNodesVisible(!IsQuickCapture && CanResizeSelection());
+        _regionToolButton.Classes.Set("active", _regionShape == RegionShape.Rectangle);
         _viewModel?.SetHostToolbarToolsActive(false);
+        _viewModel?.SetActiveHostToolbarItem(RegionCaptureToolbar.GetItemId(_regionShape));
         _annotationToolbar.ShowToolOptions = false;
         _editorWorkspace.CancelActiveInteractionOrSelection();
-        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
-        bool showMagnifier = _request?.RegionCaptureOptions.ShowMagnifier == true;
+        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(_cursorScaling);
+        bool showMagnifier = IsMagnifierShown;
         bool showInfo = _request?.RegionCaptureOptions.ShowInfo == true;
         _magnifierView.IsVisible = showMagnifier;
         _pointerInfoPanel.IsVisible = showInfo;
@@ -636,6 +739,7 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.HoverRectangle = default;
         _hoverCandidate = null;
         _regionToolButton.Classes.Set("active", false);
+        _viewModel?.SetActiveHostToolbarItem(null);
         _viewModel?.SetHostToolbarToolsActive(true);
         _annotationToolbar.ShowToolOptions = true;
         _magnifierPanel.IsVisible = false;
@@ -699,7 +803,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         _pressPoint = point;
-        _interactionStartRectangle = _regionOverlay.SelectionRectangle;
+        _interactionStartRegion = _regionOverlay.Selection;
         _resizeNode = SelectionResizeNode.TryGetKind((e.Source as Control)?.Tag, out SelectionResizeNodeKind resizeNode)
             ? resizeNode
             : null;
@@ -708,32 +812,42 @@ public partial class RegionCaptureWindow : Window
         {
             SetInteraction(RegionInteraction.Resizing);
         }
-        else if (HasValidSelection() && _regionOverlay.SelectionRectangle.Contains(point))
+        else if (HasValidSelection() && _regionOverlay.Selection.Contains(point))
         {
             SetInteraction(RegionInteraction.Moving);
         }
         else if (FindRegionAt(point) is int regionIndex and >= 0)
         {
             // Multi region mode: pressing an added region makes it the one being edited.
-            Rect region = _regions[regionIndex];
+            CaptureRegion region = _regions[regionIndex];
             _regions.RemoveAt(regionIndex);
             AddSelectionToRegions();
             _regionOverlay.Regions = [.. _regions];
             SetSelection(region, null);
-            _interactionStartRectangle = region;
+            _interactionStartRegion = region;
             SetInteraction(RegionInteraction.Moving);
         }
         else if (RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
         {
             AddSelectionToRegions();
-            SetSelection(_regionOverlay.HoverRectangle, _hoverCandidate);
-            _interactionStartRectangle = _regionOverlay.SelectionRectangle;
+            SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
+            _interactionStartRegion = _regionOverlay.Selection;
             SetInteraction(RegionInteraction.PendingHover);
         }
         else
         {
             AddSelectionToRegions();
-            SetSelection(default, null);
+
+            if (_regionShape == RegionShape.Freehand)
+            {
+                _freehandPoints = [point];
+                SetSelection(new CaptureRegion(RegionShape.Freehand, default, _freehandPoints), null);
+            }
+            else
+            {
+                SetSelection(new CaptureRegion(_regionShape, default), null);
+            }
+
             SetInteraction(RegionInteraction.Creating);
         }
 
@@ -747,7 +861,7 @@ public partial class RegionCaptureWindow : Window
         SetRegionResizeNodesVisible(false);
         if (_interaction is RegionInteraction.Moving or RegionInteraction.Resizing)
         {
-            _regionInputSurface.Cursor = CursorAssetLoader.GetClosedHandCursor(Math.Max(1, RenderScaling));
+            _regionInputSurface.Cursor = CursorAssetLoader.GetClosedHandCursor(_cursorScaling);
         }
         e.Pointer.Capture(_regionInputSurface);
         e.Handled = true;
@@ -785,15 +899,18 @@ public partial class RegionCaptureWindow : Window
                 {
                     SetInteraction(RegionInteraction.Creating);
                     _selectedCandidate = null;
-                    SetSelection(default, null);
+                    SetSelection(new CaptureRegion(_regionOverlay.HoverShape, default), null);
                     UpdateSelectionDuringCreation(point, e.KeyModifiers);
                 }
+                break;
+            case RegionInteraction.Creating when _freehandPoints != null:
+                AddFreehandPoint(point);
                 break;
             case RegionInteraction.Creating:
                 UpdateSelectionDuringCreation(point, e.KeyModifiers);
                 break;
             case RegionInteraction.Moving:
-                MoveSelection(point.X - _pressPoint.X, point.Y - _pressPoint.Y, _interactionStartRectangle);
+                MoveSelection(point.X - _pressPoint.X, point.Y - _pressPoint.Y, _interactionStartRegion);
                 break;
             case RegionInteraction.Resizing:
                 ResizeSelection(point);
@@ -843,15 +960,20 @@ public partial class RegionCaptureWindow : Window
         e.Pointer.Capture(null);
         SetInteraction(RegionInteraction.None);
         _resizeNode = null;
-        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(Math.Max(1, RenderScaling));
+        _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(_cursorScaling);
         ResetCreationModifiers();
 
-        Rect selection = _regionOverlay.SelectionRectangle;
-        if (selection.Width < RegionCaptureOptions.MinimumSize || selection.Height < RegionCaptureOptions.MinimumSize)
+        if (_freehandPoints != null)
+        {
+            SetSelection(_regionOverlay.Selection with { Points = _freehandPoints.ToArray() }, null);
+            _freehandPoints = null;
+        }
+
+        if (!HasValidSelection())
         {
             if (RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
             {
-                SetSelection(_regionOverlay.HoverRectangle, _hoverCandidate);
+                SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
             }
             else
             {
@@ -861,11 +983,11 @@ public partial class RegionCaptureWindow : Window
 
         if (HasValidSelection() && IsQuickCapture)
         {
-            Complete(_regionOverlay.SelectionRectangle);
+            Complete([_regionOverlay.Selection]);
         }
         else
         {
-            SetRegionResizeNodesVisible(HasValidSelection());
+            SetRegionResizeNodesVisible(CanResizeSelection());
             UpdateHover(_lastPointerPoint);
             UpdateHud(_lastPointerPoint);
         }
@@ -910,6 +1032,8 @@ public partial class RegionCaptureWindow : Window
         return true;
     }
 
+    private bool IsMagnifierShown => _request?.RegionCaptureOptions.ShowMagnifier == true && !_magnifierHiddenByWheel;
+
     private void OnRegionPointerWheelChanged(object? sender, PointerWheelEventArgs e)
     {
         if (_request == null || !_regionToolActive)
@@ -917,14 +1041,98 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int delta = e.Delta.Y > 0 ? -2 : 2;
-        int count = NormalizeMagnifierPixelCount(_request.RegionCaptureOptions.MagnifierPixelCount + delta);
-
-        _request.RegionCaptureOptions.MagnifierPixelCount = count;
-        _request.RegionCaptureOptions.ShowMagnifier = true;
-        RecreateMagnifierBitmap();
-        UpdateHud(_lastPointerPoint);
         e.Handled = true;
+
+        // Horizontal-only wheel events have no vertical direction.
+        int direction = Math.Sign(e.Delta.Y);
+        if (direction == 0)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.RegionCaptureOptions;
+        bool scrollUp = direction > 0;
+
+        // A magnifier turned off in task settings stays off.
+        if (!options.ShowMagnifier)
+        {
+            return;
+        }
+
+        if (_magnifierHiddenByWheel)
+        {
+            // A magnifier scrolled away comes back on scroll up, at the zoom and size it had before it was hidden.
+            if (scrollUp)
+            {
+                _magnifierHiddenByWheel = false;
+                RecreateMagnifierBitmap();
+                UpdateHud(_lastPointerPoint);
+            }
+
+            return;
+        }
+
+        RegionCaptureMagnifierScrollAction action = options.MagnifierScrollAction;
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Control))
+        {
+            action = action == RegionCaptureMagnifierScrollAction.Zoom
+                ? RegionCaptureMagnifierScrollAction.Resize
+                : RegionCaptureMagnifierScrollAction.Zoom;
+        }
+
+        if (action == RegionCaptureMagnifierScrollAction.Resize)
+        {
+            ResizeMagnifier(scrollUp);
+        }
+        else
+        {
+            ZoomMagnifier(scrollUp);
+        }
+
+        UpdateHud(_lastPointerPoint);
+    }
+
+    // Keeps the magnifier the same size and changes how many pixels it shows.
+    private void ZoomMagnifier(bool zoomIn)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        options.MagnifierPixelCount = NormalizeMagnifierPixelCount(
+            NormalizeMagnifierPixelCount(options.MagnifierPixelCount) + (zoomIn ? -2 : 2));
+        RecreateMagnifierBitmap();
+    }
+
+    // Keeps each magnified pixel the same size and grows or shrinks the magnifier around more or fewer pixels.
+    // Shrinking past the smallest size hides the magnifier.
+    private void ResizeMagnifier(bool grow)
+    {
+        RegionCaptureOptions options = _request!.RegionCaptureOptions;
+        int currentSize = Math.Clamp(options.MagnifierSize,
+            RegionCaptureOptions.MagnifierSizeMinimum,
+            RegionCaptureOptions.MagnifierSizeMaximum);
+        int currentCount = NormalizeMagnifierPixelCount(options.MagnifierPixelCount);
+        int count = currentCount + (grow ? 2 : -2);
+        int size = (int)Math.Round((double)currentSize / currentCount * count);
+
+        if (size < RegionCaptureOptions.MagnifierSizeMinimum && currentSize == RegionCaptureOptions.MagnifierSizeMinimum)
+        {
+            _magnifierHiddenByWheel = true;
+            return;
+        }
+
+        size = Math.Clamp(size, RegionCaptureOptions.MagnifierSizeMinimum, RegionCaptureOptions.MagnifierSizeMaximum);
+        if (size == currentSize)
+        {
+            return;
+        }
+
+        // Past the pixel count limits the frame still resizes, and the pixels scale with it.
+        options.MagnifierSize = size;
+        options.MagnifierPixelCount = Math.Clamp(count,
+            RegionCaptureOptions.MagnifierPixelCountMinimum,
+            RegionCaptureOptions.MagnifierPixelCountMaximum);
+        ApplyMagnifierShape();
+        RecreateMagnifierBitmap();
+        _magnifierPanel.UpdateLayout();
     }
 
     private void UpdateToolbarPosition(DrawingPoint screenPoint)
@@ -950,13 +1158,73 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        _captureToolbarScreenBounds = screen.Bounds;
         Rect monitor = ScreenToImage(screen.Bounds);
         SetCaptureToolbarAnchor((monitor.X + monitor.Width / 2d) / scale, monitor.Y / scale);
     }
 
     private double GetToolbarScale()
     {
+        return GetWindowScaling();
+    }
+
+    private double GetWindowScaling()
+    {
         return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+    }
+
+    /// <summary>Scaling of the monitor at the given desktop point, or of the window when the point is not on a monitor.</summary>
+    private double GetMonitorScaling(PixelPoint desktopPoint)
+    {
+        double scaling = Screens.ScreenFromPoint(desktopPoint)?.Scaling ?? 0;
+        return double.IsFinite(scaling) && scaling > 0 ? scaling : GetWindowScaling();
+    }
+
+    // Avalonia's monitors use the capture's screen coordinates on Windows and X11. Where they differ (Hyprland, sway), a point
+    // that misses them falls back to the window's scaling.
+    private double GetMonitorScaling(Point imagePoint)
+    {
+        if (_request == null)
+        {
+            return GetWindowScaling();
+        }
+
+        DrawingPoint screenPoint = ImageToScreen(Math.Floor(imagePoint.X), Math.Floor(imagePoint.Y));
+        return GetMonitorScaling(new PixelPoint(screenPoint.X, screenPoint.Y));
+    }
+
+    /// <summary>
+    /// The overlay is one window across all monitors, so Windows gives it a single scaling, from the monitor at
+    /// the desktop origin (see ConfigureInitialPixelBounds). The toolbar, magnifier and info labels are scaled by
+    /// this factor so they match the scaling of the monitor they are shown on in mixed DPI setups.
+    /// </summary>
+    private double GetMonitorScaleFactor(PixelPoint desktopPoint)
+    {
+        return GetMonitorScaling(desktopPoint) / GetWindowScaling();
+    }
+
+    private double GetMonitorScaleFactor(Point imagePoint)
+    {
+        return GetMonitorScaling(imagePoint) / GetWindowScaling();
+    }
+
+    /// <summary>Recreates the custom cursors when the pointer moves to a monitor with different scaling, so they keep their size.</summary>
+    private void UpdateCursorScaling(Point imagePoint)
+    {
+        double scaling = GetMonitorScaling(imagePoint);
+        if (Math.Abs(scaling - _cursorScaling) < 0.001)
+        {
+            return;
+        }
+
+        _cursorScaling = scaling;
+        _regionInputSurface.Cursor = _interaction is RegionInteraction.Moving or RegionInteraction.Resizing
+            ? CursorAssetLoader.GetClosedHandCursor(scaling)
+            : CursorAssetLoader.GetCrosshairCursor(scaling);
+        foreach (Border node in _regionResizeNodes.Values)
+        {
+            node.Cursor = CursorAssetLoader.GetOpenHandCursor(scaling);
+        }
     }
 
     /// <summary>The toolbar is anchored by its top centre so it stays put when the options row changes its width.</summary>
@@ -965,6 +1233,14 @@ public partial class RegionCaptureWindow : Window
         _captureToolbarCenterX = centerX;
         _captureToolbarTop = top;
         _positionedCaptureToolbarSize = default;
+
+        if (_request != null)
+        {
+            double scaling = GetWindowScaling();
+            _captureToolbarMonitorScale = GetMonitorScaleFactor(new Point(centerX * scaling, top * scaling));
+            ApplyCaptureToolbarScale();
+        }
+
         PositionCaptureToolbar();
     }
 
@@ -991,7 +1267,68 @@ public partial class RegionCaptureWindow : Window
 
     private void OnCaptureToolbarLayoutUpdated(object? sender, EventArgs e)
     {
+        UpdateCaptureToolbarScale();
         PositionCaptureToolbar();
+    }
+
+    /// <summary>
+    /// Scales the whole toolbar so its buttons are the custom button size tall. The button is measured
+    /// inside the scale transform, so its height stays unscaled and the scale settles after one pass.
+    /// </summary>
+    private void UpdateCaptureToolbarScale()
+    {
+        if (_request == null || !_request.RegionCaptureOptions.UseCustomToolbarButtonSize)
+        {
+            return;
+        }
+
+        double buttonHeight = _regionToolButton.Bounds.Height;
+        if (!double.IsFinite(buttonHeight) || buttonHeight <= 0)
+        {
+            return;
+        }
+
+        int buttonSize = Math.Clamp(_request.RegionCaptureOptions.ToolbarButtonSize,
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+        _captureToolbarScaleFactor = buttonSize / buttonHeight;
+        ApplyCaptureToolbarScale();
+    }
+
+    /// <summary>
+    /// Ctrl + mouse wheel over the toolbar makes it bigger or smaller. It changes the toolbar button size
+    /// option from task settings, so the size is kept for the next capture.
+    /// </summary>
+    private void OnCaptureToolbarPointerWheelChanged(object? sender, PointerWheelEventArgs e)
+    {
+        if (_request == null || !e.KeyModifiers.HasFlag(KeyModifiers.Control) || e.Delta.Y == 0)
+        {
+            return;
+        }
+
+        RegionCaptureOptions options = _request.RegionCaptureOptions;
+        int currentSize = options.UseCustomToolbarButtonSize
+            ? options.ToolbarButtonSize
+            : (int)Math.Round(_regionToolButton.Bounds.Height);
+        int newSize = Math.Clamp(currentSize + (e.Delta.Y > 0 ? ToolbarButtonSizeWheelStep : -ToolbarButtonSizeWheelStep),
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+
+        options.UseCustomToolbarButtonSize = true;
+        options.ToolbarButtonSize = newSize;
+        UpdateCaptureToolbarScale();
+        e.Handled = true;
+    }
+
+    /// <summary>Applies the custom button size together with the correction for the toolbar's monitor.</summary>
+    private void ApplyCaptureToolbarScale()
+    {
+        double scale = _captureToolbarScaleFactor * _captureToolbarMonitorScale;
+        if (Math.Abs(scale - _appliedCaptureToolbarScale) < 0.001)
+        {
+            return;
+        }
+
+        _appliedCaptureToolbarScale = scale;
+        _captureToolbarScale.LayoutTransform = new ScaleTransform(scale, scale);
     }
 
     private void PositionCaptureToolbar()
@@ -1007,14 +1344,20 @@ public partial class RegionCaptureWindow : Window
         double toolbarHeight = _captureToolbar.Bounds.Height > 0
             ? _captureToolbar.Bounds.Height
             : _captureToolbar.DesiredSize.Height;
+        // The window can still be resizing right after it opens: with mixed DPI monitors Windows can change its
+        // scaling after the first size was set. So also place the toolbar again when the window size changes,
+        // otherwise it stays clamped to the old, smaller size, between two monitors.
+        Size clientSize = ClientSize;
         if (!double.IsFinite(toolbarWidth) || toolbarWidth <= 0 ||
             (Math.Abs(toolbarWidth - _positionedCaptureToolbarSize.Width) < 0.01 &&
-             Math.Abs(toolbarHeight - _positionedCaptureToolbarSize.Height) < 0.01))
+             Math.Abs(toolbarHeight - _positionedCaptureToolbarSize.Height) < 0.01 &&
+             clientSize == _positionedCaptureToolbarClientSize))
         {
             return;
         }
 
         _positionedCaptureToolbarSize = new Size(toolbarWidth, toolbarHeight);
+        _positionedCaptureToolbarClientSize = clientSize;
         double maxLeft = Math.Max(0, ClientSize.Width - toolbarWidth);
         double maxTop = Math.Max(0, ClientSize.Height - toolbarHeight);
         AvaloniaCanvas.SetLeft(_captureToolbar, Math.Clamp(_captureToolbarCenterX - toolbarWidth / 2d, 0, maxLeft));
@@ -1100,13 +1443,41 @@ public partial class RegionCaptureWindow : Window
         double top = AvaloniaCanvas.GetTop(_captureToolbar);
         _captureToolbarCenterX = centerX;
         _captureToolbarTop = top;
-        _request.RegionCaptureOptions.ToolbarPosition = new DrawingPoint(
-            _request.ScreenBounds.X + (int)Math.Round(centerX * scale),
-            _request.ScreenBounds.Y + (int)Math.Round(top * scale));
+        _request.RegionCaptureOptions.ToolbarPosition = ImageToScreen(centerX * scale, top * scale);
+    }
+
+    private void OnCaptureHostKeyDown(object? sender, KeyEventArgs e)
+    {
+        // Modifier keys alone are not an interaction, e.g. holding Shift while moving to another monitor.
+        if (_keyboardInputEnabled && e.Key is not (Key.LeftShift or Key.RightShift or Key.LeftCtrl or Key.RightCtrl or
+            Key.LeftAlt or Key.RightAlt or Key.LWin or Key.RWin))
+        {
+            _captureToolbarFollowsPointer = false;
+        }
+    }
+
+    private void FollowPointerWithCaptureToolbar(PointerEventArgs e)
+    {
+        // A position the user saved by dragging the toolbar always wins.
+        if (!_captureToolbarFollowsPointer || _draggingCaptureToolbar || _request == null ||
+            !_request.RegionCaptureOptions.ToolbarPosition.IsEmpty)
+        {
+            return;
+        }
+
+        double scale = GetToolbarScale();
+        Point pointer = e.GetPosition(this);
+        DrawingPoint screenPoint = ImageToScreen(pointer.X * scale, pointer.Y * scale);
+        if (!_captureToolbarScreenBounds.Contains(screenPoint))
+        {
+            UpdateToolbarPosition(screenPoint);
+        }
     }
 
     private void OnCaptureHostPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        _captureToolbarFollowsPointer = false;
+
         if (_regionToolActive || _closing || _request == null || !IsEditorWorkspaceSource(e.Source))
         {
             return;
@@ -1144,6 +1515,8 @@ public partial class RegionCaptureWindow : Window
 
     private void OnCaptureHostPointerMoved(object? sender, PointerEventArgs e)
     {
+        FollowPointerWithCaptureToolbar(e);
+
         if (!_annotationMiddleButtonPressed)
         {
             return;
@@ -1252,7 +1625,8 @@ public partial class RegionCaptureWindow : Window
     private void UpdateHoverRectangle(Point imagePoint)
     {
         bool hoverBlocked = IsMultiRegionMode ? IsPointInAnyRegion(imagePoint) : HasValidSelection();
-        if (_request == null || hoverBlocked || _interaction != RegionInteraction.None)
+        if (_request == null || hoverBlocked || _interaction != RegionInteraction.None ||
+            _regionShape == RegionShape.Freehand)
         {
             _regionOverlay.HoverRectangle = default;
             _hoverCandidate = null;
@@ -1294,11 +1668,20 @@ public partial class RegionCaptureWindow : Window
             y < (double)rectangle.Y + rectangle.Height;
     }
 
+    /// <summary>Sets the bounds of the rectangle or ellipse selection.</summary>
     private void SetSelection(Rect rectangle, SnapTarget? candidate)
     {
-        _regionOverlay.SelectionRectangle = RegionSelectionOverlay.Intersect(
-            rectangle,
-            new Rect(0, 0, GetImageSize().Width, GetImageSize().Height));
+        SetSelection(_regionOverlay.Selection with { Bounds = rectangle }, candidate);
+    }
+
+    private void SetSelection(CaptureRegion region, SnapTarget? candidate)
+    {
+        _regionOverlay.Selection = region with
+        {
+            Bounds = RegionSelectionOverlay.Intersect(
+                region.Bounds,
+                new Rect(0, 0, GetImageSize().Width, GetImageSize().Height))
+        };
         _selectedCandidate = candidate;
         if (_regionResizeNodeCanvas.IsVisible)
         {
@@ -1319,27 +1702,40 @@ public partial class RegionCaptureWindow : Window
         SetInteraction(RegionInteraction.None);
         ResetCreationModifiers();
         _selectedCandidate = null;
-        _regionOverlay.SelectionRectangle = default;
+        _freehandPoints = null;
+        _regionOverlay.Selection = default;
         SetRegionResizeNodesVisible(false);
         _selectionInfoPanel.IsVisible = false;
         UpdateHover(_lastPointerPoint);
     }
 
-    private void MoveSelection(double dx, double dy)
-    {
-        MoveSelection(dx, dy, _regionOverlay.SelectionRectangle);
-    }
-
-    private void MoveSelection(double dx, double dy, Rect source)
+    private void MoveSelection(double dx, double dy, CaptureRegion source)
     {
         Size bounds = GetImageSize();
-        double x = Math.Clamp(source.X + dx, 0, Math.Max(0, bounds.Width - source.Width));
-        double y = Math.Clamp(source.Y + dy, 0, Math.Max(0, bounds.Height - source.Height));
-        SetSelection(new Rect(x, y, source.Width, source.Height), null);
+        Rect rectangle = source.Bounds;
+        double x = Math.Clamp(rectangle.X + dx, 0, Math.Max(0, bounds.Width - rectangle.Width));
+        double y = Math.Clamp(rectangle.Y + dy, 0, Math.Max(0, bounds.Height - rectangle.Height));
+        SetSelection(source.Offset(x - rectangle.X, y - rectangle.Y), null);
+    }
+
+    private void AddFreehandPoint(Point point)
+    {
+        if (_freehandPoints == null || (_freehandPoints.Count > 0 && _freehandPoints[^1] == point))
+        {
+            return;
+        }
+
+        _freehandPoints.Add(point);
+        SetSelection(new CaptureRegion(RegionShape.Freehand, CaptureRegion.GetBounds(_freehandPoints), _freehandPoints), null);
     }
 
     private void UpdateSelectionDuringCreation(Point point, KeyModifiers modifiers)
     {
+        if (_freehandPoints != null)
+        {
+            return;
+        }
+
         bool controlHeld = modifiers.HasFlag(KeyModifiers.Control);
         if (!controlHeld)
         {
@@ -1364,7 +1760,7 @@ public partial class RegionCaptureWindow : Window
     private void MoveSelectionDuringCreation(Point point)
     {
         Rect before = _regionOverlay.SelectionRectangle;
-        MoveSelection(point.X - _lastCreationPoint.X, point.Y - _lastCreationPoint.Y, before);
+        MoveSelection(point.X - _lastCreationPoint.X, point.Y - _lastCreationPoint.Y, _regionOverlay.Selection);
         Rect after = _regionOverlay.SelectionRectangle;
         _pressPoint = ClampPoint(new Point(
             _pressPoint.X + after.X - before.X,
@@ -1418,8 +1814,9 @@ public partial class RegionCaptureWindow : Window
         }
 
         _regionOverlay.CursorPosition = imagePoint;
+        UpdateCursorScaling(imagePoint);
 
-        bool showMagnifier = _request.RegionCaptureOptions.ShowMagnifier;
+        bool showMagnifier = IsMagnifierShown;
         bool showInfo = _request.RegionCaptureOptions.ShowInfo;
 
         if (showMagnifier || showInfo)
@@ -1436,7 +1833,10 @@ public partial class RegionCaptureWindow : Window
 
             double scale = Math.Max(1, RenderScaling);
             Point pointer = new Point(imagePoint.X / scale, imagePoint.Y / scale);
-            PositionPanelNearPointer(_magnifierPanel, pointer, 18, GetMonitorBounds(imagePoint));
+            double monitorScale = GetMonitorScaleFactor(imagePoint);
+            _magnifierScale.ScaleX = monitorScale;
+            _magnifierScale.ScaleY = monitorScale;
+            PositionPanelNearPointer(_magnifierPanel, pointer, 18, GetMonitorBounds(imagePoint), monitorScale);
             _magnifierPanel.InvalidateVisual();
         }
         else
@@ -1611,23 +2011,33 @@ public partial class RegionCaptureWindow : Window
         _selectionInfoPanel.IsVisible = true;
 
         double scale = Math.Max(1, RenderScaling);
-        double panelWidth = _selectionInfoPanel.Bounds.Width > 0 ? _selectionInfoPanel.Bounds.Width : 100;
-        double panelHeight = _selectionInfoPanel.Bounds.Height > 0 ? _selectionInfoPanel.Bounds.Height : 36;
+        double baseWidth = _selectionInfoPanel.Bounds.Width > 0 ? _selectionInfoPanel.Bounds.Width : 100;
+        double baseHeight = _selectionInfoPanel.Bounds.Height > 0 ? _selectionInfoPanel.Bounds.Height : 36;
         double left = selection.Left / scale;
 
         // Prefer below the selection, on the monitor containing its bottom-left corner.
-        Rect area = GetMonitorBounds(new Point(selection.Left, Math.Max(selection.Top, selection.Bottom - 1)));
-        double y = selection.Bottom / scale + 8;
+        Point anchor = new Point(selection.Left, Math.Max(selection.Top, selection.Bottom - 1));
+        Rect area = GetMonitorBounds(anchor);
+        double panelScale = GetMonitorScaleFactor(anchor);
+        double panelWidth = baseWidth * panelScale;
+        double panelHeight = baseHeight * panelScale;
+        double y = selection.Bottom / scale + 8 * panelScale;
         if (y + panelHeight > area.Bottom)
         {
             // Otherwise place it above the selection, on the monitor containing its top-left corner.
-            area = GetMonitorBounds(new Point(selection.Left, selection.Top));
+            anchor = new Point(selection.Left, selection.Top);
+            area = GetMonitorBounds(anchor);
+            panelScale = GetMonitorScaleFactor(anchor);
+            panelWidth = baseWidth * panelScale;
+            panelHeight = baseHeight * panelScale;
             y = selection.Top / scale - panelHeight;
         }
 
         double x = Math.Clamp(left, area.Left, Math.Max(area.Left, area.Right - panelWidth));
         y = Math.Clamp(y, area.Top, Math.Max(area.Top, area.Bottom - panelHeight));
 
+        _selectionInfoScale.ScaleX = panelScale;
+        _selectionInfoScale.ScaleY = panelScale;
         AvaloniaCanvas.SetLeft(_selectionInfoPanel, x);
         AvaloniaCanvas.SetTop(_selectionInfoPanel, y);
     }
@@ -1662,13 +2072,15 @@ public partial class RegionCaptureWindow : Window
         return monitorBounds.Width > 0 && monitorBounds.Height > 0 ? monitorBounds : windowBounds;
     }
 
-    private void PositionPanelNearPointer(Control panel, Point pointer, double offset, Rect area)
+    /// <param name="panelScale">Scale applied to the panel by its render transform, see GetMonitorScaleFactor.</param>
+    private void PositionPanelNearPointer(Control panel, Point pointer, double offset, Rect area, double panelScale = 1)
     {
         bool isMagnifierPanel = ReferenceEquals(panel, _magnifierPanel);
         double fallbackWidth = isMagnifierPanel ? _magnifierView.Width : 170;
         double fallbackHeight = isMagnifierPanel ? _magnifierView.Height + 53 : 205;
-        double width = panel.Bounds.Width > 0 ? panel.Bounds.Width : fallbackWidth;
-        double height = panel.Bounds.Height > 0 ? panel.Bounds.Height : fallbackHeight;
+        double width = (panel.Bounds.Width > 0 ? panel.Bounds.Width : fallbackWidth) * panelScale;
+        double height = (panel.Bounds.Height > 0 ? panel.Bounds.Height : fallbackHeight) * panelScale;
+        offset *= panelScale;
         double x = pointer.X + offset;
         double y = pointer.Y + offset;
 
@@ -1796,14 +2208,19 @@ public partial class RegionCaptureWindow : Window
 
     private void Complete(Rect selection, bool includeWindowInfo = true)
     {
-        Complete([selection], includeWindowInfo);
+        Complete([CaptureRegion.FromRectangle(selection)], includeWindowInfo);
+    }
+
+    private void Complete(IReadOnlyList<Rect> selections, bool includeWindowInfo)
+    {
+        Complete(selections.Select(CaptureRegion.FromRectangle).ToList(), includeWindowInfo);
     }
 
     /// <summary>
-    /// Captures the bounds of <paramref name="selections"/>. With more than one region, pixels outside
-    /// every region are transparent, matching multi region mode in the classic region capture.
+    /// Captures the bounds of <paramref name="selections"/>. With more than one region, or an ellipse or freehand
+    /// region, pixels outside every region are transparent, matching the classic region capture.
     /// </summary>
-    private void Complete(IReadOnlyList<Rect> selections, bool includeWindowInfo = true)
+    private void Complete(IReadOnlyList<CaptureRegion> selections, bool includeWindowInfo = true)
     {
         if (_closing || _request == null)
         {
@@ -1811,9 +2228,11 @@ public partial class RegionCaptureWindow : Window
         }
 
         List<DrawingRectangle> regions = [];
+        List<CaptureRegion> shapes = [];
 
-        foreach (Rect selection in selections)
+        foreach (CaptureRegion region in selections)
         {
+            Rect selection = region.Bounds;
             if (!RegionSelectionOverlay.IsValid(selection))
             {
                 continue;
@@ -1824,6 +2243,7 @@ public partial class RegionCaptureWindow : Window
             int right = Math.Clamp((int)Math.Ceiling(selection.Right), left + 1, _imageWidth);
             int bottom = Math.Clamp((int)Math.Ceiling(selection.Bottom), top + 1, _imageHeight);
             regions.Add(new DrawingRectangle(left, top, right - left, bottom - top));
+            shapes.Add(region);
         }
 
         if (regions.Count == 0)
@@ -1839,7 +2259,21 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (regions.Count > 1)
+        if (shapes.Any(shape => !shape.IsRectangle))
+        {
+            List<SKPath> paths = shapes.Select(shape => shape.CreatePath(-bounds.X, -bounds.Y)).ToList();
+            try
+            {
+                SKBitmap masked = RegionCaptureTasks.ApplyRegionMask(output, paths);
+                output.Dispose();
+                output = masked;
+            }
+            finally
+            {
+                paths.ForEach(path => path.Dispose());
+            }
+        }
+        else if (regions.Count > 1)
         {
             List<DrawingRectangle> localRegions = regions
                 .Select(region => new DrawingRectangle(region.X - bounds.X, region.Y - bounds.Y, region.Width, region.Height))
@@ -1905,10 +2339,14 @@ public partial class RegionCaptureWindow : Window
             return false;
         }
 
-        Rect selection = _regionOverlay.SelectionRectangle;
-        return selection.Width >= RegionCaptureOptions.MinimumSize &&
-            selection.Height >= RegionCaptureOptions.MinimumSize;
+        CaptureRegion selection = _regionOverlay.Selection;
+        return selection.Bounds.Width >= RegionCaptureOptions.MinimumSize &&
+            selection.Bounds.Height >= RegionCaptureOptions.MinimumSize &&
+            (selection.Shape != RegionShape.Freehand || selection.Points is { Count: >= 3 });
     }
+
+    // A freehand region can be moved but has no resize nodes.
+    private bool CanResizeSelection() => HasValidSelection() && _regionOverlay.Selection.Shape != RegionShape.Freehand;
 
     private bool IsMultiRegionMode => _request is { AllowMultipleRegions: true, RegionCaptureOptions.MultiRegionMode: true };
 
@@ -1916,12 +2354,12 @@ public partial class RegionCaptureWindow : Window
 
     private bool HasAnyRegion() => HasValidSelection() || _regions.Count > 0;
 
-    private List<Rect> GetSelectedRegions()
+    private List<CaptureRegion> GetSelectedRegions()
     {
-        List<Rect> regions = [.. _regions];
+        List<CaptureRegion> regions = [.. _regions];
         if (HasValidSelection())
         {
-            regions.Add(_regionOverlay.SelectionRectangle);
+            regions.Add(_regionOverlay.Selection);
         }
 
         return regions;
@@ -1943,7 +2381,7 @@ public partial class RegionCaptureWindow : Window
 
     private bool IsPointInAnyRegion(Point point)
     {
-        return (HasValidSelection() && _regionOverlay.SelectionRectangle.Contains(point)) || FindRegionAt(point) >= 0;
+        return (HasValidSelection() && _regionOverlay.Selection.Contains(point)) || FindRegionAt(point) >= 0;
     }
 
     /// <summary>In multi region mode, keeps the current selection as an added region before another one starts.</summary>
@@ -1951,7 +2389,7 @@ public partial class RegionCaptureWindow : Window
     {
         if (IsMultiRegionMode && HasValidSelection())
         {
-            _regions.Add(_regionOverlay.SelectionRectangle);
+            _regions.Add(_regionOverlay.Selection);
             _regionOverlay.Regions = [.. _regions];
         }
     }
@@ -1970,7 +2408,7 @@ public partial class RegionCaptureWindow : Window
 
     private bool TryRemoveRegionAt(Point point)
     {
-        if (HasValidSelection() && _regionOverlay.SelectionRectangle.Contains(point))
+        if (HasValidSelection() && _regionOverlay.Selection.Contains(point))
         {
             ClearSelection();
             return true;
@@ -2057,15 +2495,20 @@ public partial class RegionCaptureWindow : Window
         Height = _imageHeight / scaling;
     }
 
+    private double GetRenderScaling() => double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+
     private void UpdatePixelTransforms()
     {
-        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        double scaling = GetRenderScaling();
+        _appliedPixelScaling = scaling;
         _regionTransform.LayoutTransform = new ScaleTransform(1 / scaling, 1 / scaling);
         if (_viewModel != null)
         {
             _viewModel.DpiScale = scaling;
             _viewModel.Zoom = 1;
         }
+        // UpdateHud switches the cursors to the scaling of the monitor under the pointer.
+        _cursorScaling = scaling;
         _regionInputSurface.Cursor = CursorAssetLoader.GetCrosshairCursor(scaling);
         foreach (Border node in _regionResizeNodes.Values)
         {

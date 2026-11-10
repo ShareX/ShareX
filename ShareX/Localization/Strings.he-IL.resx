@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>העלאה</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>הצג תמיד פסי גלילה ברוחב מלא</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>יישום</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>נראות התצוגה המקדימה של תמונה:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>מיקום התצוגה המקדימה של תמונה:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>הגדרות הדפסת תמונה...</value>
@@ -1449,7 +1455,7 @@
     <value>ניתן לשנות זאת בכל עת בהגדרות היישום.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>הסמלים הצבעוניים מ-ShareX 21.</value>
+    <value>סמלים צבעוניים ומפורטים בסגנון קלאסי.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>סמלי קו נקיים שתואמים לצבעי ערכת הנושא שלך.</value>
@@ -2507,9 +2513,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>התאמה אישית של סרגל הכלים...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>שפת ברירת מחדל:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>מחיקת קובץ הקלט</value>
   </data>
@@ -2696,6 +2699,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>פעולת לחיצה אמצעית:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>צג:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>לחיצה על לחצן עכבר 4:</value>
   </data>
@@ -2707,6 +2713,12 @@
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>אפשרויות סימון עכבר...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>גלגלת העכבר:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>מה הגלילה עושה לזכוכית המגדלת. החזק את Ctrl בזמן הגלילה כדי לבצע את הפעולה האחרת.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>העברה למטה</value>
@@ -2833,12 +2845,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>עזרה בנושא OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>שפות OCR אינן זמינות</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>החלת אפקטים רק על לכידת אזור</value>
@@ -3140,8 +3146,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>אזור זמן:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>צג {0} (לא מחובר)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>צג {0}: {1} ({2} במיקום {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>התראה</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>גודל לחצני סרגל הכלים (פיקסלים):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>כלים</value>
@@ -3190,6 +3205,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>שימוש באזור זמן מותאם אישית</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>השתמש בגודל מותאם אישית ללחצני סרגל הכלים</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>שימוש במשך זמן קבוע</value>

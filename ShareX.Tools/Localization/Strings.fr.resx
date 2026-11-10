@@ -1663,23 +1663,17 @@ Chemin du fichier : {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Modifier les services</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Langue</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nom</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nouveau</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Aide OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Aucun texte trouvé</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Ouvrir le service...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Reconnaissance</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Supprimer</value>
@@ -1689,9 +1683,6 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Résultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Facteur d’échelle</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Sélectionnez un service</value>
@@ -1704,9 +1695,6 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Sélectionner une région...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Services</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconnaissance optique de caractères</value>
@@ -2101,6 +2089,9 @@ Chemin du fichier : {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Arrêt de la conversion...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Débit moyen</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Parcourir...</value>
   </data>
@@ -2119,6 +2110,9 @@ Chemin du fichier : {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nom du fichier</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Taille du fichier</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Dossier</value>
   </data>
@@ -2136,6 +2130,12 @@ Chemin du fichier : {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Qualité</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Résolution</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Résultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertisseur vidéo</value>

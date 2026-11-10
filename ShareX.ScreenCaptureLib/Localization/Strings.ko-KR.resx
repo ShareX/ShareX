@@ -436,6 +436,12 @@
   <data name="Pause" xml:space="preserve">
     <value>일시 중지</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>타원 영역</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>자유형 영역</value>
+  </data>
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>끌어서 도구 모음을 이동하고, 두 번 클릭하면 위치가 초기화됩니다</value>
   </data>

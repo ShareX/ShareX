@@ -331,7 +331,7 @@
                     <iconControls:IconPresenter Grid.Column="0"
                                                 Icon="{Binding NotificationIcon}"
                                                 FontSize="18"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                 VerticalAlignment="Center"
                                                 IsVisible="{Binding HasNotificationIcon}"/>
                     <TextBlock Grid.Column="1"

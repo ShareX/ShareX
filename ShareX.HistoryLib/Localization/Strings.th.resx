@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>ไม่มีรายการที่ตรงกับตัวกรองปัจจุบัน</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>ประมวลผล ชื่อ</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>เปลี่ยนชื่อ</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>เปลี่ยนชื่อ ไฟล์</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>รีเซ็ตคอลัมน์</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>เลือกโฟลเดอร์ที่จะนำเข้า</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>สำเร็จ นำเข้าแล้ว {0:N0} ไฟล์.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>แท็ก</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>ไฟล์ {0:N0} รายการนี้</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>เอาออกจากรายการโปรด</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>ชื่อหน้าต่าง</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>ขั้นสูง</value>

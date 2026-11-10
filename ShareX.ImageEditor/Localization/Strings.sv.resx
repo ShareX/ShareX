@@ -357,6 +357,12 @@ Urklipp innehåller ingen bild.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marginal</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nytt från skärmbild (helskärm)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nytt från skärmbild (område)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Öppna bild</value>
   </data>

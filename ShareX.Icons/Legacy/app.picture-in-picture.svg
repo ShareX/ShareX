@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-window" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc" /><stop offset=".86" stop-color="#e2e2e2" /><stop offset="1" stop-color="#e7e7e7" /></linearGradient>
+    <linearGradient id="g-title" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#87d2fe" /><stop offset=".5" stop-color="#6cbbf3" /><stop offset="1" stop-color="#4793cf" /></linearGradient>
+    <linearGradient id="g-frame" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#409fea" stop-opacity=".8" /><stop offset="1" stop-color="#0956a1" stop-opacity=".82" /></linearGradient>
+    <linearGradient id="g-layer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6f5" /><stop offset="1" stop-color="#b1cce5" /></linearGradient>
+    <linearGradient id="g-layer-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a8fc4" /><stop offset="1" stop-color="#2a5f99" /></linearGradient>
+  </defs>
+  <rect x=".5" y="1.5" width="15" height="13" rx="1" fill="url(#g-window)" stroke="url(#g-frame)" />
+  <rect x="1" y="2" width="14" height="2.5" fill="url(#g-title)" />
+  <rect x="7.5" y="8" width="7" height="5.5" rx=".6" fill="url(#g-layer)" stroke="url(#g-layer-s)" />
+  <rect x="8" y="8.5" width="6" height="1.4" fill="url(#g-title)" />
+  <path d="M2.5 7.5 5.5 10.5M5.5 8V10.5H3" fill="none" stroke="#04509b" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

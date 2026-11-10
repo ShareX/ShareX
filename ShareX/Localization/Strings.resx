@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Always show full-width scroll bars</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Application</value>
   </data>
@@ -532,6 +535,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Image preview visibility:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Image preview location:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Image print settings...</value>
@@ -1453,8 +1459,8 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>You can change this anytime in Application settings.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>The colorful icons from ShareX 21.</value>
-    <comment>Description of the Legacy icon pack. 21 is the ShareX version number.</comment>
+    <value>Colorful, detailed icons in a classic style.</value>
+    <comment>Description of the Legacy icon pack.</comment>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Clean line icons that follow your theme colors.</value>
@@ -2521,9 +2527,6 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Customize toolbar...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Default language:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Delete input file</value>
   </data>
@@ -2710,6 +2713,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Middle click action:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Mouse 4 click:</value>
   </data>
@@ -2721,6 +2727,12 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Mouse highlighter options...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mouse wheel:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>What scrolling does to the magnifier. Hold Ctrl while scrolling to do the other one.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Move down</value>
@@ -2848,12 +2860,6 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR help...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR languages are unavailable</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Only apply effects to region capture</value>
@@ -3155,8 +3161,18 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Time zone:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (not connected)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} at {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Toast notification</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Toolbar button size (pixels):</value>
+    <comment>Label for the number of pixels tall the region capture toolbar buttons are; the whole toolbar is scaled to match.</comment>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Tools</value>
@@ -3205,6 +3221,10 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Use custom time zone</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Use custom toolbar button size</value>
+    <comment>Checkbox that lets the user set the size of the region capture toolbar buttons.</comment>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Use fixed duration</value>

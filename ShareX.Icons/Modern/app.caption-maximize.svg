@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">
+  <path d="M13 4L12 4L12 3L4 3L4 4L3 4L3 12L4 12L4 13L12 13L12 12L13 12L13 4ZM12 12L4 12L4 4L12 4L12 12Z" fill="currentColor" stroke="none"/>
+  <path d="M4 3L3 3L3 4L4 4L4 3ZM13 3L12 3L12 4L13 4L13 3ZM3 12L4 12L4 13L3 13L3 12ZM13 12L12 12L12 13L13 13L13 12Z" fill="currentColor" stroke="none" opacity="0.45"/>
+</svg>

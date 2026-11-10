@@ -1663,23 +1663,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>सेवाएँ संपादित करें</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>भाषा</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>नाम</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>नया</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR सहायता</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>कोई टेक्स्ट नहीं मिला</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>सेवा खोलें...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>पहचान</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>हटाएँ</value>
@@ -1689,9 +1683,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>परिणाम</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>मापक्रम गुणक</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>सेवा चुनें</value>
@@ -1704,9 +1695,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>क्षेत्र चुनें...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>सेवाएँ</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - ऑप्टिकल वर्ण पहचान</value>
@@ -2101,6 +2089,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>रूपांतरण रोका जा रहा है...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>औसत बिटरेट</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>ब्राउज़ करें...</value>
   </data>
@@ -2119,6 +2110,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>फ़ाइल नाम</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>फ़ाइल का आकार</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>फ़ोल्डर</value>
   </data>
@@ -2136,6 +2130,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>गुणवत्ता</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>रिज़ॉल्यूशन</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>परिणाम</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - वीडियो रूपांतरक</value>

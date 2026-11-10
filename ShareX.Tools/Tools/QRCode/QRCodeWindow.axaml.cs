@@ -28,6 +28,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform.Storage;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 
@@ -65,6 +66,11 @@ public partial class QRCodeWindow : Window
             previewHost.SizeChanged += (_, _) => UpdateAvailableSize(previewHost);
         }
 
+        if (this.FindControl<TextBoxLinkHighlighter>("ContentLinkHighlighter") is { } linkHighlighter)
+        {
+            linkHighlighter.LinkClicked += (_, url) => URLHelpers.OpenURL(url);
+        }
+
         Opened += OnOpened;
         Closed += (_, _) => _viewModel.Dispose();
     }
@@ -72,6 +78,18 @@ public partial class QRCodeWindow : Window
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+    }
+
+    protected override void OnKeyDown(KeyEventArgs e)
+    {
+        base.OnKeyDown(e);
+
+        // Controls that use Escape themselves, such as an open drop-down, mark it handled first.
+        if (!e.Handled && e.Key == Key.Escape && e.KeyModifiers == KeyModifiers.None)
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private async void OnOpened(object? sender, EventArgs e)

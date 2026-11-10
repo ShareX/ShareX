@@ -37,7 +37,8 @@ namespace ShareX.ImageEditor.Tests;
 
 public sealed class WindowsSdkArtifactTests
 {
-    private const string OcrTypeName = "ShareX.Platform.Windows.WindowsOcrService";
+    // A Windows Runtime type that only the Windows SDK target compiles.
+    private const string SdkOnlyTypeName = "ShareX.Platform.Windows.WindowsNativeScreenRecorderService";
 
     [WindowsSdkArtifactFact]
     public void WindowsApplicationGetsTheSdkAssemblyAndPortableHostsKeepTheirOwnAssembly()
@@ -47,53 +48,14 @@ public sealed class WindowsSdkArtifactTests
         string portableAssembly = typeof(WindowsPlatformServices).Assembly.Location;
         Assert.True(File.Exists(sdkAssembly), $"Build the Windows SDK platform target: {sdkAssembly}");
         Assert.True(File.Exists(applicationAssembly), $"Build the Windows application: {applicationAssembly}");
-        Assert.False(ContainsOcrType(portableAssembly), "The net10.0 host must use the portable platform assembly.");
-        Assert.True(ContainsOcrType(sdkAssembly), "The SDK target must contain Windows.Media.Ocr support.");
-        Assert.True(ContainsOcrType(applicationAssembly), "The Windows application must retain its native OCR implementation.");
+        Assert.False(ContainsSdkOnlyType(portableAssembly), "The net10.0 host must use the portable platform assembly.");
+        Assert.True(ContainsSdkOnlyType(sdkAssembly), "The SDK target must contain the Windows Runtime services.");
+        Assert.True(ContainsSdkOnlyType(applicationAssembly), "The Windows application must retain its Windows Runtime services.");
         Assert.Equal(SHA256.HashData(File.ReadAllBytes(sdkAssembly)), SHA256.HashData(File.ReadAllBytes(applicationAssembly)));
         Assert.NotEqual(SHA256.HashData(File.ReadAllBytes(portableAssembly)), SHA256.HashData(File.ReadAllBytes(sdkAssembly)));
     }
 
-    [WindowsSdkArtifactFact]
-    public async Task WindowsApplicationRecognizesSyntheticTextWithItsNativeOcrService()
-    {
-        if (!OperatingSystem.IsWindows()) return;
-        NativeApplicationContext context = new(GetApplicationDirectory());
-        try
-        {
-            Assembly assembly = context.LoadFromAssemblyPath(Path.Combine(GetApplicationDirectory(), "ShareX.Platform.Windows.dll"));
-            Type platformType = assembly.GetType("ShareX.Platform.Windows.WindowsPlatformServices", throwOnError: true)!;
-            using IPlatformServices services = (IPlatformServices)Activator.CreateInstance(platformType)!;
-            Assert.Equal(OcrTypeName, services.Ocr.GetType().FullName);
-            Assert.True(services.Ocr.Support.IsSupported);
-            IReadOnlyList<OcrLanguage> languages = services.Ocr.GetLanguages();
-            Assert.NotEmpty(languages);
-            OcrLanguage language = languages.FirstOrDefault(value => value.Tag.StartsWith("en", StringComparison.OrdinalIgnoreCase)) ?? languages[0];
-            byte[] image = RenderSyntheticText();
-            Assert.Equal("SHAREX TEST" + Environment.NewLine + "123", (await services.Ocr.RecognizeAsync(image, language.Tag, false)).Trim());
-            Assert.Equal("SHAREX TEST 123", (await services.Ocr.RecognizeAsync(image, language.Tag, true)).Trim());
-        }
-        finally
-        {
-            context.Unload();
-        }
-    }
-
-    private static byte[] RenderSyntheticText()
-    {
-        using SKBitmap image = new(640, 220);
-        using SKCanvas canvas = new(image);
-        using SKTypeface typeface = SKTypeface.FromFamilyName("Arial");
-        using SKFont font = new(typeface, 48);
-        using SKPaint paint = new() { Color = SKColors.Black, IsAntialias = true };
-        canvas.Clear(SKColors.White);
-        canvas.DrawText("SHAREX TEST", 30, 80, font, paint);
-        canvas.DrawText("123", 30, 170, font, paint);
-        using SKData png = image.Encode(SKEncodedImageFormat.Png, 100);
-        return png.ToArray();
-    }
-
-    private static bool ContainsOcrType(string path)
+    private static bool ContainsSdkOnlyType(string path)
     {
         using FileStream stream = File.OpenRead(path);
         using PEReader reader = new(stream);
@@ -101,7 +63,7 @@ public sealed class WindowsSdkArtifactTests
         return metadata.TypeDefinitions.Any(handle =>
         {
             TypeDefinition type = metadata.GetTypeDefinition(handle);
-            return metadata.GetString(type.Namespace) + "." + metadata.GetString(type.Name) == OcrTypeName;
+            return metadata.GetString(type.Namespace) + "." + metadata.GetString(type.Name) == SdkOnlyTypeName;
         });
     }
 

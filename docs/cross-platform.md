@@ -11,7 +11,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | `ShareX.Platform` | `net10.0` | Interfaces, `PlatformServices`, `PlatformDetector`, `PlatformInfo`, `LinuxDistribution`, `LinuxPackages`, portable models and helpers. No operating system calls. |
 | `ShareX.Platform.Windows` | `net10.0` and `net10.0-windows10.0.22621.0` | Win32, COM and WinRT implementations. Behaviour is identical to the code they replace. The Windows SDK target adds WinRT features (OCR). |
 | `ShareX.Platform.MacOS` | `net10.0` | AppKit, CoreGraphics, Carbon, Keychain and LaunchAgent implementations. |
-| `ShareX.Platform.Linux` | `net10.0` | X11, Wayland (portals, wlroots tools, Hyprland and sway IPC), freedesktop.org (XDG, D-Bus, Secret Service, thumbnails), Tesseract. |
+| `ShareX.Platform.Linux` | `net10.0` | X11, Wayland (portals, wlroots tools, Hyprland and sway IPC), freedesktop.org (XDG, D-Bus, Secret Service, thumbnails). |
 | `ShareX.Platform.Tests` | `net10.0` | xUnit tests for parsers and argument building; run on all three operating systems. |
 | `ShareX.HelpersLib`, `ShareX.UploadersLib`, `ShareX.HistoryLib`, `ShareX.ImageEffectsLib`, `ShareX.ScreenCaptureLib`, `ShareX.Tools`, `ShareX.ImageEditor`, `ShareX.Avalonia`, `ShareX.NativeMessagingHost` | `net10.0` | Portable code. Anything that needs the operating system goes through `PlatformServices.Current`. |
 | `ShareX` | `net10.0` and `net10.0-windows10.0.22621.0` | The application. Chooses the platform services at start up; contains no operating system code itself. |
@@ -32,7 +32,7 @@ This document describes the **target** architecture. At the branch point (`devel
 | `IWindowService` | Win32 windows and child controls, cursor, overlays | CGWindowList | EWMH, XShape | Hyprland and sway IPC only |
 | `IWindowManagementService` | Inspect, top most, opacity, borderless | Inspect (CGWindowList, NSRunningApplication); changing other windows not allowed by macOS | EWMH | Hyprland and sway IPC only |
 | `IInputService` | SendInput, WM_VSCROLL, low-level mouse hook | Quartz events (Accessibility permission) | XTEST | Hyprland key shortcuts only |
-| `IOcrService` | Windows.Media.Ocr | Not supported (Windows only) | Tesseract | Tesseract |
+| `IOcrService` | Not used: ShareX.OCR (PaddleOCR) | Vision, used only on Intel Macs | Not used: ShareX.OCR | Not used: ShareX.OCR |
 | `INotificationService` | ShareX notification window | Notification Center (`osascript`) | org.freedesktop.Notifications or notify-send | Same as X11 |
 | `IShellService` | ShellExecute and Explorer select | `open` and `open -R`; MIME types from uniform type identifiers | xdg-open and FileManager1 D-Bus | Same as X11 |
 | `IShellIntegrationService` | Explorer context menu keys under HKCU | Finder Quick Actions in `~/Library/Services`; Launch Services default application for file types | File manager `.desktop` actions | Same as X11 |
@@ -115,7 +115,7 @@ Scripts/install-linux.sh --uninstall  # remove it; settings and screenshots in ~
 
 The script installs `~/.local/lib/sharex/app`, the `sharex` command and the `sharex.desktop` entry with "Capture region", "Capture full screen" and "Capture active window" actions. The desktop entry is required: xdg-desktop-portal identifies ShareX by it (application id `sharex`) before it grants global hotkeys.
 
-Recommended packages: FFmpeg (recording), wl-clipboard (Wayland) or xclip (X11), grim and wf-recorder (Hyprland, sway), libnotify, libsecret, Tesseract with language data (OCR), CUPS (printing). ShareX names the missing package and the install command for the distribution where a feature needs one.
+Recommended packages: FFmpeg (recording), wl-clipboard (Wayland) or xclip (X11), grim and wf-recorder (Hyprland, sway), libnotify, libsecret, CUPS (printing). ShareX names the missing package and the install command for the distribution where a feature needs one.
 
 ### Hyprland
 

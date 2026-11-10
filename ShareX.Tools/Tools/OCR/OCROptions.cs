@@ -23,18 +23,21 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.HelpersLib;
+
 namespace ShareX.Tools;
 
 public sealed class OCROptions
 {
-    public string Language { get; set; } = "en";
-    public float ScaleFactor { get; set; } = 2f;
     public bool SingleLine { get; set; }
     public bool Silent { get; set; }
     public bool AutoCopy { get; set; }
     public List<OCRServiceLinkOption> ServiceLinks { get; set; } = DefaultServiceLinks;
     public bool CloseWindowAfterOpeningServiceLink { get; set; }
     public int SelectedServiceLink { get; set; }
+    public WindowState WindowState { get; set; } = new();
+    // Width of the result panel beside the image preview; 0 uses the default.
+    public double ResultPanelWidth { get; set; }
 
     public static List<OCRServiceLinkOption> DefaultServiceLinks =>
     [

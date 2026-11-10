@@ -357,6 +357,12 @@ Schránka neobsahuje obrázek.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Okraj</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nový ze snímku obrazovky (celá obrazovka)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nový ze snímku obrazovky (oblast)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Otevřít obrázek</value>
   </data>

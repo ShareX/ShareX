@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Uppladdning</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Visa alltid rullningslister i full bredd</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Program</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Synlighet för bildförhandsvisning:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Placering för bildförhandsvisning:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Bildutskriftsinställningar...</value>
@@ -1449,7 +1455,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Du kan ändra detta när som helst i programinställningarna.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>De färgglada ikonerna från ShareX 21.</value>
+    <value>Färgglada, detaljerade ikoner i klassisk stil.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Rena linjeikoner som följer temats färger.</value>
@@ -2507,9 +2513,6 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Anpassa verktygsfält...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Standardspråk:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Ta bort indatafil</value>
   </data>
@@ -2696,6 +2699,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Åtgärd vid mittenklick:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Bildskärm:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Musklick 4:</value>
   </data>
@@ -2707,6 +2713,12 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Alternativ för musmarkering...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mushjul:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Vad rullning gör med förstoringsglaset. Håll ned Ctrl medan du rullar för att göra det andra.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flytta ned</value>
@@ -2833,12 +2845,6 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-hjälp...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR-språk är inte tillgängliga</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Tillämpa endast effekter vid områdesbildtagning</value>
@@ -3140,8 +3146,17 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Tidszon:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Bildskärm {0} (inte ansluten)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Bildskärm {0}: {1} ({2} vid {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Popupavisering</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Storlek på verktygsfältsknappar (pixlar):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Verktyg</value>
@@ -3190,6 +3205,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Använd anpassad tidszon</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Använd anpassad storlek på verktygsfältsknappar</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Använd fast varaktighet</value>

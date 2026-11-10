@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a8a" /><stop offset=".5" stop-color="#f05050" /><stop offset="1" stop-color="#d42020" /></linearGradient>
+    <linearGradient id="g-red-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ad1d21" /><stop offset="1" stop-color="#86171c" /></linearGradient>
+    <linearGradient id="g-paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5" /><stop offset="1" stop-color="#ffffff" /></linearGradient>
+    <linearGradient id="g-paper-s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f" /><stop offset="1" stop-color="#0b2a2a" /></linearGradient>
+  </defs>
+  <g transform="translate(-1 0)">
+    <path d="M2.5 .5H9.5L13.5 4.5V15.5H2.5Z" fill="url(#g-paper)" stroke="url(#g-paper-s)" stroke-opacity=".6" stroke-linejoin="round" />
+    <path d="M3.5 15V1.5M12.5 5V15" fill="none" stroke="#ffffff" stroke-opacity=".55" />
+    <path d="M9.1 .9V4.9H13.1" fill="#ffffff" stroke="#9fb0b0" stroke-linejoin="round" />
+  </g>
+  <g transform="rotate(45 12 12)"><path d="M11 8h2v3h3v2h-3v3h-2v-3H8v-2h3z" fill="#fff" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" opacity=".85" /><path d="M11 8h2v3h3v2h-3v3h-2v-3H8v-2h3z" fill="url(#g-red)" stroke="url(#g-red-s)" stroke-width=".8" stroke-linejoin="round" /><path d="M12 8.7v6.6" fill="none" stroke="#ffd0d0" stroke-opacity=".6" stroke-width=".6" /></g>
+</svg>

@@ -504,8 +504,8 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             if (_workspaceDisposed) return;
 
-            // Check clipboard initially
-            _ = CheckClipboardStatus();
+            // Check clipboard initially. Reading it can decode a full screenshot, so wait until the first frames are drawn.
+            QueueClipboardStatusCheck();
 
             // Attach key handlers to the parent Window so shortcuts work
             // regardless of which child control has focus (buttons, dropdowns, etc.).
@@ -575,7 +575,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnWindowActivated(object? sender, EventArgs e)
         {
-            _ = CheckClipboardStatus();
+            QueueClipboardStatusCheck();
         }
 
         private void OnEffectBrowserOverlayPointerPressed(object? sender, global::Avalonia.Input.PointerPressedEventArgs e)
@@ -967,9 +967,10 @@ namespace ShareX.ImageEditor.Presentation.Views
         /// <summary>
         /// Loads an owned bitmap directly into the shared workspace without creating the
         /// normal editor preview and backup copies. This is intended for very large,
-        /// immutable capture backgrounds.
+        /// immutable capture backgrounds. Pass <paramref name="isOpaque"/> only when every pixel has alpha 255,
+        /// as in a screen capture: then the canvas draws the bitmap's own pixels instead of a full-size copy.
         /// </summary>
-        public void LoadWorkspaceImage(SKBitmap bitmap)
+        public void LoadWorkspaceImage(SKBitmap bitmap, bool isOpaque = false)
         {
             ArgumentNullException.ThrowIfNull(bitmap);
 
@@ -986,7 +987,26 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             InvalidateImageOperations();
             _suppressNextHistoryDirtyMark = true;
-            _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            // RenderCore goes back to the copy if the image is replaced.
+            bool direct = false;
+            if (isOpaque)
+            {
+                try
+                {
+                    _canvasControl.ShowDirectly(bitmap);
+                    direct = true;
+                }
+                catch (Exception ex)
+                {
+                    EditorServices.ReportWarning(nameof(EditorView), "Could not draw the workspace image directly; using a copy.", ex);
+                }
+            }
+
+            if (!direct)
+            {
+                _canvasControl.Initialize(bitmap.Width, bitmap.Height);
+            }
+
             _editorCore.LoadImage(bitmap);
 
             if (DataContext is MainViewModel vm)
@@ -1954,7 +1974,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                 {
                     if (!IsCurrent()) return;
                     vm.RequestLoadRecentFile(path);
-                });
+                })
+            {
+                NewFromScreenshotRegionCommand = vm.CanCaptureRegion ? vm.NewFromScreenshotRegionCommand : null,
+                NewFromScreenshotFullscreenCommand = vm.CanCaptureFullscreen ? vm.NewFromScreenshotFullscreenCommand : null
+            };
 
             vm.ModalContent = dialog;
             vm.IsModalOpen = true;
@@ -2024,6 +2048,51 @@ namespace ShareX.ImageEditor.Presentation.Views
                 if (!operation.IsCurrent) return;
                 EditorServices.ReportError(nameof(EditorView), "Failed to load image from clipboard.", ex);
                 ShowStartScreenStatus(vm, Strings.EditorView_FailedToLoadImageFromClipboard);
+            }
+        }
+
+        private bool _isCapturingScreenshot;
+
+        private async void OnNewFromScreenshotRequested(object? sender, Func<Task<SKBitmap?>> capture)
+        {
+            if (DataContext is not MainViewModel vm || _isCapturingScreenshot) return;
+
+            _isCapturingScreenshot = true;
+            Window? window = TopLevel.GetTopLevel(this) as Window;
+            SKBitmap? skBitmap = null;
+
+            try
+            {
+                if (window != null)
+                {
+                    window.Hide();
+
+                    // Give the window time to disappear from the screen before it is captured.
+                    await Task.Delay(250);
+                }
+
+                skBitmap = await capture();
+            }
+            catch (Exception ex)
+            {
+                EditorServices.ReportError(nameof(EditorView), "Failed to capture screenshot.", ex);
+            }
+            finally
+            {
+                if (window != null)
+                {
+                    window.Show();
+                    window.Activate();
+                }
+
+                _isCapturingScreenshot = false;
+            }
+
+            // A cancelled capture returns null and leaves the current image untouched.
+            if (skBitmap != null)
+            {
+                vm.CloseModalCommand.Execute(null);
+                LoadBitmapIntoEditor(vm, skBitmap, null);
             }
         }
 

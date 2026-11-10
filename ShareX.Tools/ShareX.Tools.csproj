@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ShareX.Avalonia\ShareX.Avalonia.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
+    <ProjectReference Include="..\ShareX.OCR\ShareX.OCR.csproj" />
   </ItemGroup>
 
   <ItemGroup>

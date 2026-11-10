@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect x="0" y="0" width="256" height="480" fill="#046A38"/>
+<rect x="256" y="0" width="384" height="480" fill="#DA291C"/>
+<g transform="translate(256 240)">
+<ellipse cx="0" cy="0" rx="30" ry="104" fill="none" stroke="#000000" stroke-width="8.5"/>
+<ellipse cx="0" cy="0" rx="30" ry="104" fill="none" stroke="#FFE900" stroke-width="6"/>
+<ellipse cx="0" cy="-41.6" rx="95.37" ry="15" fill="none" stroke="#000000" stroke-width="8.5"/>
+<ellipse cx="0" cy="-41.6" rx="95.37" ry="15" fill="none" stroke="#FFE900" stroke-width="6"/>
+<ellipse cx="0" cy="41.6" rx="95.37" ry="15" fill="none" stroke="#000000" stroke-width="8.5"/>
+<ellipse cx="0" cy="41.6" rx="95.37" ry="15" fill="none" stroke="#FFE900" stroke-width="6"/>
+<ellipse cx="0" cy="0" rx="104" ry="22" fill="none" stroke="#000000" stroke-width="9.5"/>
+<ellipse cx="0" cy="0" rx="104" ry="22" fill="none" stroke="#FFE900" stroke-width="7"/>
+<ellipse cx="0" cy="0" rx="104" ry="26" transform="rotate(-24)" fill="none" stroke="#000000" stroke-width="9.5"/>
+<ellipse cx="0" cy="0" rx="104" ry="26" transform="rotate(-24)" fill="none" stroke="#FFE900" stroke-width="7"/>
+<circle cx="0" cy="0" r="104" fill="none" stroke="#000000" stroke-width="15.5"/>
+<circle cx="0" cy="0" r="104" fill="none" stroke="#FFE900" stroke-width="13"/>
+<path d="M-50,-56 H50 V14 A50,50 0 0 1 -50,14 Z" fill="#DA291C" stroke="#000000" stroke-width="1.2"/>
+<path d="M-37,-43 H37 V14 A37,37 0 0 1 -37,14 Z" fill="#FFFFFF" stroke="#000000" stroke-width=".8"/>
+<path fill="#FFE900" d="M-48,-45 V-54 H-46 V-52 H-44.5 V-54 H-42.5 V-52 H-41 V-54 H-39 V-45 Z M-4.5,-45 V-54 H-2.5 V-52 H-1 V-54 H1 V-52 H2.5 V-54 H4.5 V-45 Z M39,-45 V-54 H41 V-52 H42.5 V-54 H44.5 V-52 H46 V-54 H48 V-45 Z M-48,-3.5 V-12.5 H-46 V-10.5 H-44.5 V-12.5 H-42.5 V-10.5 H-41 V-12.5 H-39 V-3.5 Z M39,-3.5 V-12.5 H41 V-10.5 H42.5 V-12.5 H44.5 V-10.5 H46 V-12.5 H48 V-3.5 Z M-36.5,44.5 V35.5 H-34.5 V37.5 H-33 V35.5 H-31 V37.5 H-29.5 V35.5 H-27.5 V44.5 Z M27.5,44.5 V35.5 H29.5 V37.5 H31 V35.5 H33 V37.5 H34.5 V35.5 H36.5 V44.5 Z"/>
+<path d="M-7,-13 H7 V-2 A7,7 0 0 1 -7,-2 Z" fill="#003399"/>
+<circle cx="-3.2" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="0" cy="-5" r="1.4" fill="#FFFFFF"/>
+<circle cx="-3.2" cy="-1" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="-1" r="1.4" fill="#FFFFFF"/>
+<path d="M-7,-35 H7 V-24 A7,7 0 0 1 -7,-24 Z" fill="#003399"/>
+<circle cx="-3.2" cy="-31" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="-31" r="1.4" fill="#FFFFFF"/>
+<circle cx="0" cy="-27" r="1.4" fill="#FFFFFF"/>
+<circle cx="-3.2" cy="-23" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="-23" r="1.4" fill="#FFFFFF"/>
+<path d="M-7,9 H7 V20 A7,7 0 0 1 -7,20 Z" fill="#003399"/>
+<circle cx="-3.2" cy="13" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="13" r="1.4" fill="#FFFFFF"/>
+<circle cx="0" cy="17" r="1.4" fill="#FFFFFF"/>
+<circle cx="-3.2" cy="21" r="1.4" fill="#FFFFFF"/>
+<circle cx="3.2" cy="21" r="1.4" fill="#FFFFFF"/>
+<path d="M-28,-13 H-14 V-2 A7,7 0 0 1 -28,-2 Z" fill="#003399"/>
+<circle cx="-24.2" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="-17.8" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="-21" cy="-5" r="1.4" fill="#FFFFFF"/>
+<circle cx="-24.2" cy="-1" r="1.4" fill="#FFFFFF"/>
+<circle cx="-17.8" cy="-1" r="1.4" fill="#FFFFFF"/>
+<path d="M14,-13 H28 V-2 A7,7 0 0 1 14,-2 Z" fill="#003399"/>
+<circle cx="17.8" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="24.2" cy="-9" r="1.4" fill="#FFFFFF"/>
+<circle cx="21" cy="-5" r="1.4" fill="#FFFFFF"/>
+<circle cx="17.8" cy="-1" r="1.4" fill="#FFFFFF"/>
+<circle cx="24.2" cy="-1" r="1.4" fill="#FFFFFF"/>
+</g>
+</svg>

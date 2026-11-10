@@ -1663,23 +1663,17 @@ Dosya yolu: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Hizmetleri düzenle</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Dil</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Ad</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Yeni</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR yardımı</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Metin bulunamadı</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Hizmeti aç...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Tanıma</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Kaldır</value>
@@ -1689,9 +1683,6 @@ Dosya yolu: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Sonuç</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Ölçek katsayısı</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Bir hizmet seçin</value>
@@ -1704,9 +1695,6 @@ Dosya yolu: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Bölge seç...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Hizmetler</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optik Karakter Tanıma</value>
@@ -2101,6 +2089,9 @@ Dosya yolu: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Dönüştürme durduruluyor...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Ortalama bit hızı</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Gözat...</value>
   </data>
@@ -2119,6 +2110,9 @@ Dosya yolu: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Dosya adı</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Dosya boyutu</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Klasör</value>
   </data>
@@ -2136,6 +2130,12 @@ Dosya yolu: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kalite</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Çözünürlük</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Sonuç</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Video Dönüştürücü</value>

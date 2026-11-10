@@ -40,6 +40,8 @@ namespace ShareX.ScreenCaptureLib
         public const int MagnifierPixelSizeMinimum = 3;
         public const int MoveSpeedMinimum = 1;
         public const int MoveSpeedMaximum = 10;
+        public const int ToolbarButtonSizeMinimum = 16;
+        public const int ToolbarButtonSizeMaximum = 96;
 
         public bool QuickCapture = true;
         public bool MultiRegionMode = false;
@@ -50,11 +52,16 @@ namespace ShareX.ScreenCaptureLib
         public bool DimAllExceptSelection = false;
         public List<ImageEditorToolbarItemOptions> ToolbarItems = new List<ImageEditorToolbarItemOptions>();
         public bool CompactToolbar = false;
+        // When enabled, the region capture toolbar is scaled so its buttons are this many pixels tall.
+        public bool UseCustomToolbarButtonSize = false;
+        public int ToolbarButtonSize = 32;
 
         public RegionCaptureAction RegionCaptureActionRightClick = RegionCaptureAction.RemoveShapeCancelCapture;
         public RegionCaptureAction RegionCaptureActionMiddleClick = RegionCaptureAction.SwapToolType;
         public RegionCaptureAction RegionCaptureActionX1Click = RegionCaptureAction.CaptureFullscreen;
         public RegionCaptureAction RegionCaptureActionX2Click = RegionCaptureAction.CaptureActiveMonitor;
+        // What the mouse wheel does to the magnifier. Holding Ctrl while scrolling does the other one.
+        public RegionCaptureMagnifierScrollAction MagnifierScrollAction = RegionCaptureMagnifierScrollAction.Resize;
 
         public bool ShowInfo = true;
         public bool UseCustomInfoText = false;

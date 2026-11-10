@@ -876,6 +876,12 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>קובצי תמונה</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>למטה</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>צד</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>אוטומטי</value>
   </data>
@@ -1110,6 +1116,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>החלף סוג כלי</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>שינוי גודל זכוכית המגדלת</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>שינוי זום של זכוכית המגדלת</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>מחשב</value>
   </data>
@@ -1316,6 +1328,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>העלה קובץ</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>הצג הפעיל</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>הצג הראשי</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

@@ -876,6 +876,12 @@ Vill du ändå köra det?</value>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bildfiler</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Nederkant</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Sidan</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automatisk</value>
   </data>
@@ -1110,6 +1116,12 @@ Vill du ändå köra det?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Byt verktygstyp</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ändra storlek på förstoringsglaset</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zooma förstoringsglaset</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Dator</value>
   </data>
@@ -1316,6 +1328,12 @@ Vill du ändå köra det?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Ladda upp fil</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktiv bildskärm</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primär bildskärm</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

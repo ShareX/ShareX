@@ -17,20 +17,19 @@
     -->
     <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
-  <ItemGroup>
-    <!-- Large or non-Windows assemblies that are not on the startup or capture path, kept as IL to limit size. -->
-    <PublishReadyToRunExclude Include="Microsoft.Windows.SDK.NET.dll" />
-    <PublishReadyToRunExclude Include="BouncyCastle.Cryptography.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.DesignerSupport.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.FreeDesktop.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.FreeDesktop.AtSpi.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.Metal.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.Native.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.Remote.Protocol.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.Vulkan.dll" />
-    <PublishReadyToRunExclude Include="Avalonia.X11.dll" />
-    <PublishReadyToRunExclude Include="Tmds.DBus.Protocol.dll" />
-  </ItemGroup>
+  <!--
+    Precompile only ShareX assemblies, which CI signs after publishing.
+    Recompiling third party assemblies would replace their files and strip the publishers' signatures.
+  -->
+  <Target Name="ExcludeThirdPartyAssembliesFromReadyToRun"
+          BeforeTargets="_PrepareForReadyToRunCompilation"
+          DependsOnTargets="_ComputeAssembliesToPostprocessOnPublish">
+    <ItemGroup>
+      <_ThirdPartyReadyToRunAssembly Include="@(ResolvedFileToPublish)"
+                                     Condition="'%(ResolvedFileToPublish.PostprocessAssembly)' == 'true' and !$([System.String]::Copy('%(ResolvedFileToPublish.Filename)').StartsWith('ShareX', StringComparison.OrdinalIgnoreCase))" />
+      <PublishReadyToRunExclude Include="@(_ThirdPartyReadyToRunAssembly->'%(Filename)%(Extension)')" />
+    </ItemGroup>
+  </Target>
   <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Newtonsoft.Json" />
@@ -38,7 +37,7 @@
     <PackageReference Include="ZXing.Net" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Resources\Flags\*.png" />
+    <AvaloniaResource Include="Resources\Flags\*.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">

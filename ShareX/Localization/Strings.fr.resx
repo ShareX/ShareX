@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Téléversement</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Toujours afficher les barres de défilement en pleine largeur</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Application</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>Visibilité de l'aperçu d'une image :</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Emplacement de l'aperçu d'une image :</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Paramètres d’impression d’image...</value>
@@ -1449,7 +1455,7 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
     <value>Vous pouvez modifier ce choix à tout moment dans les paramètres de l'application.</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>Les icônes colorées de ShareX 21.</value>
+    <value>Des icônes colorées et détaillées au style classique.</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>Des icônes au trait épuré qui suivent les couleurs de votre thème.</value>
@@ -2507,9 +2513,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personnaliser la barre d’outils...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Langue par défaut :</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Supprimer le fichier d’entrée</value>
   </data>
@@ -2696,6 +2699,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Action du clic central :</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Moniteur :</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Clic du bouton 4 de la souris :</value>
   </data>
@@ -2707,6 +2713,12 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Options du surligneur de la souris...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Molette de la souris :</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Ce que fait le défilement sur la loupe. Maintenez Ctrl enfoncée pendant le défilement pour effectuer l'autre action.</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Descendre</value>
@@ -2833,12 +2845,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Aide OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Les langues OCR ne sont pas disponibles</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Appliquer les effets uniquement aux captures de région</value>
@@ -3140,8 +3146,17 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Fuseau horaire :</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Moniteur {0} (non connecté)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Moniteur {0} : {1} ({2} à {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notification</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Taille des boutons de la barre d'outils (pixels) :</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Outils</value>
@@ -3190,6 +3205,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Utiliser un fuseau horaire personnalisé</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Utiliser une taille personnalisée pour les boutons de la barre d'outils</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Utiliser une durée fixe</value>

@@ -357,6 +357,12 @@ A área de transferência não contém uma imagem.</value>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margem</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Novo de captura de tela (tela inteira)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Novo de captura de tela (região)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Abrir imagem</value>
   </data>

@@ -27,10 +27,6 @@
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>

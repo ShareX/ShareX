@@ -66,7 +66,8 @@ public sealed class LinuxPlatformServices : IPlatformServices
         Thumbnails = new FreedesktopThumbnailService(System.IO.Path.Combine(paths.CacheHome, "thumbnails"));
         Preferences = new DefaultSystemPreferencesService("/etc/sharex/policy.json", System.IO.Path.Combine(paths.GetConfigDirectory("ShareX"), "policy.json"));
         SystemInfo = new UnixSystemInfoService(info, runner);
-        Ocr = new TesseractOcrService(info, runner);
+        // ShareX reads text with its own engine (ShareX.OCR) on Linux.
+        Ocr = new UnsupportedOcrService("ShareX reads text with its own engine on Linux.");
         // ShareX's windows are X11 or XWayland; the player is an X11 child window.
         VideoPlayback = new Media.GStreamerVideoPlaybackService(() => !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DISPLAY")));
         Printing = new CupsPrintService(info, runner);

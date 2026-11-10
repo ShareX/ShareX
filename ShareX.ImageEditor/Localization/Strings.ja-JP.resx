@@ -357,6 +357,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>余白</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>スクリーンショットから新規作成 (全画面)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>スクリーンショットから新規作成 (範囲)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>画像を開く</value>
   </data>

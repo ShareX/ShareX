@@ -25,7 +25,6 @@
 
 #nullable enable
 
-using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
@@ -38,11 +37,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 using Image = SkiaSharp.SKBitmap;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
@@ -86,6 +83,7 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public IReadOnlyList<EnumOption<UpdateChannel>> UpdateChannelOptions { get; } = CreateEnumOptions<UpdateChannel>();
     public IReadOnlyList<EnumOption<TaskViewMode>> TaskViewModeOptions { get; } = CreateEnumOptions<TaskViewMode>();
     public IReadOnlyList<EnumOption<ImagePreviewVisibility>> ImagePreviewOptions { get; } = CreateEnumOptions<ImagePreviewVisibility>();
+    public IReadOnlyList<EnumOption<ImagePreviewLocation>> ImagePreviewLocationOptions { get; } = CreateEnumOptions<ImagePreviewLocation>();
     public IReadOnlyList<EnumOption<ThumbnailTitleLocation>> ThumbnailTitleLocationOptions { get; } = CreateEnumOptions<ThumbnailTitleLocation>();
     public IReadOnlyList<EnumOption<ThumbnailViewClickAction>> ThumbnailClickActionOptions { get; } = CreateEnumOptions<ThumbnailViewClickAction>();
     public IReadOnlyList<EnumOption<ProxyMethod>> ProxyMethodOptions { get; } = CreateEnumOptions<ProxyMethod>();
@@ -284,6 +282,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     }
 
     public bool CanEditTheme => !UseSystemTheme;
+
+    public bool AlwaysExpandScrollBars
+    {
+        get => Settings.ThemeOptions.AlwaysExpandScrollBars;
+        set => SetSetting(Settings.ThemeOptions.AlwaysExpandScrollBars, value, x => Settings.ThemeOptions.AlwaysExpandScrollBars = x);
+    }
 
     public bool CompactMode
     {
@@ -673,6 +677,12 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     {
         get => Find(ImagePreviewOptions, Settings.ImagePreview);
         set { if (value != null) SetSetting(Settings.ImagePreview, value.Value, x => Settings.ImagePreview = x); }
+    }
+
+    public EnumOption<ImagePreviewLocation>? SelectedImagePreviewLocation
+    {
+        get => Find(ImagePreviewLocationOptions, Settings.ImagePreviewLocation);
+        set { if (value != null) SetSetting(Settings.ImagePreviewLocation, value.Value, x => Settings.ImagePreviewLocation = x); }
     }
 
     public bool ShowThumbnailTitle { get => Settings.ShowThumbnailTitle; set => SetSetting(Settings.ShowThumbnailTitle, value, x => Settings.ShowThumbnailTitle = x); }
@@ -1258,22 +1268,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
             .Select(x => new LanguageOption(
                 x,
                 x.GetLocalizedDescription(),
-                LoadLanguageFlag(x),
+                LanguageFlags.Get(x),
                 x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
-
-    private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)
-    {
-        if (language == SupportedLanguage.Automatic)
-        {
-            return null;
-        }
-
-        string resourceName = LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
-
-        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/Flags/{resourceName}.png"));
-        return new AvaloniaBitmap(stream);
-    }
 
     private static LanguageOption? Find(IReadOnlyList<LanguageOption> options, SupportedLanguage value) =>
         options.FirstOrDefault(x => x.Value == value);
@@ -1328,10 +1325,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
 
         _disposed = true;
-        foreach (LanguageOption language in LanguageOptions)
-        {
-            language.Flag?.Dispose();
-        }
 
         if (!ApplicationLifecycle.IsClosing)
         {

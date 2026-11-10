@@ -331,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>อัปโหลด</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>แสดงแถบเลื่อนแบบเต็มความกว้างเสมอ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>แอปพลิเคชัน</value>
   </data>
@@ -531,6 +534,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
     <value>การแสดงตัวอย่างรูปภาพ:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>ตำแหน่งตัวอย่างรูปภาพ:</value>
   </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>รูปภาพ พิมพ์ การตั้งค่า...</value>
@@ -1449,7 +1455,7 @@
     <value>คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
   </data>
   <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
-    <value>ไอคอนสีสันสดใสจาก ShareX 21</value>
+    <value>ไอคอนสีสันสดใสและละเอียดในสไตล์คลาสสิก</value>
   </data>
   <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
     <value>ไอคอนเส้นเรียบง่ายที่ใช้สีตามธีมของคุณ</value>
@@ -2507,9 +2513,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>ปรับแต่ง แถบเครื่องมือ...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>ค่าเริ่มต้น ภาษา:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>ลบไฟล์อินพุต</value>
   </data>
@@ -2696,6 +2699,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>กึ่งกลาง การทำงานเมื่อคลิก:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>จอภาพ:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>เมาส์ 4 คลิก:</value>
   </data>
@@ -2707,6 +2713,12 @@
   </data>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>ตัวเลือกปากกาเน้นข้อความเมาส์...</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>ล้อเมาส์:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>การทำงานของการเลื่อนกับแว่นขยาย กด Ctrl ค้างไว้ขณะเลื่อนเพื่อทำอีกการทำงานหนึ่ง</value>
   </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>ย้ายลง</value>
@@ -2833,12 +2845,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR วิธีใช้...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR ภาษา ไม่พร้อมใช้งาน</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>ใช้เอฟเฟกต์เฉพาะกับการจับภาพพื้นที่</value>
@@ -3140,8 +3146,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>เขตเวลา:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>จอภาพ {0} (ไม่ได้เชื่อมต่อ)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>จอภาพ {0}: {1} ({2} ที่ {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>การแจ้งเตือนแบบป๊อปอัป</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>ขนาดปุ่มแถบเครื่องมือ (พิกเซล):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>เครื่องมือ</value>
@@ -3190,6 +3205,9 @@
   </data>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>ใช้ กำหนดเอง เขตเวลา</value>
+  </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>ใช้ขนาดปุ่มแถบเครื่องมือแบบกำหนดเอง</value>
   </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>ใช้ระยะเวลาคงที่</value>

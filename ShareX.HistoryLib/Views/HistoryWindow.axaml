@@ -40,11 +40,37 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style Selector="Thumb.column-resizer">
+            <Setter Property="Width" Value="8"/>
+            <Setter Property="Margin" Value="0,-8,-8,-8"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}">
+                        <Rectangle Width="1" Margin="0,5" HorizontalAlignment="Center" Fill="{DynamicResource ShareX.Brush.Separator}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
         <Style Selector="TextBlock.history-cell">
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
             <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.history-cell.secondary">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.history-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem:selected TextBlock.history-cell">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox.history-list ListBoxItem:selected controls|IconPresenter.history-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="controls|IconPresenter.loading-icon">
             <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
@@ -124,12 +150,54 @@
                                     Background="{DynamicResource ShareX.Brush.Control.Background}"
                                     BorderBrush="{DynamicResource ShareX.Brush.Border}"
                                     BorderThickness="0,0,0,1">
-                                <Grid ColumnDefinitions="18,105,0.9*,1.5*" ColumnSpacing="8">
-                                    <TextBlock Grid.Column="0" Text=""/>
-                                    <TextBlock Grid.Column="1" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Date}"/>
-                                    <TextBlock Grid.Column="2" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_File_name}"/>
-                                    <TextBlock Grid.Column="3" Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_URL}"/>
-                                </Grid>
+                                <Border.ContextMenu>
+                                    <ContextMenu x:Name="ColumnsMenu" Opening="OnColumnsMenuOpening"/>
+                                </Border.ContextMenu>
+                                <history:HistoryColumnsPanel x:Name="ColumnHeaderPanel"
+                                                             ClipToBounds="False"
+                                                             Layout="{Binding ColumnLayout, RelativeSource={RelativeSource AncestorType=history:HistoryWindow}}">
+                                    <Panel history:HistoryColumnsPanel.Column="Icon"/>
+                                    <Panel history:HistoryColumnsPanel.Column="Date">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Date}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="FileName">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_File_name}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="FilePath">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_File_path}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="Type">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Type}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="Host">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Host}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="URL">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_URL}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="ShortenedURL">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindows_Shortened_URL}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="ProcessName">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindow_ProcessName}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="WindowTitle">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindow_WindowTitle}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                    <Panel history:HistoryColumnsPanel.Column="Tag">
+                                        <TextBlock Classes="column-header" Text="{x:Static localization:Strings.HistoryWindow_Tag}"/>
+                                        <Thumb Classes="column-resizer" DragDelta="OnColumnResizerDragDelta" DragCompleted="OnColumnResizerDragCompleted"/>
+                                    </Panel>
+                                </history:HistoryColumnsPanel>
                             </Border>
 
                             <Grid Grid.Row="1">
@@ -146,26 +214,45 @@
                                     </ListBox.ItemsPanel>
                                     <ListBox.ItemTemplate>
                                         <DataTemplate x:DataType="history:HistoryItem">
-                                            <Grid Height="34"
-                                                  ColumnDefinitions="18,105,0.9*,1.5*"
-                                                  ColumnSpacing="8"
-                                                  Margin="10,0">
-                                                <controls:IconPresenter Grid.Column="0"
+                                            <history:HistoryColumnsPanel Height="34"
+                                                                         Margin="10,0"
+                                                                         Layout="{Binding ColumnLayout, RelativeSource={RelativeSource AncestorType=history:HistoryWindow}}">
+                                                <controls:IconPresenter history:HistoryColumnsPanel.Column="Icon"
                                                                         Icon="{Binding Converter={StaticResource HistoryItemIconConverter}}"
+                                                                        Classes="history-icon"
                                                                         FontSize="16"
-                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                                                         HorizontalAlignment="Center"/>
-                                                <TextBlock Grid.Column="1"
+                                                <TextBlock history:HistoryColumnsPanel.Column="Date"
                                                            Classes="history-cell"
                                                            Text="{Binding DateTime, StringFormat={}{0:g}}"/>
-                                                <TextBlock Grid.Column="2"
+                                                <TextBlock history:HistoryColumnsPanel.Column="FileName"
                                                            Classes="history-cell"
                                                            Text="{Binding FileName}"/>
-                                                <TextBlock Grid.Column="3"
+                                                <TextBlock history:HistoryColumnsPanel.Column="FilePath"
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding FilePath}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="Type"
                                                            Classes="history-cell"
-                                                           Text="{Binding URL}"
-                                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                                            </Grid>
+                                                           Text="{Binding Type}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="Host"
+                                                           Classes="history-cell"
+                                                           Text="{Binding Host}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="URL"
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding URL}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="ShortenedURL"
+                                                           Classes="history-cell secondary"
+                                                           Text="{Binding ShortenedURL}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="ProcessName"
+                                                           Classes="history-cell"
+                                                           Text="{Binding TagsProcessName}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="WindowTitle"
+                                                           Classes="history-cell"
+                                                           Text="{Binding TagsWindowTitle}"/>
+                                                <TextBlock history:HistoryColumnsPanel.Column="Tag"
+                                                           Classes="history-cell"
+                                                           Text="{Binding Tag}"/>
+                                            </history:HistoryColumnsPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                     <ListBox.ContextMenu>
@@ -296,7 +383,7 @@
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Loading}"
                                                             Classes="loading-icon"
                                                             FontSize="44"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                             HorizontalAlignment="Center">
                                         <controls:IconPresenter.RenderTransform>
                                             <RotateTransform Angle="0"/>

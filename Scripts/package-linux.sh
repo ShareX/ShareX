@@ -70,10 +70,10 @@ contents:
 overrides:
   deb:
     recommends: [wl-clipboard, xclip, ffmpeg, xdg-utils, libnotify-bin]
-    suggests: [tesseract-ocr, gstreamer1.0-pipewire]
+    suggests: [gstreamer1.0-pipewire]
   rpm:
     recommends: [wl-clipboard, xclip, ffmpeg-free, xdg-utils, libnotify]
-    suggests: [tesseract, pipewire-gstreamer]
+    suggests: [pipewire-gstreamer]
 rpm:
   summary: Screenshot, screen recording and file sharing tool
 NFPM

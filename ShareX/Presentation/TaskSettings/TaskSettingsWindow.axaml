@@ -24,12 +24,12 @@
         <Style Selector="TextBlock.page-title-text">
             <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="controls|IconPresenter.page-title-icon">
             <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
@@ -55,7 +55,7 @@
         </Style>
         <Style Selector="Border.override-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
             <Setter Property="Padding" Value="12,8"/>
@@ -137,6 +137,13 @@
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -157,6 +164,7 @@
             </Grid>
 
             <Border x:Name="ToolbarEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -166,6 +174,7 @@
             </Border>
 
             <Border x:Name="ActionEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -182,7 +191,7 @@
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ActionEditorTitle"
@@ -279,6 +288,7 @@
             </Border>
 
             <Border x:Name="WatchFolderEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -295,7 +305,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderSearch}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="WatchFolderEditorTitle"
@@ -360,6 +370,7 @@
             </Border>
 
             <Border x:Name="NotificationButtonsEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -376,7 +387,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Bell}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_NotificationButtons}"
@@ -437,7 +448,7 @@
                                               ColumnSpacing="7">
                                             <controls:IconPresenter Icon="{Binding Icon}"
                                                                     FontSize="16"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent}"
+                                                                    Classes="list-icon accent"
                                                                     VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1"
                                                        Text="{Binding Title}"

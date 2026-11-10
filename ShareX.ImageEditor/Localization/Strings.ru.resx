@@ -357,6 +357,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Поля</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Новый из снимка экрана (весь экран)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Новый из снимка экрана (область)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Открыть изображение</value>
   </data>

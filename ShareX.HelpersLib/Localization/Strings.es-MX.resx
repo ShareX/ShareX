@@ -876,6 +876,12 @@
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Archivos de imagen</value>
   </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Inferior</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Lateral</value>
+  </data>
   <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
     <value>Automático</value>
   </data>
@@ -1110,6 +1116,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Cambiar tipo de herramienta</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Cambiar el tamaño de la lupa</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Ampliar la lupa</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Equipo</value>
   </data>
@@ -1316,6 +1328,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Subir archivo</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Monitor activo</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Monitor principal</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

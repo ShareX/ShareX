@@ -1657,23 +1657,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Изменить службы</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Язык</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Имя</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Создать</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Справка по OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Текст не найден</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Открыть службу...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Распознавание</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Удалить</value>
@@ -1683,9 +1677,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Результат</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Коэффициент масштаба</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Выберите службу</value>
@@ -1698,9 +1689,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Выбрать область...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Службы</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX — оптическое распознавание символов</value>
@@ -2095,6 +2083,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Остановка преобразования...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Средний битрейт</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Обзор...</value>
   </data>
@@ -2113,6 +2104,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Имя файла</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Размер файла</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Папка</value>
   </data>
@@ -2130,6 +2124,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Качество</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Разрешение</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Результат</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX — конвертер видео</value>

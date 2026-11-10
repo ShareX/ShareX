@@ -1657,23 +1657,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>تحرير الخدمات</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>اللغة</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>جديد</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>مساعدة OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>لم يتم العثور على نص</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>فتح الخدمة...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>التعرّف</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>إزالة</value>
@@ -1683,9 +1677,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>النتيجة</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>عامل التحجيم</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>اختيار خدمة</value>
@@ -1698,9 +1689,6 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>تحديد منطقة...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>الخدمات</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - التعرف البصري على الأحرف</value>
@@ -2095,6 +2083,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>جارٍ إيقاف التحويل...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>متوسط معدل البت</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>استعراض...</value>
   </data>
@@ -2113,6 +2104,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>اسم الملف</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>حجم الملف</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>المجلد</value>
   </data>
@@ -2130,6 +2124,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>الجودة</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>الدقة</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>النتيجة</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - محوّل الفيديو</value>

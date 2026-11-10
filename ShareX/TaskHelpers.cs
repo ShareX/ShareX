@@ -1290,8 +1290,40 @@ namespace ShareX
                         .LastOrDefault();
                 }
 
-                return new VideoConversionResult(succeeded, wasCancelled, errorMessage);
+                VideoConversionOutputInfo outputInfo = null;
+                if (succeeded && !wasCancelled)
+                {
+                    outputInfo = GetVideoConversionOutputInfo(ffmpegFilePath, request.OutputFilePath);
+                }
+
+                return new VideoConversionResult(succeeded, wasCancelled, errorMessage, outputInfo);
             }, cancellationToken);
+        }
+
+        private static VideoConversionOutputInfo GetVideoConversionOutputInfo(string ffmpegFilePath, string outputFilePath)
+        {
+            try
+            {
+                FileInfo fileInfo = new FileInfo(outputFilePath);
+                if (!fileInfo.Exists)
+                {
+                    return null;
+                }
+
+                using FFmpegCLIManager probe = new FFmpegCLIManager(ffmpegFilePath)
+                {
+                    ShowError = false
+                };
+
+                // "ffmpeg -i" without an output exits with an error, but still prints the stream summary.
+                probe.Run($"-hide_banner -i \"{outputFilePath}\"");
+                return VideoConversionOutputInfo.FromFFmpegOutput(probe.Output.ToString(), fileInfo.Length);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
         }
 
         public static void OpenVideoPlayer(string inputFilePath = null)
@@ -1505,7 +1537,9 @@ namespace ShareX
                 {
                     Bitmap bmp = skBitmap.Copy();
                     UploadImageOnUiThread(bmp, taskSettings);
-                }
+                },
+                CaptureRegionRequested = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureFullscreenRequested = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
 
             SKBitmap skBitmapResult = null;
@@ -2016,11 +2050,31 @@ namespace ShareX
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
-        public static async Task OCRImage(TaskSettings taskSettings = null)
+        public static async Task OCRImage(TaskSettings taskSettings = null, bool autoHideMainWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions))
+            Bitmap bmp;
+
+            if (autoHideMainWindow)
+            {
+                MainWindowIntegration.Hide();
+                await Task.Delay(250);
+            }
+
+            try
+            {
+                bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+            }
+            finally
+            {
+                if (autoHideMainWindow)
+                {
+                    MainWindowIntegration.Activate();
+                }
+            }
+
+            using (bmp)
             {
                 await OCRImage(bmp, taskSettings);
             }
@@ -2050,8 +2104,6 @@ namespace ShareX
 
             try
             {
-                OCRHelper.ThrowIfNotSupported();
-
                 if (bmp != null)
                 {
                     if (options.Silent)
@@ -2068,16 +2120,13 @@ namespace ShareX
                         using MemoryStream imageStream = new MemoryStream();
                         bmp.Save(imageStream, ImageFormat.Png);
 
-                        OCRLanguageOption[] languages = OCRHelper.AvailableLanguages;
-
                         string result = await ToolsIntegration.ShowOCRWindowAsync(
                             imageStream.ToArray(),
-                            languages,
                             options,
-                            async (imageData, language, scaleFactor, singleLine) =>
+                            async imageData =>
                             {
                                 using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
-                                return await OCRHelper.OCR(source, language, scaleFactor, singleLine);
+                                return await OCRHelper.Recognize(source);
                             },
                             async () =>
                             {
@@ -2090,8 +2139,7 @@ namespace ShareX
                                 using MemoryStream regionStream = new MemoryStream();
                                 region.Save(regionStream, ImageFormat.Png);
                                 return regionStream.ToArray();
-                            },
-                            openHelp: () => URLHelpers.OpenURL(Links.DocsOCR));
+                            });
 
                         if (!string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(filePath))
                         {
@@ -2115,7 +2163,7 @@ namespace ShareX
 
                 OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-                string result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor, options.SingleLine);
+                string result = await OCRHelper.OCR(bmp, options.SingleLine);
 
                 if (!string.IsNullOrEmpty(result))
                 {
@@ -2891,6 +2939,8 @@ namespace ShareX
                 Duration = duration,
                 FadeDuration = (int)(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
                 Placement = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
+                Monitor = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitor,
+                MonitorDeviceName = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitorDeviceName,
                 Size = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
                 ActionButtonSize = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtonSize,
                 ActionButtons = NotificationActionButton.CloneButtons(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),

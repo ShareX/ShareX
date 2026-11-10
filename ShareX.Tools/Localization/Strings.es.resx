@@ -1663,23 +1663,17 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Editar servicios</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nuevo</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Ayuda de OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>No se encontró texto</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Abrir servicio...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Reconocimiento</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Quitar</value>
@@ -1689,9 +1683,6 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultado</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Factor de escala</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Seleccione un servicio</value>
@@ -1704,9 +1695,6 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Seleccionar región...</value>
-  </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Servicios</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconocimiento óptico de caracteres</value>
@@ -2101,6 +2089,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Deteniendo la conversión...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Tasa de bits media</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Examinar...</value>
   </data>
@@ -2119,6 +2110,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nombre del archivo</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Tamaño del archivo</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Carpeta</value>
   </data>
@@ -2136,6 +2130,12 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Calidad</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolución</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultado</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertidor de vídeo</value>

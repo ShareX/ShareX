@@ -357,6 +357,12 @@
   <data name="EditorView_Margin" xml:space="preserve">
     <value>الهامش</value>
   </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>جديد من لقطة شاشة (ملء الشاشة)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>جديد من لقطة شاشة (منطقة)...</value>
+  </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>فتح صورة</value>
   </data>

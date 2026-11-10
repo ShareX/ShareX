@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="3" y="3" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none"/>
+  <rect x="7.83" y="3" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.6"/>
+  <rect x="12.67" y="3" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.8"/>
+  <rect x="17.5" y="3" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.3"/>
+  <rect x="3" y="7.83" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.3"/>
+  <rect x="7.83" y="7.83" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none"/>
+  <rect x="12.67" y="7.83" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.6"/>
+  <rect x="17.5" y="7.83" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.8"/>
+  <rect x="3" y="12.67" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.8"/>
+  <rect x="7.83" y="12.67" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.3"/>
+  <rect x="12.67" y="12.67" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none"/>
+  <rect x="17.5" y="12.67" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.6"/>
+  <rect x="3" y="17.5" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.6"/>
+  <rect x="7.83" y="17.5" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.8"/>
+  <rect x="12.67" y="17.5" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none" opacity="0.3"/>
+  <rect x="17.5" y="17.5" width="3.5" height="3.5" rx="0.6" fill="currentColor" stroke="none"/>
+</svg>

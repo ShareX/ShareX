@@ -40,21 +40,21 @@ public sealed class OCRLanguageTests
     [Fact]
     public void SavedLanguageWinsWhenTheEngineHasIt()
     {
-        Assert.Equal("en-US", OCRViewModel.SelectLanguage(VisionLanguages, "en-US", "fr-FR")?.LanguageTag);
+        Assert.Equal("en-US", OCRHelper.SelectLanguage(VisionLanguages, "en-US", "fr-FR")?.LanguageTag);
     }
 
     [Fact]
     public void InexactSavedTagFallsBackToTheSystemLanguageNotTheFirstInTheList()
     {
-        Assert.Equal("fr-FR", OCRViewModel.SelectLanguage(VisionLanguages, "en", "fr-FR")?.LanguageTag);
-        Assert.Equal("fr-FR", OCRViewModel.SelectLanguage(VisionLanguages, "en", "fr-CA")?.LanguageTag);
+        Assert.Equal("fr-FR", OCRHelper.SelectLanguage(VisionLanguages, "en", "fr-FR")?.LanguageTag);
+        Assert.Equal("fr-FR", OCRHelper.SelectLanguage(VisionLanguages, "en", "fr-CA")?.LanguageTag);
     }
 
     [Fact]
     public void WithoutTheSystemLanguageAVariantOfTheSavedOneIsUsed()
     {
-        Assert.Equal("en-US", OCRViewModel.SelectLanguage(VisionLanguages, "en", "ja-JP")?.LanguageTag);
-        Assert.Equal("de-DE", OCRViewModel.SelectLanguage(VisionLanguages, "it", "ja-JP")?.LanguageTag);
-        Assert.Null(OCRViewModel.SelectLanguage([], "en", "fr-FR"));
+        Assert.Equal("en-US", OCRHelper.SelectLanguage(VisionLanguages, "en", "ja-JP")?.LanguageTag);
+        Assert.Equal("de-DE", OCRHelper.SelectLanguage(VisionLanguages, "it", "ja-JP")?.LanguageTag);
+        Assert.Null(OCRHelper.SelectLanguage([], "en", "fr-FR"));
     }
 }

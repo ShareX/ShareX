@@ -47,12 +47,18 @@ public sealed class DesktopScreen
     public Rectangle Bounds { get; }
     public Rectangle WorkingArea { get; }
     public bool Primary { get; }
+    /// <summary>The platform's name for the monitor: \\.\DISPLAY2 on Windows, the output such as DP-1 elsewhere; null when unknown.</summary>
+    public string DeviceName { get; }
+    /// <summary>Monitor model name, when known; several monitors can share it.</summary>
+    public string DisplayName { get; }
 
     private DesktopScreen(Avalonia.Platform.Screen screen)
     {
         Bounds = new Rectangle(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
         WorkingArea = new Rectangle(screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height);
         Primary = screen.IsPrimary;
+        DeviceName = GetDeviceName(screen);
+        DisplayName = screen.DisplayName;
     }
 
     private DesktopScreen(ScreenInfo screen)
@@ -61,6 +67,20 @@ public sealed class DesktopScreen
         WorkingArea = screen.WorkingArea.IsEmpty ? Bounds :
             new Rectangle(screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height);
         Primary = screen.IsPrimary;
+        DeviceName = screen.Id;
+        DisplayName = screen.Name == screen.Id ? null : screen.Name;
+    }
+
+    /// <summary>The platform's name for an Avalonia screen (\\.\DISPLAY2 on Windows, the output such as DP-1 elsewhere), or null.</summary>
+    /// <remarks>Matched by bounds, which both lists give in physical pixels on Windows and X11, then by name.</remarks>
+    public static string GetDeviceName(Avalonia.Platform.Screen screen)
+    {
+        DesktopScreen[] screens = GetPlatformScreens();
+        if (screens == null) return null;
+
+        Rectangle bounds = new Rectangle(screen.Bounds.X, screen.Bounds.Y, screen.Bounds.Width, screen.Bounds.Height);
+        return (screens.FirstOrDefault(x => x.Bounds == bounds) ??
+            screens.FirstOrDefault(x => !string.IsNullOrEmpty(screen.DisplayName) && x.DeviceName == screen.DisplayName))?.DeviceName;
     }
 
     public static DesktopScreen[] AllScreens => GetPlatformScreens() ?? DesktopServices.Run(() =>

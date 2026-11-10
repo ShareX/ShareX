@@ -255,6 +255,7 @@ internal sealed class TaskSettingsPageBuilder
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_DurationSeconds, Number(() => (decimal)general.ToastWindowDuration, value => general.ToastWindowDuration = (float)value, 0, 60, 0.1m)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_FadeDurationSeconds, Number(() => (decimal)general.ToastWindowFadeDuration, value => general.ToastWindowFadeDuration = (float)value, 0, 10, 0.1m)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Placement, EnumCombo(() => general.ToastWindowPlacement, value => general.ToastWindowPlacement = value)));
+        toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Monitor, ToastMonitorCombo(general)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Width, Number(() => general.ToastWindowSize.Width, value => general.ToastWindowSize = new DrawingSize((int)value, general.ToastWindowSize.Height), 100, 2000)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_Height, Number(() => general.ToastWindowSize.Height, value => general.ToastWindowSize = new DrawingSize(general.ToastWindowSize.Width, (int)value), 50, 2000)));
         toastOptions.Children.Add(Row(Strings.TaskSettingsWindow_LeftClickAction, EnumCombo(() => general.ToastWindowLeftClickAction, value => general.ToastWindowLeftClickAction = value)));
@@ -542,6 +543,11 @@ internal sealed class TaskSettingsPageBuilder
         BindEnabled(magnifierSize, magnifier);
         BindEnabled(pixelCount, magnifier);
 
+        BoundValue<bool> customToolbarButtonSize = new(options.UseCustomToolbarButtonSize, value => options.UseCustomToolbarButtonSize = value);
+        NumericUpDown toolbarButtonSize = Number(() => options.ToolbarButtonSize, value => options.ToolbarButtonSize = (int)value,
+            RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
+        BindEnabled(toolbarButtonSize, customToolbarButtonSize);
+
         return Page("capture-region", Strings.TaskSettingsWindow_RegionCapture, AppIcons.Crop,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Selection,
                 quickCapture,
@@ -552,12 +558,16 @@ internal sealed class TaskSettingsPageBuilder
                 Row(Strings.TaskSettingsWindow_BackgroundDimStrengthPercent, Number(() => options.BackgroundDimStrength, value => options.BackgroundDimStrength = (int)value, 0, 100)),
                 Check(Strings.TaskSettingsWindow_DimHoveredWindowsAndControls, () => options.DimAllExceptSelection, value => options.DimAllExceptSelection = value),
                 Check(Strings.TaskSettingsWindow_CompactRegionCaptureToolbar, () => options.CompactToolbar, value => options.CompactToolbar = value),
+                Check(Strings.TaskSettingsWindow_UseCustomToolbarButtonSize, customToolbarButtonSize),
+                Row(Strings.TaskSettingsWindow_ToolbarButtonSizePixels, toolbarButtonSize),
                 Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowRegionCaptureToolbarEditor(options))),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_MouseActions,
                 Row(Strings.TaskSettingsWindow_RightClick, EnumCombo(() => options.RegionCaptureActionRightClick, value => options.RegionCaptureActionRightClick = value)),
                 Row(Strings.TaskSettingsWindow_MiddleClick, EnumCombo(() => options.RegionCaptureActionMiddleClick, value => options.RegionCaptureActionMiddleClick = value)),
                 Row(Strings.TaskSettingsWindow_Mouse4Click, EnumCombo(() => options.RegionCaptureActionX1Click, value => options.RegionCaptureActionX1Click = value)),
-                Row(Strings.TaskSettingsWindow_Mouse5Click, EnumCombo(() => options.RegionCaptureActionX2Click, value => options.RegionCaptureActionX2Click = value))),
+                Row(Strings.TaskSettingsWindow_Mouse5Click, EnumCombo(() => options.RegionCaptureActionX2Click, value => options.RegionCaptureActionX2Click = value)),
+                Row(Strings.TaskSettingsWindow_MouseWheel, EnumCombo(() => options.MagnifierScrollAction, value => options.MagnifierScrollAction = value),
+                    Strings.TaskSettingsWindow_MouseWheelTooltip)),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_InformationAndMagnifier,
                 Check(Strings.TaskSettingsWindow_ShowPositionAndSizeInfo, () => options.ShowInfo, value => options.ShowInfo = value),
                 Check(Strings.TaskSettingsWindow_UseCustomInfoText, customInfo), customInfoText,
@@ -760,31 +770,14 @@ internal sealed class TaskSettingsPageBuilder
     private Control BuildOcrPage()
     {
         OCROptions options = _settings.CaptureSettings.OCROptions;
-        ComboBox language;
-
-        try
-        {
-            OCRLanguageOption[] languages = OCRHelper.AvailableLanguages.OrderBy(x => x.DisplayName).ToArray();
-            OCRLanguageOption selected = languages.FirstOrDefault(x => x.LanguageTag.Equals(options.Language, StringComparison.OrdinalIgnoreCase)) ?? languages.First();
-            options.Language = selected.LanguageTag;
-            language = ObjectCombo(languages, () => selected, value => options.Language = value.LanguageTag, value => value.DisplayName);
-        }
-        catch
-        {
-            language = new ComboBox { IsEnabled = false, PlaceholderText = Strings.TaskSettingsWindow_OCRLanguagesAreUnavailable };
-            language.Classes.Add("form-control");
-        }
-
         BoundValue<bool> silent = new(options.Silent, value => options.Silent = value);
         CheckBox autoCopy = Check(Strings.TaskSettingsWindow_AutomaticallyCopyResultsToClipboard, () => options.AutoCopy, value => options.AutoCopy = value);
         BindEnabled(autoCopy, silent, invert: true);
 
         return Page("capture-ocr", Strings.TaskSettingsWindow_OCR, AppIcons.TextRecognition,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_OpticalCharacterRecognition,
-                Row(Strings.TaskSettingsWindow_DefaultLanguage, language),
                 Check(Strings.TaskSettingsWindow_ProcessOCRSilently, silent), autoCopy,
-                Check(Strings.TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink, () => options.CloseWindowAfterOpeningServiceLink, value => options.CloseWindowAfterOpeningServiceLink = value),
-                Button(Strings.TaskSettingsWindow_OCRHelp, () => URLHelpers.OpenURL(Links.DocsOCR))));
+                Check(Strings.TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink, () => options.CloseWindowAfterOpeningServiceLink, value => options.CloseWindowAfterOpeningServiceLink = value)));
     }
 
     private Control BuildFileNamingPage()
@@ -1596,6 +1589,58 @@ internal sealed class TaskSettingsPageBuilder
     }
 
     private static BoundValue<decimal?> NumericValue(decimal initial, Action<decimal?> setter) => new(initial, setter);
+
+    private sealed record ToastMonitorChoice(ToastWindowMonitor Monitor, string DeviceName);
+
+    private static ComboBox ToastMonitorCombo(TaskSettingsGeneral general)
+    {
+        List<(ToastMonitorChoice Choice, string Title)> choices =
+        [
+            (new(ToastWindowMonitor.ActiveMonitor, ""), ToastWindowMonitor.ActiveMonitor.GetLocalizedDescription()),
+            (new(ToastWindowMonitor.PrimaryMonitor, ""), ToastWindowMonitor.PrimaryMonitor.GetLocalizedDescription())
+        ];
+
+        // The primary monitor already has its own entry, so list only the other monitors.
+        IEnumerable<DesktopScreen> otherScreens = DesktopScreen.AllScreens
+            .Where(x => !x.Primary && !string.IsNullOrEmpty(x.DeviceName))
+            .OrderBy(x => GetMonitorNumber(x.DeviceName).PadLeft(4, '0'), StringComparer.Ordinal);
+
+        foreach (DesktopScreen screen in otherScreens)
+        {
+            DrawingRectangle bounds = screen.Bounds;
+            string name = string.IsNullOrEmpty(screen.DisplayName) ? screen.DeviceName : screen.DisplayName;
+            string title = string.Format(Strings.TaskSettingsWindow_ToastMonitorScreen0123, GetMonitorNumber(screen.DeviceName), name,
+                $"{bounds.Width}x{bounds.Height}", $"{bounds.X}, {bounds.Y}");
+            choices.Add((new(ToastWindowMonitor.SpecificMonitor, screen.DeviceName), title));
+        }
+
+        // Keep a saved monitor selectable while it is disconnected, so opening the settings does not discard it.
+        string savedDeviceName = general.ToastWindowMonitorDeviceName ?? "";
+        if (general.ToastWindowMonitor == ToastWindowMonitor.SpecificMonitor && savedDeviceName.Length > 0 &&
+            !choices.Any(x => string.Equals(x.Choice.DeviceName, savedDeviceName, StringComparison.OrdinalIgnoreCase)))
+        {
+            choices.Add((new(ToastWindowMonitor.SpecificMonitor, savedDeviceName),
+                string.Format(Strings.TaskSettingsWindow_ToastMonitorNotConnected0, GetMonitorNumber(savedDeviceName))));
+        }
+
+        ToastMonitorChoice current = choices.Select(x => x.Choice).FirstOrDefault(x => x.Monitor == general.ToastWindowMonitor &&
+            (x.Monitor != ToastWindowMonitor.SpecificMonitor || string.Equals(x.DeviceName, savedDeviceName, StringComparison.OrdinalIgnoreCase)))
+            ?? choices[0].Choice;
+        Dictionary<ToastMonitorChoice, string> titles = choices.ToDictionary(x => x.Choice, x => x.Title);
+
+        return ObjectCombo(choices.Select(x => x.Choice), () => current, value =>
+        {
+            general.ToastWindowMonitor = value.Monitor;
+            general.ToastWindowMonitorDeviceName = value.DeviceName;
+        }, value => titles[value]);
+    }
+
+    // \\.\DISPLAY2 -> 2
+    private static string GetMonitorNumber(string deviceName)
+    {
+        string digits = new(deviceName.Reverse().TakeWhile(char.IsDigit).Reverse().ToArray());
+        return digits.Length > 0 ? digits : deviceName;
+    }
 
     private static ComboBox EnumCombo<T>(Func<T> getter, Action<T> setter) where T : struct, Enum =>
         ObjectCombo(Enum.GetValues<T>(), getter, setter, value => ((Enum)(object)value).GetLocalizedDescription());
