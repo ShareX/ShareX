@@ -32,8 +32,14 @@ namespace ShareX.OCR;
 // reads each one. The models are multilingual, so there is no language to choose.
 public sealed class PaddleOCREngine : IDisposable
 {
-    public const string DetectionModelName = "PP-OCRv6_small_det";
-    public const string RecognitionModelName = "PP-OCRv6_small_rec";
+    // Models in the order they are preferred. The small models ship with ShareX. The medium models are more accurate
+    // but larger and slower, so they are not included; a user who downloads them into the models folder gets them
+    // instead. Detection and recognition are picked separately, so either one can be replaced on its own.
+    private static readonly string[] DetectionModelNames = ["PP-OCRv6_medium_det", "PP-OCRv6_small_det"];
+    private static readonly string[] RecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_small_rec"];
+
+    // Hugging Face names the ONNX downloads with this suffix, so a folder copied from there as-is is found too.
+    private const string DownloadFolderSuffix = "_onnx";
 
     // Recognized text below this confidence is usually an icon or noise read as characters.
     public const float DefaultMinScore = 0.5f;
@@ -43,6 +49,10 @@ public sealed class PaddleOCREngine : IDisposable
 
     private readonly TextDetector _detector;
     private readonly TextRecognizer _recognizer;
+
+    // The folders of the models in use.
+    public string DetectionModelFolder { get; }
+    public string RecognitionModelFolder { get; }
 
     // The models are copied next to the application under this folder.
     public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "Models");
@@ -66,17 +76,39 @@ public sealed class PaddleOCREngine : IDisposable
             GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
         };
 
-        _detector = new TextDetector(Path.Combine(modelsFolder, DetectionModelName), sessionOptions);
+        DetectionModelFolder = FindModelFolder(modelsFolder, DetectionModelNames);
+        RecognitionModelFolder = FindModelFolder(modelsFolder, RecognitionModelNames);
+        _detector = new TextDetector(DetectionModelFolder, sessionOptions);
 
         try
         {
-            _recognizer = new TextRecognizer(Path.Combine(modelsFolder, RecognitionModelName), sessionOptions);
+            _recognizer = new TextRecognizer(RecognitionModelFolder, sessionOptions);
         }
         catch
         {
             _detector.Dispose();
             throw;
         }
+    }
+
+    // Returns the first model in the list that has both its files. When none does, the last one is returned, so
+    // loading it reports the built-in model as missing.
+    private static string FindModelFolder(string modelsFolder, string[] modelNames)
+    {
+        foreach (string modelName in modelNames)
+        {
+            foreach (string folderName in (string[])[modelName, modelName + DownloadFolderSuffix])
+            {
+                string folder = Path.Combine(modelsFolder, folderName);
+
+                if (File.Exists(Path.Combine(folder, "inference.onnx")) && File.Exists(Path.Combine(folder, "inference.yml")))
+                {
+                    return folder;
+                }
+            }
+        }
+
+        return Path.Combine(modelsFolder, modelNames[^1]);
     }
 
     public OCRResult Recognize(SKBitmap bitmap, float minScore = DefaultMinScore)
