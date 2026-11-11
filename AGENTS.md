@@ -84,3 +84,4 @@ Evidence first, adapted from Cursor's pstack principles (github.com/cursor/plugi
 - Secrets in settings are encrypted through `ISecretProtectionService`; never fall back to plain text.
 - ShareX and XerahS are different applications; never install one over the other. Do not change a user's desktop or compositor configuration without asking.
 - Check that code is used before porting it.
+- A localisation key with no reference in code is not unused. Enum values, image effects, effect properties and destination settings fields are looked up by a name built at run time (`GetLocalizedDescription`, `ImageEffectsLocalization`, `EffectBrowserLocalization`, `EnumNames`, `DestinationSettingsPageBuilder`). Trace the lookup before removing a key, and remove keys that `develop` owns on `develop`.
