@@ -2249,26 +2249,17 @@ Do you want to abort the active screen recording?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Enter a valid HTTP, HTTPS, or FTP URL.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Appearance</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Get started</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Choose how the app should look and feel.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Make ShareX yours</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Built for Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>You can change these options anytime in Application settings.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Welcome to ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capture, edit and share anything your way.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Would you like to add "{0}" custom uploader?</value>

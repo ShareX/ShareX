@@ -48,21 +48,15 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
     private ApplicationConfig Settings => ApplicationState.Settings;
 
     public string WindowTitle => Strings.StartScreen_Welcome;
-    public string WelcomeTitle => Strings.StartScreen_Welcome;
-    public string WelcomeSubtitle => Strings.StartScreen_WelcomeSubtitle;
-    public string CaptureFeature => Strings.MainMenuBuilder_Capture;
-    public string AutomateFeature => Strings.MainMenuBuilder_Workflows;
-    public string ShareFeature => Strings.MainMenuBuilder_Tools;
-    public string PlatformNote => Strings.StartScreen_PlatformNote;
-    public string PersonalizeTitle => Strings.StartScreen_PersonalizeTitle;
-    public string PersonalizeSubtitle => Strings.StartScreen_PersonalizeSubtitle;
+    public string GeneralGroupTitle => Strings.ApplicationSettingsWindow_General;
+    public string AppearanceGroupTitle => Strings.StartScreen_Appearance;
     public string SettingsNote => Strings.StartScreen_SettingsNote;
     public string GetStartedText => Strings.StartScreen_GetStarted;
-    public string LanguageLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_LanguageLabel);
+    public string LanguageLabel => Strings.ApplicationSettingsWindow_LanguageLabel;
     public string FollowSystemThemeLabel => Strings.ApplicationSettingsWindow_FollowSystemTheme;
-    public string ThemeLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_ThemeLabel);
+    public string ThemeLabel => Strings.ApplicationSettingsWindow_ThemeLabel;
     public string FollowSystemAccentColorLabel => Strings.ApplicationSettingsWindow_FollowSystemAccentColor;
-    public string AccentColorLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_AccentColorLabel);
+    public string AccentColorLabel => Strings.ApplicationSettingsWindow_AccentColorLabel;
 
     public IReadOnlyList<StartScreenLanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
     public IReadOnlyList<StartScreenThemeOption> ThemeOptions { get; } =
@@ -142,7 +136,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
 
     public bool CanEditAccentColor => !UseSystemAccentColor;
 
-    public string IconPackLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_IconPackLabel);
+    public string IconPackLabel => Strings.ApplicationSettingsWindow_IconPackLabel;
 
     public IReadOnlyList<StartScreenIconPackOption> IconPackOptions { get; } =
     [
@@ -250,8 +244,6 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
 
     private static string NormalizeTheme(string? theme) =>
         string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase) ? "Light" : "Dark";
-
-    private static string RemoveTrailingColon(string text) => text.TrimEnd().TrimEnd(':', '：').TrimEnd();
 
     private void RefreshLocalizedText()
     {

@@ -2242,26 +2242,17 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Saisissez une URL HTTP, HTTPS ou FTP valide.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Apparence</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Commencer</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Choisissez l’apparence et le style de l’application.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Personnalisez ShareX</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Conçu pour Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Vous pouvez modifier ces options à tout moment dans les paramètres de l’application.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Bienvenue dans ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capturez, modifiez et partagez tout ce que vous voulez, à votre façon.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Voulez-vous ajouter le module d’envoi personnalisé « {0} » ?</value>

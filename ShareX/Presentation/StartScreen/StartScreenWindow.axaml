@@ -7,163 +7,60 @@
         xmlns:local="using:ShareX"
         xmlns:imageEditorControls="using:ShareX.ImageEditor.Presentation.Controls"
         mc:Ignorable="d"
-        d:DesignWidth="1000"
-        d:DesignHeight="720"
+        d:DesignWidth="540"
         x:Class="ShareX.StartScreenWindow"
         x:DataType="local:StartScreenViewModel"
         Title="{Binding WindowTitle}"
-        Width="1000"
-        Height="720"
-        MinWidth="840"
-        MinHeight="580"
-        CanResize="True"
+        Width="540"
+        SizeToContent="Height"
+        CanResize="False"
         Background="{DynamicResource ShareX.Brush.Background.Main}"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
-        <Style Selector="Border.setting-card">
+        <Style Selector="TextBlock.group-title">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="Margin" Value="1,12,0,12"/>
+        </Style>
+        <Style Selector="Border.group">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="CornerRadius" Value="10"/>
-            <Setter Property="Padding" Value="16,12"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="CornerRadius" Value="6"/>
+            <Setter Property="Padding" Value="16,14"/>
         </Style>
-        <Style Selector="Border.conditional-option">
-            <Setter Property="ClipToBounds" Value="True"/>
-            <Setter Property="MaxHeight" Value="90"/>
-            <Setter Property="Opacity" Value="1"/>
-            <Setter Property="IsHitTestVisible" Value="True"/>
-            <Setter Property="Transitions">
-                <Transitions>
-                    <DoubleTransition Property="MaxHeight" Duration="0:0:0.22"/>
-                    <DoubleTransition Property="Opacity" Duration="0:0:0.16"/>
-                    <ThicknessTransition Property="Margin" Duration="0:0:0.22"/>
-                </Transitions>
-            </Setter>
-            <Style Selector="^.hidden">
-                <Setter Property="MaxHeight" Value="0"/>
-                <Setter Property="Opacity" Value="0"/>
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="IsHitTestVisible" Value="False"/>
-            </Style>
+        <Style Selector="Grid.row">
+            <Setter Property="ColumnSpacing" Value="12"/>
         </Style>
-        <Style Selector="Border.setting-icon">
-            <Setter Property="Width" Value="38"/>
-            <Setter Property="Height" Value="38"/>
-            <Setter Property="CornerRadius" Value="9"/>
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
+        <Style Selector="TextBlock.label">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style Selector="ComboBox.field">
+            <Setter Property="Width" Value="230"/>
+            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        <Style Selector="TextBlock.setting-title">
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style Selector="ComboBox.option-control">
-            <Setter Property="Width" Value="190"/>
-            <Setter Property="MinHeight" Value="38"/>
-            <Setter Property="Padding" Value="9,5"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-        </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="CornerRadius" Value="8"/>
-            <Setter Property="MinHeight" Value="42"/>
-            <Setter Property="Padding" Value="20,8"/>
-            <Setter Property="FontWeight" Value="SemiBold"/>
+        <Style Selector="CheckBox">
+            <Setter Property="FontWeight" Value="Normal"/>
         </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
-        <Grid ColumnDefinitions="340,*"
-              Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Border Grid.Column="0"
-                    Background="{DynamicResource ShareX.Brush.Accent}"
-                    ClipToBounds="True">
-                <Grid>
-                    <Canvas IsHitTestVisible="False">
-                        <Ellipse Width="280" Height="280" Canvas.Left="185" Canvas.Top="-105" Fill="#18FFFFFF"/>
-                        <Ellipse Width="170" Height="170" Canvas.Left="-72" Canvas.Top="465" Fill="#12FFFFFF"/>
-                        <Ellipse Width="72" Height="72" Canvas.Left="270" Canvas.Top="430" Fill="#10FFFFFF"/>
-                    </Canvas>
-
-                    <Grid Margin="38,42,38,36" RowDefinitions="*,Auto">
-                        <StackPanel VerticalAlignment="Center" Spacing="18">
-                            <StackPanel Spacing="8">
-                                <TextBlock Text="{Binding WelcomeTitle}"
-                                           FontSize="31"
-                                           FontWeight="Bold"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                           TextWrapping="Wrap"/>
-                                <TextBlock Text="{Binding WelcomeSubtitle}"
-                                           HorizontalAlignment="Left"
-                                           FontSize="15"
-                                           FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                           Opacity="0.9"
-                                           LineHeight="22"
-                                           TextWrapping="Wrap"/>
-                            </StackPanel>
-
-                            <StackPanel Spacing="12">
-                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
-                                </Grid>
-                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
-                                </Grid>
-                                <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
-                                </Grid>
-                            </StackPanel>
-                        </StackPanel>
-
-                        <TextBlock Grid.Row="1"
-                                   Text="{Binding PlatformNote}"
-                                   FontSize="11"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                   Opacity="0.85"
-                                   FontWeight="Normal"/>
-                    </Grid>
-                </Grid>
-            </Border>
-
-            <Grid Grid.Column="1"
-                  Margin="42,34,42,36"
-                  RowDefinitions="Auto,*,Auto">
-                <StackPanel Spacing="5">
-                    <TextBlock Text="{Binding PersonalizeTitle}"
-                               FontSize="25"
-                               FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                    <TextBlock Text="{Binding PersonalizeSubtitle}"
-                               FontSize="13"
-                               FontWeight="Normal"
-                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                </StackPanel>
-
-                <ScrollViewer Grid.Row="1"
-                              Margin="0,22,0,18"
-                              HorizontalScrollBarVisibility="Disabled"
-                              VerticalScrollBarVisibility="Auto">
-                    <StackPanel>
-                        <Border Classes="setting-card">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Language}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding LanguageLabel}"/>
-                                </StackPanel>
-                                <ComboBox Grid.Column="2"
-                                          Classes="option-control"
+        <StackPanel>
+            <StackPanel Margin="20,0,20,20">
+                <StackPanel>
+                    <TextBlock Classes="group-title" Text="{Binding GeneralGroupTitle}"/>
+                    <Border Classes="group">
+                        <StackPanel Spacing="12">
+                            <Grid Classes="row" ColumnDefinitions="160,*">
+                                <TextBlock Classes="label" Text="{Binding LanguageLabel}"/>
+                                <ComboBox Grid.Column="1"
+                                          Classes="field"
                                           ItemsSource="{Binding LanguageOptions}"
                                           SelectedItem="{Binding SelectedLanguage, Mode=TwoWay}">
                                     <ComboBox.ItemTemplate>
@@ -188,60 +85,25 @@
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </Grid>
-                        </Border>
 
-                        <Border Classes="setting-card">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rocket}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding StartWithWindowsText}"/>
-                                </StackPanel>
-                                <ToggleSwitch Grid.Column="2"
-                                              VerticalAlignment="Center"
-                                              IsEnabled="{Binding StartWithWindowsEnabled}"
-                                              IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
+                            <Grid Classes="row" ColumnDefinitions="160,*">
+                                <CheckBox Grid.Column="1"
+                                          Content="{Binding StartWithWindowsText}"
+                                          IsEnabled="{Binding StartWithWindowsEnabled}"
+                                          IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
                             </Grid>
-                        </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
 
-                        <Border Classes="setting-card">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding FollowSystemThemeLabel}"/>
-                                </StackPanel>
-                                <ToggleSwitch Grid.Column="2"
-                                              VerticalAlignment="Center"
-                                              IsChecked="{Binding UseSystemTheme, Mode=TwoWay}"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Classes="setting-card conditional-option"
-                                Classes.hidden="{Binding UseSystemTheme}">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding ThemeLabel}"/>
-                                </StackPanel>
-                                <ComboBox Grid.Column="2"
-                                          Classes="option-control"
+                <StackPanel>
+                    <TextBlock Classes="group-title" Text="{Binding AppearanceGroupTitle}"/>
+                    <Border Classes="group">
+                        <StackPanel Spacing="12">
+                            <Grid Classes="row" ColumnDefinitions="160,*" RowDefinitions="Auto,Auto" RowSpacing="6">
+                                <TextBlock Classes="label" Text="{Binding ThemeLabel}"/>
+                                <ComboBox Grid.Column="1"
+                                          Classes="field"
                                           IsEnabled="{Binding CanEditTheme}"
                                           ItemsSource="{Binding ThemeOptions}"
                                           SelectedItem="{Binding SelectedTheme, Mode=TwoWay}">
@@ -251,63 +113,30 @@
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
+                                <CheckBox Grid.Row="1"
+                                          Grid.Column="1"
+                                          Content="{Binding FollowSystemThemeLabel}"
+                                          IsChecked="{Binding UseSystemTheme, Mode=TwoWay}"/>
                             </Grid>
-                        </Border>
 
-                        <Border Classes="setting-card">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Palette}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding FollowSystemAccentColorLabel}"/>
-                                </StackPanel>
-                                <ToggleSwitch Grid.Column="2"
-                                              VerticalAlignment="Center"
-                                              IsChecked="{Binding UseSystemAccentColor, Mode=TwoWay}"/>
+                            <Grid Classes="row" ColumnDefinitions="160,*" RowDefinitions="Auto,Auto" RowSpacing="6">
+                                <TextBlock Classes="label" Text="{Binding AccentColorLabel}"/>
+                                <imageEditorControls:ColorPickerDropdown Grid.Column="1"
+                                                                         Width="72"
+                                                                         HorizontalAlignment="Left"
+                                                                         VerticalAlignment="Center"
+                                                                         IsEnabled="{Binding CanEditAccentColor}"
+                                                                         SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"/>
+                                <CheckBox Grid.Row="1"
+                                          Grid.Column="1"
+                                          Content="{Binding FollowSystemAccentColorLabel}"
+                                          IsChecked="{Binding UseSystemAccentColor, Mode=TwoWay}"/>
                             </Grid>
-                        </Border>
 
-                        <Border Classes="setting-card conditional-option"
-                                Classes.hidden="{Binding UseSystemAccentColor}">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Swatches}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding AccentColorLabel}"/>
-                                </StackPanel>
-                                <imageEditorControls:ColorPickerDropdown Grid.Column="2"
-                                                                                Width="72"
-                                                                                IsEnabled="{Binding CanEditAccentColor}"
-                                                                                SelectedColorValue="{Binding AccentColor, Mode=TwoWay}"
-                                                                                HorizontalAlignment="Right"
-                                                                                VerticalAlignment="Center"/>
-                            </Grid>
-                        </Border>
-
-                        <Border Classes="setting-card">
-                            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
-                                <Border Classes="setting-icon">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Images}"
-                                                            FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
-                                                            HorizontalAlignment="Center"
-                                                            VerticalAlignment="Center"/>
-                                </Border>
-                                <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
-                                    <TextBlock Classes="setting-title" Text="{Binding IconPackLabel}"/>
-                                </StackPanel>
-                                <ComboBox Grid.Column="2"
-                                          Classes="option-control"
+                            <Grid Classes="row" ColumnDefinitions="160,*">
+                                <TextBlock Classes="label" Text="{Binding IconPackLabel}"/>
+                                <ComboBox Grid.Column="1"
+                                          Classes="field"
                                           ItemsSource="{Binding IconPackOptions}"
                                           SelectedItem="{Binding SelectedIconPack, Mode=TwoWay}">
                                     <ComboBox.ItemTemplate>
@@ -315,41 +144,41 @@
                                             <StackPanel Orientation="Horizontal"
                                                         Spacing="5"
                                                         icons:IconPackScope.Pack="{Binding Value}">
-                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Region}" FontSize="15" VerticalAlignment="Center"/>
-                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ImageUpload}" FontSize="15" VerticalAlignment="Center"/>
-                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.History}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ScreenRecording}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ImageEditor}" FontSize="15" VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CloudUpload}" FontSize="15" VerticalAlignment="Center"/>
                                                 <TextBlock Text="{Binding DisplayName}" Margin="4,0,0,0" VerticalAlignment="Center"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ComboBox.ItemTemplate>
                                 </ComboBox>
                             </Grid>
-                        </Border>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </StackPanel>
 
-                    </StackPanel>
-                </ScrollViewer>
-
-                <Grid Grid.Row="2" ColumnDefinitions="*,Auto" ColumnSpacing="16">
+            <Border Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                    BorderThickness="0,1,0,0"
+                    Padding="20,14">
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
                     <TextBlock Text="{Binding SettingsNote}"
-                               FontSize="11"
+                               FontSize="12"
                                FontWeight="Normal"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                               HorizontalAlignment="Left"
                                TextWrapping="Wrap"
                                VerticalAlignment="Center"/>
                     <Button Grid.Column="1"
                             Classes="primary"
+                            MinWidth="110"
+                            HorizontalContentAlignment="Center"
                             IsDefault="True"
-                            Click="OnGetStartedClick">
-                        <StackPanel Orientation="Horizontal" Spacing="9">
-                            <TextBlock Text="{Binding GetStartedText}" VerticalAlignment="Center"/>
-                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRight}"
-                                                    FontSize="16"
-                                                    VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
+                            Content="{Binding GetStartedText}"
+                            Click="OnGetStartedClick"/>
                 </Grid>
-            </Grid>
-        </Grid>
+            </Border>
+        </StackPanel>
     </ThemeVariantScope>
 </Window>

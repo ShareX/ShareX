@@ -2242,26 +2242,17 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Introduceți un URL HTTP, HTTPS sau FTP valid.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Aspect</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Începeți</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Alegeți aspectul și stilul aplicației.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Personalizați ShareX</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Sursă deschisă • Creat pentru Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puteți modifica oricând aceste opțiuni din setările aplicației.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Bun venit la ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capturați, editați și partajați orice în stilul dvs.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Doriți să adăugați serviciul de încărcare personalizat „{0}”?</value>

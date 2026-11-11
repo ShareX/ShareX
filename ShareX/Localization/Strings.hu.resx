@@ -2242,26 +2242,17 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Adjon meg egy érvényes HTTP-, HTTPS- vagy FTP-URL-t.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Megjelenés</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kezdés</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Válassza ki az alkalmazás megjelenését.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Tegye egyedivé a ShareX-et</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Nyílt forráskódú • Windowshoz készült</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Ezeket a beállításokat bármikor módosíthatja az alkalmazás beállításaiban.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Üdvözli a ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Rögzítsen, szerkesszen és osszon meg bármit a saját módján.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Hozzáadja a(z) „{0}” egyéni feltöltőt?</value>

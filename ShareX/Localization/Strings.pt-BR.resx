@@ -2242,26 +2242,17 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Insira uma URL HTTP, HTTPS ou FTP válida.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Aparência</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Começar</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Escolha a aparência e o estilo do aplicativo.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Deixe o ShareX com a sua cara</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Código aberto • Feito para Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Boas-vindas ao ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capture, edite e compartilhe qualquer coisa do seu jeito.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Deseja adicionar o carregador personalizado "{0}"?</value>

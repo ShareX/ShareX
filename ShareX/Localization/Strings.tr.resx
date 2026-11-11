@@ -2242,26 +2242,17 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Geçerli bir HTTP, HTTPS veya FTP URL'si girin.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Görünüm</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Başlayın</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Uygulamanın nasıl görüneceğini ve hissettireceğini seçin.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>ShareX'i kendinize göre özelleştirin</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Açık kaynak • Windows için geliştirildi</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bu seçenekleri istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX'e hoş geldiniz</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Her şeyi kendi tarzınızda yakalayın, düzenleyin ve paylaşın.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>"{0}" özel yükleyicisini eklemek istiyor musunuz?</value>

@@ -2242,26 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Введите допустимый URL-адрес HTTP, HTTPS или FTP.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Внешний вид</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Начать</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Выберите внешний вид приложения.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Настройте ShareX под себя</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Открытый исходный код • Создано для Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Эти параметры можно изменить в любое время в настройках приложения.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Добро пожаловать в ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Захватывайте, редактируйте и делитесь чем угодно по-своему.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Добавить пользовательский загрузчик «{0}»?</value>

@@ -2242,26 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>הזן כתובת HTTP, HTTPS או FTP תקינה.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>מראה</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>מתחילים</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>בחרו כיצד היישום ייראה וירגיש.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>התאימו את ShareX לטעמכם</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>קוד פתוח • נבנה עבור Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>ניתן לשנות אפשרויות אלה בכל עת בהגדרות היישום.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ברוכים הבאים ל-ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>צלמו, ערכו ושתפו כל דבר בדרך שלכם.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>להוסיף את המעלה המותאם אישית "{0}"?</value>

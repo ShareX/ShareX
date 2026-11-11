@@ -2242,26 +2242,17 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Angiv en gyldig HTTP-, HTTPS- eller FTP-URL.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Udseende</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom i gang</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Vælg, hvordan appen skal se ud og føles.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Gør ShareX til dit eget</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Bygget til Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Velkommen til ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Optag, rediger og del alt på din måde.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Vil du tilføje til den brugerdefinerede uploader "{0}"?</value>

@@ -2242,26 +2242,17 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Ange en giltig HTTP-, HTTPS- eller FTP-URL.</value>
   </data>
+  <data name="StartScreen_Appearance" xml:space="preserve">
+    <value>Utseende</value>
+  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom igång</value>
-  </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Välj hur appen ska se ut och kännas.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Gör ShareX till ditt</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Öppen källkod • Byggt för Windows</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Välkommen till ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Fånga, redigera och dela vad som helst på ditt sätt.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Vill du lägga till den anpassade uppladdaren "{0}"?</value>

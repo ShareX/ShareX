@@ -5610,26 +5610,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("StartScreen_Welcome", resourceCulture);
             }
         }
-        public static string StartScreen_WelcomeSubtitle {
-            get {
-                return ResourceManager.GetString("StartScreen_WelcomeSubtitle", resourceCulture);
-            }
-        }
-        public static string StartScreen_PlatformNote {
-            get {
-                return ResourceManager.GetString("StartScreen_PlatformNote", resourceCulture);
-            }
-        }
-        public static string StartScreen_PersonalizeTitle {
-            get {
-                return ResourceManager.GetString("StartScreen_PersonalizeTitle", resourceCulture);
-            }
-        }
-        public static string StartScreen_PersonalizeSubtitle {
-            get {
-                return ResourceManager.GetString("StartScreen_PersonalizeSubtitle", resourceCulture);
-            }
-        }
         public static string StartScreen_SettingsNote {
             get {
                 return ResourceManager.GetString("StartScreen_SettingsNote", resourceCulture);
@@ -5777,5 +5757,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_ToastMonitorNotConnected0 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorNotConnected0", resourceCulture);
         public static string TaskSettingsWindow_ToastMonitorScreen0123 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorScreen0123", resourceCulture);
         public static string TaskSettingsWindow_RightClickDeletesShape => ResourceManager.GetString("TaskSettingsWindow_RightClickDeletesShape", resourceCulture);
+        public static string StartScreen_Appearance => ResourceManager.GetString("StartScreen_Appearance", resourceCulture);
     }
 }
