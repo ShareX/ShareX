@@ -189,48 +189,48 @@ public sealed class ShapeTool : ToolBase
                 path.AddOval(r);
                 break;
             case ShapeKind.Triangle:
-            {
-                SKPoint[] pts = [new(r.MidX, r.Top), new(r.Right, r.Bottom), new(r.Left, r.Bottom)];
-                if (CornerRadius > 0) AddRounded(path, pts, CornerRadius);
-                else path.AddPoly(pts, true);
-                break;
-            }
+                {
+                    SKPoint[] pts = [new(r.MidX, r.Top), new(r.Right, r.Bottom), new(r.Left, r.Bottom)];
+                    if (CornerRadius > 0) AddRounded(path, pts, CornerRadius);
+                    else path.AddPoly(pts, true);
+                    break;
+                }
             case ShapeKind.Polygon:
-            {
-                int sides = Math.Clamp(Sides, 3, 100);
-                bool star = StarRatio < 100;
-                int count = star ? sides * 2 : sides;
-                List<SKPoint> pts = [];
-                for (int i = 0; i < count; i++)
                 {
-                    float angle = -MathF.PI / 2 + i * MathF.PI * 2 / count;
-                    float scale = star && i % 2 == 1 ? StarRatio / 100f : 1;
-                    pts.Add(new SKPoint(r.MidX + MathF.Cos(angle) * r.Width / 2 * scale, r.MidY + MathF.Sin(angle) * r.Height / 2 * scale));
+                    int sides = Math.Clamp(Sides, 3, 100);
+                    bool star = StarRatio < 100;
+                    int count = star ? sides * 2 : sides;
+                    List<SKPoint> pts = [];
+                    for (int i = 0; i < count; i++)
+                    {
+                        float angle = -MathF.PI / 2 + i * MathF.PI * 2 / count;
+                        float scale = star && i % 2 == 1 ? StarRatio / 100f : 1;
+                        pts.Add(new SKPoint(r.MidX + MathF.Cos(angle) * r.Width / 2 * scale, r.MidY + MathF.Sin(angle) * r.Height / 2 * scale));
+                    }
+                    if (CornerRadius > 0) AddRounded(path, pts, CornerRadius);
+                    else path.AddPoly(pts.ToArray(), true);
+                    break;
                 }
-                if (CornerRadius > 0) AddRounded(path, pts, CornerRadius);
-                else path.AddPoly(pts.ToArray(), true);
-                break;
-            }
             case ShapeKind.Line:
-            {
-                SKPoint a = _start, b = _current;
-                SKPoint d = b - a;
-                float length = d.Length;
-                if (length < 0.5f) return null;
-                SKPoint u = new(d.X / length, d.Y / length);
-                SKPoint n = new(-u.Y * LineWeight / 2, u.X * LineWeight / 2);
-                path.AddPoly([a + n, b + n, b - n, a - n], true);
-                float head = Math.Max(10, LineWeight * 4);
-                void Arrow(SKPoint tip, SKPoint dir)
                 {
-                    SKPoint back = tip - new SKPoint(dir.X * head, dir.Y * head);
-                    SKPoint side = new(-dir.Y * head / 2, dir.X * head / 2);
-                    path.AddPoly([tip, back + side, back - side], true);
+                    SKPoint a = _start, b = _current;
+                    SKPoint d = b - a;
+                    float length = d.Length;
+                    if (length < 0.5f) return null;
+                    SKPoint u = new(d.X / length, d.Y / length);
+                    SKPoint n = new(-u.Y * LineWeight / 2, u.X * LineWeight / 2);
+                    path.AddPoly([a + n, b + n, b - n, a - n], true);
+                    float head = Math.Max(10, LineWeight * 4);
+                    void Arrow(SKPoint tip, SKPoint dir)
+                    {
+                        SKPoint back = tip - new SKPoint(dir.X * head, dir.Y * head);
+                        SKPoint side = new(-dir.Y * head / 2, dir.X * head / 2);
+                        path.AddPoly([tip, back + side, back - side], true);
+                    }
+                    if (ArrowEnd) Arrow(b, u);
+                    if (ArrowStart) Arrow(a, new SKPoint(-u.X, -u.Y));
+                    break;
                 }
-                if (ArrowEnd) Arrow(b, u);
-                if (ArrowStart) Arrow(a, new SKPoint(-u.X, -u.Y));
-                break;
-            }
             default:
                 path.AddPath(Custom.CreatePath(r));
                 break;
@@ -265,25 +265,25 @@ public sealed class ShapeTool : ToolBase
         switch (Mode)
         {
             case ShapeToolMode.Pixels:
-            {
-                if (!RequireEditableLayer(out RasterLayer layer)) return;
-                using PixelSurface mask = MaskOps.FromPath(path, doc.Width, doc.Height);
-                uint color = ColorMath.FromColor(Host.Foreground);
-                SKRectI changed = LayerOps.CompositeMasked(doc, layer, (_, _) => color, mask, 1, LayerBlendMode.Normal);
-                PushHistory(EnumNames.Get(_kind));
-                Host.InvalidateCanvas(changed);
-                return;
-            }
+                {
+                    if (!RequireEditableLayer(out RasterLayer layer)) return;
+                    using PixelSurface mask = MaskOps.FromPath(path, doc.Width, doc.Height);
+                    uint color = ColorMath.FromColor(Host.Foreground);
+                    SKRectI changed = LayerOps.CompositeMasked(doc, layer, (_, _) => color, mask, 1, LayerBlendMode.Normal);
+                    PushHistory(EnumNames.Get(_kind));
+                    Host.InvalidateCanvas(changed);
+                    return;
+                }
             case ShapeToolMode.Path:
-            {
-                doc.WorkPath ??= new VectorPath();
-                VectorPath target = doc.ActivePath?.Path ?? doc.WorkPath;
-                target.SubPaths.AddRange(VectorPath.FromSKPath(path).SubPaths);
-                if (doc.ActivePath == null) doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
-                PushHistory(EnumNames.Get(_kind));
-                Host.InvalidateOverlay();
-                return;
-            }
+                {
+                    doc.WorkPath ??= new VectorPath();
+                    VectorPath target = doc.ActivePath?.Path ?? doc.WorkPath;
+                    target.SubPaths.AddRange(VectorPath.FromSKPath(path).SubPaths);
+                    if (doc.ActivePath == null) doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
+                    PushHistory(EnumNames.Get(_kind));
+                    Host.InvalidateOverlay();
+                    return;
+                }
         }
 
         if (Combine != PathCombine.NewLayer && doc.ActiveLayer is ShapeLayer existing)

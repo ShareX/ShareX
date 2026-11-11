@@ -25,10 +25,10 @@
 
 #nullable enable
 
+using ShareX.Icons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ShareX.Icons;
 
 namespace ShareX;
 

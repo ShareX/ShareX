@@ -215,255 +215,255 @@ public static class Adjustments
         switch (s.Kind)
         {
             case AdjustmentKind.BrightnessContrast:
-            {
-                float brightness = s.Get("brightness") / 150f;
-                float contrast = s.Get("contrast") / 100f;
-                bool legacy = s.Get("legacy") > 0;
-                float[] lut = new float[256];
-                for (int i = 0; i < 256; i++)
                 {
-                    float v = i / 255f;
-                    if (legacy)
+                    float brightness = s.Get("brightness") / 150f;
+                    float contrast = s.Get("contrast") / 100f;
+                    bool legacy = s.Get("legacy") > 0;
+                    float[] lut = new float[256];
+                    for (int i = 0; i < 256; i++)
                     {
-                        v += brightness * 0.5f;
+                        float v = i / 255f;
+                        if (legacy)
+                        {
+                            v += brightness * 0.5f;
+                        }
+                        else
+                        {
+                            // Brightness bends the midtones like a gamma curve so that highlights are not clipped.
+                            v = brightness >= 0 ? 1 - MathF.Pow(1 - v, 1 + brightness * 1.5f) : MathF.Pow(v, 1 - brightness * 1.5f);
+                        }
+                        float factor = contrast >= 0 ? 1 / MathF.Max(0.01f, 1 - contrast * 0.99f) : 1 + contrast;
+                        v = (v - 0.5f) * factor + 0.5f;
+                        lut[i] = Math.Clamp(v, 0, 1);
                     }
-                    else
-                    {
-                        // Brightness bends the midtones like a gamma curve so that highlights are not clipped.
-                        v = brightness >= 0 ? 1 - MathF.Pow(1 - v, 1 + brightness * 1.5f) : MathF.Pow(v, 1 - brightness * 1.5f);
-                    }
-                    float factor = contrast >= 0 ? 1 / MathF.Max(0.01f, 1 - contrast * 0.99f) : 1 + contrast;
-                    v = (v - 0.5f) * factor + 0.5f;
-                    lut[i] = Math.Clamp(v, 0, 1);
+                    return LutFunction(lut, lut, lut);
                 }
-                return LutFunction(lut, lut, lut);
-            }
             case AdjustmentKind.Levels:
-            {
-                float[] master = LevelsLut(s, "rgb");
-                float[] rl = Chain(LevelsLut(s, "r"), master);
-                float[] gl = Chain(LevelsLut(s, "g"), master);
-                float[] bl = Chain(LevelsLut(s, "b"), master);
-                return LutFunction(rl, gl, bl);
-            }
-            case AdjustmentKind.Curves:
-            {
-                float[] master = CurveLut(s.Curves[0]);
-                return LutFunction(Chain(master, CurveLut(s.Curves[1])), Chain(master, CurveLut(s.Curves[2])), Chain(master, CurveLut(s.Curves[3])));
-            }
-            case AdjustmentKind.Exposure:
-            {
-                float exposure = MathF.Pow(2, s.Get("exposure"));
-                float offset = s.Get("offset");
-                float gamma = Math.Max(0.01f, s.Get("gamma", 1));
-                float[] lut = new float[256];
-                for (int i = 0; i < 256; i++)
                 {
-                    float linear = MathF.Pow(i / 255f, 2.2f);
-                    linear = linear * exposure + offset;
-                    float v = MathF.Pow(Math.Max(0, linear), 1 / 2.2f);
-                    lut[i] = Math.Clamp(MathF.Pow(Math.Clamp(v, 0, 1), 1 / gamma), 0, 1);
+                    float[] master = LevelsLut(s, "rgb");
+                    float[] rl = Chain(LevelsLut(s, "r"), master);
+                    float[] gl = Chain(LevelsLut(s, "g"), master);
+                    float[] bl = Chain(LevelsLut(s, "b"), master);
+                    return LutFunction(rl, gl, bl);
                 }
-                return LutFunction(lut, lut, lut);
-            }
+            case AdjustmentKind.Curves:
+                {
+                    float[] master = CurveLut(s.Curves[0]);
+                    return LutFunction(Chain(master, CurveLut(s.Curves[1])), Chain(master, CurveLut(s.Curves[2])), Chain(master, CurveLut(s.Curves[3])));
+                }
+            case AdjustmentKind.Exposure:
+                {
+                    float exposure = MathF.Pow(2, s.Get("exposure"));
+                    float offset = s.Get("offset");
+                    float gamma = Math.Max(0.01f, s.Get("gamma", 1));
+                    float[] lut = new float[256];
+                    for (int i = 0; i < 256; i++)
+                    {
+                        float linear = MathF.Pow(i / 255f, 2.2f);
+                        linear = linear * exposure + offset;
+                        float v = MathF.Pow(Math.Max(0, linear), 1 / 2.2f);
+                        lut[i] = Math.Clamp(MathF.Pow(Math.Clamp(v, 0, 1), 1 / gamma), 0, 1);
+                    }
+                    return LutFunction(lut, lut, lut);
+                }
             case AdjustmentKind.Vibrance:
-            {
-                float vibrance = s.Get("vibrance") / 100f;
-                float saturation = s.Get("saturation") / 100f;
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    float max = MathF.Max(r, MathF.Max(g, b));
-                    float min = MathF.Min(r, MathF.Min(g, b));
-                    float sat = max - min;
-                    float l = ColorMath.Luminance(r, g, b);
-                    // Vibrance boosts less saturated colors more and protects skin-like hues.
-                    float skin = r > g && g > b ? 0.5f : 1f;
-                    float amount = 1 + vibrance * (1 - sat) * skin + saturation;
-                    r = l + (r - l) * amount;
-                    g = l + (g - l) * amount;
-                    b = l + (b - l) * amount;
-                };
-            }
+                    float vibrance = s.Get("vibrance") / 100f;
+                    float saturation = s.Get("saturation") / 100f;
+                    return (ref float r, ref float g, ref float b) =>
+                    {
+                        float max = MathF.Max(r, MathF.Max(g, b));
+                        float min = MathF.Min(r, MathF.Min(g, b));
+                        float sat = max - min;
+                        float l = ColorMath.Luminance(r, g, b);
+                        // Vibrance boosts less saturated colors more and protects skin-like hues.
+                        float skin = r > g && g > b ? 0.5f : 1f;
+                        float amount = 1 + vibrance * (1 - sat) * skin + saturation;
+                        r = l + (r - l) * amount;
+                        g = l + (g - l) * amount;
+                        b = l + (b - l) * amount;
+                    };
+                }
             case AdjustmentKind.HueSaturation:
-            {
-                float hue = s.Get("hue");
-                float saturation = s.Get("saturation") / 100f;
-                float lightness = s.Get("lightness") / 100f;
-                bool colorize = s.Get("colorize") > 0;
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    if (!colorize)
+                    float hue = s.Get("hue");
+                    float saturation = s.Get("saturation") / 100f;
+                    float lightness = s.Get("lightness") / 100f;
+                    bool colorize = s.Get("colorize") > 0;
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
-                        return;
-                    }
-                    ColorMath.RgbToHsl(r, g, b, out _, out _, out float l);
-                    ColorMath.HslToRgb(hue < 0 ? hue + 360 : hue, Math.Clamp(0.25f + saturation * 0.75f, 0, 1), ShiftLightness(l, lightness), out r, out g, out b);
-                };
-            }
+                        if (!colorize)
+                        {
+                            ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
+                            return;
+                        }
+                        ColorMath.RgbToHsl(r, g, b, out _, out _, out float l);
+                        ColorMath.HslToRgb(hue < 0 ? hue + 360 : hue, Math.Clamp(0.25f + saturation * 0.75f, 0, 1), ShiftLightness(l, lightness), out r, out g, out b);
+                    };
+                }
             case AdjustmentKind.ColorBalance:
-            {
-                float[] shadows = [s.Get("shadows.cr") / 100f, s.Get("shadows.mg") / 100f, s.Get("shadows.yb") / 100f];
-                float[] mid = [s.Get("midtones.cr") / 100f, s.Get("midtones.mg") / 100f, s.Get("midtones.yb") / 100f];
-                float[] high = [s.Get("highlights.cr") / 100f, s.Get("highlights.mg") / 100f, s.Get("highlights.yb") / 100f];
-                bool preserve = s.Get("preserve", 1) > 0;
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    float l = ColorMath.Luminance(r, g, b);
-                    float ws = Math.Clamp(1 - l * 3, 0, 1);
-                    float wh = Math.Clamp((l - 0.66f) * 3, 0, 1);
-                    float wm = 1 - ws - wh;
-                    float dr = (shadows[0] * ws + mid[0] * wm + high[0] * wh) * 0.4f;
-                    float dg = (shadows[1] * ws + mid[1] * wm + high[1] * wh) * 0.4f;
-                    float db = (shadows[2] * ws + mid[2] * wm + high[2] * wh) * 0.4f;
-                    r += dr; g += dg; b += db;
-                    r = Math.Clamp(r, 0, 1); g = Math.Clamp(g, 0, 1); b = Math.Clamp(b, 0, 1);
-                    if (preserve)
+                    float[] shadows = [s.Get("shadows.cr") / 100f, s.Get("shadows.mg") / 100f, s.Get("shadows.yb") / 100f];
+                    float[] mid = [s.Get("midtones.cr") / 100f, s.Get("midtones.mg") / 100f, s.Get("midtones.yb") / 100f];
+                    float[] high = [s.Get("highlights.cr") / 100f, s.Get("highlights.mg") / 100f, s.Get("highlights.yb") / 100f];
+                    bool preserve = s.Get("preserve", 1) > 0;
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        float nl = ColorMath.Luminance(r, g, b);
-                        float d = l - nl;
-                        r += d; g += d; b += d;
-                    }
-                };
-            }
+                        float l = ColorMath.Luminance(r, g, b);
+                        float ws = Math.Clamp(1 - l * 3, 0, 1);
+                        float wh = Math.Clamp((l - 0.66f) * 3, 0, 1);
+                        float wm = 1 - ws - wh;
+                        float dr = (shadows[0] * ws + mid[0] * wm + high[0] * wh) * 0.4f;
+                        float dg = (shadows[1] * ws + mid[1] * wm + high[1] * wh) * 0.4f;
+                        float db = (shadows[2] * ws + mid[2] * wm + high[2] * wh) * 0.4f;
+                        r += dr; g += dg; b += db;
+                        r = Math.Clamp(r, 0, 1); g = Math.Clamp(g, 0, 1); b = Math.Clamp(b, 0, 1);
+                        if (preserve)
+                        {
+                            float nl = ColorMath.Luminance(r, g, b);
+                            float d = l - nl;
+                            r += d; g += d; b += d;
+                        }
+                    };
+                }
             case AdjustmentKind.BlackAndWhite:
-            {
-                float[] weights = [s.Get("reds", 40), s.Get("yellows", 60), s.Get("greens", 40), s.Get("cyans", 60), s.Get("blues", 20), s.Get("magentas", 80)];
-                bool tint = s.Get("tint") > 0;
-                SKColor tintColor = s.Color;
-                ColorMath.RgbToHsl(tintColor.Red / 255f, tintColor.Green / 255f, tintColor.Blue / 255f, out float th, out float ts, out _);
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    ColorMath.RgbToHsl(r, g, b, out float h, out float sat, out _);
-                    float min = MathF.Min(r, MathF.Min(g, b));
-                    float lum = ColorMath.Luminance(r, g, b);
-                    // Blend the two hue sectors adjacent to this pixel's hue.
-                    float sector = h / 60f;
-                    int i0 = (int)MathF.Floor(sector) % 6;
-                    int i1 = (i0 + 1) % 6;
-                    float f = sector - MathF.Floor(sector);
-                    float wv = (weights[i0] * (1 - f) + weights[i1] * f) / 100f;
-                    float chroma = MathF.Max(r, MathF.Max(g, b)) - min;
-                    float gray = Math.Clamp(min + chroma * wv * 1.0f + (lum - min) * 0.0f, 0, 1);
-                    if (sat < 0.001f) gray = lum;
-                    if (tint)
+                    float[] weights = [s.Get("reds", 40), s.Get("yellows", 60), s.Get("greens", 40), s.Get("cyans", 60), s.Get("blues", 20), s.Get("magentas", 80)];
+                    bool tint = s.Get("tint") > 0;
+                    SKColor tintColor = s.Color;
+                    ColorMath.RgbToHsl(tintColor.Red / 255f, tintColor.Green / 255f, tintColor.Blue / 255f, out float th, out float ts, out _);
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        ColorMath.HslToRgb(th, ts, gray, out r, out g, out b);
-                    }
-                    else
-                    {
-                        r = g = b = gray;
-                    }
-                };
-            }
+                        ColorMath.RgbToHsl(r, g, b, out float h, out float sat, out _);
+                        float min = MathF.Min(r, MathF.Min(g, b));
+                        float lum = ColorMath.Luminance(r, g, b);
+                        // Blend the two hue sectors adjacent to this pixel's hue.
+                        float sector = h / 60f;
+                        int i0 = (int)MathF.Floor(sector) % 6;
+                        int i1 = (i0 + 1) % 6;
+                        float f = sector - MathF.Floor(sector);
+                        float wv = (weights[i0] * (1 - f) + weights[i1] * f) / 100f;
+                        float chroma = MathF.Max(r, MathF.Max(g, b)) - min;
+                        float gray = Math.Clamp(min + chroma * wv * 1.0f + (lum - min) * 0.0f, 0, 1);
+                        if (sat < 0.001f) gray = lum;
+                        if (tint)
+                        {
+                            ColorMath.HslToRgb(th, ts, gray, out r, out g, out b);
+                        }
+                        else
+                        {
+                            r = g = b = gray;
+                        }
+                    };
+                }
             case AdjustmentKind.PhotoFilter:
-            {
-                SKColor color = s.Color;
-                float density = s.Get("density", 25) / 100f;
-                bool preserve = s.Get("preserve", 1) > 0;
-                float cr = color.Red / 255f, cg = color.Green / 255f, cb = color.Blue / 255f;
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    float l = ColorMath.Luminance(r, g, b);
-                    r = r + (r * cr * 2 - r) * density * 0.5f + (cr - r) * density * 0.25f;
-                    g = g + (g * cg * 2 - g) * density * 0.5f + (cg - g) * density * 0.25f;
-                    b = b + (b * cb * 2 - b) * density * 0.5f + (cb - b) * density * 0.25f;
-                    r = Math.Clamp(r, 0, 1); g = Math.Clamp(g, 0, 1); b = Math.Clamp(b, 0, 1);
-                    if (preserve)
+                    SKColor color = s.Color;
+                    float density = s.Get("density", 25) / 100f;
+                    bool preserve = s.Get("preserve", 1) > 0;
+                    float cr = color.Red / 255f, cg = color.Green / 255f, cb = color.Blue / 255f;
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        float d = l - ColorMath.Luminance(r, g, b);
-                        r += d; g += d; b += d;
-                    }
-                };
-            }
+                        float l = ColorMath.Luminance(r, g, b);
+                        r = r + (r * cr * 2 - r) * density * 0.5f + (cr - r) * density * 0.25f;
+                        g = g + (g * cg * 2 - g) * density * 0.5f + (cg - g) * density * 0.25f;
+                        b = b + (b * cb * 2 - b) * density * 0.5f + (cb - b) * density * 0.25f;
+                        r = Math.Clamp(r, 0, 1); g = Math.Clamp(g, 0, 1); b = Math.Clamp(b, 0, 1);
+                        if (preserve)
+                        {
+                            float d = l - ColorMath.Luminance(r, g, b);
+                            r += d; g += d; b += d;
+                        }
+                    };
+                }
             case AdjustmentKind.ChannelMixer:
-            {
-                float[] m =
-                [
-                    s.Get("r.r") / 100f, s.Get("r.g") / 100f, s.Get("r.b") / 100f, s.Get("r.c") / 100f,
+                {
+                    float[] m =
+                    [
+                        s.Get("r.r") / 100f, s.Get("r.g") / 100f, s.Get("r.b") / 100f, s.Get("r.c") / 100f,
                     s.Get("g.r") / 100f, s.Get("g.g") / 100f, s.Get("g.b") / 100f, s.Get("g.c") / 100f,
                     s.Get("b.r") / 100f, s.Get("b.g") / 100f, s.Get("b.b") / 100f, s.Get("b.c") / 100f
-                ];
-                bool mono = s.Get("monochrome") > 0;
-                return (ref float r, ref float g, ref float b) =>
-                {
-                    float nr = r * m[0] + g * m[1] + b * m[2] + m[3];
-                    if (mono)
+                    ];
+                    bool mono = s.Get("monochrome") > 0;
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        r = g = b = nr;
-                        return;
-                    }
-                    float ng = r * m[4] + g * m[5] + b * m[6] + m[7];
-                    float nb = r * m[8] + g * m[9] + b * m[10] + m[11];
-                    r = nr; g = ng; b = nb;
-                };
-            }
+                        float nr = r * m[0] + g * m[1] + b * m[2] + m[3];
+                        if (mono)
+                        {
+                            r = g = b = nr;
+                            return;
+                        }
+                        float ng = r * m[4] + g * m[5] + b * m[6] + m[7];
+                        float nb = r * m[8] + g * m[9] + b * m[10] + m[11];
+                        r = nr; g = ng; b = nb;
+                    };
+                }
             case AdjustmentKind.Invert:
                 return (ref float r, ref float g, ref float b) => { r = 1 - r; g = 1 - g; b = 1 - b; };
             case AdjustmentKind.Posterize:
-            {
-                int levels = Math.Clamp((int)s.Get("levels", 4), 2, 255);
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    r = MathF.Round(r * (levels - 1)) / (levels - 1);
-                    g = MathF.Round(g * (levels - 1)) / (levels - 1);
-                    b = MathF.Round(b * (levels - 1)) / (levels - 1);
-                };
-            }
-            case AdjustmentKind.Threshold:
-            {
-                float level = s.Get("level", 128) / 255f;
-                return (ref float r, ref float g, ref float b) =>
-                {
-                    float v = ColorMath.Luminance(r, g, b) >= level ? 1 : 0;
-                    r = g = b = v;
-                };
-            }
-            case AdjustmentKind.GradientMap:
-            {
-                GradientDefinition gradient = s.Gradient ?? GradientDefinition.CreateDefault(SKColors.Black, SKColors.White);
-                SKColor[] lut = new SKColor[256];
-                for (int i = 0; i < 256; i++) lut[i] = gradient.Sample(i / 255f);
-                return (ref float r, ref float g, ref float b) =>
-                {
-                    SKColor c = lut[Math.Clamp((int)(ColorMath.Luminance(r, g, b) * 255), 0, 255)];
-                    r = c.Red / 255f; g = c.Green / 255f; b = c.Blue / 255f;
-                };
-            }
-            case AdjustmentKind.SelectiveColor:
-            {
-                string[] groups = ["reds", "yellows", "greens", "cyans", "blues", "magentas", "whites", "neutrals", "blacks"];
-                float[,] cmyk = new float[groups.Length, 4];
-                for (int i = 0; i < groups.Length; i++)
-                {
-                    cmyk[i, 0] = s.Get($"{groups[i]}.c") / 100f;
-                    cmyk[i, 1] = s.Get($"{groups[i]}.m") / 100f;
-                    cmyk[i, 2] = s.Get($"{groups[i]}.y") / 100f;
-                    cmyk[i, 3] = s.Get($"{groups[i]}.k") / 100f;
-                }
-                return (ref float r, ref float g, ref float b) =>
-                {
-                    float max = MathF.Max(r, MathF.Max(g, b));
-                    float min = MathF.Min(r, MathF.Min(g, b));
-                    float chroma = max - min;
-                    ColorMath.RgbToHsl(r, g, b, out float h, out _, out float l);
-                    float dr = 0, dg = 0, db = 0;
-                    void ApplyGroup(int index, float amount)
+                    int levels = Math.Clamp((int)s.Get("levels", 4), 2, 255);
+                    return (ref float r, ref float g, ref float b) =>
                     {
-                        if (amount <= 0) return;
-                        float k = cmyk[index, 3];
-                        dr -= (cmyk[index, 0] + k) * amount;
-                        dg -= (cmyk[index, 1] + k) * amount;
-                        db -= (cmyk[index, 2] + k) * amount;
+                        r = MathF.Round(r * (levels - 1)) / (levels - 1);
+                        g = MathF.Round(g * (levels - 1)) / (levels - 1);
+                        b = MathF.Round(b * (levels - 1)) / (levels - 1);
+                    };
+                }
+            case AdjustmentKind.Threshold:
+                {
+                    float level = s.Get("level", 128) / 255f;
+                    return (ref float r, ref float g, ref float b) =>
+                    {
+                        float v = ColorMath.Luminance(r, g, b) >= level ? 1 : 0;
+                        r = g = b = v;
+                    };
+                }
+            case AdjustmentKind.GradientMap:
+                {
+                    GradientDefinition gradient = s.Gradient ?? GradientDefinition.CreateDefault(SKColors.Black, SKColors.White);
+                    SKColor[] lut = new SKColor[256];
+                    for (int i = 0; i < 256; i++) lut[i] = gradient.Sample(i / 255f);
+                    return (ref float r, ref float g, ref float b) =>
+                    {
+                        SKColor c = lut[Math.Clamp((int)(ColorMath.Luminance(r, g, b) * 255), 0, 255)];
+                        r = c.Red / 255f; g = c.Green / 255f; b = c.Blue / 255f;
+                    };
+                }
+            case AdjustmentKind.SelectiveColor:
+                {
+                    string[] groups = ["reds", "yellows", "greens", "cyans", "blues", "magentas", "whites", "neutrals", "blacks"];
+                    float[,] cmyk = new float[groups.Length, 4];
+                    for (int i = 0; i < groups.Length; i++)
+                    {
+                        cmyk[i, 0] = s.Get($"{groups[i]}.c") / 100f;
+                        cmyk[i, 1] = s.Get($"{groups[i]}.m") / 100f;
+                        cmyk[i, 2] = s.Get($"{groups[i]}.y") / 100f;
+                        cmyk[i, 3] = s.Get($"{groups[i]}.k") / 100f;
                     }
-                    int hueGroup = (int)MathF.Round(h / 60f) % 6;
-                    ApplyGroup(hueGroup, chroma);
-                    ApplyGroup(6, Math.Clamp((min - 0.5f) * 2, 0, 1));
-                    ApplyGroup(7, 1 - MathF.Abs(l - 0.5f) * 2 - chroma);
-                    ApplyGroup(8, Math.Clamp((0.5f - max) * 2, 0, 1));
-                    r = Math.Clamp(r + dr, 0, 1); g = Math.Clamp(g + dg, 0, 1); b = Math.Clamp(b + db, 0, 1);
-                };
-            }
+                    return (ref float r, ref float g, ref float b) =>
+                    {
+                        float max = MathF.Max(r, MathF.Max(g, b));
+                        float min = MathF.Min(r, MathF.Min(g, b));
+                        float chroma = max - min;
+                        ColorMath.RgbToHsl(r, g, b, out float h, out _, out float l);
+                        float dr = 0, dg = 0, db = 0;
+                        void ApplyGroup(int index, float amount)
+                        {
+                            if (amount <= 0) return;
+                            float k = cmyk[index, 3];
+                            dr -= (cmyk[index, 0] + k) * amount;
+                            dg -= (cmyk[index, 1] + k) * amount;
+                            db -= (cmyk[index, 2] + k) * amount;
+                        }
+                        int hueGroup = (int)MathF.Round(h / 60f) % 6;
+                        ApplyGroup(hueGroup, chroma);
+                        ApplyGroup(6, Math.Clamp((min - 0.5f) * 2, 0, 1));
+                        ApplyGroup(7, 1 - MathF.Abs(l - 0.5f) * 2 - chroma);
+                        ApplyGroup(8, Math.Clamp((0.5f - max) * 2, 0, 1));
+                        r = Math.Clamp(r + dr, 0, 1); g = Math.Clamp(g + dg, 0, 1); b = Math.Clamp(b + db, 0, 1);
+                    };
+                }
             case AdjustmentKind.Desaturate:
                 return (ref float r, ref float g, ref float b) =>
                 {
@@ -471,30 +471,30 @@ public static class Adjustments
                     r = g = b = l;
                 };
             case AdjustmentKind.ColorLookup:
-            {
-                ColorLut? lut = s.Lut;
-                if (lut == null) goto default;
-                return (ref float r, ref float g, ref float b) => lut.Sample(ref r, ref g, ref b);
-            }
-            case AdjustmentKind.ReplaceColor:
-            {
-                float hue = s.Get("hue");
-                float saturation = s.Get("saturation") / 100f;
-                float lightness = s.Get("lightness") / 100f;
-                float range = Math.Max(1, s.Get("fuzziness", 40));
-                SKColor[] samples = s.SampleColors.ToArray();
-                SKColor[] excluded = s.ExcludedColors.ToArray();
-                return (ref float r, ref float g, ref float b) =>
                 {
-                    float coverage = ReplaceCoverage(r, g, b, samples, excluded, range);
-                    if (coverage <= 0) return;
-                    float r0 = r, g0 = g, b0 = b;
-                    ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
-                    r = r0 + (r - r0) * coverage;
-                    g = g0 + (g - g0) * coverage;
-                    b = b0 + (b - b0) * coverage;
-                };
-            }
+                    ColorLut? lut = s.Lut;
+                    if (lut == null) goto default;
+                    return (ref float r, ref float g, ref float b) => lut.Sample(ref r, ref g, ref b);
+                }
+            case AdjustmentKind.ReplaceColor:
+                {
+                    float hue = s.Get("hue");
+                    float saturation = s.Get("saturation") / 100f;
+                    float lightness = s.Get("lightness") / 100f;
+                    float range = Math.Max(1, s.Get("fuzziness", 40));
+                    SKColor[] samples = s.SampleColors.ToArray();
+                    SKColor[] excluded = s.ExcludedColors.ToArray();
+                    return (ref float r, ref float g, ref float b) =>
+                    {
+                        float coverage = ReplaceCoverage(r, g, b, samples, excluded, range);
+                        if (coverage <= 0) return;
+                        float r0 = r, g0 = g, b0 = b;
+                        ShiftHsl(ref r, ref g, ref b, hue, saturation, lightness);
+                        r = r0 + (r - r0) * coverage;
+                        g = g0 + (g - g0) * coverage;
+                        b = b0 + (b - b0) * coverage;
+                    };
+                }
             case AdjustmentKind.MatchColor:
                 return ColorMatch.CreateFunction(s);
             default:

@@ -167,18 +167,18 @@ public sealed class GradientDefinition
             case GradientType.Radial:
                 return SKShader.CreateRadialGradient(start, Math.Max(0.5f, length), colors, positions, SKShaderTileMode.Clamp);
             case GradientType.Angle:
-            {
-                float angle = MathF.Atan2(end.Y - start.Y, end.X - start.X) * 180 / MathF.PI;
-                return SKShader.CreateSweepGradient(start, colors, positions, SKShaderTileMode.Clamp, 0, 360,
-                    SKMatrix.CreateRotationDegrees(angle, start.X, start.Y));
-            }
+                {
+                    float angle = MathF.Atan2(end.Y - start.Y, end.X - start.X) * 180 / MathF.PI;
+                    return SKShader.CreateSweepGradient(start, colors, positions, SKShaderTileMode.Clamp, 0, 360,
+                        SKMatrix.CreateRotationDegrees(angle, start.X, start.Y));
+                }
             case GradientType.Reflected:
-            {
-                SKPoint mirrored = start - (end - start);
-                List<SKColor> c = colors.Reverse().Concat(colors.Skip(1)).ToList();
-                List<float> p = positions.Reverse().Select(x => (1 - x) / 2).Concat(positions.Skip(1).Select(x => 0.5f + x / 2)).ToList();
-                return SKShader.CreateLinearGradient(mirrored, end, c.ToArray(), p.ToArray(), SKShaderTileMode.Clamp);
-            }
+                {
+                    SKPoint mirrored = start - (end - start);
+                    List<SKColor> c = colors.Reverse().Concat(colors.Skip(1)).ToList();
+                    List<float> p = positions.Reverse().Select(x => (1 - x) / 2).Concat(positions.Skip(1).Select(x => 0.5f + x / 2)).ToList();
+                    return SKShader.CreateLinearGradient(mirrored, end, c.ToArray(), p.ToArray(), SKShaderTileMode.Clamp);
+                }
             default:
                 return SKShader.CreateLinearGradient(start, end, colors, positions, SKShaderTileMode.Clamp);
         }

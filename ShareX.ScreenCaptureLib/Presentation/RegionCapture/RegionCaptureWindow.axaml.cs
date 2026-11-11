@@ -359,7 +359,7 @@ public partial class RegionCaptureWindow : Window
         _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
         _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
         _captureToolbarScale = this.FindControl<LayoutTransformControl>("CaptureToolbarScale")!;
-        _annotationToolbar =this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
+        _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
         _magnifierPanel.RenderTransformOrigin = RelativePoint.TopLeft;

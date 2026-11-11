@@ -39,7 +39,6 @@ using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Icons;
-using ShareX.Localization;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -48,9 +47,6 @@ using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
-using MessageBox = ShareX.AvaloniaUI.MessageBox;
-using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
-using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 

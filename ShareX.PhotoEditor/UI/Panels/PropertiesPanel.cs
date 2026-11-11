@@ -227,28 +227,28 @@ public sealed class PropertiesPanel : EditorPanel
         switch (fill.FillKind)
         {
             case FillKind.SolidColor:
-            {
-                Button color = new() { Content = new Border { Width = 60, Height = 20, Background = DialogBuilder.ToBrush(fill.Color) } };
-                color.Click += async (_, _) =>
                 {
-                    SKColor? c = await ColorPickerDialog.ShowAsync(Editor, fill.Color, Strings.EditorCommands_SolidColor, Editor);
-                    if (c is SKColor value) { fill.Color = value; Editor.Commit(Strings.PropertiesPanel_ChangeFill); Refresh(); }
-                };
-                _root.Children.Add(color);
-                break;
-            }
+                    Button color = new() { Content = new Border { Width = 60, Height = 20, Background = DialogBuilder.ToBrush(fill.Color) } };
+                    color.Click += async (_, _) =>
+                    {
+                        SKColor? c = await ColorPickerDialog.ShowAsync(Editor, fill.Color, Strings.EditorCommands_SolidColor, Editor);
+                        if (c is SKColor value) { fill.Color = value; Editor.Commit(Strings.PropertiesPanel_ChangeFill); Refresh(); }
+                    };
+                    _root.Children.Add(color);
+                    break;
+                }
             case FillKind.Gradient:
-            {
-                Button edit = new() { Content = Strings.AdjustmentEditor_EditGradientEllipsis };
-                edit.Click += async (_, _) =>
                 {
-                    GradientDefinition? g = await GradientEditorDialog.ShowAsync(Editor, fill.Gradient, Editor);
-                    if (g != null) { g.Angle = fill.Gradient.Angle; fill.Gradient = g; Editor.Commit(Strings.PropertiesPanel_ChangeFill); }
-                };
-                _root.Children.Add(edit);
-                _root.Children.Add(DialogBuilder.SliderNumber(-180, 180, fill.Gradient.Angle, v => { fill.Gradient.Angle = (float)v; Changed(Strings.PropertiesPanel_ChangeFill); }));
-                break;
-            }
+                    Button edit = new() { Content = Strings.AdjustmentEditor_EditGradientEllipsis };
+                    edit.Click += async (_, _) =>
+                    {
+                        GradientDefinition? g = await GradientEditorDialog.ShowAsync(Editor, fill.Gradient, Editor);
+                        if (g != null) { g.Angle = fill.Gradient.Angle; fill.Gradient = g; Editor.Commit(Strings.PropertiesPanel_ChangeFill); }
+                    };
+                    _root.Children.Add(edit);
+                    _root.Children.Add(DialogBuilder.SliderNumber(-180, 180, fill.Gradient.Angle, v => { fill.Gradient.Angle = (float)v; Changed(Strings.PropertiesPanel_ChangeFill); }));
+                    break;
+                }
             case FillKind.Pattern:
                 _root.Children.Add(DialogBuilder.Combo(Editor.Patterns.Select(p => (p.Name, p)), fill.Pattern ?? Editor.Patterns[0], v => { fill.Pattern = v; Editor.Commit(Strings.PropertiesPanel_ChangeFill); }));
                 _root.Children.Add(DialogBuilder.SliderNumber(1, 1000, fill.PatternScale * 100, v => { fill.PatternScale = (float)v / 100; Changed(Strings.PropertiesPanel_ChangeFill); }));

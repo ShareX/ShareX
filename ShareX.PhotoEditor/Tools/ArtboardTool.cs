@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Media;
 using ShareX.PhotoEditor.UI;
 
 namespace ShareX.PhotoEditor.Tools;

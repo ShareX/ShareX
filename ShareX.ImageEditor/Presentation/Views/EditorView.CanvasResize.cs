@@ -37,7 +37,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.ViewModels;
-using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.Views
 {

@@ -27,9 +27,9 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
-using Path = Avalonia.Controls.Shapes.Path;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Path = Avalonia.Controls.Shapes.Path;
 
 namespace ShareX.PhotoEditor.UI.Dialogs;
 

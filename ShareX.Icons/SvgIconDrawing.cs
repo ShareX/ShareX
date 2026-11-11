@@ -23,11 +23,11 @@
 
 #endregion License Information (GPL v3)
 
-using System.Globalization;
-using System.Xml.Linq;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
+using System.Globalization;
+using System.Xml.Linq;
 
 namespace ShareX.Icons;
 

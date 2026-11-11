@@ -135,7 +135,9 @@ public abstract class BrushToolBase : ToolBase
             Offset = layer.Offset,
             Layer = layer,
             LockTransparency = layer.LockTransparency
-        , Description = layer.Name };
+        ,
+            Description = layer.Name
+        };
     }
 
     public override void PointerDown(ToolInput input)

@@ -344,8 +344,14 @@ public sealed class TransformTool : ToolBase
         // Handle position and anchor in (u, v) parameter space; corners are (0,0),(1,0),(1,1),(0,1).
         (float hu, float hv) = handle switch
         {
-            0 => (0f, 0f), 1 => (1f, 0f), 2 => (1f, 1f), 3 => (0f, 1f),
-            4 => (0.5f, 0f), 5 => (1f, 0.5f), 6 => (0.5f, 1f), _ => (0f, 0.5f)
+            0 => (0f, 0f),
+            1 => (1f, 0f),
+            2 => (1f, 1f),
+            3 => (0f, 1f),
+            4 => (0.5f, 0f),
+            5 => (1f, 0.5f),
+            6 => (0.5f, 1f),
+            _ => (0f, 0.5f)
         };
         float au = fromCenter ? 0.5f : 1 - hu, av = fromCenter ? 0.5f : 1 - hv;
         if (handle == 4 || handle == 6) au = 0.5f;
@@ -629,11 +635,11 @@ public sealed class MoveTool : ToolBase
                 case RasterLayer raster when (ImageOps.GetPixel(raster.Surface.Bitmap, p.X - raster.Offset.X, p.Y - raster.Offset.Y) >> 24) > 10:
                     return layer;
                 case ShapeLayer shape:
-                {
-                    using SKPath path = shape.Path.ToSKPath();
-                    if (path.Contains(p.X, p.Y)) return layer;
-                    break;
-                }
+                    {
+                        using SKPath path = shape.Path.ToSKPath();
+                        if (path.Contains(p.X, p.Y)) return layer;
+                        break;
+                    }
                 case TextLayer or SmartObjectLayer or FrameLayer or FillLayer when layer.GetContentBounds().Contains(p.X, p.Y):
                     return layer;
             }

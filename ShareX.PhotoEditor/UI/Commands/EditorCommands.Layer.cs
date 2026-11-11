@@ -53,7 +53,8 @@ public static partial class EditorCommands
         R("layer.fill.solid", Strings.EditorCommands_SolidColorEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.SolidColor), HasDoc);
         R("layer.fill.gradient", Strings.EditorCommands_GradientEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.Gradient), HasDoc);
         R("layer.fill.pattern", Strings.EditorCommands_PatternEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.Pattern), HasDoc);
-        foreach (AdjustmentKind kind in AdjustmentLayerGroups.SelectMany(group => group))        {
+        foreach (AdjustmentKind kind in AdjustmentLayerGroups.SelectMany(group => group))
+        {
             AdjustmentKind captured = kind;
             R($"layer.adjust.{kind}", AdjustmentSettings.GetName(kind) + "...", null, w => NewAdjustmentLayer(w, captured), HasDoc);
         }
@@ -363,11 +364,11 @@ public static partial class EditorCommands
                 MaskOps.Invert(mask);
                 break;
             case MaskMode.FromTransparency when layer is RasterLayer raster:
-            {
-                using SKBitmap full = Compositor.RenderLayer(doc, raster, false);
-                mask = ImageOps.ToMask(full, true);
-                break;
-            }
+                {
+                    using SKBitmap full = Compositor.RenderLayer(doc, raster, false);
+                    mask = ImageOps.ToMask(full, true);
+                    break;
+                }
             default:
                 mask = PixelSurface.CreateMask(doc.Width, doc.Height, 255);
                 break;

@@ -29,9 +29,9 @@ using ShareX.HelpersLib;
 using ShareX.HistoryLib;
 using ShareX.Icons;
 using ShareX.ImageEditor.Integration;
-using ShareX.PhotoEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
+using ShareX.PhotoEditor.Integration;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -1974,7 +1974,8 @@ namespace ShareX
                     }
 
                     return windows.GetWindowInfoList().Select(window => window.Rectangle).ToList();
-                } : null
+                }
+                : null
             });
         }
 
