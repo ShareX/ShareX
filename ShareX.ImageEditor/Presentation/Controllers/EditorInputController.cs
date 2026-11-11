@@ -160,6 +160,7 @@ public class EditorInputController
         {
             if (vm.Options.RightClickDeletesShape)
             {
+                // Shapes of other tools are ignored, like empty space.
                 Control? shape = _selectionController.HitTestActiveToolShape(canvas, e.GetPosition(canvas));
                 if (shape != null)
                 {
@@ -168,9 +169,14 @@ public class EditorInputController
                     // Same as pressing Delete, so it can be undone.
                     vm.DeleteSelectedCommand.Execute(null);
                     e.Pointer.Capture(null);
-                    e.Handled = true;
-                    return;
                 }
+                else
+                {
+                    _view.OpenContextMenu(canvas);
+                }
+
+                e.Handled = true;
+                return;
             }
 
             var hitSource = e.Source as global::Avalonia.Visual;
