@@ -1687,6 +1687,9 @@ Dateipfad: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Bereich auswählen...</value>
   </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Absätze trennen</value>
+  </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optische Zeichenerkennung</value>
   </data>

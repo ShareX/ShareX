@@ -1687,6 +1687,9 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Seleccionar región...</value>
   </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separar párrafos</value>
+  </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconocimiento óptico de caracteres</value>
   </data>

@@ -1687,6 +1687,9 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>क्षेत्र चुनें...</value>
   </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>अनुच्छेद अलग करें</value>
+  </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - ऑप्टिकल वर्ण पहचान</value>
   </data>

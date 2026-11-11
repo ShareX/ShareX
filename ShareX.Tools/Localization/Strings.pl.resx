@@ -1681,6 +1681,9 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Wybierz obszar...</value>
   </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Oddzielaj akapity</value>
+  </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX — optyczne rozpoznawanie znaków</value>
   </data>

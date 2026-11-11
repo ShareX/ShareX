@@ -30,6 +30,8 @@ namespace ShareX.Tools;
 public sealed class OCROptions
 {
     public bool SingleLine { get; set; }
+    // Puts an empty line between paragraphs, which are found from the spacing and size of the lines in the image.
+    public bool SeparateParagraphs { get; set; } = true;
     public bool Silent { get; set; }
     public bool AutoCopy { get; set; }
     public List<OCRServiceLinkOption> ServiceLinks { get; set; } = DefaultServiceLinks;
