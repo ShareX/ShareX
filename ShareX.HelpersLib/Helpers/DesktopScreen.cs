@@ -83,6 +83,27 @@ public sealed class DesktopScreen
             screens.FirstOrDefault(x => !string.IsNullOrEmpty(screen.DisplayName) && x.DeviceName == screen.DisplayName))?.DeviceName;
     }
 
+    /// <summary>
+    /// Monitor model names by <see cref="DeviceName"/>, from Avalonia, for the monitors the platform's list does not name
+    /// (Windows reports only \\.\DISPLAY2 there).
+    /// </summary>
+    public static System.Collections.Generic.IReadOnlyDictionary<string, string> GetModelNames() => DesktopServices.Run(() =>
+    {
+        System.Collections.Generic.Dictionary<string, string> names = new(StringComparer.OrdinalIgnoreCase);
+
+        foreach (Avalonia.Platform.Screen screen in DesktopServices.GetWindow().Screens.All)
+        {
+            string deviceName = GetDeviceName(screen);
+
+            if (!string.IsNullOrEmpty(deviceName) && !string.IsNullOrEmpty(screen.DisplayName))
+            {
+                names[deviceName] = screen.DisplayName;
+            }
+        }
+
+        return names;
+    });
+
     public static DesktopScreen[] AllScreens => GetPlatformScreens() ?? DesktopServices.Run(() =>
         DesktopServices.GetWindow().Screens.All.Select(x => new DesktopScreen(x)).ToArray());
 

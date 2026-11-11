@@ -1605,10 +1605,13 @@ internal sealed class TaskSettingsPageBuilder
             .Where(x => !x.Primary && !string.IsNullOrEmpty(x.DeviceName))
             .OrderBy(x => GetMonitorNumber(x.DeviceName).PadLeft(4, '0'), StringComparer.Ordinal);
 
+        IReadOnlyDictionary<string, string> modelNames = DesktopScreen.GetModelNames();
+
         foreach (DesktopScreen screen in otherScreens)
         {
             DrawingRectangle bounds = screen.Bounds;
-            string name = string.IsNullOrEmpty(screen.DisplayName) ? screen.DeviceName : screen.DisplayName;
+            string name = !string.IsNullOrEmpty(screen.DisplayName) ? screen.DisplayName
+                : modelNames.TryGetValue(screen.DeviceName, out string? modelName) ? modelName : screen.DeviceName;
             string title = string.Format(Strings.TaskSettingsWindow_ToastMonitorScreen0123, GetMonitorNumber(screen.DeviceName), name,
                 $"{bounds.Width}x{bounds.Height}", $"{bounds.X}, {bounds.Y}");
             choices.Add((new(ToastWindowMonitor.SpecificMonitor, screen.DeviceName), title));
@@ -1635,11 +1638,12 @@ internal sealed class TaskSettingsPageBuilder
         }, value => titles[value]);
     }
 
-    // \\.\DISPLAY2 -> 2
-    private static string GetMonitorNumber(string deviceName)
+    // \\.\DISPLAY2 -> 2. Other platforms name outputs (DP-1, HDMI-A-1), where the trailing digit is not a monitor number.
+    internal static string GetMonitorNumber(string deviceName)
     {
-        string digits = new(deviceName.Reverse().TakeWhile(char.IsDigit).Reverse().ToArray());
-        return digits.Length > 0 ? digits : deviceName;
+        const string windowsPrefix = @"\\.\DISPLAY";
+        string digits = deviceName.StartsWith(windowsPrefix, StringComparison.OrdinalIgnoreCase) ? deviceName[windowsPrefix.Length..] : "";
+        return digits.Length > 0 && digits.All(char.IsDigit) ? digits : deviceName;
     }
 
     private static ComboBox EnumCombo<T>(Func<T> getter, Action<T> setter) where T : struct, Enum =>
