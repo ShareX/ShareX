@@ -97,8 +97,8 @@ public partial class ActionsToolbarWindow : Window
                 FontSize = 17,
                 IsHitTestVisible = false
             };
-            // Icons sit on the toolbar surface, so they use the surface accent color and follow theme and accent changes.
-            icon.Bind(IconPresenter.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Text"));
+            // Icons sit on the toolbar surface, so they use the accent icon color and follow accent changes.
+            icon.Bind(IconPresenter.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Icon"));
 
             Button button = new()
             {

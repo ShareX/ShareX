@@ -147,7 +147,7 @@
                             <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Settings}"
                                                         FontSize="20"
-                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                                                        Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                 <TextBlock Grid.Column="1"
                                            Classes="section-heading"
                                            Text="{x:Static localization:Strings.ScrollingCaptureWindow_Options_heading}"/>

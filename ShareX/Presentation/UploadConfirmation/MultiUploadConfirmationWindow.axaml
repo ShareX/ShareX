@@ -43,7 +43,7 @@
                     <controls:IconPresenter Grid.RowSpan="2"
                                             Icon="{x:Static icons:AppIcons.Files}"
                                             FontSize="32"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Top"/>
                     <TextBlock x:Name="MessageText"

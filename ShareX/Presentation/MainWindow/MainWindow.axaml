@@ -629,7 +629,7 @@
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
-                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                 <TextBlock Text="{x:Static res:Strings.MainWindow_ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
@@ -651,7 +651,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                                             IsVisible="{Binding IsRegistered}"
-                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                                             FontSize="17"
                                                                             HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"/>
@@ -699,7 +699,7 @@
                 <StackPanel Spacing="12" HorizontalAlignment="Center">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                             FontSize="48"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayTitle"
                                Text="{x:Static res:Strings.MainWindow_ReleaseToUploadFiles}"

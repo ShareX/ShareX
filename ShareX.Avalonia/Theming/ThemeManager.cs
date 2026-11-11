@@ -363,6 +363,9 @@ namespace ShareX.AvaloniaUI.Theming
                 ["ShareX.Color.Accent.Foreground"] = palette.OnFill,
                 ["ShareX.Brush.Accent.Start"] = new SolidColorBrush(palette.FillStart),
                 ["ShareX.Brush.Accent.Foreground"] = new SolidColorBrush(palette.OnFill),
+                // Icons on the theme backgrounds use the accent as picked, so they do not depend on the theme either.
+                ["ShareX.Color.Accent.Icon"] = palette.Icon,
+                ["ShareX.Brush.Accent.Icon"] = new SolidColorBrush(palette.Icon),
                 ["ShareX.Brush.Accent"] = new LinearGradientBrush
                 {
                     StartPoint = new RelativePoint(0, 0, RelativeUnit.Relative),
@@ -378,7 +381,7 @@ namespace ShareX.AvaloniaUI.Theming
             AddFluentAccentResources(values, palette);
             bool changed = SetResources(resources, values);
 
-            // Accent colored text, icons and indicators drawn on the theme backgrounds rather than on the accent.
+            // Accent colored text and indicators drawn on the theme backgrounds rather than on the accent.
             // ShareXDark and ShareXLight inherit Dark and Light, so they resolve these through the base entries.
             changed |= SetResources(GetThemeDictionary(resources, ThemeVariant.Dark), GetSurfaceAccentResources(_darkPalette));
             changed |= SetResources(GetThemeDictionary(resources, ThemeVariant.Light), GetSurfaceAccentResources(_lightPalette));

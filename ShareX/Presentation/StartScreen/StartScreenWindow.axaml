@@ -155,7 +155,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Language}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -195,7 +195,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rocket}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -214,7 +214,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -233,7 +233,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -259,7 +259,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Palette}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -278,7 +278,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Swatches}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>
@@ -299,7 +299,7 @@
                                 <Border Classes="setting-icon">
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Images}"
                                                             FontSize="19"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center"
                                                             VerticalAlignment="Center"/>
                                 </Border>

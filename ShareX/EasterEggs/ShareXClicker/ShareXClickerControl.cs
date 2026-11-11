@@ -737,11 +737,15 @@ public sealed class ShareXClickerControl : IDisposable
         }
     }
 
-    private static IconPresenter Icon(string key, double size) =>
-        AccentText(new IconPresenter { Icon = key, FontSize = size, VerticalAlignment = VerticalAlignment.Center });
+    private static IconPresenter Icon(string key, double size)
+    {
+        IconPresenter icon = new() { Icon = key, FontSize = size, VerticalAlignment = VerticalAlignment.Center };
+        icon.Bind(TextElement.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Icon"));
+        return icon;
+    }
 
-    // Accent text and icons are drawn on the About panel, so they use the surface accent color resolved for the
-    // control's theme, and follow theme and accent changes.
+    // Accent text is drawn on the About panel, so it uses the surface accent color resolved for the control's theme,
+    // and follows theme and accent changes. Icons use the accent icon color instead.
     private static T AccentText<T>(T control) where T : Control
     {
         control.Bind(TextElement.ForegroundProperty, control.GetResourceObservable("ShareX.Brush.Accent.Text"));

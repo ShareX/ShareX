@@ -31,7 +31,7 @@
         </Style>
         <Style Selector="controls|IconPresenter.page-title-icon">
             <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
@@ -880,7 +880,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.ClipboardList}"
                                                     FontSize="21"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                     VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ClipboardFormatEditorTitle"

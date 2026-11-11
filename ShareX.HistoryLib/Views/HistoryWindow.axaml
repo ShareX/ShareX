@@ -383,7 +383,7 @@
                                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Loading}"
                                                             Classes="loading-icon"
                                                             FontSize="44"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             HorizontalAlignment="Center">
                                         <controls:IconPresenter.RenderTransform>
                                             <RotateTransform Angle="0"/>

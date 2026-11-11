@@ -166,7 +166,7 @@
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="18,16,18,8">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.TextRecognition}"
                                                     FontSize="18"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                     VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}"/>
                         </Grid>

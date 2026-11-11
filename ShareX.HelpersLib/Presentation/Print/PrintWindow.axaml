@@ -42,7 +42,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Printer}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>

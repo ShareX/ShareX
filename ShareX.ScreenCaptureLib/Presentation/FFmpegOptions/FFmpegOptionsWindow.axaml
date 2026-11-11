@@ -260,7 +260,7 @@
                                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10">
                                             <controls:IconPresenter Grid.Column="0"
                                                                     Icon="{x:Static icons:AppIcons.Info}"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                                     VerticalAlignment="Center"/>
                                             <TextBlock x:Name="DeviceStatusTextBlock"
                                                        Grid.Column="1"
@@ -451,7 +451,7 @@
                                     <Border x:Name="NoVideoSettingsPanel" Classes="info-card">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
-                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1"
                                                        Classes="hint"
                                                        Text="{x:Static localization:Strings.FFmpegOptionsWindow_No_additional_settings}"/>
