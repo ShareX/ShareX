@@ -71,10 +71,11 @@ public static class AnnotationEffectVisualUpdater
         {
             // Draw the bitmap 1:1 on the image pixel grid: stretching it over fractional bounds resamples it,
             // which blurs text under a highlight. Avalonia resamples untiled or offset tiles through an
-            // intermediate image, so use one tile the size of the bitmap (it covers the shape, so nothing
-            // repeats) and shift it onto the pixel grid with a transform.
+            // intermediate image, so use one tile the size of the bitmap and shift it onto the pixel grid with
+            // a transform. The tile covers the shape; mirroring it keeps filtering at the edges from pulling
+            // in the opposite edge when zoomed out.
             SKRect bounds = annotation.GetBounds();
-            brush.TileMode = TileMode.Tile;
+            brush.TileMode = TileMode.FlipXY;
             brush.DestinationRect = new RelativeRect(0, 0, pixelBounds.Width, pixelBounds.Height, RelativeUnit.Absolute);
             brush.Transform = new TranslateTransform(pixelBounds.Left - bounds.Left, pixelBounds.Top - bounds.Top);
         }
