@@ -2987,6 +2987,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>عمل کلیک راست:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>کلیک راست شکل زیر نشانگر را حذف می‌کند</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>برای درج نشانه فایل ورودی یا خروجی راست‌کلیک کنید.</value>
   </data>

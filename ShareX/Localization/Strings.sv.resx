@@ -2987,6 +2987,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Åtgärd vid högerklick:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Högerklick tar bort formen under markören</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Högerklicka för att infoga en token för in- eller utdatafil.</value>
   </data>

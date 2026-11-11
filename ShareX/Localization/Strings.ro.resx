@@ -2987,6 +2987,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Acțiune clic dreapta:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Clicul dreapta șterge forma de sub cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Fă clic dreapta pentru a insera un simbol de fișier de intrare sau ieșire.</value>
   </data>

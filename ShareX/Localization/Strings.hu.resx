@@ -2987,6 +2987,9 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Jobb kattintás művelete:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>A jobb kattintás törli a kurzor alatti alakzatot</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Kattintson jobb gombbal egy bemeneti vagy kimeneti fájl helyőrzőjének beszúrásához.</value>
   </data>

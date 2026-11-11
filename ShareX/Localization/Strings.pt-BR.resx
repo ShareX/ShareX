@@ -2987,6 +2987,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Ação do clique direito:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Clicar com o botão direito exclui a forma sob o cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Clique com o botão direito para inserir um token de arquivo de entrada ou saída.</value>
   </data>

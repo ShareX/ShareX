@@ -2987,6 +2987,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Azione clic destro:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Il clic destro elimina la forma sotto il cursore</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Fai clic con il pulsante destro per inserire un token di file di input o output.</value>
   </data>

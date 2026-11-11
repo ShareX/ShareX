@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>إجراء النقر الأيمن:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>النقر بزر الماوس الأيمن يحذف الشكل الموجود تحت المؤشر</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>انقر بزر الماوس الأيمن لإدراج رمز ملف إدخال أو إخراج.</value>
   </data>

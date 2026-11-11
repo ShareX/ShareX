@@ -2987,6 +2987,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Hành động nhấp phải:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Nhấp chuột phải để xóa hình dưới con trỏ</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Nhấp chuột phải để chèn mã tệp đầu vào hoặc đầu ra.</value>
   </data>

@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Дія правої кнопки миші:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Клацання правою кнопкою видаляє фігуру під курсором</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Клацніть правою кнопкою миші, щоб вставити маркер вхідного або вихідного файлу.</value>
   </data>

@@ -2987,6 +2987,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Sağ tıklama eylemi:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Sağ tıklama imlecin altındaki nesneyi siler</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Giriş veya çıkış dosyası belirteci eklemek için sağ tıklayın.</value>
   </data>

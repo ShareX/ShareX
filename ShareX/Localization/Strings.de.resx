@@ -2987,6 +2987,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Aktion bei Rechtsklick:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Rechtsklick löscht die Form unter dem Mauszeiger</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Mit der rechten Maustaste klicken, um ein Eingabe- oder Ausgabedatei-Token einzufügen.</value>
   </data>

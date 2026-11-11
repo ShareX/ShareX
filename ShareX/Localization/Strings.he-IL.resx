@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>פעולת לחיצה ימנית:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>לחיצה ימנית מוחקת את הצורה שמתחת לסמן</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>יש ללחוץ באמצעות לחצן העכבר הימני כדי להוסיף אסימון של קובץ קלט או פלט.</value>
   </data>

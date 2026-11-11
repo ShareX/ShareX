@@ -2987,6 +2987,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>右键操作：</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>右键单击删除光标下的形状</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>右键单击以插入输入或输出文件标记。</value>
   </data>
