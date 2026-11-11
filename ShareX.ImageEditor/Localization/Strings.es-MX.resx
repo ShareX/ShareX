@@ -1497,6 +1497,9 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Texto (fondo)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Ajustar a la ventana</value>
   </data>

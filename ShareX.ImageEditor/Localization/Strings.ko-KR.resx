@@ -1497,6 +1497,9 @@
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>텍스트</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>텍스트 (배경)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>창에 맞춤</value>
   </data>

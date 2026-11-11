@@ -58,4 +58,5 @@ public static class ImageEditorIcons
     public const string Spotlight = Prefix + "spotlight";
     public const string Step = Prefix + "step";
     public const string Text = Prefix + "text";
+    public const string TextBackground = Prefix + "text-background";
 }

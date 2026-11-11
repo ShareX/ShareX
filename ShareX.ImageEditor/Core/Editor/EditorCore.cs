@@ -1647,6 +1647,7 @@ public class EditorCore : IDisposable
             EditorTool.Spotlight => new SpotlightAnnotation(),
             EditorTool.Magnify => new MagnifyAnnotation(),
             EditorTool.SpeechBalloon => new SpeechBalloonAnnotation(),
+            EditorTool.TextBackground => new TextBackgroundAnnotation(),
             EditorTool.Crop => new CropAnnotation(),
             EditorTool.CutOut => new CutOutAnnotation(),
             _ => null

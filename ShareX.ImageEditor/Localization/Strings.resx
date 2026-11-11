@@ -1503,6 +1503,9 @@ Favorite image effects (Right click)</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Text (Background)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Zoom to Fit</value>
   </data>

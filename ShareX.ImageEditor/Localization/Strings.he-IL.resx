@@ -1498,6 +1498,9 @@
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>טקסט</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>טקסט (רקע)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>התאמה לחלון</value>
   </data>

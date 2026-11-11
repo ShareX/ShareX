@@ -1497,6 +1497,9 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Texte</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Texte (arrière-plan)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Ajuster à la fenêtre</value>
   </data>

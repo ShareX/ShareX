@@ -2500,5 +2500,10 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
             }
         }
+        public static string ToolbarCustomizationItemViewModel_TextBackground {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationItemViewModel_TextBackground", resourceCulture);
+            }
+        }
     }
 }

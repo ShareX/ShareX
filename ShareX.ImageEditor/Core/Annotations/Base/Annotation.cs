@@ -49,6 +49,7 @@ namespace ShareX.ImageEditor.Core.Annotations;
 [JsonDerivedType(typeof(SpeechBalloonAnnotation), typeDiscriminator: "SpeechBalloon")]
 [JsonDerivedType(typeof(SpotlightAnnotation), typeDiscriminator: "Spotlight")]
 [JsonDerivedType(typeof(TextAnnotation), typeDiscriminator: "Text")]
+[JsonDerivedType(typeof(TextBackgroundAnnotation), typeDiscriminator: "TextBackground")]
 public abstract class Annotation
 {
     public const string DefaultShadowColorHex = "#80000000";

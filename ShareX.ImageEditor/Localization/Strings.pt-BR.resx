@@ -1497,6 +1497,9 @@ A área de transferência não contém uma imagem.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Texto</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Texto (plano de fundo)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Ajustar à janela</value>
   </data>

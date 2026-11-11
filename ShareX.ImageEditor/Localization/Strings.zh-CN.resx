@@ -1497,6 +1497,9 @@
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>文本</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>文本 (背景)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>适合窗口</value>
   </data>

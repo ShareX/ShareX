@@ -1497,6 +1497,9 @@ Schowek nie zawiera obrazu.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Tekst</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Tekst (tło)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Dopasuj do okna</value>
   </data>

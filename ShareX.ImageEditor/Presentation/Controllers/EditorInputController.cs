@@ -474,6 +474,16 @@ public class EditorInputController
                 Canvas.SetTop(balloonControl, _startPoint.Y);
                 _currentShape = balloonControl;
                 break;
+            case EditorTool.TextBackground:
+                var textBackgroundAnnotation = new TextBackgroundAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, FillColor = vm.FillColor, TextColor = vm.TextColor, FontSize = vm.FontSize, FontFamily = vm.SelectedFontFamily, IsBold = vm.TextBold, IsItalic = vm.TextItalic, HorizontalAlignment = vm.SelectedTextHorizontalAlignment, CornerRadius = vm.CornerRadius, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
+                ApplyShadowOptions(textBackgroundAnnotation, vm);
+                var textBackgroundControl = textBackgroundAnnotation.CreateVisual();
+                textBackgroundControl.Width = 0;
+                textBackgroundControl.Height = 0;
+                Canvas.SetLeft(textBackgroundControl, _startPoint.X);
+                Canvas.SetTop(textBackgroundControl, _startPoint.Y);
+                _currentShape = textBackgroundControl;
+                break;
             case EditorTool.Step:
                 var numberAnnotation = new NumberAnnotation
                 {
@@ -563,6 +573,7 @@ public class EditorInputController
             if (isPositionUnset
                 && vm.ActiveTool != EditorTool.Spotlight
                 && vm.ActiveTool != EditorTool.SpeechBalloon
+                && vm.ActiveTool != EditorTool.TextBackground
                 && vm.ActiveTool != EditorTool.Line
                 && vm.ActiveTool != EditorTool.Arrow
                 && vm.ActiveTool != EditorTool.Freehand

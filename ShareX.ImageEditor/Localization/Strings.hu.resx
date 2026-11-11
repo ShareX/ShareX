@@ -1497,6 +1497,9 @@ A vágólap nem tartalmaz képet.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Szöveg</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Szöveg (háttér)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Ablakhoz igazítás</value>
   </data>

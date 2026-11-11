@@ -62,10 +62,12 @@ public partial class EditorSelectionController
         var balloonHeight = balloonRect.Height;
 
         // Check if balloon is too small (e.g. user just clicked without dragging)
+        // A text background box only needs room for one line of text.
+        double minHeight = annotation is TextBackgroundAnnotation ? Math.Ceiling(annotation.FontSize * 1.4 + 24) : 100;
         if (balloonWidth < 50 || balloonHeight < 30)
         {
             balloonWidth = Math.Max(balloonWidth, 200);
-            balloonHeight = Math.Max(balloonHeight, 100);
+            balloonHeight = Math.Max(balloonHeight, minHeight);
 
             annotation.EndPoint = new SKPoint(
                 annotation.StartPoint.X + (float)balloonWidth,

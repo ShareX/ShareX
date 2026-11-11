@@ -50,5 +50,7 @@ public enum EditorTool
     Magnify,
     Spotlight,
     Crop,
-    CutOut
+    CutOut,
+    // Appended so the saved numeric values of the tools above stay the same.
+    TextBackground
 }

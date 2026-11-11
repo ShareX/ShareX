@@ -118,6 +118,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case EditorTool.SpeechBalloon:
                     Options.SpeechBalloonBorderColor = color;
                     break;
+                case EditorTool.TextBackground:
+                    Options.TextBackgroundBorderColor = color;
+                    break;
                 case EditorTool.Text:
                     Options.TextBorderColor = color;
                     break;
@@ -140,6 +143,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 Options.SpeechBalloonThickness = value;
             }
+            else if (ActiveTool == EditorTool.TextBackground)
+            {
+                Options.TextBackgroundThickness = value;
+            }
             else if (ActiveTool == EditorTool.Text)
             {
                 Options.TextThickness = value;
@@ -147,6 +154,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             else if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 if (SelectedAnnotation is NumberAnnotation) Options.StepThickness = value;
+                else if (SelectedAnnotation is TextBackgroundAnnotation) Options.TextBackgroundThickness = value;
                 else if (SelectedAnnotation is SpeechBalloonAnnotation) Options.SpeechBalloonThickness = value;
                 else if (SelectedAnnotation is TextAnnotation) Options.TextThickness = value;
                 else if (SelectedAnnotation is SmartEraserAnnotation) return;
@@ -171,13 +179,19 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             }
 
             bool appliesToCornerRadius = ActiveTool is EditorTool.Rectangle or EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
+                isTextBackground = SelectedAnnotation is TextBackgroundAnnotation;
                 appliesToCornerRadius = SelectedAnnotation is RectangleAnnotation or SpeechBalloonAnnotation;
             }
 
-            if (appliesToCornerRadius)
+            if (isTextBackground)
+            {
+                Options.TextBackgroundCornerRadius = value;
+            }
+            else if (appliesToCornerRadius)
             {
                 Options.CornerRadius = value;
             }
@@ -224,6 +238,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     break;
                 case EditorTool.SpeechBalloon:
                     Options.SpeechBalloonFillColor = color;
+                    break;
+                case EditorTool.TextBackground:
+                case EditorTool.Select when SelectedAnnotation is TextBackgroundAnnotation:
+                    Options.TextBackgroundFillColor = color;
                     break;
                 case EditorTool.Highlight:
                     Options.HighlightFillColor = color;
@@ -275,6 +293,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 Options.SpeechBalloonTextColor = color;
             }
+            else if (ActiveTool == EditorTool.TextBackground)
+            {
+                Options.TextBackgroundTextColor = color;
+            }
             else if (ActiveTool == EditorTool.Text)
             {
                 Options.TextTextColor = color;
@@ -284,6 +306,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 if (SelectedAnnotation is NumberAnnotation)
                 {
                     Options.StepTextColor = color;
+                }
+                else if (SelectedAnnotation is TextBackgroundAnnotation)
+                {
+                    Options.TextBackgroundTextColor = color;
                 }
                 else if (SelectedAnnotation is SpeechBalloonAnnotation)
                 {
@@ -343,16 +369,22 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
             bool isText = ActiveTool == EditorTool.Text;
             bool isSpeechBalloon = ActiveTool == EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 isText = SelectedAnnotation is TextAnnotation;
+                isTextBackground = SelectedAnnotation is TextBackgroundAnnotation;
                 isSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation;
             }
 
             if (isText)
             {
                 Options.TextHorizontalAlignment = normalizedAlignment;
+            }
+            else if (isTextBackground)
+            {
+                Options.TextBackgroundTextHorizontalAlignment = normalizedAlignment;
             }
             else if (isSpeechBalloon)
             {
@@ -364,16 +396,22 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             bool isStep = ActiveTool == EditorTool.Step;
             bool isSpeechBalloon = ActiveTool == EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 if (SelectedAnnotation is NumberAnnotation) isStep = true;
-                if (SelectedAnnotation is SpeechBalloonAnnotation) isSpeechBalloon = true;
+                if (SelectedAnnotation is TextBackgroundAnnotation) isTextBackground = true;
+                else if (SelectedAnnotation is SpeechBalloonAnnotation) isSpeechBalloon = true;
             }
 
             if (isStep)
             {
                 Options.StepFontSize = value;
+            }
+            else if (isTextBackground)
+            {
+                Options.TextBackgroundFontSize = value;
             }
             else if (isSpeechBalloon)
             {
@@ -408,16 +446,22 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
             bool isText = ActiveTool == EditorTool.Text;
             bool isSpeechBalloon = ActiveTool == EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 isText = SelectedAnnotation is TextAnnotation;
+                isTextBackground = SelectedAnnotation is TextBackgroundAnnotation;
                 isSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation;
             }
 
             if (isText)
             {
                 Options.TextFontFamily = normalizedFontFamily;
+            }
+            else if (isTextBackground)
+            {
+                Options.TextBackgroundFontFamily = normalizedFontFamily;
             }
             else if (isSpeechBalloon)
             {
@@ -778,7 +822,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
             if (ActiveTool == EditorTool.Select)
             {
-                appliesToSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation;
+                appliesToSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation and not TextBackgroundAnnotation;
                 appliesToStep = SelectedAnnotation is NumberAnnotation;
             }
 
@@ -799,11 +843,13 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             bool isText = ActiveTool == EditorTool.Text;
             bool isSpeechBalloon = ActiveTool == EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
             bool isStep = ActiveTool == EditorTool.Step;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 isText = SelectedAnnotation is TextAnnotation;
+                isTextBackground = SelectedAnnotation is TextBackgroundAnnotation;
                 isSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation;
                 isStep = SelectedAnnotation is NumberAnnotation;
             }
@@ -811,6 +857,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             if (isText)
             {
                 Options.TextBold = value;
+            }
+            else if (isTextBackground)
+            {
+                Options.TextBackgroundTextBold = value;
             }
             else if (isSpeechBalloon)
             {
@@ -829,16 +879,22 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             bool isText = ActiveTool == EditorTool.Text;
             bool isSpeechBalloon = ActiveTool == EditorTool.SpeechBalloon;
+            bool isTextBackground = ActiveTool == EditorTool.TextBackground;
 
             if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 isText = SelectedAnnotation is TextAnnotation;
+                isTextBackground = SelectedAnnotation is TextBackgroundAnnotation;
                 isSpeechBalloon = SelectedAnnotation is SpeechBalloonAnnotation;
             }
 
             if (isText)
             {
                 Options.TextItalic = value;
+            }
+            else if (isTextBackground)
+            {
+                Options.TextBackgroundTextItalic = value;
             }
             else if (isSpeechBalloon)
             {
@@ -851,19 +907,19 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Text or EditorTool.Step => true,
                 _ => false
             },
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Text or EditorTool.Step => true,
             _ => false
         };
 
         public bool ShowFillColor => ActiveTool switch
         {
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Highlight => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step or EditorTool.Highlight => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Highlight => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step or EditorTool.Highlight => true,
                 _ => false
             },
             _ => false
@@ -871,10 +927,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowTextColor => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
             EditorTool.Select => SelectedAnnotation?.ToolType switch
             {
-                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
                 _ => false
             },
             _ => false
@@ -883,11 +939,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public bool ShowThickness => ActiveTool switch
         {
             EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step or EditorTool.Text => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
                 EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step or EditorTool.Text => true,
                 _ => false
             },
             _ => false
@@ -895,10 +951,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowFontSize => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.Step or EditorTool.SpeechBalloon => true,
+            EditorTool.Text or EditorTool.Step or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Text or EditorTool.Step or EditorTool.SpeechBalloon => true,
+                EditorTool.Text or EditorTool.Step or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
                 _ => false
             },
             _ => false
@@ -910,10 +966,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowTextHorizontalAlignment => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.SpeechBalloon => true,
+            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Text or EditorTool.SpeechBalloon => true,
+                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
                 _ => false
             },
             _ => false
@@ -921,10 +977,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowFontFamily => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.SpeechBalloon => true,
+            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Text or EditorTool.SpeechBalloon => true,
+                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
                 _ => false
             },
             _ => false
@@ -957,10 +1013,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowCornerRadius => ActiveTool switch
         {
-            EditorTool.Rectangle or EditorTool.SpeechBalloon => true,
+            EditorTool.Rectangle or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
             EditorTool.Select => _selectedAnnotation?.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.SpeechBalloon => true,
+                EditorTool.Rectangle or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
                 _ => false
             },
             _ => false
@@ -994,11 +1050,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public bool ShowShadow => ActiveTool switch
         {
             EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                or EditorTool.Freehand or EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+                or EditorTool.Freehand or EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
                 EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                    or EditorTool.Freehand or EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+                    or EditorTool.Freehand or EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
                 _ => false
             },
             _ => false
@@ -1016,16 +1072,16 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public bool ShowSpeechBalloonTail => ActiveTool switch
         {
             EditorTool.SpeechBalloon or EditorTool.Step => true,
-            EditorTool.Select => SelectedAnnotation is SpeechBalloonAnnotation or NumberAnnotation,
+            EditorTool.Select => SelectedAnnotation is SpeechBalloonAnnotation and not TextBackgroundAnnotation or NumberAnnotation,
             _ => false
         };
 
         public bool ShowTextStyle => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.Step => true,
+                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground or EditorTool.Step => true,
                 _ => false
             },
             _ => false
@@ -1033,10 +1089,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowTextItalic => ActiveTool switch
         {
-            EditorTool.Text or EditorTool.SpeechBalloon => true,
+            EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Text or EditorTool.SpeechBalloon => true,
+                EditorTool.Text or EditorTool.SpeechBalloon or EditorTool.TextBackground => true,
                 _ => false
             },
             _ => false
@@ -1081,6 +1137,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     EditorTool.Cursor => Strings.ToolbarCustomizationItemViewModel_Cursor,
                     EditorTool.Emoji => Strings.ToolbarCustomizationItemViewModel_Emoji,
                     EditorTool.SpeechBalloon => Strings.ToolbarCustomizationItemViewModel_SpeechBalloon,
+                    EditorTool.TextBackground => Strings.ToolbarCustomizationItemViewModel_TextBackground,
                     EditorTool.Step => Strings.ToolbarCustomizationItemViewModel_Step,
                     EditorTool.Blur => Strings.ToolbarCustomizationItemViewModel_Blur,
                     EditorTool.Pixelate => Strings.ToolbarCustomizationItemViewModel_Pixelate,
@@ -1178,6 +1235,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             EditorTool.Freehand or
             EditorTool.Text or
             EditorTool.SpeechBalloon or
+            EditorTool.TextBackground or
             EditorTool.Step or
             EditorTool.Cursor or
             EditorTool.Highlight or
@@ -1289,6 +1347,19 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     SelectedTextHorizontalAlignment = NormalizeTextHorizontalAlignment(Options.SpeechBalloonTextHorizontalAlignment);
                     TextBold = Options.SpeechBalloonTextBold;
                     TextItalic = Options.SpeechBalloonTextItalic;
+                    break;
+                case EditorTool.TextBackground:
+                    SelectedColorValue = Options.TextBackgroundBorderColor;
+                    FillColorValue = Options.TextBackgroundFillColor;
+                    TextColorValue = Options.TextBackgroundTextColor;
+                    StrokeWidth = Options.TextBackgroundThickness;
+                    CornerRadius = Options.TextBackgroundCornerRadius;
+                    ShadowEnabled = Options.Shadow;
+                    FontSize = Options.TextBackgroundFontSize;
+                    SelectedFontFamily = NormalizeFontFamily(Options.TextBackgroundFontFamily);
+                    SelectedTextHorizontalAlignment = NormalizeTextHorizontalAlignment(Options.TextBackgroundTextHorizontalAlignment);
+                    TextBold = Options.TextBackgroundTextBold;
+                    TextItalic = Options.TextBackgroundTextItalic;
                     break;
                 case EditorTool.Step:
                     SelectedColorValue = Options.StepBorderColor;

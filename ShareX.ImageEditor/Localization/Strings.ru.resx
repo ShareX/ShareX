@@ -1497,6 +1497,9 @@
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Текст</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Текст (фон)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Вписать в окно</value>
   </data>

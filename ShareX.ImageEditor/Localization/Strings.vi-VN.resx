@@ -1497,6 +1497,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Văn bản</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Văn bản (nền)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Vừa cửa sổ</value>
   </data>

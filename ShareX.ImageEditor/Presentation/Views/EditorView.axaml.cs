@@ -434,7 +434,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                         vm.TextItalic = balloon.IsItalic;
                         vm.FillColor = balloon.FillColor;
                         vm.CornerRadius = balloon.CornerRadius;
-                        vm.SpeechBalloonTail = balloon.TailEnabled;
+                        if (balloon is not TextBackgroundAnnotation)
+                        {
+                            vm.SpeechBalloonTail = balloon.TailEnabled;
+                        }
                         if (!string.IsNullOrEmpty(balloon.TextColor))
                             vm.TextColorValue = Avalonia.Media.Color.Parse(balloon.TextColor);
                     }

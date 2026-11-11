@@ -148,6 +148,27 @@ namespace ShareX.ImageEditor.Integration
         public bool SpeechBalloonTextItalic { get; set; } = false;
         public bool SpeechBalloonTail { get; set; } = true;
 
+        // Text (Background)
+        public string TextBackgroundBorderColorHex { get; set; } = ColorToHex(SecondaryColor);
+        [JsonIgnore]
+        public Color TextBackgroundBorderColor { get => HexToColor(TextBackgroundBorderColorHex); set => TextBackgroundBorderColorHex = ColorToHex(value); }
+
+        public string TextBackgroundFillColorHex { get; set; } = ColorToHex(PrimaryColor);
+        [JsonIgnore]
+        public Color TextBackgroundFillColor { get => HexToColor(TextBackgroundFillColorHex); set => TextBackgroundFillColorHex = ColorToHex(value); }
+
+        public string TextBackgroundTextColorHex { get; set; } = ColorToHex(SecondaryColor);
+        [JsonIgnore]
+        public Color TextBackgroundTextColor { get => HexToColor(TextBackgroundTextColorHex); set => TextBackgroundTextColorHex = ColorToHex(value); }
+
+        public int TextBackgroundThickness { get; set; } = 0;
+        public int TextBackgroundCornerRadius { get; set; } = 4;
+        public float TextBackgroundFontSize { get; set; } = 30;
+        public string TextBackgroundFontFamily { get; set; } = "Segoe UI";
+        public TextHorizontalAlignment TextBackgroundTextHorizontalAlignment { get; set; } = TextHorizontalAlignment.Center;
+        public bool TextBackgroundTextBold { get; set; } = false;
+        public bool TextBackgroundTextItalic { get; set; } = false;
+
         // Step
         public string StepBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);
         [JsonIgnore]

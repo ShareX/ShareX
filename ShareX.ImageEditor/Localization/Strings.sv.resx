@@ -1498,6 +1498,9 @@ Favoritbildeffekter (högerklick)</value>
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>Text</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>Text (bakgrund)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>Anpassa till fönster</value>
   </data>

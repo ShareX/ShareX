@@ -60,6 +60,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         CreateToolDefinition(EditorTool.Arrow, Strings.ToolbarCustomizationItemViewModel_Arrow, EditorIcons.ToolArrow, "A", "NumPad5"),
         CreateToolDefinition(EditorTool.Freehand, Strings.ToolbarCustomizationItemViewModel_Freehand, EditorIcons.ToolFreehand, "F", "NumPad3"),
         CreateToolDefinition(EditorTool.Text, Strings.ToolbarCustomizationItemViewModel_Text, EditorIcons.ToolText, "T", "NumPad6"),
+        CreateToolDefinition(EditorTool.TextBackground, Strings.ToolbarCustomizationItemViewModel_TextBackground, EditorIcons.ToolTextBackground, "", isVisibleByDefault: false),
         CreateToolDefinition(EditorTool.SpeechBalloon, Strings.ToolbarCustomizationItemViewModel_SpeechBalloon, EditorIcons.ToolSpeechBalloon, "O"),
         CreateToolDefinition(EditorTool.Step, Strings.ToolbarCustomizationItemViewModel_Step, EditorIcons.ToolStep, "N", "NumPad7"),
         CreateToolDefinition(EditorTool.Image, Strings.ToolbarCustomizationItemViewModel_Image, EditorIcons.ToolImage, "I"),
@@ -361,8 +362,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         string icon,
         string defaultHotkey,
         string defaultSecondaryHotkey = "",
-        bool beginGroupByDefault = false)
+        bool beginGroupByDefault = false,
+        bool isVisibleByDefault = true)
     {
-        return new ToolbarItemDefinition(tool.ToString(), tool, name, icon, defaultHotkey, true, true, beginGroupByDefault, defaultSecondaryHotkey);
+        return new ToolbarItemDefinition(tool.ToString(), tool, name, icon, defaultHotkey, true, true, beginGroupByDefault, defaultSecondaryHotkey, isVisibleByDefault);
     }
 }

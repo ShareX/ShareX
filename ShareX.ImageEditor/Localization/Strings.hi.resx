@@ -1498,6 +1498,9 @@
   <data name="ToolbarCustomizationItemViewModel_Text" xml:space="preserve">
     <value>पाठ</value>
   </data>
+  <data name="ToolbarCustomizationItemViewModel_TextBackground" xml:space="preserve">
+    <value>पाठ (पृष्ठभूमि)</value>
+  </data>
   <data name="ZoomPickerDropdown_ZoomtoFit" xml:space="preserve">
     <value>फ़िट करने के लिए ज़ूम करें</value>
   </data>

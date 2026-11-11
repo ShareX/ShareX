@@ -38,6 +38,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ToolFreehand = ImageEditorIcons.Freehand;
         public const string ToolHighlight = ImageEditorIcons.Highlight;
         public const string ToolText = ImageEditorIcons.Text;
+        public const string ToolTextBackground = ImageEditorIcons.TextBackground;
         public const string ToolSpeechBalloon = ImageEditorIcons.SpeechBalloon;
         public const string ToolStep = ImageEditorIcons.Step;
         public const string ToolCursor = ImageEditorIcons.Cursor;
@@ -112,6 +113,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
             EditorTool.Arrow => ToolArrow,
             EditorTool.Freehand => ToolFreehand,
             EditorTool.Text => ToolText,
+            EditorTool.TextBackground => ToolTextBackground,
             EditorTool.SpeechBalloon => ToolSpeechBalloon,
             EditorTool.Step => ToolStep,
             EditorTool.Cursor => ToolCursor,
