@@ -46,7 +46,7 @@ public sealed class PinToScreenGeometryTests
     public void PlacementUsesPhysicalWindowSizeOnScaledNegativeOriginScreen(ImageContentAlignment placement, int x, int y)
     {
         ScreenInfo screen = Screen(1.5);
-        PixelPoint position = PinToScreenGeometry.GetInitialPosition(screen, new Size(200, 120), null, 12, placement, 10);
+        PixelPoint position = PinToScreenGeometry.GetInitialPosition(screen, new Size(200, 120), placement, 10);
         Assert.Equal(new PixelPoint(x, y), position);
     }
 
@@ -57,10 +57,17 @@ public sealed class PinToScreenGeometryTests
     [InlineData(2, -510, -534, -14)]
     public void RequestedImageOriginUsesScaledBorderAndShadow(double scaling, int originX, int expectedWindowX, int expectedWindowY)
     {
-        PixelPoint position = PinToScreenGeometry.GetInitialPosition(Screen(scaling), new Size(224, 144),
-            new Point(originX, 10), 12, ImageContentAlignment.BottomRight, 10);
-        // Physical outer inset is subtracted from the requested image position, independent of screen placement settings.
+        // A 12 unit border and shadow, in physical pixels, on a platform that places windows in device pixels.
+        int insetPixels = (int)Math.Round(12 * scaling);
+        PixelPoint position = PinToScreenGeometry.GetPositionForImageOrigin(new Point(originX, 10), insetPixels, scaling, scaling);
         Assert.Equal(new PixelPoint(expectedWindowX, expectedWindowY), position);
+    }
+
+    [Fact]
+    public void RequestedImageOriginUsesPointsWhereWindowsArePlacedInPoints()
+    {
+        // macOS on a Retina screen: 24 pixels of border and shadow are 12 points.
+        Assert.Equal(new PixelPoint(88, -2), PinToScreenGeometry.GetPositionForImageOrigin(new Point(100, 10), 24, 2, 1));
     }
 
     [Theory]
@@ -82,7 +89,7 @@ public sealed class PinToScreenGeometryTests
     [Fact]
     public void PhysicalSizeRoundsUpSoFractionalWindowsStayInsideWorkingArea()
     {
-        PixelPoint point = PinToScreenGeometry.GetInitialPosition(Screen(1.25), new Size(200.2, 120.3), null, 12,
+        PixelPoint point = PinToScreenGeometry.GetInitialPosition(Screen(1.25), new Size(200.2, 120.3),
             ImageContentAlignment.BottomRight, 10);
         Assert.Equal(new PixelPoint(-261, 739), point);
     }
@@ -119,7 +126,7 @@ public sealed class PinToScreenGeometryTests
     {
         foreach (ImageContentAlignment placement in Enum.GetValues<ImageContentAlignment>())
         {
-            PixelPoint actual = PinToScreenGeometry.GetInitialPosition(Screen(1), new Size(200, 120), null, 12, placement, 10);
+            PixelPoint actual = PinToScreenGeometry.GetInitialPosition(Screen(1), new Size(200, 120), placement, 10);
             Point expected = Helpers.GetPosition(placement, 10, new System.Drawing.Rectangle(-1600, 40, 1600, 860),
                 new System.Drawing.Size(200, 120));
             Assert.Equal(new PixelPoint(expected.X, expected.Y), actual);

@@ -46,15 +46,20 @@ internal static class PinToScreenGeometry
         return screens.FirstOrDefault(screen => screen.IsPrimary) ?? screens.FirstOrDefault();
     }
 
-    public static PixelPoint GetInitialPosition(ScreenInfo? screen, Size logicalSize, System.Drawing.Point? imageOrigin,
-        int logicalInset, ImageContentAlignment placement, int offset)
+    /// <summary>
+    /// The window position that puts the image itself at <paramref name="imageOrigin"/>, so the border and shadow sit outside it.
+    /// <paramref name="positionScaling"/> is screen coordinate units per logical unit (see WindowScaling.GetPositionScaling): the
+    /// screen's scaling where windows are placed in device pixels, 1 on macOS, which places them in points.
+    /// </summary>
+    public static PixelPoint GetPositionForImageOrigin(System.Drawing.Point imageOrigin, int insetPixels, double scaling, double positionScaling)
+    {
+        int inset = (int)Math.Round(insetPixels * NormalizeScaling(positionScaling) / NormalizeScaling(scaling));
+        return new PixelPoint(imageOrigin.X - inset, imageOrigin.Y - inset);
+    }
+
+    public static PixelPoint GetInitialPosition(ScreenInfo? screen, Size logicalSize, ImageContentAlignment placement, int offset)
     {
         double scaling = NormalizeScaling(screen?.ScaleFactor ?? 1);
-        if (imageOrigin is System.Drawing.Point origin)
-        {
-            int inset = (int)Math.Round(logicalInset * scaling);
-            return new PixelPoint(origin.X - inset, origin.Y - inset);
-        }
         if (screen == null) return default;
 
         System.Drawing.Size size = new(

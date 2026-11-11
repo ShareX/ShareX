@@ -115,14 +115,13 @@ public partial class PinToScreenWindow : Window
 
         if (_requestedLocation is System.Drawing.Point origin)
         {
-            // The image goes exactly where it was captured, so the border and shadow sit outside it.
-            int inset = (int)Math.Round(GetOuterInsetPixels(scaling) * WindowScaling.GetPositionScaling(scaling) / scaling);
-            Position = new PixelPoint(origin.X - inset, origin.Y - inset);
+            // The image goes exactly where it was captured.
+            Position = PinToScreenGeometry.GetPositionForImageOrigin(origin, GetOuterInsetPixels(scaling), scaling,
+                WindowScaling.GetPositionScaling(scaling));
             return;
         }
 
-        Position = PinToScreenGeometry.GetInitialPosition(target, new Avalonia.Size(Width, Height), null, 0,
-            Options.Placement, Options.PlacementOffset);
+        Position = PinToScreenGeometry.GetInitialPosition(target, new Avalonia.Size(Width, Height), Options.Placement, Options.PlacementOffset);
     }
 
     private void OnScalingChanged(object? sender, EventArgs e)
