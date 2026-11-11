@@ -1639,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Đóng sau khi mở</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Đã sao chép vào bộ nhớ tạm</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Sao chép tất cả</value>
   </data>

@@ -1645,6 +1645,9 @@ Caminho do ficheiro: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Fechar depois de abrir</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiado para a área de transferência</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copiar tudo</value>
   </data>

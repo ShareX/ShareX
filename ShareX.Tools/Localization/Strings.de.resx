@@ -1645,6 +1645,9 @@ Dateipfad: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Nach dem Öffnen schließen</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>In die Zwischenablage kopiert</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Alles kopieren</value>
   </data>

@@ -1639,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Închide după deschidere</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiat în clipboard</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copiază tot</value>
   </data>

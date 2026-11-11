@@ -129,7 +129,9 @@
             <Grid x:Name="ContentGrid" Margin="12" ColumnDefinitions="*,12,420">
                 <Border Grid.Column="0" Classes="ocr-canvas">
                     <Grid>
-                        <toolControls:OCRPreview Padding="28,28,28,84"
+                        <toolControls:OCRPreview x:Name="ImagePreview"
+                                                 Padding="28,28,28,84"
+                                                 CopiedText="{x:Static localization:Strings.OCRWindow_Copied_to_clipboard}"
                                                  Source="{Binding SourceImage}"
                                                  Regions="{Binding TextRegions}"
                                                  IsScanning="{Binding IsBusy}"

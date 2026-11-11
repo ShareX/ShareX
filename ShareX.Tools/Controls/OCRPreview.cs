@@ -33,8 +33,8 @@ using ShareX.OCR;
 namespace ShareX.Tools.Controls;
 
 // Shows the OCR source image fitted to the control, with the box of every recognized piece of text drawn over it.
-// Hovering a box highlights it and shows its text. The mouse wheel zooms around the pointer, dragging moves a zoomed
-// image and double-clicking fits it again.
+// Hovering a box highlights it and shows its text, and clicking it raises RegionClicked. The mouse wheel zooms around
+// the pointer, dragging moves a zoomed image and double-clicking fits it again.
 public class OCRPreview : Control
 {
     public static readonly StyledProperty<Bitmap?> SourceProperty =
@@ -60,6 +60,10 @@ public class OCRPreview : Control
     public static readonly StyledProperty<double> ScanPositionProperty =
         AvaloniaProperty.Register<OCRPreview, double>(nameof(ScanPosition));
 
+    // Shown in the tooltip of a region after it is clicked; the region's text is shown when it is not set.
+    public static readonly StyledProperty<string?> CopiedTextProperty =
+        AvaloniaProperty.Register<OCRPreview, string?>(nameof(CopiedText));
+
     // Small captures such as a single button are enlarged so they are readable, but not so much they turn to blocks.
     private const double MaxFitZoom = 4;
     // Zooming in stops when one image pixel is this many units wide.
@@ -67,7 +71,9 @@ public class OCRPreview : Control
     private const double WheelZoomFactor = 1.25;
     private const double ImageCornerRadius = 6;
     private static readonly BoxShadows ImageShadow = new(new BoxShadow { Blur = 24, OffsetY = 6, Color = Color.FromArgb(90, 0, 0, 0) });
-    private static readonly Cursor PanCursor = new(StandardCursorType.Hand);
+    // A press that moves further than this is a drag, not a click.
+    private const double ClickMoveTolerance = 4;
+    private static readonly Cursor HandCursor = new(StandardCursorType.Hand);
     private static readonly Cursor DragCursor = new(StandardCursorType.SizeAll);
 
     private OCRTextRegion? _hoveredRegion;
@@ -76,6 +82,9 @@ public class OCRPreview : Control
     private Vector _pan;
     private Point? _dragStart;
     private Vector _dragStartPan;
+    private Point? _pressPoint;
+    private OCRTextRegion? _pressRegion;
+    private OCRTextRegion? _copiedRegion;
 
     static OCRPreview()
     {
@@ -129,6 +138,15 @@ public class OCRPreview : Control
         get => GetValue(ScanPositionProperty);
         set => SetValue(ScanPositionProperty, value);
     }
+
+    public string? CopiedText
+    {
+        get => GetValue(CopiedTextProperty);
+        set => SetValue(CopiedTextProperty, value);
+    }
+
+    // Raised when a region is clicked, so its text can be copied.
+    public event EventHandler<OCRTextRegion>? RegionClicked;
 
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
@@ -188,13 +206,15 @@ public class OCRPreview : Control
 
         IBrush fill = new SolidColorBrush(color, 0.14);
         IBrush hoverFill = new SolidColorBrush(color, 0.32);
+        IBrush copiedFill = new SolidColorBrush(color, 0.55);
         IPen pen = new Pen(new SolidColorBrush(color), 1.5);
         double regionScale = scale / GetPixelScale(source);
 
         foreach (OCRTextRegion region in regions)
         {
             Geometry geometry = CreateRegionGeometry(region, imageRect, regionScale);
-            context.DrawGeometry(ReferenceEquals(region, _hoveredRegion) ? hoverFill : fill, pen, geometry);
+            IBrush regionFill = ReferenceEquals(region, _copiedRegion) ? copiedFill : ReferenceEquals(region, _hoveredRegion) ? hoverFill : fill;
+            context.DrawGeometry(regionFill, pen, geometry);
         }
     }
 
@@ -245,17 +265,28 @@ public class OCRPreview : Control
             return;
         }
 
+        Point position = e.GetPosition(this);
+        _pressPoint = null;
+
         if (e.ClickCount == 2 && properties.IsLeftButtonPressed)
         {
             ResetZoom();
             e.Handled = true;
+            return;
         }
-        else if (_zoom > 1 && Source != null && TryGetLayout(Source, _zoom, _pan, out _, out _, out Vector pan))
+
+        // A left click on a region is only known on release, since the same press may become a drag.
+        if (properties.IsLeftButtonPressed)
         {
-            _dragStart = e.GetPosition(this);
+            _pressPoint = position;
+            _pressRegion = HitTestRegion(position);
+        }
+
+        if (_zoom > 1 && Source != null && TryGetLayout(Source, _zoom, _pan, out _, out _, out Vector pan))
+        {
+            _dragStart = position;
             _dragStartPan = pan;
             e.Pointer.Capture(this);
-            SetHoveredRegion(null);
             UpdateCursor();
             e.Handled = true;
         }
@@ -266,8 +297,18 @@ public class OCRPreview : Control
         base.OnPointerMoved(e);
         Point position = e.GetPosition(this);
 
+        if (_pressPoint is Point pressPoint && !IsClickDistance(pressPoint, position))
+        {
+            _pressPoint = null;
+        }
+
         if (_dragStart is Point dragStart && Source != null)
         {
+            if (_pressPoint == null)
+            {
+                SetHoveredRegion(null);
+            }
+
             if (TryGetLayout(Source, _zoom, _dragStartPan + (position - dragStart), out _, out _, out Vector pan))
             {
                 _pan = pan;
@@ -283,12 +324,42 @@ public class OCRPreview : Control
     protected override void OnPointerReleased(PointerReleasedEventArgs e)
     {
         base.OnPointerReleased(e);
+        Point position = e.GetPosition(this);
 
         if (_dragStart != null)
         {
             e.Pointer.Capture(null);
             EndDrag();
         }
+
+        if (e.InitialPressMouseButton == MouseButton.Left && _pressPoint is Point pressPoint && IsClickDistance(pressPoint, position) &&
+            _pressRegion != null && ReferenceEquals(HitTestRegion(position), _pressRegion))
+        {
+            OCRTextRegion region = _pressRegion;
+            SetHoveredRegion(region);
+            ShowCopied(region);
+            RegionClicked?.Invoke(this, region);
+            e.Handled = true;
+        }
+
+        _pressPoint = null;
+        _pressRegion = null;
+    }
+
+    private static bool IsClickDistance(Point a, Point b)
+    {
+        Vector distance = a - b;
+        return Math.Abs(distance.X) <= ClickMoveTolerance && Math.Abs(distance.Y) <= ClickMoveTolerance;
+    }
+
+    // The clicked region flashes and its tooltip says the text was copied, until the pointer moves to another region.
+    private void ShowCopied(OCRTextRegion region)
+    {
+        _copiedRegion = region;
+        ToolTip.SetIsOpen(this, false);
+        ToolTip.SetTip(this, CopiedText ?? region.Text);
+        ToolTip.SetIsOpen(this, true);
+        InvalidateVisual();
     }
 
     protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)
@@ -351,9 +422,10 @@ public class OCRPreview : Control
         InvalidateVisual();
     }
 
+    // A hand shows that the image can be dragged or that the region under the pointer can be clicked.
     private void UpdateCursor()
     {
-        Cursor = _dragStart != null ? DragCursor : _zoom > 1 ? PanCursor : null;
+        Cursor = _dragStart != null ? DragCursor : _zoom > 1 || _hoveredRegion != null ? HandCursor : null;
     }
 
     private void SetHoveredRegion(OCRTextRegion? region)
@@ -364,8 +436,10 @@ public class OCRPreview : Control
         }
 
         _hoveredRegion = region;
+        _copiedRegion = null;
         ToolTip.SetTip(this, region?.Text);
         ToolTip.SetIsOpen(this, region != null);
+        UpdateCursor();
         InvalidateVisual();
     }
 

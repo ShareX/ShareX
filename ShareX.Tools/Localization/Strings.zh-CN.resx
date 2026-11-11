@@ -1645,6 +1645,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>打开后关闭</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>已复制到剪贴板</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>全部复制</value>
   </data>

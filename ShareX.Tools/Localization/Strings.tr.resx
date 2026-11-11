@@ -1645,6 +1645,9 @@ Dosya yolu: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Açtıktan sonra kapat</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Panoya kopyalandı</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Tümünü kopyala</value>
   </data>

@@ -1645,6 +1645,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>खोलने के बाद बंद करें</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड पर कॉपी किया गया</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>सभी कॉपी करें</value>
   </data>

@@ -30,6 +30,7 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.OCR;
+using ShareX.Tools.Controls;
 
 namespace ShareX.Tools;
 
@@ -67,6 +68,11 @@ public partial class OCRWindow : Window
         _viewModel.SelectImageRequested = SelectImageAsync;
         _viewModel.CopyTextRequested = CopyTextAsync;
         _viewModel.CloseRequested = Close;
+
+        if (this.FindControl<OCRPreview>("ImagePreview") is { } preview)
+        {
+            preview.RegionClicked += async (_, region) => await CopyTextAsync(region.Text);
+        }
 
         ApplySavedWindowState();
         Opened += OnOpened;
@@ -166,9 +172,19 @@ public partial class OCRWindow : Window
 
     private async Task CopyTextAsync(string text)
     {
-        if (Clipboard != null)
+        if (Clipboard == null)
+        {
+            return;
+        }
+
+        // The clipboard can be held open by another application, which must not crash the window.
+        try
         {
             await Clipboard.SetTextAsync(text);
+        }
+        catch (Exception ex)
+        {
+            ToolsDiagnostics.ReportWarning(nameof(OCRWindow), "Failed to copy OCR text to the clipboard.", ex);
         }
     }
 

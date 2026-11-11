@@ -1639,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>연 후 닫기</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>클립보드에 복사됨</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>모두 복사</value>
   </data>

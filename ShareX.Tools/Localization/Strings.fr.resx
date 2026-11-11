@@ -1645,6 +1645,9 @@ Chemin du fichier : {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Fermer après l’ouverture</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copié dans le presse-papiers</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Tout copier</value>
   </data>

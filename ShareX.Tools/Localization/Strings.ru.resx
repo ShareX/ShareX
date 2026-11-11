@@ -1639,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Закрывать после открытия</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Скопировано в буфер обмена</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Копировать всё</value>
   </data>

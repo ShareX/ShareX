@@ -1645,6 +1645,9 @@ Cesta k souboru: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Po otevření zavřít</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Zkopírováno do schránky</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Kopírovat vše</value>
   </data>

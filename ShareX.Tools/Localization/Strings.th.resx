@@ -1639,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>ปิด หลัง กำลังเปิด</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>คัดลอกไปยังคลิปบอร์ดแล้ว</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>คัดลอกทั้งหมด</value>
   </data>

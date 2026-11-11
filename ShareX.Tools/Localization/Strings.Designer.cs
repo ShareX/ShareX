@@ -6194,5 +6194,6 @@ namespace ShareX.Tools.Localization {
         public static string VideoConverterWindow_Result => ResourceManager.GetString("VideoConverterWindow_Result", resourceCulture);
         public static string OCRWindow_No_text_found => ResourceManager.GetString("OCRWindow_No_text_found", resourceCulture);
         public static string OCRWindow_Separate_paragraphs => ResourceManager.GetString("OCRWindow_Separate_paragraphs", resourceCulture);
+        public static string OCRWindow_Copied_to_clipboard => ResourceManager.GetString("OCRWindow_Copied_to_clipboard", resourceCulture);
     }
 }
