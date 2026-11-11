@@ -366,9 +366,9 @@ public class EditorCore : IDisposable
             bounds = new SKRect(minX, minY, maxX, maxY);
         }
 
-        if (annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && balloon.HasTailPoint)
+        if (annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled)
         {
-            SKPoint tail = balloon.TailPoint;
+            SKPoint tail = balloon.GetWorldTailPoint();
             bounds = SKRect.Union(bounds, new SKRect(tail.X, tail.Y, tail.X, tail.Y));
         }
 

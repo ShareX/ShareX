@@ -566,13 +566,17 @@ public partial class EditorSelectionController
         // Special handling for SpeechBalloonControl tail dragging
         if (_selectedShape is SpeechBalloonControl balloonControl && balloonControl.Annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && handleTag == "BalloonTail")
         {
-            balloon.SetTailPoint(balloon.GetTailPointFromVisual(currentPoint));
-            AnnotationVisualFactory.UpdateVisualControl(
-                balloonControl,
-                balloon,
-                AnnotationVisualMode.Persisted,
-                _view.EditorCore.CanvasSize.Width,
-                _view.EditorCore.CanvasSize.Height);
+            SKPoint newTailPoint = balloon.GetTailPointFromVisual(currentPoint);
+            if (balloon.TailPointPlaced || newTailPoint != balloon.GetEffectiveTailPoint())
+            {
+                balloon.SetPlacedTailPoint(newTailPoint);
+                AnnotationVisualFactory.UpdateVisualControl(
+                    balloonControl,
+                    balloon,
+                    AnnotationVisualMode.Persisted,
+                    _view.EditorCore.CanvasSize.Width,
+                    _view.EditorCore.CanvasSize.Height);
+            }
             _startPoint = currentPoint;
             UpdateSelectionHandles();
             return;
@@ -998,12 +1002,12 @@ public partial class EditorSelectionController
         {
             balloon.MoveBy((float)deltaX, (float)deltaY);
 
-            var newLeft = Canvas.GetLeft(balloonControl) + deltaX;
-            var newTop = Canvas.GetTop(balloonControl) + deltaY;
-            Canvas.SetLeft(balloonControl, newLeft);
-            Canvas.SetTop(balloonControl, newTop);
-
-            balloonControl.InvalidateVisual();
+            AnnotationVisualFactory.UpdateVisualControl(
+                balloonControl,
+                balloon,
+                AnnotationVisualMode.Persisted,
+                _view.EditorCore.CanvasSize.Width,
+                _view.EditorCore.CanvasSize.Height);
             _lastDragPoint = currentPoint;
             UpdateSelectionHandles();
             return;
@@ -1357,7 +1361,16 @@ public partial class EditorSelectionController
             angleDeg = Math.Round(angleDeg / 45.0) * 45.0;
         }
 
+        SKPoint? pinnedWorldTail = annotation is SpeechBalloonAnnotation { TailPointPlaced: true } balloon
+            ? balloon.GetWorldTailPoint()
+            : null;
+
         annotation.RotationAngle = (float)angleDeg;
+
+        if (pinnedWorldTail.HasValue && annotation is SpeechBalloonAnnotation placedBalloon)
+        {
+            placedBalloon.SetTailPointFromWorld(pinnedWorldTail.Value);
+        }
 
         AnnotationVisualFactory.UpdateVisualControl(
             _selectedShape,

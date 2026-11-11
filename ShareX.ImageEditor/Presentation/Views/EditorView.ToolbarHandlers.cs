@@ -858,7 +858,12 @@ namespace ShareX.ImageEditor.Presentation.Views
                 balloonControl.Annotation is SpeechBalloonAnnotation balloonAnnotation)
             {
                 balloonAnnotation.TailEnabled = isEnabled;
-                balloonControl.InvalidateVisual();
+                AnnotationVisualFactory.UpdateVisualControl(
+                    balloonControl,
+                    balloonAnnotation,
+                    AnnotationVisualMode.Persisted,
+                    _editorCore.CanvasSize.Width,
+                    _editorCore.CanvasSize.Height);
                 _selectionController.UpdateSelectionHandles();
                 return;
             }
