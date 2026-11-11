@@ -5757,6 +5757,7 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_ToastMonitorNotConnected0 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorNotConnected0", resourceCulture);
         public static string TaskSettingsWindow_ToastMonitorScreen0123 => ResourceManager.GetString("TaskSettingsWindow_ToastMonitorScreen0123", resourceCulture);
         public static string TaskSettingsWindow_RightClickDeletesShape => ResourceManager.GetString("TaskSettingsWindow_RightClickDeletesShape", resourceCulture);
-        public static string StartScreen_Appearance => ResourceManager.GetString("StartScreen_Appearance", resourceCulture);
+        public static string StartScreen_ThankYou => ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
+        public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
     }
 }

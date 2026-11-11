@@ -2242,14 +2242,17 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>یک نشانی معتبر HTTP،‏ HTTPS یا FTP وارد کنید.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>ظاهر</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>شروع کنید</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>می‌توانید هر زمان این گزینه‌ها را در تنظیمات برنامه تغییر دهید.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>از اینکه ShareX را دانلود کردید سپاسگزاریم</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>استفاده از تنظیمات سیستم</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>به ShareX خوش آمدید</value>

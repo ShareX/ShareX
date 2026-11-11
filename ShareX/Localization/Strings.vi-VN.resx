@@ -2242,14 +2242,17 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Nhập URL HTTP, HTTPS hoặc FTP hợp lệ.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Giao diện</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Bắt đầu</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Cảm ơn bạn đã tải xuống ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Dùng cài đặt hệ thống</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Chào mừng bạn đến với ShareX</value>

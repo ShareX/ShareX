@@ -2242,14 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Введіть припустиму URL-адресу HTTP, HTTPS або FTP.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Зовнішній вигляд</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Почати</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Ці параметри можна будь-коли змінити в налаштуваннях програми.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Дякуємо, що завантажили ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Як у системі</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Ласкаво просимо до ShareX</value>

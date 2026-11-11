@@ -2242,14 +2242,17 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Zadejte platnou adresu URL HTTP, HTTPS nebo FTP.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Vzhled</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Začít</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Děkujeme, že jste si stáhli ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Použít nastavení systému</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Vítejte v ShareX</value>

@@ -2242,14 +2242,17 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Adjon meg egy érvényes HTTP-, HTTPS- vagy FTP-URL-t.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Megjelenés</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kezdés</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Ezeket a beállításokat bármikor módosíthatja az alkalmazás beállításaiban.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Köszönjük, hogy letöltötted a ShareX-et</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Rendszerbeállítás használata</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Üdvözli a ShareX</value>

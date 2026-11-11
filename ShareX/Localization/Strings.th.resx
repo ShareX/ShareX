@@ -2242,14 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>ป้อน URL แบบ HTTP, HTTPS หรือ FTP ที่ถูกต้อง</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>ลักษณะ</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>เริ่มต้นใช้งาน</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>คุณสามารถเปลี่ยนตัวเลือกเหล่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ขอบคุณที่ดาวน์โหลด ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>ใช้การตั้งค่าระบบ</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ยินดีต้อนรับสู่ ShareX</value>

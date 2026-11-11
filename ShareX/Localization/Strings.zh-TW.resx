@@ -2242,14 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>請輸入有效的 HTTP、HTTPS 或 FTP URL。</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>外观</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>開始使用</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>你可以隨時在應用程式設定中變更這些選項。</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>感謝下載 ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>使用系統設定</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>歡迎使用 ShareX</value>

@@ -2242,14 +2242,17 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Insira uma URL HTTP, HTTPS ou FTP válida.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Aparência</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Começar</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Obrigado por baixar o ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Usar configuração do sistema</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Boas-vindas ao ShareX</value>

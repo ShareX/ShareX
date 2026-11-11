@@ -2242,14 +2242,17 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Введите допустимый URL-адрес HTTP, HTTPS или FTP.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Внешний вид</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Начать</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Эти параметры можно изменить в любое время в настройках приложения.</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Спасибо за загрузку ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Как в системе</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Добро пожаловать в ShareX</value>
