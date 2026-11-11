@@ -2248,6 +2248,9 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Rummelig</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Tak, fordi du downloadede ShareX</value>
   </data>

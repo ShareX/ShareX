@@ -2248,6 +2248,9 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puteți modifica oricând aceste opțiuni din setările aplicației.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Spațios</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Îți mulțumim că ai descărcat ShareX</value>
   </data>

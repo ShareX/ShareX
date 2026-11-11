@@ -2248,6 +2248,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Rộng rãi</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Cảm ơn bạn đã tải xuống ShareX</value>
   </data>

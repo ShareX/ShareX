@@ -2248,6 +2248,9 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Te opcje możesz w każdej chwili zmienić w ustawieniach aplikacji.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Przestronny</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Dziękujemy za pobranie ShareX</value>
   </data>

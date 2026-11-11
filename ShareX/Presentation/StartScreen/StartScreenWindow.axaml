@@ -141,6 +141,20 @@
             <Setter Property="Opacity" Value="0.4"/>
         </Style>
 
+        <Style Selector="StackPanel.spacing-preview">
+            <Setter Property="Spacing" Value="6"/>
+        </Style>
+        <Style Selector="StackPanel.spacing-preview.compact">
+            <Setter Property="Spacing" Value="2"/>
+        </Style>
+        <Style Selector="StackPanel.spacing-preview > Border">
+            <Setter Property="Height" Value="4"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="Opacity" Value="0.6"/>
+        </Style>
+
         <Style Selector="Border.settings-list">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
@@ -290,6 +304,35 @@
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.ImageEditor}" FontSize="20"/>
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.CloudUpload}" FontSize="20"/>
                                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.History}" FontSize="20"/>
+                                        </StackPanel>
+                                        <TextBlock Grid.Column="1" Text="{Binding DisplayName}" FontSize="13" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+
+                    <!-- Spacing (compact mode) -->
+                    <TextBlock Classes="section" Text="{Binding SpacingLabel}"/>
+                    <ListBox Classes="choices neutral-selection"
+                             ItemsSource="{Binding SpacingOptions}"
+                             SelectedItem="{Binding SelectedSpacing, Mode=TwoWay}">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Rows="1" ColumnSpacing="12"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate x:DataType="local:StartScreenSpacingOption">
+                                <Border Classes="tile" Padding="14,12">
+                                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12" MinHeight="22">
+                                        <!-- Three list rows, spaced as the option spaces them. -->
+                                        <StackPanel Classes="spacing-preview"
+                                                    Classes.compact="{Binding Compact}"
+                                                    VerticalAlignment="Center">
+                                            <Border Width="72"/>
+                                            <Border Width="56"/>
+                                            <Border Width="64"/>
                                         </StackPanel>
                                         <TextBlock Grid.Column="1" Text="{Binding DisplayName}" FontSize="13" VerticalAlignment="Center"/>
                                     </Grid>

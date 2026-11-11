@@ -166,6 +166,29 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
         }
     }
 
+    public string SpacingLabel => Strings.ApplicationSettingsWindow_Spacing;
+
+    public IReadOnlyList<StartScreenSpacingOption> SpacingOptions { get; } =
+    [
+        new(false, Strings.StartScreen_Spacious),
+        new(true, Strings.ApplicationSettingsWindow_SpacingCompact)
+    ];
+
+    public StartScreenSpacingOption? SelectedSpacing
+    {
+        get => SpacingOptions.FirstOrDefault(x => x.Compact == Settings.ThemeOptions.CompactMode);
+        set
+        {
+            if (value != null && Settings.ThemeOptions.CompactMode != value.Compact)
+            {
+                // Same as the settings window: compact mode is a spacing preset, so it drops per-area adjustments.
+                Settings.ThemeOptions.ResetSpacing();
+                Settings.ThemeOptions.CompactMode = value.Compact;
+                OnPropertyChanged();
+            }
+        }
+    }
+
     public AvaloniaColor AccentColor
     {
         get => Settings.ThemeOptions.AccentColor;
@@ -282,6 +305,8 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
         ThemeOptions[2].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
         IconPackOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackModern);
         IconPackOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackLegacy);
+        SpacingOptions[0].UpdateDisplayName(Strings.StartScreen_Spacious);
+        SpacingOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_SpacingCompact);
 
         RefreshStartWithWindows();
         OnPropertyChanged(string.Empty);
@@ -385,4 +410,29 @@ public sealed class StartScreenAccentOption
         Color = color;
         Brush = new SolidColorBrush(color);
     }
+}
+
+public sealed class StartScreenSpacingOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public bool Compact { get; }
+    public string DisplayName => _displayName;
+
+    public StartScreenSpacingOption(bool compact, string displayName)
+    {
+        Compact = compact;
+        _displayName = displayName;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
+        {
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
 }

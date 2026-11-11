@@ -2248,6 +2248,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puedes cambiar estas opciones en cualquier momento en la configuración de la aplicación.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplio</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Gracias por descargar ShareX</value>
   </data>

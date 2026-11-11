@@ -2248,6 +2248,9 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>ゆったり</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>ShareX をダウンロードしていただきありがとうございます</value>
   </data>

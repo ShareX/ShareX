@@ -2248,6 +2248,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Luftig</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Tack för att du laddade ner ShareX</value>
   </data>

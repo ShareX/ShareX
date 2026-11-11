@@ -2248,6 +2248,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bu seçenekleri istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Geniş</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>ShareX'i indirdiğiniz için teşekkürler</value>
   </data>

@@ -2248,6 +2248,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Je kunt deze opties op elk moment wijzigen in de applicatie-instellingen.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Ruim</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Bedankt voor het downloaden van ShareX</value>
   </data>

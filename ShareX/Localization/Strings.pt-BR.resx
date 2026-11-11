@@ -2248,6 +2248,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplo</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Obrigado por baixar o ShareX</value>
   </data>

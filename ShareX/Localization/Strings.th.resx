@@ -2248,6 +2248,9 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>คุณสามารถเปลี่ยนตัวเลือกเหล่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>กว้างขวาง</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>ขอบคุณที่ดาวน์โหลด ShareX</value>
   </data>

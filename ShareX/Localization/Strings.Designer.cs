@@ -5759,5 +5759,6 @@ namespace ShareX.Localization {
         public static string TaskSettingsWindow_RightClickDeletesShape => ResourceManager.GetString("TaskSettingsWindow_RightClickDeletesShape", resourceCulture);
         public static string StartScreen_ThankYou => ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
         public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
+        public static string StartScreen_Spacious => ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
     }
 }

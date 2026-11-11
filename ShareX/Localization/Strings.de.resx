@@ -2248,6 +2248,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Sie können diese Optionen jederzeit in den Anwendungseinstellungen ändern.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Großzügig</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Danke, dass du ShareX heruntergeladen hast</value>
   </data>

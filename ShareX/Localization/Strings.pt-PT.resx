@@ -2248,6 +2248,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Pode alterar estas opções a qualquer momento nas definições da aplicação.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplo</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Obrigado por transferir o ShareX</value>
   </data>

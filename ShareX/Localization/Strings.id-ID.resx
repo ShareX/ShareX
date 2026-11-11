@@ -2248,6 +2248,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Lega</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Terima kasih telah mengunduh ShareX</value>
   </data>

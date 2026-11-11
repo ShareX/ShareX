@@ -2248,6 +2248,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Vous pouvez modifier ces options à tout moment dans les paramètres de l’application.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Spacieux</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Merci d'avoir téléchargé ShareX</value>
   </data>

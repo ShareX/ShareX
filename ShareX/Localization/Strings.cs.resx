@@ -2248,6 +2248,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Prostorný</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>Děkujeme, že jste si stáhli ShareX</value>
   </data>

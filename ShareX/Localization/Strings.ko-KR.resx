@@ -2248,6 +2248,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>이 옵션은 언제든지 애플리케이션 설정에서 변경할 수 있습니다.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>넓게</value>
+  </data>
   <data name="StartScreen_ThankYou" xml:space="preserve">
     <value>ShareX를 다운로드해 주셔서 감사합니다</value>
   </data>
