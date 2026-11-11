@@ -124,6 +124,7 @@ internal static class Program
         ApplicationDiagnostics.InitializeAvalonia();
 
         SettingManager.LoadInitialSettings();
+        FileTypeRegistration.RegisterBrowserHost();
         ApplicationState.UpdateManager = new ShareXUpdateManager();
         LanguageHelper.ChangeLanguage(ApplicationState.Settings.Language);
         CleanupManager.CleanupAsync();

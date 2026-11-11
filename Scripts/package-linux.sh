@@ -87,7 +87,7 @@ appdir="$staging/ShareX.AppDir"
 mkdir -p "$appdir"
 cp -a "$staging/root/usr" "$appdir/usr"
 rm "$appdir/usr/bin/sharex"
-# The image is mounted at a new path on every start, so browsers can't be pointed at its host.
+# The system-wide browser manifests are for the .deb and .rpm; the AppImage registers itself when it runs.
 rm -r "$appdir/usr/lib/mozilla"
 ln -s ../lib/sharex/app/ShareX "$appdir/usr/bin/sharex"
 sed 's|/usr/bin/sharex|sharex|' "$staging/root/usr/share/applications/sharex.desktop" >"$appdir/sharex.desktop"
@@ -96,6 +96,12 @@ ln -s sharex.png "$appdir/.DirIcon"
 cat >"$appdir/AppRun" <<'APPRUN'
 #!/bin/sh
 here="$(dirname "$(readlink -f "$0")")"
+# Browsers start the extension host through the launcher ShareX writes to ~/.local/share/sharex/browser-host, because the
+# image is mounted at a new path on every start.
+if [ "${1:-}" = "--browser-host" ]; then
+  shift
+  exec "$here/usr/lib/sharex/app/ShareX_NativeMessagingHost" "$@"
+fi
 exec "$here/usr/lib/sharex/app/ShareX" "$@"
 APPRUN
 chmod +x "$appdir/AppRun"

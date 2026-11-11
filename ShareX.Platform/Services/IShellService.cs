@@ -126,6 +126,12 @@ public interface IShellIntegrationService
 
     FeatureSupport BrowserHostSupport { get; }
 
+    /// <summary>
+    /// Whether ShareX registers the browser extension host itself the first time it runs, because no installer does: true on
+    /// Linux and macOS. The Windows setup offers it as a task, so the user's choice there is not overridden.
+    /// </summary>
+    bool RegistersBrowserHostOnFirstRun => false;
+
     bool IsBrowserHostRegistered(BrowserHost host);
 
     void RegisterBrowserHost(BrowserHost host);

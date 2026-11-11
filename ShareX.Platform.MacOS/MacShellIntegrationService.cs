@@ -136,6 +136,8 @@ public sealed class MacShellIntegrationService : IShellIntegrationService
 
     public FeatureSupport BrowserHostSupport => FeatureSupport.Supported;
 
+    public bool RegistersBrowserHostOnFirstRun => true;
+
     internal IReadOnlyList<string> GetBrowserHostManifestPaths(BrowserHost host)
     {
         IEnumerable<string> folders = host.Browser == BrowserFamily.Firefox

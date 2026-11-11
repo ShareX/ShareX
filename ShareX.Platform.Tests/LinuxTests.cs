@@ -356,6 +356,41 @@ public class LinuxFileAssociationTests : IDisposable
     }
 
     [Fact]
+    public void BrowserHosts_FromAnAppImageGoThroughALauncherThatSurvivesTheNextMount()
+    {
+        string manifest = Path.Combine(root, "host-manifest-chrome.json");
+        Directory.CreateDirectory(root);
+        File.WriteAllText(manifest, """{ "name": "x", "path": "ShareX_NativeMessagingHost.exe", "type": "stdio", "allowed_origins": ["chrome-extension://abc/"] }""");
+        string appImage = Path.Combine(root, "Apps", "Share X's.AppImage");
+        LinuxShellIntegrationService mounted(string mount) => new(Path.Combine(root, "data"), Path.Combine(root, "config"), Path.Combine(root, "home"), new MissingToolsRunner())
+        {
+            AppImagePath = appImage,
+            AppImageMount = mount
+        };
+        BrowserHost hostIn(string mount) => new(BrowserFamily.Chromium, "com.getsharex.sharex", manifest, Path.Combine(mount, "usr/lib/sharex/app/ShareX_NativeMessagingHost"));
+
+        LinuxShellIntegrationService first = mounted("/tmp/.mount_ShareXaaaa");
+        first.RegisterBrowserHost(hostIn("/tmp/.mount_ShareXaaaa"));
+
+        string launcher = Path.Combine(root, "data", "sharex", "browser-host");
+        string written = File.ReadAllText(Path.Combine(root, "config", "google-chrome", "NativeMessagingHosts", "com.getsharex.sharex.json"));
+        using (JsonDocument document = JsonDocument.Parse(written))
+        {
+            Assert.Equal(launcher, document.RootElement.GetProperty("path").GetString());
+        }
+        Assert.Contains("exec '" + appImage.Replace("'", "'\\''") + "' --browser-host \"$@\"", File.ReadAllText(launcher));
+        Assert.True(File.GetUnixFileMode(launcher).HasFlag(UnixFileMode.UserExecute));
+
+        // The next start mounts the image somewhere else; the registration still counts.
+        LinuxShellIntegrationService second = mounted("/tmp/.mount_ShareXbbbb");
+        Assert.True(second.IsBrowserHostRegistered(hostIn("/tmp/.mount_ShareXbbbb")));
+
+        second.UnregisterBrowserHost(hostIn("/tmp/.mount_ShareXbbbb"));
+        Assert.False(second.IsBrowserHostRegistered(hostIn("/tmp/.mount_ShareXbbbb")));
+        Assert.False(File.Exists(launcher));
+    }
+
+    [Fact]
     public void FirefoxHost_DefaultsToMozillaFolder()
     {
         BrowserHost host = new BrowserHost(BrowserFamily.Firefox, "ShareX", "unused.json", "/opt/sharex/host");

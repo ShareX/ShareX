@@ -39,6 +39,8 @@ namespace ShareX
 
         public DateTime FirstTimeRunDate = DateTime.Now;
         public bool ShowStartScreen = true;
+        // Set once ShareX has registered the browser extension host by itself (Linux, macOS), so turning it off later stays off.
+        public bool BrowserExtensionSupportOffered = false;
         public bool ShowIconPackPrompt = true;
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;

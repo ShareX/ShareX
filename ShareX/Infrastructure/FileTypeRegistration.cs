@@ -47,4 +47,32 @@ internal static class FileTypeRegistration
         }
 #endif
     }
+
+    /// <summary>
+    /// Where no installer registers the browser extension host (Linux, macOS), ShareX does it once, as the Windows setup does by
+    /// default. After that the "Enable Chrome extension support" and "Enable Firefox add-on support" settings decide. While it
+    /// is on, the registration is refreshed at every start: an AppImage's launcher follows the file when it is moved.
+    /// </summary>
+    internal static void RegisterBrowserHost()
+    {
+        Platform.IShellIntegrationService integration = Platform.PlatformServices.Current.ShellIntegration;
+
+        if (StartupOptions.Portable || !integration.RegistersBrowserHostOnFirstRun || !integration.BrowserHostSupport.IsSupported)
+        {
+            return;
+        }
+
+        bool firstRun = !ApplicationState.Settings.BrowserExtensionSupportOffered;
+        ApplicationState.Settings.BrowserExtensionSupportOffered = true;
+
+        if (firstRun || IntegrationHelpers.CheckChromeExtensionSupport())
+        {
+            IntegrationHelpers.CreateChromeExtensionSupport(true);
+        }
+
+        if (firstRun || IntegrationHelpers.CheckFirefoxAddonSupport())
+        {
+            IntegrationHelpers.CreateFirefoxAddonSupport(true);
+        }
+    }
 }
