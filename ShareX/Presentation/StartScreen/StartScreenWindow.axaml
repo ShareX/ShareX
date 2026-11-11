@@ -93,30 +93,29 @@
                                 <TextBlock Text="{Binding WelcomeTitle}"
                                            FontSize="31"
                                            FontWeight="Bold"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
+                                           Foreground="White"
                                            TextWrapping="Wrap"/>
                                 <TextBlock Text="{Binding WelcomeSubtitle}"
                                            HorizontalAlignment="Left"
                                            FontSize="15"
                                            FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                           Opacity="0.9"
+                                           Foreground="#E8FFFFFF"
                                            LineHeight="22"
                                            TextWrapping="Wrap"/>
                             </StackPanel>
 
                             <StackPanel Spacing="12">
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Camera}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding CaptureFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.MagicWand}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding AutomateFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                                 <Grid ColumnDefinitions="28,*" ColumnSpacing="8">
-                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}" FontWeight="Normal"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}" FontSize="18" Foreground="White"/>
+                                    <TextBlock Grid.Column="1" Text="{Binding ShareFeature}" Foreground="White" FontWeight="Normal"/>
                                 </Grid>
                             </StackPanel>
                         </StackPanel>
@@ -124,8 +123,7 @@
                         <TextBlock Grid.Row="1"
                                    Text="{Binding PlatformNote}"
                                    FontSize="11"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Foreground}"
-                                   Opacity="0.85"
+                                   Foreground="#C8FFFFFF"
                                    FontWeight="Normal"/>
                     </Grid>
                 </Grid>

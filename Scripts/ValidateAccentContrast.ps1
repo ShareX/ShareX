@@ -21,6 +21,12 @@ $excludedFiles = @(
     'ShareX.Avalonia/Theming/ShareXTheme.axaml'
 )
 
+# Files whose accent-filled panels keep fixed white text by design (check 4 only).
+# The start screen welcome panel uses white text on any accent.
+$fixedForegroundOnFillFiles = @(
+    'ShareX/Presentation/StartScreen/StartScreenWindow.axaml'
+)
+
 $rawAccent = 'ShareX\.Brush\.Accent(\.Start|\.End)?|SystemAccentColor\w*|SystemControl\w*Accent\w*Brush'
 $rawAccentResource = "\{(DynamicResource|StaticResource) ($rawAccent)\}"
 $accentFill = "\{(DynamicResource|StaticResource) ($rawAccent)\}"
@@ -102,6 +108,10 @@ foreach ($relativePath in $sourceFiles) {
         }
 
         # 4. An element filled with the accent whose content sets a fixed or theme text color.
+        if ($fixedForegroundOnFillFiles -contains $relativePath) {
+            continue
+        }
+
         try {
             [xml]$document = $text
         }
