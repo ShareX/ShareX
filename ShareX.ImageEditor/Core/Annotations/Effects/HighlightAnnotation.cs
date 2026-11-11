@@ -83,14 +83,13 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
             return;
         }
 
-        var rect = GetBounds();
-        var fullW = (int)rect.Width;
-        var fullH = (int)rect.Height;
+        var skRect = GetEffectPixelBounds();
+        var fullW = skRect.Width;
+        var fullH = skRect.Height;
 
         if (fullW <= 0 || fullH <= 0) return;
 
         // Logical intersection with image
-        var skRect = new SKRectI((int)rect.Left, (int)rect.Top, (int)rect.Right, (int)rect.Bottom);
         var intersect = skRect;
         intersect.Intersect(new SKRectI(0, 0, source.Width, source.Height));
 
@@ -120,8 +119,7 @@ public partial class HighlightAnnotation : BaseEffectAnnotation
             }
         }
 
-        EffectBitmap?.Dispose();
-        EffectBitmap = result;
+        SetEffectBitmap(result, skRect);
     }
 
     private static unsafe void ApplyHighlightToBitmap(SKBitmap bitmap, string? fillColor)

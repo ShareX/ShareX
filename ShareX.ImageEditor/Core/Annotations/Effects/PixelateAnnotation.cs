@@ -88,13 +88,11 @@ public partial class PixelateAnnotation : BaseEffectAnnotation
             return;
         }
 
-        var rect = GetBounds();
-        int fullW = (int)rect.Width;
-        int fullH = (int)rect.Height;
+        // Cover every image pixel the annotation touches
+        var annotationRect = GetEffectPixelBounds();
+        int fullW = annotationRect.Width;
+        int fullH = annotationRect.Height;
         if (fullW <= 0 || fullH <= 0) return;
-
-        // Convert annotation bounds to integer rect
-        var annotationRect = new SKRectI((int)rect.Left, (int)rect.Top, (int)rect.Right, (int)rect.Bottom);
 
         // Find intersection with source image bounds
         var validRect = annotationRect;
@@ -106,16 +104,14 @@ public partial class PixelateAnnotation : BaseEffectAnnotation
 
         if (validRect.Width <= 0 || validRect.Height <= 0)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
         using var crop = new SKBitmap(validRect.Width, validRect.Height);
         if (!source.ExtractSubset(crop, validRect))
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -128,8 +124,7 @@ public partial class PixelateAnnotation : BaseEffectAnnotation
         using var small = crop.Resize(info, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.None));
         if (small == null)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -137,8 +132,7 @@ public partial class PixelateAnnotation : BaseEffectAnnotation
         using var pixelated = small.Resize(info, new SKSamplingOptions(SKFilterMode.Nearest, SKMipmapMode.None)); // Nearest neighbor upscale
         if (pixelated == null)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -151,7 +145,6 @@ public partial class PixelateAnnotation : BaseEffectAnnotation
             resultCanvas.DrawBitmap(pixelated, drawX, drawY);
         }
 
-        EffectBitmap?.Dispose();
-        EffectBitmap = result;
+        SetEffectBitmap(result, annotationRect);
     }
 }

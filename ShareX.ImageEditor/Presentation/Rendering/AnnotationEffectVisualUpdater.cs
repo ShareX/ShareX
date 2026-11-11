@@ -61,11 +61,26 @@ public static class AnnotationEffectVisualUpdater
             return;
         }
 
-        shapeControl.Fill = new ImageBrush(BitmapConversionHelpers.ToAvaloniBitmap(annotation.EffectBitmap))
+        var brush = new ImageBrush(BitmapConversionHelpers.ToAvaloniBitmap(annotation.EffectBitmap))
         {
             Stretch = Stretch.Fill,
             SourceRect = new RelativeRect(0, 0, 1, 1, RelativeUnit.Relative)
         };
+
+        if (annotation.EffectPixelBounds is SKRectI pixelBounds)
+        {
+            // Draw the bitmap 1:1 on the image pixel grid: stretching it over fractional bounds resamples it,
+            // which blurs text under a highlight. Avalonia resamples untiled or offset tiles through an
+            // intermediate image, so use one tile the size of the bitmap and shift it onto the pixel grid with
+            // a transform. The tile covers the shape; mirroring it keeps filtering at the edges from pulling
+            // in the opposite edge when zoomed out.
+            SKRect bounds = annotation.GetBounds();
+            brush.TileMode = TileMode.FlipXY;
+            brush.DestinationRect = new RelativeRect(0, 0, pixelBounds.Width, pixelBounds.Height, RelativeUnit.Absolute);
+            brush.Transform = new TranslateTransform(pixelBounds.Left - bounds.Left, pixelBounds.Top - bounds.Top);
+        }
+
+        shapeControl.Fill = brush;
     }
 
     private static Rect GetBounds(Control shape, BaseEffectAnnotation annotation)
