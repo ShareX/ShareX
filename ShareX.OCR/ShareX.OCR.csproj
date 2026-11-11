@@ -14,6 +14,6 @@
   </ItemGroup>
   <ItemGroup>
     <!-- The models are copied next to the application, where PaddleOCREngine.DefaultModelsFolder looks for them. -->
-    <None Include="Models\**\*.onnx;Models\**\*.yml" CopyToOutputDirectory="PreserveNewest" Link="PaddleOCR\%(RecursiveDir)%(Filename)%(Extension)" />
+    <None Include="Models\**\*.onnx;Models\**\*.yml" CopyToOutputDirectory="PreserveNewest" Link="Models\%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
 </Project>

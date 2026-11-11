@@ -45,7 +45,7 @@ public sealed class PaddleOCREngine : IDisposable
     private readonly TextRecognizer _recognizer;
 
     // The models are copied next to the application under this folder.
-    public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "PaddleOCR");
+    public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "Models");
 
     // Loading the models takes a moment, so one engine is kept for the life of the process.
     public static PaddleOCREngine Shared
