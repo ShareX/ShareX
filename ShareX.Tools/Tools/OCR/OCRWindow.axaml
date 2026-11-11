@@ -232,7 +232,7 @@
                             </StackPanel>
                         </Border>
 
-                        <StackPanel Grid.Row="3" Margin="16,6,16,16" Spacing="10">
+                        <StackPanel Grid.Row="3" Margin="16,6,16,16" Spacing="16">
                             <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="6">
                                 <ComboBox ItemsSource="{Binding ServiceLinks}"
                                           SelectedItem="{Binding SelectedServiceLink}"
