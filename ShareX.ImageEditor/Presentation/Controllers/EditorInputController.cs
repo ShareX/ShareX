@@ -158,6 +158,21 @@ public class EditorInputController
 
         if (props.IsRightButtonPressed)
         {
+            if (vm.Options.RightClickDeletesShape)
+            {
+                Control? shape = _selectionController.HitTestActiveToolShape(canvas, e.GetPosition(canvas));
+                if (shape != null)
+                {
+                    _selectionController.SetSelectedShape(shape);
+
+                    // Same as pressing Delete, so it can be undone.
+                    vm.DeleteSelectedCommand.Execute(null);
+                    e.Pointer.Capture(null);
+                    e.Handled = true;
+                    return;
+                }
+            }
+
             var hitSource = e.Source as global::Avalonia.Visual;
             Control? hitTarget = null;
             while (hitSource != null && hitSource != canvas)
@@ -182,15 +197,6 @@ public class EditorInputController
                 if (_selectionController.SelectedShape != hitTarget)
                 {
                     _selectionController.SetSelectedShape(hitTarget);
-                }
-
-                if (vm.Options.RightClickDeletesShape)
-                {
-                    // Same as pressing Delete, so it can be undone.
-                    vm.DeleteSelectedCommand.Execute(null);
-                    e.Pointer.Capture(null);
-                    e.Handled = true;
-                    return;
                 }
 
                 _view.OpenContextMenu(hitTarget);

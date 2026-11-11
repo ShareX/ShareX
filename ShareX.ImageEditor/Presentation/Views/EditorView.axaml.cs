@@ -1015,7 +1015,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             return sourceImage.GetPixel(x, y);
         }
 
-        /// <summary>Deletes the topmost annotation under a point supplied by an embedded host.</summary>
+        /// <summary>Deletes the topmost annotation of the active tool under a point supplied by an embedded host.</summary>
         public bool DeleteWorkspaceAnnotationAt(Point workspacePoint)
         {
             Canvas? canvas = this.FindControl<Canvas>("AnnotationCanvas");
@@ -1025,7 +1025,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return false;
             }
 
-            Control? shape = _selectionController.HitTestShape(canvas, canvasPoint.Value);
+            Control? shape = _selectionController.HitTestActiveToolShape(canvas, canvasPoint.Value);
             if (shape == null)
             {
                 return false;

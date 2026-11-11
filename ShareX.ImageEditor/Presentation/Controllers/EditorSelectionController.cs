@@ -1481,25 +1481,7 @@ public partial class EditorSelectionController
             }
         }
 
-        // Find shape under cursor (hit test)
-        Control? hitShape = HitTestShape(canvas, currentPoint);
-
-        // Filter: If using Spotlight tool, only highlight existing Spotlights
-        if (_view.DataContext is MainViewModel vm2 && vm2.ActiveTool == EditorTool.Spotlight)
-        {
-            if (!(hitShape is SpotlightControl)) hitShape = null;
-        }
-
-        // When a drawing tool is active, only hover shapes created by that same tool.
-        if (_view.DataContext is MainViewModel vm3
-            && vm3.ActiveTool != EditorTool.Select
-            && vm3.ActiveTool != EditorTool.Spotlight)
-        {
-            if (hitShape != null && GetControlToolType(hitShape) != vm3.ActiveTool)
-            {
-                hitShape = null;
-            }
-        }
+        Control? hitShape = HitTestActiveToolShape(canvas, currentPoint);
 
         // If we're hovering over the selected shape, keep showing ant lines on it
         // Otherwise, show ant lines on the hovered (unselected) shape
@@ -1545,6 +1527,32 @@ public partial class EditorSelectionController
             && _selectedShape != null
             && _view.DataContext is MainViewModel vm
             && ShouldIgnoreSelection(vm, _currentKeyModifiers);
+    }
+
+    /// <summary>
+    /// Returns the topmost shape under the point if the active tool can use it: any shape with the Select tool,
+    /// otherwise only shapes created by the active tool.
+    /// </summary>
+    internal Control? HitTestActiveToolShape(Canvas canvas, Point currentPoint)
+    {
+        Control? hitShape = HitTestShape(canvas, currentPoint);
+        return hitShape != null && IsActiveToolShape(hitShape) ? hitShape : null;
+    }
+
+    private bool IsActiveToolShape(Control shape)
+    {
+        if (_view.DataContext is not MainViewModel vm)
+        {
+            return true;
+        }
+
+        return vm.ActiveTool switch
+        {
+            EditorTool.Select => true,
+            EditorTool.Crop or EditorTool.CutOut => false,
+            EditorTool.Spotlight => shape is SpotlightControl,
+            _ => GetControlToolType(shape) == vm.ActiveTool
+        };
     }
 
     public Control? HitTestShape(Canvas canvas, Point currentPoint)
