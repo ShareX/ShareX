@@ -32,11 +32,12 @@ namespace ShareX.OCR;
 // reads each one. The models are multilingual, so there is no language to choose.
 public sealed class PaddleOCREngine : IDisposable
 {
-    // Models in the order they are preferred. The small models ship with ShareX. The medium models are more accurate
-    // but larger and slower, so they are not included; a user who downloads them into the models folder gets them
-    // instead. Detection and recognition are picked separately, so either one can be replaced on its own.
-    private static readonly string[] DetectionModelNames = ["PP-OCRv6_medium_det", "PP-OCRv6_small_det"];
-    private static readonly string[] RecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_small_rec"];
+    // Models in the order they are preferred. The small models ship with ShareX, so they come last: a model a user
+    // downloads into the models folder is used instead. The medium models are more accurate but larger and slower,
+    // and the tiny models are faster but less accurate and read fewer characters. When both are added, medium wins.
+    // Detection and recognition are picked separately, so either one can be replaced on its own.
+    private static readonly string[] DetectionModelNames = ["PP-OCRv6_medium_det", "PP-OCRv6_tiny_det", "PP-OCRv6_small_det"];
+    private static readonly string[] RecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_tiny_rec", "PP-OCRv6_small_rec"];
 
     // Hugging Face names the ONNX downloads with this suffix, so a folder copied from there as-is is found too.
     private const string DownloadFolderSuffix = "_onnx";
