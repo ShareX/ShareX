@@ -55,6 +55,12 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
     /// </summary>
     public SKBitmap? EffectBitmap { get; protected set; }
 
+    /// <summary>
+    /// The image pixels that <see cref="EffectBitmap"/> covers, so it can be drawn 1:1 on the image pixel grid.
+    /// Null when the bitmap is stretched over the annotation bounds instead (rotated or magnified effects).
+    /// </summary>
+    public SKRectI? EffectPixelBounds { get; protected set; }
+
     public override bool HitTest(SKPoint point, float tolerance = 5)
     {
         var bounds = GetBounds();
@@ -86,6 +92,7 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
         // Don't copy the bitmap - it will be regenerated when needed
         // This avoids shared bitmap references and potential disposal issues
         clone.EffectBitmap = null;
+        clone.EffectPixelBounds = null;
         return clone;
     }
 
@@ -93,6 +100,23 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
     /// Updates the effect bitmap based on the source image
     /// </summary>
     public virtual void UpdateEffect(SKBitmap source) { }
+
+    /// <summary>
+    /// Gets every image pixel the annotation touches. Mouse input gives fractional bounds at most zoom levels,
+    /// and a bitmap cut to whole pixels but stretched over those bounds would be resampled and look blurry.
+    /// </summary>
+    protected SKRectI GetEffectPixelBounds()
+    {
+        var rect = GetBounds();
+        return new SKRectI((int)MathF.Floor(rect.Left), (int)MathF.Floor(rect.Top), (int)MathF.Ceiling(rect.Right), (int)MathF.Ceiling(rect.Bottom));
+    }
+
+    protected void SetEffectBitmap(SKBitmap bitmap, SKRectI? pixelBounds)
+    {
+        EffectBitmap?.Dispose();
+        EffectBitmap = bitmap;
+        EffectPixelBounds = pixelBounds;
+    }
 
     internal virtual string GetInteractionCacheKey()
     {
@@ -136,8 +160,7 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
             canvas.DrawBitmap(processedSource, -rect.Left, -rect.Top);
         }
 
-        EffectBitmap?.Dispose();
-        EffectBitmap = result;
+        SetEffectBitmap(result, null);
     }
 
     protected void UpdateEffectFromAlignedCache(SKBitmap source, SKBitmap cachedEffectBitmap)
@@ -145,12 +168,11 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
         if (source == null || cachedEffectBitmap == null) return;
         if (cachedEffectBitmap.Width != source.Width || cachedEffectBitmap.Height != source.Height) return;
 
-        var rect = GetBounds();
-        int fullW = (int)rect.Width;
-        int fullH = (int)rect.Height;
+        var annotationRect = GetEffectPixelBounds();
+        int fullW = annotationRect.Width;
+        int fullH = annotationRect.Height;
         if (fullW <= 0 || fullH <= 0) return;
 
-        var annotationRect = new SKRectI((int)rect.Left, (int)rect.Top, (int)rect.Right, (int)rect.Bottom);
         var validRect = annotationRect;
         validRect.Intersect(new SKRectI(0, 0, source.Width, source.Height));
 
@@ -159,16 +181,14 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
 
         if (validRect.Width <= 0 || validRect.Height <= 0)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
         using var cachedRegion = new SKBitmap(validRect.Width, validRect.Height);
         if (!cachedEffectBitmap.ExtractSubset(cachedRegion, validRect))
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -180,8 +200,7 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
             resultCanvas.DrawBitmap(cachedRegion, drawX, drawY);
         }
 
-        EffectBitmap?.Dispose();
-        EffectBitmap = result;
+        SetEffectBitmap(result, annotationRect);
     }
 
     /// <summary>
@@ -191,6 +210,7 @@ public abstract partial class BaseEffectAnnotation : Annotation, IDisposable
     {
         EffectBitmap?.Dispose();
         EffectBitmap = null;
+        EffectPixelBounds = null;
     }
 
     /// <summary>
