@@ -122,7 +122,7 @@ internal static class Program
     {
         ImageEditorIntegration.Initialize();
 
-        if (ApplicationState.Settings.ShowStartScreen)
+        if (ApplicationState.Settings.ShowStartScreen && !StartupOptions.Sandbox)
         {
             DebugHelper.WriteLine("Start screen opening.");
             StartScreenWindow startScreen = new();
