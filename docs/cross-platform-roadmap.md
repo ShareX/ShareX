@@ -1,6 +1,6 @@
 # Cross-platform roadmap and progress
 
-How far each operating system is and what is left. Rules are in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md). The task and request IDs (R, W, H, B) in older entries refer to [cross-platform-delegation.md](cross-platform-delegation.md), which is now a historical record.
+How far each operating system is and what is left. Rules are in [AGENTS.md](../AGENTS.md); architecture in [cross-platform.md](cross-platform.md). The task and request IDs (R, W, H, B) in older entries refer to `docs/cross-platform-delegation.md`, the task tracker of the two-agent phase. It was removed on 2026-11-11 and is kept in Git history.
 
 Scope (McoreD and Jaex agree): Windows, Linux and macOS at 100%, with features through each system's own support. OCR uses ShareX's own PaddleOCR engine (ShareX.OCR) since develop adopted it on 2026-11-11; Intel Macs, which ONNX Runtime has no build for, use Vision. Linux HDR is not supported.
 

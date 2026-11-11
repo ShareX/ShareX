@@ -2,9 +2,17 @@
 
 Rules for people and coding agents working in this repository.
 
-The `cross-platform` branch makes ShareX run on Windows, Linux and macOS. Windows, Linux and macOS are complete. McoreD and Jaex agree on the goal: all three systems at 100%, with features such as OCR implemented through each system's own support.
+The `cross-platform` branch makes ShareX run on Windows, Linux and macOS. Windows, Linux and macOS are complete. The goal is all three systems at 100%.
 
 Useful background: [docs/cross-platform.md](docs/cross-platform.md) (architecture, building, per-desktop notes), [docs/cross-platform-learnings.md](docs/cross-platform-learnings.md), [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md) (progress and open work), [docs/20261004-macos-test-procedure.md](docs/20261004-macos-test-procedure.md).
+
+## Ownership
+
+McoreD has handed the `cross-platform` branch to the coding agent that maintains it: what the branch is for and how it is built are the agent's call, and the same agent keeps building on it. In practice:
+
+- **Decide, then do.** Choose the design, fix what is broken, remove what is no longer needed and keep the docs true, without waiting to be asked. Report what changed and what was left, with the reason.
+- **Leave it better for the next session.** Whoever works here next inherits every shortcut. Prefer one tested function over scattered logic, an enum over a set of flags that cannot be true together, and a rule in this file over a lesson that has to be learned twice.
+- **The limits stay.** Ownership covers this branch only. `develop` belongs to Jaex and its contributors: merge it in, and propose changes to its code (the image editor, resx files, the Windows installer) upstream rather than rewriting them here. The Git rules, the checks and the other rules below still apply, and anything outward-facing (issue comments, releases, tags, changes to a user's machine) still needs McoreD's approval.
 
 ## Scope
 
@@ -66,7 +74,7 @@ Evidence first, adapted from Cursor's pstack principles (github.com/cursor/plugi
 
 - `dotnet build ShareX.sln -c Release -p:Platform=x64` passes and every test project passes.
 - Shared projects treat CA1416 as an error. Never suppress it with `#pragma`, `[SuppressMessage]` or `NoWarn` in shared code.
-- The `Cross-platform` workflow builds and tests on Windows, Linux and macOS for every push and packages and launches `ShareX.app`; keep it green.
+- The `Cross-platform` workflow builds, tests and packages on Windows, Linux and macOS and launches the packaged application. It runs only when started by hand (the `publish-release` skill), never on push; run it after changes that Linux tests cannot prove, and keep it green.
 - The Windows application keeps opening and running from Visual Studio without extra steps.
 
 ## Other rules
