@@ -2242,14 +2242,20 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>有効な HTTP、HTTPS、または FTP URL を入力してください。</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>外観</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>始める</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>ゆったり</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX をダウンロードしていただきありがとうございます</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>システム設定を使用</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX へようこそ</value>

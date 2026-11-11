@@ -2242,14 +2242,20 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Masukkan URL HTTP, HTTPS, atau FTP yang valid.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Tampilan</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Mulai</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Lega</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Terima kasih telah mengunduh ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Gunakan pengaturan sistem</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Selamat datang di ShareX</value>

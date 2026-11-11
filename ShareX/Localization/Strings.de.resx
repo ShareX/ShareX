@@ -2242,14 +2242,20 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Geben Sie eine gültige HTTP-, HTTPS- oder FTP-URL ein.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Darstellung</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Loslegen</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Sie können diese Optionen jederzeit in den Anwendungseinstellungen ändern.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Großzügig</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Danke, dass du ShareX heruntergeladen hast</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Systemeinstellung verwenden</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Willkommen bei ShareX</value>

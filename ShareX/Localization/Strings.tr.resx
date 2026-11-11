@@ -2242,14 +2242,20 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Geçerli bir HTTP, HTTPS veya FTP URL'si girin.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Görünüm</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Başlayın</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bu seçenekleri istediğiniz zaman Uygulama ayarlarından değiştirebilirsiniz.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Geniş</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX'i indirdiğiniz için teşekkürler</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Sistem ayarını kullan</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX'e hoş geldiniz</value>

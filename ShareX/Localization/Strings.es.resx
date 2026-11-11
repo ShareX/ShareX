@@ -2242,14 +2242,20 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Introduce una URL HTTP, HTTPS o FTP válida.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Apariencia</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Comenzar</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Puedes cambiar estas opciones en cualquier momento en la configuración de la aplicación.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplio</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Gracias por descargar ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Usar configuración del sistema</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Te damos la bienvenida a ShareX</value>

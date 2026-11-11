@@ -2242,14 +2242,20 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Ange en giltig HTTP-, HTTPS- eller FTP-URL.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Utseende</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom igång</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Luftig</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Tack för att du laddade ner ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Använd systeminställning</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Välkommen till ShareX</value>

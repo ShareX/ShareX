@@ -2242,14 +2242,20 @@
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>मान्य HTTP, HTTPS या FTP URL दर्ज करें।</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>रूप-रंग</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>शुरू करें</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>आप इन विकल्पों को एप्लिकेशन सेटिंग में कभी भी बदल सकते हैं।</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>विस्तृत</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX डाउनलोड करने के लिए धन्यवाद</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>सिस्टम सेटिंग का उपयोग करें</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX में आपका स्वागत है</value>

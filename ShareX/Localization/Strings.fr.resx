@@ -2242,14 +2242,20 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Saisissez une URL HTTP, HTTPS ou FTP valide.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Apparence</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Commencer</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Vous pouvez modifier ces options à tout moment dans les paramètres de l’application.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Spacieux</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Merci d'avoir téléchargé ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Utiliser le paramètre système</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Bienvenue dans ShareX</value>

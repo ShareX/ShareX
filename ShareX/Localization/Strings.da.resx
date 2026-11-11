@@ -2242,14 +2242,20 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="ShortenURLWindow_Validation" xml:space="preserve">
     <value>Angiv en gyldig HTTP-, HTTPS- eller FTP-URL.</value>
   </data>
-  <data name="StartScreen_Appearance" xml:space="preserve">
-    <value>Udseende</value>
-  </data>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom i gang</value>
   </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan altid ændre disse indstillinger under programindstillinger.</value>
+  </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Rummelig</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Tak, fordi du downloadede ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Brug systemindstilling</value>
   </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Velkommen til ShareX</value>

@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Icons;
 using ShareX.Localization;
@@ -48,22 +49,31 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
     private ApplicationConfig Settings => ApplicationState.Settings;
 
     public string WindowTitle => Strings.StartScreen_Welcome;
-    public string GeneralGroupTitle => Strings.ApplicationSettingsWindow_General;
-    public string AppearanceGroupTitle => Strings.StartScreen_Appearance;
+    public string ThankYouTitle => Strings.StartScreen_ThankYou;
     public string SettingsNote => Strings.StartScreen_SettingsNote;
     public string GetStartedText => Strings.StartScreen_GetStarted;
-    public string LanguageLabel => Strings.ApplicationSettingsWindow_LanguageLabel;
-    public string FollowSystemThemeLabel => Strings.ApplicationSettingsWindow_FollowSystemTheme;
-    public string ThemeLabel => Strings.ApplicationSettingsWindow_ThemeLabel;
+    public string LanguageLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_LanguageLabel);
+    public string ThemeLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_ThemeLabel);
     public string FollowSystemAccentColorLabel => Strings.ApplicationSettingsWindow_FollowSystemAccentColor;
-    public string AccentColorLabel => Strings.ApplicationSettingsWindow_AccentColorLabel;
+    public string AccentColorLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_AccentColorLabel);
 
     public IReadOnlyList<StartScreenLanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
+
+    // "System" stands for UseSystemTheme rather than a theme name, so one choice covers both settings.
+    internal const string SystemTheme = "System";
+
     public IReadOnlyList<StartScreenThemeOption> ThemeOptions { get; } =
     [
-        new("Dark", Strings.ApplicationSettingsWindow_Dark),
-        new("Light", Strings.ApplicationSettingsWindow_Light)
+        new(SystemTheme, Strings.StartScreen_UseSystemSetting),
+        new("Light", Strings.ApplicationSettingsWindow_Light),
+        new("Dark", Strings.ApplicationSettingsWindow_Dark)
     ];
+
+    // The first preset is the default accent color, so a fresh install starts with it selected.
+    public IReadOnlyList<StartScreenAccentOption> AccentOptions { get; } =
+        new[] { ApplicationThemeOptions.DefaultAccentColorHex, "#6366F1", "#8B5CF6", "#EC4899", "#EF4444", "#F97316", "#10B981", "#64748B" }
+            .Select(x => new StartScreenAccentOption(AvaloniaColor.Parse(x)))
+            .ToArray();
 
     public StartScreenViewModel()
     {
@@ -91,32 +101,31 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
         }
     }
 
-    public bool UseSystemTheme
-    {
-        get => Settings.ThemeOptions.UseSystemTheme;
-        set
-        {
-            if (Settings.ThemeOptions.UseSystemTheme != value)
-            {
-                Settings.ThemeOptions.UseSystemTheme = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(CanEditTheme));
-            }
-        }
-    }
-
-    public bool CanEditTheme => !UseSystemTheme;
-
     public StartScreenThemeOption? SelectedTheme
     {
-        get => ThemeOptions.FirstOrDefault(x => string.Equals(x.Value, NormalizeTheme(Settings.ThemeOptions.Theme), StringComparison.Ordinal));
+        get
+        {
+            string value = Settings.ThemeOptions.UseSystemTheme ? SystemTheme : NormalizeTheme(Settings.ThemeOptions.Theme);
+            return ThemeOptions.FirstOrDefault(x => string.Equals(x.Value, value, StringComparison.Ordinal));
+        }
         set
         {
-            if (value != null && !string.Equals(Settings.ThemeOptions.Theme, value.Value, StringComparison.Ordinal))
+            if (value == null || value == SelectedTheme)
+            {
+                return;
+            }
+
+            if (value.Value == SystemTheme)
+            {
+                Settings.ThemeOptions.UseSystemTheme = true;
+            }
+            else
             {
                 Settings.ThemeOptions.Theme = value.Value;
-                OnPropertyChanged();
+                Settings.ThemeOptions.UseSystemTheme = false;
             }
+
+            OnPropertyChanged();
         }
     }
 
@@ -136,7 +145,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
 
     public bool CanEditAccentColor => !UseSystemAccentColor;
 
-    public string IconPackLabel => Strings.ApplicationSettingsWindow_IconPackLabel;
+    public string IconPackLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_IconPackLabel);
 
     public IReadOnlyList<StartScreenIconPackOption> IconPackOptions { get; } =
     [
@@ -157,6 +166,29 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
         }
     }
 
+    public string SpacingLabel => Strings.ApplicationSettingsWindow_Spacing;
+
+    public IReadOnlyList<StartScreenSpacingOption> SpacingOptions { get; } =
+    [
+        new(false, Strings.StartScreen_Spacious),
+        new(true, Strings.ApplicationSettingsWindow_SpacingCompact)
+    ];
+
+    public StartScreenSpacingOption? SelectedSpacing
+    {
+        get => SpacingOptions.FirstOrDefault(x => x.Compact == Settings.ThemeOptions.CompactMode);
+        set
+        {
+            if (value != null && Settings.ThemeOptions.CompactMode != value.Compact)
+            {
+                // Same as the settings window: compact mode is a spacing preset, so it drops per-area adjustments.
+                Settings.ThemeOptions.ResetSpacing();
+                Settings.ThemeOptions.CompactMode = value.Compact;
+                OnPropertyChanged();
+            }
+        }
+    }
+
     public AvaloniaColor AccentColor
     {
         get => Settings.ThemeOptions.AccentColor;
@@ -166,6 +198,20 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
             {
                 Settings.ThemeOptions.AccentColor = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedAccent));
+            }
+        }
+    }
+
+    // Null when the accent is a custom color from the picker.
+    public StartScreenAccentOption? SelectedAccent
+    {
+        get => AccentOptions.FirstOrDefault(x => x.Color == AccentColor);
+        set
+        {
+            if (value != null)
+            {
+                AccentColor = value.Color;
             }
         }
     }
@@ -245,6 +291,8 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
     private static string NormalizeTheme(string? theme) =>
         string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase) ? "Light" : "Dark";
 
+    private static string RemoveTrailingColon(string text) => text.TrimEnd().TrimEnd(':', '：').TrimEnd();
+
     private void RefreshLocalizedText()
     {
         foreach (StartScreenLanguageOption language in LanguageOptions)
@@ -252,10 +300,13 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
             language.UpdateDisplayName(language.Value.GetLocalizedDescription());
         }
 
-        ThemeOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
+        ThemeOptions[0].UpdateDisplayName(Strings.StartScreen_UseSystemSetting);
         ThemeOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_Light);
+        ThemeOptions[2].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
         IconPackOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackModern);
         IconPackOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackLegacy);
+        SpacingOptions[0].UpdateDisplayName(Strings.StartScreen_Spacious);
+        SpacingOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_SpacingCompact);
 
         RefreshStartWithWindows();
         OnPropertyChanged(string.Empty);
@@ -327,10 +378,50 @@ public sealed class StartScreenThemeOption : INotifyPropertyChanged
 
     public string Value { get; }
     public string DisplayName => _displayName;
+    public bool IsSystem => Value == StartScreenViewModel.SystemTheme;
+    public bool IsLight => Value == "Light";
+    public bool IsDark => Value == "Dark";
 
     public StartScreenThemeOption(string value, string displayName)
     {
         Value = value;
+        _displayName = displayName;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
+        {
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+}
+
+public sealed class StartScreenAccentOption
+{
+    public AvaloniaColor Color { get; }
+    public IBrush Brush { get; }
+
+    public StartScreenAccentOption(AvaloniaColor color)
+    {
+        Color = color;
+        Brush = new SolidColorBrush(color);
+    }
+}
+
+public sealed class StartScreenSpacingOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public bool Compact { get; }
+    public string DisplayName => _displayName;
+
+    public StartScreenSpacingOption(bool compact, string displayName)
+    {
+        Compact = compact;
         _displayName = displayName;
     }
 
