@@ -2005,9 +2005,8 @@ public partial class RegionCaptureWindow : Window
         int width = Math.Max(1, (int)Math.Round(selection.Width));
         int height = Math.Max(1, (int)Math.Round(selection.Height));
         // Same format as ShareX 21. X and Y are screen coordinates, matching the cursor info label.
-        int screenX = _request.ScreenBounds.X + (int)Math.Round(selection.X);
-        int screenY = _request.ScreenBounds.Y + (int)Math.Round(selection.Y);
-        _selectionInfoText.Text = $"X: {screenX} Y: {screenY} W: {width} H: {height}";
+        DrawingPoint screenPosition = ImageToScreen(selection.X, selection.Y);
+        _selectionInfoText.Text = $"X: {screenPosition.X} Y: {screenPosition.Y} W: {width} H: {height}";
         _selectionInfoPanel.IsVisible = true;
 
         double scale = Math.Max(1, RenderScaling);
@@ -2054,21 +2053,18 @@ public partial class RegionCaptureWindow : Window
             return windowBounds;
         }
 
-        PixelPoint desktopPoint = new PixelPoint(
-            _request.ScreenBounds.X + (int)Math.Floor(imagePoint.X),
-            _request.ScreenBounds.Y + (int)Math.Floor(imagePoint.Y));
-        Screen? screen = Screens.ScreenFromPoint(desktopPoint);
-        if (screen == null)
+        // The platform's screen list uses the same coordinates as the capture.
+        DrawingPoint screenPoint = ImageToScreen(Math.Floor(imagePoint.X), Math.Floor(imagePoint.Y));
+        DesktopScreen? screen = DesktopScreen.FromPoint(screenPoint);
+        if (screen == null || !screen.Bounds.Contains(screenPoint))
         {
             return windowBounds;
         }
 
         double scale = Math.Max(1, RenderScaling);
-        Rect monitorBounds = new Rect(
-            (screen.Bounds.X - _request.ScreenBounds.X) / scale,
-            (screen.Bounds.Y - _request.ScreenBounds.Y) / scale,
-            screen.Bounds.Width / scale,
-            screen.Bounds.Height / scale).Intersect(windowBounds);
+        Rect monitor = ScreenToImage(screen.Bounds);
+        Rect monitorBounds = new Rect(monitor.X / scale, monitor.Y / scale, monitor.Width / scale, monitor.Height / scale)
+            .Intersect(windowBounds);
         return monitorBounds.Width > 0 && monitorBounds.Height > 0 ? monitorBounds : windowBounds;
     }
 
