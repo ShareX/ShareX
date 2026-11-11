@@ -235,7 +235,7 @@
                                             <!-- System: light and dark split diagonally. -->
                                             <Panel IsVisible="{Binding IsSystem}">
                                                 <ContentControl Classes="mini"/>
-                                                <ContentControl Classes="mini dark" Clip="M 116,0 L 186,0 L 186,84 L 70,84 Z"/>
+                                                <ContentControl Classes="mini dark" Clip="M 140,0 L 186,0 L 186,84 L 98,84 Z"/>
                                             </Panel>
                                             <ContentControl Classes="mini" IsVisible="{Binding IsLight}"/>
                                             <ContentControl Classes="mini dark" IsVisible="{Binding IsDark}"/>
