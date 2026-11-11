@@ -696,7 +696,7 @@
     </Style>
 
     <Style Selector="ListBoxItem controls|IconPresenter.list-icon.accent">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
     </Style>
 
     <!-- Selected list items get an opaque accent fill. Item templates usually contain their own TextBlocks, which take
@@ -1127,11 +1127,11 @@
     </Style>
 
     <Style Selector="MenuItem.compact-menu-item:pointerover TextBlock.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
     </Style>
 
     <Style Selector="MenuItem.compact-menu-item:pointerover controls|IconPresenter.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
     </Style>
 
     <Style Selector="MenuItem.bold-when-checked">
@@ -1277,12 +1277,12 @@
     </Style>
 
     <Style Selector="TextBlock.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
         <Setter Property="FontWeight" Value="Normal"/>
     </Style>
 
     <Style Selector="controls|IconPresenter.accent-menu-icon">
-        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
     </Style>
 
     <!-- Menu items that hover with the accent fill draw their accent icon in the fill's text color. -->

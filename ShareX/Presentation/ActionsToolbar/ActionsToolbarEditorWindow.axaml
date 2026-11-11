@@ -116,7 +116,7 @@
                                       ColumnSpacing="7">
                                     <controls:IconPresenter Icon="{Binding Icon}"
                                                             FontSize="16"
-                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                             VerticalAlignment="Center"/>
                                     <TextBlock Grid.Column="1"
                                                Text="{Binding Title}"

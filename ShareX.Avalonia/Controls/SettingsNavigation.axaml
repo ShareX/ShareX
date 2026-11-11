@@ -47,7 +47,7 @@
         <!-- Page icons use the accent like the main menu icons, and the accent fill's text color on the selected page.
              The selected class follows the icon's own item, so a selected parent doesn't recolor its children's icons. -->
         <Style Selector="controls|IconPresenter.nav-icon">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
         </Style>
         <Style Selector="controls|IconPresenter.nav-icon.selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>

@@ -90,7 +90,7 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center">
                         <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                 FontSize="16"/>
                         <TextBlock Text="{x:Static res:Strings.ActionsToolbarWindow_DropToUpload}"
                                    FontWeight="Normal"

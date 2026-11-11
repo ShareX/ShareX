@@ -292,7 +292,7 @@
                     <Border Classes="option-indicator"
                             ToolTip.Tip="{Binding ActiveToolName}">
                         <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                     </Border>
 
                     <controls:ColorPickerDropdown x:Name="StrokeColorPicker"

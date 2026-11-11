@@ -79,7 +79,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -113,7 +113,7 @@
                                                 Classes="check"
                                                 Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                 FontSize="18"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                 VerticalAlignment="Center"/>
                     </Grid>
                     <TextBlock Classes="pack-description" Text="{x:Static res:Strings.IconPackPrompt_ModernDescription}"/>
@@ -134,7 +134,7 @@
                                                 Classes="check"
                                                 Icon="{x:Static icons:AppIcons.CircleCheck}"
                                                 FontSize="18"
-                                                Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                 VerticalAlignment="Center"/>
                     </Grid>
                     <TextBlock Classes="pack-description" Text="{x:Static res:Strings.IconPackPrompt_LegacyDescription}"/>
