@@ -361,6 +361,12 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 overlayCanvas.RenderTransformOrigin = new RelativePoint(0, 0, RelativeUnit.Absolute);
                 overlayCanvas.RenderTransform = new ScaleTransform(zoom, zoom);
+
+                if (zoomChanged)
+                {
+                    // The crop size label counter-scales against zoom.
+                    _inputController.RefreshCropChrome();
+                }
             }
         }
 

@@ -1177,6 +1177,20 @@ public class EditorInputController
         return true;
     }
 
+    /// <summary>
+    /// Re-lays out the pending crop's handles, size label and Crop button, e.g. after a zoom change.
+    /// </summary>
+    public void RefreshCropChrome()
+    {
+        if (!_cropActive || _isDraggingCropHandle) return;
+
+        var cropOverlay = _view.FindControl<global::Avalonia.Controls.Shapes.Rectangle>("CropOverlay");
+        var overlayCanvas = _view.FindControl<Canvas>("OverlayCanvas");
+        if (cropOverlay == null || overlayCanvas == null || !cropOverlay.IsVisible) return;
+
+        ShowCropHandles(overlayCanvas, GetCropOverlayCanvasRect(cropOverlay));
+    }
+
     public bool CancelClone()
     {
         if (_currentShape?.Name != "CloneOverlay" || _view.FindControl<Canvas>("AnnotationCanvas") is not { } canvas)
@@ -1292,7 +1306,8 @@ public class EditorInputController
         double canvasHeight = annotationCanvas?.Bounds.Height ?? overlay.Bounds.Height;
 
         double belowY = cropRect.Bottom + CropConfirmButtonMargin;
-        double aboveY = cropRect.Top - CropConfirmButtonMargin - btnHeight;
+        // Above, leave room for the crop size label.
+        double aboveY = cropRect.Top - CropConfirmButtonMargin - btnHeight - _cropAdorner.InfoHeightAbove;
 
         double btnY = (belowY + btnHeight <= canvasHeight) ? belowY : aboveY;
 
