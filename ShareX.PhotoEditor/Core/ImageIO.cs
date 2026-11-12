@@ -29,6 +29,9 @@ namespace ShareX.PhotoEditor.Core;
 
 public sealed record FileFormatInfo(string Name, string[] Extensions, bool CanSave);
 
+/// <summary>A failure to open a document, with a message ready to show to the user.</summary>
+public sealed class DocumentOpenException(string message) : Exception(message);
+
 /// <summary>Opens and saves flat image formats and the layered project format.</summary>
 public static class ImageIO
 {
@@ -36,7 +39,7 @@ public static class ImageIO
 
     public static IReadOnlyList<FileFormatInfo> Formats { get; } =
     [
-        new("ShareX Photo Editor Project", [ProjectExtension], true),
+        new(Strings.ImageIO_ProjectFormat, [ProjectExtension], true),
         new("PNG", [".png"], true),
         new("JPEG", [".jpg", ".jpeg", ".jpe", ".jfif"], true),
         new("WebP", [".webp"], true),
@@ -55,10 +58,10 @@ public static class ImageIO
         return Formats.Any(f => f.Extensions.Contains(extension, StringComparer.OrdinalIgnoreCase));
     }
 
-    /// <summary>Opens a document from a file. Throws <see cref="InvalidDataException"/> with a friendly message when it fails.</summary>
+    /// <summary>Opens a document from a file. Throws <see cref="DocumentOpenException"/> with a friendly message when it fails.</summary>
     public static PhotoDocument Open(string path)
     {
-        if (!File.Exists(path)) throw new FileNotFoundException("The file does not exist.", path);
+        if (!File.Exists(path)) throw new FileNotFoundException(Strings.ImageIO_FileDoesNotExist, path);
         if (IsProject(path))
         {
             PhotoDocument project;
@@ -66,18 +69,18 @@ public static class ImageIO
             {
                 project = ProjectSerializer.Load(path);
             }
-            catch (InvalidDataException ex) when (ex.Message.Contains("newer version", StringComparison.Ordinal))
+            catch (DocumentOpenException ex)
             {
-                throw;
+                throw new DocumentOpenException(string.Format(Strings.ImageIO_CouldNotOpenReason, Path.GetFileName(path), ex.Message));
             }
             catch (Exception ex) when (ex is InvalidDataException or System.Text.Json.JsonException or KeyNotFoundException or NotSupportedException or FormatException)
             {
-                throw new InvalidDataException($"Could not open \"{Path.GetFileName(path)}\" because it is not a valid ShareX Photo Editor project or the file is damaged.");
+                throw new DocumentOpenException(string.Format(Strings.ImageIO_InvalidProject, Path.GetFileName(path)));
             }
             project.FilePath = path;
             return project;
         }
-        SKBitmap bitmap = DecodeImage(path) ?? throw new InvalidDataException($"Could not open \"{Path.GetFileName(path)}\" because it is not a supported image or the file is damaged.");
+        SKBitmap bitmap = DecodeImage(path) ?? throw new DocumentOpenException(string.Format(Strings.ImageIO_UnsupportedImage, Path.GetFileName(path)));
         using (bitmap)
         {
             PhotoDocument doc = FromBitmap(bitmap, Path.GetFileNameWithoutExtension(path));
@@ -130,7 +133,7 @@ public static class ImageIO
         PhotoDocument doc = new(bitmap.Width, bitmap.Height, 72, createBackground: false);
         PixelSurface surface = PixelSurface.FromBitmap(bitmap);
         bool opaque = IsOpaque(surface.Bitmap);
-        RasterLayer layer = new(opaque ? "Background" : "Layer 0", surface)
+        RasterLayer layer = new(opaque ? Strings.LayerNames_Background : Strings.LayerNames_Layer0, surface)
         {
             IsBackground = opaque,
             LockPosition = opaque,
@@ -164,7 +167,8 @@ public static class ImageIO
         SaveBitmap(flat, path, quality);
     }
 
-    public static void SaveBitmap(SKBitmap bitmap, string path, int quality = 90)
+    /// <param name="lossless">Encodes WebP losslessly; <paramref name="quality"/> is then ignored.</param>
+    public static void SaveBitmap(SKBitmap bitmap, string path, int quality = 90, bool lossless = false)
     {
         string extension = Path.GetExtension(path).ToLowerInvariant();
         string temp = path + ".tmp";
@@ -177,6 +181,14 @@ public static class ImageIO
                     case ".jpg" or ".jpeg" or ".jpe" or ".jfif":
                         // JPEG has no alpha: composite onto white first.
                         using (SKBitmap opaque = FlattenOnto(bitmap, SKColors.White)) opaque.Save(stream, SKEncodedImageFormat.Jpeg, quality);
+                        break;
+                    case ".webp" when lossless:
+                        {
+                            // For lossless WebP the quality value sets compression effort, not image quality.
+                            using SKPixmap pixmap = bitmap.PeekPixels();
+                            using SKData data = pixmap.Encode(new SKWebpEncoderOptions(SKWebpEncoderCompression.Lossless, 75)) ?? throw new InvalidOperationException(Strings.ImageIO_WebPEncodingFailed);
+                            data.SaveTo(stream);
+                        }
                         break;
                     case ".webp":
                         bitmap.Save(stream, SKEncodedImageFormat.Webp, quality);
@@ -205,7 +217,7 @@ public static class ImageIO
 
     private static void SaveTiff(SKBitmap bitmap, Stream stream)
     {
-        if (!OperatingSystem.IsWindows()) throw new PlatformNotSupportedException("TIFF export requires Windows.");
+        if (!OperatingSystem.IsWindows()) throw new PlatformNotSupportedException(Strings.ImageIO_TiffRequiresWindows);
         using MemoryStream png = new();
         bitmap.Save(png, SKEncodedImageFormat.Png);
         png.Position = 0;

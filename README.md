@@ -40,19 +40,23 @@ ShareX supports many ways to capture your screen:
 * GIF screen recording
 * Auto capture
 
-After capturing a screenshot or recording, ShareX can automatically copy the result to the clipboard, save it to a file, open it in the image editor, upload it, print it, show it in Windows Explorer, run an action, scan a QR code or recognize text with OCR. These after-capture tasks make ShareX a flexible screenshot workflow tool instead of only a basic snipping utility.
+After capturing a screenshot or recording, ShareX can automatically copy the result to the clipboard, save it to a file, open it in the image editor or photo editor, upload it, print it, show it in Windows Explorer, run an action, scan a QR code or recognize text with OCR. These after-capture tasks make ShareX a flexible screenshot workflow tool instead of only a basic snipping utility.
 
 ## Region Capture and Annotation
 
-ShareX region capture includes tools for selecting exactly what you want to capture and marking it before saving, copying or uploading. You can draw rectangles, ellipses, freehand lines, arrows, text, speech balloons, step numbers, highlights, blur effects, pixelation, magnification and spotlight effects.
+ShareX region capture includes tools for selecting exactly what you want to capture and marking it before saving, copying or uploading. You can draw rectangles, ellipses, lines, arrows, freehand lines, text, speech balloons and step numbers, insert images, emojis and cursors, clone parts of the screenshot, and add highlights, blur effects, pixelation, magnification and spotlight effects.
 
 These annotation tools help create clear screenshots for bug reports, documentation, tutorials, support replies, pull requests and release notes. Sensitive information can be hidden with blur, pixelate or smart eraser tools before a screenshot is shared.
 
 ## Built-in Image Editor
 
-The ShareX image editor lets you crop, annotate, redact, highlight and prepare screenshots after capture. It includes common editing tools such as shapes, arrows, text, freehand drawing, image insertion, cursor insertion, blur, pixelate, magnify, spotlight, crop, cut out, background editing and image effects.
+The ShareX image editor lets you crop, annotate, redact, highlight and prepare screenshots after capture. It includes common editing tools such as shapes, arrows, text, freehand drawing, image, emoji and cursor insertion, clone, smart eraser, blur, pixelate, magnify, spotlight, crop, cut out, background editing and image effects.
 
 Because the editor is part of the capture workflow, you can take a screenshot, mark the important area, hide private details and then copy, save or upload the edited image without switching between separate apps.
+
+## Photo Editor
+
+For edits that go beyond annotation, the ShareX [photo editor](https://getsharex.com/docs/photo-editor) is a layer-based editor with selection tools, retouching brushes, adjustment layers, masks, filters, layer styles and editable project files. Edited images can be sent straight back to ShareX to run after-capture tasks, upload or pin to screen.
 
 ## File Sharing and Upload Automation
 
@@ -87,12 +91,14 @@ ShareX includes many utilities that support everyday desktop work:
 * [Image thumbnailer](https://getsharex.com/docs/image-thumbnailer)
 * [Image viewer](https://getsharex.com/docs/image-viewer)
 * [Image watermark](https://getsharex.com/docs/image-watermark)
+* [Photo editor](https://getsharex.com/docs/photo-editor)
 
 ### Video
 
 * [Animated GIF maker](https://getsharex.com/docs/animated-gif-maker)
 * [Animated GIF trimmer](https://getsharex.com/docs/animated-gif-trimmer)
 * [Video converter](https://getsharex.com/docs/video-converter)
+* [Video player](https://getsharex.com/docs/video-player)
 * [Video thumbnailer](https://getsharex.com/docs/video-thumbnailer)
 * [Video trimmer](https://getsharex.com/docs/video-trimmer)
 
@@ -150,14 +156,24 @@ For the safest download options, use the official links below.
 * Keybinds: https://getsharex.com/docs/keybinds
 * Region capture: https://getsharex.com/docs/region-capture
 * Image editor: https://getsharex.com/docs/image-editor
+* Photo editor: https://getsharex.com/docs/photo-editor
 * Background remover: https://getsharex.com/docs/background-remover
 * Pin to screen: https://getsharex.com/docs/pin-to-screen
 * Scrolling screenshot: https://getsharex.com/docs/scrolling-screenshot
 * Command line arguments: https://getsharex.com/docs/command-line-arguments
-* Translation: https://getsharex.com/docs/translation
 * OCR: https://getsharex.com/docs/ocr
 * Custom uploader: https://getsharex.com/docs/custom-uploader
 * Amazon S3 guide: https://getsharex.com/docs/amazon-s3
 * Google Cloud Storage guide: https://getsharex.com/docs/google-cloud-storage
 * Cloudflare R2 guide: https://getsharex.com/docs/cloudflare-r2
 * Brand assets: https://getsharex.com/brand-assets
+
+## Star History
+
+<a href="https://www.star-history.com/?repos=sharex%2Fsharex&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=sharex/sharex&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=sharex/sharex&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=sharex/sharex&type=date&legend=top-left" />
+ </picture>
+</a>

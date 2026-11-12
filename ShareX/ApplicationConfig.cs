@@ -39,12 +39,14 @@ namespace ShareX
 
         public DateTime FirstTimeRunDate = DateTime.Now;
         public bool ShowStartScreen = false;
+        public bool ShowIconPackPrompt = false;
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;
         public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;
+        public bool ScreenshotDelayJustOnce = false;
 
         public ApplicationConfig()
         {
@@ -103,6 +105,17 @@ namespace ShareX
 
         #region Main window
 
+        public TaskViewMode TaskViewMode = TaskViewMode.ThumbnailView;
+
+        // List view
+        public bool ShowColumns = true;
+        public List<int> TaskListViewColumnWidths = new List<int>();
+        public ImagePreviewVisibility ImagePreview = ImagePreviewVisibility.Automatic;
+        public ImagePreviewLocation ImagePreviewLocation = ImagePreviewLocation.Side;
+        public int ImagePreviewWidth = 300;
+        public int ImagePreviewHeight = 250;
+
+        // Thumbnail view
         public bool ShowThumbnailTitle = true;
         public ThumbnailTitleLocation ThumbnailTitleLocation = ThumbnailTitleLocation.Top;
         public Size ThumbnailSize = new Size(200, 150);
@@ -216,6 +229,9 @@ namespace ShareX
 
         [Category("Image"), DefaultValue(false), Description("Strip color space information chunks from PNG image.")]
         public bool PNGStripColorSpaceInformation { get; set; }
+
+        [Category("Application"), DefaultValue(true), Description("Ask for confirmation before deleting a file locally from the notification or the main window.")]
+        public bool ShowFileDeleteConfirmation { get; set; }
 
         [Category("Upload"), DefaultValue(false), Description("Can be used to disable uploading application wide.")]
         public bool DisableUpload { get; set; }

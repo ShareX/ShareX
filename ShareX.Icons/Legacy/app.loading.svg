@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<radialGradient id="ld" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#a6e4ff"/><stop offset=".5" stop-color="#2f9ae8"/><stop offset="1" stop-color="#0d62bd"/></radialGradient>
+</defs>
+<circle cx="8.00" cy="2.80" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="1"/>
+<circle cx="4.32" cy="4.32" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.9"/>
+<circle cx="2.80" cy="8.00" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.78"/>
+<circle cx="4.32" cy="11.68" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.66"/>
+<circle cx="8.00" cy="13.20" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.55"/>
+<circle cx="11.68" cy="11.68" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.46"/>
+<circle cx="13.20" cy="8.00" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.38"/>
+<circle cx="11.68" cy="4.32" r="1.5" fill="url(#ld)" stroke="#063f85" stroke-width=".8" opacity="0.3"/>
+</svg>

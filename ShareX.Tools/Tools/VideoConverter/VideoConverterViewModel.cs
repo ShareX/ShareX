@@ -25,6 +25,8 @@
 
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.HelpersLib;
+using System.Globalization;
 using System.Text;
 
 namespace ShareX.Tools;
@@ -105,6 +107,13 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
     [ObservableProperty]
     private string _statusText = Localization.Strings.VideoConverterViewModel_Choose_video;
 
+    [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(HasOutputInfo))]
+    [NotifyPropertyChangedFor(nameof(OutputBitrateText))]
+    [NotifyPropertyChangedFor(nameof(OutputFileSizeText))]
+    [NotifyPropertyChangedFor(nameof(OutputResolutionText))]
+    private VideoConversionOutputInfo? _outputInfo;
+
     public VideoConverterViewModel(
         VideoConverterOptions options,
         VideoConversionHandler conversionHandler,
@@ -140,6 +149,18 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         or VideoConverterCodec.Vp9 or VideoConverterCodec.Av1 or VideoConverterCodec.Xvid;
     public bool ShowsQualitySlider => CanChooseRateControl && !UseBitrate;
     public bool ShowsBitrate => ShowsQualityControls && (!CanChooseRateControl || UseBitrate);
+
+    public bool HasOutputInfo => OutputInfo != null;
+
+    public string OutputBitrateText => OutputInfo?.AverageBitrateKbps is double bitrate
+        ? $"{bitrate.ToString("N0", CultureInfo.CurrentCulture)} {Localization.Strings.VideoConverterWindow_kbps}"
+        : "-";
+
+    public string OutputFileSizeText => OutputInfo != null ? OutputInfo.FileSize.ToSizeString() : "-";
+
+    public string OutputResolutionText => OutputInfo is { Width: int width, Height: int height }
+        ? $"{width} × {height}"
+        : "-";
 
     public double QualityMinimum => SelectedCodec.Codec switch
     {
@@ -213,6 +234,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             OutputFileName = $"{Path.GetFileNameWithoutExtension(filePath)}-output";
         }
 
+        OutputInfo = null;
         StatusText = string.Empty;
     }
 
@@ -245,6 +267,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
         PersistSettings();
         IsEncoding = true;
         Progress = 0;
+        OutputInfo = null;
         StatusText = Localization.Strings.VideoConverterViewModel_Converting;
         _cancellationTokenSource = new CancellationTokenSource();
         IProgress<double> progress = new Progress<double>(value => Progress = Math.Clamp(value, 0, 100));
@@ -257,6 +280,7 @@ public sealed partial class VideoConverterViewModel : ViewModelBase, IDisposable
             if (result.Succeeded && !result.WasCancelled)
             {
                 Progress = 100;
+                OutputInfo = result.OutputInfo;
                 StatusText = string.Format(Localization.Strings.VideoConverterViewModel_Conversion_complete, OutputFilePath);
             }
             else if (result.WasCancelled)

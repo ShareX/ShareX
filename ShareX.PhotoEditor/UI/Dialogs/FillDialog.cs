@@ -24,9 +24,6 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
-using Avalonia.Media;
-using ShareX.PhotoEditor.Tools;
-using ShareX.PhotoEditor.UI.Commands;
 
 namespace ShareX.PhotoEditor.UI.Dialogs;
 
@@ -49,19 +46,19 @@ public static class FillDialog
         int contents = 0;
         PatternDefinition pattern = owner.Pattern ?? owner.Patterns[0];
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Contents:", DialogBuilder.Combo([("Foreground Color", 0), ("Background Color", 1), ("Color...", 2), ("Content-Aware", 3), ("Pattern", 4), ("History", 5), ("Black", 6), ("50% Gray", 7), ("White", 8)], contents, v => contents = v));
-        DialogBuilder.AddRow(form, "Pattern:", DialogBuilder.Combo(owner.Patterns.Select(p => (p.Name, p)), pattern, v => pattern = v));
-        DialogBuilder.AddRow(form, "Mode:", DialogBuilder.Combo(BlendModes.PaintModes.Select(m => (BlendModes.GetName(m), m)), result.Mode, v => result.Mode = v));
-        DialogBuilder.AddRow(form, "Opacity (%):", DialogBuilder.SliderNumber(0, 100, 100, v => result.Opacity = (float)v / 100));
-        CheckBox preserve = new() { Content = "Preserve Transparency" };
+        DialogBuilder.AddRow(form, Strings.FillDialog_ContentsColon, DialogBuilder.Combo([(Strings.ColorPanel_ForegroundColor, 0), (Strings.ColorPanel_BackgroundColor, 1), (Strings.FillDialog_ColorEllipsis, 2), (Strings.Enum_HealType_ContentAware, 3), (Strings.EditorCommands_Pattern, 4), (Strings.EditorCommands_History, 5), (Strings.NewDocumentDialog_Black, 6), (Strings.FillDialog_HalfGray, 7), (Strings.NewDocumentDialog_White, 8)], contents, v => contents = v));
+        DialogBuilder.AddRow(form, Strings.FillDialog_PatternColon, DialogBuilder.Combo(owner.Patterns.Select(p => (p.Name, p)), pattern, v => pattern = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_ModeColon, DialogBuilder.Combo(BlendModes.PaintModes.Select(m => (BlendModes.GetName(m), m)), result.Mode, v => result.Mode = v));
+        DialogBuilder.AddRow(form, Strings.FillDialog_OpacityPercentColon, DialogBuilder.SliderNumber(0, 100, 100, v => result.Opacity = (float)v / 100));
+        CheckBox preserve = new() { Content = Strings.FillDialog_PreserveTransparency };
         preserve.IsCheckedChanged += (_, _) => result.PreserveTransparency = preserve.IsChecked == true;
         DialogBuilder.AddFull(form, preserve);
-        if (!await DialogBuilder.ShowAsync(owner, "Fill", form, 420)) return null;
+        if (!await DialogBuilder.ShowAsync(owner, Strings.EditorCommands_Fill, form, 420)) return null;
         switch (contents)
         {
             case 1: result.Color = owner.Background; break;
             case 2:
-                SKColor? picked = await ColorPickerDialog.ShowAsync(owner, owner.Foreground, "Fill Color", owner);
+                SKColor? picked = await ColorPickerDialog.ShowAsync(owner, owner.Foreground, Strings.FillDialog_FillColor, owner);
                 if (picked == null) return null;
                 result.Color = picked.Value;
                 break;

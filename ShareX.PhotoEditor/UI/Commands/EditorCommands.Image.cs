@@ -48,7 +48,7 @@ public static partial class EditorCommands
 
     private static void RegisterImage()
     {
-        R("image.mode.grayscale", "Grayscale", null, w => ApplyAdjustmentDirect(w, new AdjustmentSettings(AdjustmentKind.Desaturate), "Grayscale"), HasDoc);
+        R("image.mode.grayscale", Strings.EditorCommands_Grayscale, null, w => ApplyAdjustmentDirect(w, new AdjustmentSettings(AdjustmentKind.Desaturate), Strings.EditorCommands_Grayscale), HasDoc);
         foreach (var (kind, gesture) in AdjustmentMenu)
         {
             AdjustmentKind captured = kind;
@@ -56,23 +56,23 @@ public static partial class EditorCommands
             R($"image.adjust.{kind}", AdjustmentSettings.GetName(kind) + (immediate ? string.Empty : "..."), gesture,
                 w => { if (immediate) ApplyAdjustmentDirect(w, new AdjustmentSettings(captured), AdjustmentSettings.GetName(captured)); else _ = AdjustmentDialogAsync(w, captured); }, HasDoc);
         }
-        R("image.adjust.equalize", "Equalize", null, Equalize, HasDoc);
-        R("image.adjust.shadowsHighlights", "Shadows/Highlights...", null, w => _ = LibraryEffectAsync(w, "ShadowsHighlights"), HasDoc);
-        R("image.autoTone", "Auto Tone", "Ctrl+Shift+L", w => AutoLevels(w, true, "Auto Tone"), HasDoc);
-        R("image.autoContrast", "Auto Contrast", "Ctrl+Shift+Alt+L", w => AutoLevels(w, false, "Auto Contrast"), HasDoc);
-        R("image.autoColor", "Auto Color", "Ctrl+Shift+B", w => AutoLevels(w, true, "Auto Color"), HasDoc);
-        R("image.imageSize", "Image Size...", "Ctrl+Alt+I", w => _ = ImageSizeAsync(w), HasDoc);
-        R("image.canvasSize", "Canvas Size...", "Ctrl+Alt+C", w => _ = CanvasSizeAsync(w), HasDoc);
+        R("image.adjust.equalize", Strings.EditorCommands_Equalize, null, Equalize, HasDoc);
+        R("image.adjust.shadowsHighlights", Strings.EditorCommands_ShadowsHighlightsEllipsis, null, w => _ = LibraryEffectAsync(w, "ShadowsHighlights"), HasDoc);
+        R("image.autoTone", Strings.EditorCommands_AutoTone, "Ctrl+Shift+L", w => AutoLevels(w, true, Strings.EditorCommands_AutoTone), HasDoc);
+        R("image.autoContrast", Strings.EditorCommands_AutoContrast, "Ctrl+Shift+Alt+L", w => AutoLevels(w, false, Strings.EditorCommands_AutoContrast), HasDoc);
+        R("image.autoColor", Strings.EditorCommands_AutoColor, "Ctrl+Shift+B", w => AutoLevels(w, true, Strings.EditorCommands_AutoColor), HasDoc);
+        R("image.imageSize", Strings.EditorCommands_ImageSizeEllipsis, "Ctrl+Alt+I", w => _ = ImageSizeAsync(w), HasDoc);
+        R("image.canvasSize", Strings.EditorCommands_CanvasSizeEllipsis, "Ctrl+Alt+C", w => _ = CanvasSizeAsync(w), HasDoc);
         R("image.rotate180", "180°", null, w => _ = RotateCanvasAsync(w, 180), HasDoc);
-        R("image.rotate90cw", "90° Clockwise", null, w => _ = RotateCanvasAsync(w, 90), HasDoc);
-        R("image.rotate90ccw", "90° Counter Clockwise", null, w => _ = RotateCanvasAsync(w, -90), HasDoc);
-        R("image.rotateArbitrary", "Arbitrary...", null, w => _ = RotateArbitraryAsync(w), HasDoc);
-        R("image.flipH", "Flip Canvas Horizontal", null, w => _ = EditDocumentAsync(w, "flip the canvas", "Flip Canvas Horizontal", d => DocumentTransforms.Flip(d, true)), HasDoc);
-        R("image.flipV", "Flip Canvas Vertical", null, w => _ = EditDocumentAsync(w, "flip the canvas", "Flip Canvas Vertical", d => DocumentTransforms.Flip(d, false)), HasDoc);
-        R("image.crop", "Crop", null, w => _ = CropToSelectionAsync(w), HasSelection);
-        R("image.trim", "Trim...", null, w => _ = TrimAsync(w), HasDoc);
-        R("image.revealAll", "Reveal All", null, w => _ = RevealAllAsync(w), HasDoc);
-        R("image.duplicate", "Duplicate...", null, DuplicateDocument, HasDoc);
+        R("image.rotate90cw", Strings.EditorCommands_90Clockwise, null, w => _ = RotateCanvasAsync(w, 90), HasDoc);
+        R("image.rotate90ccw", Strings.EditorCommands_90CounterClockwise, null, w => _ = RotateCanvasAsync(w, -90), HasDoc);
+        R("image.rotateArbitrary", Strings.EditorCommands_ArbitraryEllipsis, null, w => _ = RotateArbitraryAsync(w), HasDoc);
+        R("image.flipH", Strings.EditorCommands_FlipCanvasHorizontal, null, w => _ = EditDocumentAsync(w, Strings.EditorCommands_ActionFlipCanvas, Strings.EditorCommands_FlipCanvasHorizontal, d => DocumentTransforms.Flip(d, true)), HasDoc);
+        R("image.flipV", Strings.EditorCommands_FlipCanvasVertical, null, w => _ = EditDocumentAsync(w, Strings.EditorCommands_ActionFlipCanvas, Strings.EditorCommands_FlipCanvasVertical, d => DocumentTransforms.Flip(d, false)), HasDoc);
+        R("image.crop", Strings.EditorCommands_Crop, null, w => _ = CropToSelectionAsync(w), HasSelection);
+        R("image.trim", Strings.EditorCommands_TrimEllipsis, null, w => _ = TrimAsync(w), HasDoc);
+        R("image.revealAll", Strings.EditorCommands_RevealAll, null, w => _ = RevealAllAsync(w), HasDoc);
+        R("image.duplicate", Strings.EditorCommands_DuplicateEllipsis, null, DuplicateDocument, HasDoc);
     }
 
     /// <summary>Prepares a layer for an in-place edit limited to the selection: its writable surface, the edited area in surface pixels and the selection weight.</summary>
@@ -122,7 +122,7 @@ public static partial class EditorCommands
             }
             return;
         }
-        RasterLayer? layer = EditableRaster(w, "apply the adjustment");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionApplyAdjustment);
         if (layer == null) return;
         PreviewSession session = new(w, layer, 0);
         Func<SKBitmap, SKBitmap> Filter()
@@ -137,7 +137,7 @@ public static partial class EditorCommands
         }
         using SKBitmap histogramSource = w.GetSampleImage(false);
         Control editor = AdjustmentEditor.Build(settings, () => session.Preview(Filter()), histogramSource, w);
-        CheckBox preview = new() { Content = "Preview", IsChecked = true };
+        CheckBox preview = new() { Content = Strings.EditorCommands_Preview, IsChecked = true };
         preview.IsCheckedChanged += (_, _) =>
         {
             session.PreviewEnabled = preview.IsChecked == true;
@@ -160,17 +160,17 @@ public static partial class EditorCommands
     private static void AddSmartFilter(PhotoEditorWindow w, SmartObjectLayer smart, SmartFilter filter)
     {
         smart.Filters.Add(filter);
-        w.Commit(filter.Name + " (Smart Filter)");
+        w.Commit(string.Format(Strings.EditorCommands_SmartFilterHistory, filter.Name));
     }
 
     private static void Equalize(PhotoEditorWindow w)
     {
         PhotoDocument doc = w.Document!;
-        RasterLayer? layer = EditableRaster(w, "equalize");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionEqualize);
         if (layer == null) return;
         (PixelSurface surface, SKRectI area, Func<int, int, float>? weight) = BeginSelectionEdit(doc, layer);
         Adjustments.Equalize(surface.Bitmap, area, weight);
-        w.Commit("Equalize");
+        w.Commit(Strings.EditorCommands_Equalize);
     }
 
     private static void AutoLevels(PhotoEditorWindow w, bool perChannel, string name)
@@ -221,7 +221,7 @@ public static partial class EditorCommands
 
         if (error != null)
         {
-            w.ShowMessage($"Could not {action}: {error.Message}");
+            w.ShowMessage(string.Format(Strings.EditorCommands_CouldNotActionReason, action, error.Message));
             return false;
         }
         // The document may have been closed or replaced while the work ran.
@@ -246,10 +246,10 @@ public static partial class EditorCommands
         if (result.Width == doc.Width && result.Height == doc.Height)
         {
             doc.Resolution = result.Resolution;
-            w.Commit("Image Size");
+            w.Commit(Strings.EditorCommands_ImageSize);
             return;
         }
-        await EditDocumentAsync(w, "resize the image", "Image Size", d => DocumentTransforms.ResizeImage(d, result.Width, result.Height, result.Method, result.Resolution));
+        await EditDocumentAsync(w, Strings.EditorCommands_ActionResizeImage, Strings.EditorCommands_ImageSize, d => DocumentTransforms.ResizeImage(d, result.Width, result.Height, result.Method, result.Resolution));
     }
 
     private static async Task CanvasSizeAsync(PhotoEditorWindow w)
@@ -257,13 +257,13 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         CanvasSizeDialog.Result? result = await CanvasSizeDialog.ShowAsync(w, doc.Width, doc.Height, w.Background);
         if (result == null) return;
-        await EditDocumentAsync(w, "change the canvas size", "Canvas Size", d => DocumentTransforms.CanvasSize(d, result.Width, result.Height, result.Anchor, result.Extension));
+        await EditDocumentAsync(w, Strings.EditorCommands_ActionChangeCanvasSize, Strings.EditorCommands_CanvasSize, d => DocumentTransforms.CanvasSize(d, result.Width, result.Height, result.Anchor, result.Extension));
     }
 
     private static Task<bool> RotateCanvasAsync(PhotoEditorWindow w, float degrees)
     {
         SKColor background = w.Background;
-        return EditDocumentAsync(w, "rotate the canvas", $"Rotate Canvas {degrees}°", d => DocumentTransforms.Rotate(d, degrees, background));
+        return EditDocumentAsync(w, Strings.EditorCommands_ActionRotateCanvas, string.Format(Strings.EditorCommands_RotateCanvasDegrees, degrees), d => DocumentTransforms.Rotate(d, degrees, background));
     }
 
     /// <summary>Rotates the canvas (background layers) or just the active layer (used by the Ruler tool).</summary>
@@ -275,7 +275,7 @@ public static partial class EditorCommands
             _ = RotateCanvasAsync(w, degrees);
             return;
         }
-        w.Tools.Get<Tools.TransformTool>().ApplyImmediate(bounds => SKMatrix.CreateRotationDegrees(degrees, bounds.MidX, bounds.MidY), "Straighten Layer");
+        w.Tools.Get<Tools.TransformTool>().ApplyImmediate(bounds => SKMatrix.CreateRotationDegrees(degrees, bounds.MidX, bounds.MidY), Strings.EditorCommands_StraightenLayer);
     }
 
     private static async Task RotateArbitraryAsync(PhotoEditorWindow w)
@@ -285,9 +285,9 @@ public static partial class EditorCommands
         Grid form = DialogBuilder.Form();
         NumericUpDown number = DialogBuilder.Number(-359.99, 359.99, 0, 0.1, "0.00");
         number.ValueChanged += (_, e) => angle = (double)(e.NewValue ?? 0);
-        DialogBuilder.AddRow(form, "Angle (°):", number);
-        DialogBuilder.AddRow(form, "Direction:", DialogBuilder.Combo([("Clockwise", true), ("Counter Clockwise", false)], clockwise, v => clockwise = v));
-        if (!await DialogBuilder.ShowAsync(w, "Rotate Canvas", form, 360) || angle == 0) return;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_AngleDegreesColon, number);
+        DialogBuilder.AddRow(form, Strings.EditorCommands_DirectionColon, DialogBuilder.Combo([(Strings.EditorCommands_Clockwise, true), (Strings.EditorCommands_CounterClockwise, false)], clockwise, v => clockwise = v));
+        if (!await DialogBuilder.ShowAsync(w, Strings.EditorCommands_RotateCanvas, form, 360) || angle == 0) return;
         await RotateCanvasAsync(w, (float)(clockwise ? angle : -angle));
     }
 
@@ -295,7 +295,7 @@ public static partial class EditorCommands
     {
         SKRectI bounds = w.Document!.SelectionBounds;
         SKColor background = w.Background;
-        return EditDocumentAsync(w, "crop the image", "Crop", d =>
+        return EditDocumentAsync(w, Strings.EditorCommands_ActionCropImage, Strings.EditorCommands_Crop, d =>
         {
             d.SetSelectionLive(null);
             DocumentTransforms.Crop(d, bounds, true, background);
@@ -307,10 +307,10 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         int mode = 0;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Based on:", DialogBuilder.Combo([("Transparent Pixels", 0), ("Top Left Pixel Color", 1), ("Bottom Right Pixel Color", 2)], mode, v => mode = v));
-        if (!await DialogBuilder.ShowAsync(w, "Trim", form, 380)) return;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_BasedOnColon, DialogBuilder.Combo([(Strings.EditorCommands_TransparentPixels, 0), (Strings.EditorCommands_TopLeftPixelColor, 1), (Strings.EditorCommands_BottomRightPixelColor, 2)], mode, v => mode = v));
+        if (!await DialogBuilder.ShowAsync(w, Strings.EditorCommands_Trim, form, 380)) return;
         SKColor background = w.Background;
-        await EditDocumentAsync(w, "trim the image", "Trim", d =>
+        await EditDocumentAsync(w, Strings.EditorCommands_ActionTrimImage, Strings.EditorCommands_Trim, d =>
         {
             using SKBitmap flat = Compositor.Flatten(d);
             SKRectI bounds = DocumentTransforms.TrimBounds(flat, mode == 0, mode == 1);
@@ -322,7 +322,7 @@ public static partial class EditorCommands
     private static Task<bool> RevealAllAsync(PhotoEditorWindow w)
     {
         SKColor background = w.Background;
-        return EditDocumentAsync(w, "reveal all", "Reveal All", d =>
+        return EditDocumentAsync(w, Strings.EditorCommands_ActionRevealAll, Strings.EditorCommands_RevealAll, d =>
         {
             SKRectI bounds = DocumentTransforms.ContentBounds(d);
             if (bounds == d.Bounds) throw new OperationCanceledException();
@@ -340,9 +340,13 @@ public static partial class EditorCommands
             copy.Root.Remove(layer);
             copy.Root.Add(layer.Duplicate());
         }
+        // RestoreState shares the selection and the channel masks, as history states do. A separate document disposes them when it
+        // closes, so it gets its own copies, like its layers.
+        copy.SetSelectionLive(source.Selection?.Clone());
+        foreach (AlphaChannel channel in copy.Channels) channel.Mask = channel.Mask.Clone();
         copy.ActiveLayer = copy.Root.Children.LastOrDefault();
-        copy.Title = source.DisplayName.TrimEnd('*') + " copy";
-        w.OpenDocument(copy, "Duplicate Image");
+        copy.Title = string.Format(Strings.LayerNames_Copy, source.DisplayName.TrimEnd('*'));
+        w.OpenDocument(copy, Strings.EditorCommands_DuplicateImage);
     }
 
     public static void NewDocumentFromState(PhotoEditorWindow w) => DuplicateDocument(w);

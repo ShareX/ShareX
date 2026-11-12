@@ -39,12 +39,14 @@ public static class LinuxCaptureHelper
         }
     }
 
-    private static SKBitmap? LoadBitmapWithRetry(string? filePath)
+    private static SKBitmap? LoadBitmapWithRetry(string? filePath, bool deleteSourceFile = true)
     {
         if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
         {
             return null;
         }
+
+        SKBitmap? result = null;
 
         for (int i = 0; i < 25; i++)
         {
@@ -53,11 +55,15 @@ public static class LinuxCaptureHelper
                 FileInfo fi = new FileInfo(filePath);
                 if (fi.Exists && fi.Length > 0)
                 {
-                    using FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                    SKBitmap? bmp = SKBitmap.Decode(stream);
-                    if (bmp != null)
+                    using (FileStream stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                     {
-                        return bmp;
+                        SKBitmap? bmp = SKBitmap.Decode(stream);
+                        if (bmp != null)
+                        {
+                            result = bmp.Copy();
+                            bmp.Dispose();
+                            break;
+                        }
                     }
                 }
             }
@@ -73,7 +79,22 @@ public static class LinuxCaptureHelper
             Thread.Sleep(100);
         }
 
-        return null;
+        if (deleteSourceFile && result != null && !string.IsNullOrEmpty(filePath))
+        {
+            try
+            {
+                if (File.Exists(filePath))
+                {
+                    File.Delete(filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Failed to delete temporary portal screenshot file: {ex.Message}");
+            }
+        }
+
+        return result;
     }
 
     public static SKBitmap? CaptureRectangle(Rectangle rect)

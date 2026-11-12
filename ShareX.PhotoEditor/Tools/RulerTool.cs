@@ -41,9 +41,9 @@ public sealed class RulerTool : ToolBase
 
     public override ToolId Id => ToolId.Ruler;
 
-    public override string Name => "Ruler Tool";
+    public override string Name => Strings.RulerTool_Name;
 
-    public override string Hint => "Drag to measure distance and angle. Drag an end point to adjust it.";
+    public override string Hint => Strings.RulerTool_Hint;
 
     public bool UseMeasurementScale { get; set; }
 
@@ -91,9 +91,9 @@ public sealed class RulerTool : ToolBase
         SKPoint a = _a ?? default, b = _b ?? default;
         options.Label($"X: {a.X:0.0}   Y: {a.Y:0.0}   W: {b.X - a.X:0.0}   H: {b.Y - a.Y:0.0}   A: {Angle:0.0}°   L1: {Length:0.0}");
         options.Separator();
-        options.Check("Use Measurement Scale", () => UseMeasurementScale, v => UseMeasurementScale = v);
-        options.Button("Straighten Layer", Straighten, "Rotate the active layer so that the ruler line becomes level");
-        options.Button("Clear", () =>
+        options.Check(Strings.RulerTool_UseMeasurementScale, () => UseMeasurementScale, v => UseMeasurementScale = v);
+        options.Button(Strings.EditorCommands_StraightenLayer, Straighten, Strings.RulerTool_StraightenTip);
+        options.Button(Strings.EditorCommands_Clear, () =>
         {
             _a = _b = null;
             Host.RefreshOptions();

@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字辨識 (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>在相片編輯器中開啟</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>執行動作</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上傳</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>標尺</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>從剪貼簿上傳</value>
   </data>
@@ -786,8 +792,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>擷取區域</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>擷取區域 (透明)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>標尺</value>
+    <value>測量</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>螢幕檢色器</value>
@@ -866,6 +875,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>影像檔案</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>下方</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>側邊</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>自動</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>隱藏</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>顯示</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>開啟影像</value>
@@ -1089,6 +1113,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>互換工具類型</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>調整放大鏡大小</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>縮放放大鏡</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>電腦</value>
   </data>
@@ -1221,6 +1251,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自動</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>清單模式</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>縮圖模式</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>自訂文字上傳工具</value>
   </data>
@@ -1289,6 +1325,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>上傳檔案</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>作用中的顯示器</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>主要顯示器</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

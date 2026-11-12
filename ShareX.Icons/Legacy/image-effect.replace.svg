@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="r" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffaaaa"/><stop offset=".45" stop-color="#ed5050"/><stop offset="1" stop-color="#b81e1e"/></linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c4f2b0"/><stop offset=".45" stop-color="#5cc84a"/><stop offset="1" stop-color="#2a8a1e"/></linearGradient>
+    <linearGradient id="af" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff"/><stop offset=".5" stop-color="#4590cd"/><stop offset="1" stop-color="#0eb7ff"/></linearGradient>
+  </defs>
+  <rect x=".5" y=".5" width="7" height="7" rx="1" fill="url(#r)" stroke="#8c1010" stroke-linejoin="round"/>
+  <path d="M1.5 6V1.5H6" fill="none" stroke="#ffd4d4" stroke-opacity=".7"/>
+  <rect x="8.5" y="8.5" width="7" height="7" rx="1" fill="url(#g)" stroke="#1a5e12" stroke-linejoin="round"/>
+  <path d="M9.5 14V9.5H14" fill="none" stroke="#e4ffd8" stroke-opacity=".7"/>
+  <path d="M9 3.2H10.6Q12.4 3.2 12.4 5V5.6" fill="none" stroke="#04509b" stroke-width="2.4"/>
+  <path d="M9 3.2H10.6Q12.4 3.2 12.4 5V5.6" fill="none" stroke="#5aaee8" stroke-width="1.1"/>
+  <polygon points="10,5.5 14.8,5.5 12.4,8" fill="url(#af)" stroke="#04509b" stroke-width=".8" stroke-linejoin="round"/>
+  <path d="M7 12.8H5.4Q3.6 12.8 3.6 11V10.4" fill="none" stroke="#04509b" stroke-width="2.4"/>
+  <path d="M7 12.8H5.4Q3.6 12.8 3.6 11V10.4" fill="none" stroke="#5aaee8" stroke-width="1.1"/>
+  <polygon points="1.2,10.5 6,10.5 3.6,8" fill="url(#af)" stroke="#04509b" stroke-width=".8" stroke-linejoin="round"/>
+</svg>

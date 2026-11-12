@@ -84,7 +84,7 @@ public abstract class SelectionToolBase : ToolBase
     {
         if (_moveOriginal == null) return;
         _moveOriginal = null;
-        PushHistory("Move Selection");
+        PushHistory(Strings.SelectionToolBase_MoveSelection);
     }
 
     /// <summary>Combines a shape mask with the current selection and records history.</summary>
@@ -109,8 +109,8 @@ public abstract class SelectionToolBase : ToolBase
     {
         options.SelectionMode(() => Mode, m => Mode = m);
         options.Separator();
-        if (feather) options.Number("Feather:", 0, 1000, () => Feather, v => Feather = (float)v, "0.#", "px", 0.5);
-        if (antiAlias) options.Check("Anti-alias", () => AntiAlias, v => AntiAlias = v);
+        if (feather) options.Number(Strings.EditorCommands_FeatherColon, 0, 1000, () => Feather, v => Feather = (float)v, "0.#", "px", 0.5);
+        if (antiAlias) options.Check(Strings.Tools_AntiAlias, () => AntiAlias, v => AntiAlias = v);
     }
 
     /// <summary>Clicking without dragging deselects (in replace mode), like the reference application.</summary>
@@ -119,7 +119,7 @@ public abstract class SelectionToolBase : ToolBase
         if (Doc?.Selection != null && mode == SelectionMode.Replace)
         {
             Doc.SetSelection(null);
-            PushHistory("Deselect");
+            PushHistory(Strings.EditorCommands_Deselect);
             Host.InvalidateCanvas();
         }
     }

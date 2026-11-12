@@ -1,8 +1,34 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls">
     <StyleInclude Source="avares://ShareX.ImageEditor/Presentation/Controls/EffectSlider.axaml" />
+    <!-- Default picker widths. Kept as styles rather than local values so the
+         compact annotation toolbar can override them. -->
+    <Style Selector="controls|ColorPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|CornerRadiusPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|FontSizePickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="70"/>
+    </Style>
+    <Style Selector="controls|NumberPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+    <Style Selector="controls|StepTypePickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="90"/>
+    </Style>
+    <Style Selector="controls|TextHorizontalAlignmentPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="58"/>
+    </Style>
+    <Style Selector="controls|WidthPickerDropdown Button#DropdownButton">
+        <Setter Property="MinWidth" Value="60"/>
+    </Style>
+
     <!-- Editor layout primitives -->
-    <Style Selector="TextBlock.dropdown-chevron">
+    <Style Selector="iconControls|IconPresenter.dropdown-chevron">
         <Setter Property="RenderTransformOrigin" Value="50%,50%"/>
         <Setter Property="RenderTransform" Value="rotate(0deg)"/>
         <Setter Property="Transitions">
@@ -38,10 +64,10 @@
             <Setter Property="RenderTransform" Value="translateX(18px)"/>
         </Style>
 
-        <Style Selector="^.left > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
+        <Style Selector="^.left > :is(UserControl) > ScrollViewer > StackPanel > StackPanel:nth-child(1) > TextBlock">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="Padding" Value="0,0,0,16"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
@@ -49,7 +75,7 @@
         <Style Selector="^.right ContentControl > :is(UserControl) > StackPanel > StackPanel:nth-child(1) > TextBlock">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="Normal"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="Padding" Value="0,0,0,16"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>

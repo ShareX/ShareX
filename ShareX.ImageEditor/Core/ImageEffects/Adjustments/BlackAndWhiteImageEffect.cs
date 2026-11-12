@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Adjustments;
@@ -32,7 +32,7 @@ public sealed class BlackAndWhiteImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "black_and_white";
     public override string Name => "Black & White";
-    public override string IconKey => LucideIcons.contrast;
+    public override string IconKey => AppIcons.Contrast;
     public override string Description => "Converts the image to black and white.";
     public override EffectExecutionMode ExecutionMode => EffectExecutionMode.Immediate;
 

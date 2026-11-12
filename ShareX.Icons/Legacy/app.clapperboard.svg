@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="iaMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="iaEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="ibMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="ibEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="icMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="icEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="isOlive" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9e9a3f"/><stop offset="0.5" stop-color="#a6a44a"/><stop offset="1" stop-color="#6f6e31"/></linearGradient>
+<linearGradient id="isBlue" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a8acb"/><stop offset="0.7" stop-color="#5f96cb"/><stop offset="1" stop-color="#a3bdca"/></linearGradient>
+<linearGradient id="isGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfad14"/><stop offset="0.3" stop-color="#d9b71e"/><stop offset="0.5" stop-color="#e4c229"/><stop offset="0.72" stop-color="#b3910d"/><stop offset="1" stop-color="#947208"/></linearGradient>
+</defs>
+<rect x="4.5" y="1.5" width="11" height="9" fill="url(#iaMat)" stroke="url(#iaEdge)" stroke-opacity=".55"/>
+<rect x="6" y="3" width="8" height="6" fill="url(#isOlive)"/>
+<rect x="2.5" y="3.5" width="11" height="9" fill="url(#ibMat)" stroke="url(#ibEdge)" stroke-opacity=".55"/>
+<rect x="4" y="5" width="8" height="6" fill="url(#isBlue)"/>
+<rect x="0.5" y="5.5" width="11" height="9" fill="url(#icMat)" stroke="url(#icEdge)" stroke-opacity=".55"/>
+<rect x="2" y="7" width="8" height="6" fill="url(#isGold)"/>
+<ellipse cx="7.6" cy="10.2" rx="1.6" ry="1.1" fill="#ffff85" opacity=".8"/>
+<path d="M2 11 V9 Q3.2 8.8 4.4 10.2 V11 Z" fill="#3d1b1b" opacity=".85"/>
+
+</svg>

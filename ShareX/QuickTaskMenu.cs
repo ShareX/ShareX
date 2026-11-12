@@ -34,8 +34,10 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Linq;
@@ -61,7 +63,7 @@ public sealed class QuickTaskMenu
 
         ContextMenu menu = new();
         MenuItem continueItem = CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Continue,
-            LucideIcons.circle_play, () => OnTaskInfoSelected(null));
+            AppIcons.CirclePlay, () => OnTaskInfoSelected(null));
         menu.Items.Add(continueItem);
         menu.Items.Add(new Separator());
 
@@ -86,10 +88,10 @@ public sealed class QuickTaskMenu
         }
 
         menu.Items.Add(CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Edit_this_menu___,
-            LucideIcons.pencil, QuickTaskMenuEditorIntegration.Show));
+            AppIcons.Edit, QuickTaskMenuEditorIntegration.Show));
         menu.Items.Add(new Separator());
         menu.Items.Add(CreateActionItem(Strings.QuickTaskMenu_ShowMenu_Cancel,
-            LucideIcons.x, null));
+            AppIcons.Close, null));
 
         System.Drawing.Point cursorPosition = CaptureHelpers.GetCursorPosition();
         PixelPoint placementPosition = new(cursorPosition.X, cursorPosition.Y);
@@ -156,17 +158,15 @@ public sealed class QuickTaskMenu
 
         if (!string.IsNullOrEmpty(icon))
         {
-            TextBlock iconText = new()
+            IconPresenter iconPresenter = new()
             {
-                Text = icon,
+                Icon = icon,
                 FontSize = 16,
-                FontWeight = FontWeight.Normal,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
             };
-            iconText.Classes.Add("icon");
-            iconText.Classes.Add("accent-menu-icon");
-            item.Icon = iconText;
+            iconPresenter.Classes.Add("accent-menu-icon");
+            item.Icon = iconPresenter;
         }
 
         item.Click += (_, _) =>

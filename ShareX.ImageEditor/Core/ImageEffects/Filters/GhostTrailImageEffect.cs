@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GhostTrailImageEffect : ImageEffectBase
     public override string Id => "ghost_trail";
     public override string Name => "Ghost trail";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.ghost;
+    public override string IconKey => ImageEffectIcons.Ghost;
     public override string Description => "Creates fading ghost copies offset from the original image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -79,13 +79,8 @@ public partial class ImageViewerWindow : Window
         DataContext = _viewModel;
         AvaloniaXamlLoader.Load(this);
         this.FindControl<Image>("PreviewImage")!.RenderTransform = _previewTransform;
-        _viewModel.PropertyChanged += (_, e) =>
-        {
-            if (e.PropertyName == nameof(ImageViewerViewModel.CurrentImage))
-            {
-                _previewTransform.Matrix = Matrix.Identity;
-            }
-        };
+        // Reset the zoom for a different image, but not for each frame of an animated GIF.
+        _viewModel.ImageReplaced += (_, _) => _previewTransform.Matrix = Matrix.Identity;
         System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
         WindowStartupLocation = WindowStartupLocation.Manual;
         Position = new PixelPoint(activeScreen.X, activeScreen.Y);

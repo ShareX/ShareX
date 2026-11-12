@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Media;
 using ShareX.PhotoEditor.UI;
 
 namespace ShareX.PhotoEditor.Tools;
@@ -40,9 +39,9 @@ public sealed class FrameTool : ToolBase
 
     public override ToolId Id => ToolId.Frame;
 
-    public override string Name => "Frame Tool";
+    public override string Name => Strings.FrameTool_Name;
 
-    public override string Hint => "Drag to create a frame placeholder. Place or paste an image to fill the active frame.";
+    public override string Hint => Strings.FrameTool_Hint;
 
     public bool Ellipse { get; set; }
 
@@ -76,7 +75,7 @@ public sealed class FrameTool : ToolBase
             }
             return;
         }
-        FrameLayer frame = new($"Frame {Doc.AllLayers.OfType<FrameLayer>().Count() + 1}", rect, Ellipse);
+        FrameLayer frame = new(string.Format(Strings.FrameTool_FrameNumber, Doc.AllLayers.OfType<FrameLayer>().Count() + 1), rect, Ellipse);
         Layer? active = Doc.ActiveLayer;
         if (active is RasterLayer raster && !raster.IsBackground && input.Ctrl)
         {
@@ -90,7 +89,7 @@ public sealed class FrameTool : ToolBase
             }
         }
         Doc.AddLayer(frame);
-        PushHistory("Frame");
+        PushHistory(Strings.PropertiesPanel_Frame);
         Host.InvalidateCanvas();
     }
 
@@ -104,16 +103,16 @@ public sealed class FrameTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.IconButton("frame-rect", "Rectangular frame", () => { Ellipse = false; Host.RefreshOptions(); }, !Ellipse);
-        options.IconButton("frame-ellipse", "Elliptical frame", () => { Ellipse = true; Host.RefreshOptions(); }, Ellipse);
+        options.IconButton(PhotoEditorIcons.FrameRectangle, Strings.FrameTool_RectangularTip, () => { Ellipse = false; Host.RefreshOptions(); }, !Ellipse);
+        options.IconButton(PhotoEditorIcons.FrameEllipse, Strings.FrameTool_EllipticalTip, () => { Ellipse = true; Host.RefreshOptions(); }, Ellipse);
         options.Separator();
-        options.Button("Place Image...", () => UI.Commands.EditorCommands.PlaceIntoFrame(Host), "Place an image file into the active frame");
-        options.Button("Clear Frame Content", () =>
+        options.Button(Strings.PropertiesPanel_PlaceImageEllipsis, () => UI.Commands.EditorCommands.PlaceIntoFrame(Host), Strings.FrameTool_PlaceImageTip);
+        options.Button(Strings.FrameTool_ClearFrameContent, () =>
         {
             if (Doc?.ActiveLayer is FrameLayer frame && frame.Content != null)
             {
                 frame.Content = null;
-                PushHistory("Clear Frame");
+                PushHistory(Strings.FrameTool_ClearFrame);
                 Host.InvalidateCanvas();
             }
         });

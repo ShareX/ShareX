@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="tl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4e6ff"/><stop offset="1" stop-color="#cfa6f7"/></linearGradient>
+    <linearGradient id="tr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c79af2"/><stop offset="1" stop-color="#9a62e0"/></linearGradient>
+    <linearGradient id="bl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b282ea"/><stop offset="1" stop-color="#8650d4"/></linearGradient>
+    <linearGradient id="br" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a44c8"/><stop offset="1" stop-color="#5a2aa4"/></linearGradient>
+  </defs>
+  <polygon points="8,.5 8,8 .5,8" fill="url(#tl)"/>
+  <polygon points="8,.5 15.5,8 8,8" fill="url(#tr)"/>
+  <polygon points=".5,8 8,8 8,15.5" fill="url(#bl)"/>
+  <polygon points="8,8 15.5,8 8,15.5" fill="url(#br)"/>
+  <path d="M2 7.5L7.5 2" fill="none" stroke="#ffffff" stroke-opacity=".75" stroke-linecap="round"/>
+  <polygon points="8,.5 15.5,8 8,15.5 .5,8" fill="none" stroke="#4e1f94" stroke-opacity=".85" stroke-linejoin="round"/>
+</svg>

@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="940" d:DesignHeight="610"
         x:Class="ShareX.Tools.QRCodeWindow"
         x:DataType="vm:QRCodeViewModel"
@@ -23,22 +24,19 @@
                           HorizontalAlignment="Left">
                         <Button Grid.Column="0" Command="{Binding ScanScreenCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Text="{x:Static theming:LucideIcons.scan_qr_code}"
-                                           Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.QrScan}"/>
                                 <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_screen}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Command="{Binding ScanRegionCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Text="{x:Static theming:LucideIcons.scan_line}"
-                                           Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ScanLine}"/>
                                 <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_region}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="2" Command="{Binding ScanImageFileCommand}" IsEnabled="{Binding !IsScanning}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Text="{x:Static theming:LucideIcons.file_scan}"
-                                           Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileSearch}"/>
                                 <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Scan_image}"/>
                             </StackPanel>
                         </Button>
@@ -48,13 +46,18 @@
                     <Border Grid.Column="0" Classes="tool-panel" Padding="16">
                         <Grid RowDefinitions="Auto,*,Auto" RowSpacing="10">
                             <TextBlock Grid.Row="0" Classes="section-heading" Text="{x:Static localization:Strings.QRCodeWindow_Content}"/>
-                            <TextBox Grid.Row="1"
-                                     Text="{Binding Text}"
-                                     PlaceholderText="{x:Static localization:Strings.QRCodeWindow_Enter_text_or_a_URL_to_encode}"
-                                     AcceptsReturn="True"
-                                     TextWrapping="Wrap"
-                                     VerticalContentAlignment="Top"
-                                     MaxLength="2952"/>
+                            <Panel Grid.Row="1">
+                                <TextBox x:Name="ContentTextBox"
+                                         Text="{Binding Text}"
+                                         PlaceholderText="{x:Static localization:Strings.QRCodeWindow_Enter_text_or_a_URL_to_encode}"
+                                         AcceptsReturn="True"
+                                         TextWrapping="Wrap"
+                                         VerticalContentAlignment="Top"
+                                         MaxLength="2952"/>
+                                <controls:TextBoxLinkHighlighter x:Name="ContentLinkHighlighter"
+                                                                 Target="{Binding #ContentTextBox}"
+                                                                 LinkBrush="{DynamicResource ShareX.Brush.Link}"/>
+                            </Panel>
                             <Grid Grid.Row="2" ColumnDefinitions="Auto,120,Auto" ColumnSpacing="8">
                                 <TextBlock Grid.Column="0"
                                            Text="{x:Static localization:Strings.QRCodeWindow_QR_code_size}"
@@ -93,11 +96,10 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         Spacing="8">
-                                <TextBlock Text="{x:Static theming:LucideIcons.qr_code}"
-                                           Classes="icon"
-                                           FontSize="48"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.QrCode}"
+                                                        FontSize="48"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Enter_content_to_generate_a_QR_code}"
                                            FontWeight="Normal"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
@@ -109,22 +111,19 @@
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto" ColumnSpacing="8" HorizontalAlignment="Right">
                     <Button Grid.Column="0" Command="{Binding CopyImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.copy}"
-                                       Classes="icon"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}"/>
                             <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Copy_image}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="1" Command="{Binding SaveImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.save}"
-                                       Classes="icon"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Save}"/>
                             <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Save}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding UploadImageCommand}" IsEnabled="{Binding HasQRCode}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.upload}"
-                                       Classes="icon"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                             <TextBlock Text="{x:Static localization:Strings.QRCodeWindow_Upload}"/>
                         </StackPanel>
                     </Button>

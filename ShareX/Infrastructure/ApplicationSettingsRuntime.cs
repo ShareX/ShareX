@@ -26,6 +26,7 @@
 #nullable enable
 
 using ShareX.HelpersLib;
+using ShareX.ImageEditor.Integration;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -72,6 +73,8 @@ internal static class ApplicationSettingsRuntime
         HelpersOptions.RotateImageByExifOrientationData = settings.RotateImageByExifOrientationData;
         HelpersOptions.BrowserPath = settings.BrowserPath;
         HelpersOptions.RecentColors = settings.RecentColors;
+        // The same list, so the image editor's recent colors match the color picker window, as in ShareX 21.
+        EditorRecentColors.Colors = settings.RecentColors;
         HelpersOptions.DevMode = settings.DevMode;
         HelpersOptions.ShareXSpecialFolders = new Dictionary<string, string>
         {

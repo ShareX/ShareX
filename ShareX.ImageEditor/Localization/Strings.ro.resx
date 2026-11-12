@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Dimensiune font</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Săgeată liberă</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Aliniere orizontală</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Refacere (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Colțuri rotunjite</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salvează</value>
@@ -282,6 +288,15 @@ Doriți să salvați modificările înainte de a închide editorul de imagini?</
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Anulare (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Aplicare</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Anulare</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Culoarea de umplere pentru zona adăugată</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Imaginea nu a putut fi încărcată din clipboard.
 Clipboardul nu conține nicio imagine.</value>
@@ -335,6 +350,12 @@ Clipboardul nu conține nicio imagine.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margine</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nou din captură de ecran (ecran complet)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nou din captură de ecran (regiune)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Deschide imaginea</value>
@@ -1386,8 +1407,14 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principală</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Restabilește bara de instrumente implicită</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secundară</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Afișare / Ascundere</value>
@@ -1400,6 +1427,9 @@ Clipboardul nu conține nicio imagine.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Estompare</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Dimensiune pânză</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clonează</value>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bd0000"/><stop offset="1" stop-color="#8d0000"/></linearGradient>
+<linearGradient id="f00" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc7a81"/><stop offset="0.5" stop-color="#fc7a81"/><stop offset="0.5" stop-color="#e9505d"/><stop offset="1" stop-color="#e9505d"/></linearGradient>
+<linearGradient id="f01" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fc7a81"/><stop offset="0.5" stop-color="#fc7a81"/><stop offset="0.5" stop-color="#e9505d"/><stop offset="1" stop-color="#e9505d"/></linearGradient>
+<linearGradient id="f02" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f95961"/><stop offset="0.5" stop-color="#f95961"/><stop offset="0.5" stop-color="#e02334"/><stop offset="1" stop-color="#e02334"/></linearGradient>
+<linearGradient id="o1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0188c2"/><stop offset="1" stop-color="#01518f"/></linearGradient>
+<linearGradient id="f10" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#71d0f9"/><stop offset="0.5" stop-color="#71d0f9"/><stop offset="0.5" stop-color="#5fbee7"/><stop offset="1" stop-color="#5fbee7"/></linearGradient>
+<linearGradient id="f11" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6ecef8"/><stop offset="0.5" stop-color="#6ecef8"/><stop offset="0.5" stop-color="#42abd9"/><stop offset="1" stop-color="#42abd9"/></linearGradient>
+<linearGradient id="f12" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4dc3f6"/><stop offset="0.5" stop-color="#4dc3f6"/><stop offset="0.5" stop-color="#36abde"/><stop offset="1" stop-color="#36abde"/></linearGradient>
+<linearGradient id="o2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#53a800"/><stop offset="1" stop-color="#236b00"/></linearGradient>
+<linearGradient id="f20" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b5eb7f"/><stop offset="0.5" stop-color="#b5eb7f"/><stop offset="0.5" stop-color="#a3d96c"/><stop offset="1" stop-color="#a3d96c"/></linearGradient>
+<linearGradient id="f21" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a0df62"/><stop offset="0.5" stop-color="#a0df62"/><stop offset="0.5" stop-color="#81c042"/><stop offset="1" stop-color="#81c042"/></linearGradient>
+<linearGradient id="f22" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a1e55e"/><stop offset="0.5" stop-color="#a1e55e"/><stop offset="0.5" stop-color="#8acd47"/><stop offset="1" stop-color="#8acd47"/></linearGradient>
+</defs>
+<rect x="1.5" y="1.5" width="3" height="3" fill="url(#f00)" stroke="url(#o0)" stroke-linejoin="round"/>
+<rect x="6.5" y="1.5" width="3" height="3" fill="url(#f01)" stroke="url(#o0)" stroke-linejoin="round"/>
+<rect x="11.5" y="1.5" width="3" height="3" fill="url(#f02)" stroke="url(#o0)" stroke-linejoin="round"/>
+<rect x="1.5" y="6.5" width="3" height="3" fill="url(#f10)" stroke="url(#o1)" stroke-linejoin="round"/>
+<rect x="6.5" y="6.5" width="3" height="3" fill="url(#f11)" stroke="url(#o1)" stroke-linejoin="round"/>
+<rect x="11.5" y="6.5" width="3" height="3" fill="url(#f12)" stroke="url(#o1)" stroke-linejoin="round"/>
+<rect x="1.5" y="11.5" width="3" height="3" fill="url(#f20)" stroke="url(#o2)" stroke-linejoin="round"/>
+<rect x="6.5" y="11.5" width="3" height="3" fill="url(#f21)" stroke="url(#o2)" stroke-linejoin="round"/>
+<rect x="11.5" y="11.5" width="3" height="3" fill="url(#f22)" stroke="url(#o2)" stroke-linejoin="round"/>
+</svg>

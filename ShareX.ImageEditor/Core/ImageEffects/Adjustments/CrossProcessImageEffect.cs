@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class CrossProcessImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "cross_process";
     public override string Name => "Cross process";
-    public override string IconKey => LucideIcons.camera;
+    public override string IconKey => AppIcons.Camera;
     public override string Description => "Simulates film cross-processing with shifted colors and high contrast.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

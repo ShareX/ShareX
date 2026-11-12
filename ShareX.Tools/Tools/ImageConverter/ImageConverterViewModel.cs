@@ -59,9 +59,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     [NotifyPropertyChangedFor(nameof(IsGif))]
     [NotifyPropertyChangedFor(nameof(IsBmp))]
     [NotifyPropertyChangedFor(nameof(IsWebp))]
-    [NotifyPropertyChangedFor(nameof(QualityLabel))]
-    [NotifyPropertyChangedFor(nameof(QualityHint))]
     [NotifyPropertyChangedFor(nameof(HasQuality))]
+    [NotifyPropertyChangedFor(nameof(HasCompressionEffort))]
     [NotifyPropertyChangedFor(nameof(HasBackgroundColor))]
     private int _selectedOutputFormatIndex;
 
@@ -69,9 +68,12 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     private decimal _quality = 90;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(QualityLabel))]
-    [NotifyPropertyChangedFor(nameof(QualityHint))]
+    [NotifyPropertyChangedFor(nameof(HasQuality))]
+    [NotifyPropertyChangedFor(nameof(HasCompressionEffort))]
     private bool _webpLossless;
+
+    [ObservableProperty]
+    private decimal _webpCompressionEffort = 75;
 
     [ObservableProperty]
     private int _pngCompressionLevel = 1;
@@ -153,13 +155,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     public bool IsGif => GetOutputFormat() == ImageConverterOutputFormat.Gif;
     public bool IsBmp => GetOutputFormat() == ImageConverterOutputFormat.Bmp;
     public bool IsWebp => GetOutputFormat() == ImageConverterOutputFormat.Webp;
-    public bool HasQuality => GetOutputFormat() is ImageConverterOutputFormat.Jpeg or ImageConverterOutputFormat.Webp;
-    public string QualityLabel => IsWebp && WebpLossless
-        ? Localization.Strings.ImageConverterWindow_WebPCompressionEffort
-        : Localization.Strings.ImageConverterWindow_Quality;
-    public string? QualityHint => IsWebp && WebpLossless
-        ? Localization.Strings.ImageConverterWindow_WebPCompressionEffortHint
-        : null;
+    public bool HasQuality => IsJpeg || IsWebp && !WebpLossless;
+    public bool HasCompressionEffort => IsWebp && WebpLossless;
     public bool HasBackgroundColor => IsJpeg || IsPng && GetPngBitDepth() != PNGBitDepth.Bit32 || IsBmp && GetBmpBitDepth() != BMPBitDepth.Bit32;
     public bool CanRemove => _selectedImages.Count > 0 || SelectedImage != null;
     public bool CanConvert => !IsBusy && HasImages && Directory.Exists(OutputFolderPath) &&
@@ -254,7 +251,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
         string[] imageFiles = Images.ToArray();
         ImageConverterOutputFormat format = GetOutputFormat();
-        int quality = (int)Quality;
+        int quality = GetEncoderQuality();
         SKColor backgroundColor = ToSKColor(BackgroundColor);
         SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
         SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
@@ -297,6 +294,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
     partial void OnSelectedOutputFormatIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnQualityChanged(decimal value) => NotifyOptionsChanged();
     partial void OnWebpLosslessChanged(bool value) => NotifyOptionsChanged();
+    partial void OnWebpCompressionEffortChanged(decimal value) => NotifyOptionsChanged();
     partial void OnPngCompressionLevelChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngFilterIndexChanged(int value) => NotifyOptionsChanged();
     partial void OnSelectedPngBitDepthIndexChanged(int value) => NotifyOptionsChanged();
@@ -357,7 +355,7 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
         {
             await Task.Delay(100, cancellationToken);
             ImageConverterOutputFormat format = GetOutputFormat();
-            int quality = (int)Quality;
+            int quality = GetEncoderQuality();
             SKColor backgroundColor = ToSKColor(BackgroundColor);
             SKPngEncoderOptions pngOptions = GetPngEncoderOptions();
             SKJpegEncoderDownsample jpegSubsampling = GetJpegSubsampling();
@@ -434,6 +432,8 @@ public sealed partial class ImageConverterViewModel : ViewModelBase, IDisposable
 
     private BMPBitDepth GetBmpBitDepth() =>
         BmpBitDepths[Math.Clamp(SelectedBmpBitDepthIndex, 0, BmpBitDepths.Length - 1)];
+
+    private int GetEncoderQuality() => (int)(IsWebp && WebpLossless ? WebpCompressionEffort : Quality);
 
     private SKWebpEncoderCompression GetWebpCompression() =>
         WebpLossless ? SKWebpEncoderCompression.Lossless : SKWebpEncoderCompression.Lossy;

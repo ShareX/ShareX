@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>現在のフィルターに一致する項目はありません</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>プロセス名</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>名前を変更</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>ファイル名を変更</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>列をリセット</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>インポートするフォルダーを選択</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} 個のファイルをインポートしました。</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>タグ</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>これら {0:N0} 個のファイル</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>お気に入りから削除</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>ウィンドウ タイトル</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>詳細</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>完了</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>フォトエディターで編集...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>履歴項目を編集</value>

@@ -135,7 +135,7 @@ internal static class Program
     {
         ImageEditorIntegration.Initialize();
 
-        if (ApplicationState.Settings.ShowStartScreen)
+        if (ApplicationState.Settings.ShowStartScreen && !StartupOptions.Sandbox)
         {
             DebugHelper.WriteLine("Start screen opening.");
             StartScreenWindow startScreen = new();
@@ -162,6 +162,8 @@ internal static class Program
         {
             MainWindowIntegration.Activate();
         }
+
+        IconPackPromptWindow.ShowOnceWithMainWindow();
 
         DebugHelper.WriteLine("Startup time: {0} ms", _startTimer.ElapsedMilliseconds);
         await ApplicationCommandLine.ExecuteInitialAsync();

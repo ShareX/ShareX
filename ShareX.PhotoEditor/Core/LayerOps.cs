@@ -93,7 +93,7 @@ public static class LayerOps
         layer.IsBackground = false;
         layer.LockTransparency = false;
         layer.LockPosition = false;
-        if (layer.Name == "Background") layer.Name = "Layer 0";
+        if (layer.Name == Strings.LayerNames_Background) layer.Name = Strings.LayerNames_Layer0;
     }
 
     /// <summary>Renders a gradient into a document-sized bitmap.</summary>

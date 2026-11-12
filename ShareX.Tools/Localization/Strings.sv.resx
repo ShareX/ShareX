@@ -431,6 +431,18 @@ Filsökväg: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Fönstertitel</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Avstånd: {0:0.00} px | Vinkel: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Höger: {2} | Nederkant: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Bredd: {0} px | Höjd: {1} px | Area: {2} px | Omkrets: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX – Linjal</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Innehåll i Urklipp</value>
   </data>
@@ -990,7 +1002,7 @@ Filsökväg: {0}</value>
     <value>Lägre värden ger snabbare kodning. Högre värden ger mindre filer. Alla värden bevarar bildkvaliteten.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Förlustfri:</value>
+    <value>Förlustfri</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyll</value>
@@ -1606,12 +1618,6 @@ Filsökväg: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Språket {0} är inte tillgängligt för OCR i det här systemet.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk teckenigenkänning är endast tillgänglig i Windows version {0} eller senare.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1639,6 +1645,9 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Stäng efter öppning</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Kopierat till urklipp</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Kopiera allt</value>
   </data>
@@ -1648,23 +1657,17 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Redigera tjänster</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Språk</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Namn</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Ny</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR-hjälp</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Ingen text hittades</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Öppna tjänst...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Igenkänning</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Ta bort</value>
@@ -1674,9 +1677,6 @@ Filsökväg: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Skalningsfaktor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Välj en tjänst</value>
@@ -1690,8 +1690,8 @@ Filsökväg: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Välj område...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Tjänster</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separera stycken</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optisk teckenigenkänning</value>
@@ -2039,7 +2039,7 @@ Filsökväg: {0}</value>
     <value>Tolerans: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Linjal</value>
+    <value>ShareX – Mätning</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Välj en video för att börja.</value>
@@ -2083,6 +2083,9 @@ Filsökväg: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stoppar konverteringen...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Genomsnittlig bithastighet</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Bläddra...</value>
   </data>
@@ -2101,6 +2104,9 @@ Filsökväg: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Filnamn</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Filstorlek</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Mapp</value>
   </data>
@@ -2118,6 +2124,12 @@ Filsökväg: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kvalitet</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Upplösning</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Videokonverterare</value>

@@ -199,6 +199,8 @@ namespace ShareX.HelpersLib
                 {
                     namedPipeClient.Connect(timeoutMs);
 
+                    AllowFirstInstanceToSetForeground(namedPipeClient);
+
                     using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8, leaveOpen: true))
                     {
                         writer.Write(args.Length);
@@ -252,6 +254,25 @@ namespace ShareX.HelpersLib
             }
 
             return false;
+        }
+
+        // Only the foreground process may bring a window to front; others just flash in the taskbar.
+        // This instance was usually started by the foreground process (for example Explorer), so it passes that right on to the first instance.
+        private static void AllowFirstInstanceToSetForeground(NamedPipeClientStream namedPipeClient)
+        {
+            if (!OperatingSystem.IsWindows()) return;
+
+            try
+            {
+                if (NativeMethods.GetNamedPipeServerProcessId(namedPipeClient.SafePipeHandle, out uint processId))
+                {
+                    NativeMethods.AllowSetForegroundWindow(processId);
+                }
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+            }
         }
 
         public void Dispose()

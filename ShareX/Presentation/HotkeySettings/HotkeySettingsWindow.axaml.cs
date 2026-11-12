@@ -25,11 +25,13 @@
 
 #nullable enable
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -41,8 +43,24 @@ public partial class HotkeySettingsWindow : Window
 
     public HotkeySettingsWindow()
     {
-        AvaloniaXamlLoader.Load(this);
+        InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        AddHandler(WindowOpenedEvent, (_, _) => FitMinWidthToToolbar());
+
+        // The capture field is a Button, which clicks itself on Enter and Space before bubbling handlers run.
+        // Tunnel handlers see the key first, so combinations with those keys can be captured.
+        AddHandler(KeyDownEvent, OnHotkeyKeyDown, RoutingStrategies.Tunnel);
+        AddHandler(KeyUpEvent, OnHotkeyKeyUp, RoutingStrategies.Tunnel);
+    }
+
+    // Translated toolbar labels can be wider than the default window, which cuts off the Reset button.
+    // WindowOpenedEvent is raised before the window is sized and centered, so raising MinWidth here opens it wide enough.
+    private void FitMinWidthToToolbar()
+    {
+        ApplyStyling();
+        Toolbar.Measure(Size.Infinity);
+        double requiredWidth = Math.Ceiling(Toolbar.DesiredSize.Width + ContentGrid.Margin.Left + ContentGrid.Margin.Right);
+        MinWidth = Math.Max(MinWidth, requiredWidth);
     }
 
     public HotkeySettingsWindow(IHotkeySettingsService service) : this()
@@ -141,16 +159,14 @@ public partial class HotkeySettingsWindow : Window
             return null;
         }
 
-        TextBlock textBlock = new()
+        IconPresenter presenter = new()
         {
-            Text = icon,
+            Icon = icon,
             FontSize = 16,
-            Width = 18,
-            TextAlignment = Avalonia.Media.TextAlignment.Center
+            Width = 18
         };
-        textBlock.Classes.Add("icon");
-        textBlock.Classes.Add("accent-menu-icon");
-        return textBlock;
+        presenter.Classes.Add("accent-menu-icon");
+        return presenter;
     }
 
     private void OnHotkeyClick(object? sender, RoutedEventArgs e)
@@ -162,9 +178,15 @@ public partial class HotkeySettingsWindow : Window
         }
     }
 
+    private static HotkeySettingsItem? GetCapturingItem(KeyEventArgs e)
+    {
+        return e.Source is Button { DataContext: HotkeySettingsItem { IsCapturing: true } item } button
+            && button.Classes.Contains("hotkey-capture") ? item : null;
+    }
+
     private void OnHotkeyKeyDown(object? sender, KeyEventArgs e)
     {
-        if (sender is not Control { DataContext: HotkeySettingsItem item } || !item.IsCapturing)
+        if (GetCapturingItem(e) is not HotkeySettingsItem item)
         {
             return;
         }
@@ -200,9 +222,7 @@ public partial class HotkeySettingsWindow : Window
 
     private void OnHotkeyKeyUp(object? sender, KeyEventArgs e)
     {
-        if (sender is Control { DataContext: HotkeySettingsItem item }
-            && item.IsCapturing
-            && e.Key == Key.PrintScreen)
+        if (e.Key == Key.PrintScreen && GetCapturingItem(e) != null)
         {
             e.Handled = true;
             OnHotkeyKeyDown(sender, e);

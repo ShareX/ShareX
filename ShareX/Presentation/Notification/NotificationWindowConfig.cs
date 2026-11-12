@@ -36,6 +36,8 @@ namespace ShareX
         public int Duration { get; set; }
         public int FadeDuration { get; set; }
         public ImageContentAlignment Placement { get; set; }
+        public ToastWindowMonitor Monitor { get; set; }
+        public string MonitorDeviceName { get; set; }
         public int Offset { get; set; } = 5;
         public Size Size { get; set; }
         public bool IsValid => (Duration > 0 || FadeDuration > 0) && Size.Width > 0 && Size.Height > 0;

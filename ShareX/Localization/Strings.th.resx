@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>หลังอัปโหลด</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>เพิ่มเติม</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>ชื่อไฟล์</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>คัดลอกไฟล์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>วางไฟล์ที่บันทึกไว้ลงในคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>คัดลอกเส้นทางไฟล์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>คัดลอกเส้นทางของไฟล์ที่บันทึกไว้</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>คัดลอกเส้นทางโฟลเดอร์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>คัดลอกโฟลเดอร์ของไฟล์ที่บันทึกไว้</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>คัดลอกรูปภาพ</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>วางรูปภาพลงในคลิปบอร์ด</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>คัดลอก URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>อัปโหลดแล้วคัดลอกลิงก์</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>ขั้นตอนที่จำเป็นขึ้นอยู่กับเป้าหมายของคุณ เพิ่มรายการเสริมได้ตามต้องการ</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>คุณต้องการให้มีอะไรในคลิปบอร์ด</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>หลังจับภาพ</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>ไม่มี ตัวอย่างรูปภาพ พร้อมใช้งาน</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>จำเป็นสำหรับเป้าหมายนี้</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>ตรวจสอบเนื้อหาที่จับภาพและเลือกสิ่งที่จะทำต่อไป</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>อัปโหลด</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>แสดงแถบเลื่อนแบบเต็มความกว้างเสมอ</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>แอปพลิเคชัน</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>คลิปบอร์ด รูปแบบ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>โหมดกะทัดรัด</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>กำหนดเอง ปุ่มลัด การกำหนดค่า เส้นทาง</value>
@@ -472,6 +520,24 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>ปุ่มลัด ทำซ้ำ ช่วงเวลา (มิลลิวินาที)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>ชุดไอคอน:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>แบบดั้งเดิม</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>สมัยใหม่</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>ไอคอน</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>การแสดงตัวอย่างรูปภาพ:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>ตำแหน่งตัวอย่างรูปภาพ:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>รูปภาพ พิมพ์ การตั้งค่า...</value>
   </data>
@@ -504,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>สว่าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>หน้าต่างหลัก</value>
@@ -625,8 +694,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>แสดง คลิปบอร์ด เนื้อหา ตัวแสดง</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>แสดงคอลัมน์</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>แสดงปุ่ม "แก้ไขด้วย ShareX" ในเมนูบริบทของ Windows Explorer</value>
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขรูปภาพ ShareX" ในเมนูบริบทของ Windows Explorer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>แสดงปุ่ม "แก้ไขในตัวแก้ไขภาพถ่าย ShareX" ในเมนูบริบทของ Windows Explorer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>ขอการยืนยันก่อนลบไฟล์</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>ใหญ่-ไฟล์ คำเตือน เกณฑ์ (MB)</value>
@@ -664,6 +742,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>พร้อมกัน ขีดจำกัดการอัปโหลด:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>ระยะห่าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>กะทัดรัด</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>ค่าเริ่มต้น</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>เมนู</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>เมนู:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>ตัวอย่าง:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>หน้าต่างการตั้งค่า:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>แถบด้านข้าง</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>แถบด้านข้าง:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>เมนูเครื่องมือ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>เมนูเครื่องมือ:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +783,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>รูปแบบโฟลเดอร์ย่อย:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>โหมดมุมมองงาน:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>ธีม</value>
@@ -1213,6 +1327,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>ไม่สามารถ บันทึก การตั้งค่า</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>ไม่ต้องเตือนอีก</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
   </data>
@@ -1322,11 +1439,29 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - การตั้งค่าปุ่มลัด</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>คุณเปลี่ยนการตั้งค่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>ไอคอนสีสันสดใสและละเอียดในสไตล์คลาสสิก</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>ไอคอนเส้นเรียบง่ายที่ใช้สีตามธีมของคุณ</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX มีไอคอนใหม่ เลือกรูปแบบที่คุณชอบ</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>เลือกไอคอนของคุณ</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>ไม่สามารถเขียนรูปภาพไปยังเส้นทาง:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>แก้ไข ด้วย ShareX</value>
+    <value>แก้ไขในตัวแก้ไขรูปภาพ ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>แก้ไขในตัวแก้ไขภาพถ่าย ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>อัปโหลด ด้วย ShareX</value>
@@ -1396,6 +1531,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>จับภาพ</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>ไม้บรรทัด...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>คลิปบอร์ด ตัวแสดง...</value>
@@ -1520,6 +1658,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>ตัวตรวจสอบเครือข่าย...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>ใหม่</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>ไม่มีค่าที่ตั้งไว้ของเอฟเฟกต์รูปภาพ</value>
   </data>
@@ -1547,6 +1688,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>พื้นที่...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>พื้นที่ (โปร่งใส)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>เบราว์เซอร์จัดเก็บข้อมูลระยะไกล...</value>
   </data>
@@ -1554,7 +1698,7 @@
     <value>เริ่มใหม่ในฐานะผู้ดูแลระบบ</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด...</value>
+    <value>วัดขนาด...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี...</value>
@@ -1564,6 +1708,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>บันทึกหน้าจอ (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>เพียงครั้งเดียว</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>โฟลเดอร์ภาพหน้าจอ...</value>
@@ -1669,6 +1816,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>ตกแต่ง รูปภาพ...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>ล้างรายการงาน</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>ล้าง ภาพขนาดย่อ มุมมอง</value>
@@ -1831,6 +1981,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>หยุด อัปโหลด</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>สลับเป็นมุมมองรายการ</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>สลับเป็นมุมมองภาพขนาดย่อ</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>ข้อความ</value>
@@ -2089,23 +2245,20 @@
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>เริ่มต้นใช้งาน</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>เลือกรูปลักษณ์และความรู้สึกของแอป</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>ปรับ ShareX ให้เป็นแบบคุณ</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>โอเพนซอร์ส • สร้างขึ้นสำหรับ Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>คุณสามารถเปลี่ยนตัวเลือกเหล่านี้ได้ทุกเมื่อในการตั้งค่าแอปพลิเคชัน</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>กว้างขวาง</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ขอบคุณที่ดาวน์โหลด ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>ใช้การตั้งค่าระบบ</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ยินดีต้อนรับสู่ ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>จับภาพ แก้ไข และแชร์ทุกอย่างในแบบของคุณ</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>คุณต้องการ เพิ่ม "{0}" ตัวอัปโหลดกำหนดเอง?</value>
@@ -2131,6 +2284,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>เปิดใช้งานปุ่มลัดแล้ว</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>เวลาที่ผ่านไป</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>ชื่อไฟล์</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>ประวัติ</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>อยู่ในคิว</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>ความคืบหน้า</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>เวลาที่เหลือ</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>ความเร็ว</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>สถานะ</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>อัปโหลดเสร็จสมบูรณ์ URL: {0}</value>
@@ -2207,6 +2387,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>อัตโนมัติ คัดลอกรูปภาพ ไปยังคลิปบอร์ด</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>ขยายผืนผ้าใบอัตโนมัติเมื่อข้อความหรือรูปทรงเกินขอบ</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>หมายเลขเพิ่มอัตโนมัติ:</value>
   </data>
@@ -2239,6 +2422,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>ยกเลิก</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>สีเติมสำหรับพื้นที่ผืนผ้าใบที่เพิ่ม:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>จับภาพ</value>
@@ -2285,6 +2471,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>ปิดหน้าต่าง OCR หลังเปิดลิงก์บริการ</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>แถบเครื่องมือจับภาพพื้นที่แบบกะทัดรัด</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>กำหนดค่า...</value>
   </data>
@@ -2300,9 +2489,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>ปรับแต่ง แถบเครื่องมือ...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>ค่าเริ่มต้น ภาษา:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>ลบไฟล์อินพุต</value>
   </data>
@@ -2315,8 +2501,8 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>ตรวจจับพื้นที่หน้าต่าง</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>หรี่ทุกส่วนยกเว้นการเลือกปัจจุบัน</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>หรี่หน้าต่างและตัวควบคุมที่อยู่ใต้เคอร์เซอร์</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>ปิดการแจ้งเตือนแบบป๊อปอัปเมื่อเต็มหน้าจอ</value>
@@ -2489,6 +2675,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>กึ่งกลาง การทำงานเมื่อคลิก:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>จอภาพ:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>เมาส์ 4 คลิก:</value>
   </data>
@@ -2501,6 +2690,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>ตัวเลือกปากกาเน้นข้อความเมาส์...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>ล้อเมาส์:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>การทำงานของการเลื่อนกับแว่นขยาย กด Ctrl ค้างไว้ขณะเลื่อนเพื่อทำอีกการทำงานหนึ่ง</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>ย้ายลง</value>
   </data>
@@ -2509,6 +2704,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>ย้ายขึ้น</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>โหมดหลายพื้นที่</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>ชื่อ</value>
@@ -2579,6 +2777,9 @@
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>ใช้ตัวบันทึกหน้าจอในตัว</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>การแมปโทน HDR</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>กำหนดให้เข้ารหัสวิดีโอด้วยฮาร์ดแวร์</value>
   </data>
@@ -2620,12 +2821,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR วิธีใช้...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR ภาษา ไม่พร้อมใช้งาน</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>ใช้เอฟเฟกต์เฉพาะกับการจับภาพพื้นที่</value>
@@ -2789,6 +2984,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>คลิกขวา การดำเนินการ:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>คลิกขวาเพื่อลบรูปร่างที่อยู่ใต้เคอร์เซอร์</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>คลิกขวาเพื่อแทรกโทเค็นไฟล์อินพุตหรือเอาต์พุต</value>
   </data>
@@ -2924,8 +3122,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>เขตเวลา:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>จอภาพ {0} (ไม่ได้เชื่อมต่อ)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>จอภาพ {0}: {1} ({2} ที่ {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>การแจ้งเตือนแบบป๊อปอัป</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>ขนาดปุ่มแถบเครื่องมือ (พิกเซล):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>เครื่องมือ</value>
@@ -2975,6 +3182,9 @@
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>ใช้ กำหนดเอง เขตเวลา</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>ใช้ขนาดปุ่มแถบเครื่องมือแบบกำหนดเอง</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>ใช้ระยะเวลาคงที่</value>
   </data>
@@ -3004,6 +3214,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>คลื่น เสียง</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>ความพยายามในการบีบอัด WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>ค่าที่ต่ำกว่าจะเข้ารหัสได้เร็วกว่า ค่าที่สูงกว่าจะสร้างไฟล์ที่เล็กกว่า ทุกค่ารักษาคุณภาพของภาพไว้</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>ไม่สูญเสียคุณภาพ</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>คุณภาพ WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>ความกว้าง:</value>

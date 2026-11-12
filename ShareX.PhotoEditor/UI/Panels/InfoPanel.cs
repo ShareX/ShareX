@@ -41,10 +41,10 @@ public sealed class InfoPanel : EditorPanel
     public InfoPanel(PhotoEditorWindow editor) : base(editor)
     {
         Grid quadrants = new() { ColumnDefinitions = new ColumnDefinitions("*,1,*"), RowDefinitions = new RowDefinitions("Auto,1,Auto") };
-        AddCell(quadrants, 0, 0, "eyedropper", ["R", "G", "B", "A"]);
+        AddCell(quadrants, 0, 0, PhotoEditorIcons.Eyedropper, ["R", "G", "B", "A"]);
         AddCell(quadrants, 0, 2, null, ["H", "S", "Br", "#"]);
-        AddCell(quadrants, 2, 0, "move", ["X", "Y"]);
-        AddCell(quadrants, 2, 2, "rectangularmarquee", ["W", "H2"]);
+        AddCell(quadrants, 2, 0, PhotoEditorIcons.Move, ["X", "Y"]);
+        AddCell(quadrants, 2, 2, PhotoEditorIcons.RectangularMarquee, ["W", "H2"]);
         Border vertical = new() { Background = DividerBrush, Margin = new Thickness(0, 4) };
         Grid.SetColumn(vertical, 1);
         Grid.SetRowSpan(vertical, 3);
@@ -64,7 +64,7 @@ public sealed class InfoPanel : EditorPanel
 
     public override string Id => "info";
 
-    public override string Title => "Info";
+    public override string Title => Strings.EditorCommands_Info;
 
     private void AddCell(Grid parent, int row, int column, string? icon, string[] keys)
     {
@@ -84,7 +84,7 @@ public sealed class InfoPanel : EditorPanel
         }
         if (icon != null)
         {
-            Control image = ToolIcons.Create(icon, 14);
+            Control image = new IconView(icon, 16);
             image.VerticalAlignment = VerticalAlignment.Top;
             image.Margin = new Thickness(0, 1, 0, 0);
             image.Opacity = 0.8;

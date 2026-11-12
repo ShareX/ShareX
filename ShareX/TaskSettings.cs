@@ -313,6 +313,8 @@ namespace ShareX
         public float ToastWindowDuration = 3f;
         public float ToastWindowFadeDuration = 1f;
         public ImageContentAlignment ToastWindowPlacement = ImageContentAlignment.BottomRight;
+        public ToastWindowMonitor ToastWindowMonitor = ToastWindowMonitor.ActiveMonitor;
+        public string ToastWindowMonitorDeviceName = "";
         public Size ToastWindowSize = new Size(400, 300);
         public ToastClickAction ToastWindowLeftClickAction = ToastClickAction.OpenUrl;
         public ToastClickAction ToastWindowRightClickAction = ToastClickAction.CloseNotification;
@@ -345,6 +347,9 @@ namespace ShareX
         public int ImageJPEGQuality = 90;
         public SKJpegEncoderDownsample ImageJPEGSubsampling = SKJpegEncoderDownsample.Downsample420;
         public GIFQuality ImageGIFQuality = GIFQuality.Adaptive;
+        public int ImageWebPQuality = 90;
+        public bool ImageWebPLossless = true;
+        public int ImageWebPCompressionEffort = 100;
         public bool ImageAutoUseJPEG = true;
         public int ImageAutoUseJPEGSize = 2048;
         public bool ImageAutoJPEGQuality = false;
@@ -418,6 +423,7 @@ namespace ShareX
         public int ScreenRecordCameraMargin = 20;
         public bool ScreenRecordRequireHardwareEncoder = true;
         public int ScreenRecordVideoBitrate = 10000; // kbps
+        public bool ScreenRecordHDRToneMapping = false;
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;

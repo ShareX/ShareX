@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Po nahrání</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Dále</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Název souboru</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Kopírovat soubor</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Vloží uložený soubor do schránky.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Kopírovat cestu k souboru</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Zkopíruje cestu k uloženému souboru.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Kopírovat cestu ke složce</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Zkopíruje složku uloženého souboru.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Kopírovat obrázek</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Vloží obrázek do schránky.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>Kopírovat URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Nahraje jej a poté zkopíruje odkaz.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>Povinné kroky vycházejí z vašeho cíle. Přidejte libovolné doplňky.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>Co chcete mít ve schránce?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Po zachycení</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Náhled obrázku není dostupný</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Povinné pro tento cíl</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Zkontrolujte zachycený obsah a vyberte, co se má stát dál.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Nahrávání</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Vždy zobrazovat posuvníky v plné šířce</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Aplikace</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formáty schránky</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompaktní režim</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Vlastní cesta ke konfiguraci klávesových zkratek</value>
@@ -472,6 +520,24 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Interval opakování klávesové zkratky (milisekundy)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Sada ikon:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Starší</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Moderní</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Ikony</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Viditelnost náhledu obrázku:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Umístění náhledu obrázku:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Nastavení tisku obrázku...</value>
   </data>
@@ -504,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Světlý</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Zobrazení seznamu</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Hlavní okno</value>
@@ -625,8 +694,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Zobrazit prohlížeč obsahu schránky</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Zobrazit sloupce</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Zobrazit tlačítko „Upravit pomocí ShareX“ v místní nabídce Průzkumníka Windows</value>
+    <value>Zobrazit tlačítko „Upravit v editoru obrázků ShareX“ v místní nabídce Průzkumníka Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Zobrazit tlačítko „Upravit v editoru fotografií ShareX“ v místní nabídce Průzkumníka Windows</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Před odstraněním souborů požádat o potvrzení</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Prahová hodnota upozornění na velký soubor (MB)</value>
@@ -664,6 +742,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limit souběžných nahrávání:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Mezery</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompaktní</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Výchozí</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Nabídky</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Nabídky:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Náhled:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Okna nastavení:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Postranní panel</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Postranní panel:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Nabídky nástrojů</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Nabídky nástrojů:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +783,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Vzor podsložky:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Režim zobrazení úloh:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Motiv</value>
@@ -1213,6 +1327,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Nastavení se nepodařilo uložit</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Znovu nepřipomínat</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
@@ -1322,11 +1439,29 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Nastavení klávesových zkratek</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Toto můžete kdykoli změnit v nastavení aplikace.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Barevné a detailní ikony v klasickém stylu.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Čisté obrysové ikony, které přebírají barvy motivu.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX má nové ikony. Vyberte si vzhled, který se vám líbí.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Vyberte si ikony</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Obrázek nelze zapsat do cesty:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Upravit pomocí ShareX</value>
+    <value>Upravit v editoru obrázků ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Upravit v editoru fotografií ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Nahrát pomocí ShareX</value>
@@ -1396,6 +1531,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Zachytit</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Pravítko...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Prohlížeč schránky...</value>
@@ -1520,6 +1658,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Sledování sítě...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Nové</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Žádné předvolby efektů obrázku</value>
   </data>
@@ -1547,6 +1688,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Oblast...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Oblast (průhledná)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Prohlížeč vzdáleného úložiště...</value>
   </data>
@@ -1554,7 +1698,7 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
     <value>Restartovat jako správce</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Pravítko...</value>
+    <value>Měření...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Výběr barvy z obrazovky...</value>
@@ -1564,6 +1708,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Nahrávání obrazovky (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Pouze jednou</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Složka snímků obrazovky...</value>
@@ -1669,6 +1816,9 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Vylepšit obrázek...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Vymazat seznam úloh</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Vymazat zobrazení miniatur</value>
@@ -1831,6 +1981,12 @@ Vyberte jinou klávesovou zkratku nebo ukončete konfliktní aplikaci a znovu ot
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Zastavit nahrávání</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Přepnout na zobrazení seznamu</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Přepnout na zobrazení miniatur</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2089,23 +2245,20 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Začít</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Zvolte si vzhled a chování aplikace.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Přizpůsobte si ShareX</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Vytvořeno pro Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Tyto možnosti můžete kdykoli změnit v nastavení aplikace.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Prostorný</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Děkujeme, že jste si stáhli ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Použít nastavení systému</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Vítejte v ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Zachyťte, upravte a sdílejte cokoli podle sebe.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Chcete přidat vlastní nahrávání „{0}“?</value>
@@ -2131,6 +2284,33 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Klávesové zkratky byly povoleny.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Uplynulo</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Název souboru</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Ve frontě</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Průběh</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Zbývá</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Rychlost</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Stav</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>Adresa URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Nahrávání dokončeno. Adresa URL: {0}</value>
@@ -2207,6 +2387,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Automaticky kopírovat obrázek do schránky</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Automaticky zvětšit plátno, když text nebo tvary přesahují okraj</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Automaticky zvyšovat číslo:</value>
   </data>
@@ -2239,6 +2422,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Zrušit</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Barva výplně přidané oblasti plátna:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Zachycení</value>
@@ -2285,6 +2471,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Po otevření odkazu služby zavřít okno OCR</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompaktní panel nástrojů zachycení oblasti</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Nastavit...</value>
   </data>
@@ -2300,9 +2489,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Přizpůsobit panel nástrojů...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Výchozí jazyk:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Odstranit vstupní soubor</value>
   </data>
@@ -2315,8 +2501,8 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Zjišťovat oblasti oken</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>Ztlumit vše kromě aktuálního výběru</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Ztlumit okna a ovládací prvky pod kurzorem</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Zakázat informační oznámení v režimu celé obrazovky</value>
@@ -2489,6 +2675,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Akce prostředního tlačítka:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Tlačítko myši 4:</value>
   </data>
@@ -2501,6 +2690,12 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Možnosti zvýrazňovače myši...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Kolečko myši:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Co dělá posouvání kolečkem s lupou. Podržením Ctrl při posouvání provedete druhou akci.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Přesunout dolů</value>
   </data>
@@ -2509,6 +2704,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Přesunout nahoru</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Režim více oblastí</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Název</value>
@@ -2579,6 +2777,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Použít vestavěný záznam obrazovky</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Mapování tónů HDR</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Vyžadovat hardwarové kódování videa</value>
   </data>
@@ -2620,12 +2821,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Nápověda k OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Jazyky OCR nejsou dostupné</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Použít efekty pouze na zachycení oblasti</value>
@@ -2789,6 +2984,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Akce pravého tlačítka:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Kliknutí pravým tlačítkem odstraní tvar pod kurzorem</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Kliknutím pravým tlačítkem vložíte token vstupního nebo výstupního souboru.</value>
   </data>
@@ -2924,8 +3122,17 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Časové pásmo:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (nepřipojen)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} na pozici {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Informační oznámení</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Velikost tlačítek panelu nástrojů (pixely):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Nástroje</value>
@@ -2975,6 +3182,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Použít vlastní časové pásmo</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Použít vlastní velikost tlačítek panelu nástrojů</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Použít pevnou dobu trvání</value>
   </data>
@@ -3004,6 +3214,18 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Zvuk Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Úsilí při kompresi WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Nižší hodnoty zrychlují kódování. Vyšší hodnoty vytvářejí menší soubory. Všechny hodnoty zachovávají kvalitu obrazu.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Bezeztrátová</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Kvalita WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Šířka:</value>

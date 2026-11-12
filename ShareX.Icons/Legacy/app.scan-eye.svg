@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff" /><stop offset=".3" stop-color="#6ab6f0" /><stop offset=".55" stop-color="#4590cd" /><stop offset=".8" stop-color="#1ca4ea" /><stop offset="1" stop-color="#0eb7ff" /></linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#d3e2ff" /></linearGradient>
+  </defs>
+  <g transform="translate(2 2) scale(.75)">
+    <path d="M.8 8C2.6 4.9 5 3.4 8 3.4S13.4 4.9 15.2 8C13.4 11.1 11 12.6 8 12.6S2.6 11.1.8 8Z" fill="url(#g-glass)" stroke="#2a2a36" stroke-width=".9" stroke-linejoin="round" />
+    <circle cx="8" cy="8" r="3.4" fill="url(#g-blue)" stroke="#0a3f78" stroke-width=".7" />
+    <circle cx="8" cy="8" r="1.5" fill="#0a0a10" />
+    <circle cx="6.9" cy="6.9" r=".8" fill="#ffffff" />
+  </g>
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#04509b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M1 5V1H5M11 1H15V5M15 11V15H11M5 15H1V11" fill="none" stroke="#6ab6f0" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

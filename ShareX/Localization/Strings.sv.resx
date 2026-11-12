@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Efter uppladdning</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Dessutom</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Filnamn</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Kopiera fil</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Lägger den sparade filen i urklipp.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Kopiera filsökväg</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Kopierar sökvägen till den sparade filen.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Kopiera mappsökväg</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Kopierar mappen med den sparade filen.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Kopiera bild</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Lägger bilden i urklipp.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>Kopiera URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Laddar upp den och kopierar sedan länken.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>Nödvändiga steg följer av ditt mål. Lägg till de extra åtgärder du vill ha.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>Vad vill du ha i urklipp?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Efter bildtagning</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Ingen bildförhandsvisning tillgänglig</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Krävs för det här målet</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Granska det tagna innehållet och välj vad som ska hända härnäst.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Uppladdning</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Visa alltid rullningslister i full bredd</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Program</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Urklippsformat</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Kompakt läge</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Anpassad sökväg till snabbtangentskonfiguration</value>
@@ -472,6 +520,24 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Intervall för upprepning av snabbtangent (millisekunder)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Ikonpaket:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Klassisk</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Ikoner</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Synlighet för bildförhandsvisning:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Placering för bildförhandsvisning:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Bildutskriftsinställningar...</value>
   </data>
@@ -504,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Ljust</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Listvy</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Huvudfönster</value>
@@ -625,8 +694,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Visa Urklippsvisaren</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Visa kolumner</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Visa knappen ”Redigera med ShareX” i Utforskarens snabbmeny</value>
+    <value>Visa knappen ”Redigera i ShareX bildredigerare” i Utforskarens snabbmeny</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Visa knappen ”Redigera i ShareX fotoredigerare” i Utforskarens snabbmeny</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Be om bekräftelse innan filer tas bort</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Tröskelvärde för varning om stor fil (MB)</value>
@@ -664,6 +742,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Gräns för samtidiga uppladdningar:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Mellanrum</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Kompakt</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menyer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menyer:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Förhandsgranskning:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Inställningsfönster:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Sidofält</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Sidofält:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Verktygsmenyer</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Verktygsmenyer:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +783,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Mönster för undermapp:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Visningsläge för uppgifter:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1213,6 +1327,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Det gick inte att spara inställningarna</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Påminn mig inte igen</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Avbryt</value>
   </data>
@@ -1322,11 +1439,29 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX – Snabbtangentsinställningar</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Du kan ändra detta när som helst i programinställningarna.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Färgglada, detaljerade ikoner i klassisk stil.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Rena linjeikoner som följer temats färger.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX har nya ikoner. Välj det utseende du föredrar.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Välj dina ikoner</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Det gick inte att skriva bilden till sökvägen:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Redigera med ShareX</value>
+    <value>Redigera i ShareX bildredigerare</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Redigera i ShareX fotoredigerare</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Ladda upp med ShareX</value>
@@ -1396,6 +1531,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Ta bild</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Linjal...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Urklippsvisare...</value>
@@ -1520,6 +1658,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Nätverksövervakare...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Ny</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Inga förinställningar för bildeffekter</value>
   </data>
@@ -1547,6 +1688,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Område...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Område (genomskinligt)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Webbläsare för fjärrlagring...</value>
   </data>
@@ -1554,7 +1698,7 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
     <value>Starta om som administratör</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Linjal...</value>
+    <value>Mätning...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare...</value>
@@ -1564,6 +1708,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Skärminspelning (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Bara en gång</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Skärmbildsmapp...</value>
@@ -1669,6 +1816,9 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Försköna bild...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Rensa uppgiftslistan</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Rensa miniatyrvyn</value>
@@ -1831,6 +1981,12 @@ Välj en annan snabbtangent eller avsluta programmet som orsakar konflikten och 
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Stoppa uppladdning</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Växla till listvy</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Växla till miniatyrvy</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2089,23 +2245,20 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Kom igång</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Välj hur appen ska se ut och kännas.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Gör ShareX till ditt</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Öppen källkod • Byggt för Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Du kan ändra dessa alternativ när som helst i programinställningarna.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Luftig</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Tack för att du laddade ner ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Använd systeminställning</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Välkommen till ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Fånga, redigera och dela vad som helst på ditt sätt.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Vill du lägga till den anpassade uppladdaren "{0}"?</value>
@@ -2131,6 +2284,33 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Snabbtangenter har aktiverats.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Förfluten tid</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Filnamn</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Historik</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>I kö</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Förlopp</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Återstår</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Hastighet</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Uppladdningen slutfördes. URL: {0}</value>
@@ -2207,6 +2387,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Kopiera bilden automatiskt till Urklipp</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Utöka arbetsytan automatiskt när text eller former går utanför kanten</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Öka nummer automatiskt:</value>
   </data>
@@ -2239,6 +2422,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Avbryt</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Fyllnadsfärg för tillagd arbetsyta:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Bildtagning</value>
@@ -2285,6 +2471,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Stäng OCR-fönstret efter att en tjänstlänk har öppnats</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Kompakt verktygsfält för områdesbildtagning</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Konfigurera...</value>
   </data>
@@ -2300,9 +2489,6 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Anpassa verktygsfält...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Standardspråk:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Ta bort indatafil</value>
   </data>
@@ -2315,8 +2501,8 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Identifiera fönsterområden</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>Tona ned allt utom den aktuella markeringen</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Tona ned fönster och kontroller under markören</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Inaktivera popupaviseringar i helskärmsläge</value>
@@ -2489,6 +2675,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Åtgärd vid mittenklick:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Bildskärm:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Musklick 4:</value>
   </data>
@@ -2501,6 +2690,12 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Alternativ för musmarkering...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mushjul:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>Vad rullning gör med förstoringsglaset. Håll ned Ctrl medan du rullar för att göra det andra.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Flytta ned</value>
   </data>
@@ -2509,6 +2704,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Flytta upp</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Läge för flera områden</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Namn</value>
@@ -2579,6 +2777,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Använd den inbyggda skärminspelaren</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR-tonmappning</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Kräv maskinvarukodning av video</value>
   </data>
@@ -2620,12 +2821,6 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR-hjälp...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR-språk är inte tillgängliga</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Tillämpa endast effekter vid områdesbildtagning</value>
@@ -2789,6 +2984,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Åtgärd vid högerklick:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Högerklick tar bort formen under markören</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Högerklicka för att infoga en token för in- eller utdatafil.</value>
   </data>
@@ -2924,8 +3122,17 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Tidszon:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Bildskärm {0} (inte ansluten)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Bildskärm {0}: {1} ({2} vid {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Popupavisering</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Storlek på verktygsfältsknappar (pixlar):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Verktyg</value>
@@ -2975,6 +3182,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Använd anpassad tidszon</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Använd anpassad storlek på verktygsfältsknappar</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Använd fast varaktighet</value>
   </data>
@@ -3004,6 +3214,18 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave-ljud</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP-komprimeringsarbete:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lägre värden ger snabbare kodning. Högre värden ger mindre filer. Alla värden bevarar bildkvaliteten.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Förlustfri</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP-kvalitet:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Bredd:</value>

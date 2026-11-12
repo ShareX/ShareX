@@ -25,8 +25,8 @@
 
 #nullable enable
 
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.FileUploaders;
@@ -62,11 +62,11 @@ public sealed class CustomUploaderSettingsViewModel : CustomUploaderNotifyObject
     public ObservableCollection<CustomUploaderEditorItem> FilteredUploaders { get; } = [];
     public IReadOnlyList<CustomUploaderEditorSection> Sections { get; } =
     [
-        new(Strings.CustomUploaderSettingsWindow_Overview, LucideIcons.layout_dashboard),
-        new(Strings.CustomUploaderSettingsWindow_Request, LucideIcons.send),
-        new(Strings.CustomUploaderSettingsWindow_Body, LucideIcons.braces),
-        new(Strings.CustomUploaderSettingsWindow_Response, LucideIcons.reply),
-        new(Strings.CustomUploaderSettingsWindow_Test, LucideIcons.flask_conical)
+        new(Strings.CustomUploaderSettingsWindow_Overview, AppIcons.Dashboard),
+        new(Strings.CustomUploaderSettingsWindow_Request, AppIcons.Send),
+        new(Strings.CustomUploaderSettingsWindow_Body, AppIcons.Braces),
+        new(Strings.CustomUploaderSettingsWindow_Response, AppIcons.Reply),
+        new(Strings.CustomUploaderSettingsWindow_Test, AppIcons.Flask)
     ];
     public string[] RequestMethods { get; } = Enum.GetNames<HttpMethod>();
     public string[] BodyTypes { get; } = Enum.GetValues<CustomUploaderBody>().Select(x => x.GetLocalizedDescription()).ToArray();

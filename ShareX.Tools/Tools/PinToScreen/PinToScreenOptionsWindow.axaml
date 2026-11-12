@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         xmlns:cp="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.ColorPicker"
         mc:Ignorable="d" d:DesignWidth="760" d:DesignHeight="560"
         x:Class="ShareX.Tools.PinToScreenOptionsWindow"

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cc8800" stop-opacity=".5"/><stop offset="1" stop-color="#8b5c00" stop-opacity=".75"/></linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2ae"/><stop offset=".9" stop-color="#e8c77c"/><stop offset="1" stop-color="#edcb81"/></linearGradient>
+    <linearGradient id="p" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdfefe"/><stop offset="1" stop-color="#dbe9e9"/></linearGradient>
+    <linearGradient id="t" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#41c9fe"/><stop offset="1" stop-color="#2eb6f4"/></linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dec07b"/><stop offset="1" stop-color="#b18f4b"/></linearGradient>
+    <linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e50101" stop-opacity=".7"/><stop offset=".1" stop-color="#e74b36"/><stop offset="1" stop-color="#ae2c1b"/></linearGradient>
+    <linearGradient id="ri" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8484"/><stop offset="1" stop-color="#fc6464"/></linearGradient>
+  </defs>
+  <path d="M2.5 1.5h11v6l1 1v5l-1 1v1h-11z" fill="url(#f)"/>
+  <path d="M3.5 2v13M12.5 2v5.5" stroke="#fffbe0" stroke-opacity=".35"/>
+  <path d="M10.5 8.6V15M12.5 9V15" stroke="#fdf2b0" stroke-opacity=".6"/>
+  <polyline points="13.6,7.3 11.5,8.5 11.5,15" fill="none" stroke="url(#d)"/>
+  <rect x="13" y="8.5" width="1" height="3.5" fill="url(#p)"/>
+  <rect x="13" y="12" width="1" height="2" fill="url(#t)"/>
+  <path d="M2.5 1.5h11v6l1 1v5l-1 1v1h-11z" fill="none" stroke="url(#o)"/>
+  <path d="M4 0h4v13l-2-1.1L4 13z" fill="url(#r)"/>
+  <rect x="5" y="1" width="2" height="10" fill="url(#ri)"/>
+  <rect x="5" y="11" width="2" height=".9" fill="#c83a2d"/>
+</svg>

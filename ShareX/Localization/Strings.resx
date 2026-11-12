@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>After upload</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Also</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>File name</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Copy file</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Puts the saved file on the clipboard.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Copy file path</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Copies the path of the saved file.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Copy folder path</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Copies the folder of the saved file.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Copy image</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Puts the picture on the clipboard.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>Copy URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Uploads it, then copies the link.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>Required steps follow from your goal. Add any extras you want.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>What do you want on the clipboard?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>After capture</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>No image preview available</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Required for this goal</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Review the captured content and choose what happens next.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Upload</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Always show full-width scroll bars</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Application</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Clipboard formats</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Compact mode</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Custom hotkeys configuration path</value>
@@ -472,6 +520,25 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Hotkey repeat interval (milliseconds)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Icon pack:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Legacy</value>
+    <comment>Icon pack option that brings back the colourful icons of ShareX version 21.</comment>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Modern</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Icons</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Image preview visibility:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Image preview location:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Image print settings...</value>
   </data>
@@ -504,6 +571,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Light</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>List view</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Main window</value>
@@ -625,8 +695,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Show the clipboard content viewer</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Show columns</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Show "Edit with ShareX Image editor" button in Windows Explorer context menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Show "Edit with ShareX Photo editor" button in Windows Explorer context menu</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Ask for confirmation before deleting files</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Large-file warning threshold (MB)</value>
@@ -664,6 +743,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Simultaneous upload limit:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compact</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menus</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menus:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Preview:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Settings windows:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Sidebar</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Sidebar:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Tool menus</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Tool menus:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +784,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Sub folder pattern:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Task view mode:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Theme</value>
@@ -1213,6 +1328,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Failed to save settings</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Don't remind me again</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -1322,11 +1440,31 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Hotkey settings</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>You can change this anytime in Application settings.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Colorful, detailed icons in a classic style.</value>
+    <comment>Description of the Legacy icon pack.</comment>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Clean line icons that follow your theme colors.</value>
+    <comment>Description of the Modern icon pack.</comment>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>ShareX has new icons. Pick the look you prefer.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Choose your icons</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Could not write image to path:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Edit with ShareX</value>
+    <value>Edit with ShareX Image editor</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Edit with ShareX Photo editor</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Upload with ShareX</value>
@@ -1396,6 +1534,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Capture</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Ruler...</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Clipboard viewer...</value>
@@ -1520,6 +1661,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Network monitor...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>New</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>No image effect presets</value>
   </data>
@@ -1547,6 +1691,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Region...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Region (Transparent)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Remote storage browser...</value>
   </data>
@@ -1554,7 +1701,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Restart as administrator</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Ruler...</value>
+    <value>Measure...</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Screen color picker...</value>
@@ -1564,6 +1711,10 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Screen recording (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Just once</value>
+    <comment>Toggle in the Screenshot delay menu: the selected delay applies only to the next capture, then resets to 0s.</comment>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Screenshots folder...</value>
@@ -1670,6 +1821,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Beautify image...</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Clear task list</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Clear thumbnail view</value>
@@ -1832,6 +1986,12 @@ Please select a different hotkey or quit the conflicting application and reopen 
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Stop upload</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Switch to list view</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Switch to thumbnail view</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Text</value>
@@ -2092,23 +2252,20 @@ Do you want to abort the active screen recording?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Get started</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Choose how the app should look and feel.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Make ShareX yours</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Open source • Built for Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>You can change these options anytime in Application settings.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Spacious</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Thank you for downloading ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Use system setting</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Welcome to ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capture, edit and share anything your way.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Would you like to add "{0}" custom uploader?</value>
@@ -2134,6 +2291,33 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Hotkeys enabled.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Elapsed</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>In queue</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Progress</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Upload completed. URL: {0}</value>
@@ -2210,6 +2394,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Auto copy image to clipboard</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Auto-expand canvas when text or shapes go beyond the edge</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Auto increment number:</value>
   </data>
@@ -2242,6 +2429,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Fill color for added canvas area:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Capture</value>
@@ -2288,6 +2478,10 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Close OCR window after opening service link</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Compact region capture toolbar</value>
+    <comment>Checkbox that makes the region capture toolbar use the smaller, denser layout of ShareX version 21.</comment>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configure...</value>
   </data>
@@ -2303,9 +2497,6 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Customize toolbar...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Default language:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Delete input file</value>
   </data>
@@ -2318,8 +2509,8 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detect window regions</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>Dim all, except the current selection</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Dim hovered windows and controls</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Disable toast notifications on fullscreen</value>
@@ -2492,6 +2683,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Middle click action:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Mouse 4 click:</value>
   </data>
@@ -2504,6 +2698,12 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Mouse highlighter options...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Mouse wheel:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>What scrolling does to the magnifier. Hold Ctrl while scrolling to do the other one.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Move down</value>
   </data>
@@ -2512,6 +2712,9 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Move up</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Multi region mode</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Name</value>
@@ -2582,6 +2785,10 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Use built-in screen recorder</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>HDR tone mapping</value>
+    <comment>Screen recorder option: on HDR displays, convert the captured HDR frames to SDR so bright content is not blown out.</comment>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Require hardware video encoding</value>
   </data>
@@ -2623,12 +2830,6 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>OCR help...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>OCR languages are unavailable</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Only apply effects to region capture</value>
@@ -2792,6 +2993,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Right click action:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Right-click deletes the shape under the cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Right-click to insert an input or output file token.</value>
   </data>
@@ -2927,8 +3131,18 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Time zone:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (not connected)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} at {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Toast notification</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Toolbar button size (pixels):</value>
+    <comment>Label for the number of pixels tall the region capture toolbar buttons are; the whole toolbar is scaled to match.</comment>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Tools</value>
@@ -2978,6 +3192,10 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Use custom time zone</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Use custom toolbar button size</value>
+    <comment>Checkbox that lets the user set the size of the region capture toolbar buttons.</comment>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Use fixed duration</value>
   </data>
@@ -3007,6 +3225,18 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Wave audio</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>WebP compression effort:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Lower values encode faster. Higher values produce smaller files. All values preserve image quality.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Lossless</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>WebP quality:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Width:</value>

@@ -36,9 +36,9 @@ public sealed class MagicWandTool : SelectionToolBase
 
     public override ToolId Id => ToolId.MagicWand;
 
-    public override string Name => "Magic Wand Tool";
+    public override string Name => Strings.AutoSelectionTools_MagicWandTool;
 
-    public override string Hint => "Click to select similar colors. Shift adds, Alt subtracts.";
+    public override string Hint => Strings.AutoSelectionTools_MagicWandHint;
 
     public int Tolerance { get; set; } = 32;
 
@@ -58,21 +58,21 @@ public sealed class MagicWandTool : SelectionToolBase
         SKColor average = ImageOps.SampleAverage(sample, p.X, p.Y, SampleSize);
         uint seed = ColorMath.FromColor(average);
         PixelSurface mask = FloodFill.SelectColor(sample, seed, Tolerance, Contiguous ? (p.X, p.Y) : null, AntiAlias);
-        ApplySelection(mask, mode, "Magic Wand");
+        ApplySelection(mask, mode, Strings.AutoSelectionTools_MagicWand);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
         options.SelectionMode(() => Mode, m => Mode = m);
         options.Separator();
-        options.Combo("Sample Size:", [("Point Sample", 1), ("3 by 3 Average", 3), ("5 by 5 Average", 5), ("11 by 11 Average", 11), ("31 by 31 Average", 31)], () => SampleSize, v => SampleSize = v, 130);
-        options.Number("Tolerance:", 0, 255, () => Tolerance, v => Tolerance = (int)v);
-        options.Check("Anti-alias", () => AntiAlias, v => AntiAlias = v);
-        options.Check("Contiguous", () => Contiguous, v => Contiguous = v);
-        options.Check("Sample All Layers", () => SampleAllLayers, v => SampleAllLayers = v);
+        options.Combo(Strings.Tools_SampleSizeColon, [(Strings.Tools_PointSample, 1), (string.Format(Strings.Tools_SampleAverage, 3), 3), (string.Format(Strings.Tools_SampleAverage, 5), 5), (string.Format(Strings.Tools_SampleAverage, 11), 11), (string.Format(Strings.Tools_SampleAverage, 31), 31)], () => SampleSize, v => SampleSize = v, 130);
+        options.Number(Strings.Tools_ToleranceColon, 0, 255, () => Tolerance, v => Tolerance = (int)v);
+        options.Check(Strings.Tools_AntiAlias, () => AntiAlias, v => AntiAlias = v);
+        options.Check(Strings.Tools_Contiguous, () => Contiguous, v => Contiguous = v);
+        options.Check(Strings.Tools_SampleAllLayers, () => SampleAllLayers, v => SampleAllLayers = v);
         options.Separator();
-        options.Button("Select Subject", () => UI.Commands.EditorCommands.SelectSubject(Host));
-        options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host));
+        options.Button(Strings.EditorCommands_SelectSubject, () => UI.Commands.EditorCommands.SelectSubject(Host));
+        options.Button(Strings.EditorCommands_SelectAndMaskEllipsis, () => UI.Commands.EditorCommands.SelectAndMask(Host));
     }
 }
 
@@ -91,9 +91,9 @@ public sealed class ObjectSelectionTool : SelectionToolBase
 
     public override ToolId Id => ToolId.ObjectSelection;
 
-    public override string Name => "Object Selection Tool";
+    public override string Name => Strings.AutoSelectionTools_ObjectSelectionTool;
 
-    public override string Hint => "Drag a rectangle or lasso around an object to select it.";
+    public override string Hint => Strings.AutoSelectionTools_ObjectSelectionHint;
 
     public bool LassoMode { get; set; }
 
@@ -141,7 +141,7 @@ public sealed class ObjectSelectionTool : SelectionToolBase
         }
         SKBitmap sample = Host.GetSampleImage(SampleAllLayers);
         PixelSurface? mask = null;
-        await Host.RunBusyAsync("Selecting object...", _ => Task.Run(() => mask = SmartSelection.SelectObject(sample, rect)));
+        await Host.RunBusyAsync(Strings.AutoSelectionTools_SelectingObject, _ => Task.Run(() => mask = SmartSelection.SelectObject(sample, rect)));
         sample.Dispose();
         if (mask == null) return;
         if (limit != null)
@@ -152,7 +152,7 @@ public sealed class ObjectSelectionTool : SelectionToolBase
             mask = limited!;
             limit.Dispose();
         }
-        ApplySelection(mask, _mode, "Object Selection");
+        ApplySelection(mask, _mode, Strings.AutoSelectionTools_ObjectSelection);
     }
 
     public override void DrawOverlay(OverlayContext context)
@@ -166,11 +166,11 @@ public sealed class ObjectSelectionTool : SelectionToolBase
     {
         options.SelectionMode(() => Mode, m => Mode = m);
         options.Separator();
-        options.Combo("Mode:", [("Rectangle", false), ("Lasso", true)], () => LassoMode, v => LassoMode = v, 100);
-        options.Check("Sample All Layers", () => SampleAllLayers, v => SampleAllLayers = v);
+        options.Combo(Strings.EditorCommands_ModeColon, [(Strings.Enum_ShapeKind_Rectangle, false), (Strings.AutoSelectionTools_Lasso, true)], () => LassoMode, v => LassoMode = v, 100);
+        options.Check(Strings.Tools_SampleAllLayers, () => SampleAllLayers, v => SampleAllLayers = v);
         options.Separator();
-        options.Button("Select Subject", () => UI.Commands.EditorCommands.SelectSubject(Host));
-        options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host));
+        options.Button(Strings.EditorCommands_SelectSubject, () => UI.Commands.EditorCommands.SelectSubject(Host));
+        options.Button(Strings.EditorCommands_SelectAndMaskEllipsis, () => UI.Commands.EditorCommands.SelectAndMask(Host));
     }
 }
 
@@ -191,9 +191,9 @@ public sealed class QuickSelectionTool : SelectionToolBase
 
     public override ToolId Id => ToolId.QuickSelection;
 
-    public override string Name => "Quick Selection Tool";
+    public override string Name => Strings.AutoSelectionTools_QuickSelectionTool;
 
-    public override string Hint => "Paint over an area to select it; the selection grows to find edges. Alt subtracts.";
+    public override string Hint => Strings.AutoSelectionTools_QuickSelectionHint;
 
     public override ToolCursor Cursor => ToolCursor.Brush;
 
@@ -246,7 +246,7 @@ public sealed class QuickSelectionTool : SelectionToolBase
         _sample.Dispose();
         _sample = null;
         _edges = null;
-        PushHistory("Quick Selection");
+        PushHistory(Strings.AutoSelectionTools_QuickSelection);
     }
 
     public override void DrawOverlay(OverlayContext context)
@@ -265,12 +265,12 @@ public sealed class QuickSelectionTool : SelectionToolBase
     {
         options.SelectionMode(() => Mode, m => Mode = m);
         options.Separator();
-        options.Number("Size:", 1, 2500, () => Size, v => Size = (float)v, "0", "px");
-        options.Check("Sample All Layers", () => SampleAllLayers, v => SampleAllLayers = v);
-        options.Check("Enhance Edge", () => AutoEnhance, v => AutoEnhance = v);
+        options.Number(Strings.PropertiesPanel_SizeColon, 1, 2500, () => Size, v => Size = (float)v, "0", "px");
+        options.Check(Strings.Tools_SampleAllLayers, () => SampleAllLayers, v => SampleAllLayers = v);
+        options.Check(Strings.AutoSelectionTools_EnhanceEdge, () => AutoEnhance, v => AutoEnhance = v);
         options.Separator();
-        options.Button("Select Subject", () => UI.Commands.EditorCommands.SelectSubject(Host));
-        options.Button("Select and Mask...", () => UI.Commands.EditorCommands.SelectAndMask(Host));
+        options.Button(Strings.EditorCommands_SelectSubject, () => UI.Commands.EditorCommands.SelectSubject(Host));
+        options.Button(Strings.EditorCommands_SelectAndMaskEllipsis, () => UI.Commands.EditorCommands.SelectAndMask(Host));
     }
 }
 
@@ -288,9 +288,9 @@ public sealed class SelectionBrushTool : SelectionToolBase
 
     public override ToolId Id => ToolId.SelectionBrush;
 
-    public override string Name => "Selection Brush Tool";
+    public override string Name => Strings.AutoSelectionTools_SelectionBrushTool;
 
-    public override string Hint => "Paint to add to the selection. Alt (or Subtract mode) removes from it.";
+    public override string Hint => Strings.AutoSelectionTools_SelectionBrushHint;
 
     public override ToolCursor Cursor => ToolCursor.Brush;
 
@@ -341,7 +341,7 @@ public sealed class SelectionBrushTool : SelectionToolBase
         PixelSurface result = _stroke.Target;
         _stroke = null;
         Doc.SetSelection(result);
-        PushHistory("Selection Brush");
+        PushHistory(Strings.AutoSelectionTools_SelectionBrush);
         Host.InvalidateCanvas();
     }
 
@@ -352,8 +352,8 @@ public sealed class SelectionBrushTool : SelectionToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Mode:", [("Add", SelectionMode.Add), ("Subtract", SelectionMode.Subtract)], () => Mode, v => Mode = v, 100);
-        options.Number("Size:", 1, 2500, () => Size, v => Size = (float)v, "0", "px");
-        options.Percent("Hardness:", () => Hardness, v => Hardness = v);
+        options.Combo(Strings.EditorCommands_ModeColon, [(Strings.AutoSelectionTools_Add, SelectionMode.Add), (Strings.BlendModes_Subtract, SelectionMode.Subtract)], () => Mode, v => Mode = v, 100);
+        options.Number(Strings.PropertiesPanel_SizeColon, 1, 2500, () => Size, v => Size = (float)v, "0", "px");
+        options.Percent(Strings.OptionsBuilder_HardnessColon, () => Hardness, v => Hardness = v);
     }
 }

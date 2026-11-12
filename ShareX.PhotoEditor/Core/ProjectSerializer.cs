@@ -332,7 +332,7 @@ public static class ProjectSerializer
         {
             dto = JsonSerializer.Deserialize<DocumentDto>(stream, Options) ?? throw new InvalidDataException("The project file is damaged.");
         }
-        if (dto.Version > FormatVersion) throw new InvalidDataException("The project was created by a newer version of the Photo editor.");
+        if (dto.Version > FormatVersion) throw new DocumentOpenException(Strings.ProjectSerializer_NewerVersion);
 
         SKBitmap ReadPng(string name)
         {
@@ -358,34 +358,54 @@ public static class ProjectSerializer
                 case LayerKind.Text:
                     layer = new TextLayer(d.Name)
                     {
-                        Text = d.Text ?? string.Empty, FontFamily = d.FontFamily ?? "Segoe UI", Bold = d.Bold, Italic = d.Italic,
-                        FauxBold = d.FauxBold, FauxItalic = d.FauxItalic, Underline = d.Underline, Strikethrough = d.Strikethrough, AllCaps = d.AllCaps,
-                        FontSize = d.FontSize > 0 ? d.FontSize : 12, Color = d.Color ?? SKColors.Black, Alignment = d.Alignment, Vertical = d.Vertical,
-                        Position = d.Position, BoxSize = d.BoxSize, Tracking = d.Tracking, Leading = d.Leading > 0 ? d.Leading : 1.2f, AntiAlias = d.AntiAlias,
+                        Text = d.Text ?? string.Empty,
+                        FontFamily = d.FontFamily ?? "Segoe UI",
+                        Bold = d.Bold,
+                        Italic = d.Italic,
+                        FauxBold = d.FauxBold,
+                        FauxItalic = d.FauxItalic,
+                        Underline = d.Underline,
+                        Strikethrough = d.Strikethrough,
+                        AllCaps = d.AllCaps,
+                        FontSize = d.FontSize > 0 ? d.FontSize : 12,
+                        Color = d.Color ?? SKColors.Black,
+                        Alignment = d.Alignment,
+                        Vertical = d.Vertical,
+                        Position = d.Position,
+                        BoxSize = d.BoxSize,
+                        Tracking = d.Tracking,
+                        Leading = d.Leading > 0 ? d.Leading : 1.2f,
+                        AntiAlias = d.AntiAlias,
                         Transform = d.Transform ?? SKMatrix.Identity
                     };
                     break;
                 case LayerKind.Shape:
                     layer = new ShapeLayer(d.Name, d.Path?.ToPath() ?? new VectorPath())
                     {
-                        FillColor = d.FillColor, StrokeColor = d.StrokeColor, StrokeWidth = d.StrokeWidth, StrokeAlignment = d.StrokeAlignment, Dashed = d.Dashed
+                        FillColor = d.FillColor,
+                        StrokeColor = d.StrokeColor,
+                        StrokeWidth = d.StrokeWidth,
+                        StrokeAlignment = d.StrokeAlignment,
+                        Dashed = d.Dashed
                     };
                     break;
                 case LayerKind.Group:
-                {
-                    GroupLayer group = new(d.Name) { Expanded = d.Expanded, ArtboardBounds = d.Artboard, ArtboardBackground = d.ArtboardBackground ?? SKColors.White };
-                    foreach (LayerDto child in d.Children ?? []) group.Add(FromDto(child));
-                    layer = group;
-                    break;
-                }
+                    {
+                        GroupLayer group = new(d.Name) { Expanded = d.Expanded, ArtboardBounds = d.Artboard, ArtboardBackground = d.ArtboardBackground ?? SKColors.White };
+                        foreach (LayerDto child in d.Children ?? []) group.Add(FromDto(child));
+                        layer = group;
+                        break;
+                    }
                 case LayerKind.Adjustment:
                     layer = new AdjustmentLayer(d.Name, d.Adjustment ?? new AdjustmentSettings(AdjustmentKind.BrightnessContrast));
                     break;
                 case LayerKind.Fill:
                     layer = new FillLayer(d.Name)
                     {
-                        FillKind = d.FillKind, Color = d.Color ?? SKColors.Gray, Gradient = d.Gradient ?? GradientDefinition.CreateDefault(SKColors.Black, SKColors.White),
-                        Pattern = d.Pattern != null ? new PatternDefinition(d.PatternName ?? "Pattern", ReadPng(d.Pattern)) : null,
+                        FillKind = d.FillKind,
+                        Color = d.Color ?? SKColors.Gray,
+                        Gradient = d.Gradient ?? GradientDefinition.CreateDefault(SKColors.Black, SKColors.White),
+                        Pattern = d.Pattern != null ? new PatternDefinition(d.PatternName ?? Strings.EditorCommands_Pattern, ReadPng(d.Pattern)) : null,
                         PatternScale = d.PatternScale
                     };
                     break;

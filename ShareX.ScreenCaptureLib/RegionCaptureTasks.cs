@@ -29,6 +29,7 @@ using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -79,6 +80,52 @@ public static class RegionCaptureTasks
         return (result.ScreenRectangle, result.WindowInfo);
     }
 
+    /// <summary>
+    /// Returns a copy of <paramref name="source"/> that keeps only the pixels inside <paramref name="regions"/>
+    /// and makes everything else transparent. Regions are in <paramref name="source"/> pixel coordinates.
+    /// </summary>
+    public static Bitmap ApplyRegionMask(Bitmap source, IReadOnlyList<Rectangle> regions)
+    {
+        Bitmap result = new Bitmap(new SKImageInfo(source.Width, source.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        result.Erase(SKColors.Transparent);
+
+        using SKCanvas canvas = new SKCanvas(result);
+        using SKPath path = new SKPath { FillType = SKPathFillType.Winding };
+
+        foreach (Rectangle region in regions)
+        {
+            path.AddRect(SKRect.Create(region.X, region.Y, region.Width, region.Height));
+        }
+
+        canvas.ClipPath(path, SKClipOperation.Intersect, false);
+        canvas.DrawBitmap(source, 0, 0);
+        return result;
+    }
+
+    /// <summary>
+    /// Returns a copy of <paramref name="source"/> that keeps only the pixels inside <paramref name="paths"/>, with
+    /// antialiased edges, and makes everything else transparent. Paths are in <paramref name="source"/> pixel coordinates.
+    /// </summary>
+    public static Bitmap ApplyRegionMask(Bitmap source, IReadOnlyList<SKPath> paths)
+    {
+        Bitmap result = new Bitmap(new SKImageInfo(source.Width, source.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        result.Erase(SKColors.Transparent);
+
+        using SKCanvas canvas = new SKCanvas(result);
+        // Src replaces instead of blending, so where regions overlap their edges are not drawn twice.
+        using SKPaint paint = new SKPaint { BlendMode = SKBlendMode.Src };
+
+        foreach (SKPath path in paths)
+        {
+            canvas.Save();
+            canvas.ClipPath(path, SKClipOperation.Intersect, true);
+            canvas.DrawBitmap(source, 0, 0, paint);
+            canvas.Restore();
+        }
+
+        return result;
+    }
+
     private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
     {
         options ??= new RegionCaptureOptions();
@@ -92,17 +139,16 @@ public static class RegionCaptureTasks
             ? CaptureHelpers.GetActiveScreenBounds()
             : CaptureHelpers.GetScreenBounds();
 
-        SKBitmap frozenScreenshot;
-        using (Bitmap canvas = options.ActiveMonitorMode
+        // The capture is already a new bitmap owned by this request, so it is handed over without a copy.
+        SKBitmap frozenScreenshot = options.ActiveMonitorMode
             ? screenshot.CaptureActiveMonitor()
-            : screenshot.CaptureFullscreen())
-        {
-            frozenScreenshot = canvas.Copy();
-        }
+            : screenshot.CaptureFullscreen();
 
         AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
         {
             Screenshot = frozenScreenshot,
+            // Screen captures are opaque: WindowsImageInterop.Capture and HDR correction set alpha to 255.
+            ScreenshotIsOpaque = true,
             ScreenBounds = screenBounds,
             RegionCaptureOptions = options,
             ImageEditorOptions = new ImageEditorOptions(),

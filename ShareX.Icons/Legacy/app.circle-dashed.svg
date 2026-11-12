@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="r" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdf4a4"/><stop offset="0.125" stop-color="#fdf4a4"/><stop offset="0.25" stop-color="#f7e679"/><stop offset="0.375" stop-color="#ead962"/><stop offset="0.5" stop-color="#d0cf40"/><stop offset="0.625" stop-color="#d8d338"/><stop offset="0.75" stop-color="#e2d72f"/><stop offset="0.875" stop-color="#e8d925"/><stop offset="1" stop-color="#e8d925"/></linearGradient>
+<linearGradient id="ro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ccb301"/><stop offset="0.5" stop-color="#b8a001"/><stop offset="1" stop-color="#998300"/></linearGradient>
+</defs>
+<circle cx="7.5" cy="7.5" r="4" fill="url(#r)" stroke="url(#ro)"/>
+</svg>

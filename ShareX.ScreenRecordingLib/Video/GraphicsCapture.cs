@@ -22,7 +22,7 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         throw new PlatformNotSupportedException("Hardware screen recording requires Windows Graphics Capture.");
     }
 
-    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor, int fps)
+    public GraphicsCapture(GraphicsDevice graphics, GpuVideoProcessor processor, List<Target> targets, bool cursor, int fps, bool hdrToneMapping = false)
     {
         throw new PlatformNotSupportedException("Hardware screen recording requires Windows Graphics Capture.");
     }

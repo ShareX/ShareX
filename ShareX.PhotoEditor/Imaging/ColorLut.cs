@@ -104,7 +104,7 @@ public sealed class ColorLut
 
     private static void ValidateSize(int size)
     {
-        if (size < 2 || size > MaxSize) throw new InvalidDataException($"The table size {size} is not supported.");
+        if (size < 2 || size > MaxSize) throw new InvalidDataException(string.Format(Strings.ColorLut_SizeNotSupported, size));
     }
 
     private static float ParseNumber(string text) => float.Parse(text, NumberStyles.Float, CultureInfo.InvariantCulture);
@@ -126,7 +126,7 @@ public sealed class ColorLut
                 switch (parts[0].ToUpperInvariant())
                 {
                     case "LUT_1D_SIZE":
-                        throw new InvalidDataException("1D lookup tables are not supported.");
+                        throw new InvalidDataException(Strings.ColorLut_1DNotSupported);
                     case "LUT_3D_SIZE":
                         size = int.Parse(parts[1], CultureInfo.InvariantCulture);
                         ValidateSize(size);
@@ -141,15 +141,15 @@ public sealed class ColorLut
                 }
                 continue;
             }
-            if (size == 0) throw new InvalidDataException("The file has no LUT_3D_SIZE entry.");
-            if (parts.Length < 3 || count + 3 > values.Length) throw new InvalidDataException("The table data does not match its size.");
+            if (size == 0) throw new InvalidDataException(Strings.ColorLut_NoSizeEntry);
+            if (parts.Length < 3 || count + 3 > values.Length) throw new InvalidDataException(Strings.ColorLut_DataSizeMismatch);
             for (int i = 0; i < 3; i++) values[count++] = ParseNumber(parts[i]);
         }
-        if (size == 0) throw new InvalidDataException("The file has no LUT_3D_SIZE entry.");
-        if (count != values.Length) throw new InvalidDataException("The table data does not match its size.");
+        if (size == 0) throw new InvalidDataException(Strings.ColorLut_NoSizeEntry);
+        if (count != values.Length) throw new InvalidDataException(Strings.ColorLut_DataSizeMismatch);
         if (domainMin.Length != 3 || domainMax.Length != 3 || Enumerable.Range(0, 3).Any(i => domainMax[i] <= domainMin[i]))
         {
-            throw new InvalidDataException("The table domain is not valid.");
+            throw new InvalidDataException(Strings.ColorLut_InvalidDomain);
         }
         return Create(size, values, domainMin, domainMax);
     }
@@ -174,7 +174,7 @@ public sealed class ColorLut
         }
         int size = (int)MathF.Round(MathF.Pow(entries.Count / 3f, 1 / 3f));
         ValidateSize(size);
-        if (size * size * size * 3 != entries.Count) throw new InvalidDataException("The table data does not match its size.");
+        if (size * size * size * 3 != entries.Count) throw new InvalidDataException(Strings.ColorLut_DataSizeMismatch);
         float scale = peak <= 1 ? 1 : peak <= 1023 ? 1023 : peak <= 4095 ? 4095 : 65535;
         float[] values = new float[entries.Count];
         int index = 0;

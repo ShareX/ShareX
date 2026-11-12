@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DrawLineEffect : ImageEffectBase
     public override string Id => "draw_line";
     public override string Name => "Line";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.minus;
+    public override string IconKey => ImageEditorIcons.Line;
     public override string Description => "Draws a line on the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

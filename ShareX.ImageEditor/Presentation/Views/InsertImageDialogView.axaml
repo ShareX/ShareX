@@ -1,9 +1,10 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icons="using:ShareX.Icons"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="using:ShareX.ImageEditor.Presentation.ViewModels"
-             xmlns:theming="clr-namespace:ShareX.AvaloniaUI.Theming;assembly=ShareX.Avalonia"
              xmlns:res="using:ShareX.ImageEditor.Localization"
              mc:Ignorable="d" d:DesignWidth="430" d:DesignHeight="310"
              x:Class="ShareX.ImageEditor.Presentation.Views.InsertImageDialogView"
@@ -36,10 +37,8 @@
                             Height="32"
                             Padding="0"
                             HorizontalAlignment="Right">
-                        <TextBlock Text="{x:Static theming:LucideIcons.x}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontWeight="Normal"
-                                   FontSize="16"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
+                                                FontSize="16"/>
                     </Button>
                 </Grid>
             </Border>
@@ -52,11 +51,9 @@
                         Padding="14,10"
                         MinHeight="58">
                     <StackPanel Orientation="Horizontal" Spacing="12">
-                        <TextBlock Text="{x:Static theming:LucideIcons.locate_fixed}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Locate}"
+                                                FontSize="18"
+                                                VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Center}" FontWeight="Normal"/>
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_CenterDescription}"
@@ -74,11 +71,9 @@
                         Padding="14,10"
                         MinHeight="58">
                     <StackPanel Orientation="Horizontal" Spacing="12">
-                        <TextBlock Text="{x:Static theming:LucideIcons.arrow_down_to_line}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowDownToLine}"
+                                                FontSize="18"
+                                                VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Below}" FontWeight="Normal"/>
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_BelowDescription}"
@@ -96,11 +91,9 @@
                         Padding="14,10"
                         MinHeight="58">
                     <StackPanel Orientation="Horizontal" Spacing="12">
-                        <TextBlock Text="{x:Static theming:LucideIcons.arrow_right_to_line}"
-                                   FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                   FontSize="18"
-                                   FontWeight="Normal"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRightToLine}"
+                                                FontSize="18"
+                                                VerticalAlignment="Center"/>
                         <StackPanel Spacing="2" VerticalAlignment="Center">
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_Right}" FontWeight="Normal"/>
                                 <TextBlock Text="{x:Static res:Strings.InsertImageDialogView_RightDescription}"

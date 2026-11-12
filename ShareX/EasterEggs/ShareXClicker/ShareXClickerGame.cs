@@ -25,7 +25,7 @@
 
 #nullable enable
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,24 +40,24 @@ public sealed class ShareXClickerGame
 
     public static readonly IReadOnlyList<ShareXClickerBuilding> Buildings =
     [
-        new("auto-clicker", "Auto Clicker", LucideIcons.mouse_pointer_click, 15, 1, 10),
-        new("sharex-bot", "ShareX Bot", LucideIcons.bot, 100, 6, 100),
-        new("screenshot-station", "Screenshot Station", LucideIcons.monitor, 600, 30, 500),
-        new("upload-server", "Upload Server", LucideIcons.server, 3500, 150, 2500),
-        new("screenshot-factory", "Screenshot Factory", LucideIcons.factory, 20000, 800, 10000),
-        new("sharex-datacenter", "ShareX Datacenter", LucideIcons.database, 120000, 4000, 50000),
-        new("capture-cloud", "Capture Cloud", LucideIcons.cloud, 700000, 20000, 250000),
-        new("sharex-satellite", "ShareX Satellite", LucideIcons.satellite, 4000000, 100000, 1000000)
+        new("auto-clicker", "Auto Clicker", AppIcons.PointerClick, 15, 1, 10),
+        new("sharex-bot", "ShareX Bot", AppIcons.Robot, 100, 6, 100),
+        new("screenshot-station", "Screenshot Station", AppIcons.Monitor, 600, 30, 500),
+        new("upload-server", "Upload Server", AppIcons.Server, 3500, 150, 2500),
+        new("screenshot-factory", "Screenshot Factory", AppIcons.Factory, 20000, 800, 10000),
+        new("sharex-datacenter", "ShareX Datacenter", AppIcons.Database, 120000, 4000, 50000),
+        new("capture-cloud", "Capture Cloud", AppIcons.Cloud, 700000, 20000, 250000),
+        new("sharex-satellite", "ShareX Satellite", AppIcons.Satellite, 4000000, 100000, 1000000)
     ];
 
     public static readonly IReadOnlyList<ShareXClickerUpgrade> Upgrades =
     [
-        new("better-click", "Better Click", LucideIcons.mouse_pointer_click, 50, 25, "+1 base logo per click", 1, 1, 1),
-        new("double-click", "Double Click", LucideIcons.mouse, 500, 250, "2x manual click value", 0, 2, 1),
-        new("workflow-automation", "Workflow Automation", LucideIcons.zap, 2500, 1000, "2x generator output", 0, 1, 2),
-        new("pixel-perfect", "Pixel Perfect", LucideIcons.target, 15000, 7500, "+4 base logos per click", 4, 1, 1),
-        new("parallel-uploads", "Parallel Uploads", LucideIcons.cloud_upload, 75000, 35000, "3x generator output", 0, 1, 3),
-        new("quantum-compression", "Quantum Compression", LucideIcons.sparkles, 1000000, 500000, "2x all logo production", 0, 2, 2)
+        new("better-click", "Better Click", AppIcons.PointerClick, 50, 25, "+1 base logo per click", 1, 1, 1),
+        new("double-click", "Double Click", AppIcons.Mouse, 500, 250, "2x manual click value", 0, 2, 1),
+        new("workflow-automation", "Workflow Automation", AppIcons.Zap, 2500, 1000, "2x generator output", 0, 1, 2),
+        new("pixel-perfect", "Pixel Perfect", AppIcons.Target, 15000, 7500, "+4 base logos per click", 4, 1, 1),
+        new("parallel-uploads", "Parallel Uploads", AppIcons.CloudUpload, 75000, 35000, "3x generator output", 0, 1, 3),
+        new("quantum-compression", "Quantum Compression", AppIcons.Sparkles, 1000000, 500000, "2x all logo production", 0, 2, 2)
     ];
 
     private readonly ShareXClickerState _state;

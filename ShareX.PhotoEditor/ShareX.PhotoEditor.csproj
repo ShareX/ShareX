@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net10.0-windows10.0.22621.0</TargetFramework>
+    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net10.0-windows</TargetFramework>
     <TargetFramework Condition="'$(OS)' != 'Windows_NT'">net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -23,9 +23,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Localization\Strings.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Localization\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="SkiaSharp" />
     <Using Include="ShareX.PhotoEditor.Core" />
     <Using Include="ShareX.PhotoEditor.Imaging" />
+    <Using Include="ShareX.PhotoEditor.Localization" />
+    <Using Include="ShareX.Icons" />
     <Using Include="ShareX.PhotoEditor.Imaging.SelectionMode" Alias="SelectionMode" />
     <Using Include="ShareX.PhotoEditor.Core.GradientStop" Alias="GradientStop" />
     <Using Include="ShareX.PhotoEditor.Core.TextAlignment" Alias="TextAlignment" />

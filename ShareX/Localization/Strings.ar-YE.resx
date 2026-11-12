@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>بعد الرفع</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>أيضًا</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>اسم الملف</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>نسخ الملف</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>يضع الملف المحفوظ في الحافظة.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>نسخ مسار الملف</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>ينسخ مسار الملف المحفوظ.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>نسخ مسار المجلد</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>ينسخ مجلد الملف المحفوظ.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>نسخ الصورة</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>يضع الصورة في الحافظة.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>نسخ الرابط</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>يرفعه ثم ينسخ الرابط.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>تتحدد الخطوات المطلوبة حسب هدفك. أضف ما تريد من الخيارات الإضافية.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>ما الذي تريد وضعه في الحافظة؟</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>بعد الالتقاط</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>لا تتوفر معاينة للصورة</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>مطلوب لهذا الهدف</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>راجع المحتوى الملتقط واختر ما سيحدث بعد ذلك.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>الرفع</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>إظهار أشرطة التمرير بعرضها الكامل دائمًا</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>التطبيق</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>صيغة الحافظة</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>الوضع المضغوط</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>مسار مخصص لإعدادات اختصارات لوحة المفاتيح</value>
@@ -472,6 +520,24 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>الفاصل الزمني لتكرار الاختصار (مللي ثانية)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>حزمة الأيقونات:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>الكلاسيكية</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>حديثة</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>الأيقونات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>ظهور معاينة الصورة:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>موقع معاينة الصورة:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>إعدادات طباعة الصورة...</value>
   </data>
@@ -504,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>فاتح</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>عرض كقائمة</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>النافذة الرئيسية</value>
@@ -625,8 +694,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>عرض عارض محتوى الحافظة</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>عرض الأعمدة</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>عرض الخيار "تعديل باستخدام ShareX" على قائمة خيارات الملفات</value>
+    <value>عرض الخيار "تعديل في محرر الصور الخاص بـ ShareX" على قائمة خيارات الملفات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>عرض الخيار "تعديل في محرر الصور في ShareX" على قائمة خيارات الملفات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>طلب التأكيد قبل حذف الملفات</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>حد التحذير للملفات الكبيرة (ميغابايت)</value>
@@ -664,6 +742,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>عدد المرفوعات في الوقت نفسه:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>التباعد</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>مضغوط</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>الافتراضي</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>القوائم</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>القوائم:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>المعاينة:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>نوافذ الإعدادات:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>الشريط الجانبي</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>الشريط الجانبي:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>قوائم الأدوات</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>قوائم الأدوات:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +783,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>نمط المجلدات الفرعية:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>طريقة عرض المهام:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>المظهر</value>
@@ -1213,6 +1327,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>فشل حفظ الأعدادات</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>لا تذكّرني مرة أخرى</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>إلغاء</value>
   </data>
@@ -1322,11 +1439,29 @@
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - إعدادات اختصارات لوحة المفاتيح</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>يمكنك تغيير هذا في أي وقت من إعدادات التطبيق.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>أيقونات ملونة ومفصّلة بأسلوب كلاسيكي.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>أيقونات خطية بسيطة تتبع ألوان السمة.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>يحتوي ShareX على أيقونات جديدة. اختر المظهر الذي تفضله.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>اختر أيقوناتك</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>فشل إنشاء الصورة إلى:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>تعديل باستخدام ShareX</value>
+    <value>تعديل في محرر الصور الخاص بـ ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>تعديل في محرر الصور في ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>رفع باستخدام ShareX</value>
@@ -1396,6 +1531,9 @@
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>لقطة شاشة</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>المسطرة</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>عارض الحافظة</value>
@@ -1520,6 +1658,9 @@
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>مراقب الشبكة...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>جديد</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>لا توجد إعدادات مسبقة لتأثيرات الصور</value>
   </data>
@@ -1547,6 +1688,9 @@
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>منطقة...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>منطقة (شفافة)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>متصفح التخزين البعيد...</value>
   </data>
@@ -1554,7 +1698,7 @@
     <value>إعادة التشغيل كمسؤول</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>المسطرة</value>
+    <value>القياس</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>منتقي الألوان</value>
@@ -1564,6 +1708,9 @@
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>تسجيل الشاشة (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>مرة واحدة فقط</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>مجلد لقطات الشاشة...</value>
@@ -1669,6 +1816,9 @@
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>تحسين صورة</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>مسح قائمة المهام</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>مسح عرض الصور المصغرة</value>
@@ -1831,6 +1981,12 @@
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>إيقاف الرفع</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>تبديل إلى طريقة عرض القائمة</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>تبديل إلى طريقة عرض الشبكة</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>النص</value>
@@ -2089,23 +2245,20 @@
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>ابدأ</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>اختر الشكل والمظهر المناسبين للتطبيق.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>اجعل ShareX مناسبًا لك</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>مفتوح المصدر • مصمم لنظام Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>يمكنك تغيير هذه الخيارات في أي وقت من إعدادات التطبيق.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>واسع</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>شكرًا لتنزيلك ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>استخدام إعداد النظام</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>مرحبًا بك في ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>التقط أي شيء وحرّره وشاركه بطريقتك.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>هل تريد إضافة أداة الرفع المخصصة «{0}»؟</value>
@@ -2131,6 +2284,33 @@
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>تم تعطيل اختصارات لوحة المفاتيح.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>المنقضي</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>اسم الملف</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>إدراج في الطابور</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>التقدّم</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>المتبقي</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>السرعة</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>عنوان URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>اكتمل الرفع. الرابط: {0}</value>
@@ -2207,6 +2387,9 @@
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>نسخ الصورة تلقائيًا إلى الحافظة</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>توسيع اللوحة تلقائيًا عند تجاوز النص أو الأشكال للحافة</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>رقم متزايد تلقائيًا:</value>
   </data>
@@ -2239,6 +2422,9 @@
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>إلغاء</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>لون تعبئة مساحة اللوحة المضافة:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>الالتقاط</value>
@@ -2285,6 +2471,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>إغلاق نافذة OCR بعد فتح رابط الخدمة</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>شريط أدوات مضغوط لالتقاط المنطقة</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>تكوين...</value>
   </data>
@@ -2300,9 +2489,6 @@
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>تخصيص شريط الأدوات...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>اللغة الافتراضية:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>حذف ملف الإدخال</value>
   </data>
@@ -2315,8 +2501,8 @@
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>اكتشاف مناطق النوافذ</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>تعتيم الكل باستثناء التحديد الحالي</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>تعتيم النوافذ وعناصر التحكم عند المرور فوقها</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>تعطيل الإشعارات في وضع ملء الشاشة</value>
@@ -2489,6 +2675,9 @@
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>إجراء النقر الأوسط:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>الشاشة:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>نقر زر الماوس 4:</value>
   </data>
@@ -2501,6 +2690,12 @@
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>خيارات تمييز الماوس...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>عجلة الفأرة:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>ما يفعله التمرير بالمكبر. اضغط مع الاستمرار على Ctrl أثناء التمرير لتنفيذ الإجراء الآخر.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>نقل إلى أسفل</value>
   </data>
@@ -2509,6 +2704,9 @@
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>نقل إلى أعلى</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>وضع تعدد المناطق</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>الاسم</value>
@@ -2579,6 +2777,9 @@
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>استخدام مسجل الشاشة المدمج</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>تعيين نغمات HDR</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>اشتراط ترميز الفيديو بواسطة العتاد</value>
   </data>
@@ -2620,12 +2821,6 @@
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>مساعدة OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>لغات OCR غير متاحة</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>تطبيق التأثيرات على التقاط المنطقة فقط</value>
@@ -2789,6 +2984,9 @@
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>إجراء النقر الأيمن:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>النقر بزر الماوس الأيمن يحذف الشكل الموجود تحت المؤشر</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>انقر بزر الماوس الأيمن لإدراج رمز ملف إدخال أو إخراج.</value>
   </data>
@@ -2924,8 +3122,17 @@
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>المنطقة الزمنية:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>الشاشة {0} (غير متصلة)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>الشاشة {0}: {1} ({2} عند {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>الإشعار</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>حجم أزرار شريط الأدوات (بكسل):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>الأدوات</value>
@@ -2975,6 +3182,9 @@
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>استخدام منطقة زمنية مخصصة</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>استخدام حجم مخصص لأزرار شريط الأدوات</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>استخدام مدة ثابتة</value>
   </data>
@@ -3004,6 +3214,18 @@
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>صوت Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>جهد ضغط WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>القيم الأقل تجعل الترميز أسرع. القيم الأعلى تنتج ملفات أصغر. جميع القيم تحافظ على جودة الصورة.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>بدون فقدان</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>جودة WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>العرض:</value>

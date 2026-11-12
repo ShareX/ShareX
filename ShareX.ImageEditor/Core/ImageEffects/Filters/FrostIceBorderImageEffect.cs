@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class FrostIceBorderImageEffect : ImageEffectBase
     public override string Id => "frost_ice_border";
     public override string Name => "Frost ice border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.snowflake;
+    public override string IconKey => ImageEffectIcons.Snowflake;
     public override string Description => "Adds a frosted ice crystal border with rime buildup and icy blue highlights.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

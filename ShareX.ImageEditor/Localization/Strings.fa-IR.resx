@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>اندازه قلم</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>پیکان آزاد</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>تراز افقی</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>انجام مجدد (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>گوشه‌های گرد</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>ذخیره</value>
@@ -282,6 +288,15 @@
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>لغو (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>رنگ پرکردن ناحیه افزوده‌شده</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>بارگیری تصویر از کلیپ‌بورد ناموفق بود.
 کلیپ‌بورد حاوی تصویر نیست.</value>
@@ -335,6 +350,12 @@
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>حاشیه</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>جدید از عکس صفحه (تمام صفحه)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>جدید از عکس صفحه (ناحیه)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>باز کردن تصویر</value>
@@ -1386,8 +1407,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>تأیید</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>اصلی</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>بازنشانی نوار ابزار به حالت پیش‌فرض</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>ثانویه</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>نمایش / پنهان کردن</value>
@@ -1400,6 +1427,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>تاری</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>اندازه بوم</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>تکثیر</value>

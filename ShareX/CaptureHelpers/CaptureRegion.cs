@@ -55,18 +55,15 @@ namespace ShareX
                 ? CaptureHelpers.GetActiveScreenBounds()
                 : CaptureHelpers.GetScreenBounds();
 
-            SKBitmap frozenScreenshot;
-            using (Bitmap canvas = activeMonitorMode
+            // The capture is already a new bitmap owned by this request, so it is handed over without a copy.
+            SKBitmap frozenScreenshot = activeMonitorMode
                 ? screenshot.CaptureActiveMonitor()
-                : screenshot.CaptureFullscreen())
-            {
-                if (canvas == null)
-                {
-                    DebugHelper.WriteLine("CaptureRegion: Failed to capture screen (canvas is null).");
-                    return null;
-                }
+                : screenshot.CaptureFullscreen();
 
-                frozenScreenshot = canvas.Copy();
+            if (frozenScreenshot == null)
+            {
+                DebugHelper.WriteLine("CaptureRegion: Failed to capture screen (frozenScreenshot is null).");
+                return null;
             }
 
             SKBitmap cursorBitmap = null;
@@ -77,8 +74,7 @@ namespace ShareX
                 CursorData cursorData = new CursorData();
                 if (cursorData.IsVisible)
                 {
-                    using Bitmap cursor = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
-                    cursorBitmap = cursor.Copy();
+                    cursorBitmap = cursorData.ToBitmap(frozenScreenshot, screenBounds.Location);
                     cursorPosition = new Point(
                         cursorData.DrawPosition.X - screenBounds.X,
                         cursorData.DrawPosition.Y - screenBounds.Y);
@@ -88,10 +84,13 @@ namespace ShareX
             AvaloniaRegionCaptureRequest request = new AvaloniaRegionCaptureRequest
             {
                 Screenshot = frozenScreenshot,
+                // Screen captures are opaque: WindowsImageInterop.Capture and HDR correction set alpha to 255.
+                ScreenshotIsOpaque = true,
                 ScreenBounds = screenBounds,
                 RegionCaptureOptions = taskSettings.CaptureSettingsReference.RegionCaptureOptions,
                 ImageEditorOptions = taskSettings.ToolsSettingsReference.ImageEditorOptions,
                 EnableAnnotations = !taskSettings.AdvancedSettings.RegionCaptureDisableAnnotation,
+                AllowMultipleRegions = true,
                 CursorBitmap = cursorBitmap,
                 CursorPosition = cursorPosition
             };

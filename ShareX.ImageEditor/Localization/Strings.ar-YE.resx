@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>حجم الخط</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>سهم حر</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>المحاذاة الأفقية</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>إعادة (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>زوايا مستديرة</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>حفظ</value>
@@ -282,6 +288,15 @@
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>إلغاء (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>لون تعبئة المساحة المضافة</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>تعذر تحميل الصورة من الحافظة.
 لا تحتوي الحافظة على صورة.</value>
@@ -335,6 +350,12 @@
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>الهامش</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>جديد من لقطة شاشة (ملء الشاشة)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>جديد من لقطة شاشة (منطقة)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>فتح صورة</value>
@@ -1386,8 +1407,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>موافق</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>أساسي</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>إعادة تعيين شريط الأدوات إلى الافتراضي</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>ثانوي</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>إظهار / إخفاء</value>
@@ -1400,6 +1427,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>تمويه</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>حجم اللوحة</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>استنساخ</value>

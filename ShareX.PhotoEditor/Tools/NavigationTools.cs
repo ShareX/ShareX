@@ -38,9 +38,9 @@ public sealed class HandTool : ToolBase
 
     public override ToolId Id => ToolId.Hand;
 
-    public override string Name => "Hand Tool";
+    public override string Name => Strings.NavigationTools_HandTool;
 
-    public override string Hint => "Drag to scroll the view. Hold Space with any tool to use the Hand tool temporarily. Double-click to fit on screen.";
+    public override string Hint => Strings.NavigationTools_HandHint;
 
     public override ToolCursor Cursor => _last != null ? ToolCursor.Grab : ToolCursor.Hand;
 
@@ -68,8 +68,8 @@ public sealed class HandTool : ToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.Button("100%", () => { Host.View?.ActualPixels(); Host.InvalidateOverlay(); });
-        options.Button("Fit Screen", () => { Host.View?.FitOnScreen(); Host.InvalidateOverlay(); });
-        options.Button("Fill Screen", () => { Host.View?.FillScreen(); Host.InvalidateOverlay(); });
+        options.Button(Strings.NavigationTools_FitScreen, () => { Host.View?.FitOnScreen(); Host.InvalidateOverlay(); });
+        options.Button(Strings.EditorCommands_FillScreen, () => { Host.View?.FillScreen(); Host.InvalidateOverlay(); });
     }
 }
 
@@ -85,9 +85,9 @@ public sealed class RotateViewTool : ToolBase
 
     public override ToolId Id => ToolId.RotateView;
 
-    public override string Name => "Rotate View Tool";
+    public override string Name => Strings.NavigationTools_RotateViewTool;
 
-    public override string Hint => "Drag to rotate the canvas view without changing pixels. Shift snaps to 15 degrees. Esc or Reset View restores it.";
+    public override string Hint => Strings.NavigationTools_RotateViewHint;
 
     public override ToolCursor Cursor => ToolCursor.Rotate;
 
@@ -132,13 +132,13 @@ public sealed class RotateViewTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Number("Rotation Angle:", -360, 360, () => Host.View?.Rotation ?? 0, v =>
+        options.Number(Strings.NavigationTools_RotationAngleColon, -360, 360, () => Host.View?.Rotation ?? 0, v =>
         {
             if (Host.View == null) return;
             Host.View.Rotation = v;
             Host.InvalidateOverlay();
         }, "0", "°");
-        options.Button("Reset View", () =>
+        options.Button(Strings.NavigationTools_ResetView, () =>
         {
             if (Host.View == null) return;
             Host.View.Rotation = 0;
@@ -163,9 +163,9 @@ public sealed class ZoomTool : ToolBase
 
     public override ToolId Id => ToolId.Zoom;
 
-    public override string Name => "Zoom Tool";
+    public override string Name => Strings.NavigationTools_ZoomTool;
 
-    public override string Hint => "Click to zoom in, Alt-click to zoom out. Drag left/right for scrubby zoom, or drag a rectangle when scrubby zoom is off.";
+    public override string Hint => Strings.NavigationTools_ZoomHint;
 
     public override ToolCursor Cursor => _zoomOut ? ToolCursor.ZoomOut : ToolCursor.ZoomIn;
 
@@ -233,12 +233,12 @@ public sealed class ZoomTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.IconButton("zoom-in", "Zoom in", () => { Host.View?.ZoomStep(true, Center()); Host.InvalidateOverlay(); });
-        options.IconButton("zoom-out", "Zoom out", () => { Host.View?.ZoomStep(false, Center()); Host.InvalidateOverlay(); });
-        options.Check("Scrubby Zoom", () => ScrubbyZoom, v => ScrubbyZoom = v);
+        options.IconButton(PhotoEditorIcons.ZoomIn, Strings.NavigationTools_ZoomInTip, () => { Host.View?.ZoomStep(true, Center()); Host.InvalidateOverlay(); });
+        options.IconButton(PhotoEditorIcons.ZoomOut, Strings.NavigationTools_ZoomOutTip, () => { Host.View?.ZoomStep(false, Center()); Host.InvalidateOverlay(); });
+        options.Check(Strings.NavigationTools_ScrubbyZoom, () => ScrubbyZoom, v => ScrubbyZoom = v);
         options.Button("100%", () => { Host.View?.ActualPixels(); Host.InvalidateOverlay(); });
-        options.Button("Fit Screen", () => { Host.View?.FitOnScreen(); Host.InvalidateOverlay(); });
-        options.Button("Fill Screen", () => { Host.View?.FillScreen(); Host.InvalidateOverlay(); });
+        options.Button(Strings.NavigationTools_FitScreen, () => { Host.View?.FitOnScreen(); Host.InvalidateOverlay(); });
+        options.Button(Strings.EditorCommands_FillScreen, () => { Host.View?.FillScreen(); Host.InvalidateOverlay(); });
     }
 
     private Point Center() => Host.View == null ? default : new Point(Host.View.Viewport.Width / 2, Host.View.Viewport.Height / 2);

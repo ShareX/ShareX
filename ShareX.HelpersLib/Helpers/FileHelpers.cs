@@ -40,7 +40,7 @@ namespace ShareX.HelpersLib
 {
     public static class FileHelpers
     {
-        public static readonly FrozenSet<string> ImageFileExtensions = new[] { "jpg", "jpeg", "png", "gif", "bmp", "ico" }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
+        public static readonly FrozenSet<string> ImageFileExtensions = new[] { "jpg", "jpeg", "png", "gif", "bmp", "ico", "webp" }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
         public static readonly FrozenSet<string> TextFileExtensions = new[] { "txt", "log", "nfo", "c", "cpp", "cc", "cxx", "h", "hpp", "hxx", "cs", "vb",
             "html", "htm", "xhtml", "xht", "xml", "css", "js", "php", "bat", "java", "lua", "py", "pl", "cfg", "ini", "dart", "go", "gohtml" }.ToFrozenSet(StringComparer.OrdinalIgnoreCase);
         public static readonly FrozenSet<string> VideoFileExtensions = new[] { "mp4", "webm", "mkv", "avi", "vob", "ogv", "ogg", "mov", "qt", "wmv", "m4p",

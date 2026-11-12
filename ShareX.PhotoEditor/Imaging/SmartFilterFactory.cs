@@ -23,9 +23,9 @@
 
 #endregion License Information (GPL v3)
 
-using System.Globalization;
 using ShareX.ImageEditor.Core.ImageEffects;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
+using System.Globalization;
 
 namespace ShareX.PhotoEditor.Imaging;
 
@@ -99,7 +99,7 @@ public static class SmartFilterFactory
             Foreground = context.Foreground,
             Background = context.Background
         };
-        return new SmartFilter(filter.Name, filter.Key(values) + "#" + index, FilterFunc(filter, values, context)) { Recipe = recipe };
+        return new SmartFilter(filter.DisplayName, filter.Key(values) + "#" + index, FilterFunc(filter, values, context)) { Recipe = recipe };
     }
 
     public static SmartFilter CreateAdjustment(string name, AdjustmentSettings settings, int index)
@@ -131,26 +131,26 @@ public static class SmartFilterFactory
             switch (recipe.Kind)
             {
                 case FilterKind:
-                {
-                    FilterDefinition? definition = Filters.All.FirstOrDefault(f => f.Category + "|" + f.Name == recipe.Id);
-                    if (definition == null) return null;
-                    Dictionary<string, float> values = definition.Defaults;
-                    foreach (KeyValuePair<string, float> pair in recipe.Values ?? []) values[pair.Key] = pair.Value;
-                    FilterContext context = new() { Foreground = recipe.Foreground, Background = recipe.Background, Seed = recipe.Seed };
-                    result = new SmartFilter(name, key, FilterFunc(definition, values, context)) { Recipe = recipe };
-                    break;
-                }
+                    {
+                        FilterDefinition? definition = Filters.All.FirstOrDefault(f => f.Category + "|" + f.Name == recipe.Id);
+                        if (definition == null) return null;
+                        Dictionary<string, float> values = definition.Defaults;
+                        foreach (KeyValuePair<string, float> pair in recipe.Values ?? []) values[pair.Key] = pair.Value;
+                        FilterContext context = new() { Foreground = recipe.Foreground, Background = recipe.Background, Seed = recipe.Seed };
+                        result = new SmartFilter(name, key, FilterFunc(definition, values, context)) { Recipe = recipe };
+                        break;
+                    }
                 case AdjustmentKind when recipe.Adjustment != null:
                     result = new SmartFilter(name, key, AdjustmentFunc(recipe.Adjustment)) { Recipe = recipe };
                     break;
                 case LibraryKind:
-                {
-                    Type? type = LibraryTypes.Value.FirstOrDefault(t => (t.FullName ?? t.Name) == recipe.Id);
-                    if (type == null) return null;
-                    Dictionary<string, object?> values = (recipe.Library ?? []).ToDictionary(v => v.Key, v => DecodeValue(v.Value));
-                    result = new SmartFilter(name, key, LibraryFunc(type, values)) { Recipe = recipe };
-                    break;
-                }
+                    {
+                        Type? type = LibraryTypes.Value.FirstOrDefault(t => (t.FullName ?? t.Name) == recipe.Id);
+                        if (type == null) return null;
+                        Dictionary<string, object?> values = (recipe.Library ?? []).ToDictionary(v => v.Key, v => DecodeValue(v.Value));
+                        result = new SmartFilter(name, key, LibraryFunc(type, values)) { Recipe = recipe };
+                        break;
+                    }
             }
             if (result != null) result.Enabled = enabled;
             return result;
@@ -189,11 +189,11 @@ public static class SmartFilterFactory
             case 'i': return int.Parse(body, CultureInfo.InvariantCulture);
             case 'f': return float.Parse(body, CultureInfo.InvariantCulture);
             case 'e':
-            {
-                int split = body.IndexOf('|');
-                Type? type = typeof(ImageEffectBase).Assembly.GetType(body[..split]) ?? Type.GetType(body[..split]);
-                return type != null && Enum.TryParse(type, body[(split + 1)..], out object? parsed) ? parsed : null;
-            }
+                {
+                    int split = body.IndexOf('|');
+                    Type? type = typeof(ImageEffectBase).Assembly.GetType(body[..split]) ?? Type.GetType(body[..split]);
+                    return type != null && Enum.TryParse(type, body[(split + 1)..], out object? parsed) ? parsed : null;
+                }
             default: return null;
         }
     }

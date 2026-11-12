@@ -34,20 +34,19 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
-using ShareX.Localization;
+using ShareX.Icons;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
-using MessageBox = ShareX.AvaloniaUI.MessageBox;
-using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
-using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -78,7 +77,9 @@ public partial class NotificationWindow : Window
     public NotificationWindow()
     {
         InitializeComponent();
-        RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        // The card, caption and action bar are dark whatever the app theme, so the theme dependent accent brushes
+        // (the card border) must resolve for a dark background.
+        RequestedThemeVariant = ThemeManager.ShareXDark;
 
         _durationTimer = new DispatcherTimer();
         _durationTimer.Tick += OnDurationElapsed;
@@ -87,8 +88,26 @@ public partial class NotificationWindow : Window
         _hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40) };
         _hoverTimer.Tick += OnHoverTick;
 
+        ApplyToolWindowStyle();
+
         Opened += OnOpened;
         Closed += OnClosed;
+    }
+
+    // ShowInTaskbar="False" alone leaves the window in Alt+Tab, so mark it as a tool window
+    // before it is first shown, and keep the styles whenever Avalonia rewrites them.
+    private void ApplyToolWindowStyle()
+    {
+        const uint extraExStyles = (uint)(WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE);
+
+        Win32Properties.AddWindowStylesCallback(this, (style, exStyle) => (style, exStyle | extraExStyles));
+
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        if (handle != IntPtr.Zero)
+        {
+            WindowInfo info = new(handle);
+            info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW | WindowStyles.WS_EX_NOACTIVATE;
+        }
     }
 
     public static void Show(NotificationWindowConfig config)
@@ -264,14 +283,14 @@ public partial class NotificationWindow : Window
             string label = string.IsNullOrWhiteSpace(definition.Label)
                 ? definition.Action.GetLocalizedDescription()
                 : definition.Label;
-            string icon = string.IsNullOrWhiteSpace(definition.Icon)
-                ? NotificationActionButton.GetDefaultIcon(definition.Action)
-                : definition.Icon;
+            // A saved icon that is not an icon key, such as one from an older version, falls back to the default.
+            string icon = IconCatalog.Find(definition.Icon) != null
+                ? definition.Icon!
+                : NotificationActionButton.GetDefaultIcon(definition.Action);
 
-            TextBlock iconText = new()
+            IconPresenter iconText = new()
             {
-                Text = icon,
-                FontFamily = (FontFamily)Application.Current!.FindResource("ShareX.FontFamily.Icon")!,
+                Icon = icon,
                 FontSize = iconSize,
                 HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center,
                 VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center
@@ -317,8 +336,7 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
-        Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y)) ?? Screens.Primary;
+        Screen? screen = GetTargetScreen(_config.Monitor, _config.MonitorDeviceName);
         if (screen == null)
         {
             return;
@@ -330,6 +348,31 @@ public partial class NotificationWindow : Window
         int x = GetHorizontalPosition(_config.Placement, area, size.Width, offset);
         int y = GetVerticalPosition(_config.Placement, area, size.Height, offset);
         Position = new PixelPoint(x, y);
+    }
+
+    // A specific monitor that is no longer connected falls back to the primary monitor.
+    private Screen? GetTargetScreen(ToastWindowMonitor monitor, string? deviceName)
+    {
+        if (monitor == ToastWindowMonitor.SpecificMonitor && !string.IsNullOrEmpty(deviceName))
+        {
+            Screen? namedScreen = Screens.All.FirstOrDefault(x =>
+                string.Equals(DesktopScreen.GetDeviceName(x), deviceName, StringComparison.OrdinalIgnoreCase));
+            if (namedScreen != null)
+            {
+                return namedScreen;
+            }
+        }
+        else if (monitor == ToastWindowMonitor.ActiveMonitor)
+        {
+            System.Drawing.Point cursor = CaptureHelpers.GetCursorPosition();
+            Screen? cursorScreen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y));
+            if (cursorScreen != null)
+            {
+                return cursorScreen;
+            }
+        }
+
+        return Screens.Primary;
     }
 
     private static int GetHorizontalPosition(DrawingContentAlignment placement, PixelRect area, int width, int offset) => placement switch
@@ -620,9 +663,7 @@ public partial class NotificationWindow : Window
                     TaskHelpers.PinToScreen(config.FilePath);
                     break;
                 case ToastClickAction.DeleteFile:
-                    if (MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
-                        "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
-                        MessageBoxButtons.YesNo) == MessageBoxResult.Yes)
+                    if (TaskHelpers.ConfirmFileDelete())
                     {
                         FileHelpers.DeleteFile(config.FilePath, true);
                     }

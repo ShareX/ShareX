@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class OilPaintImageEffect : ImageEffectBase
     public override string Id => "oil_paint";
     public override string Name => "Oil paint";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.paintbrush_vertical;
+    public override string IconKey => ImageEffectIcons.PaintBrush;
     public override string Description => "Simulates an oil painting by quantizing color intensity levels.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

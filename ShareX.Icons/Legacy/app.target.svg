@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="rd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f87070"/><stop offset=".45" stop-color="#d82a2a"/><stop offset="1" stop-color="#b80c0c"/></linearGradient>
+    <linearGradient id="ro" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b00000"/><stop offset="1" stop-color="#5d0000"/></linearGradient>
+    <linearGradient id="wt" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f0f0f0"/><stop offset="1" stop-color="#d4d4d4"/></linearGradient>
+    <radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" stop-opacity=".6"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="8" cy="8" r="7" fill="url(#rd)" stroke="url(#ro)"/>
+  <circle cx="8" cy="8" r="4.8" fill="url(#wt)"/>
+  <circle cx="8" cy="8" r="2.8" fill="url(#rd)" stroke="#a00000" stroke-width=".5"/>
+  <ellipse cx="8" cy="3.4" rx="4" ry="1.5" fill="url(#gl)"/>
+</svg>

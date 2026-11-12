@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="gf" cx=".4" cy=".35" r=".65"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#e4f0fb"/><stop offset="1" stop-color="#bcd4ec"/></radialGradient>
+    <linearGradient id="rm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a6a76"/><stop offset="1" stop-color="#22222a"/></linearGradient>
+    <radialGradient id="dot" cx=".4" cy=".35" r=".6"><stop offset="0" stop-color="#ff9a9a"/><stop offset=".5" stop-color="#e82020"/><stop offset="1" stop-color="#a80000"/></radialGradient>
+  </defs>
+  <circle cx="8" cy="8" r="5.5" fill="url(#gf)" stroke="url(#rm)" stroke-width="1.5"/>
+  <rect x="7.25" y=".5" width="1.5" height="5" fill="url(#rm)"/>
+  <rect x="7.25" y="10.5" width="1.5" height="5" fill="url(#rm)"/>
+  <rect x=".5" y="7.25" width="5" height="1.5" fill="url(#rm)"/>
+  <rect x="10.5" y="7.25" width="5" height="1.5" fill="url(#rm)"/>
+  <circle cx="8" cy="8" r="1.5" fill="url(#dot)" stroke="#8a0000" stroke-width=".6"/>
+  <path d="M4.3 6.2Q4.9 4.7 6.3 4.2" fill="none" stroke="#ffffff" stroke-opacity=".9" stroke-linecap="round"/>
+</svg>

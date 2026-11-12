@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
@@ -72,6 +73,8 @@ public partial class HistoryWindow : Window
     private bool _windowPlacementApplied;
     private bool _virtualListLayoutRefreshPending;
 
+    public HistoryColumnLayout ColumnLayout { get; } = new();
+
     private ShareX.HelpersLib.WindowState SavedWindowState =>
         _settings.WindowState ??= new ShareX.HelpersLib.WindowState();
 
@@ -91,6 +94,8 @@ public partial class HistoryWindow : Window
         HistoryList.AddHandler(KeyDownEvent, OnHistoryListKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
+        ColumnLayout.Changed += (_, _) => UpdateColumnResizers();
+        UpdateColumnResizers();
     }
 
     public HistoryWindow(HistoryManagerSQLite historyManager, HistorySettings settings, HistoryWindowServices services) : this()
@@ -105,6 +110,7 @@ public partial class HistoryWindow : Window
         SearchTextBox.Text = _settings.RememberSearchText ? _settings.SearchText : string.Empty;
         _suppressFilterChanges = false;
         FavoritesButton.Classes.Set("active", _settings.Favorites);
+        ColumnLayout.Load(_settings.Columns);
 
         ApplySavedWindowState();
         Opened += OnOpened;
@@ -498,7 +504,11 @@ public partial class HistoryWindow : Window
             HistoryList.SelectedItem = item;
         }
 
-        if (point.Properties.IsLeftButtonPressed)
+        // Only arm file drag-and-drop when the press lands on an item; otherwise dragging the
+        // scrollbar thumb would start a drag of the selected files and steal the pointer.
+        bool onScrollBar = (e.Source as Visual)?.GetSelfAndVisualAncestors().OfType<ScrollBar>().Any() == true;
+
+        if (point.Properties.IsLeftButtonPressed && container != null && !onScrollBar)
         {
             _dragPointerPressed = e;
             _dragStart = e.GetPosition(HistoryList);
@@ -575,6 +585,87 @@ public partial class HistoryWindow : Window
             ? Strings.HistoryWindow_Unfavorite
             : Strings.HistoryWindows_Favorite;
     }
+
+    private void UpdateColumnResizers()
+    {
+        HistoryColumn? fillColumn = ColumnLayout.FillColumn;
+
+        // The last visible column fills the remaining width, so its right edge has nothing to resize.
+        foreach (Control cell in ColumnHeaderPanel.Children)
+        {
+            if (cell is Panel panel)
+            {
+                bool resizable = HistoryColumnsPanel.GetColumn(cell) != fillColumn;
+                foreach (Thumb thumb in panel.Children.OfType<Thumb>())
+                {
+                    thumb.IsVisible = resizable;
+                }
+            }
+        }
+    }
+
+    private void OnColumnResizerDragDelta(object? sender, VectorEventArgs e)
+    {
+        if (sender is Control { Parent: Control cell })
+        {
+            ColumnLayout.Resize(HistoryColumnsPanel.GetColumn(cell), e.Vector.X);
+        }
+    }
+
+    private void OnColumnResizerDragCompleted(object? sender, VectorEventArgs e) => SaveColumnLayout();
+
+    private void SaveColumnLayout() => _settings.Columns = ColumnLayout.ToSettings();
+
+    private void OnColumnsMenuOpening(object? sender, CancelEventArgs e)
+    {
+        List<object> items = [];
+
+        foreach (HistoryColumn column in HistoryColumnLayout.ConfigurableColumns)
+        {
+            bool visible = ColumnLayout.IsVisible(column);
+            MenuItem item = new()
+            {
+                Header = GetColumnTitle(column),
+                ToggleType = MenuItemToggleType.CheckBox,
+                IsChecked = visible,
+                // Keep at least one text column visible.
+                IsEnabled = !visible || ColumnLayout.VisibleCount > 1
+            };
+            item.Click += (_, _) =>
+            {
+                ColumnLayout.SetVisible(column, !ColumnLayout.IsVisible(column));
+                SaveColumnLayout();
+            };
+            items.Add(item);
+        }
+
+        items.Add(new Separator());
+
+        MenuItem resetItem = new() { Header = Strings.HistoryWindow_ResetColumns };
+        resetItem.Click += (_, _) =>
+        {
+            ColumnLayout.Reset();
+            SaveColumnLayout();
+        };
+        items.Add(resetItem);
+
+        ColumnsMenu.ItemsSource = items;
+    }
+
+    private static string GetColumnTitle(HistoryColumn column) => column switch
+    {
+        HistoryColumn.Date => Strings.HistoryWindows_Date,
+        HistoryColumn.FileName => Strings.HistoryWindows_File_name,
+        HistoryColumn.FilePath => Strings.HistoryWindows_File_path,
+        HistoryColumn.Type => Strings.HistoryWindows_Type,
+        HistoryColumn.Host => Strings.HistoryWindows_Host,
+        HistoryColumn.URL => Strings.HistoryWindows_URL,
+        HistoryColumn.ShortenedURL => Strings.HistoryWindows_Shortened_URL,
+        HistoryColumn.ProcessName => Strings.HistoryWindow_ProcessName,
+        HistoryColumn.WindowTitle => Strings.HistoryWindow_WindowTitle,
+        HistoryColumn.Tag => Strings.HistoryWindow_Tag,
+        _ => column.ToString()
+    };
 
     private void OnAdvancedClick(object? sender, RoutedEventArgs e)
     {
@@ -1025,6 +1116,8 @@ public partial class HistoryWindow : Window
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+
+    private void OnEditImageInPhotoEditorClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImageInPhotoEditor, true);
     private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem[] items = GetSelectedItems();

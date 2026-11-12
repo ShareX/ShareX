@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>متن را تشخیص بده (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>بازکردن در ویرایشگر عکس</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>انجام اعمال</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>آپلود</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>خط کش</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>آپلود از کلیپ بورد</value>
   </data>
@@ -786,8 +792,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>ضبط ناحیه</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>ضبط ناحیه (شفاف)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>خط کش</value>
+    <value>اندازه‌گیری</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>انتخاب گر رنگ صفحه</value>
@@ -866,6 +875,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>فایل‌های تصویری</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>کنار</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>پنهان</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>نمایش</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>باز کردن تصویر</value>
@@ -1089,6 +1113,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>تعویض نوع ابزار</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>تغییر اندازه ذره‌بین</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>بزرگ‌نمایی ذره‌بین</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>کامیپوتر</value>
   </data>
@@ -1221,6 +1251,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>خودکار</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>نمای فهرست</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>نمای بندانگشتی</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>آپلود کننده متن سفارشی</value>
   </data>
@@ -1289,6 +1325,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>بارگذاری فایل</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>نمایشگر فعال</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>نمایشگر اصلی</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

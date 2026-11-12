@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class MedianFilterImageEffect : ImageEffectBase
     public override string Id => "median_filter";
     public override string Name => "Median filter";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.filter;
+    public override string IconKey => AppIcons.Filter;
     public override string Description => "Applies a median filter to reduce noise while preserving edges.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

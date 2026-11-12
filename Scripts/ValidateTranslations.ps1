@@ -87,6 +87,8 @@ $projects = @(
             'GIFQuality_'
             'HotkeyType_'
             'ImageDestination_'
+            'ImagePreviewLocation_'
+            'ImagePreviewVisibility_'
             'ImgurThumbnailType_'
             'PastebinExpiration_'
             'PastebinPrivacy_'
@@ -95,12 +97,15 @@ $projects = @(
             'PrivateBinFormat_'
             'ProxyMethod_'
             'RegionCaptureAction_'
+            'RegionCaptureMagnifierScrollAction_'
             'ScrollMethod_'
             'SupportedLanguage_'
+            'TaskViewMode_'
             'TextDestination_'
             'ThumbnailTitleLocation_'
             'ThumbnailViewClickAction_'
             'ToastClickAction_'
+            'ToastWindowMonitor_'
             'UpdateChannel_'
             'URLSharingServices_'
             'UrlShortenerType_'
@@ -128,6 +133,13 @@ $projects = @(
             'ImageEffectProperty_'
             'ImageEffectPropertyDescription_'
             'ImageEffectEnum_'
+        )
+    }
+    [pscustomobject]@{
+        Name = 'ShareX.PhotoEditor'
+        ResourceBaseName = 'ShareX.PhotoEditor.Localization.Strings'
+        DynamicPrefixes = @(
+            'Enum_'
         )
     }
     [pscustomobject]@{

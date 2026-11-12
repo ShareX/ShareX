@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ChalkDrawingImageEffect : ImageEffectBase
     public override string Id => "chalk_drawing";
     public override string Name => "Chalk Drawing";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.brush;
+    public override string IconKey => ImageEffectIcons.ChalkBrush;
     public override string Description => "Simulates a chalk drawing on a dark surface.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

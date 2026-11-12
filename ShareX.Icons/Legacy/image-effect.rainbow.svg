@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfdcea"/></linearGradient>
+  </defs>
+  <g transform="translate(0 -2)">
+  <path d="M.5 12.5A7.5 7.5 0 0 1 15.5 12.5" fill="none" stroke="#a3201a" stroke-width=".8"/>
+  <path d="M1.4 12.5A6.6 6.6 0 0 1 14.6 12.5" fill="none" stroke="#ee3a2c" stroke-width="1.3"/>
+  <path d="M2.6 12.5A5.4 5.4 0 0 1 13.4 12.5" fill="none" stroke="#f8a024" stroke-width="1.2"/>
+  <path d="M3.8 12.5A4.2 4.2 0 0 1 12.2 12.5" fill="none" stroke="#f6e030" stroke-width="1.2"/>
+  <path d="M5 12.5A3 3 0 0 1 11 12.5" fill="none" stroke="#4cc23a" stroke-width="1.2"/>
+  <path d="M6.1 12.5A1.9 1.9 0 0 1 9.9 12.5" fill="none" stroke="#3a86e6" stroke-width="1.1"/>
+  <path d="M6.6 12.5A1.4 1.4 0 0 1 9.4 12.5" fill="none" stroke="#1d4f99" stroke-width=".6"/>
+  <path d="M2.4 9.4A6.4 6.4 0 0 1 8 5.6" fill="none" stroke="#ffffff" stroke-width=".6" stroke-opacity=".55" stroke-linecap="round"/>
+  <path d="M.6 15.5Q0 13.4 1.6 12.9Q2 11.3 3.6 11.9Q5 11.6 5.1 13Q6.2 13.4 5.6 15.5Z" fill="url(#cl)" stroke="#5a7896" stroke-width=".8" stroke-linejoin="round"/>
+  <path d="M10.4 15.5Q9.8 13.4 10.9 13Q11 11.6 12.4 11.9Q14 11.3 14.4 12.9Q16 13.4 15.4 15.5Z" fill="url(#cl)" stroke="#5a7896" stroke-width=".8" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -527,5 +527,14 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string FFmpegOptionsWindow_Source_DDA {
             get { return ResourceManager.GetString("FFmpegOptionsWindow_Source_DDA", resourceCulture); }
         }
+        public static string RegionCaptureWindow_MoveToolbar {
+            get { return ResourceManager.GetString("RegionCaptureWindow_MoveToolbar", resourceCulture); }
+        }
+        public static string RegionCaptureWindow_EllipseRegion {
+            get { return ResourceManager.GetString("RegionCaptureWindow_EllipseRegion", resourceCulture); }
+        }
+        public static string RegionCaptureWindow_FreehandRegion {
+            get { return ResourceManager.GetString("RegionCaptureWindow_FreehandRegion", resourceCulture); }
+        }
     }
 }

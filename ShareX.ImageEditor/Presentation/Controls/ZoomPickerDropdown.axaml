@@ -1,5 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:res="using:ShareX.ImageEditor.Localization"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -17,14 +18,12 @@
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 <!-- Zoom Icon -->
-                <TextBlock Grid.Column="0"
-                           Text="{x:Static theming:EditorIcons.Zoom}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="16"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"
-                           Margin="0,0,6,0"/>
+                <controls:IconPresenter Grid.Column="0"
+                                        Icon="{x:Static theming:EditorIcons.Zoom}"
+                                        FontSize="20"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"
+                                        Margin="0,0,6,0"/>
 
                 <!-- Zoom Display -->
                 <TextBlock Grid.Column="1"
@@ -34,17 +33,15 @@
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"/>
 
-                <!-- Chevron Icon (Lucide ChevronDown) -->
-                <TextBlock Grid.Column="2"
-                           Classes="dropdown-chevron"
-                           Classes.open="{Binding #ZoomPopup.IsOpen}"
-                           Text="{x:Static theming:EditorIcons.ChevronDown}"
-                           FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                           FontWeight="Normal"
-                           FontSize="10"
-                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                           VerticalAlignment="Center"
-                           Margin="8,0,4,0"/>
+                <!-- Chevron icon -->
+                <controls:IconPresenter Grid.Column="2"
+                                        Classes="dropdown-chevron"
+                                        Classes.open="{Binding #ZoomPopup.IsOpen}"
+                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                        FontSize="10"
+                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                        VerticalAlignment="Center"
+                                        Margin="8,0,4,0"/>
             </Grid>
         </Button>
 

@@ -23,9 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.ScreenRecordingLib.Native;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using Vortice.Direct3D;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
@@ -130,22 +128,8 @@ internal sealed class CameraCircleShader : IDisposable
         return Texture;
     }
 
-    private static unsafe byte[] Compile(string entryPoint, string target)
-    {
-        byte[] source = System.Text.Encoding.ASCII.GetBytes(Source);
-        fixed (byte* data = source)
-        {
-            HRESULT result = NativeMethods.D3DCompile(data, (nuint)source.Length, "CameraCircleShader", 0, 0,
-                entryPoint, target, (1u << 11) | (1u << 15), 0, out nint code, out nint errors); // Strictness, optimization level 3.
-            using Blob? bytecode = code == 0 ? null : new(code);
-            using Blob? messages = errors == 0 ? null : new(errors);
-            if (result.Failed)
-                throw new InvalidOperationException($"Could not compile the camera overlay shader. {Marshal.PtrToStringAnsi(messages?.BufferPointer ?? 0)}",
-                    Marshal.GetExceptionForHR(result.Value));
-            if (bytecode == null) throw new InvalidOperationException("Windows did not return camera overlay shader bytecode.");
-            return new ReadOnlySpan<byte>((void*)bytecode.BufferPointer, checked((int)(nuint)bytecode.BufferSize)).ToArray();
-        }
-    }
+    private static byte[] Compile(string entryPoint, string target) =>
+        ShaderCompiler.Compile(Source, "camera overlay", entryPoint, target);
 
     public void Dispose()
     {

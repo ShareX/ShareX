@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class WatercolorBorderImageEffect : ImageEffectBase
     public override string Id => "watercolor_border";
     public override string Name => "Watercolor border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.droplets;
+    public override string IconKey => ImageEffectIcons.Droplets;
     public override string Description => "Adds a soft watercolor wash border with organic, painted edges that bleed into the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class HolographicFoilShimmerImageEffect : ImageEffectBase
     public override string Id => "holographic_foil_shimmer";
     public override string Name => "Holographic foil shimmer";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.rainbow;
+    public override string IconKey => ImageEffectIcons.Rainbow;
     public override string Description => "Overlays a rainbow holographic foil shimmer effect.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

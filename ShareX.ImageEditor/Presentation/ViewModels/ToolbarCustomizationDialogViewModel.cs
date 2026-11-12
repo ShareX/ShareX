@@ -154,9 +154,17 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
             return;
         }
 
-        foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => item.IsHotkeyEditable && !string.IsNullOrWhiteSpace(item.Hotkey)))
+        foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => item.IsHotkeyEditable))
         {
-            item.Hotkey = ToolbarHotkeyHelper.Normalize(item.Hotkey);
+            if (!string.IsNullOrWhiteSpace(item.Hotkey))
+            {
+                item.Hotkey = ToolbarHotkeyHelper.Normalize(item.Hotkey);
+            }
+
+            if (!string.IsNullOrWhiteSpace(item.SecondaryHotkey))
+            {
+                item.SecondaryHotkey = ToolbarHotkeyHelper.Normalize(item.SecondaryHotkey);
+            }
         }
 
         _onSave(Items.Select(item => item.Clone()).ToList());
@@ -191,7 +199,7 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 
     private void OnItemPropertyChanged(object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName is nameof(ToolbarCustomizationItemViewModel.Hotkey))
+        if (e.PropertyName is nameof(ToolbarCustomizationItemViewModel.Hotkey) or nameof(ToolbarCustomizationItemViewModel.SecondaryHotkey))
         {
             RefreshValidation();
         }
@@ -210,28 +218,25 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
     {
         Dictionary<string, ToolbarCustomizationItemViewModel> usedHotkeys = new(StringComparer.OrdinalIgnoreCase);
 
-        foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => item.IsHotkeyEditable))
+        foreach (ToolbarCustomizationItemViewModel item in Items)
         {
-            string hotkey = item.Hotkey.Trim();
-            if (hotkey.Length == 0)
+            foreach (string hotkey in item.Hotkeys)
             {
-                continue;
-            }
+                if (!ToolbarHotkeyHelper.TryParse(hotkey, out _, out _))
+                {
+                    ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_InvalidHotkey, item.Name);
+                    return;
+                }
 
-            if (!ToolbarHotkeyHelper.TryParse(hotkey, out _, out _))
-            {
-                ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_InvalidHotkey, item.Name);
-                return;
-            }
+                string normalizedHotkey = ToolbarHotkeyHelper.Normalize(hotkey);
+                if (usedHotkeys.TryGetValue(normalizedHotkey, out ToolbarCustomizationItemViewModel? existingItem) && existingItem != item)
+                {
+                    ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_DuplicateHotkey, item.Name, existingItem.Name, normalizedHotkey);
+                    return;
+                }
 
-            string normalizedHotkey = ToolbarHotkeyHelper.Normalize(hotkey);
-            if (usedHotkeys.TryGetValue(normalizedHotkey, out ToolbarCustomizationItemViewModel? existingItem))
-            {
-                ValidationMessage = string.Format(Strings.ToolbarCustomizationDialogView_DuplicateHotkey, item.Name, existingItem.Name, normalizedHotkey);
-                return;
+                usedHotkeys[normalizedHotkey] = item;
             }
-
-            usedHotkeys[normalizedHotkey] = item;
         }
 
         ValidationMessage = "";

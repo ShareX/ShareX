@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Betűméret</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Szabadkézi nyíl</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Vízszintes igazítás</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Újra (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Lekerekített sarkok</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Mentés</value>
@@ -282,6 +288,15 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Mégse (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>A hozzáadott terület kitöltőszíne</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nem sikerült betölteni a képet a vágólapról.
 A vágólap nem tartalmaz képet.</value>
@@ -335,6 +350,12 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margó</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Új képernyőképből (teljes képernyő)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Új képernyőképből (terület)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Kép megnyitása</value>
@@ -1386,8 +1407,14 @@ A vágólap nem tartalmaz képet.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Elsődleges</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Eszköztár visszaállítása alapértelmezettre</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Másodlagos</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Megjelenítés / Elrejtés</value>
@@ -1400,6 +1427,9 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Elmosás</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Vászonméret</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klónozás</value>

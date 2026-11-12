@@ -25,53 +25,55 @@
 
 #nullable enable
 
-using Avalonia.Platform;
+using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 using AvaloniaColor = Avalonia.Media.Color;
 
 namespace ShareX;
 
-public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
+public sealed class StartScreenViewModel : INotifyPropertyChanged
 {
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
-    private string _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+    private string _startWithWindowsText = OperatingSystem.IsWindows() ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text : "Iniciar com o sistema";
 
     private ApplicationConfig Settings => ApplicationState.Settings;
 
     public string WindowTitle => Strings.StartScreen_Welcome;
-    public string WelcomeTitle => Strings.StartScreen_Welcome;
-    public string WelcomeSubtitle => Strings.StartScreen_WelcomeSubtitle;
-    public string CaptureFeature => Strings.MainMenuBuilder_Capture;
-    public string AutomateFeature => Strings.MainMenuBuilder_Workflows;
-    public string ShareFeature => Strings.MainMenuBuilder_Tools;
-    public string PlatformNote => OperatingSystem.IsWindows() ? Strings.StartScreen_PlatformNote : "Open source • Built for Linux";
-    public string PersonalizeTitle => Strings.StartScreen_PersonalizeTitle;
-    public string PersonalizeSubtitle => Strings.StartScreen_PersonalizeSubtitle;
+    public string ThankYouTitle => Strings.StartScreen_ThankYou;
     public string SettingsNote => Strings.StartScreen_SettingsNote;
     public string GetStartedText => Strings.StartScreen_GetStarted;
     public string LanguageLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_LanguageLabel);
-    public string FollowSystemThemeLabel => Strings.ApplicationSettingsWindow_FollowSystemTheme;
     public string ThemeLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_ThemeLabel);
     public string FollowSystemAccentColorLabel => Strings.ApplicationSettingsWindow_FollowSystemAccentColor;
     public string AccentColorLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_AccentColorLabel);
 
     public IReadOnlyList<StartScreenLanguageOption> LanguageOptions { get; } = CreateLanguageOptions();
+
+    // "System" stands for UseSystemTheme rather than a theme name, so one choice covers both settings.
+    internal const string SystemTheme = "System";
+
     public IReadOnlyList<StartScreenThemeOption> ThemeOptions { get; } =
     [
-        new("Dark", Strings.ApplicationSettingsWindow_Dark),
-        new("Light", Strings.ApplicationSettingsWindow_Light)
+        new(SystemTheme, Strings.StartScreen_UseSystemSetting),
+        new("Light", Strings.ApplicationSettingsWindow_Light),
+        new("Dark", Strings.ApplicationSettingsWindow_Dark)
     ];
+
+    // The first preset is the default accent color, so a fresh install starts with it selected.
+    public IReadOnlyList<StartScreenAccentOption> AccentOptions { get; } =
+        new[] { ApplicationThemeOptions.DefaultAccentColorHex, "#6366F1", "#8B5CF6", "#EC4899", "#EF4444", "#F97316", "#10B981", "#64748B" }
+            .Select(x => new StartScreenAccentOption(AvaloniaColor.Parse(x)))
+            .ToArray();
 
     public StartScreenViewModel()
     {
@@ -99,32 +101,31 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
         }
     }
 
-    public bool UseSystemTheme
-    {
-        get => Settings.ThemeOptions.UseSystemTheme;
-        set
-        {
-            if (Settings.ThemeOptions.UseSystemTheme != value)
-            {
-                Settings.ThemeOptions.UseSystemTheme = value;
-                OnPropertyChanged();
-                OnPropertyChanged(nameof(CanEditTheme));
-            }
-        }
-    }
-
-    public bool CanEditTheme => !UseSystemTheme;
-
     public StartScreenThemeOption? SelectedTheme
     {
-        get => ThemeOptions.FirstOrDefault(x => string.Equals(x.Value, NormalizeTheme(Settings.ThemeOptions.Theme), StringComparison.Ordinal));
+        get
+        {
+            string value = Settings.ThemeOptions.UseSystemTheme ? SystemTheme : NormalizeTheme(Settings.ThemeOptions.Theme);
+            return ThemeOptions.FirstOrDefault(x => string.Equals(x.Value, value, StringComparison.Ordinal));
+        }
         set
         {
-            if (value != null && !string.Equals(Settings.ThemeOptions.Theme, value.Value, StringComparison.Ordinal))
+            if (value == null || value == SelectedTheme)
+            {
+                return;
+            }
+
+            if (value.Value == SystemTheme)
+            {
+                Settings.ThemeOptions.UseSystemTheme = true;
+            }
+            else
             {
                 Settings.ThemeOptions.Theme = value.Value;
-                OnPropertyChanged();
+                Settings.ThemeOptions.UseSystemTheme = false;
             }
+
+            OnPropertyChanged();
         }
     }
 
@@ -144,6 +145,50 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
 
     public bool CanEditAccentColor => !UseSystemAccentColor;
 
+    public string IconPackLabel => RemoveTrailingColon(Strings.ApplicationSettingsWindow_IconPackLabel);
+
+    public IReadOnlyList<StartScreenIconPackOption> IconPackOptions { get; } =
+    [
+        new(IconPack.Modern, Strings.ApplicationSettingsWindow_IconPackModern),
+        new(IconPack.Legacy, Strings.ApplicationSettingsWindow_IconPackLegacy)
+    ];
+
+    public StartScreenIconPackOption? SelectedIconPack
+    {
+        get => IconPackOptions.FirstOrDefault(x => x.Value == Settings.ThemeOptions.IconPack);
+        set
+        {
+            if (value != null && Settings.ThemeOptions.IconPack != value.Value)
+            {
+                Settings.ThemeOptions.IconPack = value.Value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    public string SpacingLabel => Strings.ApplicationSettingsWindow_Spacing;
+
+    public IReadOnlyList<StartScreenSpacingOption> SpacingOptions { get; } =
+    [
+        new(false, Strings.StartScreen_Spacious),
+        new(true, Strings.ApplicationSettingsWindow_SpacingCompact)
+    ];
+
+    public StartScreenSpacingOption? SelectedSpacing
+    {
+        get => SpacingOptions.FirstOrDefault(x => x.Compact == Settings.ThemeOptions.CompactMode);
+        set
+        {
+            if (value != null && Settings.ThemeOptions.CompactMode != value.Compact)
+            {
+                // Same as the settings window: compact mode is a spacing preset, so it drops per-area adjustments.
+                Settings.ThemeOptions.ResetSpacing();
+                Settings.ThemeOptions.CompactMode = value.Compact;
+                OnPropertyChanged();
+            }
+        }
+    }
+
     public AvaloniaColor AccentColor
     {
         get => Settings.ThemeOptions.AccentColor;
@@ -153,6 +198,20 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
             {
                 Settings.ThemeOptions.AccentColor = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(SelectedAccent));
+            }
+        }
+    }
+
+    // Null when the accent is a custom color from the picker.
+    public StartScreenAccentOption? SelectedAccent
+    {
+        get => AccentOptions.FirstOrDefault(x => x.Color == AccentColor);
+        set
+        {
+            if (value != null)
+            {
+                AccentColor = value.Color;
             }
         }
     }
@@ -183,27 +242,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
     public bool StartWithWindowsEnabled => _startWithWindowsEnabled;
     public string StartWithWindowsText => _startWithWindowsText;
 
-    private static string GetStartupLabel()
-    {
-        if (OperatingSystem.IsWindows())
-        {
-            return Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
-        }
-
-        string lang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-        return lang switch
-        {
-            "pt" => "Executar o ShareX ao iniciar o sistema",
-            "es" => "Ejecutar ShareX al iniciar el sistema",
-            "fr" => "Lancer ShareX au démarrage du système",
-            "de" => "ShareX beim Systemstart ausführen",
-            _ => "Run ShareX at system startup"
-        };
-    }
-
     private void RefreshStartWithWindows()
     {
-        _startWithWindowsText = GetStartupLabel();
+        _startWithWindowsText = OperatingSystem.IsWindows() ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text : "Iniciar com o sistema";
         _startWithWindowsEnabled = false;
 
         try
@@ -243,21 +284,9 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
             .Select(x => new StartScreenLanguageOption(
                 x,
                 x.GetLocalizedDescription(),
-                LoadLanguageFlag(x),
-                x == SupportedLanguage.Automatic ? LucideIcons.languages : null))
+                LanguageFlags.Get(x),
+                x == SupportedLanguage.Automatic ? AppIcons.Language : null))
             .ToArray();
-
-    private static AvaloniaBitmap? LoadLanguageFlag(SupportedLanguage language)
-    {
-        if (language == SupportedLanguage.Automatic)
-        {
-            return null;
-        }
-
-        string countryCode = LanguageHelper.GetCultureName(language).Split('-')[1].ToLowerInvariant();
-        using Stream stream = AssetLoader.Open(new Uri($"avares://ShareX/Resources/Flags/{countryCode}.png"));
-        return new AvaloniaBitmap(stream);
-    }
 
     private static string NormalizeTheme(string? theme) =>
         string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase) ? "Light" : "Dark";
@@ -271,30 +300,22 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged, IDisposable
             language.UpdateDisplayName(language.Value.GetLocalizedDescription());
         }
 
-        ThemeOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
+        ThemeOptions[0].UpdateDisplayName(Strings.StartScreen_UseSystemSetting);
         ThemeOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_Light);
+        ThemeOptions[2].UpdateDisplayName(Strings.ApplicationSettingsWindow_Dark);
+        IconPackOptions[0].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackModern);
+        IconPackOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_IconPackLegacy);
+        SpacingOptions[0].UpdateDisplayName(Strings.StartScreen_Spacious);
+        SpacingOptions[1].UpdateDisplayName(Strings.ApplicationSettingsWindow_SpacingCompact);
 
         RefreshStartWithWindows();
         OnPropertyChanged(string.Empty);
-    }
-
-    private void DisposeLanguageOptions()
-    {
-        foreach (StartScreenLanguageOption language in LanguageOptions)
-        {
-            language.Flag?.Dispose();
-        }
     }
 
     private void OnPropertyChanged([CallerMemberName] string? propertyName = null) =>
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
     public event PropertyChangedEventHandler? PropertyChanged;
-
-    public void Dispose()
-    {
-        DisposeLanguageOptions();
-    }
 }
 
 public sealed class StartScreenLanguageOption : INotifyPropertyChanged
@@ -303,15 +324,40 @@ public sealed class StartScreenLanguageOption : INotifyPropertyChanged
 
     public SupportedLanguage Value { get; }
     public string DisplayName => _displayName;
-    public AvaloniaBitmap? Flag { get; }
+    public IImage? Flag { get; }
     public string? IconGlyph { get; }
 
-    public StartScreenLanguageOption(SupportedLanguage value, string displayName, AvaloniaBitmap? flag, string? iconGlyph)
+    public StartScreenLanguageOption(SupportedLanguage value, string displayName, IImage? flag, string? iconGlyph)
     {
         Value = value;
         _displayName = displayName;
         Flag = flag;
         IconGlyph = iconGlyph;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
+        {
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+}
+
+public sealed class StartScreenIconPackOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public IconPack Value { get; }
+    public string DisplayName => _displayName;
+
+    public StartScreenIconPackOption(IconPack value, string displayName)
+    {
+        Value = value;
+        _displayName = displayName;
     }
 
     public void UpdateDisplayName(string displayName)
@@ -332,10 +378,50 @@ public sealed class StartScreenThemeOption : INotifyPropertyChanged
 
     public string Value { get; }
     public string DisplayName => _displayName;
+    public bool IsSystem => Value == StartScreenViewModel.SystemTheme;
+    public bool IsLight => Value == "Light";
+    public bool IsDark => Value == "Dark";
 
     public StartScreenThemeOption(string value, string displayName)
     {
         Value = value;
+        _displayName = displayName;
+    }
+
+    public void UpdateDisplayName(string displayName)
+    {
+        if (_displayName != displayName)
+        {
+            _displayName = displayName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DisplayName)));
+        }
+    }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
+}
+
+public sealed class StartScreenAccentOption
+{
+    public AvaloniaColor Color { get; }
+    public IBrush Brush { get; }
+
+    public StartScreenAccentOption(AvaloniaColor color)
+    {
+        Color = color;
+        Brush = new SolidColorBrush(color);
+    }
+}
+
+public sealed class StartScreenSpacingOption : INotifyPropertyChanged
+{
+    private string _displayName;
+
+    public bool Compact { get; }
+    public string DisplayName => _displayName;
+
+    public StartScreenSpacingOption(bool compact, string displayName)
+    {
+        Compact = compact;
         _displayName = displayName;
     }
 

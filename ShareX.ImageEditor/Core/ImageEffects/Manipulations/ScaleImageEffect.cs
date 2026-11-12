@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ScaleImageEffect : ImageEffectBase
     public override string Id => "scale";
     public override string Name => "Scale";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.scaling;
+    public override string IconKey => AppIcons.Resize;
     public override string Description => "Scales the image by width and height percentages.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

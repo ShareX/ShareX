@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Немає елементів, що відповідають поточним фільтрам</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Ім'я процесу</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Перейменувати</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Перейменувати файл</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Скинути стовпці</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Виберіть папку для імпорту</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Успішно імпортовано файлів: {0:N0}.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Тег</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>ці {0:N0} файлів</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Видалити з обраного</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Заголовок вікна</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Розширені</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>Зроблено</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редагувати у фоторедакторі...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>Редагувати елемент історії</value>

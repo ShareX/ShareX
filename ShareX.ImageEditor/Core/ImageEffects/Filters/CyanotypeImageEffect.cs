@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CyanotypeImageEffect : ImageEffectBase
     public override string Id => "cyanotype";
     public override string Name => "Cyanotype";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.swatch_book;
+    public override string IconKey => AppIcons.Swatches;
     public override string Description => "Simulates a cyanotype photographic printing process with blue-toned output.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

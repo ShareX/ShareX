@@ -431,6 +431,18 @@ Percorso file: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Titolo finestra</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Distanza: {0:0.00} px | Angolo: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Destra: {2} | Basso: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Larghezza: {0} px | Altezza: {1} px | Area: {2} px | Perimetro: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Righello</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Contenuto degli appunti</value>
   </data>
@@ -990,7 +1002,7 @@ Percorso file: {0}</value>
     <value>I valori più bassi velocizzano la codifica. I valori più alti producono file più piccoli. Tutti i valori preservano la qualità dell’immagine.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Senza perdita:</value>
+    <value>Senza perdita</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Riempi</value>
@@ -1606,12 +1618,6 @@ Percorso file: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Destinazione</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>La lingua {0} non è disponibile per l’OCR in questo sistema.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Il riconoscimento ottico dei caratteri è disponibile solo con Windows versione {0} o successiva.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1639,6 +1645,9 @@ Percorso file: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Chiudi dopo l’apertura</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiato negli appunti</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copia tutto</value>
   </data>
@@ -1648,23 +1657,17 @@ Percorso file: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Modifica servizi</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Lingua</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nome</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nuovo</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Guida OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nessun testo trovato</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Apri servizio...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Riconoscimento</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Rimuovi</value>
@@ -1674,9 +1677,6 @@ Percorso file: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Risultato</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Fattore di scala</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Seleziona un servizio</value>
@@ -1690,8 +1690,8 @@ Percorso file: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Seleziona area...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Servizi</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separa i paragrafi</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Riconoscimento ottico dei caratteri</value>
@@ -2039,7 +2039,7 @@ Percorso file: {0}</value>
     <value>Tolleranza: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Righello</value>
+    <value>ShareX - Misura</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Scegli un video per iniziare.</value>
@@ -2083,6 +2083,9 @@ Percorso file: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Arresto della conversione...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Bitrate medio</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Sfoglia...</value>
   </data>
@@ -2101,6 +2104,9 @@ Percorso file: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nome file</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Dimensione file</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Cartella</value>
   </data>
@@ -2118,6 +2124,12 @@ Percorso file: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Qualità</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Risoluzione</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Risultato</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertitore video</value>

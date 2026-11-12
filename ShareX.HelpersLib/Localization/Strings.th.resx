@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recognize ข้อความ (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>เปิดในตัวแก้ไขภาพถ่าย</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>ดำเนินการ การดำเนินการ</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>อัปโหลด</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>ไม้บรรทัด</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>อัปโหลด จากคลิปบอร์ด</value>
   </data>
@@ -786,8 +792,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>จับภาพ พื้นที่</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>จับภาพ พื้นที่ (โปร่งใส)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>ไม้บรรทัด</value>
+    <value>วัดขนาด</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>หน้าจอ ตัวเลือกสี</value>
@@ -866,6 +875,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>ไฟล์รูปภาพ</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>ด้านล่าง</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>ด้านข้าง</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>อัตโนมัติ</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>ซ่อน</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>แสดง</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>เปิดรูปภาพ</value>
@@ -1089,6 +1113,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Swap เครื่องมือ ชนิด</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>ปรับขนาดแว่นขยาย</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>ซูมแว่นขยาย</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>คอมพิวเตอร์</value>
   </data>
@@ -1221,6 +1251,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>อัตโนมัติ</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>มุมมองรายการ</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>มุมมองภาพขนาดย่อ</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>กำหนดเอง ตัวอัปโหลดข้อความ</value>
   </data>
@@ -1289,6 +1325,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>อัปโหลด ไฟล์</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>จอภาพที่ใช้งานอยู่</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>จอภาพหลัก</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

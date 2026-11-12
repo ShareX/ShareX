@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chrome="using:Avalonia.Controls.Chrome"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:icons="using:ShareX.Icons"
         xmlns:res="using:ShareX.Localization"
         xmlns:local="using:ShareX"
         x:Class="ShareX.MainWindow"
@@ -21,19 +22,6 @@
         DragDrop.Drop="OnDrop">
 
     <Window.Styles>
-        <Style Selector="Button.nav-button">
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="HorizontalAlignment" Value="Stretch"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-            <Setter Property="Padding" Value="8,2"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="CornerRadius" Value="4"/>
-        </Style>
-        <Style Selector="Button.nav-button:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
         <Style Selector="Border.thumbnail-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
@@ -44,11 +32,11 @@
         </Style>
         <Style Selector="Border.thumbnail-card:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
         </Style>
         <Style Selector="Border.thumbnail-card.selected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
         </Style>
         <Style Selector="Border.thumbnail-preview.clickable">
@@ -57,8 +45,116 @@
         <Style Selector="Border.combine-drop-zone">
             <Setter Property="Background" Value="#CC2B2B2B"/>
         </Style>
+        <!-- The label and icon colours are set on the TextBlock and IconPresenter themselves, which the global
+             TextBlock style would otherwise override, and follow the accent fill while dragging over. -->
+        <Style Selector="Border.combine-drop-zone TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone controls|IconPresenter">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
         <Style Selector="Border.combine-drop-zone.drag-over">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone.drag-over TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Border.combine-drop-zone.drag-over controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Border.task-list-header">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Toolbar}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Separator}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+        </Style>
+        <Style Selector="TextBlock.task-header">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Thumb.column-resizer">
+            <Setter Property="Width" Value="7"/>
+            <Setter Property="Margin" Value="0,0,-4,0"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}">
+                        <Rectangle Width="1" Margin="0,5" HorizontalAlignment="Center" Fill="{DynamicResource ShareX.Brush.Separator}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="Panel.image-preview">
+            <Setter Property="DockPanel.Dock" Value="Right"/>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom">
+            <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        </Style>
+        <Style Selector="Border.image-preview-frame">
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom > Border.image-preview-frame">
+            <Setter Property="BorderThickness" Value="0,1,0,0"/>
+        </Style>
+        <Style Selector="Thumb.preview-resizer">
+            <Setter Property="Width" Value="6"/>
+            <Setter Property="Margin" Value="-3,0,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+            <Setter Property="Template">
+                <ControlTemplate>
+                    <Border Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter>
+        </Style>
+        <Style Selector="Panel.image-preview.bottom > Thumb.preview-resizer">
+            <Setter Property="Width" Value="NaN"/>
+            <Setter Property="Height" Value="6"/>
+            <Setter Property="Margin" Value="0,-3,0,0"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="Cursor" Value="SizeNorthSouth"/>
+        </Style>
+        <Style Selector="Border.task-row">
+            <Setter Property="Height" Value="22"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.task-row:pointerover">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="Border.task-row.selected">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+        </Style>
+        <Style Selector="TextBlock.task-cell">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="Padding" Value="4,0"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.task-status">
+            <Setter Property="Width" Value="22"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.task-status.failed">
+            <Setter Property="Foreground" Value="#C65F5F"/>
+        </Style>
+        <Style Selector="Border.task-row.selected TextBlock.task-cell">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="Border.task-row.selected controls|IconPresenter.task-status">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Border.hotkey-panel">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
@@ -88,8 +184,8 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background}"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        <Style Selector="TextBlock.theme-toggle-icon">
-            <Setter Property="FontSize" Value="14"/>
+        <Style Selector="controls|IconPresenter.theme-toggle-icon">
+            <Setter Property="FontSize" Value="16"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Opacity" Value="0"/>
@@ -166,12 +262,12 @@
                                 Click="OnThemeToggleClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid Width="20" Height="20" ClipToBounds="True" IsHitTestVisible="False">
-                                <TextBlock Classes="icon theme-toggle-icon moon"
-                                           Classes.active="{Binding IsDarkTheme}"
-                                           Text="{x:Static theming:LucideIcons.moon}"/>
-                                <TextBlock Classes="icon theme-toggle-icon sun"
-                                           Classes.active="{Binding !IsDarkTheme}"
-                                           Text="{x:Static theming:LucideIcons.sun}"/>
+                                <controls:IconPresenter Classes="theme-toggle-icon moon"
+                                                        Classes.active="{Binding IsDarkTheme}"
+                                                        Icon="{x:Static icons:AppIcons.CaptionMoon}"/>
+                                <controls:IconPresenter Classes="theme-toggle-icon sun"
+                                                        Classes.active="{Binding !IsDarkTheme}"
+                                                        Icon="{x:Static icons:AppIcons.CaptionSun}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
@@ -179,37 +275,32 @@
                                 Click="OnTopmostClick"
                                 chrome:WindowDecorationProperties.ElementRole="User">
                             <Grid>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.pin}"
-                                           FontSize="13"
-                                           IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.pin_off}"
-                                           FontSize="13"
-                                           IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionPin}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding !Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionUnpin}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding Topmost, RelativeSource={RelativeSource AncestorType=Window}}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.minus}"
-                                       FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMinimize}"
+                                                    FontSize="16"/>
                         </Button>
                         <Button Classes="caption-button"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_MaximizeOrRestore}"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
                             <Grid>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.square}"
-                                           FontSize="12"
-                                           IsVisible="{Binding !IsWindowMaximized}"/>
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.copy}"
-                                           FontSize="12"
-                                           IsVisible="{Binding IsWindowMaximized}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionMaximize}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding !IsWindowMaximized}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionRestore}"
+                                                        FontSize="16"
+                                                        IsVisible="{Binding IsWindowMaximized}"/>
                             </Grid>
                         </Button>
                         <Button Classes="caption-button caption-close"
@@ -217,9 +308,8 @@
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"
                                 chrome:WindowDecorationProperties.ElementRole="CloseButton">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.x}"
-                                       FontSize="14"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.CaptionClose}"
+                                                    FontSize="16"/>
                         </Button>
                     </StackPanel>
                 </Grid>
@@ -227,7 +317,7 @@
 
             <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
         <Border Grid.Column="0"
-                MinWidth="210"
+                MinWidth="{DynamicResource ShareX.Density.Nav.MinWidth}"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,0,1,0">
@@ -235,7 +325,7 @@
                           HorizontalScrollBarVisibility="Disabled"
                           HorizontalContentAlignment="Stretch">
                 <StackPanel x:Name="NavigationPanel"
-                            Margin="6,6,6,0"
+                            Margin="{DynamicResource ShareX.Density.Nav.PanelMargin}"
                             Spacing="0"
                             HorizontalAlignment="Stretch"/>
             </ScrollViewer>
@@ -243,10 +333,122 @@
 
         <Grid x:Name="ThumbnailPanel"
               Grid.Column="1"
+              ClipToBounds="True"
               Focusable="True"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
-                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <DockPanel IsVisible="{Binding IsListView}">
+                <Panel Classes="image-preview"
+                       Classes.bottom="{Binding IsImagePreviewAtBottom}"
+                       Width="{Binding ImagePreviewPaneWidth}"
+                       Height="{Binding ImagePreviewPaneHeight}"
+                       IsVisible="{Binding IsImagePreviewVisible}"
+                       ZIndex="1">
+                    <Border Classes="image-preview-frame"
+                            Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                            BorderBrush="{DynamicResource ShareX.Brush.Separator}"
+                            PointerPressed="OnImagePreviewPointerPressed">
+                        <Border Margin="6"
+                                Background="{DynamicResource ShareX.Brush.Checkered}"
+                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                BorderThickness="1"
+                                CornerRadius="4"
+                                ClipToBounds="True"
+                                Cursor="Hand"
+                                IsVisible="{Binding ImagePreview, Converter={x:Static ObjectConverters.IsNotNull}}">
+                            <Image Source="{Binding ImagePreview}" Stretch="Uniform" StretchDirection="DownOnly"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                        </Border>
+                    </Border>
+                    <Thumb Classes="preview-resizer" DragDelta="OnImagePreviewResizerDragDelta"/>
+                </Panel>
+                <Grid RowDefinitions="Auto,*">
+                    <Border Classes="task-list-header" IsVisible="{Binding ShowListColumns}" ClipToBounds="True">
+                        <DockPanel HorizontalAlignment="Left" MinWidth="{Binding TaskListColumns.MinRowWidth}">
+                            <Panel DockPanel.Dock="Left" Width="22"/>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.FilenameWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Filename}"/>
+                                <Thumb Classes="column-resizer" Tag="0" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.StatusWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Status}"/>
+                                <Thumb Classes="column-resizer" Tag="1" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.ProgressWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Progress}"/>
+                                <Thumb Classes="column-resizer" Tag="2" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.SpeedWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Speed}"/>
+                                <Thumb Classes="column-resizer" Tag="3" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.ElapsedWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Elapsed}"/>
+                                <Thumb Classes="column-resizer" Tag="4" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <Panel DockPanel.Dock="Left" Width="{Binding TaskListColumns.RemainingWidth}">
+                                <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_Remaining}"/>
+                                <Thumb Classes="column-resizer" Tag="5" DragDelta="OnTaskListColumnDragDelta" DragCompleted="OnTaskListColumnDragCompleted"/>
+                            </Panel>
+                            <TextBlock Classes="task-header" Text="{x:Static res:Strings.TaskListView_URL}"/>
+                        </DockPanel>
+                    </Border>
+                    <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="TaskList" ItemsSource="{Binding ThumbnailItems}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="local:ThumbnailItemViewModel">
+                                    <Border Classes="task-row"
+                                            Classes.selected="{Binding IsSelected}"
+                                            PointerPressed="OnThumbnailPointerPressed"
+                                            PointerMoved="OnThumbnailPointerMoved"
+                                            PointerReleased="OnTaskRowPointerReleased"
+                                            PointerCaptureLost="OnThumbnailPointerCaptureLost"
+                                            DoubleTapped="OnTaskRowDoubleTapped"
+                                            ClipToBounds="True">
+                                        <DockPanel HorizontalAlignment="Left"
+                                                   MinWidth="{Binding TaskListColumns.MinRowWidth, RelativeSource={RelativeSource AncestorType=Window}}">
+                                            <controls:IconPresenter DockPanel.Dock="Left"
+                                                                    Classes="task-status"
+                                                                    Classes.failed="{Binding IsFailed}"
+                                                                    Icon="{Binding ListStatusIcon}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.FilenameWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding Title}"
+                                                       ToolTip.Tip="{Binding Title}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.StatusWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListStatus}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.ProgressWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListProgress}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.SpeedWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListSpeed}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.ElapsedWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListElapsed}"/>
+                                            <TextBlock DockPanel.Dock="Left" Classes="task-cell"
+                                                       Width="{Binding TaskListColumns.RemainingWidth, RelativeSource={RelativeSource AncestorType=Window}}"
+                                                       Text="{Binding ListRemaining}"/>
+                                            <TextBlock Classes="task-cell"
+                                                       Text="{Binding ListUrl}"
+                                                       ToolTip.Tip="{Binding ListUrlToolTip}"/>
+                                        </DockPanel>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+                </DockPanel>
+
+                <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding ThumbnailItems}" Margin="6">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -288,11 +490,17 @@
                                                 Height="{Binding Height}"
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}"
                                                 CornerRadius="4"
-                                                ClipToBounds="True">
+                                                ClipToBounds="True"
+                                                PointerEntered="OnThumbnailPreviewPointerEntered"
+                                                PointerExited="OnThumbnailPreviewPointerExited">
                                             <Grid>
                                                 <Image Source="{Binding Thumbnail}"
-                                                       IsVisible="{Binding HasThumbnail}"
+                                                       IsVisible="{Binding ShowStillThumbnail}"
                                                        Stretch="Uniform"/>
+                                                <Image Source="{Binding HoverFrame}"
+                                                       IsVisible="{Binding HasHoverFrame}"
+                                                       Stretch="Uniform"
+                                                       RenderOptions.BitmapInterpolationMode="HighQuality"/>
                                                 <Border IsVisible="{Binding ShowPlayIcon}"
                                                         Width="50"
                                                         Height="50"
@@ -301,22 +509,19 @@
                                                         HorizontalAlignment="Center"
                                                         VerticalAlignment="Center"
                                                         IsHitTestVisible="False">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.play}"
-                                                               Foreground="#A9A9A9"
-                                                               FontSize="18"
-                                                               Width="18"
-                                                               TextAlignment="Center"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
+                                                                            Foreground="#A9A9A9"
+                                                                            FontSize="18"
+                                                                            Width="18"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                 </Border>
-                                                <TextBlock Classes="icon"
-                                                           Text="{Binding PlaceholderIcon}"
-                                                           IsVisible="{Binding HasNoThumbnail}"
-                                                           FontSize="42"
-                                                           Opacity="0.45"
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Center"/>
+                                                <controls:IconPresenter Icon="{Binding PlaceholderIcon}"
+                                                                        IsVisible="{Binding HasNoThumbnail}"
+                                                                        FontSize="42"
+                                                                        Opacity="0.45"
+                                                                        HorizontalAlignment="Center"
+                                                                        VerticalAlignment="Center"/>
                                                 <Border IsVisible="{Binding IsFailed}"
                                                         Background="#C8B91C1C"
                                                         CornerRadius="4"
@@ -324,7 +529,7 @@
                                                         HorizontalAlignment="Right"
                                                         VerticalAlignment="Top"
                                                         Margin="5">
-                                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.triangle_alert}" Foreground="White"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}" Foreground="White"/>
                                                 </Border>
                                                 <ProgressBar IsVisible="{Binding IsProgressVisible}"
                                                              Value="{Binding Progress}"
@@ -344,7 +549,7 @@
                                                         <Grid Grid.Row="1" ColumnDefinitions="*,*" ColumnSpacing="6">
                                                             <Border Classes="combine-drop-zone"
                                                                     Tag="Horizontal"
-                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                                                                     BorderThickness="1"
                                                                     CornerRadius="4"
                                                                     DragDrop.AllowDrop="True"
@@ -355,13 +560,10 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <TextBlock Classes="icon"
-                                                                               Text="{x:Static theming:LucideIcons.columns_2}"
-                                                                               Foreground="White"
-                                                                               FontSize="20"
-                                                                               HorizontalAlignment="Center"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Columns}"
+                                                                                            FontSize="20"
+                                                                                            HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Horizontal}"
-                                                                               Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
                                                                 </StackPanel>
@@ -369,7 +571,7 @@
                                                             <Border Grid.Column="1"
                                                                     Classes="combine-drop-zone"
                                                                     Tag="Vertical"
-                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                                                                     BorderThickness="1"
                                                                     CornerRadius="4"
                                                                     DragDrop.AllowDrop="True"
@@ -380,13 +582,10 @@
                                                                 <StackPanel HorizontalAlignment="Center"
                                                                             VerticalAlignment="Center"
                                                                             Spacing="3">
-                                                                    <TextBlock Classes="icon"
-                                                                               Text="{x:Static theming:LucideIcons.rows_2}"
-                                                                               Foreground="White"
-                                                                               FontSize="20"
-                                                                               HorizontalAlignment="Center"/>
+                                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Rows}"
+                                                                                            FontSize="20"
+                                                                                            HorizontalAlignment="Center"/>
                                                                     <TextBlock Text="{x:Static res:Strings.MainWindow_Vertical}"
-                                                                               Foreground="White"
                                                                                FontSize="11"
                                                                                TextAlignment="Center"/>
                                                                 </StackPanel>
@@ -424,13 +623,13 @@
 
                 <Grid IsVisible="{Binding IsEmpty}" Margin="28">
                     <Border Classes="hotkey-panel"
-                            Width="530"
+                            MaxWidth="530"
                             MaxHeight="430"
-                            HorizontalAlignment="Center"
+                            HorizontalAlignment="Stretch"
                             VerticalAlignment="Center">
                         <Grid RowDefinitions="Auto,Auto,*" RowSpacing="8">
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="9">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Keyboard}" FontSize="22" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                 <TextBlock Text="{x:Static res:Strings.MainWindow_ShareXHotkeys}" FontSize="19" FontWeight="SemiBold" Foreground="{DynamicResource ShareX.Brush.Text}"/>
                             </StackPanel>
                             <TextBlock Grid.Row="1"
@@ -440,25 +639,28 @@
                                        TextWrapping="Wrap"
                                        Margin="8,0,8,8"/>
                             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
-                                <ItemsControl ItemsSource="{Binding HotkeyTips}">
+                                <ItemsControl ItemsSource="{Binding HotkeyTips}" Grid.IsSharedSizeScope="True">
                                     <ItemsControl.ItemTemplate>
                                         <DataTemplate DataType="local:HotkeyTipViewModel">
                                             <Border BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0" Padding="6,8">
-                                                <Grid ColumnDefinitions="24,155,*" ColumnSpacing="10">
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.circle_check}"
-                                                               IsVisible="{Binding IsRegistered}"
-                                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                               FontSize="17"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
-                                                    <TextBlock Classes="icon"
-                                                               Text="{x:Static theming:LucideIcons.circle_x}"
-                                                               IsVisible="{Binding !IsRegistered}"
-                                                               Foreground="#C65F5F"
-                                                               FontSize="17"
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Center"/>
+                                                <Grid ColumnSpacing="10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="24"/>
+                                                        <ColumnDefinition Width="Auto" MinWidth="155" SharedSizeGroup="HotkeyTipHotkey"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                                            IsVisible="{Binding IsRegistered}"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                                            FontSize="17"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
+                                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleX}"
+                                                                            IsVisible="{Binding !IsRegistered}"
+                                                                            Foreground="#C65F5F"
+                                                                            FontSize="17"
+                                                                            HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="1"
                                                                Text="{Binding Hotkey}"
                                                                FontFamily="{DynamicResource ShareX.FontFamily.Monospace}"
@@ -466,6 +668,7 @@
                                                                VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Column="2"
                                                                Text="{Binding Description}"
+                                                               ToolTip.Tip="{Binding Description}"
                                                                FontWeight="Normal"
                                                                TextTrimming="CharacterEllipsis"
                                                                VerticalAlignment="Center"/>
@@ -490,15 +693,14 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Background="{DynamicResource ShareX.Brush.Background.Panel}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
                     BorderThickness="2"
                     CornerRadius="12">
                 <StackPanel Spacing="12" HorizontalAlignment="Center">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.upload}"
-                               FontSize="48"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
+                                            FontSize="48"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"/>
                     <TextBlock x:Name="DropOverlayTitle"
                                Text="{x:Static res:Strings.MainWindow_ReleaseToUploadFiles}"
                                FontSize="22"

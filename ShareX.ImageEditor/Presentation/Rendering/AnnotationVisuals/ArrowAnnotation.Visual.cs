@@ -41,8 +41,8 @@ public partial class ArrowAnnotation
         {
             Stroke = brush,
             StrokeThickness = StrokeWidth,
-            StrokeLineCap = PenLineCap.Round,
-            StrokeJoin = PenLineJoin.Round,
+            StrokeLineCap = GetStrokeLineCap(),
+            StrokeJoin = GetStrokeJoin(),
             Fill = brush,
             Tag = this
         };
@@ -362,7 +362,7 @@ public partial class ArrowAnnotation
         return geometry;
     }
 
-    private static void AppendArrowCapFigure(StreamGeometryContext context, Point tip, ArrowCapPoints cap)
+    internal static void AppendArrowCapFigure(StreamGeometryContext context, Point tip, ArrowCapPoints cap)
     {
         context.BeginFigure(tip, true);
         context.LineTo(new Point(cap.LeftBase.X, cap.LeftBase.Y));
@@ -394,8 +394,12 @@ public partial class ArrowAnnotation
         arrowPath.Stroke = brush;
         arrowPath.Fill = brush;
         arrowPath.StrokeThickness = StrokeWidth;
-        arrowPath.StrokeLineCap = PenLineCap.Round;
-        arrowPath.StrokeJoin = PenLineJoin.Round;
+        arrowPath.StrokeLineCap = GetStrokeLineCap();
+        arrowPath.StrokeJoin = GetStrokeJoin();
         arrowPath.Data = CreateArrowGeometry();
     }
+
+    private PenLineCap GetStrokeLineCap() => RoundedCorners ? PenLineCap.Round : PenLineCap.Flat;
+
+    private PenLineJoin GetStrokeJoin() => RoundedCorners ? PenLineJoin.Round : PenLineJoin.Miter;
 }

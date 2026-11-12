@@ -29,6 +29,7 @@ using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 
@@ -50,6 +51,8 @@ public partial class PinToScreenWindow : Window
     private int _imageOpacity;
     private bool _minimized;
     private bool _opened;
+    private bool _dragging;
+    private PixelSize _windowPixelSize;
 
     public PinToScreenOptions Options { get; }
 
@@ -80,28 +83,51 @@ public partial class PinToScreenWindow : Window
 
         Opened += OnOpened;
         Closed += (_, _) => _bitmap.Dispose();
+        ScalingChanged += OnScalingChanged;
         ApplyOptions(resize: false);
+        UpdateCursor();
     }
 
     private void OnOpened(object? sender, EventArgs e)
     {
         _opened = true;
-        ResizeWindow(keepCenter: false);
+
+        // Like ShareX 21, 100% shows the image pixel for pixel, so sizes and positions are worked out in physical
+        // pixels for the screen the window is about to be placed on, which may not be the one it opened on.
+        System.Drawing.Rectangle workingArea = _requestedLocation.HasValue
+            ? System.Drawing.Rectangle.Empty
+            : CaptureHelpers.GetActiveScreenWorkingArea();
+        PixelPoint anchor = _requestedLocation.HasValue
+            ? new PixelPoint(_requestedLocation.Value.X, _requestedLocation.Value.Y)
+            : new PixelPoint(workingArea.X + workingArea.Width / 2, workingArea.Y + workingArea.Height / 2);
+        double scaling = Screens.ScreenFromPoint(anchor)?.Scaling ?? RenderScaling;
+
+        ResizeWindow(keepCenter: false, scaling);
 
         System.Drawing.Point location;
         if (_requestedLocation.HasValue)
         {
-            int inset = GetOuterInset();
+            int inset = GetOuterInsetPixels(scaling);
             location = new System.Drawing.Point(_requestedLocation.Value.X - inset, _requestedLocation.Value.Y - inset);
         }
         else
         {
-            System.Drawing.Size size = new((int)Math.Ceiling(Width), (int)Math.Ceiling(Height));
-            location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset,
-                CaptureHelpers.GetActiveScreenWorkingArea(), size);
+            System.Drawing.Size size = new(_windowPixelSize.Width, _windowPixelSize.Height);
+            location = Helpers.GetPosition(Options.Placement, Options.PlacementOffset, workingArea, size);
         }
 
         Position = new PixelPoint(location.X, location.Y);
+    }
+
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        UpdateCursor();
+
+        if (_opened)
+        {
+            // Keep the image pixel for pixel when the window moves to a monitor with a different scale.
+            ResizeWindow(keepCenter: false);
+        }
     }
 
     private void ApplyOptions(bool resize = true)
@@ -110,8 +136,6 @@ public partial class PinToScreenWindow : Window
         Opacity = _minimized ? 1 : _imageOpacity / 100d;
         _imageBorder.Background = new SolidColorBrush(ToAvalonia(Options.BackgroundColor));
         _imageBorder.BorderBrush = new SolidColorBrush(ToAvalonia(Options.BorderColor));
-        _imageBorder.BorderThickness = Options.Border ? new Thickness(Math.Clamp(Options.BorderSize, 1, 30)) : new Thickness(0);
-        _imageBorder.Margin = Options.Shadow ? new Thickness(ShadowMargin) : new Thickness(0);
         _imageBorder.BoxShadow = Options.Shadow
             ? new BoxShadows(new BoxShadow { Blur = 14, OffsetY = 3, Color = Color.FromArgb(110, 0, 0, 0) })
             : new BoxShadows();
@@ -124,50 +148,76 @@ public partial class PinToScreenWindow : Window
         }
     }
 
-    private void ResizeWindow(bool keepCenter)
-    {
-        PixelPoint previousPosition = Position;
-        Avalonia.Size previousSize = ClientSize;
-        Avalonia.Size imageSize = GetDisplayedImageSize();
-        double border = Options.Border ? Math.Clamp(Options.BorderSize, 1, 30) * 2 : 0;
-        double shadow = Options.Shadow ? ShadowMargin * 2 : 0;
-        double width = Math.Max(1, imageSize.Width + border + shadow);
-        double height = Math.Max(1, imageSize.Height + border + shadow);
+    private void ResizeWindow(bool keepCenter) => ResizeWindow(keepCenter, RenderScaling);
 
-        _pinnedImage.Width = imageSize.Width;
-        _pinnedImage.Height = imageSize.Height;
+    private void ResizeWindow(bool keepCenter, double scaling)
+    {
+        if (!double.IsFinite(scaling) || scaling <= 0)
+        {
+            scaling = 1;
+        }
+
+        // Size every part in whole physical pixels and convert to DIPs, so layout rounding can't shift or blur the image.
+        PixelPoint previousPosition = Position;
+        PixelSize previousSize = _windowPixelSize;
+        PixelSize imageSize = GetDisplayedImagePixelSize(scaling);
+        int borderSize = GetBorderPixels(scaling);
+        int shadowSize = GetShadowPixels(scaling);
+        int inset = borderSize + shadowSize;
+        PixelSize windowSize = new(imageSize.Width + inset * 2, imageSize.Height + inset * 2);
+
+        _imageBorder.BorderThickness = new Thickness(borderSize / scaling);
+        _imageBorder.Margin = new Thickness(shadowSize / scaling);
+        _pinnedImage.Width = imageSize.Width / scaling;
+        _pinnedImage.Height = imageSize.Height / scaling;
+
+        double width = windowSize.Width / scaling;
+        double height = windowSize.Height / scaling;
         Width = width;
         Height = height;
         MinWidth = width;
         MaxWidth = width;
         MinHeight = height;
         MaxHeight = height;
+        _windowPixelSize = windowSize;
 
         if (keepCenter && previousSize.Width > 0 && previousSize.Height > 0)
         {
             Position = new PixelPoint(
-                previousPosition.X + (int)Math.Round((previousSize.Width - width) / 2),
-                previousPosition.Y + (int)Math.Round((previousSize.Height - height) / 2));
+                previousPosition.X + (previousSize.Width - windowSize.Width) / 2,
+                previousPosition.Y + (previousSize.Height - windowSize.Height) / 2);
         }
 
         _scaleText.Text = $"{_imageScale}%";
         UpdateToolbarVisibility(IsPointerOver);
     }
 
-    private Avalonia.Size GetDisplayedImageSize()
+    private PixelSize GetDisplayedImagePixelSize(double scaling)
     {
         if (_minimized)
         {
-            return new Avalonia.Size(Math.Max(1, Options.MinimizeSize.Width), Math.Max(1, Options.MinimizeSize.Height));
+            return new PixelSize(Math.Max(1, (int)Math.Round(Options.MinimizeSize.Width * scaling)),
+                Math.Max(1, (int)Math.Round(Options.MinimizeSize.Height * scaling)));
         }
 
         double scale = _imageScale / 100d;
-        return new Avalonia.Size(Math.Max(1, Math.Round(_bitmap.PixelSize.Width * scale)),
-            Math.Max(1, Math.Round(_bitmap.PixelSize.Height * scale)));
+        return new PixelSize(Math.Max(1, (int)Math.Round(_bitmap.PixelSize.Width * scale)),
+            Math.Max(1, (int)Math.Round(_bitmap.PixelSize.Height * scale)));
     }
 
-    private int GetOuterInset() => (Options.Border ? Math.Clamp(Options.BorderSize, 1, 30) : 0) +
-        (Options.Shadow ? ShadowMargin : 0);
+    private int GetBorderPixels(double scaling) =>
+        Options.Border ? Math.Max(1, (int)Math.Round(Math.Clamp(Options.BorderSize, 1, 30) * scaling)) : 0;
+
+    private int GetShadowPixels(double scaling) => Options.Shadow ? (int)Math.Round(ShadowMargin * scaling) : 0;
+
+    private int GetOuterInsetPixels(double scaling) => GetBorderPixels(scaling) + GetShadowPixels(scaling);
+
+    private void UpdateCursor()
+    {
+        Cursor = _dragging
+            ? CursorAssetLoader.GetClosedHandCursor(RenderScaling)
+            : CursorAssetLoader.GetOpenHandCursor(RenderScaling);
+    }
 
     private void ChangeScale(int delta)
     {
@@ -221,7 +271,19 @@ public partial class PinToScreenWindow : Window
             }
             else
             {
-                BeginMoveDrag(e);
+                _dragging = true;
+                UpdateCursor();
+
+                try
+                {
+                    // On Windows this runs the move loop and returns once the button is released.
+                    BeginMoveDrag(e);
+                }
+                finally
+                {
+                    _dragging = false;
+                    UpdateCursor();
+                }
             }
             e.Handled = true;
         }

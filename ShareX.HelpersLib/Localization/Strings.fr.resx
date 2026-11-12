@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconnaître un texte (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Ouvrir dans l’éditeur de photos</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Effectuer des actions</value>
   </data>
@@ -639,6 +642,9 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Mise en ligne</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Règle</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Mise en ligne depuis le presse-papier</value>
   </data>
@@ -786,8 +792,11 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Capturer une région</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Capturer une région (transparente)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Règle</value>
+    <value>Mesurer</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleurs de l'écran</value>
@@ -866,6 +875,21 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fichiers image</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bas</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Côté</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatique</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Masquer</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Afficher</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Ouvrir une image</value>
@@ -1089,6 +1113,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Changer le type d'outil</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionner la loupe</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zoomer la loupe</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Ordinateur</value>
   </data>
@@ -1221,6 +1251,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatique</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vue liste</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vue miniatures</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Service de mise en ligne de textes personnalisé</value>
   </data>
@@ -1289,6 +1325,12 @@ Voulez-vous quand même l’exécuter ?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Téléverser le fichier</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Moniteur actif</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Moniteur principal</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

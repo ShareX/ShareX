@@ -25,6 +25,7 @@
 
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using ShareX.ImageEditor.Presentation.Views;
 using SkiaSharp;
@@ -39,6 +40,18 @@ namespace ShareX.ImageEditor.Integration
         public Action<SKBitmap>? PrintImageRequested { get; set; }
         public Action<SKBitmap>? PinImageRequested { get; set; }
         public Action<SKBitmap>? UploadImageRequested { get; set; }
+
+        /// <summary>
+        /// Captures a region of the screen while the editor window is hidden. Returns null when the capture is cancelled.
+        /// The editor takes ownership of the returned bitmap.
+        /// </summary>
+        public Func<Task<SKBitmap?>>? CaptureRegionRequested { get; set; }
+
+        /// <summary>
+        /// Captures the full screen while the editor window is hidden. The editor takes ownership of the returned bitmap.
+        /// </summary>
+        public Func<Task<SKBitmap?>>? CaptureFullscreenRequested { get; set; }
+
         public string? ImageFilePath { get; set; }
     }
 
@@ -141,6 +154,7 @@ namespace ShareX.ImageEditor.Integration
                     tcs.SetResult(result);
                 };
 
+                DesktopServices.PlaceOnMainWindowScreen(window);
                 window.Show();
             });
 
@@ -256,6 +270,9 @@ namespace ShareX.ImageEditor.Integration
                     }
                 };
             }
+
+            vm.CaptureRegionHandler = events.CaptureRegionRequested;
+            vm.CaptureFullscreenHandler = events.CaptureFullscreenRequested;
         }
     }
 }

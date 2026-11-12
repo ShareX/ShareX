@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Ukuran font</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Panah bebas</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Perataan horizontal</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ulangi (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Sudut membulat</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Simpan</value>
@@ -282,6 +288,15 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Batal (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Warna isian untuk area yang ditambahkan</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Gagal memuat gambar dari papan klip.
 Papan klip tidak berisi gambar.</value>
@@ -335,6 +350,12 @@ Papan klip tidak berisi gambar.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Baru dari tangkapan layar (layar penuh)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Baru dari tangkapan layar (wilayah)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Buka gambar</value>
@@ -1386,8 +1407,14 @@ Papan klip tidak berisi gambar.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Oke</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Utama</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Atur ulang bilah alat ke bawaan</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Sekunder</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Tampilkan / Sembunyikan</value>
@@ -1400,6 +1427,9 @@ Papan klip tidak berisi gambar.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Buram</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Ukuran kanvas</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klon</value>

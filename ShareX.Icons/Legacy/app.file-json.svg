@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="paper" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d4e5e5"/><stop offset="1" stop-color="#fff"/></linearGradient>
+    <linearGradient id="paperEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557f7f"/><stop offset="1" stop-color="#0b2a2a"/></linearGradient>
+    <linearGradient id="br" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset=".5" stop-color="#ffb52e"/><stop offset="1" stop-color="#ec8a00"/></linearGradient>
+  </defs>
+  <path d="M2.5 .5H11L13.5 3V15.5H2.5Z" fill="url(#paper)" stroke="url(#paperEdge)" stroke-opacity=".6"/>
+  <path d="M3.5 15V1M12.5 3.5V15" fill="none" stroke="#fff" stroke-opacity=".55"/>
+  <path d="M10.5 .9V3.5H13.2" fill="#fff" stroke="#9fb0b0"/>
+  <g fill="url(#br)" stroke="#9a5200" stroke-width=".8" stroke-linejoin="round">
+    <path d="M7 5H5.8Q4.5 5 4.5 6.3V8.4L3.3 9.5L4.5 10.6V12.7Q4.5 14 5.8 14H7V12.8H6.2Q5.8 12.8 5.8 12.4V10.4Q5.8 9.8 5.1 9.5Q5.8 9.2 5.8 8.6V6.6Q5.8 6.2 6.2 6.2H7Z"/>
+    <path d="M9 5H10.2Q11.5 5 11.5 6.3V8.4L12.7 9.5L11.5 10.6V12.7Q11.5 14 10.2 14H9V12.8H9.8Q10.2 12.8 10.2 12.4V10.4Q10.2 9.8 10.9 9.5Q10.2 9.2 10.2 8.6V6.6Q10.2 6.2 9.8 6.2H9Z"/>
+  </g>
+</svg>

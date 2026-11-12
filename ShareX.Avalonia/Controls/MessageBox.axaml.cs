@@ -33,6 +33,7 @@ using Avalonia.Threading;
 using ShareX.AvaloniaUI.Integration;
 using ShareX.AvaloniaUI.Localization;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 
 namespace ShareX.AvaloniaUI;
 
@@ -101,15 +102,29 @@ public static class MessageBox
 
     public static DialogResult Show(Window? owner, string? text, string? caption,
         MessageBoxButtons buttons = MessageBoxButtons.OK, MessageBoxIcon icon = MessageBoxIcon.None,
+        MessageBoxDefaultButton defaultButton = MessageBoxDefaultButton.Button1) =>
+        ShowInternal(owner, text, caption, buttons, icon, defaultButton, null).Result;
+
+    /// <summary>Shows a message box with a checkbox (e.g. "Don't remind me again") under the message.</summary>
+    public static DialogResult Show(string? text, string? caption, MessageBoxButtons buttons, string checkBoxText,
+        out bool checkBoxChecked, MessageBoxIcon icon = MessageBoxIcon.None,
         MessageBoxDefaultButton defaultButton = MessageBoxDefaultButton.Button1)
+    {
+        (DialogResult result, bool isChecked) = ShowInternal(null, text, caption, buttons, icon, defaultButton, checkBoxText);
+        checkBoxChecked = isChecked;
+        return result;
+    }
+
+    private static (DialogResult Result, bool CheckBoxChecked) ShowInternal(Window? owner, string? text, string? caption,
+        MessageBoxButtons buttons, MessageBoxIcon icon, MessageBoxDefaultButton defaultButton, string? checkBoxText)
     {
         AvaloniaBootstrapper.EnsureInitialized();
 
         if (Dispatcher.UIThread.CheckAccess())
         {
-            DialogResult result = DialogResult.None;
+            (DialogResult, bool) result = (DialogResult.None, false);
             DispatcherFrame frame = new();
-            ShowCore(owner, text, caption, buttons, icon, defaultButton, value =>
+            ShowCore(owner, text, caption, buttons, icon, defaultButton, checkBoxText, value =>
             {
                 result = value;
                 frame.Continue = false;
@@ -118,12 +133,12 @@ public static class MessageBox
             return result;
         }
 
-        TaskCompletionSource<DialogResult> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
+        TaskCompletionSource<(DialogResult, bool)> completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
         Dispatcher.UIThread.Post(() =>
         {
             try
             {
-                ShowCore(owner, text, caption, buttons, icon, defaultButton,
+                ShowCore(owner, text, caption, buttons, icon, defaultButton, checkBoxText,
                     value => completion.TrySetResult(value));
             }
             catch (Exception exception)
@@ -135,10 +150,11 @@ public static class MessageBox
     }
 
     private static void ShowCore(Window? owner, string? text, string? caption, MessageBoxButtons buttons,
-        MessageBoxIcon icon, MessageBoxDefaultButton defaultButton, Action<DialogResult> completed)
+        MessageBoxIcon icon, MessageBoxDefaultButton defaultButton, string? checkBoxText,
+        Action<(DialogResult, bool)> completed)
     {
-        MessageBoxWindow window = new(text, caption, buttons, icon, defaultButton);
-        window.Closed += (_, _) => completed(window.Result);
+        MessageBoxWindow window = new(text, caption, buttons, icon, defaultButton, checkBoxText);
+        window.Closed += (_, _) => completed((window.Result, window.IsCheckBoxChecked));
 
         owner ??= FindOwner();
         if (owner is { IsVisible: true })
@@ -173,8 +189,10 @@ internal partial class MessageBoxWindow : Window
 
     public DialogResult Result { get; private set; }
 
+    public bool IsCheckBoxChecked => OptionCheckBox.IsChecked == true;
+
     public MessageBoxWindow(string? text, string? caption, MessageBoxButtons buttons,
-        MessageBoxIcon icon, MessageBoxDefaultButton defaultButton)
+        MessageBoxIcon icon, MessageBoxDefaultButton defaultButton, string? checkBoxText = null)
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -182,6 +200,12 @@ internal partial class MessageBoxWindow : Window
         Title = caption ?? string.Empty;
         MessageText.Text = text ?? string.Empty;
         ConfigureIcon(icon);
+
+        if (!string.IsNullOrEmpty(checkBoxText))
+        {
+            OptionCheckBox.Content = checkBoxText;
+            OptionCheckBox.IsVisible = true;
+        }
 
         (DialogResult Result, string Text)[] buttonDefinitions = GetButtonDefinitions(buttons);
         int defaultButtonIndex = Math.Min((int)defaultButton, buttonDefinitions.Length - 1);
@@ -218,22 +242,22 @@ internal partial class MessageBoxWindow : Window
 
     private void ConfigureIcon(MessageBoxIcon icon)
     {
-        string? iconText = icon switch
+        string? iconKey = icon switch
         {
-            MessageBoxIcon.Error => LucideIcons.circle_x,
-            MessageBoxIcon.Question => LucideIcons.circle_question_mark,
-            MessageBoxIcon.Warning => LucideIcons.triangle_alert,
-            MessageBoxIcon.Information => LucideIcons.info,
+            MessageBoxIcon.Error => AppIcons.CircleX,
+            MessageBoxIcon.Question => AppIcons.Help,
+            MessageBoxIcon.Warning => AppIcons.Warning,
+            MessageBoxIcon.Information => AppIcons.Info,
             _ => null
         };
 
-        if (iconText == null)
+        if (iconKey == null)
         {
             IconContainer.IsVisible = false;
             return;
         }
 
-        IconText.Text = iconText;
+        IconText.Icon = iconKey;
         IconText.Foreground = icon switch
         {
             MessageBoxIcon.Error => new SolidColorBrush(ErrorColor),
@@ -242,8 +266,9 @@ internal partial class MessageBoxWindow : Window
         };
     }
 
+    // The icon sits on the dialog background, so it uses the accent icon color.
     private IBrush GetAccentBrush() =>
-        this.FindResource("ShareX.Brush.Accent.Start") as IBrush ?? Brushes.DodgerBlue;
+        this.FindResource("ShareX.Brush.Accent.Icon") as IBrush ?? Brushes.DodgerBlue;
 
     private static (DialogResult Result, string Text)[] GetButtonDefinitions(MessageBoxButtons buttons) => buttons switch
     {

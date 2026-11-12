@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.MultiUploadConfirmationWindow"
         Title="{x:Static res:Strings.MultiUploadConfirmationWindow_Title}"
         Width="440"
@@ -27,10 +28,6 @@
             <Setter Property="MinHeight" Value="32"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -43,13 +40,12 @@
                       ColumnDefinitions="Auto,*"
                       RowSpacing="14"
                       ColumnSpacing="16">
-                    <TextBlock Classes="icon"
-                               Grid.RowSpan="2"
-                               Text="{x:Static theming:LucideIcons.files}"
-                               FontSize="32"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Top"/>
+                    <controls:IconPresenter Grid.RowSpan="2"
+                                            Icon="{x:Static icons:AppIcons.Files}"
+                                            FontSize="32"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Top"/>
                     <TextBlock x:Name="MessageText"
                                Grid.Column="1"
                                FontSize="15"

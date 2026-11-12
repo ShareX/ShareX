@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="o" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3377bb" stop-opacity="0.36"/>
+<stop offset="1" stop-color="#12569a" stop-opacity="0.48"/>
+</linearGradient>
+<linearGradient id="l" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#eef4fa" stop-opacity="0.82"/>
+<stop offset="0.55" stop-color="#d3e2f0" stop-opacity="0.75"/>
+<stop offset="1" stop-color="#b7cfe7" stop-opacity="0.7"/>
+</linearGradient>
+<linearGradient id="r" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#e3edf7" stop-opacity="0.8"/>
+<stop offset="0.5" stop-color="#bbd2e9" stop-opacity="0.68"/>
+<stop offset="1" stop-color="#a8c4e1" stop-opacity="0.62"/>
+</linearGradient>
+</defs>
+<polygon points="6.08,3.764 6.08,12.08 1.882,12.08" fill="url(#l)"/>
+<polygon points="5.5,6.2 5.5,11.5 2.825,11.5" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+<polygon points="6.5,2 6.5,12.5 1.2,12.5" fill="none" stroke="url(#o)" stroke-linejoin="round"/>
+<polygon points="8.92,3.764 13.118,12.08 8.92,12.08" fill="url(#r)"/>
+<polygon points="9.5,6.2 12.175,11.5 9.5,11.5" fill="none" stroke="#ffffff" stroke-opacity=".22"/>
+<polygon points="8.5,2 13.8,12.5 8.5,12.5" fill="none" stroke="url(#o)" stroke-linejoin="round"/>
+</svg>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -41,7 +41,7 @@ public sealed class MosaicPolygonImageEffect : ImageEffectBase
     public override string Id => "mosaic_polygon";
     public override string Name => "Mosaic polygon";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.hexagon;
+    public override string IconKey => ImageEffectIcons.Hexagon;
     public override string Description => "Creates a mosaic using hexagonal or triangular polygon tiles.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

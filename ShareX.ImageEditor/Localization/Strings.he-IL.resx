@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>גודל גופן</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>חץ חופשי</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>יישור אופקי</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>ביצוע חוזר (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>פינות מעוגלות</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>שמור</value>
@@ -282,6 +288,15 @@
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>ביטול (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>החלה</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>צבע מילוי לאזור שנוסף</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>טעינת התמונה מלוח העריכה נכשלה.
 לוח העריכה אינו מכיל תמונה.</value>
@@ -335,6 +350,12 @@
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>שוליים</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>חדש מצילום מסך (מסך מלא)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>חדש מצילום מסך (אזור)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>פתיחת תמונה</value>
@@ -1386,8 +1407,14 @@
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>אישור</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>ראשי</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>איפוס סרגל הכלים לברירת המחדל</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>משני</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>הצגה / הסתרה</value>
@@ -1400,6 +1427,9 @@
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>טשטוש</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>גודל בד הציור</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>שכפול</value>

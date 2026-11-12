@@ -1,0 +1,162 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:res="using:ShareX.Localization"
+        x:Class="ShareX.IconPackPromptWindow"
+        x:CompileBindings="False"
+        Title="{x:Static res:Strings.IconPackPrompt_Title}"
+        Width="620"
+        SizeToContent="Height"
+        CanResize="False"
+        ShowInTaskbar="True"
+        Background="{DynamicResource ShareX.Brush.Background.Main}"
+        WindowStartupLocation="CenterOwner">
+
+    <Window.Styles>
+        <Style Selector="Button.pack-card">
+            <!-- The app Button style fixes the height at 40. -->
+            <Setter Property="Height" Value="NaN"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="CornerRadius" Value="10"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+        </Style>
+        <Style Selector="Button.pack-card.selected">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+        </Style>
+        <Style Selector="Button.pack-card.selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+        </Style>
+        <Style Selector="Button.pack-card controls|IconPresenter.check">
+            <Setter Property="IsVisible" Value="False"/>
+        </Style>
+        <Style Selector="Button.pack-card.selected controls|IconPresenter.check">
+            <Setter Property="IsVisible" Value="True"/>
+        </Style>
+        <Style Selector="Border.preview">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Main}"/>
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="Padding" Value="10,12"/>
+        </Style>
+        <Style Selector="Border.preview controls|IconPresenter">
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="Margin" Value="0,6"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.pack-title">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="TextBlock.pack-description">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="CornerRadius" Value="8"/>
+            <Setter Property="MinHeight" Value="38"/>
+            <Setter Property="Padding" Value="20,6"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+        </Style>
+    </Window.Styles>
+
+    <Grid RowDefinitions="Auto,Auto,Auto">
+        <Border Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                Padding="18,14">
+            <Grid ColumnDefinitions="Auto,*" ColumnSpacing="12">
+                <Border Width="40"
+                        Height="40"
+                        CornerRadius="8"
+                        Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Theme}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
+                </Border>
+                <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                    <TextBlock Text="{x:Static res:Strings.IconPackPrompt_Title}"
+                               FontSize="19"
+                               FontWeight="SemiBold"
+                               Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                    <TextBlock Text="{x:Static res:Strings.IconPackPrompt_Subtitle}"
+                               FontWeight="Normal"
+                               TextWrapping="Wrap"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1"
+              ColumnDefinitions="*,*"
+              ColumnSpacing="12"
+              Margin="18,16,18,0">
+            <Button x:Name="ModernCard"
+                    Classes="pack-card"
+                    Click="OnModernClick">
+                <StackPanel Spacing="10">
+                    <Border Classes="preview" icons:IconPackScope.Pack="Modern">
+                        <UniformGrid x:Name="ModernPreview" Columns="4"/>
+                    </Border>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Classes="pack-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_IconPackModern}"/>
+                        <controls:IconPresenter Grid.Column="1"
+                                                Classes="check"
+                                                Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                VerticalAlignment="Center"/>
+                    </Grid>
+                    <TextBlock Classes="pack-description" Text="{x:Static res:Strings.IconPackPrompt_ModernDescription}"/>
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="LegacyCard"
+                    Grid.Column="1"
+                    Classes="pack-card"
+                    Click="OnLegacyClick">
+                <StackPanel Spacing="10">
+                    <Border Classes="preview" icons:IconPackScope.Pack="Legacy">
+                        <UniformGrid x:Name="LegacyPreview" Columns="4"/>
+                    </Border>
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Classes="pack-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_IconPackLegacy}"/>
+                        <controls:IconPresenter Grid.Column="1"
+                                                Classes="check"
+                                                Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                FontSize="18"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                VerticalAlignment="Center"/>
+                    </Grid>
+                    <TextBlock Classes="pack-description" Text="{x:Static res:Strings.IconPackPrompt_LegacyDescription}"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Grid Grid.Row="2"
+              ColumnDefinitions="*,Auto"
+              ColumnSpacing="16"
+              Margin="18,16,18,18">
+            <TextBlock Text="{x:Static res:Strings.IconPackPrompt_ChangeLater}"
+                       FontSize="11"
+                       FontWeight="Normal"
+                       TextWrapping="Wrap"
+                       VerticalAlignment="Center"
+                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Button Grid.Column="1"
+                    Classes="primary"
+                    IsDefault="True"
+                    Content="{x:Static res:Strings.AfterCaptureWindow_Continue}"
+                    Click="OnContinueClick"/>
+        </Grid>
+    </Grid>
+</Window>

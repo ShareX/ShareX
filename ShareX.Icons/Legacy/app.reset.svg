@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="t0" x1="1" y1=".23" x2=".23" y2="1"><stop offset="0" stop-color="#8fdafb" stop-opacity="0"/><stop offset=".35" stop-color="#80caf4" stop-opacity=".25"/><stop offset=".7" stop-color="#6fb9ea" stop-opacity=".6"/><stop offset="1" stop-color="#62b0e5"/></linearGradient>
+    <linearGradient id="tl00" x1="1" y1=".23" x2=".23" y2="1"><stop offset="0" stop-color="#3895e0" stop-opacity="0"/><stop offset=".35" stop-color="#308ad6" stop-opacity=".25"/><stop offset=".7" stop-color="#287ec9" stop-opacity=".6"/><stop offset="1" stop-color="#1f73be"/></linearGradient>
+    <linearGradient id="tl01" x1="1" y1="-.43" x2="-.43" y2="1"><stop offset="0" stop-color="#3895e0" stop-opacity="0"/><stop offset=".35" stop-color="#308ad6" stop-opacity=".25"/><stop offset=".7" stop-color="#287ec9" stop-opacity=".6"/><stop offset="1" stop-color="#1f73be"/></linearGradient>
+    <linearGradient id="r0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae5ff"/><stop offset=".19" stop-color="#88d2f8"/><stop offset=".35" stop-color="#74bcec"/><stop offset=".5" stop-color="#62b0e5"/><stop offset=".65" stop-color="#40a9e7"/><stop offset=".81" stop-color="#22b2f7"/><stop offset="1" stop-color="#08b0fc"/></linearGradient>
+    <linearGradient id="rl00" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3e9be6"/><stop offset=".19" stop-color="#3490db"/><stop offset=".42" stop-color="#257ac5"/><stop offset=".65" stop-color="#1464af"/><stop offset="1" stop-color="#024d98"/></linearGradient>
+    <linearGradient id="rl01" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#318cd7"/><stop offset=".35" stop-color="#257ac5"/><stop offset=".78" stop-color="#1464af"/><stop offset="1" stop-color="#0e5ca7"/></linearGradient>
+    <linearGradient id="h0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae5ff"/><stop offset=".04" stop-color="#9ae5ff"/><stop offset=".44" stop-color="#88d2f8"/><stop offset=".76" stop-color="#74bcec"/><stop offset="1" stop-color="#66b3e7"/></linearGradient>
+    <linearGradient id="hs0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3f9de8"/><stop offset=".44" stop-color="#3490db"/><stop offset=".92" stop-color="#257ac5"/><stop offset="1" stop-color="#2276c1"/></linearGradient>
+  </defs>
+  <path d="M8 1.5C6.26 1.5 4.59 2.2 3.36 3.44C2.14 4.69 1.47 6.37 1.5 8.11L4.5 8.06C4.48 7.12 4.85 6.22 5.5 5.55C6.16 4.88 7.06 4.5 8 4.5Z" fill="url(#t0)"/>
+  <path d="M1.5 8C1.5 11.44 4.18 14.29 7.62 14.49C11.06 14.69 14.06 12.17 14.46 8.75C14.86 5.33 12.52 2.2 9.13 1.6L8.61 4.55C10.43 4.88 11.69 6.56 11.48 8.41C11.26 10.25 9.65 11.6 7.8 11.49C5.95 11.39 4.5 9.85 4.5 8Z" fill="url(#r0)"/>
+  <path d="M8 1.5C6.27 1.5 4.6 2.19 3.38 3.42C2.16 4.66 1.49 6.32 1.5 8.06" fill="none" stroke="url(#tl00)"/>
+  <path d="M8 4.5C7.07 4.5 6.17 4.87 5.51 5.54C4.86 6.2 4.49 7.1 4.5 8.03" fill="none" stroke="url(#tl01)"/>
+  <path d="M1.5 8C1.5 11.44 4.18 14.29 7.62 14.49C11.06 14.69 14.06 12.17 14.46 8.75C14.86 5.33 12.52 2.2 9.13 1.6" fill="none" stroke="url(#rl00)"/>
+  <path d="M4.5 8C4.5 9.85 5.95 11.39 7.8 11.49C9.65 11.6 11.26 10.25 11.48 8.41C11.69 6.56 10.43 4.88 8.61 4.55" fill="none" stroke="url(#rl01)"/>
+  <polygon points="14.07,1.47 8.23,1.23 8.23,7.53" fill="url(#h0)" stroke="url(#hs0)" stroke-linejoin="round"/>
+</svg>

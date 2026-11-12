@@ -430,6 +430,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Tiêu đề cửa sổ</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Khoảng cách: {0:0.00} px | Góc: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Phải: {2} | Dưới: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Chiều rộng: {0} px | Chiều cao: {1} px | Diện tích: {2} px | Chu vi: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Thước kẻ</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Nội dung bảng tạm</value>
   </data>
@@ -986,7 +998,7 @@
     <value>Giá trị thấp hơn giúp mã hóa nhanh hơn. Giá trị cao hơn tạo tệp nhỏ hơn. Mọi giá trị đều giữ nguyên chất lượng hình ảnh.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Không mất dữ liệu:</value>
+    <value>Không mất dữ liệu</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Lấp đầy</value>
@@ -1600,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Đích</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Ngôn ngữ {0} không khả dụng cho OCR trên hệ thống này.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Nhận dạng ký tự quang học chỉ khả dụng với Windows phiên bản {0} trở lên.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1633,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Đóng sau khi mở</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Đã sao chép vào bộ nhớ tạm</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Sao chép tất cả</value>
   </data>
@@ -1642,23 +1651,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Chỉnh sửa dịch vụ</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Ngôn ngữ</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Tên</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Mới</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Trợ giúp OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Không tìm thấy văn bản</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Mở dịch vụ...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Nhận dạng</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Xóa</value>
@@ -1668,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Kết quả</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Hệ số tỷ lệ</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Chọn dịch vụ</value>
@@ -1684,8 +1684,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Chọn vùng...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Dịch vụ</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Tách đoạn văn</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Nhận dạng ký tự quang học</value>
@@ -2033,7 +2033,7 @@
     <value>Dung sai: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Thước đo</value>
+    <value>ShareX - Đo</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Chọn một video để bắt đầu.</value>
@@ -2077,6 +2077,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Đang dừng chuyển đổi...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Tốc độ bit trung bình</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Duyệt...</value>
   </data>
@@ -2095,6 +2098,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Tên tệp</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Kích thước tệp</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Thư mục</value>
   </data>
@@ -2112,6 +2118,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Chất lượng</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Độ phân giải</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Kết quả</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Trình chuyển đổi video</value>

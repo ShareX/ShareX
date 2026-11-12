@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class EngravingImageEffect : ImageEffectBase
     public override string Id => "engraving";
     public override string Name => "Engraving";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.pen_line;
+    public override string IconKey => AppIcons.Annotate;
     public override string Description => "Simulates a line engraving effect like banknote illustrations.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>文字识别（OCR）</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>在照片编辑器中打开</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>执行操作</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>上传</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>标尺</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>从剪贴板上传</value>
   </data>
@@ -786,8 +792,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>截图矩形区域</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>截图矩形区域（透明）</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>测量尺</value>
+    <value>测量</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>屏幕拾色器</value>
@@ -866,6 +875,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>图像文件</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>底部</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>侧边</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>隐藏</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>显示</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>打开图像</value>
@@ -1089,6 +1113,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>互换工具类型</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>调整放大镜大小</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>缩放放大镜</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>计算机</value>
   </data>
@@ -1221,6 +1251,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>自动</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>列表视图</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>缩略图视图</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>自定义文本上传器</value>
   </data>
@@ -1289,6 +1325,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>上传文件</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>当前显示器</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>主显示器</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

@@ -28,8 +28,8 @@
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Imaging;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using System;
 using System.Collections.Generic;
@@ -45,17 +45,29 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 {
     private int _refreshVersion;
     private Bitmap? _thumbnail;
+    private Bitmap? _hoverFrame;
+    private int _hoverVersion;
+    private bool _isHoverAnimating;
+    private bool _disposed;
     private bool _isSelected;
     private string _title = string.Empty;
     private string _status = string.Empty;
     private string _details = string.Empty;
-    private string _placeholderIcon = LucideIcons.file;
+    private string _placeholderIcon = AppIcons.File;
     private double _progress;
     private bool _isProgressVisible;
     private bool _isFailed;
     private bool _isCombineTarget;
+    private string _listStatus = string.Empty;
+    private string _listStatusIcon = AppIcons.Clock;
+    private string _listProgress = string.Empty;
+    private string _listSpeed = string.Empty;
+    private string _listElapsed = string.Empty;
+    private string _listRemaining = string.Empty;
+    private string _listUrl = string.Empty;
 
     public WorkerTask Task { get; }
+    private static bool IsListView => ApplicationState.Settings.TaskViewMode == TaskViewMode.ListView;
     public int Width => Math.Max(96, ApplicationState.Settings.ThumbnailSize.Width);
     public int Height => Math.Max(72, ApplicationState.Settings.ThumbnailSize.Height);
     public bool ShowTitle => ApplicationState.Settings.ShowThumbnailTitle;
@@ -77,11 +89,35 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             OnPropertyChanged();
             OnPropertyChanged(nameof(HasThumbnail));
             OnPropertyChanged(nameof(HasNoThumbnail));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
             OnPropertyChanged(nameof(ShowPlayIcon));
             old?.Dispose();
         }
     }
 
+    // The current frame of an animated GIF played while the pointer is over the thumbnail, shown on top of Thumbnail.
+    public Bitmap? HoverFrame
+    {
+        get => _hoverFrame;
+        private set
+        {
+            if (ReferenceEquals(_hoverFrame, value))
+            {
+                return;
+            }
+
+            Bitmap? old = _hoverFrame;
+            _hoverFrame = value;
+            OnPropertyChanged();
+            OnPropertyChanged(nameof(HasHoverFrame));
+            OnPropertyChanged(nameof(ShowStillThumbnail));
+            old?.Dispose();
+        }
+    }
+
+    public bool HasHoverFrame => HoverFrame != null;
+    // Hidden while a GIF plays, so it doesn't show through the frames' transparent parts.
+    public bool ShowStillThumbnail => HasThumbnail && !HasHoverFrame;
     public bool HasThumbnail => Thumbnail != null;
     public bool HasNoThumbnail => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Task.Info?.FilePath ?? Task.Info?.FileName);
@@ -169,6 +205,58 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         set => SetField(ref _isCombineTarget, value);
     }
 
+    public string ListStatus
+    {
+        get => _listStatus;
+        private set => SetField(ref _listStatus, value);
+    }
+
+    public string ListStatusIcon
+    {
+        get => _listStatusIcon;
+        private set => SetField(ref _listStatusIcon, value);
+    }
+
+    public string ListProgress
+    {
+        get => _listProgress;
+        private set => SetField(ref _listProgress, value);
+    }
+
+    public string ListSpeed
+    {
+        get => _listSpeed;
+        private set => SetField(ref _listSpeed, value);
+    }
+
+    public string ListElapsed
+    {
+        get => _listElapsed;
+        private set => SetField(ref _listElapsed, value);
+    }
+
+    public string ListRemaining
+    {
+        get => _listRemaining;
+        private set => SetField(ref _listRemaining, value);
+    }
+
+    public string ListUrl
+    {
+        get => _listUrl;
+        private set
+        {
+            if (_listUrl != value)
+            {
+                _listUrl = value;
+                OnPropertyChanged();
+                OnPropertyChanged(nameof(ListUrlToolTip));
+            }
+        }
+    }
+
+    public string? ListUrlToolTip => string.IsNullOrEmpty(_listUrl) ? null : _listUrl;
+
     public ThumbnailItemViewModel(WorkerTask task)
     {
         Task = task;
@@ -178,6 +266,12 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     public void Refresh()
     {
         RefreshMetadata();
+
+        // The list view never shows image content, so don't decode any.
+        if (IsListView)
+        {
+            return;
+        }
 
         string? filePath = Task.Info?.FilePath;
 
@@ -191,6 +285,13 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
     public void RefreshFromOwnedImage(DrawingBitmap image)
     {
         RefreshMetadata();
+
+        if (IsListView)
+        {
+            image.Dispose();
+            return;
+        }
+
         StartThumbnailRefresh(null, image);
     }
 
@@ -205,9 +306,69 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         IsProgressVisible = Task.IsWorking && info?.Progress != null;
         IsFailed = Task.Status == TaskStatus.Failed;
         PlaceholderIcon = GetPlaceholderIcon(info?.FilePath ?? info?.FileName);
+        RefreshListColumns(info);
         OnPropertyChanged(nameof(IsVideo));
         OnPropertyChanged(nameof(ShowPlayIcon));
         OnPropertyChanged(nameof(IsClickable));
+    }
+
+    // Mirrors the ShareX 21 task list: transfer columns keep their last values once a task finishes.
+    private void RefreshListColumns(TaskInfo? info)
+    {
+        TaskStatus status = Task.Status;
+        ListStatusIcon = status switch
+        {
+            TaskStatus.InQueue => AppIcons.Clock,
+            TaskStatus.Preparing or TaskStatus.Working or TaskStatus.Stopping => AppIcons.Upload,
+            TaskStatus.Stopped => AppIcons.CircleStop,
+            TaskStatus.Failed => AppIcons.CircleX,
+            TaskStatus.History => AppIcons.History,
+            _ => AppIcons.CircleCheck
+        };
+
+        if (status == TaskStatus.History)
+        {
+            ListStatus = Strings.TaskListView_History;
+            ListProgress = info?.TaskEndTime.ToString() ?? string.Empty;
+            ListUrl = info?.ToString() ?? string.Empty;
+            return;
+        }
+
+        if (status == TaskStatus.InQueue)
+        {
+            ListStatus = Strings.TaskListView_InQueue;
+            return;
+        }
+
+        bool binaryUnits = ApplicationState.Settings.BinaryUnits;
+        var progress = info?.Progress;
+
+        if (status == TaskStatus.Working && progress != null && progress.Length > 0)
+        {
+            ListStatus = string.Format("{0:0.0}%", progress.Percentage);
+            ListProgress = string.Format("{0} / {1}", progress.Position.ToSizeString(binaryUnits), progress.Length.ToSizeString(binaryUnits));
+
+            if (progress.Speed > 0)
+            {
+                ListSpeed = ((long)progress.Speed).ToSizeString(binaryUnits) + "/s";
+            }
+
+            ListElapsed = Helpers.ProperTimeSpan(progress.Elapsed);
+            ListRemaining = Helpers.ProperTimeSpan(progress.Remaining);
+        }
+        else
+        {
+            ListStatus = !string.IsNullOrEmpty(info?.Status) ? info.Status : string.Empty;
+        }
+
+        if (status == TaskStatus.Failed)
+        {
+            ListUrl = string.Empty;
+        }
+        else if (status == TaskStatus.Completed || status == TaskStatus.Stopped)
+        {
+            ListUrl = info?.ToString() ?? string.Empty;
+        }
     }
 
     public void RefreshSettings()
@@ -217,14 +378,26 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         OnPropertyChanged(nameof(ShowTitle));
         OnPropertyChanged(nameof(ShowTitleAbove));
         OnPropertyChanged(nameof(ShowTitleBelow));
+
+        if (IsListView)
+        {
+            // Release decoded previews when switching to the list view.
+            _refreshVersion++;
+            Thumbnail = null;
+        }
+
         Refresh();
     }
+
+    // Width and Height are layout units; decode at the monitor's pixel density so previews stay sharp on high-DPI displays.
+    internal static double RenderScaling { get; set; } = 1;
 
     private void StartThumbnailRefresh(string? filePath, DrawingBitmap? image)
     {
         int version = ++_refreshVersion;
-        int width = Width;
-        int height = Height;
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 1 ? RenderScaling : 1;
+        int width = (int)Math.Ceiling(Width * scaling);
+        int height = (int)Math.Ceiling(Height * scaling);
         _ = RefreshThumbnailAsync(version, width, height, filePath, image);
     }
 
@@ -260,7 +433,7 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsImageFile(filePath))
             {
                 using FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+                return DecodeToFit(stream, width, height);
             }
 
             if (!string.IsNullOrEmpty(filePath) && File.Exists(filePath) && FileHelpers.IsVideoFile(filePath))
@@ -285,20 +458,80 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
         return null;
     }
 
+    // Decode only as large as the thumbnail box needs, without enlarging small images.
+    private static Bitmap DecodeToFit(Stream stream, int width, int height)
+    {
+        SkiaSharp.SKSizeI size = default;
+
+        using (SkiaSharp.SKCodec? codec = SkiaSharp.SKCodec.Create(new SkiaSharp.SKManagedStream(stream, false)))
+        {
+            if (codec != null)
+            {
+                size = codec.Info.Size;
+            }
+        }
+
+        stream.Position = 0;
+
+        if (size.Width <= 0 || size.Height <= 0)
+        {
+            return Bitmap.DecodeToWidth(stream, width, BitmapInterpolationMode.HighQuality);
+        }
+
+        if ((long)size.Width * height > (long)size.Height * width)
+        {
+            return Bitmap.DecodeToWidth(stream, Math.Min(width, size.Width), BitmapInterpolationMode.HighQuality);
+        }
+
+        return Bitmap.DecodeToHeight(stream, Math.Min(height, size.Height), BitmapInterpolationMode.HighQuality);
+    }
+
     private static string GetPlaceholderIcon(string? filePath)
     {
-        if (string.IsNullOrEmpty(filePath)) return LucideIcons.file;
-        if (FileHelpers.IsVideoFile(filePath)) return LucideIcons.file_video;
-        if (FileHelpers.IsTextFile(filePath)) return LucideIcons.file_text;
-        if (FileHelpers.IsImageFile(filePath)) return LucideIcons.file_image;
-        return LucideIcons.file;
+        if (string.IsNullOrEmpty(filePath)) return AppIcons.File;
+        if (FileHelpers.IsVideoFile(filePath)) return AppIcons.FileVideo;
+        if (FileHelpers.IsTextFile(filePath)) return AppIcons.FileText;
+        if (FileHelpers.IsImageFile(filePath)) return AppIcons.FileImage;
+        return AppIcons.File;
+    }
+
+    // Plays an animated GIF over its still thumbnail while the pointer is on it.
+    public void StartHoverAnimation()
+    {
+        string? filePath = Task.Info?.FilePath;
+
+        // Only formats that can be animated, so hovering a large PNG doesn't read the whole file.
+        if (_disposed || _isHoverAnimating || string.IsNullOrEmpty(filePath) ||
+            !AnimatedImagePreview.CanBeAnimated(filePath) || !File.Exists(filePath))
+        {
+            return;
+        }
+
+        _isHoverAnimating = true;
+        int version = ++_hoverVersion;
+
+        // Decode at twice the thumbnail size so frames stay sharp on high DPI screens.
+        _ = AnimatedImagePreview.PlayAsync(filePath, Math.Max(Width, Height) * 2,
+            () => version == _hoverVersion && !_disposed,
+            frame => HoverFrame = frame);
+    }
+
+    public void StopHoverAnimation()
+    {
+        _isHoverAnimating = false;
+        _hoverVersion++;
+        HoverFrame = null;
     }
 
     public void Dispose()
     {
+        _disposed = true;
         _refreshVersion++;
+        _hoverVersion++;
         Thumbnail?.Dispose();
         _thumbnail = null;
+        _hoverFrame?.Dispose();
+        _hoverFrame = null;
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;

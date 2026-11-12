@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>هیچ موردی با فیلترهای فعلی مطابقت ندارد</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>نام فرایند</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>تغییر نام</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>تغییر نام فایل</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>بازنشانی ستون‌ها</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>پوشه موردنظر برای وارد کردن را انتخاب کنید</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>{0:N0} فایل با موفقیت وارد شد.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>برچسب</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>این {0:N0} فایل</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>حذف از علاقه‌مندی‌ها</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>عنوان پنجره</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>پیشرفته</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>انجام شد</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>ویرایش در ویرایشگر عکس...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>ویرایش مورد تاریخچه</value>

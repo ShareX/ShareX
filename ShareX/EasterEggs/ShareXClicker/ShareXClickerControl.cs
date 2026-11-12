@@ -27,12 +27,14 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Documents;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Theming;
+using ShareX.AvaloniaUI.Controls;
+using ShareX.Icons;
 using ShareX.Properties;
 using System;
 using System.Collections.Generic;
@@ -57,7 +59,6 @@ public sealed class ShareXClickerControl : IDisposable
     private readonly Control _normalContent;
     private readonly ContentControl _storeHost;
     private readonly IBrush? _panelBackground;
-    private readonly IBrush? _accentBrush;
     private readonly IReadOnlyList<Control> _aboutTextControls;
     private readonly DispatcherTimer _timer;
     private readonly Random _random = new();
@@ -95,17 +96,15 @@ public sealed class ShareXClickerControl : IDisposable
         _normalContent = normalContent ?? throw new ArgumentNullException(nameof(normalContent));
         _storeHost = storeHost ?? throw new ArgumentNullException(nameof(storeHost));
         _panelBackground = panelBackground;
-        _accentBrush = Application.Current?.Resources["ShareX.Brush.Accent"] as IBrush;
         _aboutTextControls = aboutTextControls ?? throw new ArgumentNullException(nameof(aboutTextControls));
 
-        _counter = new TextBlock
+        _counter = AccentText(new TextBlock
         {
             FontSize = 24,
             FontWeight = FontWeight.Bold,
-            Foreground = _accentBrush,
             TextAlignment = TextAlignment.Center,
             TextWrapping = TextWrapping.Wrap
-        };
+        });
         _rateText = new TextBlock
         {
             FontSize = 12,
@@ -269,7 +268,7 @@ public sealed class ShareXClickerControl : IDisposable
                         {
                             Orientation = Orientation.Horizontal,
                             Spacing = 7,
-                            Children = { Icon(LucideIcons.landmark, 18), new TextBlock { Text = "ShareX Clicker", FontSize = 18, Foreground = _accentBrush } }
+                            Children = { Icon(AppIcons.Landmark, 18), AccentText(new TextBlock { Text = "ShareX Clicker", FontSize = 18 }) }
                         },
                         new TextBlock { Text = "Build a tiny screenshot empire.", FontSize = 12, Opacity = 0.7 }
                     }
@@ -278,7 +277,7 @@ public sealed class ShareXClickerControl : IDisposable
             }
         });
 
-        panel.Children.Add(CreateSectionHeading("Upgrades", LucideIcons.sparkles));
+        panel.Children.Add(CreateSectionHeading("Upgrades", AppIcons.Sparkles));
 
         foreach (ShareXClickerUpgrade upgrade in UpgradesToDisplay())
         {
@@ -287,7 +286,7 @@ public sealed class ShareXClickerControl : IDisposable
             panel.Children.Add(row.Container);
         }
 
-        panel.Children.Add(CreateSectionHeading("Generators", LucideIcons.factory));
+        panel.Children.Add(CreateSectionHeading("Generators", AppIcons.Factory));
         foreach (ShareXClickerBuilding building in BuildingsToDisplay())
         {
             StoreRow row = CreateBuildingRow(building);
@@ -402,7 +401,7 @@ public sealed class ShareXClickerControl : IDisposable
             }
         };
 
-        TextBlock rowIcon = Icon(building.Icon, 18);
+        IconPresenter rowIcon = Icon(building.Icon, 18);
         StackPanel priceContent = CreatePriceContent(out TextBlock priceText);
         buyButton.Content = priceContent;
         return new StoreRow(building.Id, building, null, CreateRow(rowIcon, title, details, buyButton, _panelBackground), rowIcon, title, details, buyButton, priceContent, priceText);
@@ -422,7 +421,7 @@ public sealed class ShareXClickerControl : IDisposable
             }
         };
 
-        TextBlock rowIcon = Icon(upgrade.Icon, 18);
+        IconPresenter rowIcon = Icon(upgrade.Icon, 18);
         StackPanel priceContent = CreatePriceContent(out TextBlock priceText);
         buyButton.Content = priceContent;
         return new StoreRow(upgrade.Id, null, upgrade, CreateRow(rowIcon, title, details, buyButton, _panelBackground), rowIcon, title, details, buyButton, priceContent, priceText);
@@ -445,7 +444,7 @@ public sealed class ShareXClickerControl : IDisposable
         };
     }
 
-    private static Border CreateRow(TextBlock icon, TextBlock title, TextBlock details, Button buyButton, IBrush? background)
+    private static Border CreateRow(IconPresenter icon, TextBlock title, TextBlock details, Button buyButton, IBrush? background)
     {
         Border buttonHost = new() { Padding = new Thickness(8, 0, 0, 0), Child = buyButton };
         Grid.SetColumn(title, 1);
@@ -494,7 +493,7 @@ public sealed class ShareXClickerControl : IDisposable
             ShareXClickerUpgrade upgrade = row.Upgrade!;
             bool unlocked = _game.IsUnlocked(upgrade);
             bool purchased = _game.IsPurchased(upgrade);
-            row.Icon.Text = unlocked ? upgrade.Icon : LucideIcons.@lock;
+            row.Icon.Icon = unlocked ? upgrade.Icon : AppIcons.Lock;
             row.Title.Text = upgrade.Name;
             row.Details.Text = unlocked ? upgrade.Effect : $"Unlock at {ShareXClickerNumberFormatter.Format(upgrade.UnlockAt)} logos";
             row.Price.Text = ShareXClickerNumberFormatter.Format(upgrade.Cost);
@@ -507,7 +506,7 @@ public sealed class ShareXClickerControl : IDisposable
         {
             ShareXClickerBuilding building = row.Building!;
             bool unlocked = _game.IsUnlocked(building);
-            row.Icon.Text = unlocked ? building.Icon : LucideIcons.@lock;
+            row.Icon.Icon = unlocked ? building.Icon : AppIcons.Lock;
             row.Title.Text = $"{building.Name} ({_game.GetOwned(building)})";
             row.Details.Text = GetBuildingDetails(building, unlocked);
             int quantity = GetBuyQuantity(building);
@@ -600,14 +599,13 @@ public sealed class ShareXClickerControl : IDisposable
 
     private void AddFloatingText(Canvas canvas, Point position, string content, double fontSize, double lifetime = 0.65)
     {
-        TextBlock text = new()
+        TextBlock text = AccentText(new TextBlock
         {
             Text = content,
             FontSize = fontSize,
-            Foreground = _accentBrush,
             IsHitTestVisible = false,
             TextAlignment = TextAlignment.Center
-        };
+        });
         double estimatedWidth = Math.Max(40, content.Length * fontSize * 0.55);
         double left = Math.Clamp(position.X - estimatedWidth / 2 + _random.Next(-8, 9), 0, Math.Max(0, canvas.Bounds.Width - estimatedWidth));
         Canvas.SetLeft(text, left);
@@ -739,11 +737,19 @@ public sealed class ShareXClickerControl : IDisposable
         }
     }
 
-    private TextBlock Icon(string glyph, double size)
+    private static IconPresenter Icon(string key, double size)
     {
-        TextBlock icon = new() { Text = glyph, FontSize = size, VerticalAlignment = VerticalAlignment.Center, Foreground = _accentBrush };
-        icon.Classes.Add("icon");
+        IconPresenter icon = new() { Icon = key, FontSize = size, VerticalAlignment = VerticalAlignment.Center };
+        icon.Bind(TextElement.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Icon"));
         return icon;
+    }
+
+    // Accent text is drawn on the About panel, so it uses the surface accent color resolved for the control's theme,
+    // and follows theme and accent changes. Icons use the accent icon color instead.
+    private static T AccentText<T>(T control) where T : Control
+    {
+        control.Bind(TextElement.ForegroundProperty, control.GetResourceObservable("ShareX.Brush.Accent.Text"));
+        return control;
     }
 
     private static double ElapsedSeconds() => Stopwatch.GetTimestamp() / (double)Stopwatch.Frequency;
@@ -795,13 +801,13 @@ public sealed class ShareXClickerControl : IDisposable
         public double Age { get; set; }
     }
 
-    private sealed class StoreRow(string id, ShareXClickerBuilding? building, ShareXClickerUpgrade? upgrade, Border container, TextBlock icon, TextBlock title, TextBlock details, Button button, StackPanel priceContent, TextBlock price)
+    private sealed class StoreRow(string id, ShareXClickerBuilding? building, ShareXClickerUpgrade? upgrade, Border container, IconPresenter icon, TextBlock title, TextBlock details, Button button, StackPanel priceContent, TextBlock price)
     {
         public string Id { get; } = id;
         public ShareXClickerBuilding? Building { get; } = building;
         public ShareXClickerUpgrade? Upgrade { get; } = upgrade;
         public Border Container { get; } = container;
-        public TextBlock Icon { get; } = icon;
+        public IconPresenter Icon { get; } = icon;
         public TextBlock Title { get; } = title;
         public TextBlock Details { get; } = details;
         public Button Button { get; } = button;

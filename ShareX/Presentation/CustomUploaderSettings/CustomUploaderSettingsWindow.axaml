@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         x:Class="ShareX.CustomUploaderSettingsWindow"
         x:DataType="local:CustomUploaderSettingsViewModel"
@@ -43,7 +44,7 @@
         <Style Selector="TextBlock.section-title">
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Start}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
         </Style>
         <Style Selector="TextBlock.card-title">
             <Setter Property="FontSize" Value="14"/>
@@ -72,10 +73,6 @@
         <Style Selector="Button.compact">
             <Setter Property="MinHeight" Value="30"/>
             <Setter Property="Padding" Value="10,4"/>
-        </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Button.icon-button">
             <Setter Property="Width" Value="32"/>
@@ -120,8 +117,12 @@
         <Style Selector="ListBox.uploader-list > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.uploader-list > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.uploader-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
 
@@ -144,9 +145,20 @@
         <Style Selector="ListBox.section-navigation > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.section-navigation > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.section-navigation > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
     </Window.Styles>
 
@@ -169,18 +181,17 @@
                                 Classes="icon-button"
                                     ToolTip.Tip="{x:Static res:Strings.CustomUploaderSettingsWindow_Guide}"
                                 Click="OnGuideClick">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.circle_help}" FontSize="16"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Help}" FontSize="16"/>
                         </Button>
                     </Grid>
 
                     <Grid Grid.Row="1" ColumnDefinitions="Auto,*">
-                        <TextBlock Margin="9,0,0,0"
-                                   Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.search}"
-                                   FontSize="15"
-                                   IsHitTestVisible="False"
-                                   VerticalAlignment="Center"
-                                   ZIndex="1"/>
+                        <controls:IconPresenter Margin="9,0,0,0"
+                                                Icon="{x:Static icons:AppIcons.Search}"
+                                                FontSize="15"
+                                                IsHitTestVisible="False"
+                                                VerticalAlignment="Center"
+                                                ZIndex="1"/>
                         <TextBox Grid.ColumnSpan="2"
                                  Classes="dense"
                                  Padding="29,4,7,4"
@@ -191,13 +202,13 @@
                     <Grid Grid.Row="2" ColumnDefinitions="*,*" ColumnSpacing="5">
                         <Button Classes="compact primary left-action" Click="OnNewClick">
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}" FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}" FontSize="15"/>
                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_New}"/>
                             </StackPanel>
                         </Button>
                         <Button Grid.Column="1" Classes="compact left-action" Click="OnImportClick">
                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.download}" FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Download}" FontSize="15"/>
                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Import}"/>
                             </StackPanel>
                         </Button>
@@ -215,12 +226,11 @@
                                         <Border Width="29" Height="29"
                                                 CornerRadius="4"
                                                 Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.braces}"
-                                                       FontSize="15"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                       HorizontalAlignment="Center"
-                                                       VerticalAlignment="Center"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Braces}"
+                                                                    FontSize="15"
+                                                                    Classes="list-icon accent"
+                                                                    HorizontalAlignment="Center"
+                                                                    VerticalAlignment="Center"/>
                                         </Border>
                                         <StackPanel Grid.Column="1" Spacing="0" VerticalAlignment="Center">
                                             <TextBlock Text="{Binding Title}" TextTrimming="CharacterEllipsis"/>
@@ -238,11 +248,10 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Margin="16">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.search}"
-                                       FontSize="24"
-                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                       HorizontalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Search}"
+                                                    FontSize="24"
+                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                    HorizontalAlignment="Center"/>
                             <TextBlock Text="{Binding EmptyLibraryMessage}"
                                        Classes="description"
                                        TextAlignment="Center"/>
@@ -252,13 +261,13 @@
                     <StackPanel Grid.Row="4" Spacing="6">
                         <Grid ColumnDefinitions="*,*,*" ColumnSpacing="4">
                         <Button Classes="compact left-action" IsEnabled="{Binding HasSelection}" Click="OnDuplicateClick" ToolTip.Tip="{x:Static res:Strings.CustomUploaderSettingsWindow_Duplicate}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}" FontSize="15"/>
                             </Button>
                         <Button Grid.Column="1" Classes="compact left-action" IsEnabled="{Binding HasSelection}" Click="OnExportClick" ToolTip.Tip="{x:Static res:Strings.CustomUploaderSettingsWindow_Export}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}" FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}" FontSize="15"/>
                             </Button>
                         <Button Grid.Column="2" Classes="compact left-action" IsEnabled="{Binding HasSelection}" Click="OnRemoveClick" ToolTip.Tip="{x:Static res:Strings.CustomUploaderSettingsWindow_Remove}">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}" FontSize="15"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}" FontSize="15"/>
                             </Button>
                         </Grid>
                         <Grid ColumnDefinitions="*,*" ColumnSpacing="4">
@@ -277,12 +286,11 @@
             <Grid Grid.Column="1" Margin="16,12,16,10" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="10">
                 <Grid IsVisible="{Binding HasSelection}" ColumnDefinitions="Auto,*" ColumnSpacing="10">
                     <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.braces}"
-                                   FontSize="21"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                   HorizontalAlignment="Center"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Braces}"
+                                                FontSize="21"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
                     </Border>
                     <StackPanel Grid.Column="1" Spacing="1" VerticalAlignment="Center">
                         <TextBlock Text="{Binding SelectedUploader.Title}"
@@ -311,7 +319,7 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate x:DataType="local:CustomUploaderEditorSection">
                                 <StackPanel Orientation="Horizontal" Spacing="6">
-                                    <TextBlock Classes="icon" Text="{Binding Icon}" FontSize="15"/>
+                                    <controls:IconPresenter Icon="{Binding Icon}" FontSize="15"/>
                                     <TextBlock Text="{Binding Title}"/>
                                 </StackPanel>
                             </DataTemplate>
@@ -364,11 +372,10 @@
 
                             <Border Classes="card">
                                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.route}"
-                                               FontSize="20"
-                                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                               VerticalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FilePath}"
+                                                            FontSize="20"
+                                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                            VerticalAlignment="Center"/>
                                     <StackPanel Grid.Column="1" Spacing="2">
                             <TextBlock Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_Endpoint}"/>
                                         <TextBlock Text="{Binding SelectedUploader.RequestURL}"
@@ -480,11 +487,10 @@
 
                             <Border Classes="card" IsVisible="{Binding SelectedUploader.HasNoBodyEditor}">
                                 <StackPanel Spacing="8" HorizontalAlignment="Center" Margin="20">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.file_code}"
-                                               FontSize="28"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               HorizontalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileCode}"
+                                                            FontSize="28"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                            HorizontalAlignment="Center"/>
                                     <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_NoAdditionalBodyFields}"
                                                Classes="description"
                                                TextAlignment="Center"/>
@@ -509,7 +515,7 @@
                                                 HorizontalAlignment="Right"
                                                 Click="OnSyntaxTestClick">
                                             <StackPanel Orientation="Horizontal" Spacing="6">
-                                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.test_tube_2}" FontSize="15"/>
+                                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Flask}" FontSize="15"/>
                                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntaxButton}"/>
                                             </StackPanel>
                                         </Button>
@@ -554,7 +560,7 @@
                                 <Border Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_ImageUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -566,7 +572,7 @@
                                 <Border Grid.Column="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_text}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileText}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TextUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -578,7 +584,7 @@
                                 <Border Grid.Row="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file_code}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileCode}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_FileUploader}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -590,7 +596,7 @@
                                 <Border Grid.Row="1" Grid.Column="1" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.link}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_URLShortener}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -602,7 +608,7 @@
                                 <Border Grid.Row="2" Classes="card">
                                     <StackPanel Spacing="7">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.share_2}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Share}" FontSize="18" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                                             <TextBlock Grid.Column="1" Classes="card-title" Text="{x:Static res:Strings.CustomUploaderSettingsWindow_URLSharingService}"/>
                                         </Grid>
                                         <Grid ColumnDefinitions="*,Auto" ColumnSpacing="5">
@@ -621,11 +627,10 @@
                         Classes="card"
                         IsVisible="{Binding !HasSelection}">
                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="10" Margin="30">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.braces}"
-                                   FontSize="34"
-                                   Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                   HorizontalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Braces}"
+                                                FontSize="34"
+                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                HorizontalAlignment="Center"/>
                         <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_SelectUploaderToEdit}"
                                    FontSize="17"
                                    FontWeight="SemiBold"
@@ -638,11 +643,10 @@
                         BorderThickness="0,1,0,0"
                         Padding="2,8,2,0">
                     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.circle_check}"
-                                   FontSize="14"
-                                   Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                   VerticalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                                FontSize="14"
+                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                VerticalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding StatusMessage}"
                                    Classes="field-label"
@@ -663,11 +667,10 @@
                         VerticalAlignment="Center">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.test_tube_2}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Flask}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.CustomUploaderSettingsWindow_TestURLSyntax}" FontSize="19" FontWeight="SemiBold"/>
                             </StackPanel>
@@ -675,7 +678,7 @@
                                     Classes="icon-button"
                                     ToolTip.Tip="{x:Static res:Strings.CustomUploaderSettingsWindow_Close}"
                                     Click="OnCloseSyntaxTestClick">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.x}" FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}" FontSize="16"/>
                             </Button>
                         </Grid>
 

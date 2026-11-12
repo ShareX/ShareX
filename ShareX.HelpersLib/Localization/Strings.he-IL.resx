@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>זהה טקסט (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>פתח בעורך התמונות</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>בצע פעולות</value>
   </data>
@@ -639,6 +642,9 @@
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>העלה</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>סרגל</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>צילום מלוח הגזירה</value>
   </data>
@@ -786,8 +792,11 @@
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>צלם אזור</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>צלם אזור (שקוף)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>סרגל</value>
+    <value>מדידה</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>בוחר צבעי מסך</value>
@@ -866,6 +875,21 @@
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>קובצי תמונה</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>למטה</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>צד</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>אוטומטי</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>הסתר</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>הצג</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>פתיחת תמונה</value>
@@ -1089,6 +1113,12 @@
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>החלף סוג כלי</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>שינוי גודל זכוכית המגדלת</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>שינוי זום של זכוכית המגדלת</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>מחשב</value>
   </data>
@@ -1221,6 +1251,12 @@
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>אוטומטי</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>תצוגת רשימה</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>תצוגת תמונות ממוזערות</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>שירות העלאת טקסט מותאם אישית</value>
   </data>
@@ -1289,6 +1325,12 @@
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>העלה קובץ</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>הצג הפעיל</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>הצג הראשי</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

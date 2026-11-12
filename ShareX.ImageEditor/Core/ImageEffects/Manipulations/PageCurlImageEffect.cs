@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -43,7 +43,7 @@ public sealed class PageCurlImageEffect : ImageEffectBase
     public override string Id => "page_curl";
     public override string Name => "Page curl";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.rotate_cw_square;
+    public override string IconKey => ImageEffectIcons.PageCurl;
     public override string Description => "Simulates a page curl at a corner of the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -48,9 +48,9 @@ public sealed class CropTool : ToolBase
 
     public override ToolId Id => ToolId.Crop;
 
-    public override string Name => "Crop Tool";
+    public override string Name => Strings.CropTools_CropTool;
 
-    public override string Hint => "Drag to define the crop area; drag outside it to rotate. Enter commits, Esc cancels.";
+    public override string Hint => Strings.CropTools_CropHint;
 
     /// <summary>The crop box counts as a pending operation only once it differs from the whole canvas.</summary>
     public override bool HasPendingOperation => _active && IsModified;
@@ -183,7 +183,7 @@ public sealed class CropTool : ToolBase
             _center = startMatrix.MapPoint(localCenter);
             _size = new SKSize(right - left, bottom - top);
         }
-        Host.SetStatus($"W: {_size.Width:0} px  H: {_size.Height:0} px  Angle: {_angle:0.0}°");
+        Host.SetStatus(string.Format(Strings.CropTools_CropInfo, _size.Width, _size.Height, _angle));
         Host.InvalidateOverlay();
     }
 
@@ -203,7 +203,7 @@ public sealed class CropTool : ToolBase
             return;
         }
         DocumentTransforms.CropRotated(Doc, _center, _size, _angle, DeleteCroppedPixels, Host.Background, Host.Settings.DefaultResample);
-        PushHistory("Crop");
+        PushHistory(Strings.EditorCommands_Crop);
         Host.View?.FitOnScreen();
         Reset();
         Host.InvalidateCanvas();
@@ -251,23 +251,23 @@ public sealed class CropTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Ratio:", [("Ratio", (0f, 0f)), ("Original Ratio", (-1f, -1f)), ("1 : 1 (Square)", (1f, 1f)), ("4 : 5 (8 : 10)", (4f, 5f)), ("5 : 7", (5f, 7f)), ("2 : 3 (4 : 6)", (2f, 3f)), ("16 : 9", (16f, 9f))],
+        options.Combo(Strings.CropTools_RatioColon, [(Strings.CropTools_Ratio, (0f, 0f)), (Strings.CropTools_OriginalRatio, (-1f, -1f)), (Strings.CropTools_RatioSquare, (1f, 1f)), ("4 : 5 (8 : 10)", (4f, 5f)), ("5 : 7", (5f, 7f)), ("2 : 3 (4 : 6)", (2f, 3f)), ("16 : 9", (16f, 9f))],
             () => (RatioWidth, RatioHeight), v =>
             {
                 if (v.Item1 < 0 && Doc != null) { RatioWidth = Doc.Width; RatioHeight = Doc.Height; }
                 else { RatioWidth = v.Item1; RatioHeight = v.Item2; }
                 Host.RefreshOptions();
             }, 140);
-        options.Number("W:", 0, 100000, () => RatioWidth, v => RatioWidth = (float)v, "0.##", null, 1, 60);
-        options.Button("⇄", () => { (RatioWidth, RatioHeight) = (RatioHeight, RatioWidth); Host.RefreshOptions(); }, "Swap width and height");
-        options.Number("H:", 0, 100000, () => RatioHeight, v => RatioHeight = (float)v, "0.##", null, 1, 60);
-        options.Button("Clear", () => { RatioWidth = RatioHeight = 0; Host.RefreshOptions(); });
+        options.Number(Strings.CropTools_WColon, 0, 100000, () => RatioWidth, v => RatioWidth = (float)v, "0.##", null, 1, 60);
+        options.IconButton(PhotoEditorIcons.SwapDimensions, Strings.CropTools_SwapTip, () => { (RatioWidth, RatioHeight) = (RatioHeight, RatioWidth); Host.RefreshOptions(); });
+        options.Number(Strings.CropTools_HColon, 0, 100000, () => RatioHeight, v => RatioHeight = (float)v, "0.##", null, 1, 60);
+        options.Button(Strings.EditorCommands_Clear, () => { RatioWidth = RatioHeight = 0; Host.RefreshOptions(); });
         options.Separator();
-        options.Check("Rule of Thirds", () => ShowThirds, v => { ShowThirds = v; Host.InvalidateOverlay(); });
-        options.Check("Delete Cropped Pixels", () => DeleteCroppedPixels, v => DeleteCroppedPixels = v);
+        options.Check(Strings.CropTools_RuleOfThirds, () => ShowThirds, v => { ShowThirds = v; Host.InvalidateOverlay(); });
+        options.Check(Strings.CropTools_DeleteCroppedPixels, () => DeleteCroppedPixels, v => DeleteCroppedPixels = v);
         options.Separator();
-        options.Button("Cancel", Cancel);
-        options.Button("Commit", Commit);
+        options.Button(Strings.DialogBuilder_Cancel, Cancel);
+        options.Button(Strings.Tools_Commit, Commit);
     }
 }
 
@@ -285,9 +285,9 @@ public sealed class PerspectiveCropTool : ToolBase
 
     public override ToolId Id => ToolId.PerspectiveCrop;
 
-    public override string Name => "Perspective Crop Tool";
+    public override string Name => Strings.CropTools_PerspectiveCropTool;
 
-    public override string Hint => "Drag to create a crop box, then drag its corners to match the perspective of an object. Enter crops and straightens.";
+    public override string Hint => Strings.CropTools_PerspectiveCropHint;
 
     public override bool HasPendingOperation => _quad != null;
 
@@ -362,7 +362,7 @@ public sealed class PerspectiveCropTool : ToolBase
         if (width < 1 || height < 1) return;
         DocumentTransforms.PerspectiveCrop(Doc, _quad, width, height, Host.Settings.DefaultResample);
         _quad = null;
-        PushHistory("Perspective Crop");
+        PushHistory(Strings.CropTools_PerspectiveCrop);
         Host.View?.FitOnScreen();
         Host.InvalidateCanvas();
     }
@@ -393,8 +393,8 @@ public sealed class PerspectiveCropTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Check("Show Grid", () => ShowGrid, v => { ShowGrid = v; Host.InvalidateOverlay(); });
-        options.Button("Cancel", Cancel);
-        options.Button("Commit", Commit);
+        options.Check(Strings.CropTools_ShowGrid, () => ShowGrid, v => { ShowGrid = v; Host.InvalidateOverlay(); });
+        options.Button(Strings.DialogBuilder_Cancel, Cancel);
+        options.Button(Strings.Tools_Commit, Commit);
     }
 }

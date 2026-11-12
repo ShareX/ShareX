@@ -32,6 +32,7 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Platform;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -90,15 +91,14 @@ public partial class ActionsToolbarWindow : Window
                 continue;
             }
 
-            TextBlock icon = new()
+            IconPresenter icon = new()
             {
-                Text = TaskHelpers.FindMenuLucideIcon(action),
+                Icon = TaskHelpers.FindMenuIcon(action),
                 FontSize = 17,
-                TextAlignment = Avalonia.Media.TextAlignment.Center,
-                Foreground = this.FindResource("ShareX.Brush.Accent") as Avalonia.Media.IBrush,
                 IsHitTestVisible = false
             };
-            icon.Classes.Add("icon");
+            // Icons sit on the toolbar surface, so they use the accent icon color and follow accent changes.
+            icon.Bind(IconPresenter.ForegroundProperty, icon.GetResourceObservable("ShareX.Brush.Accent.Icon"));
 
             Button button = new()
             {

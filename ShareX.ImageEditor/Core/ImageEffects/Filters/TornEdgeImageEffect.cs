@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class TornEdgeImageEffect : ImageEffectBase
     public override string Id => "torn_edge";
     public override string Name => "Torn edge";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scissors_line_dashed;
+    public override string IconKey => ImageEffectIcons.TornEdge;
     public override string Description => "Adds a torn edge border effect.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

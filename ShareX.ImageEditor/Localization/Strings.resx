@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Font size</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freehand arrow</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Horizontal alignment</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Redo (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Rounded corners</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Save</value>
@@ -282,6 +288,15 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancel (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Fill color for the added area</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Failed to load image from clipboard.
 Clipboard does not contain an image.</value>
@@ -335,6 +350,12 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margin</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>New from screenshot (full screen)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>New from screenshot (region)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Open image</value>
@@ -1388,8 +1409,16 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primary</value>
+    <comment>Column header in the Customize Toolbar dialog for the main keyboard shortcut of a tool.</comment>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Reset toolbar to default</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondary</value>
+    <comment>Column header in the Customize Toolbar dialog for the alternate keyboard shortcut of a tool.</comment>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Show / Hide</value>
@@ -1402,6 +1431,9 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Blur</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Canvas size</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clone</value>

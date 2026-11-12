@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -39,7 +39,7 @@ public sealed class LensBlurImageEffect : ImageEffectBase
     public override string Id => "lens_blur";
     public override string Name => "Lens blur (bokeh)";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.aperture;
+    public override string IconKey => ImageEffectIcons.Aperture;
     public override string Description => "Applies a disc-shaped lens blur with highlight boost.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

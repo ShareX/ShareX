@@ -24,14 +24,14 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Threading;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.HistoryLib;
+using ShareX.Icons;
 using ShareX.ImageEditor.Integration;
-using ShareX.PhotoEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
+using ShareX.PhotoEditor.Integration;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -132,6 +132,9 @@ namespace ShareX
                 case HotkeyType.RectangleRegion:
                     new CaptureRegion().Capture(safeTaskSettings);
                     break;
+                case HotkeyType.RectangleTransparent:
+                    new CaptureRegionTransparent().Capture(safeTaskSettings);
+                    break;
                 case HotkeyType.CustomRegion:
                     new CaptureCustomRegion().Capture(safeTaskSettings);
                     break;
@@ -196,6 +199,9 @@ namespace ShareX
                     break;
                 case HotkeyType.Ruler:
                     OpenRuler(safeTaskSettings);
+                    break;
+                case HotkeyType.ClassicRuler:
+                    OpenClassicRuler(safeTaskSettings);
                     break;
                 case HotkeyType.MouseHighlighter:
                     MouseHighlighterManager.Toggle(safeTaskSettings.ToolsSettingsReference.MouseHighlighterOptions);
@@ -424,7 +430,8 @@ namespace ShareX
             imageData.ImageStream = SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                taskSettings.ImageSettings.ImageBMPBitDepth, autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings),
+                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
             imageData.ImageFormat = imageFormat;
 
             if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
@@ -479,7 +486,13 @@ namespace ShareX
             return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
                 taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
                 GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
-                taskSettings.ImageSettings.ImageBMPBitDepth, long.MaxValue, out _);
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings), long.MaxValue, out _);
+        }
+
+        private static SKWebpEncoderOptions GetWebPEncoderOptions(TaskSettingsImage settings)
+        {
+            return SkiaImageHelpers.GetWebPEncoderOptions(settings.ImageWebPQuality, settings.ImageWebPLossless,
+                settings.ImageWebPCompressionEffort);
         }
 
         private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
@@ -499,12 +512,13 @@ namespace ShareX
             BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
         {
             return SaveImageAsStream(img, imageFormat, pngBitDepth, jpegQuality, gifQuality,
-                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, long.MaxValue, out _);
+                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, SkiaImageHelpers.GetWebPEncoderOptions(90, false, 75),
+                long.MaxValue, out _);
         }
 
         private static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
             int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
-            BMPBitDepth bmpBitDepth, long pngSizeLimit, out bool pngSizeLimitExceeded)
+            BMPBitDepth bmpBitDepth, SKWebpEncoderOptions webpOptions, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
             pngSizeLimitExceeded = false;
@@ -541,6 +555,9 @@ namespace ShareX
                     case EImageFormat.BMP:
                         SkiaImageHelpers.SaveBMP(img, ms, bmpBitDepth);
                         break;
+                    case EImageFormat.WEBP:
+                        SkiaImageHelpers.SaveWebP(img, ms, webpOptions);
+                        break;
                 }
             }
             catch (Exception e)
@@ -557,7 +574,7 @@ namespace ShareX
             using (ImageData imageData = PrepareImage(bmp, taskSettings))
             {
                 string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                string fileName = GetFileName(taskSettings, imageData.ImageFormat.GetDescription(), bmp);
+                string fileName = GetFileName(taskSettings, imageData.ImageFormat.GetFileExtension(), bmp);
                 string filePath = Path.Combine(screenshotsFolder, fileName);
 
                 if (!overwriteFile)
@@ -682,6 +699,34 @@ namespace ShareX
 
                 completed(result);
             });
+        }
+
+        /// <summary>
+        /// Asks before deleting local files unless the user turned the confirmation off with "Don't remind me again"
+        /// (it can be turned back on in Application settings).
+        /// </summary>
+        public static bool ConfirmFileDelete()
+        {
+            if (!ApplicationState.Settings.ShowFileDeleteConfirmation)
+            {
+                return true;
+            }
+
+            MessageBoxResult result = MessageBox.Show(Strings.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                "ShareX - " + Strings.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+                MessageBoxButtons.YesNo, Strings.FileDeleteConfirmation_DontRemindAgain, out bool dontRemindAgain);
+
+            if (result != MessageBoxResult.Yes)
+            {
+                return false;
+            }
+
+            if (dontRemindAgain)
+            {
+                ApplicationState.Settings.ShowFileDeleteConfirmation = false;
+            }
+
+            return true;
         }
 
         public static void PrintImage(Image img)
@@ -887,6 +932,7 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    EditImageInPhotoEditor = filePath => OpenPhotoEditor(filePath),
                     TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
                     TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
@@ -903,6 +949,7 @@ namespace ShareX
                 {
                     UploadFile = filePath => UploadManager.UploadFile(filePath),
                     EditImage = filePath => AnnotateImageFromFile(filePath),
+                    EditImageInPhotoEditor = filePath => OpenPhotoEditor(filePath),
                     TrimVideo = filePath => OpenVideoTrimmer(inputFilePath: filePath),
                     TrimAnimatedGif = filePath => OpenAnimatedGifTrimmer(filePath),
                     PinToScreen = filePath => PinToScreen(filePath),
@@ -1230,8 +1277,40 @@ namespace ShareX
                         .LastOrDefault();
                 }
 
-                return new VideoConversionResult(succeeded, wasCancelled, errorMessage);
+                VideoConversionOutputInfo outputInfo = null;
+                if (succeeded && !wasCancelled)
+                {
+                    outputInfo = GetVideoConversionOutputInfo(ffmpegFilePath, request.OutputFilePath);
+                }
+
+                return new VideoConversionResult(succeeded, wasCancelled, errorMessage, outputInfo);
             }, cancellationToken);
+        }
+
+        private static VideoConversionOutputInfo GetVideoConversionOutputInfo(string ffmpegFilePath, string outputFilePath)
+        {
+            try
+            {
+                FileInfo fileInfo = new FileInfo(outputFilePath);
+                if (!fileInfo.Exists)
+                {
+                    return null;
+                }
+
+                using FFmpegCLIManager probe = new FFmpegCLIManager(ffmpegFilePath)
+                {
+                    ShowError = false
+                };
+
+                // "ffmpeg -i" without an output exits with an error, but still prints the stream summary.
+                probe.Run($"-hide_banner -i \"{outputFilePath}\"");
+                return VideoConversionOutputInfo.FromFFmpegOutput(probe.Output.ToString(), fileInfo.Length);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e);
+                return null;
+            }
         }
 
         public static void OpenVideoPlayer(string inputFilePath = null)
@@ -1406,7 +1485,7 @@ namespace ShareX
                     if (string.IsNullOrEmpty(newFilePath))
                     {
                         string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetFileExtension(), img);
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 
@@ -1420,7 +1499,7 @@ namespace ShareX
                     if (string.IsNullOrEmpty(newFilePath))
                     {
                         string screenshotsFolder = GetScreenshotsFolder(taskSettings);
-                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetDescription(), img);
+                        string fileName = GetFileName(taskSettings, taskSettings.ImageSettings.ImageFormat.GetFileExtension(), img);
                         newFilePath = Path.Combine(screenshotsFolder, fileName);
                     }
 
@@ -1441,7 +1520,9 @@ namespace ShareX
                 {
                     Bitmap bmp = skBitmap.Copy();
                     UploadImageOnUiThread(bmp, taskSettings);
-                }
+                },
+                CaptureRegionRequested = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureFullscreenRequested = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
 
             SKBitmap skBitmapResult = null;
@@ -1515,7 +1596,18 @@ namespace ShareX
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            PhotoEditorServices services = new PhotoEditorServices
+            PhotoEditorIntegration.Show(CreatePhotoEditorServices(taskSettings), filePaths, image, image != null ? "Screenshot" : null);
+        }
+
+        // Blocks until the Photo editor window closes and returns the edited image.
+        public static Bitmap OpenPhotoEditorTask(Bitmap image, TaskSettings taskSettings)
+        {
+            return PhotoEditorIntegration.ShowTaskDialog(CreatePhotoEditorServices(taskSettings), image, "Screenshot");
+        }
+
+        private static PhotoEditorServices CreatePhotoEditorServices(TaskSettings taskSettings)
+        {
+            return new PhotoEditorServices
             {
                 SettingsFilePath = StartupOptions.Sandbox ? null : Path.Combine(AppPaths.PersonalFolder, "PhotoEditor.json"),
                 DefaultFolder = GetScreenshotsFolder(taskSettings),
@@ -1531,8 +1623,6 @@ namespace ShareX
                 CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
                 CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
-
-            PhotoEditorIntegration.Show(services, filePaths, image, image != null ? "Screenshot" : null);
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
@@ -1857,6 +1947,43 @@ namespace ShareX
             ToolsIntegration.ShowRulerWindow();
         }
 
+        public static void OpenClassicRuler(TaskSettings taskSettings = null)
+        {
+            taskSettings ??= ApplicationState.DefaultTaskSettings;
+            RegionCaptureOptions options = taskSettings.CaptureSettings.RegionCaptureOptions;
+
+            ToolsIntegration.ShowClassicRulerWindow(new ClassicRulerOptions
+            {
+                ShowInfo = options.ShowInfo,
+                UseCustomInfoText = options.UseCustomInfoText,
+                CustomInfoText = options.CustomInfoText,
+                ShowMagnifier = options.ShowMagnifier,
+                UseSquareMagnifier = options.UseSquareMagnifier,
+                MagnifierSize = options.MagnifierSize,
+                MagnifierPixelCount = options.MagnifierPixelCount,
+                BackgroundDimStrength = options.BackgroundDimStrength,
+                DimAllExceptSelection = options.DimAllExceptSelection,
+                ShowCenterCrosshair = options.ShowCenterCrosshair,
+                ShowScreenCrosshair = options.ShowScreenCrosshair,
+                GetWindowRectangles = options.DetectWindows ? ignoredHandle =>
+                {
+                    WindowsRectangleList windows = new WindowsRectangleList
+                    {
+                        IncludeChildWindows = options.DetectControls,
+                        Timeout = 5000
+                    };
+
+                    if (ignoredHandle != IntPtr.Zero)
+                    {
+                        windows.IgnoreHandleList.Add(ignoredHandle);
+                    }
+
+                    return windows.GetWindowInfoList().Select(window => window.Rectangle).ToList();
+                }
+                : null
+            });
+        }
+
         public static void OpenMouseHighlighter(TaskSettings taskSettings = null)
         {
             taskSettings ??= ApplicationState.DefaultTaskSettings;
@@ -1910,11 +2037,31 @@ namespace ShareX
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
         }
 
-        public static async Task OCRImage(TaskSettings taskSettings = null)
+        public static async Task OCRImage(TaskSettings taskSettings = null, bool autoHideMainWindow = false)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
-            using (Bitmap bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions))
+            Bitmap bmp;
+
+            if (autoHideMainWindow)
+            {
+                MainWindowIntegration.Hide();
+                await Task.Delay(250);
+            }
+
+            try
+            {
+                bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+            }
+            finally
+            {
+                if (autoHideMainWindow)
+                {
+                    MainWindowIntegration.Activate();
+                }
+            }
+
+            using (bmp)
             {
                 await OCRImage(bmp, taskSettings);
             }
@@ -1944,8 +2091,6 @@ namespace ShareX
 
             try
             {
-                OCRHelper.ThrowIfNotSupported();
-
                 if (bmp != null)
                 {
                     if (options.Silent)
@@ -1962,16 +2107,13 @@ namespace ShareX
                         using MemoryStream imageStream = new MemoryStream();
                         bmp.Save(imageStream, ImageFormat.Png);
 
-                        OCRLanguageOption[] languages = OCRHelper.AvailableLanguages;
-
                         string result = await ToolsIntegration.ShowOCRWindowAsync(
                             imageStream.ToArray(),
-                            languages,
                             options,
-                            async (imageData, language, scaleFactor, singleLine) =>
+                            async imageData =>
                             {
                                 using Bitmap source = SkiaImageHelpers.ByteArrayToBitmap(imageData);
-                                return await OCRHelper.OCR(source, language, scaleFactor, singleLine);
+                                return await OCRHelper.Recognize(source);
                             },
                             async () =>
                             {
@@ -1984,8 +2126,7 @@ namespace ShareX
                                 using MemoryStream regionStream = new MemoryStream();
                                 region.Save(regionStream, ImageFormat.Png);
                                 return regionStream.ToArray();
-                            },
-                            openHelp: () => URLHelpers.OpenURL(Links.DocsOCR));
+                            });
 
                         if (!string.IsNullOrEmpty(result) && !string.IsNullOrEmpty(filePath))
                         {
@@ -2009,7 +2150,7 @@ namespace ShareX
 
                 OCROptions options = taskSettings.CaptureSettingsReference.OCROptions;
 
-                string result = await OCRHelper.OCR(bmp, options.Language, options.ScaleFactor, options.SingleLine);
+                string result = await OCRHelper.OCR(bmp, options.SingleLine, options.SeparateParagraphs);
 
                 if (!string.IsNullOrEmpty(result))
                 {
@@ -2295,104 +2436,106 @@ namespace ShareX
             CustomUploaderSettingsIntegration.Show();
         }
 
-        public static string FindMenuLucideIcon(HotkeyType hotkeyType)
+        public static string FindMenuIcon(HotkeyType hotkeyType)
         {
             return hotkeyType switch
             {
-                HotkeyType.None => LucideIcons.circle_dashed,
+                HotkeyType.None => AppIcons.CircleDashed,
 
                 // Upload
-                HotkeyType.FileUpload => LucideIcons.file_up,
-                HotkeyType.FolderUpload => LucideIcons.folder_up,
-                HotkeyType.ClipboardUpload => LucideIcons.clipboard,
-                HotkeyType.ClipboardUploadWithContentViewer => LucideIcons.clipboard_list,
-                HotkeyType.UploadText => LucideIcons.file_text,
-                HotkeyType.UploadURL => LucideIcons.link,
-                HotkeyType.DragDropUpload => LucideIcons.mouse_pointer_2,
-                HotkeyType.ShortenURL => LucideIcons.link_2,
-                HotkeyType.StopUploads => LucideIcons.circle_stop,
+                HotkeyType.FileUpload => AppIcons.FileUpload,
+                HotkeyType.FolderUpload => AppIcons.FolderUpload,
+                HotkeyType.ClipboardUpload => AppIcons.UploadClipboard,
+                HotkeyType.ClipboardUploadWithContentViewer => AppIcons.ClipboardViewer,
+                HotkeyType.UploadText => AppIcons.FileText,
+                HotkeyType.UploadURL => AppIcons.Link,
+                HotkeyType.DragDropUpload => AppIcons.DragDropUpload,
+                HotkeyType.ShortenURL => AppIcons.ShortLink,
+                HotkeyType.StopUploads => AppIcons.CircleStop,
 
                 // Screen capture
-                HotkeyType.PrintScreen => LucideIcons.monitor,
-                HotkeyType.ActiveWindow => LucideIcons.app_window,
-                HotkeyType.CustomWindow => LucideIcons.scan,
-                HotkeyType.ActiveMonitor => LucideIcons.monitor,
-                HotkeyType.RectangleRegion => LucideIcons.scan,
-                HotkeyType.CustomRegion => LucideIcons.scan_line,
-                HotkeyType.LastRegion => LucideIcons.layers,
-                HotkeyType.ScrollingCapture => LucideIcons.scroll_text,
-                HotkeyType.AutoCapture => LucideIcons.clock,
-                HotkeyType.StartAutoCapture => LucideIcons.circle_play,
-                HotkeyType.StopAutoCapture => LucideIcons.timer_off,
+                HotkeyType.PrintScreen => AppIcons.Fullscreen,
+                HotkeyType.ActiveWindow => AppIcons.Window,
+                HotkeyType.CustomWindow => AppIcons.Window,
+                HotkeyType.ActiveMonitor => AppIcons.Monitor,
+                HotkeyType.RectangleRegion => AppIcons.Region,
+                HotkeyType.RectangleTransparent => AppIcons.RegionTransparent,
+                HotkeyType.CustomRegion => AppIcons.Crop,
+                HotkeyType.LastRegion => AppIcons.LastRegion,
+                HotkeyType.ScrollingCapture => AppIcons.ScrollingCapture,
+                HotkeyType.AutoCapture => AppIcons.AutoCapture,
+                HotkeyType.StartAutoCapture => AppIcons.CirclePlay,
+                HotkeyType.StopAutoCapture => AppIcons.TimerOff,
 
                 // Screen record
-                HotkeyType.ScreenRecorder => LucideIcons.video,
-                HotkeyType.ScreenRecorderActiveWindow => LucideIcons.app_window,
-                HotkeyType.ScreenRecorderCustomRegion => LucideIcons.crop,
-                HotkeyType.StartScreenRecorder => LucideIcons.circle_play,
-                HotkeyType.ScreenRecorderGIF => LucideIcons.film,
-                HotkeyType.ScreenRecorderGIFActiveWindow => LucideIcons.film,
-                HotkeyType.ScreenRecorderGIFCustomRegion => LucideIcons.crop,
-                HotkeyType.StartScreenRecorderGIF => LucideIcons.circle_play,
-                HotkeyType.StopScreenRecording => LucideIcons.square_stop,
-                HotkeyType.PauseScreenRecording => LucideIcons.circle_pause,
-                HotkeyType.AbortScreenRecording => LucideIcons.circle_x,
+                HotkeyType.ScreenRecorder => AppIcons.ScreenRecording,
+                HotkeyType.ScreenRecorderActiveWindow => AppIcons.Window,
+                HotkeyType.ScreenRecorderCustomRegion => AppIcons.Crop,
+                HotkeyType.StartScreenRecorder => AppIcons.CirclePlay,
+                HotkeyType.ScreenRecorderGIF => AppIcons.Film,
+                HotkeyType.ScreenRecorderGIFActiveWindow => AppIcons.Film,
+                HotkeyType.ScreenRecorderGIFCustomRegion => AppIcons.Crop,
+                HotkeyType.StartScreenRecorderGIF => AppIcons.CirclePlay,
+                HotkeyType.StopScreenRecording => AppIcons.CircleStop,
+                HotkeyType.PauseScreenRecording => AppIcons.CirclePause,
+                HotkeyType.AbortScreenRecording => AppIcons.CircleX,
 
                 // Tools
-                HotkeyType.ColorPicker => LucideIcons.palette,
-                HotkeyType.ScreenColorPicker => LucideIcons.pipette,
-                HotkeyType.Ruler => LucideIcons.ruler,
-                HotkeyType.MouseHighlighter => LucideIcons.mouse_pointer_click,
-                HotkeyType.PinToScreen => LucideIcons.pin,
-                HotkeyType.PinToScreenFromScreen => LucideIcons.picture_in_picture,
-                HotkeyType.PinToScreenFromClipboard => LucideIcons.clipboard,
-                HotkeyType.PinToScreenFromFile => LucideIcons.file_image,
-                HotkeyType.PinToScreenCloseAll => LucideIcons.pin_off,
-                HotkeyType.ImageEditor => LucideIcons.image,
-                HotkeyType.PhotoEditor => LucideIcons.layers,
-                HotkeyType.ImageBeautifier => LucideIcons.sparkles,
-                HotkeyType.ImageEffects => LucideIcons.wand_sparkles,
-                HotkeyType.ImageViewer => LucideIcons.eye,
-                HotkeyType.BackgroundRemover => LucideIcons.eraser,
-                HotkeyType.ImageComparer => LucideIcons.images,
-                HotkeyType.IconConverter => LucideIcons.file_image,
-                HotkeyType.ImageCombiner => LucideIcons.combine,
-                HotkeyType.ImageSplitter => LucideIcons.split,
-                HotkeyType.ImageResizer => LucideIcons.maximize_2,
-                HotkeyType.ImageConverter => LucideIcons.refresh_cw,
-                HotkeyType.ImageWatermark => LucideIcons.stamp,
-                HotkeyType.ImageThumbnailer => LucideIcons.shrink,
-                HotkeyType.VideoConverter => LucideIcons.file_video,
-                HotkeyType.VideoTrimmer => LucideIcons.scissors,
-                HotkeyType.AnimatedGifTrimmer => LucideIcons.scissors_square,
-                HotkeyType.VideoThumbnailer => LucideIcons.clapperboard,
-                HotkeyType.AnalyzeImage => LucideIcons.bot,
-                HotkeyType.OCR => LucideIcons.scan_text,
-                HotkeyType.QRCode => LucideIcons.qr_code,
-                HotkeyType.QRCodeDecodeFromScreen => LucideIcons.scan_eye,
-                HotkeyType.QRCodeScanRegion => LucideIcons.scan_line,
-                HotkeyType.HashCheck => LucideIcons.hash,
-                HotkeyType.Metadata => LucideIcons.tags,
-                HotkeyType.StripMetadata => LucideIcons.file_x,
-                HotkeyType.IndexFolder => LucideIcons.folder_tree,
-                HotkeyType.ClipboardViewer => LucideIcons.clipboard_list,
-                HotkeyType.BorderlessWindow => LucideIcons.frame,
-                HotkeyType.ActiveWindowBorderless => LucideIcons.maximize,
-                HotkeyType.ActiveWindowTopMost => LucideIcons.panel_top,
-                HotkeyType.InspectWindow => LucideIcons.scan_search,
-                HotkeyType.NetworkMonitor => LucideIcons.activity,
-                HotkeyType.MonitorTest => LucideIcons.monitor,
+                HotkeyType.ColorPicker => AppIcons.Palette,
+                HotkeyType.ScreenColorPicker => AppIcons.ScreenColorPicker,
+                HotkeyType.Ruler => AppIcons.Measure,
+                HotkeyType.ClassicRuler => AppIcons.Ruler,
+                HotkeyType.MouseHighlighter => AppIcons.MouseHighlighter,
+                HotkeyType.PinToScreen => AppIcons.Pin,
+                HotkeyType.PinToScreenFromScreen => AppIcons.PictureInPicture,
+                HotkeyType.PinToScreenFromClipboard => AppIcons.Clipboard,
+                HotkeyType.PinToScreenFromFile => AppIcons.FileImage,
+                HotkeyType.PinToScreenCloseAll => AppIcons.Unpin,
+                HotkeyType.ImageEditor => AppIcons.ImageEditor,
+                HotkeyType.PhotoEditor => AppIcons.Layers,
+                HotkeyType.ImageBeautifier => AppIcons.ImageBeautifier,
+                HotkeyType.ImageEffects => AppIcons.MagicWand,
+                HotkeyType.ImageViewer => AppIcons.Eye,
+                HotkeyType.BackgroundRemover => AppIcons.BackgroundRemover,
+                HotkeyType.ImageComparer => AppIcons.ImageComparer,
+                HotkeyType.IconConverter => AppIcons.IconConverter,
+                HotkeyType.ImageCombiner => AppIcons.Combine,
+                HotkeyType.ImageSplitter => AppIcons.Split,
+                HotkeyType.ImageResizer => AppIcons.Resize,
+                HotkeyType.ImageConverter => AppIcons.ImageConverter,
+                HotkeyType.ImageWatermark => AppIcons.Stamp,
+                HotkeyType.ImageThumbnailer => AppIcons.ImageThumbnailer,
+                HotkeyType.VideoConverter => AppIcons.VideoConverter,
+                HotkeyType.VideoTrimmer => AppIcons.Scissors,
+                HotkeyType.AnimatedGifTrimmer => AppIcons.ScissorsFrame,
+                HotkeyType.VideoThumbnailer => AppIcons.Clapperboard,
+                HotkeyType.AnalyzeImage => AppIcons.Robot,
+                HotkeyType.OCR => AppIcons.TextRecognition,
+                HotkeyType.QRCode => AppIcons.QrCode,
+                HotkeyType.QRCodeDecodeFromScreen => AppIcons.ScanEye,
+                HotkeyType.QRCodeScanRegion => AppIcons.QrScan,
+                HotkeyType.HashCheck => AppIcons.Hash,
+                HotkeyType.Metadata => AppIcons.Tag,
+                HotkeyType.StripMetadata => AppIcons.FileDelete,
+                HotkeyType.IndexFolder => AppIcons.FolderTree,
+                HotkeyType.ClipboardViewer => AppIcons.ClipboardViewer,
+                HotkeyType.BorderlessWindow => AppIcons.BorderlessWindow,
+                HotkeyType.ActiveWindowBorderless => AppIcons.BorderlessWindow,
+                HotkeyType.ActiveWindowTopMost => AppIcons.Pin,
+                HotkeyType.InspectWindow => AppIcons.InspectWindow,
+                HotkeyType.NetworkMonitor => AppIcons.Activity,
+                HotkeyType.MonitorTest => AppIcons.MonitorTest,
 
                 // Other
-                HotkeyType.DisableHotkeys => LucideIcons.keyboard_off,
-                HotkeyType.OpenMainWindow => LucideIcons.panel_top_open,
-                HotkeyType.OpenScreenshotsFolder => LucideIcons.folder_open,
-                HotkeyType.OpenHistory => LucideIcons.history,
-                HotkeyType.OpenImageHistory => LucideIcons.images,
-                HotkeyType.ToggleActionsToolbar => LucideIcons.panel_top,
-                HotkeyType.ToggleTrayMenu => LucideIcons.menu,
-                HotkeyType.ExitShareX => LucideIcons.log_out,
-                _ => LucideIcons.circle
+                HotkeyType.DisableHotkeys => AppIcons.KeyboardOff,
+                HotkeyType.OpenMainWindow => AppIcons.Window,
+                HotkeyType.OpenScreenshotsFolder => AppIcons.ScreenshotsFolder,
+                HotkeyType.OpenHistory => AppIcons.History,
+                HotkeyType.OpenImageHistory => AppIcons.ImageHistory,
+                HotkeyType.ToggleActionsToolbar => AppIcons.Toolbar,
+                HotkeyType.ToggleTrayMenu => AppIcons.Menu,
+                HotkeyType.ExitShareX => AppIcons.Exit,
+                _ => AppIcons.Circle
             };
         }
 
@@ -2765,6 +2908,8 @@ namespace ShareX
                 Duration = duration,
                 FadeDuration = (int)(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowFadeDuration * 1000),
                 Placement = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowPlacement,
+                Monitor = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitor,
+                MonitorDeviceName = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowMonitorDeviceName,
                 Size = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowSize,
                 ActionButtonSize = ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtonSize,
                 ActionButtons = NotificationActionButton.CloneButtons(ApplicationState.DefaultTaskSettings.GeneralSettings.ToastWindowButtons),

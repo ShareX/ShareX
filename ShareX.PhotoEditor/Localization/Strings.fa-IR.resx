@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>خودکار</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>مشکی:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>مشکی‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>آبی</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>آبی:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>آبی‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>آبی‌ها:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>روشنایی:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>کانال:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>رنگی‌سازی</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>رنگ‌ها:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>ثابت:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>کنتراست:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>برای افزودن نقطه کلیک کنید، برای تنظیم بکشید و برای حذف، نقطه را به بیرون نمودار بکشید.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>فیروزه‌ای:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>فیروزه‌ای / قرمز:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>فیروزه‌ای‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>فیروزه‌ای‌ها:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>چگالی:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>ویرایش گرادیان...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>نوردهی:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>رنگ فیلتر:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>گاما:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>اصلاح گاما:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>سبز</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>سبز:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>سبزها</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>سبزها:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>نقاط روشن</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>فام:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>مشکی ورودی:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>سفید ورودی:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>سطوح:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>روشنی:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>سرخابی:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>سرخابی / سبز:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>سرخابی‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>سرخابی‌ها:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>تُن‌های میانی</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>تک‌رنگ</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>خنثی‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>این تنظیم گزینه‌ای ندارد.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>جابه‌جایی:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>مشکی خروجی:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>کانال خروجی:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>سفید خروجی:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>حفظ درخشندگی</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>قرمز</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>قرمز:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>قرمزها</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>قرمزها:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>بازنشانی کانال</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>معکوس</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>اشباع:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>سایه‌ها</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>سطح آستانه:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>رنگ‌آمیزی</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>رنگ رنگ‌آمیزی:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>تُن:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>استفاده از روش قدیمی</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>سرزندگی:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>سفیدها</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>زرد / آبی:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>زرد:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>زردها</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>زردها:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>افزودن تنظیم</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>ایجاد لایه تنظیم {0} جدید</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>سیاه و سفید</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>روشنایی/کنتراست</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>میکسر کانال</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>تعادل رنگ</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>جستجوی رنگ</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>منحنی‌ها</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>حذف اشباع</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>نوردهی</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>نگاشت گرادیان</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>تُن‌دهی HDR</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>فام/اشباع</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>وارونه‌کردن</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>سطوح</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>تطبیق رنگ</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>فیلتر عکس</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>پوستری‌کردن</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>جایگزینی رنگ</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>رنگ انتخابی</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>آستانه</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>سرزندگی رنگ</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>نویسنده:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>نویسنده: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>پاک کردن همه</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>پاک کردن شمارش</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>پاک کردن یادداشت‌ها</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>گروه شمارش {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>برای قرار دادن نشانگرهای شمارش شماره‌دار کلیک کنید. برای جابه‌جایی بکشید و برای حذف Alt+کلیک کنید.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>تعداد: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>ابزار شمارش</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>حذف شمارش</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>حذف یادداشت</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>ویرایش یادداشت</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>گروه:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>رنگ گروه</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>اندازه برچسب:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>اندازه نشانگر:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>جابه‌جایی شمارش</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>جابه‌جایی یادداشت</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>ایجاد گروه شمارش جدید</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>یادداشت</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>رنگ یادداشت</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>برای افزودن یادداشت کلیک کنید. برای ویرایش روی یادداشت کلیک کنید، برای جابه‌جایی بکشید و برای حذف Alt+کلیک کنید.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>ابزار یادداشت</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>افزودن آرت‌بورد جدید</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>آرت‌بورد {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>پس‌زمینه آرت‌بورد</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>برای ایجاد آرت‌بورد روی بوم خالی بکشید. برای جابه‌جایی آرت‌بورد همراه با محتوایش، عنوان آن را بکشید.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>جابه‌جایی آرت‌بورد</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>ابزار آرت‌بورد</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>آرت‌بورد جدید</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (تلفن)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (مربع)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (تبلت)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>افزودن</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>بهبود لبه</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>کمند</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>عصای جادویی</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>برای انتخاب رنگ‌های مشابه کلیک کنید. Shift اضافه می‌کند، Alt کم می‌کند.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>ابزار عصای جادویی</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>انتخاب شیء</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>برای انتخاب یک شیء، مستطیل یا کمندی دور آن بکشید.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>ابزار انتخاب شیء</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>انتخاب سریع</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>برای انتخاب یک ناحیه روی آن نقاشی کنید؛ انتخاب تا یافتن لبه‌ها گسترش می‌یابد. Alt کم می‌کند.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>ابزار انتخاب سریع</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>در حال انتخاب شیء...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>قلم‌موی انتخاب</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>برای افزودن به انتخاب نقاشی کنید. Alt (یا حالت کم کردن) از آن حذف می‌کند.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی انتخاب</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>پشت</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>سوزاندن رنگ</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>روشن‌سازی رنگ</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>تیره‌تر</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>رنگ تیره‌تر</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>تفاضل</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>حل شدن</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>تقسیم</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>نور سخت</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>ترکیب سخت</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>فام</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>روشن‌تر</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>رنگ روشن‌تر</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>سوزاندن خطی</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>روشن‌سازی خطی (افزودن)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>نور خطی</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>درخشندگی</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>ضرب</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>روکش</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>عبور</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>نور نقطه‌ای</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>صفحه</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>نور نرم</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>تفریق</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>نور زنده</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>فعال کردن جلوه‌های انباشت به سبک ایربراش</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>{0} نمی‌تواند روی ماسک لایه نقاشی کند.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>رنگ اعمال‌شده در هر ضربه</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>حداکثر پوشش رنگ در هر حرکت (کلیدهای 0 تا 9)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>اندازه بر اساس فشار</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>هموارسازی:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>قلم‌موی تنظیم</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>یک تنظیم محلی را نقاشی می‌کند. هر حرکت ماسک یک لایه تنظیم را ویرایش می‌کند. Alt تنظیم را پاک می‌کند.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>قلم‌موی {0}</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی تنظیم</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>تنظیم:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>مقدار:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>پاک کردن خودکار</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>با رنگ پیش‌زمینه نقاشی می‌کند. Shift+کلیک یک خط صاف می‌کشد. [ ] اندازه را تغییر می‌دهند.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>ابزار قلم‌مو</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>تمیز کردن پس از هر حرکت</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>رنگ‌های مشابه رنگ نمونه‌برداری‌شده را با رنگ پیش‌زمینه جایگزین می‌کند.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>ابزار جایگزینی رنگ</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>بارگذاری:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>رنگ بارگذاری (پیش‌زمینه)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>ترکیب:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>رنگ بارگذاری‌شده را مانند رنگ واقعی با رنگ‌های بوم ترکیب می‌کند.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی ترکیب</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>لایه جدید برای هر حرکت</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>خطوط لبه‌تیز و بدون ضددندانه را با رنگ پیش‌زمینه نقاشی می‌کند.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>ابزار مداد</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>نمونه‌برداری:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>خیسی:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>زاویه</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>سختی</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>پیش‌تنظیم قلم‌موی جدید...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>فشار قلم جریان را کنترل می‌کند</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>فشار قلم اندازه را کنترل می‌کند</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>گردی</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>پراکندگی</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>برای ویرایش قلم‌مو، یک ابزار نقاشی انتخاب کنید.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>سایز:</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>نوسان اندازه</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>فاصله</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>نوک مربعی</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>لنگر:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>اندازه فعلی: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>رنگ گسترش بوم:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>پیش‌زمینه</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>خاکستری</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>نسبی</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>ویرایش لغو شد، زیرا سند تغییر کرد.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>برای شروع ویرایش، یک سند باز یا ایجاد کنید (Ctrl+O / Ctrl+N)، یا تصویری را اینجا رها کنید.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>گزینه‌های کانال</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>حذف کانال فعلی</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>بارگذاری کانال به‌عنوان انتخاب</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>ایجاد کانال جدید</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>ماسک سریع</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>ذخیره انتخاب به‌عنوان کانال</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>نمایش کانال به‌صورت روکش</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>بارگذاری 3D LUT ممکن نیست: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>بارگذاری 3D LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>بارگذاری 3D LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>فایل 3D LUT:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>فایل‌های 3D LUT</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>جدول‌های جستجوی یک‌بعدی پشتیبانی نمی‌شوند.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>داده‌های جدول با اندازه آن مطابقت ندارد.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>دامنه جدول معتبر نیست.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>فایل ورودی LUT_3D_SIZE ندارد.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>اندازه جدول {0} پشتیبانی نمی‌شود.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>رنگ پس‌زمینه</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>رنگ پس‌زمینه. با دوبار کلیک، انتخابگر رنگ باز می‌شود.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>رنگ پیش‌زمینه</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>رنگ پیش‌زمینه. با دوبار کلیک، انتخابگر رنگ باز می‌شود.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>افزودن به نمونه‌رنگ‌ها</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>رنگ وب نیست. برای استفاده از نزدیک‌ترین رنگ، روی نمونه کلیک کنید.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>فقط رنگ‌های وب</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>بازنشانی</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>برای بازگرداندن رنگ فعلی کلیک کنید</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>انتخابگر رنگ</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>انتخابگر رنگ ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>برای تعیین ناحیه برش بکشید؛ برای چرخش بیرون آن بکشید. Enter تأیید می‌کند، Esc لغو می‌کند.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>ع: {0:0} px  ا: {1:0} px  زاویه: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>ابزار برش</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>حذف پیکسل‌های برش‌خورده</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>ا:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>نسبت اصلی</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>برش پرسپکتیو</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>برای ایجاد کادر برش بکشید، سپس گوشه‌های آن را بکشید تا با پرسپکتیو یک شیء مطابقت کند. Enter برش می‌زند و صاف می‌کند.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>ابزار برش پرسپکتیو</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>نسبت</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>نسبت:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (مربع)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>قانون یک‌سوم</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>نمایش شبکه</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>جابه‌جایی عرض و ارتفاع</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>ع:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>خیر</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>تایید</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>بله</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>گروه شمارش ۱</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>۹۰° در جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>۹۰° خلاف جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>اعمال تنظیم</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>تغییر اندازه بوم</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>برش تصویر</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>یکنواخت‌سازی</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>پر کردن</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>پر کردن مسیر</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>قرینه کردن بوم</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>تغییر اندازه تصویر</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>نمایش همه</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>چرخاندن بوم</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>اعمال فیلتر</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>خط‌دور کشیدن</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>خط‌دور کشیدن مسیر</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>پیرایش تصویر</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>افزودن ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>افزودن ماسک برداری</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>دوباره</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>تراز کردن</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>همه</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>همه لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>آلفا {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>زاویه (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>هموارسازی لبه‌ها</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>اعمال ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>دلخواه...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>مرتب کردن</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>مرتب کردن لایه</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>رنگ خودکار</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>کنتراست خودکار</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>تُن خودکار</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>لایه پس‌زمینه نمی‌تواند ماسک داشته باشد. ابتدا آن را به یک لایه تبدیل کنید.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>لایه پس‌زمینه نمی‌تواند سبک لایه داشته باشد. ابتدا آن را به یک لایه تبدیل کنید (لایه &gt; جدید &gt; لایه از پس‌زمینه).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>پس‌زمینه از لایه</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>بر اساس:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>آبی</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>آبی‌ها</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>کادر</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>حاشیه...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>لبه‌های پایین</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>رنگ پیکسل پایین راست</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>یک لایه جلوتر</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>آوردن به جلو</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>نام قلم‌مو</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>قلم‌موها</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>{0} ممکن نیست، زیرا لایه قفل است.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>{0} ممکن نیست، زیرا هیچ لایه فعالی وجود ندارد.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>{0} ممکن نیست، زیرا لایه فعال یک لایه پیکسلی نیست. ابتدا آن را شطرنجی کنید (لایه &gt; شطرنجی کردن).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>تبدیل به شیء هوشمند ممکن نیست، زیرا لایه خالی است.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>برش ممکن نیست، زیرا لایه قفل است.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>آخرین عملیات را نمی‌توان کم‌رنگ کرد.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>ادغام به پایین ممکن نیست، زیرا لایه‌ای در زیر وجود ندارد.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>ادغام به پایین ممکن نیست، زیرا لایه زیرین یک لایه پیکسلی نیست.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>اندازه بوم</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>اندازه بوم...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>مرکز</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>تغییر جهت متن</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>کانال</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>کانال‌ها</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>پاک کردن خطوط راهنما</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>پاک کردن سبک لایه</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>پاک کردن فهرست فایل‌های اخیر</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>کلیپ‌بورد</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>حافظه موقت تصویری ندارد.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>در جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>بستن همه</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>رنگ:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>پرکردن رنگ</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>محدوده رنگ</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>محدوده رنگ...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>نکته: ابتدا با قطره‌چکان از یک رنگ نمونه بگیرید؛ از آن به‌عنوان رنگ پیش‌زمینه استفاده می‌شود.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>ستون‌ها:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>پرکردن آگاه از محتوا</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>پرکردن آگاه از محتوا...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>کوچک کردن</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>کوچک کردن به میزان (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>کوچک کردن...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>کنتراست:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>تبدیل برای فیلترهای هوشمند</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>تبدیل به شکل</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>تبدیل به شیء هوشمند</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>کپی سبک لایه</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>کپی ادغام‌شده</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>{0} ممکن نیست: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>ایجاد سند ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>صادر کردن ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>صادر کردن لایه‌ها ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>قرار دادن «{0}» ممکن نیست، زیرا قالب فایل پشتیبانی نمی‌شود.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>بازگرداندن ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>ذخیره ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>ذخیره «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>ذخیره برش‌ها ممکن نیست: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>شمارش</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>خلاف جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>ایجاد ماسک برش</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>ایجاد مسیر کاری</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>برش</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>برداشتن</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>تغییر حالت صفحه</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>کاهش اندازه قلم</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>رنگ‌های پیش‌فرض پیش‌زمینه و پس‌زمینه</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>تعریف پیش‌تنظیم قلم‌مو...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>تعریف شکل سفارشی...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>تعریف الگو...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>حذف کانال</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>حذف لایه</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>حذف ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>حذف لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>حذف مسیر</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>لغو انتخاب</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>جهت:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>غیرفعال کردن</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>غیرفعال کردن ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>اعوجاج</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>مرزهای سند</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>تکثیر...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>تکثیر تصویر</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>تکثیر لایه</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>ویرایش در حالت ماسک سریع</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>ویرایش ماسک</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>این جلوه در دسترس نیست.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>کتابخانه جلوه‌ها</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>فعال کردن ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>ورود به ماسک سریع</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>یکنواخت‌سازی</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>خروج از ماسک سریع</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>گسترش</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>گسترش به میزان (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>گسترش...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>صادر کردن</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>صادر کردن به‌عنوان</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>صادر کردن به‌عنوان...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>{0} لایه به {1} صادر شد</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>{0} صادر شد</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>موارد اضافی</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>کم‌رنگ کردن</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>کم‌رنگ کردن...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>کم‌رنگ کردن {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>محوسازی لبه</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>محوسازی لبه:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>محوسازی لبه...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>شعاع محوسازی لبه (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>پر کردن</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>پر کردن...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>پر کردن مسیر</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>پر کردن صفحه</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>پر کردن با رنگ پس‌زمینه</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>پر کردن با رنگ پیش‌زمینه</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>متناسب با صفحه</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>تخت کردن</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>مسطح کردن تصویر</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>قرینه افقی بوم</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>قرینه عمودی بوم</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>قرینه افقی</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>قرینه عمودی</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>«{0}» از لایه‌ها پشتیبانی نمی‌کند. یک نسخه مسطح در این قالب ذخیره شود، یا برای حفظ لایه‌ها به‌عنوان پروژه ShareX Photo Editor ذخیره شود؟</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>تبدیل آزاد</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>از شفافیت</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>تلرانس:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>گرادیان...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>پرکردن گرادیان</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>طیف خاکستری</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>سبز</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>سبزها</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>شبکه</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>گروه کردن لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>گروه {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>گسترش انتخاب</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>خطوط راهنما</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>فاصله (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>ارتفاع (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>پنهان کردن همه</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>پنهان کردن لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>پنهان کردن انتخاب</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>نقاط روشن</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>تاریخچه</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>افقی</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>مراکز افقی</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>گزینه‌های تصویر</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>چرخش تصویر</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>اندازه تصویر</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>اندازه تصویر...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>افزایش اندازه قلم</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>اطلاعات</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>داخلی</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>معکوس</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>میانبرهای صفحه‌کلید...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>آخرین فیلتر</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>لایه از پس‌زمینه</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>ماسک لایه</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>لایه {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>ویژگی‌های لایه</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>سبک لایه</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>سبک لایه...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>لایه با کپی</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>لایه با برش</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>لایه‌ها به فایل‌ها</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>لایه‌ها به فایل‌ها...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>لبه‌های چپ</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>پیوند لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>پیوند/لغو پیوند لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>بارگذاری انتخاب</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>بارگذاری انتخاب...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>مکان:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>قفل همه</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>قفل خطوط راهنما</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>قفل لایه</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>ایجاد انتخاب</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>ابتدا یک انتخاب ایجاد کنید.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>ایجاد مسیر کاری</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>حاشیه (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_ویرایش</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_فایل</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>_فیلتر</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_تصویر</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_لایه</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_انتخاب</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_متن</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_نما</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>_پنجره</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>ادغام به پایین</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>ادغام گروه</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>ادغام لایه‌های نمایان</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>ادغام‌شده</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>تُن‌های میانی</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>حالت</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>حالت:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>اصلاح</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>انتخاب: {0}</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>جابه‌جایی لایه</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>نام:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>ناوبر</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>لایه تنظیم جدید</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>لایه {0} جدید</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>کانال جدید</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>جدید...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>لایه پرکننده جدید</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>جدید از کلیپ‌بورد</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>جدید از عکس صفحه (تمام صفحه)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>جدید از عکس صفحه (ناحیه)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>گروه جدید</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>خط راهنمای جدید</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>خط راهنمای جدید...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>چیدمان خطوط راهنمای جدید</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>چیدمان خطوط راهنمای جدید...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>خطوط راهنمای جدید از شکل</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>لایه جدید</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>لایه جدید...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>مسیر جدید</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>لایه شکل جدید</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>سند بعدی</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>مسیری برای بارگذاری به‌عنوان انتخاب وجود ندارد.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>هیچ انتخاب ذخیره‌شده‌ای (کانال آلفا) وجود ندارد.</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>یادداشت‌ها</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>جابه‌جایی X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>جابه‌جایی Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>کدری:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>باز کردن</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>بازکردن...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>باز کردن موارد اخیر</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>گزینه‌ها</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>جهت</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>جهت:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>بیرونی</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>پنل‌ها</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>چسباندن به‌عنوان سند جدید</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>چسباندن در همان محل</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>چسباندن به داخل</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>چسباندن سبک لایه</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>چسباندن ویژه</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>چسبانده شد</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>مسیر {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>مسیرها</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>الگو</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>الگو...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>پرکردن الگو</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>نام الگو</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>الگو {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>پرسپکتیو</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>سنجاق کردن به صفحه</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>شبکه پیکسلی</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>قرار دادن جاسازی‌شده</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>قرار دادن جاسازی‌شده...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>قرار دادن تصویر در قاب</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>قرار دادن در قاب</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>موقعیت (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>ترجیحات...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>پیش‌نمایش</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>سند قبلی</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>چاپ...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>ویژگی‌ها</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>پاک‌سازی</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>پاک‌سازی کلیپ‌بورد</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>پاک‌سازی تاریخچه‌ها</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>کیفیت:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>صادر کردن سریع به PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>شطرنجی کردن</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>شطرنجی کردن لایه</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>شطرنجی کردن سبک لایه</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>شطرنجی کردن لایه متن</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>قرمز</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>انجام دوباره</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>قرمزها</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>آزاد کردن ماسک برش</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>تغییر نام لایه</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>تغییر نام لایه...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>انتخاب مجدد</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>بازنشانی ملزومات</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>بازنشانی چرخش نما</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>نمایش همه</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>نمایش انتخاب</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>بازگرداندن</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>لبه‌های راست</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>چرخش</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>چرخش ۱۸۰°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>چرخش ۹۰° در جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>چرخش ۹۰° خلاف جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>چرخاندن بوم</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>چرخاندن بوم به میزان {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>چرخش {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>ردیف‌ها:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>خط‌کش‌ها</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>شعاع نمونه‌برداری (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>قلم‌موی نمونه‌برداری‌شده {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>رنگ‌های نمونه‌برداری‌شده (پیش‌زمینه)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>ذخیره یک نسخه</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>ذخیره یک نسخه...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>ذخیره با نام</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>ذخیره با نام...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>ذخیره به‌عنوان پروژه</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>ذخیره انتخاب</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>ذخیره انتخاب...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>ذخیره برش‌ها</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>ذخیره برش‌ها...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>ذخیره فضای کاری</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>یک نسخه در {0} ذخیره شد</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>{0} ذخیره شد</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>{0} برش در {1} ذخیره شد</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>مقیاس</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>عکس صفحه</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>انتخاب و ماسک</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>انتخاب و ماسک...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>انتخاب:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>ابتدا یک لایه قاب انتخاب کنید (با ابزار قاب یکی بکشید).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>برای پیوند دادن، دو یا چند لایه انتخاب کنید (Ctrl+کلیک در پنل لایه‌ها).</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>انتخاب لایه بعدی</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>ابتدا یک انتخاب مستطیلی از کاشی الگو ایجاد کنید.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>انتخاب لایه قبلی</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>انتخاب سوژه</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>در حال انتخاب سوژه...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>لبه‌های انتخاب</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>یک لایه عقب‌تر</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>فرستادن به عقب</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>ارسال به ShareX (وظایف پس از ضبط)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>تنظیم اندازه قلم</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>سایه‌ها</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>سایه‌ها/نقاط روشن...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>نام شکل</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>شکل {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>اشتراک‌گذاری با ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>نمایش</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>مشابه</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>کجی</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>رنگ‌های پوست</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>برش‌ها</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (فیلتر هوشمند)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>اشیای هوشمند</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>هموارسازی</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>هموارسازی:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>هموار کردن...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>چسبیدن</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>چسبیدن به</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>رنگ یکدست</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>رنگ یکدست...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>مهر کردن لایه‌های نمایان</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>یک گام عقب</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>یک گام جلو</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>صاف کردن لایه</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>خط‌دور</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>رنگ خط‌دور</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>خط‌دور...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>خط‌دور مسیر</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>سوژه</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>نمونه‌رنگ‌ها</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>جابه‌جایی رنگ‌های پیش‌زمینه و پس‌زمینه</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>نوار ابزار...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>لبه‌های بالا</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>رنگ پیکسل بالا چپ</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>تبدیل</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>تبدیل انتخاب</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>تبدیل انتخاب...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>پیکسل‌های شفاف</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>پیرایش</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>پیرایش...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>نوار ابزار دوستونه</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>برگرداندن</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>لغو گروه‌بندی لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>لغو پیوند لایه‌ها</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>آپلود با ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>عمودی</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>مراکز عمودی</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>عرض:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>پهنا (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>پهنا (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>فضای کاری</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>فضای کاری ذخیره شد.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>بزرگ‌نمایی</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>کوچک‌نمایی</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>ضربه</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>پیچ شل</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>بلند شل</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>متوسط شل</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>پیچ سفت</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>بلند سفت</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>متوسط سفت</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>کوتاه سفت</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>پایین</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>پایین چپ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>پایین راست</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>مرکز</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>چپ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>راست</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>بالا</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>بالا چپ</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>بالا راست</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>بلوک</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>قلم‌مو</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>مداد</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>گرادیان</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>الگو</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>رنگ یکدست</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>زاویه</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>لوزی</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>خطی</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>شعاعی</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>بازتابی</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>آگاه از محتوا</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>ایجاد بافت</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>تطبیق مجاورت</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>نسبت ثابت</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>اندازه ثابت</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>ترکیب شکل‌ها</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>حذف شکل‌های هم‌پوشان</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>اشتراک نواحی شکل</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>لایه جدید</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>تفریق شکل جلویی</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>شکل</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>فام</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>درخشندگی</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>دو‌مکعبی</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>دومکعبی (تیزتر)</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>دومکعبی (نرم‌تر)</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>دوخطی</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>نزدیک‌ترین همسایه</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>نمونه‌رنگ پس‌زمینه</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>پیوسته</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>یک‌بار</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>شکل سفارشی</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>بیضی</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>خط</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>چندضلعی</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>مستطیل</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>مثلث</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>مسیر</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>پیکسل‌ها</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>شکل</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>مرکز</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>داخلی</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>بیرونی</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>مرکز</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>تراز دوطرفه</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>چپ</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>راست</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>واضح</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>تیز</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>نرم</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>قوی</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>نقاط روشن</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>تُن‌های میانی</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>سایه‌ها</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>پیکسل‌هایی را که با رنگ زیر مرکز قلم‌مو (نقطه داغ) مطابقت دارند پاک می‌کند.</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>ابزار پاک‌کن پس‌زمینه</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>غیرپیوسته</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>پاک کردن تا تاریخچه</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>تا شفافیت پاک می‌کند، یا در لایه‌های قفل‌شده تا رنگ پس‌زمینه. Alt تا تاریخچه پاک می‌کند.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>ابزار پاک‌کن</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>محدودیت‌ها:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>محافظت از رنگ پیش‌زمینه</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>خروجی گرفتن از تنظیمات برنامه...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>قالب:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>ارتفاع (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>بدون افت کیفیت</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>رنگ...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>محتوا:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>رنگ پرکردن</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>خاکستری ۵۰٪</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>کدری (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>الگو:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>حفظ شفافیت</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>دیتر</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>ویرایش...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>گرادیان:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>برای کشیدن گرادیان بکشید. Shift زاویه را به ۴۵ درجه محدود می‌کند.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>زاویه: {0:0.0}°  فاصله: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>ابزار گرادیان</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>گرادیان {0}</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>پاک‌کن جادویی</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>برای پاک کردن پیکسل‌های هم‌رنگ تا شفافیت کلیک کنید.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>ابزار پاک‌کن جادویی</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>سطل رنگ</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>برای پر کردن پیکسل‌های هم‌رنگ با رنگ پیش‌زمینه یا یک الگو کلیک کنید.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>ابزار سطل رنگ</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>شفافیت</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>افزودن نویز</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>میانگین</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>محو</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>محوسازی بیشتر</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>محوسازی جعبه‌ای</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>محو</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>اعوجاج</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>نویز</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>دیگر</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>پیکسلی کردن</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>رندر</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>واضح‌سازی</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>سبک‌دهی</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>ابرها</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>بلوری کردن</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>حذف لکه</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>ابرهای تفاضلی</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>پخش کردن</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>گرد و خراش</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>برجسته‌سازی</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>چندوجهی</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>الیاف</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>یافتن لبه‌ها</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>محوسازی گاوسی</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>گذر بالا</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>وینیت نور</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>بیشینه</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>میانه</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>کمینه</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>موزاییک</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>محوسازی حرکتی</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>جابه‌جایی</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>نقاشی رنگ روغن</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>گاوسی</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>بزرگ</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>خاموش</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>قطبی به مستطیلی</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>مستطیلی به قطبی</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>کوچک</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>چرخشی</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>یکنواخت</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>زوم</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>دامنه</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>زاویه</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>اندازه سلول</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>فاصله</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>توزیع</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>ارتفاع</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>افقی</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>سطوح</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>بیشترین جابه‌جایی %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>روش</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>حالت</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>تک‌رنگ</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>تعداد کاشی‌ها</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>حفظ جزئیات</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>شعاع</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>کاهش نویز</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>سایز:</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>شدت</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>آستانه</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>واریانس</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>عمودی</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>طول موج</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>نیشگون</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>نقطه‌چینی</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>مختصات قطبی</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>محوسازی شعاعی</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>کاهش نویز</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>ریپل</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>واضح‌سازی</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>واضح‌سازی لبه‌ها</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>واضح‌سازی بیشتر</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>واضح‌سازی هوشمند</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>خورشیدی‌کردن</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>کروی کردن</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>محوسازی سطحی</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>کاشی‌ها</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>گرداب</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>ماسک واضح‌سازی</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>موج</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>پاک کردن قاب</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>پاک کردن محتوای قاب</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>قاب بیضی</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>قاب {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>برای ایجاد جای‌نگهدار قاب بکشید. برای پر کردن قاب فعال، تصویری را قرار دهید یا جای‌گذاری کنید.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>ابزار قاب</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>قرار دادن فایل تصویر در قاب فعال</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>قاب مستطیلی</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>افزودن نقطه رنگ</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>سفارشی</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>مکان</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>پیش‌تنظیم‌ها</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>رنگ نقطه</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>ویرایشگر گرادیان</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>پیشرفته</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>جزئیات:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>درخشش لبه</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>یکنواخت‌سازی هیستوگرام</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>نوردهی و گاما</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>نقاط روشن:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>فشرده‌سازی نقاط روشن</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>انطباق محلی</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>روش:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>این روش گزینه‌ای ندارد.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>پیش‌تنظیم:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>شعاع:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>بازنشانی منحنی</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>سایه:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>هموارسازی لبه‌ها</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>شدت:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>تُن و جزئیات</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>منحنی تُن‌دهی و هیستوگرام</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>پیش‌فرض</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>تخت</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>تک‌رنگ</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>واقع‌گرایانه</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>اشباع‌شده</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>فراواقع‌گرایانه</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>ناحیه:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>حرکت‌های سبک‌دار نمونه‌برداری‌شده از منبع تاریخچه را نقاشی می‌کند.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی تاریخچه هنری</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>استفاده از قلم‌موی تاریخچه ممکن نشد، زیرا وضعیت تاریخچه اندازه بوم یکسانی ندارد.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>پیکسل‌ها را از وضعیت تاریخچه‌ای که در پنل تاریخچه به‌عنوان منبع انتخاب شده بازنقاشی می‌کند.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی تاریخچه</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>ابتدا در پنل تاریخچه یک منبع تاریخچه تنظیم کنید.</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>حذف نما</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>حذف وضعیت‌های پس از وضعیت فعلی</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>تنظیم منبع قلم‌موی تاریخچه</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>ایجاد سند جدید از وضعیت فعلی</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>ایجاد نمای جدید</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>تغییر نام نما</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>تغییر نام نما...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>نما {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>همه تصاویر پشتیبانی‌شده</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>باز کردن «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>فایل وجود ندارد.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>باز کردن «{0}» ممکن نیست، زیرا یک پروژه معتبر ShareX Photo Editor نیست یا فایل آسیب دیده است.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>پروژه ShareX Photo Editor</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>صادر کردن TIFF به Windows نیاز دارد.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>باز کردن «{0}» ممکن نیست، زیرا تصویر پشتیبانی‌شده‌ای نیست یا فایل آسیب دیده است.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>کدگذاری WebP ناموفق بود.</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>حفظ تناسب</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>درصد:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>نمونه‌برداری مجدد:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>بسامد:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>برای کشیدن انتخاب آزاد بکشید. برای بستن آن رها کنید.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>ابزار کمند</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>کمند مغناطیسی</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>برای شروع کلیک کنید، سپس در امتداد یک لبه حرکت کنید. برای افزودن لنگر کلیک کنید، برای بستن دوبار کلیک کنید یا Enter بزنید، Backspace یک لنگر را حذف می‌کند.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>ابزار کمند مغناطیسی</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>کمند چندضلعی</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>برای افزودن نقطه کلیک کنید. برای بستن دوبار کلیک کنید، Enter بزنید یا روی نقطه شروع کلیک کنید. Backspace آخرین نقطه را حذف می‌کند.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>ابزار کمند چندضلعی</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>پس‌زمینه</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} کپی</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>لایه 0</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>لایه</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>زاویه:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>حالت ترکیب:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>گزینه‌های ترکیب</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>روکش رنگ</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>فاصله:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>سایه افتاده</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>کدری پرکردن:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>رنگ درخشش</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>سایه داخلی</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>رنگ سایه داخلی</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>درخشش بیرونی</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>رنگ روکش</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>موقعیت:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>رنگ سایه</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>افزودن ماسک لایه (Alt: پنهان کردن همه)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>افزودن سبک لایه</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>تغییر ترکیب</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>گزینه‌های ترکیب...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>تغییر قفل لایه</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>حذف لایه</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>تکثیر لایه...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>تغییر کدری پرکردن</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>نشان می‌دهد لایه کاملاً قفل است</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>گروه از لایه‌ها...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>پنهان کردن لایه</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>ویژگی‌های لایه...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>لایه‌های انتخاب‌شده را پیوند دهید یا پیوندشان را لغو کنید (چند لایه را با Ctrl+کلیک انتخاب کنید) تا با هم جابه‌جا شوند</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>قفل همه</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>قفل:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>قفل پیکسل‌های تصویر</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>قفل کردن موقعیت</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>قفل پیکسل‌های شفاف</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>برای ویرایش ماسک کلیک کنید، برای غیرفعال کردن Shift+کلیک و برای بارگذاری به‌عنوان انتخاب Ctrl+کلیک کنید</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>ایجاد لایه پرکننده یا تنظیم جدید</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>ایجاد گروه جدید</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>ایجاد لایه جدید</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>تغییر کدری</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>نشان می‌دهد لایه تا حدی قفل است</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>نمایش لایه</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>تغییر نمایان بودن (Alt+کلیک فقط این لایه را نشان می‌دهد)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>انتخاب بیضوی</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>ابزار انتخاب بیضوی</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>برای انتخاب بکشید. Shift محدود می‌کند، Alt از مرکز می‌کشد. برای جابه‌جایی انتخاب، درون آن بکشید.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>انتخاب مستطیلی</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>ابزار انتخاب مستطیلی</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>اصلاح لبه انتخاب</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>برای انتخاب یک ستون ۱ پیکسلی کلیک کنید.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>ابزار انتخاب تک‌ستون</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>برای انتخاب یک ردیف ۱ پیکسلی کلیک کنید.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>ابزار انتخاب تک‌ردیف</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>سبک:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>شدت رنگ:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>تصویر مقصد</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>کم‌رنگ کردن:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>آمار تصویر</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>لایه:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>درخشندگی:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>خنثی‌سازی</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>منبع:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>هدف:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>استفاده از انتخاب در منبع برای محاسبه رنگ‌ها</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>استفاده از انتخاب در هدف برای محاسبه تنظیم</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(خالی)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>متناسب با صفحه</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>برای پیمایش نما بکشید. با هر ابزاری Space را نگه دارید تا موقتاً از ابزار دست استفاده کنید. برای متناسب کردن با صفحه دوبار کلیک کنید.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>ابزار دست</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>بازنشانی نما</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>برای چرخاندن نمای بوم بدون تغییر پیکسل‌ها بکشید. Shift در گام‌های ۱۵ درجه می‌چسباند. Esc یا بازنشانی نما آن را بازمی‌گرداند.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>ابزار چرخش نما</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>زاویه چرخش:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>بزرگ‌نمایی کشیدنی</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>برای بزرگ‌نمایی کلیک کنید، برای کوچک‌نمایی Alt+کلیک کنید. برای بزرگ‌نمایی کشیدنی به چپ/راست بکشید، یا وقتی خاموش است مستطیلی بکشید.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>بزرگ‌نمایی</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>کوچک‌نمایی</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>ابزار بزرگ‌نمایی</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>مشکی</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>پیش‌فرض (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>نماد 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>مربع 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>وب 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>وضوح (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>سند جدید</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>شفاف</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>بی‌نام</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>سفید</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>افزودن به انتخاب (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>برای باز کردن انتخابگر پیش‌تنظیم قلم‌مو کلیک کنید</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>سختی:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>اشتراک با انتخاب (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>انتخاب جدید</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>بدون رنگ</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>تفریق از انتخاب (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>بستن گروه زبانه</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>جمع کردن گروه پنل</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>باز کردن گروه پنل</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>انتقال به گروه همراه {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>انتقال به گروه جدید</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>منوی پنل</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>افزودن نقطه لنگر</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>برای افزودن نقطه لنگر روی یک بخش مسیر کلیک کنید.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>ابزار افزودن نقطه لنگر</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>ترکیب</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>ادغام اجزای مسیر هم‌پوشان</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>تبدیل نقطه</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>روی یک نقطه نرم کلیک کنید تا گوشه شود؛ یک نقطه گوشه را بکشید تا دستگیره‌های نرم بیرون آید. برای شکستن یک دستگیره آن را بکشید.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>ابزار تبدیل نقطه</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>حذف نقطه لنگر</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>برای حذف یک نقطه لنگر روی آن کلیک کنید.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>ابزار حذف نقطه لنگر</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>برای انتخاب نقاط لنگر کلیک کنید یا کادری بکشید؛ برای تغییر شکل، نقاط یا دستگیره‌ها را بکشید. Alt دستگیره را مستقل می‌کشد.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>ابزار انتخاب مستقیم</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>کشیدن لنگر</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>حذف همپوشانی</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>اشتراک</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>جابه‌جایی مسیر</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>جابه‌جایی جزئی لنگر</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>برای انتخاب یک جزء مسیر روی آن کلیک کنید و برای جابه‌جایی بکشید. Alt+کشیدن تکثیر می‌کند، Delete حذف می‌کند.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>ابزار انتخاب مسیر</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>کم کردن اجزای بعدی از جزء اول</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>مسیر کاری</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>افزودن ماسک برداری (لایه شکل از مسیر)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>حذف مسیر فعلی</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>پر کردن مسیر با رنگ پیش‌زمینه</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>بارگذاری مسیر به‌عنوان انتخاب</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>ایجاد مسیر کاری از انتخاب</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>ایجاد مسیر جدید</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>تغییر نام مسیر</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>ذخیره مسیر</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>مسیر شکل {0}</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>خط‌دور مسیر با قلم‌مو</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>افزودن/حذف خودکار</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>بستن مسیر</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>قلم انحنا</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>برای قرار دادن نقاط کلیک کنید؛ منحنی به‌نرمی از آن‌ها عبور می‌کند. برای بستن روی نقطه اول کلیک کنید، برای پایان Enter یا Esc بزنید.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>ابزار قلم انحنا</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>برازش منحنی:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>قلم آزاد</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>برای کشیدن مسیر آزاد بکشید؛ با منحنی‌های نرم برازش می‌شود. مغناطیسی به لبه‌ها می‌چسبد.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>ابزار قلم آزاد</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>مغناطیسی</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>ساخت:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>ماسک</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>قلم</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>برای افزودن نقاط گوشه کلیک کنید، برای افزودن نقاط نرم بکشید. برای بستن روی نقطه اول کلیک کنید. Ctrl نقاط را ویرایش می‌کند، Alt آن‌ها را تبدیل می‌کند.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>ابزار قلم</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>نوار لاستیکی</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>انتخاب...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>بی‌نام-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>تکمیل «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   سند: {3:0.0} MB</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - ویرایشگر عکس - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>ذخیره نشود</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>ماسک لایه/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>ماسک سریع/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>هیچ سندی باز نیست.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} ناموفق بود: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>گزینه‌ها در دسترس نیستند: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>ویرایشگر عکاسی</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>تغییرات «{0}» پیش از بستن ذخیره شود؟</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>نما: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - ویرایشگر عکس</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>زیرتقسیم‌ها:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>خط شبکه هر (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>رنگ خط راهنما (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>تعداد وضعیت‌های تاریخچه:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>درون‌یابی تصویر:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>به‌خاطر سپردن اندازه و موقعیت پنجره</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>ترجیحات</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>اندازه شبکه شفافیت:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>این پروژه با نسخه جدیدتری از ویرایشگر عکس ایجاد شده است.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>افزودن ماسک</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>تراز:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>تراز کردن متن</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>اعمال ماسک</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>صفحه طراحی</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>پس‌زمینه صفحه طراحی</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>پس‌زمینه:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>پررنگ</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>تغییر پرکردن</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>نویسه</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>برش به لایه زیرین</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>ماسک برش</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>شامل یک تصویر</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>تبدیل به لایه</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>خط‌چین</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>حذف ماسک</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>حذف فیلتر هوشمند</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>حذف فیلتر هوشمند</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>سند</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>پ: {0} px   ا: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>ویرایش لایه متن</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>قاب خالی</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>لایه خالی</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>فعال کردن</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>محوسازی لبه ماسک</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>پرکردن:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>لایه پرکننده</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>قلم:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>قاب</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>خط‌دور قاب</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>وارونه‌کردن</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>معکوس کردن ماسک</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>کج</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>فاصله خطوط:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>بارگذاری به‌عنوان انتخاب</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>اکنون ابزارهای نقاشی ماسک را ویرایش می‌کنند: مشکی پنهان می‌کند، سفید آشکار می‌کند.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>اصلاح {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>بدون سند</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>پاراگراف</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>لایه پیکسلی</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>قرار دادن تصویر...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>شعاع (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>شطرنجی کردن متن</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>بازنشانی تبدیل</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>تغییر اندازه صفحه طراحی</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>وضوح: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>تنظیم پرکردن</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>تنظیم قلم</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>تنظیم فاصله خطوط</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>تنظیم خط‌دور</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>تنظیم تراز خط‌دور</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>تنظیم نوع خط‌دور</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>تنظیم پهنای خط‌دور</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>تنظیم رنگ متن</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>تنظیم فاصله نویسه‌ها</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>ویژگی‌های شکل</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>اندازه:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>فیلترهای هوشمند</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>شیء هوشمند</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>خط‌دور:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>رنگ متن</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>تغییر وضعیت فیلتر هوشمند</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>فاصله نویسه‌ها:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>زیرخط‌دار</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>افزودن به نمونه (Shift+کلیک)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>برای نمونه‌برداری از رنگ کلیک کنید</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>قطره‌چکان</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>جایگزینی</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>نتیجه:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>رنگی را که باید جایگزین شود انتخاب کنید</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>تفریق از نمونه (Alt+کلیک)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>ایربراش نرم</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>مشکی، سفید</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>آجرها</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>خوشنویسی تخت</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>گچ</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>شطرنجی</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>کروم</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>مس</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>خطوط مورب</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>نقطه‌ها</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>پیش‌زمینه به پس‌زمینه</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>پیش‌زمینه به شفاف</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>پیکسل سخت</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>گرد سخت</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>گرد سخت با فشار</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>شش‌ضلعی‌ها</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>اقیانوس</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>گرد نرم</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>گرد نرم با فشار</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>پاشش</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>طیف</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>مربعی سخت</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>غروب</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>نوارهای شفاف</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>رگه چوب</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>جابه‌جایی آگاه از محتوا</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>جابه‌جایی آگاه از محتوا...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>ابزار جابه‌جایی آگاه از محتوا</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>مقدار تیره کردن:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>مقصد</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>یک انتخاب بکشید (یا از هر ابزار انتخابی استفاده کنید)، سپس انتخاب را بکشید.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>گسترش</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>جابه‌جایی</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>وصله</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>وصله:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>ابزار وصله</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>اندازه مردمک:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>چشم قرمز</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>برای حذف بازتاب قرمز روی چشم قرمز کلیک کنید (یا دور آن بکشید).</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>ابزار چشم قرمز</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>منبع</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>ساختار:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>برای اندازه‌گیری فاصله و زاویه بکشید. برای تنظیم یک نقطه انتهایی آن را بکشید.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>ابزار خط‌کش</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>چرخاندن لایه فعال تا خط خط‌کش افقی شود</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>استفاده از مقیاس اندازه‌گیری</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>پاک کردن نمونه‌گیرهای رنگ</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>نمونه‌گیر رنگ</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>برای قرار دادن حداکثر ۱۰ نمونه‌گیر رنگ کلیک کنید (در پنل اطلاعات نمایش داده می‌شوند). برای جابه‌جایی بکشید و برای حذف Alt+کلیک کنید.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>ابزار نمونه‌گیر رنگ</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>لایه فعلی</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>حذف نمونه‌گیر رنگ</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>برای نمونه‌برداری از رنگ پیش‌زمینه کلیک کنید. Alt+کلیک از رنگ پس‌زمینه نمونه می‌گیرد.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>ابزار قطره‌چکان</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>حداکثر ۱۰ نمونه‌گیر رنگ مجاز است.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>جابه‌جایی نمونه‌گیر رنگ</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>نمونه:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>نمایش حلقه نمونه‌برداری</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>جابه‌جایی انتخاب</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>پیکان</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>تیک</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>ابر</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>ضربدر</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>تاج</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>ابزار شکل سفارشی</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>قطره</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>ابزار بیضی</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>پیکان پایان</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>رنگ پرکننده (کلیک راست برای هیچ)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>چرخ‌دنده</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>قلب</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>طول: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>صاعقه</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>برای کشیدن خط بکشید. Shift به ۴۵ درجه محدود می‌کند.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>ابزار خط</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>عملیات مسیر:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>ابزار چندضلعی</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>پازل</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>ابزار مستطیل</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>شکل:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>برای کشیدن شکل بکشید. Shift تناسب را حفظ می‌کند، Alt از مرکز می‌کشد.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>اضلاع:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>حباب گفتگو</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>ستاره</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>نسبت ستاره:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>پیکان شروع</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>رنگ خط دور (کلیک راست برای هیچ)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>ابزار مثلث</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>ضخامت:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>جستجوی فرمان‌ها</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>میانبرهای صفحه‌کلید</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>استفاده از پیش‌فرض‌ها</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>پاک کردن قطعه‌ها</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>حذف قطعه</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>تقسیم...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>تقسیم قطعه</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>ویرایش قطعه</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>ویرایش گزینه‌های قطعه</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>ع ثابت:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>هیچ قطعه‌ای انتخاب نشده است</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>ردیف x ستون (برای مثال 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>قطعه</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>برای ایجاد قطعه بکشید. برای صدور آن‌ها از پرونده &gt; صدور &gt; ذخیره قطعه‌ها استفاده کنید.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>گزینه‌های قطعه</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>برای انتخاب یک قطعه کلیک کنید، برای جابه‌جایی یا تغییر اندازه آن بکشید. Delete آن را حذف می‌کند، دوبار کلیک نام آن را تغییر می‌دهد.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>ابزار انتخاب قطعه</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>ابزار قطعه</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>قطعه‌ها از خطوط راهنما</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>هم‌تراز</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>منبع شبیه‌سازی: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>ابزار مهر شبیه‌سازی</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>در حال ترمیم...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی ترمیم</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>امپرسیونیستی</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>استفاده از ابزار مهر شبیه‌سازی ممکن نشد، زیرا ناحیه شبیه‌سازی تعریف نشده است (برای تعریف نقطه منبع Alt+کلیک کنید).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>با الگوی انتخاب‌شده نقاشی می‌کند.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>ابزار مهر الگو</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>برای حذف عوامل مزاحم روی آن‌ها نقاشی کنید. ناحیه از اطرافش بازسازی می‌شود.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>ابزار حذف</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>در حال حذف...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>ابزار قلم‌موی ترمیم نقطه‌ای</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>برای ترمیم خودکار لکه‌ها و عیب‌ها روی آن‌ها نقاشی کنید.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>نوع:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>پاک کردن فایل‌های اخیر</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>فایل جدید</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>جدید از عکس صفحه (ناحیه)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>فایل‌هایی که باز می‌کنید اینجا نمایش داده می‌شوند.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>اخیر</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>نمایش فایل‌های اخیر به‌صورت فهرست</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>نمایش فایل‌های اخیر به‌صورت کاشی</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>ایجاد نمونه‌رنگ جدید از رنگ پیش‌زمینه</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — کلیک: پیش‌زمینه، Alt/Ctrl+کلیک: پس‌زمینه، کلیک راست: حذف</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>متن را تایپ کنید. Ctrl+Enter تأیید و Esc لغو می‌کند.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>ابزار متن</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>بیشینه کردن</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>به حداقل رساندن</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>بازگرداندن</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>برای نرم کردن لبه‌ها و جزئیات نقاشی کنید.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>ابزار محوسازی</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>برای تیره کردن نواحی نقاشی کنید. Alt روشن می‌کند.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>ابزار سوزاندن</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>برای روشن کردن نواحی نقاشی کنید. Alt تیره می‌کند.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>ابزار روشن‌سازی</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>نقاشی با انگشت</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>محافظت از جزئیات</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>محافظت از تُن‌ها</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>محدوده:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>برای افزایش کنتراست محلی و تیز کردن جزئیات نقاشی کنید.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>ابزار تیزسازی</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>برای مالیدن رنگ بکشید. نقاشی با انگشت با رنگ پیش‌زمینه شروع می‌شود.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>ابزار مالیدن</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>برای افزایش یا کاهش اشباع رنگ‌ها نقاشی کنید.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>ابزار اسفنج</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>استفاده از {0} ممکن نشد، زیرا لایه هدف پنهان است.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>استفاده از {0} ممکن نشد، زیرا لایه قفل است.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>استفاده از {0} ممکن نشد، زیرا لایه هدف یک لایه پیکسلی نیست. ابتدا لایه را شطرنجی کنید (لایه &gt; شطرنجی کردن).</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>جمع کردن به یک ستون</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>رنگ‌های پیش‌فرض پیش‌زمینه و پس‌زمینه (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>ویرایش نوار ابزار...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>باز کردن به دو ستون</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>ویرایش در حالت ماسک سریع (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>تغییر حالت صفحه (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>تنظیم رنگ پس‌زمینه</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>تنظیم رنگ پیش‌زمینه</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>جابه‌جایی رنگ‌های پیش‌زمینه و پس‌زمینه (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>نوار ابزار (هر ردیف یک جایگاه نوار ابزار با ابزارهای بازشوی آن است). ابزاری را انتخاب کنید، سپس با دکمه‌ها آن را جابه‌جا کنید.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>انجام شد</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>ابزارهای اضافی (پنهان از نوار ابزار):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>پنهان کردن ابزار</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>ادغام با گروه بالا</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>انتقال به جلوتر در گروه</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>انتقال گروه به پایین</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>انتقال گروه به بالا</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>گروه مستقل</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>بازگرداندن پیش‌فرض‌ها</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>برای بازگرداندن به نوار ابزار کلیک کنید</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>سفارشی‌سازی نوار ابزار</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>ضددندانه</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>تأیید</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>پیوسته</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>جریان:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>نمونه نقطه‌ای</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>نمونه‌برداری از همه لایه‌ها</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>میانگین {0} در {0}</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>اندازه نمونه:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>ع: {0:0} px  ا: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>تلرانس:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>هم‌تراز کردن لبه‌های پایین</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>هم‌تراز کردن مراکز افقی</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>هم‌تراز کردن لبه‌های چپ</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>هم‌تراز کردن لبه‌های راست</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>هم‌تراز کردن لبه‌های بالا</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>هم‌تراز کردن مراکز عمودی</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>انتخاب خودکار:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>کلیک بالاترین لایه زیر نشانگر را انتخاب می‌کند (به‌طور موقت با Ctrl)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>لغو تبدیل (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>تبدیل ممکن نشد، زیرا لایه خالی است.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>تبدیل ممکن نشد، زیرا لایه قفل است یا محتوایی ندارد.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>تبدیل انتخاب ممکن نشد، زیرا لایه قفل است.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>تأیید تبدیل (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>حذف خط راهنما</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>شناور</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>انتخاب شناور</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>برای مقیاس‌بندی دستگیره‌ها را بکشید (Shift: متناسب، Alt: از مرکز)، برای چرخش بیرون بکشید، برای اعوجاج یک گوشه را با Ctrl بکشید، برای کج کردن یک لبه را با Ctrl بکشید. Enter تأیید می‌کند، Esc لغو می‌کند.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>گروه</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>درون‌یابی:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>انجام درخواست ممکن نشد، زیرا لایه قفل است.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>جابه‌جایی خط راهنما</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>برای جابه‌جایی لایه یا پیکسل‌های انتخاب‌شده بکشید. Alt+کشیدن تکثیر می‌کند، Shift محدود می‌کند. کلیدهای جهت‌نما جابه‌جایی جزئی می‌دهند.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>ابزار جابه‌جایی</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>جابه‌جایی جزئی</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>نمایش کنترل‌های تبدیل</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>برای تبدیل لایه فعال یا انتخاب از ویرایش &gt; تبدیل آزاد (Ctrl+T) استفاده کنید.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>همه حروف بزرگ</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>پررنگ کج</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>لغو ویرایش‌های فعلی (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>وسط‌چین کردن متن</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>تأیید ویرایش‌های فعلی (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>پررنگ مصنوعی</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>کج مصنوعی</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>برای افزودن متن نقطه‌ای کلیک کنید، برای افزودن متن پاراگرافی بکشید و برای ویرایش روی متن موجود کلیک کنید. Ctrl+Enter تأیید می‌کند، Esc لغو می‌کند.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>ابزار ماسک متن افقی</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>ابزار متن افقی</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>چپ‌چین کردن متن</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>برای تایپ کلیک کنید؛ با تأیید، انتخابی به شکل متن ایجاد می‌شود.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>معمولی</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>راست‌چین کردن متن</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>تنظیم ضددندانه</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>تنظیم سبک قلم</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>خط‌خورده</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>رنگ متن</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>تغییر جهت متن</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>ماسک متن</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>ابزار ماسک متن عمودی</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>ابزار متن عمودی</value>
+  </data>
+</root>

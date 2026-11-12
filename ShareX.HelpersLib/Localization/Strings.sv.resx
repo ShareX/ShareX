@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Identifiera text (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Öppna i fotoredigeraren</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Utför åtgärder</value>
   </data>
@@ -639,6 +642,9 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uppladdning</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Linjal</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Ladda upp från urklipp</value>
   </data>
@@ -786,8 +792,11 @@ Vill du ändå köra det?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Ta bild av område</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Ta bild av område (genomskinligt)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Linjal</value>
+    <value>Mätning</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare</value>
@@ -866,6 +875,21 @@ Vill du ändå köra det?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Bildfiler</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Nederkant</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Sidan</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisk</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Dölj</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Visa</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Öppna bild</value>
@@ -1089,6 +1113,12 @@ Vill du ändå köra det?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Byt verktygstyp</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ändra storlek på förstoringsglaset</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Zooma förstoringsglaset</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Dator</value>
   </data>
@@ -1221,6 +1251,12 @@ Vill du ändå köra det?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatiskt</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Listvy</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatyrvy</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Anpassad textuppladdare</value>
   </data>
@@ -1289,6 +1325,12 @@ Vill du ändå köra det?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Ladda upp fil</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktiv bildskärm</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primär bildskärm</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

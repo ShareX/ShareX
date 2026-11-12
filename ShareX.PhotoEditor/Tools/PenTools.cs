@@ -43,9 +43,9 @@ public sealed class PenTool : PathToolBase
 
     public override ToolId Id => ToolId.Pen;
 
-    public override string Name => "Pen Tool";
+    public override string Name => Strings.PenTools_PenTool;
 
-    public override string Hint => "Click to add corner points, drag to add smooth points. Click the first point to close. Ctrl edits points, Alt converts them.";
+    public override string Hint => Strings.PenTools_PenHint;
 
     public PathToolMode Mode { get; set; } = PathToolMode.Path;
 
@@ -82,7 +82,7 @@ public sealed class PenTool : PathToolBase
                 anchor.In = anchor.Out = anchor.Point;
                 anchor.Smooth = false;
                 PathChanged();
-                PushHistory("Convert Point");
+                PushHistory(Strings.PathEditTools_ConvertPoint);
                 return;
             }
             _dragAnchor = anchor;
@@ -107,14 +107,14 @@ public sealed class PenTool : PathToolBase
                 sub.Anchors.RemoveAt(index);
                 if (sub.Anchors.Count < 2) path.SubPaths.Remove(sub);
                 PathChanged();
-                PushHistory("Delete Anchor Point");
+                PushHistory(Strings.PathEditTools_DeleteAnchorPoint);
                 return;
             }
             if (path.HitSegment(input.Doc, Tolerance) is (var segmentSub, var segment, var t))
             {
                 path.InsertAnchor(segmentSub, segment, t);
                 PathChanged();
-                PushHistory("Add Anchor Point");
+                PushHistory(Strings.PathEditTools_AddAnchorPoint);
                 return;
             }
         }
@@ -182,7 +182,7 @@ public sealed class PenTool : PathToolBase
         if (_changed)
         {
             _changed = false;
-            PushHistory(_active == null ? "Close Path" : "Pen");
+            PushHistory(_active == null ? Strings.PenTools_ClosePath : Strings.PenTools_Pen);
         }
     }
 
@@ -212,9 +212,9 @@ public sealed class PenTool : PathToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.EnumCombo("Mode:", () => Mode, v => Mode = v, 90);
-        options.Check("Auto Add/Delete", () => AutoAddDelete, v => AutoAddDelete = v);
-        options.Check("Rubber Band", () => RubberBand, v => RubberBand = v);
+        options.EnumCombo(Strings.EditorCommands_ModeColon, () => Mode, v => Mode = v, 90);
+        options.Check(Strings.PenTools_AutoAddDelete, () => AutoAddDelete, v => AutoAddDelete = v);
+        options.Check(Strings.PenTools_RubberBand, () => RubberBand, v => RubberBand = v);
         PathOperationButtons(options, Host);
     }
 
@@ -222,10 +222,10 @@ public sealed class PenTool : PathToolBase
     public static void PathOperationButtons(OptionsBuilder options, IEditorHost host)
     {
         options.Separator();
-        options.Label("Make:");
-        options.Button("Selection...", () => UI.Commands.EditorCommands.PathToSelection(host));
-        options.Button("Mask", () => UI.Commands.EditorCommands.PathToVectorMask(host));
-        options.Button("Shape", () => UI.Commands.EditorCommands.PathToShape(host));
+        options.Label(Strings.PenTools_MakeColon);
+        options.Button(Strings.PenTools_SelectionEllipsis, () => UI.Commands.EditorCommands.PathToSelection(host));
+        options.Button(Strings.PenTools_Mask, () => UI.Commands.EditorCommands.PathToVectorMask(host));
+        options.Button(Strings.Enum_ShapeToolMode_Shape, () => UI.Commands.EditorCommands.PathToShape(host));
     }
 }
 
@@ -241,9 +241,9 @@ public sealed class FreeformPenTool : PathToolBase
 
     public override ToolId Id => ToolId.FreeformPen;
 
-    public override string Name => "Freeform Pen Tool";
+    public override string Name => Strings.PenTools_FreeformPenTool;
 
-    public override string Hint => "Drag to draw a path freehand; it is fitted with smooth curves. Magnetic snaps to edges.";
+    public override string Hint => Strings.PenTools_FreeformPenHint;
 
     public PathToolMode Mode { get; set; } = PathToolMode.Path;
 
@@ -298,7 +298,7 @@ public sealed class FreeformPenTool : PathToolBase
         path!.SubPaths.Add(sub);
         _points.Clear();
         PathChanged();
-        PushHistory("Freeform Pen");
+        PushHistory(Strings.PenTools_FreeformPen);
     }
 
     public override void DrawOverlay(OverlayContext context)
@@ -309,9 +309,9 @@ public sealed class FreeformPenTool : PathToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.EnumCombo("Mode:", () => Mode, v => Mode = v, 90);
-        options.Number("Curve Fit:", 0.5, 10, () => CurveFit, v => CurveFit = (float)v, "0.0", "px", 0.5);
-        options.Check("Magnetic", () => Magnetic, v => Magnetic = v);
+        options.EnumCombo(Strings.EditorCommands_ModeColon, () => Mode, v => Mode = v, 90);
+        options.Number(Strings.PenTools_CurveFitColon, 0.5, 10, () => CurveFit, v => CurveFit = (float)v, "0.0", "px", 0.5);
+        options.Check(Strings.PenTools_Magnetic, () => Magnetic, v => Magnetic = v);
         PenTool.PathOperationButtons(options, Host);
     }
 }
@@ -329,9 +329,9 @@ public sealed class CurvaturePenTool : PathToolBase
 
     public override ToolId Id => ToolId.CurvaturePen;
 
-    public override string Name => "Curvature Pen Tool";
+    public override string Name => Strings.PenTools_CurvaturePenTool;
 
-    public override string Hint => "Click to place points; the curve flows smoothly through them. Click the first point to close, Enter or Esc to finish.";
+    public override string Hint => Strings.PenTools_CurvaturePenHint;
 
     public PathToolMode Mode { get; set; } = PathToolMode.Path;
 
@@ -385,7 +385,7 @@ public sealed class CurvaturePenTool : PathToolBase
     {
         _active = null;
         _points.Clear();
-        PushHistory("Curvature Pen");
+        PushHistory(Strings.PenTools_CurvaturePen);
         PathChanged();
     }
 
@@ -416,7 +416,7 @@ public sealed class CurvaturePenTool : PathToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.EnumCombo("Mode:", () => Mode, v => Mode = v, 90);
+        options.EnumCombo(Strings.EditorCommands_ModeColon, () => Mode, v => Mode = v, 90);
         PenTool.PathOperationButtons(options, Host);
     }
 }

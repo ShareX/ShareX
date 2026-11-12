@@ -359,6 +359,8 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(source, destination, "*.pdb");
             }
 
+            FileHelpers.CopyAll(Path.Combine(source, "Models"), Path.Combine(destination, "Models"));
+
             FileHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), Path.Combine(destination, "Licenses"), "*.txt");
 
             FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);

@@ -84,7 +84,7 @@ namespace ShareX.Tools
                     timeSliceElapsed = GetTimeSlice(Options.ThumbnailCount) * (i + 1);
                 }
 
-                string fileName = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetDescription());
+                string fileName = string.Format("{0}-{1}.{2}", mediaFileName, timeSliceElapsed, Options.ImageFormat.GetFileExtension());
                 string tempThumbnailPath = Path.Combine(GetOutputDirectory(), fileName);
 
                 using (Process process = new Process())
@@ -128,7 +128,7 @@ namespace ShareX.Tools
                 {
                     using (SKBitmap img = CombineScreenshots(tempThumbnails))
                     {
-                        string tempFilePath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetDescription());
+                        string tempFilePath = Path.Combine(GetOutputDirectory(), Path.GetFileNameWithoutExtension(MediaPath) + Options.FilenameSuffix + "." + Options.ImageFormat.GetFileExtension());
                         SkiaImageHelpers.SaveImage(img, tempFilePath);
                         thumbnails.Add(new VideoThumbnailInfo(tempFilePath));
                     }

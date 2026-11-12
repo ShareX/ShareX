@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
+using ShareX.AvaloniaUI.Theming;
 using ShareX.PhotoEditor.UI;
 using ShareX.PhotoEditor.UI.Theme;
 
@@ -135,7 +136,7 @@ public interface IEditorHost
 
     void ShowMessage(string text);
 
-    Task<string?> PromptTextAsync(string title, string label, string initial);
+    Task<string?> PromptTextAsync(string title, string label, string initial, bool multiline = false);
 }
 
 /// <summary>Base class for every toolbar tool.</summary>
@@ -241,15 +242,15 @@ public abstract class ToolBase
         }
         if (Doc?.ActiveLayer is RasterLayer locked && !locked.CanEditPixels)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the layer is locked.");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseLocked, Name));
         }
         else if (Doc?.ActiveLayer is RasterLayer hidden && !hidden.IsEffectivelyVisible)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the target layer is hidden.");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseHidden, Name));
         }
         else if (Doc?.ActiveLayer != null)
         {
-            Host.ShowMessage("Could not use the " + Name + " because the target layer is not a pixel layer. Rasterize the layer first (Layer > Rasterize).");
+            Host.ShowMessage(string.Format(Strings.ToolBase_CannotUseNotPixelLayer, Name));
         }
         return false;
     }
@@ -286,6 +287,12 @@ public sealed class OverlayContext
     public static readonly IPen LightPen = new Pen(Brushes.White, 1, new DashStyle([4, 4], 0));
     public static readonly IBrush AccentBrush = PhotoEditorTheme.AccentBrush;
     public static readonly IPen AccentPen = new Pen(AccentBrush, 1);
+    private static readonly IPen LightHaloPen = new Pen(new SolidColorBrush(Color.FromArgb(200, 255, 255, 255)), 1);
+
+    // Overlays sit on the user's image, so each stroke gets a black or white halo that contrasts with the stroke
+    // itself. Light strokes keep the dark shadow; dark ones (a black or navy accent) get a light one. The color is
+    // read at draw time, so it follows accent changes.
+    private static IPen GetHaloPen(IBrush? brush) => AccentPalette.GetHaloColor(brush) == Colors.White ? LightHaloPen : DarkPen;
 
     public OverlayContext(DrawingContext drawing, DocumentView view)
     {
@@ -307,8 +314,9 @@ public sealed class OverlayContext
     public void Line(SKPoint a, SKPoint b, IPen? pen = null)
     {
         Point pa = ToScreen(a), pb = ToScreen(b);
-        Drawing.DrawLine(DarkPen, pa + new Vector(0.5, 0.5), pb + new Vector(0.5, 0.5));
-        Drawing.DrawLine(pen ?? LightPen, pa, pb);
+        pen ??= LightPen;
+        Drawing.DrawLine(GetHaloPen(pen.Brush), pa + new Vector(0.5, 0.5), pb + new Vector(0.5, 0.5));
+        Drawing.DrawLine(pen, pa, pb);
     }
 
     public void Polygon(IReadOnlyList<SKPoint> points, bool closed, IPen? pen = null)
@@ -336,22 +344,26 @@ public sealed class OverlayContext
     {
         Point s = ToScreen(p);
         Rect r = new(s.X - size / 2, s.Y - size / 2, size, size);
-        Drawing.DrawRectangle(filled ? AccentBrush : Brushes.White, DarkPen, r);
+        IBrush handleFill = filled ? AccentBrush : Brushes.White;
+        Drawing.DrawRectangle(handleFill, GetHaloPen(handleFill), r);
     }
 
     public void Circle(SKPoint center, double screenRadius, IPen? pen = null, IBrush? fill = null)
     {
         Point s = ToScreen(center);
-        Drawing.DrawEllipse(fill, DarkPen, s, screenRadius + 1, screenRadius + 1);
-        Drawing.DrawEllipse(null, pen ?? new Pen(Brushes.White, 1), s, screenRadius, screenRadius);
+        pen ??= new Pen(Brushes.White, 1);
+        Drawing.DrawEllipse(fill, GetHaloPen(pen.Brush), s, screenRadius + 1, screenRadius + 1);
+        Drawing.DrawEllipse(null, pen, s, screenRadius, screenRadius);
     }
 
     public void Path(SKPath path, IPen? pen = null, IBrush? fill = null)
     {
         Geometry geometry = ToGeometry(path);
+        pen ??= AccentPen;
+        Color halo = AccentPalette.GetHaloColor(pen.Brush);
         if (fill != null) Drawing.DrawGeometry(fill, null, geometry);
-        Drawing.DrawGeometry(null, new Pen(new SolidColorBrush(Color.FromArgb(160, 0, 0, 0)), 2), geometry);
-        Drawing.DrawGeometry(null, pen ?? AccentPen, geometry);
+        Drawing.DrawGeometry(null, new Pen(new SolidColorBrush(Color.FromArgb(160, halo.R, halo.G, halo.B)), 2), geometry);
+        Drawing.DrawGeometry(null, pen, geometry);
     }
 
     public Geometry ToGeometry(SKPath path)
@@ -396,7 +408,9 @@ public sealed class OverlayContext
     public void Text(SKPoint docPoint, string text, double offsetX = 8, double offsetY = 8, IBrush? background = null)
     {
         Point s = ToScreen(docPoint);
-        FormattedText formatted = new(text, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 11, Brushes.White);
+        // White suits the default dark label; a solid background (the accent behind slice numbers) picks whichever text color reads on it.
+        IBrush foreground = background is ISolidColorBrush solid ? new SolidColorBrush(AccentPalette.GetTextColorOn(solid.Color)) : Brushes.White;
+        FormattedText formatted = new(text, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 11, foreground);
         Rect box = new(s.X + offsetX - 3, s.Y + offsetY - 2, formatted.Width + 6, formatted.Height + 4);
         Drawing.DrawRectangle(background ?? new SolidColorBrush(Color.FromArgb(200, 30, 30, 30)), null, box, 2, 2);
         Drawing.DrawText(formatted, new Point(s.X + offsetX, s.Y + offsetY));

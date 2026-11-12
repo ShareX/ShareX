@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.URLUploadWindow"
         x:CompileBindings="False"
         Title="{x:Static res:Strings.URLUploadWindow_Title}"
@@ -25,10 +26,6 @@
             <Setter Property="MinWidth" Value="96"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
     </Window.Styles>
 
     <Grid RowDefinitions="Auto,Auto,Auto">
@@ -39,18 +36,17 @@
                         Height="40"
                         CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.link}"
-                               FontSize="20"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                     <TextBlock Text="{x:Static res:Strings.URLUploadWindow_Heading}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock x:Name="PromptText"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>

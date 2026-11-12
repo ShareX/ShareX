@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f56d6d"/><stop offset="0.1" stop-color="#f56d6d"/><stop offset="0.18" stop-color="#e35b5b"/><stop offset="0.27" stop-color="#d74f4f"/><stop offset="0.36" stop-color="#ca4242"/><stop offset="0.45" stop-color="#bf3737"/><stop offset="0.5" stop-color="#a11111"/><stop offset="0.6" stop-color="#aa1111"/><stop offset="0.7" stop-color="#b41111"/><stop offset="0.78" stop-color="#be1111"/><stop offset="0.86" stop-color="#c81111"/><stop offset="0.93" stop-color="#d11111"/><stop offset="1" stop-color="#d91111"/></linearGradient>
+<linearGradient id="bo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#aa0000"/><stop offset="0.5" stop-color="#960000"/><stop offset="1" stop-color="#5d0000"/></linearGradient>
+<linearGradient id="w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.3" stop-color="#f2f2f2"/><stop offset="0.45" stop-color="#cecece"/><stop offset="0.7" stop-color="#dcdcdc"/><stop offset="1" stop-color="#eeeeee"/></linearGradient>
+</defs>
+<rect x="1.5" y="1.5" width="13" height="13" rx=".6" fill="url(#b)" stroke="url(#bo)"/>
+<path d="M2.5 3v10" stroke="#ff8080" stroke-opacity=".3"/>
+<path d="M5.4 5.4l5.2 5.2M10.6 5.4l-5.2 5.2" stroke="url(#w)" stroke-width="2.3" stroke-linecap="round"/>
+</svg>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class MatrixDigitalRainImageEffect : ImageEffectBase
     public override string Id => "matrix_digital_rain";
     public override string Name => "Matrix digital rain";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.terminal;
+    public override string IconKey => AppIcons.Terminal;
     public override string Description => "Overlays a Matrix-style digital rain effect using source luminance.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

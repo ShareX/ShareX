@@ -43,17 +43,17 @@ public static partial class EditorCommands
 
     private static void RegisterFilter()
     {
-        R("filter.last", "Last Filter", "Ctrl+Alt+F", w => w.RepeatLastFilter?.Invoke(), w => w.RepeatLastFilter != null && HasDoc(w));
-        R("filter.convertSmart", "Convert for Smart Filters", null, ConvertToSmartObject, HasLayer);
+        R("filter.last", Strings.EditorCommands_LastFilter, "Ctrl+Alt+F", w => w.RepeatLastFilter?.Invoke(), w => w.RepeatLastFilter != null && HasDoc(w));
+        R("filter.convertSmart", Strings.EditorCommands_ConvertForSmartFilters, null, ConvertToSmartObject, HasLayer);
         foreach (FilterDefinition filter in Filters.All)
         {
             FilterDefinition captured = filter;
-            R($"filter.{filter.Category}.{filter.Name}", filter.Name + (filter.Parameters.Count > 0 ? "..." : string.Empty), null, w => _ = RunFilterAsync(w, captured), HasDoc);
+            R($"filter.{filter.Category}.{filter.Name}", filter.DisplayName + (filter.Parameters.Count > 0 ? "..." : string.Empty), null, w => _ = RunFilterAsync(w, captured), HasDoc);
         }
     }
 
     private static IEnumerable<MenuNode> FilterCategoryNodes() =>
-        Filters.All.GroupBy(f => f.Category).Select(g => MenuNode.Sub(g.Key, g.Select(f => MenuNode.Cmd($"filter.{f.Category}.{f.Name}")).ToArray()));
+        Filters.All.GroupBy(f => f.Category).Select(g => MenuNode.Sub(Filters.GetCategoryName(g.Key), g.Select(f => MenuNode.Cmd($"filter.{f.Category}.{f.Name}")).ToArray()));
 
     private static IEnumerable<MenuNode> LibraryNodes(PhotoEditorWindow w) =>
         LibraryEffects.Value.GroupBy(e => e.Category).Select(g => new MenuNode
@@ -65,7 +65,7 @@ public static partial class EditorCommands
     private static (RasterLayer? Raster, SmartObjectLayer? Smart) FilterTarget(PhotoEditorWindow w)
     {
         if (w.Document?.ActiveLayer is SmartObjectLayer smart) return (null, smart);
-        return (EditableRaster(w, "run the filter"), null);
+        return (EditableRaster(w, Strings.EditorCommands_ActionRunFilter), null);
     }
 
     private static async Task RunFilterAsync(PhotoEditorWindow w, FilterDefinition filter, Dictionary<string, float>? preset = null)
@@ -94,7 +94,7 @@ public static partial class EditorCommands
                     DialogBuilder.AddRow(form, p.Label + ":", DialogBuilder.SliderNumber(p.Minimum, p.Maximum, values[p.Key], v => { values[p.Key] = (float)v; session?.Preview(Make()); }, p.Step, p.Step < 1 ? "0.0" : "0"));
                 }
             }
-            CheckBox preview = new() { Content = "Preview", IsChecked = true };
+            CheckBox preview = new() { Content = Strings.EditorCommands_Preview, IsChecked = true };
             preview.IsCheckedChanged += (_, _) =>
             {
                 if (session == null) return;
@@ -103,7 +103,7 @@ public static partial class EditorCommands
             };
             DialogBuilder.AddFull(form, preview);
             session?.Preview(Make());
-            bool ok = await DialogBuilder.ShowAsync(w, filter.Name, form, 480);
+            bool ok = await DialogBuilder.ShowAsync(w, filter.DisplayName, form, 480);
             if (!ok)
             {
                 session?.Cancel();
@@ -111,7 +111,7 @@ public static partial class EditorCommands
             }
             if (session != null)
             {
-                await session.CommitAsync(Make(), filter.Name);
+                await session.CommitAsync(Make(), filter.DisplayName);
                 RememberFilter(w, filter, values);
                 return;
             }
@@ -123,7 +123,7 @@ public static partial class EditorCommands
         else
         {
             PreviewSession session = new(w, raster!, 96);
-            await session.CommitAsync(Make(), filter.Name);
+            await session.CommitAsync(Make(), filter.DisplayName);
         }
         RememberFilter(w, filter, values);
     }
@@ -131,7 +131,7 @@ public static partial class EditorCommands
     private static void RememberFilter(PhotoEditorWindow w, FilterDefinition filter, Dictionary<string, float> values)
     {
         Dictionary<string, float> copy = new(values);
-        w.LastFilterName = filter.Name;
+        w.LastFilterName = filter.DisplayName;
         w.RepeatLastFilter = () => _ = RunFilterAsync(w, filter, copy);
     }
 
@@ -140,7 +140,7 @@ public static partial class EditorCommands
         ImageEffectBase? effect = LibraryEffects.Value.FirstOrDefault(e => e.GetType().Name.Contains(typeNameContains, StringComparison.OrdinalIgnoreCase));
         if (effect == null)
         {
-            w.ShowMessage("This effect is not available.");
+            w.ShowMessage(Strings.EditorCommands_EffectNotAvailable);
             return Task.CompletedTask;
         }
         return RunLibraryEffectAsync(w, effect.GetType());
@@ -200,39 +200,39 @@ public static partial class EditorCommands
                 values.TryAdd(numeric.Key, numeric.DefaultValue);
                 return DialogBuilder.SliderNumber((double)numeric.Minimum, (double)numeric.Maximum, (double)(decimal)values[numeric.Key]!, v => { values[numeric.Key] = (decimal)v; changed(); }, (double)numeric.Increment, numeric.Increment >= 1 ? "0" : "0.00");
             case CheckboxEffectParameter check:
-            {
-                values.TryAdd(check.Key, check.DefaultValue);
-                CheckBox box = new() { IsChecked = (bool)values[check.Key]! };
-                box.IsCheckedChanged += (_, _) => { values[check.Key] = box.IsChecked == true; changed(); };
-                return box;
-            }
+                {
+                    values.TryAdd(check.Key, check.DefaultValue);
+                    CheckBox box = new() { IsChecked = (bool)values[check.Key]! };
+                    box.IsCheckedChanged += (_, _) => { values[check.Key] = box.IsChecked == true; changed(); };
+                    return box;
+                }
             case EnumEffectParameter enumeration:
                 values.TryAdd(enumeration.Key, enumeration.Options[enumeration.DefaultIndex].Value);
                 return DialogBuilder.Combo(enumeration.Options.Select(o => (o.Label, o.Value)), values[enumeration.Key]!, v => { values[enumeration.Key] = v; changed(); });
             case ColorEffectParameter color:
-            {
-                values.TryAdd(color.Key, color.DefaultValue);
-                SKColor current = (SKColor)values[color.Key]!;
-                Button button = new() { Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(current) } };
-                button.Click += async (_, _) =>
                 {
-                    SKColor? picked = await ColorPickerDialog.ShowAsync(w, (SKColor)values[color.Key]!, color.Label, w);
-                    if (picked is SKColor c)
+                    values.TryAdd(color.Key, color.DefaultValue);
+                    SKColor current = (SKColor)values[color.Key]!;
+                    Button button = new() { Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(current) } };
+                    button.Click += async (_, _) =>
                     {
-                        values[color.Key] = c;
-                        button.Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(c) };
-                        changed();
-                    }
-                };
-                return button;
-            }
+                        SKColor? picked = await ColorPickerDialog.ShowAsync(w, (SKColor)values[color.Key]!, color.Label, w);
+                        if (picked is SKColor c)
+                        {
+                            values[color.Key] = c;
+                            button.Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(c) };
+                            changed();
+                        }
+                    };
+                    return button;
+                }
             case TextEffectParameter text:
-            {
-                values.TryAdd(text.Key, text.DefaultValue);
-                TextBox box = new() { Text = (string?)values[text.Key] };
-                box.TextChanged += (_, _) => { values[text.Key] = box.Text ?? string.Empty; changed(); };
-                return box;
-            }
+                {
+                    values.TryAdd(text.Key, text.DefaultValue);
+                    TextBox box = new() { Text = (string?)values[text.Key] };
+                    box.TextChanged += (_, _) => { values[text.Key] = box.Text ?? string.Empty; changed(); };
+                    return box;
+                }
             default:
                 return null;
         }

@@ -33,19 +33,19 @@ public static partial class EditorCommands
 {
     private static void RegisterType()
     {
-        R("type.horizontal", "Horizontal", null, w => SetTextOrientation(w, false), w => w.Document?.ActiveLayer is TextLayer, w => w.Document?.ActiveLayer is TextLayer { Vertical: false });
-        R("type.vertical", "Vertical", null, w => SetTextOrientation(w, true), w => w.Document?.ActiveLayer is TextLayer, w => w.Document?.ActiveLayer is TextLayer { Vertical: true });
+        R("type.horizontal", Strings.EditorCommands_Horizontal, null, w => SetTextOrientation(w, false), w => w.Document?.ActiveLayer is TextLayer, w => w.Document?.ActiveLayer is TextLayer { Vertical: false });
+        R("type.vertical", Strings.EditorCommands_Vertical, null, w => SetTextOrientation(w, true), w => w.Document?.ActiveLayer is TextLayer, w => w.Document?.ActiveLayer is TextLayer { Vertical: true });
         foreach (TextAntiAlias mode in Enum.GetValues<TextAntiAlias>())
         {
             TextAntiAlias captured = mode;
-            R($"type.aa.{mode}", mode.ToString(), null, w => { if (w.Document!.ActiveLayer is TextLayer t) { t.AntiAlias = captured; t.Invalidate(); w.Commit("Anti-Alias"); } },
+            R($"type.aa.{mode}", EnumNames.Get(mode), null, w => { if (w.Document!.ActiveLayer is TextLayer t) { t.AntiAlias = captured; t.Invalidate(); w.Commit(Strings.EditorCommands_AntiAlias); } },
                 w => w.Document?.ActiveLayer is TextLayer, w => (w.Document?.ActiveLayer as TextLayer)?.AntiAlias == captured);
         }
-        R("type.sizeUp", "Increase Font Size", "Ctrl+Shift+OemPeriod", w => ChangeFontSize(w, 2), w => w.Document?.ActiveLayer is TextLayer);
-        R("type.sizeDown", "Decrease Font Size", "Ctrl+Shift+OemComma", w => ChangeFontSize(w, -2), w => w.Document?.ActiveLayer is TextLayer);
-        R("type.rasterize", "Rasterize Type Layer", null, w => Rasterize(w, false), w => w.Document?.ActiveLayer is TextLayer);
-        R("type.convertToShape", "Convert to Shape", null, TextToShape, w => w.Document?.ActiveLayer is TextLayer);
-        R("type.createWorkPath", "Create Work Path", null, TextToWorkPath, w => w.Document?.ActiveLayer is TextLayer);
+        R("type.sizeUp", Strings.EditorCommands_IncreaseFontSize, "Ctrl+Shift+OemPeriod", w => ChangeFontSize(w, 2), w => w.Document?.ActiveLayer is TextLayer);
+        R("type.sizeDown", Strings.EditorCommands_DecreaseFontSize, "Ctrl+Shift+OemComma", w => ChangeFontSize(w, -2), w => w.Document?.ActiveLayer is TextLayer);
+        R("type.rasterize", Strings.EditorCommands_RasterizeTypeLayer, null, w => Rasterize(w, false), w => w.Document?.ActiveLayer is TextLayer);
+        R("type.convertToShape", Strings.EditorCommands_ConvertToShape, null, TextToShape, w => w.Document?.ActiveLayer is TextLayer);
+        R("type.createWorkPath", Strings.EditorCommands_CreateWorkPath, null, TextToWorkPath, w => w.Document?.ActiveLayer is TextLayer);
     }
 
     private static void SetTextOrientation(PhotoEditorWindow w, bool vertical)
@@ -53,7 +53,7 @@ public static partial class EditorCommands
         if (w.Document!.ActiveLayer is not TextLayer text) return;
         text.Vertical = vertical;
         text.Invalidate();
-        w.Commit("Change Text Orientation");
+        w.Commit(Strings.EditorCommands_ChangeTextOrientation);
     }
 
     private static void ChangeFontSize(PhotoEditorWindow w, float delta)
@@ -61,7 +61,7 @@ public static partial class EditorCommands
         if (w.Document!.ActiveLayer is not TextLayer text) return;
         text.FontSize = Math.Max(1, text.FontSize + delta);
         text.Invalidate();
-        w.Commit("Set Font Size");
+        w.Commit(Strings.EditorCommands_SetFontSize);
     }
 
     private static void TextToShape(PhotoEditorWindow w)
@@ -71,7 +71,7 @@ public static partial class EditorCommands
         using SKPath path = text.GetTextPath();
         ShapeLayer shape = new(text.Name, VectorPath.FromSKPath(path)) { FillColor = text.Color, StrokeColor = null, Opacity = text.Opacity, BlendMode = text.BlendMode, Mask = text.Mask, Style = text.Style };
         ReplaceLayer(doc, text, shape);
-        w.Commit("Convert to Shape");
+        w.Commit(Strings.EditorCommands_ConvertToShape);
     }
 
     private static void TextToWorkPath(PhotoEditorWindow w)
@@ -80,31 +80,34 @@ public static partial class EditorCommands
         if (doc.ActiveLayer is not TextLayer text) return;
         using SKPath path = text.GetTextPath();
         doc.WorkPath = VectorPath.FromSKPath(path);
-        doc.ActivePath = new NamedPath("Work Path", doc.WorkPath);
-        w.Commit("Create Work Path");
+        doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
+        w.Commit(Strings.EditorCommands_CreateWorkPath);
     }
+
+    // A selection made before the document was cropped or resized no longer matches it, so it cannot be restored.
+    private static bool CanReselect(PhotoEditorWindow w) => w.Document?.LastSelection is PixelSurface last && last.Width == w.Document.Width && last.Height == w.Document.Height;
 
     private static void RegisterSelect()
     {
-        R("select.all", "All", "Ctrl+A", w => { w.Document!.SetSelection(MaskOps.FromRect(w.Document.Bounds, w.Document.Width, w.Document.Height)); w.Commit("Select All"); }, HasDoc);
-        R("select.deselect", "Deselect", "Ctrl+D", w => { w.Document!.SetSelection(null); w.Commit("Deselect"); }, HasSelection);
-        R("select.reselect", "Reselect", "Ctrl+Shift+D", w => { w.Document!.SetSelection(w.Document.LastSelection?.Clone()); w.Commit("Reselect"); }, w => w.Document?.LastSelection != null);
-        R("select.inverse", "Inverse", "Ctrl+Shift+I", Inverse, HasDoc);
-        R("select.allLayers", "All Layers", "Ctrl+Alt+A", w => { PhotoDocument d = w.Document!; foreach (Layer l in d.AllLayers.Where(l => !l.IsBackground)) d.SelectedLayerIds.Add(l.Id); w.RefreshPanels(); }, HasDoc);
-        R("select.colorRange", "Color Range...", null, w => _ = ColorRangeAsync(w), HasDoc);
-        R("select.subject", "Subject", null, w => SelectSubject(w), HasDoc);
-        R("select.selectAndMask", "Select and Mask...", "Ctrl+Alt+R", w => SelectAndMask(w), HasSelection);
-        R("select.modify.border", "Border...", null, w => _ = ModifyAsync(w, "Border", "Width (px):", 10, (m, v) => MaskOps.Border(m, v)), HasSelection);
-        R("select.modify.smooth", "Smooth...", null, w => _ = ModifyAsync(w, "Smooth", "Sample Radius (px):", 2, (m, v) => MaskOps.Smooth(m, v)), HasSelection);
-        R("select.modify.expand", "Expand...", null, w => _ = ModifyAsync(w, "Expand", "Expand By (px):", 5, (m, v) => MaskOps.Morph(m, v)), HasSelection);
-        R("select.modify.contract", "Contract...", null, w => _ = ModifyAsync(w, "Contract", "Contract By (px):", 5, (m, v) => MaskOps.Morph(m, -v)), HasSelection);
-        R("select.modify.feather", "Feather...", "Shift+F6", w => _ = ModifyAsync(w, "Feather", "Feather Radius (px):", 5, (m, v) => { PixelSurface c = m.Clone(); MaskOps.Blur(c, v); return c; }), HasSelection);
-        R("select.grow", "Grow", null, w => GrowSimilar(w, true), HasSelection);
-        R("select.similar", "Similar", null, w => GrowSimilar(w, false), HasSelection);
-        R("select.transform", "Transform Selection...", null, w => _ = TransformSelectionAsync(w), HasSelection);
-        R("select.load", "Load Selection...", null, LoadChannelSelection, w => w.Document?.Channels.Count > 0);
-        R("select.save", "Save Selection...", null, SaveSelectionToChannel, HasSelection);
-        R("paths.fromSelection", "Make Work Path", null, w => SelectionToPath(w), HasSelection);
+        R("select.all", Strings.EditorCommands_All, "Ctrl+A", w => { w.Document!.SetSelection(MaskOps.FromRect(w.Document.Bounds, w.Document.Width, w.Document.Height)); w.Commit(Strings.EditorCommands_SelectAll); }, HasDoc);
+        R("select.deselect", Strings.EditorCommands_Deselect, "Ctrl+D", w => { w.Document!.SetSelection(null); w.Commit(Strings.EditorCommands_Deselect); }, HasSelection);
+        R("select.reselect", Strings.EditorCommands_Reselect, "Ctrl+Shift+D", w => { if (!CanReselect(w)) return; w.Document!.SetSelection(w.Document.LastSelection!.Clone()); w.Commit(Strings.EditorCommands_Reselect); }, CanReselect);
+        R("select.inverse", Strings.EditorCommands_Inverse, "Ctrl+Shift+I", Inverse, HasDoc);
+        R("select.allLayers", Strings.EditorCommands_AllLayers, "Ctrl+Alt+A", w => { PhotoDocument d = w.Document!; foreach (Layer l in d.AllLayers.Where(l => !l.IsBackground)) d.SelectedLayerIds.Add(l.Id); w.RefreshPanels(); }, HasDoc);
+        R("select.colorRange", Strings.EditorCommands_ColorRangeEllipsis, null, w => _ = ColorRangeAsync(w), HasDoc);
+        R("select.subject", Strings.EditorCommands_Subject, null, w => SelectSubject(w), HasDoc);
+        R("select.selectAndMask", Strings.EditorCommands_SelectAndMaskEllipsis, "Ctrl+Alt+R", w => SelectAndMask(w), HasSelection);
+        R("select.modify.border", Strings.EditorCommands_BorderEllipsis, null, w => _ = ModifyAsync(w, Strings.EditorCommands_Border, Strings.EditorCommands_WidthPxColon, 10, (m, v) => MaskOps.Border(m, v)), HasSelection);
+        R("select.modify.smooth", Strings.EditorCommands_SmoothEllipsis, null, w => _ = ModifyAsync(w, Strings.EditorCommands_Smooth, Strings.EditorCommands_SampleRadiusPxColon, 2, (m, v) => MaskOps.Smooth(m, v)), HasSelection);
+        R("select.modify.expand", Strings.EditorCommands_ExpandEllipsis, null, w => _ = ModifyAsync(w, Strings.EditorCommands_Expand, Strings.EditorCommands_ExpandByPxColon, 5, (m, v) => MaskOps.Morph(m, v)), HasSelection);
+        R("select.modify.contract", Strings.EditorCommands_ContractEllipsis, null, w => _ = ModifyAsync(w, Strings.EditorCommands_Contract, Strings.EditorCommands_ContractByPxColon, 5, (m, v) => MaskOps.Morph(m, -v)), HasSelection);
+        R("select.modify.feather", Strings.EditorCommands_FeatherEllipsis, "Shift+F6", w => _ = ModifyAsync(w, Strings.EditorCommands_Feather, Strings.EditorCommands_FeatherRadiusPxColon, 5, (m, v) => { PixelSurface c = m.Clone(); MaskOps.Blur(c, v); return c; }), HasSelection);
+        R("select.grow", Strings.EditorCommands_Grow, null, w => GrowSimilar(w, true), HasSelection);
+        R("select.similar", Strings.EditorCommands_Similar, null, w => GrowSimilar(w, false), HasSelection);
+        R("select.transform", Strings.EditorCommands_TransformSelectionEllipsis, null, w => _ = TransformSelectionAsync(w), HasSelection);
+        R("select.load", Strings.EditorCommands_LoadSelectionEllipsis, null, LoadChannelSelection, w => w.Document?.Channels.Count > 0);
+        R("select.save", Strings.EditorCommands_SaveSelectionEllipsis, null, SaveSelectionToChannel, HasSelection);
+        R("paths.fromSelection", Strings.EditorCommands_MakeWorkPath, null, w => SelectionToPath(w), HasSelection);
     }
 
     private static void Inverse(PhotoEditorWindow w)
@@ -113,7 +116,7 @@ public static partial class EditorCommands
         PixelSurface mask = doc.Selection?.Clone() ?? PixelSurface.CreateMask(doc.Width, doc.Height);
         MaskOps.Invert(mask);
         doc.SetSelection(mask);
-        w.Commit("Inverse");
+        w.Commit(Strings.EditorCommands_Inverse);
     }
 
     public static async void SelectSubject(IEditorHost host)
@@ -122,11 +125,11 @@ public static partial class EditorCommands
         if (w.Document == null) return;
         SKBitmap sample = w.GetSampleImage(true);
         PixelSurface? mask = null;
-        await w.RunBusyAsync("Selecting subject...", _ => Task.Run(() => mask = SmartSelection.SelectSubject(sample)));
+        await w.RunBusyAsync(Strings.EditorCommands_SelectingSubject, _ => Task.Run(() => mask = SmartSelection.SelectSubject(sample)));
         sample.Dispose();
         if (mask == null) return;
         w.Document.SetSelection(mask);
-        w.Commit("Select Subject");
+        w.Commit(Strings.EditorCommands_SelectSubject);
     }
 
     public static async void SelectAndMask(IEditorHost host)
@@ -135,7 +138,7 @@ public static partial class EditorCommands
         PhotoDocument? doc = w.Document;
         if (doc?.Selection == null)
         {
-            w.ShowMessage("Make a selection first.");
+            w.ShowMessage(Strings.EditorCommands_MakeSelectionFirst);
             return;
         }
         PixelSurface original = doc.Selection;
@@ -161,19 +164,19 @@ public static partial class EditorCommands
             w.InvalidateCanvas();
         }
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Smooth:", DialogBuilder.SliderNumber(0, 100, 0, v => { smooth = (float)v; Update(); }));
-        DialogBuilder.AddRow(form, "Feather:", DialogBuilder.SliderNumber(0, 250, 0, v => { feather = (float)v; Update(); }, 0.5, "0.0"));
-        DialogBuilder.AddRow(form, "Contrast:", DialogBuilder.SliderNumber(0, 100, 0, v => { contrast = (float)v; Update(); }));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_SmoothColon, DialogBuilder.SliderNumber(0, 100, 0, v => { smooth = (float)v; Update(); }));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_FeatherColon, DialogBuilder.SliderNumber(0, 250, 0, v => { feather = (float)v; Update(); }, 0.5, "0.0"));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_ContrastColon, DialogBuilder.SliderNumber(0, 100, 0, v => { contrast = (float)v; Update(); }));
         DialogBuilder.AddRow(form, "Shift Edge:", DialogBuilder.SliderNumber(-100, 100, 0, v => { shift = (float)v / 5; Update(); }));
         bool quickMask = doc.QuickMask;
         doc.QuickMask = true;
         w.InvalidateCanvas();
-        bool ok = await DialogBuilder.ShowAsync(w, "Select and Mask", form, 440);
+        bool ok = await DialogBuilder.ShowAsync(w, Strings.EditorCommands_SelectAndMask, form, 440);
         doc.QuickMask = quickMask;
         if (ok)
         {
             doc.SetSelection(doc.Selection);
-            w.Commit("Select and Mask");
+            w.Commit(Strings.EditorCommands_SelectAndMask);
         }
         else
         {
@@ -200,7 +203,7 @@ public static partial class EditorCommands
         amount.AttachedToVisualTree += (_, _) => amount.Focus();
         Grid form = DialogBuilder.Form();
         DialogBuilder.AddRow(form, label, amount);
-        if (!await DialogBuilder.ShowAsync(w, name + " Selection", form, 380) || doc.Selection == null) return;
+        if (!await DialogBuilder.ShowAsync(w, string.Format(Strings.EditorCommands_ModifySelectionTitle, name), form, 380) || doc.Selection == null) return;
         float value = (float)(amount.Value ?? (decimal)initial);
         if (value <= 0) return;
         await w.RunBusyAsync(name + "...", _ => Task.Run(() => doc.SetSelectionLive(modify(doc.Selection, value))));
@@ -241,7 +244,7 @@ public static partial class EditorCommands
             result = combined!;
         }
         doc.SetSelection(result);
-        w.Commit(contiguous ? "Grow" : "Similar");
+        w.Commit(contiguous ? Strings.EditorCommands_Grow : Strings.EditorCommands_Similar);
     }
 
     private static async Task TransformSelectionAsync(PhotoEditorWindow w)
@@ -250,18 +253,18 @@ public static partial class EditorCommands
         if (doc.Selection == null) return;
         double scaleX = 100, scaleY = 100, angle = 0, dx = 0, dy = 0;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Width (%):", DialogBuilder.SliderNumber(1, 500, 100, v => scaleX = v));
-        DialogBuilder.AddRow(form, "Height (%):", DialogBuilder.SliderNumber(1, 500, 100, v => scaleY = v));
-        DialogBuilder.AddRow(form, "Angle (°):", DialogBuilder.SliderNumber(-180, 180, 0, v => angle = v));
-        DialogBuilder.AddRow(form, "Offset X:", DialogBuilder.SliderNumber(-5000, 5000, 0, v => dx = v));
-        DialogBuilder.AddRow(form, "Offset Y:", DialogBuilder.SliderNumber(-5000, 5000, 0, v => dy = v));
-        if (!await DialogBuilder.ShowAsync(w, "Transform Selection", form, 460)) return;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_WidthPercentColon, DialogBuilder.SliderNumber(1, 500, 100, v => scaleX = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_HeightPercentColon, DialogBuilder.SliderNumber(1, 500, 100, v => scaleY = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_AngleDegreesColon, DialogBuilder.SliderNumber(-180, 180, 0, v => angle = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_OffsetXColon, DialogBuilder.SliderNumber(-5000, 5000, 0, v => dx = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_OffsetYColon, DialogBuilder.SliderNumber(-5000, 5000, 0, v => dy = v));
+        if (!await DialogBuilder.ShowAsync(w, Strings.EditorCommands_TransformSelection, form, 460)) return;
         SKRectI b = doc.SelectionBounds;
         SKMatrix m = SKMatrix.CreateScale((float)scaleX / 100, (float)scaleY / 100, b.MidX, b.MidY)
             .PostConcat(SKMatrix.CreateRotationDegrees((float)angle, b.MidX, b.MidY))
             .PostConcat(SKMatrix.CreateTranslation((float)dx, (float)dy));
         doc.SetSelection(MaskOps.Transform(doc.Selection, m, doc.Width, doc.Height));
-        w.Commit("Transform Selection");
+        w.Commit(Strings.EditorCommands_TransformSelection);
     }
 
     private static async Task ColorRangeAsync(PhotoEditorWindow w)
@@ -272,10 +275,10 @@ public static partial class EditorCommands
         float fuzziness = 40;
         int range = 0;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Select:", DialogBuilder.Combo([("Sampled Colors (foreground)", 0), ("Highlights", 1), ("Midtones", 2), ("Shadows", 3), ("Reds", 4), ("Greens", 5), ("Blues", 6), ("Skin Tones", 7)], range, v => range = v));
-        DialogBuilder.AddRow(form, "Fuzziness:", DialogBuilder.SliderNumber(1, 200, fuzziness, v => fuzziness = (float)v));
-        DialogBuilder.AddFull(form, new TextBlock { Text = "Tip: sample a color with the Eyedropper first; it is used as the foreground color.", FontSize = 11, TextWrapping = Avalonia.Media.TextWrapping.Wrap });
-        if (!await DialogBuilder.ShowAsync(w, "Color Range", form, 420)) return;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_SelectColon, DialogBuilder.Combo([(Strings.EditorCommands_SampledColorsForeground, 0), (Strings.EditorCommands_Highlights, 1), (Strings.EditorCommands_Midtones, 2), (Strings.EditorCommands_Shadows, 3), (Strings.EditorCommands_Reds, 4), (Strings.EditorCommands_Greens, 5), (Strings.EditorCommands_Blues, 6), (Strings.EditorCommands_SkinTones, 7)], range, v => range = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_FuzzinessColon, DialogBuilder.SliderNumber(1, 200, fuzziness, v => fuzziness = (float)v));
+        DialogBuilder.AddFull(form, new TextBlock { Text = Strings.EditorCommands_ColorRangeTip, FontSize = 11, TextWrapping = Avalonia.Media.TextWrapping.Wrap });
+        if (!await DialogBuilder.ShowAsync(w, Strings.EditorCommands_ColorRange, form, 420)) return;
         colors = range switch
         {
             1 => [new SKColor(235, 235, 235)],
@@ -289,7 +292,7 @@ public static partial class EditorCommands
         };
         PixelSurface mask = FloodFill.ColorRange(sample, colors, range is 1 or 2 or 3 ? fuzziness * 0.6f : fuzziness);
         doc.SetSelection(mask);
-        w.Commit("Color Range");
+        w.Commit(Strings.EditorCommands_ColorRange);
     }
 
     public static void LoadChannelSelection(IEditorHost host)
@@ -299,11 +302,11 @@ public static partial class EditorCommands
         AlphaChannel? channel = doc.ActiveChannel ?? doc.Channels.LastOrDefault();
         if (channel == null)
         {
-            w.ShowMessage("There are no saved selections (alpha channels).");
+            w.ShowMessage(Strings.EditorCommands_NoSavedSelections);
             return;
         }
         doc.SetSelection(channel.Mask.Clone());
-        w.Commit("Load Selection");
+        w.Commit(Strings.EditorCommands_LoadSelection);
     }
 
     public static void SaveSelectionToChannel(IEditorHost host)
@@ -312,22 +315,22 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         if (doc.Selection == null)
         {
-            w.ShowMessage("Make a selection first.");
+            w.ShowMessage(Strings.EditorCommands_MakeSelectionFirst);
             return;
         }
-        doc.Channels.Add(new AlphaChannel($"Alpha {doc.Channels.Count + 1}", doc.Selection.Clone()));
-        w.Commit("Save Selection");
+        doc.Channels.Add(new AlphaChannel(string.Format(Strings.EditorCommands_AlphaNumber, doc.Channels.Count + 1), doc.Selection.Clone()));
+        w.Commit(Strings.EditorCommands_SaveSelection);
     }
 
     public static void NewChannel(IEditorHost host)
     {
         PhotoEditorWindow w = W(host);
         PhotoDocument doc = w.Document!;
-        AlphaChannel channel = new($"Alpha {doc.Channels.Count + 1}", PixelSurface.CreateMask(doc.Width, doc.Height));
+        AlphaChannel channel = new(string.Format(Strings.EditorCommands_AlphaNumber, doc.Channels.Count + 1), PixelSurface.CreateMask(doc.Width, doc.Height));
         doc.Channels.Add(channel);
         doc.ActiveChannel = channel;
         channel.Visible = true;
-        w.Commit("New Channel");
+        w.Commit(Strings.EditorCommands_NewChannel);
     }
 
     public static void DeleteChannel(IEditorHost host)
@@ -337,7 +340,7 @@ public static partial class EditorCommands
         if (doc.ActiveChannel == null) return;
         doc.Channels.Remove(doc.ActiveChannel);
         doc.ActiveChannel = null;
-        w.Commit("Delete Channel");
+        w.Commit(Strings.EditorCommands_DeleteChannel);
     }
 
     public static void SetChannelView(IEditorHost host, ChannelView view)
@@ -360,12 +363,12 @@ public static partial class EditorCommands
         VectorPath? path = CurrentPath(w);
         if (path == null || path.IsEmpty || w.Document == null)
         {
-            w.ShowMessage("There is no path to load as a selection.");
+            w.ShowMessage(Strings.EditorCommands_NoPathForSelection);
             return;
         }
         using SKPath sk = path.ToSKPath();
         w.Document.SetSelection(MaskOps.FromPath(sk, w.Document.Width, w.Document.Height));
-        w.Commit("Make Selection");
+        w.Commit(Strings.EditorCommands_MakeSelection);
     }
 
     public static void PathToShape(IEditorHost host)
@@ -374,10 +377,10 @@ public static partial class EditorCommands
         PhotoDocument? doc = w.Document;
         VectorPath? path = doc?.ActivePath?.Path ?? doc?.WorkPath;
         if (doc == null || path == null || path.IsEmpty) return;
-        ShapeLayer shape = new($"Shape {doc.AllLayers.OfType<ShapeLayer>().Count() + 1}", path.Clone()) { FillColor = w.Foreground };
+        ShapeLayer shape = new(string.Format(Strings.EditorCommands_ShapeNumber, doc.AllLayers.OfType<ShapeLayer>().Count() + 1), path.Clone()) { FillColor = w.Foreground };
         doc.ActivePath = null;
         doc.AddLayer(shape);
-        w.Commit("New Shape Layer");
+        w.Commit(Strings.EditorCommands_NewShapeLayer);
     }
 
     /// <summary>Adds a mask to the active layer from the path (a rasterized vector mask).</summary>
@@ -389,7 +392,7 @@ public static partial class EditorCommands
         if (doc?.ActiveLayer == null || path == null || path.IsEmpty) return;
         using SKPath sk = path.ToSKPath();
         doc.ActiveLayer.Mask = MaskOps.FromPath(sk, doc.Width, doc.Height);
-        w.Commit("Add Vector Mask");
+        w.Commit(Strings.EditorCommands_AddVectorMask);
     }
 
     public static void SelectionToPath(IEditorHost host)
@@ -399,8 +402,8 @@ public static partial class EditorCommands
         if (doc?.Selection == null) return;
         using SKPath path = MaskOps.ToPath(doc.Selection, 1.5f);
         doc.WorkPath = VectorPath.FromSKPath(path);
-        doc.ActivePath = new NamedPath("Work Path", doc.WorkPath);
-        w.Commit("Make Work Path");
+        doc.ActivePath = new NamedPath(Strings.PathNames_WorkPath, doc.WorkPath);
+        w.Commit(Strings.EditorCommands_MakeWorkPath);
     }
 
     public static void FillPath(IEditorHost host)
@@ -408,13 +411,13 @@ public static partial class EditorCommands
         PhotoEditorWindow w = W(host);
         VectorPath? path = CurrentPath(w);
         if (path == null || w.Document == null) return;
-        RasterLayer? layer = EditableRaster(w, "fill the path");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionFillPath);
         if (layer == null) return;
         using SKPath sk = path.ToSKPath();
         using PixelSurface mask = MaskOps.FromPath(sk, w.Document.Width, w.Document.Height);
         uint color = ColorMath.FromColor(w.Foreground);
         LayerOps.CompositeMasked(w.Document, layer, (_, _) => color, mask, 1, LayerBlendMode.Normal);
-        w.Commit("Fill Path");
+        w.Commit(Strings.EditorCommands_FillPath);
     }
 
     public static void StrokePath(IEditorHost host)
@@ -422,7 +425,7 @@ public static partial class EditorCommands
         PhotoEditorWindow w = W(host);
         VectorPath? path = CurrentPath(w);
         if (path == null || w.Document == null) return;
-        RasterLayer? layer = EditableRaster(w, "stroke the path");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionStrokePath);
         if (layer == null) return;
         BrushTool brush = w.Tools.Get<BrushTool>();
         layer.EnsureCovers(w.Document.Bounds);
@@ -451,7 +454,7 @@ public static partial class EditorCommands
             }
         }
         while (measure.NextContour());
-        w.Commit("Stroke Path");
+        w.Commit(Strings.EditorCommands_StrokePath);
     }
 
     public static void NewPath(IEditorHost host)
@@ -459,10 +462,10 @@ public static partial class EditorCommands
         PhotoEditorWindow w = W(host);
         PhotoDocument? doc = w.Document;
         if (doc == null) return;
-        NamedPath path = new($"Path {doc.Paths.Count + 1}", new VectorPath());
+        NamedPath path = new(string.Format(Strings.EditorCommands_PathNumber, doc.Paths.Count + 1), new VectorPath());
         doc.Paths.Add(path);
         doc.ActivePath = path;
-        w.Commit("New Path");
+        w.Commit(Strings.EditorCommands_NewPath);
     }
 
     public static void DeletePath(IEditorHost host)
@@ -473,6 +476,6 @@ public static partial class EditorCommands
         if (doc.ActivePath.Path == doc.WorkPath) doc.WorkPath = null;
         else doc.Paths.Remove(doc.ActivePath);
         doc.ActivePath = null;
-        w.Commit("Delete Path");
+        w.Commit(Strings.EditorCommands_DeletePath);
     }
 }

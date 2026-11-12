@@ -116,7 +116,7 @@ public sealed class OptionsBuilder
             Slider slider = new() { Minimum = min, Maximum = Math.Min(max, min + 5000), Value = (double)(box.Value ?? 0), Width = 180 };
             slider.ValueChanged += (_, e) => box.Value = (decimal)Math.Round(e.NewValue / increment) * (decimal)increment;
             box.ValueChanged += (_, e) => { if (e.NewValue is decimal v && Math.Abs(slider.Value - (double)v) > 1e-6) slider.Value = (double)v; };
-            Button drop = new() { Classes = { "icon" }, Content = ToolIcons.Create("chevron-down", 9), Padding = new Thickness(2, 4), VerticalAlignment = VerticalAlignment.Center };
+            Button drop = new() { Classes = { "icon" }, Content = new IconView(PhotoEditorIcons.ChevronDown, 10), Padding = new Thickness(2, 4), VerticalAlignment = VerticalAlignment.Center };
             drop.Flyout = new Flyout { Content = slider, Placement = PlacementMode.BottomEdgeAlignedRight };
             field.Children.Add(drop);
         }
@@ -146,13 +146,13 @@ public sealed class OptionsBuilder
     }
 
     public ComboBox EnumCombo<T>(string? label, Func<T> get, Action<T> set, double width = 120, Func<T, string>? text = null) where T : struct, Enum =>
-        Combo(label, Enum.GetValues<T>().Select(v => (text?.Invoke(v) ?? SplitWords(v.ToString()), v)), get, set, width);
+        Combo(label, Enum.GetValues<T>().Select(v => (text?.Invoke(v) ?? EnumNames.Get(v), v)), get, set, width);
 
     public static string SplitWords(string text) =>
         string.Concat(text.Select((c, i) => i > 0 && char.IsUpper(c) && !char.IsUpper(text[i - 1]) ? " " + c : c.ToString()));
 
     public ComboBox BlendMode(Func<LayerBlendMode> get, Action<LayerBlendMode> set, bool paintModes = true) =>
-        Combo("Mode:", (paintModes ? BlendModes.PaintModes : BlendModes.LayerModes).Select(m => (BlendModes.GetName(m), m)), get, set, 120);
+        Combo(Strings.EditorCommands_ModeColon, (paintModes ? BlendModes.PaintModes : BlendModes.LayerModes).Select(m => (BlendModes.GetName(m), m)), get, set, 120);
 
     public CheckBox Check(string text, Func<bool> get, Action<bool> set, string? tooltip = null)
     {
@@ -177,7 +177,7 @@ public sealed class OptionsBuilder
         Button button = new()
         {
             Classes = { "icon" },
-            Content = ToolIcons.Create(iconKey, 16),
+            Content = new IconView(iconKey, 16),
             Width = 26,
             Height = 24,
             Padding = new Thickness(0),
@@ -230,7 +230,7 @@ public sealed class OptionsBuilder
         if (allowNone && setNone != null)
         {
             button.ContextMenu = new ContextMenu();
-            MenuItem none = new() { Header = "No Color" };
+            MenuItem none = new() { Header = Strings.OptionsBuilder_NoColor };
             none.Click += (_, _) => { setNone(); Refresh(); };
             button.ContextMenu.Items.Add(none);
         }
@@ -249,13 +249,13 @@ public sealed class OptionsBuilder
         }
         foreach (var (mode, icon, tip) in new[]
         {
-            (Imaging.SelectionMode.Replace, "sel-new", "New selection"),
-            (Imaging.SelectionMode.Add, "sel-add", "Add to selection (Shift)"),
-            (Imaging.SelectionMode.Subtract, "sel-sub", "Subtract from selection (Alt)"),
-            (Imaging.SelectionMode.Intersect, "sel-int", "Intersect with selection (Shift+Alt)")
+            (Imaging.SelectionMode.Replace, PhotoEditorIcons.SelectionNew, Strings.OptionsBuilder_NewSelectionTip),
+            (Imaging.SelectionMode.Add, PhotoEditorIcons.SelectionAdd, Strings.OptionsBuilder_AddToSelectionTip),
+            (Imaging.SelectionMode.Subtract, PhotoEditorIcons.SelectionSubtract, Strings.OptionsBuilder_SubtractFromSelectionTip),
+            (Imaging.SelectionMode.Intersect, PhotoEditorIcons.SelectionIntersect, Strings.OptionsBuilder_IntersectWithSelectionTip)
         })
         {
-            Button button = new() { Classes = { "icon" }, Content = ToolIcons.Create(icon, 16), Width = 26, Height = 24, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
+            Button button = new() { Classes = { "icon" }, Content = new IconView(icon, 16), Width = 26, Height = 24, Padding = new Thickness(0), HorizontalContentAlignment = HorizontalAlignment.Center };
             ToolTip.SetTip(button, tip);
             SelectionMode captured = mode;
             button.Click += (_, _) => { set(captured); Refresh(); };
@@ -305,19 +305,19 @@ public sealed class OptionsBuilder
         tipStack.Children.Add(tipHost);
         tipStack.Children.Add(sizeText);
         content.Children.Add(tipStack);
-        content.Children.Add(ToolIcons.Create("chevron-down", 9));
+        content.Children.Add(new IconView(PhotoEditorIcons.ChevronDown, 10));
         Button button = new() { Classes = { "icon" }, Content = content, Padding = new Thickness(4, 0), Height = 30, VerticalAlignment = VerticalAlignment.Center };
-        ToolTip.SetTip(button, "Click to open the Brush Preset picker");
+        ToolTip.SetTip(button, Strings.OptionsBuilder_BrushPresetPickerTip);
 
         StackPanel panel = new() { Spacing = 8, Width = 270 };
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Size:", DialogBuilder.SliderNumber(1, 2500, getSize(), v =>
+        DialogBuilder.AddRow(form, Strings.PropertiesPanel_SizeColon, DialogBuilder.SliderNumber(1, 2500, getSize(), v =>
         {
             setSize((float)v);
             sizeText.Text = $"{v:0}";
             _host.InvalidateOverlay();
         }));
-        DialogBuilder.AddRow(form, "Hardness:", DialogBuilder.SliderNumber(0, 100, get().Hardness * 100, v =>
+        DialogBuilder.AddRow(form, Strings.OptionsBuilder_HardnessColon, DialogBuilder.SliderNumber(0, 100, get().Hardness * 100, v =>
         {
             get().Hardness = (float)(v / 100);
             tipHost.Content = TipPreview(get(), 18);

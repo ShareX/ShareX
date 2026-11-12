@@ -81,19 +81,36 @@ public static class BlendModes
 
     public static string GetName(LayerBlendMode mode) => mode switch
     {
-        LayerBlendMode.ColorBurn => "Color Burn",
-        LayerBlendMode.LinearBurn => "Linear Burn",
-        LayerBlendMode.DarkerColor => "Darker Color",
-        LayerBlendMode.ColorDodge => "Color Dodge",
-        LayerBlendMode.LinearDodge => "Linear Dodge (Add)",
-        LayerBlendMode.LighterColor => "Lighter Color",
-        LayerBlendMode.SoftLight => "Soft Light",
-        LayerBlendMode.HardLight => "Hard Light",
-        LayerBlendMode.VividLight => "Vivid Light",
-        LayerBlendMode.LinearLight => "Linear Light",
-        LayerBlendMode.PinLight => "Pin Light",
-        LayerBlendMode.HardMix => "Hard Mix",
-        LayerBlendMode.PassThrough => "Pass Through",
+        LayerBlendMode.Normal => Strings.BlendModes_Normal,
+        LayerBlendMode.Dissolve => Strings.BlendModes_Dissolve,
+        LayerBlendMode.Darken => Strings.BlendModes_Darken,
+        LayerBlendMode.Multiply => Strings.BlendModes_Multiply,
+        LayerBlendMode.ColorBurn => Strings.BlendModes_ColorBurn,
+        LayerBlendMode.LinearBurn => Strings.BlendModes_LinearBurn,
+        LayerBlendMode.DarkerColor => Strings.BlendModes_DarkerColor,
+        LayerBlendMode.Lighten => Strings.BlendModes_Lighten,
+        LayerBlendMode.Screen => Strings.BlendModes_Screen,
+        LayerBlendMode.ColorDodge => Strings.BlendModes_ColorDodge,
+        LayerBlendMode.LinearDodge => Strings.BlendModes_LinearDodge,
+        LayerBlendMode.LighterColor => Strings.BlendModes_LighterColor,
+        LayerBlendMode.Overlay => Strings.BlendModes_Overlay,
+        LayerBlendMode.SoftLight => Strings.BlendModes_SoftLight,
+        LayerBlendMode.HardLight => Strings.BlendModes_HardLight,
+        LayerBlendMode.VividLight => Strings.BlendModes_VividLight,
+        LayerBlendMode.LinearLight => Strings.BlendModes_LinearLight,
+        LayerBlendMode.PinLight => Strings.BlendModes_PinLight,
+        LayerBlendMode.HardMix => Strings.BlendModes_HardMix,
+        LayerBlendMode.Difference => Strings.BlendModes_Difference,
+        LayerBlendMode.Exclusion => Strings.BlendModes_Exclusion,
+        LayerBlendMode.Subtract => Strings.BlendModes_Subtract,
+        LayerBlendMode.Divide => Strings.BlendModes_Divide,
+        LayerBlendMode.Hue => Strings.BlendModes_Hue,
+        LayerBlendMode.Saturation => Strings.BlendModes_Saturation,
+        LayerBlendMode.Color => Strings.BlendModes_Color,
+        LayerBlendMode.Luminosity => Strings.BlendModes_Luminosity,
+        LayerBlendMode.PassThrough => Strings.BlendModes_PassThrough,
+        LayerBlendMode.Behind => Strings.BlendModes_Behind,
+        LayerBlendMode.Clear => Strings.BlendModes_Clear,
         _ => mode.ToString()
     };
 
@@ -214,35 +231,35 @@ public static class BlendModes
                 if (Lum(br, bg, bb) > Lum(sr, sg, sb)) { sr = br; sg = bg; sb = bb; }
                 return;
             case LayerBlendMode.Hue:
-            {
-                float r = sr, g = sg, b = sb;
-                SetSat(ref r, ref g, ref b, Sat(br, bg, bb));
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = sr, g = sg, b = sb;
+                    SetSat(ref r, ref g, ref b, Sat(br, bg, bb));
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Saturation:
-            {
-                float r = br, g = bg, b = bb;
-                SetSat(ref r, ref g, ref b, Sat(sr, sg, sb));
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = br, g = bg, b = bb;
+                    SetSat(ref r, ref g, ref b, Sat(sr, sg, sb));
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Color:
-            {
-                float r = sr, g = sg, b = sb;
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = sr, g = sg, b = sb;
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Luminosity:
-            {
-                float r = br, g = bg, b = bb;
-                SetLum(ref r, ref g, ref b, Lum(sr, sg, sb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = br, g = bg, b = bb;
+                    SetLum(ref r, ref g, ref b, Lum(sr, sg, sb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             default:
                 sr = Separable(mode, br, sr);
                 sg = Separable(mode, bg, sg);

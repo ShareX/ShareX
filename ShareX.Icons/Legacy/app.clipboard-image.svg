@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="cbBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88451"/><stop offset="0.5" stop-color="#b06c39"/><stop offset="1" stop-color="#ab6734"/></linearGradient>
+<linearGradient id="cbEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#954000"/><stop offset="0.85" stop-color="#6e2300"/><stop offset="1" stop-color="#470600"/></linearGradient>
+<linearGradient id="cbPaper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfefe"/><stop offset="0.85" stop-color="#d9e8e8"/><stop offset="1" stop-color="#e2f3f3"/></linearGradient>
+<linearGradient id="cbClip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7c7d2"/><stop offset="0.5" stop-color="#dedee4"/><stop offset="1" stop-color="#c7c7d2"/></linearGradient>
+<linearGradient id="paMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="paEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="pbMat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e4f3f3"/></linearGradient>
+<linearGradient id="pbEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#557e7e"/><stop offset="1" stop-color="#103131"/></linearGradient>
+<linearGradient id="paSky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5490cb"/><stop offset="0.6" stop-color="#699ccb"/><stop offset="1" stop-color="#a4bdc8"/></linearGradient>
+<linearGradient id="paSun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d1af16"/><stop offset="0.35" stop-color="#e3c329"/><stop offset="0.7" stop-color="#c4ad10"/><stop offset="1" stop-color="#a6840b"/></linearGradient>
+</defs>
+<rect x="2.5" y="1.5" width="11" height="14" rx="1" fill="url(#cbBoard)" stroke="url(#cbEdge)" stroke-opacity=".8"/>
+<path d="M3.5 14.5 V2.5 H12.5 V14.5" fill="none" stroke="#e8a06a" stroke-opacity=".6"/>
+<rect x="4" y="3" width="8" height="1" fill="#000" opacity=".16"/>
+<rect x="5" y="2" width="6" height="1" fill="url(#cbClip)"/>
+<rect x="6.5" y="1" width="3" height="1" fill="#dadadc"/>
+<path d="M6.5 2 V1.3 Q6.5 .5 7.3 .5 H8.7 Q9.5 .5 9.5 1.3 V2" fill="none" stroke="#545454" stroke-opacity=".45"/>
+<rect x="7.5" y="4.5" width="8" height="7" fill="url(#paMat)" stroke="url(#paEdge)" stroke-opacity=".55"/>
+<rect x="9" y="6" width="5" height="5" fill="url(#paSky)"/>
+<rect x="5.5" y="6.5" width="8" height="7" fill="url(#pbMat)" stroke="url(#pbEdge)" stroke-opacity=".55"/>
+<rect x="7" y="8" width="5" height="4" fill="url(#paSun)"/>
+<ellipse cx="9.8" cy="9.8" rx="1.4" ry="1" fill="#f7f465" opacity=".8"/>
+<path d="M7 11 V9.6 Q7.6 9.4 8.2 10.2 V11 Z" fill="#593715" opacity=".85"/>
+
+</svg>

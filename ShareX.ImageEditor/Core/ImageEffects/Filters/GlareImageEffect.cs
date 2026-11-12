@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GlareImageEffect : ImageEffectBase
     public override string Id => "glare";
     public override string Name => "Glare";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sparkle;
+    public override string IconKey => ImageEffectIcons.Sparkle;
     public override string Description => "Adds a bright glare/light flare at a specified position.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -430,6 +430,15 @@
   <data name="Pause" xml:space="preserve">
     <value>Pozastavit</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Eliptická oblast</value>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Oblast od ruky</value>
+  </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Přetažením přesunete panel nástrojů, poklepáním obnovíte jeho pozici</value>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Zachytit oblast (Tab)</value>
   </data>

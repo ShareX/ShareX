@@ -431,6 +431,18 @@ Filsti: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Vinduestitel</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Afstand: {0:0.00} px | Vinkel: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Højre: {2} | Bund: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Bredde: {0} px | Højde: {1} px | Areal: {2} px | Omkreds: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX – Lineal</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Indhold i Udklipsholder</value>
   </data>
@@ -990,7 +1002,7 @@ Filsti: {0}</value>
     <value>Lavere værdier giver hurtigere kodning. Højere værdier giver mindre filer. Alle værdier bevarer billedkvaliteten.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Tabsfri:</value>
+    <value>Tabsfri</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fyld</value>
@@ -1606,12 +1618,6 @@ Filsti: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Mål</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Sproget {0} er ikke tilgængeligt til OCR på dette system.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optisk tekstgenkendelse er kun tilgængelig i Windows version {0} eller senere.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1639,6 +1645,9 @@ Filsti: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Luk efter åbning</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Kopieret til udklipsholderen</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Kopiér alt</value>
   </data>
@@ -1648,23 +1657,17 @@ Filsti: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Rediger tjenester</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Sprog</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Navn</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Ny</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR-hjælp</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Ingen tekst fundet</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Åbn tjeneste...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Genkendelse</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Fjern</value>
@@ -1674,9 +1677,6 @@ Filsti: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Skaleringsfaktor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Vælg en tjeneste</value>
@@ -1690,8 +1690,8 @@ Filsti: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Vælg område...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Tjenester</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Adskil afsnit</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optisk tekstgenkendelse</value>
@@ -2039,7 +2039,7 @@ Filsti: {0}</value>
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Lineal</value>
+    <value>ShareX – Måling</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Vælg en video for at begynde.</value>
@@ -2083,6 +2083,9 @@ Filsti: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stopper konverteringen...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Gennemsnitlig bitrate</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Gennemse...</value>
   </data>
@@ -2101,6 +2104,9 @@ Filsti: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Filnavn</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Filstørrelse</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Mappe</value>
   </data>
@@ -2118,6 +2124,12 @@ Filsti: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kvalitet</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Opløsning</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Videokonvertering</value>

@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Kenali teks (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Buka di editor foto</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Lakukan tindakan</value>
   </data>
@@ -639,6 +642,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Unggah</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Penggaris</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Unggah dari papan klip</value>
   </data>
@@ -786,8 +792,11 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Jepret area</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Jepret area (Transparan)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Penggaris</value>
+    <value>Ukur</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Pemilih warna layar</value>
@@ -866,6 +875,21 @@ Apakah Anda tetap ingin menjalankannya?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Berkas gambar</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Bawah</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Samping</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Otomatis</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Sembunyikan</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Tampilkan</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Buka gambar</value>
@@ -1089,6 +1113,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Tukar jenis alat</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Ubah ukuran kaca pembesar</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Perbesar kaca pembesar</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Komputer</value>
   </data>
@@ -1221,6 +1251,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatis</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Tampilan daftar</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Tampilan thumbnail</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Pengunggah teks khusus</value>
   </data>
@@ -1289,6 +1325,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Unggah file</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Monitor aktif</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Monitor utama</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

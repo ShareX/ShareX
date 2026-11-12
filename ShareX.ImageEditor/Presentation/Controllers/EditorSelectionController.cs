@@ -56,6 +56,8 @@ public partial class EditorSelectionController
     private Control? _draggedHandle;
     private Point _lastDragPoint;
     private Point _startPoint; // Used for resizing deltas
+    private Rect _resizeStartRect; // Shape bounds that Shift proportional resizing starts from
+    private Point _resizeStartPoint;
     private bool _isDraggingShape;
     private global::Avalonia.Controls.Shapes.Line? _rotationLine; // Dotted line connecting top-center to rotation handle
     private bool _pendingEmojiExactRender;
@@ -179,6 +181,8 @@ public partial class EditorSelectionController
                 _isDraggingHandle = true;
                 _draggedHandle = handleSource;
                 _startPoint = point; // Capture start for resize delta
+                _resizeStartPoint = point;
+                _resizeStartRect = _selectedShape != null ? GetLogicalRect(_selectedShape) : default;
                 _view.BeginInteractionCursorCapture(e.Pointer, CursorAssetLoader.CustomCursorKind.ClosedHand);
                 e.Handled = true;
                 return true;
@@ -485,6 +489,8 @@ public partial class EditorSelectionController
             {
                 RequestUpdateEffect?.Invoke(_selectedShape);
             }
+
+            _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
             return true;
         }
 
@@ -500,6 +506,8 @@ public partial class EditorSelectionController
             {
                 RequestUpdateEffect?.Invoke(_selectedShape);
             }
+
+            _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
             return true;
         }
 
@@ -679,7 +687,18 @@ public partial class EditorSelectionController
             || _selectedShape is Grid
             || _selectedShape is OutlinedTextControl)
         {
-            Rect resized = SelectionResizeNode.Resize(shapeRect, handleTag, new Vector(deltaX, deltaY));
+            Rect resized;
+
+            if (isShiftHeld && TryGetProportionalResizeRect(currentPoint, handleTag, out Rect proportionalRect))
+            {
+                resized = proportionalRect;
+            }
+            else
+            {
+                resized = SelectionResizeNode.Resize(shapeRect, handleTag, new Vector(deltaX, deltaY));
+                _resizeStartRect = resized;
+                _resizeStartPoint = currentPoint;
+            }
 
             Canvas.SetLeft(_selectedShape, resized.Left);
             Canvas.SetTop(_selectedShape, resized.Top);
@@ -702,6 +721,48 @@ public partial class EditorSelectionController
         {
             RequestUpdateEffect?.Invoke(_selectedShape);
         }
+    }
+
+    // Like ShareX 21, holding Shift while dragging a corner handle keeps the proportions, with the opposite corner staying in place.
+    // Images keep the proportions of the image itself, other shapes the ones they had when Shift resizing started.
+    private bool TryGetProportionalResizeRect(Point currentPoint, string handleTag, out Rect resized)
+    {
+        resized = default;
+
+        if (!SelectionResizeNode.TryGetDirection(handleTag, out int horizontalDirection, out int verticalDirection)
+            || horizontalDirection == 0 || verticalDirection == 0)
+        {
+            return false;
+        }
+
+        Rect startRect = _resizeStartRect;
+        Size aspect = _selectedShape?.Tag is ImageAnnotation { ImageBitmap: { Width: > 0, Height: > 0 } bitmap }
+            ? new Size(bitmap.Width, bitmap.Height)
+            : startRect.Size;
+
+        if (aspect.Width <= 0 || aspect.Height <= 0)
+        {
+            return false;
+        }
+
+        double anchorX = horizontalDirection > 0 ? startRect.Left : startRect.Right;
+        double anchorY = verticalDirection > 0 ? startRect.Top : startRect.Bottom;
+        double cornerX = (horizontalDirection > 0 ? startRect.Right : startRect.Left) + currentPoint.X - _resizeStartPoint.X;
+        double cornerY = (verticalDirection > 0 ? startRect.Bottom : startRect.Top) + currentPoint.Y - _resizeStartPoint.Y;
+        double width = Math.Max(1, (cornerX - anchorX) * horizontalDirection);
+        double height = Math.Max(1, (cornerY - anchorY) * verticalDirection);
+
+        double ratio = Math.Min(width / aspect.Width, height / aspect.Height);
+        ratio = Math.Max(ratio, Math.Max(1 / aspect.Width, 1 / aspect.Height));
+        width = aspect.Width * ratio;
+        height = aspect.Height * ratio;
+
+        resized = new Rect(
+            horizontalDirection > 0 ? anchorX : anchorX - width,
+            verticalDirection > 0 ? anchorY : anchorY - height,
+            width,
+            height);
+        return true;
     }
 
     private void ResizeEmojiAnnotation(EmojiAnnotation annotation, Point currentPoint, string handleTag)
@@ -907,6 +968,8 @@ public partial class EditorSelectionController
         {
             RequestUpdateEffect?.Invoke(_selectedShape);
         }
+
+        _view.ScheduleAutoExpandCanvas(_selectedShape?.Tag as Annotation);
     }
 
     private void HandleMove(Point currentPoint)
@@ -1418,25 +1481,7 @@ public partial class EditorSelectionController
             }
         }
 
-        // Find shape under cursor (hit test)
-        Control? hitShape = HitTestShape(canvas, currentPoint);
-
-        // Filter: If using Spotlight tool, only highlight existing Spotlights
-        if (_view.DataContext is MainViewModel vm2 && vm2.ActiveTool == EditorTool.Spotlight)
-        {
-            if (!(hitShape is SpotlightControl)) hitShape = null;
-        }
-
-        // When a drawing tool is active, only hover shapes created by that same tool.
-        if (_view.DataContext is MainViewModel vm3
-            && vm3.ActiveTool != EditorTool.Select
-            && vm3.ActiveTool != EditorTool.Spotlight)
-        {
-            if (hitShape != null && GetControlToolType(hitShape) != vm3.ActiveTool)
-            {
-                hitShape = null;
-            }
-        }
+        Control? hitShape = HitTestActiveToolShape(canvas, currentPoint);
 
         // If we're hovering over the selected shape, keep showing ant lines on it
         // Otherwise, show ant lines on the hovered (unselected) shape
@@ -1482,6 +1527,32 @@ public partial class EditorSelectionController
             && _selectedShape != null
             && _view.DataContext is MainViewModel vm
             && ShouldIgnoreSelection(vm, _currentKeyModifiers);
+    }
+
+    /// <summary>
+    /// Returns the topmost shape under the point if the active tool can use it: any shape with the Select tool,
+    /// otherwise only shapes created by the active tool.
+    /// </summary>
+    internal Control? HitTestActiveToolShape(Canvas canvas, Point currentPoint)
+    {
+        Control? hitShape = HitTestShape(canvas, currentPoint);
+        return hitShape != null && IsActiveToolShape(hitShape) ? hitShape : null;
+    }
+
+    private bool IsActiveToolShape(Control shape)
+    {
+        if (_view.DataContext is not MainViewModel vm)
+        {
+            return true;
+        }
+
+        return vm.ActiveTool switch
+        {
+            EditorTool.Select => true,
+            EditorTool.Crop or EditorTool.CutOut => false,
+            EditorTool.Spotlight => shape is SpotlightControl,
+            _ => GetControlToolType(shape) == vm.ActiveTool
+        };
     }
 
     public Control? HitTestShape(Canvas canvas, Point currentPoint)

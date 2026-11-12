@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Lettergrootte</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Pijl uit de vrije hand</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Horizontale uitlijning</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Opnieuw (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Afgeronde hoeken</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Opslaan</value>
@@ -282,6 +288,15 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annuleren (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Toepassen</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annuleren</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Opvulkleur voor het toegevoegde gebied</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Kan afbeelding niet laden vanaf het klembord.
 Het klembord bevat geen afbeelding.</value>
@@ -335,6 +350,12 @@ Het klembord bevat geen afbeelding.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marge</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nieuw vanaf schermafbeelding (volledig scherm)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nieuw vanaf schermafbeelding (gebied)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Afbeelding openen</value>
@@ -1386,8 +1407,14 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primair</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Werkbalk herstellen naar standaard</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secundair</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Tonen / Verbergen</value>
@@ -1400,6 +1427,9 @@ Het klembord bevat geen afbeelding.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Vervagen</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Canvasgrootte</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonen</value>

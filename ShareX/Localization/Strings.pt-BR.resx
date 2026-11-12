@@ -157,6 +157,9 @@
   <data name="AfterCaptureWindow_AfterUpload" xml:space="preserve">
     <value>Após o upload</value>
   </data>
+  <data name="AfterCaptureWindow_AlsoHeading" xml:space="preserve">
+    <value>Além disso</value>
+  </data>
   <data name="AfterCaptureWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -178,11 +181,50 @@
   <data name="AfterCaptureWindow_FileName" xml:space="preserve">
     <value>Nome do arquivo</value>
   </data>
+  <data name="AfterCaptureWindow_GoalCopyFile" xml:space="preserve">
+    <value>Copiar arquivo</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFileDescription" xml:space="preserve">
+    <value>Coloca o arquivo salvo na área de transferência.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePath" xml:space="preserve">
+    <value>Copiar caminho do arquivo</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFilePathDescription" xml:space="preserve">
+    <value>Copia o caminho do arquivo salvo.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPath" xml:space="preserve">
+    <value>Copiar caminho da pasta</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyFolderPathDescription" xml:space="preserve">
+    <value>Copia a pasta do arquivo salvo.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImage" xml:space="preserve">
+    <value>Copiar imagem</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyImageDescription" xml:space="preserve">
+    <value>Coloca a imagem na área de transferência.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrl" xml:space="preserve">
+    <value>Copiar URL</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalCopyUrlDescription" xml:space="preserve">
+    <value>Envia e depois copia o link.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalDescription" xml:space="preserve">
+    <value>As etapas necessárias dependem do seu objetivo. Adicione os extras que quiser.</value>
+  </data>
+  <data name="AfterCaptureWindow_GoalHeading" xml:space="preserve">
+    <value>O que você quer na área de transferência?</value>
+  </data>
   <data name="AfterCaptureWindow_Heading" xml:space="preserve">
     <value>Após a captura</value>
   </data>
   <data name="AfterCaptureWindow_NoPreview" xml:space="preserve">
     <value>Visualização da imagem indisponível</value>
+  </data>
+  <data name="AfterCaptureWindow_RequiredHeading" xml:space="preserve">
+    <value>Necessário para este objetivo</value>
   </data>
   <data name="AfterCaptureWindow_Subtitle" xml:space="preserve">
     <value>Revise o conteúdo capturado e escolha o que acontecerá depois.</value>
@@ -289,6 +331,9 @@
   <data name="ApplicationSettingsWindow_AdvancedUpload" xml:space="preserve">
     <value>Envio</value>
   </data>
+  <data name="ApplicationSettingsWindow_AlwaysExpandScrollBars" xml:space="preserve">
+    <value>Sempre mostrar barras de rolagem com largura total</value>
+  </data>
   <data name="ApplicationSettingsWindow_Application" xml:space="preserve">
     <value>Aplicativo</value>
   </data>
@@ -357,6 +402,9 @@
   </data>
   <data name="ApplicationSettingsWindow_ClipboardFormats" xml:space="preserve">
     <value>Formatos da área de transferência</value>
+  </data>
+  <data name="ApplicationSettingsWindow_CompactMode" xml:space="preserve">
+    <value>Modo compacto</value>
   </data>
   <data name="ApplicationSettingsWindow_CustomHotkeysConfigPath" xml:space="preserve">
     <value>Caminho personalizado da configuração dos atalhos</value>
@@ -472,6 +520,24 @@
   <data name="ApplicationSettingsWindow_HotkeyRepeatLimit" xml:space="preserve">
     <value>Intervalo de repetição dos atalhos (milissegundos)</value>
   </data>
+  <data name="ApplicationSettingsWindow_IconPackLabel" xml:space="preserve">
+    <value>Pacote de ícones:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackLegacy" xml:space="preserve">
+    <value>Clássico</value>
+  </data>
+  <data name="ApplicationSettingsWindow_IconPackModern" xml:space="preserve">
+    <value>Moderno</value>
+  </data>
+  <data name="ApplicationSettingsWindow_Icons" xml:space="preserve">
+    <value>Ícones</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLabel" xml:space="preserve">
+    <value>Visibilidade da visualização da imagem:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ImagePreviewLocationLabel" xml:space="preserve">
+    <value>Local da visualização da imagem:</value>
+  </data>
   <data name="ApplicationSettingsWindow_ImagePrintSettings" xml:space="preserve">
     <value>Configurações de impressão de imagem...</value>
   </data>
@@ -504,6 +570,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Light" xml:space="preserve">
     <value>Claro</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ListView" xml:space="preserve">
+    <value>Exibição de lista</value>
   </data>
   <data name="ApplicationSettingsWindow_MainWindow" xml:space="preserve">
     <value>Janela principal</value>
@@ -625,8 +694,17 @@
   <data name="ApplicationSettingsWindow_ShowClipboardContentViewer" xml:space="preserve">
     <value>Mostrar o visualizador de conteúdo da área de transferência</value>
   </data>
+  <data name="ApplicationSettingsWindow_ShowColumns" xml:space="preserve">
+    <value>Mostrar colunas</value>
+  </data>
   <data name="ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu" xml:space="preserve">
-    <value>Mostrar o botão "Editar com ShareX" no menu de contexto do Explorador de Arquivos</value>
+    <value>Mostrar o botão "Editar no editor de imagens do ShareX" no menu de contexto do Explorador de Arquivos</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowEditWithShareXPhotoEditorButtonInWindowsExplorerContextMenu" xml:space="preserve">
+    <value>Mostrar o botão "Editar no editor de fotos do ShareX" no menu de contexto do Explorador de Arquivos</value>
+  </data>
+  <data name="ApplicationSettingsWindow_ShowFileDeleteConfirmation" xml:space="preserve">
+    <value>Pedir confirmação antes de excluir arquivos</value>
   </data>
   <data name="ApplicationSettingsWindow_ShowLargeFileSizeWarning" xml:space="preserve">
     <value>Limite de aviso para arquivos grandes (MB)</value>
@@ -664,6 +742,39 @@
   <data name="ApplicationSettingsWindow_SimultaneousUploadLimitLabel" xml:space="preserve">
     <value>Limite de envios simultâneos:</value>
   </data>
+  <data name="ApplicationSettingsWindow_Spacing" xml:space="preserve">
+    <value>Espaçamento</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingCompact" xml:space="preserve">
+    <value>Compacto</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingDefault" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenus" xml:space="preserve">
+    <value>Menus</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingMenusLabel" xml:space="preserve">
+    <value>Menus:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingPreviewLabel" xml:space="preserve">
+    <value>Pré-visualização:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSettingsWindowsLabel" xml:space="preserve">
+    <value>Janelas de configurações:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebar" xml:space="preserve">
+    <value>Barra lateral</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingSidebarLabel" xml:space="preserve">
+    <value>Barra lateral:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenus" xml:space="preserve">
+    <value>Menus de ferramentas</value>
+  </data>
+  <data name="ApplicationSettingsWindow_SpacingToolMenusLabel" xml:space="preserve">
+    <value>Menus de ferramentas:</value>
+  </data>
   <data name="ApplicationSettingsWindow_Steam" xml:space="preserve">
     <value>Steam</value>
   </data>
@@ -672,6 +783,9 @@
   </data>
   <data name="ApplicationSettingsWindow_SubFolderPatternLabel" xml:space="preserve">
     <value>Padrão de subpasta:</value>
+  </data>
+  <data name="ApplicationSettingsWindow_TaskViewModeLabel" xml:space="preserve">
+    <value>Modo de exibição de tarefas:</value>
   </data>
   <data name="ApplicationSettingsWindow_Theme" xml:space="preserve">
     <value>Tema</value>
@@ -1213,6 +1327,9 @@
   <data name="FailedToSaveSettings" xml:space="preserve">
     <value>Falha ao salvar as configurações</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Não me lembrar novamente</value>
+  </data>
   <data name="FileExistWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
@@ -1322,11 +1439,29 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="HotkeySettingsWindow_WindowTitle" xml:space="preserve">
     <value>ShareX - Configurações de atalhos</value>
   </data>
+  <data name="IconPackPrompt_ChangeLater" xml:space="preserve">
+    <value>Você pode alterar isso a qualquer momento nas configurações do aplicativo.</value>
+  </data>
+  <data name="IconPackPrompt_LegacyDescription" xml:space="preserve">
+    <value>Ícones coloridos e detalhados em estilo clássico.</value>
+  </data>
+  <data name="IconPackPrompt_ModernDescription" xml:space="preserve">
+    <value>Ícones de linhas limpas que seguem as cores do seu tema.</value>
+  </data>
+  <data name="IconPackPrompt_Subtitle" xml:space="preserve">
+    <value>O ShareX tem novos ícones. Escolha a aparência que preferir.</value>
+  </data>
+  <data name="IconPackPrompt_Title" xml:space="preserve">
+    <value>Escolha seus ícones</value>
+  </data>
   <data name="ImageData_Write_Error_Message" xml:space="preserve">
     <value>Não foi possível salvar a imagem no caminho:</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Editar com ShareX</value>
+    <value>Editar no editor de imagens do ShareX</value>
+  </data>
+  <data name="IntegrationHelpers_EditWithShareXPhotoEditor" xml:space="preserve">
+    <value>Editar no editor de fotos do ShareX</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
     <value>Enviar com o ShareX</value>
@@ -1396,6 +1531,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Capturar</value>
+  </data>
+  <data name="MainMenuBuilder_ClassicRuler" xml:space="preserve">
+    <value>Régua</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
     <value>Visualizador da área de transferência</value>
@@ -1520,6 +1658,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainMenuBuilder_NetworkMonitor" xml:space="preserve">
     <value>Monitor de rede...</value>
   </data>
+  <data name="MainMenuBuilder_NewBadge" xml:space="preserve">
+    <value>Novo</value>
+  </data>
   <data name="MainMenuBuilder_NoImageEffectPresets" xml:space="preserve">
     <value>Sem predefinições de efeitos de imagem</value>
   </data>
@@ -1547,6 +1688,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainMenuBuilder_Region" xml:space="preserve">
     <value>Região...</value>
   </data>
+  <data name="MainMenuBuilder_RegionTransparent" xml:space="preserve">
+    <value>Região (transparente)...</value>
+  </data>
   <data name="MainMenuBuilder_RemoteStorageBrowser" xml:space="preserve">
     <value>Navegador de armazenamento remoto...</value>
   </data>
@@ -1554,7 +1698,7 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
     <value>Reiniciar como administrador</value>
   </data>
   <data name="MainMenuBuilder_Ruler" xml:space="preserve">
-    <value>Régua</value>
+    <value>Medir</value>
   </data>
   <data name="MainMenuBuilder_ScreenColorPicker" xml:space="preserve">
     <value>Seletor de cores da tela</value>
@@ -1564,6 +1708,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainMenuBuilder_ScreenRecordingGif" xml:space="preserve">
     <value>Gravação de ecrã (GIF)...</value>
+  </data>
+  <data name="MainMenuBuilder_ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Apenas uma vez</value>
   </data>
   <data name="MainMenuBuilder_ScreenshotsFolder" xml:space="preserve">
     <value>Pasta de capturas de ecrã...</value>
@@ -1669,6 +1816,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainWindow_BeautifyImage" xml:space="preserve">
     <value>Embelezar imagem</value>
+  </data>
+  <data name="MainWindow_ClearTaskList" xml:space="preserve">
+    <value>Limpar lista</value>
   </data>
   <data name="MainWindow_ClearThumbnailView" xml:space="preserve">
     <value>Limpar vista de miniaturas</value>
@@ -1831,6 +1981,12 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainWindow_StopUpload" xml:space="preserve">
     <value>Parar carregamento</value>
+  </data>
+  <data name="MainWindow_SwitchToListView" xml:space="preserve">
+    <value>Alternar para exibição de lista</value>
+  </data>
+  <data name="MainWindow_SwitchToThumbnailView" xml:space="preserve">
+    <value>Alternar para exibição de miniaturas</value>
   </data>
   <data name="MainWindow_Text" xml:space="preserve">
     <value>Texto</value>
@@ -2089,23 +2245,20 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="StartScreen_GetStarted" xml:space="preserve">
     <value>Começar</value>
   </data>
-  <data name="StartScreen_PersonalizeSubtitle" xml:space="preserve">
-    <value>Escolha a aparência e o estilo do aplicativo.</value>
-  </data>
-  <data name="StartScreen_PersonalizeTitle" xml:space="preserve">
-    <value>Deixe o ShareX com a sua cara</value>
-  </data>
-  <data name="StartScreen_PlatformNote" xml:space="preserve">
-    <value>Código aberto • Feito para Windows</value>
-  </data>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplo</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Obrigado por baixar o ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Usar configuração do sistema</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Boas-vindas ao ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capture, edite e compartilhe qualquer coisa do seu jeito.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Deseja adicionar o carregador personalizado "{0}"?</value>
@@ -2131,6 +2284,33 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_enabled_" xml:space="preserve">
     <value>Atalhos ativados.</value>
+  </data>
+  <data name="TaskListView_Elapsed" xml:space="preserve">
+    <value>Transcorrido</value>
+  </data>
+  <data name="TaskListView_Filename" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="TaskListView_History" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="TaskListView_InQueue" xml:space="preserve">
+    <value>Na fila</value>
+  </data>
+  <data name="TaskListView_Progress" xml:space="preserve">
+    <value>Progresso</value>
+  </data>
+  <data name="TaskListView_Remaining" xml:space="preserve">
+    <value>Restante</value>
+  </data>
+  <data name="TaskListView_Speed" xml:space="preserve">
+    <value>Velocidade</value>
+  </data>
+  <data name="TaskListView_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="TaskListView_URL" xml:space="preserve">
+    <value>URL</value>
   </data>
   <data name="TaskManager_UploadCompletedURL" xml:space="preserve">
     <value>Envio concluído. URL: {0}</value>
@@ -2207,6 +2387,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_AutoCopyImageToClipboard" xml:space="preserve">
     <value>Copiar imagem automaticamente para a área de transferência</value>
   </data>
+  <data name="TaskSettingsWindow_AutoExpandCanvas" xml:space="preserve">
+    <value>Expandir a tela automaticamente quando texto ou formas ultrapassarem a borda</value>
+  </data>
   <data name="TaskSettingsWindow_AutoIncrementNumber" xml:space="preserve">
     <value>Número autoincremental:</value>
   </data>
@@ -2239,6 +2422,9 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_Cancel" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="TaskSettingsWindow_CanvasFillColor" xml:space="preserve">
+    <value>Cor de preenchimento da área de tela adicionada:</value>
   </data>
   <data name="TaskSettingsWindow_Capture" xml:space="preserve">
     <value>Captura</value>
@@ -2285,6 +2471,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Fechar janela de OCR após abrir o link do serviço</value>
   </data>
+  <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
+    <value>Barra de ferramentas compacta da captura de região</value>
+  </data>
   <data name="TaskSettingsWindow_ConfigureWithEllipsis" xml:space="preserve">
     <value>Configurar...</value>
   </data>
@@ -2300,9 +2489,6 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_CustomizeToolbarWithEllipsis" xml:space="preserve">
     <value>Personalizar barra de ferramentas...</value>
   </data>
-  <data name="TaskSettingsWindow_DefaultLanguage" xml:space="preserve">
-    <value>Idioma padrão:</value>
-  </data>
   <data name="TaskSettingsWindow_DeleteInputFile" xml:space="preserve">
     <value>Excluir arquivo de entrada</value>
   </data>
@@ -2315,8 +2501,8 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_DetectWindowRegions" xml:space="preserve">
     <value>Detectar regiões de janela</value>
   </data>
-  <data name="TaskSettingsWindow_DimAllExceptCurrentSelection" xml:space="preserve">
-    <value>Escurecer tudo, exceto a seleção atual</value>
+  <data name="TaskSettingsWindow_DimHoveredWindowsAndControls" xml:space="preserve">
+    <value>Escurecer janelas e controles sob o cursor</value>
   </data>
   <data name="TaskSettingsWindow_DisableToastNotificationsOnFullscreen" xml:space="preserve">
     <value>Desativar notificações em tela cheia</value>
@@ -2489,6 +2675,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_MiddleClickAction" xml:space="preserve">
     <value>Ação do clique do meio:</value>
   </data>
+  <data name="TaskSettingsWindow_Monitor" xml:space="preserve">
+    <value>Monitor:</value>
+  </data>
   <data name="TaskSettingsWindow_Mouse4Click" xml:space="preserve">
     <value>Clique do botão 4 do mouse:</value>
   </data>
@@ -2501,6 +2690,12 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_MouseHighlighterOptions" xml:space="preserve">
     <value>Opções de marcador de mouse...</value>
   </data>
+  <data name="TaskSettingsWindow_MouseWheel" xml:space="preserve">
+    <value>Roda do mouse:</value>
+  </data>
+  <data name="TaskSettingsWindow_MouseWheelTooltip" xml:space="preserve">
+    <value>O que a rolagem faz com a lupa. Mantenha Ctrl pressionado enquanto rola para fazer a outra ação.</value>
+  </data>
   <data name="TaskSettingsWindow_MoveDown" xml:space="preserve">
     <value>Mover para baixo</value>
   </data>
@@ -2509,6 +2704,9 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_MoveUp" xml:space="preserve">
     <value>Mover para cima</value>
+  </data>
+  <data name="TaskSettingsWindow_MultiRegionMode" xml:space="preserve">
+    <value>Modo multirregião</value>
   </data>
   <data name="TaskSettingsWindow_Name" xml:space="preserve">
     <value>Nome</value>
@@ -2579,6 +2777,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_NativeRecorderEnabled" xml:space="preserve">
     <value>Usar o gravador de tela integrado</value>
   </data>
+  <data name="TaskSettingsWindow_NativeRecorderHDRToneMapping" xml:space="preserve">
+    <value>Mapeamento de tons HDR</value>
+  </data>
   <data name="TaskSettingsWindow_NativeRecorderHardware" xml:space="preserve">
     <value>Exigir codificação de vídeo por hardware</value>
   </data>
@@ -2620,12 +2821,6 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_OCR" xml:space="preserve">
     <value>OCR</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRHelp" xml:space="preserve">
-    <value>Ajuda de OCR...</value>
-  </data>
-  <data name="TaskSettingsWindow_OCRLanguagesAreUnavailable" xml:space="preserve">
-    <value>Os idiomas de OCR não estão disponíveis</value>
   </data>
   <data name="TaskSettingsWindow_OnlyApplyEffectsToRegionCapture" xml:space="preserve">
     <value>Aplicar efeitos somente à captura de região</value>
@@ -2789,6 +2984,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Ação do clique direito:</value>
   </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Clicar com o botão direito exclui a forma sob o cursor</value>
+  </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Clique com o botão direito para inserir um token de arquivo de entrada ou saída.</value>
   </data>
@@ -2924,8 +3122,17 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_TimeZoneLabel" xml:space="preserve">
     <value>Fuso horário:</value>
   </data>
+  <data name="TaskSettingsWindow_ToastMonitorNotConnected0" xml:space="preserve">
+    <value>Monitor {0} (não conectado)</value>
+  </data>
+  <data name="TaskSettingsWindow_ToastMonitorScreen0123" xml:space="preserve">
+    <value>Monitor {0}: {1} ({2} em {3})</value>
+  </data>
   <data name="TaskSettingsWindow_ToastNotification" xml:space="preserve">
     <value>Notificação</value>
+  </data>
+  <data name="TaskSettingsWindow_ToolbarButtonSizePixels" xml:space="preserve">
+    <value>Tamanho dos botões da barra de ferramentas (pixels):</value>
   </data>
   <data name="TaskSettingsWindow_Tools" xml:space="preserve">
     <value>Ferramentas</value>
@@ -2975,6 +3182,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskSettingsWindow_UseCustomTimeZone" xml:space="preserve">
     <value>Usar fuso horário personalizado</value>
   </data>
+  <data name="TaskSettingsWindow_UseCustomToolbarButtonSize" xml:space="preserve">
+    <value>Usar tamanho personalizado para os botões da barra de ferramentas</value>
+  </data>
   <data name="TaskSettingsWindow_UseFixedDuration" xml:space="preserve">
     <value>Usar duração fixa</value>
   </data>
@@ -3004,6 +3214,18 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_WaveAudio" xml:space="preserve">
     <value>Áudio Wave</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffort" xml:space="preserve">
+    <value>Esforço de compressão WebP:</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPCompressionEffortHint" xml:space="preserve">
+    <value>Valores mais baixos aceleram a codificação. Valores mais altos produzem arquivos menores. Todos os valores preservam a qualidade da imagem.</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPLossless" xml:space="preserve">
+    <value>Sem perdas</value>
+  </data>
+  <data name="TaskSettingsWindow_WebPQuality" xml:space="preserve">
+    <value>Qualidade WebP:</value>
   </data>
   <data name="TaskSettingsWindow_Width" xml:space="preserve">
     <value>Largura:</value>

@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Tamaño de fuente</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Flecha a mano alzada</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Alineación horizontal</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Rehacer (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Esquinas redondeadas</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Guardar</value>
@@ -282,6 +288,15 @@ Opciones de sombra (Clic derecho)</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancelar (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Color de relleno del área añadida</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>No se pudo cargar la imagen desde el portapapeles.
 El portapapeles no contiene ninguna imagen.</value>
@@ -335,6 +350,12 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margen</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nuevo desde captura de pantalla (pantalla completa)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nuevo desde captura de pantalla (región)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Abrir imagen</value>
@@ -1386,8 +1407,14 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Aceptar</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principal</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Restablecer barra de herramientas</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secundario</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Mostrar / Ocultar</value>
@@ -1400,6 +1427,9 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Desenfoque</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tamaño del lienzo</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clonar</value>

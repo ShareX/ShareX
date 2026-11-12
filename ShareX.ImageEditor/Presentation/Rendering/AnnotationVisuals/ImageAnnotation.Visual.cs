@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Controls;
+using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
@@ -57,9 +58,11 @@ public partial class ImageAnnotation
 
     public virtual Control CreateVisual()
     {
+        // Fill, like ShareX 21, so dragging a side handle stretches the image instead of adding empty space around it.
         var image = new Image
         {
-            Tag = this
+            Tag = this,
+            Stretch = Stretch.Fill
         };
 
         if (ImageBitmap != null)

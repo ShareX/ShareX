@@ -71,6 +71,8 @@ public sealed class CanvasView : Control
         DragDrop.SetAllowDrop(this, true);
     }
 
+    public void StopTimers() => _antsTimer.Stop();
+
     /// <summary>Guide being dragged out of a ruler, in document coordinates.</summary>
     public Guide? PendingGuide { get; set; }
 
@@ -96,7 +98,7 @@ public sealed class CanvasView : Control
             catch (ObjectDisposedException)
             {
             }
-            _editor.SetStatus("The edit was cancelled because the document changed.");
+            _editor.SetStatus(Strings.CanvasView_EditCancelled);
             _editor.InvalidateCanvas();
         }
     }
@@ -162,7 +164,7 @@ public sealed class CanvasView : Control
         DocumentView? view = _editor.View;
         if (view == null)
         {
-            FormattedText hint = new("Open or create a document to start editing (Ctrl+O / Ctrl+N), or drop an image here.",
+            FormattedText hint = new(Strings.CanvasView_EmptyHint,
                 System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 14, Brushes.Gray);
             context.DrawText(hint, new Point((Bounds.Width - hint.Width) / 2, (Bounds.Height - hint.Height) / 2));
             return;
@@ -281,7 +283,7 @@ public sealed class CanvasView : Control
             overlay.Rect(SKRect.Create(b.Left, b.Top, b.Width, b.Height), new Pen(new SolidColorBrush(Color.FromArgb(120, 200, 200, 200)), 1));
             Point p = overlay.ToScreen(new SKPoint(b.Left, b.Top));
             FormattedText text = new(artboard.Name, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 11,
-                artboard == doc.ActiveLayer ? OverlayContext.AccentBrush : Brushes.LightGray);
+                artboard == doc.ActiveLayer ? PhotoEditorTheme.AccentTextBrush : Brushes.LightGray);
             overlay.Drawing.DrawText(text, new Point(p.X, p.Y - 16));
         }
     }
@@ -603,7 +605,7 @@ public sealed class RulerControl : Control
         // Pointer position marker.
         SKPoint doc = _editor.Canvas.LastDocPoint;
         double marker = start0 + (_horizontal ? doc.X : doc.Y) * zoom;
-        Pen markerPen = new(OverlayContext.AccentBrush, 1);
+        Pen markerPen = new(PhotoEditorTheme.AccentBorderBrush, 1);
         if (_horizontal) context.DrawLine(markerPen, new Point(marker, 0), new Point(marker, 18));
         else context.DrawLine(markerPen, new Point(0, marker), new Point(18, marker));
     }
@@ -640,7 +642,7 @@ public sealed class RulerControl : Control
         if (p.X >= 0 && p.Y >= 0 && p.X <= _editor.Canvas.Bounds.Width && p.Y <= _editor.Canvas.Bounds.Height)
         {
             _editor.Document.Guides.Add(guide);
-            _editor.Document.History.Push("New Guide");
+            _editor.Document.History.Push(Strings.EditorCommands_NewGuide);
             _editor.Settings.ShowGuides = true;
             _editor.RefreshPanels();
         }

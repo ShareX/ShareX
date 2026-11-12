@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class CloudsImageEffect : ImageEffectBase
     public override string Id => "clouds";
     public override string Name => "Clouds";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.cloud;
+    public override string IconKey => AppIcons.Cloud;
     public override string Description => "Overlays procedurally generated clouds onto the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -430,6 +430,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Titlul ferestrei</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Distanță: {0:0.00} px | Unghi: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Dreapta: {2} | Jos: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Lățime: {0} px | Înălțime: {1} px | Arie: {2} px | Perimetru: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Riglă</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Conținut clipboard</value>
   </data>
@@ -986,7 +998,7 @@
     <value>Valorile mai mici accelerează codificarea. Valorile mai mari produc fișiere mai mici. Toate valorile păstrează calitatea imaginii.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Fără pierderi:</value>
+    <value>Fără pierderi</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Umplere</value>
@@ -1600,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Țintă</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Limba {0} nu este disponibilă în acest sistem pentru OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Recunoașterea optică a caracterelor este disponibilă numai în Windows versiunea {0} sau mai nouă.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1633,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Închide după deschidere</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiat în clipboard</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copiază tot</value>
   </data>
@@ -1642,23 +1651,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Editează serviciile</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Limbă</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nume</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nou</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Ajutor OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nu a fost găsit niciun text</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Deschide serviciul...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Recunoaștere</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Elimină</value>
@@ -1668,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Rezultat</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Factor de scalare</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Selectează un serviciu</value>
@@ -1684,8 +1684,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Selectează regiunea...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Servicii</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separă paragrafele</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Recunoaștere optică a caracterelor</value>
@@ -2033,7 +2033,7 @@
     <value>Toleranță: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Riglă</value>
+    <value>ShareX - Măsurare</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Alegeți un videoclip pentru a începe.</value>
@@ -2077,6 +2077,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Se oprește conversia...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Rată de biți medie</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Răsfoire...</value>
   </data>
@@ -2095,6 +2098,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nume fișier</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Dimensiunea fișierului</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Dosar</value>
   </data>
@@ -2112,6 +2118,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Calitate</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Rezoluție</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Rezultat</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertor video</value>

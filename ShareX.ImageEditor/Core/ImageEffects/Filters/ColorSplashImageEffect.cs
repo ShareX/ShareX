@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ColorSplashImageEffect : ImageEffectBase
     public override string Id => "color_splash";
     public override string Name => "Color splash";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.droplets;
+    public override string IconKey => ImageEffectIcons.Droplets;
     public override string Description => "Keeps one color and desaturates the rest of the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

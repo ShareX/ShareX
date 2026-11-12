@@ -1,10 +1,10 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icons="using:ShareX.Icons"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:controls="using:ShareX.AvaloniaUI.Controls"
              xmlns:localization="using:ShareX.AvaloniaUI.Localization"
-             xmlns:theming="using:ShareX.AvaloniaUI.Theming"
              mc:Ignorable="d"
              d:DesignWidth="230"
              d:DesignHeight="600"
@@ -20,6 +20,7 @@
             <Setter Property="IsVisible" Value="{ReflectionBinding IsVisible}"/>
             <Setter Property="IsExpanded" Value="{ReflectionBinding IsExpanded, Mode=TwoWay}"/>
             <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NavItemMinHeight}"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="CornerRadius" Value="4"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -30,32 +31,43 @@
         </Style>
         <Style Selector="TreeViewItem:selected">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="TreeViewItem:selected:pointerover">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="TreeViewItem:selected:pressed">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <!-- Page icons use the accent like the main menu icons, and the accent fill's text color on the selected page.
+             The selected class follows the icon's own item, so a selected parent doesn't recolor its children's icons. -->
+        <Style Selector="controls|IconPresenter.nav-icon">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.nav-icon.selected">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <!-- Outlines the selected item when the accent is too close to the background to see; no layout change. -->
+        <Style Selector="TreeViewItem:selected /template/ Border#PART_LayoutRoot">
+            <Setter Property="BoxShadow" Value="{DynamicResource ShareX.BoxShadow.Accent.Outline}"/>
         </Style>
     </UserControl.Styles>
 
-    <Grid RowDefinitions="Auto,*" RowSpacing="10">
+    <Grid RowDefinitions="Auto,*" RowSpacing="{DynamicResource ShareX.Density.Settings.NavSpacing}">
         <Grid ColumnDefinitions="Auto,*">
-            <TextBlock Margin="8,0,0,0"
-                       Classes="icon"
-                       Text="{x:Static theming:LucideIcons.search}"
-                       FontSize="16"
-                       IsHitTestVisible="False"
-                       VerticalAlignment="Center"
-                       ZIndex="1"/>
+            <controls:IconPresenter Margin="8,0,0,0"
+                                    Icon="{x:Static icons:AppIcons.Search}"
+                                    FontSize="16"
+                                    IsHitTestVisible="False"
+                                    VerticalAlignment="Center"
+                                    ZIndex="1"/>
             <TextBox Grid.ColumnSpan="2"
-                     Padding="30,8,8,8"
+                     Padding="{DynamicResource ShareX.Density.Settings.SearchPadding}"
                      PlaceholderText="{x:Static localization:Strings.SettingsNavigation_Search_settings}"
                      Text="{Binding SearchText, ElementName=Root, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
@@ -67,14 +79,15 @@
             <TreeView.ItemTemplate>
                 <TreeDataTemplate DataType="controls:SettingsNavigationItem"
                                   ItemsSource="{Binding Children}">
-                    <Grid ColumnDefinitions="Auto,*" Margin="2,3">
-                        <TextBlock Classes="icon"
-                                   Text="{Binding Icon}"
-                                   IsVisible="{Binding HasIcon}"
-                                   FontSize="16"
-                                   Width="20"
-                                   Margin="0,0,6,0"
-                                   HorizontalAlignment="Center"/>
+                    <Grid ColumnDefinitions="Auto,*" Margin="{DynamicResource ShareX.Density.Settings.NavItemMargin}">
+                        <controls:IconPresenter Classes="nav-icon"
+                                                Classes.selected="{Binding $parent[TreeViewItem].IsSelected}"
+                                                Icon="{Binding Icon}"
+                                                IsVisible="{Binding HasIcon}"
+                                                FontSize="16"
+                                                Width="20"
+                                                Margin="0,0,6,0"
+                                                HorizontalAlignment="Center"/>
                         <TextBlock Grid.Column="1"
                                    Text="{Binding Title}"
                                    FontWeight="Normal"

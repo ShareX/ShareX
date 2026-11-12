@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Żaden element nie pasuje do bieżących filtrów</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Nazwa procesu</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Zmień nazwę</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Zmień nazwę pliku</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Resetuj kolumny</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Wybierz folder do zaimportowania</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Pomyślnie zaimportowano {0:N0} plików.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Tag</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>te {0:N0} pliki</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Usuń z ulubionych</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Tytuł okna</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Zaawansowane</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>Ukończono</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Edytuj w edytorze zdjęć...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>Edytuj element historii</value>

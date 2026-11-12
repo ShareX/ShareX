@@ -1,5 +1,6 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         x:Class="ShareX.AvaloniaUI.MessageBoxWindow"
         Width="480"
         MinWidth="360"
@@ -23,11 +24,10 @@
                         CornerRadius="8"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}"
                         VerticalAlignment="Top">
-                    <TextBlock x:Name="IconText"
-                               Classes="icon"
-                               FontSize="24"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter x:Name="IconText"
+                                            FontSize="24"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
 
                 <SelectableTextBlock x:Name="MessageText"
@@ -45,10 +45,19 @@
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="0,1,0,0">
-            <StackPanel x:Name="ButtonPanel"
-                        Orientation="Horizontal"
-                        HorizontalAlignment="Right"
-                        Spacing="8"/>
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <CheckBox x:Name="OptionCheckBox"
+                          IsVisible="False"
+                          Margin="8,0,0,0"
+                          FontWeight="Normal"
+                          Foreground="{DynamicResource ShareX.Brush.Text}"
+                          VerticalAlignment="Center"/>
+                <StackPanel x:Name="ButtonPanel"
+                            Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Spacing="8"/>
+            </Grid>
         </Border>
     </Grid>
 </Window>

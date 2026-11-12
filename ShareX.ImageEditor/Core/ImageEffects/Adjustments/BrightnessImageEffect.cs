@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -33,7 +33,7 @@ public sealed class BrightnessImageEffect : AdjustmentImageEffectBase
 {
     public override string Id => "brightness";
     public override string Name => "Brightness";
-    public override string IconKey => LucideIcons.sun_medium;
+    public override string IconKey => AppIcons.Sun;
     public override string Description => "Adjusts image brightness.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

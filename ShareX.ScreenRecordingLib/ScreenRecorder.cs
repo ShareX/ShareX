@@ -174,12 +174,12 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             using (new FileStream(options.OutputPath, FileMode.CreateNew, FileAccess.Write, FileShare.None)) { }
             ownsOutput = true;
             using GraphicsDevice graphics = new(targets[0].Monitor);
-            using GpuVideoProcessor processor = new(graphics, width, height, options.FramesPerSecond, !options.IsGif);
-            using MediaFoundationWriter? writer = options.IsGif ? null : new(graphics, options, width, height);
+            using MediaFoundationWriter? writer = options.IsGif ? null : MediaFoundationWriter.Create(graphics, options, width, height);
+            using GpuVideoProcessor processor = new(graphics, width, height, options.FramesPerSecond, !options.IsGif, writer?.Width ?? width, writer?.Height ?? height);
             using GifWriter? gifWriter = options.IsGif ? new(graphics, options, width, height) : null;
             Encoder = writer?.Encoder ?? GifWriter.Encoder;
             using VideoTexturePool? textures = writer == null ? null : new(graphics, processor, writer.EncoderBindFlags);
-            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond);
+            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond, options.HdrToneMapping);
             using CameraCapture? camera = options.CaptureCamera ? new(graphics, options) : null;
             Camera = camera?.Info;
             using CameraOverlay? cameraOverlay = camera == null ? null : new(graphics, camera.Info, camera.Subtype,

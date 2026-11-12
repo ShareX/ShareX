@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Rozpoznat text (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Otevřít v editoru fotografií</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Provést akce</value>
   </data>
@@ -639,6 +642,9 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Nahrávání</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Pravítko</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Nahrát ze schránky</value>
   </data>
@@ -786,8 +792,11 @@ Chcete jej přesto spustit?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Zachytit oblast</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Zachytit oblast (průhledná)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Pravítko</value>
+    <value>Měření</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Výběr barvy z obrazovky</value>
@@ -866,6 +875,21 @@ Chcete jej přesto spustit?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Obrazové soubory</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Dole</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Po straně</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automaticky</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Skrýt</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Zobrazit</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Otevřít obrázek</value>
@@ -1089,6 +1113,12 @@ Chcete jej přesto spustit?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Vyměnit typ nástroje</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Změnit velikost lupy</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Přiblížit lupu</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Počítač</value>
   </data>
@@ -1221,6 +1251,12 @@ Chcete jej přesto spustit?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automaticky</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Zobrazení seznamu</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Zobrazení miniatur</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Vlastní nahrávání textu</value>
   </data>
@@ -1289,6 +1325,12 @@ Chcete jej přesto spustit?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Nahrát soubor</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Aktivní monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primární monitor</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

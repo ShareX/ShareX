@@ -1,6 +1,7 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:res="using:ShareX.Localization"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         x:Class="ShareX.ScreenRecorderBarWindow"
         Title="{x:Static res:Strings.TaskSettingsWindow_NativeRecorder}"
         WindowDecorations="None"
@@ -23,7 +24,23 @@
             <Setter Property="Margin" Value="0"/>
         </Style>
         <Style Selector="ToggleButton.recorder-setup:checked">
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <!-- Replace Fluent's checked states with the accent fill, and colour the content directly because the
+             global TextBlock style would otherwise win over the inherited foreground. -->
+        <Style Selector="ToggleButton.recorder-setup:checked /template/ ContentPresenter#PART_ContentPresenter,
+                         ToggleButton.recorder-setup:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter,
+                         ToggleButton.recorder-setup:checked:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ToggleButton.recorder-setup:checked TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ToggleButton.recorder-setup:checked controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
         <Style Selector="Button.recorder-arrow">
             <Setter Property="MinWidth" Value="30"/>
@@ -34,7 +51,7 @@
             <Setter Property="BorderBrush" Value="{StaticResource Recorder.Record.Background}"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
-        <Style Selector="Button.recorder-record TextBlock">
+        <Style Selector="Button.recorder-record > StackPanel > TextBlock">
             <Setter Property="Foreground" Value="White"/>
         </Style>
         <Style Selector="Button.recorder-record /template/ ContentPresenter#PART_ContentPresenter">

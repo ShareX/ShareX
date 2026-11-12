@@ -103,6 +103,7 @@ public partial class EditorSelectionController
                 balloonControl.InvalidateVisual();
                 (tb.Parent as Panel)?.Children.Remove(tb); // Remove from OverlayCanvas
                 _balloonTextEditor = null;
+                _view.ScheduleAutoExpandCanvas(annotation);
             }
         };
 
@@ -188,6 +189,8 @@ public partial class EditorSelectionController
 
             UpdateSelectionHandles();
             UpdateHoverOutline();
+
+            _view.ScheduleAutoExpandCanvas(annotation);
         }
 
         lostFocusHandler = (s, args) => CompleteEditing();

@@ -36,6 +36,12 @@ public sealed class AvaloniaRegionCaptureRequest
     /// <summary>Frozen screenshot. Ownership transfers to the capture window.</summary>
     public required SKBitmap Screenshot { get; init; }
 
+    /// <summary>
+    /// Every pixel of <see cref="Screenshot"/> has alpha 255, as in a screen capture. The overlay then draws
+    /// the screenshot's own pixels instead of a full-size copy.
+    /// </summary>
+    public bool ScreenshotIsOpaque { get; init; }
+
     /// <summary>Physical-pixel desktop bounds represented by <see cref="Screenshot"/>.</summary>
     public required Rectangle ScreenBounds { get; init; }
 
@@ -44,6 +50,12 @@ public sealed class AvaloniaRegionCaptureRequest
     public required ImageEditorOptions ImageEditorOptions { get; init; }
 
     public bool EnableAnnotations { get; init; } = true;
+
+    /// <summary>
+    /// Allows <see cref="RegionCaptureOptions.MultiRegionMode"/> to select several regions. Only image captures
+    /// enable this; callers that need a single rectangle leave it off.
+    /// </summary>
+    public bool AllowMultipleRegions { get; init; }
 
     /// <summary>Optional captured cursor bitmap. Ownership transfers to the capture window.</summary>
     public SKBitmap? CursorBitmap { get; init; }

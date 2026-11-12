@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="o" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cc8800" stop-opacity=".5"/><stop offset="1" stop-color="#956300" stop-opacity=".72"/></linearGradient>
+    <linearGradient id="f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fef1ad"/><stop offset="1" stop-color="#eecf85"/></linearGradient>
+    <linearGradient id="d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9cb86"/><stop offset="1" stop-color="#caa864"/></linearGradient>
+  </defs>
+  <g stroke="#000" stroke-opacity=".5" stroke-dasharray="1 1">
+    <line x1="2.5" y1="0" x2="2.5" y2="13"/>
+    <line x1="4" y1="4.5" x2="8" y2="4.5"/>
+    <line x1="4" y1="12.5" x2="8" y2="12.5"/>
+  </g>
+  <g>
+    <path d="M8.5 1.5h5v2.8l1 .7v2.5h-6z" fill="url(#f)"/>
+    <path d="M9.5 2v5" stroke="#fffbe0" stroke-opacity=".35"/>
+    <polyline points="13.6,4.2 12.5,5 12.5,7" fill="none" stroke="url(#d)"/>
+    <rect x="13" y="5" width="1" height="1" fill="#f9fbfb"/>
+    <rect x="13" y="6" width="1" height="1" fill="#93ddf6"/>
+    <path d="M8.5 1.5h5v2.8l1 .7v2.5h-6z" fill="none" stroke="url(#o)"/>
+  </g>
+  <g transform="translate(0 8)">
+    <path d="M8.5 1.5h5v2.8l1 .7v2.5h-6z" fill="url(#f)"/>
+    <path d="M9.5 2v5" stroke="#fffbe0" stroke-opacity=".35"/>
+    <polyline points="13.6,4.2 12.5,5 12.5,7" fill="none" stroke="url(#d)"/>
+    <rect x="13" y="5" width="1" height="1" fill="#f9fbfb"/>
+    <rect x="13" y="6" width="1" height="1" fill="#93ddf6"/>
+    <path d="M8.5 1.5h5v2.8l1 .7v2.5h-6z" fill="none" stroke="url(#o)"/>
+  </g>
+</svg>

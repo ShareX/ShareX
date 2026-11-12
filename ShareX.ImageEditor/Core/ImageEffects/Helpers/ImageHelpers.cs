@@ -255,7 +255,9 @@ public static class ImageHelpers
             throw new ArgumentException("Canvas size after padding must be greater than 0");
         }
 
-        SKBitmap result = new SKBitmap(newWidth, newHeight, source.ColorType, source.AlphaType);
+        // An opaque source (e.g. a JPEG) would turn a transparent fill black.
+        SKAlphaType alphaType = source.AlphaType == SKAlphaType.Opaque && backgroundColor.Alpha < 255 ? SKAlphaType.Premul : source.AlphaType;
+        SKBitmap result = new SKBitmap(newWidth, newHeight, source.ColorType, alphaType);
         using (SKCanvas canvas = new SKCanvas(result))
         {
             canvas.Clear(backgroundColor);

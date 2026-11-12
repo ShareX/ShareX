@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+<rect x="0" y="0" width="640" height="480" fill="#FFFFFF"/>
+<rect x="0" y="45" width="640" height="75" fill="#0038B8"/>
+<rect x="0" y="360" width="640" height="75" fill="#0038B8"/>
+<path fill="#0038B8" fill-rule="evenodd" d="M320,157.5 L391.45,281.25 L248.55,281.25 Z M320,190.5 L362.87,264.75 L277.13,264.75 Z"/>
+<path fill="#0038B8" fill-rule="evenodd" d="M320,322.5 L248.55,198.75 L391.45,198.75 Z M320,289.5 L277.13,215.25 L362.87,215.25 Z"/>
+</svg>

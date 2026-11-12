@@ -58,13 +58,21 @@ public abstract class AdjustmentImageEffectBase : ImageEffectBase
 
         if (source.ColorType == SKColorType.Bgra8888)
         {
-            int count = source.Width * source.Height;
-            SKColor* srcPtr = (SKColor*)source.GetPixels();
-            SKColor* dstPtr = (SKColor*)result.GetPixels();
+            // Rows are addressed with each bitmap's own stride: a cropped image is an ExtractSubset view that keeps its parent's
+            // row width, so its pixels are not contiguous.
+            int width = source.Width, height = source.Height;
+            byte* srcBase = (byte*)source.GetPixels();
+            byte* dstBase = (byte*)result.GetPixels();
 
-            for (int i = 0; i < count; i++)
+            for (int y = 0; y < height; y++)
             {
-                *dstPtr++ = operation(*srcPtr++);
+                SKColor* srcPtr = (SKColor*)(srcBase + (long)y * source.RowBytes);
+                SKColor* dstPtr = (SKColor*)(dstBase + (long)y * result.RowBytes);
+
+                for (int x = 0; x < width; x++)
+                {
+                    dstPtr[x] = operation(srcPtr[x]);
+                }
             }
         }
         else

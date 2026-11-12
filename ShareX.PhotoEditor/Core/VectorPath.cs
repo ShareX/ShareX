@@ -155,25 +155,25 @@ public sealed class VectorPath
                     current.Anchors.Add(new PathAnchor(pts[1]));
                     break;
                 case SKPathVerb.Quad:
-                {
-                    current ??= StartSub(result, pts[0]);
-                    SKPoint c0 = pts[0] + new SKPoint((pts[1].X - pts[0].X) * 2 / 3f, (pts[1].Y - pts[0].Y) * 2 / 3f);
-                    SKPoint c1 = pts[2] + new SKPoint((pts[1].X - pts[2].X) * 2 / 3f, (pts[1].Y - pts[2].Y) * 2 / 3f);
-                    current.Anchors[^1].Out = c0;
-                    current.Anchors.Add(new PathAnchor(pts[2], c1, pts[2], false));
-                    break;
-                }
+                    {
+                        current ??= StartSub(result, pts[0]);
+                        SKPoint c0 = pts[0] + new SKPoint((pts[1].X - pts[0].X) * 2 / 3f, (pts[1].Y - pts[0].Y) * 2 / 3f);
+                        SKPoint c1 = pts[2] + new SKPoint((pts[1].X - pts[2].X) * 2 / 3f, (pts[1].Y - pts[2].Y) * 2 / 3f);
+                        current.Anchors[^1].Out = c0;
+                        current.Anchors.Add(new PathAnchor(pts[2], c1, pts[2], false));
+                        break;
+                    }
                 case SKPathVerb.Conic:
-                {
-                    current ??= StartSub(result, pts[0]);
-                    float w = iterator.ConicWeight();
-                    float k = 4f / 3f * w / (1 + w);
-                    SKPoint c0 = pts[0] + new SKPoint((pts[1].X - pts[0].X) * k, (pts[1].Y - pts[0].Y) * k);
-                    SKPoint c1 = pts[2] + new SKPoint((pts[1].X - pts[2].X) * k, (pts[1].Y - pts[2].Y) * k);
-                    current.Anchors[^1].Out = c0;
-                    current.Anchors.Add(new PathAnchor(pts[2], c1, pts[2], false));
-                    break;
-                }
+                    {
+                        current ??= StartSub(result, pts[0]);
+                        float w = iterator.ConicWeight();
+                        float k = 4f / 3f * w / (1 + w);
+                        SKPoint c0 = pts[0] + new SKPoint((pts[1].X - pts[0].X) * k, (pts[1].Y - pts[0].Y) * k);
+                        SKPoint c1 = pts[2] + new SKPoint((pts[1].X - pts[2].X) * k, (pts[1].Y - pts[2].Y) * k);
+                        current.Anchors[^1].Out = c0;
+                        current.Anchors.Add(new PathAnchor(pts[2], c1, pts[2], false));
+                        break;
+                    }
                 case SKPathVerb.Cubic:
                     current ??= StartSub(result, pts[0]);
                     current.Anchors[^1].Out = pts[1];

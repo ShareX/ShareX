@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class AutoCropImageEffect : ImageEffectBase
     public override string Id => "auto_crop_image";
     public override string Name => "Auto crop image";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.scan;
+    public override string IconKey => AppIcons.Region;
     public override string Description => "Automatically crops the image using tolerance on edge pixels.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

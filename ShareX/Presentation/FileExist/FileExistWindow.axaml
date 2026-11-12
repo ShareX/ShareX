@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.FileExistWindow"
         x:CompileBindings="False"
         Title="{x:Static res:Strings.FileExistWindow_Title}"
@@ -43,18 +44,17 @@
                         Height="40"
                         CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.triangle_alert}"
-                               FontSize="20"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                     <TextBlock Text="{x:Static res:Strings.FileExistWindow_FileAlreadyExists}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock Text="{x:Static res:Strings.FileExistWindow_Instruction}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                 </StackPanel>
@@ -67,11 +67,10 @@
               Margin="18,14,18,18">
             <Border Classes="panel-card" Padding="10,8">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.file}"
-                               FontSize="16"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.File}"
+                                            FontSize="16"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            VerticalAlignment="Center"/>
                     <TextBlock x:Name="ExistingPathText"
                                Grid.Column="1"
                                FontFamily="Cascadia Mono,Consolas"
@@ -95,11 +94,10 @@
                     Classes="action-button"
                     Click="OnUseNewNameClick">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.pencil}"
-                               FontSize="17"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Edit}"
+                                            FontSize="17"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="NewNameActionTitle" Classes="action-title"/>
                         <TextBlock x:Name="NewNameFileText"
@@ -114,11 +112,10 @@
                     Classes="action-button"
                     Click="OnOverwriteClick">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.file}"
-                               FontSize="17"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.File}"
+                                            FontSize="17"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="OverwriteActionTitle" Classes="action-title"/>
                         <TextBlock x:Name="OverwriteFileText"
@@ -133,11 +130,10 @@
                     Classes="action-button"
                     Click="OnUseUniqueNameClick">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.copy_plus}"
-                               FontSize="17"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Duplicate}"
+                                            FontSize="17"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="UniqueNameActionTitle" Classes="action-title"/>
                         <TextBlock x:Name="UniqueNameFileText"
@@ -152,10 +148,9 @@
                     IsCancel="True"
                     Click="OnCancelClick">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.x}"
-                               FontSize="17"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
+                                            FontSize="17"
+                                            VerticalAlignment="Center"/>
                     <TextBlock x:Name="CancelActionTitle"
                                Grid.Column="1"
                                Classes="action-title"

@@ -1,18 +1,19 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="575"
         x:Class="ShareX.Tools.VideoConverterWindow"
         x:DataType="vm:VideoConverterViewModel"
         Title="{x:Static localization:Strings.VideoConverterWindow_ShareX_Video_Converter}"
         Width="850"
-        Height="475"
+        Height="550"
         MinWidth="700"
-        MinHeight="475"
+        MinHeight="550"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
@@ -26,6 +27,13 @@
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
             <Setter Property="Margin" Value="0,0,0,5"/>
         </Style>
+        <Style Selector="TextBlock.result-value">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+        <Style Selector="TextBlock.result-value.empty">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
         <Style Selector="TextBlock.path-text">
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
@@ -34,7 +42,7 @@
     </Window.Styles>
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
-            <Grid RowDefinitions="Auto,*,Auto" Margin="16" RowSpacing="12">
+            <Grid RowDefinitions="Auto,*,Auto,Auto" Margin="16" RowSpacing="12">
                 <Border Grid.Row="0" Classes="tool-panel" Padding="12">
                     <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="12">
                         <TextBlock Grid.Column="0"
@@ -131,8 +139,7 @@
                                     <Button Grid.Column="1"
                                             Command="{Binding BrowseOutputFolderCommand}"
                                             IsEnabled="{Binding IsIdle}">
-                                        <TextBlock Text="{x:Static theming:LucideIcons.folder_open}"
-                                                   Classes="icon"/>
+                                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                                     </Button>
                                 </Grid>
                                 <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_name}"/>
@@ -153,7 +160,35 @@
 
                 </Grid>
 
-                <Grid Grid.Row="2" RowDefinitions="Auto,Auto">
+                <Border Grid.Row="2" Classes="tool-panel" Padding="16,12">
+                    <Grid ColumnDefinitions="Auto,*,*,*" ColumnSpacing="24">
+                        <TextBlock Grid.Column="0"
+                                   Classes="section-heading"
+                                   Text="{x:Static localization:Strings.VideoConverterWindow_Result}"
+                                   Margin="0,0,12,0"
+                                   VerticalAlignment="Center"/>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Average_bitrate}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputBitrateText}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_File_size}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputFileSizeText}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3">
+                            <TextBlock Classes="field-label" Text="{x:Static localization:Strings.VideoConverterWindow_Resolution}"/>
+                            <TextBlock Classes="result-value"
+                                       Classes.empty="{Binding !HasOutputInfo}"
+                                       Text="{Binding OutputResolutionText}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="3" RowDefinitions="Auto,Auto">
                     <ProgressBar Grid.Row="0"
                                  Minimum="0"
                                  Maximum="100"
@@ -172,9 +207,8 @@
                                 IsVisible="{Binding IsIdle}"
                                 VerticalContentAlignment="Center">
                             <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                                <TextBlock Text="{x:Static theming:LucideIcons.play}"
-                                           Classes="icon"
-                                           VerticalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Play}"
+                                                        VerticalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Start_encoding}" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
@@ -182,8 +216,7 @@
                                 Command="{Binding StopEncodingCommand}"
                                 IsVisible="{Binding IsEncoding}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Text="{x:Static theming:LucideIcons.square_stop}"
-                                           Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Stop}"/>
                                 <TextBlock Text="{x:Static localization:Strings.VideoConverterWindow_Stop_encoding}"/>
                             </StackPanel>
                         </Button>

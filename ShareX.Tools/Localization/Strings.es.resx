@@ -431,6 +431,18 @@ Ruta del archivo: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Título de la ventana</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Distancia: {0:0.00} px | Ángulo: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Derecha: {2} | Inferior: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Ancho: {0} px | Alto: {1} px | Área: {2} px | Perímetro: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Regla</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Contenido del portapapeles</value>
   </data>
@@ -990,7 +1002,7 @@ Ruta del archivo: {0}</value>
     <value>Los valores más bajos codifican más rápido. Los valores más altos producen archivos más pequeños. Todos los valores conservan la calidad de la imagen.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Sin pérdida:</value>
+    <value>Sin pérdida</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Rellenar</value>
@@ -1606,12 +1618,6 @@ Ruta del archivo: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Destino</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>El idioma {0} no está disponible en este sistema para OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>El reconocimiento óptico de caracteres solo está disponible en Windows versión {0} o posterior.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1639,6 +1645,9 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Cerrar después de abrir</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiado al portapapeles</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copiar todo</value>
   </data>
@@ -1648,23 +1657,17 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Editar servicios</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Nombre</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nuevo</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Ayuda de OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>No se encontró texto</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Abrir servicio...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Reconocimiento</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Quitar</value>
@@ -1674,9 +1677,6 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Resultado</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Factor de escala</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Seleccione un servicio</value>
@@ -1690,8 +1690,8 @@ Ruta del archivo: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Seleccionar región...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Servicios</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separar párrafos</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconocimiento óptico de caracteres</value>
@@ -2039,7 +2039,7 @@ Ruta del archivo: {0}</value>
     <value>Tolerancia: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Regla</value>
+    <value>ShareX - Medir</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Elija un vídeo para comenzar.</value>
@@ -2083,6 +2083,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Deteniendo la conversión...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Tasa de bits media</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Examinar...</value>
   </data>
@@ -2101,6 +2104,9 @@ Ruta del archivo: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Nombre del archivo</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Tamaño del archivo</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Carpeta</value>
   </data>
@@ -2118,6 +2124,12 @@ Ruta del archivo: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Calidad</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolución</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Resultado</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Convertidor de vídeo</value>

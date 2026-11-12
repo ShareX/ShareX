@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class ZoomBlurImageEffect : ImageEffectBase
     public override string Id => "zoom_blur";
     public override string Name => "Zoom blur";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.zoom_in;
+    public override string IconKey => AppIcons.ZoomIn;
     public override string Description => "Applies a radial zoom blur emanating from a center point.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

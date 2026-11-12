@@ -23,37 +23,43 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.OCR;
+using ShareX.Tools.Controls;
 
 namespace ShareX.Tools;
 
 public partial class OCRWindow : Window
 {
+    private const double MinResultPanelWidth = 300;
+
     private readonly OCRViewModel _viewModel;
     private readonly OCRRegionCaptureHandler _selectRegion;
+    private readonly OCROptions _options;
+    private bool _windowPlacementApplied;
 
     public string Result => _viewModel.Result;
 
     public OCRWindow()
-        : this([], [], new OCROptions(), (_, _, _, _) => Task.FromResult(string.Empty), () => Task.FromResult<byte[]?>(null))
+        : this([], new OCROptions(), _ => Task.FromResult(new OCRResult([])), () => Task.FromResult<byte[]?>(null))
     {
     }
 
     public OCRWindow(
         byte[] imageData,
-        IEnumerable<OCRLanguageOption> languages,
         OCROptions options,
         OCRRecognitionHandler recognize,
         OCRRegionCaptureHandler selectRegion,
-        Action<OCROptions>? optionsChanged = null,
-        Action? openHelp = null)
+        Action<OCROptions>? optionsChanged = null)
     {
         _selectRegion = selectRegion;
-        _viewModel = new OCRViewModel(imageData, languages, options, recognize, optionsChanged, openHelp);
+        _options = options;
+        _viewModel = new OCRViewModel(imageData, options, recognize, optionsChanged);
         DataContext = _viewModel;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
@@ -62,8 +68,18 @@ public partial class OCRWindow : Window
         _viewModel.SelectImageRequested = SelectImageAsync;
         _viewModel.CopyTextRequested = CopyTextAsync;
         _viewModel.CloseRequested = Close;
+
+        if (this.FindControl<OCRPreview>("ImagePreview") is { } preview)
+        {
+            preview.RegionClicked += async (_, region) => await CopyTextAsync(region.Text);
+        }
+
+        ApplySavedWindowState();
         Opened += OnOpened;
+        Closing += (_, _) => SaveWindowState();
         Closed += (_, _) => _viewModel.Dispose();
+        Resized += (_, _) => SaveNormalWindowBounds();
+        PositionChanged += (_, _) => SaveNormalWindowBounds();
     }
 
     private void InitializeComponent()
@@ -71,8 +87,68 @@ public partial class OCRWindow : Window
         AvaloniaXamlLoader.Load(this);
     }
 
+    private ColumnDefinition ResultPanelColumn => this.FindControl<Grid>("ContentGrid")!.ColumnDefinitions[2];
+
+    private ShareX.HelpersLib.WindowState SavedWindowState => _options.WindowState ??= new ShareX.HelpersLib.WindowState();
+
+    private void ApplySavedWindowState()
+    {
+        ShareX.HelpersLib.WindowState savedState = SavedWindowState;
+
+        if (!savedState.Size.IsEmpty)
+        {
+            Width = Math.Max(savedState.Size.Width, MinWidth);
+            Height = Math.Max(savedState.Size.Height, MinHeight);
+        }
+
+        if (!savedState.Location.IsEmpty)
+        {
+            PixelPoint savedPosition = new(savedState.Location.X, savedState.Location.Y);
+
+            // Only restore a position that is still on a connected screen.
+            if (Screens.ScreenFromPoint(savedPosition) != null)
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual;
+                Position = savedPosition;
+            }
+        }
+
+        if (_options.ResultPanelWidth > 0)
+        {
+            ResultPanelColumn.Width = new GridLength(Math.Max(_options.ResultPanelWidth, MinResultPanelWidth));
+        }
+
+        WindowState = savedState.IsMaximized ? Avalonia.Controls.WindowState.Maximized : Avalonia.Controls.WindowState.Normal;
+    }
+
+    private void SaveWindowState()
+    {
+        SaveNormalWindowBounds();
+        SavedWindowState.IsMaximized = WindowState == Avalonia.Controls.WindowState.Maximized;
+
+        double resultPanelWidth = ResultPanelColumn.ActualWidth;
+
+        if (resultPanelWidth > 0)
+        {
+            _options.ResultPanelWidth = Math.Round(resultPanelWidth);
+        }
+    }
+
+    // The normal size and position are kept while the window moves, so a maximized window restores to them next time.
+    private void SaveNormalWindowBounds()
+    {
+        if (!_windowPlacementApplied || WindowState != Avalonia.Controls.WindowState.Normal || Bounds.Width <= 0 || Bounds.Height <= 0)
+        {
+            return;
+        }
+
+        SavedWindowState.Size = new System.Drawing.Size((int)Math.Round(Bounds.Width), (int)Math.Round(Bounds.Height));
+        SavedWindowState.Location = new System.Drawing.Point(Position.X, Position.Y);
+    }
+
     private async void OnOpened(object? sender, EventArgs e)
     {
+        _windowPlacementApplied = true;
         Opened -= OnOpened;
         await _viewModel.StartAsync();
     }
@@ -96,9 +172,19 @@ public partial class OCRWindow : Window
 
     private async Task CopyTextAsync(string text)
     {
-        if (Clipboard != null)
+        if (Clipboard == null)
+        {
+            return;
+        }
+
+        // The clipboard can be held open by another application, which must not crash the window.
+        try
         {
             await Clipboard.SetTextAsync(text);
+        }
+        catch (Exception ex)
+        {
+            ToolsDiagnostics.ReportWarning(nameof(OCRWindow), "Failed to copy OCR text to the clipboard.", ex);
         }
     }
 

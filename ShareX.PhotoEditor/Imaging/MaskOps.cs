@@ -65,20 +65,30 @@ public static class MaskOps
             if (mode == SelectionMode.Subtract || mode == SelectionMode.Intersect && current == null) return mode == SelectionMode.Intersect ? null : current;
             return shape;
         }
-        PixelSurface result = current.Clone();
+        // The result takes the shape's size, which is the document's. The current selection can be another size (Reselect after a
+        // crop restores an older mask), so each mask is addressed with its own size and row stride, and pixels outside the
+        // current selection count as unselected.
+        PixelSurface result = PixelSurface.CreateMask(shape.Width, shape.Height);
         byte* r = Ptr(result);
         byte* s = Ptr(shape);
-        int length = result.RowBytes * result.Height;
-        for (int i = 0; i < length; i++)
+        byte* c = Ptr(current);
+        int width = shape.Width, height = shape.Height;
+        for (int y = 0; y < height; y++)
         {
-            int a = r[i], b = s[i];
-            r[i] = mode switch
+            byte* rRow = r + (long)y * result.RowBytes;
+            byte* sRow = s + (long)y * shape.RowBytes;
+            byte* cRow = y < current.Height ? c + (long)y * current.RowBytes : null;
+            for (int x = 0; x < width; x++)
             {
-                SelectionMode.Add => (byte)Math.Max(a, b),
-                SelectionMode.Subtract => (byte)(a * (255 - b) / 255),
-                SelectionMode.Intersect => (byte)(a * b / 255),
-                _ => (byte)b
-            };
+                int a = cRow != null && x < current.Width ? cRow[x] : 0, b = sRow[x];
+                rRow[x] = mode switch
+                {
+                    SelectionMode.Add => (byte)Math.Max(a, b),
+                    SelectionMode.Subtract => (byte)(a * (255 - b) / 255),
+                    SelectionMode.Intersect => (byte)(a * b / 255),
+                    _ => (byte)b
+                };
+            }
         }
         return result;
     }

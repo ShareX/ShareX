@@ -970,6 +970,31 @@ namespace ShareX.HistoryLib.Localization {
                 return ResourceManager.GetString("StatsWindow_VsPrevious7Days", resourceCulture);
             }
         }
+        public static string HistoryWindows_EditImageInPhotoEditor {
+            get {
+                return ResourceManager.GetString("HistoryWindows_EditImageInPhotoEditor", resourceCulture);
+            }
+        }
+        public static string HistoryWindow_ProcessName {
+            get {
+                return ResourceManager.GetString("HistoryWindow_ProcessName", resourceCulture);
+            }
+        }
+        public static string HistoryWindow_ResetColumns {
+            get {
+                return ResourceManager.GetString("HistoryWindow_ResetColumns", resourceCulture);
+            }
+        }
+        public static string HistoryWindow_Tag {
+            get {
+                return ResourceManager.GetString("HistoryWindow_Tag", resourceCulture);
+            }
+        }
+        public static string HistoryWindow_WindowTitle {
+            get {
+                return ResourceManager.GetString("HistoryWindow_WindowTitle", resourceCulture);
+            }
+        }
     }
 }
 

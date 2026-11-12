@@ -61,10 +61,30 @@ namespace ShareX.ImageEditor.Integration
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
+        // Like ShareX 21 and region capture: right-clicking a shape deletes it instead of opening the context menu.
+        public bool RightClickDeletesShape { get; set; } = false;
         public bool AutoCloseEditorOnTask { get; set; } = false;
         public bool AutoCopyImageToClipboard { get; set; } = false;
         public bool ShowInsertImageDialog { get; set; } = true;
         public bool ShowNotifications { get; set; } = true;
+        /// <summary>
+        /// Grow the canvas automatically when text or shapes go beyond the image edge.
+        /// </summary>
+        public bool AutoExpandCanvas { get; set; } = true;
+        /// <summary>
+        /// Fill color for the area added to the canvas (auto-expand and the canvas size tool). Transparent by default.
+        /// </summary>
+        public string CanvasFillColorHex { get; set; } = "#00000000";
+        [JsonIgnore]
+        public Color CanvasFillColor
+        {
+            get
+            {
+                try { return HexToColor(CanvasFillColorHex); }
+                catch { return Colors.Transparent; }
+            }
+            set => CanvasFillColorHex = ColorToHex(value);
+        }
         public List<ImageEditorToolbarItemOptions> ToolbarItems { get; set; } = new List<ImageEditorToolbarItemOptions>();
 
         // Shared
@@ -88,6 +108,8 @@ namespace ShareX.ImageEditor.Integration
         public double ShadowOffsetY { get; set; } = Annotation.DefaultShadowOffsetY;
         public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
         public ArrowStyle ArrowStyle { get; set; } = ArrowStyle.Classic;
+        public bool ArrowRoundedCorners { get; set; } = true;
+        public bool FreehandArrow { get; set; } = false;
         public CursorType CursorType { get; set; } = CursorType.Default;
 
         // Text

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GradientOverlayImageEffect : ImageEffectBase
     public override string Id => "gradient_overlay";
     public override string Name => "Gradient overlay";
     public override ImageEffectCategory Category => ImageEffectCategory.Drawings;
-    public override string IconKey => LucideIcons.paintbrush;
+    public override string IconKey => ImageEffectIcons.PaintBrush;
     public override string Description => "Blends a two-color gradient overlay on the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

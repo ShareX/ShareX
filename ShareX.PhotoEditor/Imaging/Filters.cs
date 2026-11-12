@@ -37,16 +37,19 @@ public sealed class FilterContext
 /// <summary>Describes a filter for the Filter menu and its generic parameter dialog.</summary>
 public sealed class FilterDefinition
 {
-    public FilterDefinition(string category, string name, IReadOnlyList<FilterParameter> parameters, Func<SKBitmap, IReadOnlyDictionary<string, float>, FilterContext, SKBitmap> apply)
+    public FilterDefinition(string category, string name, string displayName, IReadOnlyList<FilterParameter> parameters, Func<SKBitmap, IReadOnlyDictionary<string, float>, FilterContext, SKBitmap> apply)
     {
         Category = category;
         Name = name;
+        DisplayName = displayName;
         Parameters = parameters;
         Apply = apply;
     }
 
     public string Category { get; }
+    /// <summary>Stable identifier used in command ids and saved smart filters.</summary>
     public string Name { get; }
+    public string DisplayName { get; }
     public IReadOnlyList<FilterParameter> Parameters { get; }
     public Func<SKBitmap, IReadOnlyDictionary<string, float>, FilterContext, SKBitmap> Apply { get; }
 
@@ -60,62 +63,75 @@ public static class Filters
 {
     public static IReadOnlyList<FilterDefinition> All { get; } = CreateDefinitions();
 
+    public static string GetCategoryName(string category) => category switch
+    {
+        "Blur" => Strings.Filters_CategoryBlur,
+        "Distort" => Strings.Filters_CategoryDistort,
+        "Noise" => Strings.Filters_CategoryNoise,
+        "Pixelate" => Strings.Filters_CategoryPixelate,
+        "Render" => Strings.Filters_CategoryRender,
+        "Sharpen" => Strings.Filters_CategorySharpen,
+        "Stylize" => Strings.Filters_CategoryStylize,
+        "Other" => Strings.Filters_CategoryOther,
+        _ => category
+    };
+
     private static float P(IReadOnlyDictionary<string, float> v, string key) => v.TryGetValue(key, out float value) ? value : 0;
 
     private static List<FilterDefinition> CreateDefinitions() =>
     [
-        new("Blur", "Average", [], (b, v, c) => Average(b)),
-        new("Blur", "Blur", [], (b, v, c) => Convolve(b, [1, 2, 1, 2, 4, 2, 1, 2, 1], 3, 16)),
-        new("Blur", "Blur More", [], (b, v, c) => GaussianBlur(b, 2)),
-        new("Blur", "Box Blur", [new("radius", "Radius", 1, 200, 5)], (b, v, c) => BoxBlur(b, (int)P(v, "radius"))),
-        new("Blur", "Gaussian Blur", [new("radius", "Radius", 0.1f, 250, 4, 0.1f)], (b, v, c) => GaussianBlur(b, P(v, "radius"))),
-        new("Blur", "Motion Blur", [new("angle", "Angle", -90, 90, 0), new("distance", "Distance", 1, 500, 20)], (b, v, c) => MotionBlur(b, P(v, "angle"), (int)P(v, "distance"))),
-        new("Blur", "Radial Blur", [new("amount", "Amount", 1, 100, 10), new("method", "Method", 0, 1, 0, 1, ["Spin", "Zoom"])], (b, v, c) => RadialBlur(b, P(v, "amount"), P(v, "method") > 0)),
-        new("Blur", "Surface Blur", [new("radius", "Radius", 1, 30, 5), new("threshold", "Threshold", 2, 255, 15)], (b, v, c) => SurfaceBlur(b, (int)P(v, "radius"), P(v, "threshold"))),
+        new("Blur", "Average", Strings.Filters_Average, [], (b, v, c) => Average(b)),
+        new("Blur", "Blur", Strings.Filters_Blur, [], (b, v, c) => Convolve(b, [1, 2, 1, 2, 4, 2, 1, 2, 1], 3, 16)),
+        new("Blur", "Blur More", Strings.Filters_BlurMore, [], (b, v, c) => GaussianBlur(b, 2)),
+        new("Blur", "Box Blur", Strings.Filters_BoxBlur, [new("radius", Strings.Filters_ParamRadius, 1, 200, 5)], (b, v, c) => BoxBlur(b, (int)P(v, "radius"))),
+        new("Blur", "Gaussian Blur", Strings.Filters_GaussianBlur, [new("radius", Strings.Filters_ParamRadius, 0.1f, 250, 4, 0.1f)], (b, v, c) => GaussianBlur(b, P(v, "radius"))),
+        new("Blur", "Motion Blur", Strings.Filters_MotionBlur, [new("angle", Strings.Filters_ParamAngle, -90, 90, 0), new("distance", Strings.Filters_ParamDistance, 1, 500, 20)], (b, v, c) => MotionBlur(b, P(v, "angle"), (int)P(v, "distance"))),
+        new("Blur", "Radial Blur", Strings.Filters_RadialBlur, [new("amount", Strings.Filters_ParamAmount, 1, 100, 10), new("method", Strings.Filters_ParamMethod, 0, 1, 0, 1, [Strings.Filters_OptionSpin, Strings.Filters_OptionZoom])], (b, v, c) => RadialBlur(b, P(v, "amount"), P(v, "method") > 0)),
+        new("Blur", "Surface Blur", Strings.Filters_SurfaceBlur, [new("radius", Strings.Filters_ParamRadius, 1, 30, 5), new("threshold", Strings.Filters_ParamThreshold, 2, 255, 15)], (b, v, c) => SurfaceBlur(b, (int)P(v, "radius"), P(v, "threshold"))),
 
-        new("Distort", "Pinch", [new("amount", "Amount", -100, 100, 50)], (b, v, c) => Pinch(b, P(v, "amount") / 100f)),
-        new("Distort", "Polar Coordinates", [new("mode", "Mode", 0, 1, 0, 1, ["Rectangular to Polar", "Polar to Rectangular"])], (b, v, c) => Polar(b, P(v, "mode") < 1)),
-        new("Distort", "Ripple", [new("amount", "Amount", -999, 999, 100), new("size", "Size", 0, 2, 1, 1, ["Small", "Medium", "Large"])], (b, v, c) => Wave(b, P(v, "amount") / 100f * 4, 8 + P(v, "size") * 12, 8 + P(v, "size") * 12)),
-        new("Distort", "Spherize", [new("amount", "Amount", -100, 100, 100)], (b, v, c) => Spherize(b, P(v, "amount") / 100f)),
-        new("Distort", "Twirl", [new("angle", "Angle", -999, 999, 50)], (b, v, c) => Twirl(b, P(v, "angle"))),
-        new("Distort", "Wave", [new("amplitude", "Amplitude", 1, 200, 10), new("wavelength", "Wavelength", 2, 500, 60)], (b, v, c) => Wave(b, P(v, "amplitude"), P(v, "wavelength"), P(v, "wavelength") * 1.3f)),
+        new("Distort", "Pinch", Strings.Filters_Pinch, [new("amount", Strings.Filters_ParamAmount, -100, 100, 50)], (b, v, c) => Pinch(b, P(v, "amount") / 100f)),
+        new("Distort", "Polar Coordinates", Strings.Filters_PolarCoordinates, [new("mode", Strings.Filters_ParamMode, 0, 1, 0, 1, [Strings.Filters_OptionRectangularToPolar, Strings.Filters_OptionPolarToRectangular])], (b, v, c) => Polar(b, P(v, "mode") < 1)),
+        new("Distort", "Ripple", Strings.Filters_Ripple, [new("amount", Strings.Filters_ParamAmount, -999, 999, 100), new("size", Strings.Filters_ParamSize, 0, 2, 1, 1, [Strings.Filters_OptionSmall, Strings.Filters_OptionMedium, Strings.Filters_OptionLarge])], (b, v, c) => Wave(b, P(v, "amount") / 100f * 4, 8 + P(v, "size") * 12, 8 + P(v, "size") * 12)),
+        new("Distort", "Spherize", Strings.Filters_Spherize, [new("amount", Strings.Filters_ParamAmount, -100, 100, 100)], (b, v, c) => Spherize(b, P(v, "amount") / 100f)),
+        new("Distort", "Twirl", Strings.Filters_Twirl, [new("angle", Strings.Filters_ParamAngle, -999, 999, 50)], (b, v, c) => Twirl(b, P(v, "angle"))),
+        new("Distort", "Wave", Strings.Filters_Wave, [new("amplitude", Strings.Filters_ParamAmplitude, 1, 200, 10), new("wavelength", Strings.Filters_ParamWavelength, 2, 500, 60)], (b, v, c) => Wave(b, P(v, "amplitude"), P(v, "wavelength"), P(v, "wavelength") * 1.3f)),
 
-        new("Noise", "Add Noise", [new("amount", "Amount", 0.1f, 400, 12.5f, 0.1f), new("gaussian", "Distribution", 0, 1, 1, 1, ["Uniform", "Gaussian"]), new("mono", "Monochromatic", 0, 1, 0, 1, ["Off", "On"])],
+        new("Noise", "Add Noise", Strings.Filters_AddNoise, [new("amount", Strings.Filters_ParamAmount, 0.1f, 400, 12.5f, 0.1f), new("gaussian", Strings.Filters_ParamDistribution, 0, 1, 1, 1, [Strings.Filters_OptionUniform, Strings.Filters_OptionGaussian]), new("mono", Strings.Filters_ParamMonochromatic, 0, 1, 0, 1, [Strings.Filters_OptionOff, Strings.Filters_OptionOn])],
             (b, v, c) => AddNoise(b, P(v, "amount"), P(v, "gaussian") > 0, P(v, "mono") > 0, c.Seed)),
-        new("Noise", "Despeckle", [], (b, v, c) => Despeckle(b)),
-        new("Noise", "Dust & Scratches", [new("radius", "Radius", 1, 16, 1), new("threshold", "Threshold", 0, 255, 0)], (b, v, c) => DustAndScratches(b, (int)P(v, "radius"), P(v, "threshold"))),
-        new("Noise", "Median", [new("radius", "Radius", 1, 30, 2)], (b, v, c) => Median(b, (int)P(v, "radius"))),
-        new("Noise", "Reduce Noise", [new("strength", "Strength", 0, 10, 6), new("details", "Preserve Details", 0, 100, 60)], (b, v, c) => SurfaceBlur(b, (int)(1 + P(v, "strength") / 2), 40 - P(v, "details") * 0.35f + P(v, "strength") * 2)),
+        new("Noise", "Despeckle", Strings.Filters_Despeckle, [], (b, v, c) => Despeckle(b)),
+        new("Noise", "Dust & Scratches", Strings.Filters_DustScratches, [new("radius", Strings.Filters_ParamRadius, 1, 16, 1), new("threshold", Strings.Filters_ParamThreshold, 0, 255, 0)], (b, v, c) => DustAndScratches(b, (int)P(v, "radius"), P(v, "threshold"))),
+        new("Noise", "Median", Strings.Filters_Median, [new("radius", Strings.Filters_ParamRadius, 1, 30, 2)], (b, v, c) => Median(b, (int)P(v, "radius"))),
+        new("Noise", "Reduce Noise", Strings.Filters_ReduceNoise, [new("strength", Strings.Filters_ParamStrength, 0, 10, 6), new("details", Strings.Filters_ParamPreserveDetails, 0, 100, 60)], (b, v, c) => SurfaceBlur(b, (int)(1 + P(v, "strength") / 2), 40 - P(v, "details") * 0.35f + P(v, "strength") * 2)),
 
-        new("Pixelate", "Crystallize", [new("size", "Cell Size", 3, 300, 10)], (b, v, c) => Crystallize(b, (int)P(v, "size"), c.Seed)),
-        new("Pixelate", "Facet", [], (b, v, c) => Median(b, 2)),
-        new("Pixelate", "Mosaic", [new("size", "Cell Size", 2, 200, 8)], (b, v, c) => Mosaic(b, (int)P(v, "size"))),
-        new("Pixelate", "Pointillize", [new("size", "Cell Size", 3, 300, 8)], (b, v, c) => Pointillize(b, (int)P(v, "size"), c.Background, c.Seed)),
+        new("Pixelate", "Crystallize", Strings.Filters_Crystallize, [new("size", Strings.Filters_ParamCellSize, 3, 300, 10)], (b, v, c) => Crystallize(b, (int)P(v, "size"), c.Seed)),
+        new("Pixelate", "Facet", Strings.Filters_Facet, [], (b, v, c) => Median(b, 2)),
+        new("Pixelate", "Mosaic", Strings.Filters_Mosaic, [new("size", Strings.Filters_ParamCellSize, 2, 200, 8)], (b, v, c) => Mosaic(b, (int)P(v, "size"))),
+        new("Pixelate", "Pointillize", Strings.Filters_Pointillize, [new("size", Strings.Filters_ParamCellSize, 3, 300, 8)], (b, v, c) => Pointillize(b, (int)P(v, "size"), c.Background, c.Seed)),
 
-        new("Render", "Clouds", [], (b, v, c) => Clouds(b, c.Foreground, c.Background, c.Seed, false)),
-        new("Render", "Difference Clouds", [], (b, v, c) => Clouds(b, c.Foreground, c.Background, c.Seed, true)),
-        new("Render", "Fibers", [new("variance", "Variance", 1, 64, 16), new("strength", "Strength", 1, 64, 4)], (b, v, c) => Fibers(b, c.Foreground, c.Background, P(v, "variance"), P(v, "strength"), c.Seed)),
-        new("Render", "Lighting Vignette", [new("amount", "Amount", 0, 100, 50), new("size", "Size", 10, 100, 60)], (b, v, c) => Vignette(b, P(v, "amount") / 100f, P(v, "size") / 100f)),
+        new("Render", "Clouds", Strings.Filters_Clouds, [], (b, v, c) => Clouds(b, c.Foreground, c.Background, c.Seed, false)),
+        new("Render", "Difference Clouds", Strings.Filters_DifferenceClouds, [], (b, v, c) => Clouds(b, c.Foreground, c.Background, c.Seed, true)),
+        new("Render", "Fibers", Strings.Filters_Fibers, [new("variance", Strings.Filters_ParamVariance, 1, 64, 16), new("strength", Strings.Filters_ParamStrength, 1, 64, 4)], (b, v, c) => Fibers(b, c.Foreground, c.Background, P(v, "variance"), P(v, "strength"), c.Seed)),
+        new("Render", "Lighting Vignette", Strings.Filters_LightingVignette, [new("amount", Strings.Filters_ParamAmount, 0, 100, 50), new("size", Strings.Filters_ParamSize, 10, 100, 60)], (b, v, c) => Vignette(b, P(v, "amount") / 100f, P(v, "size") / 100f)),
 
-        new("Sharpen", "Sharpen", [], (b, v, c) => Convolve(b, [0, -1, 0, -1, 6, -1, 0, -1, 0], 3, 2)),
-        new("Sharpen", "Sharpen Edges", [], (b, v, c) => UnsharpMask(b, 1, 0.6f, 12)),
-        new("Sharpen", "Sharpen More", [], (b, v, c) => Convolve(b, [-1, -1, -1, -1, 12, -1, -1, -1, -1], 3, 4)),
-        new("Sharpen", "Smart Sharpen", [new("amount", "Amount", 1, 500, 200), new("radius", "Radius", 0.1f, 64, 1, 0.1f), new("noise", "Reduce Noise", 0, 100, 10)],
+        new("Sharpen", "Sharpen", Strings.Filters_Sharpen, [], (b, v, c) => Convolve(b, [0, -1, 0, -1, 6, -1, 0, -1, 0], 3, 2)),
+        new("Sharpen", "Sharpen Edges", Strings.Filters_SharpenEdges, [], (b, v, c) => UnsharpMask(b, 1, 0.6f, 12)),
+        new("Sharpen", "Sharpen More", Strings.Filters_SharpenMore, [], (b, v, c) => Convolve(b, [-1, -1, -1, -1, 12, -1, -1, -1, -1], 3, 4)),
+        new("Sharpen", "Smart Sharpen", Strings.Filters_SmartSharpen, [new("amount", Strings.Filters_ParamAmount, 1, 500, 200), new("radius", Strings.Filters_ParamRadius, 0.1f, 64, 1, 0.1f), new("noise", Strings.Filters_ParamReduceNoise, 0, 100, 10)],
             (b, v, c) => UnsharpMask(b, P(v, "radius"), P(v, "amount") / 100f, P(v, "noise") * 0.3f)),
-        new("Sharpen", "Unsharp Mask", [new("amount", "Amount", 1, 500, 100), new("radius", "Radius", 0.1f, 250, 1, 0.1f), new("threshold", "Threshold", 0, 255, 0)],
+        new("Sharpen", "Unsharp Mask", Strings.Filters_UnsharpMask, [new("amount", Strings.Filters_ParamAmount, 1, 500, 100), new("radius", Strings.Filters_ParamRadius, 0.1f, 250, 1, 0.1f), new("threshold", Strings.Filters_ParamThreshold, 0, 255, 0)],
             (b, v, c) => UnsharpMask(b, P(v, "radius"), P(v, "amount") / 100f, P(v, "threshold"))),
 
-        new("Stylize", "Diffuse", [], (b, v, c) => Diffuse(b, 2, c.Seed)),
-        new("Stylize", "Emboss", [new("angle", "Angle", -180, 180, 135), new("height", "Height", 1, 10, 3), new("amount", "Amount", 1, 500, 100)], (b, v, c) => Emboss(b, P(v, "angle"), P(v, "height"), P(v, "amount") / 100f)),
-        new("Stylize", "Find Edges", [], (b, v, c) => FindEdges(b)),
-        new("Stylize", "Oil Paint", [new("radius", "Radius", 1, 10, 4), new("levels", "Levels", 4, 64, 20)], (b, v, c) => OilPaint(b, (int)P(v, "radius"), (int)P(v, "levels"))),
-        new("Stylize", "Solarize", [], (b, v, c) => MapPixels(b, (ref float r, ref float g, ref float bb) => { r = r > 0.5f ? 1 - r : r; g = g > 0.5f ? 1 - g : g; bb = bb > 0.5f ? 1 - bb : bb; })),
-        new("Stylize", "Tiles", [new("count", "Number of Tiles", 1, 99, 10), new("offset", "Maximum Offset %", 1, 99, 10)], (b, v, c) => Tiles(b, (int)P(v, "count"), P(v, "offset") / 100f, c.Seed)),
+        new("Stylize", "Diffuse", Strings.Filters_Diffuse, [], (b, v, c) => Diffuse(b, 2, c.Seed)),
+        new("Stylize", "Emboss", Strings.Filters_Emboss, [new("angle", Strings.Filters_ParamAngle, -180, 180, 135), new("height", Strings.Filters_ParamHeight, 1, 10, 3), new("amount", Strings.Filters_ParamAmount, 1, 500, 100)], (b, v, c) => Emboss(b, P(v, "angle"), P(v, "height"), P(v, "amount") / 100f)),
+        new("Stylize", "Find Edges", Strings.Filters_FindEdges, [], (b, v, c) => FindEdges(b)),
+        new("Stylize", "Oil Paint", Strings.Filters_OilPaint, [new("radius", Strings.Filters_ParamRadius, 1, 10, 4), new("levels", Strings.Filters_ParamLevels, 4, 64, 20)], (b, v, c) => OilPaint(b, (int)P(v, "radius"), (int)P(v, "levels"))),
+        new("Stylize", "Solarize", Strings.Filters_Solarize, [], (b, v, c) => MapPixels(b, (ref float r, ref float g, ref float bb) => { r = r > 0.5f ? 1 - r : r; g = g > 0.5f ? 1 - g : g; bb = bb > 0.5f ? 1 - bb : bb; })),
+        new("Stylize", "Tiles", Strings.Filters_Tiles, [new("count", Strings.Filters_ParamNumberOfTiles, 1, 99, 10), new("offset", Strings.Filters_ParamMaximumOffsetPercent, 1, 99, 10)], (b, v, c) => Tiles(b, (int)P(v, "count"), P(v, "offset") / 100f, c.Seed)),
 
-        new("Other", "High Pass", [new("radius", "Radius", 0.1f, 250, 10, 0.1f)], (b, v, c) => HighPass(b, P(v, "radius"))),
-        new("Other", "Maximum", [new("radius", "Radius", 1, 100, 1)], (b, v, c) => Morphology(b, (int)P(v, "radius"), true)),
-        new("Other", "Minimum", [new("radius", "Radius", 1, 100, 1)], (b, v, c) => Morphology(b, (int)P(v, "radius"), false)),
-        new("Other", "Offset", [new("x", "Horizontal", -2000, 2000, 50), new("y", "Vertical", -2000, 2000, 50)], (b, v, c) => Offset(b, (int)P(v, "x"), (int)P(v, "y")))
+        new("Other", "High Pass", Strings.Filters_HighPass, [new("radius", Strings.Filters_ParamRadius, 0.1f, 250, 10, 0.1f)], (b, v, c) => HighPass(b, P(v, "radius"))),
+        new("Other", "Maximum", Strings.Filters_Maximum, [new("radius", Strings.Filters_ParamRadius, 1, 100, 1)], (b, v, c) => Morphology(b, (int)P(v, "radius"), true)),
+        new("Other", "Minimum", Strings.Filters_Minimum, [new("radius", Strings.Filters_ParamRadius, 1, 100, 1)], (b, v, c) => Morphology(b, (int)P(v, "radius"), false)),
+        new("Other", "Offset", Strings.Filters_Offset, [new("x", Strings.Filters_ParamHorizontal, -2000, 2000, 50), new("y", Strings.Filters_ParamVertical, -2000, 2000, 50)], (b, v, c) => Offset(b, (int)P(v, "x"), (int)P(v, "y")))
     ];
 
     public static SKBitmap Copy(SKBitmap source) => source.Copy();

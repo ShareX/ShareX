@@ -431,6 +431,18 @@ Cesta k souboru: {0}</value>
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Název okna</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Vzdálenost: {0:0.00} px | Úhel: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Vpravo: {2} | Dole: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Šířka: {0} px | Výška: {1} px | Plocha: {2} px | Obvod: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX – Pravítko</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Obsah schránky</value>
   </data>
@@ -990,7 +1002,7 @@ Cesta k souboru: {0}</value>
     <value>Nižší hodnoty zrychlují kódování. Vyšší hodnoty vytvářejí menší soubory. Všechny hodnoty zachovávají kvalitu obrazu.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Bezeztrátový:</value>
+    <value>Bezeztrátový</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Vyplnit</value>
@@ -1606,12 +1618,6 @@ Cesta k souboru: {0}</value>
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Cíl</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>Jazyk {0} není v tomto systému pro OCR dostupný.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optické rozpoznávání znaků je dostupné pouze ve Windows verze {0} nebo novější.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1639,6 +1645,9 @@ Cesta k souboru: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Po otevření zavřít</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Zkopírováno do schránky</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Kopírovat vše</value>
   </data>
@@ -1648,23 +1657,17 @@ Cesta k souboru: {0}</value>
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Upravit služby</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Jazyk</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Název</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>Nová</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>Nápověda k OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>Nebyl nalezen žádný text</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Otevřít službu...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Rozpoznávání</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Odebrat</value>
@@ -1674,9 +1677,6 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Výsledek</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Měřítko</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Vyberte službu</value>
@@ -1690,8 +1690,8 @@ Cesta k souboru: {0}</value>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Vybrat oblast...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Služby</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Oddělit odstavce</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optické rozpoznávání znaků</value>
@@ -2039,7 +2039,7 @@ Cesta k souboru: {0}</value>
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX – Pravítko</value>
+    <value>ShareX – Měření</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Začněte výběrem videa.</value>
@@ -2083,6 +2083,9 @@ Cesta k souboru: {0}</value>
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Převod se zastavuje...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Průměrný datový tok</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Procházet...</value>
   </data>
@@ -2101,6 +2104,9 @@ Cesta k souboru: {0}</value>
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>Název souboru</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>Velikost souboru</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Složka</value>
   </data>
@@ -2118,6 +2124,12 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Kvalita</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Rozlišení</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Výsledek</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX – Převodník videa</value>

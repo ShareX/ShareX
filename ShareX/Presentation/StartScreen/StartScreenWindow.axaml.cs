@@ -25,29 +25,67 @@
 
 #nullable enable
 
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.HelpersLib;
 using System;
+using System.IO;
 using System.Threading.Tasks;
+using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
+using DrawingBitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX;
 
 public partial class StartScreenWindow : Window
 {
     private readonly StartScreenViewModel _viewModel;
+    private readonly AvaloniaBitmap _logoBitmap;
 
     public StartScreenWindow()
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
 
+        using DrawingBitmap logo = ShareXResources.Logo;
+        using Stream logoStream = logo.GetStream();
+        logoStream.Position = 0;
+        _logoBitmap = new AvaloniaBitmap(logoStream);
+        LogoImage.Source = _logoBitmap;
+
         _viewModel = new StartScreenViewModel();
         DataContext = _viewModel;
 
-        Opened += (_, _) => Activate();
+        Opened += (_, _) =>
+        {
+            FitToWorkingArea();
+            Activate();
+        };
         ThemeManager.ThemeChanged += OnThemeChanged;
         Closed += OnClosed;
+    }
+
+    // The window sizes to its content and cannot be resized, so on a short screen (such as 1080p at 150%) cap it
+    // to the working area; the content then scrolls above the footer.
+    private void FitToWorkingArea()
+    {
+        Screen? screen = Screens.ScreenFromWindow(this) ?? Screens.Primary;
+
+        if (screen == null)
+        {
+            return;
+        }
+
+        double frameHeight = FrameSize is Size frame ? frame.Height - ClientSize.Height : 0;
+        double available = screen.WorkingArea.Height / screen.Scaling - frameHeight;
+
+        if (ClientSize.Height > available)
+        {
+            MaxHeight = available;
+            Position = new PixelPoint(Position.X, screen.WorkingArea.Y);
+        }
     }
 
     public Task ShowAsync()
@@ -66,8 +104,10 @@ public partial class StartScreenWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         ThemeManager.ThemeChanged -= OnThemeChanged;
+        _logoBitmap.Dispose();
         ApplicationState.Settings.ShowStartScreen = false;
+        // The start screen has its own icon pack choice, so the update prompt is not needed.
+        ApplicationState.Settings.ShowIconPackPrompt = false;
         SettingManager.SaveApplicationConfigAsync();
-        _viewModel.Dispose();
     }
 }

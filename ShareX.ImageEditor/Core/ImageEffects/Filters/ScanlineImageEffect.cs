@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class ScanlineImageEffect : ImageEffectBase
     public override string Id => "scanline";
     public override string Name => "Scanlines";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.scan_line;
+    public override string IconKey => AppIcons.ScanLine;
     public override string Description => "Adds retro CRT-style horizontal scanlines.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

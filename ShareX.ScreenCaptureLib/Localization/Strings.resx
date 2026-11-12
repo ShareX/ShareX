@@ -436,6 +436,18 @@
   <data name="Pause" xml:space="preserve">
     <value>Pause</value>
   </data>
+  <data name="RegionCaptureWindow_EllipseRegion" xml:space="preserve">
+    <value>Ellipse region</value>
+    <comment>Region capture toolbar tool that selects an ellipse or circle shaped region.</comment>
+  </data>
+  <data name="RegionCaptureWindow_FreehandRegion" xml:space="preserve">
+    <value>Freehand region</value>
+    <comment>Region capture toolbar tool that selects a region drawn freehand, like a lasso.</comment>
+  </data>
+  <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
+    <value>Drag to move the toolbar, double-click to reset its position</value>
+    <comment>Tooltip of the grip handle at the left end of the region capture toolbar.</comment>
+  </data>
   <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
     <value>Rectangle region (Tab)</value>
   </data>

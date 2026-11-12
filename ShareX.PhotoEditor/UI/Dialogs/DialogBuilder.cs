@@ -55,12 +55,12 @@ public static class DialogBuilder
     }
 
     /// <summary>Shows content with OK and Cancel buttons. Returns true when OK is pressed and validation passes.</summary>
-    public static async Task<bool> ShowAsync(Window owner, string title, Control content, double width = 420, string okText = "OK", Func<bool>? validate = null, IEnumerable<Control>? extraButtons = null)
+    public static async Task<bool> ShowAsync(Window owner, string title, Control content, double width = 420, string? okText = null, Func<bool>? validate = null, IEnumerable<Control>? extraButtons = null)
     {
         Window window = CreateWindow(title, width);
         bool result = false;
-        Button ok = new() { Classes = { "primary" }, Content = okText, IsDefault = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
-        Button cancel = new() { Classes = { "secondary" }, Content = "Cancel", IsCancel = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
+        Button ok = new() { Classes = { "primary" }, Content = okText ?? Strings.DialogBuilder_OK, IsDefault = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
+        Button cancel = new() { Classes = { "secondary" }, Content = Strings.DialogBuilder_Cancel, IsCancel = true, MinWidth = 80, HorizontalContentAlignment = HorizontalAlignment.Center };
         ok.Click += (_, _) =>
         {
             if (validate != null && !validate()) return;
@@ -172,9 +172,9 @@ public static class DialogBuilder
         return combo;
     }
 
-    public static async Task<string?> PromptAsync(Window owner, string title, string label, string initial)
+    public static async Task<string?> PromptAsync(Window owner, string title, string label, string initial, bool multiline = false)
     {
-        TextBox box = new() { Text = initial, AcceptsReturn = label.Contains("Author", StringComparison.Ordinal), MinHeight = label.Contains("Author", StringComparison.Ordinal) ? 100 : 0, TextWrapping = TextWrapping.Wrap };
+        TextBox box = new() { Text = initial, AcceptsReturn = multiline, MinHeight = multiline ? 100 : 0, TextWrapping = TextWrapping.Wrap };
         StackPanel panel = new() { Spacing = 8 };
         panel.Children.Add(new TextBlock { Text = label });
         panel.Children.Add(box);
@@ -190,7 +190,7 @@ public static class DialogBuilder
     public static async Task ShowMessageAsync(Window owner, string title, string text)
     {
         Window window = CreateWindow(title, 440);
-        Button ok = new() { Classes = { "primary" }, Content = "OK", IsDefault = true, IsCancel = true, MinWidth = 80, HorizontalAlignment = HorizontalAlignment.Right };
+        Button ok = new() { Classes = { "primary" }, Content = Strings.DialogBuilder_OK, IsDefault = true, IsCancel = true, MinWidth = 80, HorizontalAlignment = HorizontalAlignment.Right };
         ok.Click += (_, _) => window.Close();
         StackPanel panel = new() { Margin = new Thickness(16), Spacing = 12 };
         panel.Children.Add(new TextBlock { Text = text, TextWrapping = TextWrapping.Wrap });
@@ -199,14 +199,14 @@ public static class DialogBuilder
         await window.ShowDialog(owner);
     }
 
-    public static async Task<bool?> ConfirmAsync(Window owner, string title, string text, string yes = "Yes", string no = "No", bool showCancel = true)
+    public static async Task<bool?> ConfirmAsync(Window owner, string title, string text, string? yes = null, string? no = null, bool showCancel = true)
     {
         Window window = CreateWindow(title, 460);
         bool? result = null;
         StackPanel buttons = new() { Orientation = Orientation.Horizontal, Spacing = 8, HorizontalAlignment = HorizontalAlignment.Right };
-        Button yesButton = new() { Classes = { "primary" }, Content = yes, IsDefault = true, MinWidth = 80 };
-        Button noButton = new() { Classes = { "secondary" }, Content = no, MinWidth = 80 };
-        Button cancelButton = new() { Classes = { "secondary" }, Content = "Cancel", IsCancel = true, MinWidth = 80 };
+        Button yesButton = new() { Classes = { "primary" }, Content = yes ?? Strings.DialogBuilder_Yes, IsDefault = true, MinWidth = 80 };
+        Button noButton = new() { Classes = { "secondary" }, Content = no ?? Strings.DialogBuilder_No, MinWidth = 80 };
+        Button cancelButton = new() { Classes = { "secondary" }, Content = Strings.DialogBuilder_Cancel, IsCancel = true, MinWidth = 80 };
         yesButton.Click += (_, _) => { result = true; window.Close(); };
         noButton.Click += (_, _) => { result = false; window.Close(); };
         cancelButton.Click += (_, _) => window.Close();

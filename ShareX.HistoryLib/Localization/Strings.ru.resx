@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Нет элементов, соответствующих текущим фильтрам</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Имя процесса</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Переименовать</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Переименовать файл</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Сбросить столбцы</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Выберите папку для импорта</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>Успешно импортировано файлов: {0:N0}.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Тег</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>эти {0:N0} файлов</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Удалить из избранного</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Заголовок окна</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Расширенные</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>Готово</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Редактировать в фоторедакторе...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>Изменить элемент истории</value>

@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class HeatHazeRefractionImageEffect : ImageEffectBase
     public override string Id => "heat_haze_refraction";
     public override string Name => "Heat haze refraction";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.thermometer_sun;
+    public override string IconKey => ImageEffectIcons.ThermometerSun;
     public override string Description => "Simulates heat haze refraction with wavy distortion.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

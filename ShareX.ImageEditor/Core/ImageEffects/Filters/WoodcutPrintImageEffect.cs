@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class WoodcutPrintImageEffect : ImageEffectBase
     public override string Id => "woodcut_print";
     public override string Name => "Woodcut Print";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.axe;
+    public override string IconKey => ImageEffectIcons.Axe;
     public override string Description => "Simulates a woodcut or linocut print style.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

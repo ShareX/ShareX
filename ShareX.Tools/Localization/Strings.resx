@@ -430,6 +430,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>Window title</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>Distance: {0:0.00} px | Angle: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | Right: {2} | Bottom: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>Width: {0} px | Height: {1} px | Area: {2} px | Perimeter: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - Ruler</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>Clipboard content</value>
   </data>
@@ -987,7 +999,7 @@
     <value>Lower values encode faster. Higher values produce smaller files. All values preserve image quality.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>Lossless:</value>
+    <value>Lossless</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>Fill</value>
@@ -1601,12 +1613,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>Target</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>{0} language is not available in this system for OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>Optical character recognition is only available with Windows version {0} or newer.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1634,6 +1640,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Close after opening</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copied to clipboard</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copy all</value>
   </data>
@@ -1643,23 +1652,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>Edit services</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>Language</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>New</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>OCR help</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>No text found</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>Open service...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>Recognition</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>Remove</value>
@@ -1669,9 +1672,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>Result</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>Scale factor</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>Select a service</value>
@@ -1685,8 +1685,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Select region...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>Services</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separate paragraphs</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optical character recognition</value>
@@ -2034,7 +2034,7 @@
     <value>Tolerance: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - Ruler</value>
+    <value>ShareX - Measure</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>Choose a video to get started.</value>
@@ -2078,6 +2078,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>Stopping conversion...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>Average bitrate</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>Browse...</value>
   </data>
@@ -2096,6 +2099,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>File name</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>File size</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>Folder</value>
   </data>
@@ -2113,6 +2119,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>Quality</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>Resolution</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>Result</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - Video Converter</value>

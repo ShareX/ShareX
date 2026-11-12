@@ -862,6 +862,9 @@ namespace ShareX.HelpersLib.Localization {
         public static string HotkeyType_Ruler {
             get { return ResourceManager.GetString("HotkeyType_Ruler", resourceCulture); }
         }
+        public static string HotkeyType_ClassicRuler {
+            get { return ResourceManager.GetString("HotkeyType_ClassicRuler", resourceCulture); }
+        }
         public static string HotkeyType_ScreenColorPicker {
             get { return ResourceManager.GetString("HotkeyType_ScreenColorPicker", resourceCulture); }
         }
@@ -1352,5 +1355,18 @@ namespace ShareX.HelpersLib.Localization {
         }
 
         public static string HotkeyType_AnimatedGifTrimmer => ResourceManager.GetString("HotkeyType_AnimatedGifTrimmer", resourceCulture);
+        public static string AfterCaptureTasks_OpenInPhotoEditor => ResourceManager.GetString("AfterCaptureTasks_OpenInPhotoEditor", resourceCulture);
+        public static string HotkeyType_RectangleTransparent => ResourceManager.GetString("HotkeyType_RectangleTransparent", resourceCulture);
+        public static string TaskViewMode_ListView => ResourceManager.GetString("TaskViewMode_ListView", resourceCulture);
+        public static string TaskViewMode_ThumbnailView => ResourceManager.GetString("TaskViewMode_ThumbnailView", resourceCulture);
+        public static string ImagePreviewVisibility_Automatic => ResourceManager.GetString("ImagePreviewVisibility_Automatic", resourceCulture);
+        public static string ImagePreviewVisibility_Hide => ResourceManager.GetString("ImagePreviewVisibility_Hide", resourceCulture);
+        public static string ImagePreviewVisibility_Show => ResourceManager.GetString("ImagePreviewVisibility_Show", resourceCulture);
+        public static string RegionCaptureMagnifierScrollAction_Resize => ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Resize", resourceCulture);
+        public static string RegionCaptureMagnifierScrollAction_Zoom => ResourceManager.GetString("RegionCaptureMagnifierScrollAction_Zoom", resourceCulture);
+        public static string ImagePreviewLocation_Bottom => ResourceManager.GetString("ImagePreviewLocation_Bottom", resourceCulture);
+        public static string ImagePreviewLocation_Side => ResourceManager.GetString("ImagePreviewLocation_Side", resourceCulture);
+        public static string ToastWindowMonitor_ActiveMonitor => ResourceManager.GetString("ToastWindowMonitor_ActiveMonitor", resourceCulture);
+        public static string ToastWindowMonitor_PrimaryMonitor => ResourceManager.GetString("ToastWindowMonitor_PrimaryMonitor", resourceCulture);
     }
 }

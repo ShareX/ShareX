@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="ink" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".66"/><stop offset="1" stop-color="#fff" stop-opacity=".9"/></linearGradient>
+<linearGradient id="ah" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae5ff"/><stop offset="1" stop-color="#4aa6e6"/></linearGradient>
+</defs>
+<path d="M1.2 2H14.8V3H1.2zM1.2 5H14.8V6H1.2zM1.2 8H7V9H1.2zM1.2 11H6V12H1.2z" fill="url(#ink)"/>
+<path d="M11.50 8.80A2.7 2.7 0 1 1 8.80 11.50" fill="none" stroke="#0b4f9a" stroke-width="3"/>
+<path d="M11.50 8.80A2.7 2.7 0 1 1 8.80 11.50" fill="none" stroke="#3fa6ec" stroke-width="1.4"/>
+<polygon points="8.4,8.8 11.5,6.3 11.5,11.3" fill="url(#ah)" stroke="#0b4f9a" stroke-width=".9" stroke-linejoin="round"/>
+</svg>

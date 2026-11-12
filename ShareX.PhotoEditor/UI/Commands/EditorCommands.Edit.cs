@@ -35,51 +35,52 @@ public static partial class EditorCommands
     private static SKBitmap? _clipboard;
     private static SKPointI _clipboardOrigin;
     private static int _clipboardHash;
+    private static List<Layer>? _clipboardLayers;
 
     private static void RegisterEdit()
     {
-        R("edit.undo", "Undo", "Ctrl+Z", w => { if (!CancelPending(w)) { w.Document!.History.Undo(); w.AfterHistoryChange(); } }, w => w.Document?.History.CanUndo == true || w.Tools.Active.HasPendingOperation);
-        R("edit.redo", "Redo", "Ctrl+Shift+Z, Ctrl+Y", w => { w.Document!.History.Redo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanRedo == true);
-        R("edit.stepBackward", "Step Backward", "Ctrl+Alt+Z", w => { w.Document!.History.Undo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanUndo == true);
-        R("edit.stepForward", "Step Forward", "Ctrl+Shift+Alt+Z", w => { w.Document!.History.Redo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanRedo == true);
-        R("edit.fade", "Fade...", "Ctrl+Shift+F", w => _ = FadeAsync(w), w => w.Document?.History.Previous != null);
-        R("edit.cut", "Cut", "Ctrl+X", w => CopyCore(w, false, true), HasDoc);
-        R("edit.copy", "Copy", "Ctrl+C", w => CopyCore(w, false, false), HasDoc);
-        R("edit.copyMerged", "Copy Merged", "Ctrl+Shift+C", w => CopyCore(w, true, false), HasDoc);
-        R("edit.paste", "Paste", "Ctrl+V", w => Paste(w, false, false));
-        R("edit.pasteInPlace", "Paste in Place", "Ctrl+Shift+V", w => Paste(w, true, false), HasDoc);
-        R("edit.pasteInto", "Paste Into", "Ctrl+Shift+Alt+V", w => Paste(w, true, true), HasSelection);
-        R("edit.pasteNew", "Paste as New Document", null, w => NewFromClipboard(w));
-        R("edit.clear", "Clear", "Delete, Back", Clear, HasDoc);
-        R("edit.fill", "Fill...", "Shift+F5, Shift+Back", w => _ = FillAsync(w), HasDoc);
-        R("edit.fillForeground", "Fill with Foreground", "Alt+Back", w => FillWith(w, w.Foreground), HasDoc);
-        R("edit.fillBackground", "Fill with Background", "Ctrl+Back", w => FillWith(w, w.Background), HasDoc);
-        R("edit.stroke", "Stroke...", null, w => _ = StrokeAsync(w), HasSelection);
-        R("edit.contentAwareFill", "Content-Aware Fill", null, w => _ = ContentAwareFillAsync(w), HasSelection);
-        R("edit.freeTransform", "Free Transform", "Ctrl+T", w => w.Tools.Get<TransformTool>().Begin(TransformMode.Free), HasLayer);
-        R("edit.transform.again", "Again", "Ctrl+Shift+T", w => _lastTransform?.Invoke(w), HasLayer);
-        R("edit.transform.scale", "Scale", null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Scale, "Scale"), HasLayer);
-        R("edit.transform.rotate", "Rotate", null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Rotate, "Rotate"), HasLayer);
-        R("edit.transform.skew", "Skew", null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Skew, "Skew"), HasLayer);
-        R("edit.transform.distort", "Distort", null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Distort, "Distort"), HasLayer);
-        R("edit.transform.perspective", "Perspective", null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Perspective, "Perspective"), HasLayer);
-        R("edit.transform.rotate180", "Rotate 180°", null, w => QuickTransform(w, 180, false, false), HasLayer);
-        R("edit.transform.rotate90cw", "Rotate 90° Clockwise", null, w => QuickTransform(w, 90, false, false), HasLayer);
-        R("edit.transform.rotate90ccw", "Rotate 90° Counter Clockwise", null, w => QuickTransform(w, -90, false, false), HasLayer);
-        R("edit.transform.flipH", "Flip Horizontal", null, w => QuickTransform(w, 0, true, false), HasLayer);
-        R("edit.transform.flipV", "Flip Vertical", null, w => QuickTransform(w, 0, false, true), HasLayer);
-        R("edit.defineBrush", "Define Brush Preset...", null, w => _ = DefineBrushAsync(w), HasDoc);
-        R("edit.definePattern", "Define Pattern...", null, w => _ = DefinePatternAsync(w), HasDoc);
-        R("edit.defineShape", "Define Custom Shape...", null, w => _ = DefineShapeAsync(w), w => w.Document?.ActivePath != null || w.Document?.ActiveLayer is ShapeLayer);
-        R("edit.purge.history", "Purge Histories", null, w => { w.Document!.History.Purge(); w.RefreshPanels(); }, HasDoc);
-        R("edit.purge.clipboard", "Purge Clipboard", null, w => { _clipboard?.Dispose(); _clipboard = null; });
-        R("edit.preferences", "Preferences...", "Ctrl+K", w => _ = PreferencesDialog.ShowAsync(w));
-        R("edit.shortcuts", "Keyboard Shortcuts...", "Ctrl+Shift+Alt+K", w => _ = ShortcutsDialog.ShowAsync(w));
-        R("edit.toolbar", "Toolbar...", null, w => _ = ToolbarCustomizeDialog.ShowAsync(w));
-        R("color.swap", "Switch Foreground and Background Colors", "X", w => SwapColors(w));
-        R("color.reset", "Default Foreground and Background Colors", "D", w => ResetColors(w));
-        R("select.quickMask", "Edit in Quick Mask Mode", "Q", w => ToggleQuickMask(w), HasDoc, w => w.Document?.QuickMask == true);
-        R("view.screenMode", "Cycle Screen Mode", "F", w => w.CycleScreenMode());
+        R("edit.undo", Strings.EditorCommands_Undo, "Ctrl+Z", w => { if (!CancelPending(w)) { w.Document!.History.Undo(); w.AfterHistoryChange(); } }, w => w.Document?.History.CanUndo == true || w.Tools.Active.HasPendingOperation);
+        R("edit.redo", Strings.EditorCommands_Redo, "Ctrl+Shift+Z, Ctrl+Y", w => { w.Document!.History.Redo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanRedo == true);
+        R("edit.stepBackward", Strings.EditorCommands_StepBackward, "Ctrl+Alt+Z", w => { w.Document!.History.Undo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanUndo == true);
+        R("edit.stepForward", Strings.EditorCommands_StepForward, "Ctrl+Shift+Alt+Z", w => { w.Document!.History.Redo(); w.AfterHistoryChange(); }, w => w.Document?.History.CanRedo == true);
+        R("edit.fade", Strings.EditorCommands_FadeEllipsis, "Ctrl+Shift+F", w => _ = FadeAsync(w), w => w.Document?.History.Previous != null);
+        R("edit.cut", Strings.EditorCommands_Cut, "Ctrl+X", w => CopyCore(w, false, true), HasDoc);
+        R("edit.copy", Strings.EditorCommands_Copy, "Ctrl+C", w => CopyCore(w, false, false), HasDoc);
+        R("edit.copyMerged", Strings.EditorCommands_CopyMerged, "Ctrl+Shift+C", w => CopyCore(w, true, false), HasDoc);
+        R("edit.paste", Strings.EditorCommands_Paste, "Ctrl+V", w => Paste(w, false, false));
+        R("edit.pasteInPlace", Strings.EditorCommands_PasteInPlace, "Ctrl+Shift+V", w => Paste(w, true, false), HasDoc);
+        R("edit.pasteInto", Strings.EditorCommands_PasteInto, "Ctrl+Shift+Alt+V", w => Paste(w, true, true), HasSelection);
+        R("edit.pasteNew", Strings.EditorCommands_PasteAsNewDocument, null, w => NewFromClipboard(w));
+        R("edit.clear", Strings.EditorCommands_Clear, "Delete, Back", Clear, HasDoc);
+        R("edit.fill", Strings.EditorCommands_FillEllipsis, "Shift+F5, Shift+Back", w => _ = FillAsync(w), HasDoc);
+        R("edit.fillForeground", Strings.EditorCommands_FillWithForeground, "Alt+Back", w => FillWith(w, w.Foreground), HasDoc);
+        R("edit.fillBackground", Strings.EditorCommands_FillWithBackground, "Ctrl+Back", w => FillWith(w, w.Background), HasDoc);
+        R("edit.stroke", Strings.EditorCommands_StrokeEllipsis, null, w => _ = StrokeAsync(w), HasSelection);
+        R("edit.contentAwareFill", Strings.EditorCommands_ContentAwareFill, null, w => _ = ContentAwareFillAsync(w), HasSelection);
+        R("edit.freeTransform", Strings.EditorCommands_FreeTransform, "Ctrl+T", w => w.Tools.Get<TransformTool>().Begin(TransformMode.Free), HasLayer);
+        R("edit.transform.again", Strings.EditorCommands_Again, "Ctrl+Shift+T", w => _lastTransform?.Invoke(w), HasLayer);
+        R("edit.transform.scale", Strings.EditorCommands_Scale, null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Scale, Strings.EditorCommands_Scale), HasLayer);
+        R("edit.transform.rotate", Strings.EditorCommands_Rotate, null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Rotate, Strings.EditorCommands_Rotate), HasLayer);
+        R("edit.transform.skew", Strings.EditorCommands_Skew, null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Skew, Strings.EditorCommands_Skew), HasLayer);
+        R("edit.transform.distort", Strings.EditorCommands_Distort, null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Distort, Strings.EditorCommands_Distort), HasLayer);
+        R("edit.transform.perspective", Strings.EditorCommands_Perspective, null, w => w.Tools.Get<TransformTool>().Begin(TransformMode.Perspective, Strings.EditorCommands_Perspective), HasLayer);
+        R("edit.transform.rotate180", Strings.EditorCommands_Rotate180, null, w => QuickTransform(w, 180, false, false), HasLayer);
+        R("edit.transform.rotate90cw", Strings.EditorCommands_Rotate90Clockwise, null, w => QuickTransform(w, 90, false, false), HasLayer);
+        R("edit.transform.rotate90ccw", Strings.EditorCommands_Rotate90CounterClockwise, null, w => QuickTransform(w, -90, false, false), HasLayer);
+        R("edit.transform.flipH", Strings.EditorCommands_FlipHorizontal, null, w => QuickTransform(w, 0, true, false), HasLayer);
+        R("edit.transform.flipV", Strings.EditorCommands_FlipVertical, null, w => QuickTransform(w, 0, false, true), HasLayer);
+        R("edit.defineBrush", Strings.EditorCommands_DefineBrushPresetEllipsis, null, w => _ = DefineBrushAsync(w), HasDoc);
+        R("edit.definePattern", Strings.EditorCommands_DefinePatternEllipsis, null, w => _ = DefinePatternAsync(w), HasDoc);
+        R("edit.defineShape", Strings.EditorCommands_DefineCustomShapeEllipsis, null, w => _ = DefineShapeAsync(w), w => w.Document?.ActivePath != null || w.Document?.ActiveLayer is ShapeLayer);
+        R("edit.purge.history", Strings.EditorCommands_PurgeHistories, null, w => { w.Document!.History.Purge(); w.RefreshPanels(); }, HasDoc);
+        R("edit.purge.clipboard", Strings.EditorCommands_PurgeClipboard, null, w => { _clipboard?.Dispose(); _clipboard = null; _clipboardLayers = null; });
+        R("edit.preferences", Strings.EditorCommands_PreferencesEllipsis, "Ctrl+K", w => _ = PreferencesDialog.ShowAsync(w));
+        R("edit.shortcuts", Strings.EditorCommands_KeyboardShortcutsEllipsis, "Ctrl+Shift+Alt+K", w => _ = ShortcutsDialog.ShowAsync(w));
+        R("edit.toolbar", Strings.EditorCommands_ToolbarEllipsis, null, w => _ = ToolbarCustomizeDialog.ShowAsync(w));
+        R("color.swap", Strings.EditorCommands_SwitchColors, "X", w => SwapColors(w));
+        R("color.reset", Strings.EditorCommands_DefaultColors, "D", w => ResetColors(w));
+        R("select.quickMask", Strings.EditorCommands_EditInQuickMaskMode, "Q", w => ToggleQuickMask(w), HasDoc, w => w.Document?.QuickMask == true);
+        R("view.screenMode", Strings.EditorCommands_CycleScreenMode, "F", w => w.CycleScreenMode());
     }
 
     private static Action<PhotoEditorWindow>? _lastTransform;
@@ -106,13 +107,16 @@ public static partial class EditorCommands
         doc.QuickMask = !doc.QuickMask;
         if (!doc.QuickMask) doc.SetSelection(doc.Selection);
         doc.Invalidate();
-        W(host).Commit(doc.QuickMask ? "Enter Quick Mask" : "Exit Quick Mask");
+        W(host).Commit(doc.QuickMask ? Strings.EditorCommands_EnterQuickMask : Strings.EditorCommands_ExitQuickMask);
     }
 
-    /// <summary>Copies (or cuts) the selected pixels of the active layer, or of all visible layers when merged.</summary>
+    /// <summary>Copies (or cuts) the selected pixels of the active layer, or of all visible layers when merged.
+    /// With no selection on a text, shape or other non-pixel layer, the layers themselves are kept too so pasting them
+    /// gives editable layers instead of pixels.</summary>
     private static void CopyCore(PhotoEditorWindow w, bool merged, bool cut)
     {
         PhotoDocument doc = w.Document!;
+        List<Layer>? layers = merged || doc.Selection != null || doc.EditingMask || doc.ActiveLayer is null or RasterLayer ? null : CopyLayers(doc);
         SKRectI bounds = doc.SelectionBounds;
         SKBitmap copy;
         if (merged || doc.ActiveLayer is not RasterLayer)
@@ -135,6 +139,7 @@ public static partial class EditorCommands
         _clipboard?.Dispose();
         _clipboard = copy;
         _clipboardOrigin = new SKPointI(bounds.Left, bounds.Top);
+        _clipboardLayers = layers;
         try
         {
             ClipboardHelpers.CopyImage(copy);
@@ -147,6 +152,21 @@ public static partial class EditorCommands
         if (cut) Clear(w);
     }
 
+    /// <summary>Snapshots the selected layers, bottom to top, skipping layers inside a selected group.</summary>
+    private static List<Layer> CopyLayers(PhotoDocument doc)
+    {
+        List<Layer> selected = doc.SelectedLayers.ToList();
+        return doc.Root.Descendants()
+            .Where(l => selected.Contains(l) && !l.IsBackground && !Ancestors(l).Any(selected.Contains))
+            .Select(l => l.Duplicate())
+            .ToList();
+
+        static IEnumerable<Layer> Ancestors(Layer layer)
+        {
+            for (Layer? p = layer.Parent; p != null; p = p.Parent) yield return p;
+        }
+    }
+
     private static int ClipboardSignature()
     {
         using SKBitmap? image = TryGetClipboardImage();
@@ -157,11 +177,14 @@ public static partial class EditorCommands
     {
         SKBitmap? image = null;
         SKPointI? origin = null;
+        List<Layer>? layers = null;
         using SKBitmap? system = TryGetClipboardImage();
         if (_clipboard != null && (system == null || HashCode.Combine(system.Width, system.Height, system.GetPixel(system.Width / 2, system.Height / 2)) == _clipboardHash))
         {
             image = _clipboard.Copy();
             origin = _clipboardOrigin;
+            // Layers only when our copy is still on the system clipboard, not after something else (like text) replaced it.
+            if (system != null) layers = _clipboardLayers;
         }
         else if (system != null)
         {
@@ -169,20 +192,25 @@ public static partial class EditorCommands
         }
         if (image == null)
         {
-            w.ShowMessage("The clipboard does not contain an image.");
+            w.ShowMessage(Strings.EditorCommands_ClipboardHasNoImage);
             return;
         }
         using (image)
         {
             if (w.Document == null)
             {
-                OpenBitmap(w, image, "Clipboard");
+                OpenBitmap(w, image, Strings.EditorCommands_Clipboard);
                 return;
             }
             PhotoDocument doc = w.Document;
+            if (layers is { Count: > 0 } && !into)
+            {
+                PasteLayers(w, layers);
+                return;
+            }
             if (doc.ActiveLayer is FrameLayer && !inPlace)
             {
-                PlaceBitmap(w, image, "Pasted");
+                PlaceBitmap(w, image, Strings.EditorCommands_Pasted);
                 return;
             }
             SKPointI position;
@@ -192,12 +220,32 @@ public static partial class EditorCommands
                 SKRectI target = doc.Selection != null ? doc.SelectionBounds : doc.Bounds;
                 position = new SKPointI(target.MidX - image.Width / 2, target.MidY - image.Height / 2);
             }
-            RasterLayer layer = new($"Layer {doc.AllLayers.Count() + 1}", PixelSurface.FromBitmap(image), position);
+            RasterLayer layer = new(string.Format(Strings.EditorCommands_LayerNumber, doc.AllLayers.Count() + 1), PixelSurface.FromBitmap(image), position);
             if (into && doc.Selection != null) layer.Mask = doc.Selection.Clone();
             doc.AddLayer(layer);
             if (!into) doc.SetSelectionLive(null);
-            w.Commit(into ? "Paste Into" : "Paste");
+            w.Commit(into ? Strings.EditorCommands_PasteInto : Strings.EditorCommands_Paste);
         }
+    }
+
+    /// <summary>Adds copies of copied layers above the active layer, keeping their names and positions.</summary>
+    private static void PasteLayers(PhotoEditorWindow w, List<Layer> layers)
+    {
+        PhotoDocument doc = w.Document!;
+        List<int> pasted = [];
+        Layer? anchor = doc.ActiveLayer;
+        foreach (Layer layer in layers)
+        {
+            // An explicit anchor keeps pasted layers as siblings instead of nesting them in an empty group.
+            Layer copy = layer.Duplicate();
+            doc.AddLayer(copy, anchor);
+            pasted.Add(copy.Id);
+            anchor = copy;
+        }
+        doc.SelectedLayerIds.Clear();
+        foreach (int id in pasted) doc.SelectedLayerIds.Add(id);
+        doc.SetSelectionLive(null);
+        w.Commit(Strings.EditorCommands_Paste);
     }
 
     private static void Clear(PhotoEditorWindow w)
@@ -207,7 +255,7 @@ public static partial class EditorCommands
         {
             PixelSurface mask = doc.ActiveLayer.GetWritableMask(doc.Width, doc.Height);
             ClearMask(doc, mask);
-            w.Commit("Clear");
+            w.Commit(Strings.EditorCommands_Clear);
             return;
         }
         if (doc.ActiveLayer is not RasterLayer && doc.Selection == null)
@@ -215,7 +263,7 @@ public static partial class EditorCommands
             DeleteLayers(w);
             return;
         }
-        RasterLayer? layer = EditableRaster(w, "clear");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionClear);
         if (layer == null) return;
         if (layer.LockTransparency)
         {
@@ -226,7 +274,7 @@ public static partial class EditorCommands
         {
             LayerOps.EraseMasked(doc, layer, null, 1);
         }
-        w.Commit("Clear");
+        w.Commit(Strings.EditorCommands_Clear);
     }
 
     private static unsafe void ClearMask(PhotoDocument doc, PixelSurface mask)
@@ -242,11 +290,11 @@ public static partial class EditorCommands
 
     private static void FillWith(PhotoEditorWindow w, SKColor color)
     {
-        RasterLayer? layer = EditableRaster(w, "fill");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionFill);
         if (layer == null) return;
         uint c = ColorMath.FromColor(color);
         LayerOps.CompositeMasked(w.Document!, layer, (_, _) => c, null, 1, LayerBlendMode.Normal);
-        w.Commit("Fill");
+        w.Commit(Strings.EditorCommands_Fill);
     }
 
     private static async Task FillAsync(PhotoEditorWindow w)
@@ -259,7 +307,7 @@ public static partial class EditorCommands
             await ContentAwareFillAsync(w);
             return;
         }
-        RasterLayer? layer = EditableRaster(w, "fill");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionFill);
         if (layer == null) return;
         Func<int, int, uint> source;
         if (result.Pattern != null)
@@ -280,7 +328,7 @@ public static partial class EditorCommands
         layer.LockTransparency = savedLock || result.PreserveTransparency;
         LayerOps.CompositeMasked(doc, layer, source, null, result.Opacity, result.Mode);
         layer.LockTransparency = savedLock;
-        w.Commit("Fill");
+        w.Commit(Strings.EditorCommands_Fill);
     }
 
     private static async Task StrokeAsync(PhotoEditorWindow w)
@@ -292,39 +340,39 @@ public static partial class EditorCommands
         StrokePosition position = StrokePosition.Center;
         float opacity = 1;
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Width:", DialogBuilder.SliderNumber(1, 250, width, v => width = (float)v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_WidthColon, DialogBuilder.SliderNumber(1, 250, width, v => width = (float)v));
         Button colorButton = new() { Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(color) } };
         colorButton.Click += async (_, _) =>
         {
-            SKColor? c = await ColorPickerDialog.ShowAsync(w, color, "Stroke Color", w);
+            SKColor? c = await ColorPickerDialog.ShowAsync(w, color, Strings.EditorCommands_StrokeColor, w);
             if (c is SKColor value)
             {
                 color = value;
                 colorButton.Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(color) };
             }
         };
-        DialogBuilder.AddRow(form, "Color:", colorButton);
-        DialogBuilder.AddRow(form, "Location:", DialogBuilder.Combo([("Inside", StrokePosition.Inside), ("Center", StrokePosition.Center), ("Outside", StrokePosition.Outside)], position, v => position = v));
-        DialogBuilder.AddRow(form, "Opacity:", DialogBuilder.SliderNumber(1, 100, 100, v => opacity = (float)v / 100));
-        if (!await DialogBuilder.ShowAsync(w, "Stroke", form)) return;
-        RasterLayer? layer = EditableRaster(w, "stroke");
+        DialogBuilder.AddRow(form, Strings.EditorCommands_ColorColon, colorButton);
+        DialogBuilder.AddRow(form, Strings.EditorCommands_LocationColon, DialogBuilder.Combo([(Strings.EditorCommands_Inside, StrokePosition.Inside), (Strings.EditorCommands_Center, StrokePosition.Center), (Strings.EditorCommands_Outside, StrokePosition.Outside)], position, v => position = v));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(1, 100, 100, v => opacity = (float)v / 100));
+        if (!await DialogBuilder.ShowAsync(w, Strings.EditorCommands_Stroke, form)) return;
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionStroke);
         if (layer == null) return;
         LayerOps.StrokeSelection(doc, layer, width, color, position, opacity, LayerBlendMode.Normal);
-        w.Commit("Stroke");
+        w.Commit(Strings.EditorCommands_Stroke);
     }
 
     public static async Task ContentAwareFillAsync(PhotoEditorWindow w)
     {
         PhotoDocument? doc = w.Document;
         if (doc?.Selection == null) return;
-        RasterLayer? layer = EditableRaster(w, "fill");
+        RasterLayer? layer = EditableRaster(w, Strings.EditorCommands_ActionFill);
         if (layer == null) return;
         layer.EnsureCovers(doc.Bounds);
         PixelSurface surface = layer.GetWritableSurface();
         using PixelSurface hole = MaskOps.Reframe(doc.Selection, surface.Width, surface.Height, -layer.Offset.X, -layer.Offset.Y, 0);
         MaskOps.Threshold(hole, 1);
-        await w.RunBusyAsync("Content-Aware Fill...", progress => Task.Run(() => Inpainting.Fill(surface.Bitmap, hole, 3, null, progress)));
-        w.Commit("Content-Aware Fill");
+        await w.RunBusyAsync(Strings.EditorCommands_ContentAwareFillEllipsis, progress => Task.Run(() => Inpainting.Fill(surface.Bitmap, hole, 3, null, progress)));
+        w.Commit(Strings.EditorCommands_ContentAwareFill);
     }
 
     private static void QuickTransform(PhotoEditorWindow w, float angle, bool flipH, bool flipV)
@@ -336,7 +384,7 @@ public static partial class EditorCommands
             if (flipV) return SKMatrix.CreateScale(1, -1, c.X, c.Y);
             return SKMatrix.CreateRotationDegrees(angle, c.X, c.Y);
         };
-        string name = flipH ? "Flip Horizontal" : flipV ? "Flip Vertical" : $"Rotate {angle}°";
+        string name = flipH ? Strings.EditorCommands_FlipHorizontal : flipV ? Strings.EditorCommands_FlipVertical : string.Format(Strings.EditorCommands_RotateDegrees, angle);
         w.Tools.Get<TransformTool>().ApplyImmediate(matrix, name);
         _lastTransform = win => win.Tools.Get<TransformTool>().ApplyImmediate(matrix, name);
     }
@@ -349,7 +397,7 @@ public static partial class EditorCommands
         RasterLayer? before = previous.State.FindRasterLayer(current.Id);
         if (before == null)
         {
-            w.ShowMessage("The last operation cannot be faded.");
+            w.ShowMessage(Strings.EditorCommands_CannotFade);
             return;
         }
         float opacity = 1;
@@ -358,9 +406,9 @@ public static partial class EditorCommands
         after.Erase(SKColors.Transparent);
         using (SKCanvas canvas = new(after)) canvas.DrawBitmap(current.Surface.Bitmap, current.Offset.X, current.Offset.Y);
         Grid form = DialogBuilder.Form();
-        DialogBuilder.AddRow(form, "Opacity:", DialogBuilder.SliderNumber(0, 100, 100, v => opacity = (float)v / 100));
-        DialogBuilder.AddRow(form, "Mode:", DialogBuilder.Combo(BlendModes.LayerModes.Select(m => (BlendModes.GetName(m), m)), mode, v => mode = v));
-        if (!await DialogBuilder.ShowAsync(w, "Fade " + doc.History.Current?.Name, form)) return;
+        DialogBuilder.AddRow(form, Strings.EditorCommands_OpacityColon, DialogBuilder.SliderNumber(0, 100, 100, v => opacity = (float)v / 100));
+        DialogBuilder.AddRow(form, Strings.EditorCommands_ModeColon, DialogBuilder.Combo(BlendModes.LayerModes.Select(m => (BlendModes.GetName(m), m)), mode, v => mode = v));
+        if (!await DialogBuilder.ShowAsync(w, string.Format(Strings.EditorCommands_FadeName, doc.History.Current?.Name), form)) return;
         // Rebuild the layer from the previous pixels and blend the result of the last operation back on top.
         PixelSurface restored = before.Surface.Clone();
         current.Surface = restored;
@@ -370,7 +418,7 @@ public static partial class EditorCommands
         doc.SetSelectionLive(null);
         LayerOps.CompositeMasked(doc, current, (x, y) => ImageOps.GetPixel(after, x, y), null, opacity, mode);
         doc.SetSelectionLive(selection);
-        w.Commit("Fade");
+        w.Commit(Strings.EditorCommands_Fade);
     }
 
     private static async Task DefineBrushAsync(PhotoEditorWindow w)
@@ -378,7 +426,7 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         using SKBitmap flat = Compositor.Flatten(doc);
         SKRectI bounds = doc.SelectionBounds;
-        string? name = await DialogBuilder.PromptAsync(w, "Brush Name", "Name:", $"Sampled Brush {w.BrushPresets.Count + 1}");
+        string? name = await DialogBuilder.PromptAsync(w, Strings.EditorCommands_BrushName, Strings.EditorCommands_NameColon, string.Format(Strings.EditorCommands_SampledBrushNumber, w.BrushPresets.Count + 1));
         if (string.IsNullOrWhiteSpace(name)) return;
         SKBitmap tip = ImageOps.Crop(flat, bounds);
         w.BrushPresets.Add(new BrushPreset { Name = name, Shape = BrushTipShape.Sampled, SampledTip = tip, Size = Math.Max(bounds.Width, bounds.Height), Hardness = 1, Spacing = 0.25f });
@@ -390,10 +438,10 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         if (doc.Selection == null && (doc.Width > 1024 || doc.Height > 1024))
         {
-            w.ShowMessage("Make a rectangular selection of the pattern tile first.");
+            w.ShowMessage(Strings.EditorCommands_SelectPatternTileFirst);
             return;
         }
-        string? name = await DialogBuilder.PromptAsync(w, "Pattern Name", "Name:", $"Pattern {w.Patterns.Count + 1}");
+        string? name = await DialogBuilder.PromptAsync(w, Strings.EditorCommands_PatternName, Strings.EditorCommands_NameColon, string.Format(Strings.EditorCommands_PatternNumber, w.Patterns.Count + 1));
         if (string.IsNullOrWhiteSpace(name)) return;
         using SKBitmap flat = Compositor.Flatten(doc);
         PatternDefinition pattern = new(name, ImageOps.Crop(flat, doc.SelectionBounds));
@@ -407,7 +455,7 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         VectorPath? path = doc.ActiveLayer is ShapeLayer shape ? shape.Path : doc.ActivePath?.Path;
         if (path == null || path.IsEmpty) return;
-        string? name = await DialogBuilder.PromptAsync(w, "Shape Name", "Name:", $"Shape {CustomShape.Defaults.Count + 1}");
+        string? name = await DialogBuilder.PromptAsync(w, Strings.EditorCommands_ShapeName, Strings.EditorCommands_NameColon, string.Format(Strings.EditorCommands_ShapeNumber, CustomShape.Defaults.Count + 1));
         if (string.IsNullOrWhiteSpace(name)) return;
         using SKPath sk = path.ToSKPath();
         SKRect b = sk.Bounds;

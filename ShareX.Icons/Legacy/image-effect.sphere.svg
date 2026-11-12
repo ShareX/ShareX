@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <radialGradient id="ball" cx=".42" cy=".38" r=".62" fx=".35" fy=".3"><stop offset="0" stop-color="#ffffff"/><stop offset="0.35" stop-color="#dff1fd"/><stop offset="0.75" stop-color="#8cc4ec"/><stop offset="1" stop-color="#4a8fcf"/></radialGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a9ad6"/><stop offset="1" stop-color="#1f5a96"/></linearGradient>
+    <linearGradient id="caus" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0"/><stop offset="1" stop-color="#ffffff" stop-opacity=".85"/></linearGradient>
+  </defs>
+  <ellipse cx="8" cy="15" rx="4.5" ry=".9" fill="#2a3a4a" fill-opacity=".25"/>
+  <circle cx="8" cy="7.6" r="6.9" fill="url(#ball)" stroke="url(#edge)"/>
+  <path d="M2.6 9.4Q8 13.2 13.4 9.4 12.4 13.6 8 13.8 3.6 13.6 2.6 9.4Z" fill="url(#caus)"/>
+  <ellipse cx="5.6" cy="4.6" rx="2.3" ry="1.3" transform="rotate(-35 5.6 4.6)" fill="#ffffff" fill-opacity=".95"/>
+  <circle cx="11.3" cy="5.2" r=".6" fill="#ffffff" fill-opacity=".8"/>
+</svg>

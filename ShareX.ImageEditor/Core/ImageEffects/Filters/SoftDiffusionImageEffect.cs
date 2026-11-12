@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class SoftDiffusionImageEffect : ImageEffectBase
     public override string Id => "soft_diffusion";
     public override string Name => "Soft diffusion";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.circle_fading_plus;
+    public override string IconKey => ImageEffectIcons.SoftGlow;
     public override string Description => "Applies a soft diffusion glow with bloom and warmth.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

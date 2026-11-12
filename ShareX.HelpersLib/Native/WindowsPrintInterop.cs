@@ -25,7 +25,6 @@
 
 using SkiaSharp;
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
@@ -58,7 +57,9 @@ internal static class WindowsPrintInterop
             dc = args.Graphics.GetHdc();
             int result = StretchDIBits(dc, rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height,
                 0, 0, image.Width, image.Height, IntPtr.Add(pinned.AddrOfPinnedObject(), 54), ref header, 0, 0x00CC0020);
-            if (result == -1) throw new Win32Exception();
+            // StretchDIBits returns the number of scan lines drawn: 0 is a failure, and GDI_ERROR (-1) applies only to JPEG and PNG
+            // sources. It does not set the last error, so there is no Windows error code to report.
+            if (result <= 0) throw new InvalidOperationException("The image could not be drawn on the printer page (StretchDIBits failed).");
         }
         finally
         {

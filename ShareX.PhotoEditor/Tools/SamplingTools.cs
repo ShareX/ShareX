@@ -42,9 +42,9 @@ public sealed class EyedropperTool : ToolBase
 
     public override ToolId Id => ToolId.Eyedropper;
 
-    public override string Name => "Eyedropper Tool";
+    public override string Name => Strings.SamplingTools_EyedropperTool;
 
-    public override string Hint => "Click to sample the foreground color. Alt-click samples the background color.";
+    public override string Hint => Strings.SamplingTools_EyedropperHint;
 
     public override ToolCursor Cursor => ToolCursor.Eyedropper;
 
@@ -110,10 +110,10 @@ public sealed class EyedropperTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Sample Size:", [("Point Sample", 1), ("3 by 3 Average", 3), ("5 by 5 Average", 5), ("11 by 11 Average", 11), ("31 by 31 Average", 31), ("51 by 51 Average", 51), ("101 by 101 Average", 101)],
+        options.Combo(Strings.Tools_SampleSizeColon, [(Strings.Tools_PointSample, 1), (string.Format(Strings.Tools_SampleAverage, 3), 3), (string.Format(Strings.Tools_SampleAverage, 5), 5), (string.Format(Strings.Tools_SampleAverage, 11), 11), (string.Format(Strings.Tools_SampleAverage, 31), 31), (string.Format(Strings.Tools_SampleAverage, 51), 51), (string.Format(Strings.Tools_SampleAverage, 101), 101)],
             () => SampleSize, v => SampleSize = v, 140);
-        options.Combo("Sample:", [("Current Layer", false), ("All Layers", true)], () => AllLayers, v => AllLayers = v, 130);
-        options.Check("Show Sampling Ring", () => ShowRing, v => ShowRing = v);
+        options.Combo(Strings.SamplingTools_SampleColon, [(Strings.SamplingTools_CurrentLayer, false), (Strings.EditorCommands_AllLayers, true)], () => AllLayers, v => AllLayers = v, 130);
+        options.Check(Strings.SamplingTools_ShowSamplingRing, () => ShowRing, v => ShowRing = v);
     }
 
     /// <summary>Simple arc used for the sampling ring.</summary>
@@ -145,9 +145,9 @@ public sealed class ColorSamplerTool : ToolBase
 
     public override ToolId Id => ToolId.ColorSampler;
 
-    public override string Name => "Color Sampler Tool";
+    public override string Name => Strings.SamplingTools_ColorSamplerTool;
 
-    public override string Hint => "Click to place up to 10 color samplers (shown in the Info panel). Drag to move, Alt-click to delete.";
+    public override string Hint => Strings.SamplingTools_ColorSamplerHint;
 
     public int SampleSize { get; set; } = 1;
 
@@ -161,7 +161,7 @@ public sealed class ColorSamplerTool : ToolBase
         if (hit != null && input.Alt)
         {
             Doc.Samplers.Remove(hit);
-            PushHistory("Delete Color Sampler");
+            PushHistory(Strings.SamplingTools_DeleteColorSampler);
             Host.InvalidateOverlay();
             return;
         }
@@ -172,11 +172,11 @@ public sealed class ColorSamplerTool : ToolBase
         }
         if (Doc.Samplers.Count >= 10)
         {
-            Host.ShowMessage("A maximum of 10 color samplers is allowed.");
+            Host.ShowMessage(Strings.SamplingTools_MaxSamplers);
             return;
         }
         Doc.Samplers.Add(new ColorSamplerPoint { Position = new SKPoint(MathF.Floor(input.Doc.X) + 0.5f, MathF.Floor(input.Doc.Y) + 0.5f) });
-        PushHistory("Color Sampler");
+        PushHistory(Strings.SamplingTools_ColorSampler);
         Host.InvalidateOverlay();
     }
 
@@ -192,17 +192,17 @@ public sealed class ColorSamplerTool : ToolBase
     {
         if (_dragging == null) return;
         _dragging = null;
-        PushHistory("Move Color Sampler");
+        PushHistory(Strings.SamplingTools_MoveColorSampler);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Sample Size:", [("Point Sample", 1), ("3 by 3 Average", 3), ("5 by 5 Average", 5)], () => SampleSize, v => SampleSize = v, 130);
-        options.Button("Clear All", () =>
+        options.Combo(Strings.Tools_SampleSizeColon, [(Strings.Tools_PointSample, 1), (string.Format(Strings.Tools_SampleAverage, 3), 3), (string.Format(Strings.Tools_SampleAverage, 5), 5)], () => SampleSize, v => SampleSize = v, 130);
+        options.Button(Strings.AnnotationTools_ClearAll, () =>
         {
             if (Doc == null || Doc.Samplers.Count == 0) return;
             Doc.Samplers.Clear();
-            PushHistory("Clear Color Samplers");
+            PushHistory(Strings.SamplingTools_ClearColorSamplers);
             Host.InvalidateOverlay();
         });
     }

@@ -38,7 +38,7 @@ public sealed record GradientStop(float Position, SKColor Color);
 
 public sealed class GradientDefinition
 {
-    public string Name { get; set; } = "Custom";
+    public string Name { get; set; } = Strings.GradientEditorDialog_Custom;
 
     public List<GradientStop> Stops { get; set; } = [];
 
@@ -68,6 +68,21 @@ public sealed class GradientDefinition
 
     public const string ForegroundToBackground = "Foreground to Background";
     public const string ForegroundToTransparent = "Foreground to Transparent";
+
+    /// <summary>Built-in presets keep their English name, which identifies them in saved settings; this is the name to show.</summary>
+    public string DisplayName => Name switch
+    {
+        ForegroundToBackground => Strings.Resources_ForegroundToBackground,
+        ForegroundToTransparent => Strings.Resources_ForegroundToTransparent,
+        "Black, White" => Strings.Resources_BlackWhite,
+        "Spectrum" => Strings.Resources_Spectrum,
+        "Sunset" => Strings.Resources_Sunset,
+        "Ocean" => Strings.Resources_Ocean,
+        "Copper" => Strings.Resources_Copper,
+        "Chrome" => Strings.Resources_Chrome,
+        "Transparent Stripes" => Strings.Resources_TransparentStripes,
+        _ => Name
+    };
 
     /// <summary>True for presets that always follow the current foreground and background colors.</summary>
     public bool IsDynamic => Name is ForegroundToBackground or ForegroundToTransparent;
@@ -152,18 +167,18 @@ public sealed class GradientDefinition
             case GradientType.Radial:
                 return SKShader.CreateRadialGradient(start, Math.Max(0.5f, length), colors, positions, SKShaderTileMode.Clamp);
             case GradientType.Angle:
-            {
-                float angle = MathF.Atan2(end.Y - start.Y, end.X - start.X) * 180 / MathF.PI;
-                return SKShader.CreateSweepGradient(start, colors, positions, SKShaderTileMode.Clamp, 0, 360,
-                    SKMatrix.CreateRotationDegrees(angle, start.X, start.Y));
-            }
+                {
+                    float angle = MathF.Atan2(end.Y - start.Y, end.X - start.X) * 180 / MathF.PI;
+                    return SKShader.CreateSweepGradient(start, colors, positions, SKShaderTileMode.Clamp, 0, 360,
+                        SKMatrix.CreateRotationDegrees(angle, start.X, start.Y));
+                }
             case GradientType.Reflected:
-            {
-                SKPoint mirrored = start - (end - start);
-                List<SKColor> c = colors.Reverse().Concat(colors.Skip(1)).ToList();
-                List<float> p = positions.Reverse().Select(x => (1 - x) / 2).Concat(positions.Skip(1).Select(x => 0.5f + x / 2)).ToList();
-                return SKShader.CreateLinearGradient(mirrored, end, c.ToArray(), p.ToArray(), SKShaderTileMode.Clamp);
-            }
+                {
+                    SKPoint mirrored = start - (end - start);
+                    List<SKColor> c = colors.Reverse().Concat(colors.Skip(1)).ToList();
+                    List<float> p = positions.Reverse().Select(x => (1 - x) / 2).Concat(positions.Skip(1).Select(x => 0.5f + x / 2)).ToList();
+                    return SKShader.CreateLinearGradient(mirrored, end, c.ToArray(), p.ToArray(), SKShaderTileMode.Clamp);
+                }
             default:
                 return SKShader.CreateLinearGradient(start, end, colors, positions, SKShaderTileMode.Clamp);
         }
@@ -197,14 +212,14 @@ public sealed class PatternDefinition
     {
         List<PatternDefinition> list = [];
 
-        list.Add(Create("Checkerboard", 16, (canvas, size) =>
+        list.Add(Create(Strings.Resources_Checkerboard, 16, (canvas, size) =>
         {
             canvas.Clear(SKColors.White);
             using SKPaint p = new() { Color = new SKColor(0xCC, 0xCC, 0xCC) };
             canvas.DrawRect(0, 0, size / 2, size / 2, p);
             canvas.DrawRect(size / 2, size / 2, size / 2, size / 2, p);
         }));
-        list.Add(Create("Diagonal Lines", 12, (canvas, size) =>
+        list.Add(Create(Strings.Resources_DiagonalLines, 12, (canvas, size) =>
         {
             canvas.Clear(SKColors.White);
             using SKPaint p = new() { Color = SKColors.Black, StrokeWidth = 2, IsAntialias = true };
@@ -212,20 +227,20 @@ public sealed class PatternDefinition
             canvas.DrawLine(-size / 2f, size / 2f, size / 2f, -size / 2f, p);
             canvas.DrawLine(size / 2f, size * 1.5f, size * 1.5f, size / 2f, p);
         }));
-        list.Add(Create("Dots", 14, (canvas, size) =>
+        list.Add(Create(Strings.Resources_Dots, 14, (canvas, size) =>
         {
             canvas.Clear(SKColors.White);
             using SKPaint p = new() { Color = SKColors.Black, IsAntialias = true };
             canvas.DrawCircle(size / 2f, size / 2f, size / 5f, p);
         }));
-        list.Add(Create("Grid", 20, (canvas, size) =>
+        list.Add(Create(Strings.EditorCommands_Grid, 20, (canvas, size) =>
         {
             canvas.Clear(SKColors.White);
             using SKPaint p = new() { Color = new SKColor(0x80, 0x80, 0x80), StrokeWidth = 1 };
             canvas.DrawLine(0, 0.5f, size, 0.5f, p);
             canvas.DrawLine(0.5f, 0, 0.5f, size, p);
         }));
-        list.Add(Create("Bricks", 32, (canvas, size) =>
+        list.Add(Create(Strings.Resources_Bricks, 32, (canvas, size) =>
         {
             canvas.Clear(new SKColor(0xB5, 0x4A, 0x32));
             using SKPaint p = new() { Color = new SKColor(0xD8, 0xD0, 0xC0), StrokeWidth = 2 };
@@ -234,7 +249,7 @@ public sealed class PatternDefinition
             canvas.DrawLine(size / 2f, 0, size / 2f, size / 2f, p);
             canvas.DrawLine(1, size / 2f, 1, size, p);
         }));
-        list.Add(Create("Noise", 64, (canvas, size) =>
+        list.Add(Create(Strings.Filters_CategoryNoise, 64, (canvas, size) =>
         {
             Random random = new(7);
             using SKPaint p = new();
@@ -248,7 +263,7 @@ public sealed class PatternDefinition
                 }
             }
         }));
-        list.Add(Create("Wood Grain", 64, (canvas, size) =>
+        list.Add(Create(Strings.Resources_WoodGrain, 64, (canvas, size) =>
         {
             using SKPaint p = new();
             for (int y = 0; y < size; y++)
@@ -261,7 +276,7 @@ public sealed class PatternDefinition
                 }
             }
         }));
-        list.Add(Create("Hexagons", 28, (canvas, size) =>
+        list.Add(Create(Strings.Resources_Hexagons, 28, (canvas, size) =>
         {
             canvas.Clear(new SKColor(0xF0, 0xF0, 0xF0));
             using SKPaint p = new() { Color = new SKColor(0x40, 0x40, 0x40), Style = SKPaintStyle.Stroke, StrokeWidth = 1.5f, IsAntialias = true };
@@ -297,7 +312,7 @@ public enum BrushTipShape
 /// <summary>A brush preset describing tip shape and dynamics.</summary>
 public sealed class BrushPreset
 {
-    public string Name { get; set; } = "Soft Round";
+    public string Name { get; set; } = Strings.Resources_SoftRound;
 
     public float Size { get; set; } = 30;
 
@@ -332,15 +347,15 @@ public sealed class BrushPreset
 
     public static List<BrushPreset> CreateDefaults() =>
     [
-        new() { Name = "Soft Round", Size = 30, Hardness = 0 },
-        new() { Name = "Hard Round", Size = 30, Hardness = 1 },
-        new() { Name = "Soft Round Pressure", Size = 45, Hardness = 0, PressureSize = true },
-        new() { Name = "Hard Round Pressure", Size = 19, Hardness = 1, PressureSize = true },
-        new() { Name = "Airbrush Soft", Size = 100, Hardness = 0, Spacing = 0.05f },
-        new() { Name = "Calligraphic Flat", Size = 25, Hardness = 1, Roundness = 0.25f, Angle = 45 },
-        new() { Name = "Square Hard", Size = 20, Hardness = 1, Shape = BrushTipShape.Square },
-        new() { Name = "Spatter", Size = 40, Hardness = 0.6f, Spacing = 0.5f, SizeJitter = 0.8f, Scatter = 1.2f },
-        new() { Name = "Chalk", Size = 36, Hardness = 0.8f, Spacing = 0.15f, SizeJitter = 0.3f, Scatter = 0.15f, Roundness = 0.7f },
-        new() { Name = "Hard Pixel", Size = 1, Hardness = 1, Shape = BrushTipShape.Square, Spacing = 0.05f }
+        new() { Name = Strings.Resources_SoftRound, Size = 30, Hardness = 0 },
+        new() { Name = Strings.Resources_HardRound, Size = 30, Hardness = 1 },
+        new() { Name = Strings.Resources_SoftRoundPressure, Size = 45, Hardness = 0, PressureSize = true },
+        new() { Name = Strings.Resources_HardRoundPressure, Size = 19, Hardness = 1, PressureSize = true },
+        new() { Name = Strings.Resources_AirbrushSoft, Size = 100, Hardness = 0, Spacing = 0.05f },
+        new() { Name = Strings.Resources_CalligraphicFlat, Size = 25, Hardness = 1, Roundness = 0.25f, Angle = 45 },
+        new() { Name = Strings.Resources_SquareHard, Size = 20, Hardness = 1, Shape = BrushTipShape.Square },
+        new() { Name = Strings.Resources_Spatter, Size = 40, Hardness = 0.6f, Spacing = 0.5f, SizeJitter = 0.8f, Scatter = 1.2f },
+        new() { Name = Strings.Resources_Chalk, Size = 36, Hardness = 0.8f, Spacing = 0.15f, SizeJitter = 0.3f, Scatter = 0.15f, Roundness = 0.7f },
+        new() { Name = Strings.Resources_HardPixel, Size = 1, Hardness = 1, Shape = BrushTipShape.Square, Spacing = 0.05f }
     ];
 }

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="fo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555" stop-opacity="0.4"/><stop offset="1" stop-color="#101010" stop-opacity="0.52"/></linearGradient>
+    <linearGradient id="fb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfcfc"/><stop offset="0.86" stop-color="#e2e2e2"/><stop offset="1" stop-color="#e7e7e7"/></linearGradient>
+    <linearGradient id="ft1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#dcdcdc"/><stop offset="1" stop-color="#cbcbd7"/></linearGradient>
+    <linearGradient id="ft2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#bbbbbb"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+  </defs>
+  <rect x="0" y="1" width="16" height="13" rx="1" fill="url(#fo)"/>
+  <rect x="1" y="2" width="14" height="1" fill="url(#ft1)"/>
+  <rect x="1" y="3" width="14" height="1" fill="url(#ft2)"/>
+  <rect x="1" y="4" width="14" height="9" fill="url(#fb)"/>
+  <rect x="1" y="4" width="14" height="1" fill="#fff"/>
+  <path d="M1.5 5V13M14.5 5V13" stroke="#fff" stroke-opacity=".3"/>
+  <polyline points="2.2,5.9 3.5,7.2 5.6,5.1" fill="none" stroke="#2ea51d" stroke-width="1.2"/>
+  <polyline points="2.2,9.9 3.5,11.2 5.6,9.1" fill="none" stroke="#2ea51d" stroke-width="1.2"/>
+  <rect x="6" y="6" width="8" height="1" fill="#c6c6c6"/>
+  <rect x="6" y="10" width="8" height="1" fill="#bdbdbd"/>
+</svg>

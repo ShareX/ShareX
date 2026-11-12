@@ -36,69 +36,70 @@ public static partial class EditorCommands
 
     private static void RegisterLayer()
     {
-        R("layer.new", "New Layer...", "Ctrl+Shift+N", w => NewLayer(w), HasDoc);
-        R("layer.newViaCopy", "Layer via Copy", "Ctrl+J", w => LayerVia(w, false), HasLayer);
-        R("layer.newViaCut", "Layer via Cut", "Ctrl+Shift+J", w => LayerVia(w, true), HasSelection);
-        R("layer.newGroup", "New Group", null, w => NewGroup(w), HasDoc);
-        R("layer.group", "Group Layers", "Ctrl+G", GroupLayers, HasLayer);
-        R("layer.ungroup", "Ungroup Layers", "Ctrl+Shift+G", Ungroup, w => w.Document?.ActiveLayer is GroupLayer);
-        R("layer.duplicate", "Duplicate Layer", null, DuplicateLayer, HasLayer);
-        R("layer.delete", "Delete Layer", null, w => DeleteLayers(w), HasLayer);
-        R("layer.rename", "Rename Layer...", null, w => _ = RenameLayerAsync(w), HasLayer);
-        R("layer.style", "Layer Style...", null, w => _ = LayerStyle(w), HasLayer);
-        R("layer.style.copy", "Copy Layer Style", null, w => _copiedStyle = w.Document!.ActiveLayer!.Style?.Clone(), HasLayer);
-        R("layer.style.paste", "Paste Layer Style", null, w => { foreach (Layer l in w.Document!.SelectedLayers) l.Style = _copiedStyle?.Clone(); w.Commit("Paste Layer Style"); }, w => _copiedStyle != null && HasLayer(w));
-        R("layer.style.clear", "Clear Layer Style", null, w => { w.Document!.ActiveLayer!.Style = null; w.Commit("Clear Layer Style"); }, HasLayer);
-        R("layer.rasterizeStyle", "Rasterize Layer Style", null, w => Rasterize(w, true), HasLayer);
-        R("layer.fill.solid", "Solid Color...", null, w => _ = NewFillLayerAsync(w, FillKind.SolidColor), HasDoc);
-        R("layer.fill.gradient", "Gradient...", null, w => _ = NewFillLayerAsync(w, FillKind.Gradient), HasDoc);
-        R("layer.fill.pattern", "Pattern...", null, w => _ = NewFillLayerAsync(w, FillKind.Pattern), HasDoc);
-        foreach (AdjustmentKind kind in AdjustmentLayerGroups.SelectMany(group => group))        {
+        R("layer.new", Strings.EditorCommands_NewLayerEllipsis, "Ctrl+Shift+N", w => NewLayer(w), HasDoc);
+        R("layer.newViaCopy", Strings.EditorCommands_LayerViaCopy, "Ctrl+J", w => LayerVia(w, false), HasLayer);
+        R("layer.newViaCut", Strings.EditorCommands_LayerViaCut, "Ctrl+Shift+J", w => LayerVia(w, true), HasSelection);
+        R("layer.newGroup", Strings.EditorCommands_NewGroup, null, w => NewGroup(w), HasDoc);
+        R("layer.group", Strings.EditorCommands_GroupLayers, "Ctrl+G", GroupLayers, HasLayer);
+        R("layer.ungroup", Strings.EditorCommands_UngroupLayers, "Ctrl+Shift+G", Ungroup, w => w.Document?.ActiveLayer is GroupLayer);
+        R("layer.duplicate", Strings.EditorCommands_DuplicateLayer, null, DuplicateLayer, HasLayer);
+        R("layer.delete", Strings.EditorCommands_DeleteLayer, null, w => DeleteLayers(w), HasLayer);
+        R("layer.rename", Strings.EditorCommands_RenameLayerEllipsis, null, w => _ = RenameLayerAsync(w), HasLayer);
+        R("layer.style", Strings.EditorCommands_LayerStyleEllipsis, null, w => _ = LayerStyle(w), HasLayer);
+        R("layer.style.copy", Strings.EditorCommands_CopyLayerStyle, null, w => _copiedStyle = w.Document!.ActiveLayer!.Style?.Clone(), HasLayer);
+        R("layer.style.paste", Strings.EditorCommands_PasteLayerStyle, null, w => { foreach (Layer l in w.Document!.SelectedLayers) l.Style = _copiedStyle?.Clone(); w.Commit(Strings.EditorCommands_PasteLayerStyle); }, w => _copiedStyle != null && HasLayer(w));
+        R("layer.style.clear", Strings.EditorCommands_ClearLayerStyle, null, w => { w.Document!.ActiveLayer!.Style = null; w.Commit(Strings.EditorCommands_ClearLayerStyle); }, HasLayer);
+        R("layer.rasterizeStyle", Strings.EditorCommands_RasterizeLayerStyle, null, w => Rasterize(w, true), HasLayer);
+        R("layer.fill.solid", Strings.EditorCommands_SolidColorEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.SolidColor), HasDoc);
+        R("layer.fill.gradient", Strings.EditorCommands_GradientEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.Gradient), HasDoc);
+        R("layer.fill.pattern", Strings.EditorCommands_PatternEllipsis, null, w => _ = NewFillLayerAsync(w, FillKind.Pattern), HasDoc);
+        foreach (AdjustmentKind kind in AdjustmentLayerGroups.SelectMany(group => group))
+        {
             AdjustmentKind captured = kind;
             R($"layer.adjust.{kind}", AdjustmentSettings.GetName(kind) + "...", null, w => NewAdjustmentLayer(w, captured), HasDoc);
         }
-        R("layer.mask.revealAll", "Reveal All", null, w => AddMask(w, MaskMode.RevealAll), HasLayer);
-        R("layer.mask.hideAll", "Hide All", null, w => AddMask(w, MaskMode.HideAll), HasLayer);
-        R("layer.mask.revealSelection", "Reveal Selection", null, w => AddMask(w, MaskMode.RevealSelection), w => HasSelection(w) && HasLayer(w));
-        R("layer.mask.hideSelection", "Hide Selection", null, w => AddMask(w, MaskMode.HideSelection), w => HasSelection(w) && HasLayer(w));
-        R("layer.mask.fromTransparency", "From Transparency", null, w => AddMask(w, MaskMode.FromTransparency), w => w.Document?.ActiveLayer is RasterLayer);
-        R("layer.mask.delete", "Delete", null, DeleteMask, w => w.Document?.ActiveLayer?.Mask != null);
-        R("layer.mask.apply", "Apply", null, ApplyMask, w => w.Document?.ActiveLayer is RasterLayer { Mask: not null });
-        R("layer.mask.toggle", "Disable", null, w => { Layer l = w.Document!.ActiveLayer!; l.MaskEnabled = !l.MaskEnabled; w.Commit(l.MaskEnabled ? "Enable Layer Mask" : "Disable Layer Mask"); }, w => w.Document?.ActiveLayer?.Mask != null, w => w.Document?.ActiveLayer?.MaskEnabled == false);
-        R("layer.mask.edit", "Edit Mask", @"Ctrl+OemBackslash", w => { w.Document!.EditingMask = !w.Document.EditingMask; w.RefreshPanels(); }, w => w.Document?.ActiveLayer?.Mask != null, w => w.Document?.EditingMask == true);
-        R("layer.clip", "Create Clipping Mask", "Ctrl+Alt+G", w => { Layer l = w.Document!.ActiveLayer!; l.IsClipped = !l.IsClipped; w.Commit(l.IsClipped ? "Create Clipping Mask" : "Release Clipping Mask"); }, HasLayer, w => w.Document?.ActiveLayer?.IsClipped == true);
-        R("layer.smart.convert", "Convert to Smart Object", null, ConvertToSmartObject, HasLayer);
-        R("layer.rasterize", "Rasterize", null, w => Rasterize(w, false), w => w.Document?.ActiveLayer is TextLayer or ShapeLayer or SmartObjectLayer or FillLayer or FrameLayer);
-        R("layer.arrange.front", "Bring to Front", "Ctrl+Shift+OemCloseBrackets", w => Arrange(w, int.MaxValue), HasLayer);
-        R("layer.arrange.forward", "Bring Forward", "Ctrl+OemCloseBrackets", w => Arrange(w, 1), HasLayer);
-        R("layer.arrange.backward", "Send Backward", "Ctrl+OemOpenBrackets", w => Arrange(w, -1), HasLayer);
-        R("layer.arrange.back", "Send to Back", "Ctrl+Shift+OemOpenBrackets", w => Arrange(w, int.MinValue), HasLayer);
-        R("layer.align.left", "Left Edges", null, w => AlignLayers(w, LayerAlignment.Left), HasLayer);
-        R("layer.align.hcenter", "Horizontal Centers", null, w => AlignLayers(w, LayerAlignment.HorizontalCenter), HasLayer);
-        R("layer.align.right", "Right Edges", null, w => AlignLayers(w, LayerAlignment.Right), HasLayer);
-        R("layer.align.top", "Top Edges", null, w => AlignLayers(w, LayerAlignment.Top), HasLayer);
-        R("layer.align.vcenter", "Vertical Centers", null, w => AlignLayers(w, LayerAlignment.VerticalCenter), HasLayer);
-        R("layer.align.bottom", "Bottom Edges", null, w => AlignLayers(w, LayerAlignment.Bottom), HasLayer);
-        R("layer.mergeDown", "Merge Down", "Ctrl+E", MergeDown, HasLayer);
-        R("layer.mergeVisible", "Merge Visible", "Ctrl+Shift+E", MergeVisible, HasDoc);
-        R("layer.stampVisible", "Stamp Visible", "Ctrl+Shift+Alt+E", StampVisible, HasDoc);
-        R("layer.flatten", "Flatten Image", null, Flatten, HasDoc);
-        R("layer.lock", "Lock All", "Ctrl+OemQuestion", w => { Layer l = w.Document!.ActiveLayer!; l.LockAll = !l.LockAll; w.Commit("Lock Layer"); }, HasLayer, w => w.Document?.ActiveLayer?.LockAll == true);
-        R("layer.link", "Link/Unlink Layers", null, ToggleLinkLayers, HasLayer);
-        R("layer.hide", "Hide Layers", "Ctrl+OemComma", w => { foreach (Layer l in w.Document!.SelectedLayers) l.Visible = !l.Visible; w.Commit("Hide Layers"); }, HasLayer);
-        R("layer.fromBackground", "Layer from Background", null, w => { if (w.Document!.ActiveLayer is RasterLayer r) { LayerOps.UnlockBackground(r); w.Commit("Layer from Background"); } }, w => w.Document?.ActiveLayer is RasterLayer { IsBackground: true });
-        R("layer.toBackground", "Background from Layer", null, BackgroundFromLayer, w => w.Document?.ActiveLayer is RasterLayer { IsBackground: false });
-        R("layer.selectNext", "Select Next Layer", "Alt+OemCloseBrackets", w => SelectAdjacent(w, -1), HasLayer);
-        R("layer.selectPrevious", "Select Previous Layer", "Alt+OemOpenBrackets", w => SelectAdjacent(w, 1), HasLayer);
+        R("layer.mask.revealAll", Strings.EditorCommands_RevealAll, null, w => AddMask(w, MaskMode.RevealAll), HasLayer);
+        R("layer.mask.hideAll", Strings.EditorCommands_HideAll, null, w => AddMask(w, MaskMode.HideAll), HasLayer);
+        R("layer.mask.revealSelection", Strings.EditorCommands_RevealSelection, null, w => AddMask(w, MaskMode.RevealSelection), w => HasSelection(w) && HasLayer(w));
+        R("layer.mask.hideSelection", Strings.EditorCommands_HideSelection, null, w => AddMask(w, MaskMode.HideSelection), w => HasSelection(w) && HasLayer(w));
+        R("layer.mask.fromTransparency", Strings.EditorCommands_FromTransparency, null, w => AddMask(w, MaskMode.FromTransparency), w => w.Document?.ActiveLayer is RasterLayer);
+        R("layer.mask.delete", Strings.EditorCommands_Delete, null, DeleteMask, w => w.Document?.ActiveLayer?.Mask != null);
+        R("layer.mask.apply", Strings.EditorCommands_Apply, null, ApplyMask, w => w.Document?.ActiveLayer is RasterLayer { Mask: not null });
+        R("layer.mask.toggle", Strings.EditorCommands_Disable, null, w => { Layer l = w.Document!.ActiveLayer!; l.MaskEnabled = !l.MaskEnabled; w.Commit(l.MaskEnabled ? Strings.EditorCommands_EnableLayerMask : Strings.EditorCommands_DisableLayerMask); }, w => w.Document?.ActiveLayer?.Mask != null, w => w.Document?.ActiveLayer?.MaskEnabled == false);
+        R("layer.mask.edit", Strings.EditorCommands_EditMask, @"Ctrl+OemBackslash", w => { w.Document!.EditingMask = !w.Document.EditingMask; w.RefreshPanels(); }, w => w.Document?.ActiveLayer?.Mask != null, w => w.Document?.EditingMask == true);
+        R("layer.clip", Strings.EditorCommands_CreateClippingMask, "Ctrl+Alt+G", w => { Layer l = w.Document!.ActiveLayer!; l.IsClipped = !l.IsClipped; w.Commit(l.IsClipped ? Strings.EditorCommands_CreateClippingMask : Strings.EditorCommands_ReleaseClippingMask); }, HasLayer, w => w.Document?.ActiveLayer?.IsClipped == true);
+        R("layer.smart.convert", Strings.EditorCommands_ConvertToSmartObject, null, ConvertToSmartObject, HasLayer);
+        R("layer.rasterize", Strings.EditorCommands_Rasterize, null, w => Rasterize(w, false), w => w.Document?.ActiveLayer is TextLayer or ShapeLayer or SmartObjectLayer or FillLayer or FrameLayer);
+        R("layer.arrange.front", Strings.EditorCommands_BringToFront, "Ctrl+Shift+OemCloseBrackets", w => Arrange(w, int.MaxValue), HasLayer);
+        R("layer.arrange.forward", Strings.EditorCommands_BringForward, "Ctrl+OemCloseBrackets", w => Arrange(w, 1), HasLayer);
+        R("layer.arrange.backward", Strings.EditorCommands_SendBackward, "Ctrl+OemOpenBrackets", w => Arrange(w, -1), HasLayer);
+        R("layer.arrange.back", Strings.EditorCommands_SendToBack, "Ctrl+Shift+OemOpenBrackets", w => Arrange(w, int.MinValue), HasLayer);
+        R("layer.align.left", Strings.EditorCommands_LeftEdges, null, w => AlignLayers(w, LayerAlignment.Left), HasLayer);
+        R("layer.align.hcenter", Strings.EditorCommands_HorizontalCenters, null, w => AlignLayers(w, LayerAlignment.HorizontalCenter), HasLayer);
+        R("layer.align.right", Strings.EditorCommands_RightEdges, null, w => AlignLayers(w, LayerAlignment.Right), HasLayer);
+        R("layer.align.top", Strings.EditorCommands_TopEdges, null, w => AlignLayers(w, LayerAlignment.Top), HasLayer);
+        R("layer.align.vcenter", Strings.EditorCommands_VerticalCenters, null, w => AlignLayers(w, LayerAlignment.VerticalCenter), HasLayer);
+        R("layer.align.bottom", Strings.EditorCommands_BottomEdges, null, w => AlignLayers(w, LayerAlignment.Bottom), HasLayer);
+        R("layer.mergeDown", Strings.EditorCommands_MergeDown, "Ctrl+E", MergeDown, HasLayer);
+        R("layer.mergeVisible", Strings.EditorCommands_MergeVisible, "Ctrl+Shift+E", MergeVisible, HasDoc);
+        R("layer.stampVisible", Strings.EditorCommands_StampVisible, "Ctrl+Shift+Alt+E", StampVisible, HasDoc);
+        R("layer.flatten", Strings.EditorCommands_FlattenImage, null, Flatten, HasDoc);
+        R("layer.lock", Strings.EditorCommands_LockAll, "Ctrl+OemQuestion", w => { Layer l = w.Document!.ActiveLayer!; l.LockAll = !l.LockAll; w.Commit(Strings.EditorCommands_LockLayer); }, HasLayer, w => w.Document?.ActiveLayer?.LockAll == true);
+        R("layer.link", Strings.EditorCommands_LinkUnlinkLayers, null, ToggleLinkLayers, HasLayer);
+        R("layer.hide", Strings.EditorCommands_HideLayers, "Ctrl+OemComma", w => { foreach (Layer l in w.Document!.SelectedLayers) l.Visible = !l.Visible; w.Commit(Strings.EditorCommands_HideLayers); }, HasLayer);
+        R("layer.fromBackground", Strings.EditorCommands_LayerFromBackground, null, w => { if (w.Document!.ActiveLayer is RasterLayer r) { LayerOps.UnlockBackground(r); w.Commit(Strings.EditorCommands_LayerFromBackground); } }, w => w.Document?.ActiveLayer is RasterLayer { IsBackground: true });
+        R("layer.toBackground", Strings.EditorCommands_BackgroundFromLayer, null, BackgroundFromLayer, w => w.Document?.ActiveLayer is RasterLayer { IsBackground: false });
+        R("layer.selectNext", Strings.EditorCommands_SelectNextLayer, "Alt+OemCloseBrackets", w => SelectAdjacent(w, -1), HasLayer);
+        R("layer.selectPrevious", Strings.EditorCommands_SelectPreviousLayer, "Alt+OemOpenBrackets", w => SelectAdjacent(w, 1), HasLayer);
     }
 
     public static void NewLayer(IEditorHost host)
     {
         PhotoEditorWindow w = W(host);
         PhotoDocument doc = w.Document!;
-        RasterLayer layer = new($"Layer {doc.AllLayers.Count(l => l is RasterLayer) + 1}", PixelSurface.CreateColor(doc.Width, doc.Height));
+        RasterLayer layer = new(string.Format(Strings.EditorCommands_LayerNumber, doc.AllLayers.Count(l => l is RasterLayer) + 1), PixelSurface.CreateColor(doc.Width, doc.Height));
         doc.AddLayer(layer);
-        w.Commit("New Layer");
+        w.Commit(Strings.EditorCommands_NewLayer);
     }
 
     /// <summary>Links the selected layers so they move together, or unlinks them when they are already linked.</summary>
@@ -111,28 +112,28 @@ public static partial class EditorCommands
         bool sameLink = layers.Count > 0 && layers.All(l => l.LinkId != 0) && layers.Select(l => l.LinkId).Distinct().Count() == 1;
         if (layers.Count < 2 && !anyLinked)
         {
-            w.ShowMessage("Select two or more layers (Ctrl-click in the Layers panel) to link them.");
+            w.ShowMessage(Strings.EditorCommands_SelectLayersToLink);
             return;
         }
         if (sameLink || layers.Count < 2)
         {
             HashSet<int> unlink = layers.Where(l => l.LinkId != 0).Select(l => l.LinkId).ToHashSet();
             foreach (Layer layer in doc.AllLayers.Where(l => unlink.Contains(l.LinkId))) layer.LinkId = 0;
-            w.Commit("Unlink Layers");
+            w.Commit(Strings.EditorCommands_UnlinkLayers);
             return;
         }
         HashSet<int> merged = layers.Where(l => l.LinkId != 0).Select(l => l.LinkId).ToHashSet();
         int id = doc.AllLayers.Select(l => l.LinkId).DefaultIfEmpty(0).Max() + 1;
         foreach (Layer layer in doc.AllLayers.Where(l => merged.Contains(l.LinkId)).Concat(layers)) layer.LinkId = id;
-        w.Commit("Link Layers");
+        w.Commit(Strings.EditorCommands_LinkLayers);
     }
 
     public static void NewGroup(IEditorHost host)
     {
         PhotoEditorWindow w = W(host);
         PhotoDocument doc = w.Document!;
-        doc.AddLayer(new GroupLayer($"Group {doc.AllLayers.Count(l => l is GroupLayer) + 1}"));
-        w.Commit("New Group");
+        doc.AddLayer(new GroupLayer(string.Format(Strings.EditorCommands_GroupNumber, doc.AllLayers.Count(l => l is GroupLayer) + 1)));
+        w.Commit(Strings.EditorCommands_NewGroup);
     }
 
     private static void LayerVia(PhotoEditorWindow w, bool cut)
@@ -152,7 +153,7 @@ public static partial class EditorCommands
             if (!raster.CanEditPixels)
             {
                 pixels.Dispose();
-                w.ShowMessage("Could not cut because the layer is locked.");
+                w.ShowMessage(Strings.EditorCommands_CannotCutLockedLayer);
                 return;
             }
             if (raster.LockTransparency)
@@ -165,10 +166,10 @@ public static partial class EditorCommands
                 LayerOps.EraseMasked(doc, raster, null, 1);
             }
         }
-        RasterLayer layer = new($"Layer {doc.AllLayers.Count(l => l is RasterLayer) + 1}", new PixelSurface(pixels), new SKPointI(bounds.Left, bounds.Top));
+        RasterLayer layer = new(string.Format(Strings.EditorCommands_LayerNumber, doc.AllLayers.Count(l => l is RasterLayer) + 1), new PixelSurface(pixels), new SKPointI(bounds.Left, bounds.Top));
         doc.AddLayer(layer, raster);
         doc.SetSelectionLive(null);
-        w.Commit(cut ? "Layer via Cut" : "Layer via Copy");
+        w.Commit(cut ? Strings.EditorCommands_LayerViaCut : Strings.EditorCommands_LayerViaCopy);
     }
 
     private static void GroupLayers(PhotoEditorWindow w)
@@ -178,13 +179,13 @@ public static partial class EditorCommands
         if (layers.Count == 0) return;
         GroupLayer parent = layers[0].Parent ?? doc.Root;
         int index = layers.Where(l => l.Parent == parent).Max(l => parent.Children.IndexOf(l));
-        GroupLayer group = new($"Group {doc.AllLayers.Count(l => l is GroupLayer) + 1}");
+        GroupLayer group = new(string.Format(Strings.EditorCommands_GroupNumber, doc.AllLayers.Count(l => l is GroupLayer) + 1));
         parent.Add(group, index + 1);
         foreach (Layer layer in layers.OrderBy(l => doc.AllLayers.ToList().IndexOf(l))) group.Add(layer);
         doc.ActiveLayer = group;
         doc.SelectedLayerIds.Clear();
         doc.SelectedLayerIds.Add(group.Id);
-        w.Commit("Group Layers");
+        w.Commit(Strings.EditorCommands_GroupLayers);
     }
 
     private static void Ungroup(PhotoEditorWindow w)
@@ -196,7 +197,7 @@ public static partial class EditorCommands
         foreach (Layer child in group.Children.ToList()) parent.Add(child, index++);
         parent.Remove(group);
         doc.ActiveLayer = parent.Children.ElementAtOrDefault(Math.Max(0, index - 1));
-        w.Commit("Ungroup Layers");
+        w.Commit(Strings.EditorCommands_UngroupLayers);
     }
 
     private static void DuplicateLayer(PhotoEditorWindow w)
@@ -205,13 +206,13 @@ public static partial class EditorCommands
         foreach (Layer layer in doc.SelectedLayers.ToList())
         {
             Layer copy = layer.Duplicate();
-            copy.Name = layer.Name + " copy";
+            copy.Name = string.Format(Strings.LayerNames_Copy, layer.Name);
             copy.IsBackground = false;
             copy.LockPosition = false;
             if (layer.IsBackground) copy.LockTransparency = false;
             doc.AddLayer(copy, layer);
         }
-        w.Commit("Duplicate Layer");
+        w.Commit(Strings.EditorCommands_DuplicateLayer);
     }
 
     public static void DeleteLayers(IEditorHost host)
@@ -226,16 +227,16 @@ public static partial class EditorCommands
             return;
         }
         foreach (Layer layer in layers) doc.RemoveLayer(layer);
-        w.Commit(layers.Count > 1 ? "Delete Layers" : "Delete Layer");
+        w.Commit(layers.Count > 1 ? Strings.EditorCommands_DeleteLayers : Strings.EditorCommands_DeleteLayer);
     }
 
     private static async Task RenameLayerAsync(PhotoEditorWindow w)
     {
         Layer layer = w.Document!.ActiveLayer!;
-        string? name = await DialogBuilder.PromptAsync(w, "Layer Properties", "Name:", layer.Name);
+        string? name = await DialogBuilder.PromptAsync(w, Strings.EditorCommands_LayerProperties, Strings.EditorCommands_NameColon, layer.Name);
         if (string.IsNullOrWhiteSpace(name)) return;
         layer.Name = name;
-        w.Commit("Rename Layer");
+        w.Commit(Strings.EditorCommands_RenameLayer);
     }
 
     public static async Task LayerStyle(PhotoEditorWindow w)
@@ -244,7 +245,7 @@ public static partial class EditorCommands
         if (layer == null) return;
         if (layer.IsBackground)
         {
-            w.ShowMessage("The Background layer cannot have layer styles. Convert it to a layer first (Layer > New > Layer from Background).");
+            w.ShowMessage(Strings.EditorCommands_BackgroundCannotHaveStyles);
             return;
         }
         LayerStyle? original = layer.Style?.Clone();
@@ -255,7 +256,7 @@ public static partial class EditorCommands
         if (ok)
         {
             if (layer.Style is { HasAny: false }) layer.Style = null;
-            w.Commit("Layer Style");
+            w.Commit(Strings.EditorCommands_LayerStyle);
         }
         else
         {
@@ -270,11 +271,11 @@ public static partial class EditorCommands
     private static async Task NewFillLayerAsync(PhotoEditorWindow w, FillKind kind)
     {
         PhotoDocument doc = w.Document!;
-        FillLayer layer = new(kind switch { FillKind.Gradient => "Gradient Fill", FillKind.Pattern => "Pattern Fill", _ => "Color Fill" }) { FillKind = kind };
+        FillLayer layer = new(kind switch { FillKind.Gradient => Strings.EditorCommands_GradientFill, FillKind.Pattern => Strings.EditorCommands_PatternFill, _ => Strings.EditorCommands_ColorFill }) { FillKind = kind };
         switch (kind)
         {
             case FillKind.SolidColor:
-                SKColor? color = await ColorPickerDialog.ShowAsync(w, w.Foreground, "Solid Color", w);
+                SKColor? color = await ColorPickerDialog.ShowAsync(w, w.Foreground, Strings.EditorCommands_SolidColor, w);
                 if (color == null) return;
                 layer.Color = color.Value;
                 break;
@@ -289,7 +290,7 @@ public static partial class EditorCommands
         }
         if (doc.Selection != null) layer.Mask = doc.Selection.Clone();
         doc.AddLayer(layer);
-        w.Commit("New Fill Layer");
+        w.Commit(Strings.EditorCommands_NewFillLayer);
         w.Panels.ShowPanel("properties");
     }
 
@@ -304,14 +305,14 @@ public static partial class EditorCommands
         if (doc.Selection != null) layer.Mask = doc.Selection.Clone();
         else layer.Mask = PixelSurface.CreateMask(doc.Width, doc.Height, 255);
         doc.AddLayer(layer);
-        w.Commit("New " + AdjustmentSettings.GetName(kind) + " Layer");
+        w.Commit(string.Format(Strings.EditorCommands_NewAdjustmentLayerHistory, AdjustmentSettings.GetName(kind)));
         w.Panels.ShowPanel("properties");
     }
 
     public static MenuFlyout CreateAdjustmentFlyout(PhotoEditorWindow w)
     {
         MenuFlyout flyout = new();
-        foreach (var (id, text) in new[] { ("layer.fill.solid", "Solid Color..."), ("layer.fill.gradient", "Gradient..."), ("layer.fill.pattern", "Pattern...") })
+        foreach (var (id, text) in new[] { ("layer.fill.solid", Strings.EditorCommands_SolidColorEllipsis), ("layer.fill.gradient", Strings.EditorCommands_GradientEllipsis), ("layer.fill.pattern", Strings.EditorCommands_PatternEllipsis) })
         {
             MenuItem item = new() { Header = text };
             item.Click += (_, _) => w.Execute(id);
@@ -340,7 +341,7 @@ public static partial class EditorCommands
         if (layer == null) return;
         if (layer.IsBackground)
         {
-            w.ShowMessage("The Background layer cannot have a mask. Convert it to a layer first.");
+            w.ShowMessage(Strings.EditorCommands_BackgroundCannotHaveMask);
             return;
         }
         if (layer.Mask != null && mode is MaskMode.RevealAll or MaskMode.HideAll)
@@ -363,11 +364,11 @@ public static partial class EditorCommands
                 MaskOps.Invert(mask);
                 break;
             case MaskMode.FromTransparency when layer is RasterLayer raster:
-            {
-                using SKBitmap full = Compositor.RenderLayer(doc, raster, false);
-                mask = ImageOps.ToMask(full, true);
-                break;
-            }
+                {
+                    using SKBitmap full = Compositor.RenderLayer(doc, raster, false);
+                    mask = ImageOps.ToMask(full, true);
+                    break;
+                }
             default:
                 mask = PixelSurface.CreateMask(doc.Width, doc.Height, 255);
                 break;
@@ -376,7 +377,7 @@ public static partial class EditorCommands
         layer.MaskEnabled = true;
         doc.EditingMask = true;
         if (mode is MaskMode.RevealSelection or MaskMode.HideSelection) doc.SetSelectionLive(null);
-        w.Commit("Add Layer Mask");
+        w.Commit(Strings.EditorCommands_AddLayerMask);
     }
 
     private static void DeleteMask(PhotoEditorWindow w)
@@ -384,7 +385,7 @@ public static partial class EditorCommands
         Layer layer = w.Document!.ActiveLayer!;
         layer.Mask = null;
         w.Document.EditingMask = false;
-        w.Commit("Delete Layer Mask");
+        w.Commit(Strings.EditorCommands_DeleteLayerMask);
     }
 
     private static unsafe void ApplyMask(PhotoEditorWindow w)
@@ -406,7 +407,7 @@ public static partial class EditorCommands
         }
         raster.Mask = null;
         doc.EditingMask = false;
-        w.Commit("Apply Layer Mask");
+        w.Commit(Strings.EditorCommands_ApplyLayerMask);
     }
 
     private static void ConvertToSmartObject(PhotoEditorWindow w)
@@ -418,7 +419,7 @@ public static partial class EditorCommands
         SKRectI bounds = ImageOps.GetOpaqueBounds(rendered);
         if (bounds.IsEmpty)
         {
-            w.ShowMessage("Could not convert to a smart object because the layer is empty.");
+            w.ShowMessage(Strings.EditorCommands_CannotConvertEmptyToSmartObject);
             return;
         }
         SmartObjectLayer smart = new(layer.Name, new PixelSurface(ImageOps.Crop(rendered, bounds)))
@@ -431,7 +432,7 @@ public static partial class EditorCommands
             IsClipped = layer.IsClipped
         };
         ReplaceLayer(doc, layer, smart);
-        w.Commit("Convert to Smart Object");
+        w.Commit(Strings.EditorCommands_ConvertToSmartObject);
     }
 
     private static void ReplaceLayer(PhotoDocument doc, Layer old, Layer replacement)
@@ -469,7 +470,7 @@ public static partial class EditorCommands
             Style = includeStyle ? null : style
         };
         ReplaceLayer(doc, layer, raster);
-        w.Commit(includeStyle ? "Rasterize Layer Style" : "Rasterize Layer");
+        w.Commit(includeStyle ? Strings.EditorCommands_RasterizeLayerStyle : Strings.EditorCommands_RasterizeLayer);
     }
 
     private static void Arrange(PhotoEditorWindow w, int delta)
@@ -484,7 +485,7 @@ public static partial class EditorCommands
         if (target == index) return;
         parent.Children.RemoveAt(index);
         parent.Children.Insert(target, layer);
-        w.Commit("Arrange Layer");
+        w.Commit(Strings.EditorCommands_ArrangeLayer);
     }
 
     /// <summary>Moves a layer relative to another (Layers panel drag and drop). Position: 0 above, 1 below, 2 inside group.</summary>
@@ -507,7 +508,7 @@ public static partial class EditorCommands
             parent.Add(layer, position == 0 ? index + 1 : index);
         }
         doc.ActiveLayer = layer;
-        w.Commit("Move Layer");
+        w.Commit(Strings.EditorCommands_MoveLayer);
     }
 
     public static void AlignLayers(IEditorHost host, LayerAlignment alignment)
@@ -541,7 +542,7 @@ public static partial class EditorCommands
             };
             layer.Translate(dx, dy);
         }
-        w.Commit("Align");
+        w.Commit(Strings.EditorCommands_Align);
     }
 
     private static RasterLayer MergeLayers(PhotoDocument doc, IReadOnlyList<Layer> layers, string name)
@@ -560,18 +561,18 @@ public static partial class EditorCommands
         {
             Layer flattened = MergeLayers(doc, [top], top.Name);
             ReplaceLayer(doc, top, flattened);
-            w.Commit("Merge Group");
+            w.Commit(Strings.EditorCommands_MergeGroup);
             return;
         }
         if (index <= 0)
         {
-            w.ShowMessage("Could not merge down because there is no layer below.");
+            w.ShowMessage(Strings.EditorCommands_CannotMergeDownNoLayerBelow);
             return;
         }
         Layer below = parent.Children[index - 1];
         if (below is AdjustmentLayer)
         {
-            w.ShowMessage("Could not merge down because the layer below is not a pixel layer.");
+            w.ShowMessage(Strings.EditorCommands_CannotMergeDownNotPixelLayer);
             return;
         }
         LayerBlendMode belowMode = below.BlendMode;
@@ -588,7 +589,7 @@ public static partial class EditorCommands
         merged.LockTransparency = below.IsBackground;
         parent.Remove(top);
         ReplaceLayer(doc, below, merged);
-        w.Commit("Merge Down");
+        w.Commit(Strings.EditorCommands_MergeDown);
     }
 
     private static void MergeVisible(PhotoEditorWindow w)
@@ -596,24 +597,24 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         List<Layer> visible = doc.Root.Children.Where(l => l.Visible).ToList();
         if (visible.Count < 2) return;
-        RasterLayer merged = MergeLayers(doc, visible, visible.FirstOrDefault(l => l.IsBackground)?.Name ?? "Merged");
+        RasterLayer merged = MergeLayers(doc, visible, visible.FirstOrDefault(l => l.IsBackground)?.Name ?? Strings.EditorCommands_Merged);
         merged.IsBackground = visible.Any(l => l.IsBackground);
         merged.LockPosition = merged.LockTransparency = merged.IsBackground;
         int index = doc.Root.Children.IndexOf(visible[0]);
         foreach (Layer layer in visible) doc.Root.Remove(layer);
         doc.Root.Add(merged, Math.Max(0, index));
         doc.ActiveLayer = merged;
-        w.Commit("Merge Visible");
+        w.Commit(Strings.EditorCommands_MergeVisible);
     }
 
     private static void StampVisible(PhotoEditorWindow w)
     {
         PhotoDocument doc = w.Document!;
         using SKBitmap flat = Compositor.Flatten(doc);
-        RasterLayer layer = new($"Layer {doc.AllLayers.Count() + 1}", PixelSurface.FromBitmap(flat));
+        RasterLayer layer = new(string.Format(Strings.EditorCommands_LayerNumber, doc.AllLayers.Count() + 1), PixelSurface.FromBitmap(flat));
         doc.Root.Add(layer);
         doc.ActiveLayer = layer;
-        w.Commit("Stamp Visible");
+        w.Commit(Strings.EditorCommands_StampVisible);
     }
 
     private static void Flatten(PhotoEditorWindow w)
@@ -621,12 +622,12 @@ public static partial class EditorCommands
         PhotoDocument doc = w.Document!;
         using SKBitmap flat = Compositor.Flatten(doc);
         using SKBitmap opaque = ImageIO.FlattenOnto(flat, SKColors.White);
-        RasterLayer background = new("Background", PixelSurface.FromBitmap(opaque)) { IsBackground = true, LockPosition = true, LockTransparency = true };
+        RasterLayer background = new(Strings.LayerNames_Background, PixelSurface.FromBitmap(opaque)) { IsBackground = true, LockPosition = true, LockTransparency = true };
         GroupLayer root = new("Root") { BlendMode = LayerBlendMode.Normal };
         root.Add(background);
         doc.ReplaceRoot(root);
         doc.EditingMask = false;
-        w.Commit("Flatten Image");
+        w.Commit(Strings.EditorCommands_FlattenImage);
     }
 
     private static void BackgroundFromLayer(PhotoEditorWindow w)
@@ -636,11 +637,11 @@ public static partial class EditorCommands
         foreach (RasterLayer other in doc.AllLayers.OfType<RasterLayer>().Where(l => l.IsBackground)) LayerOps.UnlockBackground(other);
         using SKBitmap rendered = Compositor.RenderLayer(doc, layer);
         using SKBitmap opaque = ImageIO.FlattenOnto(rendered, w.Background);
-        RasterLayer background = new("Background", PixelSurface.FromBitmap(opaque)) { IsBackground = true, LockPosition = true, LockTransparency = true };
+        RasterLayer background = new(Strings.LayerNames_Background, PixelSurface.FromBitmap(opaque)) { IsBackground = true, LockPosition = true, LockTransparency = true };
         doc.RemoveLayer(layer);
         doc.Root.Add(background, 0);
         doc.ActiveLayer = background;
-        w.Commit("Background from Layer");
+        w.Commit(Strings.EditorCommands_BackgroundFromLayer);
     }
 
     private static void SelectAdjacent(PhotoEditorWindow w, int delta)
@@ -664,6 +665,6 @@ public static partial class EditorCommands
         using SKBitmap rendered = Compositor.RenderLayer(doc, layer);
         PixelSurface mask = ImageOps.ToMask(rendered, true);
         doc.SetSelection(MaskOps.Combine(doc.Selection, mask, mode));
-        w.Commit("Load Selection");
+        w.Commit(Strings.EditorCommands_LoadSelection);
     }
 }

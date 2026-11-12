@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class DiamondPixelateImageEffect : ImageEffectBase
     public override string Id => "diamond_pixelate";
     public override string Name => "Diamond pixelate";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.diamond;
+    public override string IconKey => ImageEffectIcons.Diamond;
     public override string Description => "Pixelates the image using diamond-shaped blocks.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

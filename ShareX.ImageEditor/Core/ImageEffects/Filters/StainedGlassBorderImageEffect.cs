@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class StainedGlassBorderImageEffect : ImageEffectBase
     public override string Id => "stained_glass_border";
     public override string Name => "Stained glass border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.palette;
+    public override string IconKey => AppIcons.Palette;
     public override string Description => "Adds a stained glass border with jewel-toned glass panels divided by dark lead came lines.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

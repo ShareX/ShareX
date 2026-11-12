@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class KaleidoscopeImageEffect : ImageEffectBase
     public override string Id => "kaleidoscope";
     public override string Name => "Kaleidoscope";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.loader_pinwheel;
+    public override string IconKey => ImageEffectIcons.Pinwheel;
     public override string Description => "Creates a kaleidoscope mirror pattern.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

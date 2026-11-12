@@ -2529,7 +2529,7 @@ namespace ShareX.Tools.Localization {
         }
 
         /// <summary>
-        ///   Looks up a localized string similar to Lossless:.
+        ///   Looks up a localized string similar to Lossless.
         /// </summary>
         public static string ImageConverterWindow_WebPLossless {
             get { return ResourceManager.GetString("ImageConverterWindow_WebPLossless", resourceCulture); }
@@ -3978,24 +3978,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {0} language is not available in this system for OCR..
-        /// </summary>
-        public static string OCRHelper_Language_unavailable {
-            get {
-                return ResourceManager.GetString("OCRHelper_Language_unavailable", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Optical character recognition is only available with Windows version {0} or newer..
-        /// </summary>
-        public static string OCRHelper_Requires_Windows_version {
-            get {
-                return ResourceManager.GetString("OCRHelper_Requires_Windows_version", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Bing.
         /// </summary>
         public static string OCROptions_Bing {
@@ -4104,15 +4086,6 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Language.
-        /// </summary>
-        public static string OCRWindow_Language {
-            get {
-                return ResourceManager.GetString("OCRWindow_Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string OCRWindow_Name {
@@ -4131,29 +4104,11 @@ namespace ShareX.Tools.Localization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OCR help.
-        /// </summary>
-        public static string OCRWindow_OCR_help {
-            get {
-                return ResourceManager.GetString("OCRWindow_OCR_help", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Open service....
         /// </summary>
         public static string OCRWindow_Open_service {
             get {
                 return ResourceManager.GetString("OCRWindow_Open_service", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Recognition.
-        /// </summary>
-        public static string OCRWindow_Recognition {
-            get {
-                return ResourceManager.GetString("OCRWindow_Recognition", resourceCulture);
             }
         }
         
@@ -4181,15 +4136,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Result {
             get {
                 return ResourceManager.GetString("OCRWindow_Result", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Scale factor.
-        /// </summary>
-        public static string OCRWindow_Scale_factor {
-            get {
-                return ResourceManager.GetString("OCRWindow_Scale_factor", resourceCulture);
             }
         }
         
@@ -4226,15 +4172,6 @@ namespace ShareX.Tools.Localization {
         public static string OCRWindow_Select_region {
             get {
                 return ResourceManager.GetString("OCRWindow_Select_region", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Services.
-        /// </summary>
-        public static string OCRWindow_Services {
-            get {
-                return ResourceManager.GetString("OCRWindow_Services", resourceCulture);
             }
         }
         
@@ -4953,6 +4890,42 @@ namespace ShareX.Tools.Localization {
 
         /// <summary>
         ///   Looks up a localized string similar to ShareX - Ruler.
+        /// </summary>
+        public static string ClassicRulerWindow_Title {
+            get {
+                return ResourceManager.GetString("ClassicRulerWindow_Title", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to X: {0} | Y: {1} | Right: {2} | Bottom: {3}.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Position {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Position", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Width: {0} px | Height: {1} px | Area: {2} px | Perimeter: {3} px.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Size {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Size", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Distance: {0:0.00} px | Angle: {1:0.00}°.
+        /// </summary>
+        public static string ClassicRulerOverlayControl_Distance {
+            get {
+                return ResourceManager.GetString("ClassicRulerOverlayControl_Distance", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ShareX - Measure.
         /// </summary>
         public static string RulerWindow_ShareX_Ruler {
             get {
@@ -6215,5 +6188,12 @@ namespace ShareX.Tools.Localization {
         public static string VideoPlayer_Unmute => ResourceManager.GetString("VideoPlayer_Unmute", resourceCulture);
         public static string VideoPlayer_Seek => ResourceManager.GetString("VideoPlayer_Seek", resourceCulture);
         public static string VideoPlayer_Volume => ResourceManager.GetString("VideoPlayer_Volume", resourceCulture);
+        public static string VideoConverterWindow_Average_bitrate => ResourceManager.GetString("VideoConverterWindow_Average_bitrate", resourceCulture);
+        public static string VideoConverterWindow_File_size => ResourceManager.GetString("VideoConverterWindow_File_size", resourceCulture);
+        public static string VideoConverterWindow_Resolution => ResourceManager.GetString("VideoConverterWindow_Resolution", resourceCulture);
+        public static string VideoConverterWindow_Result => ResourceManager.GetString("VideoConverterWindow_Result", resourceCulture);
+        public static string OCRWindow_No_text_found => ResourceManager.GetString("OCRWindow_No_text_found", resourceCulture);
+        public static string OCRWindow_Separate_paragraphs => ResourceManager.GetString("OCRWindow_Separate_paragraphs", resourceCulture);
+        public static string OCRWindow_Copied_to_clipboard => ResourceManager.GetString("OCRWindow_Copied_to_clipboard", resourceCulture);
     }
 }

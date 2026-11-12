@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recunoaștere text (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Deschideți în editorul foto</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Efectuați acțiuni</value>
   </data>
@@ -639,6 +642,9 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Încărcați</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Riglă</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Încărcați din clipboard</value>
   </data>
@@ -786,8 +792,11 @@ Doriți totuși să îl executați?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Regiune de captură</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Regiune de captură (Transparentă)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Riglă</value>
+    <value>Măsurare</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Alegător de culori pe ecran</value>
@@ -866,6 +875,21 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Fișiere imagine</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Partea de jos</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Lateral</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automat</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Ascunde</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Arată</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Deschideți imaginea</value>
@@ -1089,6 +1113,12 @@ Doriți totuși să îl executați?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Schimbați tipul de instrument</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Redimensionare lupă</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Mărire lupă</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
@@ -1221,6 +1251,12 @@ Doriți totuși să îl executați?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automat</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Vizualizare listă</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Vizualizare în miniatură</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Destinație de text personalizat</value>
   </data>
@@ -1289,6 +1325,12 @@ Doriți totuși să îl executați?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Încărcați fișierul</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Monitorul activ</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Monitorul principal</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

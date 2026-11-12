@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class VintagePrintDamageImageEffect : ImageEffectBase
     public override string Id => "vintage_print_damage";
     public override string Name => "Vintage print damage";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.newspaper;
+    public override string IconKey => ImageEffectIcons.Newspaper;
     public override string Description => "Simulates aged print damage with sepia toning, grain, scratches, and dust.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

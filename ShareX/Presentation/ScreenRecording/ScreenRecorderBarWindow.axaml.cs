@@ -32,8 +32,10 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Localization;
 using ShareX.ScreenCaptureLib;
 using ShareX.ScreenRecordingLib;
@@ -50,8 +52,10 @@ internal partial class ScreenRecorderBarWindow : Window
 {
     private readonly ScreenRecorderBarSettings _draft;
     private readonly bool _gif;
+    private readonly bool _native;
+    private readonly bool _evenSize;
     private readonly List<Source> _sources = [];
-    private readonly Source _cameraSource;
+    private readonly Source? _cameraSource;
     private readonly TaskCompletionSource<bool> _completion = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly Button _recordButton;
     private ToggleButton _startDelayToggle = null!;
@@ -63,40 +67,47 @@ internal partial class ScreenRecorderBarWindow : Window
     public IntPtr CaptureWindow { get; }
     private TaskSettingsCapture Capture => _draft.Capture;
 
-    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window, bool gif = false)
+    /// <param name="native">False for the FFmpeg recorder, which hides the audio, camera and bitrate settings it does not use.</param>
+    public ScreenRecorderBarWindow(TaskSettings settings, DrawingRectangle region, IntPtr window, bool gif, bool native, bool evenSize)
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         _draft = new(settings);
         _gif = gif;
+        _native = native;
+        _evenSize = evenSize;
+        if (!native) Title = Strings.TaskSettingsWindow_ScreenRecorder;
         RecordingRegion = region;
         CaptureWindow = window;
-        _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, LucideIcons.circle, RequestRecord, toolbar: true);
+        _recordButton = ActionButton(Strings.ScreenRecorderBar_Record, AppIcons.Circle, RequestRecord, toolbar: true);
         _recordButton.Classes.Add("recorder-record");
 
-        if (!gif)
+        if (native && !gif)
         {
-            AddSource(Strings.ScreenRecorderBar_SystemAudio, LucideIcons.volume_2,
+            AddSource(Strings.ScreenRecorderBar_SystemAudio, AppIcons.Volume,
                 () => Capture.ScreenRecordSystemAudio, value => Capture.ScreenRecordSystemAudio = value,
                 () => Capture.ScreenRecordSystemAudioDeviceId, value => Capture.ScreenRecordSystemAudioDeviceId = value,
                 () => AudioCaptureDevices.GetSystemAudioDevices().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
                 () => AudioCaptureDevices.GetDefaultSystemAudioDevice()?.Name,
                 Strings.TaskSettingsWindow_NativeRecorderDefaultSystemAudioDevice, Strings.TaskSettingsWindow_NativeRecorderUnavailableSystemAudioDevice);
-            AddSource(Strings.ScreenRecorderBar_Microphone, LucideIcons.mic,
+            AddSource(Strings.ScreenRecorderBar_Microphone, AppIcons.Microphone,
                 () => Capture.ScreenRecordMicrophone, value => Capture.ScreenRecordMicrophone = value,
                 () => Capture.ScreenRecordMicrophoneDeviceId, value => Capture.ScreenRecordMicrophoneDeviceId = value,
                 () => AudioCaptureDevices.GetMicrophones().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(),
                 () => AudioCaptureDevices.GetDefaultMicrophone()?.Name,
                 Strings.TaskSettingsWindow_NativeRecorderDefaultMicrophone, Strings.TaskSettingsWindow_NativeRecorderUnavailableMicrophone);
         }
-        _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, LucideIcons.video,
-            () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
-            () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
-            () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
-            Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice);
+        if (native)
+        {
+            _cameraSource = AddSource(Strings.ScreenRecorderBar_Camera, AppIcons.Webcam,
+                () => Capture.ScreenRecordCamera, value => Capture.ScreenRecordCamera = value,
+                () => Capture.ScreenRecordCameraDeviceId, value => Capture.ScreenRecordCameraDeviceId = value,
+                () => CameraCaptureDevices.GetCameras().Select(device => new DeviceChoice(device.Id, device.Name)).ToArray(), null,
+                Strings.TaskSettingsWindow_NativeRecorderCamera_DefaultDevice, Strings.TaskSettingsWindow_NativeRecorderCamera_UnavailableDevice);
+        }
 
         BuildBar();
-        ClosePanelButton.Content = Glyph(LucideIcons.x);
+        ClosePanelButton.Content = CreateIcon(AppIcons.Close);
         ToolTip.SetTip(ClosePanelButton, Strings.ActionsToolbarWindow_Close);
         AutomationProperties.SetName(ClosePanelButton, Strings.ActionsToolbarWindow_Close);
         ClosePanelButton.Click += (_, _) => ClosePanel();
@@ -144,13 +155,16 @@ internal partial class ScreenRecorderBarWindow : Window
         if (CaptureWindow != IntPtr.Zero)
         {
             WindowInfo target = new(CaptureWindow);
-            if (!target.IsVisible || target.IsMinimized || !target.Rectangle.IsValid())
+            // The window may have moved or resized while its settings were being edited.
+            DrawingRectangle rect = target.Rectangle;
+            // FFmpeg's gdigrab rejects areas outside the desktop, so clip like StartRecording does.
+            if (!_native) rect = DrawingRectangle.Intersect(rect, CaptureHelpers.GetScreenBounds());
+            if (!target.IsVisible || target.IsMinimized || !rect.IsValid())
             {
                 ShowError(Strings.ScreenRecorderBar_TargetUnavailable);
                 return;
             }
-            // The window may have moved or resized while its settings were being edited.
-            RecordingRegion = _gif ? target.Rectangle : CaptureHelpers.EvenRectangleSize(target.Rectangle);
+            RecordingRegion = _evenSize ? CaptureHelpers.EvenRectangleSize(rect) : rect;
         }
         _completion.TrySetResult(true);
         Close();
@@ -171,7 +185,7 @@ internal partial class ScreenRecorderBarWindow : Window
             Height = 36,
             Background = Brushes.Transparent,
             Cursor = new Cursor(StandardCursorType.SizeAll),
-            Child = Glyph(LucideIcons.grip_vertical)
+            Child = CreateIcon(AppIcons.Grip)
         };
         grip.PointerPressed += (_, e) =>
         {
@@ -180,9 +194,9 @@ internal partial class ScreenRecorderBarWindow : Window
         actions.Children.Add(grip);
         // Rebuild toolbar content when its labels change, keeping the active settings panel open.
         if (_recordButton.Parent is Panel oldParent) oldParent.Children.Remove(_recordButton);
-        _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, LucideIcons.circle, toolbar: true);
+        _recordButton.Content = ButtonContent(Strings.ScreenRecorderBar_Record, AppIcons.Circle, toolbar: true);
         actions.Children.Add(_recordButton);
-        StackPanel startDelay = (StackPanel)SplitControl(Strings.ScreenRecorderBar_StartDelay, LucideIcons.timer,
+        StackPanel startDelay = (StackPanel)SplitControl(Strings.ScreenRecorderBar_StartDelay, AppIcons.Timer,
             Capture.ScreenRecordStartDelayEnabled,
             value => { Capture.ScreenRecordStartDelayEnabled = value; UpdateStartDelay(); },
             ShowStartDelayMenu);
@@ -197,9 +211,9 @@ internal partial class ScreenRecorderBarWindow : Window
             UpdateSource(source);
             inputs.Children.Add(source.Control);
         }
-        inputs.Children.Add(ToggleControl(Strings.ScreenRecorderBar_Cursor, LucideIcons.mouse_pointer_2,
+        inputs.Children.Add(ToggleControl(Strings.ScreenRecorderBar_Cursor, AppIcons.Pointer,
             Capture.ScreenRecordShowCursor, value => Capture.ScreenRecordShowCursor = value));
-        inputs.Children.Add(SplitControl(Strings.MouseHighlighter, LucideIcons.mouse_pointer_click,
+        inputs.Children.Add(SplitControl(Strings.MouseHighlighter, AppIcons.PointerClick,
             Capture.ScreenRecordMouseHighlighter, value => Capture.ScreenRecordMouseHighlighter = value,
             () => ShowPanel("highlighter", Strings.MouseHighlighter, BuildHighlighterPanel)));
         // Keep the action buttons visible when long labels or a small work area require scrolling the sources.
@@ -211,11 +225,11 @@ internal partial class ScreenRecorderBarWindow : Window
         };
         Grid.SetColumn(sources, 1);
         Toolbar.Children.Add(sources);
-        Button options = ActionButton(Strings.ScreenRecorderBar_Options, LucideIcons.settings,
+        Button options = ActionButton(Strings.ScreenRecorderBar_Options, AppIcons.Settings,
             () => ShowPanel("options", Strings.ScreenRecorderBar_Options, BuildOptionsPanel), toolbar: true);
         Grid.SetColumn(options, 2);
         Toolbar.Children.Add(options);
-        Button cancel = ActionButton(Strings.TaskSettingsWindow_Cancel, LucideIcons.x, Cancel, iconOnly: true);
+        Button cancel = ActionButton(Strings.TaskSettingsWindow_Cancel, AppIcons.Close, Cancel, iconOnly: true);
         cancel.Classes.Remove("recorder-setup");
         cancel.Classes.Add("recorder-close");
         cancel.VerticalAlignment = VerticalAlignment.Center;
@@ -255,7 +269,7 @@ internal partial class ScreenRecorderBarWindow : Window
     {
         bool enabled = Capture.ScreenRecordStartDelayEnabled;
         _startDelayToggle.IsChecked = enabled;
-        _startDelayToggle.Content = ButtonContent(Strings.ScreenRecorderBar_StartDelay, LucideIcons.timer, enabled, toolbar: true);
+        _startDelayToggle.Content = ButtonContent(Strings.ScreenRecorderBar_StartDelay, AppIcons.Timer, enabled, toolbar: true);
         ToolTip.SetTip(_startDelayToggle, TwoLineToolTip(Strings.ScreenRecorderBar_StartDelay,
             enabled ? StartDelayLabel(Capture.ScreenRecordStartDelay) : Strings.ScreenRecorderBar_Off));
     }
@@ -357,7 +371,7 @@ internal partial class ScreenRecorderBarWindow : Window
         Refresh();
         Grid deviceRow = new() { ColumnDefinitions = new("*,Auto"), ColumnSpacing = 6 };
         deviceRow.Children.Add(devices);
-        Button refresh = ActionButton(Strings.ScreenRecorderBar_RefreshDevices, LucideIcons.refresh_cw, Refresh, iconOnly: true);
+        Button refresh = ActionButton(Strings.ScreenRecorderBar_RefreshDevices, AppIcons.Refresh, Refresh, iconOnly: true);
         Grid.SetColumn(refresh, 1);
         deviceRow.Children.Add(refresh);
         panel.Children.Add(deviceRow);
@@ -426,8 +440,11 @@ internal partial class ScreenRecorderBarWindow : Window
         {
             recording.Children.Add(Row(Strings.TaskSettingsWindow_ScreenRecordingFPS,
                 Number(Capture.ScreenRecordFPS, 1, 120, 1, value => Capture.ScreenRecordFPS = (int)value)));
-            recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
-                Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+            if (_native)
+            {
+                recording.Children.Add(Row(Strings.TaskSettingsWindow_NativeRecorderBitrate,
+                    Number(Capture.ScreenRecordVideoBitrate, 100, 200000, 100, value => Capture.ScreenRecordVideoBitrate = (int)value)));
+            }
         }
         NumericUpDown duration = Number((decimal)Capture.ScreenRecordDuration, 0.1m, 86400, 0.1m, value => Capture.ScreenRecordDuration = (float)value);
         duration.IsEnabled = Capture.ScreenRecordFixedDuration;
@@ -527,7 +544,7 @@ internal partial class ScreenRecorderBarWindow : Window
         ToggleButton toggle = ToggleControl(label, icon, enabled, changed);
         toggle.CornerRadius = new(5, 0, 0, 5);
         toggle.Margin = new Thickness(0);
-        Button arrow = ActionButton(string.Format(Strings.ScreenRecorderBar_SourceOptions, label), LucideIcons.chevron_down,
+        Button arrow = ActionButton(string.Format(Strings.ScreenRecorderBar_SourceOptions, label), AppIcons.ChevronDown,
             () => open(group), iconOnly: true);
         arrow.CornerRadius = new(0, 5, 5, 0);
         arrow.Margin = new Thickness(0);
@@ -558,7 +575,7 @@ internal partial class ScreenRecorderBarWindow : Window
 
     private Button ActionButton(string label, string icon, Action action, bool iconOnly = false, bool toolbar = false)
     {
-        Button button = new() { Content = iconOnly ? Glyph(icon) : ButtonContent(label, icon, toolbar: toolbar), Margin = new Thickness(3, 2) };
+        Button button = new() { Content = iconOnly ? CreateIcon(icon) : ButtonContent(label, icon, toolbar: toolbar), Margin = new Thickness(3, 2) };
         button.Classes.Add("recorder-setup");
         ToolTip.SetTip(button, label);
         AutomationProperties.SetName(button, label);
@@ -569,7 +586,7 @@ internal partial class ScreenRecorderBarWindow : Window
     private Control ButtonContent(string label, string icon, bool? enabled = null, bool toolbar = false)
     {
         StackPanel content = new() { Orientation = Orientation.Horizontal, Spacing = 6 };
-        content.Children.Add(Glyph(icon));
+        content.Children.Add(CreateIcon(enabled == false ? OffIcon(icon) : icon));
         if (toolbar && !Capture.ScreenRecordShowButtonLabels) return content;
         content.Children.Add(new TextBlock { Text = label, VerticalAlignment = VerticalAlignment.Center });
         if (enabled != null) content.Children.Add(new TextBlock
@@ -582,12 +599,18 @@ internal partial class ScreenRecorderBarWindow : Window
         return content;
     }
 
-    private static TextBlock Glyph(string glyph)
+    // A toggle that is off shows a muted or crossed out icon, so its state reads without relying on the highlight.
+    private static string OffIcon(string icon) => icon switch
     {
-        TextBlock icon = new() { Text = glyph, FontSize = 16, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Center };
-        icon.Classes.Add("icon");
-        return icon;
-    }
+        AppIcons.Volume => AppIcons.Mute,
+        AppIcons.Microphone => AppIcons.MicrophoneOff,
+        AppIcons.Webcam => AppIcons.WebcamOff,
+        AppIcons.Timer => AppIcons.TimerOff,
+        _ => icon
+    };
+
+    private static IconPresenter CreateIcon(string icon) =>
+        new() { Icon = icon, FontSize = 16, VerticalAlignment = VerticalAlignment.Center, HorizontalAlignment = HorizontalAlignment.Center };
 
     private static TextBlock Hint(string text) => new() { Text = text, TextWrapping = TextWrapping.Wrap, FontSize = 12, Opacity = 0.75 };
 

@@ -26,10 +26,10 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Markup.Xaml;
-using Avalonia.Media;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.ImageEditor.Core.ImageEffects;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
@@ -259,7 +259,6 @@ namespace ShareX.ImageEditor.Presentation.Controls
     public partial class EffectBrowserPanel : UserControl
     {
         private const int MaxRecentEffects = 10;
-        private static readonly FontFamily IconFontFamily = new("avares://ShareX.Avalonia/Assets#lucide");
 
         private static readonly Dictionary<string, string> EffectAliases = new(StringComparer.OrdinalIgnoreCase)
         {
@@ -352,12 +351,10 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
             if (!string.IsNullOrWhiteSpace(effect.Icon))
             {
-                var iconBlock = new TextBlock
+                var iconBlock = new IconPresenter
                 {
-                    Text = effect.Icon,
-                    FontFamily = IconFontFamily,
-                    FontSize = 16,
-                    FontWeight = FontWeight.Normal
+                    Icon = effect.Icon,
+                    FontSize = 16
                 };
 
                 menuItem.Icon = iconBlock;

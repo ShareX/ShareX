@@ -72,11 +72,17 @@
   <data name="HistoryWindow_NoItemsMatchCurrentFilters" xml:space="preserve">
     <value>Niciun element nu corespunde filtrelor curente</value>
   </data>
+  <data name="HistoryWindow_ProcessName" xml:space="preserve">
+    <value>Numele procesului</value>
+  </data>
   <data name="HistoryWindow_Rename" xml:space="preserve">
     <value>Redenumește</value>
   </data>
   <data name="HistoryWindow_RenameFile" xml:space="preserve">
     <value>Redenumește fișierul</value>
+  </data>
+  <data name="HistoryWindow_ResetColumns" xml:space="preserve">
+    <value>Resetează coloanele</value>
   </data>
   <data name="HistoryWindow_SelectFolderToImport" xml:space="preserve">
     <value>Selectați folderul de importat</value>
@@ -86,6 +92,9 @@
   </data>
   <data name="HistoryWindow_SuccessfullyImportedFilesFormat" xml:space="preserve">
     <value>S-au importat cu succes {0:N0} fișiere.</value>
+  </data>
+  <data name="HistoryWindow_Tag" xml:space="preserve">
+    <value>Etichetă</value>
   </data>
   <data name="HistoryWindow_TheseFilesFormat" xml:space="preserve">
     <value>aceste {0:N0} fișiere</value>
@@ -101,6 +110,9 @@
   </data>
   <data name="HistoryWindow_Unfavorite" xml:space="preserve">
     <value>Elimină din favorite</value>
+  </data>
+  <data name="HistoryWindow_WindowTitle" xml:space="preserve">
+    <value>Titlul ferestrei</value>
   </data>
   <data name="HistoryWindows_Advanced" xml:space="preserve">
     <value>Avansat</value>
@@ -149,6 +161,9 @@
   </data>
   <data name="HistoryWindows_Done" xml:space="preserve">
     <value>Finalizat</value>
+  </data>
+  <data name="HistoryWindows_EditImageInPhotoEditor" xml:space="preserve">
+    <value>Editați în editorul foto...</value>
   </data>
   <data name="HistoryWindows_Edit_history_item" xml:space="preserve">
     <value>Editează elementul din istoric</value>

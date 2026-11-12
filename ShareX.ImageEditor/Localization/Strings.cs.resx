@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Velikost písma</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Šipka od ruky</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Vodorovné zarovnání</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Znovu (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Zaoblené rohy</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Uložit</value>
@@ -282,6 +288,15 @@ Chcete před zavřením editoru obrázků změny uložit?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Zrušit (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Barva výplně přidané oblasti</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Nepodařilo se načíst obrázek ze schránky.
 Schránka neobsahuje obrázek.</value>
@@ -335,6 +350,12 @@ Schránka neobsahuje obrázek.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Okraj</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nový ze snímku obrazovky (celá obrazovka)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nový ze snímku obrazovky (oblast)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Otevřít obrázek</value>
@@ -1386,8 +1407,14 @@ Schránka neobsahuje obrázek.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Primární</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Obnovit výchozí panel nástrojů</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Sekundární</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Zobrazit / skrýt</value>
@@ -1400,6 +1427,9 @@ Schránka neobsahuje obrázek.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Rozmazání</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Velikost plátna</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonovat</value>

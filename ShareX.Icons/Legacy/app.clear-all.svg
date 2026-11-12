@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0a8" /><stop offset=".4" stop-color="#f8d046" /><stop offset=".55" stop-color="#eab420" /><stop offset="1" stop-color="#d89810" /></linearGradient>
+    <linearGradient id="g-wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3c98a" /><stop offset=".45" stop-color="#d9973f" /><stop offset="1" stop-color="#9c5c14" /></linearGradient>
+  </defs>
+  <path d="M14.6 1.4 8.4 7.6" fill="none" stroke="#4a2a08" stroke-width="2.4" stroke-linecap="round" />
+  <path d="M14.6 1.4 8.4 7.6" fill="none" stroke="url(#g-wood)" stroke-width="1.2" stroke-linecap="round" />
+  <path d="M7.2 6.2 9.8 8.8 6.2 14.6C4.4 15 2.2 14.2 1.4 12.6 1.2 12 1.4 11.4 1.9 11Z" fill="url(#g-gold)" stroke="#8a5a00" stroke-width=".8" stroke-linejoin="round" />
+  <path d="M6.6 9.2 3.2 12.6M7.6 10.2 4.6 13.8M5.6 8.2 2.4 11.4" fill="none" stroke="#b07800" stroke-width=".6" stroke-linecap="round" />
+  <path d="M6.6 5.6 10.4 9.4" fill="none" stroke="#c02020" stroke-width="1.6" stroke-linecap="round" />
+</svg>

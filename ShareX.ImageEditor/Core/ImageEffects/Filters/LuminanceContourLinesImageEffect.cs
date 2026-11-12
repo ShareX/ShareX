@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class LuminanceContourLinesImageEffect : ImageEffectBase
     public override string Id => "luminance_contour_lines";
     public override string Name => "Luminance contour lines";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.waypoints;
+    public override string IconKey => ImageEffectIcons.Contours;
     public override string Description => "Draws contour lines based on luminance quantization levels.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

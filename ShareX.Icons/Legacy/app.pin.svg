@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="pf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffa8a8"/><stop offset=".35" stop-color="#f27676"/><stop offset=".7" stop-color="#d84141"/><stop offset="1" stop-color="#c43030"/></linearGradient>
+    <linearGradient id="ps" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e50101"/><stop offset=".45" stop-color="#d00101"/><stop offset="1" stop-color="#950000"/></linearGradient>
+    <linearGradient id="nd" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d7d7d7"/><stop offset="1" stop-color="#3c3c3c"/></linearGradient>
+  </defs>
+  <path d="M5.4 10.6L1.6 14.4" stroke="#040404" stroke-opacity=".45" stroke-width="1.2" stroke-linecap="round"/>
+  <path d="M5.4 10.6L1.8 14.2" stroke="url(#nd)" stroke-width=".9" stroke-linecap="round"/>
+  <polygon points="9.6,1.4 10.6,1.1 14.7,5.1 14.5,6.5 11.2,6.7 9.8,8.4 9.8,11.6 8.6,12.8 7.4,12.4 3.4,8.5 3.1,6.1 7.7,6 9.3,4.6" fill="url(#pf)" stroke="url(#ps)" stroke-opacity=".8" stroke-linejoin="round"/>
+  <path d="M4 7.1h4.2M10 5.6V2.6M5.3 8.6L8 11.2" fill="none" stroke="#ffb4b4" stroke-opacity=".75"/>
+  <path d="M11.3 6.2L13 4.5" stroke="#b80000" stroke-opacity=".35"/>
+</svg>

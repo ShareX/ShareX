@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -49,7 +49,7 @@ public sealed class DitheringImageEffect : ImageEffectBase
     public override string Id => "dithering";
     public override string Name => "Dithering";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.grid_2x2_check;
+    public override string IconKey => ImageEffectIcons.Checkerboard;
     public override string Description => "Applies dithering to reduce color depth with various methods and palettes.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

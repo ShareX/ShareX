@@ -399,6 +399,18 @@ public static partial class SkiaImageHelpers
         using FileStream stream = new(path, FileMode.Create, FileAccess.Write, FileShare.Read);
         SaveJPEG(bitmap, stream, quality, subsampling);
     }
+
+    public static SKWebpEncoderOptions GetWebPEncoderOptions(int quality, bool lossless, int compressionEffort)
+        => lossless
+            ? new(SKWebpEncoderCompression.Lossless, Math.Clamp(compressionEffort, 0, 100))
+            : new(SKWebpEncoderCompression.Lossy, Math.Clamp(quality, 0, 100));
+
+    public static void SaveWebP(SKBitmap bitmap, Stream stream, SKWebpEncoderOptions options)
+    {
+        using SKPixmap pixels = bitmap.PeekPixels();
+        if (!pixels.Encode(stream, options))
+            throw new InvalidDataException("Image encoding failed: Webp.");
+    }
     public static MemoryStream SavePNG(SKBitmap bitmap, PNGBitDepth depth)
     {
         MemoryStream stream = new(); SavePNG(bitmap, stream, depth); return stream;

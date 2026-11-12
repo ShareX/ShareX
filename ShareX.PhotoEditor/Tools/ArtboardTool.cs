@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Avalonia.Media;
 using ShareX.PhotoEditor.UI;
 
 namespace ShareX.PhotoEditor.Tools;
@@ -42,9 +41,9 @@ public sealed class ArtboardTool : ToolBase
 
     public override ToolId Id => ToolId.Artboard;
 
-    public override string Name => "Artboard Tool";
+    public override string Name => Strings.ArtboardTool_Name;
 
-    public override string Hint => "Drag on empty canvas to create an artboard. Drag an artboard's title to move it with its contents.";
+    public override string Hint => Strings.ArtboardTool_Hint;
 
     public SKColor BackgroundColor { get; set; } = SKColors.White;
 
@@ -96,7 +95,7 @@ public sealed class ArtboardTool : ToolBase
         if (_moving != null)
         {
             _moving = null;
-            if (_applied != default) PushHistory("Move Artboard");
+            if (_applied != default) PushHistory(Strings.ArtboardTool_MoveArtboard);
             return;
         }
         if (!_creating) return;
@@ -114,7 +113,7 @@ public sealed class ArtboardTool : ToolBase
     {
         if (Doc == null) return;
         int number = Doc.AllLayers.OfType<GroupLayer>().Count(g => g.IsArtboard) + 1;
-        GroupLayer artboard = new($"Artboard {number}") { ArtboardBounds = bounds, ArtboardBackground = BackgroundColor, BlendMode = LayerBlendMode.PassThrough };
+        GroupLayer artboard = new(string.Format(Strings.ArtboardTool_ArtboardNumber, number)) { ArtboardBounds = bounds, ArtboardBackground = BackgroundColor, BlendMode = LayerBlendMode.PassThrough };
         Layer? active = Doc.ActiveLayer;
         Doc.Root.Add(artboard);
         if (active != null && active is not GroupLayer { IsArtboard: true } && !(active is RasterLayer { IsBackground: true }) && active.Parent == Doc.Root &&
@@ -132,7 +131,7 @@ public sealed class ArtboardTool : ToolBase
                 Math.Max(Doc.Width, all.Right) - Math.Min(0, all.Left), Math.Max(Doc.Height, all.Bottom) - Math.Min(0, all.Top),
                 ResampleMethod.NearestNeighbor, Host.Background, true);
         }
-        PushHistory("New Artboard");
+        PushHistory(Strings.ArtboardTool_NewArtboard);
         Host.InvalidateCanvas();
     }
 
@@ -144,11 +143,11 @@ public sealed class ArtboardTool : ToolBase
 
     public override void BuildOptions(OptionsBuilder options)
     {
-        options.Combo("Size:", [("Custom", new SKSizeI(0, 0)), ("1920 × 1080 (HD)", new SKSizeI(1920, 1080)), ("1280 × 720", new SKSizeI(1280, 720)),
-            ("1080 × 1080 (Square)", new SKSizeI(1080, 1080)), ("390 × 844 (Phone)", new SKSizeI(390, 844)), ("820 × 1180 (Tablet)", new SKSizeI(820, 1180)), ("595 × 842 (A4)", new SKSizeI(595, 842))],
+        options.Combo(Strings.PropertiesPanel_SizeColon, [(Strings.GradientEditorDialog_Custom, new SKSizeI(0, 0)), ("1920 × 1080 (HD)", new SKSizeI(1920, 1080)), ("1280 × 720", new SKSizeI(1280, 720)),
+            (Strings.ArtboardTool_SizeSquare, new SKSizeI(1080, 1080)), (Strings.ArtboardTool_SizePhone, new SKSizeI(390, 844)), (Strings.ArtboardTool_SizeTablet, new SKSizeI(820, 1180)), ("595 × 842 (A4)", new SKSizeI(595, 842))],
             () => PresetSize, v => PresetSize = v, 170);
-        options.ColorButton("Artboard background", () => BackgroundColor, c => BackgroundColor = c);
-        options.Button("Add New Artboard", () =>
+        options.ColorButton(Strings.ArtboardTool_BackgroundTip, () => BackgroundColor, c => BackgroundColor = c);
+        options.Button(Strings.ArtboardTool_AddNewArtboard, () =>
         {
             if (Doc == null) return;
             SKSizeI size = PresetSize.Width > 0 ? PresetSize : new SKSizeI(Math.Min(1000, Doc.Width), Math.Min(1000, Doc.Height));

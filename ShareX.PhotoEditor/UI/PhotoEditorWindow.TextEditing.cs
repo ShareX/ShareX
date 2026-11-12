@@ -25,15 +25,10 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Input;
-using Avalonia.Interactivity;
-using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Threading;
-using ShareX.PhotoEditor.Integration;
 using ShareX.PhotoEditor.Tools;
-using ShareX.PhotoEditor.UI.Dialogs;
-using ShareX.PhotoEditor.UI.Panels;
+using ShareX.PhotoEditor.UI.Theme;
 
 namespace ShareX.PhotoEditor.UI;
 
@@ -54,11 +49,10 @@ public sealed partial class PhotoEditorWindow
             AcceptsReturn = true,
             TextWrapping = layer.IsParagraph ? TextWrapping.Wrap : TextWrapping.NoWrap,
             Background = inline ? Brushes.Transparent : new SolidColorBrush(Color.FromArgb(220, 30, 30, 30)),
-            BorderBrush = OverlayContext.AccentBrush,
+            BorderBrush = PhotoEditorTheme.AccentBorderBrush,
             BorderThickness = new Thickness(1),
             Padding = new Thickness(0),
-            MinWidth = 20,
-            CaretBrush = OverlayContext.AccentBrush
+            MinWidth = 20
         };
         _textEditor.TextChanged += (_, _) =>
         {
@@ -69,10 +63,17 @@ public sealed partial class PhotoEditorWindow
         };
         _overlayLayer.Children.Add(_textEditor);
         PositionTextEditor();
-        _textEditor.AttachedToVisualTree += (_, _) => _textEditor?.Focus();
+        // The overlay is already in the visual tree, so the box is attached by now; focus it once its template is applied so typing starts without another click.
+        TextBox editor = _textEditor;
+        Dispatcher.UIThread.Post(() =>
+        {
+            if (_textEditor != editor) return;
+            editor.Focus();
+            editor.CaretIndex = editor.Text?.Length ?? 0;
+        }, DispatcherPriority.Loaded);
         RefreshOptions();
         InvalidateCanvas();
-        SetStatus("Type the text. Ctrl+Enter commits, Esc cancels.");
+        SetStatus(Strings.TextEditing_Hint);
     }
 
     private void PositionTextEditor()
@@ -110,6 +111,10 @@ public sealed partial class PhotoEditorWindow
             Avalonia.Controls.Canvas.SetLeft(_textEditor, below.X);
             Avalonia.Controls.Canvas.SetTop(_textEditor, below.Y + 8);
         }
+        // The caret sits over the image (inline) or the dark box, so it takes the opaque text color, which is already
+        // what the user sees there, rather than an accent that can vanish on either.
+        Color caret = _textEditor.Foreground is ISolidColorBrush foreground ? foreground.Color : Colors.White;
+        _textEditor.CaretBrush = new SolidColorBrush(Color.FromRgb(caret.R, caret.G, caret.B));
     }
 
     public void EndTextEditing(bool commit)
@@ -136,12 +141,12 @@ public sealed partial class PhotoEditorWindow
             else if (string.IsNullOrWhiteSpace(layer.Text))
             {
                 if (_editingIsNew) doc.RemoveLayer(layer);
-                else doc.History.Push("Edit Type Layer");
+                else doc.History.Push(Strings.PropertiesPanel_EditTypeLayer);
             }
             else
             {
-                if (_editingIsNew || layer.Name == "Layer") layer.Name = layer.Text.Split('\n')[0].Trim() is { Length: > 0 } first ? first[..Math.Min(first.Length, 32)] : "Text";
-                doc.History.Push(_editingIsNew ? "Type Tool" : "Edit Type Layer");
+                if (_editingIsNew || layer.Name == Strings.LayerNames_NewTypeLayer) layer.Name = layer.Text.Split('\n')[0].Trim() is { Length: > 0 } first ? first[..Math.Min(first.Length, 32)] : Strings.LayerNames_Text;
+                doc.History.Push(_editingIsNew ? Strings.TextEditing_TypeTool : Strings.PropertiesPanel_EditTypeLayer);
             }
         }
         _editingOriginal = null;

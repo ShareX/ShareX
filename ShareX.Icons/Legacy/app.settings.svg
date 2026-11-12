@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f2f2f2"/><stop offset=".5" stop-color="#c4c4c4"/><stop offset="1" stop-color="#9a9a9a"/></linearGradient>
+<linearGradient id="head" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f0f0f0"/><stop offset=".6" stop-color="#c2c2c2"/><stop offset="1" stop-color="#9c9c9c"/></linearGradient>
+<linearGradient id="grip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9a9a"/><stop offset=".35" stop-color="#e84848"/><stop offset="1" stop-color="#b01818"/></linearGradient>
+<linearGradient id="ferrule" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c24040"/><stop offset="1" stop-color="#6e0808"/></linearGradient>
+</defs>
+<!-- wrench: ring end at the bottom left, open jaw at the top right -->
+<g transform="translate(8 8) rotate(-45)">
+<rect x="-7" y="-.95" width="12" height="1.9" fill="url(#steel)" stroke="#6c6c6c" stroke-width=".6"/>
+<path d="M-8 -1.9a1.9 1.9 0 1 0 0.01 0zM-8 -.75a.75 .75 0 1 1 -.01 0z" fill="url(#head)" fill-rule="evenodd" stroke="#6c6c6c" stroke-width=".6"/>
+<path d="M5.7 -.75H8.2A2.2 2.2 0 1 0 8.2 .75H5.7z" fill="url(#head)" stroke="#6c6c6c" stroke-width=".6" stroke-linejoin="round"/>
+<path d="M-5.6 -.35H4.4" stroke="#ffffff" stroke-opacity=".7" stroke-width=".5"/>
+</g>
+<!-- screwdriver: metal tip at the top left, red handle at the bottom right, over the wrench -->
+<g transform="translate(8 8) rotate(45)">
+<rect x="-8.3" y="-.85" width="1.6" height="1.7" rx=".3" fill="url(#steel)" stroke="#6c6c6c" stroke-width=".5"/>
+<rect x="-6.9" y="-.55" width="7.4" height="1.1" fill="url(#steel)" stroke="#6c6c6c" stroke-width=".4"/>
+<rect x=".3" y="-1.3" width="1.3" height="2.6" fill="url(#ferrule)"/>
+<rect x="1.5" y="-1.5" width="7.4" height="3" rx="1.1" fill="url(#grip)" stroke="#8a1010" stroke-width=".6"/>
+<path d="M2.3 -.7H8.1" stroke="#ffd0d0" stroke-opacity=".75" stroke-width=".5" stroke-linecap="round"/>
+</g>
+</svg>

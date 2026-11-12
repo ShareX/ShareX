@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Cỡ chữ</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Mũi tên tự do</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Căn chỉnh ngang</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Làm lại (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Bo góc</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Lưu</value>
@@ -282,6 +288,15 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Hủy (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Áp dụng</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Màu tô cho vùng được thêm</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Không thể tải ảnh từ bảng nhớ tạm.
 Bảng nhớ tạm không chứa ảnh.</value>
@@ -335,6 +350,12 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Lề</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Mới từ ảnh chụp màn hình (toàn màn hình)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Mới từ ảnh chụp màn hình (vùng)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Mở ảnh</value>
@@ -1386,8 +1407,14 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Chính</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Đặt lại thanh công cụ về mặc định</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Phụ</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Hiện / Ẩn</value>
@@ -1400,6 +1427,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Làm mờ</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Kích thước vùng vẽ</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Nhân bản</value>

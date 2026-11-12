@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Yazı tanı (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Fotoğraf düzenleyicide aç</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Aksiyonları gerçekleştir</value>
   </data>
@@ -639,6 +642,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Yükle</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Cetvel</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Panodan yükle</value>
   </data>
@@ -786,8 +792,11 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Bölge yakala</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Bölge yakala (Saydam)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Cetvel</value>
+    <value>Ölçüm</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Renk seçici ekranı</value>
@@ -866,6 +875,21 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Görüntü dosyaları</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Alt</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Kenar</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Otomatik</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Gizle</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Göster</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Görüntü aç</value>
@@ -1089,6 +1113,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Araç tipini değiştir</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Büyüteci yeniden boyutlandır</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Büyüteci yakınlaştır</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Bilgisayar</value>
   </data>
@@ -1221,6 +1251,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Otomatik</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Liste görünümü</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Küçük resim görünümü</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Özel yazı yükleyici</value>
   </data>
@@ -1289,6 +1325,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Karşıya dosya yükle</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Etkin monitör</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Birincil monitör</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

@@ -430,6 +430,18 @@
   <data name="BorderlessWindowWindow_Window_title" xml:space="preserve">
     <value>כותרת החלון</value>
   </data>
+  <data name="ClassicRulerOverlayControl_Distance" xml:space="preserve">
+    <value>מרחק: {0:0.00} px | זווית: {1:0.00}°</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Position" xml:space="preserve">
+    <value>X: {0} | Y: {1} | ימין: {2} | תחתון: {3}</value>
+  </data>
+  <data name="ClassicRulerOverlayControl_Size" xml:space="preserve">
+    <value>רוחב: {0} px | גובה: {1} px | שטח: {2} px | היקף: {3} px</value>
+  </data>
+  <data name="ClassicRulerWindow_Title" xml:space="preserve">
+    <value>ShareX - סרגל</value>
+  </data>
   <data name="ClipboardViewerViewModel_Clipboard_content" xml:space="preserve">
     <value>תוכן הלוח</value>
   </data>
@@ -986,7 +998,7 @@
     <value>ערכים נמוכים מאפשרים קידוד מהיר יותר. ערכים גבוהים יוצרים קבצים קטנים יותר. כל הערכים שומרים על איכות התמונה.</value>
   </data>
   <data name="ImageConverterWindow_WebPLossless" xml:space="preserve">
-    <value>ללא אובדן:</value>
+    <value>ללא אובדן</value>
   </data>
   <data name="ImageResizerWindow_Fill" xml:space="preserve">
     <value>מילוי</value>
@@ -1600,12 +1612,6 @@
   <data name="NetworkMonitorWindow_Target" xml:space="preserve">
     <value>יעד</value>
   </data>
-  <data name="OCRHelper_Language_unavailable" xml:space="preserve">
-    <value>השפה {0} אינה זמינה במערכת זו עבור OCR.</value>
-  </data>
-  <data name="OCRHelper_Requires_Windows_version" xml:space="preserve">
-    <value>זיהוי תווים אופטי זמין רק ב-Windows גרסה {0} ואילך.</value>
-  </data>
   <data name="OCROptions_Bing" xml:space="preserve">
     <value>Bing</value>
   </data>
@@ -1633,6 +1639,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>סגור לאחר הפתיחה</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>הועתק ללוח</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>העתק הכול</value>
   </data>
@@ -1642,23 +1651,17 @@
   <data name="OCRWindow_Edit_services" xml:space="preserve">
     <value>ערוך שירותים</value>
   </data>
-  <data name="OCRWindow_Language" xml:space="preserve">
-    <value>שפה</value>
-  </data>
   <data name="OCRWindow_Name" xml:space="preserve">
     <value>שם</value>
   </data>
   <data name="OCRWindow_New" xml:space="preserve">
     <value>חדש</value>
   </data>
-  <data name="OCRWindow_OCR_help" xml:space="preserve">
-    <value>עזרה בנושא OCR</value>
+  <data name="OCRWindow_No_text_found" xml:space="preserve">
+    <value>לא נמצא טקסט</value>
   </data>
   <data name="OCRWindow_Open_service" xml:space="preserve">
     <value>פתח שירות...</value>
-  </data>
-  <data name="OCRWindow_Recognition" xml:space="preserve">
-    <value>זיהוי</value>
   </data>
   <data name="OCRWindow_Remove" xml:space="preserve">
     <value>הסר</value>
@@ -1668,9 +1671,6 @@
   </data>
   <data name="OCRWindow_Result" xml:space="preserve">
     <value>תוצאה</value>
-  </data>
-  <data name="OCRWindow_Scale_factor" xml:space="preserve">
-    <value>מקדם קנה מידה</value>
   </data>
   <data name="OCRWindow_Select_a_service" xml:space="preserve">
     <value>בחר שירות</value>
@@ -1684,8 +1684,8 @@
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>בחר אזור...</value>
   </data>
-  <data name="OCRWindow_Services" xml:space="preserve">
-    <value>שירותים</value>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>הפרדת פסקאות</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - זיהוי תווים אופטי</value>
@@ -2033,7 +2033,7 @@
     <value>סבילות: {0}%</value>
   </data>
   <data name="RulerWindow_ShareX_Ruler" xml:space="preserve">
-    <value>ShareX - סרגל</value>
+    <value>ShareX - מדידה</value>
   </data>
   <data name="VideoConverterViewModel_Choose_video" xml:space="preserve">
     <value>בחר סרטון כדי להתחיל.</value>
@@ -2077,6 +2077,9 @@
   <data name="VideoConverterViewModel_Stopping" xml:space="preserve">
     <value>עוצר את ההמרה...</value>
   </data>
+  <data name="VideoConverterWindow_Average_bitrate" xml:space="preserve">
+    <value>קצב סיביות ממוצע</value>
+  </data>
   <data name="VideoConverterWindow_Browse" xml:space="preserve">
     <value>עיון...</value>
   </data>
@@ -2095,6 +2098,9 @@
   <data name="VideoConverterWindow_File_name" xml:space="preserve">
     <value>שם קובץ</value>
   </data>
+  <data name="VideoConverterWindow_File_size" xml:space="preserve">
+    <value>גודל הקובץ</value>
+  </data>
   <data name="VideoConverterWindow_Folder" xml:space="preserve">
     <value>תיקייה</value>
   </data>
@@ -2112,6 +2118,12 @@
   </data>
   <data name="VideoConverterWindow_Quality" xml:space="preserve">
     <value>איכות</value>
+  </data>
+  <data name="VideoConverterWindow_Resolution" xml:space="preserve">
+    <value>רזולוציה</value>
+  </data>
+  <data name="VideoConverterWindow_Result" xml:space="preserve">
+    <value>תוצאה</value>
   </data>
   <data name="VideoConverterWindow_ShareX_Video_Converter" xml:space="preserve">
     <value>ShareX - ממיר סרטונים</value>

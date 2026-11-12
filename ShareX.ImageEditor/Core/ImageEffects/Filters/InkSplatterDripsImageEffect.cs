@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class InkSplatterDripsImageEffect : ImageEffectBase
     public override string Id => "ink_splatter_drips";
     public override string Name => "Ink splatter + drips";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.paintbrush;
+    public override string IconKey => ImageEffectIcons.PaintBrush;
     public override string Description => "Adds ink splatter blobs and vertical drip marks.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

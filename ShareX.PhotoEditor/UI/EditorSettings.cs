@@ -63,6 +63,9 @@ public sealed class EditorSettings
     public bool SnapToGrid { get; set; }
     public bool SnapToDocument { get; set; } = true;
     public bool LockGuides { get; set; }
+    public bool MoveAutoSelect { get; set; }
+    public bool MoveAutoSelectGroups { get; set; }
+    public bool MoveShowTransformControls { get; set; } = true;
     public string Foreground { get; set; } = "#000000";
     public string Background { get; set; } = "#FFFFFF";
     public ResampleMethod DefaultResample { get; set; } = ResampleMethod.Bicubic;
@@ -97,6 +100,15 @@ public sealed class EditorSettings
     public bool RememberWindowState { get; set; } = true;
 
     public ShareX.HelpersLib.WindowState WindowState { get; set; } = new();
+
+    /// <summary>Last format chosen in Export As, as a file extension.</summary>
+    public string ExportFormat { get; set; } = ".png";
+
+    public int ExportJpegQuality { get; set; } = 90;
+
+    public int ExportWebPQuality { get; set; } = 90;
+
+    public bool ExportWebPLossless { get; set; }
 
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -138,6 +150,9 @@ public sealed class EditorSettings
         if (!(GridSpacing >= 1)) GridSpacing = 64;
         CheckerSize = Math.Clamp(CheckerSize, 2, 64);
         if (!(RightDockWidth >= 0)) RightDockWidth = 300;
+        if (string.IsNullOrEmpty(ExportFormat)) ExportFormat = ".png";
+        ExportJpegQuality = Math.Clamp(ExportJpegQuality, 1, 100);
+        ExportWebPQuality = Math.Clamp(ExportWebPQuality, 1, 100);
         return this;
     }
 

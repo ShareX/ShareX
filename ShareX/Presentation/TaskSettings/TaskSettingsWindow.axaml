@@ -1,39 +1,39 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="950"
         d:DesignHeight="720"
         x:Class="ShareX.TaskSettingsWindow"
         x:DataType="local:TaskSettingsViewModel"
-        Width="950"
+        Width="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         Height="720"
-        MinWidth="950"
+        MinWidth="{DynamicResource ShareX.Density.Settings.WindowWidth}"
         MinHeight="600"
         WindowStartupLocation="CenterScreen">
 
     <Window.Styles>
         <Style Selector="Grid.page-title">
-            <Setter Property="Margin" Value="0,0,0,14"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageTitleMargin}"/>
         </Style>
         <Style Selector="TextBlock.page-title-text">
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Text}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
-        <Style Selector="TextBlock.page-title-icon">
-            <Setter Property="FontSize" Value="22"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        <Style Selector="controls|IconPresenter.page-title-icon">
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.PageTitleIconSize}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.section-title">
-            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontSize" Value="{DynamicResource ShareX.Density.Settings.SectionTitleFontSize}"/>
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="Margin" Value="0,1,0,3"/>
         </Style>
@@ -49,43 +49,60 @@
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
-            <Setter Property="Padding" Value="12"/>
-            <Setter Property="Margin" Value="0,0,0,8"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.CardPadding}"/>
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.CardMargin}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="Border.override-card">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Background.Panel}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="CornerRadius" Value="6"/>
             <Setter Property="Padding" Value="12,8"/>
             <Setter Property="Margin" Value="0,0,0,8"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
+        <Style Selector="StackPanel.settings-page">
+            <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Settings.PageMargin}"/>
+        </Style>
         <Style Selector="CheckBox.setting">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
             <Setter Property="Margin" Value="0,1"/>
             <Setter Property="FontWeight" Value="Normal"/>
         </Style>
+        <Style Selector="Button.form-control">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
+        </Style>
         <Style Selector="ComboBox.form-control">
             <Setter Property="MinWidth" Value="250"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
         <Style Selector="TextBox.form-control">
             <Setter Property="MinWidth" Value="300"/>
-            <Setter Property="MinHeight" Value="32"/>
-            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ControlPadding}"/>
             <Setter Property="HorizontalAlignment" Value="Stretch"/>
         </Style>
         <Style Selector="NumericUpDown.form-control">
             <Setter Property="Width" Value="130"/>
-            <Setter Property="MinHeight" Value="32"/>
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
+        <Style Selector="NumericUpDown.form-control /template/ ButtonSpinner#PART_Spinner">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="NumericUpDown.form-control /template/ TextBox#PART_TextBox">
+            <Setter Property="MinHeight" Value="{DynamicResource ShareX.Density.Settings.NumberBoxHeight}"/>
+        </Style>
+        <Style Selector="CheckBox.setting /template/ Grid#RootGrid > Grid">
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.CheckBoxMinHeight}"/>
+        </Style>
         <Style Selector="Button.compact">
-            <Setter Property="Height" Value="32"/>
-            <Setter Property="Padding" Value="10,4"/>
+            <Setter Property="Height" Value="{DynamicResource ShareX.Density.Settings.ControlMinHeight}"/>
+            <Setter Property="Padding" Value="{DynamicResource ShareX.Density.Settings.ButtonPadding}"/>
             <Setter Property="Margin" Value="0,4"/>
         </Style>
         <Style Selector="ListBox.settings-list">
@@ -120,6 +137,13 @@
             <Setter Property="FontWeight" Value="Normal"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
+        <!-- Selected list rows use the accent fill; this comes after the window's own text styles so it wins. -->
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
+        <Style Selector="ListBox:not(.neutral-selection) > ListBoxItem:selected controls|IconPresenter">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
     </Window.Styles>
 
     <ThemeVariantScope>
@@ -140,6 +164,7 @@
             </Grid>
 
             <Border x:Name="ToolbarEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -149,6 +174,7 @@
             </Border>
 
             <Border x:Name="ActionEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -163,11 +189,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.zap}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Zap}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="ActionEditorTitle"
                                            Text="{x:Static res:Strings.TaskSettingsWindow_AddAction}"
@@ -180,9 +205,8 @@
                                     Classes="icon-button"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_Close}"
                                     Click="OnCancelActionEditorClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.x}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Close}"
+                                                        FontSize="16"/>
                             </Button>
                         </Grid>
 
@@ -203,9 +227,8 @@
                                                 Padding="0"
                                                 ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseActionPathClick">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.folder}"
-                                                       FontSize="15"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Folder}"
+                                                                    FontSize="15"/>
                                         </Button>
                                     </Grid>
                                 </StackPanel>
@@ -265,6 +288,7 @@
             </Border>
 
             <Border x:Name="WatchFolderEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -279,11 +303,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.folder_search}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderSearch}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock x:Name="WatchFolderEditorTitle"
                                            Text="{x:Static res:Strings.TaskSettingsWindow_AddWatchFolder}"
@@ -306,9 +329,8 @@
                                                 Padding="0"
                                                 ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_BrowseWithEllipsis}"
                                                 Click="OnBrowseWatchFolderClick">
-                                            <TextBlock Classes="icon"
-                                                       Text="{x:Static theming:LucideIcons.folder}"
-                                                       FontSize="15"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Folder}"
+                                                                    FontSize="15"/>
                                         </Button>
                                     </Grid>
                                 </StackPanel>
@@ -348,6 +370,7 @@
             </Border>
 
             <Border x:Name="NotificationButtonsEditorOverlay"
+                    PointerPressed="OnEditorOverlayPointerPressed"
                     ZIndex="100"
                     IsVisible="False"
                     Background="{DynamicResource ShareX.Brush.Overlay.Modal}">
@@ -362,11 +385,10 @@
                         CornerRadius="8">
                     <Grid RowDefinitions="Auto,Auto,*,Auto" RowSpacing="12">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="9">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.bell}"
-                                       FontSize="21"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Bell}"
+                                                    FontSize="21"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                    VerticalAlignment="Center"/>
                             <StackPanel Grid.Column="1" Spacing="1">
                                 <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_NotificationButtons}"
                                            FontSize="19"
@@ -383,7 +405,7 @@
                                     Classes="compact"
                                     Click="OnAddNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.plus}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                     <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_AddWithEllipsis}"/>
                                 </StackPanel>
                             </Button>
@@ -391,7 +413,7 @@
                                     Classes="compact"
                                     Click="OnRemoveNotificationButtonClick">
                                 <StackPanel Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.trash_2}"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                                     <TextBlock Text="{x:Static res:Strings.TaskSettingsWindow_Remove}"/>
                                 </StackPanel>
                             </Button>
@@ -401,9 +423,8 @@
                                     Padding="0"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveUp}"
                                     Click="OnMoveNotificationButtonUpClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.chevron_up}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronUp}"
+                                                        FontSize="16"/>
                             </Button>
                             <Button x:Name="NotificationButtonMoveDownButton"
                                     Width="32"
@@ -411,9 +432,8 @@
                                     Padding="0"
                                     ToolTip.Tip="{x:Static res:Strings.TaskSettingsWindow_MoveDown}"
                                     Click="OnMoveNotificationButtonDownClick">
-                                <TextBlock Classes="icon"
-                                           Text="{x:Static theming:LucideIcons.chevron_down}"
-                                           FontSize="16"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}"
+                                                        FontSize="16"/>
                             </Button>
                         </StackPanel>
 
@@ -426,12 +446,10 @@
                                         <Grid Classes="action-list-item"
                                               ColumnDefinitions="26,*"
                                               ColumnSpacing="7">
-                                            <TextBlock Classes="icon"
-                                                       Text="{Binding Icon}"
-                                                       FontSize="16"
-                                                       Foreground="{DynamicResource ShareX.Brush.Accent}"
-                                                       TextAlignment="Center"
-                                                       VerticalAlignment="Center"/>
+                                            <controls:IconPresenter Icon="{Binding Icon}"
+                                                                    FontSize="16"
+                                                                    Classes="list-icon accent"
+                                                                    VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1"
                                                        Text="{Binding Title}"
                                                        FontWeight="Normal"

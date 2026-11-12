@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Dimensione carattere</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Freccia a mano libera</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Allineamento orizzontale</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Ripeti (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Angoli arrotondati</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salva</value>
@@ -282,6 +288,15 @@ Salvare le modifiche prima di chiudere l'editor di immagini?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annulla (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Applica</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Colore di riempimento dell'area aggiunta</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Impossibile caricare l’immagine dagli appunti.
 Gli appunti non contengono un’immagine.</value>
@@ -335,6 +350,12 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margine</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nuovo da screenshot (schermo intero)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nuovo da screenshot (area)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Apri immagine</value>
@@ -1386,8 +1407,14 @@ Gli appunti non contengono un’immagine.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principale</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Ripristina barra degli strumenti predefinita</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondaria</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Mostra / Nascondi</value>
@@ -1400,6 +1427,9 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Sfocatura</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Dimensione tela</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clona</value>

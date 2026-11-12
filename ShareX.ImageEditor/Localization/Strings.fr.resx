@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Taille de police</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Flèche à main levée</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Alignement horizontal</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Rétablir (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Coins arrondis</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Enregistrer</value>
@@ -282,6 +288,15 @@ Voulez-vous les enregistrer avant de fermer l’éditeur d’images ?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Annuler (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Couleur de remplissage de la zone ajoutée</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Impossible de charger l’image depuis le presse-papiers.
 Le presse-papiers ne contient aucune image.</value>
@@ -335,6 +350,12 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Marge</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Nouveau à partir d’une capture (plein écran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Nouveau à partir d’une capture (région)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Ouvrir une image</value>
@@ -1386,8 +1407,14 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principal</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Rétablir la barre d’outils par défaut</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secondaire</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Afficher / Masquer</value>
@@ -1400,6 +1427,9 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Flou</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Taille de la toile</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Cloner</value>

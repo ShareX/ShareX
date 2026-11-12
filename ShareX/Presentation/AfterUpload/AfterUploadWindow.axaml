@@ -1,8 +1,9 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:local="using:ShareX"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.AfterUploadWindow"
         x:CompileBindings="False"
         Title="{x:Static res:Strings.AfterUploadWindow_Title}"
@@ -41,8 +42,12 @@
         <Style Selector="ListBox.format-list > ListBoxItem:selected">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
         </Style>
+        <Style Selector="ListBox.format-list > ListBoxItem:selected TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        </Style>
         <Style Selector="ListBox.format-list > ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Setter Property="CornerRadius" Value="4"/>
         </Style>
         <Style Selector="Button.compact">
@@ -67,18 +72,17 @@
                         Height="40"
                         CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.circle_check}"
-                               FontSize="20"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                     <TextBlock Text="{x:Static res:Strings.AfterUploadWindow_UploadComplete}"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock Text="{Binding ResultText}"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextTrimming="CharacterEllipsis"/>
@@ -98,11 +102,10 @@
                             CornerRadius="6"
                             Padding="10,7">
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
-                            <TextBlock Classes="icon"
-                                       Text="{x:Static theming:LucideIcons.link}"
-                                       FontSize="16"
-                                       Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                                       VerticalAlignment="Center"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}"
+                                                    FontSize="16"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                    VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.AfterUploadWindow_ClipboardFormats}"
                                        FontWeight="SemiBold"
@@ -124,7 +127,7 @@
                                     <StackPanel Spacing="1" VerticalAlignment="Center">
                                         <TextBlock Text="{Binding Group}"
                                                    FontSize="11"
-                                                   Opacity="0.72"/>
+                                                   Opacity="0.8"/>
                                         <TextBlock Text="{Binding Description}"
                                                    TextTrimming="CharacterEllipsis"/>
                                     </StackPanel>
@@ -163,11 +166,10 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 Spacing="8">
-                        <TextBlock Classes="icon"
-                                   Text="{x:Static theming:LucideIcons.link}"
-                                   FontSize="48"
-                                   Opacity="0.45"
-                                   HorizontalAlignment="Center"/>
+                        <controls:IconPresenter Icon="{x:Static icons:AppIcons.Link}"
+                                                FontSize="48"
+                                                Opacity="0.45"
+                                                HorizontalAlignment="Center"/>
                         <TextBlock Text="{x:Static res:Strings.AfterUploadWindow_NoPreview}"
                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                     </StackPanel>
@@ -192,35 +194,35 @@
                         Classes="compact icon-button"
                         ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_CopyImage}"
                         Click="OnCopyImageClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.image}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}" FontSize="15"/>
                 </Button>
                 <Button x:Name="CopyLinkButton"
                         Grid.Column="1"
                         Classes="compact icon-button"
                         ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_CopySelectedFormat}"
                         Click="OnCopyLinkClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.copy}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Copy}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenLinkButton"
                         Grid.Column="2"
                         Classes="compact icon-button"
                         ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenLink}"
                         Click="OnOpenLinkClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.external_link}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.ExternalLink}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenFileButton"
                         Grid.Column="3"
                         Classes="compact icon-button"
                         ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenFile}"
                         Click="OnOpenFileClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.file}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.File}" FontSize="15"/>
                 </Button>
                 <Button x:Name="OpenFolderButton"
                         Grid.Column="4"
                         Classes="compact icon-button"
                         ToolTip.Tip="{x:Static res:Strings.AfterUploadWindow_OpenContainingFolder}"
                         Click="OnOpenFolderClick">
-                    <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder}" FontSize="15"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Folder}" FontSize="15"/>
                 </Button>
                 <Button Grid.Column="6"
                         Classes="compact"

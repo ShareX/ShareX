@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="g-blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ae6ff" /><stop offset=".3" stop-color="#6ab6f0" /><stop offset=".55" stop-color="#4590cd" /><stop offset=".8" stop-color="#1ca4ea" /><stop offset="1" stop-color="#0eb7ff" /></linearGradient>
+    <linearGradient id="g-glass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" /><stop offset="1" stop-color="#d3e2ff" /></linearGradient>
+    <linearGradient id="acbBoard" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c88451" /><stop offset="0.5" stop-color="#b06c39" /><stop offset="1" stop-color="#ab6734" /></linearGradient>
+    <linearGradient id="acbEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#954000" /><stop offset="0.85" stop-color="#6e2300" /><stop offset="1" stop-color="#470600" /></linearGradient>
+    <linearGradient id="acbPaper" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fcfefe" /><stop offset="0.85" stop-color="#d9e8e8" /><stop offset="1" stop-color="#e2f3f3" /></linearGradient>
+    <linearGradient id="acbClip" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#c7c7d2" /><stop offset="0.5" stop-color="#dedee4" /><stop offset="1" stop-color="#c7c7d2" /></linearGradient>
+  </defs>
+  <g transform="translate(-1.5 -.5)">
+    <rect x="2.5" y="1.5" width="11" height="14" rx="1" fill="url(#acbBoard)" stroke="url(#acbEdge)" stroke-opacity=".8" />
+    <path d="M3.5 14.5 V2.5 H12.5 V14.5" fill="none" stroke="#e8a06a" stroke-opacity=".6" />
+    <rect x="3" y="3" width="10" height="12" fill="url(#acbPaper)" />
+    <path d="M3.5 3 V15 M12.5 3 V15" stroke="#ffffff" stroke-opacity=".6" />
+    <rect x="4" y="3" width="8" height="1" fill="#000" opacity=".38" />
+    <rect x="5" y="4" width="6" height="1" fill="#000" opacity=".13" />
+    <rect x="5" y="2" width="6" height="1" fill="url(#acbClip)" />
+    <rect x="6.5" y="1" width="3" height="1" fill="#dadadc" />
+    <path d="M6.5 2 V1.3 Q6.5 .5 7.3 .5 H8.7 Q9.5 .5 9.5 1.3 V2" fill="none" stroke="#545454" stroke-opacity=".45" />
+  </g>
+  <ellipse cx="12" cy="12.4" rx="4.4" ry="3.2" fill="#fff" opacity=".85" />
+  <path d="M8.3 12.4C9.2 10.7 10.5 9.9 12 9.9S14.8 10.7 15.7 12.4C14.8 14.1 13.5 14.9 12 14.9S9.2 14.1 8.3 12.4Z" fill="url(#g-glass)" stroke="#2a2a36" stroke-width=".7" stroke-linejoin="round" />
+  <circle cx="12" cy="12.4" r="1.9" fill="url(#g-blue)" stroke="#0a3f78" stroke-width=".5" />
+  <circle cx="12" cy="12.4" r=".8" fill="#0a0a10" />
+  <circle cx="11.4" cy="11.8" r=".45" fill="#ffffff" />
+</svg>

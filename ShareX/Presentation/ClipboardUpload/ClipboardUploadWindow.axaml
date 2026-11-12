@@ -1,7 +1,8 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:res="using:ShareX.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         x:Class="ShareX.ClipboardUploadWindow"
         x:CompileBindings="False"
         Width="620"
@@ -23,10 +24,6 @@
             <Setter Property="MinWidth" Value="92"/>
             <Setter Property="Padding" Value="14,5"/>
         </Style>
-        <Style Selector="Button.primary">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
         <Style Selector="CheckBox">
             <Setter Property="FontWeight" Value="Normal"/>
         </Style>
@@ -40,18 +37,17 @@
                         Height="40"
                         CornerRadius="6"
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
-                    <TextBlock Classes="icon"
-                               Text="{x:Static theming:LucideIcons.clipboard}"
-                               FontSize="20"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
-                               HorizontalAlignment="Center"
-                               VerticalAlignment="Center"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Clipboard}"
+                                            FontSize="20"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"/>
                 </Border>
                 <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
                     <TextBlock x:Name="HeaderTitle"
                                FontSize="19"
                                FontWeight="SemiBold"
-                               Foreground="{DynamicResource ShareX.Brush.Accent.Start}"/>
+                               Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
                     <TextBlock x:Name="ClipboardSummary"
                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
                                TextTrimming="CharacterEllipsis"/>

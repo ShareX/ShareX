@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class RadialRainbowImageEffect : ImageEffectBase
     public override string Id => "radial_rainbow";
     public override string Name => "Radial rainbow";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.rainbow;
+    public override string IconKey => ImageEffectIcons.Rainbow;
     public override string Description => "Applies a rainbow hue shift based on angle from center.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

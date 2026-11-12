@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="980" d:DesignHeight="680"
         x:Class="ShareX.Tools.DirectoryIndexerWindow"
         x:DataType="vm:DirectoryIndexerViewModel"
@@ -28,7 +29,7 @@
                         <Button Grid.Column="2" Content="{x:Static localization:Strings.DirectoryIndexerWindow_Browse}" Command="{Binding BrowseFolderCommand}" IsEnabled="{Binding IsIdle}"/>
                         <Button Grid.Column="3" Command="{Binding IndexCommand}" IsEnabled="{Binding CanIndex}">
                             <StackPanel Orientation="Horizontal" Spacing="8">
-                                <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.folder_search}"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderSearch}"/>
                                 <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Generate_output}"/>
                             </StackPanel>
                         </Button>
@@ -153,7 +154,7 @@
                                            Text="{x:Static localization:Strings.DirectoryIndexerWindow_Ready_to_save_or_upload}"
                                            IsVisible="{Binding HasSource}"
                                            FontWeight="Normal"
-                                           Foreground="{DynamicResource ShareX.Brush.Accent.Start}"
+                                           Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
                                            VerticalAlignment="Center"/>
                             </Grid>
                             <ProgressBar Grid.Row="1" Height="4" IsIndeterminate="True" IsVisible="{Binding IsBusy}"/>
@@ -173,11 +174,10 @@
                                             VerticalAlignment="Center"
                                             MaxWidth="390"
                                             Spacing="10">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.file_code}"
-                                               FontSize="44"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               HorizontalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FileCode}"
+                                                            FontSize="44"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                            HorizontalAlignment="Center"/>
                                     <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_The_HTML_index_was_generated_successfully_HTML_preview_is_unavailable_but_the_output_is_ready_to_save_or_upload}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -190,11 +190,10 @@
                                             VerticalAlignment="Center"
                                             MaxWidth="390"
                                             Spacing="10">
-                                    <TextBlock Classes="icon"
-                                               Text="{x:Static theming:LucideIcons.folder_tree}"
-                                               FontSize="44"
-                                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                               HorizontalAlignment="Center"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderTree}"
+                                                            FontSize="44"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                            HorizontalAlignment="Center"/>
                                     <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Choose_a_folder_and_generate_output_Nothing_is_saved_until_you_use_Save_as_or_Upload}"
                                                FontWeight="Normal"
                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -215,13 +214,13 @@
                                VerticalAlignment="Center"/>
                     <Button Grid.Column="1" Command="{Binding SaveAsCommand}" IsEnabled="{Binding HasSource}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.save}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Save}"/>
                             <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Save_as}"/>
                         </StackPanel>
                     </Button>
                     <Button Grid.Column="2" Command="{Binding UploadCommand}" IsEnabled="{Binding HasSource}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Classes="icon" Text="{x:Static theming:LucideIcons.upload}"/>
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"/>
                             <TextBlock Text="{x:Static localization:Strings.DirectoryIndexerWindow_Upload}"/>
                         </StackPanel>
                     </Button>

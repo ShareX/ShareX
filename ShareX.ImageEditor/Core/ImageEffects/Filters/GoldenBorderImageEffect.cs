@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class GoldenBorderImageEffect : ImageEffectBase
     public override string Id => "golden_border";
     public override string Name => "Golden border";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.crown;
+    public override string IconKey => ImageEffectIcons.Crown;
     public override string Description => "Adds a luxurious picture frame border to the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Yazı tipi boyutu</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Serbest ok</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Yatay hizalama</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Yinele (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Yuvarlatılmış köşeler</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Kaydet</value>
@@ -282,6 +288,15 @@ Resim düzenleyiciyi kapatmadan önce değişiklikleri kaydetmek ister misiniz?<
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>İptal (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Eklenen alanın dolgu rengi</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Panodan görüntü yüklenemedi.
 Panoda görüntü yok.</value>
@@ -335,6 +350,12 @@ Panoda görüntü yok.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Kenar boşluğu</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (tam ekran)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Ekran görüntüsünden yeni (bölge)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Görüntü aç</value>
@@ -1386,8 +1407,14 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Birincil</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Araç çubuğunu varsayılana sıfırla</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>İkincil</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Göster / Gizle</value>
@@ -1400,6 +1427,9 @@ Panoda görüntü yok.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Bulanıklaştır</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Klonla</value>

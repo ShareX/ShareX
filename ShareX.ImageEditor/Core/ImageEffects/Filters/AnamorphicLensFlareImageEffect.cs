@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -35,7 +35,7 @@ public sealed class AnamorphicLensFlareImageEffect : ImageEffectBase
     public override string Id => "anamorphic_lens_flare";
     public override string Name => "Anamorphic lens flare";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.sparkle;
+    public override string IconKey => ImageEffectIcons.Sparkle;
     public override string Description => "Adds cinematic horizontal lens flare streaks to bright areas.";
 
     public override IReadOnlyList<EffectParameter> Parameters =>

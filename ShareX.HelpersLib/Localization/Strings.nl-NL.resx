@@ -94,6 +94,9 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Tekst herkennen (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
+    <value>Openen in foto-editor</value>
+  </data>
   <data name="AfterCaptureTasks_PerformActions" xml:space="preserve">
     <value>Voer acties uit</value>
   </data>
@@ -639,6 +642,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_Category_Upload" xml:space="preserve">
     <value>Uploaden</value>
   </data>
+  <data name="HotkeyType_ClassicRuler" xml:space="preserve">
+    <value>Meetlat</value>
+  </data>
   <data name="HotkeyType_ClipboardUpload" xml:space="preserve">
     <value>Uploaden van klembord</value>
   </data>
@@ -786,8 +792,11 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_RectangleRegion" xml:space="preserve">
     <value>Leg rechthoekige regio vast</value>
   </data>
+  <data name="HotkeyType_RectangleTransparent" xml:space="preserve">
+    <value>Leg rechthoekige regio vast (Transparant)</value>
+  </data>
   <data name="HotkeyType_Ruler" xml:space="preserve">
-    <value>Meetlat</value>
+    <value>Meten</value>
   </data>
   <data name="HotkeyType_ScreenColorPicker" xml:space="preserve">
     <value>Kleurenkiezer op het scherm</value>
@@ -866,6 +875,21 @@ Wilt u het toch uitvoeren?</value>
   </data>
   <data name="ImageHelpers_Image_files" xml:space="preserve">
     <value>Afbeeldingsbestanden</value>
+  </data>
+  <data name="ImagePreviewLocation_Bottom" xml:space="preserve">
+    <value>Onder</value>
+  </data>
+  <data name="ImagePreviewLocation_Side" xml:space="preserve">
+    <value>Zijkant</value>
+  </data>
+  <data name="ImagePreviewVisibility_Automatic" xml:space="preserve">
+    <value>Automatisch</value>
+  </data>
+  <data name="ImagePreviewVisibility_Hide" xml:space="preserve">
+    <value>Verbergen</value>
+  </data>
+  <data name="ImagePreviewVisibility_Show" xml:space="preserve">
+    <value>Weergeven</value>
   </data>
   <data name="ImageViewerWindow_Open_image" xml:space="preserve">
     <value>Afbeelding openen</value>
@@ -1089,6 +1113,12 @@ Wilt u het toch uitvoeren?</value>
   <data name="RegionCaptureAction_SwapToolType" xml:space="preserve">
     <value>Gereedschapstype wisselen</value>
   </data>
+  <data name="RegionCaptureMagnifierScrollAction_Resize" xml:space="preserve">
+    <value>Grootte vergrootglas wijzigen</value>
+  </data>
+  <data name="RegionCaptureMagnifierScrollAction_Zoom" xml:space="preserve">
+    <value>Vergrootglas zoomen</value>
+  </data>
   <data name="ReplCodeMenuCategory_Computer" xml:space="preserve">
     <value>Computer</value>
   </data>
@@ -1221,6 +1251,12 @@ Wilt u het toch uitvoeren?</value>
   <data name="SupportedLanguage_Automatic" xml:space="preserve">
     <value>Automatisch</value>
   </data>
+  <data name="TaskViewMode_ListView" xml:space="preserve">
+    <value>Lijstweergave</value>
+  </data>
+  <data name="TaskViewMode_ThumbnailView" xml:space="preserve">
+    <value>Miniatuurweergave</value>
+  </data>
   <data name="TextDestination_CustomTextUploader" xml:space="preserve">
     <value>Aangepaste tekstuploader</value>
   </data>
@@ -1289,6 +1325,12 @@ Wilt u het toch uitvoeren?</value>
   </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Uploaden bestand</value>
+  </data>
+  <data name="ToastWindowMonitor_ActiveMonitor" xml:space="preserve">
+    <value>Actieve monitor</value>
+  </data>
+  <data name="ToastWindowMonitor_PrimaryMonitor" xml:space="preserve">
+    <value>Primaire monitor</value>
   </data>
   <data name="Translator_ASCII" xml:space="preserve">
     <value>ASCII</value>

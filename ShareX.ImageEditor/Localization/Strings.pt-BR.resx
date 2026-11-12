@@ -57,6 +57,9 @@
   <data name="AnnotationToolbar_Fontsize" xml:space="preserve">
     <value>Tamanho da fonte</value>
   </data>
+  <data name="AnnotationToolbar_Freehandarrow" xml:space="preserve">
+    <value>Seta à mão livre</value>
+  </data>
   <data name="AnnotationToolbar_Horizontalalignment" xml:space="preserve">
     <value>Alinhamento horizontal</value>
   </data>
@@ -80,6 +83,9 @@
   </data>
   <data name="AnnotationToolbar_RedoCtrlY" xml:space="preserve">
     <value>Refazer (Ctrl+Y)</value>
+  </data>
+  <data name="AnnotationToolbar_Roundedcorners" xml:space="preserve">
+    <value>Cantos arredondados</value>
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salvar</value>
@@ -282,6 +288,15 @@ Deseja salvar as alterações antes de fechar o editor de imagens?</value>
   <data name="EditorView_CancelEsc" xml:space="preserve">
     <value>Cancelar (Esc)</value>
   </data>
+  <data name="EditorView_CanvasSizeApply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="EditorView_CanvasSizeCancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="EditorView_CanvasSizeFillColor" xml:space="preserve">
+    <value>Cor de preenchimento da área adicionada</value>
+  </data>
   <data name="EditorView_ClipboardDoesNotContainImage" xml:space="preserve">
     <value>Não foi possível carregar a imagem da área de transferência.
 A área de transferência não contém uma imagem.</value>
@@ -335,6 +350,12 @@ A área de transferência não contém uma imagem.</value>
   </data>
   <data name="EditorView_Margin" xml:space="preserve">
     <value>Margem</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>Novo de captura de tela (tela inteira)</value>
+  </data>
+  <data name="EditorView_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>Novo de captura de tela (região)...</value>
   </data>
   <data name="EditorView_OpenImage" xml:space="preserve">
     <value>Abrir imagem</value>
@@ -1386,8 +1407,14 @@ A área de transferência não contém uma imagem.</value>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_Primary" xml:space="preserve">
+    <value>Principal</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Resettoolbartodefault" xml:space="preserve">
     <value>Redefinir barra de ferramentas para o padrão</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
+    <value>Secundário</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Mostrar / Ocultar</value>
@@ -1400,6 +1427,9 @@ A área de transferência não contém uma imagem.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Blur" xml:space="preserve">
     <value>Desfoque</value>
+  </data>
+  <data name="ToolbarCustomizationItemViewModel_CanvasSize" xml:space="preserve">
+    <value>Tamanho da tela</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Clone" xml:space="preserve">
     <value>Clonar</value>

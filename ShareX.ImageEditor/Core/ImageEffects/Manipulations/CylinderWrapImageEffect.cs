@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
@@ -41,7 +41,7 @@ public sealed class CylinderWrapImageEffect : ImageEffectBase
     public override string Id => "cylinder_wrap";
     public override string Name => "Cylinder wrap";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.cylinder;
+    public override string IconKey => ImageEffectIcons.Cylinder;
     public override string Description => "Wraps the image around a cylindrical surface.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

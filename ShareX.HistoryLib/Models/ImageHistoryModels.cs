@@ -27,8 +27,8 @@
 
 using Avalonia;
 using ShareX.AvaloniaUI.Imaging;
-using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -81,7 +81,7 @@ public sealed class ImageHistoryEntry : INotifyPropertyChanged, IDisposable
     public bool ShowPlaceholder => Thumbnail == null;
     public bool IsVideo => FileHelpers.IsVideoFile(Item.FilePath);
     public bool ShowPlayIcon => HasThumbnail && IsVideo;
-    public string PlaceholderIcon => IsVideo ? LucideIcons.file_video : LucideIcons.image;
+    public string PlaceholderIcon => IsVideo ? AppIcons.FileVideo : AppIcons.Image;
 
     public AvaloniaBitmap? Thumbnail
     {
@@ -212,9 +212,16 @@ public sealed class ImageHistoryThumbnailLoader : IDisposable
     private readonly SemaphoreSlim _workers = new(Math.Clamp(Environment.ProcessorCount / 2, 2, 4));
     private bool _disposed;
 
+    // Thumbnail sizes are layout units; decode at the monitor's pixel density so previews stay sharp on high-DPI displays.
+    public double RenderScaling { get; set; } = 1;
+
     public async Task<AvaloniaBitmap?> LoadAsync(string? filePath, int width, int height, CancellationToken token)
     {
         if (_disposed || token.IsCancellationRequested || string.IsNullOrWhiteSpace(filePath) || !File.Exists(filePath)) return null;
+
+        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 1 ? RenderScaling : 1;
+        width = (int)Math.Ceiling(width * scaling);
+        height = (int)Math.Ceiling(height * scaling);
 
         try
         {

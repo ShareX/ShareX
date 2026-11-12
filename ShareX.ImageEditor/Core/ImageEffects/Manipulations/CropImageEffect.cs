@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class CropImageEffect : ImageEffectBase
     public override string Id => "crop_image";
     public override string Name => "Crop image";
     public override ImageEffectCategory Category => ImageEffectCategory.Manipulations;
-    public override string IconKey => LucideIcons.crop;
+    public override string IconKey => AppIcons.Crop;
     public override string Description => "Crops the image.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

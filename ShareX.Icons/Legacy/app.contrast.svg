@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="wf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".55" stop-color="#ededf0"/><stop offset="1" stop-color="#cfcfd6"/></linearGradient>
+    <linearGradient id="kf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a6a74"/><stop offset=".45" stop-color="#2e2e36"/><stop offset="1" stop-color="#101014"/></linearGradient>
+    <linearGradient id="ko" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6e6e78"/><stop offset="1" stop-color="#1c1c22"/></linearGradient>
+    <radialGradient id="gl" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" stop-opacity=".55"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="8" cy="8" r="7" fill="url(#wf)"/>
+  <path d="M8 1a7 7 0 0 1 0 14z" fill="url(#kf)"/>
+  <ellipse cx="8" cy="4.2" rx="5" ry="2.6" fill="url(#gl)"/>
+  <circle cx="8" cy="8" r="7" fill="none" stroke="url(#ko)" stroke-opacity=".9"/>
+</svg>

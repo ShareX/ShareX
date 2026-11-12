@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="650"
         x:Class="ShareX.Tools.AnimatedGifMakerWindow"
         x:DataType="vm:AnimatedGifMakerViewModel"
@@ -23,18 +24,18 @@
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto,Auto,*" ColumnSpacing="8">
                             <Button Grid.Column="0" Command="{Binding AddCommand}">
                                 <StackPanel Orientation="Horizontal" Spacing="8">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.plus}" Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Plus}"/>
                                     <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Add}"/>
                                 </StackPanel>
                             </Button>
                             <Button Grid.Column="1" Command="{Binding RemoveCommand}" IsEnabled="{Binding CanRemove}">
-                                <TextBlock Text="{x:Static theming:LucideIcons.trash_2}" Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Trash}"/>
                             </Button>
                             <Button Grid.Column="2" Command="{Binding MoveUpCommand}" IsEnabled="{Binding CanMoveUp}">
-                                <TextBlock Text="{x:Static theming:LucideIcons.arrow_up}" Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowUp}"/>
                             </Button>
                             <Button Grid.Column="3" Command="{Binding MoveDownCommand}" IsEnabled="{Binding CanMoveDown}">
-                                <TextBlock Text="{x:Static theming:LucideIcons.arrow_down}" Classes="icon"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowDown}"/>
                             </Button>
                             <TextBlock Grid.Column="4" Text="{Binding ImageCountText}"
                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
@@ -50,10 +51,9 @@
                                 <ListBox.ItemTemplate>
                                     <DataTemplate x:CompileBindings="False">
                                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="4,3">
-                                            <TextBlock Text="{x:Static theming:LucideIcons.image}"
-                                                       Classes="icon"
-                                                       Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                       VerticalAlignment="Center"/>
+                                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Image}"
+                                                                    Classes="list-icon"
+                                                                    VerticalAlignment="Center"/>
                                             <TextBlock Grid.Column="1" Text="{Binding}"
                                                        TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
                                         </Grid>
@@ -63,10 +63,9 @@
                             <StackPanel IsVisible="{Binding !HasImages}"
                                         HorizontalAlignment="Center" VerticalAlignment="Center"
                                         Spacing="8" IsHitTestVisible="False">
-                                <TextBlock Text="{x:Static theming:LucideIcons.square_dashed}"
-                                           Classes="icon" FontSize="42"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.DragDropUpload}" FontSize="42"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.ImageThumbnailerWindow_Drop_images_here_or_use_the_Add_button}"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             </StackPanel>
@@ -112,7 +111,7 @@
                                 <TextBlock Text="{Binding OutputFilePath}" Classes="path-text"
                                            VerticalAlignment="Center"/>
                                 <Button Grid.Column="1" Command="{Binding OpenOutputCommand}">
-                                    <TextBlock Text="{x:Static theming:LucideIcons.folder_open}" Classes="icon"/>
+                                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.FolderOpen}"/>
                                 </Button>
                             </Grid>
                         </Grid>
@@ -151,10 +150,9 @@
                             <StackPanel IsVisible="{Binding !HasPreview}"
                                         HorizontalAlignment="Center" VerticalAlignment="Center"
                                         Spacing="8" IsHitTestVisible="False">
-                                <TextBlock Text="{x:Static theming:LucideIcons.film}"
-                                           Classes="icon" FontSize="54"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           HorizontalAlignment="Center"/>
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Film}" FontSize="54"
+                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                        HorizontalAlignment="Center"/>
                                 <TextBlock Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Add_two_images_to_preview}"
                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
                             </StackPanel>
@@ -166,7 +164,7 @@
             <Button Grid.Row="1" Command="{Binding CreateCommand}" IsEnabled="{Binding CanCreate}"
                     HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal" Spacing="8">
-                    <TextBlock Text="{x:Static theming:LucideIcons.film}" Classes="icon"/>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.Film}"/>
                     <TextBlock Text="{x:Static localization:Strings.AnimatedGifMakerWindow_Create_GIF}"/>
                 </StackPanel>
             </Button>

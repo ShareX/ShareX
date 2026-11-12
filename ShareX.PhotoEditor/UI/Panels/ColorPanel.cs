@@ -54,7 +54,7 @@ public sealed class ColorPanel : EditorPanel
         {
             if (e.ClickCount >= 2)
             {
-                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, "Foreground Color", Editor);
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Foreground, Strings.ColorPanel_ForegroundColor, Editor);
                 if (c is SKColor col) Editor.Foreground = col;
                 return;
             }
@@ -65,15 +65,15 @@ public sealed class ColorPanel : EditorPanel
         {
             if (e.ClickCount >= 2)
             {
-                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, "Background Color", Editor);
+                SKColor? c = await ColorPickerDialog.ShowAsync(Editor, Editor.Background, Strings.ColorPanel_BackgroundColor, Editor);
                 if (c is SKColor col) Editor.Background = col;
                 return;
             }
             _editBackground = true;
             Refresh();
         };
-        ToolTip.SetTip(_fg, "Foreground color. Double-click opens the Color Picker.");
-        ToolTip.SetTip(_bg, "Background color. Double-click opens the Color Picker.");
+        ToolTip.SetTip(_fg, Strings.ColorPanel_ForegroundTip);
+        ToolTip.SetTip(_bg, Strings.ColorPanel_BackgroundTip);
 
         // Saturation/brightness field: hue fill with white and black gradient overlays.
         Grid field = new() { Cursor = new Cursor(StandardCursorType.Cross), MinHeight = 90, ClipToBounds = true };
@@ -153,7 +153,7 @@ public sealed class ColorPanel : EditorPanel
 
     public override string Id => "color";
 
-    public override string Title => "Color";
+    public override string Title => Strings.EditorCommands_Color;
 
     private SKColor Current => _editBackground ? Editor.Background : Editor.Foreground;
 
@@ -196,11 +196,12 @@ public sealed class ColorPanel : EditorPanel
         Canvas.SetTop(ring, (1 - _v) * field.Height - 5);
         _fieldMarker.Children.Add(ring);
         _hueMarker.Children.Clear();
-        double y = (1 - _h / 360) * _hue.Bounds.Height;
-        Avalonia.Controls.Shapes.Path left = new() { Data = Geometry.Parse("M0,0 L4,3 L0,6 Z"), Fill = Brushes.White };
+        // Whole-pixel position keeps the arrows sharp.
+        double y = Math.Round((1 - _h / 360) * _hue.Bounds.Height);
+        Avalonia.Controls.Shapes.Path left = new() { Data = Geometry.Parse("M0 0 L4 3.5 L0 7 Z"), Fill = Brushes.White };
         Canvas.SetLeft(left, -4);
         Canvas.SetTop(left, y - 3);
-        Avalonia.Controls.Shapes.Path right = new() { Data = Geometry.Parse("M4,0 L0,3 L4,6 Z"), Fill = Brushes.White };
+        Avalonia.Controls.Shapes.Path right = new() { Data = Geometry.Parse("M4 0 L0 3.5 L4 7 Z"), Fill = Brushes.White };
         Canvas.SetLeft(right, 14);
         Canvas.SetTop(right, y - 3);
         _hueMarker.Children.Add(left);

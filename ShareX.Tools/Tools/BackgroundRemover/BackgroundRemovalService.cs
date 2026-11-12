@@ -120,7 +120,11 @@ public sealed class BackgroundRemovalService : IDisposable
             return new SessionLookupResult(_session, true, _executionDevice);
         }
 
+        // Forget the old session before creating the new one, so a failed creation cannot leave a disposed session cached.
         _session?.Dispose();
+        _session = null;
+        _executionDevice = null;
+        _sessionKey = null;
         SessionCreationResult creationResult = CreateSession(modelPath, device);
         _session = creationResult.Session;
         _executionDevice = creationResult.ExecutionDevice;

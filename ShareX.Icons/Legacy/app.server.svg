@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+<defs>
+<linearGradient id="svEdge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#545454"/><stop offset="0.7" stop-color="#292929"/><stop offset="1" stop-color="#040404"/></linearGradient>
+<linearGradient id="svBase" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#555555"/><stop offset="0.3" stop-color="#5e5e5e"/><stop offset="1" stop-color="#878787"/></linearGradient>
+</defs>
+<rect x="3.5" y=".5" width="9" height="15" fill="#d2d2d2" stroke="url(#svEdge)" stroke-opacity=".6"/>
+<rect x="4" y="1" width="8" height="1" fill="#e6e6e6"/>
+<rect x="4" y="2" width="8" height="1" fill="#c6c6c6"/>
+<rect x="4" y="3" width="8" height="1" fill="#dedede"/>
+<rect x="4" y="4" width="8" height="1" fill="#bdbdbd"/>
+<rect x="4" y="6" width="8" height="1" fill="#e2e2e2"/>
+<rect x="4" y="7" width="8" height="1" fill="#c4c4c4"/>
+<rect x="4" y="8" width="8" height="1" fill="#bfbfbf"/>
+<rect x="10" y="7" width="1" height="1" fill="#999999"/>
+<rect x="10" y="8" width="1" height="1" fill="#e0e0e0"/>
+<rect x="5" y="2" width="4" height="1" fill="#8e8e8e"/>
+<rect x="5" y="7" width="4" height="1" fill="#8e8e8e"/>
+<path d="M4.5 1V10M11.5 1V10" stroke="#ffffff" stroke-opacity=".25"/>
+<rect x="4" y="10" width="8" height="5" fill="url(#svBase)"/>
+<rect x="5" y="11" width="6" height="1" fill="#4a4a4a"/>
+<rect x="5" y="13" width="6" height="1" fill="#4a4a4a"/>
+<rect x="10" y="12" width="1" height="1" fill="#33dd33"/>
+<rect x="8" y="12" width="1" height="1" fill="#ffb020"/>
+<path d="M3.5 10V15.5H12.5V10" fill="none" stroke="#000" stroke-opacity=".55"/>
+</svg>

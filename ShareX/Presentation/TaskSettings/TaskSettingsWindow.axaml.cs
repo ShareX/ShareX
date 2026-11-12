@@ -30,6 +30,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
@@ -274,6 +275,38 @@ public partial class TaskSettingsWindow : Window
         }
     }
 
+    private void OnEditorOverlayPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        // Only clicks on the dimmed backdrop itself, not inside the dialog, cancel it.
+        if (!ReferenceEquals(e.Source, sender) || !e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+        {
+            return;
+        }
+
+        if (sender == ToolbarEditorOverlay)
+        {
+            HideToolbarEditor();
+        }
+        else if (sender == NotificationButtonsEditorOverlay)
+        {
+            HideNotificationButtonsEditor();
+        }
+        else if (sender == WatchFolderEditorOverlay)
+        {
+            HideWatchFolderEditor();
+        }
+        else if (sender == ActionEditorOverlay)
+        {
+            HideActionEditor();
+        }
+        else
+        {
+            return;
+        }
+
+        e.Handled = true;
+    }
+
     private void AttachActionArgumentsMenu()
     {
         ContextMenu menu = new();
@@ -395,13 +428,11 @@ public partial class TaskSettingsWindow : Window
             MenuItem item = new()
             {
                 Header = action.GetLocalizedDescription(),
-                Icon = new TextBlock
+                Icon = new IconPresenter
                 {
-                    Classes = { "icon" },
-                    Text = NotificationActionButton.GetDefaultIcon(action),
+                    Icon = NotificationActionButton.GetDefaultIcon(action),
                     FontSize = 15,
-                    Width = 18,
-                    TextAlignment = Avalonia.Media.TextAlignment.Center
+                    Width = 18
                 }
             };
             item.Click += (_, _) => AddNotificationButton(action);

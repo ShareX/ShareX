@@ -1,10 +1,11 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:ShareX.ScreenCaptureLib"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d"
         d:DesignWidth="700"
         d:DesignHeight="420"
@@ -73,9 +74,9 @@
         <Style Selector="Button.recorder-action.right-rounded:pressed /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="CornerRadius" Value="0,7,7,0"/>
         </Style>
-        <Style Selector="TextBlock.action-icon">
+        <Style Selector="controls|IconPresenter.action-icon">
             <Setter Property="FontSize" Value="15"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
         <Style Selector="TextBlock.action-label">
@@ -138,9 +139,9 @@
                             <Button x:Name="StartButton"
                                     Classes="recorder-action left-rounded">
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
-                                    <TextBlock x:Name="StartIcon"
-                                               Classes="icon action-icon"
-                                               Text="{x:Static theming:LucideIcons.circle_play}"/>
+                                    <controls:IconPresenter x:Name="StartIcon"
+                                                            Classes="action-icon"
+                                                            Icon="{x:Static icons:AppIcons.CirclePlay}"/>
                                     <TextBlock x:Name="StartText"
                                                Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Start}"/>
@@ -150,9 +151,9 @@
                             <Button x:Name="PauseButton"
                                     Classes="recorder-action">
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
-                                    <TextBlock x:Name="PauseIcon"
-                                               Classes="icon action-icon"
-                                               Text="{x:Static theming:LucideIcons.pause}"/>
+                                    <controls:IconPresenter x:Name="PauseIcon"
+                                                            Classes="action-icon"
+                                                            Icon="{x:Static icons:AppIcons.Pause}"/>
                                     <TextBlock x:Name="PauseText"
                                                Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Pause}"/>
@@ -163,8 +164,8 @@
                                     Classes="recorder-action"
                                     IsEnabled="False">
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon action-icon"
-                                               Text="{x:Static theming:LucideIcons.rotate_ccw}"/>
+                                    <controls:IconPresenter Classes="action-icon"
+                                                            Icon="{x:Static icons:AppIcons.Reset}"/>
                                     <TextBlock x:Name="RestartText"
                                                Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Restart}"/>
@@ -174,8 +175,8 @@
                             <Button x:Name="AbortButton"
                                     Classes="recorder-action right-rounded">
                                 <StackPanel Classes="action-content" Orientation="Horizontal" Spacing="7">
-                                    <TextBlock Classes="icon action-icon"
-                                               Text="{x:Static theming:LucideIcons.x}"/>
+                                    <controls:IconPresenter Classes="action-icon"
+                                                            Icon="{x:Static icons:AppIcons.Close}"/>
                                     <TextBlock x:Name="AbortText"
                                                Classes="action-label"
                                                Text="{x:Static localization:Strings.ScreenRecordWindow_Abort}"/>

@@ -1,11 +1,12 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         xmlns:localization="using:ShareX.Tools.Localization"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:ShareX.Tools"
         xmlns:controls="using:ShareX.Tools.Controls"
-        xmlns:theming="using:ShareX.AvaloniaUI.Theming"
         mc:Ignorable="d" d:DesignWidth="1080" d:DesignHeight="720"
         x:Class="ShareX.Tools.BackgroundRemoverWindow"
         x:DataType="vm:BackgroundRemoverViewModel"
@@ -32,18 +33,18 @@
             <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
-        <Style Selector="TextBlock.model-action-icon">
+        <Style Selector="iconControls|IconPresenter.model-action-icon">
             <Setter Property="FontSize" Value="17"/>
         </Style>
         <Style Selector="Button.guide-highlight">
             <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
             <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
                 <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             </Style>
             <Style Selector="^:pointerover /template/ ContentPresenter#PART_ContentPresenter">
                 <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent.Border}"/>
             </Style>
             <Style.Animations>
                 <Animation Duration="0:0:1.2" IterationCount="Infinite">
@@ -102,12 +103,10 @@
                                         Padding="0"
                                         Command="{Binding RefreshModelsCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Refresh_models}">
-                                    <TextBlock Classes="model-action-icon"
-                                               Text="{x:Static theming:LucideIcons.refresh_cw}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <iconControls:IconPresenter Classes="model-action-icon"
+                                                                Icon="{x:Static icons:AppIcons.Refresh}"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"/>
                                 </Button>
                                 <Button Grid.Column="2"
                                         MinWidth="0"
@@ -115,12 +114,10 @@
                                         Padding="0"
                                         Command="{Binding OpenModelsFolderCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Open_models_folder}">
-                                    <TextBlock Classes="model-action-icon"
-                                               Text="{x:Static theming:LucideIcons.folder_open}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <iconControls:IconPresenter Classes="model-action-icon"
+                                                                Icon="{x:Static icons:AppIcons.FolderOpen}"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"/>
                                 </Button>
                                 <Button Grid.Column="3"
                                         Classes.guide-highlight="{Binding IsGuideHighlighted}"
@@ -129,12 +126,10 @@
                                         Padding="0"
                                         Command="{Binding OpenBackgroundRemoverGuideCommand}"
                                         ToolTip.Tip="{x:Static localization:Strings.BackgroundRemoverWindow_Open_guide_page}">
-                                    <TextBlock Classes="model-action-icon"
-                                               Text="{x:Static theming:LucideIcons.circle_help}"
-                                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                               FontWeight="Normal"
-                                               HorizontalAlignment="Center"
-                                               VerticalAlignment="Center"/>
+                                    <iconControls:IconPresenter Classes="model-action-icon"
+                                                                Icon="{x:Static icons:AppIcons.Help}"
+                                                                HorizontalAlignment="Center"
+                                                                VerticalAlignment="Center"/>
                                 </Button>
                                 <TextBlock Grid.Column="4"
                                            Text="{x:Static localization:Strings.BackgroundRemoverWindow_Device}"
@@ -185,20 +180,16 @@
                     <Button
                             Command="{Binding SaveCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.save}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"
-                                       VerticalAlignment="Center"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.Save}"
+                                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.BackgroundRemoverWindow_Save}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
                     <Button
                             Command="{Binding SaveAsCommand}">
                         <StackPanel Orientation="Horizontal" Spacing="8">
-                            <TextBlock Text="{x:Static theming:LucideIcons.save_all}"
-                                       FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                                       FontWeight="Normal"
-                                       VerticalAlignment="Center"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.SaveAs}"
+                                                        VerticalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.BackgroundRemoverWindow_Save_as}" VerticalAlignment="Center"/>
                         </StackPanel>
                     </Button>
@@ -218,13 +209,11 @@
                     PointerPressed="OnNotificationPointerPressed"
                     ZIndex="28">
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
-                    <TextBlock Grid.Column="0"
-                               Text="{Binding NotificationIcon}"
-                               FontFamily="{DynamicResource ShareX.FontFamily.Icon}"
-                               FontWeight="Normal"
-                               FontSize="18"
-                               VerticalAlignment="Center"
-                               IsVisible="{Binding HasNotificationIcon}"/>
+                    <iconControls:IconPresenter Grid.Column="0"
+                                                Icon="{Binding NotificationIcon}"
+                                                FontSize="18"
+                                                VerticalAlignment="Center"
+                                                IsVisible="{Binding HasNotificationIcon}"/>
                     <TextBlock Grid.Column="1"
                                Text="{Binding NotificationMessage}"
                                TextWrapping="Wrap"

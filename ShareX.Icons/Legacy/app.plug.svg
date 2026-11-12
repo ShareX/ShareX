@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <defs>
+    <linearGradient id="pr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#a69839"/><stop offset=".45" stop-color="#f7e679"/><stop offset="1" stop-color="#8f8230"/></linearGradient>
+    <linearGradient id="bd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fafafa"/><stop offset=".5" stop-color="#dedede"/><stop offset="1" stop-color="#a8a8a8"/></linearGradient>
+    <linearGradient id="bo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5a5a5a"/><stop offset="1" stop-color="#2a2a2a"/></linearGradient>
+  </defs>
+  <rect x="4.5" y=".5" width="2" height="4.5" fill="url(#pr)" stroke="#6e6420"/>
+  <rect x="9.5" y=".5" width="2" height="4.5" fill="url(#pr)" stroke="#6e6420"/>
+  <path d="M8 12.5V13Q8 14.5 10 14.5H15" fill="none" stroke="#2e2e2e" stroke-width="2.2"/>
+  <path d="M8 12.5V13Q8 14.5 10 14.5H15" fill="none" stroke="#7a7a7a" stroke-width=".8"/>
+  <path d="M2.5 4.5H13.5V7.5Q13.5 11.5 9.5 11.5H6.5Q2.5 11.5 2.5 7.5Z" fill="url(#bd)" stroke="url(#bo)" stroke-linejoin="round"/>
+  <rect x="6.5" y="11" width="3" height="2" fill="url(#bd)" stroke="url(#bo)"/>
+  <path d="M3.5 5.5V7.5Q3.5 9.5 5 10.2" fill="none" stroke="#fff" stroke-opacity=".9" stroke-linecap="round"/>
+  <path d="M3 5.5H13" stroke="#8a8a8a" stroke-opacity=".4"/>
+</svg>

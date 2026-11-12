@@ -91,6 +91,8 @@ public partial class ImageHistoryWindow : Window
         ThumbnailRows.AddHandler(KeyDownEvent, OnWindowKeyDown, RoutingStrategies.Tunnel);
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
+        _thumbnailLoader.RenderScaling = RenderScaling;
+        ScalingChanged += (_, _) => _thumbnailLoader.RenderScaling = RenderScaling;
     }
 
     public ImageHistoryWindow(HistoryManagerSQLite historyManager, ImageHistorySettings settings,
@@ -992,6 +994,8 @@ public partial class ImageHistoryWindow : Window
 
     private void OnUploadFileClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.UploadFile, false);
     private void OnEditImageClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImage, true);
+
+    private void OnEditImageInPhotoEditorClick(object? sender, RoutedEventArgs e) => InvokeFileService(_services.EditImageInPhotoEditor, true);
     private void OnTrimVideoClick(object? sender, RoutedEventArgs e)
     {
         HistoryItem[] items = GetSelectedItems();

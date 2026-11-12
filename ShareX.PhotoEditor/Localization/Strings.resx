@@ -1,0 +1,4347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AdjustmentEditor_Auto" xml:space="preserve">
+    <value>Auto</value>
+  </data>
+  <data name="AdjustmentEditor_BlackColon" xml:space="preserve">
+    <value>Black:</value>
+  </data>
+  <data name="AdjustmentEditor_Blacks" xml:space="preserve">
+    <value>Blacks</value>
+  </data>
+  <data name="AdjustmentEditor_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="AdjustmentEditor_BlueColon" xml:space="preserve">
+    <value>Blue:</value>
+  </data>
+  <data name="AdjustmentEditor_Blues" xml:space="preserve">
+    <value>Blues</value>
+  </data>
+  <data name="AdjustmentEditor_BluesColon" xml:space="preserve">
+    <value>Blues:</value>
+  </data>
+  <data name="AdjustmentEditor_BrightnessColon" xml:space="preserve">
+    <value>Brightness:</value>
+  </data>
+  <data name="AdjustmentEditor_ChannelColon" xml:space="preserve">
+    <value>Channel:</value>
+  </data>
+  <data name="AdjustmentEditor_Colorize" xml:space="preserve">
+    <value>Colorize</value>
+  </data>
+  <data name="AdjustmentEditor_ColorsColon" xml:space="preserve">
+    <value>Colors:</value>
+  </data>
+  <data name="AdjustmentEditor_ConstantColon" xml:space="preserve">
+    <value>Constant:</value>
+  </data>
+  <data name="AdjustmentEditor_ContrastColon" xml:space="preserve">
+    <value>Contrast:</value>
+  </data>
+  <data name="AdjustmentEditor_CurvesHint" xml:space="preserve">
+    <value>Click to add points, drag to adjust, drag a point off the graph to delete it.</value>
+  </data>
+  <data name="AdjustmentEditor_CyanColon" xml:space="preserve">
+    <value>Cyan:</value>
+  </data>
+  <data name="AdjustmentEditor_CyanRedColon" xml:space="preserve">
+    <value>Cyan / Red:</value>
+  </data>
+  <data name="AdjustmentEditor_Cyans" xml:space="preserve">
+    <value>Cyans</value>
+  </data>
+  <data name="AdjustmentEditor_CyansColon" xml:space="preserve">
+    <value>Cyans:</value>
+  </data>
+  <data name="AdjustmentEditor_DensityColon" xml:space="preserve">
+    <value>Density:</value>
+  </data>
+  <data name="AdjustmentEditor_EditGradientEllipsis" xml:space="preserve">
+    <value>Edit Gradient...</value>
+  </data>
+  <data name="AdjustmentEditor_ExposureColon" xml:space="preserve">
+    <value>Exposure:</value>
+  </data>
+  <data name="AdjustmentEditor_FilterColorColon" xml:space="preserve">
+    <value>Filter Color:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaColon" xml:space="preserve">
+    <value>Gamma:</value>
+  </data>
+  <data name="AdjustmentEditor_GammaCorrectionColon" xml:space="preserve">
+    <value>Gamma Correction:</value>
+  </data>
+  <data name="AdjustmentEditor_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="AdjustmentEditor_GreenColon" xml:space="preserve">
+    <value>Green:</value>
+  </data>
+  <data name="AdjustmentEditor_Greens" xml:space="preserve">
+    <value>Greens</value>
+  </data>
+  <data name="AdjustmentEditor_GreensColon" xml:space="preserve">
+    <value>Greens:</value>
+  </data>
+  <data name="AdjustmentEditor_Highlights" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="AdjustmentEditor_HueColon" xml:space="preserve">
+    <value>Hue:</value>
+  </data>
+  <data name="AdjustmentEditor_InputBlackColon" xml:space="preserve">
+    <value>Input Black:</value>
+  </data>
+  <data name="AdjustmentEditor_InputWhiteColon" xml:space="preserve">
+    <value>Input White:</value>
+  </data>
+  <data name="AdjustmentEditor_LevelsColon" xml:space="preserve">
+    <value>Levels:</value>
+  </data>
+  <data name="AdjustmentEditor_LightnessColon" xml:space="preserve">
+    <value>Lightness:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaColon" xml:space="preserve">
+    <value>Magenta:</value>
+  </data>
+  <data name="AdjustmentEditor_MagentaGreenColon" xml:space="preserve">
+    <value>Magenta / Green:</value>
+  </data>
+  <data name="AdjustmentEditor_Magentas" xml:space="preserve">
+    <value>Magentas</value>
+  </data>
+  <data name="AdjustmentEditor_MagentasColon" xml:space="preserve">
+    <value>Magentas:</value>
+  </data>
+  <data name="AdjustmentEditor_Midtones" xml:space="preserve">
+    <value>Midtones</value>
+  </data>
+  <data name="AdjustmentEditor_Monochrome" xml:space="preserve">
+    <value>Monochrome</value>
+  </data>
+  <data name="AdjustmentEditor_Neutrals" xml:space="preserve">
+    <value>Neutrals</value>
+  </data>
+  <data name="AdjustmentEditor_NoOptions" xml:space="preserve">
+    <value>This adjustment has no options.</value>
+  </data>
+  <data name="AdjustmentEditor_OffsetColon" xml:space="preserve">
+    <value>Offset:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputBlackColon" xml:space="preserve">
+    <value>Output Black:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputChannelColon" xml:space="preserve">
+    <value>Output Channel:</value>
+  </data>
+  <data name="AdjustmentEditor_OutputWhiteColon" xml:space="preserve">
+    <value>Output White:</value>
+  </data>
+  <data name="AdjustmentEditor_PreserveLuminosity" xml:space="preserve">
+    <value>Preserve Luminosity</value>
+  </data>
+  <data name="AdjustmentEditor_Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="AdjustmentEditor_RedColon" xml:space="preserve">
+    <value>Red:</value>
+  </data>
+  <data name="AdjustmentEditor_Reds" xml:space="preserve">
+    <value>Reds</value>
+  </data>
+  <data name="AdjustmentEditor_RedsColon" xml:space="preserve">
+    <value>Reds:</value>
+  </data>
+  <data name="AdjustmentEditor_ResetChannel" xml:space="preserve">
+    <value>Reset Channel</value>
+  </data>
+  <data name="AdjustmentEditor_Reverse" xml:space="preserve">
+    <value>Reverse</value>
+  </data>
+  <data name="AdjustmentEditor_SaturationColon" xml:space="preserve">
+    <value>Saturation:</value>
+  </data>
+  <data name="AdjustmentEditor_Shadows" xml:space="preserve">
+    <value>Shadows</value>
+  </data>
+  <data name="AdjustmentEditor_ThresholdLevelColon" xml:space="preserve">
+    <value>Threshold Level:</value>
+  </data>
+  <data name="AdjustmentEditor_Tint" xml:space="preserve">
+    <value>Tint</value>
+  </data>
+  <data name="AdjustmentEditor_TintColorColon" xml:space="preserve">
+    <value>Tint Color:</value>
+  </data>
+  <data name="AdjustmentEditor_ToneColon" xml:space="preserve">
+    <value>Tone:</value>
+  </data>
+  <data name="AdjustmentEditor_UseLegacy" xml:space="preserve">
+    <value>Use Legacy</value>
+  </data>
+  <data name="AdjustmentEditor_VibranceColon" xml:space="preserve">
+    <value>Vibrance:</value>
+  </data>
+  <data name="AdjustmentEditor_Whites" xml:space="preserve">
+    <value>Whites</value>
+  </data>
+  <data name="AdjustmentEditor_YellowBlueColon" xml:space="preserve">
+    <value>Yellow / Blue:</value>
+  </data>
+  <data name="AdjustmentEditor_YellowColon" xml:space="preserve">
+    <value>Yellow:</value>
+  </data>
+  <data name="AdjustmentEditor_Yellows" xml:space="preserve">
+    <value>Yellows</value>
+  </data>
+  <data name="AdjustmentEditor_YellowsColon" xml:space="preserve">
+    <value>Yellows:</value>
+  </data>
+  <data name="AdjustmentsPanel_AddAdjustment" xml:space="preserve">
+    <value>Add an adjustment</value>
+  </data>
+  <data name="AdjustmentsPanel_CreateAdjustmentLayerTip" xml:space="preserve">
+    <value>Create a new {0} adjustment layer</value>
+  </data>
+  <data name="Adjustments_BlackAndWhite" xml:space="preserve">
+    <value>Black &amp; White</value>
+  </data>
+  <data name="Adjustments_BrightnessContrast" xml:space="preserve">
+    <value>Brightness/Contrast</value>
+  </data>
+  <data name="Adjustments_ChannelMixer" xml:space="preserve">
+    <value>Channel Mixer</value>
+  </data>
+  <data name="Adjustments_ColorBalance" xml:space="preserve">
+    <value>Color Balance</value>
+  </data>
+  <data name="Adjustments_ColorLookup" xml:space="preserve">
+    <value>Color Lookup</value>
+  </data>
+  <data name="Adjustments_Curves" xml:space="preserve">
+    <value>Curves</value>
+  </data>
+  <data name="Adjustments_Desaturate" xml:space="preserve">
+    <value>Desaturate</value>
+  </data>
+  <data name="Adjustments_Exposure" xml:space="preserve">
+    <value>Exposure</value>
+  </data>
+  <data name="Adjustments_GradientMap" xml:space="preserve">
+    <value>Gradient Map</value>
+  </data>
+  <data name="Adjustments_HdrToning" xml:space="preserve">
+    <value>HDR Toning</value>
+  </data>
+  <data name="Adjustments_HueSaturation" xml:space="preserve">
+    <value>Hue/Saturation</value>
+  </data>
+  <data name="Adjustments_Invert" xml:space="preserve">
+    <value>Invert</value>
+  </data>
+  <data name="Adjustments_Levels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="Adjustments_MatchColor" xml:space="preserve">
+    <value>Match Color</value>
+  </data>
+  <data name="Adjustments_PhotoFilter" xml:space="preserve">
+    <value>Photo Filter</value>
+  </data>
+  <data name="Adjustments_Posterize" xml:space="preserve">
+    <value>Posterize</value>
+  </data>
+  <data name="Adjustments_ReplaceColor" xml:space="preserve">
+    <value>Replace Color</value>
+  </data>
+  <data name="Adjustments_SelectiveColor" xml:space="preserve">
+    <value>Selective Color</value>
+  </data>
+  <data name="Adjustments_Threshold" xml:space="preserve">
+    <value>Threshold</value>
+  </data>
+  <data name="Adjustments_Vibrance" xml:space="preserve">
+    <value>Vibrance</value>
+  </data>
+  <data name="AnnotationTools_AuthorColon" xml:space="preserve">
+    <value>Author:</value>
+  </data>
+  <data name="AnnotationTools_AuthorLabel" xml:space="preserve">
+    <value>Author: {0}</value>
+  </data>
+  <data name="AnnotationTools_ClearAll" xml:space="preserve">
+    <value>Clear All</value>
+  </data>
+  <data name="AnnotationTools_ClearCount" xml:space="preserve">
+    <value>Clear Count</value>
+  </data>
+  <data name="AnnotationTools_ClearNotes" xml:space="preserve">
+    <value>Clear Notes</value>
+  </data>
+  <data name="AnnotationTools_CountGroupNumber" xml:space="preserve">
+    <value>Count Group {0}</value>
+  </data>
+  <data name="AnnotationTools_CountHint" xml:space="preserve">
+    <value>Click to place numbered count markers. Drag to move, Alt-click to remove.</value>
+  </data>
+  <data name="AnnotationTools_CountLabel" xml:space="preserve">
+    <value>Count: {0}</value>
+  </data>
+  <data name="AnnotationTools_CountTool" xml:space="preserve">
+    <value>Count Tool</value>
+  </data>
+  <data name="AnnotationTools_DeleteCount" xml:space="preserve">
+    <value>Delete Count</value>
+  </data>
+  <data name="AnnotationTools_DeleteNote" xml:space="preserve">
+    <value>Delete Note</value>
+  </data>
+  <data name="AnnotationTools_EditNote" xml:space="preserve">
+    <value>Edit Note</value>
+  </data>
+  <data name="AnnotationTools_GroupColon" xml:space="preserve">
+    <value>Group:</value>
+  </data>
+  <data name="AnnotationTools_GroupColorTip" xml:space="preserve">
+    <value>Group color</value>
+  </data>
+  <data name="AnnotationTools_LabelSizeColon" xml:space="preserve">
+    <value>Label Size:</value>
+  </data>
+  <data name="AnnotationTools_MarkerSizeColon" xml:space="preserve">
+    <value>Marker Size:</value>
+  </data>
+  <data name="AnnotationTools_MoveCount" xml:space="preserve">
+    <value>Move Count</value>
+  </data>
+  <data name="AnnotationTools_MoveNote" xml:space="preserve">
+    <value>Move Note</value>
+  </data>
+  <data name="AnnotationTools_NewCountGroupTip" xml:space="preserve">
+    <value>Create a new count group</value>
+  </data>
+  <data name="AnnotationTools_Note" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="AnnotationTools_NoteColorTip" xml:space="preserve">
+    <value>Note color</value>
+  </data>
+  <data name="AnnotationTools_NoteHint" xml:space="preserve">
+    <value>Click to add a note. Click a note to edit it, drag to move it, Alt-click to delete it.</value>
+  </data>
+  <data name="AnnotationTools_NoteTool" xml:space="preserve">
+    <value>Note Tool</value>
+  </data>
+  <data name="ArtboardTool_AddNewArtboard" xml:space="preserve">
+    <value>Add New Artboard</value>
+  </data>
+  <data name="ArtboardTool_ArtboardNumber" xml:space="preserve">
+    <value>Artboard {0}</value>
+  </data>
+  <data name="ArtboardTool_BackgroundTip" xml:space="preserve">
+    <value>Artboard background</value>
+  </data>
+  <data name="ArtboardTool_Hint" xml:space="preserve">
+    <value>Drag on empty canvas to create an artboard. Drag an artboard's title to move it with its contents.</value>
+  </data>
+  <data name="ArtboardTool_MoveArtboard" xml:space="preserve">
+    <value>Move Artboard</value>
+  </data>
+  <data name="ArtboardTool_Name" xml:space="preserve">
+    <value>Artboard Tool</value>
+  </data>
+  <data name="ArtboardTool_NewArtboard" xml:space="preserve">
+    <value>New Artboard</value>
+  </data>
+  <data name="ArtboardTool_SizePhone" xml:space="preserve">
+    <value>390 × 844 (Phone)</value>
+  </data>
+  <data name="ArtboardTool_SizeSquare" xml:space="preserve">
+    <value>1080 × 1080 (Square)</value>
+  </data>
+  <data name="ArtboardTool_SizeTablet" xml:space="preserve">
+    <value>820 × 1180 (Tablet)</value>
+  </data>
+  <data name="AutoSelectionTools_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AutoSelectionTools_EnhanceEdge" xml:space="preserve">
+    <value>Enhance Edge</value>
+  </data>
+  <data name="AutoSelectionTools_Lasso" xml:space="preserve">
+    <value>Lasso</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWand" xml:space="preserve">
+    <value>Magic Wand</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandHint" xml:space="preserve">
+    <value>Click to select similar colors. Shift adds, Alt subtracts.</value>
+  </data>
+  <data name="AutoSelectionTools_MagicWandTool" xml:space="preserve">
+    <value>Magic Wand Tool</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelection" xml:space="preserve">
+    <value>Object Selection</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionHint" xml:space="preserve">
+    <value>Drag a rectangle or lasso around an object to select it.</value>
+  </data>
+  <data name="AutoSelectionTools_ObjectSelectionTool" xml:space="preserve">
+    <value>Object Selection Tool</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelection" xml:space="preserve">
+    <value>Quick Selection</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionHint" xml:space="preserve">
+    <value>Paint over an area to select it; the selection grows to find edges. Alt subtracts.</value>
+  </data>
+  <data name="AutoSelectionTools_QuickSelectionTool" xml:space="preserve">
+    <value>Quick Selection Tool</value>
+  </data>
+  <data name="AutoSelectionTools_SelectingObject" xml:space="preserve">
+    <value>Selecting object...</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrush" xml:space="preserve">
+    <value>Selection Brush</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushHint" xml:space="preserve">
+    <value>Paint to add to the selection. Alt (or Subtract mode) removes from it.</value>
+  </data>
+  <data name="AutoSelectionTools_SelectionBrushTool" xml:space="preserve">
+    <value>Selection Brush Tool</value>
+  </data>
+  <data name="BlendModes_Behind" xml:space="preserve">
+    <value>Behind</value>
+  </data>
+  <data name="BlendModes_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="BlendModes_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="BlendModes_ColorBurn" xml:space="preserve">
+    <value>Color Burn</value>
+  </data>
+  <data name="BlendModes_ColorDodge" xml:space="preserve">
+    <value>Color Dodge</value>
+  </data>
+  <data name="BlendModes_Darken" xml:space="preserve">
+    <value>Darken</value>
+  </data>
+  <data name="BlendModes_DarkerColor" xml:space="preserve">
+    <value>Darker Color</value>
+  </data>
+  <data name="BlendModes_Difference" xml:space="preserve">
+    <value>Difference</value>
+  </data>
+  <data name="BlendModes_Dissolve" xml:space="preserve">
+    <value>Dissolve</value>
+  </data>
+  <data name="BlendModes_Divide" xml:space="preserve">
+    <value>Divide</value>
+  </data>
+  <data name="BlendModes_Exclusion" xml:space="preserve">
+    <value>Exclusion</value>
+  </data>
+  <data name="BlendModes_HardLight" xml:space="preserve">
+    <value>Hard Light</value>
+  </data>
+  <data name="BlendModes_HardMix" xml:space="preserve">
+    <value>Hard Mix</value>
+  </data>
+  <data name="BlendModes_Hue" xml:space="preserve">
+    <value>Hue</value>
+  </data>
+  <data name="BlendModes_Lighten" xml:space="preserve">
+    <value>Lighten</value>
+  </data>
+  <data name="BlendModes_LighterColor" xml:space="preserve">
+    <value>Lighter Color</value>
+  </data>
+  <data name="BlendModes_LinearBurn" xml:space="preserve">
+    <value>Linear Burn</value>
+  </data>
+  <data name="BlendModes_LinearDodge" xml:space="preserve">
+    <value>Linear Dodge (Add)</value>
+  </data>
+  <data name="BlendModes_LinearLight" xml:space="preserve">
+    <value>Linear Light</value>
+  </data>
+  <data name="BlendModes_Luminosity" xml:space="preserve">
+    <value>Luminosity</value>
+  </data>
+  <data name="BlendModes_Multiply" xml:space="preserve">
+    <value>Multiply</value>
+  </data>
+  <data name="BlendModes_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="BlendModes_Overlay" xml:space="preserve">
+    <value>Overlay</value>
+  </data>
+  <data name="BlendModes_PassThrough" xml:space="preserve">
+    <value>Pass Through</value>
+  </data>
+  <data name="BlendModes_PinLight" xml:space="preserve">
+    <value>Pin Light</value>
+  </data>
+  <data name="BlendModes_Saturation" xml:space="preserve">
+    <value>Saturation</value>
+  </data>
+  <data name="BlendModes_Screen" xml:space="preserve">
+    <value>Screen</value>
+  </data>
+  <data name="BlendModes_SoftLight" xml:space="preserve">
+    <value>Soft Light</value>
+  </data>
+  <data name="BlendModes_Subtract" xml:space="preserve">
+    <value>Subtract</value>
+  </data>
+  <data name="BlendModes_VividLight" xml:space="preserve">
+    <value>Vivid Light</value>
+  </data>
+  <data name="BrushToolBase_AirbrushTip" xml:space="preserve">
+    <value>Enable airbrush-style build-up effects</value>
+  </data>
+  <data name="BrushToolBase_CannotPaintOnMask" xml:space="preserve">
+    <value>The {0} cannot paint on a layer mask.</value>
+  </data>
+  <data name="BrushToolBase_FlowTip" xml:space="preserve">
+    <value>Paint applied per dab</value>
+  </data>
+  <data name="BrushToolBase_OpacityTip" xml:space="preserve">
+    <value>Maximum paint coverage per stroke (0-9 keys)</value>
+  </data>
+  <data name="BrushToolBase_PressureSize" xml:space="preserve">
+    <value>Pressure Size</value>
+  </data>
+  <data name="BrushToolBase_SmoothingColon" xml:space="preserve">
+    <value>Smoothing:</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrush" xml:space="preserve">
+    <value>Adjustment Brush</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushHint" xml:space="preserve">
+    <value>Paint a local adjustment. Each stroke edits the mask of an adjustment layer. Alt erases the adjustment.</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushLayerName" xml:space="preserve">
+    <value>{0} Brush</value>
+  </data>
+  <data name="BrushTools_AdjustmentBrushTool" xml:space="preserve">
+    <value>Adjustment Brush Tool</value>
+  </data>
+  <data name="BrushTools_AdjustmentColon" xml:space="preserve">
+    <value>Adjustment:</value>
+  </data>
+  <data name="BrushTools_AmountColon" xml:space="preserve">
+    <value>Amount:</value>
+  </data>
+  <data name="BrushTools_AutoErase" xml:space="preserve">
+    <value>Auto Erase</value>
+  </data>
+  <data name="BrushTools_BrushHint" xml:space="preserve">
+    <value>Paint with the foreground color. Shift-click draws a straight line. [ ] change size.</value>
+  </data>
+  <data name="BrushTools_BrushTool" xml:space="preserve">
+    <value>Brush Tool</value>
+  </data>
+  <data name="BrushTools_CleanAfterStroke" xml:space="preserve">
+    <value>Clean after each stroke</value>
+  </data>
+  <data name="BrushTools_ColorReplacementHint" xml:space="preserve">
+    <value>Replace colors similar to the sampled color with the foreground color.</value>
+  </data>
+  <data name="BrushTools_ColorReplacementTool" xml:space="preserve">
+    <value>Color Replacement Tool</value>
+  </data>
+  <data name="BrushTools_LoadColon" xml:space="preserve">
+    <value>Load:</value>
+  </data>
+  <data name="BrushTools_LoadColorTip" xml:space="preserve">
+    <value>Load color (foreground)</value>
+  </data>
+  <data name="BrushTools_MixColon" xml:space="preserve">
+    <value>Mix:</value>
+  </data>
+  <data name="BrushTools_MixerBrushHint" xml:space="preserve">
+    <value>Mix the loaded paint with the canvas colors like real paint.</value>
+  </data>
+  <data name="BrushTools_MixerBrushTool" xml:space="preserve">
+    <value>Mixer Brush Tool</value>
+  </data>
+  <data name="BrushTools_NewLayerPerStroke" xml:space="preserve">
+    <value>New layer per stroke</value>
+  </data>
+  <data name="BrushTools_PencilHint" xml:space="preserve">
+    <value>Paint hard-edged, aliased lines with the foreground color.</value>
+  </data>
+  <data name="BrushTools_PencilTool" xml:space="preserve">
+    <value>Pencil Tool</value>
+  </data>
+  <data name="BrushTools_SamplingColon" xml:space="preserve">
+    <value>Sampling:</value>
+  </data>
+  <data name="BrushTools_WetColon" xml:space="preserve">
+    <value>Wet:</value>
+  </data>
+  <data name="BrushesPanel_Angle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="BrushesPanel_Hardness" xml:space="preserve">
+    <value>Hardness</value>
+  </data>
+  <data name="BrushesPanel_NewBrushPresetEllipsis" xml:space="preserve">
+    <value>New Brush Preset...</value>
+  </data>
+  <data name="BrushesPanel_PressureFlow" xml:space="preserve">
+    <value>Pen pressure controls flow</value>
+  </data>
+  <data name="BrushesPanel_PressureSize" xml:space="preserve">
+    <value>Pen pressure controls size</value>
+  </data>
+  <data name="BrushesPanel_Roundness" xml:space="preserve">
+    <value>Roundness</value>
+  </data>
+  <data name="BrushesPanel_Scatter" xml:space="preserve">
+    <value>Scatter</value>
+  </data>
+  <data name="BrushesPanel_SelectPaintingTool" xml:space="preserve">
+    <value>Select a painting tool to edit its brush.</value>
+  </data>
+  <data name="BrushesPanel_Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="BrushesPanel_SizeJitter" xml:space="preserve">
+    <value>Size Jitter</value>
+  </data>
+  <data name="BrushesPanel_Spacing" xml:space="preserve">
+    <value>Spacing</value>
+  </data>
+  <data name="BrushesPanel_SquareTip" xml:space="preserve">
+    <value>Square tip</value>
+  </data>
+  <data name="CanvasSizeDialog_AnchorColon" xml:space="preserve">
+    <value>Anchor:</value>
+  </data>
+  <data name="CanvasSizeDialog_CurrentSize" xml:space="preserve">
+    <value>Current size: {0} × {1} px</value>
+  </data>
+  <data name="CanvasSizeDialog_ExtensionColorColon" xml:space="preserve">
+    <value>Canvas extension color:</value>
+  </data>
+  <data name="CanvasSizeDialog_Foreground" xml:space="preserve">
+    <value>Foreground</value>
+  </data>
+  <data name="CanvasSizeDialog_Gray" xml:space="preserve">
+    <value>Gray</value>
+  </data>
+  <data name="CanvasSizeDialog_Relative" xml:space="preserve">
+    <value>Relative</value>
+  </data>
+  <data name="CanvasView_EditCancelled" xml:space="preserve">
+    <value>The edit was cancelled because the document changed.</value>
+  </data>
+  <data name="CanvasView_EmptyHint" xml:space="preserve">
+    <value>Open or create a document to start editing (Ctrl+O / Ctrl+N), or drop an image here.</value>
+  </data>
+  <data name="ChannelsPanel_ChannelOptions" xml:space="preserve">
+    <value>Channel Options</value>
+  </data>
+  <data name="ChannelsPanel_DeleteChannelTip" xml:space="preserve">
+    <value>Delete current channel</value>
+  </data>
+  <data name="ChannelsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Load channel as selection</value>
+  </data>
+  <data name="ChannelsPanel_NewChannelTip" xml:space="preserve">
+    <value>Create new channel</value>
+  </data>
+  <data name="ChannelsPanel_QuickMask" xml:space="preserve">
+    <value>Quick Mask</value>
+  </data>
+  <data name="ChannelsPanel_SaveSelectionTip" xml:space="preserve">
+    <value>Save selection as channel</value>
+  </data>
+  <data name="ChannelsPanel_ShowOverlayTip" xml:space="preserve">
+    <value>Show the channel as an overlay</value>
+  </data>
+  <data name="ColorLookupEditor_CouldNotLoad" xml:space="preserve">
+    <value>Could not load the 3D LUT: {0}</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLut" xml:space="preserve">
+    <value>Load 3D LUT</value>
+  </data>
+  <data name="ColorLookupEditor_LoadLutEllipsis" xml:space="preserve">
+    <value>Load 3D LUT...</value>
+  </data>
+  <data name="ColorLookupEditor_LutFileColon" xml:space="preserve">
+    <value>3DLUT File:</value>
+  </data>
+  <data name="ColorLookupEditor_LutFiles" xml:space="preserve">
+    <value>3D LUT files</value>
+  </data>
+  <data name="ColorLut_1DNotSupported" xml:space="preserve">
+    <value>1D lookup tables are not supported.</value>
+  </data>
+  <data name="ColorLut_DataSizeMismatch" xml:space="preserve">
+    <value>The table data does not match its size.</value>
+  </data>
+  <data name="ColorLut_InvalidDomain" xml:space="preserve">
+    <value>The table domain is not valid.</value>
+  </data>
+  <data name="ColorLut_NoSizeEntry" xml:space="preserve">
+    <value>The file has no LUT_3D_SIZE entry.</value>
+  </data>
+  <data name="ColorLut_SizeNotSupported" xml:space="preserve">
+    <value>The table size {0} is not supported.</value>
+  </data>
+  <data name="ColorPanel_BackgroundColor" xml:space="preserve">
+    <value>Background Color</value>
+  </data>
+  <data name="ColorPanel_BackgroundTip" xml:space="preserve">
+    <value>Background color. Double-click opens the Color Picker.</value>
+  </data>
+  <data name="ColorPanel_ForegroundColor" xml:space="preserve">
+    <value>Foreground Color</value>
+  </data>
+  <data name="ColorPanel_ForegroundTip" xml:space="preserve">
+    <value>Foreground color. Double-click opens the Color Picker.</value>
+  </data>
+  <data name="ColorPickerDialog_AddToSwatches" xml:space="preserve">
+    <value>Add to Swatches</value>
+  </data>
+  <data name="ColorPickerDialog_NotWebColorTip" xml:space="preserve">
+    <value>Not a web color. Click the swatch to use the nearest one.</value>
+  </data>
+  <data name="ColorPickerDialog_OnlyWebColors" xml:space="preserve">
+    <value>Only Web Colors</value>
+  </data>
+  <data name="ColorPickerDialog_Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="ColorPickerDialog_RestoreCurrentTip" xml:space="preserve">
+    <value>Click to restore the current color</value>
+  </data>
+  <data name="ColorPickerDialog_Title" xml:space="preserve">
+    <value>Color Picker</value>
+  </data>
+  <data name="ColorPickerDialog_TitleWith" xml:space="preserve">
+    <value>Color Picker ({0})</value>
+  </data>
+  <data name="CropTools_CropHint" xml:space="preserve">
+    <value>Drag to define the crop area; drag outside it to rotate. Enter commits, Esc cancels.</value>
+  </data>
+  <data name="CropTools_CropInfo" xml:space="preserve">
+    <value>W: {0:0} px  H: {1:0} px  Angle: {2:0.0}°</value>
+  </data>
+  <data name="CropTools_CropTool" xml:space="preserve">
+    <value>Crop Tool</value>
+  </data>
+  <data name="CropTools_DeleteCroppedPixels" xml:space="preserve">
+    <value>Delete Cropped Pixels</value>
+  </data>
+  <data name="CropTools_HColon" xml:space="preserve">
+    <value>H:</value>
+  </data>
+  <data name="CropTools_OriginalRatio" xml:space="preserve">
+    <value>Original Ratio</value>
+  </data>
+  <data name="CropTools_PerspectiveCrop" xml:space="preserve">
+    <value>Perspective Crop</value>
+  </data>
+  <data name="CropTools_PerspectiveCropHint" xml:space="preserve">
+    <value>Drag to create a crop box, then drag its corners to match the perspective of an object. Enter crops and straightens.</value>
+  </data>
+  <data name="CropTools_PerspectiveCropTool" xml:space="preserve">
+    <value>Perspective Crop Tool</value>
+  </data>
+  <data name="CropTools_Ratio" xml:space="preserve">
+    <value>Ratio</value>
+  </data>
+  <data name="CropTools_RatioColon" xml:space="preserve">
+    <value>Ratio:</value>
+  </data>
+  <data name="CropTools_RatioSquare" xml:space="preserve">
+    <value>1 : 1 (Square)</value>
+  </data>
+  <data name="CropTools_RuleOfThirds" xml:space="preserve">
+    <value>Rule of Thirds</value>
+  </data>
+  <data name="CropTools_ShowGrid" xml:space="preserve">
+    <value>Show Grid</value>
+  </data>
+  <data name="CropTools_SwapTip" xml:space="preserve">
+    <value>Swap width and height</value>
+  </data>
+  <data name="CropTools_WColon" xml:space="preserve">
+    <value>W:</value>
+  </data>
+  <data name="DialogBuilder_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DialogBuilder_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="DialogBuilder_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="DialogBuilder_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="DocumentItems_CountGroup1" xml:space="preserve">
+    <value>Count Group 1</value>
+  </data>
+  <data name="EditorCommands_90Clockwise" xml:space="preserve">
+    <value>90° Clockwise</value>
+  </data>
+  <data name="EditorCommands_90CounterClockwise" xml:space="preserve">
+    <value>90° Counter Clockwise</value>
+  </data>
+  <data name="EditorCommands_ActionApplyAdjustment" xml:space="preserve">
+    <value>apply the adjustment</value>
+  </data>
+  <data name="EditorCommands_ActionChangeCanvasSize" xml:space="preserve">
+    <value>change the canvas size</value>
+  </data>
+  <data name="EditorCommands_ActionClear" xml:space="preserve">
+    <value>clear</value>
+  </data>
+  <data name="EditorCommands_ActionCropImage" xml:space="preserve">
+    <value>crop the image</value>
+  </data>
+  <data name="EditorCommands_ActionEqualize" xml:space="preserve">
+    <value>equalize</value>
+  </data>
+  <data name="EditorCommands_ActionFill" xml:space="preserve">
+    <value>fill</value>
+  </data>
+  <data name="EditorCommands_ActionFillPath" xml:space="preserve">
+    <value>fill the path</value>
+  </data>
+  <data name="EditorCommands_ActionFlipCanvas" xml:space="preserve">
+    <value>flip the canvas</value>
+  </data>
+  <data name="EditorCommands_ActionResizeImage" xml:space="preserve">
+    <value>resize the image</value>
+  </data>
+  <data name="EditorCommands_ActionRevealAll" xml:space="preserve">
+    <value>reveal all</value>
+  </data>
+  <data name="EditorCommands_ActionRotateCanvas" xml:space="preserve">
+    <value>rotate the canvas</value>
+  </data>
+  <data name="EditorCommands_ActionRunFilter" xml:space="preserve">
+    <value>run the filter</value>
+  </data>
+  <data name="EditorCommands_ActionStroke" xml:space="preserve">
+    <value>stroke</value>
+  </data>
+  <data name="EditorCommands_ActionStrokePath" xml:space="preserve">
+    <value>stroke the path</value>
+  </data>
+  <data name="EditorCommands_ActionTrimImage" xml:space="preserve">
+    <value>trim the image</value>
+  </data>
+  <data name="EditorCommands_AddLayerMask" xml:space="preserve">
+    <value>Add Layer Mask</value>
+  </data>
+  <data name="EditorCommands_AddVectorMask" xml:space="preserve">
+    <value>Add Vector Mask</value>
+  </data>
+  <data name="EditorCommands_Adjustments" xml:space="preserve">
+    <value>Adjustments</value>
+  </data>
+  <data name="EditorCommands_Again" xml:space="preserve">
+    <value>Again</value>
+  </data>
+  <data name="EditorCommands_Align" xml:space="preserve">
+    <value>Align</value>
+  </data>
+  <data name="EditorCommands_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="EditorCommands_AllLayers" xml:space="preserve">
+    <value>All Layers</value>
+  </data>
+  <data name="EditorCommands_AlphaNumber" xml:space="preserve">
+    <value>Alpha {0}</value>
+  </data>
+  <data name="EditorCommands_AngleDegreesColon" xml:space="preserve">
+    <value>Angle (°):</value>
+  </data>
+  <data name="EditorCommands_AntiAlias" xml:space="preserve">
+    <value>Anti-Alias</value>
+  </data>
+  <data name="EditorCommands_Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="EditorCommands_ApplyLayerMask" xml:space="preserve">
+    <value>Apply Layer Mask</value>
+  </data>
+  <data name="EditorCommands_ArbitraryEllipsis" xml:space="preserve">
+    <value>Arbitrary...</value>
+  </data>
+  <data name="EditorCommands_Arrange" xml:space="preserve">
+    <value>Arrange</value>
+  </data>
+  <data name="EditorCommands_ArrangeLayer" xml:space="preserve">
+    <value>Arrange Layer</value>
+  </data>
+  <data name="EditorCommands_AutoColor" xml:space="preserve">
+    <value>Auto Color</value>
+  </data>
+  <data name="EditorCommands_AutoContrast" xml:space="preserve">
+    <value>Auto Contrast</value>
+  </data>
+  <data name="EditorCommands_AutoTone" xml:space="preserve">
+    <value>Auto Tone</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveMask" xml:space="preserve">
+    <value>The Background layer cannot have a mask. Convert it to a layer first.</value>
+  </data>
+  <data name="EditorCommands_BackgroundCannotHaveStyles" xml:space="preserve">
+    <value>The Background layer cannot have layer styles. Convert it to a layer first (Layer &gt; New &gt; Layer from Background).</value>
+  </data>
+  <data name="EditorCommands_BackgroundFromLayer" xml:space="preserve">
+    <value>Background from Layer</value>
+  </data>
+  <data name="EditorCommands_BasedOnColon" xml:space="preserve">
+    <value>Based on:</value>
+  </data>
+  <data name="EditorCommands_Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="EditorCommands_Blues" xml:space="preserve">
+    <value>Blues</value>
+  </data>
+  <data name="EditorCommands_Border" xml:space="preserve">
+    <value>Border</value>
+  </data>
+  <data name="EditorCommands_BorderEllipsis" xml:space="preserve">
+    <value>Border...</value>
+  </data>
+  <data name="EditorCommands_BottomEdges" xml:space="preserve">
+    <value>Bottom Edges</value>
+  </data>
+  <data name="EditorCommands_BottomRightPixelColor" xml:space="preserve">
+    <value>Bottom Right Pixel Color</value>
+  </data>
+  <data name="EditorCommands_BringForward" xml:space="preserve">
+    <value>Bring Forward</value>
+  </data>
+  <data name="EditorCommands_BringToFront" xml:space="preserve">
+    <value>Bring to Front</value>
+  </data>
+  <data name="EditorCommands_BrushName" xml:space="preserve">
+    <value>Brush Name</value>
+  </data>
+  <data name="EditorCommands_Brushes" xml:space="preserve">
+    <value>Brushes</value>
+  </data>
+  <data name="EditorCommands_CannotActionLayerLocked" xml:space="preserve">
+    <value>Could not {0} because the layer is locked.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNoActiveLayer" xml:space="preserve">
+    <value>Could not {0} because there is no active layer.</value>
+  </data>
+  <data name="EditorCommands_CannotActionNotPixelLayer" xml:space="preserve">
+    <value>Could not {0} because the active layer is not a pixel layer. Rasterize it first (Layer &gt; Rasterize).</value>
+  </data>
+  <data name="EditorCommands_CannotConvertEmptyToSmartObject" xml:space="preserve">
+    <value>Could not convert to a smart object because the layer is empty.</value>
+  </data>
+  <data name="EditorCommands_CannotCutLockedLayer" xml:space="preserve">
+    <value>Could not cut because the layer is locked.</value>
+  </data>
+  <data name="EditorCommands_CannotFade" xml:space="preserve">
+    <value>The last operation cannot be faded.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNoLayerBelow" xml:space="preserve">
+    <value>Could not merge down because there is no layer below.</value>
+  </data>
+  <data name="EditorCommands_CannotMergeDownNotPixelLayer" xml:space="preserve">
+    <value>Could not merge down because the layer below is not a pixel layer.</value>
+  </data>
+  <data name="EditorCommands_CanvasSize" xml:space="preserve">
+    <value>Canvas Size</value>
+  </data>
+  <data name="EditorCommands_CanvasSizeEllipsis" xml:space="preserve">
+    <value>Canvas Size...</value>
+  </data>
+  <data name="EditorCommands_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="EditorCommands_ChangeTextOrientation" xml:space="preserve">
+    <value>Change Text Orientation</value>
+  </data>
+  <data name="EditorCommands_Channel" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="EditorCommands_Channels" xml:space="preserve">
+    <value>Channels</value>
+  </data>
+  <data name="EditorCommands_Clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="EditorCommands_ClearGuides" xml:space="preserve">
+    <value>Clear Guides</value>
+  </data>
+  <data name="EditorCommands_ClearLayerStyle" xml:space="preserve">
+    <value>Clear Layer Style</value>
+  </data>
+  <data name="EditorCommands_ClearRecentFileList" xml:space="preserve">
+    <value>Clear Recent File List</value>
+  </data>
+  <data name="EditorCommands_Clipboard" xml:space="preserve">
+    <value>Clipboard</value>
+  </data>
+  <data name="EditorCommands_ClipboardHasNoImage" xml:space="preserve">
+    <value>The clipboard does not contain an image.</value>
+  </data>
+  <data name="EditorCommands_Clockwise" xml:space="preserve">
+    <value>Clockwise</value>
+  </data>
+  <data name="EditorCommands_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="EditorCommands_CloseAll" xml:space="preserve">
+    <value>Close All</value>
+  </data>
+  <data name="EditorCommands_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="EditorCommands_ColorColon" xml:space="preserve">
+    <value>Color:</value>
+  </data>
+  <data name="EditorCommands_ColorFill" xml:space="preserve">
+    <value>Color Fill</value>
+  </data>
+  <data name="EditorCommands_ColorRange" xml:space="preserve">
+    <value>Color Range</value>
+  </data>
+  <data name="EditorCommands_ColorRangeEllipsis" xml:space="preserve">
+    <value>Color Range...</value>
+  </data>
+  <data name="EditorCommands_ColorRangeTip" xml:space="preserve">
+    <value>Tip: sample a color with the Eyedropper first; it is used as the foreground color.</value>
+  </data>
+  <data name="EditorCommands_ColumnsColon" xml:space="preserve">
+    <value>Columns:</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFill" xml:space="preserve">
+    <value>Content-Aware Fill</value>
+  </data>
+  <data name="EditorCommands_ContentAwareFillEllipsis" xml:space="preserve">
+    <value>Content-Aware Fill...</value>
+  </data>
+  <data name="EditorCommands_Contract" xml:space="preserve">
+    <value>Contract</value>
+  </data>
+  <data name="EditorCommands_ContractByPxColon" xml:space="preserve">
+    <value>Contract By (px):</value>
+  </data>
+  <data name="EditorCommands_ContractEllipsis" xml:space="preserve">
+    <value>Contract...</value>
+  </data>
+  <data name="EditorCommands_ContrastColon" xml:space="preserve">
+    <value>Contrast:</value>
+  </data>
+  <data name="EditorCommands_ConvertForSmartFilters" xml:space="preserve">
+    <value>Convert for Smart Filters</value>
+  </data>
+  <data name="EditorCommands_ConvertToShape" xml:space="preserve">
+    <value>Convert to Shape</value>
+  </data>
+  <data name="EditorCommands_ConvertToSmartObject" xml:space="preserve">
+    <value>Convert to Smart Object</value>
+  </data>
+  <data name="EditorCommands_Copy" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="EditorCommands_CopyLayerStyle" xml:space="preserve">
+    <value>Copy Layer Style</value>
+  </data>
+  <data name="EditorCommands_CopyMerged" xml:space="preserve">
+    <value>Copy Merged</value>
+  </data>
+  <data name="EditorCommands_CouldNotActionReason" xml:space="preserve">
+    <value>Could not {0}: {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotCreateDocument" xml:space="preserve">
+    <value>Could not create the document: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExport" xml:space="preserve">
+    <value>Could not export: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotExportLayers" xml:space="preserve">
+    <value>Could not export layers: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotPlaceUnsupported" xml:space="preserve">
+    <value>Could not place "{0}" because the file format is not supported.</value>
+  </data>
+  <data name="EditorCommands_CouldNotRevert" xml:space="preserve">
+    <value>Could not revert: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSave" xml:space="preserve">
+    <value>Could not save: {0}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveFile" xml:space="preserve">
+    <value>Could not save "{0}": {1}</value>
+  </data>
+  <data name="EditorCommands_CouldNotSaveSlices" xml:space="preserve">
+    <value>Could not save slices: {0}</value>
+  </data>
+  <data name="EditorCommands_Count" xml:space="preserve">
+    <value>Count</value>
+  </data>
+  <data name="EditorCommands_CounterClockwise" xml:space="preserve">
+    <value>Counter Clockwise</value>
+  </data>
+  <data name="EditorCommands_CreateClippingMask" xml:space="preserve">
+    <value>Create Clipping Mask</value>
+  </data>
+  <data name="EditorCommands_CreateWorkPath" xml:space="preserve">
+    <value>Create Work Path</value>
+  </data>
+  <data name="EditorCommands_Crop" xml:space="preserve">
+    <value>Crop</value>
+  </data>
+  <data name="EditorCommands_Cut" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="EditorCommands_CycleScreenMode" xml:space="preserve">
+    <value>Cycle Screen Mode</value>
+  </data>
+  <data name="EditorCommands_DecreaseFontSize" xml:space="preserve">
+    <value>Decrease Font Size</value>
+  </data>
+  <data name="EditorCommands_DefaultColors" xml:space="preserve">
+    <value>Default Foreground and Background Colors</value>
+  </data>
+  <data name="EditorCommands_DefineBrushPresetEllipsis" xml:space="preserve">
+    <value>Define Brush Preset...</value>
+  </data>
+  <data name="EditorCommands_DefineCustomShapeEllipsis" xml:space="preserve">
+    <value>Define Custom Shape...</value>
+  </data>
+  <data name="EditorCommands_DefinePatternEllipsis" xml:space="preserve">
+    <value>Define Pattern...</value>
+  </data>
+  <data name="EditorCommands_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EditorCommands_DeleteChannel" xml:space="preserve">
+    <value>Delete Channel</value>
+  </data>
+  <data name="EditorCommands_DeleteLayer" xml:space="preserve">
+    <value>Delete Layer</value>
+  </data>
+  <data name="EditorCommands_DeleteLayerMask" xml:space="preserve">
+    <value>Delete Layer Mask</value>
+  </data>
+  <data name="EditorCommands_DeleteLayers" xml:space="preserve">
+    <value>Delete Layers</value>
+  </data>
+  <data name="EditorCommands_DeletePath" xml:space="preserve">
+    <value>Delete Path</value>
+  </data>
+  <data name="EditorCommands_Deselect" xml:space="preserve">
+    <value>Deselect</value>
+  </data>
+  <data name="EditorCommands_DirectionColon" xml:space="preserve">
+    <value>Direction:</value>
+  </data>
+  <data name="EditorCommands_Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="EditorCommands_DisableLayerMask" xml:space="preserve">
+    <value>Disable Layer Mask</value>
+  </data>
+  <data name="EditorCommands_Distort" xml:space="preserve">
+    <value>Distort</value>
+  </data>
+  <data name="EditorCommands_DocumentBounds" xml:space="preserve">
+    <value>Document Bounds</value>
+  </data>
+  <data name="EditorCommands_DuplicateEllipsis" xml:space="preserve">
+    <value>Duplicate...</value>
+  </data>
+  <data name="EditorCommands_DuplicateImage" xml:space="preserve">
+    <value>Duplicate Image</value>
+  </data>
+  <data name="EditorCommands_DuplicateLayer" xml:space="preserve">
+    <value>Duplicate Layer</value>
+  </data>
+  <data name="EditorCommands_EditInQuickMaskMode" xml:space="preserve">
+    <value>Edit in Quick Mask Mode</value>
+  </data>
+  <data name="EditorCommands_EditMask" xml:space="preserve">
+    <value>Edit Mask</value>
+  </data>
+  <data name="EditorCommands_EffectNotAvailable" xml:space="preserve">
+    <value>This effect is not available.</value>
+  </data>
+  <data name="EditorCommands_EffectsLibrary" xml:space="preserve">
+    <value>Effects Library</value>
+  </data>
+  <data name="EditorCommands_EnableLayerMask" xml:space="preserve">
+    <value>Enable Layer Mask</value>
+  </data>
+  <data name="EditorCommands_EnterQuickMask" xml:space="preserve">
+    <value>Enter Quick Mask</value>
+  </data>
+  <data name="EditorCommands_Equalize" xml:space="preserve">
+    <value>Equalize</value>
+  </data>
+  <data name="EditorCommands_Exit" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="EditorCommands_ExitQuickMask" xml:space="preserve">
+    <value>Exit Quick Mask</value>
+  </data>
+  <data name="EditorCommands_Expand" xml:space="preserve">
+    <value>Expand</value>
+  </data>
+  <data name="EditorCommands_ExpandByPxColon" xml:space="preserve">
+    <value>Expand By (px):</value>
+  </data>
+  <data name="EditorCommands_ExpandEllipsis" xml:space="preserve">
+    <value>Expand...</value>
+  </data>
+  <data name="EditorCommands_Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="EditorCommands_ExportAs" xml:space="preserve">
+    <value>Export As</value>
+  </data>
+  <data name="EditorCommands_ExportAsEllipsis" xml:space="preserve">
+    <value>Export As...</value>
+  </data>
+  <data name="EditorCommands_ExportedLayersTo" xml:space="preserve">
+    <value>Exported {0} layers to {1}</value>
+  </data>
+  <data name="EditorCommands_ExportedPath" xml:space="preserve">
+    <value>Exported {0}</value>
+  </data>
+  <data name="EditorCommands_Extras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="EditorCommands_Fade" xml:space="preserve">
+    <value>Fade</value>
+  </data>
+  <data name="EditorCommands_FadeEllipsis" xml:space="preserve">
+    <value>Fade...</value>
+  </data>
+  <data name="EditorCommands_FadeName" xml:space="preserve">
+    <value>Fade {0}</value>
+  </data>
+  <data name="EditorCommands_Feather" xml:space="preserve">
+    <value>Feather</value>
+  </data>
+  <data name="EditorCommands_FeatherColon" xml:space="preserve">
+    <value>Feather:</value>
+  </data>
+  <data name="EditorCommands_FeatherEllipsis" xml:space="preserve">
+    <value>Feather...</value>
+  </data>
+  <data name="EditorCommands_FeatherRadiusPxColon" xml:space="preserve">
+    <value>Feather Radius (px):</value>
+  </data>
+  <data name="EditorCommands_Fill" xml:space="preserve">
+    <value>Fill</value>
+  </data>
+  <data name="EditorCommands_FillEllipsis" xml:space="preserve">
+    <value>Fill...</value>
+  </data>
+  <data name="EditorCommands_FillPath" xml:space="preserve">
+    <value>Fill Path</value>
+  </data>
+  <data name="EditorCommands_FillScreen" xml:space="preserve">
+    <value>Fill Screen</value>
+  </data>
+  <data name="EditorCommands_FillWithBackground" xml:space="preserve">
+    <value>Fill with Background</value>
+  </data>
+  <data name="EditorCommands_FillWithForeground" xml:space="preserve">
+    <value>Fill with Foreground</value>
+  </data>
+  <data name="EditorCommands_FitOnScreen" xml:space="preserve">
+    <value>Fit on Screen</value>
+  </data>
+  <data name="EditorCommands_Flatten" xml:space="preserve">
+    <value>Flatten</value>
+  </data>
+  <data name="EditorCommands_FlattenImage" xml:space="preserve">
+    <value>Flatten Image</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasHorizontal" xml:space="preserve">
+    <value>Flip Canvas Horizontal</value>
+  </data>
+  <data name="EditorCommands_FlipCanvasVertical" xml:space="preserve">
+    <value>Flip Canvas Vertical</value>
+  </data>
+  <data name="EditorCommands_FlipHorizontal" xml:space="preserve">
+    <value>Flip Horizontal</value>
+  </data>
+  <data name="EditorCommands_FlipVertical" xml:space="preserve">
+    <value>Flip Vertical</value>
+  </data>
+  <data name="EditorCommands_FormatDoesNotSupportLayers" xml:space="preserve">
+    <value>"{0}" does not support layers. Save a flattened copy in this format, or save as a ShareX Photo Editor project to keep the layers?</value>
+  </data>
+  <data name="EditorCommands_FreeTransform" xml:space="preserve">
+    <value>Free Transform</value>
+  </data>
+  <data name="EditorCommands_FromTransparency" xml:space="preserve">
+    <value>From Transparency</value>
+  </data>
+  <data name="EditorCommands_FuzzinessColon" xml:space="preserve">
+    <value>Fuzziness:</value>
+  </data>
+  <data name="EditorCommands_GradientEllipsis" xml:space="preserve">
+    <value>Gradient...</value>
+  </data>
+  <data name="EditorCommands_GradientFill" xml:space="preserve">
+    <value>Gradient Fill</value>
+  </data>
+  <data name="EditorCommands_Grayscale" xml:space="preserve">
+    <value>Grayscale</value>
+  </data>
+  <data name="EditorCommands_Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="EditorCommands_Greens" xml:space="preserve">
+    <value>Greens</value>
+  </data>
+  <data name="EditorCommands_Grid" xml:space="preserve">
+    <value>Grid</value>
+  </data>
+  <data name="EditorCommands_GroupLayers" xml:space="preserve">
+    <value>Group Layers</value>
+  </data>
+  <data name="EditorCommands_GroupNumber" xml:space="preserve">
+    <value>Group {0}</value>
+  </data>
+  <data name="EditorCommands_Grow" xml:space="preserve">
+    <value>Grow</value>
+  </data>
+  <data name="EditorCommands_Guides" xml:space="preserve">
+    <value>Guides</value>
+  </data>
+  <data name="EditorCommands_GutterPxColon" xml:space="preserve">
+    <value>Gutter (px):</value>
+  </data>
+  <data name="EditorCommands_HeightPercentColon" xml:space="preserve">
+    <value>Height (%):</value>
+  </data>
+  <data name="EditorCommands_HideAll" xml:space="preserve">
+    <value>Hide All</value>
+  </data>
+  <data name="EditorCommands_HideLayers" xml:space="preserve">
+    <value>Hide Layers</value>
+  </data>
+  <data name="EditorCommands_HideSelection" xml:space="preserve">
+    <value>Hide Selection</value>
+  </data>
+  <data name="EditorCommands_Highlights" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="EditorCommands_History" xml:space="preserve">
+    <value>History</value>
+  </data>
+  <data name="EditorCommands_Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="EditorCommands_HorizontalCenters" xml:space="preserve">
+    <value>Horizontal Centers</value>
+  </data>
+  <data name="EditorCommands_ImageOptions" xml:space="preserve">
+    <value>Image Options</value>
+  </data>
+  <data name="EditorCommands_ImageRotation" xml:space="preserve">
+    <value>Image Rotation</value>
+  </data>
+  <data name="EditorCommands_ImageSize" xml:space="preserve">
+    <value>Image Size</value>
+  </data>
+  <data name="EditorCommands_ImageSizeEllipsis" xml:space="preserve">
+    <value>Image Size...</value>
+  </data>
+  <data name="EditorCommands_IncreaseFontSize" xml:space="preserve">
+    <value>Increase Font Size</value>
+  </data>
+  <data name="EditorCommands_Info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="EditorCommands_Inside" xml:space="preserve">
+    <value>Inside</value>
+  </data>
+  <data name="EditorCommands_Inverse" xml:space="preserve">
+    <value>Inverse</value>
+  </data>
+  <data name="EditorCommands_KeyboardShortcutsEllipsis" xml:space="preserve">
+    <value>Keyboard Shortcuts...</value>
+  </data>
+  <data name="EditorCommands_LastFilter" xml:space="preserve">
+    <value>Last Filter</value>
+  </data>
+  <data name="EditorCommands_LayerFromBackground" xml:space="preserve">
+    <value>Layer from Background</value>
+  </data>
+  <data name="EditorCommands_LayerMask" xml:space="preserve">
+    <value>Layer Mask</value>
+  </data>
+  <data name="EditorCommands_LayerNumber" xml:space="preserve">
+    <value>Layer {0}</value>
+  </data>
+  <data name="EditorCommands_LayerProperties" xml:space="preserve">
+    <value>Layer Properties</value>
+  </data>
+  <data name="EditorCommands_LayerStyle" xml:space="preserve">
+    <value>Layer Style</value>
+  </data>
+  <data name="EditorCommands_LayerStyleEllipsis" xml:space="preserve">
+    <value>Layer Style...</value>
+  </data>
+  <data name="EditorCommands_LayerViaCopy" xml:space="preserve">
+    <value>Layer via Copy</value>
+  </data>
+  <data name="EditorCommands_LayerViaCut" xml:space="preserve">
+    <value>Layer via Cut</value>
+  </data>
+  <data name="EditorCommands_Layers" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="EditorCommands_LayersToFiles" xml:space="preserve">
+    <value>Layers to Files</value>
+  </data>
+  <data name="EditorCommands_LayersToFilesEllipsis" xml:space="preserve">
+    <value>Layers to Files...</value>
+  </data>
+  <data name="EditorCommands_LeftEdges" xml:space="preserve">
+    <value>Left Edges</value>
+  </data>
+  <data name="EditorCommands_LinkLayers" xml:space="preserve">
+    <value>Link Layers</value>
+  </data>
+  <data name="EditorCommands_LinkUnlinkLayers" xml:space="preserve">
+    <value>Link/Unlink Layers</value>
+  </data>
+  <data name="EditorCommands_LoadSelection" xml:space="preserve">
+    <value>Load Selection</value>
+  </data>
+  <data name="EditorCommands_LoadSelectionEllipsis" xml:space="preserve">
+    <value>Load Selection...</value>
+  </data>
+  <data name="EditorCommands_LocationColon" xml:space="preserve">
+    <value>Location:</value>
+  </data>
+  <data name="EditorCommands_LockAll" xml:space="preserve">
+    <value>Lock All</value>
+  </data>
+  <data name="EditorCommands_LockGuides" xml:space="preserve">
+    <value>Lock Guides</value>
+  </data>
+  <data name="EditorCommands_LockLayer" xml:space="preserve">
+    <value>Lock Layer</value>
+  </data>
+  <data name="EditorCommands_MakeSelection" xml:space="preserve">
+    <value>Make Selection</value>
+  </data>
+  <data name="EditorCommands_MakeSelectionFirst" xml:space="preserve">
+    <value>Make a selection first.</value>
+  </data>
+  <data name="EditorCommands_MakeWorkPath" xml:space="preserve">
+    <value>Make Work Path</value>
+  </data>
+  <data name="EditorCommands_MarginPxColon" xml:space="preserve">
+    <value>Margin (px):</value>
+  </data>
+  <data name="EditorCommands_MenuEdit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="EditorCommands_MenuFile" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="EditorCommands_MenuFilter" xml:space="preserve">
+    <value>Fil_ter</value>
+  </data>
+  <data name="EditorCommands_MenuImage" xml:space="preserve">
+    <value>_Image</value>
+  </data>
+  <data name="EditorCommands_MenuLayer" xml:space="preserve">
+    <value>_Layer</value>
+  </data>
+  <data name="EditorCommands_MenuSelect" xml:space="preserve">
+    <value>_Select</value>
+  </data>
+  <data name="EditorCommands_MenuType" xml:space="preserve">
+    <value>_Type</value>
+  </data>
+  <data name="EditorCommands_MenuView" xml:space="preserve">
+    <value>_View</value>
+  </data>
+  <data name="EditorCommands_MenuWindow" xml:space="preserve">
+    <value>_Window</value>
+  </data>
+  <data name="EditorCommands_MergeDown" xml:space="preserve">
+    <value>Merge Down</value>
+  </data>
+  <data name="EditorCommands_MergeGroup" xml:space="preserve">
+    <value>Merge Group</value>
+  </data>
+  <data name="EditorCommands_MergeVisible" xml:space="preserve">
+    <value>Merge Visible</value>
+  </data>
+  <data name="EditorCommands_Merged" xml:space="preserve">
+    <value>Merged</value>
+  </data>
+  <data name="EditorCommands_Midtones" xml:space="preserve">
+    <value>Midtones</value>
+  </data>
+  <data name="EditorCommands_Mode" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="EditorCommands_ModeColon" xml:space="preserve">
+    <value>Mode:</value>
+  </data>
+  <data name="EditorCommands_Modify" xml:space="preserve">
+    <value>Modify</value>
+  </data>
+  <data name="EditorCommands_ModifySelectionTitle" xml:space="preserve">
+    <value>{0} Selection</value>
+  </data>
+  <data name="EditorCommands_MoveLayer" xml:space="preserve">
+    <value>Move Layer</value>
+  </data>
+  <data name="EditorCommands_NameColon" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="EditorCommands_Navigator" xml:space="preserve">
+    <value>Navigator</value>
+  </data>
+  <data name="EditorCommands_New" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayer" xml:space="preserve">
+    <value>New Adjustment Layer</value>
+  </data>
+  <data name="EditorCommands_NewAdjustmentLayerHistory" xml:space="preserve">
+    <value>New {0} Layer</value>
+  </data>
+  <data name="EditorCommands_NewChannel" xml:space="preserve">
+    <value>New Channel</value>
+  </data>
+  <data name="EditorCommands_NewEllipsis" xml:space="preserve">
+    <value>New...</value>
+  </data>
+  <data name="EditorCommands_NewFillLayer" xml:space="preserve">
+    <value>New Fill Layer</value>
+  </data>
+  <data name="EditorCommands_NewFromClipboard" xml:space="preserve">
+    <value>New from Clipboard</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotFullScreen" xml:space="preserve">
+    <value>New from Screenshot (Full Screen)</value>
+  </data>
+  <data name="EditorCommands_NewFromScreenshotRegionEllipsis" xml:space="preserve">
+    <value>New from Screenshot (Region)...</value>
+  </data>
+  <data name="EditorCommands_NewGroup" xml:space="preserve">
+    <value>New Group</value>
+  </data>
+  <data name="EditorCommands_NewGuide" xml:space="preserve">
+    <value>New Guide</value>
+  </data>
+  <data name="EditorCommands_NewGuideEllipsis" xml:space="preserve">
+    <value>New Guide...</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayout" xml:space="preserve">
+    <value>New Guide Layout</value>
+  </data>
+  <data name="EditorCommands_NewGuideLayoutEllipsis" xml:space="preserve">
+    <value>New Guide Layout...</value>
+  </data>
+  <data name="EditorCommands_NewGuidesFromShape" xml:space="preserve">
+    <value>New Guides From Shape</value>
+  </data>
+  <data name="EditorCommands_NewLayer" xml:space="preserve">
+    <value>New Layer</value>
+  </data>
+  <data name="EditorCommands_NewLayerEllipsis" xml:space="preserve">
+    <value>New Layer...</value>
+  </data>
+  <data name="EditorCommands_NewPath" xml:space="preserve">
+    <value>New Path</value>
+  </data>
+  <data name="EditorCommands_NewShapeLayer" xml:space="preserve">
+    <value>New Shape Layer</value>
+  </data>
+  <data name="EditorCommands_NextDocument" xml:space="preserve">
+    <value>Next Document</value>
+  </data>
+  <data name="EditorCommands_NoPathForSelection" xml:space="preserve">
+    <value>There is no path to load as a selection.</value>
+  </data>
+  <data name="EditorCommands_NoSavedSelections" xml:space="preserve">
+    <value>There are no saved selections (alpha channels).</value>
+  </data>
+  <data name="EditorCommands_Notes" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="EditorCommands_OffsetXColon" xml:space="preserve">
+    <value>Offset X:</value>
+  </data>
+  <data name="EditorCommands_OffsetYColon" xml:space="preserve">
+    <value>Offset Y:</value>
+  </data>
+  <data name="EditorCommands_OpacityColon" xml:space="preserve">
+    <value>Opacity:</value>
+  </data>
+  <data name="EditorCommands_Open" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="EditorCommands_OpenEllipsis" xml:space="preserve">
+    <value>Open...</value>
+  </data>
+  <data name="EditorCommands_OpenRecent" xml:space="preserve">
+    <value>Open Recent</value>
+  </data>
+  <data name="EditorCommands_Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="EditorCommands_Orientation" xml:space="preserve">
+    <value>Orientation</value>
+  </data>
+  <data name="EditorCommands_OrientationColon" xml:space="preserve">
+    <value>Orientation:</value>
+  </data>
+  <data name="EditorCommands_Outside" xml:space="preserve">
+    <value>Outside</value>
+  </data>
+  <data name="EditorCommands_Panels" xml:space="preserve">
+    <value>Panels</value>
+  </data>
+  <data name="EditorCommands_Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="EditorCommands_PasteAsNewDocument" xml:space="preserve">
+    <value>Paste as New Document</value>
+  </data>
+  <data name="EditorCommands_PasteInPlace" xml:space="preserve">
+    <value>Paste in Place</value>
+  </data>
+  <data name="EditorCommands_PasteInto" xml:space="preserve">
+    <value>Paste Into</value>
+  </data>
+  <data name="EditorCommands_PasteLayerStyle" xml:space="preserve">
+    <value>Paste Layer Style</value>
+  </data>
+  <data name="EditorCommands_PasteSpecial" xml:space="preserve">
+    <value>Paste Special</value>
+  </data>
+  <data name="EditorCommands_Pasted" xml:space="preserve">
+    <value>Pasted</value>
+  </data>
+  <data name="EditorCommands_PathNumber" xml:space="preserve">
+    <value>Path {0}</value>
+  </data>
+  <data name="EditorCommands_Paths" xml:space="preserve">
+    <value>Paths</value>
+  </data>
+  <data name="EditorCommands_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="EditorCommands_PatternEllipsis" xml:space="preserve">
+    <value>Pattern...</value>
+  </data>
+  <data name="EditorCommands_PatternFill" xml:space="preserve">
+    <value>Pattern Fill</value>
+  </data>
+  <data name="EditorCommands_PatternName" xml:space="preserve">
+    <value>Pattern Name</value>
+  </data>
+  <data name="EditorCommands_PatternNumber" xml:space="preserve">
+    <value>Pattern {0}</value>
+  </data>
+  <data name="EditorCommands_Perspective" xml:space="preserve">
+    <value>Perspective</value>
+  </data>
+  <data name="EditorCommands_PinToScreen" xml:space="preserve">
+    <value>Pin to Screen</value>
+  </data>
+  <data name="EditorCommands_PixelGrid" xml:space="preserve">
+    <value>Pixel Grid</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbedded" xml:space="preserve">
+    <value>Place Embedded</value>
+  </data>
+  <data name="EditorCommands_PlaceEmbeddedEllipsis" xml:space="preserve">
+    <value>Place Embedded...</value>
+  </data>
+  <data name="EditorCommands_PlaceImageIntoFrame" xml:space="preserve">
+    <value>Place Image Into Frame</value>
+  </data>
+  <data name="EditorCommands_PlaceIntoFrame" xml:space="preserve">
+    <value>Place Into Frame</value>
+  </data>
+  <data name="EditorCommands_PositionPxColon" xml:space="preserve">
+    <value>Position (px):</value>
+  </data>
+  <data name="EditorCommands_PreferencesEllipsis" xml:space="preserve">
+    <value>Preferences...</value>
+  </data>
+  <data name="EditorCommands_Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="EditorCommands_PreviousDocument" xml:space="preserve">
+    <value>Previous Document</value>
+  </data>
+  <data name="EditorCommands_PrintEllipsis" xml:space="preserve">
+    <value>Print...</value>
+  </data>
+  <data name="EditorCommands_Properties" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="EditorCommands_Purge" xml:space="preserve">
+    <value>Purge</value>
+  </data>
+  <data name="EditorCommands_PurgeClipboard" xml:space="preserve">
+    <value>Purge Clipboard</value>
+  </data>
+  <data name="EditorCommands_PurgeHistories" xml:space="preserve">
+    <value>Purge Histories</value>
+  </data>
+  <data name="EditorCommands_QualityColon" xml:space="preserve">
+    <value>Quality:</value>
+  </data>
+  <data name="EditorCommands_QuickExportAsPng" xml:space="preserve">
+    <value>Quick Export as PNG</value>
+  </data>
+  <data name="EditorCommands_Rasterize" xml:space="preserve">
+    <value>Rasterize</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayer" xml:space="preserve">
+    <value>Rasterize Layer</value>
+  </data>
+  <data name="EditorCommands_RasterizeLayerStyle" xml:space="preserve">
+    <value>Rasterize Layer Style</value>
+  </data>
+  <data name="EditorCommands_RasterizeTypeLayer" xml:space="preserve">
+    <value>Rasterize Type Layer</value>
+  </data>
+  <data name="EditorCommands_Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="EditorCommands_Redo" xml:space="preserve">
+    <value>Redo</value>
+  </data>
+  <data name="EditorCommands_Reds" xml:space="preserve">
+    <value>Reds</value>
+  </data>
+  <data name="EditorCommands_ReleaseClippingMask" xml:space="preserve">
+    <value>Release Clipping Mask</value>
+  </data>
+  <data name="EditorCommands_RenameLayer" xml:space="preserve">
+    <value>Rename Layer</value>
+  </data>
+  <data name="EditorCommands_RenameLayerEllipsis" xml:space="preserve">
+    <value>Rename Layer...</value>
+  </data>
+  <data name="EditorCommands_Reselect" xml:space="preserve">
+    <value>Reselect</value>
+  </data>
+  <data name="EditorCommands_ResetEssentials" xml:space="preserve">
+    <value>Reset Essentials</value>
+  </data>
+  <data name="EditorCommands_ResetViewRotation" xml:space="preserve">
+    <value>Reset View Rotation</value>
+  </data>
+  <data name="EditorCommands_RevealAll" xml:space="preserve">
+    <value>Reveal All</value>
+  </data>
+  <data name="EditorCommands_RevealSelection" xml:space="preserve">
+    <value>Reveal Selection</value>
+  </data>
+  <data name="EditorCommands_Revert" xml:space="preserve">
+    <value>Revert</value>
+  </data>
+  <data name="EditorCommands_RightEdges" xml:space="preserve">
+    <value>Right Edges</value>
+  </data>
+  <data name="EditorCommands_Rotate" xml:space="preserve">
+    <value>Rotate</value>
+  </data>
+  <data name="EditorCommands_Rotate180" xml:space="preserve">
+    <value>Rotate 180°</value>
+  </data>
+  <data name="EditorCommands_Rotate90Clockwise" xml:space="preserve">
+    <value>Rotate 90° Clockwise</value>
+  </data>
+  <data name="EditorCommands_Rotate90CounterClockwise" xml:space="preserve">
+    <value>Rotate 90° Counter Clockwise</value>
+  </data>
+  <data name="EditorCommands_RotateCanvas" xml:space="preserve">
+    <value>Rotate Canvas</value>
+  </data>
+  <data name="EditorCommands_RotateCanvasDegrees" xml:space="preserve">
+    <value>Rotate Canvas {0}°</value>
+  </data>
+  <data name="EditorCommands_RotateDegrees" xml:space="preserve">
+    <value>Rotate {0}°</value>
+  </data>
+  <data name="EditorCommands_RowsColon" xml:space="preserve">
+    <value>Rows:</value>
+  </data>
+  <data name="EditorCommands_Rulers" xml:space="preserve">
+    <value>Rulers</value>
+  </data>
+  <data name="EditorCommands_SampleRadiusPxColon" xml:space="preserve">
+    <value>Sample Radius (px):</value>
+  </data>
+  <data name="EditorCommands_SampledBrushNumber" xml:space="preserve">
+    <value>Sampled Brush {0}</value>
+  </data>
+  <data name="EditorCommands_SampledColorsForeground" xml:space="preserve">
+    <value>Sampled Colors (foreground)</value>
+  </data>
+  <data name="EditorCommands_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="EditorCommands_SaveACopy" xml:space="preserve">
+    <value>Save a Copy</value>
+  </data>
+  <data name="EditorCommands_SaveACopyEllipsis" xml:space="preserve">
+    <value>Save a Copy...</value>
+  </data>
+  <data name="EditorCommands_SaveAs" xml:space="preserve">
+    <value>Save As</value>
+  </data>
+  <data name="EditorCommands_SaveAsEllipsis" xml:space="preserve">
+    <value>Save As...</value>
+  </data>
+  <data name="EditorCommands_SaveAsProject" xml:space="preserve">
+    <value>Save as Project</value>
+  </data>
+  <data name="EditorCommands_SaveSelection" xml:space="preserve">
+    <value>Save Selection</value>
+  </data>
+  <data name="EditorCommands_SaveSelectionEllipsis" xml:space="preserve">
+    <value>Save Selection...</value>
+  </data>
+  <data name="EditorCommands_SaveSlices" xml:space="preserve">
+    <value>Save Slices</value>
+  </data>
+  <data name="EditorCommands_SaveSlicesEllipsis" xml:space="preserve">
+    <value>Save Slices...</value>
+  </data>
+  <data name="EditorCommands_SaveWorkspace" xml:space="preserve">
+    <value>Save Workspace</value>
+  </data>
+  <data name="EditorCommands_SavedCopyTo" xml:space="preserve">
+    <value>Saved a copy to {0}</value>
+  </data>
+  <data name="EditorCommands_SavedPath" xml:space="preserve">
+    <value>Saved {0}</value>
+  </data>
+  <data name="EditorCommands_SavedSlicesTo" xml:space="preserve">
+    <value>Saved {0} slices to {1}</value>
+  </data>
+  <data name="EditorCommands_Scale" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="EditorCommands_Screenshot" xml:space="preserve">
+    <value>Screenshot</value>
+  </data>
+  <data name="EditorCommands_SelectAll" xml:space="preserve">
+    <value>Select All</value>
+  </data>
+  <data name="EditorCommands_SelectAndMask" xml:space="preserve">
+    <value>Select and Mask</value>
+  </data>
+  <data name="EditorCommands_SelectAndMaskEllipsis" xml:space="preserve">
+    <value>Select and Mask...</value>
+  </data>
+  <data name="EditorCommands_SelectColon" xml:space="preserve">
+    <value>Select:</value>
+  </data>
+  <data name="EditorCommands_SelectFrameLayerFirst" xml:space="preserve">
+    <value>Select a frame layer first (draw one with the Frame tool).</value>
+  </data>
+  <data name="EditorCommands_SelectLayersToLink" xml:space="preserve">
+    <value>Select two or more layers (Ctrl-click in the Layers panel) to link them.</value>
+  </data>
+  <data name="EditorCommands_SelectNextLayer" xml:space="preserve">
+    <value>Select Next Layer</value>
+  </data>
+  <data name="EditorCommands_SelectPatternTileFirst" xml:space="preserve">
+    <value>Make a rectangular selection of the pattern tile first.</value>
+  </data>
+  <data name="EditorCommands_SelectPreviousLayer" xml:space="preserve">
+    <value>Select Previous Layer</value>
+  </data>
+  <data name="EditorCommands_SelectSubject" xml:space="preserve">
+    <value>Select Subject</value>
+  </data>
+  <data name="EditorCommands_SelectingSubject" xml:space="preserve">
+    <value>Selecting subject...</value>
+  </data>
+  <data name="EditorCommands_SelectionEdges" xml:space="preserve">
+    <value>Selection Edges</value>
+  </data>
+  <data name="EditorCommands_SendBackward" xml:space="preserve">
+    <value>Send Backward</value>
+  </data>
+  <data name="EditorCommands_SendToBack" xml:space="preserve">
+    <value>Send to Back</value>
+  </data>
+  <data name="EditorCommands_SendToShareX" xml:space="preserve">
+    <value>Send to ShareX (After Capture Tasks)</value>
+  </data>
+  <data name="EditorCommands_SetFontSize" xml:space="preserve">
+    <value>Set Font Size</value>
+  </data>
+  <data name="EditorCommands_Shadows" xml:space="preserve">
+    <value>Shadows</value>
+  </data>
+  <data name="EditorCommands_ShadowsHighlightsEllipsis" xml:space="preserve">
+    <value>Shadows/Highlights...</value>
+  </data>
+  <data name="EditorCommands_ShapeName" xml:space="preserve">
+    <value>Shape Name</value>
+  </data>
+  <data name="EditorCommands_ShapeNumber" xml:space="preserve">
+    <value>Shape {0}</value>
+  </data>
+  <data name="EditorCommands_ShareWithShareX" xml:space="preserve">
+    <value>Share with ShareX</value>
+  </data>
+  <data name="EditorCommands_Show" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="EditorCommands_Similar" xml:space="preserve">
+    <value>Similar</value>
+  </data>
+  <data name="EditorCommands_Skew" xml:space="preserve">
+    <value>Skew</value>
+  </data>
+  <data name="EditorCommands_SkinTones" xml:space="preserve">
+    <value>Skin Tones</value>
+  </data>
+  <data name="EditorCommands_Slices" xml:space="preserve">
+    <value>Slices</value>
+  </data>
+  <data name="EditorCommands_SmartFilterHistory" xml:space="preserve">
+    <value>{0} (Smart Filter)</value>
+  </data>
+  <data name="EditorCommands_SmartObjects" xml:space="preserve">
+    <value>Smart Objects</value>
+  </data>
+  <data name="EditorCommands_Smooth" xml:space="preserve">
+    <value>Smooth</value>
+  </data>
+  <data name="EditorCommands_SmoothColon" xml:space="preserve">
+    <value>Smooth:</value>
+  </data>
+  <data name="EditorCommands_SmoothEllipsis" xml:space="preserve">
+    <value>Smooth...</value>
+  </data>
+  <data name="EditorCommands_Snap" xml:space="preserve">
+    <value>Snap</value>
+  </data>
+  <data name="EditorCommands_SnapTo" xml:space="preserve">
+    <value>Snap To</value>
+  </data>
+  <data name="EditorCommands_SolidColor" xml:space="preserve">
+    <value>Solid Color</value>
+  </data>
+  <data name="EditorCommands_SolidColorEllipsis" xml:space="preserve">
+    <value>Solid Color...</value>
+  </data>
+  <data name="EditorCommands_StampVisible" xml:space="preserve">
+    <value>Stamp Visible</value>
+  </data>
+  <data name="EditorCommands_StepBackward" xml:space="preserve">
+    <value>Step Backward</value>
+  </data>
+  <data name="EditorCommands_StepForward" xml:space="preserve">
+    <value>Step Forward</value>
+  </data>
+  <data name="EditorCommands_StraightenLayer" xml:space="preserve">
+    <value>Straighten Layer</value>
+  </data>
+  <data name="EditorCommands_Stroke" xml:space="preserve">
+    <value>Stroke</value>
+  </data>
+  <data name="EditorCommands_StrokeColor" xml:space="preserve">
+    <value>Stroke Color</value>
+  </data>
+  <data name="EditorCommands_StrokeEllipsis" xml:space="preserve">
+    <value>Stroke...</value>
+  </data>
+  <data name="EditorCommands_StrokePath" xml:space="preserve">
+    <value>Stroke Path</value>
+  </data>
+  <data name="EditorCommands_Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="EditorCommands_Swatches" xml:space="preserve">
+    <value>Swatches</value>
+  </data>
+  <data name="EditorCommands_SwitchColors" xml:space="preserve">
+    <value>Switch Foreground and Background Colors</value>
+  </data>
+  <data name="EditorCommands_ToolbarEllipsis" xml:space="preserve">
+    <value>Toolbar...</value>
+  </data>
+  <data name="EditorCommands_Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="EditorCommands_TopEdges" xml:space="preserve">
+    <value>Top Edges</value>
+  </data>
+  <data name="EditorCommands_TopLeftPixelColor" xml:space="preserve">
+    <value>Top Left Pixel Color</value>
+  </data>
+  <data name="EditorCommands_Transform" xml:space="preserve">
+    <value>Transform</value>
+  </data>
+  <data name="EditorCommands_TransformSelection" xml:space="preserve">
+    <value>Transform Selection</value>
+  </data>
+  <data name="EditorCommands_TransformSelectionEllipsis" xml:space="preserve">
+    <value>Transform Selection...</value>
+  </data>
+  <data name="EditorCommands_TransparentPixels" xml:space="preserve">
+    <value>Transparent Pixels</value>
+  </data>
+  <data name="EditorCommands_Trim" xml:space="preserve">
+    <value>Trim</value>
+  </data>
+  <data name="EditorCommands_TrimEllipsis" xml:space="preserve">
+    <value>Trim...</value>
+  </data>
+  <data name="EditorCommands_TwoColumnToolbar" xml:space="preserve">
+    <value>Two Column Toolbar</value>
+  </data>
+  <data name="EditorCommands_Undo" xml:space="preserve">
+    <value>Undo</value>
+  </data>
+  <data name="EditorCommands_UngroupLayers" xml:space="preserve">
+    <value>Ungroup Layers</value>
+  </data>
+  <data name="EditorCommands_UnlinkLayers" xml:space="preserve">
+    <value>Unlink Layers</value>
+  </data>
+  <data name="EditorCommands_UploadWithShareX" xml:space="preserve">
+    <value>Upload with ShareX</value>
+  </data>
+  <data name="EditorCommands_Vertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="EditorCommands_VerticalCenters" xml:space="preserve">
+    <value>Vertical Centers</value>
+  </data>
+  <data name="EditorCommands_WidthColon" xml:space="preserve">
+    <value>Width:</value>
+  </data>
+  <data name="EditorCommands_WidthPercentColon" xml:space="preserve">
+    <value>Width (%):</value>
+  </data>
+  <data name="EditorCommands_WidthPxColon" xml:space="preserve">
+    <value>Width (px):</value>
+  </data>
+  <data name="EditorCommands_Workspace" xml:space="preserve">
+    <value>Workspace</value>
+  </data>
+  <data name="EditorCommands_WorkspaceSaved" xml:space="preserve">
+    <value>Workspace saved.</value>
+  </data>
+  <data name="EditorCommands_ZoomIn" xml:space="preserve">
+    <value>Zoom In</value>
+  </data>
+  <data name="EditorCommands_ZoomOut" xml:space="preserve">
+    <value>Zoom Out</value>
+  </data>
+  <data name="Enum_ArtStyle_Dab" xml:space="preserve">
+    <value>Dab</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseCurl" xml:space="preserve">
+    <value>Loose Curl</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseLong" xml:space="preserve">
+    <value>Loose Long</value>
+  </data>
+  <data name="Enum_ArtStyle_LooseMedium" xml:space="preserve">
+    <value>Loose Medium</value>
+  </data>
+  <data name="Enum_ArtStyle_TightCurl" xml:space="preserve">
+    <value>Tight Curl</value>
+  </data>
+  <data name="Enum_ArtStyle_TightLong" xml:space="preserve">
+    <value>Tight Long</value>
+  </data>
+  <data name="Enum_ArtStyle_TightMedium" xml:space="preserve">
+    <value>Tight Medium</value>
+  </data>
+  <data name="Enum_ArtStyle_TightShort" xml:space="preserve">
+    <value>Tight Short</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Bottom" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomLeft" xml:space="preserve">
+    <value>Bottom Left</value>
+  </data>
+  <data name="Enum_CanvasAnchor_BottomRight" xml:space="preserve">
+    <value>Bottom Right</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enum_CanvasAnchor_Top" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopLeft" xml:space="preserve">
+    <value>Top Left</value>
+  </data>
+  <data name="Enum_CanvasAnchor_TopRight" xml:space="preserve">
+    <value>Top Right</value>
+  </data>
+  <data name="Enum_EraserMode_Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+  <data name="Enum_EraserMode_Brush" xml:space="preserve">
+    <value>Brush</value>
+  </data>
+  <data name="Enum_EraserMode_Pencil" xml:space="preserve">
+    <value>Pencil</value>
+  </data>
+  <data name="Enum_FillKind_Gradient" xml:space="preserve">
+    <value>Gradient</value>
+  </data>
+  <data name="Enum_FillKind_Pattern" xml:space="preserve">
+    <value>Pattern</value>
+  </data>
+  <data name="Enum_FillKind_SolidColor" xml:space="preserve">
+    <value>Solid Color</value>
+  </data>
+  <data name="Enum_GradientType_Angle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="Enum_GradientType_Diamond" xml:space="preserve">
+    <value>Diamond</value>
+  </data>
+  <data name="Enum_GradientType_Linear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="Enum_GradientType_Radial" xml:space="preserve">
+    <value>Radial</value>
+  </data>
+  <data name="Enum_GradientType_Reflected" xml:space="preserve">
+    <value>Reflected</value>
+  </data>
+  <data name="Enum_HealType_ContentAware" xml:space="preserve">
+    <value>Content-Aware</value>
+  </data>
+  <data name="Enum_HealType_CreateTexture" xml:space="preserve">
+    <value>Create Texture</value>
+  </data>
+  <data name="Enum_HealType_ProximityMatch" xml:space="preserve">
+    <value>Proximity Match</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedRatio" xml:space="preserve">
+    <value>Fixed Ratio</value>
+  </data>
+  <data name="Enum_MarqueeStyle_FixedSize" xml:space="preserve">
+    <value>Fixed Size</value>
+  </data>
+  <data name="Enum_MarqueeStyle_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Enum_PathCombine_Combine" xml:space="preserve">
+    <value>Combine Shapes</value>
+  </data>
+  <data name="Enum_PathCombine_Exclude" xml:space="preserve">
+    <value>Exclude Overlapping Shapes</value>
+  </data>
+  <data name="Enum_PathCombine_Intersect" xml:space="preserve">
+    <value>Intersect Shape Areas</value>
+  </data>
+  <data name="Enum_PathCombine_NewLayer" xml:space="preserve">
+    <value>New Layer</value>
+  </data>
+  <data name="Enum_PathCombine_Subtract" xml:space="preserve">
+    <value>Subtract Front Shape</value>
+  </data>
+  <data name="Enum_PathToolMode_Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Enum_PathToolMode_Shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="Enum_ReplaceMode_Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Enum_ReplaceMode_Hue" xml:space="preserve">
+    <value>Hue</value>
+  </data>
+  <data name="Enum_ReplaceMode_Luminosity" xml:space="preserve">
+    <value>Luminosity</value>
+  </data>
+  <data name="Enum_ReplaceMode_Saturation" xml:space="preserve">
+    <value>Saturation</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bicubic" xml:space="preserve">
+    <value>Bicubic</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSharper" xml:space="preserve">
+    <value>Bicubic Sharper</value>
+  </data>
+  <data name="Enum_ResampleMethod_BicubicSmoother" xml:space="preserve">
+    <value>Bicubic Smoother</value>
+  </data>
+  <data name="Enum_ResampleMethod_Bilinear" xml:space="preserve">
+    <value>Bilinear</value>
+  </data>
+  <data name="Enum_ResampleMethod_Lanczos" xml:space="preserve">
+    <value>Lanczos</value>
+  </data>
+  <data name="Enum_ResampleMethod_NearestNeighbor" xml:space="preserve">
+    <value>Nearest Neighbor</value>
+  </data>
+  <data name="Enum_Sampling_BackgroundSwatch" xml:space="preserve">
+    <value>Background Swatch</value>
+  </data>
+  <data name="Enum_Sampling_Continuous" xml:space="preserve">
+    <value>Continuous</value>
+  </data>
+  <data name="Enum_Sampling_Once" xml:space="preserve">
+    <value>Once</value>
+  </data>
+  <data name="Enum_ShapeKind_Custom" xml:space="preserve">
+    <value>Custom Shape</value>
+  </data>
+  <data name="Enum_ShapeKind_Ellipse" xml:space="preserve">
+    <value>Ellipse</value>
+  </data>
+  <data name="Enum_ShapeKind_Line" xml:space="preserve">
+    <value>Line</value>
+  </data>
+  <data name="Enum_ShapeKind_Polygon" xml:space="preserve">
+    <value>Polygon</value>
+  </data>
+  <data name="Enum_ShapeKind_Rectangle" xml:space="preserve">
+    <value>Rectangle</value>
+  </data>
+  <data name="Enum_ShapeKind_Triangle" xml:space="preserve">
+    <value>Triangle</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Pixels" xml:space="preserve">
+    <value>Pixels</value>
+  </data>
+  <data name="Enum_ShapeToolMode_Shape" xml:space="preserve">
+    <value>Shape</value>
+  </data>
+  <data name="Enum_StrokePosition_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Enum_StrokePosition_Inside" xml:space="preserve">
+    <value>Inside</value>
+  </data>
+  <data name="Enum_StrokePosition_Outside" xml:space="preserve">
+    <value>Outside</value>
+  </data>
+  <data name="Enum_TextAlignment_Center" xml:space="preserve">
+    <value>Center</value>
+  </data>
+  <data name="Enum_TextAlignment_Justify" xml:space="preserve">
+    <value>Justify</value>
+  </data>
+  <data name="Enum_TextAlignment_Left" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="Enum_TextAlignment_Right" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Crisp" xml:space="preserve">
+    <value>Crisp</value>
+  </data>
+  <data name="Enum_TextAntiAlias_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Sharp" xml:space="preserve">
+    <value>Sharp</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Smooth" xml:space="preserve">
+    <value>Smooth</value>
+  </data>
+  <data name="Enum_TextAntiAlias_Strong" xml:space="preserve">
+    <value>Strong</value>
+  </data>
+  <data name="Enum_ToneRange_Highlights" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="Enum_ToneRange_Midtones" xml:space="preserve">
+    <value>Midtones</value>
+  </data>
+  <data name="Enum_ToneRange_Shadows" xml:space="preserve">
+    <value>Shadows</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserHint" xml:space="preserve">
+    <value>Erase pixels that match the color under the brush center (hot spot).</value>
+  </data>
+  <data name="EraserTools_BackgroundEraserTool" xml:space="preserve">
+    <value>Background Eraser Tool</value>
+  </data>
+  <data name="EraserTools_Discontiguous" xml:space="preserve">
+    <value>Discontiguous</value>
+  </data>
+  <data name="EraserTools_EraseToHistory" xml:space="preserve">
+    <value>Erase to History</value>
+  </data>
+  <data name="EraserTools_EraserHint" xml:space="preserve">
+    <value>Erase to transparency, or to the background color on locked layers. Alt erases to history.</value>
+  </data>
+  <data name="EraserTools_EraserTool" xml:space="preserve">
+    <value>Eraser Tool</value>
+  </data>
+  <data name="EraserTools_LimitsColon" xml:space="preserve">
+    <value>Limits:</value>
+  </data>
+  <data name="EraserTools_ProtectForeground" xml:space="preserve">
+    <value>Protect Foreground Color</value>
+  </data>
+  <data name="ExportDialog_ExportEllipsis" xml:space="preserve">
+    <value>Export...</value>
+  </data>
+  <data name="ExportDialog_FormatColon" xml:space="preserve">
+    <value>Format:</value>
+  </data>
+  <data name="ExportDialog_HeightPxColon" xml:space="preserve">
+    <value>Height (px):</value>
+  </data>
+  <data name="ExportDialog_Lossless" xml:space="preserve">
+    <value>Lossless</value>
+  </data>
+  <data name="FillDialog_ColorEllipsis" xml:space="preserve">
+    <value>Color...</value>
+  </data>
+  <data name="FillDialog_ContentsColon" xml:space="preserve">
+    <value>Contents:</value>
+  </data>
+  <data name="FillDialog_FillColor" xml:space="preserve">
+    <value>Fill Color</value>
+  </data>
+  <data name="FillDialog_HalfGray" xml:space="preserve">
+    <value>50% Gray</value>
+  </data>
+  <data name="FillDialog_OpacityPercentColon" xml:space="preserve">
+    <value>Opacity (%):</value>
+  </data>
+  <data name="FillDialog_PatternColon" xml:space="preserve">
+    <value>Pattern:</value>
+  </data>
+  <data name="FillDialog_PreserveTransparency" xml:space="preserve">
+    <value>Preserve Transparency</value>
+  </data>
+  <data name="FillTools_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="FillTools_EditEllipsis" xml:space="preserve">
+    <value>Edit...</value>
+  </data>
+  <data name="FillTools_GradientColon" xml:space="preserve">
+    <value>Gradient:</value>
+  </data>
+  <data name="FillTools_GradientHint" xml:space="preserve">
+    <value>Drag to draw a gradient. Shift constrains the angle to 45 degrees.</value>
+  </data>
+  <data name="FillTools_GradientInfo" xml:space="preserve">
+    <value>Angle: {0:0.0}°  Distance: {1:0.0} px</value>
+  </data>
+  <data name="FillTools_GradientTool" xml:space="preserve">
+    <value>Gradient Tool</value>
+  </data>
+  <data name="FillTools_GradientTypeTip" xml:space="preserve">
+    <value>{0} Gradient</value>
+  </data>
+  <data name="FillTools_MagicEraser" xml:space="preserve">
+    <value>Magic Eraser</value>
+  </data>
+  <data name="FillTools_MagicEraserHint" xml:space="preserve">
+    <value>Click to erase similarly colored pixels to transparency.</value>
+  </data>
+  <data name="FillTools_MagicEraserTool" xml:space="preserve">
+    <value>Magic Eraser Tool</value>
+  </data>
+  <data name="FillTools_PaintBucket" xml:space="preserve">
+    <value>Paint Bucket</value>
+  </data>
+  <data name="FillTools_PaintBucketHint" xml:space="preserve">
+    <value>Click to fill similarly colored pixels with the foreground color or a pattern.</value>
+  </data>
+  <data name="FillTools_PaintBucketTool" xml:space="preserve">
+    <value>Paint Bucket Tool</value>
+  </data>
+  <data name="FillTools_Transparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="Filters_AddNoise" xml:space="preserve">
+    <value>Add Noise</value>
+  </data>
+  <data name="Filters_Average" xml:space="preserve">
+    <value>Average</value>
+  </data>
+  <data name="Filters_Blur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="Filters_BlurMore" xml:space="preserve">
+    <value>Blur More</value>
+  </data>
+  <data name="Filters_BoxBlur" xml:space="preserve">
+    <value>Box Blur</value>
+  </data>
+  <data name="Filters_CategoryBlur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
+  <data name="Filters_CategoryDistort" xml:space="preserve">
+    <value>Distort</value>
+  </data>
+  <data name="Filters_CategoryNoise" xml:space="preserve">
+    <value>Noise</value>
+  </data>
+  <data name="Filters_CategoryOther" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Filters_CategoryPixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="Filters_CategoryRender" xml:space="preserve">
+    <value>Render</value>
+  </data>
+  <data name="Filters_CategorySharpen" xml:space="preserve">
+    <value>Sharpen</value>
+  </data>
+  <data name="Filters_CategoryStylize" xml:space="preserve">
+    <value>Stylize</value>
+  </data>
+  <data name="Filters_Clouds" xml:space="preserve">
+    <value>Clouds</value>
+  </data>
+  <data name="Filters_Crystallize" xml:space="preserve">
+    <value>Crystallize</value>
+  </data>
+  <data name="Filters_Despeckle" xml:space="preserve">
+    <value>Despeckle</value>
+  </data>
+  <data name="Filters_DifferenceClouds" xml:space="preserve">
+    <value>Difference Clouds</value>
+  </data>
+  <data name="Filters_Diffuse" xml:space="preserve">
+    <value>Diffuse</value>
+  </data>
+  <data name="Filters_DustScratches" xml:space="preserve">
+    <value>Dust &amp; Scratches</value>
+  </data>
+  <data name="Filters_Emboss" xml:space="preserve">
+    <value>Emboss</value>
+  </data>
+  <data name="Filters_Facet" xml:space="preserve">
+    <value>Facet</value>
+  </data>
+  <data name="Filters_Fibers" xml:space="preserve">
+    <value>Fibers</value>
+  </data>
+  <data name="Filters_FindEdges" xml:space="preserve">
+    <value>Find Edges</value>
+  </data>
+  <data name="Filters_GaussianBlur" xml:space="preserve">
+    <value>Gaussian Blur</value>
+  </data>
+  <data name="Filters_HighPass" xml:space="preserve">
+    <value>High Pass</value>
+  </data>
+  <data name="Filters_LightingVignette" xml:space="preserve">
+    <value>Lighting Vignette</value>
+  </data>
+  <data name="Filters_Maximum" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="Filters_Median" xml:space="preserve">
+    <value>Median</value>
+  </data>
+  <data name="Filters_Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Filters_Mosaic" xml:space="preserve">
+    <value>Mosaic</value>
+  </data>
+  <data name="Filters_MotionBlur" xml:space="preserve">
+    <value>Motion Blur</value>
+  </data>
+  <data name="Filters_Offset" xml:space="preserve">
+    <value>Offset</value>
+  </data>
+  <data name="Filters_OilPaint" xml:space="preserve">
+    <value>Oil Paint</value>
+  </data>
+  <data name="Filters_OptionGaussian" xml:space="preserve">
+    <value>Gaussian</value>
+  </data>
+  <data name="Filters_OptionLarge" xml:space="preserve">
+    <value>Large</value>
+  </data>
+  <data name="Filters_OptionMedium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="Filters_OptionOff" xml:space="preserve">
+    <value>Off</value>
+  </data>
+  <data name="Filters_OptionOn" xml:space="preserve">
+    <value>On</value>
+  </data>
+  <data name="Filters_OptionPolarToRectangular" xml:space="preserve">
+    <value>Polar to Rectangular</value>
+  </data>
+  <data name="Filters_OptionRectangularToPolar" xml:space="preserve">
+    <value>Rectangular to Polar</value>
+  </data>
+  <data name="Filters_OptionSmall" xml:space="preserve">
+    <value>Small</value>
+  </data>
+  <data name="Filters_OptionSpin" xml:space="preserve">
+    <value>Spin</value>
+  </data>
+  <data name="Filters_OptionUniform" xml:space="preserve">
+    <value>Uniform</value>
+  </data>
+  <data name="Filters_OptionZoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Filters_ParamAmount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="Filters_ParamAmplitude" xml:space="preserve">
+    <value>Amplitude</value>
+  </data>
+  <data name="Filters_ParamAngle" xml:space="preserve">
+    <value>Angle</value>
+  </data>
+  <data name="Filters_ParamCellSize" xml:space="preserve">
+    <value>Cell Size</value>
+  </data>
+  <data name="Filters_ParamDistance" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="Filters_ParamDistribution" xml:space="preserve">
+    <value>Distribution</value>
+  </data>
+  <data name="Filters_ParamHeight" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="Filters_ParamHorizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
+  <data name="Filters_ParamLevels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="Filters_ParamMaximumOffsetPercent" xml:space="preserve">
+    <value>Maximum Offset %</value>
+  </data>
+  <data name="Filters_ParamMethod" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="Filters_ParamMode" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="Filters_ParamMonochromatic" xml:space="preserve">
+    <value>Monochromatic</value>
+  </data>
+  <data name="Filters_ParamNumberOfTiles" xml:space="preserve">
+    <value>Number of Tiles</value>
+  </data>
+  <data name="Filters_ParamPreserveDetails" xml:space="preserve">
+    <value>Preserve Details</value>
+  </data>
+  <data name="Filters_ParamRadius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="Filters_ParamReduceNoise" xml:space="preserve">
+    <value>Reduce Noise</value>
+  </data>
+  <data name="Filters_ParamSize" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="Filters_ParamStrength" xml:space="preserve">
+    <value>Strength</value>
+  </data>
+  <data name="Filters_ParamThreshold" xml:space="preserve">
+    <value>Threshold</value>
+  </data>
+  <data name="Filters_ParamVariance" xml:space="preserve">
+    <value>Variance</value>
+  </data>
+  <data name="Filters_ParamVertical" xml:space="preserve">
+    <value>Vertical</value>
+  </data>
+  <data name="Filters_ParamWavelength" xml:space="preserve">
+    <value>Wavelength</value>
+  </data>
+  <data name="Filters_Pinch" xml:space="preserve">
+    <value>Pinch</value>
+  </data>
+  <data name="Filters_Pointillize" xml:space="preserve">
+    <value>Pointillize</value>
+  </data>
+  <data name="Filters_PolarCoordinates" xml:space="preserve">
+    <value>Polar Coordinates</value>
+  </data>
+  <data name="Filters_RadialBlur" xml:space="preserve">
+    <value>Radial Blur</value>
+  </data>
+  <data name="Filters_ReduceNoise" xml:space="preserve">
+    <value>Reduce Noise</value>
+  </data>
+  <data name="Filters_Ripple" xml:space="preserve">
+    <value>Ripple</value>
+  </data>
+  <data name="Filters_Sharpen" xml:space="preserve">
+    <value>Sharpen</value>
+  </data>
+  <data name="Filters_SharpenEdges" xml:space="preserve">
+    <value>Sharpen Edges</value>
+  </data>
+  <data name="Filters_SharpenMore" xml:space="preserve">
+    <value>Sharpen More</value>
+  </data>
+  <data name="Filters_SmartSharpen" xml:space="preserve">
+    <value>Smart Sharpen</value>
+  </data>
+  <data name="Filters_Solarize" xml:space="preserve">
+    <value>Solarize</value>
+  </data>
+  <data name="Filters_Spherize" xml:space="preserve">
+    <value>Spherize</value>
+  </data>
+  <data name="Filters_SurfaceBlur" xml:space="preserve">
+    <value>Surface Blur</value>
+  </data>
+  <data name="Filters_Tiles" xml:space="preserve">
+    <value>Tiles</value>
+  </data>
+  <data name="Filters_Twirl" xml:space="preserve">
+    <value>Twirl</value>
+  </data>
+  <data name="Filters_UnsharpMask" xml:space="preserve">
+    <value>Unsharp Mask</value>
+  </data>
+  <data name="Filters_Wave" xml:space="preserve">
+    <value>Wave</value>
+  </data>
+  <data name="FrameTool_ClearFrame" xml:space="preserve">
+    <value>Clear Frame</value>
+  </data>
+  <data name="FrameTool_ClearFrameContent" xml:space="preserve">
+    <value>Clear Frame Content</value>
+  </data>
+  <data name="FrameTool_EllipticalTip" xml:space="preserve">
+    <value>Elliptical frame</value>
+  </data>
+  <data name="FrameTool_FrameNumber" xml:space="preserve">
+    <value>Frame {0}</value>
+  </data>
+  <data name="FrameTool_Hint" xml:space="preserve">
+    <value>Drag to create a frame placeholder. Place or paste an image to fill the active frame.</value>
+  </data>
+  <data name="FrameTool_Name" xml:space="preserve">
+    <value>Frame Tool</value>
+  </data>
+  <data name="FrameTool_PlaceImageTip" xml:space="preserve">
+    <value>Place an image file into the active frame</value>
+  </data>
+  <data name="FrameTool_RectangularTip" xml:space="preserve">
+    <value>Rectangular frame</value>
+  </data>
+  <data name="GradientEditorDialog_AddStop" xml:space="preserve">
+    <value>Add Stop</value>
+  </data>
+  <data name="GradientEditorDialog_Custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="GradientEditorDialog_Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="GradientEditorDialog_Presets" xml:space="preserve">
+    <value>Presets</value>
+  </data>
+  <data name="GradientEditorDialog_StopColor" xml:space="preserve">
+    <value>Stop Color</value>
+  </data>
+  <data name="GradientEditorDialog_Title" xml:space="preserve">
+    <value>Gradient Editor</value>
+  </data>
+  <data name="HdrToningEditor_Advanced" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="HdrToningEditor_DetailColon" xml:space="preserve">
+    <value>Detail:</value>
+  </data>
+  <data name="HdrToningEditor_EdgeGlow" xml:space="preserve">
+    <value>Edge Glow</value>
+  </data>
+  <data name="HdrToningEditor_EqualizeHistogram" xml:space="preserve">
+    <value>Equalize Histogram</value>
+  </data>
+  <data name="HdrToningEditor_ExposureAndGamma" xml:space="preserve">
+    <value>Exposure and Gamma</value>
+  </data>
+  <data name="HdrToningEditor_HighlightColon" xml:space="preserve">
+    <value>Highlight:</value>
+  </data>
+  <data name="HdrToningEditor_HighlightCompression" xml:space="preserve">
+    <value>Highlight Compression</value>
+  </data>
+  <data name="HdrToningEditor_LocalAdaptation" xml:space="preserve">
+    <value>Local Adaptation</value>
+  </data>
+  <data name="HdrToningEditor_MethodColon" xml:space="preserve">
+    <value>Method:</value>
+  </data>
+  <data name="HdrToningEditor_NoOptions" xml:space="preserve">
+    <value>This method has no options.</value>
+  </data>
+  <data name="HdrToningEditor_PresetColon" xml:space="preserve">
+    <value>Preset:</value>
+  </data>
+  <data name="HdrToningEditor_RadiusColon" xml:space="preserve">
+    <value>Radius:</value>
+  </data>
+  <data name="HdrToningEditor_ResetCurve" xml:space="preserve">
+    <value>Reset Curve</value>
+  </data>
+  <data name="HdrToningEditor_ShadowColon" xml:space="preserve">
+    <value>Shadow:</value>
+  </data>
+  <data name="HdrToningEditor_SmoothEdges" xml:space="preserve">
+    <value>Smooth Edges</value>
+  </data>
+  <data name="HdrToningEditor_StrengthColon" xml:space="preserve">
+    <value>Strength:</value>
+  </data>
+  <data name="HdrToningEditor_ToneAndDetail" xml:space="preserve">
+    <value>Tone and Detail</value>
+  </data>
+  <data name="HdrToningEditor_ToningCurveAndHistogram" xml:space="preserve">
+    <value>Toning Curve and Histogram</value>
+  </data>
+  <data name="HdrToning_PresetDefault" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="HdrToning_PresetFlat" xml:space="preserve">
+    <value>Flat</value>
+  </data>
+  <data name="HdrToning_PresetMonochromatic" xml:space="preserve">
+    <value>Monochromatic</value>
+  </data>
+  <data name="HdrToning_PresetPhotorealistic" xml:space="preserve">
+    <value>Photorealistic</value>
+  </data>
+  <data name="HdrToning_PresetSaturated" xml:space="preserve">
+    <value>Saturated</value>
+  </data>
+  <data name="HdrToning_PresetSurrealistic" xml:space="preserve">
+    <value>Surrealistic</value>
+  </data>
+  <data name="HistoryBrushTools_AreaColon" xml:space="preserve">
+    <value>Area:</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushHint" xml:space="preserve">
+    <value>Paint stylized strokes sampled from the history source.</value>
+  </data>
+  <data name="HistoryBrushTools_ArtHistoryBrushTool" xml:space="preserve">
+    <value>Art History Brush Tool</value>
+  </data>
+  <data name="HistoryBrushTools_CanvasSizeMismatch" xml:space="preserve">
+    <value>Could not use the History Brush because the history state does not have the same canvas size.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushHint" xml:space="preserve">
+    <value>Paint pixels back from the history state selected as the source in the History panel.</value>
+  </data>
+  <data name="HistoryBrushTools_HistoryBrushTool" xml:space="preserve">
+    <value>History Brush Tool</value>
+  </data>
+  <data name="HistoryBrushTools_SetSourceFirst" xml:space="preserve">
+    <value>Set a history source in the History panel first.</value>
+  </data>
+  <data name="HistoryPanel_DeleteSnapshot" xml:space="preserve">
+    <value>Delete Snapshot</value>
+  </data>
+  <data name="HistoryPanel_DeleteStatesTip" xml:space="preserve">
+    <value>Delete the states after the current one</value>
+  </data>
+  <data name="HistoryPanel_HistoryBrushSourceTip" xml:space="preserve">
+    <value>Set the source for the history brush</value>
+  </data>
+  <data name="HistoryPanel_NewDocumentTip" xml:space="preserve">
+    <value>Create new document from current state</value>
+  </data>
+  <data name="HistoryPanel_NewSnapshotTip" xml:space="preserve">
+    <value>Create new snapshot</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshot" xml:space="preserve">
+    <value>Rename Snapshot</value>
+  </data>
+  <data name="HistoryPanel_RenameSnapshotEllipsis" xml:space="preserve">
+    <value>Rename Snapshot...</value>
+  </data>
+  <data name="History_SnapshotNumber" xml:space="preserve">
+    <value>Snapshot {0}</value>
+  </data>
+  <data name="ImageIO_AllSupportedImages" xml:space="preserve">
+    <value>All supported images</value>
+  </data>
+  <data name="ImageIO_CouldNotOpenReason" xml:space="preserve">
+    <value>Could not open "{0}": {1}</value>
+  </data>
+  <data name="ImageIO_FileDoesNotExist" xml:space="preserve">
+    <value>The file does not exist.</value>
+  </data>
+  <data name="ImageIO_InvalidProject" xml:space="preserve">
+    <value>Could not open "{0}" because it is not a valid ShareX Photo Editor project or the file is damaged.</value>
+  </data>
+  <data name="ImageIO_ProjectFormat" xml:space="preserve">
+    <value>ShareX Photo Editor Project</value>
+  </data>
+  <data name="ImageIO_TiffRequiresWindows" xml:space="preserve">
+    <value>TIFF export requires Windows.</value>
+  </data>
+  <data name="ImageIO_UnsupportedImage" xml:space="preserve">
+    <value>Could not open "{0}" because it is not a supported image or the file is damaged.</value>
+  </data>
+  <data name="ImageIO_WebPEncodingFailed" xml:space="preserve">
+    <value>WebP encoding failed.</value>
+  </data>
+  <data name="ImageSizeDialog_ConstrainProportions" xml:space="preserve">
+    <value>Constrain proportions</value>
+  </data>
+  <data name="ImageSizeDialog_PercentColon" xml:space="preserve">
+    <value>Percent:</value>
+  </data>
+  <data name="ImageSizeDialog_ResampleColon" xml:space="preserve">
+    <value>Resample:</value>
+  </data>
+  <data name="LassoTools_FrequencyColon" xml:space="preserve">
+    <value>Frequency:</value>
+  </data>
+  <data name="LassoTools_LassoHint" xml:space="preserve">
+    <value>Drag to draw a freehand selection. Release to close it.</value>
+  </data>
+  <data name="LassoTools_LassoTool" xml:space="preserve">
+    <value>Lasso Tool</value>
+  </data>
+  <data name="LassoTools_MagneticLasso" xml:space="preserve">
+    <value>Magnetic Lasso</value>
+  </data>
+  <data name="LassoTools_MagneticLassoHint" xml:space="preserve">
+    <value>Click to start, then move along an edge. Click to add anchors, double-click or Enter to close, Backspace removes an anchor.</value>
+  </data>
+  <data name="LassoTools_MagneticLassoTool" xml:space="preserve">
+    <value>Magnetic Lasso Tool</value>
+  </data>
+  <data name="LassoTools_PolygonalLasso" xml:space="preserve">
+    <value>Polygonal Lasso</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoHint" xml:space="preserve">
+    <value>Click to add points. Double-click, Enter or click the start point to close. Backspace removes the last point.</value>
+  </data>
+  <data name="LassoTools_PolygonalLassoTool" xml:space="preserve">
+    <value>Polygonal Lasso Tool</value>
+  </data>
+  <data name="LayerNames_Background" xml:space="preserve">
+    <value>Background</value>
+  </data>
+  <data name="LayerNames_Copy" xml:space="preserve">
+    <value>{0} copy</value>
+  </data>
+  <data name="LayerNames_Layer0" xml:space="preserve">
+    <value>Layer 0</value>
+  </data>
+  <data name="LayerNames_NewTypeLayer" xml:space="preserve">
+    <value>Layer</value>
+  </data>
+  <data name="LayerNames_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="LayerStyleDialog_AngleColon" xml:space="preserve">
+    <value>Angle:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendModeColon" xml:space="preserve">
+    <value>Blend Mode:</value>
+  </data>
+  <data name="LayerStyleDialog_BlendingOptions" xml:space="preserve">
+    <value>Blending Options</value>
+  </data>
+  <data name="LayerStyleDialog_ColorOverlay" xml:space="preserve">
+    <value>Color Overlay</value>
+  </data>
+  <data name="LayerStyleDialog_DistanceColon" xml:space="preserve">
+    <value>Distance:</value>
+  </data>
+  <data name="LayerStyleDialog_DropShadow" xml:space="preserve">
+    <value>Drop Shadow</value>
+  </data>
+  <data name="LayerStyleDialog_FillOpacityColon" xml:space="preserve">
+    <value>Fill Opacity:</value>
+  </data>
+  <data name="LayerStyleDialog_GlowColor" xml:space="preserve">
+    <value>Glow Color</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadow" xml:space="preserve">
+    <value>Inner Shadow</value>
+  </data>
+  <data name="LayerStyleDialog_InnerShadowColor" xml:space="preserve">
+    <value>Inner Shadow Color</value>
+  </data>
+  <data name="LayerStyleDialog_OuterGlow" xml:space="preserve">
+    <value>Outer Glow</value>
+  </data>
+  <data name="LayerStyleDialog_OverlayColor" xml:space="preserve">
+    <value>Overlay Color</value>
+  </data>
+  <data name="LayerStyleDialog_PositionColon" xml:space="preserve">
+    <value>Position:</value>
+  </data>
+  <data name="LayerStyleDialog_ShadowColor" xml:space="preserve">
+    <value>Shadow Color</value>
+  </data>
+  <data name="LayersPanel_AddLayerMaskTip" xml:space="preserve">
+    <value>Add layer mask (Alt: hide all)</value>
+  </data>
+  <data name="LayersPanel_AddLayerStyleTip" xml:space="preserve">
+    <value>Add a layer style</value>
+  </data>
+  <data name="LayersPanel_BlendingChange" xml:space="preserve">
+    <value>Blending Change</value>
+  </data>
+  <data name="LayersPanel_BlendingOptionsEllipsis" xml:space="preserve">
+    <value>Blending Options...</value>
+  </data>
+  <data name="LayersPanel_ChangeLayerLock" xml:space="preserve">
+    <value>Change Layer Lock</value>
+  </data>
+  <data name="LayersPanel_DeleteLayerTip" xml:space="preserve">
+    <value>Delete layer</value>
+  </data>
+  <data name="LayersPanel_DuplicateLayerEllipsis" xml:space="preserve">
+    <value>Duplicate Layer...</value>
+  </data>
+  <data name="LayersPanel_FillOpacityChange" xml:space="preserve">
+    <value>Fill Opacity Change</value>
+  </data>
+  <data name="LayersPanel_FullyLockedTip" xml:space="preserve">
+    <value>Indicates layer is fully locked</value>
+  </data>
+  <data name="LayersPanel_GroupFromLayersEllipsis" xml:space="preserve">
+    <value>Group from Layers...</value>
+  </data>
+  <data name="LayersPanel_HideLayer" xml:space="preserve">
+    <value>Hide Layer</value>
+  </data>
+  <data name="LayersPanel_LayerPropertiesEllipsis" xml:space="preserve">
+    <value>Layer Properties...</value>
+  </data>
+  <data name="LayersPanel_LinkTip" xml:space="preserve">
+    <value>Link or unlink the selected layers (select several with Ctrl-click) so they move together</value>
+  </data>
+  <data name="LayersPanel_LockAll" xml:space="preserve">
+    <value>Lock all</value>
+  </data>
+  <data name="LayersPanel_LockColon" xml:space="preserve">
+    <value>Lock:</value>
+  </data>
+  <data name="LayersPanel_LockImagePixels" xml:space="preserve">
+    <value>Lock image pixels</value>
+  </data>
+  <data name="LayersPanel_LockPosition" xml:space="preserve">
+    <value>Lock position</value>
+  </data>
+  <data name="LayersPanel_LockTransparentPixels" xml:space="preserve">
+    <value>Lock transparent pixels</value>
+  </data>
+  <data name="LayersPanel_MaskThumbnailTip" xml:space="preserve">
+    <value>Click to edit the mask, Shift-click to disable it, Ctrl-click to load it as a selection</value>
+  </data>
+  <data name="LayersPanel_NewFillOrAdjustmentTip" xml:space="preserve">
+    <value>Create new fill or adjustment layer</value>
+  </data>
+  <data name="LayersPanel_NewGroupTip" xml:space="preserve">
+    <value>Create a new group</value>
+  </data>
+  <data name="LayersPanel_NewLayerTip" xml:space="preserve">
+    <value>Create a new layer</value>
+  </data>
+  <data name="LayersPanel_OpacityChange" xml:space="preserve">
+    <value>Opacity Change</value>
+  </data>
+  <data name="LayersPanel_PartiallyLockedTip" xml:space="preserve">
+    <value>Indicates layer is partially locked</value>
+  </data>
+  <data name="LayersPanel_ShowLayer" xml:space="preserve">
+    <value>Show Layer</value>
+  </data>
+  <data name="LayersPanel_ToggleVisibilityTip" xml:space="preserve">
+    <value>Toggle visibility (Alt-click shows only this layer)</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarquee" xml:space="preserve">
+    <value>Elliptical Marquee</value>
+  </data>
+  <data name="MarqueeTools_EllipticalMarqueeTool" xml:space="preserve">
+    <value>Elliptical Marquee Tool</value>
+  </data>
+  <data name="MarqueeTools_Hint" xml:space="preserve">
+    <value>Drag to select. Shift constrains, Alt draws from the center. Drag inside a selection to move it.</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarquee" xml:space="preserve">
+    <value>Rectangular Marquee</value>
+  </data>
+  <data name="MarqueeTools_RectangularMarqueeTool" xml:space="preserve">
+    <value>Rectangular Marquee Tool</value>
+  </data>
+  <data name="MarqueeTools_RefineEdgeTip" xml:space="preserve">
+    <value>Refine the selection edge</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnHint" xml:space="preserve">
+    <value>Click to select a 1 pixel column.</value>
+  </data>
+  <data name="MarqueeTools_SingleColumnMarqueeTool" xml:space="preserve">
+    <value>Single Column Marquee Tool</value>
+  </data>
+  <data name="MarqueeTools_SingleRowHint" xml:space="preserve">
+    <value>Click to select a 1 pixel row.</value>
+  </data>
+  <data name="MarqueeTools_SingleRowMarqueeTool" xml:space="preserve">
+    <value>Single Row Marquee Tool</value>
+  </data>
+  <data name="MarqueeTools_StyleColon" xml:space="preserve">
+    <value>Style:</value>
+  </data>
+  <data name="MatchColorEditor_ColorIntensityColon" xml:space="preserve">
+    <value>Color Intensity:</value>
+  </data>
+  <data name="MatchColorEditor_DestinationImage" xml:space="preserve">
+    <value>Destination Image</value>
+  </data>
+  <data name="MatchColorEditor_FadeColon" xml:space="preserve">
+    <value>Fade:</value>
+  </data>
+  <data name="MatchColorEditor_ImageStatistics" xml:space="preserve">
+    <value>Image Statistics</value>
+  </data>
+  <data name="MatchColorEditor_LayerColon" xml:space="preserve">
+    <value>Layer:</value>
+  </data>
+  <data name="MatchColorEditor_LuminanceColon" xml:space="preserve">
+    <value>Luminance:</value>
+  </data>
+  <data name="MatchColorEditor_Neutralize" xml:space="preserve">
+    <value>Neutralize</value>
+  </data>
+  <data name="MatchColorEditor_SourceColon" xml:space="preserve">
+    <value>Source:</value>
+  </data>
+  <data name="MatchColorEditor_TargetColon" xml:space="preserve">
+    <value>Target:</value>
+  </data>
+  <data name="MatchColorEditor_UseSourceSelection" xml:space="preserve">
+    <value>Use Selection in Source to Calculate Colors</value>
+  </data>
+  <data name="MatchColorEditor_UseTargetSelection" xml:space="preserve">
+    <value>Use Selection in Target to Calculate Adjustment</value>
+  </data>
+  <data name="MenuBuilder_Empty" xml:space="preserve">
+    <value>(empty)</value>
+  </data>
+  <data name="NavigationTools_FitScreen" xml:space="preserve">
+    <value>Fit Screen</value>
+  </data>
+  <data name="NavigationTools_HandHint" xml:space="preserve">
+    <value>Drag to scroll the view. Hold Space with any tool to use the Hand tool temporarily. Double-click to fit on screen.</value>
+  </data>
+  <data name="NavigationTools_HandTool" xml:space="preserve">
+    <value>Hand Tool</value>
+  </data>
+  <data name="NavigationTools_ResetView" xml:space="preserve">
+    <value>Reset View</value>
+  </data>
+  <data name="NavigationTools_RotateViewHint" xml:space="preserve">
+    <value>Drag to rotate the canvas view without changing pixels. Shift snaps to 15 degrees. Esc or Reset View restores it.</value>
+  </data>
+  <data name="NavigationTools_RotateViewTool" xml:space="preserve">
+    <value>Rotate View Tool</value>
+  </data>
+  <data name="NavigationTools_RotationAngleColon" xml:space="preserve">
+    <value>Rotation Angle:</value>
+  </data>
+  <data name="NavigationTools_ScrubbyZoom" xml:space="preserve">
+    <value>Scrubby Zoom</value>
+  </data>
+  <data name="NavigationTools_ZoomHint" xml:space="preserve">
+    <value>Click to zoom in, Alt-click to zoom out. Drag left/right for scrubby zoom, or drag a rectangle when scrubby zoom is off.</value>
+  </data>
+  <data name="NavigationTools_ZoomInTip" xml:space="preserve">
+    <value>Zoom in</value>
+  </data>
+  <data name="NavigationTools_ZoomOutTip" xml:space="preserve">
+    <value>Zoom out</value>
+  </data>
+  <data name="NavigationTools_ZoomTool" xml:space="preserve">
+    <value>Zoom Tool</value>
+  </data>
+  <data name="NewDocumentDialog_Black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="NewDocumentDialog_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="NewDocumentDialog_PresetA4" xml:space="preserve">
+    <value>A4 2480 × 3508 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetDefault" xml:space="preserve">
+    <value>Default (1920 × 1080)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetIcon" xml:space="preserve">
+    <value>Icon 512 × 512</value>
+  </data>
+  <data name="NewDocumentDialog_PresetLetter" xml:space="preserve">
+    <value>Letter 2550 × 3300 (300 ppi)</value>
+  </data>
+  <data name="NewDocumentDialog_PresetSquare" xml:space="preserve">
+    <value>Square 1080 × 1080</value>
+  </data>
+  <data name="NewDocumentDialog_PresetWeb" xml:space="preserve">
+    <value>Web 1366 × 768</value>
+  </data>
+  <data name="NewDocumentDialog_ResolutionColon" xml:space="preserve">
+    <value>Resolution (ppi):</value>
+  </data>
+  <data name="NewDocumentDialog_Title" xml:space="preserve">
+    <value>New Document</value>
+  </data>
+  <data name="NewDocumentDialog_Transparent" xml:space="preserve">
+    <value>Transparent</value>
+  </data>
+  <data name="NewDocumentDialog_Untitled" xml:space="preserve">
+    <value>Untitled</value>
+  </data>
+  <data name="NewDocumentDialog_White" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="OptionsBuilder_AddToSelectionTip" xml:space="preserve">
+    <value>Add to selection (Shift)</value>
+  </data>
+  <data name="OptionsBuilder_BrushPresetPickerTip" xml:space="preserve">
+    <value>Click to open the Brush Preset picker</value>
+  </data>
+  <data name="OptionsBuilder_HardnessColon" xml:space="preserve">
+    <value>Hardness:</value>
+  </data>
+  <data name="OptionsBuilder_IntersectWithSelectionTip" xml:space="preserve">
+    <value>Intersect with selection (Shift+Alt)</value>
+  </data>
+  <data name="OptionsBuilder_NewSelectionTip" xml:space="preserve">
+    <value>New selection</value>
+  </data>
+  <data name="OptionsBuilder_NoColor" xml:space="preserve">
+    <value>No Color</value>
+  </data>
+  <data name="OptionsBuilder_SubtractFromSelectionTip" xml:space="preserve">
+    <value>Subtract from selection (Alt)</value>
+  </data>
+  <data name="PanelDock_CloseTabGroup" xml:space="preserve">
+    <value>Close Tab Group</value>
+  </data>
+  <data name="PanelDock_CollapsePanelGroup" xml:space="preserve">
+    <value>Collapse Panel Group</value>
+  </data>
+  <data name="PanelDock_ExpandPanelGroup" xml:space="preserve">
+    <value>Expand Panel Group</value>
+  </data>
+  <data name="PanelDock_MoveToGroupWith" xml:space="preserve">
+    <value>Move to Group with {0}</value>
+  </data>
+  <data name="PanelDock_MoveToNewGroup" xml:space="preserve">
+    <value>Move to New Group</value>
+  </data>
+  <data name="PanelDock_PanelMenuTip" xml:space="preserve">
+    <value>Panel menu</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPoint" xml:space="preserve">
+    <value>Add Anchor Point</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointHint" xml:space="preserve">
+    <value>Click a path segment to add an anchor point.</value>
+  </data>
+  <data name="PathEditTools_AddAnchorPointTool" xml:space="preserve">
+    <value>Add Anchor Point Tool</value>
+  </data>
+  <data name="PathEditTools_Combine" xml:space="preserve">
+    <value>Combine</value>
+  </data>
+  <data name="PathEditTools_CombineTip" xml:space="preserve">
+    <value>Merge overlapping path components</value>
+  </data>
+  <data name="PathEditTools_ConvertPoint" xml:space="preserve">
+    <value>Convert Point</value>
+  </data>
+  <data name="PathEditTools_ConvertPointHint" xml:space="preserve">
+    <value>Click a smooth point to make it a corner; drag a corner point to pull out smooth handles. Drag a handle to break it.</value>
+  </data>
+  <data name="PathEditTools_ConvertPointTool" xml:space="preserve">
+    <value>Convert Point Tool</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPoint" xml:space="preserve">
+    <value>Delete Anchor Point</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointHint" xml:space="preserve">
+    <value>Click an anchor point to delete it.</value>
+  </data>
+  <data name="PathEditTools_DeleteAnchorPointTool" xml:space="preserve">
+    <value>Delete Anchor Point Tool</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionHint" xml:space="preserve">
+    <value>Click or drag a marquee to select anchor points; drag points or handles to reshape. Alt drags a handle independently.</value>
+  </data>
+  <data name="PathEditTools_DirectSelectionTool" xml:space="preserve">
+    <value>Direct Selection Tool</value>
+  </data>
+  <data name="PathEditTools_DragAnchor" xml:space="preserve">
+    <value>Drag Anchor</value>
+  </data>
+  <data name="PathEditTools_Exclude" xml:space="preserve">
+    <value>Exclude</value>
+  </data>
+  <data name="PathEditTools_Intersect" xml:space="preserve">
+    <value>Intersect</value>
+  </data>
+  <data name="PathEditTools_MovePath" xml:space="preserve">
+    <value>Move Path</value>
+  </data>
+  <data name="PathEditTools_NudgeAnchor" xml:space="preserve">
+    <value>Nudge Anchor</value>
+  </data>
+  <data name="PathEditTools_PathSelectionHint" xml:space="preserve">
+    <value>Click a path component to select it, drag to move it. Alt-drag duplicates, Delete removes.</value>
+  </data>
+  <data name="PathEditTools_PathSelectionTool" xml:space="preserve">
+    <value>Path Selection Tool</value>
+  </data>
+  <data name="PathEditTools_SubtractTip" xml:space="preserve">
+    <value>Subtract later components from the first</value>
+  </data>
+  <data name="PathNames_WorkPath" xml:space="preserve">
+    <value>Work Path</value>
+  </data>
+  <data name="PathsPanel_AddVectorMaskTip" xml:space="preserve">
+    <value>Add a vector mask (shape layer from path)</value>
+  </data>
+  <data name="PathsPanel_DeletePathTip" xml:space="preserve">
+    <value>Delete current path</value>
+  </data>
+  <data name="PathsPanel_FillPathTip" xml:space="preserve">
+    <value>Fill path with foreground color</value>
+  </data>
+  <data name="PathsPanel_LoadAsSelectionTip" xml:space="preserve">
+    <value>Load path as a selection</value>
+  </data>
+  <data name="PathsPanel_MakeWorkPathTip" xml:space="preserve">
+    <value>Make work path from selection</value>
+  </data>
+  <data name="PathsPanel_NewPathTip" xml:space="preserve">
+    <value>Create new path</value>
+  </data>
+  <data name="PathsPanel_RenamePath" xml:space="preserve">
+    <value>Rename Path</value>
+  </data>
+  <data name="PathsPanel_SavePath" xml:space="preserve">
+    <value>Save Path</value>
+  </data>
+  <data name="PathsPanel_ShapePathName" xml:space="preserve">
+    <value>{0} Shape Path</value>
+  </data>
+  <data name="PathsPanel_StrokePathTip" xml:space="preserve">
+    <value>Stroke path with brush</value>
+  </data>
+  <data name="PenTools_AutoAddDelete" xml:space="preserve">
+    <value>Auto Add/Delete</value>
+  </data>
+  <data name="PenTools_ClosePath" xml:space="preserve">
+    <value>Close Path</value>
+  </data>
+  <data name="PenTools_CurvaturePen" xml:space="preserve">
+    <value>Curvature Pen</value>
+  </data>
+  <data name="PenTools_CurvaturePenHint" xml:space="preserve">
+    <value>Click to place points; the curve flows smoothly through them. Click the first point to close, Enter or Esc to finish.</value>
+  </data>
+  <data name="PenTools_CurvaturePenTool" xml:space="preserve">
+    <value>Curvature Pen Tool</value>
+  </data>
+  <data name="PenTools_CurveFitColon" xml:space="preserve">
+    <value>Curve Fit:</value>
+  </data>
+  <data name="PenTools_FreeformPen" xml:space="preserve">
+    <value>Freeform Pen</value>
+  </data>
+  <data name="PenTools_FreeformPenHint" xml:space="preserve">
+    <value>Drag to draw a path freehand; it is fitted with smooth curves. Magnetic snaps to edges.</value>
+  </data>
+  <data name="PenTools_FreeformPenTool" xml:space="preserve">
+    <value>Freeform Pen Tool</value>
+  </data>
+  <data name="PenTools_Magnetic" xml:space="preserve">
+    <value>Magnetic</value>
+  </data>
+  <data name="PenTools_MakeColon" xml:space="preserve">
+    <value>Make:</value>
+  </data>
+  <data name="PenTools_Mask" xml:space="preserve">
+    <value>Mask</value>
+  </data>
+  <data name="PenTools_Pen" xml:space="preserve">
+    <value>Pen</value>
+  </data>
+  <data name="PenTools_PenHint" xml:space="preserve">
+    <value>Click to add corner points, drag to add smooth points. Click the first point to close. Ctrl edits points, Alt converts them.</value>
+  </data>
+  <data name="PenTools_PenTool" xml:space="preserve">
+    <value>Pen Tool</value>
+  </data>
+  <data name="PenTools_RubberBand" xml:space="preserve">
+    <value>Rubber Band</value>
+  </data>
+  <data name="PenTools_SelectionEllipsis" xml:space="preserve">
+    <value>Selection...</value>
+  </data>
+  <data name="PhotoDocument_UntitledNumber" xml:space="preserve">
+    <value>Untitled-{0}</value>
+  </data>
+  <data name="PhotoEditorWindow_CouldNotComplete" xml:space="preserve">
+    <value>Could not complete "{0}": {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentInfo" xml:space="preserve">
+    <value>{0} × {1} px ({2:0} ppi)   Doc: {3:0.0}M</value>
+  </data>
+  <data name="PhotoEditorWindow_DocumentWindowTitle" xml:space="preserve">
+    <value>{0} - Photo editor - ShareX</value>
+  </data>
+  <data name="PhotoEditorWindow_DontSave" xml:space="preserve">
+    <value>Don't Save</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeLayerMask" xml:space="preserve">
+    <value>Layer Mask/8</value>
+  </data>
+  <data name="PhotoEditorWindow_ModeQuickMask" xml:space="preserve">
+    <value>Quick Mask/8</value>
+  </data>
+  <data name="PhotoEditorWindow_NoDocumentOpen" xml:space="preserve">
+    <value>No document is open.</value>
+  </data>
+  <data name="PhotoEditorWindow_OperationFailed" xml:space="preserve">
+    <value>{0} failed: {1}</value>
+  </data>
+  <data name="PhotoEditorWindow_OptionsUnavailable" xml:space="preserve">
+    <value>Options unavailable: {0}</value>
+  </data>
+  <data name="PhotoEditorWindow_PhotoEditor" xml:space="preserve">
+    <value>Photo editor</value>
+  </data>
+  <data name="PhotoEditorWindow_SaveChangesPrompt" xml:space="preserve">
+    <value>Save changes to "{0}" before closing?</value>
+  </data>
+  <data name="PhotoEditorWindow_ViewRotation" xml:space="preserve">
+    <value>View: {0:0}°</value>
+  </data>
+  <data name="PhotoEditorWindow_WindowTitle" xml:space="preserve">
+    <value>ShareX - Photo editor</value>
+  </data>
+  <data name="PreferencesDialog_GridSubdivisionsColon" xml:space="preserve">
+    <value>Grid Subdivisions:</value>
+  </data>
+  <data name="PreferencesDialog_GridlineEveryColon" xml:space="preserve">
+    <value>Gridline Every (px):</value>
+  </data>
+  <data name="PreferencesDialog_GuideColorColon" xml:space="preserve">
+    <value>Guide Color (hex):</value>
+  </data>
+  <data name="PreferencesDialog_HistoryStatesColon" xml:space="preserve">
+    <value>History States:</value>
+  </data>
+  <data name="PreferencesDialog_ImageInterpolationColon" xml:space="preserve">
+    <value>Image Interpolation:</value>
+  </data>
+  <data name="PreferencesDialog_RememberWindow" xml:space="preserve">
+    <value>Remember window size and position</value>
+  </data>
+  <data name="PreferencesDialog_Title" xml:space="preserve">
+    <value>Preferences</value>
+  </data>
+  <data name="PreferencesDialog_TransparencyGridSizeColon" xml:space="preserve">
+    <value>Transparency Grid Size:</value>
+  </data>
+  <data name="ProjectSerializer_NewerVersion" xml:space="preserve">
+    <value>The project was created by a newer version of the Photo editor.</value>
+  </data>
+  <data name="PropertiesPanel_AddMask" xml:space="preserve">
+    <value>Add Mask</value>
+  </data>
+  <data name="PropertiesPanel_AlignColon" xml:space="preserve">
+    <value>Align:</value>
+  </data>
+  <data name="PropertiesPanel_AlignText" xml:space="preserve">
+    <value>Align Text</value>
+  </data>
+  <data name="PropertiesPanel_ApplyMask" xml:space="preserve">
+    <value>Apply Mask</value>
+  </data>
+  <data name="PropertiesPanel_Artboard" xml:space="preserve">
+    <value>Artboard</value>
+  </data>
+  <data name="PropertiesPanel_ArtboardBackground" xml:space="preserve">
+    <value>Artboard Background</value>
+  </data>
+  <data name="PropertiesPanel_BackgroundColon" xml:space="preserve">
+    <value>Background:</value>
+  </data>
+  <data name="PropertiesPanel_Bold" xml:space="preserve">
+    <value>Bold</value>
+  </data>
+  <data name="PropertiesPanel_ChangeFill" xml:space="preserve">
+    <value>Change Fill</value>
+  </data>
+  <data name="PropertiesPanel_Character" xml:space="preserve">
+    <value>Character</value>
+  </data>
+  <data name="PropertiesPanel_ClipToLayerBelow" xml:space="preserve">
+    <value>Clip to layer below</value>
+  </data>
+  <data name="PropertiesPanel_ClippingMask" xml:space="preserve">
+    <value>Clipping Mask</value>
+  </data>
+  <data name="PropertiesPanel_ContainsImage" xml:space="preserve">
+    <value>Contains an image</value>
+  </data>
+  <data name="PropertiesPanel_ConvertToLayer" xml:space="preserve">
+    <value>Convert to Layer</value>
+  </data>
+  <data name="PropertiesPanel_Dashed" xml:space="preserve">
+    <value>Dashed</value>
+  </data>
+  <data name="PropertiesPanel_DeleteMask" xml:space="preserve">
+    <value>Delete Mask</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilter" xml:space="preserve">
+    <value>Delete Smart Filter</value>
+  </data>
+  <data name="PropertiesPanel_DeleteSmartFilterTip" xml:space="preserve">
+    <value>Delete smart filter</value>
+  </data>
+  <data name="PropertiesPanel_Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="PropertiesPanel_DocumentSize" xml:space="preserve">
+    <value>W: {0} px   H: {1} px</value>
+  </data>
+  <data name="PropertiesPanel_EditTypeLayer" xml:space="preserve">
+    <value>Edit Type Layer</value>
+  </data>
+  <data name="PropertiesPanel_EmptyFrame" xml:space="preserve">
+    <value>Empty frame</value>
+  </data>
+  <data name="PropertiesPanel_EmptyLayer" xml:space="preserve">
+    <value>Empty layer</value>
+  </data>
+  <data name="PropertiesPanel_Enable" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="PropertiesPanel_FeatherMask" xml:space="preserve">
+    <value>Feather Mask</value>
+  </data>
+  <data name="PropertiesPanel_FillColon" xml:space="preserve">
+    <value>Fill:</value>
+  </data>
+  <data name="PropertiesPanel_FillLayer" xml:space="preserve">
+    <value>Fill Layer</value>
+  </data>
+  <data name="PropertiesPanel_FontColon" xml:space="preserve">
+    <value>Font:</value>
+  </data>
+  <data name="PropertiesPanel_Frame" xml:space="preserve">
+    <value>Frame</value>
+  </data>
+  <data name="PropertiesPanel_FrameStroke" xml:space="preserve">
+    <value>Frame Stroke</value>
+  </data>
+  <data name="PropertiesPanel_Invert" xml:space="preserve">
+    <value>Invert</value>
+  </data>
+  <data name="PropertiesPanel_InvertMask" xml:space="preserve">
+    <value>Invert Mask</value>
+  </data>
+  <data name="PropertiesPanel_Italic" xml:space="preserve">
+    <value>Italic</value>
+  </data>
+  <data name="PropertiesPanel_LeadingColon" xml:space="preserve">
+    <value>Leading:</value>
+  </data>
+  <data name="PropertiesPanel_LoadAsSelection" xml:space="preserve">
+    <value>Load as Selection</value>
+  </data>
+  <data name="PropertiesPanel_MaskEditHint" xml:space="preserve">
+    <value>Painting tools now edit the mask: black hides, white reveals.</value>
+  </data>
+  <data name="PropertiesPanel_ModifyAdjustment" xml:space="preserve">
+    <value>Modify {0}</value>
+  </data>
+  <data name="PropertiesPanel_NoDocument" xml:space="preserve">
+    <value>No document</value>
+  </data>
+  <data name="PropertiesPanel_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="PropertiesPanel_Paragraph" xml:space="preserve">
+    <value>Paragraph</value>
+  </data>
+  <data name="PropertiesPanel_PixelLayer" xml:space="preserve">
+    <value>Pixel Layer</value>
+  </data>
+  <data name="PropertiesPanel_PlaceImageEllipsis" xml:space="preserve">
+    <value>Place Image...</value>
+  </data>
+  <data name="PropertiesPanel_RadiusPxColon" xml:space="preserve">
+    <value>Radius (px):</value>
+  </data>
+  <data name="PropertiesPanel_RasterizeType" xml:space="preserve">
+    <value>Rasterize Type</value>
+  </data>
+  <data name="PropertiesPanel_ResetTransform" xml:space="preserve">
+    <value>Reset Transform</value>
+  </data>
+  <data name="PropertiesPanel_ResizeArtboard" xml:space="preserve">
+    <value>Resize Artboard</value>
+  </data>
+  <data name="PropertiesPanel_Resolution" xml:space="preserve">
+    <value>Resolution: {0:0} ppi</value>
+  </data>
+  <data name="PropertiesPanel_SetFill" xml:space="preserve">
+    <value>Set Fill</value>
+  </data>
+  <data name="PropertiesPanel_SetFont" xml:space="preserve">
+    <value>Set Font</value>
+  </data>
+  <data name="PropertiesPanel_SetLeading" xml:space="preserve">
+    <value>Set Leading</value>
+  </data>
+  <data name="PropertiesPanel_SetStroke" xml:space="preserve">
+    <value>Set Stroke</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeAlignment" xml:space="preserve">
+    <value>Set Stroke Alignment</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeType" xml:space="preserve">
+    <value>Set Stroke Type</value>
+  </data>
+  <data name="PropertiesPanel_SetStrokeWidth" xml:space="preserve">
+    <value>Set Stroke Width</value>
+  </data>
+  <data name="PropertiesPanel_SetTextColor" xml:space="preserve">
+    <value>Set Text Color</value>
+  </data>
+  <data name="PropertiesPanel_SetTracking" xml:space="preserve">
+    <value>Set Tracking</value>
+  </data>
+  <data name="PropertiesPanel_ShapeProperties" xml:space="preserve">
+    <value>Shape Properties</value>
+  </data>
+  <data name="PropertiesPanel_SizeColon" xml:space="preserve">
+    <value>Size:</value>
+  </data>
+  <data name="PropertiesPanel_SmartFilters" xml:space="preserve">
+    <value>Smart Filters</value>
+  </data>
+  <data name="PropertiesPanel_SmartObject" xml:space="preserve">
+    <value>Smart Object</value>
+  </data>
+  <data name="PropertiesPanel_StrokeColon" xml:space="preserve">
+    <value>Stroke:</value>
+  </data>
+  <data name="PropertiesPanel_TextColor" xml:space="preserve">
+    <value>Text Color</value>
+  </data>
+  <data name="PropertiesPanel_ToggleSmartFilter" xml:space="preserve">
+    <value>Toggle Smart Filter</value>
+  </data>
+  <data name="PropertiesPanel_TrackingColon" xml:space="preserve">
+    <value>Tracking:</value>
+  </data>
+  <data name="PropertiesPanel_Underline" xml:space="preserve">
+    <value>Underline</value>
+  </data>
+  <data name="ReplaceColorEditor_AddToSampleTip" xml:space="preserve">
+    <value>Add to Sample (Shift-click)</value>
+  </data>
+  <data name="ReplaceColorEditor_ClickToSample" xml:space="preserve">
+    <value>Click to sample a color</value>
+  </data>
+  <data name="ReplaceColorEditor_EyedropperTip" xml:space="preserve">
+    <value>Eyedropper</value>
+  </data>
+  <data name="ReplaceColorEditor_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="ReplaceColorEditor_Replacement" xml:space="preserve">
+    <value>Replacement</value>
+  </data>
+  <data name="ReplaceColorEditor_ResultColon" xml:space="preserve">
+    <value>Result:</value>
+  </data>
+  <data name="ReplaceColorEditor_SelectColorTip" xml:space="preserve">
+    <value>Select the color to replace</value>
+  </data>
+  <data name="ReplaceColorEditor_Selection" xml:space="preserve">
+    <value>Selection</value>
+  </data>
+  <data name="ReplaceColorEditor_SubtractFromSampleTip" xml:space="preserve">
+    <value>Subtract from Sample (Alt-click)</value>
+  </data>
+  <data name="Resources_AirbrushSoft" xml:space="preserve">
+    <value>Airbrush Soft</value>
+  </data>
+  <data name="Resources_BlackWhite" xml:space="preserve">
+    <value>Black, White</value>
+  </data>
+  <data name="Resources_Bricks" xml:space="preserve">
+    <value>Bricks</value>
+  </data>
+  <data name="Resources_CalligraphicFlat" xml:space="preserve">
+    <value>Calligraphic Flat</value>
+  </data>
+  <data name="Resources_Chalk" xml:space="preserve">
+    <value>Chalk</value>
+  </data>
+  <data name="Resources_Checkerboard" xml:space="preserve">
+    <value>Checkerboard</value>
+  </data>
+  <data name="Resources_Chrome" xml:space="preserve">
+    <value>Chrome</value>
+  </data>
+  <data name="Resources_Copper" xml:space="preserve">
+    <value>Copper</value>
+  </data>
+  <data name="Resources_DiagonalLines" xml:space="preserve">
+    <value>Diagonal Lines</value>
+  </data>
+  <data name="Resources_Dots" xml:space="preserve">
+    <value>Dots</value>
+  </data>
+  <data name="Resources_ForegroundToBackground" xml:space="preserve">
+    <value>Foreground to Background</value>
+  </data>
+  <data name="Resources_ForegroundToTransparent" xml:space="preserve">
+    <value>Foreground to Transparent</value>
+  </data>
+  <data name="Resources_HardPixel" xml:space="preserve">
+    <value>Hard Pixel</value>
+  </data>
+  <data name="Resources_HardRound" xml:space="preserve">
+    <value>Hard Round</value>
+  </data>
+  <data name="Resources_HardRoundPressure" xml:space="preserve">
+    <value>Hard Round Pressure</value>
+  </data>
+  <data name="Resources_Hexagons" xml:space="preserve">
+    <value>Hexagons</value>
+  </data>
+  <data name="Resources_Ocean" xml:space="preserve">
+    <value>Ocean</value>
+  </data>
+  <data name="Resources_SoftRound" xml:space="preserve">
+    <value>Soft Round</value>
+  </data>
+  <data name="Resources_SoftRoundPressure" xml:space="preserve">
+    <value>Soft Round Pressure</value>
+  </data>
+  <data name="Resources_Spatter" xml:space="preserve">
+    <value>Spatter</value>
+  </data>
+  <data name="Resources_Spectrum" xml:space="preserve">
+    <value>Spectrum</value>
+  </data>
+  <data name="Resources_SquareHard" xml:space="preserve">
+    <value>Square Hard</value>
+  </data>
+  <data name="Resources_Sunset" xml:space="preserve">
+    <value>Sunset</value>
+  </data>
+  <data name="Resources_TransparentStripes" xml:space="preserve">
+    <value>Transparent Stripes</value>
+  </data>
+  <data name="Resources_WoodGrain" xml:space="preserve">
+    <value>Wood Grain</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMove" xml:space="preserve">
+    <value>Content-Aware Move</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveEllipsis" xml:space="preserve">
+    <value>Content-Aware Move...</value>
+  </data>
+  <data name="RetouchTools_ContentAwareMoveTool" xml:space="preserve">
+    <value>Content-Aware Move Tool</value>
+  </data>
+  <data name="RetouchTools_DarkenAmountColon" xml:space="preserve">
+    <value>Darken Amount:</value>
+  </data>
+  <data name="RetouchTools_Destination" xml:space="preserve">
+    <value>Destination</value>
+  </data>
+  <data name="RetouchTools_DragSelectionHint" xml:space="preserve">
+    <value>Draw a selection (or use any selection tool), then drag the selection.</value>
+  </data>
+  <data name="RetouchTools_Extend" xml:space="preserve">
+    <value>Extend</value>
+  </data>
+  <data name="RetouchTools_Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="RetouchTools_Patch" xml:space="preserve">
+    <value>Patch</value>
+  </data>
+  <data name="RetouchTools_PatchColon" xml:space="preserve">
+    <value>Patch:</value>
+  </data>
+  <data name="RetouchTools_PatchTool" xml:space="preserve">
+    <value>Patch Tool</value>
+  </data>
+  <data name="RetouchTools_PupilSizeColon" xml:space="preserve">
+    <value>Pupil Size:</value>
+  </data>
+  <data name="RetouchTools_RedEye" xml:space="preserve">
+    <value>Red Eye</value>
+  </data>
+  <data name="RetouchTools_RedEyeHint" xml:space="preserve">
+    <value>Click on a red eye (or drag around it) to remove the red reflection.</value>
+  </data>
+  <data name="RetouchTools_RedEyeTool" xml:space="preserve">
+    <value>Red Eye Tool</value>
+  </data>
+  <data name="RetouchTools_Source" xml:space="preserve">
+    <value>Source</value>
+  </data>
+  <data name="RetouchTools_StructureColon" xml:space="preserve">
+    <value>Structure:</value>
+  </data>
+  <data name="RulerTool_Hint" xml:space="preserve">
+    <value>Drag to measure distance and angle. Drag an end point to adjust it.</value>
+  </data>
+  <data name="RulerTool_Name" xml:space="preserve">
+    <value>Ruler Tool</value>
+  </data>
+  <data name="RulerTool_StraightenTip" xml:space="preserve">
+    <value>Rotate the active layer so that the ruler line becomes level</value>
+  </data>
+  <data name="RulerTool_UseMeasurementScale" xml:space="preserve">
+    <value>Use Measurement Scale</value>
+  </data>
+  <data name="SamplingTools_ClearColorSamplers" xml:space="preserve">
+    <value>Clear Color Samplers</value>
+  </data>
+  <data name="SamplingTools_ColorSampler" xml:space="preserve">
+    <value>Color Sampler</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerHint" xml:space="preserve">
+    <value>Click to place up to 10 color samplers (shown in the Info panel). Drag to move, Alt-click to delete.</value>
+  </data>
+  <data name="SamplingTools_ColorSamplerTool" xml:space="preserve">
+    <value>Color Sampler Tool</value>
+  </data>
+  <data name="SamplingTools_CurrentLayer" xml:space="preserve">
+    <value>Current Layer</value>
+  </data>
+  <data name="SamplingTools_DeleteColorSampler" xml:space="preserve">
+    <value>Delete Color Sampler</value>
+  </data>
+  <data name="SamplingTools_EyedropperHint" xml:space="preserve">
+    <value>Click to sample the foreground color. Alt-click samples the background color.</value>
+  </data>
+  <data name="SamplingTools_EyedropperTool" xml:space="preserve">
+    <value>Eyedropper Tool</value>
+  </data>
+  <data name="SamplingTools_MaxSamplers" xml:space="preserve">
+    <value>A maximum of 10 color samplers is allowed.</value>
+  </data>
+  <data name="SamplingTools_MoveColorSampler" xml:space="preserve">
+    <value>Move Color Sampler</value>
+  </data>
+  <data name="SamplingTools_SampleColon" xml:space="preserve">
+    <value>Sample:</value>
+  </data>
+  <data name="SamplingTools_ShowSamplingRing" xml:space="preserve">
+    <value>Show Sampling Ring</value>
+  </data>
+  <data name="SelectionToolBase_MoveSelection" xml:space="preserve">
+    <value>Move Selection</value>
+  </data>
+  <data name="ShapeTools_Arrow" xml:space="preserve">
+    <value>Arrow</value>
+  </data>
+  <data name="ShapeTools_CheckMark" xml:space="preserve">
+    <value>Check Mark</value>
+  </data>
+  <data name="ShapeTools_Cloud" xml:space="preserve">
+    <value>Cloud</value>
+  </data>
+  <data name="ShapeTools_Cross" xml:space="preserve">
+    <value>Cross</value>
+  </data>
+  <data name="ShapeTools_Crown" xml:space="preserve">
+    <value>Crown</value>
+  </data>
+  <data name="ShapeTools_CustomShapeTool" xml:space="preserve">
+    <value>Custom Shape Tool</value>
+  </data>
+  <data name="ShapeTools_Droplet" xml:space="preserve">
+    <value>Droplet</value>
+  </data>
+  <data name="ShapeTools_EllipseTool" xml:space="preserve">
+    <value>Ellipse Tool</value>
+  </data>
+  <data name="ShapeTools_EndArrow" xml:space="preserve">
+    <value>End Arrow</value>
+  </data>
+  <data name="ShapeTools_FillColorTip" xml:space="preserve">
+    <value>Fill color (right-click for none)</value>
+  </data>
+  <data name="ShapeTools_Gear" xml:space="preserve">
+    <value>Gear</value>
+  </data>
+  <data name="ShapeTools_Heart" xml:space="preserve">
+    <value>Heart</value>
+  </data>
+  <data name="ShapeTools_LengthInfo" xml:space="preserve">
+    <value>Length: {0:0.0} px</value>
+  </data>
+  <data name="ShapeTools_Lightning" xml:space="preserve">
+    <value>Lightning</value>
+  </data>
+  <data name="ShapeTools_LineHint" xml:space="preserve">
+    <value>Drag to draw a line. Shift constrains to 45 degrees.</value>
+  </data>
+  <data name="ShapeTools_LineTool" xml:space="preserve">
+    <value>Line Tool</value>
+  </data>
+  <data name="ShapeTools_PathOpColon" xml:space="preserve">
+    <value>Path op:</value>
+  </data>
+  <data name="ShapeTools_PolygonTool" xml:space="preserve">
+    <value>Polygon Tool</value>
+  </data>
+  <data name="ShapeTools_Puzzle" xml:space="preserve">
+    <value>Puzzle</value>
+  </data>
+  <data name="ShapeTools_RectangleTool" xml:space="preserve">
+    <value>Rectangle Tool</value>
+  </data>
+  <data name="ShapeTools_ShapeColon" xml:space="preserve">
+    <value>Shape:</value>
+  </data>
+  <data name="ShapeTools_ShapeHint" xml:space="preserve">
+    <value>Drag to draw the shape. Shift keeps proportions, Alt draws from the center.</value>
+  </data>
+  <data name="ShapeTools_SidesColon" xml:space="preserve">
+    <value>Sides:</value>
+  </data>
+  <data name="ShapeTools_SpeechBubble" xml:space="preserve">
+    <value>Speech Bubble</value>
+  </data>
+  <data name="ShapeTools_Star" xml:space="preserve">
+    <value>Star</value>
+  </data>
+  <data name="ShapeTools_StarRatioColon" xml:space="preserve">
+    <value>Star Ratio:</value>
+  </data>
+  <data name="ShapeTools_StartArrow" xml:space="preserve">
+    <value>Start Arrow</value>
+  </data>
+  <data name="ShapeTools_StrokeColorTip" xml:space="preserve">
+    <value>Stroke color (right-click for none)</value>
+  </data>
+  <data name="ShapeTools_TriangleTool" xml:space="preserve">
+    <value>Triangle Tool</value>
+  </data>
+  <data name="ShapeTools_WeightColon" xml:space="preserve">
+    <value>Weight:</value>
+  </data>
+  <data name="ShortcutsDialog_SearchCommands" xml:space="preserve">
+    <value>Search commands</value>
+  </data>
+  <data name="ShortcutsDialog_Title" xml:space="preserve">
+    <value>Keyboard Shortcuts</value>
+  </data>
+  <data name="ShortcutsDialog_UseDefaults" xml:space="preserve">
+    <value>Use Defaults</value>
+  </data>
+  <data name="SliceTools_ClearSlices" xml:space="preserve">
+    <value>Clear Slices</value>
+  </data>
+  <data name="SliceTools_DeleteSlice" xml:space="preserve">
+    <value>Delete Slice</value>
+  </data>
+  <data name="SliceTools_DivideEllipsis" xml:space="preserve">
+    <value>Divide...</value>
+  </data>
+  <data name="SliceTools_DivideSlice" xml:space="preserve">
+    <value>Divide Slice</value>
+  </data>
+  <data name="SliceTools_EditSlice" xml:space="preserve">
+    <value>Edit Slice</value>
+  </data>
+  <data name="SliceTools_EditSliceOptions" xml:space="preserve">
+    <value>Edit Slice Options</value>
+  </data>
+  <data name="SliceTools_FixedWColon" xml:space="preserve">
+    <value>Fixed W:</value>
+  </data>
+  <data name="SliceTools_NoSliceSelected" xml:space="preserve">
+    <value>No slice selected</value>
+  </data>
+  <data name="SliceTools_RowsColumnsPrompt" xml:space="preserve">
+    <value>Rows x Columns (for example 2x3):</value>
+  </data>
+  <data name="SliceTools_Slice" xml:space="preserve">
+    <value>Slice</value>
+  </data>
+  <data name="SliceTools_SliceHint" xml:space="preserve">
+    <value>Drag to create a slice. Use File &gt; Export &gt; Save Slices to export them.</value>
+  </data>
+  <data name="SliceTools_SliceOptions" xml:space="preserve">
+    <value>Slice Options</value>
+  </data>
+  <data name="SliceTools_SliceSelectHint" xml:space="preserve">
+    <value>Click to select a slice, drag to move or resize it. Delete removes it, double-click renames it.</value>
+  </data>
+  <data name="SliceTools_SliceSelectTool" xml:space="preserve">
+    <value>Slice Select Tool</value>
+  </data>
+  <data name="SliceTools_SliceTool" xml:space="preserve">
+    <value>Slice Tool</value>
+  </data>
+  <data name="SliceTools_SlicesFromGuides" xml:space="preserve">
+    <value>Slices From Guides</value>
+  </data>
+  <data name="StampTools_Aligned" xml:space="preserve">
+    <value>Aligned</value>
+  </data>
+  <data name="StampTools_CloneSourceInfo" xml:space="preserve">
+    <value>Clone source: {0:0}, {1:0}</value>
+  </data>
+  <data name="StampTools_CloneStampTool" xml:space="preserve">
+    <value>Clone Stamp Tool</value>
+  </data>
+  <data name="StampTools_Healing" xml:space="preserve">
+    <value>Healing...</value>
+  </data>
+  <data name="StampTools_HealingBrushTool" xml:space="preserve">
+    <value>Healing Brush Tool</value>
+  </data>
+  <data name="StampTools_Impressionist" xml:space="preserve">
+    <value>Impressionist</value>
+  </data>
+  <data name="StampTools_NoCloneSource" xml:space="preserve">
+    <value>Could not use the Clone Stamp tool because the area to clone has not been defined (Alt-click to define a source point).</value>
+  </data>
+  <data name="StampTools_PatternStampHint" xml:space="preserve">
+    <value>Paint with the selected pattern.</value>
+  </data>
+  <data name="StampTools_PatternStampTool" xml:space="preserve">
+    <value>Pattern Stamp Tool</value>
+  </data>
+  <data name="StampTools_RemoveHint" xml:space="preserve">
+    <value>Paint over distractions to remove them. The area is reconstructed from its surroundings.</value>
+  </data>
+  <data name="StampTools_RemoveTool" xml:space="preserve">
+    <value>Remove Tool</value>
+  </data>
+  <data name="StampTools_Removing" xml:space="preserve">
+    <value>Removing...</value>
+  </data>
+  <data name="StampTools_SpotHealingBrushTool" xml:space="preserve">
+    <value>Spot Healing Brush Tool</value>
+  </data>
+  <data name="StampTools_SpotHealingHint" xml:space="preserve">
+    <value>Paint over spots and blemishes to heal them automatically.</value>
+  </data>
+  <data name="StampTools_TypeColon" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="StartScreen_ClearRecentFiles" xml:space="preserve">
+    <value>Clear recent files</value>
+  </data>
+  <data name="StartScreen_NewFile" xml:space="preserve">
+    <value>New file</value>
+  </data>
+  <data name="StartScreen_NewFromScreenshotRegion" xml:space="preserve">
+    <value>New from Screenshot (Region)</value>
+  </data>
+  <data name="StartScreen_NoRecentFiles" xml:space="preserve">
+    <value>Files you open will appear here.</value>
+  </data>
+  <data name="StartScreen_Recent" xml:space="preserve">
+    <value>Recent</value>
+  </data>
+  <data name="StartScreen_ShowAsListTip" xml:space="preserve">
+    <value>Show recent files as a list</value>
+  </data>
+  <data name="StartScreen_ShowAsTilesTip" xml:space="preserve">
+    <value>Show recent files as tiles</value>
+  </data>
+  <data name="SwatchesPanel_NewSwatchTip" xml:space="preserve">
+    <value>Create new swatch of foreground color</value>
+  </data>
+  <data name="SwatchesPanel_SwatchTip" xml:space="preserve">
+    <value>#{0} — click: foreground, Alt/Ctrl-click: background, right-click: delete</value>
+  </data>
+  <data name="TextEditing_Hint" xml:space="preserve">
+    <value>Type the text. Ctrl+Enter commits, Esc cancels.</value>
+  </data>
+  <data name="TextEditing_TypeTool" xml:space="preserve">
+    <value>Type Tool</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maximize</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Restore</value>
+  </data>
+  <data name="ToningTools_BlurHint" xml:space="preserve">
+    <value>Paint to soften edges and details.</value>
+  </data>
+  <data name="ToningTools_BlurTool" xml:space="preserve">
+    <value>Blur Tool</value>
+  </data>
+  <data name="ToningTools_BurnHint" xml:space="preserve">
+    <value>Paint to darken areas. Alt dodges.</value>
+  </data>
+  <data name="ToningTools_BurnTool" xml:space="preserve">
+    <value>Burn Tool</value>
+  </data>
+  <data name="ToningTools_DodgeHint" xml:space="preserve">
+    <value>Paint to lighten areas. Alt burns.</value>
+  </data>
+  <data name="ToningTools_DodgeTool" xml:space="preserve">
+    <value>Dodge Tool</value>
+  </data>
+  <data name="ToningTools_FingerPainting" xml:space="preserve">
+    <value>Finger Painting</value>
+  </data>
+  <data name="ToningTools_ProtectDetail" xml:space="preserve">
+    <value>Protect Detail</value>
+  </data>
+  <data name="ToningTools_ProtectTones" xml:space="preserve">
+    <value>Protect Tones</value>
+  </data>
+  <data name="ToningTools_RangeColon" xml:space="preserve">
+    <value>Range:</value>
+  </data>
+  <data name="ToningTools_Saturate" xml:space="preserve">
+    <value>Saturate</value>
+  </data>
+  <data name="ToningTools_SharpenHint" xml:space="preserve">
+    <value>Paint to increase local contrast and sharpen details.</value>
+  </data>
+  <data name="ToningTools_SharpenTool" xml:space="preserve">
+    <value>Sharpen Tool</value>
+  </data>
+  <data name="ToningTools_SmudgeHint" xml:space="preserve">
+    <value>Drag to smear paint. Finger Painting starts with the foreground color.</value>
+  </data>
+  <data name="ToningTools_SmudgeTool" xml:space="preserve">
+    <value>Smudge Tool</value>
+  </data>
+  <data name="ToningTools_SpongeHint" xml:space="preserve">
+    <value>Paint to saturate or desaturate colors.</value>
+  </data>
+  <data name="ToningTools_SpongeTool" xml:space="preserve">
+    <value>Sponge Tool</value>
+  </data>
+  <data name="ToolBase_CannotUseHidden" xml:space="preserve">
+    <value>Could not use the {0} because the target layer is hidden.</value>
+  </data>
+  <data name="ToolBase_CannotUseLocked" xml:space="preserve">
+    <value>Could not use the {0} because the layer is locked.</value>
+  </data>
+  <data name="ToolBase_CannotUseNotPixelLayer" xml:space="preserve">
+    <value>Could not use the {0} because the target layer is not a pixel layer. Rasterize the layer first (Layer &gt; Rasterize).</value>
+  </data>
+  <data name="ToolbarControl_CollapseTip" xml:space="preserve">
+    <value>Collapse to a single column</value>
+  </data>
+  <data name="ToolbarControl_DefaultColorsTip" xml:space="preserve">
+    <value>Default Foreground and Background Colors (D)</value>
+  </data>
+  <data name="ToolbarControl_EditToolbarEllipsis" xml:space="preserve">
+    <value>Edit Toolbar...</value>
+  </data>
+  <data name="ToolbarControl_ExpandTip" xml:space="preserve">
+    <value>Expand to two columns</value>
+  </data>
+  <data name="ToolbarControl_QuickMaskTip" xml:space="preserve">
+    <value>Edit in Quick Mask Mode (Q)</value>
+  </data>
+  <data name="ToolbarControl_ScreenModeTip" xml:space="preserve">
+    <value>Change Screen Mode (F)</value>
+  </data>
+  <data name="ToolbarControl_SetBackgroundColor" xml:space="preserve">
+    <value>Set background color</value>
+  </data>
+  <data name="ToolbarControl_SetForegroundColor" xml:space="preserve">
+    <value>Set foreground color</value>
+  </data>
+  <data name="ToolbarControl_SwitchColorsTip" xml:space="preserve">
+    <value>Switch Foreground and Background Colors (X)</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Description" xml:space="preserve">
+    <value>Toolbar (each row is a toolbar slot with its flyout tools). Select a tool, then use the buttons to rearrange.</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Done" xml:space="preserve">
+    <value>Done</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_ExtraTools" xml:space="preserve">
+    <value>Extra Tools (hidden from the toolbar):</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_HideTool" xml:space="preserve">
+    <value>Hide Tool</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MergeWithGroupAbove" xml:space="preserve">
+    <value>Merge With Group Above</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveEarlierInGroup" xml:space="preserve">
+    <value>Move Earlier in Group</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupDown" xml:space="preserve">
+    <value>Move Group Down</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_MoveGroupUp" xml:space="preserve">
+    <value>Move Group Up</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_OwnGroup" xml:space="preserve">
+    <value>Own Group</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreDefaults" xml:space="preserve">
+    <value>Restore Defaults</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_RestoreTip" xml:space="preserve">
+    <value>Click to restore to the toolbar</value>
+  </data>
+  <data name="ToolbarCustomizeDialog_Title" xml:space="preserve">
+    <value>Customize Toolbar</value>
+  </data>
+  <data name="Tools_AntiAlias" xml:space="preserve">
+    <value>Anti-alias</value>
+  </data>
+  <data name="Tools_Commit" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="Tools_Contiguous" xml:space="preserve">
+    <value>Contiguous</value>
+  </data>
+  <data name="Tools_FlowColon" xml:space="preserve">
+    <value>Flow:</value>
+  </data>
+  <data name="Tools_PointSample" xml:space="preserve">
+    <value>Point Sample</value>
+  </data>
+  <data name="Tools_SampleAllLayers" xml:space="preserve">
+    <value>Sample All Layers</value>
+  </data>
+  <data name="Tools_SampleAverage" xml:space="preserve">
+    <value>{0} by {0} Average</value>
+  </data>
+  <data name="Tools_SampleSizeColon" xml:space="preserve">
+    <value>Sample Size:</value>
+  </data>
+  <data name="Tools_SizeInfo" xml:space="preserve">
+    <value>W: {0:0} px  H: {1:0} px</value>
+  </data>
+  <data name="Tools_ToleranceColon" xml:space="preserve">
+    <value>Tolerance:</value>
+  </data>
+  <data name="TransformTools_AlignBottomTip" xml:space="preserve">
+    <value>Align bottom edges</value>
+  </data>
+  <data name="TransformTools_AlignHCenterTip" xml:space="preserve">
+    <value>Align horizontal centers</value>
+  </data>
+  <data name="TransformTools_AlignLeftTip" xml:space="preserve">
+    <value>Align left edges</value>
+  </data>
+  <data name="TransformTools_AlignRightTip" xml:space="preserve">
+    <value>Align right edges</value>
+  </data>
+  <data name="TransformTools_AlignTopTip" xml:space="preserve">
+    <value>Align top edges</value>
+  </data>
+  <data name="TransformTools_AlignVCenterTip" xml:space="preserve">
+    <value>Align vertical centers</value>
+  </data>
+  <data name="TransformTools_AutoSelectColon" xml:space="preserve">
+    <value>Auto-Select:</value>
+  </data>
+  <data name="TransformTools_AutoSelectTip" xml:space="preserve">
+    <value>Click selects the topmost layer under the pointer (Ctrl temporarily)</value>
+  </data>
+  <data name="TransformTools_CancelTip" xml:space="preserve">
+    <value>Cancel transform (Esc)</value>
+  </data>
+  <data name="TransformTools_CannotTransformEmpty" xml:space="preserve">
+    <value>Could not transform because the layer is empty.</value>
+  </data>
+  <data name="TransformTools_CannotTransformLocked" xml:space="preserve">
+    <value>Could not transform because the layer is locked or has no content.</value>
+  </data>
+  <data name="TransformTools_CannotTransformSelection" xml:space="preserve">
+    <value>Could not transform the selection because the layer is locked.</value>
+  </data>
+  <data name="TransformTools_CommitTip" xml:space="preserve">
+    <value>Commit transform (Enter)</value>
+  </data>
+  <data name="TransformTools_DeleteGuide" xml:space="preserve">
+    <value>Delete Guide</value>
+  </data>
+  <data name="TransformTools_Floating" xml:space="preserve">
+    <value>Floating</value>
+  </data>
+  <data name="TransformTools_FloatingSelection" xml:space="preserve">
+    <value>Floating Selection</value>
+  </data>
+  <data name="TransformTools_FreeTransformHint" xml:space="preserve">
+    <value>Drag handles to scale (Shift: proportional, Alt: from center), outside to rotate, Ctrl-drag a corner to distort, Ctrl-drag an edge to skew. Enter commits, Esc cancels.</value>
+  </data>
+  <data name="TransformTools_Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="TransformTools_InterpolationColon" xml:space="preserve">
+    <value>Interpolation:</value>
+  </data>
+  <data name="TransformTools_LayerLocked" xml:space="preserve">
+    <value>Could not complete the request because the layer is locked.</value>
+  </data>
+  <data name="TransformTools_MoveGuide" xml:space="preserve">
+    <value>Move Guide</value>
+  </data>
+  <data name="TransformTools_MoveHint" xml:space="preserve">
+    <value>Drag to move the layer or selected pixels. Alt-drag duplicates, Shift constrains. Arrow keys nudge.</value>
+  </data>
+  <data name="TransformTools_MoveTool" xml:space="preserve">
+    <value>Move Tool</value>
+  </data>
+  <data name="TransformTools_Nudge" xml:space="preserve">
+    <value>Nudge</value>
+  </data>
+  <data name="TransformTools_ShowTransformControls" xml:space="preserve">
+    <value>Show Transform Controls</value>
+  </data>
+  <data name="TransformTools_UseFreeTransform" xml:space="preserve">
+    <value>Use Edit &gt; Free Transform (Ctrl+T) to transform the active layer or selection.</value>
+  </data>
+  <data name="TypeTools_AllCaps" xml:space="preserve">
+    <value>All Caps</value>
+  </data>
+  <data name="TypeTools_BoldItalic" xml:space="preserve">
+    <value>Bold Italic</value>
+  </data>
+  <data name="TypeTools_CancelTip" xml:space="preserve">
+    <value>Cancel current edits (Esc)</value>
+  </data>
+  <data name="TypeTools_CenterTip" xml:space="preserve">
+    <value>Center text</value>
+  </data>
+  <data name="TypeTools_CommitTip" xml:space="preserve">
+    <value>Commit current edits (Ctrl+Enter)</value>
+  </data>
+  <data name="TypeTools_FauxBold" xml:space="preserve">
+    <value>Faux Bold</value>
+  </data>
+  <data name="TypeTools_FauxItalic" xml:space="preserve">
+    <value>Faux Italic</value>
+  </data>
+  <data name="TypeTools_Hint" xml:space="preserve">
+    <value>Click to add point text, drag to add paragraph text, click existing text to edit it. Ctrl+Enter commits, Esc cancels.</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeMaskTool" xml:space="preserve">
+    <value>Horizontal Type Mask Tool</value>
+  </data>
+  <data name="TypeTools_HorizontalTypeTool" xml:space="preserve">
+    <value>Horizontal Type Tool</value>
+  </data>
+  <data name="TypeTools_LeftAlignTip" xml:space="preserve">
+    <value>Left align text</value>
+  </data>
+  <data name="TypeTools_MaskHint" xml:space="preserve">
+    <value>Click to type; committing creates a selection in the shape of the text.</value>
+  </data>
+  <data name="TypeTools_Regular" xml:space="preserve">
+    <value>Regular</value>
+  </data>
+  <data name="TypeTools_RightAlignTip" xml:space="preserve">
+    <value>Right align text</value>
+  </data>
+  <data name="TypeTools_SetAntiAlias" xml:space="preserve">
+    <value>Set Anti-alias</value>
+  </data>
+  <data name="TypeTools_SetFontStyle" xml:space="preserve">
+    <value>Set Font Style</value>
+  </data>
+  <data name="TypeTools_Strikethrough" xml:space="preserve">
+    <value>Strikethrough</value>
+  </data>
+  <data name="TypeTools_TextColorTip" xml:space="preserve">
+    <value>Text color</value>
+  </data>
+  <data name="TypeTools_ToggleOrientationTip" xml:space="preserve">
+    <value>Toggle text orientation</value>
+  </data>
+  <data name="TypeTools_TypeMask" xml:space="preserve">
+    <value>Type Mask</value>
+  </data>
+  <data name="TypeTools_VerticalTypeMaskTool" xml:space="preserve">
+    <value>Vertical Type Mask Tool</value>
+  </data>
+  <data name="TypeTools_VerticalTypeTool" xml:space="preserve">
+    <value>Vertical Type Tool</value>
+  </data>
+</root>

@@ -35,9 +35,9 @@ public sealed class BrushTool : BrushToolBase
 
     public override ToolId Id => ToolId.Brush;
 
-    public override string Name => "Brush Tool";
+    public override string Name => Strings.BrushTools_BrushTool;
 
-    public override string Hint => "Paint with the foreground color. Shift-click draws a straight line. [ ] change size.";
+    public override string Hint => Strings.BrushTools_BrushHint;
 
     protected override void ConfigureStroke(BrushStroke stroke, ToolInput input) => stroke.Color = Host.Foreground;
 
@@ -49,15 +49,15 @@ public sealed class PencilTool : BrushToolBase
     public PencilTool(IEditorHost host) : base(host)
     {
         Size = 1;
-        Tip = new BrushPreset { Name = "Hard Pixel", Hardness = 1, Spacing = 0.05f, PressureOpacity = false };
+        Tip = new BrushPreset { Name = Strings.Resources_HardPixel, Hardness = 1, Spacing = 0.05f, PressureOpacity = false };
         Smoothing = 0;
     }
 
     public override ToolId Id => ToolId.Pencil;
 
-    public override string Name => "Pencil Tool";
+    public override string Name => Strings.BrushTools_PencilTool;
 
-    public override string Hint => "Paint hard-edged, aliased lines with the foreground color.";
+    public override string Hint => Strings.BrushTools_PencilHint;
 
     public bool AutoErase { get; set; }
 
@@ -78,7 +78,7 @@ public sealed class PencilTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         BuildBrushOptions(options);
-        options.Check("Auto Erase", () => AutoErase, v => AutoErase = v);
+        options.Check(Strings.BrushTools_AutoErase, () => AutoErase, v => AutoErase = v);
     }
 }
 
@@ -91,9 +91,9 @@ public sealed class ColorReplacementTool : BrushToolBase
 
     public override ToolId Id => ToolId.ColorReplacement;
 
-    public override string Name => "Color Replacement Tool";
+    public override string Name => Strings.BrushTools_ColorReplacementTool;
 
-    public override string Hint => "Replace colors similar to the sampled color with the foreground color.";
+    public override string Hint => Strings.BrushTools_ColorReplacementHint;
 
     public DabProcessors.ReplaceMode ReplaceMode { get; set; } = DabProcessors.ReplaceMode.Color;
 
@@ -114,9 +114,9 @@ public sealed class ColorReplacementTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.EnumCombo("Mode:", () => ReplaceMode, v => ReplaceMode = v, 100);
-        options.Combo("Sampling:", [("Continuous", true), ("Once", false)], () => Continuous, v => Continuous = v, 120);
-        options.Number("Tolerance:", 1, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
+        options.EnumCombo(Strings.EditorCommands_ModeColon, () => ReplaceMode, v => ReplaceMode = v, 100);
+        options.Combo(Strings.BrushTools_SamplingColon, [(Strings.Enum_Sampling_Continuous, true), (Strings.Enum_Sampling_Once, false)], () => Continuous, v => Continuous = v, 120);
+        options.Number(Strings.Tools_ToleranceColon, 1, 100, () => Tolerance, v => Tolerance = (int)v, "0", "%");
     }
 }
 
@@ -128,9 +128,9 @@ public sealed class MixerBrushTool : BrushToolBase
 
     public override ToolId Id => ToolId.MixerBrush;
 
-    public override string Name => "Mixer Brush Tool";
+    public override string Name => Strings.BrushTools_MixerBrushTool;
 
-    public override string Hint => "Mix the loaded paint with the canvas colors like real paint.";
+    public override string Hint => Strings.BrushTools_MixerBrushHint;
 
     public float Wet { get; set; } = 0.5f;
 
@@ -153,12 +153,12 @@ public sealed class MixerBrushTool : BrushToolBase
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.ColorButton("Load color (foreground)", () => Host.Foreground, c => Host.Foreground = c);
-        options.Percent("Wet:", () => Wet, v => Wet = v);
-        options.Percent("Load:", () => Load, v => Load = v);
-        options.Percent("Mix:", () => Mix, v => Mix = v);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.Check("Clean after each stroke", () => CleanAfterStroke, v => CleanAfterStroke = v);
+        options.ColorButton(Strings.BrushTools_LoadColorTip, () => Host.Foreground, c => Host.Foreground = c);
+        options.Percent(Strings.BrushTools_WetColon, () => Wet, v => Wet = v);
+        options.Percent(Strings.BrushTools_LoadColon, () => Load, v => Load = v);
+        options.Percent(Strings.BrushTools_MixColon, () => Mix, v => Mix = v);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.Check(Strings.BrushTools_CleanAfterStroke, () => CleanAfterStroke, v => CleanAfterStroke = v);
     }
 }
 
@@ -173,9 +173,9 @@ public sealed class AdjustmentBrushTool : BrushToolBase
 
     public override ToolId Id => ToolId.AdjustmentBrush;
 
-    public override string Name => "Adjustment Brush Tool";
+    public override string Name => Strings.BrushTools_AdjustmentBrushTool;
 
-    public override string Hint => "Paint a local adjustment. Each stroke edits the mask of an adjustment layer. Alt erases the adjustment.";
+    public override string Hint => Strings.BrushTools_AdjustmentBrushHint;
 
     public AdjustmentKind Kind { get; set; } = AdjustmentKind.Exposure;
 
@@ -208,7 +208,7 @@ public sealed class AdjustmentBrushTool : BrushToolBase
         }
         else
         {
-            _layer = new AdjustmentLayer($"{AdjustmentSettings.GetName(Kind)} Brush", CreateSettings())
+            _layer = new AdjustmentLayer(string.Format(Strings.BrushTools_AdjustmentBrushLayerName, AdjustmentSettings.GetName(Kind)), CreateSettings())
             {
                 Mask = PixelSurface.CreateMask(Doc.Width, Doc.Height, 0)
             };
@@ -224,17 +224,17 @@ public sealed class AdjustmentBrushTool : BrushToolBase
 
     protected override void OnStrokeFinished(BrushStroke stroke, PaintTarget target)
     {
-        PushHistory("Adjustment Brush");
+        PushHistory(Strings.BrushTools_AdjustmentBrush);
     }
 
     public override void BuildOptions(OptionsBuilder options)
     {
         options.BrushPicker(() => Tip, t => Tip = t, () => Size, v => Size = v);
-        options.Combo("Adjustment:", new[] { AdjustmentKind.Exposure, AdjustmentKind.BrightnessContrast, AdjustmentKind.HueSaturation, AdjustmentKind.Vibrance, AdjustmentKind.ColorBalance }
+        options.Combo(Strings.BrushTools_AdjustmentColon, new[] { AdjustmentKind.Exposure, AdjustmentKind.BrightnessContrast, AdjustmentKind.HueSaturation, AdjustmentKind.Vibrance, AdjustmentKind.ColorBalance }
             .Select(k => (AdjustmentSettings.GetName(k), k)), () => Kind, v => Kind = v, 150);
-        options.Number("Amount:", -3, 3, () => Amount, v => Amount = (float)v, "0.00", null, 0.05);
-        options.Percent("Opacity:", () => Opacity, v => Opacity = v);
-        options.Percent("Flow:", () => Flow, v => Flow = v);
-        options.Check("New layer per stroke", () => NewLayerEachTime, v => NewLayerEachTime = v);
+        options.Number(Strings.BrushTools_AmountColon, -3, 3, () => Amount, v => Amount = (float)v, "0.00", null, 0.05);
+        options.Percent(Strings.EditorCommands_OpacityColon, () => Opacity, v => Opacity = v);
+        options.Percent(Strings.Tools_FlowColon, () => Flow, v => Flow = v);
+        options.Check(Strings.BrushTools_NewLayerPerStroke, () => NewLayerEachTime, v => NewLayerEachTime = v);
     }
 }

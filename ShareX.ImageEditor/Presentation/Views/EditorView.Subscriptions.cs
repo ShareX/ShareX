@@ -56,13 +56,20 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.LoadFromClipboardRequested += OnLoadFromClipboardRequested;
             vm.LoadFromUrlRequested += OnLoadFromUrlRequested;
             vm.LoadRecentFileRequested += OnLoadRecentFileRequested;
+            vm.NewFromScreenshotRequested += OnNewFromScreenshotRequested;
             vm.CopyRequested += OnCopyImageRequested;
             vm.SaveRequested += OnSaveRequested;
             vm.SaveAsRequested += OnSaveAsRequested;
             vm.FileMenuRequested += OnFileMenuRequested;
+            vm.CanvasSizeModeRequested += OnCanvasSizeModeRequested;
             vm.PropertyChanged += OnViewModelPropertyChanged;
             vm.DeselectRequested += OnDeselectRequested;
             vm.CanvasFocusRequested += OnCanvasFocusRequested;
+
+            if (vm.IsSettingsPanelOpen)
+            {
+                EnsureBackgroundSettingsPanel();
+            }
         }
 
         private void DetachViewModel()
@@ -88,10 +95,12 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.LoadFromClipboardRequested -= OnLoadFromClipboardRequested;
             vm.LoadFromUrlRequested -= OnLoadFromUrlRequested;
             vm.LoadRecentFileRequested -= OnLoadRecentFileRequested;
+            vm.NewFromScreenshotRequested -= OnNewFromScreenshotRequested;
             vm.CopyRequested -= OnCopyImageRequested;
             vm.SaveRequested -= OnSaveRequested;
             vm.SaveAsRequested -= OnSaveAsRequested;
             vm.FileMenuRequested -= OnFileMenuRequested;
+            vm.CanvasSizeModeRequested -= OnCanvasSizeModeRequested;
             vm.PropertyChanged -= OnViewModelPropertyChanged;
             vm.DeselectRequested -= OnDeselectRequested;
             vm.CanvasFocusRequested -= OnCanvasFocusRequested;

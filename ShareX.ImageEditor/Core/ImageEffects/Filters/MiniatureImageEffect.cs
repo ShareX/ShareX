@@ -23,7 +23,7 @@
 
 #endregion License Information (GPL v3)
 
-using ShareX.AvaloniaUI.Theming;
+using ShareX.Icons;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
 using SkiaSharp;
 
@@ -34,7 +34,7 @@ public sealed class MiniatureImageEffect : ImageEffectBase
     public override string Id => "miniature";
     public override string Name => "Miniature";
     public override ImageEffectCategory Category => ImageEffectCategory.Filters;
-    public override string IconKey => LucideIcons.box;
+    public override string IconKey => ImageEffectIcons.Cube;
     public override string Description => "Creates a toy miniature look by blurring top and bottom with boosted saturation.";
     public override IReadOnlyList<EffectParameter> Parameters =>
     [

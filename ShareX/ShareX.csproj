@@ -7,7 +7,25 @@
     <Description>Screen capture, file sharing and productivity tool</Description>
     <SupportedOSPlatformVersion>10.0.22621.0</SupportedOSPlatformVersion>
     <CETCompat>false</CETCompat>
+    <!--
+      Precompile assemblies when publishing so code does not have to be JIT compiled on first use.
+      Without it, the first region capture and other first-time actions are noticeably slower than later ones.
+    -->
+    <PublishReadyToRun>true</PublishReadyToRun>
   </PropertyGroup>
+  <!--
+    Precompile only ShareX assemblies, which CI signs after publishing.
+    Recompiling third party assemblies would replace their files and strip the publishers' signatures.
+  -->
+  <Target Name="ExcludeThirdPartyAssembliesFromReadyToRun"
+          BeforeTargets="_PrepareForReadyToRunCompilation"
+          DependsOnTargets="_ComputeAssembliesToPostprocessOnPublish">
+    <ItemGroup>
+      <_ThirdPartyReadyToRunAssembly Include="@(ResolvedFileToPublish)"
+                                     Condition="'%(ResolvedFileToPublish.PostprocessAssembly)' == 'true' and !$([System.String]::Copy('%(ResolvedFileToPublish.Filename)').StartsWith('ShareX', StringComparison.OrdinalIgnoreCase))" />
+      <PublishReadyToRunExclude Include="@(_ThirdPartyReadyToRunAssembly->'%(Filename)%(Extension)')" />
+    </ItemGroup>
+  </Target>
   <ItemGroup>
     <PackageReference Include="Avalonia" />
     <PackageReference Include="Newtonsoft.Json" />
@@ -15,7 +33,7 @@
     <PackageReference Include="ZXing.Net" />
   </ItemGroup>
   <ItemGroup>
-    <AvaloniaResource Include="Resources\Flags\*.png" />
+    <AvaloniaResource Include="Resources\Flags\*.svg" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Localization\Strings.resx">

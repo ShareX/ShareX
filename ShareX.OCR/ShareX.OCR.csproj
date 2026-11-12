@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Description>Offline OCR using PaddleOCR PP-OCRv6 ONNX models</Description>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
+    <PackageReference Include="Microsoft.ML.OnnxRuntime.DirectML" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SkiaSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- The models are copied next to the application, where PaddleOCREngine.DefaultModelsFolder looks for them. -->
+    <None Include="Models\**\*.onnx;Models\**\*.yml" CopyToOutputDirectory="PreserveNewest" Link="Models\%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>
