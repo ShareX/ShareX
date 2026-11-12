@@ -1423,6 +1423,26 @@ public partial class RegionCaptureWindow : Window
         {
             _captureToolbarFollowsPointer = false;
         }
+
+        // Tunnel so this runs before the embedded editor, whose Ctrl+C copies the whole screenshot.
+        if (_keyboardInputEnabled && !_closing && _request != null &&
+            e.Key == Key.C && e.KeyModifiers == KeyModifiers.Control &&
+            _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
+            FocusManager?.GetFocusedElement() is not TextBox)
+        {
+            CopyAreaInfo();
+            e.Handled = true;
+        }
+    }
+
+    // Same as ShareX 21: copy the selection's area, or the cursor info when nothing is selected.
+    private void CopyAreaInfo()
+    {
+        string text = HasValidSelection()
+            ? GetAreaText(_regionOverlay.SelectionRectangle)
+            : GetPointerInfoText(_lastPointerPoint);
+
+        ClipboardHelpers.CopyText(text);
     }
 
     private void FollowPointerWithCaptureToolbar(PointerEventArgs e)
@@ -1818,6 +1838,21 @@ public partial class RegionCaptureWindow : Window
         UpdateSelectionInfo();
     }
 
+    private string GetAreaText(Rect selection)
+    {
+        if (_request == null)
+        {
+            return string.Empty;
+        }
+
+        int width = Math.Max(1, (int)Math.Round(selection.Width));
+        int height = Math.Max(1, (int)Math.Round(selection.Height));
+        // Same format as ShareX 21. X and Y are screen coordinates, matching the cursor info label.
+        int screenX = _request.ScreenBounds.X + (int)Math.Round(selection.X);
+        int screenY = _request.ScreenBounds.Y + (int)Math.Round(selection.Y);
+        return $"X: {screenX} Y: {screenY} W: {width} H: {height}";
+    }
+
     private string GetPointerInfoText(Point imagePoint)
     {
         if (_request == null)
@@ -1975,12 +2010,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        int width = Math.Max(1, (int)Math.Round(selection.Width));
-        int height = Math.Max(1, (int)Math.Round(selection.Height));
-        // Same format as ShareX 21. X and Y are screen coordinates, matching the cursor info label.
-        int screenX = _request.ScreenBounds.X + (int)Math.Round(selection.X);
-        int screenY = _request.ScreenBounds.Y + (int)Math.Round(selection.Y);
-        _selectionInfoText.Text = $"X: {screenX} Y: {screenY} W: {width} H: {height}";
+        _selectionInfoText.Text = GetAreaText(selection);
         _selectionInfoPanel.IsVisible = true;
 
         double scale = Math.Max(1, RenderScaling);
