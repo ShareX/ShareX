@@ -2269,15 +2269,39 @@ public partial class RegionCaptureWindow : Window
 
         DrawingRectangle screenRectangle = ToScreenRectangle(bounds);
         WindowInfo? windowInfo = includeWindowInfo ? FindTopLevelWindowInfo(screenRectangle) : null;
+        IntPtr windowHandle = includeWindowInfo && shapes.Count == 1 && shapes[0].IsRectangle &&
+            _selectedCandidate is { IsWindow: true } && _selectedCandidate.Rectangle == screenRectangle
+            ? _selectedCandidate.Handle
+            : IntPtr.Zero;
 
         _pendingResult = new AvaloniaRegionCaptureResult(
             output,
             screenRectangle,
             windowInfo,
-            _viewModel?.IsDirty == true);
+            _viewModel?.IsDirty == true,
+            windowHandle);
         RegionCaptureIntegration.SetLastRegion(screenRectangle, regions.Select(ToScreenRectangle).ToArray());
         _closing = true;
+
+        if (windowHandle != IntPtr.Zero)
+        {
+            // The window may be captured again from the screen right after this one closes, so it must not fade out.
+            DisableWindowTransitions();
+        }
+
         Close();
+    }
+
+    private void DisableWindowTransitions()
+    {
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+
+        if (OperatingSystem.IsWindows() && handle != IntPtr.Zero)
+        {
+            int disabled = 1;
+            NativeMethods.DwmSetWindowAttribute(handle, (int)DWMWINDOWATTRIBUTE.DWMWA_TRANSITIONS_FORCEDISABLED,
+                ref disabled, sizeof(int));
+        }
     }
 
     private DrawingRectangle ToScreenRectangle(DrawingRectangle imageRectangle)

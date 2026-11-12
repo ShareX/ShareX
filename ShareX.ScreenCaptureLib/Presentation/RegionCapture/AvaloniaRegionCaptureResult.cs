@@ -27,12 +27,15 @@
 
 using ShareX.HelpersLib;
 using SkiaSharp;
+using System;
 using System.Drawing;
 
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
+/// <param name="WindowHandle">The detected window whose whole rectangle is the capture, or zero.</param>
 public sealed record AvaloniaRegionCaptureResult(
     SKBitmap Image,
     Rectangle ScreenRectangle,
     WindowInfo? WindowInfo,
-    bool ImageModified);
+    bool ImageModified,
+    IntPtr WindowHandle = default);

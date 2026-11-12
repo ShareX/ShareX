@@ -27,6 +27,7 @@ using ShareX.HelpersLib;
 using ShareX.ScreenCaptureLib;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 using SkiaSharp;
+using System;
 using System.Drawing;
 using System.Threading.Tasks;
 using Bitmap = SkiaSharp.SKBitmap;
@@ -35,6 +36,9 @@ namespace ShareX
 {
     public class CaptureRegion : CaptureBase
     {
+        // Gives the compositor a frame to remove the region capture window before the screen is captured.
+        private const int TransparentCaptureDelay = 50;
+
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
             return null;
@@ -97,7 +101,14 @@ namespace ShareX
 
             using (result.Image)
             {
-                Bitmap output = result.Image.Copy();
+                Bitmap output = null;
+
+                if (result.WindowHandle != IntPtr.Zero && taskSettings.CaptureSettings.CaptureTransparent)
+                {
+                    output = await CaptureWindowTransparentAsync(taskSettings, result);
+                }
+
+                output ??= result.Image.Copy();
                 TaskMetadata metadata = new TaskMetadata(output);
 
                 if (result.ImageModified)
@@ -111,6 +122,28 @@ namespace ShareX
                 }
 
                 return metadata;
+            }
+        }
+
+        /// <summary>
+        /// When a detected window was captured whole, gives it the rounded corners and, with "Capture window with
+        /// shadow", the shadow that window capture has with "Capture window with transparency". The pixels inside the
+        /// window, annotations included, still come from the region capture. Returns null if that isn't possible.
+        /// </summary>
+        private static async Task<Bitmap> CaptureWindowTransparentAsync(TaskSettings taskSettings, AvaloniaRegionCaptureResult result)
+        {
+            await Task.Delay(TransparentCaptureDelay);
+
+            try
+            {
+                Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
+                screenshot.CaptureCursor = false;
+                return screenshot.CaptureWindowTransparent(result.WindowHandle, result.Image, result.ScreenRectangle);
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Transparent window capture failed.");
+                return null;
             }
         }
     }
