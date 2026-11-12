@@ -589,6 +589,8 @@ namespace ShareX.UploadersLib.Localization
 
         public static string FileDestination_FTP => ResourceManager.GetString("FileDestination_FTP", resourceCulture) ?? string.Empty;
 
+        public static string FileDestination_Filex => ResourceManager.GetString("FileDestination_Filex", resourceCulture) ?? string.Empty;
+
         public static string FileDestination_GoogleCloudStorage => ResourceManager.GetString("FileDestination_GoogleCloudStorage", resourceCulture) ?? string.Empty;
 
         public static string FileDestination_GoogleDrive => ResourceManager.GetString("FileDestination_GoogleDrive", resourceCulture) ?? string.Empty;

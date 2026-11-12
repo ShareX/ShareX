@@ -907,6 +907,9 @@
   <data name="FileDestination_FTP" xml:space="preserve">
     <value>FTP</value>
   </data>
+  <data name="FileDestination_Filex" xml:space="preserve">
+    <value>filex</value>
+  </data>
   <data name="FileDestination_GoogleCloudStorage" xml:space="preserve">
     <value>Google Cloud Storage</value>
   </data>

@@ -430,6 +430,14 @@ namespace ShareX.UploadersLib
 
         #endregion Immich
 
+        #region filex
+
+        public string FilexURL { get; set; } = "";
+        [JsonEncrypt]
+        public string FilexAPIKey { get; set; } = "";
+
+        #endregion filex
+
         #endregion File uploaders
 
         #region URL shorteners

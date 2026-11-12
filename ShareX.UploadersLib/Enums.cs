@@ -103,6 +103,8 @@ namespace ShareX.UploadersLib
         OwnCloud,
         [Description("Immich")]
         Immich,
+        [Description("filex")]
+        Filex,
         [Description("MediaFire")]
         MediaFire,
         [Description("Pushbullet")]
