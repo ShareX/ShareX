@@ -36,8 +36,10 @@ namespace ShareX
 {
     public class CaptureRegion : CaptureBase
     {
-        // Gives the compositor a frame to remove the region capture window before the screen is captured.
-        private const int TransparentCaptureDelay = 50;
+        // Lets the region capture window disappear and the window's title bar finish fading to its active color, which
+        // Windows starts when the region capture window closes. Shorter waits failed on Windows 11 because the two white
+        // background captures differed.
+        private const int TransparentCaptureDelay = 300;
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
