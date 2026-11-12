@@ -2996,6 +2996,9 @@
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>שמירה</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>אפשר חיפוש בטקסט שבצילומים בהיסטוריה</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>בורר צבע מסך</value>
   </data>

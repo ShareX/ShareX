@@ -2996,6 +2996,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Uložit</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Umožnit vyhledávání textu ze snímků v historii</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Výběr barvy z obrazovky</value>
   </data>

@@ -2996,6 +2996,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Opslaan</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Tekst in opnamen doorzoekbaar maken in de geschiedenis</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Schermkleurkiezer</value>
   </data>

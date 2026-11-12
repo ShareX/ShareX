@@ -2996,6 +2996,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Guardar</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Tornar o texto das capturas pesquisável no histórico</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Seletor de cores da tela</value>
   </data>

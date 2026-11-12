@@ -2996,6 +2996,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Cho phép tìm kiếm văn bản trong ảnh chụp ở lịch sử</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Bộ chọn màu màn hình</value>
   </data>

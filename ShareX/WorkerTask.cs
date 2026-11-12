@@ -528,6 +528,8 @@ namespace ShareX
                     return false;
                 }
 
+                StartHistoryOCR();
+
                 if (!DoFileJobs())
                 {
                     return false;
@@ -1098,6 +1100,16 @@ namespace ShareX
             if (Image != null && Info.DataType == EDataType.Image)
             {
                 TaskHelpers.OCRImage(Image, Info.TaskSettings).GetAwaiter().GetResult();
+            }
+        }
+
+        // Runs beside saving and uploading on a copy of the final image, since the task disposes its image when it finishes.
+        private void StartHistoryOCR()
+        {
+            if (Image != null && Info.DataType == EDataType.Image && ApplicationState.Settings.HistorySaveTasks &&
+                Info.TaskSettings.CaptureSettingsReference.OCROptions.SaveTextToHistory)
+            {
+                Info.HistoryOCRTask = TaskHelpers.RecognizeTextForHistoryAsync(Image.Copy());
             }
         }
 

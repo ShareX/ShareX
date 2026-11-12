@@ -3265,6 +3265,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessOCRSilently", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_SaveOCRTextToHistory {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SaveOCRTextToHistory", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink", resourceCulture);

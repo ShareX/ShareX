@@ -2166,6 +2166,20 @@ namespace ShareX
             }
         }
 
+        // Takes ownership of the image. The text is kept on one line, so it stays one line in the history tag editor.
+        public static async Task<string> RecognizeTextForHistoryAsync(Bitmap image)
+        {
+            if (image == null)
+            {
+                return null;
+            }
+
+            using (image)
+            {
+                return await OCRHelper.OCR(image, true);
+            }
+        }
+
         public static void PinToScreen(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();

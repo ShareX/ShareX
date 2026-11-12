@@ -2996,6 +2996,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Jadikan teks dalam tangkapan dapat dicari di riwayat</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Pemilih warna layar</value>
   </data>

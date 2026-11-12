@@ -2996,6 +2996,9 @@ Möchten Sie die aktive Bildschirmaufzeichnung abbrechen?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Speichern</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Text in Aufnahmen im Verlauf durchsuchbar machen</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Bildschirm-Farbwähler</value>
   </data>

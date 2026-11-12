@@ -2996,6 +2996,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Salva</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Rendi ricercabile nella cronologia il testo delle catture</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Selettore colore schermo</value>
   </data>

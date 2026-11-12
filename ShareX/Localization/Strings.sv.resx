@@ -2996,6 +2996,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Spara</value>
   </data>
+  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Gör text i skärmbilder sökbar i historiken</value>
+  </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Skärmfärgväljare</value>
   </data>
