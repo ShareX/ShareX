@@ -377,6 +377,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.HasSelectedAnnotation = hasSelection;
                 var annotation = _selectionController.SelectedShape?.Tag as Annotation;
                 vm.SelectedAnnotation = annotation;
+                if (annotation is ImageAnnotation { ToolType: EditorTool.Image or EditorTool.Clone } imageAnnotation)
+                {
+                    vm.SelectedImageResamplingMode = imageAnnotation.ResamplingMode;
+                }
 
                 // Sync selection to EditorCore so z-order operations work
                 if (annotation != null)
@@ -493,6 +497,20 @@ namespace ShareX.ImageEditor.Presentation.Views
                             vm.FillColor = highlight.FillColor;
                         }
                     }
+                }
+            }
+        }
+
+        private void OnImageResamplingModeChanged(ImageAnnotation annotation)
+        {
+            if (_selectionController.SelectedShape is { } selectedShape &&
+                ReferenceEquals(selectedShape.Tag, annotation))
+            {
+                AnnotationVisualFactory.UpdateVisualControl(selectedShape, annotation);
+
+                if (DataContext is MainViewModel vm)
+                {
+                    vm.IsDirty = true;
                 }
             }
         }

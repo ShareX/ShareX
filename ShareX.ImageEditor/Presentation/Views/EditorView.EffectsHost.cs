@@ -25,7 +25,9 @@
 
 using Avalonia.Controls;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Manipulations;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Effects;
 using ShareX.ImageEditor.Presentation.ViewModels;
@@ -328,7 +330,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         {
                             SKSizeI targetSize = resizeImageEffect.GetTargetSize(_editorCore.SourceImage);
 
-                            vm.ResizeImage(targetSize.Width, targetSize.Height);
+                            vm.ResizeImage(targetSize.Width, targetSize.Height, ImageResampling.GetSamplingOptions(resizeImageEffect.ResamplingMode));
                         }
                         break;
                     case EditorOperationKind.ResizeCanvas:

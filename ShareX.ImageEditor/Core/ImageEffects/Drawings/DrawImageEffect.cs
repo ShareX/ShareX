@@ -24,7 +24,9 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Icons;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
+using ShareX.ImageEditor.Localization;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Drawings;
@@ -83,15 +85,18 @@ public sealed class DrawImageEffect : ImageEffectBase
             }),
         EffectParameters.Bool<DrawImageEffect>("tile", "Tile", false, (e, v) => e.Tile = v),
         EffectParameters.Bool<DrawImageEffect>("auto_hide", "Auto hide", false, (e, v) => e.AutoHide = v),
-        EffectParameters.Enum<DrawImageEffect, DrawingInterpolationMode>(
-            "interpolation_mode", "Interpolation mode", DrawingInterpolationMode.HighQualityBicubic, (e, v) => e.InterpolationMode = v,
-            new (string Label, DrawingInterpolationMode Value)[]
+        EffectParameters.Enum<DrawImageEffect, ImageResamplingMode>(
+            "interpolation_mode",
+            Strings.ImageResamplingMode_Name,
+            ImageResamplingMode.CatmullRom,
+            (e, v) => e.ResamplingMode = v,
+            new (string Label, ImageResamplingMode Value)[]
             {
-                ("High quality bicubic", DrawingInterpolationMode.HighQualityBicubic),
-                ("Bicubic", DrawingInterpolationMode.Bicubic),
-                ("High quality bilinear", DrawingInterpolationMode.HighQualityBilinear),
-                ("Bilinear", DrawingInterpolationMode.Bilinear),
-                ("Nearest neighbor", DrawingInterpolationMode.NearestNeighbor)
+                (Strings.ImageResamplingMode_CatmullRom, ImageResamplingMode.CatmullRom),
+                (Strings.ImageResamplingMode_Mitchell, ImageResamplingMode.Mitchell),
+                (Strings.ImageResamplingMode_LinearWithMipmaps, ImageResamplingMode.LinearWithMipmaps),
+                (Strings.ImageResamplingMode_Linear, ImageResamplingMode.Linear),
+                (Strings.ImageResamplingMode_NearestNeighbor, ImageResamplingMode.NearestNeighbor)
             }),
         EffectParameters.Enum<DrawImageEffect, DrawingCompositingMode>(
             "compositing_mode", "Compositing mode", DrawingCompositingMode.SourceOver, (e, v) => e.CompositingMode = v,
@@ -119,7 +124,7 @@ public sealed class DrawImageEffect : ImageEffectBase
 
     public bool AutoHide { get; set; }
 
-    public DrawingInterpolationMode InterpolationMode { get; set; } = DrawingInterpolationMode.HighQualityBicubic;
+    public ImageResamplingMode ResamplingMode { get; set; } = ImageResamplingMode.CatmullRom;
 
     public DrawingCompositingMode CompositingMode { get; set; } = DrawingCompositingMode.SourceOver;
 
@@ -196,7 +201,7 @@ public sealed class DrawImageEffect : ImageEffectBase
 
         SKBitmap result = source.Copy();
         using SKCanvas canvas = new SKCanvas(result);
-        SKSamplingOptions sampling = DrawingEffectHelpers.GetSamplingOptions(InterpolationMode);
+        SKSamplingOptions sampling = ImageResampling.GetSamplingOptions(ResamplingMode);
         using SKPaint paint = new SKPaint
         {
             IsAntialias = true,

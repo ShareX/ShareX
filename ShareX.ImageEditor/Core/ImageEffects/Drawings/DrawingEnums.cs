@@ -67,15 +67,6 @@ public enum DrawingImageRotateFlipType
     Rotate90FlipY = 7
 }
 
-public enum DrawingInterpolationMode
-{
-    HighQualityBicubic,
-    Bicubic,
-    HighQualityBilinear,
-    Bilinear,
-    NearestNeighbor
-}
-
 public enum DrawingCompositingMode
 {
     SourceOver,

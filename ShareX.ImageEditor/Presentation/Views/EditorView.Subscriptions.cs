@@ -63,6 +63,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.FileMenuRequested += OnFileMenuRequested;
             vm.CanvasSizeModeRequested += OnCanvasSizeModeRequested;
             vm.PropertyChanged += OnViewModelPropertyChanged;
+            vm.ImageResamplingModeChanged += OnImageResamplingModeChanged;
             vm.DeselectRequested += OnDeselectRequested;
             vm.CanvasFocusRequested += OnCanvasFocusRequested;
 
@@ -102,6 +103,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             vm.FileMenuRequested -= OnFileMenuRequested;
             vm.CanvasSizeModeRequested -= OnCanvasSizeModeRequested;
             vm.PropertyChanged -= OnViewModelPropertyChanged;
+            vm.ImageResamplingModeChanged -= OnImageResamplingModeChanged;
             vm.DeselectRequested -= OnDeselectRequested;
             vm.CanvasFocusRequested -= OnCanvasFocusRequested;
             vm.DetachEditorCore(_editorCore);

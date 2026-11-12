@@ -296,7 +296,7 @@ public class EditorCore : IDisposable
         return ApplyImageOperation(
             img => ImageHelpers.Resize(img, newWidth, newHeight, maintainAspectRatio: false, sampling),
             clearAnnotations: false,
-            transformAnnotations: () => ScaleAnnotations(scaleX, scaleY));
+            transformAnnotations: () => ScaleAnnotations(scaleX, scaleY, sampling));
     }
 
     public bool ResizeCanvas(int top, int right, int bottom, int left, SKColor backgroundColor)
@@ -650,10 +650,23 @@ public class EditorCore : IDisposable
         TransformAnnotations(p => new SKPoint(p.X + dx, p.Y + dy));
     }
 
-    private void ScaleAnnotations(float scaleX, float scaleY)
+    private void ScaleAnnotations(float scaleX, float scaleY, SKSamplingOptions sampling)
     {
         foreach (Annotation annotation in _annotations)
         {
+            if (annotation is ImageAnnotation imageAnnotation &&
+                (imageAnnotation.ToolType == EditorTool.Image || imageAnnotation.ToolType == EditorTool.Clone) &&
+                imageAnnotation.ImageBitmap is SKBitmap bitmap)
+            {
+                int resizedWidth = Math.Max(1, (int)Math.Round(bitmap.Width * Math.Abs(scaleX)));
+                int resizedHeight = Math.Max(1, (int)Math.Round(bitmap.Height * Math.Abs(scaleY)));
+
+                if (resizedWidth != bitmap.Width || resizedHeight != bitmap.Height)
+                {
+                    imageAnnotation.SetImage(ImageHelpers.Resize(bitmap, resizedWidth, resizedHeight, sampling: sampling));
+                }
+            }
+
             annotation.Scale(scaleX, scaleY);
         }
     }

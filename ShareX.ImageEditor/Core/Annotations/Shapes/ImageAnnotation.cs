@@ -24,6 +24,8 @@
 #endregion License Information (GPL v3)
 
 using SkiaSharp;
+using ShareX.AvaloniaUI.Imaging;
+using System.Text.Json.Serialization;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -45,6 +47,10 @@ public partial class ImageAnnotation : Annotation, IDisposable
     /// The loaded image bitmap
     /// </summary>
     public SKBitmap? ImageBitmap => _imageBitmap;
+
+    // Keep the earlier serialized property name for saved editor state.
+    [JsonPropertyName("InterpolationMode")]
+    public ImageResamplingMode ResamplingMode { get; set; } = ImageResamplingMode.CatmullRom;
 
     public ImageAnnotation()
     {

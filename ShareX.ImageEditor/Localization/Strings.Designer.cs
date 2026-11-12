@@ -2500,5 +2500,35 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
             }
         }
+        public static string ImageResamplingMode_CatmullRom {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_CatmullRom", resourceCulture);
+            }
+        }
+        public static string ImageResamplingMode_Linear {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_Linear", resourceCulture);
+            }
+        }
+        public static string ImageResamplingMode_LinearWithMipmaps {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_LinearWithMipmaps", resourceCulture);
+            }
+        }
+        public static string ImageResamplingMode_Mitchell {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_Mitchell", resourceCulture);
+            }
+        }
+        public static string ImageResamplingMode_Name {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_Name", resourceCulture);
+            }
+        }
+        public static string ImageResamplingMode_NearestNeighbor {
+            get {
+                return ResourceManager.GetString("ImageResamplingMode_NearestNeighbor", resourceCulture);
+            }
+        }
     }
 }

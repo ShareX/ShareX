@@ -27,6 +27,7 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Core.Abstractions;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.AvaloniaUI.Imaging;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -142,6 +143,14 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public IReadOnlyList<int> AvailableStepStartNumbers => _viewModel.AvailableStepStartNumbers;
 
     public IReadOnlyList<StepType> AvailableStepTypes => _viewModel.AvailableStepTypes;
+
+    public IReadOnlyList<ImageResamplingMode> AvailableImageResamplingModes => _viewModel.AvailableImageResamplingModes;
+
+    public ImageResamplingMode SelectedImageResamplingMode
+    {
+        get => _viewModel.SelectedImageResamplingMode;
+        set => _viewModel.SelectedImageResamplingMode = value;
+    }
 
     public int StrokeWidth
     {
@@ -304,6 +313,8 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public bool ShowFreehandArrow => _viewModel.ShowFreehandArrow;
 
     public bool ShowSpeechBalloonTail => _viewModel.ShowSpeechBalloonTail;
+
+    public bool ShowImageResamplingMode => _viewModel.ShowImageResamplingMode;
 
     public bool ShowEffectEllipse => _viewModel.ShowEffectEllipse;
 
@@ -481,6 +492,12 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
                 break;
             case nameof(MainViewModel.HasAnnotations):
                 OnPropertyChanged(nameof(HasAnnotations));
+                break;
+            case nameof(MainViewModel.SelectedImageResamplingMode):
+                OnPropertyChanged(nameof(SelectedImageResamplingMode));
+                break;
+            case nameof(MainViewModel.ShowImageResamplingMode):
+                OnPropertyChanged(nameof(ShowImageResamplingMode));
                 break;
             case nameof(MainViewModel.ShowTextColor):
                 OnPropertyChanged(nameof(ShowTextColor));
