@@ -1679,6 +1679,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainMenuBuilder_PhotoEditor" xml:space="preserve">
     <value>Photo editor...</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Pixel editor...</value>
+  </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to screen...</value>
   </data>

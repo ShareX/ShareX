@@ -282,6 +282,8 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_ImageThumbnailer), Strings.MainMenuBuilder_ImageThumbnailer, AppIcons.ImageThumbnailer, () => TaskHelpers.OpenImageThumbnailer()),
             Tool(nameof(Strings.MainMenuBuilder_PhotoEditor), Strings.MainMenuBuilder_PhotoEditor, AppIcons.Layers, () => TaskHelpers.OpenPhotoEditor(),
                 badgeText: Strings.MainMenuBuilder_NewBadge),
+            Tool(nameof(Strings.MainMenuBuilder_PixelEditor), Strings.MainMenuBuilder_PixelEditor, AppIcons.PixelEditor, () => TaskHelpers.OpenPixelEditor(),
+                badgeText: Strings.MainMenuBuilder_NewBadge),
             Tool(nameof(Strings.MainMenuBuilder_ImageViewer), Strings.MainMenuBuilder_ImageViewer, AppIcons.Eye, () => TaskHelpers.OpenImageViewer()),
             Tool(nameof(Strings.MainMenuBuilder_ImageWatermark), Strings.MainMenuBuilder_ImageWatermark, AppIcons.Stamp, () => TaskHelpers.OpenImageWatermark())
         ]),

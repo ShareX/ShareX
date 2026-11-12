@@ -143,6 +143,11 @@ $projects = @(
         )
     }
     [pscustomobject]@{
+        Name = 'ShareX.PixelEditor'
+        ResourceBaseName = 'ShareX.PixelEditor.Localization.Strings'
+        DynamicPrefixes = @()
+    }
+    [pscustomobject]@{
         Name = 'ShareX.ScreenCaptureLib'
         ResourceBaseName = 'ShareX.ScreenCaptureLib.Localization.Strings'
         DynamicPrefixes = @()
