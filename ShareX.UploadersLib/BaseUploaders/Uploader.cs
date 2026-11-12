@@ -536,7 +536,7 @@ namespace ShareX.UploadersLib
         {
             MultipartFormDataContent content = CreateMultipartFormDataContent(args);
             HttpContent fileContent = CreateStreamContent(data, 0, GetStreamLength(data), MimeTypes.GetMimeTypeFromFileName(fileName));
-            fileContent.Headers.ContentDisposition = CreateFormDataContentDisposition(fileFormName, fileName);
+            SetFormDataContentDisposition(fileContent, fileFormName, fileName);
             content.Add(fileContent);
             return content;
         }
@@ -555,7 +555,11 @@ namespace ShareX.UploadersLib
         private static MultipartFormDataContent CreateMultipartFormDataContent(Dictionary<string, string> args)
         {
             string boundary = RequestHelpers.CreateBoundary();
-            MultipartFormDataContent content = new MultipartFormDataContent(boundary);
+            MultipartFormDataContent content = new MultipartFormDataContent(boundary)
+            {
+                // Write part headers as raw UTF-8 like browsers do, so non-ASCII field and file names reach the server intact.
+                HeaderEncodingSelector = (_, _) => Encoding.UTF8
+            };
 
             if (args != null)
             {
@@ -565,7 +569,7 @@ namespace ShareX.UploadersLib
                     {
                         StringContent valueContent = new StringContent(argument.Value ?? "", Encoding.UTF8);
                         valueContent.Headers.ContentType = null;
-                        valueContent.Headers.ContentDisposition = CreateFormDataContentDisposition(argument.Key);
+                        SetFormDataContentDisposition(valueContent, argument.Key);
                         content.Add(valueContent);
                     }
                 }
@@ -574,25 +578,25 @@ namespace ShareX.UploadersLib
             return content;
         }
 
-        private static ContentDispositionHeaderValue CreateFormDataContentDisposition(string name, string fileName = null)
+        private static void SetFormDataContentDisposition(HttpContent content, string name, string fileName = null)
         {
-            ContentDispositionHeaderValue contentDisposition = new ContentDispositionHeaderValue("form-data")
-            {
-                Name = QuoteHeaderValue(name)
-            };
+            // ContentDispositionHeaderValue turns non-ASCII names into RFC 2047 "=?utf-8?B?...?=" words, which servers
+            // take literally as the file name, so the header is set as a raw string instead.
+            string value = $"form-data; name={QuoteHeaderValue(name)}";
 
             if (fileName != null)
             {
-                contentDisposition.FileName = QuoteHeaderValue(fileName);
+                value += $"; filename={QuoteHeaderValue(fileName)}";
             }
 
-            return contentDisposition;
+            content.Headers.Remove("Content-Disposition");
+            content.Headers.TryAddWithoutValidation("Content-Disposition", value);
         }
 
         private static string QuoteHeaderValue(string value)
         {
             ArgumentNullException.ThrowIfNull(value);
-            return $"\"{value.Replace("\\", "\\\\").Replace("\"", "\\\"")}\"";
+            return $"\"{value.Replace("\\", "\\\\").Replace("\"", "\\\"").Replace("\r", "%0D").Replace("\n", "%0A")}\"";
         }
 
         private static void AddHeaders(HttpRequestMessage request, NameValueCollection headers)
