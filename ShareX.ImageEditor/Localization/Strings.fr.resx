@@ -1383,9 +1383,6 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nouvelle ligne : Entrée, OK : Ctrl + Entrée</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

@@ -1383,9 +1383,6 @@ Gli appunti non contengono un’immagine.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Annulla</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nuova riga: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

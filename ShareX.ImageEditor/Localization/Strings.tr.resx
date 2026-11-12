@@ -1383,9 +1383,6 @@ Panoda görüntü yok.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Yeni satır: Enter, Tamam: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
   </data>

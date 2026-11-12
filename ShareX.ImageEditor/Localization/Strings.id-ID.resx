@@ -1383,9 +1383,6 @@ Papan klip tidak berisi gambar.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Batal</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Baris baru: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>Oke</value>
   </data>

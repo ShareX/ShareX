@@ -1383,9 +1383,6 @@
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Отменить</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Новая строка: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>ОК</value>
   </data>

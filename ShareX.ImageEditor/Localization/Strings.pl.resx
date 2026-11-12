@@ -1383,9 +1383,6 @@ Schowek nie zawiera obrazu.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Anuluj</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nowa linia: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

@@ -1383,9 +1383,6 @@ Schránka neobsahuje obrázek.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nový řádek: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

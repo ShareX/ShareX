@@ -1383,9 +1383,6 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Anulare</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Linie nouă: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

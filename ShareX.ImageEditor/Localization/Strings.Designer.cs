@@ -2510,11 +2510,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("TextInputDialogView_Cancel", resourceCulture);
             }
         }
-        public static string TextInputDialogView_EnterKeyTip {
-            get {
-                return ResourceManager.GetString("TextInputDialogView_EnterKeyTip", resourceCulture);
-            }
-        }
         public static string TextInputDialogView_OK {
             get {
                 return ResourceManager.GetString("TextInputDialogView_OK", resourceCulture);

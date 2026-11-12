@@ -37,15 +37,10 @@
             <Border Grid.Row="2" Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                     BorderBrush="{DynamicResource ShareX.Brush.Border}" BorderThickness="0,1,0,0"
                     Padding="10">
-                <Grid ColumnDefinitions="*,Auto">
-                    <TextBlock Grid.Column="0" Text="{x:Static res:Strings.TextInputDialogView_EnterKeyTip}"
-                               VerticalAlignment="Center" Margin="4,0,8,0" TextWrapping="Wrap"
-                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5">
-                        <Button Padding="20,0" Content="{x:Static res:Strings.TextInputDialogView_OK}" Command="{Binding OkCommand}" HorizontalContentAlignment="Center"/>
-                        <Button Padding="20,0" Content="{x:Static res:Strings.TextInputDialogView_Cancel}" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                <StackPanel Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
+                    <Button Padding="20,0" Content="{x:Static res:Strings.TextInputDialogView_OK}" Command="{Binding OkCommand}" HorizontalContentAlignment="Center"/>
+                    <Button Padding="20,0" Content="{x:Static res:Strings.TextInputDialogView_Cancel}" Command="{Binding CancelCommand}" HorizontalContentAlignment="Center"/>
+                </StackPanel>
             </Border>
         </Grid>
     </Border>

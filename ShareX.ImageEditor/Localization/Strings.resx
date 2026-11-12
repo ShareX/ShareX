@@ -1385,9 +1385,6 @@ Clipboard does not contain an image.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>New line: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

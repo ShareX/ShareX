@@ -1383,9 +1383,6 @@ Het klembord bevat geen afbeelding.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Annuleren</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nieuwe regel: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

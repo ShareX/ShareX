@@ -1383,9 +1383,6 @@ A área de transferência não contém uma imagem.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nova linha: Enter, OK: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>

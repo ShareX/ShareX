@@ -1383,9 +1383,6 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="TextInputDialogView_Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
-  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
-    <value>Nueva línea: Enter, Aceptar: Ctrl + Enter</value>
-  </data>
   <data name="TextInputDialogView_OK" xml:space="preserve">
     <value>Aceptar</value>
   </data>
