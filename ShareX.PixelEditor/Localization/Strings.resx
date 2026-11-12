@@ -138,6 +138,9 @@
   <data name="Command_Cut" xml:space="preserve">
     <value>Cut</value>
   </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Define Brush from Selection</value>
+  </data>
   <data name="Command_Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
@@ -203,6 +206,9 @@
   </data>
   <data name="Command_HueSaturation" xml:space="preserve">
     <value>Hue/Saturation...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Import Image as Layer...</value>
   </data>
   <data name="Command_ImportSheet" xml:space="preserve">
     <value>Import Sprite Sheet...</value>
@@ -738,6 +744,9 @@
   <data name="History_ShowLayer" xml:space="preserve">
     <value>Show Layer</value>
   </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Show Only This Layer</value>
+  </data>
   <data name="History_UnlockLayer" xml:space="preserve">
     <value>Unlock Layer</value>
   </data>
@@ -873,11 +882,17 @@
   <data name="Options_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Reset Brush</value>
+  </data>
   <data name="Options_Contiguous" xml:space="preserve">
     <value>Contiguous</value>
   </data>
   <data name="Options_Contiguous_Tip" xml:space="preserve">
     <value>Only pixels connected to the clicked pixel; turn off to take every pixel of that color</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Custom brush</value>
   </data>
   <data name="Options_Density" xml:space="preserve">
     <value>Density</value>

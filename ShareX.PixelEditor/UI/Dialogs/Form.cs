@@ -53,6 +53,7 @@ public sealed class Form
     {
         NumericUpDown box = DialogBuilder.Number(min, max, value, increment);
         box.ShowButtonSpinner = true;
+        box.Width = 124;
         box.ValueChanged += (_, _) => Changed?.Invoke();
         configure?.Invoke(box);
         DialogBuilder.AddRow(Grid, label, box);

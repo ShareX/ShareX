@@ -40,11 +40,16 @@ public abstract class PaintToolBase : ToolBase
 
     protected virtual int Size => Settings.BrushSize;
 
-    public override SKPointI[]? PreviewTip => Raster.BrushTip(Size, Settings.BrushRound);
+    public override SKPointI[]? PreviewTip => Tip;
+
+    public override bool HasPendingEdit => Painter != null;
+
+    /// <summary>The brush tip in use: the custom brush when one is defined, else the round or square tip of the tool's size.</summary>
+    protected virtual SKPointI[] Tip => Editor.CustomTip ?? Raster.BrushTip(Size, Settings.BrushRound);
 
     protected virtual void Configure(Painter painter, ToolPointer p)
     {
-        painter.Tip = Raster.BrushTip(Size, Settings.BrushRound);
+        painter.Tip = Tip;
         painter.Ink = Settings.Ink;
         painter.Opacity = Math.Clamp(Settings.Opacity, 1, 100) * 255 / 100;
         painter.Pattern = Settings.Pattern;
@@ -83,12 +88,25 @@ public abstract class PaintToolBase : ToolBase
 
     protected void BrushOptions(OptionsBuilder options, bool ink = true)
     {
-        options.Number(Strings.Options_Size, 1, 64, Settings.BrushSize, v => Settings.BrushSize = v, "px");
-        options.Choice(
-        [
-            (PixelEditorIcons.TipRound, Strings.Options_RoundTip, true),
-            (PixelEditorIcons.TipSquare, Strings.Options_SquareTip, false)
-        ], Settings.BrushRound, v => Settings.BrushRound = v);
+        if (Editor.CustomTip != null)
+        {
+            options.Label(Strings.Options_CustomBrush);
+            options.Button(Strings.Options_ClearCustomBrush, () =>
+            {
+                Editor.CustomTip = null;
+                Editor.RefreshOptions();
+                Editor.Canvas.InvalidateVisual();
+            });
+        }
+        else
+        {
+            options.Number(Strings.Options_Size, 1, 64, Settings.BrushSize, v => Settings.BrushSize = v, "px");
+            options.Choice(
+            [
+                (PixelEditorIcons.TipRound, Strings.Options_RoundTip, true),
+                (PixelEditorIcons.TipSquare, Strings.Options_SquareTip, false)
+            ], Settings.BrushRound, v => Settings.BrushRound = v);
+        }
         options.Separator();
         options.Number(Strings.Options_Opacity, 1, 100, Settings.Opacity, v => Settings.Opacity = v, "%");
         if (ink)
@@ -238,12 +256,6 @@ public sealed class SprayTool : PaintToolBase
             Painter.Stamp(_position.X + (int)Math.Round(Math.Cos(angle) * distance), _position.Y + (int)Math.Round(Math.Sin(angle) * distance));
         }
         Flush();
-    }
-
-    protected override void Configure(Painter painter, ToolPointer p)
-    {
-        base.Configure(painter, p);
-        painter.Tip = Raster.BrushTip(Settings.BrushSize, Settings.BrushRound);
     }
 
     public override void Down(ToolPointer p)

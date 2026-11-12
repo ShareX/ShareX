@@ -50,7 +50,7 @@ public sealed partial class PixelEditorWindow : Window
     private readonly StackPanel _tabs = new() { Orientation = Orientation.Horizontal };
     private readonly TextBlock _status = new() { VerticalAlignment = VerticalAlignment.Center, TextTrimming = TextTrimming.CharacterEllipsis, FontSize = 11, Classes = { "dim" } };
     private readonly TextBlock _docInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), FontSize = 11, Classes = { "dim" } };
-    private readonly TextBlock _cursorInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), MinWidth = 96, FontSize = 11, Classes = { "dim" } };
+    private readonly TextBlock _cursorInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), MinWidth = 150, FontSize = 11, Classes = { "dim" } };
     private readonly TextBox _zoomBox = new() { Width = 54, MinHeight = 18, Height = 18, Padding = new Thickness(4, 0), FontSize = 11, VerticalContentAlignment = VerticalAlignment.Center, BorderThickness = new Thickness(0), Background = Brushes.Transparent };
     private readonly Border _busy;
     private readonly TextBlock _busyText = new() { Foreground = Brushes.White, FontSize = 14 };
@@ -209,6 +209,9 @@ public sealed partial class PixelEditorWindow : Window
 
     public KeyModifiers LastModifiers { get; private set; }
 
+    /// <summary>A brush tip made from a selection; it replaces the round and square tips until it is cleared.</summary>
+    public SKPointI[]? CustomTip { get; set; }
+
     public uint Foreground
     {
         get => _foreground;
@@ -335,7 +338,13 @@ public sealed partial class PixelEditorWindow : Window
 
     public void UpdateCursorStatus(int? x, int? y)
     {
-        _cursorInfo.Text = x is int px && y is int py ? $"X: {px}  Y: {py}" : string.Empty;
+        if (x is not int px || y is not int py)
+        {
+            _cursorInfo.Text = string.Empty;
+            return;
+        }
+        uint? color = SampleColor(px, py, true);
+        _cursorInfo.Text = color is uint c && c >> 24 != 0 ? $"X: {px}  Y: {py}   #{Argb.ToHex(c)}" : $"X: {px}  Y: {py}";
     }
 
     public void RefreshStatus()
@@ -399,7 +408,12 @@ public sealed partial class PixelEditorWindow : Window
         if (command == null || IsBusy) return;
         if (command.CanExecute != null && !command.CanExecute(this)) return;
         // Commands work on dropped pixels; only transform commands keep a moved selection afloat.
-        if (!command.KeepsFloating) CommitFloating();
+        if (!command.KeepsFloating)
+        {
+            // A half-finished tool edit (a curve waiting for its bend) is abandoned so it cannot end up in the history.
+            if (Tools.Active.HasPendingEdit) Tools.Active.Cancel();
+            CommitFloating();
+        }
         if (command.StopsPlayback) StopPlayback();
         try
         {

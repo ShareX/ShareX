@@ -2495,5 +2495,30 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Window_TitleWithSprite", resourceCulture);
             }
         }
+        public static string Command_DefineBrush {
+            get {
+                return ResourceManager.GetString("Command_DefineBrush", resourceCulture);
+            }
+        }
+        public static string Command_ImportImage {
+            get {
+                return ResourceManager.GetString("Command_ImportImage", resourceCulture);
+            }
+        }
+        public static string Options_ClearCustomBrush {
+            get {
+                return ResourceManager.GetString("Options_ClearCustomBrush", resourceCulture);
+            }
+        }
+        public static string Options_CustomBrush {
+            get {
+                return ResourceManager.GetString("Options_CustomBrush", resourceCulture);
+            }
+        }
+        public static string History_SoloLayer {
+            get {
+                return ResourceManager.GetString("History_SoloLayer", resourceCulture);
+            }
+        }
     }
 }

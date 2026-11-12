@@ -185,7 +185,14 @@ public sealed class SliceTool : ToolBase
         Editor.InvalidateOverlay();
     }
 
-    public override async void DoubleClick(ToolPointer p)
+    public override bool DoubleClick(ToolPointer p)
+    {
+        if (Sprite == null || Selected == null) return false;
+        Rename();
+        return true;
+    }
+
+    private async void Rename()
     {
         if (Sprite == null || Selected == null) return;
         string? name = await Editor.PromptTextAsync(Strings.Slice_Rename, Strings.Dialog_Name, Selected.Name);
@@ -260,7 +267,7 @@ public sealed class SliceTool : ToolBase
             slice.Color = c;
             Editor.Commit(Strings.History_RenameSlice);
         });
-        options.Button(Strings.Slice_Rename, () => DoubleClick(default));
+        options.Button(Strings.Slice_Rename, Rename);
         options.Button(Strings.Command_Delete, () => KeyDown(Key.Delete, KeyModifiers.None));
     }
 }

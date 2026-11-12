@@ -382,11 +382,7 @@ public sealed class CanvasView : Control
         bool right = point.Properties.IsRightButtonPressed;
         ToolPointer p = MakePointer(point.Position, right, e.KeyModifiers);
         e.Pointer.Capture(this);
-        if (e.ClickCount == 2)
-        {
-            _editor.Tools.Active.DoubleClick(p);
-            return;
-        }
+        if (e.ClickCount == 2 && _editor.Tools.Active.DoubleClick(p)) return;
         _toolDown = true;
         _toolRight = right;
         _editor.Tools.Active.Down(p);
@@ -463,8 +459,14 @@ public sealed class CanvasView : Control
         base.OnPointerWheelChanged(e);
         SpriteView? view = _editor.View;
         if (view == null) return;
+        if (e.KeyModifiers.HasFlag(KeyModifiers.Alt) && e.Delta.Y != 0)
+        {
+            // Alt + wheel changes the brush size.
+            _editor.Execute(e.Delta.Y > 0 ? "tool.brushLarger" : "tool.brushSmaller");
+            e.Handled = true;
+            return;
+        }
         if (e.KeyModifiers.HasFlag(KeyModifiers.Shift)) view.PanBy(e.Delta.Y * 48, 0);
-        else if (e.KeyModifiers.HasFlag(KeyModifiers.Control)) view.PanBy(e.Delta.X * 48, e.Delta.Y * 48);
         else if (e.Delta.Y != 0) view.ZoomStep(e.Delta.Y > 0, e.GetPosition(this));
         else view.PanBy(e.Delta.X * 48, 0);
         _editor.InvalidateOverlay();

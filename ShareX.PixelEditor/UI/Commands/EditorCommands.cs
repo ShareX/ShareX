@@ -81,7 +81,7 @@ public static partial class EditorCommands
             MenuNode.Sub(Strings.Menu_Edit,
                 C("edit.undo"), C("edit.redo"), S,
                 C("edit.cut"), C("edit.copy"), C("edit.copyMerged"), C("edit.paste"), C("edit.pasteNewLayer"), C("edit.pasteNewSprite"), S,
-                C("edit.clear"), C("edit.fill"), C("edit.stroke"), S,
+                C("edit.clear"), C("edit.fill"), C("edit.stroke"), C("edit.defineBrush"), S,
                 C("edit.transform"), C("edit.flipHorizontal"), C("edit.flipVertical"), C("edit.rotateCW"), C("edit.rotateCCW"), C("edit.rotate180"), S,
                 C("edit.shortcuts"), C("edit.preferences")),
             MenuNode.Sub(Strings.Menu_Sprite,
@@ -90,7 +90,7 @@ public static partial class EditorCommands
                 C("sprite.rotateCW"), C("sprite.rotateCCW"), C("sprite.rotate180"), C("sprite.flipHorizontal"), C("sprite.flipVertical"), S,
                 C("sprite.reduceColors")),
             MenuNode.Sub(Strings.Menu_Layer,
-                C("layer.new"), C("layer.newGroup"), C("layer.duplicate"), C("layer.delete"), S,
+                C("layer.new"), C("layer.newGroup"), C("layer.duplicate"), C("layer.importImage"), C("layer.delete"), S,
                 C("layer.properties"), C("layer.visible"), C("layer.lock"), C("layer.reference"), S,
                 C("layer.mergeDown"), C("layer.flatten"), S,
                 C("layer.moveUp"), C("layer.moveDown"), C("layer.moveToTop"), C("layer.moveToBottom"), S,
@@ -113,7 +113,7 @@ public static partial class EditorCommands
             MenuNode.Sub(Strings.Menu_View,
                 C("view.zoomIn"), C("view.zoomOut"), C("view.fit"), C("view.actualSize"), S,
                 C("view.pixelGrid"), C("view.grid"), C("view.snapToGrid"), C("view.gridSettings"), C("view.slices"), C("view.brushPreview"), S,
-                MenuNode.Sub(Strings.Menu_Symmetry, C("view.symmetryHorizontal"), C("view.symmetryVertical"), C("view.symmetryReset")),
+                MenuNode.Sub(Strings.Menu_Symmetry, C("view.symmetryHorizontal"), C("view.symmetryVertical"), C("view.symmetryReset"), C("view.symmetryAxis")),
                 MenuNode.Sub(Strings.Menu_Tiled, C("view.tiled"), C("view.tiledX"), C("view.tiledY")), S,
                 new MenuNode { Header = Strings.Menu_Panels, Dynamic = PanelItems },
                 C("view.timeline"), C("view.toolbar"), C("view.options"), C("view.toolbarColumns"), C("view.resetPanels"), S,
@@ -331,6 +331,29 @@ public static partial class EditorCommands
         R("edit.clear", Strings.Command_Clear, "Delete,Back", w => Clear(w, Strings.Command_Clear), HasPixelLayer);
         R("edit.fill", Strings.Command_Fill, "Alt+Back", w => FillSelection(w, false), HasPixelLayer);
         R("edit.stroke", Strings.Command_Stroke, null, w => FillSelection(w, true), w => HasPixelLayer(w) && HasSelection(w));
+        R("edit.defineBrush", Strings.Command_DefineBrush, "Ctrl+B", w =>
+        {
+            Sprite sprite = w.Sprite!;
+            SelectionMask selection = sprite.Selection!;
+            PixelBuffer? buffer = sprite.ActiveLayer is PixelLayer layer ? sprite.GetBuffer(layer, sprite.ActiveFrame) : null;
+            SKRectI bounds = selection.Bounds;
+            List<SKPointI> all = [], drawn = [];
+            for (int y = bounds.Top; y < bounds.Bottom; y++)
+            {
+                for (int x = bounds.Left; x < bounds.Right; x++)
+                {
+                    if (!selection[x, y]) continue;
+                    SKPointI point = new(x - bounds.Left - bounds.Width / 2, y - bounds.Top - bounds.Height / 2);
+                    all.Add(point);
+                    if (buffer != null && buffer[x, y] >> 24 != 0) drawn.Add(point);
+                }
+            }
+            // The drawn pixels inside the selection shape the brush; an empty selection area gives its outline shape.
+            w.CustomTip = (drawn.Count > 0 ? drawn : all).ToArray();
+            if (w.Tools.Active is not PaintToolBase) w.Tools.Select(ToolId.Pencil);
+            w.SetSelection(null);
+            w.RefreshOptions();
+        }, HasSelection);
         R("edit.transform", Strings.Command_Transform, "Ctrl+T", w =>
         {
             if (w.Floating == null && !w.BeginFloating(false)) return;

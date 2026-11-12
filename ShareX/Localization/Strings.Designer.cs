@@ -5761,5 +5761,6 @@ namespace ShareX.Localization {
         public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
         public static string StartScreen_Spacious => ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
         public static string MainMenuBuilder_PixelEditor => ResourceManager.GetString("MainMenuBuilder_PixelEditor", resourceCulture);
+        public static string MainWindow_EditImageInPixelEditor => ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
     }
 }

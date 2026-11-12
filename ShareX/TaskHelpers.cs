@@ -1626,6 +1626,11 @@ namespace ShareX
 
         public static void OpenPixelEditor(string filePath = null, TaskSettings taskSettings = null)
         {
+            OpenPixelEditor(string.IsNullOrEmpty(filePath) ? null : [filePath], taskSettings);
+        }
+
+        public static void OpenPixelEditor(IEnumerable<string> filePaths, TaskSettings taskSettings = null)
+        {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             PixelEditorServices services = new PixelEditorServices
@@ -1635,7 +1640,7 @@ namespace ShareX
                 UploadImage = skBitmap => UploadImageOnUiThread(skBitmap.Copy(), taskSettings)
             };
 
-            PixelEditorIntegration.Show(services, string.IsNullOrEmpty(filePath) ? null : [filePath]);
+            PixelEditorIntegration.Show(services, filePaths);
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)

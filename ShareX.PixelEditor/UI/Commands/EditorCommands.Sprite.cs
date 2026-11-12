@@ -101,6 +101,29 @@ public static partial class EditorCommands
             SpriteOps.Duplicate(sprite, sprite.ActiveLayer!, string.Format(Strings.Layer_CopyName, sprite.ActiveLayer!.Name));
             w.Commit(Strings.Command_DuplicateLayer);
         }, w => w.Sprite?.ActiveLayer != null);
+        R("layer.importImage", Strings.Command_ImportImage, null, async w =>
+        {
+            IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Command_ImportImage.Replace("...", string.Empty), false, (Strings.File_Images, SpriteFile.ImageExtensions));
+            Sprite? sprite = w.Sprite;
+            if (files.Count == 0 || sprite == null) return;
+            PixelBuffer image;
+            try
+            {
+                using SKBitmap bitmap = ShareX.HelpersLib.SkiaImageHelpers.LoadImage(files[0]) ?? throw new InvalidDataException();
+                image = PixelBuffer.FromBitmap(bitmap);
+            }
+            catch (Exception ex)
+            {
+                w.ShowMessage(string.Format(Strings.Message_CouldNotOpen, Path.GetFileName(files[0]), ex.Message));
+                return;
+            }
+            // The image arrives on its own layer as a movable selection, so it can be placed and scaled first.
+            PixelLayer layer = sprite.CreatePixelLayer(Path.GetFileNameWithoutExtension(files[0]));
+            sprite.AddLayer(layer, sprite.ActiveLayer);
+            sprite.ActiveLayer = layer;
+            w.PasteFloating(image, (sprite.Width - image.Width) / 2, (sprite.Height - image.Height) / 2, Strings.Command_ImportImage.Replace("...", string.Empty));
+            w.RefreshPanels();
+        }, HasSprite);
         R("layer.delete", Strings.Command_DeleteLayer, null, w =>
         {
             Sprite sprite = w.Sprite!;
@@ -199,6 +222,17 @@ public static partial class EditorCommands
     public static void ToggleLayerVisible(PixelEditorWindow w, Layer layer)
     {
         w.CommitFloating();
+        if (w.LastModifiers.HasFlag(Avalonia.Input.KeyModifiers.Alt))
+        {
+            // Alt+click shows only this layer; again brings the others back.
+            List<Layer> others = w.Sprite!.AllLayers.Where(l => l != layer && !(l is GroupLayer ancestor && layer.IsDescendantOf(ancestor)) && !(layer is GroupLayer group && l.IsDescendantOf(group))).ToList();
+            bool solo = others.Any(l => l.Visible);
+            foreach (Layer other in others) other.Visible = !solo;
+            for (Layer? l = layer; l != null; l = l.Parent) l.Visible = true;
+            w.Sprite.Touch();
+            w.Commit(Strings.History_SoloLayer);
+            return;
+        }
         layer.Visible = !layer.Visible;
         w.Sprite!.Touch();
         w.Commit(layer.Visible ? Strings.History_ShowLayer : Strings.History_HideLayer);

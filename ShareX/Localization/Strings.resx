@@ -1861,6 +1861,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="MainWindow_EditImage" xml:space="preserve">
     <value>Edit image...</value>
   </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Edit in Pixel editor...</value>
+  </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Edit in Photo editor...</value>
   </data>

@@ -44,6 +44,48 @@ public abstract class SelectToolBase : ToolBase
         Editor.SetSelection(SelectionMask.Combine(Sprite.Selection, mask, mode));
     }
 
+    private SelectionMask? _moveOriginal;
+    private SKPointI _moveStart;
+    private bool _moved;
+
+    /// <summary>Starts dragging the selection outline (not its pixels) when a plain press lands inside the selection.</summary>
+    protected bool TryBeginMove(ToolPointer p)
+    {
+        if (Sprite?.Selection is not SelectionMask selection || ModeFor(p) != SelectionMode.Replace || !selection[p.X, p.Y]) return false;
+        Editor.CommitFloating();
+        _moveOriginal = Sprite.Selection;
+        _moveStart = p.Pixel;
+        _moved = false;
+        return true;
+    }
+
+    protected bool IsMoving => _moveOriginal != null;
+
+    protected void ContinueMove(ToolPointer p)
+    {
+        if (Sprite == null || _moveOriginal == null) return;
+        int dx = p.X - _moveStart.X, dy = p.Y - _moveStart.Y;
+        _moved |= dx != 0 || dy != 0;
+        Sprite.Selection = _moveOriginal.Offset(dx, dy);
+        Editor.InvalidateOverlay();
+    }
+
+    protected void EndMove()
+    {
+        if (Sprite == null || _moveOriginal == null) return;
+        SelectionMask? moved = Sprite.Selection;
+        Sprite.Selection = _moveOriginal;
+        _moveOriginal = null;
+        // A click without a drag clears the selection.
+        Editor.SetSelection(_moved ? moved : null);
+    }
+
+    protected void AbandonMove()
+    {
+        if (Sprite != null && _moveOriginal != null) Sprite.Selection = _moveOriginal;
+        _moveOriginal = null;
+    }
+
     protected void ModeOptions(OptionsBuilder options)
     {
         options.Choice(
@@ -80,6 +122,7 @@ public abstract class BoxSelectToolBase : SelectToolBase
     public override void Down(ToolPointer p)
     {
         if (Sprite == null) return;
+        if (TryBeginMove(p)) return;
         Editor.CommitFloating();
         _start = _end = SnapToGrid(new SKPointI((int)Math.Round(p.Fx), (int)Math.Round(p.Fy)));
         _mode = ModeFor(p);
@@ -89,6 +132,11 @@ public abstract class BoxSelectToolBase : SelectToolBase
 
     public override void Move(ToolPointer p)
     {
+        if (IsMoving)
+        {
+            ContinueMove(p);
+            return;
+        }
         if (!_dragging) return;
         SKPointI end = SnapToGrid(new SKPointI((int)Math.Round(p.Fx), (int)Math.Round(p.Fy)));
         if (p.Shift && !_shiftAtDown) end = ConstrainSquare(_start, end);
@@ -99,6 +147,11 @@ public abstract class BoxSelectToolBase : SelectToolBase
 
     public override void Up(ToolPointer p)
     {
+        if (IsMoving)
+        {
+            EndMove();
+            return;
+        }
         if (!_dragging || Sprite == null) return;
         _dragging = false;
         Editor.SetStatus(null);
@@ -117,6 +170,7 @@ public abstract class BoxSelectToolBase : SelectToolBase
 
     public override void Cancel()
     {
+        AbandonMove();
         _dragging = false;
         Editor.InvalidateOverlay();
     }
@@ -167,6 +221,7 @@ public sealed class LassoTool : SelectToolBase
     public override void Down(ToolPointer p)
     {
         if (Sprite == null) return;
+        if (TryBeginMove(p)) return;
         Editor.CommitFloating();
         _points.Clear();
         _points.Add(p.Pixel);
@@ -176,6 +231,11 @@ public sealed class LassoTool : SelectToolBase
 
     public override void Move(ToolPointer p)
     {
+        if (IsMoving)
+        {
+            ContinueMove(p);
+            return;
+        }
         if (!_dragging || _points[^1] == p.Pixel) return;
         _points.Add(p.Pixel);
         Editor.InvalidateOverlay();
@@ -183,6 +243,11 @@ public sealed class LassoTool : SelectToolBase
 
     public override void Up(ToolPointer p)
     {
+        if (IsMoving)
+        {
+            EndMove();
+            return;
+        }
         if (!_dragging || Sprite == null) return;
         _dragging = false;
         if (_points.Count < 3)
@@ -199,6 +264,7 @@ public sealed class LassoTool : SelectToolBase
 
     public override void Cancel()
     {
+        AbandonMove();
         _dragging = false;
         _points.Clear();
         Editor.InvalidateOverlay();
@@ -251,7 +317,12 @@ public sealed class PolygonLassoTool : SelectToolBase
 
     public override void Move(ToolPointer p) => Hover(p);
 
-    public override void DoubleClick(ToolPointer p) => Finish();
+    public override bool DoubleClick(ToolPointer p)
+    {
+        if (_points.Count == 0) return false;
+        Finish();
+        return true;
+    }
 
     private void Finish()
     {

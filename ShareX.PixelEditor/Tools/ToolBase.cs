@@ -101,6 +101,9 @@ public abstract class ToolBase
     /// <summary>The brush tip outlined under the cursor, or null for tools without one.</summary>
     public virtual SKPointI[]? PreviewTip => null;
 
+    /// <summary>True while the tool holds uncommitted changes between pointer presses.</summary>
+    public virtual bool HasPendingEdit => false;
+
     public virtual void Down(ToolPointer p)
     {
     }
@@ -118,9 +121,8 @@ public abstract class ToolBase
     {
     }
 
-    public virtual void DoubleClick(ToolPointer p)
-    {
-    }
+    /// <summary>Handles a double-click. When it returns false the second click is an ordinary press, so quick taps still draw.</summary>
+    public virtual bool DoubleClick(ToolPointer p) => false;
 
     public virtual bool KeyDown(Key key, KeyModifiers modifiers) => false;
 
