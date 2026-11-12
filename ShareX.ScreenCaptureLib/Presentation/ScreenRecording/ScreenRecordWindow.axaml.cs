@@ -81,7 +81,9 @@ public partial class ScreenRecordWindow : Window, IDisposable
     private PixelPoint _dragWindowOrigin;
     private double _windowScaling = 1;
     private int _frameLeftPixels;
+    private int _frameTopPixels;
     private int _toolbarLeftPixels;
+    private int _toolbarTopPixels;
     private int _lastIconStatus = -1;
     private int _restartRequested;
     private bool _configuringGeometry;
@@ -175,7 +177,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public DrawingRectangle RecordingRegion => new(
         Position.X + _frameLeftPixels + BorderPixels,
-        Position.Y + BorderPixels,
+        Position.Y + _frameTopPixels + BorderPixels,
         _captureWidth,
         _captureHeight);
 
@@ -602,7 +604,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
     {
         double scaling = GetScreenScaling(_initialPosition);
         ConfigureGeometry(scaling);
-        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y);
+        Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels);
         ApplyToolWindowStyle();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
@@ -634,26 +636,46 @@ public partial class ScreenRecordWindow : Window, IDisposable
         try
         {
             int recordingLeft = Position.X + _frameLeftPixels + BorderPixels;
+            int recordingTop = Position.Y + _frameTopPixels + BorderPixels;
 
             _windowScaling = Math.Max(0.5, scaling);
 
             int frameWidthPixels = _captureWidth + BorderPixels * 2;
             int frameHeightPixels = _captureHeight + BorderPixels * 2;
             int toolbarWidthPixels = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
+            int toolbarHeightPixels = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
             int contentWidthPixels = Math.Max(frameWidthPixels, toolbarWidthPixels);
 
             _frameLeftPixels = (contentWidthPixels - frameWidthPixels) / 2;
             _toolbarLeftPixels = (contentWidthPixels - toolbarWidthPixels) / 2;
 
+            // Put the toolbar above the region when it would not fit below it on the screen.
+            bool toolbarAbove = false;
+            Avalonia.Platform.Screen? screen = Screens.ScreenFromPoint(new PixelPoint(recordingLeft, recordingTop));
+            if (screen != null)
+            {
+                PixelRect workingArea = screen.WorkingArea;
+                int frameTop = recordingTop - BorderPixels;
+                int frameBottom = frameTop + frameHeightPixels;
+                bool fitsBelow = frameBottom + ToolbarGapPixels + toolbarHeightPixels <= workingArea.Bottom;
+                bool fitsAbove = frameTop - ToolbarGapPixels - toolbarHeightPixels >= workingArea.Y;
+                toolbarAbove = !fitsBelow && fitsAbove;
+            }
+
+            _frameTopPixels = toolbarAbove ? toolbarHeightPixels + ToolbarGapPixels : 0;
+            _toolbarTopPixels = toolbarAbove ? 0 : frameHeightPixels + ToolbarGapPixels;
+
             double frameLeft = _frameLeftPixels / _windowScaling;
+            double frameTopOffset = _frameTopPixels / _windowScaling;
             double toolbarLeft = _toolbarLeftPixels / _windowScaling;
+            double toolbarTop = _toolbarTopPixels / _windowScaling;
             double frameWidth = frameWidthPixels / _windowScaling;
             double frameHeight = frameHeightPixels / _windowScaling;
             double gap = ToolbarGapPixels / _windowScaling;
 
             PixelPoint centeredPosition = new(
                 recordingLeft - _frameLeftPixels - BorderPixels,
-                Position.Y);
+                recordingTop - _frameTopPixels - BorderPixels);
 
             if (Position != centeredPosition)
             {
@@ -661,10 +683,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
             }
 
             Avalonia.Controls.Canvas.SetLeft(RegionBorder, frameLeft);
+            Avalonia.Controls.Canvas.SetTop(RegionBorder, frameTopOffset);
             RegionBorder.Width = frameWidth;
             RegionBorder.Height = frameHeight;
             Avalonia.Controls.Canvas.SetLeft(Toolbar, toolbarLeft);
-            Avalonia.Controls.Canvas.SetTop(Toolbar, frameHeight + gap);
+            Avalonia.Controls.Canvas.SetTop(Toolbar, toolbarTop);
 
             Width = contentWidthPixels / _windowScaling;
             Height = frameHeight + gap + ToolbarHeight;
@@ -711,16 +734,17 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
         int frameWidth = _captureWidth + BorderPixels * 2;
         int frameHeight = _captureHeight + BorderPixels * 2;
-        int toolbarTop = frameHeight + ToolbarGapPixels;
+        int frameTop = _frameTopPixels;
+        int toolbarTop = _toolbarTopPixels;
         int toolbarWidth = (int)Math.Ceiling(DisplayedToolbarWidth * _windowScaling);
         int toolbarHeight = (int)Math.Ceiling(ToolbarHeight * _windowScaling);
 
-        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, 0, _frameLeftPixels + frameWidth, frameHeight);
+        IntPtr windowRegion = CreateRectRgn(_frameLeftPixels, frameTop, _frameLeftPixels + frameWidth, frameTop + frameHeight);
         IntPtr apertureRegion = CreateRectRgn(
             _frameLeftPixels + BorderPixels,
-            BorderPixels,
+            frameTop + BorderPixels,
             _frameLeftPixels + frameWidth - BorderPixels,
-            frameHeight - BorderPixels);
+            frameTop + frameHeight - BorderPixels);
         IntPtr toolbarRegion = CreateRectRgn(
             _toolbarLeftPixels,
             toolbarTop,
@@ -774,7 +798,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
             _dragWindowOrigin.Y + pointer.Y - _dragPointerOrigin.Y);
         DrawingRectangle recordingRegion = new(
             candidate.X + _frameLeftPixels + BorderPixels,
-            candidate.Y + BorderPixels,
+            candidate.Y + _frameTopPixels + BorderPixels,
             _captureWidth,
             _captureHeight);
 
