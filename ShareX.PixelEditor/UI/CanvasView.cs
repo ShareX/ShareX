@@ -128,7 +128,7 @@ public sealed class CanvasView : Control
     private SelectionMask? _outlineSource;
     private StreamGeometry? _outline;
     private IBrush? _checker;
-    private (string, string, int) _checkerKey;
+    private (string, string, int, double) _checkerKey;
     private Point? _panLast;
     private bool _spaceHeld, _toolDown, _toolRight, _hovering;
     private SKPointI _hoverPixel;
@@ -203,10 +203,11 @@ public sealed class CanvasView : Control
 
         using (context.PushTransform(view.Matrix))
         {
-            var key = (settings.CheckerColor1, settings.CheckerColor2, settings.CheckerSize);
+            // The checker keeps its size on screen at every zoom level.
+            var key = (settings.CheckerColor1, settings.CheckerColor2, settings.CheckerSize, view.Zoom);
             if (_checker == null || key != _checkerKey)
             {
-                _checker = Ui.Checker(EditorSettings.ParseColor(settings.CheckerColor1, 0xFF8C8C8C), EditorSettings.ParseColor(settings.CheckerColor2, 0xFFA6A6A6), settings.CheckerSize);
+                _checker = Ui.Checker(EditorSettings.ParseColor(settings.CheckerColor1, 0xFF8C8C8C), EditorSettings.ParseColor(settings.CheckerColor2, 0xFFA6A6A6), settings.CheckerSize / view.Zoom);
                 _checkerKey = key;
             }
             Rect area = new(tileX ? -sprite.Width : 0, tileY ? -sprite.Height : 0, sprite.Width * (tileX ? 3 : 1), sprite.Height * (tileY ? 3 : 1));
