@@ -27,9 +27,6 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>테두리 스타일</value>
   </data>
-  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
-    <value>클릭하여 텍스트 입력</value>
-  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>색상</value>
   </data>

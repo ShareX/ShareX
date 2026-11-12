@@ -27,9 +27,6 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Stil bordură</value>
   </data>
-  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
-    <value>Clic pentru a introduce text</value>
-  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Culoare</value>
   </data>

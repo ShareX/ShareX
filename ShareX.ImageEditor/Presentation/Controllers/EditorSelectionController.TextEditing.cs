@@ -121,7 +121,7 @@ public partial class EditorSelectionController
     /// centered where it was clicked. The balloon is only added to the history once it gets text, so cancelling or
     /// leaving the text empty leaves nothing behind.
     /// </summary>
-    internal void ShowSpeechBalloonClickTextInputDialog(SpeechBalloonControl control)
+    internal void ShowSpeechBalloonTextInputDialog(SpeechBalloonControl control)
     {
         if (control.Annotation is not SpeechBalloonAnnotation annotation || _view.DataContext is not MainViewModel vm)
         {

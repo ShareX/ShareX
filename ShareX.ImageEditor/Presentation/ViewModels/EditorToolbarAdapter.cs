@@ -237,12 +237,6 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
         set => _viewModel.SpeechBalloonTail = value;
     }
 
-    public bool SpeechBalloonClickTextInput
-    {
-        get => _viewModel.SpeechBalloonClickTextInput;
-        set => _viewModel.SpeechBalloonClickTextInput = value;
-    }
-
     public bool EffectEllipse
     {
         get => _viewModel.EffectEllipse;
@@ -310,8 +304,6 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public bool ShowFreehandArrow => _viewModel.ShowFreehandArrow;
 
     public bool ShowSpeechBalloonTail => _viewModel.ShowSpeechBalloonTail;
-
-    public bool ShowSpeechBalloonClickTextInput => _viewModel.ShowSpeechBalloonClickTextInput;
 
     public bool ShowEffectEllipse => _viewModel.ShowEffectEllipse;
 

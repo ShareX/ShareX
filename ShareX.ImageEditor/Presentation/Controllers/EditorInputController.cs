@@ -970,11 +970,10 @@ public class EditorInputController
 
                         bool wasClicked = shapeWidth < MinShapeSize && shapeHeight < MinShapeSize;
 
-                        // With "Click to type text" on, a click with Speech Balloon asks for the text in a dialog
-                        // and sizes the balloon to fit it, as in ShareX 21.
+                        // A click with Speech Balloon asks for the text in a dialog and sizes the balloon to fit it,
+                        // as in ShareX 21.
                         askForBalloonText = wasClicked
                             && vm.ActiveTool == EditorTool.SpeechBalloon
-                            && vm.SpeechBalloonClickTextInput
                             && _currentShape is SpeechBalloonControl;
 
                         // Discard shape if too small (prevents accidental clicks creating tiny shapes)
@@ -1027,7 +1026,7 @@ public class EditorInputController
                     // The balloon is added to the history once the dialog gives it text, so cancelling leaves nothing to undo.
                     if (askForBalloonText && _currentShape is SpeechBalloonControl clickedBalloon)
                     {
-                        _selectionController.ShowSpeechBalloonClickTextInputDialog(clickedBalloon);
+                        _selectionController.ShowSpeechBalloonTextInputDialog(clickedBalloon);
                     }
                     // Ensure annotation is added to Core history
                     else if (_currentShape.Tag is Annotation annotation && vm.ActiveTool != EditorTool.Crop && vm.ActiveTool != EditorTool.CutOut)

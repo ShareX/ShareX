@@ -2500,11 +2500,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
             }
         }
-        public static string AnnotationToolbar_Clicktotypetext {
-            get {
-                return ResourceManager.GetString("AnnotationToolbar_Clicktotypetext", resourceCulture);
-            }
-        }
         public static string TextInputDialogView_Cancel {
             get {
                 return ResourceManager.GetString("TextInputDialogView_Cancel", resourceCulture);

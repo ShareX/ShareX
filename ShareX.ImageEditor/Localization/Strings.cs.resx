@@ -27,9 +27,6 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Styl ohraničení</value>
   </data>
-  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
-    <value>Kliknutím zadat text</value>
-  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Barva</value>
   </data>

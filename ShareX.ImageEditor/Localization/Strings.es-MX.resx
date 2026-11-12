@@ -27,9 +27,6 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Estilo del borde</value>
   </data>
-  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
-    <value>Hacer clic para escribir texto</value>
-  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Color</value>
   </data>
