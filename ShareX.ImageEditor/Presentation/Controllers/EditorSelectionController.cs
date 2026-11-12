@@ -567,7 +567,7 @@ public partial class EditorSelectionController
         if (_selectedShape is SpeechBalloonControl balloonControl && balloonControl.Annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && handleTag == "BalloonTail")
         {
             SKPoint newTailPoint = balloon.GetTailPointFromVisual(currentPoint);
-            if (balloon.TailPointPlaced || newTailPoint != balloon.GetEffectiveTailPoint())
+            if (balloon.TailPointPlaced || currentPoint != _resizeStartPoint)
             {
                 balloon.SetPlacedTailPoint(newTailPoint);
                 AnnotationVisualFactory.UpdateVisualControl(

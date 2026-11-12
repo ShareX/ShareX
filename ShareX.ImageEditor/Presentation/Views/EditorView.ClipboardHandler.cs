@@ -380,16 +380,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     freehand.Points[i] = new SKPoint(freehand.Points[i].X + offset, freehand.Points[i].Y + offset);
                 }
             }
-            else if (clone is SpeechBalloonAnnotation balloon)
+            else if (clone is SpeechBalloonAnnotation balloon && balloon.HasTailPoint)
             {
-                if (balloon.TailPointPlaced)
-                {
-                    balloon.SetPlacedTailPoint(new SKPoint(balloon.TailPoint.X + offset, balloon.TailPoint.Y + offset));
-                }
-                else if (balloon.HasTailPoint)
-                {
-                    balloon.SetTailPoint(balloon.GetDefaultTailPoint());
-                }
+                // TailPointPlaced is copied by Clone(), so only the position needs to move with the body
+                balloon.SetTailPoint(new SKPoint(balloon.TailPoint.X + offset, balloon.TailPoint.Y + offset));
             }
         }
     }

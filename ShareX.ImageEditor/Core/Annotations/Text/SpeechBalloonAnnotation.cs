@@ -39,7 +39,7 @@ public partial class SpeechBalloonAnnotation : Annotation
 
     public override AnnotationCategory Category => AnnotationCategory.Text;
     /// <summary>
-    /// Tail point (absolute position)
+    /// Tail point in canvas coordinates before the body's RotationAngle is applied (rotated around the body center when drawn)
     /// </summary>
     public SKPoint TailPoint { get; set; }
 
@@ -344,9 +344,27 @@ public partial class SpeechBalloonAnnotation : Annotation
     {
         if (!TailPointPlaced)
         {
-            if (HasTailPoint)
+            if (!HasTailPoint)
+            {
+                return;
+            }
+
+            SKPoint tailPoint = TailPoint;
+            SKPoint previousDefault = new SKPoint(previousBounds.MidX, previousBounds.Bottom + DefaultTailOffset);
+
+            if (SKPoint.Distance(tailPoint, previousDefault) < GeometryEpsilon || previousBounds.Width <= 0 || previousBounds.Height <= 0)
             {
                 SetTailPoint(GetDefaultTailPoint());
+            }
+            else
+            {
+                // An image transform (flip, rotate) moved the tail off its default position, so scale it with the body instead of snapping it back.
+                float scaleX = newBounds.Width / previousBounds.Width;
+                float scaleY = newBounds.Height / previousBounds.Height;
+
+                SetTailPoint(new SKPoint(
+                    newBounds.Left + ((tailPoint.X - previousBounds.Left) * scaleX),
+                    newBounds.Top + ((tailPoint.Y - previousBounds.Top) * scaleY)));
             }
 
             return;
@@ -366,10 +384,11 @@ public partial class SpeechBalloonAnnotation : Annotation
         if (!TailPointPlaced)
         {
             bool hadTailPoint = HasTailPoint;
+            SKPoint tailPoint = TailPoint;
             base.MoveBy(deltaX, deltaY);
             if (hadTailPoint)
             {
-                SetTailPoint(GetDefaultTailPoint());
+                SetTailPoint(new SKPoint(tailPoint.X + deltaX, tailPoint.Y + deltaY));
             }
 
             return;
