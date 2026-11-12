@@ -2520,5 +2520,40 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("History_SoloLayer", resourceCulture);
             }
         }
+        public static string Command_DuplicateSprite {
+            get {
+                return ResourceManager.GetString("Command_DuplicateSprite", resourceCulture);
+            }
+        }
+        public static string Command_ImportFrames {
+            get {
+                return ResourceManager.GetString("Command_ImportFrames", resourceCulture);
+            }
+        }
+        public static string Command_ShiftDown {
+            get {
+                return ResourceManager.GetString("Command_ShiftDown", resourceCulture);
+            }
+        }
+        public static string Command_ShiftLeft {
+            get {
+                return ResourceManager.GetString("Command_ShiftLeft", resourceCulture);
+            }
+        }
+        public static string Command_ShiftRight {
+            get {
+                return ResourceManager.GetString("Command_ShiftRight", resourceCulture);
+            }
+        }
+        public static string Command_ShiftUp {
+            get {
+                return ResourceManager.GetString("Command_ShiftUp", resourceCulture);
+            }
+        }
+        public static string Menu_Shift {
+            get {
+                return ResourceManager.GetString("Menu_Shift", resourceCulture);
+            }
+        }
     }
 }

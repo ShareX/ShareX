@@ -98,8 +98,71 @@ public sealed class LayersPanel : EditorPanel
         DockPanel.SetDock(bar, Dock.Bottom);
         root.Children.Add(top);
         root.Children.Add(bar);
-        root.Children.Add(new ScrollViewer { Content = _list, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Background = Ui.Deep });
+        // The drop line of a layer drag floats over the list.
+        Canvas overlay = new() { IsHitTestVisible = false };
+        overlay.Children.Add(_dropLine);
+        Grid listHost = new();
+        listHost.Children.Add(_list);
+        listHost.Children.Add(overlay);
+        root.Children.Add(new ScrollViewer { Content = listHost, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled, Background = Ui.Deep });
         Content = root;
+        _list.Background = Brushes.Transparent;
+        _list.PointerMoved += (_, e) =>
+        {
+            if (_dragLayerId == 0 || !ReferenceEquals(e.Pointer.Captured, _list)) return;
+            double y = e.GetPosition(_list).Y;
+            if (!_dragging && Math.Abs(y - _dragStartY) < 6) return;
+            _dragging = true;
+            _dropLine.IsVisible = true;
+            _dropLine.Width = _list.Bounds.Width;
+            Canvas.SetTop(_dropLine, DropSlot(y) * RowHeight - 1);
+        };
+        _list.PointerReleased += (_, e) =>
+        {
+            e.Pointer.Capture(null);
+            bool dragged = _dragging;
+            int id = _dragLayerId;
+            _dragging = false;
+            _dragLayerId = 0;
+            _dropLine.IsVisible = false;
+            if (dragged) DropLayer(id, DropSlot(e.GetPosition(_list).Y));
+        };
+        _list.PointerCaptureLost += (_, _) =>
+        {
+            _dragging = false;
+            _dragLayerId = 0;
+            _dropLine.IsVisible = false;
+        };
+    }
+
+    private const double RowHeight = 37;
+    private readonly Border _dropLine = new() { Height = 2, Background = PhotoEditorTheme.AccentBorderBrush, IsVisible = false };
+    private int _dragLayerId;
+    private double _dragStartY;
+    private bool _dragging;
+
+    private int DropSlot(double y) => Math.Clamp((int)Math.Round(y / RowHeight), 0, _list.Children.Count);
+
+    /// <summary>Moves a dragged layer to a slot between the listed rows: above the row at that slot, or below everything.</summary>
+    private void DropLayer(int layerId, int slot)
+    {
+        Sprite? sprite = Sprite;
+        if (sprite?.FindLayer(layerId) is not Layer layer) return;
+        List<Layer> rows = sprite.Root.Rows().ToList();
+        Layer? target = slot < rows.Count ? rows[slot] : null;
+        if (target == layer || target != null && layer is GroupLayer dragged && target.IsDescendantOf(dragged)) return;
+        // Dropping right below the dragged layer leaves it where it is.
+        if (slot > 0 && rows[slot - 1] == layer && (target == null || target.Parent == layer.Parent)) return;
+        Editor.CommitFloating();
+        sprite.RemoveLayer(layer);
+        if (target == null) sprite.InsertLayer(layer, sprite.Root, 0);
+        else
+        {
+            GroupLayer parent = target.Parent ?? sprite.Root;
+            sprite.InsertLayer(layer, parent, parent.Children.IndexOf(target) + 1);
+        }
+        sprite.ActiveLayer = layer;
+        Editor.Commit(Strings.History_ReorderLayer);
     }
 
     public override string Id => "layers";
@@ -200,7 +263,17 @@ public sealed class LayersPanel : EditorPanel
         row.PointerPressed += (_, e) =>
         {
             PointerPointProperties properties = e.GetCurrentPoint(row).Properties;
+            int id = layer.Id;
+            double startY = e.GetPosition(_list).Y;
             Editor.SetActiveLayer(layer);
+            if (properties.IsLeftButtonPressed && e.ClickCount == 1)
+            {
+                // The list rebuilds when the active layer changes, so the list itself tracks the drag.
+                _dragLayerId = id;
+                _dragStartY = startY;
+                _dragging = false;
+                e.Pointer.Capture(_list);
+            }
             if (properties.IsLeftButtonPressed && e.ClickCount == 2) Dispatcher.UIThread.Post(() => Editor.Execute("layer.properties"));
             else if (properties.IsRightButtonPressed) Dispatcher.UIThread.Post(() => BuildMenu().Open(Editor.Canvas));
         };

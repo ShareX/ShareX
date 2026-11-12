@@ -159,6 +159,9 @@
   <data name="Command_DuplicateLayer" xml:space="preserve">
     <value>Duplicate Layer</value>
   </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Duplicate Sprite</value>
+  </data>
   <data name="Command_Exit" xml:space="preserve">
     <value>Exit</value>
   </data>
@@ -206,6 +209,9 @@
   </data>
   <data name="Command_HueSaturation" xml:space="preserve">
     <value>Hue/Saturation...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Import Images as Frames...</value>
   </data>
   <data name="Command_ImportImage" xml:space="preserve">
     <value>Import Image as Layer...</value>
@@ -374,6 +380,18 @@
   </data>
   <data name="Command_SelectCelContent" xml:space="preserve">
     <value>Select Cel Content</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Shift Down</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Shift Left</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Shift Right</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Shift Up</value>
   </data>
   <data name="Command_Shortcuts" xml:space="preserve">
     <value>Keyboard Shortcuts...</value>
@@ -827,6 +845,9 @@
   </data>
   <data name="Menu_Select" xml:space="preserve">
     <value>_Select</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Shift Pixels (Wrap Around)</value>
   </data>
   <data name="Menu_Sprite" xml:space="preserve">
     <value>S_prite</value>

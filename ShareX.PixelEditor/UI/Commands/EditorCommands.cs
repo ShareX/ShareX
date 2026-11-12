@@ -75,14 +75,16 @@ public static partial class EditorCommands
                 C("file.newFromClipboard"), S,
                 C("file.close"), C("file.closeAll"), S,
                 C("file.save"), C("file.saveAs"), S,
-                C("file.export"), C("file.exportSheet"), C("file.importSheet"), S,
+                C("file.export"), C("file.exportSheet"), S,
+                C("file.importSheet"), C("file.importFrames"), C("file.duplicate"), S,
                 C("file.upload"), C("file.copyImage"), S,
                 C("file.exit")),
             MenuNode.Sub(Strings.Menu_Edit,
                 C("edit.undo"), C("edit.redo"), S,
                 C("edit.cut"), C("edit.copy"), C("edit.copyMerged"), C("edit.paste"), C("edit.pasteNewLayer"), C("edit.pasteNewSprite"), S,
                 C("edit.clear"), C("edit.fill"), C("edit.stroke"), C("edit.defineBrush"), S,
-                C("edit.transform"), C("edit.flipHorizontal"), C("edit.flipVertical"), C("edit.rotateCW"), C("edit.rotateCCW"), C("edit.rotate180"), S,
+                C("edit.transform"), C("edit.flipHorizontal"), C("edit.flipVertical"), C("edit.rotateCW"), C("edit.rotateCCW"), C("edit.rotate180"),
+                MenuNode.Sub(Strings.Menu_Shift, C("edit.shiftLeft"), C("edit.shiftRight"), C("edit.shiftUp"), C("edit.shiftDown")), S,
                 C("edit.shortcuts"), C("edit.preferences")),
             MenuNode.Sub(Strings.Menu_Sprite,
                 C("sprite.size"), C("sprite.canvas"), S,
@@ -172,6 +174,51 @@ public static partial class EditorCommands
             IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Command_ImportSheet.Replace("...", string.Empty), false, (Strings.File_Images, SpriteFile.ImageExtensions));
             if (files.Count > 0) await SheetDialogs.ImportAsync(w, files[0]);
         });
+        R("file.importFrames", Strings.Command_ImportFrames, null, async w =>
+        {
+            IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Command_ImportFrames.Replace("...", string.Empty), true, (Strings.File_Images, SpriteFile.ImageExtensions));
+            if (files.Count == 0) return;
+            try
+            {
+                // One frame per image, in name order; the first image sets the sprite size.
+                List<PixelBuffer> images = [];
+                foreach (string file in files.OrderBy(f => f, StringComparer.OrdinalIgnoreCase))
+                {
+                    using SKBitmap bitmap = SkiaImageHelpers.LoadImage(file) ?? throw new InvalidDataException(Path.GetFileName(file));
+                    images.Add(PixelBuffer.FromBitmap(bitmap));
+                }
+                Sprite sprite = new(images[0].Width, images[0].Height) { Title = Path.GetFileNameWithoutExtension(files[0]) };
+                PixelLayer layer = new() { Name = $"{Strings.Layer_DefaultName} 1" };
+                foreach (PixelBuffer image in images)
+                {
+                    PixelBuffer cel = new(sprite.Width, sprite.Height);
+                    cel.Blit(image, (sprite.Width - image.Width) / 2, (sprite.Height - image.Height) / 2, false);
+                    layer.Cels.Add(cel.IsEmpty ? null : new Cel(new CelImage(cel)));
+                }
+                GroupLayer root = new();
+                layer.Parent = root;
+                root.Children.Add(layer);
+                sprite.Adopt(root, images.Select(_ => new FrameInfo()).ToList(), []);
+                List<uint> colors = Palettes.FromImages(images, 257);
+                if (colors.Count is > 0 and <= 256) sprite.Palette = colors;
+                w.OpenSprite(sprite);
+                sprite.History.MarkModified();
+                w.RefreshPanels();
+            }
+            catch (Exception ex)
+            {
+                w.ShowMessage(string.Format(Strings.Message_OperationFailed, ex.Message));
+            }
+        });
+        R("file.duplicate", Strings.Command_DuplicateSprite, null, w =>
+        {
+            Sprite source = w.Sprite!;
+            Sprite copy = new(source.Width, source.Height) { Title = string.Format(Strings.Layer_CopyName, Path.GetFileNameWithoutExtension(source.DisplayName)) };
+            copy.Restore(source.Capture());
+            w.OpenSprite(copy);
+            copy.History.MarkModified();
+            w.RefreshPanels();
+        }, HasSprite);
         R("file.upload", Strings.Command_Upload, null, w =>
         {
             using SKBitmap bitmap = FlattenBitmap(w.Sprite!, w.Sprite!.ActiveFrame, w.Settings.ExportScale);
@@ -365,6 +412,34 @@ public static partial class EditorCommands
         R("edit.rotateCW", Strings.Command_Rotate90CW, null, w => TransformCel(w, f => f.Angle = (f.Angle + 90) % 360, null, Strings.Command_Rotate90CW), HasPixelLayer, keepsFloating: true);
         R("edit.rotateCCW", Strings.Command_Rotate90CCW, null, w => TransformCel(w, f => f.Angle = (f.Angle + 270) % 360, null, Strings.Command_Rotate90CCW), HasPixelLayer, keepsFloating: true);
         R("edit.rotate180", Strings.Command_Rotate180, null, w => TransformCel(w, f => f.Angle = (f.Angle + 180) % 360, b => b.Rotate90(2), Strings.Command_Rotate180), HasPixelLayer, keepsFloating: true);
+        void Shift(string id, string text, string gesture, int dx, int dy)
+        {
+            R(id, text, gesture, w =>
+            {
+                Sprite sprite = w.Sprite!;
+                if (w.EditableLayer() == null) return;
+                // Pixels leaving one side come back in on the other, inside the selection bounds or the whole cel.
+                SKRectI area = sprite.Selection?.Bounds ?? sprite.Bounds;
+                bool changed = SpriteOps.Apply(sprite, sprite.RangeTo > sprite.RangeFrom ? CelScope.SelectedFrames : CelScope.Cel, (b, _) =>
+                {
+                    PixelBuffer result = b.Clone();
+                    for (int y = area.Top; y < area.Bottom; y++)
+                    {
+                        for (int x = area.Left; x < area.Right; x++)
+                        {
+                            int sx = area.Left + ((x - area.Left - dx) % area.Width + area.Width) % area.Width, sy = area.Top + ((y - area.Top - dy) % area.Height + area.Height) % area.Height;
+                            result[x, y] = b[sx, sy];
+                        }
+                    }
+                    return result;
+                });
+                if (changed) w.Commit(text);
+            }, HasPixelLayer);
+        }
+        Shift("edit.shiftLeft", Strings.Command_ShiftLeft, "Ctrl+Shift+Left", -1, 0);
+        Shift("edit.shiftRight", Strings.Command_ShiftRight, "Ctrl+Shift+Right", 1, 0);
+        Shift("edit.shiftUp", Strings.Command_ShiftUp, "Ctrl+Shift+Up", 0, -1);
+        Shift("edit.shiftDown", Strings.Command_ShiftDown, "Ctrl+Shift+Down", 0, 1);
         R("edit.preferences", Strings.Command_Preferences, "Ctrl+K", w => _ = PreferencesDialog.ShowAsync(w), stopsPlayback: false);
         R("edit.shortcuts", Strings.Command_Shortcuts, "F1", w => _ = ShortcutsDialog.ShowAsync(w), stopsPlayback: false);
         R("color.swap", Strings.Toolbar_SwitchColors, "X", w => w.SwapColors(), keepsFloating: true, stopsPlayback: false);
