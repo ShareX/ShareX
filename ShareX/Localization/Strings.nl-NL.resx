@@ -1527,7 +1527,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Achtergrondverwijderaar...</value>
   </data>
   <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
-    <value>Borderless venster</value>
+    <value>Raamloos venster</value>
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Vastleggen</value>
@@ -1536,7 +1536,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Meetlat</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
-    <value>Klembord weergaveer</value>
+    <value>Klembord weergave</value>
   </data>
   <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
@@ -1611,7 +1611,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsconverter...</value>
   </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
-    <value>Afbeelding bewerkenor</value>
+    <value>Afbeelding bewerken</value>
   </data>
   <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Afbeeldingseffecten</value>
@@ -1623,13 +1623,13 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsformaat wijzigen...</value>
   </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
-    <value>Afbeelding splitter</value>
+    <value>Afbeelding splitsen</value>
   </data>
   <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
-    <value>Afbeelding miniatuurer</value>
+    <value>Afbeelding miniatuur</value>
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
-    <value>Afbeelding weergaveer</value>
+    <value>Afbeelding weergave</value>
   </data>
   <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
     <value>Afbeeldingswatermerk...</value>
