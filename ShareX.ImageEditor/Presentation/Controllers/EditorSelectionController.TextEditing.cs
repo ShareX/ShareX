@@ -67,13 +67,18 @@ public partial class EditorSelectionController
             balloonWidth = Math.Max(balloonWidth, 200);
             balloonHeight = Math.Max(balloonHeight, 100);
 
+            SKRect previousBounds = annotation.GetBounds();
+
             annotation.EndPoint = new SKPoint(
                 annotation.StartPoint.X + (float)balloonWidth,
                 annotation.StartPoint.Y + (float)balloonHeight
             );
 
+            // Keep a placed tail fixed on the canvas and move a default tail with the body
+            annotation.ResizeTail(previousBounds, annotation.GetBounds());
+
             // Fix Tail Point if it was at 0,0 or default
-            if (annotation.TailEnabled &&
+            if (!annotation.TailPointPlaced && annotation.TailEnabled &&
                 (!annotation.HasTailPoint ||
                 (Math.Abs(annotation.TailPoint.X - annotation.StartPoint.X) < 1 && Math.Abs(annotation.TailPoint.Y - annotation.StartPoint.Y) < 1)))
             {
