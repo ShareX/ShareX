@@ -2500,5 +2500,25 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("EditorView_NewFromScreenshotRegionEllipsis", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_Clicktotypetext {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_Clicktotypetext", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_Cancel {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_Cancel", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_OK {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_OK", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_Title {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_Title", resourceCulture);
+            }
+        }
     }
 }

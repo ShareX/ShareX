@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Kenarlık stili</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Metin yazmak için tıkla</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Renk</value>
   </data>
@@ -1379,6 +1382,15 @@ Panoda görüntü yok.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Sağ</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>Tamam</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Yazı girdisi</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Grubu başlat</value>

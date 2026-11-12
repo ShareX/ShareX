@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Rahmenstil</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Klicken, um Text einzugeben</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Farbe</value>
   </data>
@@ -1379,6 +1382,15 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Rechts</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Texteingabe</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Gruppe beginnen</value>

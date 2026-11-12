@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Stile bordo</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Fai clic per digitare il testo</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Colore</value>
   </data>
@@ -1379,6 +1382,15 @@ Gli appunti non contengono un’immagine.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Destra</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Inserimento testo</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Inizia gruppo</value>

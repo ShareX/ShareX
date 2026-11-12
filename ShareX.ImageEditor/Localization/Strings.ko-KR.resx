@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>테두리 스타일</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>클릭하여 텍스트 입력</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>색상</value>
   </data>
@@ -1379,6 +1382,15 @@
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>오른쪽</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>텍스트 입력</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>그룹 시작</value>

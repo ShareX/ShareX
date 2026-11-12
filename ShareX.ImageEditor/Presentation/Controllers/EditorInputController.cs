@@ -955,6 +955,7 @@ public class EditorInputController
                                     && vm.ActiveTool != EditorTool.Freehand
                                     && vm.ActiveTool != EditorTool.Text
                                     && vm.ActiveTool != EditorTool.Cursor;
+                    bool askForBalloonText = false;
 
                     if (isSizeBased)
                     {
@@ -967,8 +968,17 @@ public class EditorInputController
                             ? _currentShape.Height
                             : Math.Abs(releasePoint.Y - _startPoint.Y);
 
+                        bool wasClicked = shapeWidth < MinShapeSize && shapeHeight < MinShapeSize;
+
+                        // With "Click to type text" on, a click with Speech Balloon asks for the text in a dialog
+                        // and sizes the balloon to fit it, as in ShareX 21.
+                        askForBalloonText = wasClicked
+                            && vm.ActiveTool == EditorTool.SpeechBalloon
+                            && vm.SpeechBalloonClickTextInput
+                            && _currentShape is SpeechBalloonControl;
+
                         // Discard shape if too small (prevents accidental clicks creating tiny shapes)
-                        if (shapeWidth < MinShapeSize && shapeHeight < MinShapeSize)
+                        if (wasClicked && !askForBalloonText)
                         {
                             bool wasSpotlight = _currentShape?.Tag is SpotlightAnnotation;
                             if (_currentShape != null)
@@ -1007,11 +1017,20 @@ public class EditorInputController
                         // Restore hit testing for the finalized shape (was disabled for performance during drawing)
                         _currentShape.IsHitTestVisible = true;
 
-                        _selectionController.SetSelectedShape(_currentShape);
+                        // A balloon waiting for its text is selected once it has some.
+                        if (!askForBalloonText)
+                        {
+                            _selectionController.SetSelectedShape(_currentShape);
+                        }
                     }
 
+                    // The balloon is added to the history once the dialog gives it text, so cancelling leaves nothing to undo.
+                    if (askForBalloonText && _currentShape is SpeechBalloonControl clickedBalloon)
+                    {
+                        _selectionController.ShowSpeechBalloonClickTextInputDialog(clickedBalloon);
+                    }
                     // Ensure annotation is added to Core history
-                    if (_currentShape.Tag is Annotation annotation && vm.ActiveTool != EditorTool.Crop && vm.ActiveTool != EditorTool.CutOut)
+                    else if (_currentShape.Tag is Annotation annotation && vm.ActiveTool != EditorTool.Crop && vm.ActiveTool != EditorTool.CutOut)
                     {
                         _view.EditorCore.AddAnnotation(annotation);
 

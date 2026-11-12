@@ -147,6 +147,8 @@ namespace ShareX.ImageEditor.Integration
         public bool SpeechBalloonTextBold { get; set; } = true;
         public bool SpeechBalloonTextItalic { get; set; } = false;
         public bool SpeechBalloonTail { get; set; } = true;
+        // Clicking without dragging asks for the text in a dialog and sizes the balloon to fit it, like ShareX 21.
+        public bool SpeechBalloonClickTextInput { get; set; } = false;
 
         // Step
         public string StepBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);

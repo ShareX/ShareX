@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Style de bordure</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Cliquer pour saisir du texte</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Couleur</value>
   </data>
@@ -1379,6 +1382,15 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Droite</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Saisie de texte</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Commencer un groupe</value>

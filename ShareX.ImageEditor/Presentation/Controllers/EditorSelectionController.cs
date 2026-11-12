@@ -114,7 +114,8 @@ public partial class EditorSelectionController
         ClearHoverOutline();
     }
 
-    public void SetSelectedShape(Control shape)
+    /// <param name="editBalloonText">False selects a speech balloon without opening its text editor.</param>
+    public void SetSelectedShape(Control shape, bool editBalloonText = true)
     {
         var wasNull = _selectedShape == null;
         _selectedShape = shape;
@@ -138,7 +139,7 @@ public partial class EditorSelectionController
         }
 
         // Auto-enter text edit mode for speech balloon
-        if (shape is SpeechBalloonControl balloonControl)
+        if (editBalloonText && shape is SpeechBalloonControl balloonControl)
         {
             var canvas = _view.FindControl<Canvas>("AnnotationCanvas");
             if (canvas != null)

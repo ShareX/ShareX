@@ -863,8 +863,12 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         [RelayCommand]
         private void CloseModal()
         {
+            object? content = ModalContent;
             IsModalOpen = false;
             ModalContent = null;
+
+            // Escape or a click outside closes the text input without its buttons, so tell it that it was cancelled.
+            (content as TextInputDialogViewModel)?.Cancel();
         }
 
         [ObservableProperty]
@@ -1208,6 +1212,34 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
             ModalContent = dialog;
             IsModalOpen = true;
+        }
+
+        /// <summary>
+        /// Shows the text input dialog. Returns false when another dialog is already open.
+        /// </summary>
+        internal bool ShowTextInputDialog(string text, Action<string> onOk, Action onCancel)
+        {
+            if (IsModalOpen)
+            {
+                return false;
+            }
+
+            var dialog = new TextInputDialogViewModel(
+                text,
+                onOk: result =>
+                {
+                    CloseModal();
+                    onOk(result);
+                },
+                onCancel: () =>
+                {
+                    CloseModal();
+                    onCancel();
+                });
+
+            ModalContent = dialog;
+            IsModalOpen = true;
+            return true;
         }
 
         [RelayCommand]

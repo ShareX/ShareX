@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Kantstil</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Klicka för att skriva text</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Färg</value>
   </data>
@@ -1379,6 +1382,15 @@ Urklipp innehåller ingen bild.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Höger</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Avbryt</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Textinmatning</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Börja grupp</value>

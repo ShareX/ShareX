@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>Kiểu viền</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>Nhấp để nhập văn bản</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Màu</value>
   </data>
@@ -1379,6 +1382,15 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Phải</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Hủy bỏ</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Nhập văn bản</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Bắt đầu nhóm</value>

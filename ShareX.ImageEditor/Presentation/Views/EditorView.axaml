@@ -56,6 +56,9 @@
         <DataTemplate DataType="{x:Type vm:ToolbarCustomizationDialogViewModel}" x:DataType="vm:ToolbarCustomizationDialogViewModel">
             <views:ToolbarCustomizationDialogView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:TextInputDialogViewModel}" x:DataType="vm:TextInputDialogViewModel">
+            <views:TextInputDialogView />
+        </DataTemplate>
     </UserControl.DataTemplates>
 
     <UserControl.Resources>

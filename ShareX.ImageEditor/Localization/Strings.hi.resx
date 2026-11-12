@@ -27,6 +27,9 @@
   <data name="AnnotationToolbar_Borderstyle" xml:space="preserve">
     <value>किनारे की शैली</value>
   </data>
+  <data name="AnnotationToolbar_Clicktotypetext" xml:space="preserve">
+    <value>टेक्स्ट लिखने के लिए क्लिक करें</value>
+  </data>
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>रंग</value>
   </data>
@@ -1379,6 +1382,15 @@
   </data>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>दायाँ</value>
+  </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>ठीक है</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>पाठ इनपुट</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>समूह आरंभ करें</value>

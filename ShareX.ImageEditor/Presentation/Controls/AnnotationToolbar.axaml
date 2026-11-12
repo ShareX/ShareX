@@ -443,6 +443,14 @@
                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Toggletail}">
                         <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleSpeechBalloonTail}"/>
                     </Button>
+                    <Button Classes="toolbar-button"
+                            Classes.active="{Binding SpeechBalloonClickTextInput}"
+                            Click="OnSpeechBalloonClickTextInputClick"
+                            IsVisible="{Binding ShowSpeechBalloonClickTextInput}"
+                            ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Clicktotypetext}"
+                            AutomationProperties.Name="{x:Static res:Strings.AnnotationToolbar_Clicktotypetext}">
+                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ToggleSpeechBalloonClickTextInput}"/>
+                    </Button>
                     <Grid IsVisible="{Binding ShowShadow}">
                         <Button x:Name="ShadowToggleButton"
                                 Classes="toolbar-button"

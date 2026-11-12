@@ -413,6 +413,14 @@ public partial class AnnotationToolbar : UserControl
         }
     }
 
+    private void OnSpeechBalloonClickTextInputClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.SpeechBalloonClickTextInput = !toolbar.SpeechBalloonClickTextInput;
+        }
+    }
+
     private void OnEffectEllipseClick(object? sender, RoutedEventArgs e)
     {
         if (DataContext is IAnnotationToolbarAdapter toolbar)

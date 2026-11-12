@@ -35,6 +35,15 @@ namespace ShareX.ImageEditor.Presentation.Views
     {
         private Screen? _emojiPickerScreen;
 
+        /// <summary>
+        /// Dialogs opened from the canvas go on the monitor with the cursor, so they stay in view when region capture
+        /// spans several monitors.
+        /// </summary>
+        private static bool IsPlacedOnActiveMonitor(object? modalContent)
+        {
+            return modalContent is EmojiPickerDialogViewModel or TextInputDialogViewModel;
+        }
+
         private void PositionEmojiPickerOnActiveMonitor()
         {
             ResetModalContentPosition();
@@ -61,7 +70,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void UpdateEmojiPickerPosition()
         {
-            if (_workspaceDisposed || DataContext is not MainViewModel { ModalContent: EmojiPickerDialogViewModel } ||
+            if (_workspaceDisposed || DataContext is not MainViewModel vm || !IsPlacedOnActiveMonitor(vm.ModalContent) ||
                 Bounds.Width <= 0 || Bounds.Height <= 0 ||
                 TopLevel.GetTopLevel(this) is not TopLevel topLevel ||
                 this.FindControl<ContentControl>("ModalContentHost") is not ContentControl modalHost)
