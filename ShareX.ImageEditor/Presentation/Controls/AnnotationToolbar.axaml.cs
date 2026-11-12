@@ -77,6 +77,7 @@ public partial class AnnotationToolbar : UserControl
     public event EventHandler<bool>? ArrowRoundedCornersChanged;
     public event EventHandler<bool>? FreehandArrowChanged;
     public event EventHandler<bool>? SpeechBalloonTailChanged;
+    public event EventHandler<bool>? SpeechBalloonAutoSizeChanged;
     public event EventHandler<bool>? EffectEllipseChanged;
     public event EventHandler<Control>? FavoriteEffectsMenuRequested;
 
@@ -410,6 +411,15 @@ public partial class AnnotationToolbar : UserControl
         {
             toolbar.SpeechBalloonTail = !toolbar.SpeechBalloonTail;
             SpeechBalloonTailChanged?.Invoke(this, toolbar.SpeechBalloonTail);
+        }
+    }
+
+    private void OnSpeechBalloonAutoSizeClick(object? sender, RoutedEventArgs e)
+    {
+        if (DataContext is IAnnotationToolbarAdapter toolbar)
+        {
+            toolbar.SpeechBalloonAutoSize = !toolbar.SpeechBalloonAutoSize;
+            SpeechBalloonAutoSizeChanged?.Invoke(this, toolbar.SpeechBalloonAutoSize);
         }
     }
 

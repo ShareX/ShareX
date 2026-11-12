@@ -86,6 +86,7 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string FormatItalic = AppIcons.Italic;
         public const string MenuTheme = AppIcons.Theme;
         public const string ToggleSpeechBalloonTail = AppIcons.MessageCheck;
+        public const string ToggleSpeechBalloonAutoSize = AppIcons.Shrink;
         public const string ToggleRoundedCorners = ImageEffectIcons.RoundedCorner;
         public const string ToggleEllipseShape = ToolEllipse;
         public const string ToggleFreehandArrow = ToolArrow;

@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Gaya panah</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Ukuran otomatis sesuai teks</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Buram</value>
   </data>

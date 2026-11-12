@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Styl strzałki</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Automatycznie dopasuj rozmiar do tekstu</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Rozmycie</value>
   </data>
