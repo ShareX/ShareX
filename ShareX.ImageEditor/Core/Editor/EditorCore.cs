@@ -1603,7 +1603,7 @@ public class EditorCore : IDisposable
             TextAnnotation => true,
             ImageAnnotation and not CursorAnnotation => true,
             SpeechBalloonAnnotation => true,
-            RectangleAnnotation and not SmartEraserAnnotation => true,
+            RectangleAnnotation => true,
             EllipseAnnotation => true,
             _ => false
         };
