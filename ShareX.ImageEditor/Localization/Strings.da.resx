@@ -1380,6 +1380,18 @@ Udklipsholder indeholder intet billede.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Højre</value>
   </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Annuller</value>
+  </data>
+  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
+    <value>Ny linje: Retur, OK: Ctrl + Retur</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Tekstinput</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Begynd grupp</value>
   </data>

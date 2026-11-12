@@ -137,8 +137,9 @@ public partial class EditorSelectionController
             SelectionChanged?.Invoke(true);
         }
 
-        // Auto-enter text edit mode for speech balloon
-        if (shape is SpeechBalloonControl balloonControl)
+        // Auto-enter text edit mode for speech balloon. Text (Background) asks in a dialog instead, opened by the
+        // tool after drawing and by double-click, not on every selection.
+        if (shape is SpeechBalloonControl balloonControl && balloonControl.Annotation is not TextBackgroundAnnotation)
         {
             var canvas = _view.FindControl<Canvas>("AnnotationCanvas");
             if (canvas != null)
@@ -339,6 +340,10 @@ public partial class EditorSelectionController
         {
             case OutlinedTextControl otc:
                 ShowTextEditor(otc);
+                return true;
+            case SpeechBalloonControl { Annotation: TextBackgroundAnnotation } textBackground:
+                SetSelectedShape(textBackground);
+                ShowTextBackgroundInputDialog(textBackground, isNewShape: false, fitToText: false);
                 return true;
             case SpeechBalloonControl balloon:
                 ShowSpeechBalloonTextEditor(balloon);

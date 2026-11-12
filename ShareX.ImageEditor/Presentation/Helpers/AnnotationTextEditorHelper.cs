@@ -32,13 +32,18 @@ namespace ShareX.ImageEditor.Presentation.Helpers;
 
 internal static class AnnotationTextEditorHelper
 {
+    /// <summary>
+    /// True while an IME is composing text, when Enter belongs to the IME.
+    /// </summary>
+    public static bool IsComposing(TextBox textBox) => textBox.GetVisualDescendants()
+        .OfType<TextPresenter>()
+        .Any(presenter => !string.IsNullOrEmpty(presenter.PreeditText));
+
     public static void AttachKeyHandlers(TextBox textBox, Action completeEditing)
     {
         Key? completionKey = null;
 
-        bool IsComposing() => textBox.GetVisualDescendants()
-            .OfType<TextPresenter>()
-            .Any(presenter => !string.IsNullOrEmpty(presenter.PreeditText));
+        bool IsComposing() => AnnotationTextEditorHelper.IsComposing(textBox);
 
         void OnKeyDown(object? sender, KeyEventArgs args)
         {

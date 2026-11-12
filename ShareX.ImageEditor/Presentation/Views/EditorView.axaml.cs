@@ -663,7 +663,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                     }
                 }
                 else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
-                    vm.ModalContent is EmojiPickerDialogViewModel)
+                    IsPlacedOnActiveMonitor(vm.ModalContent))
                 {
                     PositionEmojiPickerOnActiveMonitor();
                 }

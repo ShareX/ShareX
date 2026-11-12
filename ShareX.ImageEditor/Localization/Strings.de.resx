@@ -1380,6 +1380,18 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Rechts</value>
   </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>Abbrechen</value>
+  </data>
+  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
+    <value>Neue Zeile: Enter, OK: Strg + Enter</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>Texteingabe</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Gruppe beginnen</value>
   </data>

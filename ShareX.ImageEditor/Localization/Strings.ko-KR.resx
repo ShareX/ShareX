@@ -1380,6 +1380,18 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>오른쪽</value>
   </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
+    <value>새 줄: Enter, OK: Ctrl + Enter</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>확인</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>텍스트 입력</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>그룹 시작</value>
   </data>

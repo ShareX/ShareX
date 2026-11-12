@@ -2505,5 +2505,25 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationItemViewModel_TextBackground", resourceCulture);
             }
         }
+        public static string TextInputDialogView_Cancel {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_Cancel", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_EnterKeyTip {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_EnterKeyTip", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_OK {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_OK", resourceCulture);
+            }
+        }
+        public static string TextInputDialogView_Title {
+            get {
+                return ResourceManager.GetString("TextInputDialogView_Title", resourceCulture);
+            }
+        }
     }
 }

@@ -1380,6 +1380,18 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>右</value>
   </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
+    <value>Enterで改行 Ctrl+Enterで確定</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>文字入力</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>グループを開始</value>
   </data>

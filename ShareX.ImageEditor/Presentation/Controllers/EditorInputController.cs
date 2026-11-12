@@ -966,6 +966,7 @@ public class EditorInputController
                                     && vm.ActiveTool != EditorTool.Freehand
                                     && vm.ActiveTool != EditorTool.Text
                                     && vm.ActiveTool != EditorTool.Cursor;
+                    bool wasClicked = false;
 
                     if (isSizeBased)
                     {
@@ -977,9 +978,11 @@ public class EditorInputController
                         double shapeHeight = _currentShape.Tag is SmartEraserAnnotation
                             ? _currentShape.Height
                             : Math.Abs(releasePoint.Y - _startPoint.Y);
+                        wasClicked = shapeWidth < MinShapeSize && shapeHeight < MinShapeSize;
 
-                        // Discard shape if too small (prevents accidental clicks creating tiny shapes)
-                        if (shapeWidth < MinShapeSize && shapeHeight < MinShapeSize)
+                        // Discard shape if too small (prevents accidental clicks creating tiny shapes).
+                        // A click with Text (Background) places a box sized to its text, as in ShareX 21.
+                        if (wasClicked && vm.ActiveTool != EditorTool.TextBackground)
                         {
                             bool wasSpotlight = _currentShape?.Tag is SpotlightAnnotation;
                             if (_currentShape != null)
@@ -1018,11 +1021,20 @@ public class EditorInputController
                         // Restore hit testing for the finalized shape (was disabled for performance during drawing)
                         _currentShape.IsHitTestVisible = true;
 
-                        _selectionController.SetSelectedShape(_currentShape);
+                        // Text (Background) is selected once its text is in.
+                        if (_currentShape is not SpeechBalloonControl { Annotation: TextBackgroundAnnotation })
+                        {
+                            _selectionController.SetSelectedShape(_currentShape);
+                        }
                     }
 
+                    // Text (Background) asks for its text first and adds the box to the history once it has some.
+                    if (_currentShape is SpeechBalloonControl { Annotation: TextBackgroundAnnotation } textBackgroundControl)
+                    {
+                        _selectionController.ShowTextBackgroundInputDialog(textBackgroundControl, isNewShape: true, fitToText: wasClicked);
+                    }
                     // Ensure annotation is added to Core history
-                    if (_currentShape.Tag is Annotation annotation && vm.ActiveTool != EditorTool.Crop && vm.ActiveTool != EditorTool.CutOut)
+                    else if (_currentShape.Tag is Annotation annotation && vm.ActiveTool != EditorTool.Crop && vm.ActiveTool != EditorTool.CutOut)
                     {
                         _view.EditorCore.AddAnnotation(annotation);
 

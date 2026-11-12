@@ -31,6 +31,7 @@ using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Helpers;
 using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.Controllers;
@@ -62,12 +63,10 @@ public partial class EditorSelectionController
         var balloonHeight = balloonRect.Height;
 
         // Check if balloon is too small (e.g. user just clicked without dragging)
-        // A text background box only needs room for one line of text.
-        double minHeight = annotation is TextBackgroundAnnotation ? Math.Ceiling(annotation.FontSize * 1.4 + 24) : 100;
         if (balloonWidth < 50 || balloonHeight < 30)
         {
             balloonWidth = Math.Max(balloonWidth, 200);
-            balloonHeight = Math.Max(balloonHeight, minHeight);
+            balloonHeight = Math.Max(balloonHeight, 100);
 
             annotation.EndPoint = new SKPoint(
                 annotation.StartPoint.X + (float)balloonWidth,
@@ -115,6 +114,110 @@ public partial class EditorSelectionController
         _balloonTextEditor = textBox;
         textBox.Focus();
         textBox.CaretIndex = textBox.Text?.Length ?? 0; // Place caret at end
+    }
+
+    /// <summary>
+    /// Asks for the text of a Text (Background) box in a small dialog, like ShareX 21. A new box is only added to the
+    /// history once it gets text, so cancelling leaves nothing to undo.
+    /// </summary>
+    /// <param name="fitToText">Sizes the box to the text, centered where it was clicked.</param>
+    internal void ShowTextBackgroundInputDialog(SpeechBalloonControl control, bool isNewShape, bool fitToText)
+    {
+        if (control.Annotation is not TextBackgroundAnnotation annotation || _view.DataContext is not MainViewModel vm)
+        {
+            return;
+        }
+
+        void DiscardNewShape()
+        {
+            ClearSelection();
+            (control.Parent as Panel)?.Children.Remove(control);
+        }
+
+        bool shown = vm.ShowTextInputDialog(
+            annotation.Text ?? string.Empty,
+            onOk: text =>
+            {
+                if (isNewShape && string.IsNullOrWhiteSpace(text))
+                {
+                    DiscardNewShape();
+                    _view.Focus();
+                    return;
+                }
+
+                bool changed = annotation.Text != text;
+                annotation.Text = text;
+
+                if (fitToText)
+                {
+                    FitTextBackgroundToText(annotation);
+                }
+
+                AnnotationVisualFactory.UpdateVisualControl(
+                    control,
+                    annotation,
+                    AnnotationVisualMode.Persisted,
+                    _view.EditorCore.CanvasSize.Width,
+                    _view.EditorCore.CanvasSize.Height);
+                control.InvalidateVisual();
+
+                if (isNewShape)
+                {
+                    _view.EditorCore.AddAnnotation(annotation);
+                    vm.HasAnnotations = true;
+                    SetSelectedShape(control);
+                }
+                else if (changed)
+                {
+                    vm.IsDirty = true;
+                }
+
+                UpdateSelectionHandles();
+                UpdateHoverOutline();
+                _view.ScheduleAutoExpandCanvas(annotation);
+                _view.Focus();
+            },
+            onCancel: () =>
+            {
+                if (isNewShape)
+                {
+                    DiscardNewShape();
+                }
+
+                _view.Focus();
+            });
+
+        if (!shown && isNewShape)
+        {
+            DiscardNewShape();
+        }
+    }
+
+    private static void FitTextBackgroundToText(TextBackgroundAnnotation annotation)
+    {
+        // Same text layout and padding as SpeechBalloonControl, which draws the box.
+        const double padding = 12;
+        string fontFamily = string.IsNullOrWhiteSpace(annotation.FontFamily) ? "Segoe UI" : annotation.FontFamily;
+        var typeface = new Typeface(
+            fontFamily,
+            annotation.IsItalic ? FontStyle.Italic : FontStyle.Normal,
+            annotation.IsBold ? FontWeight.Bold : FontWeight.Normal);
+        var formattedText = new FormattedText(
+            annotation.Text,
+            System.Globalization.CultureInfo.CurrentCulture,
+            FlowDirection.LeftToRight,
+            typeface,
+            annotation.FontSize,
+            Brushes.Black);
+
+        // One spare pixel so rounding never wraps the last word.
+        float width = (float)Math.Ceiling(formattedText.WidthIncludingTrailingWhitespace + padding * 2 + annotation.StrokeWidth + 1);
+        float height = (float)Math.Ceiling(formattedText.Height + padding * 2 + annotation.StrokeWidth);
+        float centerX = (annotation.StartPoint.X + annotation.EndPoint.X) / 2;
+        float centerY = (annotation.StartPoint.Y + annotation.EndPoint.Y) / 2;
+
+        annotation.StartPoint = new SKPoint(MathF.Round(centerX - width / 2), MathF.Round(centerY - height / 2));
+        annotation.EndPoint = new SKPoint(annotation.StartPoint.X + width, annotation.StartPoint.Y + height);
     }
 
     public void UpdateActiveTextEditorProperties()

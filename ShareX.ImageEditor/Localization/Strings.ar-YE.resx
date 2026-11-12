@@ -1380,6 +1380,18 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>يمين</value>
   </data>
+  <data name="TextInputDialogView_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="TextInputDialogView_EnterKeyTip" xml:space="preserve">
+    <value>سطر جديد: Enter, موافق: Ctrl + Enter</value>
+  </data>
+  <data name="TextInputDialogView_OK" xml:space="preserve">
+    <value>حسنًا</value>
+  </data>
+  <data name="TextInputDialogView_Title" xml:space="preserve">
+    <value>مربع إدخال النص</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>بدء مجموعة</value>
   </data>
