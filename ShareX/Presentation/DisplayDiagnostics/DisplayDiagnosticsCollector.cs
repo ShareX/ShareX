@@ -686,6 +686,52 @@ internal static class DisplayDiagnosticsCollector
             }
             Line(report, "  Monitor", entry.MonitorDeviceName);
 
+            if (entry.DpiChanges is WindowDpiChanges dpiChanges)
+            {
+                Line(report, "  DPI changes", dpiChanges.Received == 0
+                    ? "None"
+                    : $"{dpiChanges.Received} received, {dpiChanges.Suppressed} dropped: {dpiChanges.History}");
+
+                if (dpiChanges.Suppressed > 0)
+                {
+                    findings.Add($"Windows changed the DPI of the {entry.Source.ToLowerInvariant()} window {dpiChanges.Suppressed} time(s) " +
+                        $"while it was open ({dpiChanges.History}) and ShareX dropped the change, so Avalonia kept its original scale.");
+                }
+            }
+
+            if (entry.WindowDpi > 0 && Math.Abs(entry.WindowDpi / 96.0 - entry.RenderScaling) > 0.01)
+            {
+                findings.Add($"The {entry.Source.ToLowerInvariant()} window runs at {Percent(entry.WindowDpi)} in Windows but Avalonia renders it " +
+                    $"at {entry.RenderScaling * 100:0}%. Toolbar, magnifier and drawing positions can be scaled twice or not at all.");
+            }
+
+            if (entry.CursorScreen is Point cursorScreen && entry.CursorAvaloniaClientPixels is PointF avaloniaCursor)
+            {
+                Point expectedCursor = new(cursorScreen.X - entry.ClientOrigin.X, cursorScreen.Y - entry.ClientOrigin.Y);
+                Line(report, "  Cursor in window", $"Windows {expectedCursor.X}, {expectedCursor.Y}; " +
+                    $"Avalonia {Math.Round(avaloniaCursor.X)}, {Math.Round(avaloniaCursor.Y)}");
+
+                if (Math.Abs(avaloniaCursor.X - expectedCursor.X) > 2 || Math.Abs(avaloniaCursor.Y - expectedCursor.Y) > 2)
+                {
+                    findings.Add($"In the {entry.Source.ToLowerInvariant()} window Avalonia places the cursor at " +
+                        $"{Math.Round(avaloniaCursor.X)}, {Math.Round(avaloniaCursor.Y)} but Windows has it at {expectedCursor.X}, {expectedCursor.Y}, " +
+                        "so the magnifier and selections use the wrong pixels.");
+                }
+            }
+
+            foreach (WindowGeometryCheck check in entry.Checks)
+            {
+                bool compared = check.CompareX || check.CompareY;
+                Line(report, "  " + check.Name, $"expected {check.Expected.X}, {check.Expected.Y}; actual {check.Actual.X}, {check.Actual.Y}" +
+                    (compared ? check.Matches() ? "" : "  MISMATCH" : ""));
+
+                if (compared && !check.Matches())
+                {
+                    findings.Add($"{entry.Source}: {check.Name.ToLowerInvariant()} is at {check.Actual.X}, {check.Actual.Y} instead of " +
+                        $"{check.Expected.X}, {check.Expected.Y}.");
+                }
+            }
+
             bool positionWrong = entry.ActualBounds.X != entry.ExpectedBounds.X || entry.ActualBounds.Y != entry.ExpectedBounds.Y;
             bool sizeWrong = !positionOnly &&
                 (entry.ActualBounds.Width != entry.ExpectedBounds.Width || entry.ActualBounds.Height != entry.ExpectedBounds.Height);

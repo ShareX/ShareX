@@ -581,7 +581,7 @@ public partial class RegionCaptureWindow : Window
             }
 
             WindowGeometryLog.Record(this, "Region capture", _request.ScreenBounds,
-                new System.Drawing.Size(_imageWidth, _imageHeight));
+                new System.Drawing.Size(_imageWidth, _imageHeight), GetGeometryChecks, trackDpiChanges: true);
 
             if (_request.CursorBitmap != null)
             {
@@ -1159,6 +1159,46 @@ public partial class RegionCaptureWindow : Window
         double monitorCenterX = screen.Bounds.X - _request.ScreenBounds.X + screen.Bounds.Width / 2d;
         double monitorTop = screen.Bounds.Y - _request.ScreenBounds.Y;
         SetCaptureToolbarAnchor(monitorCenterX / scale, monitorTop / scale);
+    }
+
+    /// <summary>
+    /// For display diagnostics: where the toolbar and magnifier should be against where Avalonia put them, and where they
+    /// land if the window's Windows DPI is used instead of Avalonia's render scaling.
+    /// </summary>
+    private IEnumerable<WindowGeometryCheck> GetGeometryChecks()
+    {
+        if (_request == null)
+        {
+            yield break;
+        }
+
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        DrawingRectangle windowBounds = NativeMethods.GetWindowRect(handle);
+        double windowsScaling = WindowGeometryLog.GetWindowScaling(handle) ?? GetWindowScaling();
+        DrawingPoint cursor = CaptureHelpers.GetCursorPosition();
+
+        DrawingPoint ToScreen(Point point, double scaling) => new(
+            windowBounds.X + (int)Math.Round(point.X * scaling),
+            windowBounds.Y + (int)Math.Round(point.Y * scaling));
+
+        if (_captureToolbar.IsVisible && _captureToolbar.TranslatePoint(new Point(_captureToolbar.Bounds.Width / 2, 0), this) is Point toolbarTop)
+        {
+            DrawingPoint saved = _request.RegionCaptureOptions.ToolbarPosition;
+            Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y));
+            DrawingPoint expected = !saved.IsEmpty ? saved :
+                screen != null ? new DrawingPoint(screen.Bounds.X + screen.Bounds.Width / 2, screen.Bounds.Y) : cursor;
+
+            // The toolbar sits a margin below the monitor's top edge, so only its horizontal centre is compared.
+            yield return new WindowGeometryCheck("Toolbar centre (Avalonia scaling)", expected, ToScreen(toolbarTop, GetWindowScaling()), CompareY: false);
+            yield return new WindowGeometryCheck("Toolbar centre (Windows DPI)", expected, ToScreen(toolbarTop, windowsScaling), CompareY: false);
+        }
+
+        if (_magnifierPanel.IsVisible && _magnifierPanel.TranslatePoint(default, this) is Point magnifier)
+        {
+            // The magnifier is drawn beside the cursor on purpose, so this is reported but not compared.
+            yield return new WindowGeometryCheck("Magnifier corner vs cursor", cursor, ToScreen(magnifier, GetWindowScaling()),
+                CompareX: false, CompareY: false);
+        }
     }
 
     private double GetToolbarScale()

@@ -25,6 +25,7 @@
 
 #nullable enable
 
+using ShareX.HelpersLib;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -57,11 +58,14 @@ internal static unsafe partial class RegionCaptureFixedScale
     {
         if (message == WM_DPICHANGED)
         {
+            // Recorded for display diagnostics: Windows has already switched the window's DPI, only Avalonia misses it.
+            WindowGeometryLog.NoteDpiChange(hwnd, (uint)(wParam & 0xFFFF), suppressed: true);
             return 0;
         }
 
         if (message == WM_NCDESTROY)
         {
+            WindowGeometryLog.NoteWindowDestroyed(hwnd);
             RemoveWindowSubclass(hwnd, &WindowProcedure, id);
         }
 
