@@ -294,18 +294,20 @@ public static class SpriteDialogs
     public static async Task OnionSettingsAsync(PixelEditorWindow w)
     {
         EditorSettings s = w.Settings;
-        (bool, int, int, int, bool) before = (s.OnionSkin, s.OnionPrevious, s.OnionNext, s.OnionOpacity, s.OnionTint);
+        (bool, int, int, int, bool, bool, bool) before = (s.OnionSkin, s.OnionPrevious, s.OnionNext, s.OnionOpacity, s.OnionTint, s.OnionTagOnly, s.OnionLoop);
         Form form = new(w);
         Func<bool> enabled = form.Check(Strings.Command_OnionSkin, s.OnionSkin);
         Func<int> previous = form.Number(Strings.Dialog_OnionPrevious, 0, 5, s.OnionPrevious), next = form.Number(Strings.Dialog_OnionNext, 0, 5, s.OnionNext);
         Func<int> opacity = form.Slider(Strings.Options_Opacity, 5, 100, s.OnionOpacity);
         Func<bool> tint = form.Check(Strings.Dialog_OnionTint, s.OnionTint);
-        void Apply((bool, int, int, int, bool) v)
+        Func<bool> tagOnly = form.Check(Strings.Dialog_OnionTagOnly, s.OnionTagOnly);
+        Func<bool> loop = form.Check(Strings.Dialog_OnionLoop, s.OnionLoop);
+        void Apply((bool, int, int, int, bool, bool, bool) v)
         {
-            (s.OnionSkin, s.OnionPrevious, s.OnionNext, s.OnionOpacity, s.OnionTint) = v;
+            (s.OnionSkin, s.OnionPrevious, s.OnionNext, s.OnionOpacity, s.OnionTint, s.OnionTagOnly, s.OnionLoop) = v;
             w.InvalidateCanvas();
         }
-        form.Changed += () => Apply((enabled(), previous(), next(), opacity(), tint()));
+        form.Changed += () => Apply((enabled(), previous(), next(), opacity(), tint(), tagOnly(), loop()));
         if (!await form.ShowAsync(Strings.Command_OnionSettings.Replace("...", string.Empty), 380)) Apply(before);
         w.RefreshTimeline();
         w.RefreshOptions();

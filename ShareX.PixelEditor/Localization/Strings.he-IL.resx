@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>היסט Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>המשך מהפריים האחרון לראשון</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>פריימים אחרי</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>פריימים לפני</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>רק פריימים של התגית הנוכחית</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>צבע פריימים קודמים באדום ופריימים הבאים בכחול</value>

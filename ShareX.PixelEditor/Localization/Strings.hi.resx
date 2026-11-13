@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>ऑफ़सेट Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>अंतिम फ़्रेम से पहले फ़्रेम पर लौटें</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>बाद के फ़्रेम</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>पहले के फ़्रेम</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>केवल वर्तमान टैग के फ़्रेम</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>पहले के फ़्रेम लाल और बाद के फ़्रेम नीले रंगें</value>

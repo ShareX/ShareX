@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y オフセット</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>最後のフレームから最初のフレームへ循環する</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>後のフレーム数</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>前のフレーム数</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>現在のタグのフレームのみ</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>前のフレームを赤、後のフレームを青で着色</value>

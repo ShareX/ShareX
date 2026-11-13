@@ -3000,5 +3000,15 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Status_LockToPaletteOn", resourceCulture);
             }
         }
+        public static string Dialog_OnionLoop {
+            get {
+                return ResourceManager.GetString("Dialog_OnionLoop", resourceCulture);
+            }
+        }
+        public static string Dialog_OnionTagOnly {
+            get {
+                return ResourceManager.GetString("Dialog_OnionTagOnly", resourceCulture);
+            }
+        }
     }
 }

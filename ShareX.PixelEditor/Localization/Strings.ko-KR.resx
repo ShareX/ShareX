@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y 오프셋</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>마지막 프레임에서 첫 프레임으로 이어짐</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>이후 프레임 수</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>이전 프레임 수</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>현재 태그의 프레임만</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>이전 프레임은 빨강, 이후 프레임은 파랑으로 표시</value>

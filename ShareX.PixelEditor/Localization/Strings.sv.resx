@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y-förskjutning</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Fortsätt från sista bildrutan till den första</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Bildrutor efter</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Bildrutor före</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Endast bildrutor i aktuell etikett</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Tona bildrutor före röda och bildrutor efter blå</value>

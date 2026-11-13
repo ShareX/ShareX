@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y-forskydning</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Fortsæt fra sidste billede til det første</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Billeder efter</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Billeder før</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Kun billeder i det aktuelle mærke</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Ton billeder før røde og billeder efter blå</value>

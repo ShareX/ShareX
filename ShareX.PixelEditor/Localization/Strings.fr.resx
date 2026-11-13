@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Décalage Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Boucler de la dernière image à la première</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Images suivantes</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Images précédentes</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Uniquement les images de l'étiquette actuelle</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Teinter les images précédentes en rouge et les suivantes en bleu</value>

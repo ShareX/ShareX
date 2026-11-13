@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y uzaklığı</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Son kareden ilk kareye dön</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Sonraki kareler</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Önceki kareler</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Yalnızca geçerli etiketin kareleri</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Önceki kareleri kırmızıya, sonraki kareleri maviye boya</value>

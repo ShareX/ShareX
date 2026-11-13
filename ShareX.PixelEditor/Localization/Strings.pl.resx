@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Przesunięcie Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Zapętlaj od ostatniej klatki do pierwszej</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Klatki po</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Klatki przed</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Tylko klatki bieżącego znacznika</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Barwij wcześniejsze klatki na czerwono, a późniejsze na niebiesko</value>

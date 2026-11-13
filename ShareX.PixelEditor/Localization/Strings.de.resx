@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Versatz Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Vom letzten Einzelbild zum ersten weiterlaufen</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Einzelbilder danach</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Einzelbilder davor</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Nur Einzelbilder des aktuellen Etiketts</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Vorherige Einzelbilder rot und folgende blau tönen</value>

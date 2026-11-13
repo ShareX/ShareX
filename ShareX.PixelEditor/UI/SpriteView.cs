@@ -36,7 +36,7 @@ public sealed class SpriteView : IDisposable
 
     private PixelBuffer _composite;
     private PixelBuffer? _onion;
-    private (int Frame, int Version, int Previous, int Next, int Opacity, bool Tint) _onionKey;
+    private (int Frame, int Version, object? State, int Previous, int Next, int Opacity, bool Tint, bool TagOnly, bool Loop) _onionKey;
     private SKRectI _dirty = SKRectI.Empty;
     private bool _dirtyAll = true;
     private int _shownFrame = -1;
@@ -119,7 +119,7 @@ public sealed class SpriteView : IDisposable
         if (frame != _shownFrame || onion != _shownOnion) _dirtyAll = true;
         if (onion)
         {
-            var key = (frame, sprite.Version, settings.OnionPrevious, settings.OnionNext, settings.OnionOpacity, settings.OnionTint);
+            var key = (frame, sprite.Version, sprite.History.CurrentState, settings.OnionPrevious, settings.OnionNext, settings.OnionOpacity, settings.OnionTint, settings.OnionTagOnly, settings.OnionLoop);
             if (_onion == null || key != _onionKey)
             {
                 _onion = BuildOnion(sprite, frame, settings);
@@ -166,9 +166,13 @@ public sealed class SpriteView : IDisposable
     private static PixelBuffer BuildOnion(Sprite sprite, int frame, EditorSettings settings)
     {
         PixelBuffer result = new(sprite.Width, sprite.Height);
+        Tag? tag = settings.OnionTagOnly ? sprite.TagAt(frame) : null;
+        int from = tag?.From ?? 0, to = Math.Min(tag?.To ?? sprite.Frames.Count - 1, sprite.Frames.Count - 1), span = to - from + 1;
+        HashSet<int> used = [frame];
         void Add(int f, int distance, uint tint)
         {
-            if (f < 0 || f >= sprite.Frames.Count) return;
+            if (settings.OnionLoop && span > 1) f = from + ((f - from) % span + span) % span;
+            if (f < from || f > to || !used.Add(f)) return;
             PixelBuffer flat = Compositor.Flatten(sprite, f);
             int opacity = settings.OnionOpacity * 255 / 100 / distance;
             for (int i = 0; i < flat.Pixels.Length; i++)

@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>جابجایی Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>چرخش از آخرین فریم به اولین</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>فریم‌های بعدی</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>فریم‌های قبلی</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>فقط فریم‌های برچسب فعلی</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>فریم‌های قبلی قرمز و فریم‌های بعدی آبی شوند</value>

@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Зсув Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Переходити з останнього кадру на перший</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Кадрів після</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Кадрів до</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Лише кадри поточної мітки</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Фарбувати попередні кадри червоним, а наступні синім</value>

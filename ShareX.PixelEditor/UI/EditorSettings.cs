@@ -74,6 +74,12 @@ public sealed class EditorSettings
     public int OnionNext { get; set; } = 1;
     public int OnionOpacity { get; set; } = 45;
     public bool OnionTint { get; set; } = true;
+
+    /// <summary>Onion skins show only frames of the tag the current frame is in.</summary>
+    public bool OnionTagOnly { get; set; }
+
+    /// <summary>Onion skins wrap around from the last frame to the first, as a looping animation does.</summary>
+    public bool OnionLoop { get; set; }
     public bool ShowBrushPreview { get; set; } = true;
 
     // Tools

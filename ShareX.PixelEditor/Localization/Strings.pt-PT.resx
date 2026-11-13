@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Deslocamento Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Voltar do último quadro para o primeiro</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Quadros posteriores</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Quadros anteriores</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Somente quadros da etiqueta atual</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Tingir de vermelho os quadros anteriores e de azul os posteriores</value>

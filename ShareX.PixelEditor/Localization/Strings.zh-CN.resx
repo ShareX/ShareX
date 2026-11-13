@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Y 偏移</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>从最后一帧循环到第一帧</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>之后的帧数</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>之前的帧数</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>仅当前标签的帧</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>之前的帧着红色，之后的帧着蓝色</value>

@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Offset Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Wrap around from the last frame to the first</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Frames after</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Frames before</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Only frames of the current tag</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Tint frames before red and frames after blue</value>

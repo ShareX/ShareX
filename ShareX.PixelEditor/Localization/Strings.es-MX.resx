@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Desplazamiento Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Continuar del último fotograma al primero</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Fotogramas posteriores</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Fotogramas anteriores</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Solo fotogramas de la etiqueta actual</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Teñir de rojo los fotogramas anteriores y de azul los posteriores</value>

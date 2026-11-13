@@ -633,11 +633,17 @@
   <data name="Dialog_OffsetY" xml:space="preserve">
     <value>Ofset Y</value>
   </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Berputar dari bingkai terakhir ke yang pertama</value>
+  </data>
   <data name="Dialog_OnionNext" xml:space="preserve">
     <value>Bingkai sesudah</value>
   </data>
   <data name="Dialog_OnionPrevious" xml:space="preserve">
     <value>Bingkai sebelum</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Hanya bingkai dari tag saat ini</value>
   </data>
   <data name="Dialog_OnionTint" xml:space="preserve">
     <value>Warnai bingkai sebelum dengan merah dan sesudah dengan biru</value>
