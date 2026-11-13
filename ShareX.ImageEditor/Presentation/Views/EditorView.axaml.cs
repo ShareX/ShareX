@@ -441,6 +441,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         vm.FillColor = balloon.FillColor;
                         vm.CornerRadius = balloon.CornerRadius;
                         vm.SpeechBalloonTail = balloon.TailEnabled;
+                        vm.SpeechBalloonAutoSize = balloon.AutoSize;
                         if (!string.IsNullOrEmpty(balloon.TextColor))
                             vm.TextColorValue = Avalonia.Media.Color.Parse(balloon.TextColor);
                     }
@@ -1194,7 +1195,8 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            if (_zoomController.ZoomToFit())
+            // Only shrink images that do not fit; small images open at 100% instead of being magnified.
+            if (_zoomController.ZoomToFit(maxZoom: 1.0))
             {
                 _pendingZoomToFitOnOpen = false;
                 return;

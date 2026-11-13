@@ -131,6 +131,7 @@ public static class AppIcons
     public const string ImageUpload = Prefix + "image-upload";
     public const string ImageDownload = Prefix + "image-download";
     public const string Layers = Prefix + "layers";
+    public const string PixelEditor = Prefix + "pixel-editor";
     public const string Combine = Prefix + "combine";
     public const string Split = Prefix + "split";
     public const string Rows = Prefix + "rows";

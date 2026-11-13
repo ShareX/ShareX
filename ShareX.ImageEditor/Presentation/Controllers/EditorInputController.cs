@@ -59,6 +59,8 @@ public class EditorInputController
     private bool _isCreatingEffect;
     private bool _isMovingShapeDuringCreation;
     private bool _wasCtrlHeldDuringDraw;
+    // True while Shift draws a straight segment in a freehand stroke, as in ShareX 21.
+    private bool _isFreehandStraightLine;
 
     private static bool UsesCrosshairInteractionCapture(EditorTool tool)
         => tool != EditorTool.Select && tool != EditorTool.Image && tool != EditorTool.Text;
@@ -307,6 +309,7 @@ public class EditorInputController
         _lastDrawPoint = point;
         _isMovingShapeDuringCreation = false;
         _wasCtrlHeldDuringDraw = e.KeyModifiers.HasFlag(KeyModifiers.Control);
+        _isFreehandStraightLine = false;
         _isDrawing = true;
         if (UsesCrosshairInteractionCapture(vm.ActiveTool))
         {
@@ -465,7 +468,7 @@ public class EditorInputController
                 {
                     fillColor = IsColorLight(vm.SelectedColor) ? "#FF000000" : "#FFFFFFFF";
                 }
-                var balloonAnnotation = new SpeechBalloonAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, FillColor = fillColor, TextColor = vm.TextColor, FontSize = vm.FontSize, FontFamily = vm.SelectedFontFamily, IsBold = vm.TextBold, IsItalic = vm.TextItalic, HorizontalAlignment = vm.SelectedTextHorizontalAlignment, CornerRadius = vm.CornerRadius, TailEnabled = vm.SpeechBalloonTail, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
+                var balloonAnnotation = new SpeechBalloonAnnotation { StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, FillColor = fillColor, TextColor = vm.TextColor, FontSize = vm.FontSize, FontFamily = vm.SelectedFontFamily, IsBold = vm.TextBold, IsItalic = vm.TextItalic, HorizontalAlignment = vm.SelectedTextHorizontalAlignment, CornerRadius = vm.CornerRadius, TailEnabled = vm.SpeechBalloonTail, AutoSize = vm.SpeechBalloonAutoSize, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) };
                 ApplyShadowOptions(balloonAnnotation, vm);
                 var balloonControl = balloonAnnotation.CreateVisual();
                 balloonControl.Width = 0;
@@ -673,7 +676,7 @@ public class EditorInputController
 
         if (_currentShape is global::Avalonia.Controls.Shapes.Path freehandPath && freehandPath.Tag is FreehandAnnotation freehand)
         {
-            freehand.Points.Add(ToSKPoint(currentPoint));
+            AddFreehandPoint(freehand, ToSKPoint(currentPoint), e.KeyModifiers.HasFlag(KeyModifiers.Shift));
             freehandPath.Data = freehand.CreateSmoothedGeometry();
             freehandPath.InvalidateVisual();
             _lastDrawPoint = currentPoint;
@@ -1035,6 +1038,41 @@ public class EditorInputController
     {
         // Do not re-arm shape movement here. Ctrl KeyDown events can repeat while
         // the key remains held, so movement must only be re-armed by OnKeyUp.
+    }
+
+    /// <summary>
+    /// Adds a pointer position to a freehand stroke. While Shift is held the stroke stops following the
+    /// pointer and draws one straight segment from its last point to the pointer instead, as in ShareX 21.
+    /// </summary>
+    internal void AddFreehandPoint(FreehandAnnotation freehand, SKPoint point, bool straightLine)
+    {
+        var points = freehand.Points;
+
+        if (straightLine)
+        {
+            if (_isFreehandStraightLine)
+            {
+                points[^1] = point;
+            }
+            else
+            {
+                // The smoothed geometry uses each point as a curve control point. Doubling the
+                // segment's ends keeps the segment straight and its corners sharp.
+                points.Add(points[^1]);
+                points.Add(point);
+                _isFreehandStraightLine = true;
+            }
+        }
+        else
+        {
+            if (_isFreehandStraightLine)
+            {
+                points.Add(points[^1]);
+                _isFreehandStraightLine = false;
+            }
+
+            points.Add(point);
+        }
     }
 
     public void OnKeyUp(object sender, KeyEventArgs e)

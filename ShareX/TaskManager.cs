@@ -207,7 +207,7 @@ namespace ShareX
                                 !string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL)))
                             {
                                 HistoryItem historyItem = info.GetHistoryItem();
-                                AppendHistoryItemAsync(historyItem);
+                                AppendHistoryItemAsync(historyItem, info.HistoryOCRTask);
                             }
 
                             RecentManager.Add(task);
@@ -247,16 +247,24 @@ namespace ShareX
                         {
                             DebugHelper.WriteLine($"Task completed. File name: {info.FileName}, Duration: {(long)info.TaskDuration.TotalMilliseconds} ms");
 
-                            if (!task.StopRequested && info.Job != TaskJob.ShareURL && !string.IsNullOrEmpty(result))
-                            {
-                                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.TaskCompleted, info.TaskSettings);
+                            bool hasResult = !string.IsNullOrEmpty(result);
 
-                                if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
+                            // An image that was neither saved nor uploaded, such as one only copied to the clipboard,
+                            // has no URL or file path but still gets a toast showing the image.
+                            if (!task.StopRequested && info.Job != TaskJob.ShareURL && (hasResult || task.Image != null))
+                            {
+                                if (hasResult)
                                 {
-                                    result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
+                                    TaskHelpers.PlayNotificationSoundAsync(NotificationSound.TaskCompleted, info.TaskSettings);
+
+                                    if (!string.IsNullOrEmpty(info.TaskSettings.AdvancedSettings.BalloonTipContentFormat))
+                                    {
+                                        result = new UploadInfoParser().Parse(info, info.TaskSettings.AdvancedSettings.BalloonTipContentFormat);
+                                    }
                                 }
 
-                                if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted && !string.IsNullOrEmpty(result) &&
+                                if (info.TaskSettings.GeneralSettings.ShowToastNotificationAfterTaskCompleted &&
+                                    (!string.IsNullOrEmpty(result) || task.Image != null) &&
                                     (!info.TaskSettings.GeneralSettings.DisableNotificationsOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
                                 {
                                     task.KeepImage = true;
@@ -408,10 +416,29 @@ namespace ShareX
             }
         }
 
-        private static void AppendHistoryItemAsync(HistoryItem historyItem)
+        private static void AppendHistoryItemAsync(HistoryItem historyItem, Task<string> ocrTask = null)
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
+                if (ocrTask != null)
+                {
+                    try
+                    {
+                        string text = await ocrTask;
+
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            historyItem.Tags ??= new Dictionary<string, string>();
+                            historyItem.Tags["OCR"] = text;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        // The item is still added without its text, e.g. when the OCR models are missing.
+                        DebugHelper.WriteException(e, "OCR for history failed.");
+                    }
+                }
+
                 try
                 {
                     ApplicationState.HistoryManager.AppendHistoryItem(historyItem);

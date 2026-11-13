@@ -47,7 +47,10 @@ public partial class SpeechBalloonAnnotation
             FontFamily = new Avalonia.Media.FontFamily(FontFamilyHelper.ResolveFontFamily(FontFamily)),
             FontWeight = IsBold ? FontWeight.Bold : FontWeight.Normal,
             FontStyle = IsItalic ? FontStyle.Italic : FontStyle.Normal,
-            Padding = new Thickness(12),
+            Padding = new Thickness(TextPadding),
+            // Let an auto-sized balloon's editor be as small as the balloon.
+            MinWidth = 0,
+            MinHeight = 0,
             TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(HorizontalAlignment),
             HorizontalContentAlignment = TextHorizontalAlignmentHelper.ToHorizontalContentAlignment(HorizontalAlignment),
             VerticalContentAlignment = global::Avalonia.Layout.VerticalAlignment.Center,

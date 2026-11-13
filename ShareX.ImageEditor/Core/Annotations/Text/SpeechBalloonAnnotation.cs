@@ -36,11 +36,17 @@ public partial class SpeechBalloonAnnotation : Annotation
 {
     public const float DefaultTailOffset = 30f;
     public const float TailWidthMultiplier = 0.3f;
+
+    /// <summary>
+    /// Space between the balloon body and its text, used for drawing, the inline text editor and <see cref="AutoSize"/>.
+    /// </summary>
+    public const float TextPadding = 12f;
+
     private const float GeometryEpsilon = 0.001f;
 
     public override AnnotationCategory Category => AnnotationCategory.Text;
     /// <summary>
-    /// Tail point (absolute position)
+    /// Tail point in canvas coordinates before the body's RotationAngle is applied (rotated around the body center when drawn)
     /// </summary>
     public SKPoint TailPoint { get; set; }
 
@@ -52,9 +58,21 @@ public partial class SpeechBalloonAnnotation : Annotation
     public bool TailPointInitialized { get; set; }
 
     /// <summary>
+    /// Tracks whether the user has manually placed/dragged the tail handle at least once.
+    /// Once placed, the tail remains fixed in canvas coordinates during body moves, resizes, and rotations.
+    /// </summary>
+    public bool TailPointPlaced { get; set; }
+
+    /// <summary>
     /// Controls whether the tail geometry and handle are shown.
     /// </summary>
     public bool TailEnabled { get; set; } = true;
+
+    /// <summary>
+    /// Sizes the balloon body to its text as it is typed, so every balloon has the same padding around its text.
+    /// The body can still be resized by hand until the text changes again.
+    /// </summary>
+    public bool AutoSize { get; set; }
 
     /// <summary>
     /// Optional text content inside the balloon
@@ -122,6 +140,42 @@ public partial class SpeechBalloonAnnotation : Annotation
     {
         TailPoint = tailPoint;
         TailPointInitialized = true;
+    }
+
+    public void SetPlacedTailPoint(SKPoint tailPoint)
+    {
+        SetTailPoint(tailPoint);
+        TailPointPlaced = true;
+    }
+
+    internal SKPoint GetWorldTailPoint()
+    {
+        return RotateAroundBoundsCenter(GetEffectiveTailPoint(), GetBounds(), RotationAngle);
+    }
+
+    internal void SetTailPointFromWorld(SKPoint worldTailPoint)
+    {
+        SKPoint localTailPoint = RotateAroundBoundsCenter(worldTailPoint, GetBounds(), -RotationAngle);
+        SetPlacedTailPoint(localTailPoint);
+    }
+
+    private static SKPoint RotateAroundBoundsCenter(SKPoint point, SKRect bounds, float angleDeg)
+    {
+        if (angleDeg == 0)
+        {
+            return point;
+        }
+
+        float cx = bounds.MidX;
+        float cy = bounds.MidY;
+        float rad = angleDeg * MathF.PI / 180f;
+        float cos = MathF.Cos(rad);
+        float sin = MathF.Sin(rad);
+        float dx = point.X - cx;
+        float dy = point.Y - cy;
+        return new SKPoint(
+            cx + (dx * cos) - (dy * sin),
+            cy + (dx * sin) + (dy * cos));
     }
 
     public void EnsureTailPointInitialized()
@@ -288,30 +342,77 @@ public partial class SpeechBalloonAnnotation : Annotation
 
     internal override void TransformAdditionalPoints(Func<SKPoint, SKPoint> transformPoint)
     {
-        SetTailPoint(transformPoint(GetEffectiveTailPoint()));
+        SKPoint transformed = transformPoint(GetEffectiveTailPoint());
+        if (TailPointPlaced)
+        {
+            SetPlacedTailPoint(transformed);
+        }
+        else if (HasTailPoint)
+        {
+            SetTailPoint(transformed);
+        }
     }
 
     internal void ResizeTail(SKRect previousBounds, SKRect newBounds)
     {
-        if (!HasTailPoint || previousBounds.Width <= 0 || previousBounds.Height <= 0)
+        if (!TailPointPlaced)
+        {
+            if (!HasTailPoint)
+            {
+                return;
+            }
+
+            SKPoint tailPoint = TailPoint;
+            SKPoint previousDefault = new SKPoint(previousBounds.MidX, previousBounds.Bottom + DefaultTailOffset);
+
+            if (SKPoint.Distance(tailPoint, previousDefault) < GeometryEpsilon || previousBounds.Width <= 0 || previousBounds.Height <= 0)
+            {
+                SetTailPoint(GetDefaultTailPoint());
+            }
+            else
+            {
+                // An image transform (flip, rotate) moved the tail off its default position, so scale it with the body instead of snapping it back.
+                float scaleX = newBounds.Width / previousBounds.Width;
+                float scaleY = newBounds.Height / previousBounds.Height;
+
+                SetTailPoint(new SKPoint(
+                    newBounds.Left + ((tailPoint.X - previousBounds.Left) * scaleX),
+                    newBounds.Top + ((tailPoint.Y - previousBounds.Top) * scaleY)));
+            }
+
+            return;
+        }
+
+        if (RotationAngle == 0)
         {
             return;
         }
 
-        var tailPoint = GetEffectiveTailPoint();
-        float scaleX = newBounds.Width / previousBounds.Width;
-        float scaleY = newBounds.Height / previousBounds.Height;
-
-        SetTailPoint(new SKPoint(
-            newBounds.Left + ((tailPoint.X - previousBounds.Left) * scaleX),
-            newBounds.Top + ((tailPoint.Y - previousBounds.Top) * scaleY)));
+        SKPoint worldTailPoint = RotateAroundBoundsCenter(GetEffectiveTailPoint(), previousBounds, RotationAngle);
+        SetTailPointFromWorld(worldTailPoint);
     }
 
     internal override void MoveBy(float deltaX, float deltaY)
     {
-        // Resolve an implicit tail before moving the body, since its default position depends on the bounds.
-        SKPoint tailPoint = GetEffectiveTailPoint();
+        if (!TailPointPlaced)
+        {
+            bool hadTailPoint = HasTailPoint;
+            SKPoint tailPoint = TailPoint;
+            base.MoveBy(deltaX, deltaY);
+            if (hadTailPoint)
+            {
+                SetTailPoint(new SKPoint(tailPoint.X + deltaX, tailPoint.Y + deltaY));
+            }
+
+            return;
+        }
+
+        SKPoint? worldTailPoint = RotationAngle != 0 ? GetWorldTailPoint() : null;
         base.MoveBy(deltaX, deltaY);
-        SetTailPoint(new SKPoint(tailPoint.X + deltaX, tailPoint.Y + deltaY));
+
+        if (worldTailPoint.HasValue)
+        {
+            SetTailPointFromWorld(worldTailPoint.Value);
+        }
     }
 }

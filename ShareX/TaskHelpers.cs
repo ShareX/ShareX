@@ -32,6 +32,7 @@ using ShareX.ImageEditor.Integration;
 using ShareX.ImageEffectsLib;
 using ShareX.Localization;
 using ShareX.PhotoEditor.Integration;
+using ShareX.PixelEditor.Integration;
 using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.Tools;
@@ -247,6 +248,9 @@ namespace ShareX
                     break;
                 case HotkeyType.PhotoEditor:
                     OpenPhotoEditor(filePath, safeTaskSettings);
+                    break;
+                case HotkeyType.PixelEditor:
+                    OpenPixelEditor(filePath, safeTaskSettings);
                     break;
                 case HotkeyType.ImageBeautifier:
                     if (!string.IsNullOrEmpty(filePath))
@@ -1441,13 +1445,15 @@ namespace ShareX
             }
         }
 
+        // Takes ownership of bmp; the editor works on its own copy.
         public static void AnnotateImageAsync(Bitmap bmp, string filePath, TaskSettings taskSettings)
         {
             ThreadWorker worker = new ThreadWorker();
 
             worker.DoWork += () =>
             {
-                bmp = AnnotateImage(bmp, filePath, taskSettings);
+                using Bitmap source = bmp;
+                bmp = AnnotateImage(source, filePath, taskSettings);
             };
 
             worker.Completed += () =>
@@ -1623,6 +1629,25 @@ namespace ShareX
                 CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
                 CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
+        }
+
+        public static void OpenPixelEditor(string filePath = null, TaskSettings taskSettings = null)
+        {
+            OpenPixelEditor(string.IsNullOrEmpty(filePath) ? null : [filePath], taskSettings);
+        }
+
+        public static void OpenPixelEditor(IEnumerable<string> filePaths, TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            PixelEditorServices services = new PixelEditorServices
+            {
+                SettingsFilePath = StartupOptions.Sandbox ? null : Path.Combine(AppPaths.PersonalFolder, "PixelEditor.json"),
+                DefaultFolder = GetScreenshotsFolder(taskSettings),
+                UploadImage = skBitmap => UploadImageOnUiThread(skBitmap.Copy(), taskSettings)
+            };
+
+            PixelEditorIntegration.Show(services, filePaths);
         }
 
         public static void OpenImageBeautifier(TaskSettings taskSettings = null)
@@ -2171,6 +2196,20 @@ namespace ShareX
             }
         }
 
+        // Takes ownership of the image. The text is kept on one line, so it stays one line in the history tag editor.
+        public static async Task<string> RecognizeTextForHistoryAsync(Bitmap image)
+        {
+            if (image == null)
+            {
+                return null;
+            }
+
+            using (image)
+            {
+                return await OCRHelper.OCR(image, true);
+            }
+        }
+
         public static void PinToScreen(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
@@ -2493,6 +2532,7 @@ namespace ShareX
                 HotkeyType.PinToScreenCloseAll => AppIcons.Unpin,
                 HotkeyType.ImageEditor => AppIcons.ImageEditor,
                 HotkeyType.PhotoEditor => AppIcons.Layers,
+                HotkeyType.PixelEditor => AppIcons.PixelEditor,
                 HotkeyType.ImageBeautifier => AppIcons.ImageBeautifier,
                 HotkeyType.ImageEffects => AppIcons.MagicWand,
                 HotkeyType.ImageViewer => AppIcons.Eye,

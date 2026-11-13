@@ -5760,5 +5760,22 @@ namespace ShareX.Localization {
         public static string StartScreen_ThankYou => ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
         public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
         public static string StartScreen_Spacious => ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
+        public static string ApplicationSettingsWindow_SaveOCRTextToHistory => ResourceManager.GetString("ApplicationSettingsWindow_SaveOCRTextToHistory", resourceCulture);
+        public static string MainMenuBuilder_DisplayDiagnostics => ResourceManager.GetString("MainMenuBuilder_DisplayDiagnostics", resourceCulture);
+        public static string DisplayDiagnosticsWindow_Title => ResourceManager.GetString("DisplayDiagnosticsWindow_Title", resourceCulture);
+        public static string DisplayDiagnosticsWindow_CopyToClipboard => ResourceManager.GetString("DisplayDiagnosticsWindow_CopyToClipboard", resourceCulture);
+        public static string DisplayDiagnosticsWindow_SaveAs => ResourceManager.GetString("DisplayDiagnosticsWindow_SaveAs", resourceCulture);
+        public static string DisplayDiagnosticsWindow_Refresh => ResourceManager.GetString("DisplayDiagnosticsWindow_Refresh", resourceCulture);
+        public static string DisplayDiagnosticsWindow_DisplayLayout => ResourceManager.GetString("DisplayDiagnosticsWindow_DisplayLayout", resourceCulture);
+        public static string DisplayDiagnosticsWindow_Description => ResourceManager.GetString("DisplayDiagnosticsWindow_Description", resourceCulture);
+        public static string DisplayDiagnosticsWindow_PrimaryMonitor => ResourceManager.GetString("DisplayDiagnosticsWindow_PrimaryMonitor", resourceCulture);
+        public static string DisplayDiagnosticsWindow_ReservedArea => ResourceManager.GetString("DisplayDiagnosticsWindow_ReservedArea", resourceCulture);
+        public static string DisplayDiagnosticsWindow_MouseCursor => ResourceManager.GetString("DisplayDiagnosticsWindow_MouseCursor", resourceCulture);
+        public static string DisplayDiagnosticsWindow_Copied => ResourceManager.GetString("DisplayDiagnosticsWindow_Copied", resourceCulture);
+        public static string DisplayDiagnosticsWindow_Saved0 => ResourceManager.GetString("DisplayDiagnosticsWindow_Saved0", resourceCulture);
+        public static string DisplayDiagnosticsWindow_TextFile => ResourceManager.GetString("DisplayDiagnosticsWindow_TextFile", resourceCulture);
+        public static string DisplayDiagnosticsWindow_SaveDialogTitle => ResourceManager.GetString("DisplayDiagnosticsWindow_SaveDialogTitle", resourceCulture);
+        public static string MainMenuBuilder_PixelEditor => ResourceManager.GetString("MainMenuBuilder_PixelEditor", resourceCulture);
+        public static string MainWindow_EditImageInPixelEditor => ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
     }
 }

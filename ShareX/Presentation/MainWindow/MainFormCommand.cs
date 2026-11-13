@@ -37,6 +37,7 @@ internal enum MainFormCommand
     ImageHistory,
     Stats,
     DebugLog,
+    DisplayDiagnostics,
     TestImageUpload,
     TestTextUpload,
     TestFileUpload,

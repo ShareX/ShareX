@@ -613,6 +613,7 @@
                                     <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_History}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_SaveTasksToHistory}" IsChecked="{Binding HistorySaveTasks, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_OnlySaveIfUrlIsNotEmpty}" IsChecked="{Binding HistoryCheckURL, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_SaveOCRTextToHistory}" IsChecked="{Binding HistorySaveOCRText, Mode=TwoWay}"/>
                                 </StackPanel>
                             </Border>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">

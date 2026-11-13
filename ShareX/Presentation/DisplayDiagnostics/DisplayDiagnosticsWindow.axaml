@@ -1,0 +1,149 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:local="using:ShareX"
+        xmlns:res="using:ShareX.Localization"
+        x:Class="ShareX.DisplayDiagnosticsWindow"
+        Title="{x:Static res:Strings.DisplayDiagnosticsWindow_Title}"
+        Width="900"
+        Height="740"
+        MinWidth="640"
+        MinHeight="540"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Styles>
+        <Style Selector="Button.compact">
+            <Setter Property="Height" Value="34"/>
+            <Setter Property="Padding" Value="10,4"/>
+        </Style>
+        <Style Selector="TextBlock.legend">
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+    </Window.Styles>
+
+    <ThemeVariantScope>
+        <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
+            <Grid Margin="12,0,12,12" RowDefinitions="Auto,Auto,*,Auto" RowSpacing="8">
+                <Border Grid.Row="0" Classes="tool-panel docked-top-toolbar">
+                    <Grid ColumnDefinitions="Auto,Auto,*,Auto" ColumnSpacing="6">
+                        <Button x:Name="CopyButton" Grid.Column="0" Classes="compact" Click="OnCopyClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.ClipboardCopy}"/>
+                                <TextBlock Text="{x:Static res:Strings.DisplayDiagnosticsWindow_CopyToClipboard}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="1" Classes="compact" Click="OnSaveClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.SaveAs}"/>
+                                <TextBlock Text="{x:Static res:Strings.DisplayDiagnosticsWindow_SaveAs}"/>
+                            </StackPanel>
+                        </Button>
+                        <Button Grid.Column="3" Classes="compact" Click="OnRefreshClick">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Refresh}"/>
+                                <TextBlock Text="{x:Static res:Strings.DisplayDiagnosticsWindow_Refresh}"/>
+                            </StackPanel>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="1" Classes="tool-panel" Padding="16,14">
+                    <Grid RowDefinitions="Auto,Auto,Auto" RowSpacing="10">
+                        <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Monitor}"
+                                                    FontSize="20"
+                                                    VerticalAlignment="Top"
+                                                    Margin="0,1,0,0"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
+                            <StackPanel Grid.Column="1" Spacing="2">
+                                <TextBlock Classes="section-heading" Text="{x:Static res:Strings.DisplayDiagnosticsWindow_DisplayLayout}"/>
+                                <TextBlock Text="{x:Static res:Strings.DisplayDiagnosticsWindow_Description}"
+                                           FontWeight="Normal"
+                                           TextWrapping="Wrap"
+                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <local:MonitorLayoutView x:Name="LayoutView" Grid.Row="1" Height="200"/>
+
+                        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" ItemSpacing="18" LineSpacing="4">
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <Border Width="16"
+                                        Height="11"
+                                        CornerRadius="2"
+                                        BorderThickness="2"
+                                        VerticalAlignment="Center"
+                                        BorderBrush="{DynamicResource ShareX.Brush.Accent}"
+                                        Background="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+                                <TextBlock Classes="legend" Text="{x:Static res:Strings.DisplayDiagnosticsWindow_PrimaryMonitor}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <Panel Width="16" Height="11" VerticalAlignment="Center">
+                                    <Border CornerRadius="2"
+                                            ClipToBounds="True"
+                                            Background="{DynamicResource ShareX.Brush.Control.Background.Hover}">
+                                        <Border Height="3"
+                                                VerticalAlignment="Bottom"
+                                                Opacity="0.3"
+                                                Background="{DynamicResource ShareX.Brush.Text}"/>
+                                    </Border>
+                                    <Border CornerRadius="2"
+                                            BorderThickness="1"
+                                            Opacity="0.28"
+                                            BorderBrush="{DynamicResource ShareX.Brush.Text}"/>
+                                </Panel>
+                                <TextBlock Classes="legend" Text="{x:Static res:Strings.DisplayDiagnosticsWindow_ReservedArea}"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Spacing="7">
+                                <Ellipse Width="8"
+                                         Height="8"
+                                         VerticalAlignment="Center"
+                                         Fill="{DynamicResource ShareX.Brush.Accent}"/>
+                                <TextBlock Classes="legend" Text="{x:Static res:Strings.DisplayDiagnosticsWindow_MouseCursor}"/>
+                            </StackPanel>
+                        </WrapPanel>
+                    </Grid>
+                </Border>
+
+                <Border Grid.Row="2" Classes="tool-panel" Padding="1">
+                    <TextBox x:Name="ReportTextBox"
+                             IsReadOnly="True"
+                             AcceptsReturn="True"
+                             TextWrapping="NoWrap"
+                             FontFamily="Cascadia Mono, Consolas, monospace"
+                             FontSize="12"
+                             BorderThickness="0"
+                             Padding="9"
+                             VerticalContentAlignment="Top"
+                             ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+                </Border>
+
+                <Grid x:Name="StatusPanel"
+                      Grid.Row="3"
+                      ColumnDefinitions="Auto,*"
+                      ColumnSpacing="7"
+                      Opacity="0">
+                    <Grid.Transitions>
+                        <Transitions>
+                            <DoubleTransition Property="Opacity" Duration="0:0:0.15"/>
+                        </Transitions>
+                    </Grid.Transitions>
+                    <controls:IconPresenter Icon="{x:Static icons:AppIcons.CircleCheck}"
+                                            VerticalAlignment="Center"
+                                            Foreground="{DynamicResource ShareX.Brush.Status.Success}"/>
+                    <TextBlock x:Name="StatusText"
+                               Grid.Column="1"
+                               FontWeight="Normal"
+                               VerticalAlignment="Center"
+                               TextTrimming="CharacterEllipsis"
+                               Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ThemeVariantScope>
+</Window>

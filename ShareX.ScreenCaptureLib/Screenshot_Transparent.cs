@@ -37,14 +37,39 @@ namespace ShareX.ScreenCaptureLib
     {
         public Bitmap CaptureWindowTransparent(IntPtr handle)
         {
+            return CaptureWindowTransparentCore(handle, null, Rectangle.Empty);
+        }
+
+        /// <summary>
+        /// Captures a window's rounded corners and, with <see cref="CaptureShadow"/>, its shadow from the live screen,
+        /// but keeps the opaque window pixels of <paramref name="windowImage"/>, an earlier capture of
+        /// <paramref name="windowRectangle"/> such as an annotated region capture. Returns null when the window has moved
+        /// since or its transparency can't be captured, so the caller can keep its own image.
+        /// </summary>
+        public Bitmap CaptureWindowTransparent(IntPtr handle, Bitmap windowImage, Rectangle windowRectangle)
+        {
+            ArgumentNullException.ThrowIfNull(windowImage);
+
+            return CaptureWindowTransparentCore(handle, windowImage, windowRectangle);
+        }
+
+        private Bitmap CaptureWindowTransparentCore(IntPtr handle, Bitmap windowImage, Rectangle windowRectangle)
+        {
             if (!OperatingSystem.IsWindows())
             {
-                return CaptureWindow(handle);
+                return windowImage ?? CaptureWindow(handle);
             }
-
             if (handle != IntPtr.Zero)
             {
                 Rectangle rect = CaptureHelpers.GetWindowRectangle(handle);
+
+                if (windowImage != null && (rect != windowRectangle || windowImage.Width != rect.Width || windowImage.Height != rect.Height))
+                {
+                    DebugHelper.WriteLine("Transparent capture skipped. Reason: Window rectangle changed.");
+                    return null;
+                }
+
+                Rectangle windowBounds = rect;
 
                 if (CaptureShadow && !NativeMethods.IsZoomed(handle) && NativeMethods.IsDWMEnabled())
                 {
@@ -64,7 +89,8 @@ namespace ShareX.ScreenCaptureLib
                         isTaskbarHide = NativeMethods.SetTaskbarVisibilityIfIntersect(false, rect);
                     }
 
-                    if (CaptureCursor)
+                    // A window image already shows the cursor if the region capture drew it.
+                    if (CaptureCursor && windowImage == null)
                     {
                         try
                         {
@@ -85,7 +111,7 @@ namespace ShareX.ScreenCaptureLib
                             SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE))
                         {
                             DebugHelper.WriteLine("Transparent capture failed. Reason: SetWindowPos fail.");
-                            return CaptureWindow(handle);
+                            return windowImage == null ? CaptureWindow(handle) : null;
                         }
                         FlushCaptureBackground();
                         whiteBackground = CaptureRectangleNative(rect);
@@ -104,10 +130,21 @@ namespace ShareX.ScreenCaptureLib
                         transparentImage = CreateTransparentImage(whiteBackground, blackBackground);
                         isTransparent = true;
                     }
+                    else if (windowImage != null)
+                    {
+                        DebugHelper.WriteLine("Transparent capture skipped. Reason: Images not equal.");
+                        whiteBackground2.Dispose();
+                        return null;
+                    }
                     else
                     {
                         DebugHelper.WriteLine("Transparent capture failed. Reason: Images not equal.");
                         transparentImage = whiteBackground2;
+                    }
+
+                    if (windowImage != null)
+                    {
+                        CopyOpaquePixels(windowImage, transparentImage, new Point(windowBounds.X - rect.X, windowBounds.Y - rect.Y));
                     }
 
                     if (cursorData != null)
@@ -141,6 +178,54 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        /// <summary>
+        /// Copies <paramref name="source"/> onto <paramref name="destination"/> at <paramref name="offset"/> as opaque
+        /// pixels, except where a pixel in the source's corner squares or outer edge is not opaque in the destination, so
+        /// the rounded corners and the translucent Windows 11 border keep their transparency instead of the desktop
+        /// behind them. Translucent window content such as acrylic is taken from the source, because annotations may
+        /// cover it.
+        /// </summary>
+        internal static void CopyOpaquePixels(Bitmap source, Bitmap destination, Point offset)
+        {
+            // Covers the 8 px Windows 11 corner radius up to 400% scaling.
+            const int maxCornerSize = 32;
+            const int edgeSize = 2;
+            int cornerSize = Math.Min(maxCornerSize, Math.Min(source.Width, source.Height) / 2);
+
+            Rectangle area = Rectangle.Intersect(new Rectangle(offset, new Size(source.Width, source.Height)),
+                new Rectangle(0, 0, destination.Width, destination.Height));
+
+            if (area.IsEmpty)
+            {
+                return;
+            }
+
+            using (SkiaPixelBuffer sourceBuffer = new SkiaPixelBuffer(source, true, PixelAccess.ReadOnly))
+            using (SkiaPixelBuffer destinationBuffer = new SkiaPixelBuffer(destination, true))
+            {
+                for (int y = area.Top; y < area.Bottom; y++)
+                {
+                    int sourceY = y - offset.Y;
+                    bool cornerRow = sourceY < cornerSize || sourceY >= source.Height - cornerSize;
+                    bool edgeRow = sourceY < edgeSize || sourceY >= source.Height - edgeSize;
+
+                    for (int x = area.Left; x < area.Right; x++)
+                    {
+                        int sourceX = x - offset.X;
+                        bool keepTransparency = edgeRow || sourceX < edgeSize || sourceX >= source.Width - edgeSize ||
+                            (cornerRow && (sourceX < cornerSize || sourceX >= source.Width - cornerSize));
+
+                        if (!keepTransparency || destinationBuffer.GetPixel(x, y).Alpha == 255)
+                        {
+                            ColorBgra color = sourceBuffer.GetPixel(sourceX, sourceY);
+                            color.Alpha = 255;
+                            destinationBuffer.SetPixel(x, y, color);
+                        }
+                    }
+                }
+            }
         }
 
         private static void FlushCaptureBackground()
