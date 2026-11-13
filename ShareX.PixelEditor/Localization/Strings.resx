@@ -84,14 +84,8 @@
   <data name="Checker_White" xml:space="preserve">
     <value>White</value>
   </data>
-  <data name="CommandPalette_NoResults" xml:space="preserve">
-    <value>No matching commands</value>
-  </data>
-  <data name="CommandPalette_Placeholder" xml:space="preserve">
-    <value>Search commands, tools and panels</value>
-  </data>
-  <data name="CommandPalette_Tool" xml:space="preserve">
-    <value>Tools</value>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Recently used. Click for the foreground color, right-click for the background color.</value>
   </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Actual Size (100%)</value>
@@ -492,6 +486,15 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>Zoom Out</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>No matching commands</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Search commands, tools and panels</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>Apply to all frames</value>
   </data>
@@ -549,6 +552,9 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>From frame</value>
   </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Recolors pixels by their brightness, from the color for the darkest pixels to the color for the lightest.</value>
+  </data>
   <data name="Dialog_GradientMapColors" xml:space="preserve">
     <value>Colors from</value>
   </data>
@@ -566,9 +572,6 @@
   </data>
   <data name="Dialog_GradientMapReverse" xml:space="preserve">
     <value>Reverse the colors</value>
-  </data>
-  <data name="Dialog_GradientMap_Note" xml:space="preserve">
-    <value>Recolors pixels by their brightness, from the color for the darkest pixels to the color for the lightest.</value>
   </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Hue</value>
@@ -1068,14 +1071,14 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Click where the text should go</value>
   </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerance</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>To transparent</value>
   </data>
   <data name="Options_ToTransparent_Tip" xml:space="preserve">
     <value>Fade the foreground color out instead of blending into the background color</value>
-  </data>
-  <data name="Options_Tolerance" xml:space="preserve">
-    <value>Tolerance</value>
   </data>
   <data name="Options_Transform" xml:space="preserve">
     <value>Transform</value>
@@ -1401,6 +1404,9 @@
   <data name="Status_Saved" xml:space="preserve">
     <value>Saved {0}</value>
   </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Selection {0} × {1}</value>
+  </data>
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Select a pixel layer first</value>
   </data>
@@ -1485,11 +1491,11 @@
   <data name="Tool_Ellipse" xml:space="preserve">
     <value>Ellipse</value>
   </data>
-  <data name="Tool_EllipseSelect" xml:space="preserve">
-    <value>Elliptical Marquee</value>
-  </data>
   <data name="Tool_Ellipse_Hint" xml:space="preserve">
     <value>Drag to draw an ellipse. Shift makes a circle, Ctrl draws from the center</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Elliptical Marquee</value>
   </data>
   <data name="Tool_Eraser" xml:space="preserve">
     <value>Eraser</value>
@@ -1551,14 +1557,14 @@
   <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
     <value>Click to add corners; double-click or press Enter to close the selection</value>
   </data>
-  <data name="Tool_RectSelect" xml:space="preserve">
-    <value>Rectangular Marquee</value>
-  </data>
   <data name="Tool_Rectangle" xml:space="preserve">
     <value>Rectangle</value>
   </data>
   <data name="Tool_Rectangle_Hint" xml:space="preserve">
     <value>Drag to draw a rectangle. Shift makes a square, Ctrl draws from the center</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Rectangular Marquee</value>
   </data>
   <data name="Tool_Select_Hint" xml:space="preserve">
     <value>Drag to select. Shift adds, Alt subtracts, Shift+Alt intersects</value>

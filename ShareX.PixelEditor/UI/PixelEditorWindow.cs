@@ -255,6 +255,18 @@ public sealed partial class PixelEditorWindow : Window
     /// <summary>Opens the search box that runs any command, tool or panel by name.</summary>
     public void ShowCommandPalette() => _palette.Open();
 
+    /// <summary>Remembers a color that was painted with, for the recent colors of the Color panel.</summary>
+    public void AddRecentColor(uint color)
+    {
+        if (color >> 24 == 0) return;
+        List<uint> recent = Settings.RecentColors;
+        if (recent.Count > 0 && recent[0] == color) return;
+        recent.Remove(color);
+        recent.Insert(0, color);
+        if (recent.Count > EditorSettings.MaxRecentColors) recent.RemoveRange(EditorSettings.MaxRecentColors, recent.Count - EditorSettings.MaxRecentColors);
+        _dock.Get("color")?.Refresh();
+    }
+
     public void SwapColors()
     {
         (_foreground, _background) = (_background, _foreground);
@@ -361,7 +373,9 @@ public sealed partial class PixelEditorWindow : Window
             return;
         }
         uint? color = SampleColor(px, py, true);
-        _cursorInfo.Text = color is uint c && c >> 24 != 0 ? $"X: {px}  Y: {py}   #{Argb.ToHex(c)}" : $"X: {px}  Y: {py}";
+        string text = color is uint c && c >> 24 != 0 ? $"X: {px}  Y: {py}   #{Argb.ToHex(c)}" : $"X: {px}  Y: {py}";
+        if (Sprite?.Selection is SelectionMask selection && !selection.IsEmpty) text += "   " + string.Format(Strings.Status_Selection, selection.Bounds.Width, selection.Bounds.Height);
+        _cursorInfo.Text = text;
     }
 
     public void RefreshStatus()

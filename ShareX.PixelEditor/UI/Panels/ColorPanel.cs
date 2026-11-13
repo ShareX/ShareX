@@ -196,6 +196,8 @@ public sealed class ColorPanel : EditorPanel
         bottom.Children.Add(row);
         _values.Margin = new Thickness(0, 5, 0, 0);
         bottom.Children.Add(_values);
+        _recent.Margin = new Thickness(0, 6, 0, 0);
+        bottom.Children.Add(_recent);
 
         DockPanel root = new() { Margin = new Thickness(8) };
         DockPanel.SetDock(bottom, Dock.Bottom);
@@ -203,6 +205,9 @@ public sealed class ColorPanel : EditorPanel
         root.Children.Add(fields);
         Content = root;
     }
+
+    private readonly WrapPanel _recent = new() { Orientation = Orientation.Horizontal };
+    private string? _recentKey;
 
     public override string Id => "color";
 
@@ -286,6 +291,32 @@ public sealed class ColorPanel : EditorPanel
         _foreground.BorderBrush = _editBackground ? Ui.Gutter : Brushes.White;
         _background.BorderBrush = _editBackground ? Brushes.White : Ui.Gutter;
         if (!_hex.IsFocused) _hex.Text = Argb.ToHex(color);
+        ShowRecent();
         _values.Text = $"R {Argb.R(color)}   G {Argb.G(color)}   B {Argb.B(color)}   A {Argb.A(color)}      H {_h:0}°   S {_s * 100:0}%   V {_v * 100:0}%";
+    }
+
+    /// <summary>Rebuilds the row of recently painted colors when it changed.</summary>
+    private void ShowRecent()
+    {
+        List<uint> colors = Editor.Settings.RecentColors;
+        string key = string.Join(",", colors);
+        if (key == _recentKey) return;
+        _recentKey = key;
+        _recent.Children.Clear();
+        _recent.IsVisible = colors.Count > 0;
+        foreach (uint color in colors)
+        {
+            Border swatch = Ui.Swatch(color, 14);
+            swatch.Margin = new Thickness(0, 0, 3, 3);
+            swatch.Cursor = new Cursor(StandardCursorType.Hand);
+            ToolTip.SetTip(swatch, "#" + Argb.ToHex(color) + Environment.NewLine + Strings.Color_RecentTip);
+            swatch.PointerPressed += (_, e) =>
+            {
+                if (e.GetCurrentPoint(swatch).Properties.IsRightButtonPressed) Editor.BackgroundColor = color;
+                else Editor.ForegroundColor = color;
+                e.Handled = true;
+            };
+            _recent.Children.Add(swatch);
+        }
     }
 }

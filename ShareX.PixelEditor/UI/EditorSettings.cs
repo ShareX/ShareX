@@ -110,6 +110,11 @@ public sealed class EditorSettings
     public int PreviewZoom { get; set; }
 
     // Documents
+    public const int MaxRecentColors = 16;
+
+    /// <summary>Colors painted with most recently, newest first.</summary>
+    public List<uint> RecentColors { get; set; } = [];
+
     public string Foreground { get; set; } = "#000000";
     public string Background { get; set; } = "#FFFFFF";
     public int NewWidth { get; set; } = 32;
@@ -179,6 +184,7 @@ public sealed class EditorSettings
     {
         RecentFiles ??= [];
         RecentCommands ??= [];
+        RecentColors ??= [];
         AutoSaveMinutes = Math.Clamp(AutoSaveMinutes, 0, 60);
         Shortcuts ??= [];
         Panels ??= [];

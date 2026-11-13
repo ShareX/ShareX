@@ -2710,5 +2710,15 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Dialog_GradientMapReverse", resourceCulture);
             }
         }
+        public static string Color_RecentTip {
+            get {
+                return ResourceManager.GetString("Color_RecentTip", resourceCulture);
+            }
+        }
+        public static string Status_Selection {
+            get {
+                return ResourceManager.GetString("Status_Selection", resourceCulture);
+            }
+        }
     }
 }

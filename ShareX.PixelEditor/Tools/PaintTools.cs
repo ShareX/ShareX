@@ -74,6 +74,7 @@ public abstract class PaintToolBase : ToolBase
     {
         if (Painter == null) return;
         bool changed = !Painter.TotalDirty.IsEmpty;
+        if (changed && Painter.Ink is not (Ink.Erase or Ink.Lighten or Ink.Darken)) Editor.AddRecentColor(Painter.Color);
         Painter = null;
         if (changed) Editor.Commit(Name);
         else Editor.RevertEdit();
