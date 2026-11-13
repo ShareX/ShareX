@@ -6,7 +6,9 @@
     </mask>
   </defs>
   <g mask="url(#gap)">
-    <path d="M4 2.5h7M5.5 2.5v4l-2 2v1h8v-1l-2-2v-4"/>
+    <path d="M6 2h3v1H6Z" fill="currentColor" stroke="none"/>
+    <path d="M5 2h1v1H5ZM9 2h1v1H9Z" fill="currentColor" stroke="none" opacity="0.45"/>
+    <path d="M5.5 3v3.5l-2 2v1h8v-1l-2-2V3"/>
     <path d="M7.5 10v4"/>
   </g>
   <path d="M2.5 2.5l10 10"/>
