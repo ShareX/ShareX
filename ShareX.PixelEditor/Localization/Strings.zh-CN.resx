@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>缩小</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>缩放到选区</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>应用到所有帧</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>此格式仅保存当前帧。</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>放大时平滑边缘</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>文件</value>

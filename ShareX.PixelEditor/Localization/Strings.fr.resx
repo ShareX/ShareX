@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>Zoom arrière</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>Zoom sur la sélection</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>Appliquer à toutes les images</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Ce format n'enregistre que l'image actuelle.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>Lisser les bords lors de l'agrandissement</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>Fichiers</value>

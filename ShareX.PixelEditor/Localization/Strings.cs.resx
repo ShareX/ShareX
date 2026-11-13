@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>Zmenšit</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>Přiblížit na výběr</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>Použít na všechny snímky</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Tento formát ukládá jen aktuální snímek.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>Vyhladit hrany při zvětšení</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>Soubory</value>

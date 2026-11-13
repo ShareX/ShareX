@@ -231,6 +231,18 @@ public sealed class SpriteView : IDisposable
         NeedsFit = false;
     }
 
+    /// <summary>Zooms so an area of the sprite fills the view and centers it.</summary>
+    public void FitArea(SKRectI area)
+    {
+        if (Viewport.Width <= 0 || Viewport.Height <= 0 || area.Width <= 0 || area.Height <= 0) return;
+        double available = Math.Min((Viewport.Width - 48) / area.Width, (Viewport.Height - 48) / area.Height);
+        Zoom = ZoomLevels.LastOrDefault(z => z <= available, ZoomLevels[0]);
+        PanX = Math.Round(Viewport.Width / 2 - (area.Left + area.Width / 2.0) * Zoom);
+        PanY = Math.Round(Viewport.Height / 2 - (area.Top + area.Height / 2.0) * Zoom);
+        ClampPan();
+        NeedsFit = false;
+    }
+
     public void Center()
     {
         PanX = Math.Round((Viewport.Width - Sprite.Width * Zoom) / 2);

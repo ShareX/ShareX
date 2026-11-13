@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>ย่อ</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>ซูมไปที่ส่วนที่เลือก</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>ใช้กับทุกเฟรม</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>รูปแบบนี้บันทึกเฉพาะเฟรมปัจจุบัน</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>ทำขอบให้เรียบเมื่อขยาย</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>ไฟล์</value>

@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>축소</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>선택 영역으로 확대/축소</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>모든 프레임에 적용</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>이 형식은 현재 프레임만 저장합니다.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>확대할 때 가장자리 다듬기</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>파일</value>

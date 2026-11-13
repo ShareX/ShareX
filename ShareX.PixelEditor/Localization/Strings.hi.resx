@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>ज़ूम आउट</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>चयन पर ज़ूम करें</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>सभी फ़्रेम पर लागू करें</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>यह प्रारूप केवल वर्तमान फ़्रेम सहेजता है।</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>बड़ा करते समय किनारे चिकने करें</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>फ़ाइलें</value>

@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>התרחק</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>התקרב לבחירה</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>החל על כל הפריימים</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>תבנית זו שומרת רק את הפריים הנוכחי.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>החלק קצוות בעת הגדלה</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>קבצים</value>

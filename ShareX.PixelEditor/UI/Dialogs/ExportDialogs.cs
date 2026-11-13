@@ -89,6 +89,7 @@ public static class ExportDialog
         ], initial);
         Func<int> frames = form.Combo(Strings.Export_Frames, FrameChoices.For(sprite), FrameChoices.Default(sprite));
         Func<int> scale = form.Number(Strings.Export_Scale, 1, 64, settings.ExportScale);
+        Func<bool> smooth = form.Check(Strings.Export_SmoothScale, settings.ExportSmoothScale);
         Func<bool> loop = form.Check(Strings.Command_Loop, true);
         Func<int> split = form.Combo(Strings.Export_Split, [(Strings.Export_SplitNone, 0), (Strings.Export_SplitLayers, 1), (Strings.Export_SplitTags, 2)], Math.Clamp(settings.ExportSplit, 0, 2));
         TextBlock info = new() { Classes = { "dim" }, TextWrapping = TextWrapping.Wrap };
@@ -126,7 +127,8 @@ public static class ExportDialog
             _ => ".png"
         };
         settings.ExportScale = scale();
-        ExportOptions options = new() { Scale = scale(), Loop = loop(), Frames = FrameChoices.Frames(sprite, frames()) };
+        settings.ExportSmoothScale = smooth();
+        ExportOptions options = new() { Scale = scale(), Loop = loop(), Frames = FrameChoices.Frames(sprite, frames()), SmoothScale = smooth() };
         settings.ExportSplit = split();
         List<(string Path, ExportOptions Options, int Frame)> jobs = Jobs(sprite, path, split(), options, sprite.ActiveFrame);
         await w.RunBusyAsync(Strings.Status_Exporting, async progress =>
@@ -167,7 +169,7 @@ public static class ExportDialog
             foreach (PixelLayer layer in sprite.PixelLayers.Where(l => l.IsEffectivelyVisible && !l.IsReference).Reverse())
             {
                 PixelLayer captured = layer;
-                ExportOptions o = new() { Scale = options.Scale, Loop = options.Loop, Frames = options.Frames, LayerFilter = l => l == captured || l is GroupLayer g && captured.IsDescendantOf(g) };
+                ExportOptions o = new() { Scale = options.Scale, SmoothScale = options.SmoothScale, Loop = options.Loop, Frames = options.Frames, LayerFilter = l => l == captured || l is GroupLayer g && captured.IsDescendantOf(g) };
                 jobs.Add((Named(layer.Name), o, current));
             }
         }
@@ -176,7 +178,7 @@ public static class ExportDialog
             foreach (Tag tag in sprite.Tags)
             {
                 List<int> frames = SpriteOps.FrameSequence(tag.From, Math.Min(tag.To, sprite.Frames.Count - 1), tag.Direction);
-                ExportOptions o = new() { Scale = options.Scale, Loop = options.Loop, Frames = frames, LayerFilter = options.LayerFilter };
+                ExportOptions o = new() { Scale = options.Scale, SmoothScale = options.SmoothScale, Loop = options.Loop, Frames = frames, LayerFilter = options.LayerFilter };
                 jobs.Add((Named(tag.Name), o, tag.From));
             }
         }
@@ -198,6 +200,7 @@ public static class SheetDialogs
         Func<int> padding = form.Number(Strings.Sheet_Padding, 0, 256, settings.SheetPadding);
         Func<int> spacing = form.Number(Strings.Sheet_Spacing, 0, 256, settings.SheetSpacing);
         Func<int> scale = form.Number(Strings.Export_Scale, 1, 64, settings.ExportScale);
+        Func<bool> smooth = form.Check(Strings.Export_SmoothScale, settings.ExportSmoothScale);
         Func<bool> trim = form.Check(Strings.Sheet_Trim, settings.SheetTrim);
         Func<bool> merge = form.Check(Strings.Sheet_MergeDuplicates, settings.SheetMergeDuplicates);
         Func<bool> metadata = form.Check(Strings.Sheet_Metadata, settings.SheetMetadata);
@@ -206,6 +209,7 @@ public static class SheetDialogs
         ExportOptions Options() => new()
         {
             Scale = scale(),
+            SmoothScale = smooth(),
             Frames = FrameChoices.Frames(sprite, frames()),
             Layout = layout(),
             Columns = columns(),
@@ -228,7 +232,7 @@ public static class SheetDialogs
         if (path == null) return;
         ExportOptions options = Options();
         (settings.SheetLayout, settings.SheetColumns, settings.SheetPadding, settings.SheetSpacing, settings.SheetMetadata, settings.ExportScale) = (options.Layout, options.Columns, options.Padding, options.Spacing, options.WriteMetadata, options.Scale);
-        (settings.SheetTrim, settings.SheetMergeDuplicates) = (options.Trim, options.MergeDuplicates);
+        (settings.SheetTrim, settings.SheetMergeDuplicates, settings.ExportSmoothScale) = (options.Trim, options.MergeDuplicates, options.SmoothScale);
         await w.RunBusyAsync(Strings.Status_Exporting, async _ =>
         {
             await Task.Run(() => SpriteFile.ExportSheet(sprite, path, options));

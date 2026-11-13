@@ -141,6 +141,8 @@ public sealed class EditorSettings
     public string ExportFormat { get; set; } = ".png";
     public int ExportScale { get; set; } = 1;
 
+    public bool ExportSmoothScale { get; set; }
+
     /// <summary>0 writes one file, 1 one file per layer, 2 one file per tag.</summary>
     public int ExportSplit { get; set; }
     public SheetLayout SheetLayout { get; set; } = SheetLayout.Horizontal;

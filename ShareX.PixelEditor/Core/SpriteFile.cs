@@ -60,6 +60,9 @@ public sealed class ExportOptions
 
     public bool WriteMetadata { get; set; } = true;
 
+    /// <summary>Enlarges with the edge-smoothing pixel art scaler instead of plain pixel repetition.</summary>
+    public bool SmoothScale { get; set; }
+
     /// <summary>Crops every frame on a sheet to its visible pixels.</summary>
     public bool Trim { get; set; }
 
@@ -489,7 +492,8 @@ public static class SpriteFile
     public static PixelBuffer RenderFrame(Sprite sprite, int frame, ExportOptions options)
     {
         PixelBuffer flat = Compositor.Flatten(sprite, frame, false, options.LayerFilter);
-        return options.Scale > 1 ? flat.ScaleNearest(sprite.Width * options.Scale, sprite.Height * options.Scale) : flat;
+        if (options.Scale <= 1) return flat;
+        return options.SmoothScale ? Effects.Resize(flat, sprite.Width * options.Scale, sprite.Height * options.Scale, ResizeMethod.PixelArtScale) : flat.ScaleNearest(sprite.Width * options.Scale, sprite.Height * options.Scale);
     }
 
     public static void ExportImage(Sprite sprite, string path, int frame, ExportOptions options, int quality = 95)

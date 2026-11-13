@@ -2940,5 +2940,15 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Options_StandardBrush", resourceCulture);
             }
         }
+        public static string Command_ZoomToSelection {
+            get {
+                return ResourceManager.GetString("Command_ZoomToSelection", resourceCulture);
+            }
+        }
+        public static string Export_SmoothScale {
+            get {
+                return ResourceManager.GetString("Export_SmoothScale", resourceCulture);
+            }
+        }
     }
 }

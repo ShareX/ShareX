@@ -159,6 +159,7 @@ public static partial class EditorCommands
         View("view.zoomIn", Strings.Command_ZoomIn, "Ctrl+OemPlus,Ctrl+Add", w => w.View!.ZoomStep(true, w.View.ViewportCenter), HasSprite);
         View("view.zoomOut", Strings.Command_ZoomOut, "Ctrl+OemMinus,Ctrl+Subtract", w => w.View!.ZoomStep(false, w.View.ViewportCenter), HasSprite);
         View("view.fit", Strings.Command_FitOnScreen, "Ctrl+D0", w => w.View!.Fit(), HasSprite);
+        View("view.zoomSelection", Strings.Command_ZoomToSelection, "Ctrl+Alt+D0", w => w.View!.FitArea(w.Sprite!.Selection?.Bounds ?? SpriteOps.ContentBounds(w.Sprite) ?? w.Sprite.Bounds), HasSprite);
         View("view.actualSize", Strings.Command_ActualSize, "Ctrl+D1", w =>
         {
             w.View!.ZoomTo(1, w.View.ViewportCenter);

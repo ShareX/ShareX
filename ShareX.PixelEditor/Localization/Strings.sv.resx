@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>Zooma ut</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>Zooma till markering</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>Använd på alla bildrutor</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Det här formatet sparar bara den aktuella bildrutan.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>Jämna ut kanter vid förstoring</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>Filer</value>

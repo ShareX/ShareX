@@ -510,6 +510,9 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>تصغير</value>
   </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>تكبير إلى التحديد</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>تطبيق على كل الإطارات</value>
   </data>
@@ -767,6 +770,9 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>هذا التنسيق يحفظ الإطار الحالي فقط.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>تنعيم الحواف عند التكبير</value>
   </data>
   <data name="Export_Split" xml:space="preserve">
     <value>الملفات</value>
