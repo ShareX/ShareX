@@ -109,6 +109,31 @@ namespace ShareX.ScreenCaptureLib
 
         public SKBitmap? CaptureWindowTransparent(IntPtr handle) => CaptureWindowTransparentAsync(handle).GetAwaiter().GetResult();
 
+        /// <summary>
+        /// Recaptures <paramref name="handle"/> with its rounded corners and shadow, then keeps the opaque pixels of
+        /// <paramref name="windowImage"/> (the region capture of <paramref name="windowRectangle"/>, annotations included).
+        /// Null when the window moved or this system cannot do it.
+        /// </summary>
+        public SKBitmap? CaptureWindowTransparent(IntPtr handle, SKBitmap windowImage, Rectangle windowRectangle)
+        {
+            PixelBuffer? interior = PlatformImageConverter.ToPixelBuffer(windowImage);
+
+            if (interior == null || !PlatformServices.IsInitialized)
+            {
+                return null;
+            }
+
+            ScreenCaptureResult? result = Service.CaptureWindowPreservingInterior(
+                handle.ToInt64(),
+                interior,
+                new PlatformRectangle(windowRectangle.X, windowRectangle.Y, windowRectangle.Width, windowRectangle.Height),
+                CaptureShadow,
+                ShadowOffset,
+                AutoHideTaskbar);
+
+            return result == null ? null : PlatformImageConverter.ToSKBitmap(result);
+        }
+
         public SKBitmap? CaptureActiveWindowTransparent() => CaptureActiveWindowTransparentAsync().GetAwaiter().GetResult();
 
         private Task<SKBitmap?> CaptureWindowAsync(IntPtr handle, bool transparent, CancellationToken cancellationToken)

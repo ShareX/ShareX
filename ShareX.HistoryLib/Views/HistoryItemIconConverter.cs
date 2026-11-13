@@ -26,9 +26,9 @@
 #nullable enable
 
 using Avalonia.Data.Converters;
+using ShareX.Icons;
 using System;
 using System.Globalization;
-using ShareX.Icons;
 
 namespace ShareX.HistoryLib;
 

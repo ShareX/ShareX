@@ -45,20 +45,37 @@ internal static class FrameWindowShape
     }
 
     internal static RecordingFrameLayout CreateRecordingLayout(PlatformRectangle recordingRegion, double renderScaling,
-        double toolbarWidth, double toolbarHeight, int border, int toolbarGap)
+        double toolbarWidth, double toolbarHeight, int border, int toolbarGap, PlatformRectangle? workingArea = null)
     {
         double scaling = NormalizeScaling(renderScaling);
         int frameWidth = recordingRegion.Width + border * 2;
         int frameHeight = recordingRegion.Height + border * 2;
         int toolbarPixels = (int)Math.Ceiling(toolbarWidth * scaling);
+        int toolbarHeightPixels = (int)Math.Ceiling(toolbarHeight * scaling);
         int contentWidth = Math.Max(frameWidth, toolbarPixels);
         int frameLeft = (contentWidth - frameWidth) / 2;
         int toolbarLeft = (contentWidth - toolbarPixels) / 2;
+        int frameTop = 0;
+
+        // Keep the toolbar on screen when the region touches the bottom edge (ShareX #9154).
+        if (workingArea is { IsEmpty: false } area)
+        {
+            int top = recordingRegion.Y - border;
+            int bottom = top + frameHeight;
+            bool fitsBelow = bottom + toolbarGap + toolbarHeightPixels <= area.Bottom;
+            bool fitsAbove = top - toolbarGap - toolbarHeightPixels >= area.Y;
+
+            if (!fitsBelow && fitsAbove)
+            {
+                frameTop = toolbarHeightPixels + toolbarGap;
+            }
+        }
+
         return new RecordingFrameLayout(
-            new PixelPoint(recordingRegion.X - frameLeft - border, recordingRegion.Y - border),
+            new PixelPoint(recordingRegion.X - frameLeft - border, recordingRegion.Y - frameTop - border),
             contentWidth / scaling, (frameHeight + toolbarGap) / scaling + toolbarHeight, scaling,
-            new PlatformRectangle(frameLeft, 0, frameWidth, frameHeight),
-            new PlatformRectangle(toolbarLeft, frameHeight + toolbarGap, toolbarPixels, (int)Math.Ceiling(toolbarHeight * scaling)));
+            new PlatformRectangle(frameLeft, frameTop, frameWidth, frameHeight),
+            new PlatformRectangle(toolbarLeft, frameTop == 0 ? frameHeight + toolbarGap : 0, toolbarPixels, toolbarHeightPixels));
     }
 
     /// <summary>The four border strips of a frame, window relative, plus any extra areas such as a tool bar.</summary>

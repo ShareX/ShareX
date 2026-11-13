@@ -23,6 +23,8 @@
 
 #endregion License Information (GPL v3)
 
+#nullable enable
+
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;

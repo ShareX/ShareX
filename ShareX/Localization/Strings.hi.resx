@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>सहेजें</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>कैप्चर में मौजूद टेक्स्ट को इतिहास में खोजने योग्य बनाएं</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>हाल के कार्य सहेजें</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>डीबग लॉग अपलोड करें?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>रिपोर्ट क्लिपबोर्ड पर कॉपी हो गई।</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>स्केलिंग, एक से अधिक मॉनिटर या गलत जगह कैप्चर की समस्या रिपोर्ट करते समय यह रिपोर्ट साथ में भेजें।</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>डिस्प्ले लेआउट</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>माउस कर्सर</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>मुख्य मॉनिटर</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>रीफ़्रेश करें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>टास्कबार या ऐप बार</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>.txt के रूप में सहेजें...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>डिस्प्ले निदान सहेजें</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>रिपोर्ट {0} में सहेजी गई</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>टेक्स्ट फ़ाइल</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - डिस्प्ले निदान</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>यहाँ छोड़ें</value>
   </data>
@@ -1574,6 +1616,9 @@
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>डिस्प्ले निदान...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>दान करें...</value>
   </data>
@@ -1690,6 +1735,9 @@
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>स्क्रीन पर पिन करें...</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>पिक्सेल संपादक...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR कोड...</value>
@@ -1867,6 +1915,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>फ़ोटो संपादक में संपादित करें...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>पिक्सेल संपादक में संपादित करें...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>फ़ाइल</value>
@@ -2275,11 +2326,17 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>आप इन विकल्पों को एप्लिकेशन सेटिंग में कभी भी बदल सकते हैं।</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>विस्तृत</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX डाउनलोड करने के लिए धन्यवाद</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>सिस्टम सेटिंग का उपयोग करें</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX में आपका स्वागत है</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>अपनी पसंद से कुछ भी कैप्चर करें, संपादित करें और साझा करें।</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>क्या आप "{0}" अनुकूलित अपलोडर जोड़ना चाहते हैं?</value>
@@ -3007,6 +3064,9 @@
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>दायाँ क्लिक क्रिया:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>राइट-क्लिक करने पर कर्सर के नीचे का आकार हट जाता है</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>इनपुट या आउटपुट फ़ाइल टोकन सम्मिलित करने के लिए दायाँ-क्लिक करें।</value>

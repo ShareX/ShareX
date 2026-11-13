@@ -359,7 +359,7 @@ namespace ShareX.Setup
                 FileHelpers.CopyFiles(source, destination, "*.pdb");
             }
 
-            FileHelpers.CopyAll(Path.Combine(source, "PaddleOCR"), Path.Combine(destination, "PaddleOCR"));
+            FileHelpers.CopyAll(Path.Combine(source, "Models"), Path.Combine(destination, "Models"));
 
             FileHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), Path.Combine(destination, "Licenses"), "*.txt");
 

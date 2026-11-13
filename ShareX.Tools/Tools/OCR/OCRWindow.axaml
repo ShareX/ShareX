@@ -129,7 +129,9 @@
             <Grid x:Name="ContentGrid" Margin="12" ColumnDefinitions="*,12,420">
                 <Border Grid.Column="0" Classes="ocr-canvas">
                     <Grid>
-                        <toolControls:OCRPreview Margin="28,28,28,84"
+                        <toolControls:OCRPreview x:Name="ImagePreview"
+                                                 Padding="28,28,28,84"
+                                                 CopiedText="{x:Static localization:Strings.OCRWindow_Copied_to_clipboard}"
                                                  Source="{Binding SourceImage}"
                                                  Regions="{Binding TextRegions}"
                                                  IsScanning="{Binding IsBusy}"
@@ -166,7 +168,7 @@
                         <Grid Grid.Row="0" ColumnDefinitions="Auto,*" ColumnSpacing="10" Margin="18,16,18,8">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.TextRecognition}"
                                                     FontSize="18"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                     VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1" Classes="section-heading" Text="{x:Static localization:Strings.OCRWindow_Result}"/>
                         </Grid>
@@ -221,6 +223,10 @@
                                     <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Single_line}"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding SingleLine}" OnContent="" OffContent=""/>
                                 </Grid>
+                                <Grid ColumnDefinitions="*,Auto" MinHeight="34" IsEnabled="{Binding CanSeparateParagraphs}">
+                                    <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Separate_paragraphs}"/>
+                                    <ToggleSwitch Grid.Column="1" IsChecked="{Binding SeparateParagraphs}" OnContent="" OffContent=""/>
+                                </Grid>
                                 <Grid ColumnDefinitions="*,Auto" MinHeight="34">
                                     <TextBlock Classes="option-label" Text="{x:Static localization:Strings.OCRWindow_Copy_recognized_text_automatically}"/>
                                     <ToggleSwitch Grid.Column="1" IsChecked="{Binding AutoCopy}" OnContent="" OffContent=""/>
@@ -228,7 +234,7 @@
                             </StackPanel>
                         </Border>
 
-                        <StackPanel Grid.Row="3" Margin="16,6,16,16" Spacing="10">
+                        <StackPanel Grid.Row="3" Margin="16,6,16,16" Spacing="16">
                             <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="6">
                                 <ComboBox ItemsSource="{Binding ServiceLinks}"
                                           SelectedItem="{Binding SelectedServiceLink}"

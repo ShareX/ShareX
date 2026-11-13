@@ -200,39 +200,39 @@ public static partial class EditorCommands
                 values.TryAdd(numeric.Key, numeric.DefaultValue);
                 return DialogBuilder.SliderNumber((double)numeric.Minimum, (double)numeric.Maximum, (double)(decimal)values[numeric.Key]!, v => { values[numeric.Key] = (decimal)v; changed(); }, (double)numeric.Increment, numeric.Increment >= 1 ? "0" : "0.00");
             case CheckboxEffectParameter check:
-            {
-                values.TryAdd(check.Key, check.DefaultValue);
-                CheckBox box = new() { IsChecked = (bool)values[check.Key]! };
-                box.IsCheckedChanged += (_, _) => { values[check.Key] = box.IsChecked == true; changed(); };
-                return box;
-            }
+                {
+                    values.TryAdd(check.Key, check.DefaultValue);
+                    CheckBox box = new() { IsChecked = (bool)values[check.Key]! };
+                    box.IsCheckedChanged += (_, _) => { values[check.Key] = box.IsChecked == true; changed(); };
+                    return box;
+                }
             case EnumEffectParameter enumeration:
                 values.TryAdd(enumeration.Key, enumeration.Options[enumeration.DefaultIndex].Value);
                 return DialogBuilder.Combo(enumeration.Options.Select(o => (o.Label, o.Value)), values[enumeration.Key]!, v => { values[enumeration.Key] = v; changed(); });
             case ColorEffectParameter color:
-            {
-                values.TryAdd(color.Key, color.DefaultValue);
-                SKColor current = (SKColor)values[color.Key]!;
-                Button button = new() { Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(current) } };
-                button.Click += async (_, _) =>
                 {
-                    SKColor? picked = await ColorPickerDialog.ShowAsync(w, (SKColor)values[color.Key]!, color.Label, w);
-                    if (picked is SKColor c)
+                    values.TryAdd(color.Key, color.DefaultValue);
+                    SKColor current = (SKColor)values[color.Key]!;
+                    Button button = new() { Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(current) } };
+                    button.Click += async (_, _) =>
                     {
-                        values[color.Key] = c;
-                        button.Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(c) };
-                        changed();
-                    }
-                };
-                return button;
-            }
+                        SKColor? picked = await ColorPickerDialog.ShowAsync(w, (SKColor)values[color.Key]!, color.Label, w);
+                        if (picked is SKColor c)
+                        {
+                            values[color.Key] = c;
+                            button.Content = new Border { Width = 40, Height = 16, Background = DialogBuilder.ToBrush(c) };
+                            changed();
+                        }
+                    };
+                    return button;
+                }
             case TextEffectParameter text:
-            {
-                values.TryAdd(text.Key, text.DefaultValue);
-                TextBox box = new() { Text = (string?)values[text.Key] };
-                box.TextChanged += (_, _) => { values[text.Key] = box.Text ?? string.Empty; changed(); };
-                return box;
-            }
+                {
+                    values.TryAdd(text.Key, text.DefaultValue);
+                    TextBox box = new() { Text = (string?)values[text.Key] };
+                    box.TextChanged += (_, _) => { values[text.Key] = box.Text ?? string.Empty; changed(); };
+                    return box;
+                }
             default:
                 return null;
         }

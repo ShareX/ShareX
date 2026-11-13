@@ -1654,6 +1654,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>開啟后關闭</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>已複製到剪貼簿</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>全部複製</value>
   </data>
@@ -1695,6 +1698,9 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>選擇區域...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>分隔段落</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - 光學字元辨識</value>

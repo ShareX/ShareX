@@ -37,7 +37,6 @@ using ShareX.AvaloniaUI.Theming;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.ViewModels;
-using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.Views
 {
@@ -550,7 +549,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         /// <summary>Clicks on the tool panel, its popups and scroll bars must keep working normally.</summary>
         private bool IsCanvasResizePassThroughSource(object? source)
         {
-            for (var visual = source as Visual; visual != null; visual = visual.GetVisualParent())
+            for (var visual = source as Visual; visual != null; visual = GetCanvasResizeHitParent(visual))
             {
                 if (visual == _canvasResizePanel || visual is ScrollBar)
                 {
@@ -559,6 +558,15 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Visual parent, except that a popup's content (like the fill color picker) is not under the panel
+        /// in the visual tree: step from the popup's content to the Popup that opened it.
+        /// </summary>
+        private static Visual? GetCanvasResizeHitParent(Visual visual)
+        {
+            return visual.Parent is Popup popup ? popup : visual.GetVisualParent();
         }
 
         private static Rect ResizeCanvasFrame(Rect start, CanvasResizeEdges edges, Vector delta)

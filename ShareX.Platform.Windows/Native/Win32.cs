@@ -324,6 +324,17 @@ internal static unsafe partial class Win32
     [return: MarshalAs(UnmanagedType.Bool)]
     public static partial bool GetWindowRect(IntPtr hwnd, out RECT rect);
 
+    [LibraryImport("user32.dll")]
+    public static partial uint GetDpiForWindow(IntPtr hwnd);
+
+    public const uint MONITOR_DEFAULTTONEAREST = 2;
+
+    [LibraryImport("user32.dll")]
+    public static partial IntPtr MonitorFromRect(RECT* rect, uint flags);
+
+    [LibraryImport("user32.dll")]
+    public static partial IntPtr MonitorFromWindow(IntPtr hwnd, uint flags);
+
     public const int DWMWA_TRANSITIONS_FORCEDISABLED = 3;
 
     [LibraryImport("user32.dll", SetLastError = true)]

@@ -777,6 +777,9 @@
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Pin to صفحه (From صفحه)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>ویرایشگر پیکسل</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>ضبط صفحه بصورت کامل</value>
   </data>

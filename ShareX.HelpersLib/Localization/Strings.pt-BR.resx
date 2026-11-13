@@ -777,6 +777,9 @@ Mesmo assim, deseja executá-lo?</value>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Fixar na tela (da tela)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Editor de pixels</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capturar a tela inteira</value>
   </data>

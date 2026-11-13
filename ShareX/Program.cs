@@ -185,6 +185,11 @@ internal static class Program
 
     private static async Task ShowStartScreenAsync()
     {
+        if (StartupOptions.Sandbox)
+        {
+            return;
+        }
+
         DebugHelper.WriteLine("Start screen opening.");
         StartScreenWindow startScreen = new();
         await startScreen.ShowAsync();

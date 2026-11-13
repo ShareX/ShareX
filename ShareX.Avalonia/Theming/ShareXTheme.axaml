@@ -16,6 +16,7 @@
             <Color x:Key="ShareX.Color.Accent.Foreground">#111111</Color>
             <Color x:Key="ShareX.Color.Accent.Text">#0EACFF</Color>
             <Color x:Key="ShareX.Color.Accent.Border">#09AAFF</Color>
+            <Color x:Key="ShareX.Color.Accent.Icon">#09AAFF</Color>
             <Color x:Key="ShareX.Color.Link">#0EACFF</Color>
 
             <Color x:Key="ShareX.Color.Text">#D8DADB</Color>
@@ -48,6 +49,7 @@
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Foreground" Color="{StaticResource ShareX.Color.Accent.Foreground}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Text" Color="{StaticResource ShareX.Color.Accent.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Border" Color="{StaticResource ShareX.Color.Accent.Border}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Accent.Icon" Color="{StaticResource ShareX.Color.Accent.Icon}" />
             <SolidColorBrush x:Key="ShareX.Brush.Link" Color="{StaticResource ShareX.Color.Link}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />
@@ -124,6 +126,7 @@
             <Color x:Key="ShareX.Color.Accent.Foreground">#111111</Color>
             <Color x:Key="ShareX.Color.Accent.Text">#0670A8</Color>
             <Color x:Key="ShareX.Color.Accent.Border">#078DD4</Color>
+            <Color x:Key="ShareX.Color.Accent.Icon">#09AAFF</Color>
             <Color x:Key="ShareX.Color.Link">#0670A8</Color>
 
             <Color x:Key="ShareX.Color.Text">#4E4E4E</Color>
@@ -156,6 +159,7 @@
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Foreground" Color="{StaticResource ShareX.Color.Accent.Foreground}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Text" Color="{StaticResource ShareX.Color.Accent.Text}" />
             <SolidColorBrush x:Key="ShareX.Brush.Accent.Border" Color="{StaticResource ShareX.Color.Accent.Border}" />
+            <SolidColorBrush x:Key="ShareX.Brush.Accent.Icon" Color="{StaticResource ShareX.Color.Accent.Icon}" />
             <SolidColorBrush x:Key="ShareX.Brush.Link" Color="{StaticResource ShareX.Color.Link}" />
 
             <SolidColorBrush x:Key="ShareX.Brush.Text" Color="{StaticResource ShareX.Color.Text}" />

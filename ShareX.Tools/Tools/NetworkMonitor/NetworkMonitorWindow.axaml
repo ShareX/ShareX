@@ -174,7 +174,7 @@
                 <Grid RowDefinitions="Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.LineChart}" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.LineChart}" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Latency_history}"/>
                         </StackPanel>
                         <TextBlock Grid.Column="1" Classes="metric-label" Text="{x:Static localization:Strings.NetworkMonitorWindow_Range}" VerticalAlignment="Center"/>
@@ -200,7 +200,7 @@
                 <Grid RowDefinitions="Auto,Auto,*">
                     <Grid Grid.Row="0" Margin="12,10" ColumnDefinitions="*,Auto,Auto,Auto" ColumnSpacing="8">
                         <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ListRestart}" Foreground="{DynamicResource ShareX.Brush.Accent.Text}"/>
+                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ListRestart}" Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                             <TextBlock Classes="section-heading" Text="{x:Static localization:Strings.NetworkMonitorWindow_Connection_events}"/>
                         </StackPanel>
                         <Button Grid.Column="1" Command="{Binding CopyAllCommand}" IsEnabled="{Binding HasEvents}">

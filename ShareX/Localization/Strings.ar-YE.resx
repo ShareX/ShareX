@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>حفظ</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>اجعل النص في اللقطات قابلاً للبحث في السجل</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>حفظ المهام الأخيرة</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>هل تريد رفع سجل تصحيح الأخطاء؟</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>تم نسخ التقرير إلى الحافظة.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>نسخ إلى الحافظة</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>أرفق هذا التقرير عند الإبلاغ عن مشكلة في التحجيم أو تعدد الشاشات أو الالتقاط في المكان الخطأ.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>تخطيط الشاشات</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>مؤشر الماوس</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>الشاشة الرئيسية</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>تحديث</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>شريط المهام أو شريط تطبيق</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>حفظ كملف ‎.txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>حفظ تشخيص الشاشات</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>تم حفظ التقرير في {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>ملف نصي</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - تشخيص الشاشات</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>أفلت هنا</value>
   </data>
@@ -1574,6 +1616,9 @@
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>تشخيص الشاشات...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>تبرع</value>
   </data>
@@ -1690,6 +1735,9 @@
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>محرر البكسل...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>قارئ QR</value>
@@ -1867,6 +1915,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>تعديل في محرر الصور...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>تعديل في محرر البكسل...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ملف</value>
@@ -2275,11 +2326,17 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>يمكنك تغيير هذه الخيارات في أي وقت من إعدادات التطبيق.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>واسع</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>شكرًا لتنزيلك ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>استخدام إعداد النظام</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>مرحبًا بك في ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>التقط أي شيء وحرّره وشاركه بطريقتك.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>هل تريد إضافة أداة الرفع المخصصة «{0}»؟</value>
@@ -3007,6 +3064,9 @@
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>إجراء النقر الأيمن:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>النقر بزر الماوس الأيمن يحذف الشكل الموجود تحت المؤشر</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>انقر بزر الماوس الأيمن لإدراج رمز ملف إدخال أو إخراج.</value>

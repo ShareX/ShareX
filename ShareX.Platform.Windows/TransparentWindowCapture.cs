@@ -38,10 +38,25 @@ namespace ShareX.Platform.Windows;
 internal static class TransparentWindowCapture
 {
     /// <returns>Null when the backdrop could not be placed behind the window; the caller then captures it normally.</returns>
-    public static ScreenCaptureResult? Capture(IntPtr hwnd, ScreenCaptureRequest request)
+    public static ScreenCaptureResult? Capture(IntPtr hwnd, ScreenCaptureRequest request) =>
+        Capture(hwnd, request, null, default);
+
+    /// <summary>
+    /// Same capture, then the opaque pixels of <paramref name="interior"/> replace the window body so annotations survive.
+    /// Returns null when the window moved or the two backdrop photos disagree.
+    /// </summary>
+    public static ScreenCaptureResult? Capture(IntPtr hwnd, ScreenCaptureRequest request, PixelBuffer? interior, PlatformRectangle interiorBounds)
     {
         WindowCaptureOptions options = request.Window;
-        PlatformRectangle rect = WindowsWindowService.GetBounds(hwnd);
+        PlatformRectangle windowBounds = WindowsWindowService.GetBounds(hwnd);
+
+        if (interior != null && (windowBounds != interiorBounds || interior.Width != windowBounds.Width || interior.Height != windowBounds.Height))
+        {
+            Trace.WriteLine("Transparent capture skipped. Reason: Window rectangle changed.");
+            return null;
+        }
+
+        PlatformRectangle rect = windowBounds;
 
         // DWM is always on from Windows 8, so the shadow is always there to keep.
         if (options.IncludeShadow && !Win32.IsZoomed(hwnd))
@@ -61,7 +76,8 @@ internal static class TransparentWindowCapture
 
         (PixelBuffer Image, PlatformPoint Position)? cursor = null;
 
-        if (request.IncludeCursor)
+        // A region capture already shows the cursor when the user asked for one.
+        if (request.IncludeCursor && interior == null)
         {
             try
             {
@@ -101,11 +117,21 @@ internal static class TransparentWindowCapture
         {
             image = CombineBackgrounds(whiteBackground, blackBackground);
         }
+        else if (interior != null)
+        {
+            Trace.WriteLine("Transparent capture skipped. Reason: Images not equal.");
+            return null;
+        }
         else
         {
             // The window changed between the captures (an animation, a blinking caret), so the alpha would be wrong.
             Trace.WriteLine("Transparent capture failed. Reason: Images not equal.");
             image = whiteBackground2;
+        }
+
+        if (interior != null)
+        {
+            CopyOpaquePixels(interior, image, windowBounds.X - rect.X, windowBounds.Y - rect.Y);
         }
 
         if (cursor is { } c)
@@ -115,7 +141,7 @@ internal static class TransparentWindowCapture
 
         PlatformRectangle bounds = rect;
 
-        if (isTransparent)
+        if (isTransparent && interior == null)
         {
             PlatformRectangle crop = FindAutoCropRectangle(image);
 
@@ -132,6 +158,56 @@ internal static class TransparentWindowCapture
         }
 
         return new ScreenCaptureResult(image, bounds, isTransparent ? "GDI transparent" : "GDI");
+    }
+
+    /// <summary>
+    /// Copies <paramref name="source"/> onto <paramref name="destination"/> at <paramref name="offsetX"/>,
+    /// <paramref name="offsetY"/> as opaque pixels, except where a pixel in the source's corner squares or outer edge is not
+    /// opaque in the destination. Rounded corners and the translucent border keep their transparency. Acrylic and annotations
+    /// come from the source.
+    /// </summary>
+    internal static void CopyOpaquePixels(PixelBuffer source, PixelBuffer destination, int offsetX, int offsetY)
+    {
+        // Covers the 8 px Windows 11 corner radius up to 400% scaling.
+        const int maxCornerSize = 32;
+        const int edgeSize = 2;
+        int cornerSize = Math.Min(maxCornerSize, Math.Min(source.Width, source.Height) / 2);
+
+        for (int y = 0; y < destination.Height; y++)
+        {
+            int sourceY = y - offsetY;
+
+            if (sourceY < 0 || sourceY >= source.Height)
+            {
+                continue;
+            }
+
+            bool cornerRow = sourceY < cornerSize || sourceY >= source.Height - cornerSize;
+            bool edgeRow = sourceY < edgeSize || sourceY >= source.Height - edgeSize;
+
+            for (int x = 0; x < destination.Width; x++)
+            {
+                int sourceX = x - offsetX;
+
+                if (sourceX < 0 || sourceX >= source.Width)
+                {
+                    continue;
+                }
+
+                bool keepTransparency = edgeRow || sourceX < edgeSize || sourceX >= source.Width - edgeSize ||
+                    (cornerRow && (sourceX < cornerSize || sourceX >= source.Width - cornerSize));
+                int destinationIndex = y * destination.Stride + x * 4;
+
+                if (!keepTransparency || destination.Pixels[destinationIndex + 3] == 255)
+                {
+                    int sourceIndex = sourceY * source.Stride + sourceX * 4;
+                    destination.Pixels[destinationIndex] = source.Pixels[sourceIndex];
+                    destination.Pixels[destinationIndex + 1] = source.Pixels[sourceIndex + 1];
+                    destination.Pixels[destinationIndex + 2] = source.Pixels[sourceIndex + 2];
+                    destination.Pixels[destinationIndex + 3] = 255;
+                }
+            }
+        }
     }
 
     /// <summary>Recovers colour and alpha from the same pixels over white and over black.</summary>

@@ -177,6 +177,14 @@ public interface IScreenCaptureService
     Task<ScreenCaptureResult> CaptureAsync(ScreenCaptureRequest request, CancellationToken cancellationToken = default);
 
     /// <summary>
+    /// Recaptures a window's rounded corners and shadow, then copies the opaque pixels of <paramref name="interior"/> over the
+    /// window body. <paramref name="interior"/> is a region capture of <paramref name="interiorBounds"/>, annotations included.
+    /// Null when the window has moved or this system cannot keep both the corners and that image.
+    /// </summary>
+    ScreenCaptureResult? CaptureWindowPreservingInterior(long windowHandle, PixelBuffer interior, PlatformRectangle interiorBounds,
+        bool includeShadow, int shadowOffset, bool hideTaskbar) => null;
+
+    /// <summary>
     /// The mouse cursor as an image (straight alpha) and its top left corner on the virtual desktop, for drawing it onto a capture
     /// later. Null when it is hidden or the platform does not reveal it (Wayland).
     /// </summary>

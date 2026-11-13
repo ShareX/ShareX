@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>加算</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>焼き込みカラー</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>覆い焼きカラー</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>比較 (暗)</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>差の絶対値</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>除算</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>除外</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>ハードライト</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>色相</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>比較 (明)</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>輝度</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>乗算</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>通常</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>オーバーレイ</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>彩度</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>スクリーン</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>ソフトライト</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>減算</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>ブラック</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>ダーク</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>ライト</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>ホワイト</value>
+  </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>最近使った色。クリックで描画色、右クリックで背景色に設定します。</value>
+  </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>一致するコマンドはありません</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>コマンド、ツール、パネルを検索</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>実際のサイズ (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>ぼやけた縁を除去...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>境界線...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>明るさ/コントラスト...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>ブラシサイズを大きく</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>ブラシのプレビューを表示</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>ブラシサイズを小さく</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>カンバスサイズ...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>セルのプロパティ...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>クリア</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>セルを消去</value>
+  </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>ガイドを消去</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>すべて閉じる</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>コマンドパレット...</value>
+  </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>ピクセルレイヤーに変換</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>タイルマップレイヤーに変換...</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>フレームをコピー</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>画像をクリップボードにコピー</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>結合部分をコピー</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>選択範囲で切り抜き</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>切り取り</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>選択範囲からブラシを定義</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>フレームを削除</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>レイヤーを削除</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>選択を解除</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>ドロップシャドウ...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>レイヤーを複製</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>スプライトを複製</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>エクスポート...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>スプライトシートを書き出し...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>タイルマップを書き出し...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>描画色で塗りつぶし</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>最初のフレーム</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>画面サイズに合わせる</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>レイヤーを統合</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>左右に反転</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>上下に反転</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>フレームのプロパティ...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>フルスクリーン</value>
+  </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>グラデーションマップ...</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>彩度を下げる</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>グリッドを表示</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>グリッド設定...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>拡張...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>色相/彩度...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>画像をフレームとして読み込み...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>画像をレイヤーとして読み込み...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>スプライトシートを読み込み...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>色を反転</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>選択範囲を反転</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>最後のフレーム</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>上のレイヤーを選択</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>下のレイヤーを選択</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>ロック</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>レイヤーを下へ移動</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>レイヤーを最背面へ</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>レイヤーを最前面へ</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>レイヤーを上へ移動</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>レイヤープロパティ...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>参照レイヤー</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>コピーしたレイヤー</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>カットしたレイヤー</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>セルをリンク</value>
+  </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>色をパレットに固定</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>ループ再生</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>下のレイヤーと結合</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>フレームを左へ移動</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>フレームを右へ移動</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>新規...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>新規空フレーム</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>新規フレーム</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>クリップボードから新規作成</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>新規グループ</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>新規レイヤー</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>新規リンクフレーム</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>新規タグ...</value>
+  </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>新規タイルマップレイヤー...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>次のフレーム</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>オニオンスキン設定...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>オニオンスキン</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>開く...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>アウトライン...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>貼り付け</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>フレームを貼り付け</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>新規レイヤーとして貼り付け</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>新規スプライトとして貼り付け</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>ピクセルグリッドを表示</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>アニメーションを再生/停止</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>現在のタグのみ再生</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>ポスタリゼーション...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>環境設定...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>前のフレーム</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>やり直し</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>減色...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>タグを削除</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>未使用のタイルを削除</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>色の置き換え...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>ワークスペースをリセット</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>フレームを逆順に</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>180°回転</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>反時計回りに 90° 回転</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>90° 時計回りに回転</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>定規</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>別名で保存...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>すべてを選択</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>描画色の範囲を選択</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>セルの内容を選択</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>下へシフト</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>左へシフト</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>右へシフト</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>上へシフト</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>キーボードショートカット...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>オプションバー</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>スライスを表示</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>タイムライン</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>ツールバー</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>縮小...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>グリッドにスナップ</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>スプライトサイズ...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>選択範囲の境界線を描く</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>軸の位置を設定...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>左右対称</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>軸を中央に戻す</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>上下対称</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>タグのプロパティ...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>水平方向にタイル表示</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>タイルモード</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>垂直方向にタイル表示</value>
+  </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>セルのサムネール</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>2 列ツールバー</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>自由変形</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>余白を切り落とす</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>元に戻す</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>セルのリンクを解除</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>画像をアップロード</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>ズームイン</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>ズームアウト</value>
+  </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>選択範囲にズーム</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>すべてのフレームに適用</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>すべてのピクセルを完全に不透明か完全に透明にします。読み込んだ画像のぼやけた縁を整えるのに使います。</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>基準位置</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>適用先</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>垂直軸 (半ピクセル単位)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>水平軸 (半ピクセル単位)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>半透明をなくす</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>描画モード</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>明度</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>コントラスト</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>作成</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>方向</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>表示時間 (ミリ秒)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>フレーム {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>フレーム {0} ～ {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>変更前</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>開始フレーム</value>
+  </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>色の取得元</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>2 色</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>パレット (明るさ順)</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>シャドウ</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>ハイライト</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>色の順序を反転</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>ピクセルを明るさに応じて塗り替えます。最も暗いピクセルの色から最も明るいピクセルの色までを使います。</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>色相</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>縦横比を固定</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>明度</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>メソッド</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>新規スプライト</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>X オフセット</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Y オフセット</value>
+  </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>最後のフレームから最初のフレームへ循環する</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>後のフレーム数</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>前のフレーム数</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>現在のタグのフレームのみ</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>前のフレームを赤、後のフレームを青で着色</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>斜めの角も含める</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>図形の内側に描く</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>パーセント</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>ピクセル</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>スプライト全体からこの色数のパレットを作り、すべてのセルをその色に置き換えます。新しいパレットが現在のパレットに置き換わります。</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>すべてのセルを現在のパレットの最も近い色に置き換えます。</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>繰り返し回数</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>ニアレストネイバーはピクセルをくっきり保ちます。ドット絵スケーリングは 2 倍以上に拡大するときに階段状の縁も滑らかにします。</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>彩度</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>偶数は軸を 2 つのピクセルの間に置き、奇数はピクセルの中央を通します。</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>しきい値</value>
+  </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>タイルの高さ</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>タイルの幅</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>タイルマップレイヤーは同じサイズのタイルでできています。タイルに描くと、そのタイルを使っているすべての場所が変わります。</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>変更後</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>終了フレーム</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>背景を透明にする</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>順方向</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>往復</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>往復 (逆)</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>逆方向</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>配列 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>配列 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>フロイド–スタインバーグ</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>配列ディザ</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>パネルを閉じる</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>パネルグループを折りたたむ</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>パネルグループを展開</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>{0} のグループに移動</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>新規グループに移動</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>パネルメニュー</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>すべてのフレーム</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>アニメーション PNG</value>
+  </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>再生どおりのアニメーション</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>書き出し</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>現在のフレーム</value>
+  </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} 個のファイル</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>書式</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>フレーム</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>アニメーション GIF</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px、{2} フレーム</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>PNG 画像</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>拡大縮小</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>選択したフレーム</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>PNG 連番</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>この形式では現在のフレームのみ保存されます。</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>拡大時に輪郭を滑らかにする</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>レイヤーごとに 1 ファイル</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>1 つのファイル</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>タグごとに 1 ファイル</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>タグ: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>すべての対応ファイル</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>パレット</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>ShareX ピクセルエディターのスプライト</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>描画モード</value>
+  </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>セルをコピー</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>フレームをコピー</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>スライスを削除</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>選択を解除</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>パレットの色を編集</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>フレームの表示時間</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>レイヤーを非表示</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>パレットを読み込み</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>レイヤーをロック</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>選択範囲を変更</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>セルを移動</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>フレームを移動</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>スライスを編集</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>新規</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>新規スライス</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>レイヤーの不透明度</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>復元済み</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>スライスのプロパティ</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>レイヤーの順序を変更</value>
+  </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>パレットの並べ替え</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>選択</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>レイヤーを表示</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>このレイヤーのみ表示</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>レイヤーのロックを解除</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>背面</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>比較 (暗)</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>比較 (明)</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>アルファをロック</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>通常</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>置き換え</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} のコピー</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>レイヤー</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>統合レイヤー</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>グループ</value>
+  </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>タイルマップ</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>このセルは他のフレームとリンクしています</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>参照レイヤー: 書き出されません</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>{0} × {1} px のタイルを使うタイルマップレイヤー</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>グループを展開/折りたたみ</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>レイヤーをロック/ロック解除</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>レイヤーを表示/非表示</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>セル</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>編集(_E)</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>エフェクト(_C)</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(なし)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>ファイル(_F)</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>フレーム(_R)</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>ヘルプ(_H)</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>レイヤー(_L)</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>最近使用したファイルを開く</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>パネル</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>選択範囲(_S)</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>ピクセルをシフト (回り込み)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>スプライト(_P)</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>対称</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>タグ</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>タイルモード</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>タイルマップ</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>表示(_V)</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>クリップボードに画像がありません。</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>「{0}」を完了できませんでした: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>「{0}」を開けませんでした: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>「{0}」を保存できませんでした: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>保存しない</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>操作に失敗しました: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>閉じる前に「{0}」の変更を保存しますか?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>画像が大きすぎます。スプライトは幅・高さともに最大 {0} ピクセルです。</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>すべてのレイヤー</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>アクティブレイヤーではなく、表示中のすべてのレイヤーの色をもとに塗りつぶします</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>角度</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>適用</value>
+  </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>ブラシ</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>ブラシをリセット</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>隣接</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>クリックしたピクセルとつながっているピクセルのみ。オフにするとその色のすべてのピクセルが対象になります</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>カスタムブラシ</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>密度</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>斜め方向</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>角だけで接しているピクセルにも広げます</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>ディザ</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>クリックで描画色、右クリックで背景色を取得</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>塗りつぶし</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>高さ</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>インク</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>線形グラデーション</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>ドラッグして選択範囲またはセルを移動します。Alt を押しながらでコピーを移動します。</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>不透明度</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>輪郭</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>パターン</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>ピクセルパーフェクト</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>1 px ブラシで描いたフリーハンドの線から余分な角のピクセルを取り除きます</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>円形グラデーション</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>半径</value>
+  </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>ライブラリからブラシを削除</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>丸いブラシ先</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>アクティブレイヤーではなく、表示中のすべてのレイヤーの色を使います</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>選択範囲に追加 (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>現在の選択範囲との共通範囲 (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>新規選択</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>現在の選択範囲から一部削除 (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>クリックで明るく、右クリックで暗く、パレットに沿って変化します</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>サイズ:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>ドラッグしてスライスを作成します。クリックで選択、ダブルクリックで名前を変更します。</value>
+  </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>なめらかな回転</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>回転したピクセルアートの線をギザギザにせずきれいに保ちます</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>正方形の先端</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>標準ブラシ (サイズと形)</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>テキストを置く位置をクリックします</value>
+  </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>タイル {0}   {1} × {2} px</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>透明へ</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>背景色に変化させず、描画色を徐々に透明にします</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>許容値</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>変形</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>幅</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>描画色をパレットに追加</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} 色</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>色を編集...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>スプライトからパレットを作成</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>パレットを読み込み...</value>
+  </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>固定中</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>パレットメニュー</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>プリセット</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>カラーランプを追加...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>描画色から背景色までの色の段階を追加します。</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>段階数</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>スプライトをパレットに合わせる...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>パレットから色を削除</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>未使用の色を削除</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>描画色で置き換え</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>順序を反転</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>パレットを保存...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>この色のピクセルを選択</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>明るさで並べ替え</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>色相で並べ替え</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>彩度で並べ替え</value>
+  </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>クリック: 描画色。右クリック: 背景色。ダブルクリック: 編集。ドラッグ: 並べ替え。Ctrl+右クリック: その他のオプション。</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>色</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>レイヤー</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>パレット</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>タイル</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>市松模様</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>密</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>斜線</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>ドット</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>水平線</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>実線</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>疎</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>垂直線</value>
+  </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>復元用コピーの間隔 (分、0 = オフ)</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>透明部分の市松模様</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>マス目のサイズ (ピクセル)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>ヒストリーの数</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>ピクセルグリッドを表示する倍率 (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>ウィンドウのサイズと位置を記憶</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>タイムラインのセルサイズ</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>全体表示 ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>プレビューを再生/一時停止</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>破棄</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>ピクセルエディターが正常に終了しませんでした。保存されていない変更を含むスプライトを {0} 個復元できます。</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>復元</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>最近傍</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>ドット絵スケーリング</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>滑らか (バイキュービック)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>ガイド {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>キャンバスへドラッグするとガイドを追加します。ガイドは移動ツールで動かし、キャンバスの外へドラッグすると削除されます。</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>現在のセル</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>レイヤーの全フレーム</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>選択したフレーム</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>スプライト全体</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>フレームの高さ</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>フレームの幅</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>列</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>グリッド</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>横一列</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>インポート</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} マス、最大 {2} フレーム</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>シートのサイズ: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>シート: {0} × {1} px、{2} フレーム</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>レイアウト</value>
+  </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>同一フレームをまとめる</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>JSON データを書き出す (フレーム、タグ、スライス)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>詰めて配置</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>内側の余白</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>空のマスを飛ばす</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>間隔</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>フレームの周りの余白を切り詰める</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>固有 {0} 枚</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>縦一列</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>背景色で描く</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>コマンド</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>すべてのパネルを表示/非表示</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>マウスの中ボタン</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Ctrl+Shift+E のようにショートカットを入力します。複数はカンマで区切り、空欄にするとショートカットを削除します。</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>表示を移動</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>描画中に色を取得</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>既定値に戻す</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>マウスの右ボタン</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>最後の点から直線 (鉛筆)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>ツール</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>マウスホイール</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>ズーム</value>
+  </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>中央の高さ</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>中央の幅</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>中央 X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>中央 Y</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>スライス {0}</value>
+  </data>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9 分割スライス</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>中央とピボットはスライスの左上隅から測ります。どちらもスプライトシートのメタデータに書き込まれます。</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>ピボット</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>ピボット X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>ピボット Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>スライスのプロパティ</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>クリップボード</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>スプライト-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>最近使用したファイルをクリア</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>新規スプライト</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>最近使ったファイルはありません</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>開く</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>最近使った項目</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>クイックスタート</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>その色のピクセルはありません</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>クリップボードにコピーしました</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} を書き出しました</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} 個のファイルを書き出しました</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>書き出し中...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} 個のフレームをコピーしました</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>アクティブなレイヤーは非表示です</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>アクティブなレイヤーはロックされています</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>描いた色はパレットの最も近い色にそろえられます</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>コピーする内容がありません</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>下に結合できるピクセルレイヤーがありません</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>セルは空です</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>色を置き換え中...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>サイズを変更中...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} を保存しました</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>先にピクセルレイヤーを選択してください</value>
+  </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>先にタイルマップレイヤーを選択してください</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>選択範囲 {0} × {1}</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   フレーム {2}/{3}   {4} ミリ秒</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>レイヤーを {0} 個のタイルに分割しました</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>未使用のタイルを {0} 個削除しました</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>タグ {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>縁を滑らかにする</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>太字</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>フォント:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>斜体</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>テキストは選択範囲として配置され、レイヤーに確定する前に移動できます。</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>描画するとタイルのすべてのコピーが変わる</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>オフのときは、タイルに描くと共有タイルを変更せずに、そのセルに新しいタイルを割り当てます。</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>アクティブなレイヤーはタイルマップレイヤーではありません。タイルマップレイヤーは同じサイズのタイルでできています。タイルに描くとそのタイルを使っているすべての場所が変わり、タイルスタンプツールでグリッドにタイルを配置できます。</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>空のタイル (セルを消去)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>タイル {0} 個、{1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>タイル {0}</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>表示時間</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>選択したフレームの表示時間 (ミリ秒)</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} フレーム   {1:0.##} 秒   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>レイヤー</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>フレーム {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>最大化</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>最小化する</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>元のサイズに戻す</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>塗りつぶし</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>クリックして似た色の範囲を塗りつぶします</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>色の置き換え</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>背景色のピクセルだけを描画色で塗ります。右クリックでは逆になります</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>塗りつぶし輪郭</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>フリーハンドで輪郭を描きます。離すと閉じて塗りつぶされます</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>曲線</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>動かして曲げ、クリックで確定、Esc でキャンセル</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>線をドラッグし、動かして曲げてからクリックで確定します</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>楕円</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>楕円形選択</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>ドラッグして楕円を描きます。Shift で円、Ctrl で中心から描きます</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>消しゴム</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>ドラッグしてピクセルを消します</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>スポイト</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>クリックで描画色、右クリックで背景色を取得します</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>グラデーション</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>ドラッグして描画色から背景色へのグラデーションで塗りつぶします</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>手</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>ドラッグして表示を移動します。Space を押しながらでどのツールでも移動できます</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>なげなわ</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>範囲を囲むようにドラッグして選択します</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>線</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>ドラッグして線を描きます。Shift できれいなピクセル角度にそろえます</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>自動選択</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>クリックして似た色の範囲を選択します</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>移動</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>ドラッグして選択範囲またはセルを移動します。ハンドルで拡大縮小・回転、Enter で確定します</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>鉛筆</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>描画色で描きます。右クリックでは背景色で描きます。Shift+クリックで最後の点から直線を引きます</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>多角形選択</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>クリックで角を追加し、ダブルクリックか Enter で選択範囲を閉じます</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>長方形選択</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>長方形</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>ドラッグして長方形を描きます。Shift で正方形、Ctrl で中心から描きます</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>ドラッグして選択します。Shift で追加、Alt で除外、Shift+Alt で共通部分</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>シェーディング</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>ドラッグしてパレットに沿ってピクセルを明るくします。右クリックで暗くします</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>スライス</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>ドラッグして名前付きの領域を指定します。スプライトシートと一緒に書き出されます</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>スプレー</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>押し続けると散らばったピクセルを吹き付けます</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>クリックしてテキストを追加します</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>タイルスタンプ</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>クリックまたはドラッグで選択したタイルを配置します。Shift+クリックでつながったセルを塗りつぶし、右クリックでセルを消去、Alt+クリックでカーソル下のタイルを取得します。</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>ズーム</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>クリックで拡大、右クリックまたは Alt+クリックで縮小します</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>背景色</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>1 列に折りたたむ</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>既定の色</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>2 列に展開</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>描画色</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>描画色と背景色を入れ替え</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>ピクセルエディター</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - ピクセルエディター</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - ピクセルエディター</value>
+  </data>
+</root>

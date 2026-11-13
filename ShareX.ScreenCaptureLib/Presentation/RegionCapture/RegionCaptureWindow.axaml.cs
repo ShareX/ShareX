@@ -103,6 +103,8 @@ public partial class RegionCaptureWindow : Window
     private RegionShape _regionShape = RegionShape.Rectangle;
     // Points of the freehand region being drawn; frozen into the selection when the button is released.
     private List<Point>? _freehandPoints;
+    // True while Shift draws a straight edge in the freehand region, as in ShareX 21.
+    private bool _isFreehandStraightLine;
     private readonly TranslateTransform _magnifierTransform = new();
     private readonly ScaleTransform _magnifierScale = new();
     private readonly ScaleTransform _selectionInfoScale = new();
@@ -375,7 +377,7 @@ public partial class RegionCaptureWindow : Window
         _captureToolbar = this.FindControl<Grid>("CaptureToolbar")!;
         _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
         _captureToolbarScale = this.FindControl<LayoutTransformControl>("CaptureToolbarScale")!;
-        _annotationToolbar =this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
+        _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
         _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
         _magnifierPanel.RenderTransformOrigin = RelativePoint.TopLeft;
@@ -591,6 +593,9 @@ public partial class RegionCaptureWindow : Window
             {
                 UpdatePixelTransforms();
             }
+
+            WindowGeometryLog.Record(this, "Region capture", _request.ScreenBounds,
+                new System.Drawing.Size(_imageWidth, _imageHeight), GetGeometryChecks, trackDpiChanges: true);
 
             if (_request.CursorBitmap != null)
             {
@@ -841,6 +846,7 @@ public partial class RegionCaptureWindow : Window
             if (_regionShape == RegionShape.Freehand)
             {
                 _freehandPoints = [point];
+                _isFreehandStraightLine = false;
                 SetSelection(new CaptureRegion(RegionShape.Freehand, default, _freehandPoints), null);
             }
             else
@@ -904,7 +910,7 @@ public partial class RegionCaptureWindow : Window
                 }
                 break;
             case RegionInteraction.Creating when _freehandPoints != null:
-                AddFreehandPoint(point);
+                AddFreehandPoint(point, e.KeyModifiers.HasFlag(KeyModifiers.Shift));
                 break;
             case RegionInteraction.Creating:
                 UpdateSelectionDuringCreation(point, e.KeyModifiers);
@@ -1163,6 +1169,58 @@ public partial class RegionCaptureWindow : Window
         SetCaptureToolbarAnchor((monitor.X + monitor.Width / 2d) / scale, monitor.Y / scale);
     }
 
+    /// <summary>
+    /// For display diagnostics: where the toolbar and magnifier should be against where Avalonia put them, and where they
+    /// land if the window's Windows DPI is used instead of Avalonia's render scaling.
+    /// </summary>
+    private IEnumerable<WindowGeometryCheck> GetGeometryChecks()
+    {
+        if (_request == null)
+        {
+            yield break;
+        }
+
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        if (!PlatformServices.IsInitialized || handle == IntPtr.Zero)
+        {
+            yield break;
+        }
+
+        NativeWindowGeometry? native = PlatformServices.Current.Windows.ReadNativeWindowGeometry(handle.ToInt64());
+        if (native == null)
+        {
+            yield break;
+        }
+
+        PlatformRectangle bounds = native.Value.Bounds;
+        DrawingRectangle windowBounds = DrawingRectangle.FromLTRB(bounds.Left, bounds.Top, bounds.Right, bounds.Bottom);
+        double windowsScaling = WindowGeometryLog.GetWindowScaling(handle) ?? GetWindowScaling();
+        DrawingPoint cursor = CaptureHelpers.GetCursorPosition();
+
+        DrawingPoint ToScreen(Point point, double scaling) => new(
+            windowBounds.X + (int)Math.Round(point.X * scaling),
+            windowBounds.Y + (int)Math.Round(point.Y * scaling));
+
+        if (_captureToolbar.IsVisible && _captureToolbar.TranslatePoint(new Point(_captureToolbar.Bounds.Width / 2, 0), this) is Point toolbarTop)
+        {
+            DrawingPoint saved = _request.RegionCaptureOptions.ToolbarPosition;
+            Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursor.X, cursor.Y));
+            DrawingPoint expected = !saved.IsEmpty ? saved :
+                screen != null ? new DrawingPoint(screen.Bounds.X + screen.Bounds.Width / 2, screen.Bounds.Y) : cursor;
+
+            // The toolbar sits a margin below the monitor's top edge, so only its horizontal centre is compared.
+            yield return new WindowGeometryCheck("Toolbar centre (Avalonia scaling)", expected, ToScreen(toolbarTop, GetWindowScaling()), CompareY: false);
+            yield return new WindowGeometryCheck("Toolbar centre (Windows DPI)", expected, ToScreen(toolbarTop, windowsScaling), CompareY: false);
+        }
+
+        if (_magnifierPanel.IsVisible && _magnifierPanel.TranslatePoint(default, this) is Point magnifier)
+        {
+            // The magnifier is drawn beside the cursor on purpose, so this is reported but not compared.
+            yield return new WindowGeometryCheck("Magnifier corner vs cursor", cursor, ToScreen(magnifier, GetWindowScaling()),
+                CompareX: false, CompareY: false);
+        }
+    }
+
     private double GetToolbarScale()
     {
         return GetWindowScaling();
@@ -1194,8 +1252,8 @@ public partial class RegionCaptureWindow : Window
     }
 
     /// <summary>
-    /// The overlay is one window across all monitors, so Windows gives it a single scaling, from the monitor at
-    /// the desktop origin (see ConfigureInitialPixelBounds). The toolbar, magnifier and info labels are scaled by
+    /// The overlay is one window across all monitors, so Windows gives it a single scaling, from the monitor it
+    /// overlaps most (see ConfigureInitialPixelBounds). The toolbar, magnifier and info labels are scaled by
     /// this factor so they match the scaling of the monitor they are shown on in mixed DPI setups.
     /// </summary>
     private double GetMonitorScaleFactor(PixelPoint desktopPoint)
@@ -1718,14 +1776,25 @@ public partial class RegionCaptureWindow : Window
         SetSelection(source.Offset(x - rectangle.X, y - rectangle.Y), null);
     }
 
-    private void AddFreehandPoint(Point point)
+    // While Shift is held the region stops following the pointer and draws one straight edge
+    // from its last point to the pointer instead, as in ShareX 21.
+    private void AddFreehandPoint(Point point, bool straightLine)
     {
         if (_freehandPoints == null || (_freehandPoints.Count > 0 && _freehandPoints[^1] == point))
         {
             return;
         }
 
-        _freehandPoints.Add(point);
+        if (straightLine && _isFreehandStraightLine)
+        {
+            _freehandPoints[^1] = point;
+        }
+        else
+        {
+            _freehandPoints.Add(point);
+        }
+
+        _isFreehandStraightLine = straightLine;
         SetSelection(new CaptureRegion(RegionShape.Freehand, CaptureRegion.GetBounds(_freehandPoints), _freehandPoints), null);
     }
 
@@ -2281,19 +2350,38 @@ public partial class RegionCaptureWindow : Window
 
         DrawingRectangle screenRectangle = ToScreenRectangle(bounds);
         SnapTarget? candidate = includeWindowInfo ? FindTopLevelCandidate(screenRectangle) : null;
+        long windowHandle = 0;
+
+        if (includeWindowInfo && shapes.Count == 1 && shapes[0].IsRectangle &&
+            _selectedCandidate is { IsWindow: true } candidateWindow &&
+            SameRectangle(ToDrawingRectangle(candidateWindow.Bounds), screenRectangle))
+        {
+            windowHandle = candidateWindow.Handle;
+        }
 
         _pendingResult = new AvaloniaRegionCaptureResult(
             output,
             screenRectangle,
             candidate?.Window,
-            _viewModel?.IsDirty == true);
+            _viewModel?.IsDirty == true,
+            windowHandle);
         RegionCaptureIntegration.SetLastRegion(screenRectangle, regions.Select(ToScreenRectangle).ToArray());
         _closing = true;
+
+        if (windowHandle != 0 && TryGetPlatformHandle()?.Handle is IntPtr overlay && overlay != IntPtr.Zero)
+        {
+            // The window may be captured again from the screen right after this one closes, so it must not fade out.
+            PlatformServices.Current.Windows.DisableTransitions(overlay.ToInt64());
+        }
+
         Close();
     }
 
     private DrawingRectangle ToScreenRectangle(DrawingRectangle imageRectangle) =>
         ImageToScreen(imageRectangle.X, imageRectangle.Y, imageRectangle.Width, imageRectangle.Height);
+
+    private static bool SameRectangle(DrawingRectangle first, DrawingRectangle second) =>
+        first.X == second.X && first.Y == second.Y && first.Width == second.Width && first.Height == second.Height;
 
     private SnapTarget? FindTopLevelCandidate(DrawingRectangle selectedRectangle)
     {
@@ -2442,15 +2530,20 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        // Set Position exactly once, while the HWND still has its small initial size, so
-        // Win32 selects the DPI of the monitor at the virtual desktop origin. Reassigning
-        // Position after the window spans multiple monitors can make MonitorFromWindow
-        // select a different monitor and silently change Avalonia's internal scale.
-        // On macOS windows are placed in points, the units of ScreenBounds, not in the screenshot's pixels.
-        Position = PlatformServices.IsInitialized && PlatformServices.Current.Windows.PositionsWindowsInPoints
-            ? new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y)
-            : new PixelPoint((int)Math.Round(_request.ScreenBounds.X * _pixelsPerScreenX), (int)Math.Round(_request.ScreenBounds.Y * _pixelsPerScreenY));
+        // Set Position exactly once, while the window is still small, on the monitor the system will take the overlay's DPI
+        // from once it spans the desktop. Then move it into place without reassigning Position, which would let Avalonia
+        // change its cached scale. On macOS the bounds are already in points.
+        DrawingRectangle bounds = _request.ScreenBounds;
+        if (PlatformServices.IsInitialized && PlatformServices.Current.Windows.PositionsWindowsInPoints)
+        {
+            Position = new PixelPoint(bounds.X, bounds.Y);
+        }
+        else
+        {
+            RegionCaptureDpi.PositionAtAnchor(this, new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
+        }
         ApplyPixelSize();
+        Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
     }
 
     /// <summary>
@@ -2519,8 +2612,9 @@ public partial class RegionCaptureWindow : Window
             return 1;
         }
 
-        PixelPoint topLeft = new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y);
-        return Screens.ScreenFromPoint(topLeft)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+        PlatformPoint anchor = RegionCaptureDpi.Anchor(new PlatformRectangle(
+            _request.ScreenBounds.X, _request.ScreenBounds.Y, _request.ScreenBounds.Width, _request.ScreenBounds.Height));
+        return Screens.ScreenFromPoint(new PixelPoint(anchor.X, anchor.Y))?.Scaling ?? Screens.Primary?.Scaling ?? 1;
     }
 
     private static byte GetDimAlpha(RegionCaptureOptions options)

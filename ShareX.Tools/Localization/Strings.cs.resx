@@ -1654,6 +1654,9 @@ Cesta k souboru: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Po otevření zavřít</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Zkopírováno do schránky</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Kopírovat vše</value>
   </data>
@@ -1695,6 +1698,9 @@ Cesta k souboru: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Vybrat oblast...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Oddělit odstavce</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX – Optické rozpoznávání znaků</value>

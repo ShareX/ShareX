@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>שמירה</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>אפשר חיפוש בטקסט שבצילומים בהיסטוריה</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>שמור משימות אחרונות</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>להעלות את יומן איתור הבאגים?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>הדוח הועתק ללוח.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>העתקה ללוח</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>צרפו דוח זה כשאתם מדווחים על בעיה בשינוי קנה מידה, בכמה מסכים או בלכידה במקום הלא נכון.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>פריסת מסכים</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>סמן העכבר</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>מסך ראשי</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>רענון</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>שורת המשימות או סרגל אפליקציה</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>שמירה כ-‎.txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>שמירת אבחון התצוגה</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>הדוח נשמר ב-{0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>קובץ טקסט</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - אבחון תצוגה</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>שחרר כאן</value>
   </data>
@@ -1574,6 +1616,9 @@
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>אבחון תצוגה...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>תרומה</value>
   </data>
@@ -1690,6 +1735,9 @@
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>הצמד למסך</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>עורך פיקסלים...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>קוד QR</value>
@@ -1867,6 +1915,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>ערוך בעורך התמונות...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>ערוך בעורך הפיקסלים...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>קובץ</value>
@@ -2275,11 +2326,17 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>ניתן לשנות אפשרויות אלה בכל עת בהגדרות היישום.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>מרווח</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>תודה שהורדת את ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>שימוש בהגדרת המערכת</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ברוכים הבאים ל-ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>צלמו, ערכו ושתפו כל דבר בדרך שלכם.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>להוסיף את המעלה המותאם אישית "{0}"?</value>
@@ -3007,6 +3064,9 @@
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>פעולת לחיצה ימנית:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>לחיצה ימנית מוחקת את הצורה שמתחת לסמן</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>יש ללחוץ באמצעות לחצן העכבר הימני כדי להוסיף אסימון של קובץ קלט או פלט.</value>

@@ -88,16 +88,11 @@ public sealed class RegionCaptureTransparentWindow : Window
     /// <summary>Shows the window and returns the selected screen rectangle, or null when cancelled.</summary>
     public Task<DrawingRectangle?> SelectAsync()
     {
-        // Set Position once while the window is still small, so Win32 picks the DPI of the monitor at the
-        // desktop origin; see RegionCaptureWindow.ConfigureInitialPixelBounds. Keep that DPI while the window spans monitors
-        // with different scaling, as region capture does.
-        if (PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
-        {
-            PlatformServices.Current.Windows.KeepScaleFixed(handle.ToInt64());
-        }
-
-        Position = new PixelPoint(_screenBounds.X, _screenBounds.Y);
+        // Set Position once while the window is still small, on the monitor the system takes the spanning window's DPI from.
+        // Keep that DPI while the window spans monitors with different scaling, as region capture does.
+        RegionCaptureDpi.PositionAtAnchor(this, new PlatformRectangle(_screenBounds.X, _screenBounds.Y, _screenBounds.Width, _screenBounds.Height));
         ApplyPixelSize();
+        Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
         Show();
         return _completionSource.Task;
     }
@@ -216,6 +211,7 @@ public sealed class RegionCaptureTransparentWindow : Window
         ApplyToolWindowStyle();
         ApplyPixelSize();
         Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
+        WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds, trackDpiChanges: true);
         DisableWindowTransitions();
         Cursor = CursorAssetLoader.GetCrosshairCursor(GetScaling());
 

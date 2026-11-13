@@ -1654,6 +1654,9 @@ Bestandspad: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Sluiten na openen</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Gekopieerd naar klembord</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Alles kopiëren</value>
   </data>
@@ -1695,6 +1698,9 @@ Bestandspad: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Gebied selecteren...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Alinea's scheiden</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optische tekenherkenning</value>

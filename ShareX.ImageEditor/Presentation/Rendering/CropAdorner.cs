@@ -34,9 +34,13 @@ internal sealed class CropAdorner
 {
     private readonly List<Rectangle> _cropShadeRects = new();
     private readonly List<Line> _cropGuideLines = new();
+    private Border? _cropInfoPanel;
+    private TextBlock? _cropInfoText;
 
     private const int CropShadeZIndex = 5000;
     private const int CropGuideZIndex = 6500;
+    private const int CropInfoZIndex = 7500;
+    private const double CropInfoMargin = 6;
     private const double MinCropGuideSize = 24;
 
     private static readonly Color CropShadeFill = Color.FromArgb(140, 0, 0, 0);
@@ -100,10 +104,32 @@ internal sealed class CropAdorner
                 }
             }
         }
+
+        if (_cropInfoPanel == null)
+        {
+            _cropInfoPanel = CreateCropInfoPanel(overlay, out _cropInfoText);
+            overlay.Children.Add(_cropInfoPanel);
+        }
+        else if (_cropInfoPanel.Parent != overlay)
+        {
+            (_cropInfoPanel.Parent as Panel)?.Children.Remove(_cropInfoPanel);
+            overlay.Children.Add(_cropInfoPanel);
+        }
     }
+
+    /// <summary>
+    /// Space the size label takes above the crop rectangle, in overlay units. Zero when it sits inside.
+    /// </summary>
+    public double InfoHeightAbove { get; private set; }
 
     public void Hide()
     {
+        InfoHeightAbove = 0;
+        if (_cropInfoPanel != null)
+        {
+            _cropInfoPanel.IsVisible = false;
+        }
+
         foreach (var shade in _cropShadeRects)
         {
             shade.IsVisible = false;
@@ -147,6 +173,8 @@ internal sealed class CropAdorner
         SetCropAdornerRect(_cropShadeRects[2], overlayRight, overlayTop, Math.Max(0, (overlayImageLeft + canvasWidth) - overlayRight), height);
         SetCropAdornerRect(_cropShadeRects[3], overlayImageLeft, overlayBottom, canvasWidth, Math.Max(0, (overlayImageTop + canvasHeight) - overlayBottom));
 
+        UpdateCropInfo(overlay, left, top, width, height, overlayLeft, overlayTop);
+
         bool showGuides = width >= MinCropGuideSize && height >= MinCropGuideSize;
         if (!showGuides)
         {
@@ -186,4 +214,79 @@ internal sealed class CropAdorner
         rect.IsVisible = rect.Width > 0 && rect.Height > 0;
     }
 
+    /// <summary>
+    /// Shows the crop position and size in image pixels, like the ShareX 21 editor.
+    /// </summary>
+    private void UpdateCropInfo(Canvas overlay, double left, double top, double width, double height, double overlayLeft, double overlayTop)
+    {
+        if (_cropInfoPanel == null || _cropInfoText == null)
+        {
+            return;
+        }
+
+        // Same rounding as the crop itself, so the label matches the result.
+        int cropWidth = (int)Math.Round(width);
+        int cropHeight = (int)Math.Round(height);
+        if (cropWidth <= 0 || cropHeight <= 0)
+        {
+            InfoHeightAbove = 0;
+            _cropInfoPanel.IsVisible = false;
+            return;
+        }
+
+        _cropInfoText.Text = $"X: {(int)Math.Round(left)} Y: {(int)Math.Round(top)} W: {cropWidth} H: {cropHeight}";
+
+        // The overlay is scaled by the editor zoom; counter-scale so the label stays readable.
+        double zoom = overlay.RenderTransform is ScaleTransform { ScaleX: > 0 } scale ? scale.ScaleX : 1;
+        double inverseZoom = 1 / zoom;
+        _cropInfoPanel.RenderTransform = new ScaleTransform(inverseZoom, inverseZoom);
+
+        _cropInfoPanel.Measure(Size.Infinity);
+        double panelHeight = _cropInfoPanel.DesiredSize.Height * inverseZoom;
+        double margin = CropInfoMargin * inverseZoom;
+
+        // Above the crop's top-left corner, or just inside it when that would leave the image.
+        bool above = top >= panelHeight + margin;
+        double panelTop = above ? overlayTop - panelHeight - margin : overlayTop + margin;
+        double panelLeft = above ? overlayLeft : overlayLeft + margin;
+        InfoHeightAbove = above ? panelHeight + margin : 0;
+
+        Canvas.SetLeft(_cropInfoPanel, panelLeft);
+        Canvas.SetTop(_cropInfoPanel, panelTop);
+        _cropInfoPanel.IsVisible = true;
+    }
+
+    private static Border CreateCropInfoPanel(Canvas overlay, out TextBlock text)
+    {
+        text = new TextBlock
+        {
+            FontSize = 12,
+            FontWeight = FontWeight.SemiBold
+        };
+
+        var panel = new Border
+        {
+            Child = text,
+            Padding = new Thickness(7, 4),
+            CornerRadius = new CornerRadius(5),
+            BorderThickness = new Thickness(1),
+            IsHitTestVisible = false,
+            IsVisible = false,
+            RenderTransformOrigin = new RelativePoint(0, 0, RelativeUnit.Absolute)
+        };
+        panel.SetValue(Panel.ZIndexProperty, CropInfoZIndex);
+
+        panel.Background = FindBrush(overlay, "ShareX.Brush.Background.Main") ?? new SolidColorBrush(Color.FromArgb(235, 40, 40, 40));
+        if (FindBrush(overlay, "ShareX.Brush.Border") is IBrush borderBrush)
+        {
+            panel.BorderBrush = borderBrush;
+        }
+
+        return panel;
+    }
+
+    private static IBrush? FindBrush(Control control, string key)
+    {
+        return control.TryFindResource(key, control.ActualThemeVariant, out object? value) ? value as IBrush : null;
+    }
 }

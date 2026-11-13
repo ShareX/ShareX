@@ -1654,6 +1654,9 @@ Caminho do ficheiro: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Fechar depois de abrir</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Copiado para a área de transferência</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Copiar tudo</value>
   </data>
@@ -1695,6 +1698,9 @@ Caminho do ficheiro: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Selecionar região...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Separar parágrafos</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Reconhecimento óptico de caracteres</value>

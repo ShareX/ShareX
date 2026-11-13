@@ -31,13 +31,13 @@ using Avalonia.Input;
 using Avalonia.Media;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Platform;
 using SkiaSharp;
 using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using ShareX.Icons;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
 namespace ShareX.ScreenCaptureLib;

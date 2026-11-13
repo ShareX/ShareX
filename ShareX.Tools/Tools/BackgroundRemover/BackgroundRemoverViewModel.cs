@@ -26,11 +26,11 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.Icons;
 using ShareX.Platform;
 using SkiaSharp;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
-using ShareX.Icons;
 
 namespace ShareX.Tools;
 

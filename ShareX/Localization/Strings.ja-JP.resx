@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>保存</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>キャプチャ内のテキストを履歴で検索できるようにする</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>最近使用したタスクを保存</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>デバッグログをアップロードしますか？</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>レポートをクリップボードにコピーしました。</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>クリップボードにコピー</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>スケーリング、複数モニター、キャプチャ位置のずれに関する問題を報告するときは、このレポートを添付してください。</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>ディスプレイの配置</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>マウスカーソル</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>メインモニター</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>タスクバーまたはアプリバー</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>.txt として保存...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>ディスプレイ診断を保存</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>レポートを {0} に保存しました</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>テキストファイル</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - ディスプレイ診断</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>ここにドロップ</value>
   </data>
@@ -1574,6 +1616,9 @@
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>ディスプレイ診断...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>寄付</value>
   </data>
@@ -1690,6 +1735,9 @@
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>最前面に固定</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>ピクセルエディター...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR コード</value>
@@ -1867,6 +1915,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>フォトエディターで編集...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>ピクセルエディターで編集...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ファイル</value>
@@ -2275,11 +2326,17 @@
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>これらのオプションは、アプリケーション設定でいつでも変更できます。</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>ゆったり</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>ShareX をダウンロードしていただきありがとうございます</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>システム設定を使用</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>ShareX へようこそ</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>自分らしい方法で、あらゆるものをキャプチャ、編集、共有できます。</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>カスタムアップローダー「{0}」を追加しますか？</value>
@@ -3007,6 +3064,9 @@
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>右クリック時の動作:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>右クリックでカーソル下の図形を削除する</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>右クリックして入力または出力ファイルのトークンを挿入します。</value>

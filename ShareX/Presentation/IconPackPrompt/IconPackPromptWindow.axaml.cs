@@ -72,7 +72,7 @@ public partial class IconPackPromptWindow : Window
     /// <summary>Shows the prompt over the main window once, the first time it is shown after the update.</summary>
     internal static void ShowOnceWithMainWindow()
     {
-        if (!ApplicationState.Settings.ShowIconPackPrompt || MainWindowIntegration.Instance is not MainWindow mainWindow)
+        if (!ApplicationState.Settings.ShowIconPackPrompt || StartupOptions.Sandbox || MainWindowIntegration.Instance is not MainWindow mainWindow)
         {
             return;
         }

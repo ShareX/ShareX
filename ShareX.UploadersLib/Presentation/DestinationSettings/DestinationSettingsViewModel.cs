@@ -26,11 +26,11 @@
 #nullable enable
 
 using ShareX.AvaloniaUI.Controls;
+using ShareX.Icons;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using ShareX.Icons;
 
 namespace ShareX.UploadersLib;
 

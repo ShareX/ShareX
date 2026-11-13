@@ -503,6 +503,11 @@ namespace ShareX.HelpersLib
             return "";
         }
 
+        public static bool IsAccessBlocked(Exception exception)
+        {
+            return exception is UnauthorizedAccessException || exception is FileNotFoundException;
+        }
+
         public static void CreateDirectory(string directoryPath)
         {
             if (!string.IsNullOrEmpty(directoryPath) && !Directory.Exists(directoryPath))

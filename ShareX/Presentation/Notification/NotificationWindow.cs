@@ -40,7 +40,6 @@ using ShareX.AvaloniaUI.Imaging;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Icons;
-using ShareX.Localization;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -49,9 +48,6 @@ using System.Threading.Tasks;
 using DrawingBitmap = SkiaSharp.SKBitmap;
 using DrawingColor = System.Drawing.Color;
 using DrawingContentAlignment = ShareX.HelpersLib.ImageContentAlignment;
-using MessageBox = ShareX.AvaloniaUI.MessageBox;
-using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
-using MessageBoxResult = ShareX.AvaloniaUI.DialogResult;
 
 namespace ShareX;
 
@@ -571,8 +567,9 @@ public partial class NotificationWindow : Window
         };
 
         NotificationWindowConfig config = _config;
+        Action? run = PrepareAction(action, config);
         Close();
-        ExecuteAction(action, config);
+        run?.Invoke();
         e.Handled = true;
     }
 
@@ -585,13 +582,14 @@ public partial class NotificationWindow : Window
 
         e.Handled = true;
         NotificationWindowConfig config = _config;
+        Action? run = PrepareAction(definition.Action, config);
 
         if (definition.DismissNotification)
         {
             Close();
         }
 
-        ExecuteAction(definition.Action, config);
+        run?.Invoke();
     }
 
     private void OnActionButtonPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -618,25 +616,50 @@ public partial class NotificationWindow : Window
         _dragEvent = null;
     }
 
-    private static void ExecuteAction(ToastClickAction action, NotificationWindowConfig config)
+    // Runs before the window closes, because closing disposes config.Image. Actions on an image that was
+    // never saved get their own copy of it, which the action then owns.
+    private static Action? PrepareAction(ToastClickAction action, NotificationWindowConfig config)
     {
-        if (action == ToastClickAction.CloseNotification)
+        // A click action with nothing to act on, such as Open URL for an image that was only copied to the clipboard, does nothing.
+        if (action == ToastClickAction.CloseNotification || !CanExecute(action, config))
         {
-            return;
+            return null;
         }
 
+        DrawingBitmap? image = UsesImageInMemory(action, config) ? config.Image!.Copy() : null;
+        return () => ExecuteAction(action, config, image);
+    }
+
+    private static bool UsesImageInMemory(ToastClickAction action, NotificationWindowConfig config) =>
+        (action is ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen or
+            ToastClickAction.Upload) &&
+        string.IsNullOrWhiteSpace(config.FilePath) && config.Image != null;
+
+    private static void ExecuteAction(ToastClickAction action, NotificationWindowConfig config, DrawingBitmap? image)
+    {
         void Execute()
         {
             switch (action)
             {
                 case ToastClickAction.AnnotateImage:
-                    if (!string.IsNullOrEmpty(config.FilePath) && FileHelpers.IsImageFile(config.FilePath))
+                    if (image != null)
+                    {
+                        TaskHelpers.AnnotateImageAsync(image, null, TaskSettings.GetDefaultTaskSettings());
+                    }
+                    else if (!string.IsNullOrEmpty(config.FilePath) && FileHelpers.IsImageFile(config.FilePath))
                     {
                         TaskHelpers.AnnotateImageFromFile(config.FilePath);
                     }
                     break;
                 case ToastClickAction.CopyImageToClipboard:
-                    if (!string.IsNullOrEmpty(config.FilePath))
+                    if (image != null)
+                    {
+                        using (image)
+                        {
+                            ClipboardHelpers.CopyImage(image);
+                        }
+                    }
+                    else if (!string.IsNullOrEmpty(config.FilePath))
                     {
                         ClipboardHelpers.CopyImageFromFile(config.FilePath);
                     }
@@ -673,10 +696,24 @@ public partial class NotificationWindow : Window
                     }
                     break;
                 case ToastClickAction.Upload:
-                    UploadManager.UploadFile(config.FilePath);
+                    if (image != null)
+                    {
+                        UploadManager.UploadImage(image);
+                    }
+                    else
+                    {
+                        UploadManager.UploadFile(config.FilePath);
+                    }
                     break;
                 case ToastClickAction.PinToScreen:
-                    TaskHelpers.PinToScreen(config.FilePath);
+                    if (image != null)
+                    {
+                        TaskHelpers.PinToScreen(image);
+                    }
+                    else
+                    {
+                        TaskHelpers.PinToScreen(config.FilePath);
+                    }
                     break;
                 case ToastClickAction.DeleteFile:
                     if (TaskHelpers.ConfirmFileDelete())
@@ -702,12 +739,15 @@ public partial class NotificationWindow : Window
         bool hasFile = !string.IsNullOrWhiteSpace(config.FilePath);
         bool hasImageFile = hasFile && FileHelpers.IsImageFile(config.FilePath);
         bool hasTarget = hasFile || !string.IsNullOrWhiteSpace(config.URL);
+        bool hasImageInMemory = !hasFile && config.Image != null;
 
         return action switch
         {
-            ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen => hasImageFile,
+            ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen =>
+                hasImageFile || hasImageInMemory,
+            ToastClickAction.Upload => hasFile || hasImageInMemory,
             ToastClickAction.CopyFile or ToastClickAction.CopyFilePath or ToastClickAction.OpenFile or
-                ToastClickAction.OpenFolder or ToastClickAction.Upload or ToastClickAction.DeleteFile => hasFile,
+                ToastClickAction.OpenFolder or ToastClickAction.DeleteFile => hasFile,
             ToastClickAction.CopyUrl or ToastClickAction.OpenUrl => hasTarget,
             ToastClickAction.CloseNotification => true,
             _ => false

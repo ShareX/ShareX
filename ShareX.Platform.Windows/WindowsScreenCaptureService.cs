@@ -146,6 +146,25 @@ public sealed unsafe class WindowsScreenCaptureService : IScreenCaptureService
         return new ScreenCaptureResult(pixels, area, request.HdrToneMapping ? "GDI+HDR" : "GDI");
     }
 
+    public ScreenCaptureResult? CaptureWindowPreservingInterior(long windowHandle, PixelBuffer interior, PlatformRectangle interiorBounds,
+        bool includeShadow, int shadowOffset, bool hideTaskbar)
+    {
+        ScreenCaptureRequest request = new()
+        {
+            Mode = ScreenCaptureMode.Window,
+            WindowHandle = windowHandle,
+            Window = new WindowCaptureOptions
+            {
+                Transparent = true,
+                IncludeShadow = includeShadow,
+                ShadowOffset = shadowOffset,
+                HideTaskbar = hideTaskbar
+            }
+        };
+
+        return TransparentWindowCapture.Capture((IntPtr)windowHandle, request, interior, interiorBounds);
+    }
+
     private static ScreenCaptureResult CaptureWindow(ScreenCaptureRequest request)
     {
         IntPtr hwnd = (IntPtr)request.WindowHandle;

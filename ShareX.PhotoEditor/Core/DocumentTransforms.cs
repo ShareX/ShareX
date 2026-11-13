@@ -156,24 +156,24 @@ public static class DocumentTransforms
                 }
                 break;
             case TextLayer text:
-            {
-                SKRect block = text.GetBlockBounds();
-                SKPoint c = new(block.MidX, block.MidY);
-                if (!text.Transform.IsIdentity)
                 {
-                    SKMatrix saved = text.Transform;
-                    text.Transform = SKMatrix.Identity;
-                    block = text.GetBlockBounds();
-                    c = new SKPoint(block.MidX, block.MidY);
-                    text.Transform = saved;
+                    SKRect block = text.GetBlockBounds();
+                    SKPoint c = new(block.MidX, block.MidY);
+                    if (!text.Transform.IsIdentity)
+                    {
+                        SKMatrix saved = text.Transform;
+                        text.Transform = SKMatrix.Identity;
+                        block = text.GetBlockBounds();
+                        c = new SKPoint(block.MidX, block.MidY);
+                        text.Transform = saved;
+                    }
+                    text.Transform = text.Transform
+                        .PostConcat(SKMatrix.CreateTranslation(c.X, c.Y))
+                        .PostConcat(matrix)
+                        .PostConcat(SKMatrix.CreateTranslation(-c.X, -c.Y));
+                    text.Invalidate();
+                    break;
                 }
-                text.Transform = text.Transform
-                    .PostConcat(SKMatrix.CreateTranslation(c.X, c.Y))
-                    .PostConcat(matrix)
-                    .PostConcat(SKMatrix.CreateTranslation(-c.X, -c.Y));
-                text.Invalidate();
-                break;
-            }
             case ShapeLayer shape:
                 shape.Path.Transform(matrix);
                 break;

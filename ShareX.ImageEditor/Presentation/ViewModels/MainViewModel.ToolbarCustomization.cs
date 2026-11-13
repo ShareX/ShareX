@@ -26,7 +26,6 @@
 using Avalonia.Input;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.ImageEditor.Core.Annotations;
-using ShareX.ImageEditor.Presentation.Theming;
 using System.Collections.ObjectModel;
 
 namespace ShareX.ImageEditor.Presentation.ViewModels

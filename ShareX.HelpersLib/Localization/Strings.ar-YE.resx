@@ -777,6 +777,9 @@
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>تثيبت على الشاشة (من الشاشة)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>محرر البكسل</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>التقاط الشاشة كاملة</value>
   </data>

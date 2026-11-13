@@ -133,13 +133,11 @@ public partial class BlurAnnotation : BaseEffectAnnotation
             return;
         }
 
-        var rect = GetBounds();
-        int fullW = (int)rect.Width;
-        int fullH = (int)rect.Height;
+        // Cover every image pixel the annotation touches
+        var annotationRect = GetEffectPixelBounds();
+        int fullW = annotationRect.Width;
+        int fullH = annotationRect.Height;
         if (fullW <= 0 || fullH <= 0) return;
-
-        // Convert annotation bounds to integer rect
-        var annotationRect = new SKRectI((int)rect.Left, (int)rect.Top, (int)rect.Right, (int)rect.Bottom);
 
         // Find intersection with source image bounds
         var validRect = annotationRect;
@@ -152,8 +150,7 @@ public partial class BlurAnnotation : BaseEffectAnnotation
         // If no valid intersection, return empty bitmap
         if (validRect.Width <= 0 || validRect.Height <= 0)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -175,8 +172,7 @@ public partial class BlurAnnotation : BaseEffectAnnotation
 
         if (actualPaddedRect.Width <= 0 || actualPaddedRect.Height <= 0)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -184,8 +180,7 @@ public partial class BlurAnnotation : BaseEffectAnnotation
         using var paddedCrop = new SKBitmap(actualPaddedRect.Width, actualPaddedRect.Height);
         if (!source.ExtractSubset(paddedCrop, actualPaddedRect))
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -232,16 +227,14 @@ public partial class BlurAnnotation : BaseEffectAnnotation
 
         if (validInBlurred.Width <= 0 || validInBlurred.Height <= 0)
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
         using var blurredRegion = new SKBitmap(validInBlurred.Width, validInBlurred.Height);
         if (!blurredBitmap.ExtractSubset(blurredRegion, validInBlurred))
         {
-            EffectBitmap?.Dispose();
-            EffectBitmap = result;
+            SetEffectBitmap(result, annotationRect);
             return;
         }
 
@@ -255,7 +248,6 @@ public partial class BlurAnnotation : BaseEffectAnnotation
             resultCanvas.DrawBitmap(blurredRegion, drawX, drawY);
         }
 
-        EffectBitmap?.Dispose();
-        EffectBitmap = result;
+        SetEffectBitmap(result, annotationRect);
     }
 }

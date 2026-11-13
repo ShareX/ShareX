@@ -88,7 +88,11 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private bool _noTextFound;
 
     [ObservableProperty]
+    [NotifyPropertyChangedFor(nameof(CanSeparateParagraphs))]
     private bool _singleLine;
+
+    [ObservableProperty]
+    private bool _separateParagraphs;
 
     [ObservableProperty]
     private bool _autoCopy;
@@ -124,6 +128,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     public Action? CloseRequested { get; set; }
 
     public bool IsIdle => !IsBusy;
+    public bool CanSeparateParagraphs => !SingleLine;
     public bool CanUseResult => !IsBusy && !string.IsNullOrWhiteSpace(ResultText);
     public bool HasError => !string.IsNullOrWhiteSpace(ErrorMessage);
     public bool HasServices => ServiceLinks.Count > 0;
@@ -142,6 +147,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         _optionsChanged = optionsChanged;
 
         _singleLine = options.SingleLine;
+        _separateParagraphs = options.SeparateParagraphs;
         _autoCopy = options.AutoCopy;
         _closeAfterOpeningService = options.CloseWindowAfterOpeningServiceLink;
 
@@ -162,16 +168,21 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
         await RecognizeAsync();
     }
 
-    // The recognized lines are kept, so switching between one line and many only reformats them.
-    partial void OnSingleLineChanged(bool value)
+    // The recognized lines are kept, so changing how they are joined only reformats them.
+    partial void OnSingleLineChanged(bool value) => ReformatResult();
+    partial void OnSeparateParagraphsChanged(bool value) => ReformatResult();
+
+    private void ReformatResult()
     {
         if (_lastResult != null && !IsBusy)
         {
-            ResultText = _lastResult.GetText(value);
+            ResultText = GetResultText(_lastResult);
         }
 
         SaveOptions();
     }
+
+    private string GetResultText(OCRResult result) => result.GetText(SingleLine, SeparateParagraphs);
 
     partial void OnAutoCopyChanged(bool value) => SaveOptions();
     partial void OnCloseAfterOpeningServiceChanged(bool value) => SaveOptions();
@@ -320,7 +331,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
                 _lastResult = result;
                 TextRegions = result.Regions;
                 NoTextFound = result.Regions.Count == 0;
-                ResultText = result.GetText(SingleLine);
+                ResultText = GetResultText(result);
                 if (AutoCopy && !string.IsNullOrWhiteSpace(ResultText) && CopyTextRequested != null)
                 {
                     await CopyTextRequested(ResultText);
@@ -358,6 +369,7 @@ public sealed partial class OCRViewModel : ViewModelBase, IDisposable
     private void SaveOptions()
     {
         _options.SingleLine = SingleLine;
+        _options.SeparateParagraphs = SeparateParagraphs;
         _options.AutoCopy = AutoCopy;
         _options.CloseWindowAfterOpeningServiceLink = CloseAfterOpeningService;
         _options.SelectedServiceLink = SelectedServiceLink == null ? 0 : Math.Max(0, ServiceLinks.IndexOf(SelectedServiceLink));

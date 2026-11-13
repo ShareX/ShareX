@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Simpan</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Jadikan teks dalam tangkapan dapat dicari di riwayat</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Simpan tugas terbaru</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Unggah log debug?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>Laporan disalin ke papan klip.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Salin ke papan klip</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Sertakan laporan ini saat Anda melaporkan masalah penskalaan, beberapa monitor, atau tangkapan di tempat yang salah.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Tata letak layar</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Kursor mouse</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Monitor utama</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Segarkan</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Bilah tugas atau bilah aplikasi</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Simpan sebagai .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Simpan diagnostik layar</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>Laporan disimpan ke {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Berkas teks</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Diagnostik layar</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Letakkan di sini</value>
   </data>
@@ -1574,6 +1616,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Diagnostik layar...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Donasi</value>
   </data>
@@ -1690,6 +1735,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Sematkan ke layar</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Editor Piksel...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>Kode QR</value>
@@ -1867,6 +1915,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Edit di editor foto...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Edit di Editor Piksel...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>File</value>
@@ -2275,11 +2326,17 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Anda dapat mengubah opsi ini kapan saja di pengaturan aplikasi.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Lega</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Terima kasih telah mengunduh ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Gunakan pengaturan sistem</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Selamat datang di ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Tangkap, edit, dan bagikan apa pun dengan cara Anda.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Tambahkan pengunggah khusus "{0}"?</value>
@@ -3007,6 +3064,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Tindakan klik kanan:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Klik kanan menghapus bentuk di bawah kursor</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Klik kanan untuk menyisipkan token berkas masukan atau keluaran.</value>

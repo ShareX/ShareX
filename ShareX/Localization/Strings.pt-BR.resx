@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Salvar</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Tornar o texto das capturas pesquisável no histórico</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Salvar tarefas recentes</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Enviar o log de depuração?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>O relatório foi copiado para a área de transferência.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Copiar para a área de transferência</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Inclua este relatório ao relatar um problema com escala, vários monitores ou capturas no lugar errado.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Disposição das telas</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Cursor do mouse</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Monitor principal</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Atualizar</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Barra de tarefas ou barra de aplicativo</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Salvar como .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Salvar diagnóstico de telas</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>O relatório foi salvo em {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Arquivo de texto</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Diagnóstico de telas</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Solte aqui</value>
   </data>
@@ -1574,6 +1616,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Diagnóstico de telas...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Doar</value>
   </data>
@@ -1690,6 +1735,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Fixar na tela</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Editor de pixels...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>Código QR</value>
@@ -1867,6 +1915,9 @@ Por favor, selecione um atalho diferente ou feche o programa conflituoso e reabr
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Editar no editor de fotos...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Editar no editor de pixels...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Arquivo</value>
@@ -2275,11 +2326,17 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Você pode alterar essas opções a qualquer momento nas configurações do aplicativo.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Amplo</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Obrigado por baixar o ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Usar configuração do sistema</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Boas-vindas ao ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Capture, edite e compartilhe qualquer coisa do seu jeito.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Deseja adicionar o carregador personalizado "{0}"?</value>
@@ -3007,6 +3064,9 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Ação do clique direito:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Clicar com o botão direito exclui a forma sob o cursor</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Clique com o botão direito para inserir um token de arquivo de entrada ou saída.</value>

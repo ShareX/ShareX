@@ -1654,6 +1654,9 @@ Dosya yolu: {0}</value>
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Açtıktan sonra kapat</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Panoya kopyalandı</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Tümünü kopyala</value>
   </data>
@@ -1695,6 +1698,9 @@ Dosya yolu: {0}</value>
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Bölge seç...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Paragrafları ayır</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Optik Karakter Tanıma</value>

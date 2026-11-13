@@ -46,7 +46,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Warning}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -69,7 +69,7 @@
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="8">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.File}"
                                             FontSize="16"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             VerticalAlignment="Center"/>
                     <TextBlock x:Name="ExistingPathText"
                                Grid.Column="1"
@@ -96,7 +96,7 @@
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Edit}"
                                             FontSize="17"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="NewNameActionTitle" Classes="action-title"/>
@@ -114,7 +114,7 @@
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.File}"
                                             FontSize="17"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="OverwriteActionTitle" Classes="action-title"/>
@@ -132,7 +132,7 @@
                 <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Duplicate}"
                                             FontSize="17"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             VerticalAlignment="Center"/>
                     <StackPanel Grid.Column="1" Spacing="1">
                         <TextBlock x:Name="UniqueNameActionTitle" Classes="action-title"/>

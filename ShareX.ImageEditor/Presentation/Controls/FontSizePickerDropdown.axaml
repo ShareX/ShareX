@@ -42,30 +42,48 @@
                IsLightDismissEnabled="True"
                VerticalOffset="4">
             <Border Classes="popup-border popup-surface"
-                    Classes.open="{Binding #FontSizePopup.IsOpen}">
-                <ItemsControl ItemsSource="{Binding FontSizeOptions, ElementName=FontSizePickerDropdownRoot}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate x:DataType="x:Single">
-                            <Button MinWidth="50"
-                                    Height="32"
-                                    Padding="8,0"
-                                    Classes="picker-button"
-                                    Click="OnFontSizeSelected"
-                                    CommandParameter="{Binding .}"
-                                    HorizontalContentAlignment="Center"
-                                    VerticalContentAlignment="Center">
-                                <TextBlock Text="{Binding ., StringFormat='{}{0} pt'}"
-                                           FontSize="12"
-                                           Foreground="{DynamicResource ShareX.Brush.Text}"/>
-                            </Button>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
+                    Classes.open="{Binding #FontSizePopup.IsOpen}"
+                    KeyDown="OnPopupKeyDown"
+                    KeyUp="OnPopupKeyUp">
+                <StackPanel Orientation="Vertical">
+                    <!-- Custom size, focused when the popup opens; Enter applies it -->
+                    <TextBox x:Name="CustomSizeBox"
+                             Width="70"
+                             Height="32"
+                             MinHeight="32"
+                             Padding="8,0"
+                             Margin="0,0,0,4"
+                             CornerRadius="4"
+                             FontSize="12"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"/>
+
+                    <ItemsControl x:Name="FontSizeItems"
+                                  ItemsSource="{Binding FontSizeOptions, ElementName=FontSizePickerDropdownRoot}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate x:DataType="x:Single">
+                                <Button MinWidth="50"
+                                        Height="32"
+                                        Padding="8,0"
+                                        HorizontalAlignment="Stretch"
+                                        Classes="picker-button"
+                                        Click="OnFontSizeSelected"
+                                        CommandParameter="{Binding .}"
+                                        HorizontalContentAlignment="Center"
+                                        VerticalContentAlignment="Center">
+                                    <TextBlock Text="{Binding ., StringFormat='{}{0} pt'}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource ShareX.Brush.Text}"/>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
             </Border>
         </Popup>
     </Grid>

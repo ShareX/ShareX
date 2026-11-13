@@ -777,6 +777,9 @@
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Закрепить на экране (из экрана)</value>
   </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Пиксельный редактор</value>
+  </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Захват всего экрана</value>
   </data>

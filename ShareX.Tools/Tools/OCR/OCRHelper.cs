@@ -61,10 +61,10 @@ public static class OCRHelper
         return RecognizeWithSystemEngine(bitmap);
     }
 
-    public static async Task<string> OCR(Bitmap bitmap, bool singleLine = false)
+    public static async Task<string> OCR(Bitmap bitmap, bool singleLine = false, bool separateParagraphs = true)
     {
         OCRResult result = await Recognize(bitmap);
-        return result.GetText(singleLine);
+        return result.GetText(singleLine, separateParagraphs);
     }
 
     private static async Task<OCRResult> RecognizeWithSystemEngine(Bitmap bitmap)

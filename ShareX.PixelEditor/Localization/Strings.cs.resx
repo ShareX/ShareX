@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>Sčítání</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>Barva</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>Ztmavit barvy</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>Zesvětlit barvy</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>Ztmavit</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>Rozdíl</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>Dělit</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>Vyloučit</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>Tvrdé světlo</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>Odstín</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>Zesvětlit</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>Světelnost</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>Násobit</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>Normální</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>Překrýt</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>Sytost</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>Závoj</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>Měkké světlo</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>Odečíst</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>Černá</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>Tmavý</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>Světlý</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>Střední</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>Bílá</value>
+  </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Nedávno použité. Kliknutím nastavíte barvu popředí, kliknutím pravým tlačítkem barvu pozadí.</value>
+  </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Žádné odpovídající příkazy</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Hledat příkazy, nástroje a panely</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Nástroje</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>Skutečná velikost (100 %)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>Odstranit měkké okraje...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>Okraj...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>Jas/kontrast...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>Zvětšit štětec</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>Zobrazit náhled štětce</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>Zmenšit štětec</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>Velikost plátna...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>Vlastnosti buňky...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Vymazat</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>Vymazat buňku</value>
+  </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Vymazat vodítka</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Zavřít</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>Zavřít vše</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta příkazů...</value>
+  </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Převést na pixelovou vrstvu</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Převést na vrstvu dlaždicové mapy...</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>Kopírovat</value>
+  </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Kopírovat snímky</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>Kopírovat obrázek do schránky</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>Kopírovat sloučené</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>Oříznout podle výběru</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>Vyjmout</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Vytvořit štětec z výběru</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Odstranit</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>Odstranit snímek</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>Odstranit vrstvu</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>Odznačit</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>Vržený stín...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>Duplikovat vrstvu</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Duplikovat sprite</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>Ukončit</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Exportovat...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>Exportovat sprite sheet...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportovat dlaždicovou mapu...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>Vyplnit barvou popředí</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>První snímek</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>Přizpůsobit na obrazovku</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>Sloučit všechny vrstvy</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>Překlopit vodorovně</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>Překlopit svisle</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>Vlastnosti snímku...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>Celá obrazovka</value>
+  </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Mapa přechodu...</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>Odbarvit</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>Zobrazit mřížku</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>Nastavení mřížky...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>Rozšířit...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>Odstín/sytost...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Importovat obrázky jako snímky...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Importovat obrázek jako vrstvu...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>Importovat sprite sheet...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>Invertovat barvy</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>Invertovat výběr</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>Poslední snímek</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>Vybrat vrstvu nad</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>Vybrat vrstvu pod</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>Zamčená</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>Přesunout vrstvu níž</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>Přesunout vrstvu dospod</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>Přesunout vrstvu navrch</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>Přesunout vrstvu výš</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>Vlastnosti vrstvy...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>Referenční vrstva</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nová vrstva kopírováním</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nová vrstva vyjmutím</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>Viditelná</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>Propojit buňky</value>
+  </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Uzamknout barvy na paletu</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>Přehrávat ve smyčce</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>Sloučit dolů</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>Přesunout snímky doleva</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>Přesunout snímky doprava</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>Nový...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>Nový prázdný snímek</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>Nový snímek</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>Nový ze schránky</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>Nová skupina</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>Nová vrstva</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>Nový propojený snímek</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>Nový štítek...</value>
+  </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nová vrstva dlaždicové mapy...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>Další snímek</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>Nastavení průsvitek...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>Průsvitky</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>Otevřít...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>Obrys...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>Vložit</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Vložit snímky</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>Vložit jako novou vrstvu</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>Vložit jako nový sprite</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>Zobrazit pixelovou mřížku</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>Přehrát/zastavit animaci</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>Přehrávat jen aktuální štítek</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>Posterizace...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>Předvolby...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>Předchozí snímek</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>Znovu</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>Snížit počet barev...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>Odstranit štítek</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Odebrat nepoužité dlaždice</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>Nahradit barvu...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>Obnovit pracovní plochu</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>Obrátit pořadí snímků</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>Otočit o 180°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>Otočit o 90° proti směru hodin</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>Otočit o 90° po směru hodin</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Pravítka</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>Uložit</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>Uložit jako...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>Vybrat vše</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>Vybrat barvu popředí</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>Vybrat obsah buňky</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Posunout dolů</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Posunout doleva</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Posunout doprava</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Posunout nahoru</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>Klávesové zkratky...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>Panel voleb</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>Zobrazit řezy</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>Časová osa</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>Panel nástrojů</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>Zmenšit...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>Přichytávat k mřížce</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>Velikost spritu...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>Obtáhnout výběr</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>Nastavit polohu osy...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>Vodorovná symetrie</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>Vystředit osy</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>Svislá symetrie</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>Vlastnosti štítku...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>Opakovat vodorovně</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>Dlaždicový režim</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>Opakovat svisle</value>
+  </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Náhledy buněk</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>Dvousloupcový panel nástrojů</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>Volná transformace</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>Oříznout prázdné okraje</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>Zpět</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>Zrušit propojení buněk</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>Nahrát obrázek</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>Zvětšit</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>Zmenšit</value>
+  </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>Přiblížit na výběr</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>Použít na všechny snímky</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>Každý pixel bude buď zcela neprůhledný, nebo zcela průhledný. Hodí se k vyčištění vyhlazených okrajů importovaných obrázků.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>Ukotvení</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>Použít na</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>Svislá osa (půlpixely)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>Vodorovná osa (půlpixely)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>Odstranit částečnou průhlednost</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>Režim prolnutí</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>Jas</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>Barva</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>Barvy</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>Kontrast</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>Vytvořit</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>Směr</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>Délka (ms)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>Rámeček {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>Snímky {0} až {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>Z</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>Od snímku</value>
+  </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Barvy z</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Dvě barvy</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paleta, podle jasu</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Stíny</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Světla</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Obrátit pořadí barev</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Přebarví pixely podle jejich jasu, od barvy pro nejtmavší pixely po barvu pro nejsvětlejší.</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>Odstín</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>Zachovat poměr stran</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>Úrovně</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>Světlost</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>Metoda</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>Název</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>Nový sprite</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>Posun X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Posun Y</value>
+  </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Navázat z posledního snímku na první</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>Snímků po</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>Snímků před</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Pouze snímky aktuálního štítku</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>Tónovat předchozí snímky červeně a následující modře</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>Zahrnout úhlopříčné rohy</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>Kreslit uvnitř tvaru</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>Procenta</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>Obrazové body</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>Předvolby</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>Vytvoří z celého spritu paletu s tímto počtem barev a přebarví jí každou buňku. Nová paleta nahradí současnou.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>Přebarví každou buňku nejbližšími barvami současné palety.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Opakování</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>Nejbližší soused zachová ostré pixely. Škálování pixel artu navíc při zvětšení 2× a více vyhladí schodovité hrany.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>Sytost</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>Sudá hodnota umístí osu mezi dva pixely, lichá ji vede středem pixelu.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>Práh</value>
+  </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Výška dlaždice</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Šířka dlaždice</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Vrstvy dlaždicové mapy se skládají z dlaždic jedné velikosti. Kreslení na dlaždici ji změní všude, kde je použita.</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>Na</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>Do snímku</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>Průhledné pozadí</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>Vpřed</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>Tam a zpět</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>Tam a zpět obráceně</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>Obrátit</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>Uspořádaný 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>Uspořádaný 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>Floyd–Steinberg</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>Žádná</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>Uspořádaný</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>Zavřít panel</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>Sbalit skupinu panelů</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>Rozbalit skupinu panelů</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>Přesunout do skupiny s {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>Přesunout do nové skupiny</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>Nabídka panelu</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>Všechny snímky</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>Animovaný PNG</value>
+  </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animace tak, jak se přehrává</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>Exportovat</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>Aktuální snímek</value>
+  </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>Souborů: {0}</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>Formát</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>Snímky</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>Animovaný GIF</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, snímků: {2}</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>Obrázek PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>Měřítko</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>Vybrané snímky</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>Sekvence PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>Tento formát ukládá jen aktuální snímek.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>Vyhladit hrany při zvětšení</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Soubory</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Soubor pro každou vrstvu</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Jeden soubor</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Soubor pro každý štítek</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>Štítek: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>Všechny podporované soubory</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>Obrázky</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>Palety</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>Sprite pixelového editoru ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>Režim prolnutí</value>
+  </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Kopírování buněk</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kopírování snímků</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>Odstranit řez</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>Odznačit</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>Úprava barvy palety</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>Délka snímku</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>Skrýt vrstvu</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>Načtení palety</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>Zamknout vrstvu</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>Úprava výběru</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>Přesunout</value>
+  </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Přesun buněk</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>Přesun snímků</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>Upravit řez</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>Nový</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>Nový řez</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>Krytí vrstvy</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>Otevřít</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Obnoveno</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>Vlastnosti řezu</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>Změna pořadí vrstvy</value>
+  </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Změna pořadí palety</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>Výběr</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>Zobrazit vrstvu</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Zobrazit jen tuto vrstvu</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>Odemknutí vrstvy</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>Za</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>Ztmavit</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>Zesvětlit</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>Zamknout alfu</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>Normální</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>Nahradit</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} kopie</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>Vrstva</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>Sloučená</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>Skupina</value>
+  </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Dlaždicová mapa</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>Tato buňka je propojená s dalšími snímky</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>Referenční vrstva: neexportuje se</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Vrstva dlaždicové mapy s dlaždicemi {0} × {1} px</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>Rozbalit nebo sbalit skupinu</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>Zamknout nebo odemknout vrstvu</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>Zobrazit nebo skrýt vrstvu</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>Buňka</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>Úp_ravy</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>Efe_kty</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(Prázdné)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_Soubor</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>S_nímek</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_Nápověda</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_Vrstva</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>Otevřít poslední</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>Panely</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_Výběr</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Posunout pixely (s přetáčením)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>S_prite</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>Symetrie</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>Štítky</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>Dlaždicový režim</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Dlaždicová mapa</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_Zobrazení</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>Ve schránce není žádný obrázek.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>Nelze dokončit „{0}“: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>„{0}“ nelze otevřít: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>„{0}“ nelze uložit: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>Neukládat</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>Operace se nezdařila: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>Uložit změny v „{0}“ před zavřením?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>Obrázek je příliš velký. Sprite může být nejvýše {0} pixelů široký a vysoký.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>Všechny vrstvy</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>Vyplňovat podle barev všech viditelných vrstev místo aktivní vrstvy</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>Úhel</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>Použít</value>
+  </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Štětce</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>Zrušit</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Obnovit štětec</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>Souvislé</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>Jen pixely spojené s kliknutým pixelem; po vypnutí se vezmou všechny pixely té barvy</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Vlastní štětec</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>Hustota</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>Úhlopříčně</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>Šířit se i přes pixely, které se dotýkají jen rohy</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>Rozptyl</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>Kliknutí nabere barvu popředí, pravé tlačítko barvu pozadí</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>Vyplněný</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>Výška</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>Inkoust</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>Lineární přechod</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>Tažením přesunete výběr nebo buňku. Podržením Alt přesunete kopii.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>Krytí</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>Obrys</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>Vzorek</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>Čisté pixely</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>Odstraní přebytečné rohové pixely čar kreslených od ruky štětcem 1 px</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>Kruhový přechod</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>Poloměr</value>
+  </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Odebrat štětec z knihovny</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>Kulatý hrot</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>Použít barvy všech viditelných vrstev místo aktivní vrstvy</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>Přidat do výběru (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>Protnout s výběrem (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>Nový výběr</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>Odečíst od výběru (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>Kliknutí zesvětluje, pravé tlačítko ztmavuje, podle palety</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>Velikost</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>Tažením vytvoříte řez. Kliknutím řez vyberete, dvojklikem ho přejmenujete.</value>
+  </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Hladké otáčení</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Udržuje čáry otočeného pixel artu čisté místo zubatých</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>Čtvercová špička</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standardní štětec (velikost a tvar)</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>Klikněte tam, kam má přijít text</value>
+  </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Dlaždice {0}   {1} × {2} px</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>Do průhledna</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>Barva popředí se vytratí do průhledna, místo aby přešla do barvy pozadí</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerance</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>Transformovat</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>Šířka</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>Přidat barvu popředí do palety</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>Barev: {0}</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>Upravit barvu...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>Vytvořit paletu ze spritu</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>Načíst paletu...</value>
+  </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>uzamčeno</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>Nabídka palety</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>Předvolby</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>Přidat barevnou škálu...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>Přidá škálu barev od barvy popředí k barvě pozadí.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>Kroky</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>Přebarvit sprite podle palety...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>Odebrat barvu z palety</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>Odebrat nepoužité barvy</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>Nahradit barvou popředí</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>Obrátit pořadí</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>Uložit paletu...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>Vybrat pixely této barvy</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>Seřadit podle jasu</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>Seřadit podle odstínu</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>Seřadit podle sytosti</value>
+  </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Kliknutí: barva popředí. Pravé kliknutí: barva pozadí. Dvojklik: úpravy. Přetažení: změna pořadí. Ctrl+pravé kliknutí: další možnosti.</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>Barva</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>Historie</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>Vrstvy</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>Paleta</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>Náhled</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Dlaždice</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>Šachovnice</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>Hustý</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>Úhlopříčný</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>Tečky</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>Vodorovné čáry</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>Plná</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>Řídký</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>Svislé čáry</value>
+  </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Záložní kopie každých (minut, 0 = vypnuto)</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>Šachovnice průhlednosti</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>Velikost políček (pixely)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>Počet kroků historie</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>Zobrazit pixelovou mřížku od přiblížení (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>Zapamatovat velikost a umístění okna</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>Velikost buňky časové osy</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>Přizpůsobit ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>Přehrát nebo pozastavit náhled</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Zahodit</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Pixelový editor nebyl správně ukončen. Lze obnovit spritů s neuloženými změnami: {0}.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Obnovit</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>Nejbližší soused</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>Škálování pixel artu</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>Hladké (bikubické)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Vodítko na {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Přetažením na plátno přidáte vodítko. Vodítka posunete nástrojem Přesun a odeberete je přetažením mimo plátno.</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>Aktuální buňka</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>Všechny snímky vrstvy</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>Vybrané snímky</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>Celý sprite</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>Výška snímku</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>Šířka snímku</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>Sloupce</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>Mřížka</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>Vodorovný pás</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>Importovat</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} buněk, až {2} snímků</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>Velikost listu: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>List: {0} × {1} px, snímků: {2}</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>Rozložení</value>
+  </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Sloučit stejné snímky</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>Zapsat data JSON (snímky, štítky a řezy)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Těsně</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>Vnitřní odsazení</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>Přeskočit prázdné buňky</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>Mezery</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Oříznout prázdné místo kolem snímků</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>jedinečných: {0}</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>Svislý pás</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>Kreslit barvou pozadí</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>Příkazy</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>Skrýt nebo zobrazit všechny panely</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>prostřední tlačítko myši</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Zadejte zkratku, např. Ctrl+Shift+E. Alternativy oddělte čárkou; prázdné pole zkratku odebere.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>Posouvání zobrazení</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>Nabrat barvu při kreslení</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>Obnovit výchozí</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>pravé tlačítko myši</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>Rovná čára od posledního bodu (tužka)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>Nástroje</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>kolečko myši</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>Zvětšení</value>
+  </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Výška středu</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Šířka středu</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Střed X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Střed Y</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>Řez {0}</value>
+  </data>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Devítidílný řez</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Střed a otočný bod se měří od levého horního rohu řezu. Oba se zapisují do metadat sprite sheetu.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Otočný bod</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Otočný bod X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Otočný bod Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Vlastnosti řezu</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>Schránka</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>Sprite-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>Vymazat poslední soubory</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>Nový sprite</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>Žádné nedávné soubory</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>Otevřít</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>Nedávné</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>Rychlý start</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>Žádné pixely této barvy</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>Zkopírováno do schránky</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>Exportováno: {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>Exportováno souborů: {0}</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>Exportování...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Zkopírováno snímků: {0}</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>Aktivní vrstva je skrytá</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>Aktivní vrstva je zamčená</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Nakreslené barvy se nyní přichytávají k nejbližší barvě palety</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>Není co kopírovat</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>Pod ní není pixelová vrstva, do které by šlo sloučit</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>Buňka je prázdná</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>Přebarvování...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>Změna velikosti...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>Uloženo: {0}</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>Nejprve vyberte pixelovou vrstvu</value>
+  </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Nejprve vyberte vrstvu dlaždicové mapy</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Výběr {0} × {1}</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   Snímek {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Vrstva byla rozdělena na dlaždice: {0}</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Odebráno nepoužitých dlaždic: {0}</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>Štítek {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>Vyhlazené okraje</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>Tučné</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>Písmo</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>Kurzíva</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>Text se vloží jako výběr, který můžete přesunout, než se stane součástí vrstvy.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Kreslení změní všechny kopie dlaždice</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Když je vypnuto, kreslení na dlaždici dá dané buňce novou dlaždici místo změny sdílené dlaždice.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Aktivní vrstva není vrstvou dlaždicové mapy. Vrstva dlaždicové mapy se skládá z dlaždic jedné velikosti: kreslení na dlaždici ji změní všude, kde je použita, a nástroj Razítko dlaždic umisťuje dlaždice do mřížky.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Prázdná dlaždice (vymaže buňky)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>Dlaždice: {0}, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Dlaždice {0}</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>Délka</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>Jak dlouho se vybrané snímky zobrazují, v milisekundách</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>Snímků: {0}   {1:0.##} s   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>Vrstvy</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>Snímky {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maximalizovat</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimalizovat</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Obnovit</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>Plechovka barvy</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>Kliknutím vyplníte oblast podobné barvy</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>Nahrazení barvy</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>Kreslí barvou popředí jen přes pixely barvy pozadí; pravé tlačítko naopak</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>Vyplněný obrys</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>Nakreslete obrys od ruky; po uvolnění se uzavře a vyplní</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>Křivka</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>Pohybem křivku ohnete, kliknutím dokončíte, Esc zruší</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>Natáhněte čáru, pak ji pohybem ohněte a kliknutím dokončete</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>Elipsa</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Eliptický výběr</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Tažením nakreslíte elipsu. Shift vytvoří kruh, Ctrl kreslí od středu</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>Guma</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>Tažením mažete pixely</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>Kapátko</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>Kliknutím naberete barvu popředí, pravým tlačítkem barvu pozadí</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>Přechod</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>Tažením vyplníte přechodem od barvy popředí k barvě pozadí</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>Ruka</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>Tažením posunete zobrazení. Podržením mezerníku lze posouvat s libovolným nástrojem</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>Laso</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>Tažením kolem oblasti ji vyberete</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>Čára</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>Tažením nakreslíte čáru. Shift přichytí k čistým pixelovým úhlům</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>Kouzelná hůlka</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>Kliknutím vyberete oblast podobné barvy</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>Přesunout</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>Tažením přesunete výběr nebo buňku. Tažením úchytů měníte velikost a otáčíte, Enter použije</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>Tužka</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>Kreslí barvou popředí; pravé tlačítko kreslí barvou pozadí. Shift+klik nakreslí čáru od posledního bodu</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>Mnohoúhelníkové laso</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>Kliknutím přidáváte rohy; dvojklik nebo Enter výběr uzavře</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Obdélníkový výběr</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>Obdélník</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>Tažením nakreslíte obdélník. Shift vytvoří čtverec, Ctrl kreslí od středu</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>Tažením vyberete. Shift přidává, Alt odebírá, Shift+Alt vytvoří průnik</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>Stínování</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>Tažením zesvětlíte pixely podle palety; pravé tlačítko ztmavuje</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>Rozřezání</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>Tažením označíte pojmenovanou oblast, která se exportuje se sprite sheety</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>Sprej</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>Podržením stříkáte rozptýlené pixely</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>Text</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>Kliknutím přidáte text</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Razítko dlaždic</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Kliknutím nebo tažením umístíte vybranou dlaždici. Shift+kliknutí vyplní propojené buňky. Pravé kliknutí vymaže buňky. Alt+kliknutí vybere dlaždici pod kurzorem.</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>Zvětšení</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>Kliknutím přiblížíte, pravým tlačítkem nebo Alt+klik oddálíte</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>Barva pozadí</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>Sbalit do jednoho sloupce</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>Výchozí barvy</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>Rozbalit do dvou sloupců</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>Barva popředí</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>Zaměnit barvy popředí a pozadí</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>Pixelový editor</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - Pixelový editor</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - Pixelový editor</value>
+  </data>
+</root>

@@ -111,7 +111,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 );
 
                 // Calculate centered text position with padding
-                var padding = 12; // Adjusted to match TextBox padding
+                var padding = SpeechBalloonAnnotation.TextPadding; // Same as the TextBox padding
 
                 // Allow wrapping
                 var maxTextWidth = Math.Max(0, width - (padding * 2));

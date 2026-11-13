@@ -28,6 +28,7 @@
 using Avalonia;
 using ShareX.AvaloniaUI.Imaging;
 using ShareX.HelpersLib;
+using ShareX.Icons;
 using ShareX.Platform;
 using SkiaSharp;
 using System;
@@ -37,7 +38,6 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using ShareX.Icons;
 using AvaloniaBitmap = Avalonia.Media.Imaging.Bitmap;
 
 namespace ShareX.HistoryLib;

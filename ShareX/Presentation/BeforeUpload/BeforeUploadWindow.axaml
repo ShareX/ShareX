@@ -62,7 +62,7 @@
                         Background="{DynamicResource ShareX.Brush.Background.Panel}">
                     <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                             FontSize="20"
-                                            Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                            Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"/>
                 </Border>
@@ -92,7 +92,7 @@
                         <Grid ColumnDefinitions="Auto,*" ColumnSpacing="7">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                                     FontSize="16"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                     VerticalAlignment="Center"/>
                             <TextBlock Grid.Column="1"
                                        Text="{x:Static res:Strings.BeforeUploadWindow_Destination}"

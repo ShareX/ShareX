@@ -34,6 +34,16 @@ namespace ShareX.Platform;
 /// <param name="Bounds">Visible bounds on the virtual desktop in physical pixels, excluding invisible resize borders where the OS reports them.</param>
 public sealed record PlatformWindow(long Handle, string Title, string? ProcessName, int? ProcessId, PlatformRectangle Bounds, bool IsMinimized);
 
+/// <summary>A window's position as the operating system reports it, for comparing with the rectangle ShareX asked for.</summary>
+public readonly record struct NativeWindowGeometry(
+    PlatformRectangle Bounds,
+    PlatformPoint ClientOrigin,
+    bool HasClientOrigin,
+    uint Dpi,
+    string MonitorDeviceName,
+    PlatformPoint Cursor,
+    bool HasCursor);
+
 /// <summary>A rectangle region capture can snap to.</summary>
 /// <param name="Handle">The window or control the rectangle belongs to.</param>
 /// <param name="Bounds">Visible bounds on the virtual desktop, in the same coordinates as <see cref="PlatformWindow.Bounds"/>.</param>
@@ -153,6 +163,18 @@ public interface IWindowService
     /// The overlay is sized in device pixels anyway. False where the system does not change a window's scale this way.
     /// </summary>
     bool KeepScaleFixed(long windowHandle) => false;
+
+    /// <summary>
+    /// A point on the monitor the system takes a spanning window's DPI from: the monitor <paramref name="bounds"/> overlaps
+    /// most. Region capture creates its overlay there first, so Avalonia and the system agree on the scale. Elsewhere this is
+    /// the top left of <paramref name="bounds"/>.
+    /// </summary>
+    PlatformPoint GetOverlayDpiAnchor(PlatformRectangle bounds) => new(bounds.X, bounds.Y);
+
+    /// <summary>
+    /// Where the window actually is, for the display diagnostics report. Null where the system does not report it.
+    /// </summary>
+    NativeWindowGeometry? ReadNativeWindowGeometry(long windowHandle) => null;
 
     /// <summary>
     /// Moves one of ShareX's own windows so its top-left corner is at <paramref name="position"/> if it is not there already. On

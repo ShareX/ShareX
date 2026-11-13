@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>तीर शैली</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>टेक्स्ट के अनुसार स्वतः आकार</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>धुंधला</value>
   </data>

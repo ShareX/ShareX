@@ -45,7 +45,7 @@
             <Border Width="42" Height="42" CornerRadius="6" Background="{DynamicResource ShareX.Brush.Background.Panel}">
                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Download}"
                                         FontSize="21"
-                                        Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"/>
             </Border>

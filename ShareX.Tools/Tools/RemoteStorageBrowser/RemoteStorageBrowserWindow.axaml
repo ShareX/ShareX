@@ -300,7 +300,7 @@
                                     Spacing="10">
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Upload}"
                                                     FontSize="42"
-                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Text}"
+                                                    Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
                                                     HorizontalAlignment="Center"/>
                             <TextBlock Text="{x:Static localization:Strings.RemoteStorageBrowser_DropFilesToUpload}"
                                        FontWeight="SemiBold"

@@ -29,9 +29,9 @@ using System.Diagnostics;
 namespace ShareX.AvaloniaUI.Theming
 {
     /// <summary>
-    /// Colors derived from the user's accent color that meet WCAG AA contrast whatever accent is picked:
-    /// text on an accent fill reaches 4.5:1, accent colored text on a theme surface reaches 4.5:1 and accent
-    /// colored indicators (borders, rings) on a theme surface reach 3:1.
+    /// Colors derived from the user's accent color. Text meets WCAG AA contrast whatever accent is picked: text on an
+    /// accent fill reaches 4.5:1 and accent colored text on a theme surface reaches 4.5:1. Accent colored indicators
+    /// (borders, rings) on a theme surface reach 3:1. Accent colored icons on a theme surface use the accent as picked.
     /// </summary>
     public sealed class AccentPalette
     {
@@ -56,8 +56,14 @@ namespace ShareX.AvaloniaUI.Theming
         /// <summary>Text and icon color for content drawn on the accent fill.</summary>
         public Color OnFill { get; }
 
-        /// <summary>Accent color for text and icons drawn on a theme surface (window, panel, menu, control backgrounds).</summary>
+        /// <summary>Accent color for text drawn on a theme surface (window, panel, menu, control backgrounds).</summary>
         public Color Text { get; }
+
+        /// <summary>
+        /// Accent color for icons drawn on a theme surface. It is the accent as picked, with no contrast adjustment, so
+        /// icons match the user's color even when it is close to the background.
+        /// </summary>
+        public Color Icon => Accent;
 
         /// <summary>Accent color for borders, rings and other indicators drawn on a theme surface.</summary>
         public Color Border { get; }

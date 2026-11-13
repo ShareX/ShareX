@@ -96,23 +96,23 @@ public static class AdjustmentEditor
                 Check(Strings.AdjustmentEditor_Colorize, "colorize");
                 break;
             case AdjustmentKind.ColorBalance:
-            {
-                string range = "midtones";
-                Grid balance = DialogBuilder.Form();
-                void Build()
                 {
-                    balance.Children.Clear();
-                    balance.RowDefinitions.Clear();
-                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_CyanRedColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.cr"), v => { s.Set($"{range}.cr", (float)v); changed(); }));
-                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_MagentaGreenColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.mg"), v => { s.Set($"{range}.mg", (float)v); changed(); }));
-                    DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_YellowBlueColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.yb"), v => { s.Set($"{range}.yb", (float)v); changed(); }));
+                    string range = "midtones";
+                    Grid balance = DialogBuilder.Form();
+                    void Build()
+                    {
+                        balance.Children.Clear();
+                        balance.RowDefinitions.Clear();
+                        DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_CyanRedColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.cr"), v => { s.Set($"{range}.cr", (float)v); changed(); }));
+                        DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_MagentaGreenColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.mg"), v => { s.Set($"{range}.mg", (float)v); changed(); }));
+                        DialogBuilder.AddRow(balance, Strings.AdjustmentEditor_YellowBlueColon, DialogBuilder.SliderNumber(-100, 100, s.Get($"{range}.yb"), v => { s.Set($"{range}.yb", (float)v); changed(); }));
+                    }
+                    DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ToneColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Shadows, "shadows"), (Strings.AdjustmentEditor_Midtones, "midtones"), (Strings.AdjustmentEditor_Highlights, "highlights")], range, v => { range = v; Build(); }));
+                    Build();
+                    DialogBuilder.AddFull(form, balance);
+                    Check(Strings.AdjustmentEditor_PreserveLuminosity, "preserve");
+                    break;
                 }
-                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ToneColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Shadows, "shadows"), (Strings.AdjustmentEditor_Midtones, "midtones"), (Strings.AdjustmentEditor_Highlights, "highlights")], range, v => { range = v; Build(); }));
-                Build();
-                DialogBuilder.AddFull(form, balance);
-                Check(Strings.AdjustmentEditor_PreserveLuminosity, "preserve");
-                break;
-            }
             case AdjustmentKind.BlackAndWhite:
                 Slider(Strings.AdjustmentEditor_RedsColon, "reds", -200, 300, 40);
                 Slider(Strings.AdjustmentEditor_YellowsColon, "yellows", -200, 300, 60);
@@ -129,25 +129,25 @@ public static class AdjustmentEditor
                 Check(Strings.AdjustmentEditor_PreserveLuminosity, "preserve");
                 break;
             case AdjustmentKind.ChannelMixer:
-            {
-                string output = "r";
-                Grid mixer = DialogBuilder.Form();
-                void Build()
                 {
-                    mixer.Children.Clear();
-                    mixer.RowDefinitions.Clear();
-                    foreach (var (label, source) in new[] { (Strings.AdjustmentEditor_RedColon, "r"), (Strings.AdjustmentEditor_GreenColon, "g"), (Strings.AdjustmentEditor_BlueColon, "b"), (Strings.AdjustmentEditor_ConstantColon, "c") })
+                    string output = "r";
+                    Grid mixer = DialogBuilder.Form();
+                    void Build()
                     {
-                        string key = $"{output}.{source}";
-                        DialogBuilder.AddRow(mixer, label, DialogBuilder.SliderNumber(-200, 200, s.Get(key, output == source ? 100 : 0), v => { s.Set(key, (float)v); changed(); }));
+                        mixer.Children.Clear();
+                        mixer.RowDefinitions.Clear();
+                        foreach (var (label, source) in new[] { (Strings.AdjustmentEditor_RedColon, "r"), (Strings.AdjustmentEditor_GreenColon, "g"), (Strings.AdjustmentEditor_BlueColon, "b"), (Strings.AdjustmentEditor_ConstantColon, "c") })
+                        {
+                            string key = $"{output}.{source}";
+                            DialogBuilder.AddRow(mixer, label, DialogBuilder.SliderNumber(-200, 200, s.Get(key, output == source ? 100 : 0), v => { s.Set(key, (float)v); changed(); }));
+                        }
                     }
+                    DialogBuilder.AddRow(form, Strings.AdjustmentEditor_OutputChannelColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Red, "r"), (Strings.AdjustmentEditor_Green, "g"), (Strings.AdjustmentEditor_Blue, "b")], output, v => { output = v; Build(); }));
+                    Build();
+                    DialogBuilder.AddFull(form, mixer);
+                    Check(Strings.AdjustmentEditor_Monochrome, "monochrome");
+                    break;
                 }
-                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_OutputChannelColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Red, "r"), (Strings.AdjustmentEditor_Green, "g"), (Strings.AdjustmentEditor_Blue, "b")], output, v => { output = v; Build(); }));
-                Build();
-                DialogBuilder.AddFull(form, mixer);
-                Check(Strings.AdjustmentEditor_Monochrome, "monochrome");
-                break;
-            }
             case AdjustmentKind.ColorLookup:
                 root.Children.Add(ColorLookupEditor.Build(s, changed));
                 break;
@@ -168,42 +168,42 @@ public static class AdjustmentEditor
                 Slider(Strings.AdjustmentEditor_ThresholdLevelColon, "level", 1, 255, 128);
                 break;
             case AdjustmentKind.GradientMap:
-            {
-                s.Gradient ??= host != null ? GradientDefinition.CreateDefault(host.Foreground, host.Background) : GradientDefinition.CreateDefault(SKColors.Black, SKColors.White);
-                Button edit = new() { Content = Strings.AdjustmentEditor_EditGradientEllipsis };
-                edit.Click += async (_, _) =>
                 {
-                    if (TopLevel.GetTopLevel(edit) is not Window owner || host == null) return;
-                    GradientDefinition? g = await GradientEditorDialog.ShowAsync(owner, s.Gradient, host);
-                    if (g != null) { s.Gradient = g; changed(); }
-                };
-                CheckBox reverse = new() { Content = Strings.AdjustmentEditor_Reverse, IsChecked = s.Gradient.Reverse };
-                reverse.IsCheckedChanged += (_, _) => { s.Gradient!.Reverse = reverse.IsChecked == true; changed(); };
-                DialogBuilder.AddFull(form, edit);
-                DialogBuilder.AddFull(form, reverse);
-                break;
-            }
-            case AdjustmentKind.SelectiveColor:
-            {
-                string group = "reds";
-                Grid selective = DialogBuilder.Form();
-                void Build()
-                {
-                    selective.Children.Clear();
-                    selective.RowDefinitions.Clear();
-                    foreach (var (label, c) in new[] { (Strings.AdjustmentEditor_CyanColon, "c"), (Strings.AdjustmentEditor_MagentaColon, "m"), (Strings.AdjustmentEditor_YellowColon, "y"), (Strings.AdjustmentEditor_BlackColon, "k") })
+                    s.Gradient ??= host != null ? GradientDefinition.CreateDefault(host.Foreground, host.Background) : GradientDefinition.CreateDefault(SKColors.Black, SKColors.White);
+                    Button edit = new() { Content = Strings.AdjustmentEditor_EditGradientEllipsis };
+                    edit.Click += async (_, _) =>
                     {
-                        string key = $"{group}.{c}";
-                        DialogBuilder.AddRow(selective, label, DialogBuilder.SliderNumber(-100, 100, s.Get(key), v => { s.Set(key, (float)v); changed(); }));
-                    }
+                        if (TopLevel.GetTopLevel(edit) is not Window owner || host == null) return;
+                        GradientDefinition? g = await GradientEditorDialog.ShowAsync(owner, s.Gradient, host);
+                        if (g != null) { s.Gradient = g; changed(); }
+                    };
+                    CheckBox reverse = new() { Content = Strings.AdjustmentEditor_Reverse, IsChecked = s.Gradient.Reverse };
+                    reverse.IsCheckedChanged += (_, _) => { s.Gradient!.Reverse = reverse.IsChecked == true; changed(); };
+                    DialogBuilder.AddFull(form, edit);
+                    DialogBuilder.AddFull(form, reverse);
+                    break;
                 }
-                DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ColorsColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Reds, "reds"), (Strings.AdjustmentEditor_Yellows, "yellows"), (Strings.AdjustmentEditor_Greens, "greens"),
+            case AdjustmentKind.SelectiveColor:
+                {
+                    string group = "reds";
+                    Grid selective = DialogBuilder.Form();
+                    void Build()
+                    {
+                        selective.Children.Clear();
+                        selective.RowDefinitions.Clear();
+                        foreach (var (label, c) in new[] { (Strings.AdjustmentEditor_CyanColon, "c"), (Strings.AdjustmentEditor_MagentaColon, "m"), (Strings.AdjustmentEditor_YellowColon, "y"), (Strings.AdjustmentEditor_BlackColon, "k") })
+                        {
+                            string key = $"{group}.{c}";
+                            DialogBuilder.AddRow(selective, label, DialogBuilder.SliderNumber(-100, 100, s.Get(key), v => { s.Set(key, (float)v); changed(); }));
+                        }
+                    }
+                    DialogBuilder.AddRow(form, Strings.AdjustmentEditor_ColorsColon, DialogBuilder.Combo([(Strings.AdjustmentEditor_Reds, "reds"), (Strings.AdjustmentEditor_Yellows, "yellows"), (Strings.AdjustmentEditor_Greens, "greens"),
                     (Strings.AdjustmentEditor_Cyans, "cyans"), (Strings.AdjustmentEditor_Blues, "blues"), (Strings.AdjustmentEditor_Magentas, "magentas"),
                     (Strings.AdjustmentEditor_Whites, "whites"), (Strings.AdjustmentEditor_Neutrals, "neutrals"), (Strings.AdjustmentEditor_Blacks, "blacks")], group, v => { group = v; Build(); }));
-                Build();
-                DialogBuilder.AddFull(form, selective);
-                break;
-            }
+                    Build();
+                    DialogBuilder.AddFull(form, selective);
+                    break;
+                }
             default:
                 DialogBuilder.AddFull(form, new TextBlock { Text = Strings.AdjustmentEditor_NoOptions });
                 break;

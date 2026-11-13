@@ -207,6 +207,56 @@ public sealed unsafe class WindowsWindowService : IWindowService
     public bool KeepScaleFixed(long windowHandle) =>
         windowHandle != 0 && Win32.SetWindowSubclass((IntPtr)windowHandle, &FixedScaleWindowProcedure, FixedScaleSubclassId, 0);
 
+    public PlatformPoint GetOverlayDpiAnchor(PlatformRectangle bounds)
+    {
+        Win32.RECT rect = new() { Left = bounds.Left, Top = bounds.Top, Right = bounds.Right, Bottom = bounds.Bottom };
+        IntPtr monitor = Win32.MonitorFromRect(&rect, Win32.MONITOR_DEFAULTTONEAREST);
+        Win32.MONITORINFOEX info = new() { cbSize = sizeof(Win32.MONITORINFOEX) };
+
+        if (monitor != IntPtr.Zero && Win32.GetMonitorInfo(monitor, &info))
+        {
+            return new PlatformPoint(info.rcMonitor.Left, info.rcMonitor.Top);
+        }
+
+        return new PlatformPoint(bounds.X, bounds.Y);
+    }
+
+    public NativeWindowGeometry? ReadNativeWindowGeometry(long windowHandle)
+    {
+        if (windowHandle == 0 || !Win32.GetWindowRect((IntPtr)windowHandle, out Win32.RECT rect))
+        {
+            return null;
+        }
+
+        Win32.POINT clientOrigin = new();
+        bool hasClient = Win32.ClientToScreen((IntPtr)windowHandle, ref clientOrigin);
+        uint dpi = 0;
+
+        try
+        {
+            dpi = Win32.GetDpiForWindow((IntPtr)windowHandle);
+        }
+        catch (EntryPointNotFoundException)
+        {
+        }
+
+        IntPtr monitor = Win32.MonitorFromWindow((IntPtr)windowHandle, Win32.MONITOR_DEFAULTTONEAREST);
+        Win32.MONITORINFOEX info = new() { cbSize = sizeof(Win32.MONITORINFOEX) };
+        string monitorName = monitor != IntPtr.Zero && Win32.GetMonitorInfo(monitor, &info)
+            ? new string(info.szDevice).TrimEnd('\0')
+            : "";
+        bool hasCursor = Win32.GetCursorPos(out Win32.POINT cursor);
+
+        return new NativeWindowGeometry(
+            rect.ToRectangle(),
+            new PlatformPoint(clientOrigin.X, clientOrigin.Y),
+            hasClient,
+            dpi,
+            monitorName,
+            new PlatformPoint(cursor.X, cursor.Y),
+            hasCursor);
+    }
+
     private const nuint FixedScaleSubclassId = 0x53585343; // "SXSC"
 
     /// <summary>
@@ -218,11 +268,15 @@ public sealed unsafe class WindowsWindowService : IWindowService
     {
         if (message == Win32.WM_DPICHANGED)
         {
+            // Windows has already switched the window's DPI. Dropping the message keeps Avalonia on the scale the overlay
+            // was created with. The change is recorded so display diagnostics can show the two scales.
+            OverlayDpiHub.NoteDpiChanged(hwnd.ToInt64(), (uint)(wParam & 0xFFFF), suppressed: true);
             return 0;
         }
 
         if (message == Win32.WM_NCDESTROY)
         {
+            OverlayDpiHub.NoteWindowDestroyed(hwnd.ToInt64());
             Win32.RemoveWindowSubclass(hwnd, &FixedScaleWindowProcedure, id);
         }
 
@@ -471,7 +525,9 @@ internal sealed unsafe class SnapTargetCollector
         {
             PlatformRectangle client = WindowsWindowService.GetClientBounds(hwnd);
 
-            if (!client.IsEmpty && client != bounds)
+            // A client area that is the window minus a thin border belongs to a window that draws its own title bar.
+            // Offering it separately would always snap to it instead of the whole window.
+            if (!client.IsEmpty && !CoversWindow(client, bounds))
             {
                 found.Add(new SnapTarget(hwnd.ToInt64(), client, null));
             }
@@ -484,6 +540,19 @@ internal sealed unsafe class SnapTargetCollector
         }
 
         return true;
+    }
+
+    /// <summary>Whether the client area covers the window except for a thin border (up to 400% of a 1 px frame).</summary>
+    private static bool CoversWindow(PlatformRectangle client, PlatformRectangle window)
+    {
+        const int tolerance = 8;
+        PlatformRectangle visible = client.Intersect(window);
+
+        return !visible.IsEmpty &&
+            visible.Left - window.Left <= tolerance &&
+            visible.Top - window.Top <= tolerance &&
+            window.Right - visible.Right <= tolerance &&
+            window.Bottom - visible.Bottom <= tolerance;
     }
 
     private static List<IntPtr> Enumerate(IntPtr parent)

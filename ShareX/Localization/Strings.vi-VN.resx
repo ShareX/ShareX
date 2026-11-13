@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Lưu</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Cho phép tìm kiếm văn bản trong ảnh chụp ở lịch sử</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Lưu các tác vụ gần đây</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Tải nhật ký gỡ lỗi lên?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>Đã sao chép báo cáo vào bộ nhớ tạm.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Sao chép vào bộ nhớ tạm</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Hãy đính kèm báo cáo này khi bạn báo lỗi về tỷ lệ hiển thị, nhiều màn hình hoặc chụp sai vị trí.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Bố cục màn hình</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Con trỏ chuột</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Màn hình chính</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Làm mới</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Thanh tác vụ hoặc thanh ứng dụng</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Lưu dưới dạng .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Lưu chẩn đoán màn hình</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>Đã lưu báo cáo vào {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Tệp văn bản</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Chẩn đoán màn hình</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Thả vào đây</value>
   </data>
@@ -1574,6 +1616,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
   </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Chẩn đoán màn hình...</value>
+  </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Quyên góp</value>
   </data>
@@ -1690,6 +1735,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Ghim vào màn hình</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Trình chỉnh sửa điểm ảnh...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>Mã QR</value>
@@ -1867,6 +1915,9 @@ Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi v
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Chỉnh sửa trong trình chỉnh sửa ảnh...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Chỉnh sửa trong trình chỉnh sửa điểm ảnh...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Tệp</value>
@@ -2275,11 +2326,17 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Bạn có thể thay đổi các tùy chọn này bất cứ lúc nào trong cài đặt ứng dụng.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Rộng rãi</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Cảm ơn bạn đã tải xuống ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Dùng cài đặt hệ thống</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Chào mừng bạn đến với ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Chụp, chỉnh sửa và chia sẻ mọi thứ theo cách của bạn.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Bạn có muốn thêm trình tải lên tùy chỉnh "{0}" không?</value>
@@ -3007,6 +3064,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Hành động nhấp phải:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Nhấp chuột phải để xóa hình dưới con trỏ</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Nhấp chuột phải để chèn mã tệp đầu vào hoặc đầu ra.</value>

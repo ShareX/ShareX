@@ -1648,6 +1648,9 @@
   <data name="OCRWindow_Close_after_opening" xml:space="preserve">
     <value>Tutup setelah membuka</value>
   </data>
+  <data name="OCRWindow_Copied_to_clipboard" xml:space="preserve">
+    <value>Disalin ke papan klip</value>
+  </data>
   <data name="OCRWindow_Copy_all" xml:space="preserve">
     <value>Salin semua</value>
   </data>
@@ -1689,6 +1692,9 @@
   </data>
   <data name="OCRWindow_Select_region" xml:space="preserve">
     <value>Pilih area...</value>
+  </data>
+  <data name="OCRWindow_Separate_paragraphs" xml:space="preserve">
+    <value>Pisahkan paragraf</value>
   </data>
   <data name="OCRWindow_ShareX_Optical_character_recognition" xml:space="preserve">
     <value>ShareX - Pengenalan karakter optik</value>

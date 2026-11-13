@@ -136,6 +136,8 @@ public sealed class WindowsPlatformServices : IPlatformServices
 
     public IApplicationLaunchService ApplicationLaunch { get; } = new WindowsApplicationLaunchService();
 
+    public IDisplayDiagnosticsService DisplayDiagnostics { get; } = new WindowsDisplayDiagnosticsService();
+
     public void Dispose()
     {
         Session.Dispose();

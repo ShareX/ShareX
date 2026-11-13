@@ -43,6 +43,11 @@ namespace ShareX.Icons;
 /// interface icons 16px, badges 12px and controls 10px) with 1px strokes on pixel centers, so they are sharp at their
 /// native size. The title bar caption buttons are fine line art on a 16px grid.
 /// </para>
+/// <para>
+/// The <see cref="PixelEditorIcons"/> are pixel art on the same grids (tools 20px, interface icons 16px, small
+/// buttons 12px and controls 10px): every icon is built from whole grid pixels, solid in <c>currentColor</c> with
+/// shading at partial opacity, and has no curves or strokes.
+/// </para>
 /// </remarks>
 internal static class ModernIcons
 {

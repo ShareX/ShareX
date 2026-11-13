@@ -54,10 +54,10 @@ internal static class LegacyIcons
     /// <summary>
     /// Whether the icon with key <paramref name="key"/> always uses its modern icon, so the Legacy folder has no
     /// file for it, and one added there is not used: the main window's title bar buttons, and all of the photo
-    /// editor, which keeps its own look in both packs.
+    /// editor and the pixel editor, which keep their own look in both packs.
     /// </summary>
     public static bool IsModernOnly(string key) =>
-        ModernOnlyKeys.Contains(key) || key.StartsWith(PhotoEditorIcons.Prefix, StringComparison.Ordinal);
+        ModernOnlyKeys.Contains(key) || key.StartsWith(PhotoEditorIcons.Prefix, StringComparison.Ordinal) || key.StartsWith(PixelEditorIcons.Prefix, StringComparison.Ordinal);
 
     /// <summary>
     /// The legacy version of the icon with key <paramref name="key"/>, laid out like <paramref name="modern"/>, or

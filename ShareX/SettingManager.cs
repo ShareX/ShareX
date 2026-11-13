@@ -163,7 +163,7 @@ namespace ShareX
         {
             string message;
 
-            if (e is UnauthorizedAccessException || e is FileNotFoundException)
+            if (FileHelpers.IsAccessBlocked(e))
             {
                 message = Strings.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
             }

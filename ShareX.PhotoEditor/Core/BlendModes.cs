@@ -231,35 +231,35 @@ public static class BlendModes
                 if (Lum(br, bg, bb) > Lum(sr, sg, sb)) { sr = br; sg = bg; sb = bb; }
                 return;
             case LayerBlendMode.Hue:
-            {
-                float r = sr, g = sg, b = sb;
-                SetSat(ref r, ref g, ref b, Sat(br, bg, bb));
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = sr, g = sg, b = sb;
+                    SetSat(ref r, ref g, ref b, Sat(br, bg, bb));
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Saturation:
-            {
-                float r = br, g = bg, b = bb;
-                SetSat(ref r, ref g, ref b, Sat(sr, sg, sb));
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = br, g = bg, b = bb;
+                    SetSat(ref r, ref g, ref b, Sat(sr, sg, sb));
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Color:
-            {
-                float r = sr, g = sg, b = sb;
-                SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = sr, g = sg, b = sb;
+                    SetLum(ref r, ref g, ref b, Lum(br, bg, bb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             case LayerBlendMode.Luminosity:
-            {
-                float r = br, g = bg, b = bb;
-                SetLum(ref r, ref g, ref b, Lum(sr, sg, sb));
-                sr = r; sg = g; sb = b;
-                return;
-            }
+                {
+                    float r = br, g = bg, b = bb;
+                    SetLum(ref r, ref g, ref b, Lum(sr, sg, sb));
+                    sr = r; sg = g; sb = b;
+                    return;
+                }
             default:
                 sr = Separable(mode, br, sr);
                 sg = Separable(mode, bg, sg);

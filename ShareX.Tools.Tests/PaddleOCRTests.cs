@@ -49,7 +49,7 @@ public sealed class PaddleOCRTests
 
         OCRResult result = await OCRHelper.Recognize(image);
 
-        Assert.Equal(["SHAREX TEST", "12345"], result.Lines);
+        Assert.Equal(["SHAREX TEST", "12345"], result.Lines.Select(line => line.Text));
         Assert.Equal(2, result.Regions.Count);
         Assert.All(result.Regions, region => Assert.True(image.Info.Rect.Contains(SKRectI.Round(region.Bounds))));
         Assert.Equal("SHAREX TEST 12345", result.GetText(singleLine: true));

@@ -26,12 +26,12 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Chrome;
-using Path = Avalonia.Controls.Shapes.Path;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using ShareX.PhotoEditor.UI.Commands;
+using Path = Avalonia.Controls.Shapes.Path;
 
 namespace ShareX.PhotoEditor.UI;
 

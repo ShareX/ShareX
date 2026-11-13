@@ -670,6 +670,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Opslaan</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Tekst in opnamen doorzoekbaar maken in de geschiedenis</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Recente taken opslaan</value>
   </data>
@@ -1312,6 +1315,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>Debuglogboek uploaden?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>Het rapport is naar het klembord gekopieerd.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>Naar klembord kopiëren</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>Voeg dit rapport toe als je een probleem meldt met schaal, meerdere monitoren of opnames op de verkeerde plek.</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>Indeling van beeldschermen</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>Muiscursor</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>Hoofdmonitor</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>Vernieuwen</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>Taakbalk of app-balk</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>Opslaan als .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>Beeldschermdiagnose opslaan</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>Het rapport is opgeslagen in {0}</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>Tekstbestand</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - Beeldschermdiagnose</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>Hier neerzetten</value>
   </data>
@@ -1539,7 +1581,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Achtergrondverwijderaar...</value>
   </data>
   <data name="MainMenuBuilder_BorderlessWindow" xml:space="preserve">
-    <value>Borderless venster</value>
+    <value>Raamloos venster</value>
   </data>
   <data name="MainMenuBuilder_Capture" xml:space="preserve">
     <value>Vastleggen</value>
@@ -1548,7 +1590,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Meetlat</value>
   </data>
   <data name="MainMenuBuilder_ClipboardViewer" xml:space="preserve">
-    <value>Klembord weergaveer</value>
+    <value>Klembord weergave</value>
   </data>
   <data name="MainMenuBuilder_ColorPicker" xml:space="preserve">
     <value>Kleurenkiezer</value>
@@ -1573,6 +1615,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>Beeldschermdiagnose...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>Doneren</value>
@@ -1623,7 +1668,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsconverter...</value>
   </data>
   <data name="MainMenuBuilder_ImageEditor" xml:space="preserve">
-    <value>Afbeelding bewerkenor</value>
+    <value>Afbeelding bewerken</value>
   </data>
   <data name="MainMenuBuilder_ImageEffects" xml:space="preserve">
     <value>Afbeeldingseffecten</value>
@@ -1635,13 +1680,13 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Afbeeldingsformaat wijzigen...</value>
   </data>
   <data name="MainMenuBuilder_ImageSplitter" xml:space="preserve">
-    <value>Afbeelding splitter</value>
+    <value>Afbeelding splitsen</value>
   </data>
   <data name="MainMenuBuilder_ImageThumbnailer" xml:space="preserve">
-    <value>Afbeelding miniatuurer</value>
+    <value>Afbeelding miniatuur</value>
   </data>
   <data name="MainMenuBuilder_ImageViewer" xml:space="preserve">
-    <value>Afbeelding weergaveer</value>
+    <value>Afbeelding weergave</value>
   </data>
   <data name="MainMenuBuilder_ImageWatermark" xml:space="preserve">
     <value>Afbeeldingswatermerk...</value>
@@ -1690,6 +1735,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Pin to scherm</value>
+  </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Pixeleditor...</value>
   </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR code</value>
@@ -1867,6 +1915,9 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Bewerken in foto-editor...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Bewerken in pixeleditor...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Bestand</value>
@@ -2275,11 +2326,17 @@ Do you want to abort the active scherm opname?</value>
   <data name="StartScreen_SettingsNote" xml:space="preserve">
     <value>Je kunt deze opties op elk moment wijzigen in de applicatie-instellingen.</value>
   </data>
+  <data name="StartScreen_Spacious" xml:space="preserve">
+    <value>Ruim</value>
+  </data>
+  <data name="StartScreen_ThankYou" xml:space="preserve">
+    <value>Bedankt voor het downloaden van ShareX</value>
+  </data>
+  <data name="StartScreen_UseSystemSetting" xml:space="preserve">
+    <value>Systeeminstelling gebruiken</value>
+  </data>
   <data name="StartScreen_Welcome" xml:space="preserve">
     <value>Welkom bij ShareX</value>
-  </data>
-  <data name="StartScreen_WelcomeSubtitle" xml:space="preserve">
-    <value>Leg alles vast, bewerk het en deel het op jouw manier.</value>
   </data>
   <data name="TaskHelpers_AddCustomUploaderConfirmation" xml:space="preserve">
     <value>Wilt u de aangepaste uploader ''{0}'' toevoegen?</value>
@@ -3007,6 +3064,9 @@ Do you want to abort the active scherm opname?</value>
   </data>
   <data name="TaskSettingsWindow_RightClickAction" xml:space="preserve">
     <value>Actie bij rechtsklikken:</value>
+  </data>
+  <data name="TaskSettingsWindow_RightClickDeletesShape" xml:space="preserve">
+    <value>Rechtsklikken verwijdert de vorm onder de cursor</value>
   </data>
   <data name="TaskSettingsWindow_RightClickToInsertAnInputOrOutputFileToken" xml:space="preserve">
     <value>Klik met de rechtermuisknop om een invoer- of uitvoerbestandstoken in te voegen.</value>

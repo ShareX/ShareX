@@ -33,8 +33,17 @@ namespace ShareX.OCR;
 // reads each one. The models are multilingual, so there is no language to choose.
 public sealed class PaddleOCREngine : IDisposable
 {
-    public const string DetectionModelName = "PP-OCRv6_small_det";
-    public const string RecognitionModelName = "PP-OCRv6_small_rec";
+    // Models in the order they are preferred, the biggest and most accurate first. The small models ship with ShareX;
+    // a user who downloads the medium models into the models folder gets them instead. The tiny models are used only
+    // when the small ones have been removed. Detection and recognition are picked separately, so either one can be
+    // replaced on its own.
+    private static readonly string[] DetectionModelNames = ["PP-OCRv6_medium_det", "PP-OCRv6_small_det", "PP-OCRv6_tiny_det"];
+    private static readonly string[] RecognitionModelNames = ["PP-OCRv6_medium_rec", "PP-OCRv6_small_rec", "PP-OCRv6_tiny_rec"];
+    private const string BuiltInDetectionModelName = "PP-OCRv6_small_det";
+    private const string BuiltInRecognitionModelName = "PP-OCRv6_small_rec";
+
+    // Hugging Face names the ONNX downloads with this suffix, so a folder copied from there as-is is found too.
+    private const string DownloadFolderSuffix = "_onnx";
 
     // Recognized text below this confidence is usually an icon or noise read as characters.
     public const float DefaultMinScore = 0.5f;
@@ -45,12 +54,16 @@ public sealed class PaddleOCREngine : IDisposable
     private readonly TextDetector _detector;
     private readonly TextRecognizer _recognizer;
 
+    // The folders of the models in use.
+    public string DetectionModelFolder { get; }
+    public string RecognitionModelFolder { get; }
+
     // The models are copied next to the application under this folder.
-    public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "PaddleOCR");
+    public static string DefaultModelsFolder => Path.Combine(AppContext.BaseDirectory, "Models");
 
     private static readonly Lazy<bool> Available = new(() =>
-        File.Exists(Path.Combine(DefaultModelsFolder, DetectionModelName, "inference.onnx")) &&
-        File.Exists(Path.Combine(DefaultModelsFolder, RecognitionModelName, "inference.onnx")) &&
+        FindModelFolder(DefaultModelsFolder, DetectionModelNames) != null &&
+        FindModelFolder(DefaultModelsFolder, RecognitionModelNames) != null &&
         NativeLibrary.TryLoad("onnxruntime", typeof(InferenceSession).Assembly, null, out _));
 
     // Whether the models and the ONNX runtime are here. The runtime has no Intel Mac (osx-x64) build.
@@ -75,17 +88,39 @@ public sealed class PaddleOCREngine : IDisposable
             GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
         };
 
-        _detector = new TextDetector(Path.Combine(modelsFolder, DetectionModelName), sessionOptions);
+        DetectionModelFolder = FindModelFolder(modelsFolder, DetectionModelNames) ?? Path.Combine(modelsFolder, BuiltInDetectionModelName);
+        RecognitionModelFolder = FindModelFolder(modelsFolder, RecognitionModelNames) ?? Path.Combine(modelsFolder, BuiltInRecognitionModelName);
+        _detector = new TextDetector(DetectionModelFolder, sessionOptions);
 
         try
         {
-            _recognizer = new TextRecognizer(Path.Combine(modelsFolder, RecognitionModelName), sessionOptions);
+            _recognizer = new TextRecognizer(RecognitionModelFolder, sessionOptions);
         }
         catch
         {
             _detector.Dispose();
             throw;
         }
+    }
+
+    // Returns the first model in the list that has both its files. Null when none does, so the caller can name the
+    // built-in model and let loading report it as missing.
+    private static string? FindModelFolder(string modelsFolder, string[] modelNames)
+    {
+        foreach (string modelName in modelNames)
+        {
+            foreach (string folderName in (string[])[modelName, modelName + DownloadFolderSuffix])
+            {
+                string folder = Path.Combine(modelsFolder, folderName);
+
+                if (File.Exists(Path.Combine(folder, "inference.onnx")) && File.Exists(Path.Combine(folder, "inference.yml")))
+                {
+                    return folder;
+                }
+            }
+        }
+
+        return null;
     }
 
     public OCRResult Recognize(SKBitmap bitmap, float minScore = DefaultMinScore)

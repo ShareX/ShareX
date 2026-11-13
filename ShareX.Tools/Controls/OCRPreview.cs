@@ -33,7 +33,8 @@ using ShareX.OCR;
 namespace ShareX.Tools.Controls;
 
 // Shows the OCR source image fitted to the control, with the box of every recognized piece of text drawn over it.
-// Hovering a box highlights it and shows its text.
+// Hovering a box highlights it and shows its text, and clicking it raises RegionClicked. The mouse wheel zooms around
+// the pointer, dragging moves a zoomed image and double-clicking fits it again.
 public class OCRPreview : Control
 {
     public static readonly StyledProperty<Bitmap?> SourceProperty =
@@ -48,6 +49,10 @@ public class OCRPreview : Control
     public static readonly StyledProperty<IBrush?> ImageBorderBrushProperty =
         AvaloniaProperty.Register<OCRPreview, IBrush?>(nameof(ImageBorderBrush));
 
+    // The fitted image keeps clear of this space, such as a toolbar over the bottom edge. A zoomed image can fill it.
+    public static readonly StyledProperty<Thickness> PaddingProperty =
+        AvaloniaProperty.Register<OCRPreview, Thickness>(nameof(Padding));
+
     // While recognition runs, a scan line sweeps over the image. ScanPosition (0 top, 1 bottom) is animated by a style.
     public static readonly StyledProperty<bool> IsScanningProperty =
         AvaloniaProperty.Register<OCRPreview, bool>(nameof(IsScanning));
@@ -55,15 +60,36 @@ public class OCRPreview : Control
     public static readonly StyledProperty<double> ScanPositionProperty =
         AvaloniaProperty.Register<OCRPreview, double>(nameof(ScanPosition));
 
+    // Shown in the tooltip of a region after it is clicked; the region's text is shown when it is not set.
+    public static readonly StyledProperty<string?> CopiedTextProperty =
+        AvaloniaProperty.Register<OCRPreview, string?>(nameof(CopiedText));
+
     // Small captures such as a single button are enlarged so they are readable, but not so much they turn to blocks.
-    private const double MaxZoom = 4;
+    private const double MaxFitZoom = 4;
+    // Zooming in stops when one image pixel is this many units wide.
+    private const double MaxZoomScale = 32;
+    private const double WheelZoomFactor = 1.25;
     private const double ImageCornerRadius = 6;
     private static readonly BoxShadows ImageShadow = new(new BoxShadow { Blur = 24, OffsetY = 6, Color = Color.FromArgb(90, 0, 0, 0) });
+    // A press that moves further than this is a drag, not a click.
+    private const double ClickMoveTolerance = 4;
+    private static readonly Cursor HandCursor = new(StandardCursorType.Hand);
+    private static readonly Cursor DragCursor = new(StandardCursorType.SizeAll);
+
     private OCRTextRegion? _hoveredRegion;
+    // Zoom relative to the fitted size, and how far the image is moved from the center of the content area.
+    private double _zoom = 1;
+    private Vector _pan;
+    private Point? _dragStart;
+    private Vector _dragStartPan;
+    private Point? _pressPoint;
+    private OCRTextRegion? _pressRegion;
+    private OCRTextRegion? _copiedRegion;
 
     static OCRPreview()
     {
-        AffectsRender<OCRPreview>(SourceProperty, RegionsProperty, HighlightBrushProperty, ImageBorderBrushProperty, IsScanningProperty, ScanPositionProperty);
+        AffectsRender<OCRPreview>(SourceProperty, RegionsProperty, HighlightBrushProperty, ImageBorderBrushProperty, PaddingProperty,
+            IsScanningProperty, ScanPositionProperty);
     }
 
     public OCRPreview()
@@ -95,6 +121,12 @@ public class OCRPreview : Control
         set => SetValue(ImageBorderBrushProperty, value);
     }
 
+    public Thickness Padding
+    {
+        get => GetValue(PaddingProperty);
+        set => SetValue(PaddingProperty, value);
+    }
+
     public bool IsScanning
     {
         get => GetValue(IsScanningProperty);
@@ -107,9 +139,23 @@ public class OCRPreview : Control
         set => SetValue(ScanPositionProperty, value);
     }
 
+    public string? CopiedText
+    {
+        get => GetValue(CopiedTextProperty);
+        set => SetValue(CopiedTextProperty, value);
+    }
+
+    // Raised when a region is clicked, so its text can be copied.
+    public event EventHandler<OCRTextRegion>? RegionClicked;
+
     protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
     {
         base.OnPropertyChanged(change);
+
+        if (change.Property == SourceProperty)
+        {
+            ResetZoom();
+        }
 
         if (change.Property == RegionsProperty || change.Property == SourceProperty)
         {
@@ -160,13 +206,15 @@ public class OCRPreview : Control
 
         IBrush fill = new SolidColorBrush(color, 0.14);
         IBrush hoverFill = new SolidColorBrush(color, 0.32);
+        IBrush copiedFill = new SolidColorBrush(color, 0.55);
         IPen pen = new Pen(new SolidColorBrush(color), 1.5);
         double regionScale = scale / GetPixelScale(source);
 
         foreach (OCRTextRegion region in regions)
         {
             Geometry geometry = CreateRegionGeometry(region, imageRect, regionScale);
-            context.DrawGeometry(ReferenceEquals(region, _hoveredRegion) ? hoverFill : fill, pen, geometry);
+            IBrush regionFill = ReferenceEquals(region, _copiedRegion) ? copiedFill : ReferenceEquals(region, _hoveredRegion) ? hoverFill : fill;
+            context.DrawGeometry(regionFill, pen, geometry);
         }
     }
 
@@ -196,16 +244,188 @@ public class OCRPreview : Control
         }
     }
 
+    protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
+    {
+        base.OnPointerWheelChanged(e);
+
+        if (Source != null && e.Delta.Y != 0)
+        {
+            ZoomAt(e.GetPosition(this), Math.Pow(WheelZoomFactor, e.Delta.Y));
+            e.Handled = true;
+        }
+    }
+
+    protected override void OnPointerPressed(PointerPressedEventArgs e)
+    {
+        base.OnPointerPressed(e);
+        PointerPointProperties properties = e.GetCurrentPoint(this).Properties;
+
+        if (!properties.IsLeftButtonPressed && !properties.IsMiddleButtonPressed)
+        {
+            return;
+        }
+
+        Point position = e.GetPosition(this);
+        _pressPoint = null;
+
+        if (e.ClickCount == 2 && properties.IsLeftButtonPressed)
+        {
+            ResetZoom();
+            e.Handled = true;
+            return;
+        }
+
+        // A left click on a region is only known on release, since the same press may become a drag.
+        if (properties.IsLeftButtonPressed)
+        {
+            _pressPoint = position;
+            _pressRegion = HitTestRegion(position);
+        }
+
+        if (_zoom > 1 && Source != null && TryGetLayout(Source, _zoom, _pan, out _, out _, out Vector pan))
+        {
+            _dragStart = position;
+            _dragStartPan = pan;
+            e.Pointer.Capture(this);
+            UpdateCursor();
+            e.Handled = true;
+        }
+    }
+
     protected override void OnPointerMoved(PointerEventArgs e)
     {
         base.OnPointerMoved(e);
-        SetHoveredRegion(HitTestRegion(e.GetPosition(this)));
+        Point position = e.GetPosition(this);
+
+        if (_pressPoint is Point pressPoint && !IsClickDistance(pressPoint, position))
+        {
+            _pressPoint = null;
+        }
+
+        if (_dragStart is Point dragStart && Source != null)
+        {
+            if (_pressPoint == null)
+            {
+                SetHoveredRegion(null);
+            }
+
+            if (TryGetLayout(Source, _zoom, _dragStartPan + (position - dragStart), out _, out _, out Vector pan))
+            {
+                _pan = pan;
+                InvalidateVisual();
+            }
+
+            return;
+        }
+
+        SetHoveredRegion(HitTestRegion(position));
+    }
+
+    protected override void OnPointerReleased(PointerReleasedEventArgs e)
+    {
+        base.OnPointerReleased(e);
+        Point position = e.GetPosition(this);
+
+        if (_dragStart != null)
+        {
+            e.Pointer.Capture(null);
+            EndDrag();
+        }
+
+        if (e.InitialPressMouseButton == MouseButton.Left && _pressPoint is Point pressPoint && IsClickDistance(pressPoint, position) &&
+            _pressRegion != null && ReferenceEquals(HitTestRegion(position), _pressRegion))
+        {
+            OCRTextRegion region = _pressRegion;
+            SetHoveredRegion(region);
+            ShowCopied(region);
+            RegionClicked?.Invoke(this, region);
+            e.Handled = true;
+        }
+
+        _pressPoint = null;
+        _pressRegion = null;
+    }
+
+    private static bool IsClickDistance(Point a, Point b)
+    {
+        Vector distance = a - b;
+        return Math.Abs(distance.X) <= ClickMoveTolerance && Math.Abs(distance.Y) <= ClickMoveTolerance;
+    }
+
+    // The clicked region flashes and its tooltip says the text was copied, until the pointer moves to another region.
+    private void ShowCopied(OCRTextRegion region)
+    {
+        _copiedRegion = region;
+        ToolTip.SetIsOpen(this, false);
+        ToolTip.SetTip(this, CopiedText ?? region.Text);
+        ToolTip.SetIsOpen(this, true);
+        InvalidateVisual();
+    }
+
+    protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)
+    {
+        base.OnPointerCaptureLost(e);
+        EndDrag();
     }
 
     protected override void OnPointerExited(PointerEventArgs e)
     {
         base.OnPointerExited(e);
         SetHoveredRegion(null);
+    }
+
+    private void EndDrag()
+    {
+        _dragStart = null;
+        UpdateCursor();
+    }
+
+    // Zooms by the factor while the image point under the pointer stays where it is.
+    private void ZoomAt(Point point, double factor)
+    {
+        Bitmap? source = Source;
+
+        if (source == null || !TryGetLayout(source, _zoom, _pan, out Rect imageRect, out double scale, out _))
+        {
+            return;
+        }
+
+        double fitScale = scale / _zoom;
+        double zoom = Math.Clamp(_zoom * factor, 1, Math.Max(1, MaxZoomScale / fitScale));
+
+        if (zoom == _zoom)
+        {
+            return;
+        }
+
+        double newScale = fitScale * zoom;
+        Point imagePoint = new((point.X - imageRect.X) / scale, (point.Y - imageRect.Y) / scale);
+        Point topLeft = new(point.X - (imagePoint.X * newScale), point.Y - (imagePoint.Y * newScale));
+        Vector pan = topLeft - GetCenteredTopLeft(source.Size * newScale);
+
+        if (TryGetLayout(source, zoom, pan, out _, out _, out Vector clampedPan))
+        {
+            _zoom = zoom;
+            _pan = clampedPan;
+            UpdateCursor();
+            SetHoveredRegion(HitTestRegion(point));
+            InvalidateVisual();
+        }
+    }
+
+    private void ResetZoom()
+    {
+        _zoom = 1;
+        _pan = default;
+        _dragStart = null;
+        UpdateCursor();
+        InvalidateVisual();
+    }
+
+    // A hand shows that the image can be dragged or that the region under the pointer can be clicked.
+    private void UpdateCursor()
+    {
+        Cursor = _dragStart != null ? DragCursor : _zoom > 1 || _hoveredRegion != null ? HandCursor : null;
     }
 
     private void SetHoveredRegion(OCRTextRegion? region)
@@ -216,8 +436,10 @@ public class OCRPreview : Control
         }
 
         _hoveredRegion = region;
+        _copiedRegion = null;
         ToolTip.SetTip(this, region?.Text);
         ToolTip.SetIsOpen(this, region != null);
+        UpdateCursor();
         InvalidateVisual();
     }
 
@@ -226,7 +448,7 @@ public class OCRPreview : Control
         Bitmap? source = Source;
         IReadOnlyList<OCRTextRegion>? regions = Regions;
 
-        if (source == null || regions == null || !TryGetImageRect(source, out Rect imageRect, out double scale))
+        if (source == null || regions == null || !TryGetImageRect(source, out Rect imageRect, out double scale) || !imageRect.Contains(point))
         {
             return null;
         }
@@ -247,20 +469,49 @@ public class OCRPreview : Control
 
     private bool TryGetImageRect(Bitmap source, out Rect imageRect, out double scale)
     {
+        return TryGetLayout(source, _zoom, _pan, out imageRect, out scale, out _);
+    }
+
+    // Places the image for a zoom and pan. An image smaller than the content area is centered in it; a larger one is
+    // kept covering it, so dragging stops at the image edges. clampedPan is the pan that gives the returned position.
+    private bool TryGetLayout(Bitmap source, double zoom, Vector pan, out Rect imageRect, out double scale, out Vector clampedPan)
+    {
         Size imageSize = source.Size;
-        Size available = Bounds.Size;
+        Rect content = GetContentRect();
         imageRect = default;
         scale = 0;
+        clampedPan = default;
 
-        if (imageSize.Width <= 0 || imageSize.Height <= 0 || available.Width <= 0 || available.Height <= 0)
+        if (imageSize.Width <= 0 || imageSize.Height <= 0 || content.Width <= 0 || content.Height <= 0)
         {
             return false;
         }
 
-        scale = Math.Min(Math.Min(available.Width / imageSize.Width, available.Height / imageSize.Height), MaxZoom);
+        double fitScale = Math.Min(Math.Min(content.Width / imageSize.Width, content.Height / imageSize.Height), MaxFitZoom);
+        scale = fitScale * zoom;
         Size size = imageSize * scale;
-        imageRect = new Rect((available.Width - size.Width) / 2, (available.Height - size.Height) / 2, size.Width, size.Height);
+        Point centered = GetCenteredTopLeft(size);
+        double x = ClampAxis(centered.X + pan.X, size.Width, content.Left, content.Right);
+        double y = ClampAxis(centered.Y + pan.Y, size.Height, content.Top, content.Bottom);
+        imageRect = new Rect(x, y, size.Width, size.Height);
+        clampedPan = new Vector(x - centered.X, y - centered.Y);
         return true;
+    }
+
+    private Rect GetContentRect()
+    {
+        return new Rect(Bounds.Size).Deflate(Padding);
+    }
+
+    private Point GetCenteredTopLeft(Size size)
+    {
+        Rect content = GetContentRect();
+        return new Point(content.X + ((content.Width - size.Width) / 2), content.Y + ((content.Height - size.Height) / 2));
+    }
+
+    private static double ClampAxis(double position, double length, double start, double end)
+    {
+        return length <= end - start ? start + ((end - start - length) / 2) : Math.Clamp(position, end - length, start);
     }
 
     // Region boxes are in pixels, while the bitmap size is in device-independent units when the image has a DPI.

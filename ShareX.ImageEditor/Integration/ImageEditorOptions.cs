@@ -60,6 +60,8 @@ namespace ShareX.ImageEditor.Integration
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
+        // Like ShareX 21 and region capture: right-clicking a shape deletes it instead of opening the context menu.
+        public bool RightClickDeletesShape { get; set; } = false;
         public bool AutoCloseEditorOnTask { get; set; } = false;
         public bool AutoCopyImageToClipboard { get; set; } = false;
         public bool ShowInsertImageDialog { get; set; } = true;
@@ -145,6 +147,8 @@ namespace ShareX.ImageEditor.Integration
         public bool SpeechBalloonTextBold { get; set; } = true;
         public bool SpeechBalloonTextItalic { get; set; } = false;
         public bool SpeechBalloonTail { get; set; } = true;
+        // Sizes the balloon to its text as it is typed, so every balloon has the same padding around its text.
+        public bool SpeechBalloonAutoSize { get; set; } = false;
 
         // Step
         public string StepBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);

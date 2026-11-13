@@ -368,6 +368,12 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 overlayCanvas.RenderTransformOrigin = new RelativePoint(0, 0, RelativeUnit.Absolute);
                 overlayCanvas.RenderTransform = new ScaleTransform(zoom, zoom);
+
+                if (zoomChanged)
+                {
+                    // The crop size label counter-scales against zoom.
+                    _inputController.RefreshCropChrome();
+                }
             }
         }
 
@@ -442,6 +448,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         vm.FillColor = balloon.FillColor;
                         vm.CornerRadius = balloon.CornerRadius;
                         vm.SpeechBalloonTail = balloon.TailEnabled;
+                        vm.SpeechBalloonAutoSize = balloon.AutoSize;
                         if (!string.IsNullOrEmpty(balloon.TextColor))
                             vm.TextColorValue = Avalonia.Media.Color.Parse(balloon.TextColor);
                     }
@@ -1031,7 +1038,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             return sourceImage.GetPixel(x, y);
         }
 
-        /// <summary>Deletes the topmost annotation under a point supplied by an embedded host.</summary>
+        /// <summary>Deletes the topmost annotation of the active tool under a point supplied by an embedded host.</summary>
         public bool DeleteWorkspaceAnnotationAt(Point workspacePoint)
         {
             Canvas? canvas = this.FindControl<Canvas>("AnnotationCanvas");
@@ -1041,7 +1048,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return false;
             }
 
-            Control? shape = _selectionController.HitTestShape(canvas, canvasPoint.Value);
+            Control? shape = _selectionController.HitTestActiveToolShape(canvas, canvasPoint.Value);
             if (shape == null)
             {
                 return false;
@@ -1207,7 +1214,8 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            if (_zoomController.ZoomToFit())
+            // Only shrink images that do not fit; small images open at 100% instead of being magnified.
+            if (_zoomController.ZoomToFit(maxZoom: 1.0))
             {
                 _pendingZoomToFitOnOpen = false;
                 return;

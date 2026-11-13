@@ -125,4 +125,7 @@ public interface IPlatformServices : IDisposable
 
     /// <summary>Application launch independent of a browser or other parent application's lifetime.</summary>
     IApplicationLaunchService ApplicationLaunch { get; }
+
+    /// <summary>Native monitor, DPI and taskbar facts for the display diagnostics report. Unsupported off Windows.</summary>
+    IDisplayDiagnosticsService DisplayDiagnostics => DisplayDiagnosticsUnsupported.Instance;
 }

@@ -566,13 +566,17 @@ public partial class EditorSelectionController
         // Special handling for SpeechBalloonControl tail dragging
         if (_selectedShape is SpeechBalloonControl balloonControl && balloonControl.Annotation is SpeechBalloonAnnotation balloon && balloon.TailEnabled && handleTag == "BalloonTail")
         {
-            balloon.SetTailPoint(balloon.GetTailPointFromVisual(currentPoint));
-            AnnotationVisualFactory.UpdateVisualControl(
-                balloonControl,
-                balloon,
-                AnnotationVisualMode.Persisted,
-                _view.EditorCore.CanvasSize.Width,
-                _view.EditorCore.CanvasSize.Height);
+            SKPoint newTailPoint = balloon.GetTailPointFromVisual(currentPoint);
+            if (balloon.TailPointPlaced || currentPoint != _resizeStartPoint)
+            {
+                balloon.SetPlacedTailPoint(newTailPoint);
+                AnnotationVisualFactory.UpdateVisualControl(
+                    balloonControl,
+                    balloon,
+                    AnnotationVisualMode.Persisted,
+                    _view.EditorCore.CanvasSize.Width,
+                    _view.EditorCore.CanvasSize.Height);
+            }
             _startPoint = currentPoint;
             UpdateSelectionHandles();
             return;
@@ -998,12 +1002,12 @@ public partial class EditorSelectionController
         {
             balloon.MoveBy((float)deltaX, (float)deltaY);
 
-            var newLeft = Canvas.GetLeft(balloonControl) + deltaX;
-            var newTop = Canvas.GetTop(balloonControl) + deltaY;
-            Canvas.SetLeft(balloonControl, newLeft);
-            Canvas.SetTop(balloonControl, newTop);
-
-            balloonControl.InvalidateVisual();
+            AnnotationVisualFactory.UpdateVisualControl(
+                balloonControl,
+                balloon,
+                AnnotationVisualMode.Persisted,
+                _view.EditorCore.CanvasSize.Width,
+                _view.EditorCore.CanvasSize.Height);
             _lastDragPoint = currentPoint;
             UpdateSelectionHandles();
             return;
@@ -1312,8 +1316,7 @@ public partial class EditorSelectionController
             case global::Avalonia.Controls.Shapes.Rectangle { Tag: BaseEffectAnnotation effectAnnotation }:
                 annotation = effectAnnotation;
                 return true;
-            case global::Avalonia.Controls.Shapes.Rectangle { Tag: RectangleAnnotation rectangleAnnotation }
-                when rectangleAnnotation is not SmartEraserAnnotation:
+            case global::Avalonia.Controls.Shapes.Rectangle { Tag: RectangleAnnotation rectangleAnnotation }:
                 annotation = rectangleAnnotation;
                 return true;
             case global::Avalonia.Controls.Shapes.Ellipse { Tag: EllipseAnnotation ellipseAnnotation }:
@@ -1357,7 +1360,16 @@ public partial class EditorSelectionController
             angleDeg = Math.Round(angleDeg / 45.0) * 45.0;
         }
 
+        SKPoint? pinnedWorldTail = annotation is SpeechBalloonAnnotation { TailPointPlaced: true } balloon
+            ? balloon.GetWorldTailPoint()
+            : null;
+
         annotation.RotationAngle = (float)angleDeg;
+
+        if (pinnedWorldTail.HasValue && annotation is SpeechBalloonAnnotation placedBalloon)
+        {
+            placedBalloon.SetTailPointFromWorld(pinnedWorldTail.Value);
+        }
 
         AnnotationVisualFactory.UpdateVisualControl(
             _selectedShape,
@@ -1481,25 +1493,7 @@ public partial class EditorSelectionController
             }
         }
 
-        // Find shape under cursor (hit test)
-        Control? hitShape = HitTestShape(canvas, currentPoint);
-
-        // Filter: If using Spotlight tool, only highlight existing Spotlights
-        if (_view.DataContext is MainViewModel vm2 && vm2.ActiveTool == EditorTool.Spotlight)
-        {
-            if (!(hitShape is SpotlightControl)) hitShape = null;
-        }
-
-        // When a drawing tool is active, only hover shapes created by that same tool.
-        if (_view.DataContext is MainViewModel vm3
-            && vm3.ActiveTool != EditorTool.Select
-            && vm3.ActiveTool != EditorTool.Spotlight)
-        {
-            if (hitShape != null && GetControlToolType(hitShape) != vm3.ActiveTool)
-            {
-                hitShape = null;
-            }
-        }
+        Control? hitShape = HitTestActiveToolShape(canvas, currentPoint);
 
         // If we're hovering over the selected shape, keep showing ant lines on it
         // Otherwise, show ant lines on the hovered (unselected) shape
@@ -1545,6 +1539,32 @@ public partial class EditorSelectionController
             && _selectedShape != null
             && _view.DataContext is MainViewModel vm
             && ShouldIgnoreSelection(vm, _currentKeyModifiers);
+    }
+
+    /// <summary>
+    /// Returns the topmost shape under the point if the active tool can use it: any shape with the Select tool,
+    /// otherwise only shapes created by the active tool.
+    /// </summary>
+    internal Control? HitTestActiveToolShape(Canvas canvas, Point currentPoint)
+    {
+        Control? hitShape = HitTestShape(canvas, currentPoint);
+        return hitShape != null && IsActiveToolShape(hitShape) ? hitShape : null;
+    }
+
+    private bool IsActiveToolShape(Control shape)
+    {
+        if (_view.DataContext is not MainViewModel vm)
+        {
+            return true;
+        }
+
+        return vm.ActiveTool switch
+        {
+            EditorTool.Select => true,
+            EditorTool.Crop or EditorTool.CutOut => false,
+            EditorTool.Spotlight => shape is SpotlightControl,
+            _ => GetControlToolType(shape) == vm.ActiveTool
+        };
     }
 
     public Control? HitTestShape(Canvas canvas, Point currentPoint)

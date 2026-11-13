@@ -528,6 +528,8 @@ namespace ShareX
                     return false;
                 }
 
+                StartHistoryOCR();
+
                 if (!DoFileJobs())
                 {
                     return false;
@@ -588,13 +590,6 @@ namespace ShareX
 
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.AnnotateImage))
             {
-                // The editor blocks the task until it closes, so copy the capture now and let the user paste it without having to edit it.
-                if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CopyImageToClipboard))
-                {
-                    ClipboardHelpers.CopyImage(Image, Info.FileName);
-                    DebugHelper.WriteLine("Image copied to clipboard before opening the image editor.");
-                }
-
                 Image = TaskHelpers.AnnotateImage(Image, null, Info.TaskSettings, true);
 
                 if (Image == null)
@@ -1105,6 +1100,16 @@ namespace ShareX
             if (Image != null && Info.DataType == EDataType.Image)
             {
                 TaskHelpers.OCRImage(Image, Info.TaskSettings).GetAwaiter().GetResult();
+            }
+        }
+
+        // Runs beside saving and uploading on a copy of the final image, since the task disposes its image when it finishes.
+        private void StartHistoryOCR()
+        {
+            if (Image != null && Info.DataType == EDataType.Image && ApplicationState.Settings.HistorySaveTasks &&
+                ApplicationState.Settings.HistorySaveOCRText)
+            {
+                Info.HistoryOCRTask = TaskHelpers.RecognizeTextForHistoryAsync(Image.Copy());
             }
         }
 
