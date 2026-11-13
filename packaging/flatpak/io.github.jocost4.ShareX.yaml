@@ -1,9 +1,7 @@
 app-id: io.github.jocost4.ShareX
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
-sdk-extensions:
-  - org.freedesktop.Sdk.Extension.dotnet10
 command: ShareX
 
 finish-args:
@@ -22,23 +20,22 @@ finish-args:
   - --talk-name=org.freedesktop.portal.Notifications
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.kde.StatusNotifierWatcher
-  - --own-name=org.kde.StatusNotifierItem-*
-
-build-options:
-  append-path: /usr/lib/sdk/dotnet10/bin
-  env:
-    DOTNET_ROOT: /usr/lib/sdk/dotnet10
+  - --own-name=org.kde.StatusNotifierItem.*
 
 modules:
   - name: sharex
     buildsystem: simple
     build-commands:
-      - dotnet publish ShareX/ShareX.csproj -c Release -r linux-x64 --self-contained true -o /app/lib/ShareX
-      - install -d /app/bin
+      - install -d /app/bin /app/lib/ShareX
+      - cp -r * /app/lib/ShareX/
+      - chmod +x /app/lib/ShareX/ShareX
       - ln -s /app/lib/ShareX/ShareX /app/bin/ShareX
-      - install -Dm644 packaging/flatpak/io.github.jocost4.ShareX.desktop /app/share/applications/io.github.jocost4.ShareX.desktop
-      - install -Dm644 packaging/flatpak/io.github.jocost4.ShareX.metainfo.xml /app/share/metainfo/io.github.jocost4.ShareX.metainfo.xml
-      - install -Dm644 packaging/flatpak/io.github.jocost4.ShareX.png /app/share/icons/hicolor/256x256/apps/io.github.jocost4.ShareX.png
+      - install -Dm644 io.github.jocost4.ShareX.desktop /app/share/applications/io.github.jocost4.ShareX.desktop
+      - install -Dm644 io.github.jocost4.ShareX.metainfo.xml /app/share/metainfo/io.github.jocost4.ShareX.metainfo.xml
+      - install -Dm644 io.github.jocost4.ShareX.png /app/share/icons/hicolor/256x256/apps/io.github.jocost4.ShareX.png
     sources:
-      - type: dir
-        path: ../../
+      - type: archive
+        url: https://github.com/jocost4/ShareX/releases/download/v22.4.0-linux/ShareX-Linux-x64.tar.gz
+        sha256: 05d538edbbebfaae4e79c1e3cfadd9c2c3799f1dbf7b2bf612ce59c1697493f4
+      - type: file
+        path: io.github.jocost4.ShareX.metainfo.xml
