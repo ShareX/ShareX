@@ -1835,6 +1835,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                 new KeyGesture(Key.E, KeyModifiers.Control)),
             Item(Strings.MainWindow_EditImageInPhotoEditor, AppIcons.Layers, _uploadInfoManager.EditImageInPhotoEditor,
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
+            Item(Strings.MainWindow_EditImageInPixelEditor, AppIcons.PixelEditor, _uploadInfoManager.EditImageInPixelEditor,
+                hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_ResizeImage, AppIcons.Resize, _uploadInfoManager.ResizeImages,
                 hasSelection && !isWorking && statuses.Any(x => x.IsImageFile)),
             Item(Strings.MainWindow_TrimVideo, AppIcons.Scissors, _uploadInfoManager.TrimVideo,

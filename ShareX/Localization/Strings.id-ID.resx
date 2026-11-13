@@ -1724,6 +1724,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Sematkan ke layar</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Editor Piksel...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>Kode QR</value>
   </data>
@@ -1900,6 +1903,9 @@ Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentan
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Edit di editor foto...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Edit di Editor Piksel...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>File</value>

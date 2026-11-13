@@ -1724,6 +1724,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>سنجاق به صفحه</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>ویرایشگر پیکسل...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>کد QR</value>
   </data>
@@ -1900,6 +1903,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>ویرایش در ویرایشگر عکس...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>ویرایش در ویرایشگر پیکسل...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>فایل</value>

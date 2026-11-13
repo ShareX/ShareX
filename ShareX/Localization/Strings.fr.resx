@@ -1724,6 +1724,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Epingler à l'écran</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Éditeur de pixels...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>Code QR</value>
   </data>
@@ -1900,6 +1903,9 @@ Veuillez sélectionner un raccourci différent ou quitter l'application en confl
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Modifier dans l’éditeur de photos...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Modifier dans l’éditeur de pixels...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Fichier</value>

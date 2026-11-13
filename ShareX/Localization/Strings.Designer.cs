@@ -5775,5 +5775,7 @@ namespace ShareX.Localization {
         public static string DisplayDiagnosticsWindow_Saved0 => ResourceManager.GetString("DisplayDiagnosticsWindow_Saved0", resourceCulture);
         public static string DisplayDiagnosticsWindow_TextFile => ResourceManager.GetString("DisplayDiagnosticsWindow_TextFile", resourceCulture);
         public static string DisplayDiagnosticsWindow_SaveDialogTitle => ResourceManager.GetString("DisplayDiagnosticsWindow_SaveDialogTitle", resourceCulture);
+        public static string MainMenuBuilder_PixelEditor => ResourceManager.GetString("MainMenuBuilder_PixelEditor", resourceCulture);
+        public static string MainWindow_EditImageInPixelEditor => ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
     }
 }

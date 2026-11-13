@@ -1724,6 +1724,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>הצמד למסך</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>עורך פיקסלים...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>קוד QR</value>
   </data>
@@ -1900,6 +1903,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>ערוך בעורך התמונות...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>ערוך בעורך הפיקסלים...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>קובץ</value>

@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>جمع</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>سوزاندن رنگ</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>روشن‌سازی رنگ</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>تیره‌تر</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>تفاضل</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>تقسیم</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>نور سخت</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>فام</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>روشن‌تر</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>درخشندگی</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>ضرب</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>روکش</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>صفحه</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>نور نرم</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>تفریق</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>مشکی</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>تیره</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>روشن</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>سفید</value>
+  </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>اخیراً استفاده‌شده. برای رنگ پیش‌زمینه کلیک و برای رنگ پس‌زمینه راست‌کلیک کنید.</value>
+  </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>هیچ فرمان منطبقی یافت نشد</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>جست‌وجوی فرمان‌ها، ابزارها و پنل‌ها</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>ابزارها</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>اندازه واقعی (۱۰۰٪)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>حذف لبه‌های نرم...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>حاشیه...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>روشنایی/کنتراست...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>افزایش اندازه قلم‌مو</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>نمایش پیش‌نمایش قلم‌مو</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>کاهش اندازه قلم‌مو</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>اندازه بوم...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>ویژگی‌های سل...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>پاک کردن</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>پاک کردن سل</value>
+  </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>پاک کردن راهنماها</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>بستن</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>بستن همه</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>پالت فرمان‌ها...</value>
+  </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>تبدیل به لایه پیکسلی</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>تبدیل به لایه نقشه کاشی...</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>کپی</value>
+  </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>کپی فریم‌ها</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>کپی تصویر در کلیپ‌بورد</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>کپی ادغام‌شده</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>برش به اندازه انتخاب</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>برداشتن</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>تعریف قلم‌مو از انتخاب</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>حذف فریم</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>حذف لایه</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>لغو انتخاب</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>سایه...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>تکثیر لایه</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>تکثیر اسپرایت</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>خروجی گرفتن از تنظیمات برنامه...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>برون‌بری شیت اسپرایت...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>برون‌بری نقشه کاشی...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>پر کردن با رنگ پیش‌زمینه</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>اولین فریم</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>متناسب با صفحه</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>یکی کردن لایه‌ها</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>قرینه افقی</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>قرینه عمودی</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>ویژگی‌های فریم...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>تمام‌صفحه</value>
+  </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>نگاشت گرادیان...</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>حذف اشباع</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>نمایش شبکه</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>تنظیمات شبکه...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>گسترش...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>فام/اشباع...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>درون‌ریزی تصاویر به‌عنوان فریم...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>درون‌ریزی تصویر به‌عنوان لایه...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>درون‌ریزی شیت اسپرایت...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>معکوس کردن رنگ‌ها</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>معکوس کردن انتخاب</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>آخرین فریم</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>انتخاب لایه بالایی</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>انتخاب لایه پایینی</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>قفل‌شده</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>انتقال لایه به پایین</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>انتقال لایه به پایین‌ترین جا</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>انتقال لایه به بالاترین جا</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>انتقال لایه به بالا</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>ویژگی‌های لایه...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>لایه مرجع</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>لایه جدید با کپی</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>لایه جدید با برش</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>نمایان</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>پیوند دادن سل‌ها</value>
+  </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>قفل کردن رنگ‌ها به پالت</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>پخش تکراری</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>ادغام به پایین</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>انتقال فریم‌ها به چپ</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>انتقال فریم‌ها به راست</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>جدید...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>فریم خالی جدید</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>فریم جدید</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>جدید از کلیپ‌بورد</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>گروه جدید</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>لایه جدید</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>فریم پیوندی جدید</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>برچسب جدید...</value>
+  </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>لایه نقشه کاشی جدید...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>فریم بعدی</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>تنظیمات پوست پیازی...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>پوست پیازی</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>باز کردن...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>خط دور...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>چسباندن</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>چسباندن فریم‌ها</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>چسباندن به‌عنوان لایه جدید</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>چسباندن به‌عنوان اسپرایت جدید</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>نمایش شبکه پیکسلی</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>پخش/توقف انیمیشن</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>فقط پخش برچسب فعلی</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>پوستری کردن...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>ترجیحات...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>فریم قبلی</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>انجام دوباره</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>کاهش رنگ‌ها...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>حذف برچسب</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>حذف کاشی‌های استفاده‌نشده</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>جایگزینی رنگ...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>بازنشانی فضای کار</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>معکوس کردن فریم‌ها</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>چرخش ۱۸۰°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>چرخش ۹۰° پادساعتگرد</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>چرخش ۹۰° در جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>خط‌کش‌ها</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>ذخیره با نام...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>انتخاب همه</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>انتخاب رنگ پیش‌زمینه</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>انتخاب محتوای سل</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>جابه‌جایی به پایین</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>جابه‌جایی به چپ</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>جابه‌جایی به راست</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>جابه‌جایی به بالا</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>میانبرهای صفحه‌کلید...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>نوار گزینه‌ها</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>نمایش برش‌ها</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>خط زمان</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>نوار ابزار</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>کوچک کردن...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>چسبیدن به شبکه</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>اندازه اسپرایت...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>خط کشیدن دور انتخاب</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>تعیین جای محور...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>تقارن افقی</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>وسط‌چین کردن محورها</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>تقارن عمودی</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>ویژگی‌های برچسب...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>تکرار افقی</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>حالت کاشی</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>تکرار عمودی</value>
+  </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>تصاویر کوچک سل‌ها</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>نوار ابزار دوستونی</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>تبدیل آزاد</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>حذف حاشیه‌های خالی</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>برگرداندن</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>جدا کردن پیوند سل‌ها</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>بارگذاری تصویر</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>بزرگ‌نمایی</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>کوچک‌نمایی</value>
+  </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>بزرگ‌نمایی روی انتخاب</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>اعمال روی همه فریم‌ها</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>هر پیکسل را کاملاً مات یا کاملاً شفاف می‌کند. برای پاک‌سازی لبه‌های نرم تصاویر درون‌ریزی‌شده به کار می‌رود.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>لنگر</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>اعمال روی</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>محور عمودی (نیم‌پیکسل)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>محور افقی (نیم‌پیکسل)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>حذف شفافیت جزئی</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>حالت آمیختگی</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>روشنایی</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>رنگ‌ها</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>کنتراست</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>جهت</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>مدت (میلی‌ثانیه)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>قاب {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>فریم‌های {0} تا {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>از</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>از فریم</value>
+  </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>رنگ‌ها از</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>دو رنگ</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>پالت، بر اساس روشنایی</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>سایه‌ها</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>روشنایی‌ها</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>معکوس کردن رنگ‌ها</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>پیکسل‌ها را بر اساس روشنایی‌شان دوباره رنگ می‌کند، از رنگ تیره‌ترین پیکسل‌ها تا رنگ روشن‌ترین‌ها.</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>فام</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>حفظ تناسب</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>سطوح</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>روشنی</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>روش</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>اسپرایت جدید</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>جابجایی X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>جابجایی Y</value>
+  </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>چرخش از آخرین فریم به اولین</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>فریم‌های بعدی</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>فریم‌های قبلی</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>فقط فریم‌های برچسب فعلی</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>فریم‌های قبلی قرمز و فریم‌های بعدی آبی شوند</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>شامل گوشه‌های مورب</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>رسم درون شکل</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>درصد</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>پیکسل‌ها</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>پیش‌تنظیم‌ها</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>پالتی با این تعداد رنگ از کل اسپرایت می‌سازد و همه سل‌ها را با آن دوباره رنگ می‌کند. پالت جدید جایگزین پالت فعلی می‌شود.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>همه سل‌ها را با نزدیک‌ترین رنگ‌های پالت فعلی دوباره رنگ می‌کند.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>تکرار</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>«نزدیک‌ترین همسایه» پیکسل‌ها را واضح نگه می‌دارد. مقیاس‌دهی پیکسل‌آرت هنگام بزرگ‌نمایی ۲ برابر یا بیشتر لبه‌های پله‌ای را هم صاف می‌کند.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>اشباع</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>مقدار زوج محور را بین دو پیکسل می‌گذارد؛ مقدار فرد آن را از وسط یک پیکسل می‌گذراند.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>آستانه</value>
+  </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>ارتفاع کاشی</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>عرض کاشی</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>لایه‌های نقشه کاشی از کاشی‌هایی با یک اندازه ساخته می‌شوند. نقاشی روی یک کاشی، آن را در همه جاهایی که استفاده شده تغییر می‌دهد.</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>به</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>تا فریم</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>پس‌زمینه شفاف</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>رو به جلو</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>رفت و برگشت</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>رفت و برگشت معکوس</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>معکوس</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>مرتب ۴×۴</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>مرتب ۸×۸</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>فلوید–استاینبرگ</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>هیچ کدام</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>مرتب</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>بستن پنل</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>جمع کردن گروه پنل</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>باز کردن گروه پنل</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>انتقال به گروه همراه {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>انتقال به گروه جدید</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>منوی پنل</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>همه فریم‌ها</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>PNG متحرک</value>
+  </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>پویانمایی همان‌طور که پخش می‌شود</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>صادر کردن</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>فریم فعلی</value>
+  </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} فایل</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>فرمت</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>فریم‌ها</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>GIF متحرک</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} پیکسل، {2} فریم</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>تصویر PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>مقیاس</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>فریم‌های انتخاب‌شده</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>توالی PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>این قالب فقط فریم فعلی را ذخیره می‌کند.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>نرم کردن لبه‌ها هنگام بزرگ کردن</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>فایل‌ها</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>یک فایل برای هر لایه</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>یک فایل</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>یک فایل برای هر برچسب</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>برچسب: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>همه فایل‌های پشتیبانی‌شده</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>تصاویر</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>پالت‌ها</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>اسپرایت ویرایشگر پیکسل ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>حالت آمیختگی</value>
+  </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>کپی سل‌ها</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>کپی فریم‌ها</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>حذف قطعه</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>لغو انتخاب</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>ویرایش رنگ پالت</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>مدت فریم</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>پنهان کردن لایه</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>بارگیری پالت</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>قفل لایه</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>تغییر انتخاب</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>جابه‌جایی</value>
+  </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>جابه‌جایی سل‌ها</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>جابه‌جایی فریم‌ها</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>ویرایش قطعه</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>جدید</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>برش جدید</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>کدری لایه</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>باز کردن</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>بازیابی‌شده</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>ویژگی‌های برش</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>تغییر ترتیب لایه</value>
+  </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>تغییر ترتیب پالت</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>انتخاب</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>نمایش لایه</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>فقط نمایش این لایه</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>باز کردن قفل لایه</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>پشت</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>تیره‌تر</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>روشن‌تر</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>قفل آلفا</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>عادی</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>جایگزینی</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} کپی</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>لایه</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>یکی‌شده</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>گروه</value>
+  </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>نقشه کاشی</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>این سل به فریم‌های دیگر پیوند دارد</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>لایه مرجع: برون‌بری نمی‌شود</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>لایه نقشه کاشی با کاشی‌های {0} × {1} پیکسل</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>باز یا جمع کردن گروه</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>قفل یا باز کردن لایه</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>نمایش یا پنهان کردن لایه</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>سل</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_ویرایش</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>_جلوه‌ها</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(خالی)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_فایل</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>ف_ریم</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_راهنما</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_لایه</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>باز کردن موارد اخیر</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>پنل‌ها</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_انتخاب</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>جابه‌جایی پیکسل‌ها (چرخشی)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>ا_سپرایت</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>تقارن</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>برچسب‌ها</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>حالت کاشی</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>نقشه کاشی</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_نما</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>کلیپ‌بورد تصویری ندارد.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>تکمیل «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>باز کردن «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>ذخیره «{0}» ممکن نیست: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>ذخیره نشود</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>عملیات ناموفق بود: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>تغییرات «{0}» پیش از بستن ذخیره شود؟</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>تصویر خیلی بزرگ است. پهنا و بلندی اسپرایت حداکثر {0} پیکسل است.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>همه لایه‌ها</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>پر کردن بر پایه رنگ همه لایه‌های نمایان به‌جای لایه فعال</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>زاویه</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>اعمال</value>
+  </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>قلم‌موها</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>انصراف</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>بازنشانی قلم‌مو</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>پیوسته</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>فقط پیکسل‌های متصل به پیکسل کلیک‌شده؛ برای گرفتن همه پیکسل‌های آن رنگ خاموش کنید</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>قلم‌موی سفارشی</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>تراکم</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>مورب</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>گسترش از میان پیکسل‌هایی که فقط در گوشه‌ها به هم می‌رسند</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>دیتر</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>کلیک رنگ پیش‌زمینه و راست‌کلیک رنگ پس‌زمینه را برمی‌دارد</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>توپر</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>ارتفاع</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>جوهر</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>گرادیان خطی</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>برای جابه‌جایی انتخاب یا سل بکشید. برای جابه‌جایی یک کپی Alt را نگه دارید.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>کدری</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>خط پیرامونی</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>الگو</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>پیکسل دقیق</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>پیکسل‌های گوشه اضافی خط‌های دستی کشیده‌شده با قلم‌موی ۱ پیکسلی را حذف می‌کند</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>گرادیان شعاعی</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>شعاع</value>
+  </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>حذف قلم‌مو از کتابخانه</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>نوک گرد</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>استفاده از رنگ همه لایه‌های نمایان به‌جای لایه فعال</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>افزودن به انتخاب (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>اشتراک با انتخاب (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>انتخاب جدید</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>تفریق از انتخاب (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>کلیک روشن و راست‌کلیک تیره می‌کند، مطابق پالت</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>سایز:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>برای ساخت برش بکشید. برای انتخاب روی برش کلیک و برای تغییر نام دوبار کلیک کنید.</value>
+  </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>چرخش نرم</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>خطوط پیکسل‌آرت چرخیده را به‌جای دندانه‌دار، تمیز نگه می‌دارد</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>نوک مربعی</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>قلم‌موی استاندارد (اندازه و شکل)</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>جایی که متن باید قرار بگیرد کلیک کنید</value>
+  </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>کاشی {0}   {1} × {2} پیکسل</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>به شفاف</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>رنگ پیش‌زمینه به‌جای آمیختن با رنگ پس‌زمینه محو شود</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>تلورانس</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>تبدیل</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>افزودن رنگ پیش‌زمینه به پالت</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} رنگ</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>ویرایش رنگ...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>ساخت پالت از اسپرایت</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>بارگیری پالت...</value>
+  </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>قفل‌شده</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>منوی پالت</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>پیش‌تنظیم‌ها</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>افزودن طیف رنگ...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>طیفی از رنگ‌ها از رنگ پیش‌زمینه تا رنگ پس‌زمینه اضافه می‌کند.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>گام‌ها</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>نگاشت دوباره اسپرایت به پالت...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>حذف رنگ از پالت</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>حذف رنگ‌های استفاده‌نشده</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>جایگزینی با رنگ پیش‌زمینه</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>معکوس کردن ترتیب</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>ذخیره پالت...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>انتخاب پیکسل‌های این رنگ</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>مرتب‌سازی بر اساس روشنایی</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>مرتب‌سازی بر اساس فام</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>مرتب‌سازی بر اساس اشباع</value>
+  </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>کلیک: رنگ پیش‌زمینه. راست‌کلیک: رنگ پس‌زمینه. دوبار کلیک: ویرایش. کشیدن: تغییر ترتیب. Ctrl+راست‌کلیک: گزینه‌های بیشتر.</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>رنگ</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>تاریخچه</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>لایه‌ها</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>پالت</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>پیش‌نمایش</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>کاشی‌ها</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>شطرنجی</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>متراکم</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>مورب</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>نقطه‌ها</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>خطوط افقی</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>پیوسته</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>پراکنده</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>خطوط عمودی</value>
+  </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>نسخه بازیابی هر (دقیقه، 0 = خاموش)</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>الگوی شفافیت</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>اندازه خانه‌ها (پیکسل)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>تعداد حالت‌های تاریخچه</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>نمایش شبکه پیکسلی از بزرگ‌نمایی (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>به‌خاطر سپردن اندازه و موقعیت پنجره</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>اندازه خانه خط زمان</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>جاشدن ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>پخش یا مکث پیش‌نمایش</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>دور انداختن</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>ویرایشگر پیکسل به‌طور عادی بسته نشد. {0} اسپرایت با تغییرات ذخیره‌نشده قابل بازیابی است.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>بازیابی</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>نزدیک‌ترین همسایه</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>مقیاس‌دهی پیکسل‌آرت</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>نرم (دومکعبی)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>راهنما در {0} پیکسل</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>برای افزودن راهنما، روی بوم بکشید. راهنماها را با ابزار جابه‌جایی حرکت دهید و برای حذف، آن‌ها را بیرون از بوم بکشید.</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>سل فعلی</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>همه فریم‌های لایه</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>فریم‌های انتخاب‌شده</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>کل اسپرایت</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>بلندی فریم</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>پهنای فریم</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>ستون‌ها</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>شبکه</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>نوار افقی</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>درون‌ریزی</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} خانه، تا {2} فریم</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>اندازه شیت: {0} × {1} پیکسل</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>شیت: {0} × {1} پیکسل، {2} فریم</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>چیدمان</value>
+  </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>ادغام فریم‌های یکسان</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>نوشتن داده JSON (فریم‌ها، برچسب‌ها و برش‌ها)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>فشرده</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>فاصله داخلی</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>رد کردن خانه‌های خالی</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>فاصله</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>برش فضای خالی اطراف فریم‌ها</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} یکتا</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>نوار عمودی</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>رنگ‌آمیزی با رنگ پس‌زمینه</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>فرمان‌ها</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>پنهان یا نمایش همه پنل‌ها</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>دکمه میانی ماوس</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>میان‌بری مانند Ctrl+Shift+E بنویسید. گزینه‌های جایگزین را با کاما جدا کنید؛ برای حذف میان‌بر فیلد را خالی بگذارید.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>جابه‌جایی نما</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>برداشتن رنگ هنگام رنگ‌آمیزی</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>بازگردانی پیش‌فرض‌ها</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>دکمه راست ماوس</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>خط راست از آخرین نقطه (مداد)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>ابزار</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>چرخ ماوس</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>زوم</value>
+  </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>ارتفاع مرکز</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>عرض مرکز</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>X مرکز</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Y مرکز</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>برش {0}</value>
+  </data>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>برش نُه‌تکه</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>مرکز و نقطه محوری از گوشه بالا چپ برش اندازه‌گیری می‌شوند. هر دو در فراداده شیت اسپرایت نوشته می‌شوند.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>نقطه محوری</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>X نقطه محوری</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Y نقطه محوری</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>ویژگی‌های برش</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>کلیپ‌بورد</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>اسپرایت-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>پاک کردن فایل‌های اخیر</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>اسپرایت جدید</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>فایل اخیری وجود ندارد</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>باز کردن</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>اخیر</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>شروع سریع</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>پیکسلی با این رنگ نیست</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>در کلیپ‌بورد کپی شد</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} صادر شد</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} فایل برون‌بری شد</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>در حال برون‌بری...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} فریم کپی شد</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>لایه فعال پنهان است</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>لایه فعال قفل است</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>رنگ‌های نقاشی‌شده اکنون به نزدیک‌ترین رنگ پالت تبدیل می‌شوند</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>چیزی برای کپی نیست</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>لایه پیکسلی زیرینی برای ادغام وجود ندارد</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>سل خالی است</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>در حال رنگ‌آمیزی دوباره...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>در حال تغییر اندازه...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} ذخیره شد</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>ابتدا یک لایه پیکسلی انتخاب کنید</value>
+  </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>ابتدا یک لایه نقشه کاشی را انتخاب کنید</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>انتخاب {0} × {1}</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} پیکسل   فریم {2}/{3}   {4} میلی‌ثانیه</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>لایه به {0} کاشی تقسیم شد</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} کاشی استفاده‌نشده حذف شد</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>برچسب {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>لبه‌های نرم</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>پررنگ</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>فونت:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>کج</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>متن به‌صورت انتخابی قرار می‌گیرد که می‌توانید پیش از پیوستن به لایه جابه‌جایش کنید.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>نقاشی همه نسخه‌های کاشی را تغییر می‌دهد</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>وقتی خاموش باشد، نقاشی روی یک کاشی به آن خانه کاشی جدیدی می‌دهد به‌جای تغییر کاشی مشترک.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>لایه فعال، لایه نقشه کاشی نیست. لایه نقشه کاشی از کاشی‌هایی با یک اندازه ساخته می‌شود: نقاشی روی کاشی آن را در همه جاهای استفاده‌شده تغییر می‌دهد و ابزار مهر کاشی، کاشی‌ها را روی شبکه قرار می‌دهد.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>کاشی خالی (خانه‌ها را پاک می‌کند)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} کاشی، {1} × {2} پیکسل</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>کاشی {0}</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>مدت</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>مدت نمایش فریم‌های انتخاب‌شده به میلی‌ثانیه</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} فریم   {1:0.##} ثانیه   {2:0.#} فریم بر ثانیه</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>لایه‌ها</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>فریم‌های {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>بیشینه کردن</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>به حداقل رساندن</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>بازگرداندن</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>سطل رنگ</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>برای پر کردن ناحیه‌ای با رنگ مشابه کلیک کنید</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>جایگزینی رنگ</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>رنگ پیش‌زمینه را فقط روی پیکسل‌های رنگ پس‌زمینه می‌کشد؛ راست‌کلیک برعکس عمل می‌کند</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>طرح توپر</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>یک طرح دستی بکشید؛ هنگام رها کردن بسته و پر می‌شود</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>منحنی</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>برای خم کردن منحنی حرکت دهید، برای پایان کلیک کنید، Esc برای لغو</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>یک خط بکشید، سپس برای خم کردن حرکت دهید و برای پایان کلیک کنید</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>بیضی</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>انتخاب بیضوی</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>برای رسم بیضی بکشید. Shift دایره می‌سازد و Ctrl از مرکز رسم می‌کند</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>پاک‌کن</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>برای پاک کردن پیکسل‌ها بکشید</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>قطره‌چکان</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>برای برداشتن رنگ پیش‌زمینه کلیک و برای رنگ پس‌زمینه راست‌کلیک کنید</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>گرادیان</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>برای پر کردن با گرادیانی از رنگ پیش‌زمینه تا پس‌زمینه بکشید</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>دست</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>برای جابه‌جایی نما بکشید. با نگه داشتن فاصله با هر ابزاری جابه‌جا کنید</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>کمند</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>برای انتخاب ناحیه، دور آن بکشید</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>خط</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>برای رسم خط بکشید. Shift به زاویه‌های پیکسلی تمیز می‌چسبد</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>عصای جادویی</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>برای انتخاب ناحیه‌ای با رنگ مشابه کلیک کنید</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>جابه‌جایی</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>برای جابه‌جایی انتخاب یا سل بکشید. دستگیره‌ها را برای تغییر اندازه و چرخش بکشید، Enter برای اعمال</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>مداد</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>با رنگ پیش‌زمینه بکشید؛ راست‌کلیک با رنگ پس‌زمینه می‌کشد. Shift+کلیک خطی از آخرین نقطه می‌کشد</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>کمند چندضلعی</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>برای افزودن گوشه کلیک کنید؛ برای بستن انتخاب دوبار کلیک یا Enter بزنید</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>انتخاب مستطیلی</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>مستطیل</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>برای رسم مستطیل بکشید. Shift مربع می‌سازد و Ctrl از مرکز رسم می‌کند</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>برای انتخاب بکشید. Shift اضافه، Alt کم و Shift+Alt اشتراک می‌گیرد</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>سایه‌زنی</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>برای روشن کردن پیکسل‌ها مطابق پالت بکشید؛ راست‌کلیک تیره می‌کند</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>برش نواری</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>برای علامت‌گذاری ناحیه‌ای نام‌دار که با شیت اسپرایت برون‌بری می‌شود بکشید</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>اسپری</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>نگه دارید تا پیکسل‌های پراکنده بپاشد</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>متن</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>برای افزودن متن کلیک کنید</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>مهر کاشی</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>برای قرار دادن کاشی انتخاب‌شده کلیک کنید یا بکشید. Shift+کلیک خانه‌های متصل را پر می‌کند. راست‌کلیک خانه‌ها را پاک می‌کند. Alt+کلیک کاشی زیر نشانگر را برمی‌دارد.</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>زوم</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>برای بزرگ‌نمایی کلیک و برای کوچک‌نمایی راست‌کلیک یا Alt+کلیک کنید</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>رنگ پس زمینه</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>جمع کردن به یک ستون</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>رنگ‌های پیش‌فرض</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>باز کردن به دو ستون</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>رنگ پیش‌زمینه</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>جابه‌جایی رنگ‌های پیش‌زمینه و پس‌زمینه</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>ویرایشگر پیکسل</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - ویرایشگر پیکسل</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - ویرایشگر پیکسل</value>
+  </data>
+</root>
