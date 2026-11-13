@@ -149,9 +149,20 @@ public abstract class ToolBase
     /// <summary>Snaps a pixel to the sprite grid when grid snapping is on.</summary>
     protected SKPointI SnapToGrid(SKPointI p)
     {
-        if (!Settings.SnapToGrid) return p;
-        int gw = Math.Max(1, Settings.GridWidth), gh = Math.Max(1, Settings.GridHeight);
-        return new SKPointI((int)Math.Round(p.X / (double)gw) * gw, (int)Math.Round(p.Y / (double)gh) * gh);
+        if (Settings.SnapToGrid)
+        {
+            int gw = Math.Max(1, Settings.GridWidth), gh = Math.Max(1, Settings.GridHeight);
+            p = new SKPointI((int)Math.Round(p.X / (double)gw) * gw, (int)Math.Round(p.Y / (double)gh) * gh);
+        }
+        // Guides pull points that come within a few screen pixels.
+        if (Settings.ShowRulers && Editor.View is UI.SpriteView view && view.Guides.Count > 0)
+        {
+            double reach = 6 / view.Zoom;
+            Guide? vertical = view.Guides.Where(g => g.Vertical && Math.Abs(g.Position - p.X) <= reach).MinBy(g => Math.Abs(g.Position - p.X));
+            Guide? horizontal = view.Guides.Where(g => !g.Vertical && Math.Abs(g.Position - p.Y) <= reach).MinBy(g => Math.Abs(g.Position - p.Y));
+            p = new SKPointI(vertical?.Position ?? p.X, horizontal?.Position ?? p.Y);
+        }
+        return p;
     }
 
     /// <summary>Constrains a line end to the angles that make clean pixel lines: horizontal, vertical, diagonal and 2:1 slopes.</summary>
