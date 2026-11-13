@@ -421,7 +421,7 @@ namespace ShareX.HelpersLib
                         _paletteIndex = paletteIndex++;
 
                         // And set the color of the palette entry
-                        palette.Add(Color.FromArgb(_red / _pixelCount, _green / _pixelCount, _blue / _pixelCount));
+                        palette.Add(Color.FromArgb((int)(_red / _pixelCount), (int)(_green / _pixelCount), (int)(_blue / _pixelCount)));
                     }
                     else
                     {
@@ -482,22 +482,22 @@ namespace ShareX.HelpersLib
                 /// <summary>
                 /// Number of pixels in this node
                 /// </summary>
-                private int _pixelCount;
+                private long _pixelCount;
 
                 /// <summary>
                 /// Red component
                 /// </summary>
-                private int _red;
+                private long _red;
 
                 /// <summary>
                 /// Green Component
                 /// </summary>
-                private int _green;
+                private long _green;
 
                 /// <summary>
                 /// Blue component
                 /// </summary>
-                private int _blue;
+                private long _blue;
 
                 /// <summary>
                 /// Pointers to any child nodes
