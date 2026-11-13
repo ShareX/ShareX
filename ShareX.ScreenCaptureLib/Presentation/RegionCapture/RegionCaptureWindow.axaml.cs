@@ -101,6 +101,8 @@ public partial class RegionCaptureWindow : Window
     private RegionShape _regionShape = RegionShape.Rectangle;
     // Points of the freehand region being drawn; frozen into the selection when the button is released.
     private List<Point>? _freehandPoints;
+    // True while Shift draws a straight edge in the freehand region, as in ShareX 21.
+    private bool _isFreehandStraightLine;
     private readonly TranslateTransform _magnifierTransform = new();
     private readonly ScaleTransform _magnifierScale = new();
     private readonly ScaleTransform _selectionInfoScale = new();
@@ -828,6 +830,7 @@ public partial class RegionCaptureWindow : Window
             if (_regionShape == RegionShape.Freehand)
             {
                 _freehandPoints = [point];
+                _isFreehandStraightLine = false;
                 SetSelection(new CaptureRegion(RegionShape.Freehand, default, _freehandPoints), null);
             }
             else
@@ -891,7 +894,7 @@ public partial class RegionCaptureWindow : Window
                 }
                 break;
             case RegionInteraction.Creating when _freehandPoints != null:
-                AddFreehandPoint(point);
+                AddFreehandPoint(point, e.KeyModifiers.HasFlag(KeyModifiers.Shift));
                 break;
             case RegionInteraction.Creating:
                 UpdateSelectionDuringCreation(point, e.KeyModifiers);
@@ -1692,14 +1695,25 @@ public partial class RegionCaptureWindow : Window
         SetSelection(source.Offset(x - rectangle.X, y - rectangle.Y), null);
     }
 
-    private void AddFreehandPoint(Point point)
+    // While Shift is held the region stops following the pointer and draws one straight edge
+    // from its last point to the pointer instead, as in ShareX 21.
+    private void AddFreehandPoint(Point point, bool straightLine)
     {
         if (_freehandPoints == null || (_freehandPoints.Count > 0 && _freehandPoints[^1] == point))
         {
             return;
         }
 
-        _freehandPoints.Add(point);
+        if (straightLine && _isFreehandStraightLine)
+        {
+            _freehandPoints[^1] = point;
+        }
+        else
+        {
+            _freehandPoints.Add(point);
+        }
+
+        _isFreehandStraightLine = straightLine;
         SetSelection(new CaptureRegion(RegionShape.Freehand, CaptureRegion.GetBounds(_freehandPoints), _freehandPoints), null);
     }
 
