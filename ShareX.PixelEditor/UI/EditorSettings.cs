@@ -104,6 +104,9 @@ public sealed class EditorSettings
     public bool LoopPlayback { get; set; } = true;
     public bool PlayTagOnly { get; set; } = true;
     public int TimelineCellSize { get; set; } = 24;
+
+    /// <summary>Cels show a small picture of their pixels instead of a dot.</summary>
+    public bool TimelineThumbnails { get; set; } = true;
     public int PreviewZoom { get; set; }
 
     // Documents

@@ -118,7 +118,7 @@ public static partial class EditorCommands
                 MenuNode.Sub(Strings.Menu_Symmetry, C("view.symmetryHorizontal"), C("view.symmetryVertical"), C("view.symmetryReset"), C("view.symmetryAxis")),
                 MenuNode.Sub(Strings.Menu_Tiled, C("view.tiled"), C("view.tiledX"), C("view.tiledY")), S,
                 new MenuNode { Header = Strings.Menu_Panels, Dynamic = PanelItems },
-                C("view.timeline"), C("view.toolbar"), C("view.options"), C("view.toolbarColumns"), C("view.resetPanels"), S,
+                C("view.timeline"), C("view.timelineThumbnails"), C("view.toolbar"), C("view.options"), C("view.toolbarColumns"), C("view.resetPanels"), S,
                 C("view.fullScreen")),
             MenuNode.Sub(Strings.Menu_Help, C("help.commandPalette"), C("edit.shortcuts"))
         ];

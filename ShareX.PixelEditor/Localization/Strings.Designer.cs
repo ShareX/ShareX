@@ -2665,5 +2665,10 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Sheet_Unique", resourceCulture);
             }
         }
+        public static string Command_TimelineThumbnails {
+            get {
+                return ResourceManager.GetString("Command_TimelineThumbnails", resourceCulture);
+            }
+        }
     }
 }

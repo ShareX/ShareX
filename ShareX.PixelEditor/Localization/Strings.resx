@@ -453,6 +453,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Tile Vertically</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Cel Thumbnails</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Two-Column Toolbar</value>
   </data>

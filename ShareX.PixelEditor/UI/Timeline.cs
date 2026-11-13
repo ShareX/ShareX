@@ -30,6 +30,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using ShareX.PhotoEditor.UI.Theme;
 using ShareX.PixelEditor.UI.Commands;
@@ -81,6 +82,7 @@ public sealed class Timeline : UserControl
         Toggle(PixelEditorIcons.OnionSkin, "frame.onionSkin", () => editor.Settings.OnionSkin);
         Toggle(PixelEditorIcons.Loop, "frame.loop", () => editor.Settings.LoopPlayback);
         Toggle(PixelEditorIcons.PlayTag, "frame.playTagOnly", () => editor.Settings.PlayTagOnly);
+        Toggle(PixelEditorIcons.Thumbnails, "view.timelineThumbnails", () => editor.Settings.TimelineThumbnails);
         Gap();
         bar.Children.Add(new TextBlock { Text = Strings.Timeline_Duration, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(2, 0, 5, 0) });
         bar.Children.Add(_duration);
@@ -203,6 +205,11 @@ public sealed class TimelineGrid : Control
 
     private const double DragThreshold = 4;
 
+    private static readonly IBrush ThumbBackground = new SolidColorBrush(Color.FromRgb(0x3C, 0x3C, 0x3C));
+    private readonly Dictionary<PixelBuffer, WriteableBitmap> _thumbs = new(ReferenceEqualityComparer.Instance);
+    private Sprite? _thumbSprite;
+    private object? _thumbState;
+
     private readonly PixelEditorWindow _editor;
     private readonly Timeline _timeline;
     private DragMode _drag;
@@ -235,6 +242,8 @@ public sealed class TimelineGrid : Control
         int firstFrame = Math.Max(0, (int)(scrollX / cell)), lastFrame = Math.Min(sprite.Frames.Count - 1, (int)((scrollX + bounds.Width - HeaderWidth) / cell));
         int shown = _editor.View?.ShownFrame ?? sprite.ActiveFrame;
         IBrush accent = PhotoEditorTheme.AccentBorderBrush;
+        bool thumbnails = _editor.Settings.TimelineThumbnails && cell >= 18;
+        if (thumbnails) PruneThumbnails(sprite);
 
         // Cels
         using (context.PushClip(new Rect(HeaderWidth, TopHeight, Math.Max(0, bounds.Width - HeaderWidth), Math.Max(0, bounds.Height - TopHeight))))
@@ -258,6 +267,22 @@ public sealed class TimelineGrid : Control
                         if (cel == null)
                         {
                             context.DrawEllipse(null, new Pen(EmptyBrush, 1), center, 2.5, 2.5);
+                        }
+                        else if (thumbnails)
+                        {
+                            // A picture of the cel; linked cels are joined by a bar under their pictures.
+                            bool linkPrevious = f > 0 && pixels.Cels[f - 1]?.Image == cel.Image, linkNext = f < pixels.Cels.Count - 1 && pixels.Cels[f + 1]?.Image == cel.Image;
+                            Rect box = rect.Deflate(3);
+                            context.FillRectangle(ThumbBackground, box);
+                            WriteableBitmap thumb = Thumbnail(sprite, cel.Buffer, (int)box.Width, (int)box.Height);
+                            Rect image = new(box.X + (box.Width - thumb.PixelSize.Width) / 2, box.Y + (box.Height - thumb.PixelSize.Height) / 2, thumb.PixelSize.Width, thumb.PixelSize.Height);
+                            using (context.PushOpacity(layer.IsEffectivelyVisible ? 1 : 0.4))
+                            using (context.PushRenderOptions(new RenderOptions { BitmapInterpolationMode = BitmapInterpolationMode.None }))
+                            {
+                                context.DrawImage(thumb, image);
+                            }
+                            if (linkPrevious) context.FillRectangle(CelBrush, new Rect(x - 1, rect.Bottom - 2, cell / 2.0 + 1, 2));
+                            if (linkNext) context.FillRectangle(CelBrush, new Rect(center.X, rect.Bottom - 2, cell / 2.0, 2));
                         }
                         else
                         {
@@ -363,6 +388,52 @@ public sealed class TimelineGrid : Control
             double x = HeaderWidth + _dropFrame * cell - scrollX - 1;
             if (x >= HeaderWidth - 2) context.FillRectangle(accent, new Rect(x - 1, TagHeight, 3, bounds.Height - TagHeight));
         }
+    }
+
+    /// <summary>Drops cached cel pictures once the sprite changes; they are made again as cels are drawn.</summary>
+    private void PruneThumbnails(Sprite sprite)
+    {
+        object? state = sprite.History.CurrentState;
+        if (ReferenceEquals(sprite, _thumbSprite) && ReferenceEquals(state, _thumbState) && _thumbs.Count < 2000) return;
+        _thumbs.Clear();
+        _thumbSprite = sprite;
+        _thumbState = state;
+    }
+
+    private WriteableBitmap Thumbnail(Sprite sprite, PixelBuffer buffer, int width, int height)
+    {
+        if (_thumbs.TryGetValue(buffer, out WriteableBitmap? cached)) return cached;
+        double scale = Math.Min(width / (double)sprite.Width, height / (double)sprite.Height);
+        int w = Math.Clamp((int)Math.Round(sprite.Width * scale), 1, Math.Max(1, width)), h = Math.Clamp((int)Math.Round(sprite.Height * scale), 1, Math.Max(1, height));
+        WriteableBitmap bitmap = Ui.ToBitmap(Shrink(buffer, w, h));
+        _thumbs[buffer] = bitmap;
+        return bitmap;
+    }
+
+    /// <summary>Scales a cel down for a thumbnail. Each thumbnail pixel takes the most opaque pixel of its block, so single-pixel details stay visible.</summary>
+    private static PixelBuffer Shrink(PixelBuffer source, int width, int height)
+    {
+        if (width >= source.Width || height >= source.Height || (long)source.Width * source.Height > (long)width * height * 64) return source.ScaleNearest(width, height);
+        PixelBuffer result = new(width, height);
+        for (int y = 0; y < height; y++)
+        {
+            int y0 = y * source.Height / height, y1 = Math.Max(y0 + 1, (y + 1) * source.Height / height);
+            for (int x = 0; x < width; x++)
+            {
+                int x0 = x * source.Width / width, x1 = Math.Max(x0 + 1, (x + 1) * source.Width / width);
+                uint best = 0;
+                for (int sy = y0; sy < y1; sy++)
+                {
+                    for (int sx = x0; sx < x1; sx++)
+                    {
+                        uint p = source.Pixels[sy * source.Width + sx];
+                        if (p >> 24 > best >> 24) best = p;
+                    }
+                }
+                result.Pixels[y * width + x] = best;
+            }
+        }
+        return result;
     }
 
     private (int Row, int Frame) Hit(Point p)

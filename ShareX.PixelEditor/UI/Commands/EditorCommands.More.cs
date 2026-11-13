@@ -194,6 +194,11 @@ public static partial class EditorCommands
         Layout("view.timeline", Strings.Command_ShowTimeline, "Ctrl+Shift+T", s => s.TimelineVisible, (s, v) => s.TimelineVisible = v);
         Layout("view.toolbar", Strings.Command_ShowToolbar, null, s => s.ToolbarVisible, (s, v) => s.ToolbarVisible = v);
         Layout("view.options", Strings.Command_ShowOptions, null, s => s.OptionsVisible, (s, v) => s.OptionsVisible = v);
+        View("view.timelineThumbnails", Strings.Command_TimelineThumbnails, null, w =>
+        {
+            w.Settings.TimelineThumbnails = !w.Settings.TimelineThumbnails;
+            w.RefreshTimeline();
+        }, null, w => w.Settings.TimelineThumbnails);
         View("view.toolbarColumns", Strings.Command_ToolbarColumns, null, w => w.ToggleToolbarColumns(), null, w => w.Settings.ToolbarTwoColumns);
         View("view.resetPanels", Strings.Command_ResetPanels, null, w =>
         {
