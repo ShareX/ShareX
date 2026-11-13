@@ -91,6 +91,24 @@ namespace ShareX
             }
         }
 
+        // Removes the oldest finished tasks beyond the limit. Failed tasks stay so their errors are not missed,
+        // and queued or working tasks are never touched.
+        private static void TrimTaskList()
+        {
+            if (!ApplicationState.Settings.TaskListLimitEnabled)
+            {
+                return;
+            }
+
+            WorkerTask[] finished = Tasks.Where(x => x.Status is TaskStatus.Completed or TaskStatus.Stopped or TaskStatus.History).ToArray();
+            int removeCount = finished.Length - Math.Max(0, ApplicationState.Settings.TaskListLimit);
+
+            foreach (WorkerTask task in finished.Take(removeCount))
+            {
+                Remove(task);
+            }
+        }
+
         private static void StartTasks()
         {
             int workingTasksCount = Tasks.Count(x => x.IsWorking);
@@ -297,6 +315,8 @@ namespace ShareX
             finally
             {
                 TaskChanged?.Invoke(task);
+
+                TrimTaskList();
 
                 if (!IsBusy && StartupOptions.AutoClose)
                 {

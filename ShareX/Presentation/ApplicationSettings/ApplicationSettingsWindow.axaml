@@ -626,6 +626,11 @@
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowRecentTasksInMainWindowOnStartup}" IsChecked="{Binding RecentTasksShowInMainWindow, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowRecentTasksInTrayMenu}" IsChecked="{Binding RecentTasksShowInTrayMenu, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst}" IsChecked="{Binding RecentTasksTrayMenuMostRecentFirst, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_LimitTasksInMainWindow}" IsChecked="{Binding TaskListLimitEnabled, Mode=TwoWay}"/>
+                                    <Grid ColumnDefinitions="230,*" ColumnSpacing="8" IsEnabled="{Binding TaskListLimitEnabled}">
+                                        <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_MaximumTasksInMainWindowLabel}" VerticalAlignment="Center" FontWeight="Normal" TextWrapping="Wrap"/>
+                                        <NumericUpDown Grid.Column="1" Classes="form-control" Minimum="0" Maximum="10000" Value="{Binding TaskListLimit, Mode=TwoWay}"/>
+                                    </Grid>
                                 </StackPanel>
                             </Border>
                         </StackPanel>

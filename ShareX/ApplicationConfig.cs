@@ -150,6 +150,10 @@ namespace ShareX
         public bool RecentTasksShowInTrayMenu = true;
         public bool RecentTasksTrayMenuMostRecentFirst = false;
 
+        // Limits how many finished tasks stay in the main window. 0 removes each task as soon as it finishes.
+        public bool TaskListLimitEnabled = false;
+        public int TaskListLimit = 10;
+
         public HistorySettings HistorySettings = new HistorySettings();
         public ImageHistorySettings ImageHistorySettings = new ImageHistorySettings();
 
