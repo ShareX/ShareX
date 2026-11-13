@@ -94,10 +94,17 @@ public sealed class Timeline : UserControl
             EditorCommands.SetFrameDuration(editor, sprite.RangeFrom, sprite.RangeTo, (int)value);
         };
 
-        DockPanel top = new() { Height = 30, Background = Ui.Chrome };
-        DockPanel.SetDock(_info, Dock.Right);
-        top.Children.Add(_info);
+        // The frame count on the right gives way when the buttons need the room.
+        Grid top = new() { Height = 30, Background = Ui.Chrome, ColumnDefinitions = new ColumnDefinitions("*,Auto") };
+        bar.ClipToBounds = true;
+        Grid.SetColumn(_info, 1);
         top.Children.Add(bar);
+        top.Children.Add(_info);
+        top.SizeChanged += (_, _) => FitInfo(top, bar);
+        _info.PropertyChanged += (_, e) =>
+        {
+            if (e.Property == TextBlock.TextProperty) Avalonia.Threading.Dispatcher.UIThread.Post(() => FitInfo(top, bar));
+        };
 
         _horizontal.ValueChanged += (_, _) => _grid.InvalidateVisual();
         _vertical.ValueChanged += (_, _) => _grid.InvalidateVisual();
@@ -114,6 +121,12 @@ public sealed class Timeline : UserControl
         root.Children.Add(body);
         Content = root;
         _grid.SizeChanged += (_, _) => UpdateScrollBars();
+    }
+
+    private void FitInfo(Grid top, StackPanel bar)
+    {
+        double needed = bar.Margin.Left + bar.Margin.Right + bar.Children.Sum(c => c.IsVisible ? c.DesiredSize.Width : 0) + bar.Spacing * Math.Max(0, bar.Children.Count - 1);
+        _info.IsVisible = top.Bounds.Width >= needed + _info.DesiredSize.Width + 4 || !_info.IsVisible && top.Bounds.Width >= needed + 160;
     }
 
     public double ScrollX => _horizontal.Value;

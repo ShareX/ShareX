@@ -49,6 +49,11 @@ public sealed class ToolbarControl : UserControl
     private readonly Dictionary<ToolGroup, Button> _buttons = [];
     private readonly Button _columnsToggle;
     private Border? _foreground, _background;
+    private Control _colorWidget = null!;
+    private bool _autoTwo;
+
+    /// <summary>Two columns when chosen, or when one column does not fit the window height.</summary>
+    private bool TwoColumns => _editor.Settings.ToolbarTwoColumns || _autoTwo;
 
     public ToolbarControl(PixelEditorWindow editor)
     {
@@ -60,24 +65,39 @@ public sealed class ToolbarControl : UserControl
         root.Children.Add(new Border { Child = _columnsToggle, Padding = new Thickness(2, 1), Margin = new Thickness(0, 0, 0, 4) });
         root.Children.Add(_sections);
         root.Children.Add(new Border { Height = 9 });
-        root.Children.Add(BuildColorWidget());
+        _colorWidget = BuildColorWidget();
+        root.Children.Add(_colorWidget);
         Content = new ScrollViewer { Content = root, VerticalScrollBarVisibility = ScrollBarVisibility.Hidden, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         ApplyColumns();
         Rebuild();
         _editor.Tools.ActiveChanged += RefreshActive;
+        SizeChanged += (_, _) => FitColumns();
+    }
+
+    private void FitColumns()
+    {
+        if (_editor.Settings.ToolbarTwoColumns || Bounds.Height <= 0) return;
+        int sections = _editor.Tools.Groups.Select(g => g.Section).Distinct().Count();
+        double single = 36 + _editor.Tools.Groups.Count * ButtonHeight + (sections - 1) * 9 + 9 + _colorWidget.DesiredSize.Height + 6;
+        bool need = single > Bounds.Height;
+        if (need == _autoTwo) return;
+        _autoTwo = need;
+        ApplyColumns();
+        Rebuild();
     }
 
     /// <summary>Switches between the single-column and two-column toolbar layouts.</summary>
     public void ToggleColumns()
     {
-        _editor.Settings.ToolbarTwoColumns = !_editor.Settings.ToolbarTwoColumns;
+        _editor.Settings.ToolbarTwoColumns = !TwoColumns;
+        _autoTwo = false;
         ApplyColumns();
         Rebuild();
     }
 
     private void ApplyColumns()
     {
-        bool two = _editor.Settings.ToolbarTwoColumns;
+        bool two = TwoColumns;
         Width = two ? ButtonWidth * 2 + 8 : Math.Max(ButtonWidth + 6, ColorWidgetWidth + 2);
         _columnsToggle.Content = new IconView(two ? PixelEditorIcons.ToolbarCollapse : PixelEditorIcons.ToolbarExpand, 12);
         ToolTip.SetTip(_columnsToggle, two ? Strings.Toolbar_Collapse : Strings.Toolbar_Expand);
@@ -87,7 +107,7 @@ public sealed class ToolbarControl : UserControl
     {
         _sections.Children.Clear();
         _buttons.Clear();
-        bool two = _editor.Settings.ToolbarTwoColumns;
+        bool two = TwoColumns;
         WrapPanel? panel = null;
         int section = -1;
         foreach (ToolGroup group in _editor.Tools.Groups)
