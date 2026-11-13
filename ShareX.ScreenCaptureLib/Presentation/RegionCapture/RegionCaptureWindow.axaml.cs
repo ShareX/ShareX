@@ -165,6 +165,9 @@ public partial class RegionCaptureWindow : Window
             throw new InvalidOperationException("A capture request is required.");
         }
 
+        // The overlay spans every monitor and is sized in device pixels. Keep the scale it was created with, or Windows
+        // switches it between the monitors' DPIs (mixed scaling) and selections miss the screenshot.
+        RegionCaptureFixedScale.Apply(TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
         ConfigureInitialPixelBounds();
 
         try
