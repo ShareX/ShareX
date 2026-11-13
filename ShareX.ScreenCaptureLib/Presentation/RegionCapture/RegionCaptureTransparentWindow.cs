@@ -88,7 +88,9 @@ public sealed class RegionCaptureTransparentWindow : Window
     public Task<DrawingRectangle?> SelectAsync()
     {
         // Set Position once while the window is still small, so Win32 picks the DPI of the monitor at the
-        // desktop origin; see RegionCaptureWindow.ConfigureInitialPixelBounds.
+        // desktop origin; see RegionCaptureWindow.ConfigureInitialPixelBounds. Keep that DPI while the window spans monitors
+        // with different scaling, as region capture does.
+        RegionCaptureFixedScale.Apply(TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
         Position = new PixelPoint(_screenBounds.X, _screenBounds.Y);
         ApplyPixelSize();
         Show();
