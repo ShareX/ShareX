@@ -104,6 +104,11 @@ namespace ShareX
                 }
                 else
                 {
+                    if (IsFlatpak)
+                    {
+                        return System.IO.File.Exists(FlatpakAutostartMarker) ? StartupState.Enabled : StartupState.Disabled;
+                    }
+
                     string autostartDesktop = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "autostart", "ShareX.desktop");
                     if (System.IO.File.Exists(autostartDesktop) || ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
                     {
@@ -132,13 +137,68 @@ namespace ShareX
 #else
                 if (value == StartupState.Enabled || value == StartupState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    if (!OperatingSystem.IsWindows() && IsFlatpak)
+                    {
+                        SetFlatpakAutostart(value == StartupState.Enabled);
+                    }
+                    else
+                    {
+                        ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    }
                 }
                 else
                 {
                     throw new NotSupportedException();
                 }
 #endif
+            }
+        }
+
+        private static bool IsFlatpak => !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("FLATPAK_ID")) || System.IO.File.Exists("/.flatpak-info");
+
+        private static string FlatpakAutostartMarker => System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "autostart", "ShareX.desktop");
+
+        private static void SetFlatpakAutostart(bool enabled)
+        {
+            try
+            {
+                string marker = FlatpakAutostartMarker;
+                string dir = System.IO.Path.GetDirectoryName(marker);
+                if (enabled)
+                {
+                    if (!string.IsNullOrEmpty(dir) && !System.IO.Directory.Exists(dir))
+                    {
+                        System.IO.Directory.CreateDirectory(dir);
+                    }
+                    System.IO.File.WriteAllText(marker, "[Desktop Entry]\nType=Application\nName=ShareX\nExec=ShareX -silent\n");
+
+                    using System.Diagnostics.Process proc = new();
+                    proc.StartInfo.FileName = "gdbus";
+                    proc.StartInfo.Arguments = "call --session --dest org.freedesktop.portal.Desktop --object-path /org/freedesktop/portal/desktop --method org.freedesktop.portal.Background.RequestBackground \"\" \"{'reason': <'Start ShareX with system'>, 'autostart': <true>, 'commandline': <['ShareX', '-silent']>}\"";
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.CreateNoWindow = true;
+                    proc.Start();
+                    proc.WaitForExit(3000);
+                }
+                else
+                {
+                    if (System.IO.File.Exists(marker))
+                    {
+                        System.IO.File.Delete(marker);
+                    }
+
+                    using System.Diagnostics.Process proc = new();
+                    proc.StartInfo.FileName = "gdbus";
+                    proc.StartInfo.Arguments = "call --session --dest org.freedesktop.portal.Desktop --object-path /org/freedesktop/portal/desktop --method org.freedesktop.portal.Background.RequestBackground \"\" \"{'reason': <'Disable ShareX autostart'>, 'autostart': <false>, 'commandline': <['ShareX', '-silent']>}\"";
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.CreateNoWindow = true;
+                    proc.Start();
+                    proc.WaitForExit(3000);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
             }
         }
     }
