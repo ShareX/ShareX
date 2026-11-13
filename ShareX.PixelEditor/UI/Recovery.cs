@@ -60,6 +60,7 @@ internal sealed class Recovery : IDisposable
     private string? _session;
     private FileStream? _lock;
     private int _next;
+    private Task _writing = Task.CompletedTask;
 
     public Recovery(string? settingsFilePath)
     {
@@ -67,9 +68,14 @@ internal sealed class Recovery : IDisposable
         _root = Path.Combine(folder ?? Path.Combine(Path.GetTempPath(), "ShareX"), "PixelEditorRecovery");
     }
 
-    /// <summary>Writes a copy of every sprite whose changes are not saved and changed since its last copy, and removes copies of saved sprites.</summary>
+    /// <summary>
+    /// Writes a copy of every sprite whose changes are not saved and changed since its last copy, and removes copies of saved
+    /// sprites. The copies are taken from the history, whose pixels never change, so they are written in the background.
+    /// </summary>
     public void Backup(IEnumerable<Sprite> sprites)
     {
+        if (!_writing.IsCompleted) return;
+        List<(Entry Entry, Sprite Copy, Info Info)> jobs = [];
         foreach (Sprite sprite in sprites)
         {
             if (!sprite.IsDirty)
@@ -77,28 +83,46 @@ internal sealed class Recovery : IDisposable
                 Remove(sprite);
                 continue;
             }
-            object? state = sprite.History.CurrentState;
+            if (sprite.History.CurrentState is not SpriteState state) continue;
             if (_entries.TryGetValue(sprite, out Entry? existing) && ReferenceEquals(existing.State, state)) continue;
             try
             {
-                string session = EnsureSession();
+                EnsureSession();
+                Sprite copy = new(state.Width, state.Height) { Title = sprite.Title, FilePath = sprite.FilePath };
+                copy.Restore(state);
                 Entry entry = existing ?? new Entry { Name = (++_next).ToString("D3") };
-                string project = Path.Combine(session, entry.Name + ProjectSuffix);
-                string temp = project + ".tmp";
-                SpriteFile.SaveProject(sprite, temp);
-                File.Move(temp, project, true);
-                Info info = new() { OriginalPath = sprite.FilePath, Title = sprite.Title, SavedAt = DateTime.Now };
-                File.WriteAllText(Path.Combine(session, entry.Name + InfoSuffix), JsonConvert.SerializeObject(info, Formatting.Indented));
-                entry.State = state;
                 if (existing == null) _entries.Add(sprite, entry);
+                entry.State = state;
+                jobs.Add((entry, copy, new Info { OriginalPath = sprite.FilePath, Title = sprite.Title, SavedAt = DateTime.Now }));
             }
             catch (Exception)
             {
-                // A failed backup must never interrupt editing; the next one tries again.
             }
         }
+        if (jobs.Count == 0 || _session is not string session) return;
+        _writing = Task.Run(() =>
+        {
+            foreach ((Entry entry, Sprite copy, Info info) in jobs)
+            {
+                try
+                {
+                    string project = Path.Combine(session, entry.Name + ProjectSuffix);
+                    string temp = project + ".tmp";
+                    SpriteFile.SaveProject(copy, temp);
+                    File.Move(temp, project, true);
+                    File.WriteAllText(Path.Combine(session, entry.Name + InfoSuffix), JsonConvert.SerializeObject(info, Formatting.Indented));
+                }
+                catch (Exception)
+                {
+                    // A failed copy must never interrupt editing; the next backup tries again.
+                    entry.State = null;
+                }
+            }
+        });
     }
 
+    /// <summary>Waits for copies still being written, for tests and for closing.</summary>
+    public void Flush() => _writing.Wait(TimeSpan.FromSeconds(10));
     /// <summary>Deletes the copy of a sprite that was saved or closed.</summary>
     public void Remove(Sprite sprite)
     {
@@ -139,6 +163,13 @@ internal sealed class Recovery : IDisposable
     /// <summary>Ends the session after a normal close: nothing needs recovering.</summary>
     public void Dispose()
     {
+        try
+        {
+            Flush();
+        }
+        catch (Exception)
+        {
+        }
         _lock?.Dispose();
         _lock = null;
         if (_session != null) TryDeleteFolder(_session);
