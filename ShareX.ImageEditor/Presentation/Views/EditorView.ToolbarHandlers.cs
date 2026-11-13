@@ -75,6 +75,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.ArrowRoundedCornersChanged += OnToolbarArrowRoundedCornersChanged;
             toolbar.FreehandArrowChanged += OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged += OnToolbarSpeechBalloonTailChanged;
+            toolbar.SpeechBalloonAutoSizeChanged += OnToolbarSpeechBalloonAutoSizeChanged;
             toolbar.EffectEllipseChanged += OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested += OnFavoriteEffectsMenuRequested;
         }
@@ -117,6 +118,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             toolbar.ArrowRoundedCornersChanged -= OnToolbarArrowRoundedCornersChanged;
             toolbar.FreehandArrowChanged -= OnToolbarFreehandArrowChanged;
             toolbar.SpeechBalloonTailChanged -= OnToolbarSpeechBalloonTailChanged;
+            toolbar.SpeechBalloonAutoSizeChanged -= OnToolbarSpeechBalloonAutoSizeChanged;
             toolbar.EffectEllipseChanged -= OnToolbarEffectEllipseChanged;
             toolbar.FavoriteEffectsMenuRequested -= OnFavoriteEffectsMenuRequested;
         }
@@ -310,6 +312,11 @@ namespace ShareX.ImageEditor.Presentation.Views
         private void OnToolbarSpeechBalloonTailChanged(object? sender, bool isEnabled)
         {
             ApplySelectedSpeechBalloonTail(isEnabled);
+        }
+
+        private void OnToolbarSpeechBalloonAutoSizeChanged(object? sender, bool isEnabled)
+        {
+            ApplySelectedSpeechBalloonAutoSize(isEnabled);
         }
 
         private void OnToolbarEffectEllipseChanged(object? sender, bool isEllipse)
@@ -874,6 +881,20 @@ namespace ShareX.ImageEditor.Presentation.Views
                 numberAnnotation.TailEnabled = isEnabled;
                 AnnotationVisualFactory.UpdateVisualControl(stepControl, numberAnnotation);
                 _selectionController.UpdateSelectionHandles();
+            }
+        }
+
+        private void ApplySelectedSpeechBalloonAutoSize(bool isEnabled)
+        {
+            if (_selectionController.SelectedShape is SpeechBalloonControl { Annotation: SpeechBalloonAnnotation balloonAnnotation })
+            {
+                balloonAnnotation.AutoSize = isEnabled;
+
+                if (isEnabled)
+                {
+                    _selectionController.FitSelectedSpeechBalloonToText();
+                    ScheduleAutoExpandCanvas(balloonAnnotation);
+                }
             }
         }
 

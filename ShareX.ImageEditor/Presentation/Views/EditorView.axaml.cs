@@ -441,6 +441,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         vm.FillColor = balloon.FillColor;
                         vm.CornerRadius = balloon.CornerRadius;
                         vm.SpeechBalloonTail = balloon.TailEnabled;
+                        vm.SpeechBalloonAutoSize = balloon.AutoSize;
                         if (!string.IsNullOrEmpty(balloon.TextColor))
                             vm.TextColorValue = Avalonia.Media.Color.Parse(balloon.TextColor);
                     }

@@ -35,6 +35,12 @@ public partial class SpeechBalloonAnnotation : Annotation
 {
     public const float DefaultTailOffset = 30f;
     public const float TailWidthMultiplier = 0.3f;
+
+    /// <summary>
+    /// Space between the balloon body and its text, used for drawing, the inline text editor and <see cref="AutoSize"/>.
+    /// </summary>
+    public const float TextPadding = 12f;
+
     private const float GeometryEpsilon = 0.001f;
 
     public override AnnotationCategory Category => AnnotationCategory.Text;
@@ -60,6 +66,12 @@ public partial class SpeechBalloonAnnotation : Annotation
     /// Controls whether the tail geometry and handle are shown.
     /// </summary>
     public bool TailEnabled { get; set; } = true;
+
+    /// <summary>
+    /// Sizes the balloon body to its text as it is typed, so every balloon has the same padding around its text.
+    /// The body can still be resized by hand until the text changes again.
+    /// </summary>
+    public bool AutoSize { get; set; }
 
     /// <summary>
     /// Optional text content inside the balloon
