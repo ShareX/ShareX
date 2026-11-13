@@ -44,8 +44,17 @@ public partial class SpeechBalloonAnnotation
             IsBold ? FontWeight.Bold : FontWeight.Normal);
 
         bool isEmpty = string.IsNullOrEmpty(text);
+        string measuredText = isEmpty ? " " : text!;
+
+        // A trailing line break gets no height of its own, so measure the new empty line as a space,
+        // which the text box already shows the caret on.
+        if (measuredText.EndsWith('\n') || measuredText.EndsWith('\r'))
+        {
+            measuredText += " ";
+        }
+
         var formattedText = new FormattedText(
-            isEmpty ? " " : text!,
+            measuredText,
             System.Globalization.CultureInfo.CurrentCulture,
             FlowDirection.LeftToRight,
             typeface,
