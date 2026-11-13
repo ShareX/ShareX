@@ -158,29 +158,6 @@ public partial class RegionCaptureWindow : Window
         }
         InitializeCaptureWorkspace();
         Opened += OnOpened;
-        ScalingChanged += OnScalingChanged;
-    }
-
-    /// <summary>
-    /// The overlay keeps its rectangle when Windows changes its DPI (see RegionCaptureFixedScale), so only the size in DIPs
-    /// and the pixel transforms follow the new scale.
-    /// </summary>
-    private void OnScalingChanged(object? sender, EventArgs e)
-    {
-        if (_request == null || _closing || GetRenderScaling() == _appliedPixelScaling)
-        {
-            return;
-        }
-
-        ApplyPixelSize();
-        UpdatePixelTransforms();
-
-        // Before the window opens, OnOpened places the toolbar.
-        if (IsVisible)
-        {
-            DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
-            UpdateToolbarPosition(new PixelPoint(cursorPosition.X, cursorPosition.Y));
-        }
     }
 
     public Task<AvaloniaRegionCaptureResult?> CaptureAsync()
@@ -190,9 +167,6 @@ public partial class RegionCaptureWindow : Window
             throw new InvalidOperationException("A capture request is required.");
         }
 
-        // The overlay spans every monitor and is sized in device pixels. Keep the scale it was created with, or Windows
-        // switches it between the monitors' DPIs (mixed scaling) and selections miss the screenshot.
-        RegionCaptureFixedScale.Apply(TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
         ConfigureInitialPixelBounds();
 
         try
@@ -1251,8 +1225,8 @@ public partial class RegionCaptureWindow : Window
     }
 
     /// <summary>
-    /// The overlay is one window across all monitors, so Windows gives it a single scaling, from the monitor at
-    /// the desktop origin (see ConfigureInitialPixelBounds). The toolbar, magnifier and info labels are scaled by
+    /// The overlay is one window across all monitors, so Windows gives it a single scaling, from the monitor it
+    /// overlaps most (see ConfigureInitialPixelBounds). The toolbar, magnifier and info labels are scaled by
     /// this factor so they match the scaling of the monitor they are shown on in mixed DPI setups.
     /// </summary>
     private double GetMonitorScaleFactor(PixelPoint desktopPoint)
@@ -2544,12 +2518,17 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        // Set Position exactly once, while the HWND still has its small initial size, so
-        // Win32 selects the DPI of the monitor at the virtual desktop origin. Reassigning
-        // Position after the window spans multiple monitors can make MonitorFromWindow
-        // select a different monitor and silently change Avalonia's internal scale.
-        Position = new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y);
+        // Set Position exactly once, while the HWND still has its small initial size, on the monitor Windows will take the
+        // overlay's DPI from once it spans the desktop, so Avalonia and Windows agree on its scale. Then move it into place
+        // in screen pixels without reassigning Position, which would let Avalonia change its cached scale.
+        System.Drawing.Point anchor = RegionCaptureFixedScale.GetDpiAnchor(_request.ScreenBounds);
+        Position = new PixelPoint(anchor.X, anchor.Y);
+
+        // From here the overlay spans monitors and is sized in device pixels. Keep the scale it now has, or Windows switches
+        // it between the monitors' DPIs while it is resized and moved (mixed scaling) and selections miss the screenshot.
+        RegionCaptureFixedScale.Apply(TryGetPlatformHandle()?.Handle ?? IntPtr.Zero);
         ApplyPixelSize();
+        Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
     }
 
     private void ApplyPixelSize()
@@ -2592,8 +2571,8 @@ public partial class RegionCaptureWindow : Window
             return 1;
         }
 
-        PixelPoint topLeft = new PixelPoint(_request.ScreenBounds.X, _request.ScreenBounds.Y);
-        return Screens.ScreenFromPoint(topLeft)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+        System.Drawing.Point anchor = RegionCaptureFixedScale.GetDpiAnchor(_request.ScreenBounds);
+        return Screens.ScreenFromPoint(new PixelPoint(anchor.X, anchor.Y))?.Scaling ?? Screens.Primary?.Scaling ?? 1;
     }
 
     private static byte GetDimAlpha(RegionCaptureOptions options)
