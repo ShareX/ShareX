@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -212,7 +212,7 @@ public sealed partial class PixelEditorWindow : Window
     /// <summary>A brush tip made from a selection; it replaces the round and square tips until it is cleared.</summary>
     public SKPointI[]? CustomTip { get; set; }
 
-    public uint Foreground
+    public uint ForegroundColor
     {
         get => _foreground;
         set
@@ -225,7 +225,7 @@ public sealed partial class PixelEditorWindow : Window
         }
     }
 
-    public uint Background
+    public uint BackgroundColor
     {
         get => _background;
         set
@@ -241,8 +241,8 @@ public sealed partial class PixelEditorWindow : Window
     public void SwapColors()
     {
         (_foreground, _background) = (_background, _foreground);
-        Foreground = _foreground;
-        Background = _background;
+        ForegroundColor = _foreground;
+        BackgroundColor = _background;
     }
 
     // ------------------------------------------------------------------ refreshing

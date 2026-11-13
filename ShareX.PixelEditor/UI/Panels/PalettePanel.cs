@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -119,7 +119,7 @@ public sealed class PalettePanel : EditorPanel
             menu.Items.Add(item);
         }
         Add(Strings.Palette_EditColor, () => Commands.EditorCommands.EditPaletteColor(Editor, index));
-        Add(Strings.Palette_ReplaceWithForeground, () => Commands.EditorCommands.ReplacePaletteColor(Editor, index, Editor.Foreground));
+        Add(Strings.Palette_ReplaceWithForeground, () => Commands.EditorCommands.ReplacePaletteColor(Editor, index, Editor.ForegroundColor));
         Add(Strings.Palette_SelectPixels, () => Commands.EditorCommands.SelectByColor(Editor, Colors[index]));
         menu.Items.Add(new Separator());
         Add(Strings.Palette_RemoveColor, () => Commands.EditorCommands.RemovePaletteColor(Editor, index));
@@ -153,10 +153,10 @@ public sealed class PalettePanel : EditorPanel
                     if (properties.IsLeftButtonPressed)
                     {
                         if (e.ClickCount == 2 && Sprite != null) Commands.EditorCommands.EditPaletteColor(Editor, index);
-                        else Editor.Foreground = color;
+                        else Editor.ForegroundColor = color;
                     }
                     else if (properties.IsRightButtonPressed && e.KeyModifiers.HasFlag(KeyModifiers.Control)) SwatchMenu(index).Open(swatch);
-                    else if (properties.IsRightButtonPressed) Editor.Background = color;
+                    else if (properties.IsRightButtonPressed) Editor.BackgroundColor = color;
                     else if (properties.IsMiddleButtonPressed) SwatchMenu(index).Open(swatch);
                     e.Handled = true;
                 };
@@ -173,7 +173,7 @@ public sealed class PalettePanel : EditorPanel
     {
         foreach ((Border swatch, uint color) in _items)
         {
-            bool fg = color == Editor.Foreground, bg = color == Editor.Background;
+            bool fg = color == Editor.ForegroundColor, bg = color == Editor.BackgroundColor;
             swatch.BorderBrush = fg ? Brushes.White : bg ? Brushes.Black : Ui.Gutter;
             if (swatch.Child is Border inner) inner.BorderBrush = fg ? Brushes.Black : bg ? Brushes.White : Brushes.Transparent;
         }

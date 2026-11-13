@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -344,7 +344,7 @@ public sealed class ColorReplaceTool : PaintToolBase
     {
         base.Configure(painter, p);
         painter.Ink = Ink.ReplaceColor;
-        painter.SecondaryColor = p.Right ? Editor.Foreground : Editor.Background;
+        painter.SecondaryColor = p.Right ? Editor.ForegroundColor : Editor.BackgroundColor;
         painter.Tolerance = Settings.FillTolerance;
     }
 
@@ -434,7 +434,7 @@ public sealed class GradientTool : PaintToolBase
         SKPointI end = p.Shift ? ConstrainAngle(new SKPointI((int)_start.X, (int)_start.Y), p.Pixel) : p.Pixel;
         _end = new SKPoint(end.X + 0.5f, end.Y + 0.5f);
         Painter.RestoreAll();
-        uint from = _right ? Editor.Background : Editor.Foreground, to = Settings.GradientToTransparent ? 0 : _right ? Editor.Foreground : Editor.Background;
+        uint from = _right ? Editor.BackgroundColor : Editor.ForegroundColor, to = Settings.GradientToTransparent ? 0 : _right ? Editor.ForegroundColor : Editor.BackgroundColor;
         Painter.Gradient(_start.X, _start.Y, _end.X, _end.Y, from, to, Settings.GradientRadial, Settings.GradientDither);
         Flush();
     }
@@ -470,8 +470,8 @@ public sealed class EyedropperTool : ToolBase
     {
         uint? color = Editor.SampleColor(p.X, p.Y, Settings.EyedropperAllLayers);
         if (color is not uint c || c >> 24 == 0) return;
-        if (p.Right) Editor.Background = c;
-        else Editor.Foreground = c;
+        if (p.Right) Editor.BackgroundColor = c;
+        else Editor.ForegroundColor = c;
     }
 
     public override void Down(ToolPointer p) => Pick(p);

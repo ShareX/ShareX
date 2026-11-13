@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -365,7 +365,7 @@ public static partial class EditorCommands
         R("select.all", Strings.Command_SelectAll, "Ctrl+A", w => w.SetSelection(SelectionMask.All(w.Sprite!.Width, w.Sprite.Height)), HasSprite);
         R("select.none", Strings.Command_Deselect, "Ctrl+D", w => w.SetSelection(null), HasSelection);
         R("select.inverse", Strings.Command_InvertSelection, "Ctrl+Shift+I", w => w.SetSelection(w.Sprite!.Selection?.Invert() ?? SelectionMask.All(w.Sprite.Width, w.Sprite.Height)), HasSprite);
-        R("select.byColor", Strings.Command_SelectByColor, null, w => SelectByColor(w, w.Foreground), HasSprite);
+        R("select.byColor", Strings.Command_SelectByColor, null, w => SelectByColor(w, w.ForegroundColor), HasSprite);
         R("select.celContent", Strings.Command_SelectCelContent, null, w =>
         {
             Sprite sprite = w.Sprite!;

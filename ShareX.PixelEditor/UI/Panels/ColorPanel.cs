@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -208,7 +208,7 @@ public sealed class ColorPanel : EditorPanel
 
     public override string Title => Strings.Panel_Color;
 
-    private uint Current => _editBackground ? Editor.Background : Editor.Foreground;
+    private uint Current => _editBackground ? Editor.BackgroundColor : Editor.ForegroundColor;
 
     private Border MakeTarget(bool background)
     {
@@ -241,16 +241,16 @@ public sealed class ColorPanel : EditorPanel
         _a = (int)Math.Round((1 - _alpha.Y) * 255);
         uint color = Argb.FromHsv(_h, _s, _v, _a);
         _updating = true;
-        if (_editBackground) Editor.Background = color;
-        else Editor.Foreground = color;
+        if (_editBackground) Editor.BackgroundColor = color;
+        else Editor.ForegroundColor = color;
         _updating = false;
         Show(color);
     }
 
     private void Apply(uint color)
     {
-        if (_editBackground) Editor.Background = color;
-        else Editor.Foreground = color;
+        if (_editBackground) Editor.BackgroundColor = color;
+        else Editor.ForegroundColor = color;
     }
 
     public override void Refresh()
@@ -281,8 +281,8 @@ public sealed class ColorPanel : EditorPanel
         _square.InvalidateVisual();
         _hue.InvalidateVisual();
         _alpha.InvalidateVisual();
-        ((Border)_foreground.Child!).Background = Ui.Brush(Editor.Foreground);
-        ((Border)_background.Child!).Background = Ui.Brush(Editor.Background);
+        ((Border)_foreground.Child!).Background = Ui.Brush(Editor.ForegroundColor);
+        ((Border)_background.Child!).Background = Ui.Brush(Editor.BackgroundColor);
         _foreground.BorderBrush = _editBackground ? Ui.Gutter : Brushes.White;
         _background.BorderBrush = _editBackground ? Brushes.White : Ui.Gutter;
         if (!_hex.IsFocused) _hex.Text = Argb.ToHex(color);

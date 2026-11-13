@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -199,13 +199,13 @@ public sealed class ToolbarControl : UserControl
         Border foregroundSwatch = CreateSwatch(out _foreground, Strings.Toolbar_ForegroundColor);
         foregroundSwatch.PointerPressed += async (_, _) =>
         {
-            uint? c = await Ui.PickColorAsync(_editor, _editor.Foreground, Strings.Toolbar_ForegroundColor);
-            if (c is uint color) _editor.Foreground = color;
+            uint? c = await Ui.PickColorAsync(_editor, _editor.ForegroundColor, Strings.Toolbar_ForegroundColor);
+            if (c is uint color) _editor.ForegroundColor = color;
         };
         backgroundSwatch.PointerPressed += async (_, _) =>
         {
-            uint? c = await Ui.PickColorAsync(_editor, _editor.Background, Strings.Toolbar_BackgroundColor);
-            if (c is uint color) _editor.Background = color;
+            uint? c = await Ui.PickColorAsync(_editor, _editor.BackgroundColor, Strings.Toolbar_BackgroundColor);
+            if (c is uint color) _editor.BackgroundColor = color;
         };
         Canvas canvas = new() { Width = ColorWidgetWidth, Height = 45, HorizontalAlignment = HorizontalAlignment.Center, Margin = new Thickness(0, 4, 0, 4) };
         Place(canvas, backgroundSwatch, 17, 17);
@@ -284,7 +284,7 @@ public sealed class ToolbarControl : UserControl
 
     public void RefreshColors()
     {
-        if (_foreground != null) _foreground.Background = Ui.Brush(_editor.Foreground);
-        if (_background != null) _background.Background = Ui.Brush(_editor.Background);
+        if (_foreground != null) _foreground.Background = Ui.Brush(_editor.ForegroundColor);
+        if (_background != null) _background.Background = Ui.Brush(_editor.BackgroundColor);
     }
 }

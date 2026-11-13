@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -445,8 +445,8 @@ public static partial class EditorCommands
         R("color.swap", Strings.Toolbar_SwitchColors, "X", w => w.SwapColors(), keepsFloating: true, stopsPlayback: false);
         R("color.default", Strings.Toolbar_DefaultColors, "D", w =>
         {
-            w.Foreground = Argb.Black;
-            w.Background = Argb.White;
+            w.ForegroundColor = Argb.Black;
+            w.BackgroundColor = Argb.White;
         }, keepsFloating: true, stopsPlayback: false);
         R("tool.brushSmaller", Strings.Command_BrushSmaller, "OemOpenBrackets", w => ChangeBrushSize(w, -1), keepsFloating: true, stopsPlayback: false);
         R("tool.brushLarger", Strings.Command_BrushLarger, "OemCloseBrackets", w => ChangeBrushSize(w, 1), keepsFloating: true, stopsPlayback: false);

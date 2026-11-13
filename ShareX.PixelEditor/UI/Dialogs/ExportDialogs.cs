@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -260,8 +260,8 @@ public static class TextDialog
             {
                 // The built-in font is 7 pixels tall and grows in whole steps.
                 return PixelFont.IsBuiltIn(font())
-                    ? PixelFont.RenderBuiltIn(value, w.Foreground, Math.Max(1, size() / 8), font() == PixelFont.BuiltInMonoName)
-                    : PixelFont.RenderSystem(value, font(), size(), bold(), italic(), antialias(), w.Foreground);
+                    ? PixelFont.RenderBuiltIn(value, w.ForegroundColor, Math.Max(1, size() / 8), font() == PixelFont.BuiltInMonoName)
+                    : PixelFont.RenderSystem(value, font(), size(), bold(), italic(), antialias(), w.ForegroundColor);
             }
             catch (Exception)
             {

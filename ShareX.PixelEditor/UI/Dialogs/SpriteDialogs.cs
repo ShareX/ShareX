@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -63,7 +63,7 @@ public static class NewSpriteDialog
         settings.NewTransparent = transparent();
         settings.NewPalette = palette();
         int number = w.Views.Count(v => v.Sprite.FilePath == null) + 1;
-        Sprite sprite = Sprite.Create(width(), height(), string.Format(Strings.Sprite_Untitled, number), UniqueName(), transparent() ? 0 : w.Background);
+        Sprite sprite = Sprite.Create(width(), height(), string.Format(Strings.Sprite_Untitled, number), UniqueName(), transparent() ? 0 : w.BackgroundColor);
         sprite.Palette = [.. Palettes.Presets.First(p => p.Name == palette()).Colors];
         w.OpenSprite(sprite, Strings.History_New);
 

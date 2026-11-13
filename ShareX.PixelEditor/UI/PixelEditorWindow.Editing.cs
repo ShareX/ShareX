@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -71,7 +71,7 @@ public sealed partial class PixelEditorWindow
         PixelBuffer target = sprite.GetWritable(layer, sprite.ActiveFrame);
         return new Painter(target, original)
         {
-            Color = secondary ? Background : Foreground,
+            Color = secondary ? BackgroundColor : ForegroundColor,
             Clip = sprite.Selection,
             Symmetry = Settings.Symmetry,
             AxisX2 = _view.AxisX2,

@@ -1,4 +1,4 @@
-#region License Information (GPL v3)
+﻿#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -87,13 +87,13 @@ public static partial class EditorCommands
         }), HasPixelLayer);
         R("fx.replaceColor", Strings.Command_ReplaceColor, null, w => _ = RunEffect(w, Strings.Command_ReplaceColor, form =>
         {
-            Func<uint> from = form.Color(Strings.Dialog_From, w.Foreground), to = form.Color(Strings.Dialog_To, w.Background);
+            Func<uint> from = form.Color(Strings.Dialog_From, w.ForegroundColor), to = form.Color(Strings.Dialog_To, w.BackgroundColor);
             Func<int> tolerance = form.Slider(Strings.Options_Tolerance, 0, 255, 0);
             return (b, mask) => Effects.ReplaceColor(b, mask, from(), to(), tolerance());
         }), HasPixelLayer);
         R("fx.outline", Strings.Command_Outline, null, w => _ = RunEffect(w, Strings.Command_Outline, form =>
         {
-            Func<uint> color = form.Color(Strings.Dialog_Color, w.Foreground);
+            Func<uint> color = form.Color(Strings.Dialog_Color, w.ForegroundColor);
             Func<bool> inside = form.Check(Strings.Dialog_OutlineInside, false), corners = form.Check(Strings.Dialog_OutlineCorners, false);
             return (b, mask) => Effects.Outline(b, mask, color(), inside(), corners());
         }), HasPixelLayer);
@@ -211,15 +211,15 @@ public static partial class EditorCommands
         R("palette.addForeground", Strings.Palette_AddColor, null, w =>
         {
             Sprite sprite = w.Sprite!;
-            if (sprite.Palette.Contains(w.Foreground)) return;
-            sprite.Palette.Add(w.Foreground);
+            if (sprite.Palette.Contains(w.ForegroundColor)) return;
+            sprite.Palette.Add(w.ForegroundColor);
             w.Commit(Strings.Palette_AddColor);
         }, HasSprite);
         R("palette.removeForeground", Strings.Palette_RemoveColor, null, w =>
         {
-            int index = w.Sprite!.Palette.IndexOf(w.Foreground);
+            int index = w.Sprite!.Palette.IndexOf(w.ForegroundColor);
             if (index >= 0) RemovePaletteColor(w, index);
-        }, w => w.Sprite?.Palette.Contains(w.Foreground) == true);
+        }, w => w.Sprite?.Palette.Contains(w.ForegroundColor) == true);
         R("palette.load", Strings.Palette_Load, null, async w =>
         {
             IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Palette_Load.Replace("...", string.Empty), false, (Strings.File_Palettes, Palettes.FileExtensions));
@@ -269,7 +269,7 @@ public static partial class EditorCommands
             form.Note(Strings.Palette_Ramp_Note);
             Func<int> steps = form.Number(Strings.Palette_Ramp_Steps, 3, 32, 5);
             if (!await form.ShowAsync(Strings.Palette_Ramp.Replace("...", string.Empty), 340) || w.Sprite == null) return;
-            foreach (uint color in Palettes.Ramp(w.Foreground, w.Background, steps()))
+            foreach (uint color in Palettes.Ramp(w.ForegroundColor, w.BackgroundColor, steps()))
                 if (!w.Sprite.Palette.Contains(color)) w.Sprite.Palette.Add(color);
             w.Commit(Strings.Palette_Ramp.Replace("...", string.Empty));
         }, HasSprite);
@@ -334,8 +334,8 @@ public static partial class EditorCommands
                 }
             }
         }
-        if (w.Foreground == old) w.Foreground = color;
-        if (w.Background == old) w.Background = color;
+        if (w.ForegroundColor == old) w.ForegroundColor = color;
+        if (w.BackgroundColor == old) w.BackgroundColor = color;
         w.Commit(Strings.History_EditPaletteColor);
     }
 }
