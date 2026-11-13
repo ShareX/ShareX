@@ -7,10 +7,13 @@
   <summary>Screen capture, file sharing and productivity tool</summary>
   
   <developer id="io.github.jocost4">
-    <name>ShareX Team &amp; jocost4</name>
+    <name>jocost4 (Linux Port) &amp; ShareX Team (Original)</name>
   </developer>
 
   <description>
+    <p>
+      <em>Note: This is an unofficial, community-driven Linux port of ShareX by jocost4. Upstream ShareX is originally created and maintained by the ShareX Team (Jaex).</em>
+    </p>
     <p>
       ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations.
     </p>
@@ -51,15 +54,20 @@
   </provides>
 
   <releases>
+    <release version="22.4.0" date="2026-11-12">
+      <description>
+        <p>Updated with upstream ShareX v22.4.0 features and Linux fixes:</p>
+        <ul>
+          <li>Offline PaddleOCR ONNX engine support for text recognition</li>
+          <li>Real-time region capture coordinate &amp; size indicator</li>
+          <li>Automatic cleanup of portal screenshot temporary files in user pictures</li>
+          <li>Support for Wayland and X11 desktop environments via XDG Desktop Portals</li>
+        </ul>
+      </description>
+    </release>
     <release version="22.0.0" date="2026-10-23">
       <description>
-        <p>Comprehensive Linux port powered by Avalonia UI and .NET 10:</p>
-        <ul>
-          <li>Support for Wayland and X11 desktop environments</li>
-          <li>XDG Desktop Portal integration for screen capture</li>
-          <li>StatusNotifierItem support for system tray integration</li>
-          <li>Native packaging: Flatpak and Debian packages</li>
-        </ul>
+        <p>Initial Linux port powered by Avalonia UI and .NET 10.</p>
       </description>
     </release>
   </releases>
