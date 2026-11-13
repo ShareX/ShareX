@@ -91,8 +91,6 @@ namespace ShareX
             }
         }
 
-        // Removes the oldest finished tasks beyond the limit. Failed tasks stay so their errors are not missed,
-        // and queued or working tasks are never touched.
         private static void TrimTaskList()
         {
             if (!ApplicationState.Settings.TaskListLimitEnabled)
