@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -305,8 +305,7 @@ public sealed partial class PixelEditorWindow
         Sprite? sprite = Sprite;
         if (sprite == null || _view == null || sprite.Frames.Count < 2) return;
         CommitFloating();
-        Tag? tag = Settings.PlayTagOnly ? sprite.TagAt(sprite.ActiveFrame) : null;
-        _playSequence = tag != null ? SpriteOps.FrameSequence(tag.From, tag.To, tag.Direction) : SpriteOps.FrameSequence(0, sprite.Frames.Count - 1, TagDirection.Forward);
+        _playSequence = SpriteOps.PlaybackSequence(sprite, Settings.PlayTagOnly);
         _playIndex = Math.Max(0, _playSequence.IndexOf(sprite.ActiveFrame));
         _view.PlayFrame = _playSequence[_playIndex];
         _playTimer.Interval = TimeSpan.FromMilliseconds(Math.Max(10, sprite.Frames[_playSequence[_playIndex]].Duration));

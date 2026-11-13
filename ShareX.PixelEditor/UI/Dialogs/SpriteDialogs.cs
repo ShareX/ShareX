@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -270,6 +270,7 @@ public static class SpriteDialogs
         Func<int> from = form.Number(Strings.Dialog_FromFrame, 1, sprite.Frames.Count, (existing?.From ?? sprite.RangeFrom) + 1);
         Func<int> to = form.Number(Strings.Dialog_ToFrame, 1, sprite.Frames.Count, (existing?.To ?? sprite.RangeTo) + 1);
         Func<TagDirection> direction = form.Combo(Strings.Dialog_Direction, EnumNames.Directions, existing?.Direction ?? TagDirection.Forward);
+        Func<int> repeat = form.Number(Strings.Dialog_Repeat, 1, 99, Math.Max(1, existing?.Repeat ?? 1));
         Func<uint> color = form.Color(Strings.Dialog_Color, existing?.Color ?? TagColors[sprite.Tags.Count % TagColors.Length]);
         string title = existing != null ? Strings.Command_TagProperties.Replace("...", string.Empty) : Strings.Command_NewTag.Replace("...", string.Empty);
         if (!await form.ShowAsync(title, 380) || !ReferenceEquals(w.Sprite, sprite)) return;
@@ -278,6 +279,7 @@ public static class SpriteDialogs
         tag.From = Math.Min(from(), to()) - 1;
         tag.To = Math.Max(from(), to()) - 1;
         tag.Direction = direction();
+        tag.Repeat = repeat();
         tag.Color = Argb.Opaque(color());
         if (!sprite.Tags.Contains(tag)) sprite.Tags.Add(tag);
         sprite.Tags.Sort((a, b) => a.From != b.From ? a.From.CompareTo(b.From) : b.To.CompareTo(a.To));

@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -101,7 +101,8 @@ public static partial class EditorCommands
             SpriteOps.Duplicate(sprite, sprite.ActiveLayer!, string.Format(Strings.Layer_CopyName, sprite.ActiveLayer!.Name));
             w.Commit(Strings.Command_DuplicateLayer);
         }, w => w.Sprite?.ActiveLayer != null);
-        R("layer.importImage", Strings.Command_ImportImage, null, async w =>
+        R("layer.viaCopy", Strings.Command_LayerViaCopy, "Ctrl+Alt+J", w => LayerViaSelection(w, false), w => HasSelection(w) && w.Sprite!.ActiveLayer is PixelLayer);
+        R("layer.viaCut", Strings.Command_LayerViaCut, "Ctrl+Shift+J", w => LayerViaSelection(w, true), w => HasSelection(w) && w.Sprite!.ActiveLayer is PixelLayer);        R("layer.importImage", Strings.Command_ImportImage, null, async w =>
         {
             IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Command_ImportImage.Replace("...", string.Empty), false, (Strings.File_Images, SpriteFile.ImageExtensions));
             Sprite? sprite = w.Sprite;
@@ -404,4 +405,30 @@ public static partial class EditorCommands
         w.SetSelection(mask.IsEmpty ? null : mask);
         if (mask.IsEmpty) w.SetStatus(Strings.Status_ColorNotFound);
     }
-}
+
+    /// <summary>Copies, or moves, the selected pixels of the active cel to a new layer above it.</summary>
+    private static void LayerViaSelection(PixelEditorWindow w, bool cut)
+    {
+        Sprite sprite = w.Sprite!;
+        if (sprite.Selection is not SelectionMask selection || sprite.ActiveLayer is not PixelLayer source) return;
+        if (cut && w.EditableLayer() == null) return;
+        int frame = sprite.ActiveFrame;
+        PixelBuffer? buffer = sprite.GetBuffer(source, frame);
+        PixelLayer layer = sprite.CreatePixelLayer(UniqueLayerName(sprite, Strings.Layer_DefaultName));
+        sprite.AddLayer(layer, source);
+        if (buffer != null)
+        {
+            PixelBuffer copy = buffer.Clone();
+            for (int i = 0; i < copy.Pixels.Length; i++)
+                if (!selection.Data[i]) copy.Pixels[i] = 0;
+            sprite.SetBuffer(layer, frame, copy);
+            if (cut)
+            {
+                PixelBuffer target = sprite.GetWritable(source, frame);
+                for (int i = 0; i < target.Pixels.Length; i++)
+                    if (selection.Data[i]) target.Pixels[i] = 0;
+            }
+        }
+        sprite.ActiveLayer = layer;
+        w.Commit(cut ? Strings.Command_LayerViaCut : Strings.Command_LayerViaCopy);
+    }}

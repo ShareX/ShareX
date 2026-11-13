@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -53,6 +53,7 @@ public sealed partial class PixelEditorWindow : Window
     private readonly TextBlock _cursorInfo = new() { VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(10, 0), MinWidth = 150, FontSize = 11, Classes = { "dim" } };
     private readonly TextBox _zoomBox = new() { Width = 54, MinHeight = 18, Height = 18, Padding = new Thickness(4, 0), FontSize = 11, VerticalContentAlignment = VerticalAlignment.Center, BorderThickness = new Thickness(0), Background = Brushes.Transparent };
     private readonly Border _busy;
+    private readonly CommandPalette _palette;
     private readonly TextBlock _busyText = new() { Foreground = Brushes.White, FontSize = 14 };
     private readonly ProgressBar _busyProgress = new() { Width = 260, Minimum = 0, Maximum = 1 };
     private readonly ToolbarControl _toolbar;
@@ -164,7 +165,9 @@ public sealed partial class PixelEditorWindow : Window
         busyContent.Children.Add(_busyProgress);
         _busy = new Border { Background = new SolidColorBrush(Color.FromArgb(120, 0, 0, 0)), Child = busyContent, IsVisible = false };
         Grid shell = new();
+        _palette = new CommandPalette(this);
         shell.Children.Add(root);
+        shell.Children.Add(_palette);
         shell.Children.Add(_busy);
         Content = shell;
 
@@ -237,6 +240,9 @@ public sealed partial class PixelEditorWindow : Window
             (_dock.Get("palette") as PalettePanel)?.RefreshSelection();
         }
     }
+
+    /// <summary>Opens the search box that runs any command, tool or panel by name.</summary>
+    public void ShowCommandPalette() => _palette.Open();
 
     public void SwapColors()
     {

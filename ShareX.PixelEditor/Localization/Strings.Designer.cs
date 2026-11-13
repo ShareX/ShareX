@@ -2555,5 +2555,45 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Menu_Shift", resourceCulture);
             }
         }
+        public static string Command_CommandPalette {
+            get {
+                return ResourceManager.GetString("Command_CommandPalette", resourceCulture);
+            }
+        }
+        public static string CommandPalette_NoResults {
+            get {
+                return ResourceManager.GetString("CommandPalette_NoResults", resourceCulture);
+            }
+        }
+        public static string CommandPalette_Placeholder {
+            get {
+                return ResourceManager.GetString("CommandPalette_Placeholder", resourceCulture);
+            }
+        }
+        public static string CommandPalette_Tool {
+            get {
+                return ResourceManager.GetString("CommandPalette_Tool", resourceCulture);
+            }
+        }
+        public static string Dialog_Repeat {
+            get {
+                return ResourceManager.GetString("Dialog_Repeat", resourceCulture);
+            }
+        }
+        public static string Export_AsPlayed {
+            get {
+                return ResourceManager.GetString("Export_AsPlayed", resourceCulture);
+            }
+        }
+        public static string Command_LayerViaCopy {
+            get {
+                return ResourceManager.GetString("Command_LayerViaCopy", resourceCulture);
+            }
+        }
+        public static string Command_LayerViaCut {
+            get {
+                return ResourceManager.GetString("Command_LayerViaCut", resourceCulture);
+            }
+        }
     }
 }

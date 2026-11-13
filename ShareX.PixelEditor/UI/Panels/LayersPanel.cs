@@ -410,8 +410,7 @@ public sealed class PreviewPanel : EditorPanel
             _info.Text = string.Empty;
             return;
         }
-        Tag? tag = Editor.Settings.PlayTagOnly ? sprite.TagAt(sprite.ActiveFrame) : null;
-        _sequence = tag != null ? SpriteOps.FrameSequence(tag.From, tag.To, tag.Direction) : SpriteOps.FrameSequence(0, sprite.Frames.Count - 1, TagDirection.Forward);
+        _sequence = SpriteOps.PlaybackSequence(sprite, Editor.Settings.PlayTagOnly);
         if (_paused || sprite.Frames.Count < 2)
         {
             _timer.Stop();

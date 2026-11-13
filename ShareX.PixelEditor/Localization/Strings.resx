@@ -123,6 +123,9 @@
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Close All</value>
   </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Command Palette...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
@@ -254,6 +257,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Reference Layer</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>New Layer via Copy</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>New Layer via Cut</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Visible</value>
@@ -468,6 +477,15 @@
   <data name="Command_ZoomOut" xml:space="preserve">
     <value>Zoom Out</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>No matching commands</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Search commands, tools and panels</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Tools</value>
+  </data>
   <data name="Dialog_AllFrames" xml:space="preserve">
     <value>Apply to all frames</value>
   </data>
@@ -582,6 +600,9 @@
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Recolors every cel with the nearest colors of the current palette.</value>
   </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Nearest neighbor keeps pixels crisp. Pixel art scaling also smooths staircase edges when enlarging by 2× or more.</value>
   </data>
@@ -653,6 +674,9 @@
   </data>
   <data name="Export_Apng" xml:space="preserve">
     <value>Animated PNG</value>
+  </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animation as played</value>
   </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Export</value>
@@ -999,14 +1023,14 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Click where the text should go</value>
   </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerance</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>To transparent</value>
   </data>
   <data name="Options_ToTransparent_Tip" xml:space="preserve">
     <value>Fade the foreground color out instead of blending into the background color</value>
-  </data>
-  <data name="Options_Tolerance" xml:space="preserve">
-    <value>Tolerance</value>
   </data>
   <data name="Options_Transform" xml:space="preserve">
     <value>Transform</value>
@@ -1392,11 +1416,11 @@
   <data name="Tool_Ellipse" xml:space="preserve">
     <value>Ellipse</value>
   </data>
-  <data name="Tool_EllipseSelect" xml:space="preserve">
-    <value>Elliptical Marquee</value>
-  </data>
   <data name="Tool_Ellipse_Hint" xml:space="preserve">
     <value>Drag to draw an ellipse. Shift makes a circle, Ctrl draws from the center</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Elliptical Marquee</value>
   </data>
   <data name="Tool_Eraser" xml:space="preserve">
     <value>Eraser</value>
@@ -1458,14 +1482,14 @@
   <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
     <value>Click to add corners; double-click or press Enter to close the selection</value>
   </data>
-  <data name="Tool_RectSelect" xml:space="preserve">
-    <value>Rectangular Marquee</value>
-  </data>
   <data name="Tool_Rectangle" xml:space="preserve">
     <value>Rectangle</value>
   </data>
   <data name="Tool_Rectangle_Hint" xml:space="preserve">
     <value>Drag to draw a rectangle. Shift makes a square, Ctrl draws from the center</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Rectangular Marquee</value>
   </data>
   <data name="Tool_Select_Hint" xml:space="preserve">
     <value>Drag to select. Shift adds, Alt subtracts, Shift+Alt intersects</value>

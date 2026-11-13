@@ -229,6 +229,33 @@ public static class SpriteOps
         return frames;
     }
 
+    /// <summary>The frames the whole animation plays: untagged frames in order, and each tagged range in its direction and repeated as many times as its tag asks.</summary>
+    public static List<int> AnimationSequence(Sprite sprite)
+    {
+        List<int> frames = [];
+        for (int f = 0; f < sprite.Frames.Count;)
+        {
+            Tag? tag = sprite.Tags.Where(t => t.From == f && t.To >= t.From).OrderByDescending(t => t.To).FirstOrDefault();
+            if (tag == null)
+            {
+                frames.Add(f++);
+                continue;
+            }
+            int to = Math.Min(tag.To, sprite.Frames.Count - 1);
+            List<int> pass = FrameSequence(f, to, tag.Direction);
+            for (int i = 0; i < Math.Max(1, tag.Repeat); i++) frames.AddRange(pass);
+            f = to + 1;
+        }
+        return frames;
+    }
+
+    /// <summary>The frames playback cycles through: the tag under the active frame when only tags play, otherwise the whole animation.</summary>
+    public static List<int> PlaybackSequence(Sprite sprite, bool tagOnly)
+    {
+        Tag? tag = tagOnly ? sprite.TagAt(sprite.ActiveFrame) : null;
+        return tag != null ? FrameSequence(tag.From, Math.Min(tag.To, sprite.Frames.Count - 1), tag.Direction) : AnimationSequence(sprite);
+    }
+
     /// <summary>Makes a cel independent of the cels it was linked to.</summary>
     public static void Unlink(Sprite sprite, PixelLayer layer, int frame)
     {

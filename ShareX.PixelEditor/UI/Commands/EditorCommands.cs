@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -92,7 +92,7 @@ public static partial class EditorCommands
                 C("sprite.rotateCW"), C("sprite.rotateCCW"), C("sprite.rotate180"), C("sprite.flipHorizontal"), C("sprite.flipVertical"), S,
                 C("sprite.reduceColors")),
             MenuNode.Sub(Strings.Menu_Layer,
-                C("layer.new"), C("layer.newGroup"), C("layer.duplicate"), C("layer.importImage"), C("layer.delete"), S,
+                C("layer.new"), C("layer.newGroup"), C("layer.duplicate"), C("layer.viaCopy"), C("layer.viaCut"), C("layer.importImage"), C("layer.delete"), S,
                 C("layer.properties"), C("layer.visible"), C("layer.lock"), C("layer.reference"), S,
                 C("layer.mergeDown"), C("layer.flatten"), S,
                 C("layer.moveUp"), C("layer.moveDown"), C("layer.moveToTop"), C("layer.moveToBottom"), S,
@@ -120,7 +120,7 @@ public static partial class EditorCommands
                 new MenuNode { Header = Strings.Menu_Panels, Dynamic = PanelItems },
                 C("view.timeline"), C("view.toolbar"), C("view.options"), C("view.toolbarColumns"), C("view.resetPanels"), S,
                 C("view.fullScreen")),
-            MenuNode.Sub(Strings.Menu_Help, C("edit.shortcuts"))
+            MenuNode.Sub(Strings.Menu_Help, C("help.commandPalette"), C("edit.shortcuts"))
         ];
     }
 
@@ -441,6 +441,7 @@ public static partial class EditorCommands
         Shift("edit.shiftUp", Strings.Command_ShiftUp, "Ctrl+Shift+Up", 0, -1);
         Shift("edit.shiftDown", Strings.Command_ShiftDown, "Ctrl+Shift+Down", 0, 1);
         R("edit.preferences", Strings.Command_Preferences, "Ctrl+K", w => _ = PreferencesDialog.ShowAsync(w), stopsPlayback: false);
+        R("help.commandPalette", Strings.Command_CommandPalette, "Ctrl+Shift+P", w => w.ShowCommandPalette(), stopsPlayback: false, keepsFloating: true);
         R("edit.shortcuts", Strings.Command_Shortcuts, "F1", w => _ = ShortcutsDialog.ShowAsync(w), stopsPlayback: false);
         R("color.swap", Strings.Toolbar_SwitchColors, "X", w => w.SwapColors(), keepsFloating: true, stopsPlayback: false);
         R("color.default", Strings.Toolbar_DefaultColors, "D", w =>

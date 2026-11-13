@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -34,9 +34,10 @@ namespace ShareX.PixelEditor.UI.Dialogs;
 /// <summary>The frame ranges offered by the export dialogs: all frames, the selection, the current frame or a tag.</summary>
 internal static class FrameChoices
 {
-    public static List<(string Text, int Value)> For(Sprite sprite)
+    public static List<(string Text, int Value)> For(Sprite sprite, bool asPlayed = true)
     {
         List<(string, int)> items = [(Strings.Export_AllFrames, -1), (Strings.Export_SelectedFrames, -2), (Strings.Export_CurrentFrame, -3)];
+        if (asPlayed && sprite.Tags.Count > 0) items.Insert(1, (Strings.Export_AsPlayed, -4));
         for (int i = 0; i < sprite.Tags.Count; i++) items.Add((string.Format(Strings.Export_Tag, sprite.Tags[i].Name), i));
         return items;
     }
@@ -46,6 +47,7 @@ internal static class FrameChoices
         -1 => SpriteOps.FrameSequence(0, sprite.Frames.Count - 1, TagDirection.Forward),
         -2 => SpriteOps.FrameSequence(sprite.RangeFrom, sprite.RangeTo, TagDirection.Forward),
         -3 => [sprite.ActiveFrame],
+        -4 => SpriteOps.AnimationSequence(sprite),
         _ when choice < sprite.Tags.Count => SpriteOps.FrameSequence(sprite.Tags[choice].From, sprite.Tags[choice].To, sprite.Tags[choice].Direction),
         _ => [sprite.ActiveFrame]
     };
@@ -155,7 +157,7 @@ public static class SheetDialogs
         Sprite sprite = w.Sprite!;
         EditorSettings settings = w.Settings;
         Form form = new(w);
-        Func<int> frames = form.Combo(Strings.Export_Frames, FrameChoices.For(sprite), FrameChoices.Default(sprite));
+        Func<int> frames = form.Combo(Strings.Export_Frames, FrameChoices.For(sprite, false), FrameChoices.Default(sprite));
         Func<SheetLayout> layout = form.Combo(Strings.Sheet_Layout, EnumNames.SheetLayouts, settings.SheetLayout);
         Func<int> columns = form.Number(Strings.Sheet_Columns, 1, 256, settings.SheetColumns);
         Func<int> padding = form.Number(Strings.Sheet_Padding, 0, 256, settings.SheetPadding);

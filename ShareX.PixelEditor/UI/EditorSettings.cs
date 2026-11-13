@@ -114,6 +114,9 @@ public sealed class EditorSettings
     public bool NewTransparent { get; set; } = true;
     public string NewPalette { get; set; } = string.Empty;
     public List<string> RecentFiles { get; set; } = [];
+
+    /// <summary>Command palette entries run most recently, newest first.</summary>
+    public List<string> RecentCommands { get; set; } = [];
     public int HistoryStates { get; set; } = 100;
     public string ExportFormat { get; set; } = ".png";
     public int ExportScale { get; set; } = 1;
@@ -162,6 +165,7 @@ public sealed class EditorSettings
     private EditorSettings Normalize()
     {
         RecentFiles ??= [];
+        RecentCommands ??= [];
         Shortcuts ??= [];
         Panels ??= [];
         WindowState ??= new();

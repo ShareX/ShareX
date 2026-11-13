@@ -334,7 +334,14 @@ public sealed partial class PixelEditorWindow
         Button close = CreateCaptionButton(Strings.Command_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
         close.Classes.Add("close");
         close.Click += (_, _) => Close();
+        string? searchGesture = CommandRegistry.GetGesture("help.commandPalette", Settings);
+        Button search = Ui.IconButton(PixelEditorIcons.Zoom, Strings.Command_CommandPalette.Replace("...", string.Empty) + (searchGesture != null ? $" ({searchGesture})" : string.Empty), ShowCommandPalette, 14);
+        search.Focusable = false;
+        search.VerticalAlignment = VerticalAlignment.Center;
+        search.Margin = new Thickness(0, 0, 6, 0);
+        WindowDecorationProperties.SetElementRole(search, WindowDecorationsElementRole.User);
         StackPanel right = new() { Orientation = Orientation.Horizontal };
+        right.Children.Add(search);
         right.Children.Add(minimize);
         right.Children.Add(maximize);
         right.Children.Add(close);
