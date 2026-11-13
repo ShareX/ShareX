@@ -1303,6 +1303,45 @@
   <data name="DebugLogWindow_UploadPrompt" xml:space="preserve">
     <value>อัปโหลด บันทึกการดีบัก?</value>
   </data>
+  <data name="DisplayDiagnosticsWindow_Copied" xml:space="preserve">
+    <value>คัดลอกรายงานไปยังคลิปบอร์ดแล้ว</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_CopyToClipboard" xml:space="preserve">
+    <value>คัดลอกไปยังคลิปบอร์ด</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Description" xml:space="preserve">
+    <value>แนบรายงานนี้เมื่อแจ้งปัญหาเกี่ยวกับการปรับขนาด จอภาพหลายจอ หรือการจับภาพผิดตำแหน่ง</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_DisplayLayout" xml:space="preserve">
+    <value>การจัดวางจอแสดงผล</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_MouseCursor" xml:space="preserve">
+    <value>เคอร์เซอร์เมาส์</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_PrimaryMonitor" xml:space="preserve">
+    <value>จอภาพหลัก</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Refresh" xml:space="preserve">
+    <value>รีเฟรช</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_ReservedArea" xml:space="preserve">
+    <value>แถบงานหรือแถบแอป</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveAs" xml:space="preserve">
+    <value>บันทึกเป็น .txt...</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_SaveDialogTitle" xml:space="preserve">
+    <value>บันทึกการวินิจฉัยจอแสดงผล</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Saved0" xml:space="preserve">
+    <value>บันทึกรายงานไปที่ {0} แล้ว</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_TextFile" xml:space="preserve">
+    <value>ไฟล์ข้อความ</value>
+  </data>
+  <data name="DisplayDiagnosticsWindow_Title" xml:space="preserve">
+    <value>ShareX - การวินิจฉัยจอแสดงผล</value>
+  </data>
   <data name="DragDropUploadWindow_DropHere" xml:space="preserve">
     <value>วาง ที่นี่</value>
   </data>
@@ -1564,6 +1603,9 @@
   </data>
   <data name="MainMenuBuilder_Discord" xml:space="preserve">
     <value>Discord...</value>
+  </data>
+  <data name="MainMenuBuilder_DisplayDiagnostics" xml:space="preserve">
+    <value>การวินิจฉัยจอแสดงผล...</value>
   </data>
   <data name="MainMenuBuilder_Donate" xml:space="preserve">
     <value>บริจาค...</value>

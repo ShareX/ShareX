@@ -211,6 +211,7 @@ public sealed class RegionCaptureTransparentWindow : Window
         ApplyToolWindowStyle();
         ApplyPixelSize();
         Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
+        WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds);
         DisableWindowTransitions();
         Cursor = CursorAssetLoader.GetCrosshairCursor(GetScaling());
 

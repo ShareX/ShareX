@@ -565,6 +565,7 @@ internal sealed class MainMenuBuilder
         return new List<MainMenuEntry>
         {
             Item(Strings.MainMenuBuilder_ShowDebugLog, AppIcons.FileText, () => Run(MainFormCommand.DebugLog)),
+            Item(Strings.MainMenuBuilder_DisplayDiagnostics, AppIcons.Monitor, () => Run(MainFormCommand.DisplayDiagnostics)),
             Item(Strings.MainMenuBuilder_TestImageUpload, AppIcons.ImageUpload, () => Run(MainFormCommand.TestImageUpload), uploadsEnabled),
             Item(Strings.MainMenuBuilder_TestTextUpload, AppIcons.FileUpload, () => Run(MainFormCommand.TestTextUpload), uploadsEnabled),
             Item(Strings.MainMenuBuilder_TestFileUpload, AppIcons.Upload, () => Run(MainFormCommand.TestFileUpload), uploadsEnabled),

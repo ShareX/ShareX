@@ -580,6 +580,9 @@ public partial class RegionCaptureWindow : Window
                 UpdatePixelTransforms();
             }
 
+            WindowGeometryLog.Record(this, "Region capture", _request.ScreenBounds,
+                new System.Drawing.Size(_imageWidth, _imageHeight));
+
             if (_request.CursorBitmap != null)
             {
                 ActivateRegionTool();
