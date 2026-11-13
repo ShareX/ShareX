@@ -221,27 +221,35 @@ public static class LinuxCaptureHelper
                 catch { }
             }
 
-            monitor = new Process();
-            monitor.StartInfo = new ProcessStartInfo("stdbuf", "-oL busctl --user monitor org.freedesktop.portal.Desktop")
+            try
             {
-                RedirectStandardOutput = true,
-                UseShellExecute = false,
-                CreateNoWindow = true
-            };
-            monitor.OutputDataReceived += (s, e) =>
-            {
-                if (!string.IsNullOrEmpty(e.Data))
+                monitor = new Process();
+                monitor.StartInfo = new ProcessStartInfo("stdbuf", "-oL busctl --user monitor org.freedesktop.portal.Desktop")
                 {
-                    Match m = uriRegex.Match(e.Data);
-                    if (m.Success)
+                    RedirectStandardOutput = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+                monitor.OutputDataReceived += (s, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e.Data))
                     {
-                        foundPath = Uri.UnescapeDataString(m.Groups[1].Value);
-                        waitHandle.Set();
+                        Match m = uriRegex.Match(e.Data);
+                        if (m.Success)
+                        {
+                            foundPath = Uri.UnescapeDataString(m.Groups[1].Value);
+                            waitHandle.Set();
+                        }
                     }
-                }
-            };
-            monitor.Start();
-            monitor.BeginOutputReadLine();
+                };
+                monitor.Start();
+                monitor.BeginOutputReadLine();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Optional busctl monitor not available: {ex.Message}");
+                monitor = null;
+            }
 
             using (Process caller = new Process())
             {

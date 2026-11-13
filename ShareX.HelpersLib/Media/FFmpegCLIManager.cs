@@ -86,7 +86,7 @@ namespace ShareX.HelpersLib
 
         protected bool Run(string path, string args)
         {
-            if (!string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
+            if (OperatingSystem.IsWindows() && !string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
