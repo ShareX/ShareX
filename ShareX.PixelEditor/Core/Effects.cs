@@ -221,6 +221,17 @@ public static class Effects
     /// </summary>
     public static void DrawTransformed(PixelBuffer target, PixelBuffer source, bool[]? sourceMask, double x, double y, double width, double height, double angleDegrees, bool flipX, bool flipY, bool[]? covered)
     {
+        DrawTransformed(target, source, sourceMask, x, y, width, height, angleDegrees, flipX, flipY, covered, null, null);
+    }
+
+    /// <summary>Like the overload without a sample image, but reads the pixels from <paramref name="sample"/>, an enlarged copy of the source that gives smoother edges.</summary>
+    public static void DrawTransformed(PixelBuffer target, PixelBuffer source, bool[]? sourceMask, double x, double y, double width, double height, double angleDegrees, bool flipX, bool flipY, bool[]? covered, PixelBuffer? sample, bool[]? sampleMask)
+    {
+        if (sample != null)
+        {
+            source = sample;
+            sourceMask = sampleMask;
+        }
         if (width < 0.5 || height < 0.5) return;
         double cx = x + width / 2, cy = y + height / 2, radians = angleDegrees * Math.PI / 180, cos = Math.Cos(radians), sin = Math.Sin(radians);
         double hw = width / 2, hh = height / 2;
@@ -246,5 +257,29 @@ public static class Effects
                 if (c >> 24 != 0) target.Pixels[i] = Argb.Over(target.Pixels[i], c);
             }
         }
+    }
+
+    /// <summary>
+    /// Enlarges an image with the edge-smoothing pixel art scaler as far as memory allows (up to 8×), for rotating it with
+    /// smoother edges than nearest neighbor sampling gives. Pixels outside the mask are cleared first so they do not bleed in.
+    /// </summary>
+    public static (PixelBuffer Image, bool[]? Mask) UpscaleForRotation(PixelBuffer source, bool[]? mask)
+    {
+        const long Budget = 4_000_000;
+        int factor = 1;
+        while (factor < 8 && (long)source.Width * source.Height * (factor * 2) * (factor * 2) <= Budget) factor *= 2;
+        PixelBuffer image = source.Clone();
+        if (mask != null)
+        {
+            for (int i = 0; i < image.Pixels.Length; i++)
+                if (!mask[i]) image.Pixels[i] = 0;
+        }
+        for (int f = 1; f < factor; f *= 2) image = Scale2x(image);
+        if (mask == null || factor == 1) return (image, mask);
+        bool[] scaled = new bool[image.Width * image.Height];
+        for (int y = 0; y < image.Height; y++)
+            for (int x = 0; x < image.Width; x++)
+                scaled[y * image.Width + x] = mask[y / factor * source.Width + x / factor];
+        return (image, scaled);
     }
 }

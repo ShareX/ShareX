@@ -2635,5 +2635,15 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("History_MoveCels", resourceCulture);
             }
         }
+        public static string Options_SmoothRotation {
+            get {
+                return ResourceManager.GetString("Options_SmoothRotation", resourceCulture);
+            }
+        }
+        public static string Options_SmoothRotationTip {
+            get {
+                return ResourceManager.GetString("Options_SmoothRotationTip", resourceCulture);
+            }
+        }
     }
 }

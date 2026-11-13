@@ -1029,6 +1029,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Drag to create a slice. Click a slice to select it, double-click to rename it.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Smooth rotation</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Keeps the lines of rotated pixel art clean instead of jagged</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Square tip</value>
   </data>

@@ -65,6 +65,9 @@ public sealed class Floating
 
     public required string HistoryName { get; init; }
 
+    /// <summary>An enlarged copy of the source used for smooth rotation, made when first needed.</summary>
+    public (PixelBuffer Image, bool[]? Mask)? Smooth { get; set; }
+
     public double CenterX => X + Width / 2;
 
     public double CenterY => Y + Height / 2;
@@ -310,6 +313,11 @@ public sealed class MoveTool : ToolBase
             Change(c => c.Angle = (c.Angle + 90) % 360);
             Editor.RefreshOptions();
         });
+        options.Check(Strings.Options_SmoothRotation, Settings.SmoothRotation, v =>
+        {
+            Settings.SmoothRotation = v;
+            Editor.RenderFloating();
+        }, Strings.Options_SmoothRotationTip);
         options.Separator();
         options.Button(Strings.Options_Apply, Editor.CommitFloating, true);
         options.Button(Strings.Options_Cancel, Editor.CancelFloating);

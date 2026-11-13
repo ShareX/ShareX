@@ -238,7 +238,10 @@ public sealed partial class PixelEditorWindow
         PixelBuffer target = sprite.GetWritable(f.Layer, f.Frame);
         Array.Copy(f.Base.Pixels, target.Pixels, target.Pixels.Length);
         bool[]? covered = f.Selects ? new bool[sprite.Width * sprite.Height] : null;
-        Effects.DrawTransformed(target, f.Source, f.SourceMask, f.X, f.Y, f.Width, f.Height, f.Angle, f.FlipX, f.FlipY, covered);
+        // Rotations off the right angles read from an enlarged, edge-smoothed copy so lines stay clean.
+        bool smooth = Settings.SmoothRotation && Math.Abs(f.Angle % 90) > 0.01;
+        if (smooth) f.Smooth ??= Effects.UpscaleForRotation(f.Source, f.SourceMask);
+        Effects.DrawTransformed(target, f.Source, f.SourceMask, f.X, f.Y, f.Width, f.Height, f.Angle, f.FlipX, f.FlipY, covered, smooth ? f.Smooth!.Value.Image : null, smooth ? f.Smooth!.Value.Mask : null);
         if (covered != null)
         {
             SelectionMask mask = new(sprite.Width, sprite.Height, covered);

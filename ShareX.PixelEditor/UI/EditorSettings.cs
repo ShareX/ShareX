@@ -115,6 +115,9 @@ public sealed class EditorSettings
     public string NewPalette { get; set; } = string.Empty;
     public List<string> RecentFiles { get; set; } = [];
 
+    /// <summary>Rotating moved pixels by angles other than right angles smooths their edges.</summary>
+    public bool SmoothRotation { get; set; } = true;
+
     /// <summary>Minutes between recovery copies of sprites with unsaved changes; 0 turns them off.</summary>
     public int AutoSaveMinutes { get; set; } = 2;
 
