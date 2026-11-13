@@ -128,6 +128,8 @@ public sealed class EditorSettings
     public int NewWidth { get; set; } = 32;
     public int NewHeight { get; set; } = 32;
     public bool NewTransparent { get; set; } = true;
+
+    public int NewFrames { get; set; } = 1;
     public string NewPalette { get; set; } = string.Empty;
     public List<string> RecentFiles { get; set; } = [];
 

@@ -54,6 +54,7 @@ public static class NewSpriteDialog
             presets.Children.Add(button);
         }
         form.AddRow(Strings.Dialog_Presets, presets);
+        Func<int> frames = form.Number(Strings.Export_Frames, 1, 999, Math.Clamp(settings.NewFrames, 1, 999));
         Func<bool> transparent = form.Check(Strings.Dialog_TransparentBackground, settings.NewTransparent);
         List<(string, string)> palettes = Palettes.Presets.Select(p => ($"{p.Name} ({p.Colors.Length})", p.Name)).ToList();
         Func<string> palette = form.Combo(Strings.Panel_Palette, palettes, palettes.Any(p => p.Item2 == settings.NewPalette) ? settings.NewPalette : palettes[0].Item2);
@@ -62,9 +63,13 @@ public static class NewSpriteDialog
         settings.NewHeight = height();
         settings.NewTransparent = transparent();
         settings.NewPalette = palette();
+        settings.NewFrames = frames();
         int number = w.Views.Count(v => v.Sprite.FilePath == null) + 1;
         Sprite sprite = Sprite.Create(width(), height(), string.Format(Strings.Sprite_Untitled, number), UniqueName(), transparent() ? 0 : w.BackgroundColor);
         sprite.Palette = [.. Palettes.Presets.First(p => p.Name == palette()).Colors];
+        // Extra frames start as copies of the first, so a filled background carries over.
+        for (int i = 1; i < frames(); i++) sprite.InsertFrame(i, 0);
+        sprite.SetActiveFrame(0);
         w.OpenSprite(sprite, Strings.History_New);
 
         static string UniqueName() => $"{Strings.Layer_DefaultName} 1";
