@@ -1983,6 +1983,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         foreach (WorkerTask task in GetSelectedItems().Select(x => x.Task).ToArray())
         {
+            TaskManager.RecentManager.Remove(task);
             TaskManager.Remove(task);
         }
     }
