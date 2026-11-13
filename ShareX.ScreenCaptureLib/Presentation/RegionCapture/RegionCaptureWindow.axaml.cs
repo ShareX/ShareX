@@ -1774,10 +1774,11 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Vector delta = point - _pressPoint;
-        Rect resized = SelectionResizeNode.Resize(_regionOverlay.SelectionRectangle, _resizeNode.Value, delta);
+        // Like ShareX 21, resize from the selection the drag started with so the dragged edge stays under the cursor.
+        Rect start = _interactionStartRegion.Bounds;
+        Vector delta = point - SelectionResizeNode.GetPosition(start, _resizeNode.Value);
+        Rect resized = SelectionResizeNode.Resize(start, _resizeNode.Value, delta);
         SetSelection(resized, null);
-        _pressPoint = point;
     }
 
     private void UpdateHud(Point imagePoint)
