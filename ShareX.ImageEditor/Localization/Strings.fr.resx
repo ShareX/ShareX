@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Couleur</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Copier le chemin du fichier</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Rayon des coins</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Enregistrer</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Enregistrer et copier le chemin du fichier</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Enregistrer sous...</value>
@@ -383,6 +389,9 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Coin arrondi</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Enregistrer l’image et copier le chemin du fichier</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Enregistrer l’image sous</value>
@@ -1227,6 +1236,9 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Continuer (Entrée)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Chemin du fichier copié dans le presse-papiers.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Chemin du fichier : {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Image tournée de {0} degrés.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Image enregistrée, chemin du fichier copié dans le presse-papiers.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Image enregistrée dans un fichier.</value>

@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>צבע</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>העתקת נתיב הקובץ</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>רדיוס פינה</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>שמור</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>שמירה והעתקת נתיב הקובץ</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>שמירה בשם...</value>
@@ -383,6 +389,9 @@
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>פינה מעוגלת</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>שמירת התמונה והעתקת נתיב הקובץ</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>שמירת תמונה בשם</value>
@@ -1227,6 +1236,9 @@
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>המשך (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>נתיב הקובץ הועתק ללוח.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>נתיב הקובץ: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>התמונה סובבה {0} מעלות.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>התמונה נשמרה ונתיב הקובץ הועתק ללוח.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>התמונה נשמרה בקובץ.</value>

@@ -121,6 +121,8 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     ICommand NewFromScreenshotFullscreenCommand { get; }
     ICommand SaveCommand { get; }
     ICommand SaveAsCommand { get; }
+    ICommand SaveAndCopyFilePathCommand { get; }
+    ICommand CopyFilePathCommand { get; }
     ICommand ExitEditorCommand { get; }
     ICommand OpenRecentImageCommand { get; }
     void SelectTool(EditorTool tool);

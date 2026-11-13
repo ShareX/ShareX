@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Copiar ruta del archivo</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Radio de las esquinas</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Guardar</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Guardar y copiar ruta del archivo</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Guardar como...</value>
@@ -383,6 +389,9 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Esquina redondeada</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Guardar imagen y copiar ruta del archivo</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Guardar imagen como</value>
@@ -1227,6 +1236,9 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Continuar (Entrar)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Ruta del archivo copiada al portapapeles.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Ruta del archivo: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Imagen girada {0} grados.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Imagen guardada, ruta del archivo copiada al portapapeles.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Imagen guardada en archivo.</value>

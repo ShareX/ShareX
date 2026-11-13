@@ -2323,6 +2323,21 @@ namespace ShareX.ImageEditor.Presentation.Views
             await clipboard.SetDataAsync(data);
         }
 
+        private async Task OnFilePathCopyRequested(string filePath)
+        {
+            IClipboard? clipboard = TopLevel.GetTopLevel(this)?.Clipboard;
+            if (clipboard == null) return;
+
+            try
+            {
+                await clipboard.SetTextAsync(filePath);
+            }
+            catch (Exception ex)
+            {
+                EditorServices.ReportError(nameof(EditorView), "Failed to copy file path to clipboard.", ex);
+            }
+        }
+
         private Task<string?> OnSaveRequested()
         {
             if (DataContext is not MainViewModel vm) return Task.FromResult<string?>(null);

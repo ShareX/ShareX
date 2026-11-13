@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Szín</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Fájl elérési útjának másolása</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Saroksugár</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Mentés</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Mentés és a fájl elérési útjának másolása</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Mentés másként...</value>
@@ -383,6 +389,9 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Lekerekített sarok</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Kép mentése és a fájl elérési útjának másolása</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Kép mentése másként</value>
@@ -1227,6 +1236,9 @@ A vágólap nem tartalmaz képet.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Folytatás (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>A fájl elérési útja a vágólapra másolva.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Fájl elérési útja: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ A vágólap nem tartalmaz képet.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Kép {0} fokkal elforgatva.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Kép mentve, a fájl elérési útja a vágólapra másolva.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Kép fájlba mentve.</value>

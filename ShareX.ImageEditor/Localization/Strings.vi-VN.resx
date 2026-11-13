@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Màu</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Sao chép đường dẫn tệp</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Bán kính góc</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Lưu</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Lưu và sao chép đường dẫn tệp</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Lưu thành...</value>
@@ -383,6 +389,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Góc bo tròn</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Lưu hình ảnh và sao chép đường dẫn tệp</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Lưu ảnh thành</value>
@@ -1227,6 +1236,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Tiếp tục (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Đã sao chép đường dẫn tệp vào bảng tạm.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Đường dẫn tệp: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Đã xoay hình ảnh {0} độ.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Đã lưu hình ảnh và sao chép đường dẫn tệp vào bảng tạm.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Đã lưu hình ảnh vào tệp.</value>

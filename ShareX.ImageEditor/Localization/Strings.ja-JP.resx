@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>色</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>ファイルパスをコピー</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>角の半径</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>保存</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>保存してファイルパスをコピー</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>名前を付けて保存...</value>
@@ -383,6 +389,9 @@
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>角を丸める</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>画像を保存してファイルパスをコピー</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>名前を付けて画像を保存</value>
@@ -1227,6 +1236,9 @@
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>続行 (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>ファイルパスをクリップボードにコピーしました。</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>ファイルパス: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>画像を {0} 度回転しました。</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>画像を保存し、ファイルパスをクリップボードにコピーしました。</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>画像をファイルに保存しました。</value>

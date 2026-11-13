@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Kolor</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Kopiuj ścieżkę pliku</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Promień narożnika</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Zapisz</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Zapisz i skopiuj ścieżkę pliku</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Zapisz jako...</value>
@@ -383,6 +389,9 @@ Schowek nie zawiera obrazu.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Zaokrąglony narożnik</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Zapisz obraz i skopiuj ścieżkę pliku</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Zapisz obraz jako</value>
@@ -1227,6 +1236,9 @@ Schowek nie zawiera obrazu.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Kontynuuj (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Skopiowano ścieżkę pliku do schowka.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Ścieżka pliku: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Schowek nie zawiera obrazu.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Obrócono obraz o {0} stopni.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Zapisano obraz i skopiowano ścieżkę pliku do schowka.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Zapisano obraz do pliku.</value>

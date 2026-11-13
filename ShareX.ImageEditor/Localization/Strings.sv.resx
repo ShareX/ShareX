@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Färg</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Kopiera filsökväg</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Hörnradie</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Spara</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Spara och kopiera filsökväg</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Spara som...</value>
@@ -383,6 +389,9 @@ Urklipp innehåller ingen bild.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Rundat hörn</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Spara bild och kopiera filsökväg</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Spara bild som</value>
@@ -1227,6 +1236,9 @@ Urklipp innehåller ingen bild.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Fortsätt (Retur)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Filsökvägen kopierades till Urklipp.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Filsökväg: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Urklipp innehåller ingen bild.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Bilden roterades {0} grader.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Bilden sparades och filsökvägen kopierades till Urklipp.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Bilden sparades till en fil.</value>

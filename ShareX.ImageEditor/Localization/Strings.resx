@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Color</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Copy file path</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Corner radius</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Save and copy file path</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Save as...</value>
@@ -383,6 +389,9 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Rounded Corner</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Save image and copy file path</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Save image as</value>
@@ -1229,6 +1238,9 @@ Clipboard does not contain an image.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Continue (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>File path copied to clipboard.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>File path: {0}</value>
   </data>
@@ -1285,6 +1297,9 @@ Clipboard does not contain an image.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Image rotated by {0} degrees.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Image saved, file path copied to clipboard.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Image saved to file.</value>
