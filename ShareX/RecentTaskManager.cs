@@ -123,6 +123,24 @@ namespace ShareX
             }
         }
 
+        public void Remove(WorkerTask task)
+        {
+            string filePath = task.Info.FilePath;
+            string url = task.Info.Result?.URL;
+
+            lock (itemsLock)
+            {
+                Tasks = new Queue<RecentTask>(Tasks.Where(x => x.FilePath != filePath || x.URL != url));
+
+                if (ApplicationState.Settings.RecentTasksSave)
+                {
+                    ApplicationState.Settings.RecentTasks = Tasks.ToArray();
+                }
+
+                UpdateTrayMenu();
+            }
+        }
+
         public void Clear()
         {
             lock (itemsLock)
