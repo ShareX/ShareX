@@ -53,7 +53,7 @@ namespace ShareX
 
                 string message = $"{Strings.ImageData_Write_Error_Message}\r\n\"{filePath}\"";
 
-                if (e is UnauthorizedAccessException || e is FileNotFoundException)
+                if (FileHelpers.IsAccessBlocked(e))
                 {
                     message += "\r\n\r\n" + Strings.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX;
                 }

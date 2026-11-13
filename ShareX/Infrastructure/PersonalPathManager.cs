@@ -163,6 +163,13 @@ internal static class PersonalPathManager
             }
 
             message.AppendLine();
+
+            if (FileHelpers.IsAccessBlocked(exception))
+            {
+                message.AppendLine(Strings.YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX);
+                message.AppendLine();
+            }
+
             message.Append(exception);
             MessageBox.Show(message.ToString(), $"{ApplicationInfo.Name} - {Strings.Error}",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
