@@ -1107,7 +1107,7 @@ namespace ShareX
         private void StartHistoryOCR()
         {
             if (Image != null && Info.DataType == EDataType.Image && ApplicationState.Settings.HistorySaveTasks &&
-                Info.TaskSettings.CaptureSettingsReference.OCROptions.SaveTextToHistory)
+                ApplicationState.Settings.HistorySaveOCRText)
             {
                 Info.HistoryOCRTask = TaskHelpers.RecognizeTextForHistoryAsync(Image.Copy());
             }

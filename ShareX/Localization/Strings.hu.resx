@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Mentés</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>A felvételeken lévő szöveg kereshetővé tétele az előzményekben</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Mentés recent tasks</value>
   </data>
@@ -2995,9 +2998,6 @@ Do you want to megszakítás the active képernyőfelvétel?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Mentés</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>A felvételeken lévő szöveg kereshetővé tétele az előzményekben</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Képernyő színválasztó</value>

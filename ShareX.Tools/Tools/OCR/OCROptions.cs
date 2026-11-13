@@ -34,8 +34,6 @@ public sealed class OCROptions
     public bool SeparateParagraphs { get; set; } = true;
     public bool Silent { get; set; }
     public bool AutoCopy { get; set; }
-    // Reads the text of each captured image in the background and stores it with the history item, so history search finds it.
-    public bool SaveTextToHistory { get; set; }
     public List<OCRServiceLinkOption> ServiceLinks { get; set; } = DefaultServiceLinks;
     public bool CloseWindowAfterOpeningServiceLink { get; set; }
     public int SelectedServiceLink { get; set; }

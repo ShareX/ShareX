@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Gem</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Gør tekst i optagelser søgbar i historikken</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Gem seneste opgaver</value>
   </data>
@@ -2995,9 +2998,6 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Gem</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>Gør tekst i optagelser søgbar i historikken</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Skærmfarvevælger</value>

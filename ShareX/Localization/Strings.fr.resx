@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Enregistrer</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Rendre le texte des captures consultable dans l'historique</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Enregistrer les tâches récentes</value>
   </data>
@@ -2995,9 +2998,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Enregistrer</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>Rendre le texte des captures consultable dans l'historique</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Sélecteur de couleur d’écran</value>

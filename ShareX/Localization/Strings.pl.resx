@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Zapisz</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Umożliwiaj wyszukiwanie tekstu z przechwyceń w historii</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Zapisz ostatnie zadania</value>
   </data>
@@ -2995,9 +2998,6 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Zapisz</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>Umożliwiaj wyszukiwanie tekstu z przechwyceń w historii</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Próbnik koloru ekranu</value>

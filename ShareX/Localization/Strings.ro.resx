@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Salvare</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Fă textul din capturi căutabil în istoric</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Salvați sarcinile recente</value>
   </data>
@@ -2995,9 +2998,6 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>Salvează</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>Fă textul din capturi căutabil în istoric</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>Selector culoare ecran</value>

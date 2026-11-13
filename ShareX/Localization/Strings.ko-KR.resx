@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>저장</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>캡처 속 텍스트를 기록에서 검색할 수 있게 하기</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>최근 작업 저장하기</value>
   </data>
@@ -2995,9 +2998,6 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_Save" xml:space="preserve">
     <value>저장</value>
-  </data>
-  <data name="TaskSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
-    <value>캡처 속 텍스트를 기록에서 검색할 수 있게 하기</value>
   </data>
   <data name="TaskSettingsWindow_ScreenColorPicker" xml:space="preserve">
     <value>화면 색상 선택기</value>

@@ -3265,11 +3265,6 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ProcessOCRSilently", resourceCulture);
             }
         }
-        public static string TaskSettingsWindow_SaveOCRTextToHistory {
-            get {
-                return ResourceManager.GetString("TaskSettingsWindow_SaveOCRTextToHistory", resourceCulture);
-            }
-        }
         public static string TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink", resourceCulture);
@@ -5765,5 +5760,6 @@ namespace ShareX.Localization {
         public static string StartScreen_ThankYou => ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
         public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
         public static string StartScreen_Spacious => ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
+        public static string ApplicationSettingsWindow_SaveOCRTextToHistory => ResourceManager.GetString("ApplicationSettingsWindow_SaveOCRTextToHistory", resourceCulture);
     }
 }
