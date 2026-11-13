@@ -36,7 +36,9 @@ public enum SheetLayout
 {
     Horizontal,
     Vertical,
-    Grid
+    Grid,
+    /// <summary>Packs frames of different sizes tightly; used with trimming.</summary>
+    Packed
 }
 
 public sealed class ExportOptions
@@ -57,6 +59,12 @@ public sealed class ExportOptions
     public int Spacing { get; set; }
 
     public bool WriteMetadata { get; set; } = true;
+
+    /// <summary>Crops every frame on a sheet to its visible pixels.</summary>
+    public bool Trim { get; set; }
+
+    /// <summary>Frames that look the same share one image on a sheet.</summary>
+    public bool MergeDuplicates { get; set; }
 
     /// <summary>Layers to include; null exports every visible layer.</summary>
     public Func<Layer, bool>? LayerFilter { get; set; }
@@ -593,33 +601,107 @@ public static class SpriteFile
         return files;
     }
 
-    /// <summary>Lays the frames out on one image.</summary>
-    public static PixelBuffer RenderSheet(Sprite sprite, ExportOptions options, out List<SKRectI> cells)
+    /// <summary>Where every frame goes on a sprite sheet: frames that look the same can share one image, and trimmed frames remember their place in the full frame.</summary>
+    public sealed class SheetPlan
     {
-        int scale = Math.Max(1, options.Scale), cellW = sprite.Width * scale, cellH = sprite.Height * scale, count = Math.Max(1, options.Frames.Count);
-        int columns = options.Layout switch
-        {
-            SheetLayout.Horizontal => count,
-            SheetLayout.Vertical => 1,
-            _ => Math.Clamp(options.Columns, 1, count)
-        };
-        int rows = (count + columns - 1) / columns;
-        int width = options.Padding * 2 + columns * cellW + (columns - 1) * options.Spacing, height = options.Padding * 2 + rows * cellH + (rows - 1) * options.Spacing;
-        PixelBuffer sheet = new(width, height);
-        cells = [];
-        for (int i = 0; i < options.Frames.Count; i++)
-        {
-            int x = options.Padding + i % columns * (cellW + options.Spacing), y = options.Padding + i / columns * (cellH + options.Spacing);
-            sheet.Blit(RenderFrame(sprite, options.Frames[i], options), x, y, false);
-            cells.Add(SKRectI.Create(x, y, cellW, cellH));
-        }
-        return sheet;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public List<PixelBuffer> Images { get; } = [];
+        public List<SKPointI> Positions { get; } = [];
+        public List<SheetCell> Cells { get; } = [];
     }
 
+    /// <summary>One frame on a sheet: its rectangle on the sheet and the part of the full frame it holds.</summary>
+    public sealed record SheetCell(SKRectI Frame, SKRectI Source, int SourceWidth, int SourceHeight);
+
+    public static SheetPlan PlanSheet(Sprite sprite, ExportOptions options)
+    {
+        int scale = Math.Max(1, options.Scale), fullW = sprite.Width * scale, fullH = sprite.Height * scale;
+        SheetPlan plan = new();
+        List<int> imageOf = [];
+        List<SKRectI> sources = [];
+        foreach (int frame in options.Frames)
+        {
+            PixelBuffer image = RenderFrame(sprite, frame, options);
+            SKRectI source = SKRectI.Create(0, 0, fullW, fullH);
+            if (options.Trim)
+            {
+                source = image.ContentBounds() ?? SKRectI.Create(0, 0, 1, 1);
+                image = image.Crop(source);
+            }
+            int index = options.MergeDuplicates ? plan.Images.FindIndex(i => i.Width == image.Width && i.Height == image.Height && i.Pixels.AsSpan().SequenceEqual(image.Pixels)) : -1;
+            if (index < 0)
+            {
+                index = plan.Images.Count;
+                plan.Images.Add(image);
+            }
+            imageOf.Add(index);
+            sources.Add(source);
+        }
+        int count = Math.Max(1, plan.Images.Count), padding = options.Padding, spacing = options.Spacing;
+        if (options.Layout == SheetLayout.Packed)
+        {
+            // Shelf packing: tallest images first, filling rows up to a width that keeps the sheet roughly square.
+            long area = plan.Images.Sum(i => (long)(i.Width + spacing) * (i.Height + spacing));
+            int widest = plan.Images.Count > 0 ? plan.Images.Max(i => i.Width) : 1;
+            int rowWidth = Math.Max(widest, (int)Math.Ceiling(Math.Sqrt(area)));
+            SKPointI[] positions = new SKPointI[plan.Images.Count];
+            int x = 0, y = 0, shelf = 0, usedW = 0;
+            foreach (int i in Enumerable.Range(0, plan.Images.Count).OrderByDescending(i => plan.Images[i].Height).ThenByDescending(i => plan.Images[i].Width))
+            {
+                PixelBuffer image = plan.Images[i];
+                if (x > 0 && x + image.Width > rowWidth)
+                {
+                    y += shelf + spacing;
+                    x = 0;
+                    shelf = 0;
+                }
+                positions[i] = new SKPointI(padding + x, padding + y);
+                x += image.Width + spacing;
+                usedW = Math.Max(usedW, x - spacing);
+                shelf = Math.Max(shelf, image.Height);
+            }
+            plan.Positions.AddRange(positions);
+            plan.Width = padding * 2 + Math.Max(1, usedW);
+            plan.Height = padding * 2 + Math.Max(1, y + shelf);
+        }
+        else
+        {
+            int cellW = options.Trim && plan.Images.Count > 0 ? plan.Images.Max(i => i.Width) : fullW;
+            int cellH = options.Trim && plan.Images.Count > 0 ? plan.Images.Max(i => i.Height) : fullH;
+            int columns = options.Layout switch
+            {
+                SheetLayout.Horizontal => count,
+                SheetLayout.Vertical => 1,
+                _ => Math.Clamp(options.Columns, 1, count)
+            };
+            int rows = (count + columns - 1) / columns;
+            for (int i = 0; i < plan.Images.Count; i++) plan.Positions.Add(new SKPointI(padding + i % columns * (cellW + spacing), padding + i / columns * (cellH + spacing)));
+            plan.Width = padding * 2 + columns * cellW + (columns - 1) * spacing;
+            plan.Height = padding * 2 + rows * cellH + (rows - 1) * spacing;
+        }
+        for (int i = 0; i < imageOf.Count; i++)
+        {
+            PixelBuffer image = plan.Images[imageOf[i]];
+            SKPointI at = plan.Positions[imageOf[i]];
+            plan.Cells.Add(new SheetCell(SKRectI.Create(at.X, at.Y, image.Width, image.Height), sources[i], fullW, fullH));
+        }
+        return plan;
+    }
+
+    /// <summary>Lays the frames out on one image.</summary>
+    public static PixelBuffer RenderSheet(Sprite sprite, ExportOptions options, out List<SheetCell> cells)
+    {
+        SheetPlan plan = PlanSheet(sprite, options);
+        PixelBuffer sheet = new(Math.Max(1, plan.Width), Math.Max(1, plan.Height));
+        for (int i = 0; i < plan.Images.Count; i++) sheet.Blit(plan.Images[i], plan.Positions[i].X, plan.Positions[i].Y, false);
+        cells = plan.Cells;
+        return sheet;
+    }
     /// <summary>Writes a sprite sheet image and, optionally, a JSON file describing its frames, tags and slices.</summary>
     public static void ExportSheet(Sprite sprite, string path, ExportOptions options)
     {
-        PixelBuffer sheet = RenderSheet(sprite, options, out List<SKRectI> cells);
+        PixelBuffer sheet = RenderSheet(sprite, options, out List<SheetCell> cells);
         File.WriteAllBytes(path, EncodeImage(sheet, Path.GetExtension(path), 95));
         if (!options.WriteMetadata) return;
         int scale = Math.Max(1, options.Scale);
@@ -629,11 +711,11 @@ public static class SpriteFile
             frames = cells.Select((c, i) => new
             {
                 filename = $"{name} {i}",
-                frame = new { x = c.Left, y = c.Top, w = c.Width, h = c.Height },
+                frame = new { x = c.Frame.Left, y = c.Frame.Top, w = c.Frame.Width, h = c.Frame.Height },
                 rotated = false,
-                trimmed = false,
-                spriteSourceSize = new { x = 0, y = 0, w = c.Width, h = c.Height },
-                sourceSize = new { w = c.Width, h = c.Height },
+                trimmed = options.Trim,
+                spriteSourceSize = new { x = c.Source.Left, y = c.Source.Top, w = c.Source.Width, h = c.Source.Height },
+                sourceSize = new { w = c.SourceWidth, h = c.SourceHeight },
                 duration = sprite.Frames[options.Frames[i]].Duration
             }).ToList(),
             meta = new

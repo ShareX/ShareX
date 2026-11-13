@@ -1242,8 +1242,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Layout</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Merge identical frames</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Write JSON data (frames, tags and slices)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Packed</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Padding</value>
@@ -1253,6 +1259,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Spacing</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Trim empty space around frames</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} unique</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Vertical strip</value>

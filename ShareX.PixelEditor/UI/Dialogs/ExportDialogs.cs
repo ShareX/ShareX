@@ -163,6 +163,8 @@ public static class SheetDialogs
         Func<int> padding = form.Number(Strings.Sheet_Padding, 0, 256, settings.SheetPadding);
         Func<int> spacing = form.Number(Strings.Sheet_Spacing, 0, 256, settings.SheetSpacing);
         Func<int> scale = form.Number(Strings.Export_Scale, 1, 64, settings.ExportScale);
+        Func<bool> trim = form.Check(Strings.Sheet_Trim, settings.SheetTrim);
+        Func<bool> merge = form.Check(Strings.Sheet_MergeDuplicates, settings.SheetMergeDuplicates);
         Func<bool> metadata = form.Check(Strings.Sheet_Metadata, settings.SheetMetadata);
         TextBlock info = new() { Classes = { "dim" } };
         form.Add(info);
@@ -174,13 +176,15 @@ public static class SheetDialogs
             Columns = columns(),
             Padding = padding(),
             Spacing = spacing(),
-            WriteMetadata = metadata()
+            WriteMetadata = metadata(),
+            Trim = trim(),
+            MergeDuplicates = merge()
         };
         void Update()
         {
             ExportOptions o = Options();
-            int count = Math.Max(1, o.Frames.Count), cols = o.Layout == SheetLayout.Horizontal ? count : o.Layout == SheetLayout.Vertical ? 1 : Math.Clamp(o.Columns, 1, count), rows = (count + cols - 1) / cols;
-            info.Text = string.Format(Strings.Sheet_Info, o.Padding * 2 + cols * sprite.Width * o.Scale + (cols - 1) * o.Spacing, o.Padding * 2 + rows * sprite.Height * o.Scale + (rows - 1) * o.Spacing, count);
+            SpriteFile.SheetPlan plan = SpriteFile.PlanSheet(sprite, o);
+            info.Text = string.Format(Strings.Sheet_Info, plan.Width, plan.Height, o.Frames.Count) + (plan.Images.Count < o.Frames.Count ? "  " + string.Format(Strings.Sheet_Unique, plan.Images.Count) : string.Empty);
         }
         form.Changed += Update;
         Update();
@@ -189,6 +193,7 @@ public static class SheetDialogs
         if (path == null) return;
         ExportOptions options = Options();
         (settings.SheetLayout, settings.SheetColumns, settings.SheetPadding, settings.SheetSpacing, settings.SheetMetadata, settings.ExportScale) = (options.Layout, options.Columns, options.Padding, options.Spacing, options.WriteMetadata, options.Scale);
+        (settings.SheetTrim, settings.SheetMergeDuplicates) = (options.Trim, options.MergeDuplicates);
         await w.RunBusyAsync(Strings.Status_Exporting, async _ =>
         {
             await Task.Run(() => SpriteFile.ExportSheet(sprite, path, options));

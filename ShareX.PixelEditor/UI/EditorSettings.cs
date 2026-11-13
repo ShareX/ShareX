@@ -132,6 +132,10 @@ public sealed class EditorSettings
     public int SheetSpacing { get; set; }
     public bool SheetMetadata { get; set; } = true;
 
+    public bool SheetTrim { get; set; }
+
+    public bool SheetMergeDuplicates { get; set; }
+
     // Workspace
     public Dictionary<string, string> Shortcuts { get; set; } = [];
     public List<DockGroupLayout> Panels { get; set; } = [];
@@ -315,6 +319,7 @@ public static class EnumNames
     [
         (Strings.Sheet_Horizontal, SheetLayout.Horizontal),
         (Strings.Sheet_Vertical, SheetLayout.Vertical),
-        (Strings.Sheet_Grid, SheetLayout.Grid)
+        (Strings.Sheet_Grid, SheetLayout.Grid),
+        (Strings.Sheet_Packed, SheetLayout.Packed)
     ];
 }

@@ -2645,5 +2645,25 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Options_SmoothRotationTip", resourceCulture);
             }
         }
+        public static string Sheet_MergeDuplicates {
+            get {
+                return ResourceManager.GetString("Sheet_MergeDuplicates", resourceCulture);
+            }
+        }
+        public static string Sheet_Packed {
+            get {
+                return ResourceManager.GetString("Sheet_Packed", resourceCulture);
+            }
+        }
+        public static string Sheet_Trim {
+            get {
+                return ResourceManager.GetString("Sheet_Trim", resourceCulture);
+            }
+        }
+        public static string Sheet_Unique {
+            get {
+                return ResourceManager.GetString("Sheet_Unique", resourceCulture);
+            }
+        }
     }
 }
