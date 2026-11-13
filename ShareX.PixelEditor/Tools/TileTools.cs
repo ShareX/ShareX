@@ -154,6 +154,10 @@ public sealed class TileStampTool : ToolBase
         }
         options.Label(string.Format(Strings.Options_TileInfo, Math.Clamp(Editor.SelectedTile, 0, set.Tiles.Count - 1), set.TileWidth, set.TileHeight));
         options.Separator();
-        options.Check(Strings.Tiles_EditsShared, Settings.TileEditsShared, v => Settings.TileEditsShared = v, Strings.Tiles_EditsShared_Tip);
+        options.Check(Strings.Tiles_EditsShared, Settings.TileEditsShared, v =>
+        {
+            Settings.TileEditsShared = v;
+            Editor.Panels.Get("tiles")?.Refresh();
+        }, Strings.Tiles_EditsShared_Tip);
     }
 }

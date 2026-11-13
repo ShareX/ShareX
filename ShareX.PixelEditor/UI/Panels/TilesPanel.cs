@@ -45,6 +45,7 @@ public sealed class TilesPanel : EditorPanel
     private readonly StackPanel _empty = new() { Margin = new Thickness(10), Spacing = 8 };
     private readonly ScrollViewer _scroll;
     private readonly List<Border> _boxes = [];
+    private readonly CheckBox _shared = new() { Content = Strings.Tiles_EditsShared, Margin = new Thickness(6, 2), FontSize = 11 };
     private Tileset? _shownSet;
     private List<PixelBuffer>? _shownTiles;
 
@@ -66,9 +67,15 @@ public sealed class TilesPanel : EditorPanel
         _empty.Children.Add(create);
         _empty.Children.Add(convert);
 
-        CheckBox shared = new() { Content = Strings.Tiles_EditsShared, IsChecked = editor.Settings.TileEditsShared, Margin = new Thickness(6, 2), FontSize = 11 };
+        CheckBox shared = _shared;
+        shared.IsChecked = editor.Settings.TileEditsShared;
         ToolTip.SetTip(shared, Strings.Tiles_EditsShared_Tip);
-        shared.IsCheckedChanged += (_, _) => Editor.Settings.TileEditsShared = shared.IsChecked == true;
+        shared.IsCheckedChanged += (_, _) =>
+        {
+            if (Editor.Settings.TileEditsShared == (shared.IsChecked == true)) return;
+            Editor.Settings.TileEditsShared = shared.IsChecked == true;
+            Editor.RefreshOptions();
+        };
 
         _scroll = new ScrollViewer { Content = _tiles, HorizontalScrollBarVisibility = ScrollBarVisibility.Disabled };
         DockPanel root = new();
@@ -90,6 +97,8 @@ public sealed class TilesPanel : EditorPanel
     public override void Refresh()
     {
         Tileset? set = Set;
+        _shared.IsChecked = Editor.Settings.TileEditsShared;
+        _shared.IsVisible = set != null;
         _empty.IsVisible = set == null;
         _scroll.IsVisible = set != null;
         if (set == null)
