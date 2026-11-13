@@ -1774,7 +1774,6 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        // Like ShareX 21, resize from the selection the drag started with so the dragged edge stays under the cursor.
         Rect start = _interactionStartRegion.Bounds;
         Vector delta = point - SelectionResizeNode.GetPosition(start, _resizeNode.Value);
         Rect resized = SelectionResizeNode.Resize(start, _resizeNode.Value, delta);
