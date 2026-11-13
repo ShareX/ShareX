@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>ズーム</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>中央の高さ</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>中央の幅</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>中央 X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>中央 Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>スライス {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>スライス名を変更</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9 分割スライス</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>中央とピボットはスライスの左上隅から測ります。どちらもスプライトシートのメタデータに書き込まれます。</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>ピボット</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>ピボット X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>ピボット Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>スライスのプロパティ</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>クリップボード</value>

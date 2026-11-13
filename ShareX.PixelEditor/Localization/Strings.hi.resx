@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>ज़ूम</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>केंद्र की ऊँचाई</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>केंद्र की चौड़ाई</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>केंद्र X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>केंद्र Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>स्लाइस {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>स्लाइस का नाम बदलें</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9-भाग स्लाइस</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>केंद्र और पिवट को स्लाइस के ऊपरी बाएँ कोने से मापा जाता है। दोनों स्प्राइट शीट मेटाडेटा में लिखे जाते हैं।</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>पिवट बिंदु</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>पिवट X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>पिवट Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>स्लाइस गुण</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>क्लिपबोर्ड</value>

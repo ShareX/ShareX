@@ -195,11 +195,8 @@ public sealed class SliceTool : ToolBase
     private async void Rename()
     {
         if (Sprite == null || Selected == null) return;
-        string? name = await Editor.PromptTextAsync(Strings.Slice_Rename, Strings.Dialog_Name, Selected.Name);
-        if (string.IsNullOrWhiteSpace(name) || Selected == null) return;
-        Selected.Name = name.Trim();
-        Editor.Commit(Strings.History_RenameSlice);
-        Editor.RefreshOptions();
+        if (await UI.Dialogs.SliceDialog.ShowAsync(Editor, Selected)) Editor.RefreshOptions();
+        Editor.InvalidateOverlay();
     }
 
     public override bool KeyDown(Key key, KeyModifiers modifiers)
@@ -267,7 +264,7 @@ public sealed class SliceTool : ToolBase
             slice.Color = c;
             Editor.Commit(Strings.History_RenameSlice);
         });
-        options.Button(Strings.Slice_Rename, Rename);
+        options.Button(Strings.Slice_Properties, Rename);
         options.Button(Strings.Command_Delete, () => KeyDown(Key.Delete, KeyModifiers.None));
     }
 }

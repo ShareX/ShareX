@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zooma</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Mittens höjd</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Mittens bredd</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Mitt X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Mitt Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Segment {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Byt namn på segment</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Niodelat segment</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Mitten och pivotpunkten mäts från segmentets övre vänstra hörn. Båda skrivs till sprite-arkets metadata.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Pivotpunkt</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivotpunkt X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivotpunkt Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Segmentegenskaper</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Urklipp</value>

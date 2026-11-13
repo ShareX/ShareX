@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Înălțimea centrului</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Lățimea centrului</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Centru X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Centru Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Felia {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Redenumește felia</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Felie în 9 părți</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Centrul și pivotul se măsoară din colțul din stânga sus al feliei. Ambele sunt scrise în metadatele foii de sprite-uri.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Punct de pivot</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivot X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivot Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Proprietățile feliei</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Clipboard</value>

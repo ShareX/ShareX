@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>縮放</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>中心高度</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>中心寬度</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>中心 X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>中心 Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>切片 {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>重新命名切片</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>九宮格切片</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>中心和軸心從切片左上角開始測量。兩者都會寫入精靈圖表中繼資料。</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>軸心點</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>軸心 X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>軸心 Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>切片屬性</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>剪貼簿</value>

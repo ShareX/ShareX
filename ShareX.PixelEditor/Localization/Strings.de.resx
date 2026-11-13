@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Strahlenförmig</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Höhe der Mitte</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Breite der Mitte</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Mitte X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Mitte Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Slice {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Slice umbenennen</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9-teiliges Slice</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Mitte und Drehpunkt werden von der oberen linken Ecke des Slice gemessen. Beide werden in die Metadaten des Sprite-Sheets geschrieben.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Drehpunkt</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Drehpunkt X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Drehpunkt Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Slice-Eigenschaften</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Zwischenablage</value>

@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Center height</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Center width</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Center X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Center Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Slice {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Rename Slice</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9-slice</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>The center and the pivot are measured from the top-left corner of the slice. Both are written to sprite sheet metadata.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Pivot</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivot X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivot Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Slice Properties</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Clipboard</value>

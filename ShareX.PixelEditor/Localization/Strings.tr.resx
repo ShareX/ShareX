@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Yakınlaştırma</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Merkez yüksekliği</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Merkez genişliği</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Merkez X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Merkez Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Dilim {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Dilimi Yeniden Adlandır</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9 parçalı dilim</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Merkez ve pivot, dilimin sol üst köşesinden ölçülür. İkisi de sprite sayfası meta verilerine yazılır.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Pivot noktası</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivot X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivot Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Dilim Özellikleri</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Pano</value>

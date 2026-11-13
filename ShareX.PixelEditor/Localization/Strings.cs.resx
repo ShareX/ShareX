@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zvětšení</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Výška středu</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Šířka středu</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Střed X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Střed Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Řez {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Přejmenovat řez</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Devítidílný řez</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Střed a otočný bod se měří od levého horního rohu řezu. Oba se zapisují do metadat sprite sheetu.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Otočný bod</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Otočný bod X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Otočný bod Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Vlastnosti řezu</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Schránka</value>

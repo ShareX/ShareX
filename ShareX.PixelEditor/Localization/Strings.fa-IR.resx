@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>زوم</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>ارتفاع مرکز</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>عرض مرکز</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>X مرکز</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Y مرکز</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>برش {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>تغییر نام برش</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>برش نُه‌تکه</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>مرکز و نقطه محوری از گوشه بالا چپ برش اندازه‌گیری می‌شوند. هر دو در فراداده شیت اسپرایت نوشته می‌شوند.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>نقطه محوری</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>X نقطه محوری</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Y نقطه محوری</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>ویژگی‌های برش</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>کلیپ‌بورد</value>

@@ -436,3 +436,35 @@ public static class ShortcutsDialog
         w.RefreshPanels();
     }
 }
+
+/// <summary>Name, color, bounds, 9-slice center and pivot of a slice.</summary>
+public static class SliceDialog
+{
+    public static async Task<bool> ShowAsync(PixelEditorWindow w, Slice slice)
+    {
+        Sprite? sprite = w.Sprite;
+        if (sprite == null) return false;
+        Form form = new(w);
+        SKRectI b = slice.Bounds;
+        Func<string> name = form.Text(Strings.Dialog_Name, slice.Name);
+        Func<uint> color = form.Color(Strings.Dialog_Color, slice.Color);
+        Func<int> x = form.Number("X", -Sprite.MaxSize, Sprite.MaxSize, b.Left), y = form.Number("Y", -Sprite.MaxSize, Sprite.MaxSize, b.Top);
+        Func<int> width = form.Number(Strings.Options_Width, 1, Sprite.MaxSize, b.Width), height = form.Number(Strings.Options_Height, 1, Sprite.MaxSize, b.Height);
+        SKRectI center = slice.Center ?? SKRectI.Create(Math.Max(0, b.Width / 3), Math.Max(0, b.Height / 3), Math.Max(1, b.Width - b.Width / 3 * 2), Math.Max(1, b.Height - b.Height / 3 * 2));
+        Func<bool> nine = form.Check(Strings.Slice_NineSlice, slice.Center != null);
+        Func<int> cx = form.Number(Strings.Slice_CenterX, 0, Sprite.MaxSize, center.Left), cy = form.Number(Strings.Slice_CenterY, 0, Sprite.MaxSize, center.Top);
+        Func<int> cw = form.Number(Strings.Slice_CenterWidth, 1, Sprite.MaxSize, center.Width), ch = form.Number(Strings.Slice_CenterHeight, 1, Sprite.MaxSize, center.Height);
+        SKPointI pivot = slice.Pivot ?? new SKPointI(b.Width / 2, b.Height);
+        Func<bool> hasPivot = form.Check(Strings.Slice_Pivot, slice.Pivot != null);
+        Func<int> px = form.Number(Strings.Slice_PivotX, -Sprite.MaxSize, Sprite.MaxSize, pivot.X), py = form.Number(Strings.Slice_PivotY, -Sprite.MaxSize, Sprite.MaxSize, pivot.Y);
+        form.Note(Strings.Slice_Note);
+        if (!await form.ShowAsync(Strings.Slice_Properties, 380) || !ReferenceEquals(w.Sprite, sprite) || !sprite.Slices.Contains(slice)) return false;
+        if (!string.IsNullOrWhiteSpace(name())) slice.Name = name().Trim();
+        slice.Color = Argb.Opaque(color());
+        slice.Bounds = SKRectI.Create(x(), y(), width(), height());
+        slice.Center = nine() ? SKRectI.Create(Math.Min(cx(), width() - 1), Math.Min(cy(), height() - 1), Math.Clamp(cw(), 1, width() - Math.Min(cx(), width() - 1)), Math.Clamp(ch(), 1, height() - Math.Min(cy(), height() - 1))) : null;
+        slice.Pivot = hasPivot() ? new SKPointI(px(), py()) : null;
+        w.Commit(Strings.History_RenameSlice);
+        return true;
+    }
+}

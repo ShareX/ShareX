@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoomen</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Hoogte midden</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Breedte midden</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Midden X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Midden Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Segment {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Segment hernoemen</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Segment in 9 delen</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Het midden en het draaipunt worden gemeten vanaf de linkerbovenhoek van het segment. Beide worden in de metagegevens van de spritesheet geschreven.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Draaipunt</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Draaipunt X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Draaipunt Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Segmenteigenschappen</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Klembord</value>

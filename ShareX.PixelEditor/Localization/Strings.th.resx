@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>ซูม</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>ความสูงส่วนกลาง</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>ความกว้างส่วนกลาง</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>จุดกลาง X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>จุดกลาง Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>สไลซ์ {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>เปลี่ยนชื่อสไลซ์</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>สไลซ์ 9 ส่วน</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>จุดกลางและจุดหมุนวัดจากมุมซ้ายบนของสไลซ์ ทั้งสองจะถูกเขียนลงในข้อมูลเมตาของสไปรต์ชีต</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>จุดหมุน</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>จุดหมุน X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>จุดหมุน Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>คุณสมบัติของสไลซ์</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>คลิปบอร์ด</value>

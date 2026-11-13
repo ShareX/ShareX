@@ -110,7 +110,24 @@ public sealed class OverlayContext
         Point a = Snap(slice.Bounds.Left, slice.Bounds.Top), b = Snap(slice.Bounds.Right, slice.Bounds.Bottom);
         Rect r = new(a, b);
         Drawing.DrawRectangle(new SolidColorBrush(color, selected ? 0.22 : 0.08), new Pen(new SolidColorBrush(color), selected ? 2 : 1), r);
-        if (Zoom < 2 && !selected) return;
+        if (slice.Center is SKRectI center)
+        {
+            // The 9-slice guides across the whole slice.
+            Point c0 = Snap(slice.Bounds.Left + center.Left, slice.Bounds.Top + center.Top), c1 = Snap(slice.Bounds.Left + center.Right, slice.Bounds.Top + center.Bottom);
+            foreach ((Point from, Point to) in new[] { (new Point(c0.X, a.Y), new Point(c0.X, b.Y)), (new Point(c1.X, a.Y), new Point(c1.X, b.Y)), (new Point(a.X, c0.Y), new Point(b.X, c0.Y)), (new Point(a.X, c1.Y), new Point(b.X, c1.Y)) })
+            {
+                Drawing.DrawLine(Dark, from, to);
+                Drawing.DrawLine(Light, from, to);
+            }
+        }
+        if (slice.Pivot is SKPointI pivot)
+        {
+            Point p = Snap(slice.Bounds.Left + pivot.X, slice.Bounds.Top + pivot.Y);
+            Pen cross = new(Brushes.White, 1);
+            Drawing.DrawEllipse(new SolidColorBrush(color), Dark, p, 3.5, 3.5);
+            Drawing.DrawLine(cross, new Point(p.X - 7, p.Y), new Point(p.X + 7, p.Y));
+            Drawing.DrawLine(cross, new Point(p.X, p.Y - 7), new Point(p.X, p.Y + 7));
+        }        if (Zoom < 2 && !selected) return;
         FormattedText text = new(slice.Name, System.Globalization.CultureInfo.CurrentCulture, FlowDirection.LeftToRight, new Typeface("Segoe UI"), 10, Brushes.White);
         Rect label = new(a.X, a.Y - text.Height - 2, text.Width + 6, text.Height + 2);
         Drawing.DrawRectangle(new SolidColorBrush(color), null, label);

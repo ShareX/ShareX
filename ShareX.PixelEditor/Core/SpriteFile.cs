@@ -122,6 +122,8 @@ public static class SpriteFile
         public int Width { get; set; }
         public int Height { get; set; }
         public string Color { get; set; } = "3FB950";
+        public int[]? Center { get; set; }
+        public int[]? Pivot { get; set; }
     }
 
     private sealed class ImageDto
@@ -164,7 +166,17 @@ public static class SpriteFile
             Height = sprite.Height,
             Frames = sprite.Frames.Select(f => f.Duration).ToList(),
             Tags = sprite.Tags.Select(t => new TagDto { Name = t.Name, From = t.From, To = t.To, Color = Argb.ToHex(t.Color), Direction = t.Direction, Repeat = t.Repeat }).ToList(),
-            Slices = sprite.Slices.Select(s => new SliceDto { Name = s.Name, X = s.Bounds.Left, Y = s.Bounds.Top, Width = s.Bounds.Width, Height = s.Bounds.Height, Color = Argb.ToHex(s.Color) }).ToList(),
+            Slices = sprite.Slices.Select(s => new SliceDto
+            {
+                Name = s.Name,
+                X = s.Bounds.Left,
+                Y = s.Bounds.Top,
+                Width = s.Bounds.Width,
+                Height = s.Bounds.Height,
+                Color = Argb.ToHex(s.Color),
+                Center = s.Center is SKRectI c ? [c.Left, c.Top, c.Width, c.Height] : null,
+                Pivot = s.Pivot is SKPointI p ? [p.X, p.Y] : null
+            }).ToList(),
             Palette = sprite.Palette.Select(Argb.ToHex).ToList(),
             ActiveFrame = sprite.ActiveFrame
         };
@@ -343,7 +355,14 @@ public static class SpriteFile
             root.Children.Add(layer);
         }
         List<Tag> tags = dto.Tags.Select(t => new Tag { Name = t.Name, From = t.From, To = t.To, Color = Argb.TryParseHex(t.Color, out uint c) ? c : 0xFF4A90D9, Direction = t.Direction, Repeat = t.Repeat }).ToList();
-        List<Slice> slices = dto.Slices.Select(s => new Slice { Name = s.Name, Bounds = SKRectI.Create(s.X, s.Y, Math.Max(1, s.Width), Math.Max(1, s.Height)), Color = Argb.TryParseHex(s.Color, out uint c) ? c : 0xFF3FB950 }).ToList();
+        List<Slice> slices = dto.Slices.Select(s => new Slice
+        {
+            Name = s.Name,
+            Bounds = SKRectI.Create(s.X, s.Y, Math.Max(1, s.Width), Math.Max(1, s.Height)),
+            Color = Argb.TryParseHex(s.Color, out uint c) ? c : 0xFF3FB950,
+            Center = s.Center is { Length: 4 } r ? SKRectI.Create(r[0], r[1], Math.Max(1, r[2]), Math.Max(1, r[3])) : null,
+            Pivot = s.Pivot is { Length: 2 } p ? new SKPointI(p[0], p[1]) : null
+        }).ToList();
         int frameCount = Math.Max(1, dto.Frames.Count);
         tags.RemoveAll(t => t.From < 0 || t.To >= frameCount || t.To < t.From);
         sprite.Adopt(root, dto.Frames.Select(d => new FrameInfo { Duration = Math.Clamp(d, 1, 65535) }).ToList(), tags, slices);
@@ -774,9 +793,23 @@ public static class SpriteFile
                 size = new { w = sheet.Width, h = sheet.Height },
                 scale = scale.ToString(CultureInfo.InvariantCulture),
                 frameTags = sprite.Tags.Select(t => new { name = t.Name, from = t.From, to = t.To, direction = t.Direction.ToString().ToLowerInvariant(), color = "#" + Argb.ToHex(t.Color) }).ToList(),
-                slices = sprite.Slices.Select(s => new { name = s.Name, color = "#" + Argb.ToHex(s.Color), bounds = new { x = s.Bounds.Left * scale, y = s.Bounds.Top * scale, w = s.Bounds.Width * scale, h = s.Bounds.Height * scale } }).ToList()
+                slices = sprite.Slices.Select(s => new
+                {
+                    name = s.Name,
+                    color = "#" + Argb.ToHex(s.Color),
+                    keys = new[]
+                    {
+                        new
+                        {
+                            frame = 0,
+                            bounds = new { x = s.Bounds.Left * scale, y = s.Bounds.Top * scale, w = s.Bounds.Width * scale, h = s.Bounds.Height * scale },
+                            center = s.Center is SKRectI c ? new { x = c.Left * scale, y = c.Top * scale, w = c.Width * scale, h = c.Height * scale } : null,
+                            pivot = s.Pivot is SKPointI p ? new { x = p.X * scale, y = p.Y * scale } : null
+                        }
+                    }
+                }).ToList()
             }
         };
-        File.WriteAllText(Path.ChangeExtension(path, ".json"), JsonSerializer.Serialize(metadata, new JsonSerializerOptions { WriteIndented = true }));
+        File.WriteAllText(Path.ChangeExtension(path, ".json"), JsonSerializer.Serialize(metadata, new JsonSerializerOptions { WriteIndented = true, DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull }));
     }
 }

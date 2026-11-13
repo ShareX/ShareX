@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>זום</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>גובה המרכז</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>רוחב המרכז</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>X של המרכז</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Y של המרכז</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>פרוסה {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>שנה שם פרוסה</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>פרוסה בת 9 חלקים</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>המרכז ונקודת הציר נמדדים מהפינה השמאלית העליונה של הפרוסה. שניהם נכתבים במטא-נתונים של גיליון הספרייטים.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>נקודת ציר</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>X של הציר</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Y של הציר</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>מאפייני פרוסה</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>לוח</value>

@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Hauteur du centre</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Largeur du centre</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Centre X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Centre Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Tranche {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Renommer la tranche</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Tranche en 9 parties</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Le centre et le pivot sont mesurés depuis le coin supérieur gauche de la tranche. Les deux sont écrits dans les métadonnées de la planche de sprites.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Point de pivot</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivot X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivot Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Propriétés de la tranche</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Presse-papiers</value>

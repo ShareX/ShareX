@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Nagyító</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Közép magassága</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Közép szélessége</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Közép X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Közép Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>{0}. szelet</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Szelet átnevezése</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9 részes szelet</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>A közép és a forgáspont a szelet bal felső sarkától mérendő. Mindkettő bekerül a sprite-lap metaadataiba.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Forgáspont</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Forgáspont X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Forgáspont Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Szelet tulajdonságai</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Vágólap</value>

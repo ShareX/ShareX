@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>تكبير</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>ارتفاع المركز</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>عرض المركز</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>X للمركز</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Y للمركز</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>شريحة {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>إعادة تسمية الشريحة</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>شريحة تساعية (9-slice)</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>يُقاس المركز ونقطة الارتكاز من الزاوية العلوية اليسرى للشريحة. يُكتب كلاهما في بيانات ورقة السبرايت الوصفية.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>نقطة الارتكاز</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>X لنقطة الارتكاز</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Y لنقطة الارتكاز</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>خصائص الشريحة</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>الحافظة</value>

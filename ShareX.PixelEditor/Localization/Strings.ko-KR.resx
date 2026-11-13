@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>확대/축소</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>중앙 높이</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>중앙 너비</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>중앙 X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>중앙 Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>분할 영역 {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>분할 영역 이름 바꾸기</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>9분할 슬라이스</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>중앙과 피벗은 슬라이스의 왼쪽 위 모서리를 기준으로 측정합니다. 둘 다 스프라이트 시트 메타데이터에 기록됩니다.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>피벗</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>피벗 X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>피벗 Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>슬라이스 속성</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>클립보드</value>

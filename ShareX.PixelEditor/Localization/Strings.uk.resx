@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Масштабування</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Висота центру</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Ширина центру</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Центр X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Центр Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Фрагмент {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Перейменувати фрагмент</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Фрагмент із 9 частин</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Центр і опорна точка відраховуються від лівого верхнього кута фрагмента. Обидва записуються в метадані аркуша спрайтів.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Опорна точка</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Опорна точка X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Опорна точка Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Властивості фрагмента</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Буфер обміну</value>

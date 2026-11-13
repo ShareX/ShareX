@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Tinggi tengah</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Lebar tengah</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Tengah X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Tengah Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Irisan {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Ganti Nama Irisan</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Irisan 9 bagian</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Tengah dan pivot diukur dari sudut kiri atas irisan. Keduanya ditulis ke metadata lembar sprite.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Titik pivot</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivot X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivot Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Properti Irisan</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Papan klip</value>

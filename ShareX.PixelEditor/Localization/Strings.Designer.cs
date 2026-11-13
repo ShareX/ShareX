@@ -2025,11 +2025,6 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Slice_DefaultName", resourceCulture);
             }
         }
-        public static string Slice_Rename {
-            get {
-                return ResourceManager.GetString("Slice_Rename", resourceCulture);
-            }
-        }
         public static string Sprite_Clipboard {
             get {
                 return ResourceManager.GetString("Sprite_Clipboard", resourceCulture);
@@ -2848,6 +2843,56 @@ namespace ShareX.PixelEditor.Localization {
         public static string Layers_TilemapBadge {
             get {
                 return ResourceManager.GetString("Layers_TilemapBadge", resourceCulture);
+            }
+        }
+        public static string Slice_CenterHeight {
+            get {
+                return ResourceManager.GetString("Slice_CenterHeight", resourceCulture);
+            }
+        }
+        public static string Slice_CenterWidth {
+            get {
+                return ResourceManager.GetString("Slice_CenterWidth", resourceCulture);
+            }
+        }
+        public static string Slice_CenterX {
+            get {
+                return ResourceManager.GetString("Slice_CenterX", resourceCulture);
+            }
+        }
+        public static string Slice_CenterY {
+            get {
+                return ResourceManager.GetString("Slice_CenterY", resourceCulture);
+            }
+        }
+        public static string Slice_NineSlice {
+            get {
+                return ResourceManager.GetString("Slice_NineSlice", resourceCulture);
+            }
+        }
+        public static string Slice_Note {
+            get {
+                return ResourceManager.GetString("Slice_Note", resourceCulture);
+            }
+        }
+        public static string Slice_Pivot {
+            get {
+                return ResourceManager.GetString("Slice_Pivot", resourceCulture);
+            }
+        }
+        public static string Slice_PivotX {
+            get {
+                return ResourceManager.GetString("Slice_PivotX", resourceCulture);
+            }
+        }
+        public static string Slice_PivotY {
+            get {
+                return ResourceManager.GetString("Slice_PivotY", resourceCulture);
+            }
+        }
+        public static string Slice_Properties {
+            get {
+                return ResourceManager.GetString("Slice_Properties", resourceCulture);
             }
         }
     }

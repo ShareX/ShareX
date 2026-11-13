@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Zoom</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Midtens højde</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Midtens bredde</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Midte X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Midte Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Udsnit {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Omdøb udsnit</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Ni-delt udsnit</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Midten og ankerpunktet måles fra udsnittets øverste venstre hjørne. Begge skrives til sprite-arkets metadata.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Ankerpunkt</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Ankerpunkt X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Ankerpunkt Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Udsnitsegenskaber</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Udklipsholder</value>

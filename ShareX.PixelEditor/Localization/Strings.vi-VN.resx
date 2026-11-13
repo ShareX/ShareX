@@ -1383,11 +1383,38 @@
   <data name="Shortcuts_Zoom" xml:space="preserve">
     <value>Thu phóng</value>
   </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Chiều cao tâm</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Chiều rộng tâm</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Tâm X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Tâm Y</value>
+  </data>
   <data name="Slice_DefaultName" xml:space="preserve">
     <value>Lát cắt {0}</value>
   </data>
-  <data name="Slice_Rename" xml:space="preserve">
-    <value>Đổi tên lát cắt</value>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Lát cắt 9 phần</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>Tâm và điểm xoay được đo từ góc trên bên trái của lát cắt. Cả hai được ghi vào siêu dữ liệu của bảng sprite.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Điểm xoay</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Điểm xoay X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Điểm xoay Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Thuộc tính lát cắt</value>
   </data>
   <data name="Sprite_Clipboard" xml:space="preserve">
     <value>Bảng nhớ tạm</value>

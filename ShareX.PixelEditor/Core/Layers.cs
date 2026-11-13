@@ -260,5 +260,11 @@ public sealed class Slice
 
     public uint Color { get; set; } = 0xFF3FB950;
 
-    public Slice Clone() => new() { Name = Name, Bounds = Bounds, Color = Color };
+    /// <summary>The stretchable middle of a 9-slice, relative to the slice; null when the slice is not a 9-slice.</summary>
+    public SKRectI? Center { get; set; }
+
+    /// <summary>The origin point of the slice, relative to it; null when it has none.</summary>
+    public SKPointI? Pivot { get; set; }
+
+    public Slice Clone() => new() { Name = Name, Bounds = Bounds, Color = Color, Center = Center, Pivot = Pivot };
 }
