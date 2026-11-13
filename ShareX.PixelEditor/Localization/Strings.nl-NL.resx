@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Cellen koppelen</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Kleuren aan palet vastzetten</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Herhaald afspelen</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Palet laden...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>vastgezet</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Paletmenu</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>De actieve laag is vergrendeld</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Geschilderde kleuren worden nu afgestemd op de dichtstbijzijnde paletkleur</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Niets om te kopiëren</value>

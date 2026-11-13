@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Länka celler</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Lås färger till paletten</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Upprepa uppspelning</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Läs in palett...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>låst</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Palettmeny</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Det aktiva lagret är låst</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Målade färger anpassas nu till närmaste färg i paletten</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Inget att kopiera</value>

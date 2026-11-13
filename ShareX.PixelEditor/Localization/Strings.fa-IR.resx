@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>پیوند دادن سل‌ها</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>قفل کردن رنگ‌ها به پالت</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>پخش تکراری</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>بارگیری پالت...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>قفل‌شده</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>منوی پالت</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>لایه فعال قفل است</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>رنگ‌های نقاشی‌شده اکنون به نزدیک‌ترین رنگ پالت تبدیل می‌شوند</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>چیزی برای کپی نیست</value>

@@ -307,6 +307,12 @@ public static partial class EditorCommands
                 if (!w.Sprite.Palette.Contains(color)) w.Sprite.Palette.Add(color);
             w.Commit(Strings.Palette_Ramp.Replace("...", string.Empty));
         }, HasSprite);
+        R("palette.lock", Strings.Command_LockToPalette, null, w =>
+        {
+            w.Settings.LockToPalette = !w.Settings.LockToPalette;
+            w.SetStatus(w.Settings.LockToPalette ? Strings.Status_LockToPaletteOn : null);
+            w.RefreshPanels();
+        }, null, w => w.Settings.LockToPalette, stopsPlayback: false);
         R("palette.removeUnused", Strings.Palette_RemoveUnused, null, w =>
         {
             Sprite sprite = w.Sprite!;

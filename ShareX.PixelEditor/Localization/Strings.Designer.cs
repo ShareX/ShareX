@@ -2985,5 +2985,20 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Status_FramesCopied", resourceCulture);
             }
         }
+        public static string Command_LockToPalette {
+            get {
+                return ResourceManager.GetString("Command_LockToPalette", resourceCulture);
+            }
+        }
+        public static string Palette_Locked {
+            get {
+                return ResourceManager.GetString("Palette_Locked", resourceCulture);
+            }
+        }
+        public static string Status_LockToPaletteOn {
+            get {
+                return ResourceManager.GetString("Status_LockToPaletteOn", resourceCulture);
+            }
+        }
     }
 }

@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>เชื่อมโยงเซล</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>ล็อกสีไว้กับจานสี</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>เล่นวนซ้ำ</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>โหลดจานสี...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>ล็อกอยู่</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>เมนูจานสี</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>เลเยอร์ที่ใช้งานถูกล็อก</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>สีที่วาดจะถูกปรับเป็นสีที่ใกล้ที่สุดในจานสี</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>ไม่มีอะไรให้คัดลอก</value>

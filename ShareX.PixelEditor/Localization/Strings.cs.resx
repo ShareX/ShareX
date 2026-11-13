@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Propojit buňky</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Uzamknout barvy na paletu</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Přehrávat ve smyčce</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Načíst paletu...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>uzamčeno</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Nabídka palety</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Aktivní vrstva je zamčená</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Nakreslené barvy se nyní přichytávají k nejbližší barvě palety</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Není co kopírovat</value>

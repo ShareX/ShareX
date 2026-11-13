@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Liên kết các ô</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Khóa màu theo bảng màu</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Phát lặp lại</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Tải bảng màu...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>đã khóa</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Menu bảng màu</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Lớp đang chọn bị khóa</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Màu vẽ giờ được khớp với màu gần nhất trong bảng màu</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Không có gì để sao chép</value>

@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Hücreleri Bağla</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Renkleri Palete Kilitle</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Döngüsel Oynatma</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Palet Yükle...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>kilitli</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Palet menüsü</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Etkin katman kilitli</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Boyanan renkler artık paletteki en yakın renge uyuyor</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Kopyalanacak bir şey yok</value>

@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Leagă celulele</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Blochează culorile la paletă</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Redare în buclă</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Încarcă paleta...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>blocată</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Meniul paletei</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Stratul activ este blocat</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Culorile pictate se potrivesc acum cu cea mai apropiată culoare din paletă</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Nimic de copiat</value>

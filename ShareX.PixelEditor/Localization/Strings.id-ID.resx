@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Tautkan Sel</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Kunci Warna ke Palet</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Putar Berulang</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Muat Palet...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>terkunci</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Menu palet</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Lapisan aktif terkunci</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Warna yang dilukis kini menyesuaikan ke warna palet terdekat</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Tidak ada yang bisa disalin</value>

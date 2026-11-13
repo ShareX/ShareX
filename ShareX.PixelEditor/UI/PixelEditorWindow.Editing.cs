@@ -78,7 +78,8 @@ public sealed partial class PixelEditorWindow
             AxisY2 = _view.AxisY2,
             TiledX = Settings.Tiled is TiledMode.Horizontal or TiledMode.Both,
             TiledY = Settings.Tiled is TiledMode.Vertical or TiledMode.Both,
-            Palette = sprite.Palette
+            Palette = sprite.Palette,
+            SnapPalette = Settings.LockToPalette ? sprite.Palette.Where(c => c >> 24 != 0).ToList() : null
         };
     }
 

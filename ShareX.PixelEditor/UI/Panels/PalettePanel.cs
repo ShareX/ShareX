@@ -109,6 +109,7 @@ public sealed class PalettePanel : EditorPanel
         Add("palette.reverse");
         menu.Items.Add(new Separator());
         Add("palette.ramp");
+        Add("palette.lock");
         Add("palette.removeUnused");
         return menu;
     }
@@ -211,7 +212,7 @@ public sealed class PalettePanel : EditorPanel
                 _swatches.Children.Add(swatch);
             }
         }
-        _count.Text = string.Format(Strings.Palette_Count, colors.Count);
+        _count.Text = string.Format(Strings.Palette_Count, colors.Count) + (Editor.Settings.LockToPalette ? "  ·  " + Strings.Palette_Locked : string.Empty);
         RefreshSelection();
     }
 

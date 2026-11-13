@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>셀 연결</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>색을 팔레트로 고정</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>반복 재생</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>팔레트 불러오기...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>고정됨</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>팔레트 메뉴</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>활성 레이어가 잠겨 있습니다</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>이제 칠한 색이 팔레트에서 가장 가까운 색으로 맞춰집니다</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>복사할 내용이 없습니다</value>

@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Зв'язати комірки</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Прив'язати кольори до палітри</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Циклічне відтворення</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Завантажити палітру...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>прив'язано</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Меню палітри</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Активний шар заблоковано</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Кольори малювання тепер замінюються найближчими кольорами палітри</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Нічого копіювати</value>

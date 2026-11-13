@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Vincular celdas</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Bloquear colores a la paleta</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Reproducir en bucle</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Cargar paleta...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>bloqueada</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Menú de la paleta</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>La capa activa está bloqueada</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Los colores pintados ahora se ajustan al color más cercano de la paleta</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>No hay nada que copiar</value>

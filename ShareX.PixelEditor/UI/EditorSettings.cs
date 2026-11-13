@@ -56,6 +56,9 @@ public sealed class EditorSettings
     public bool ShowGrid { get; set; }
 
     public bool ShowRulers { get; set; }
+
+    /// <summary>Painted colors snap to the nearest palette color.</summary>
+    public bool LockToPalette { get; set; }
     public int GridWidth { get; set; } = 16;
     public int GridHeight { get; set; } = 16;
     public string GridColor { get; set; } = "#00A0FF";

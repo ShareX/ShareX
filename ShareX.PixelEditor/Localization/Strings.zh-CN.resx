@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>链接单元格</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>将颜色锁定到调色板</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>循环播放</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>载入调色板...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>已锁定</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>调色板菜单</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>当前图层已锁定</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>绘制的颜色现在会对齐到调色板中最接近的颜色</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>没有可复制的内容</value>

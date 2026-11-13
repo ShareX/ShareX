@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>Lier les cellulos</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Verrouiller les couleurs sur la palette</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>Lecture en boucle</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>Charger une palette...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>verrouillée</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>Menu de la palette</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>Le calque actif est verrouillé</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>Les couleurs peintes s'alignent désormais sur la couleur la plus proche de la palette</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>Rien à copier</value>

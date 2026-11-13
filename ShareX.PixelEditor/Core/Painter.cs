@@ -126,6 +126,11 @@ public sealed class Painter
 
     public int Tolerance { get; set; }
 
+    /// <summary>When set, every painted color is replaced by the nearest of these colors, so the sprite keeps to its palette.</summary>
+    public IReadOnlyList<uint>? SnapPalette { get; set; }
+
+    private readonly Dictionary<uint, uint> _snapped = [];
+
     /// <summary>Returns the area changed since the last call and starts a new one.</summary>
     public SKRectI TakeDirty()
     {
@@ -191,9 +196,21 @@ public sealed class Painter
         uint before = _original.Pixels[i];
         uint after = Apply(before);
         if (after >> 24 == 0) after = 0;
+        else if (SnapPalette is { Count: > 0 } palette && after != before) after = Snap(palette, after);
         if (_target.Pixels[i] == after) return;
         _target.Pixels[i] = after;
         MarkDirty(x, y);
+    }
+
+    /// <summary>The nearest opaque palette color, keeping full transparency out of the palette's way.</summary>
+    private uint Snap(IReadOnlyList<uint> palette, uint color)
+    {
+        if (_snapped.TryGetValue(color, out uint snapped)) return snapped;
+        // Translucent results become opaque or transparent, as an indexed image would hold them.
+        if (Argb.A(color) < 128) snapped = 0;
+        else snapped = Argb.Opaque(palette[Palettes.Nearest(palette, Argb.Opaque(color))]);
+        _snapped[color] = snapped;
+        return snapped;
     }
 
     private uint Apply(uint before)

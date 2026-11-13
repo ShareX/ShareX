@@ -300,6 +300,9 @@
   <data name="Command_LinkCels" xml:space="preserve">
     <value>सेल लिंक करें</value>
   </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>रंगों को पैलेट तक सीमित करें</value>
+  </data>
   <data name="Command_Loop" xml:space="preserve">
     <value>लूप में चलाएँ</value>
   </data>
@@ -1182,6 +1185,9 @@
   <data name="Palette_Load" xml:space="preserve">
     <value>पैलेट लोड करें...</value>
   </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>सीमित</value>
+  </data>
   <data name="Palette_Menu" xml:space="preserve">
     <value>पैलेट मेनू</value>
   </data>
@@ -1511,6 +1517,9 @@
   </data>
   <data name="Status_LayerLocked" xml:space="preserve">
     <value>सक्रिय परत लॉक है</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>पेंट किए गए रंग अब पैलेट के सबसे निकट रंग पर बदल जाते हैं</value>
   </data>
   <data name="Status_NothingToCopy" xml:space="preserve">
     <value>कॉपी करने के लिए कुछ नहीं</value>
