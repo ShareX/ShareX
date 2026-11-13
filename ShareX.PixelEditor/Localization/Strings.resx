@@ -198,6 +198,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Full Screen</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Gradient Map...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Desaturate</value>
   </data>
@@ -545,6 +548,27 @@
   </data>
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>From frame</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Recolors pixels by their brightness, from the color for the darkest pixels to the color for the lightest.</value>
+  </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Colors from</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Two colors</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palette, by brightness</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Shadows</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Reverse the colors</value>
   </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Hue</value>

@@ -111,7 +111,7 @@ public static partial class EditorCommands
                 C("select.grow"), C("select.shrink"), C("select.border")),
             MenuNode.Sub(Strings.Menu_Effects,
                 C("fx.hueSaturation"), C("fx.brightnessContrast"), C("fx.invert"), C("fx.grayscale"), C("fx.posterize"), S,
-                C("fx.replaceColor"), C("fx.outline"), C("fx.dropShadow"), C("fx.alphaThreshold")),
+                C("fx.replaceColor"), C("fx.gradientMap"), C("fx.outline"), C("fx.dropShadow"), C("fx.alphaThreshold")),
             MenuNode.Sub(Strings.Menu_View,
                 C("view.zoomIn"), C("view.zoomOut"), C("view.fit"), C("view.actualSize"), S,
                 C("view.pixelGrid"), C("view.grid"), C("view.snapToGrid"), C("view.gridSettings"), C("view.slices"), C("view.brushPreview"), S,

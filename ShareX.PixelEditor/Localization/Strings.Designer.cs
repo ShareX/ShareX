@@ -2670,5 +2670,45 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Command_TimelineThumbnails", resourceCulture);
             }
         }
+        public static string Command_GradientMap {
+            get {
+                return ResourceManager.GetString("Command_GradientMap", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMap_Note {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMap_Note", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapColors {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapColors", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapColorsGradient {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapColorsGradient", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapColorsPalette {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapColorsPalette", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapDark {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapDark", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapLight {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapLight", resourceCulture);
+            }
+        }
+        public static string Dialog_GradientMapReverse {
+            get {
+                return ResourceManager.GetString("Dialog_GradientMapReverse", resourceCulture);
+            }
+        }
     }
 }

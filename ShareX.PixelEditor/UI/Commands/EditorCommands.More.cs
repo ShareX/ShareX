@@ -103,7 +103,24 @@ public static partial class EditorCommands
             Func<int> dx = form.Number(Strings.Dialog_OffsetX, -64, 64, 1), dy = form.Number(Strings.Dialog_OffsetY, -64, 64, 1);
             return (b, mask) => Effects.DropShadow(b, mask, color(), dx(), dy());
         }), HasPixelLayer);
-        R("fx.alphaThreshold", Strings.Command_AlphaThreshold, null, w => _ = RunEffect(w, Strings.Command_AlphaThreshold, form =>
+        R("fx.gradientMap", Strings.Command_GradientMap, null, w => _ = RunEffect(w, Strings.Command_GradientMap, form =>
+        {
+            Sprite sprite = w.Sprite!;
+            form.Note(Strings.Dialog_GradientMap_Note);
+            Func<bool> usePalette = form.Combo(Strings.Dialog_GradientMapColors, [(Strings.Dialog_GradientMapColorsGradient, false), (Strings.Dialog_GradientMapColorsPalette, true)], false);
+            Func<uint> dark = form.Color(Strings.Dialog_GradientMapDark, w.ForegroundColor), light = form.Color(Strings.Dialog_GradientMapLight, w.BackgroundColor);
+            Func<int> steps = form.Slider(Strings.Palette_Ramp_Steps, 2, 32, 6);
+            Func<bool> reverse = form.Check(Strings.Dialog_GradientMapReverse, false);
+            return (b, mask) =>
+            {
+                uint[] ramp = usePalette()
+                    ? [.. sprite.Palette.Where(c => c >> 24 != 0).Select(Argb.Opaque).Distinct().OrderBy(Argb.Luma)]
+                    : [.. Enumerable.Range(0, steps()).Select(i => Argb.Lerp(Argb.Opaque(dark()), Argb.Opaque(light()), i / (float)(steps() - 1)))];
+                if (ramp.Length == 0) return b.Clone();
+                if (reverse()) Array.Reverse(ramp);
+                return Effects.Map(b, mask, c => Argb.WithAlpha(ramp[Math.Clamp((int)Math.Round(Argb.Luma(c) / 255.0 * (ramp.Length - 1)), 0, ramp.Length - 1)], Argb.A(c)));
+            };
+        }), HasPixelLayer);        R("fx.alphaThreshold", Strings.Command_AlphaThreshold, null, w => _ = RunEffect(w, Strings.Command_AlphaThreshold, form =>
         {
             form.Note(Strings.Dialog_AlphaThreshold_Note);
             Func<int> threshold = form.Slider(Strings.Dialog_Threshold, 1, 255, 128);
