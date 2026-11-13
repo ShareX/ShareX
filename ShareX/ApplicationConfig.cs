@@ -142,6 +142,8 @@ namespace ShareX
 
         public bool HistorySaveTasks = true;
         public bool HistoryCheckURL = false;
+        // Reads the text of each captured image in the background and stores it with the history item, so history search finds it.
+        public bool HistorySaveOCRText = false;
 
         public RecentTask[] RecentTasks = null;
         public bool RecentTasksSave = false;

@@ -1,0 +1,1803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>Adição</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>Cor</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>Superexposição de cores</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>Subexposição de cores</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>Escurecer</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>Diferença</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>Dividir</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>Exclusão</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>Luz direta</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>Matiz</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>Clarear</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>Luminosidade</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>Multiplicação</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>Sobrepor</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>Saturação</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>Tela</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>Luz indireta</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>Subtrair</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>Escuro</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>Médio</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>Branco</value>
+  </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Usadas recentemente. Clique para a cor de primeiro plano e clique com o botão direito para a cor de fundo.</value>
+  </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Nenhum comando correspondente</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Pesquisar comandos, ferramentas e painéis</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>Tamanho real (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>Remover bordas suaves...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>Borda...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>Brilho/contraste...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>Aumentar tamanho do pincel</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>Mostrar pré-visualização do pincel</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>Diminuir tamanho do pincel</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>Tamanho da tela de pintura...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>Propriedades da célula...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Limpar</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>Limpar célula</value>
+  </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Limpar guias</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>Fechar tudo</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta de comandos...</value>
+  </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Converter em camada de pixels</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Converter em camada de mapa de blocos...</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>Copiar</value>
+  </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copiar quadros</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>Copiar imagem para a área de transferência</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>Copiar mesclado</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>Cortar para a seleção</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>Recortar</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Definir pincel a partir da seleção</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>Excluir quadro</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>Excluir camada</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>Desmarcar</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>Sombra projetada...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>Duplicar camada</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Duplicar sprite</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Exportar...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>Exportar folha de sprites...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportar mapa de blocos...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>Preencher com a cor de primeiro plano</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>Primeiro quadro</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>Ajustar na tela</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>Achatar camadas</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>Espelhar horizontalmente</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>Espelhar verticalmente</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>Propriedades do quadro...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>Tela cheia</value>
+  </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Mapa de degradê...</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>Dessaturar</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>Mostrar grade</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>Configurações da grade...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>Expandir...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>Matiz/saturação...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Importar imagens como quadros...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Importar imagem como camada...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>Importar folha de sprites...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>Inverter cores</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>Inverter seleção</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>Último quadro</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>Selecionar camada acima</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>Selecionar camada abaixo</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>Bloqueada</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>Mover camada para baixo</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>Mover camada para o fundo</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>Mover camada para o topo</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>Mover camada para cima</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>Propriedades da camada...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>Camada de referência</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nova camada via cópia</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nova camada via recorte</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>Visível</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>Vincular células</value>
+  </data>
+  <data name="Command_LockToPalette" xml:space="preserve">
+    <value>Travar cores na paleta</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>Reproduzir em loop</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>Mesclar para baixo</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>Mover quadros para a esquerda</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>Mover quadros para a direita</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>Novo...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>Novo quadro vazio</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>Novo quadro</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>Novo da área de transferência</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>Novo grupo</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>Nova camada</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>Novo quadro vinculado</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>Nova etiqueta...</value>
+  </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nova camada de mapa de blocos...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>Próximo quadro</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>Configurações de papel-cebola...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>Papel-cebola</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>Abrir...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>Contorno...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>Colar</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Colar quadros</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>Colar como nova camada</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>Colar como novo sprite</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>Mostrar grade de pixels</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>Reproduzir/parar animação</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>Reproduzir só a etiqueta atual</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>Posterizar...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>Preferências...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>Quadro anterior</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>Refazer</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>Reduzir cores...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>Remover etiqueta</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Remover blocos não usados</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>Substituir cor...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>Redefinir área de trabalho</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>Inverter quadros</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>Rodar 180°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>Girar 90° no sentido anti-horário</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>Girar 90° no sentido horário</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Réguas</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>Salvar como...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>Selecionar tudo</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>Selecionar a cor de primeiro plano</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>Selecionar conteúdo da célula</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Deslocar para baixo</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Deslocar para a esquerda</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Deslocar para a direita</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Deslocar para cima</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>Atalhos de teclado...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>Barra de opções</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>Mostrar fatias</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>Linha do tempo</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>Barra de ferramentas</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>Contrair...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>Ajustar à grade</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>Tamanho do sprite...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>Traçar seleção</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>Definir posição do eixo...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>Simetria horizontal</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>Centralizar eixos</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>Simetria vertical</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>Propriedades da etiqueta...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>Repetir na horizontal</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>Modo lado a lado</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>Repetir na vertical</value>
+  </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniaturas das células</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>Barra de ferramentas em duas colunas</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>Transformação livre</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>Aparar bordas vazias</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>Desfazer</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>Desvincular células</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>Enviar imagem</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>Mais zoom</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>Menos zoom</value>
+  </data>
+  <data name="Command_ZoomToSelection" xml:space="preserve">
+    <value>Zoom na seleção</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>Aplicar a todos os quadros</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>Torna cada pixel totalmente opaco ou totalmente transparente. Use para limpar bordas suaves de imagens importadas.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>Âncora</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>Aplicar a</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>Eixo vertical (meios pixels)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>Eixo horizontal (meios pixels)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>Remover transparência parcial</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>Modo de mesclagem</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>Brilho</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>Cor</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>Cores</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>Contraste</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>Criar</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>Direção</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>Duração (ms)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>Quadro {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>Quadros {0} a {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>De</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>Do quadro</value>
+  </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Cores de</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Duas cores</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paleta, por brilho</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Sombras</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Realces</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Inverter as cores</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Recolore os pixels pelo brilho, da cor dos pixels mais escuros à cor dos mais claros.</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>Matiz</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>Manter proporções</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>Níveis</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>Luminosidade</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>Método</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>Novo sprite</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>Deslocamento X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Deslocamento Y</value>
+  </data>
+  <data name="Dialog_OnionLoop" xml:space="preserve">
+    <value>Voltar do último quadro para o primeiro</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>Quadros posteriores</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>Quadros anteriores</value>
+  </data>
+  <data name="Dialog_OnionTagOnly" xml:space="preserve">
+    <value>Somente quadros da etiqueta atual</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>Tingir de vermelho os quadros anteriores e de azul os posteriores</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>Incluir cantos diagonais</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>Desenhar dentro da forma</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>Porcentagem</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>Pixels</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>Predefinições</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>Cria uma paleta com esta quantidade de cores a partir de todo o sprite e recolore cada célula com ela. A nova paleta substitui a atual.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>Recolore cada célula com as cores mais próximas da paleta atual.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Repetições</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>Vizinho mais próximo mantém os pixels nítidos. O dimensionamento de pixel art também suaviza bordas em escada ao ampliar 2× ou mais.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>Saturação</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>Um valor par coloca o eixo entre dois pixels; um valor ímpar o faz passar pelo meio de um pixel.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>Limite</value>
+  </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Altura do bloco</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Largura do bloco</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Camadas de mapa de blocos são feitas de blocos de um mesmo tamanho. Pintar um bloco o altera em todos os lugares em que é usado.</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>Para</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>Até o quadro</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>Fundo transparente</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>Para frente</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>Vai e vem</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>Vai e vem invertido</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>Inverter</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>Ordenado 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>Ordenado 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>Floyd–Steinberg</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>Ordenado</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>Fechar painel</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>Recolher grupo de painéis</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>Expandir grupo de painéis</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>Mover para o grupo com {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>Mover para um novo grupo</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>Menu do painel</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>Todos os quadros</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>PNG animado</value>
+  </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animação como é reproduzida</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>Exportar</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>Quadro atual</value>
+  </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} arquivo(s)</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>Quadros</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>GIF animado</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, {2} quadro(s)</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>Imagem PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>Escalar</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>Quadros selecionados</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>Sequência PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>Este formato salva apenas o quadro atual.</value>
+  </data>
+  <data name="Export_SmoothScale" xml:space="preserve">
+    <value>Suavizar bordas ao ampliar</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Arquivos</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Um arquivo por camada</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Um arquivo</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Um arquivo por etiqueta</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>Etiqueta: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>Todos os arquivos compatíveis</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>Imagens</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>Paletas</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>Sprite do editor de pixels do ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>Modo de mesclagem</value>
+  </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Copiar células</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Copiar quadros</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>Excluir fatia</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>Desmarcar</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>Editar cor da paleta</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>Duração do quadro</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>Ocultar camada</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>Carregar paleta</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>Bloquear camada</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>Modificar seleção</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>Mover</value>
+  </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Mover células</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>Mover quadros</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>Editar fatia</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>Novo</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>Nova fatia</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>Opacidade da camada</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Recuperado</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>Propriedades da fatia</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>Reordenar camada</value>
+  </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Reordenar paleta</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>Mostrar camada</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Mostrar apenas esta camada</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>Desbloquear camada</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>Atrás</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>Escurecer</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>Clarear</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>Bloquear alfa</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>Substituir</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} cópia</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>Camada</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>Achatada</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Mapa de blocos</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>Esta célula está vinculada a outros quadros</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>Camada de referência: não exportada</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Camada de mapa de blocos com blocos de {0} × {1} px</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>Expandir ou recolher o grupo</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>Bloquear ou desbloquear a camada</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>Mostrar ou ocultar a camada</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>Célula</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_Editar</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>Efei_tos</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(Vazio)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_Arquivo</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>_Quadro</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Aj_uda</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_Camada</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>Abrir recentes</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>Painéis</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_Selecionar</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Deslocar pixels (com retorno)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>S_prite</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>Simetria</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>Etiquetas</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>Modo lado a lado</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Mapa de blocos</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_Visualizar</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>A área de transferência não contém uma imagem.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>Não foi possível concluir "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>Não foi possível abrir "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>Não foi possível salvar "{0}": {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>Não salvar</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>A operação falhou: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>Salvar as alterações em "{0}" antes de fechar?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>A imagem é grande demais. Sprites podem ter até {0} pixels de largura e altura.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>Todas as camadas</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>Preencher com base nas cores de todas as camadas visíveis em vez da camada ativa</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>Ângulo</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>Aplicar</value>
+  </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Pincéis</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Redefinir pincel</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>Contíguo</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>Somente os pixels conectados ao pixel clicado; desative para pegar todos os pixels dessa cor</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Pincel personalizado</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>Densidade</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>Diagonal</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>Espalhar também por pixels que só se tocam nos cantos</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>Pontilhamento</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>Clique escolhe a cor de primeiro plano; clique direito, a cor de fundo</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>Preenchido</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>Altura</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>Tinta</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>Degradê linear</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>Arraste para mover a seleção ou a célula. Segure Alt para mover uma cópia.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>Opacidade</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>Contorno</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>Pixel perfeito</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>Remove os pixels de canto extras de linhas à mão livre desenhadas com um pincel de 1 px</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>Degradê radial</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>Raio</value>
+  </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Remover pincel da biblioteca</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>Ponta redonda</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>Usar as cores de todas as camadas visíveis em vez da camada ativa</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>Adicionar à seleção (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>Fazer interseção com a seleção (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>Nova seleção</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>Subtrair da seleção (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>Clique clareia e clique direito escurece, seguindo a paleta</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>Tamanho:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>Arraste para criar uma fatia. Clique em uma fatia para selecioná-la; clique duas vezes para renomeá-la.</value>
+  </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Rotação suave</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Mantém limpas as linhas da pixel art girada em vez de serrilhadas</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>Ponta quadrada</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Pincel padrão (tamanho e forma)</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>Clique onde o texto deve ficar</value>
+  </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Bloco {0}   {1} × {2} px</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>Para transparente</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>Esmaecer a cor de primeiro plano em vez de mesclá-la com a cor de fundo</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerância</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>Transformar</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>Largura</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>Adicionar a cor de primeiro plano à paleta</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} cores</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>Editar cor...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>Criar paleta a partir do sprite</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>Carregar paleta...</value>
+  </data>
+  <data name="Palette_Locked" xml:space="preserve">
+    <value>travada</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>Menu da paleta</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>Predefinições</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>Adicionar rampa de cores...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>Adiciona uma rampa de cores da cor de primeiro plano até a cor de fundo.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>Etapas</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>Remapear sprite para a paleta...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>Remover cor da paleta</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>Remover cores não usadas</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>Substituir pela cor de primeiro plano</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>Inverter ordem</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>Salvar paleta...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>Selecionar pixels desta cor</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>Ordenar por brilho</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>Ordenar por matiz</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>Ordenar por saturação</value>
+  </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Clique: cor de primeiro plano. Clique direito: cor de fundo. Clique duplo: editar. Arrastar: reordenar. Ctrl+clique direito: mais opções.</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>Cor</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>Histórico</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>Camadas</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>Paleta</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>Prévia</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Blocos</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>Xadrez</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>Denso</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>Diagonal</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>Pontos</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>Linhas horizontais</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>Sólido</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>Esparso</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>Linhas verticais</value>
+  </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Cópia de recuperação a cada (minutos, 0 = desligada)</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>Xadrez de transparência</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>Tamanho das casas (pixels)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>Estados do histórico</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>Mostrar grade de pixels a partir do zoom (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>Lembrar tamanho e posição da janela</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>Tamanho da célula da linha do tempo</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>Ajustar ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>Reproduzir ou pausar a pré-visualização</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Descartar</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>O editor de pixels não foi fechado normalmente. É possível restaurar {0} sprite(s) com alterações não salvas.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>Vizinho mais próximo</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>Dimensionamento de pixel art</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>Suave (bicúbico)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Guia em {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Arraste para a tela para adicionar uma guia. Mova as guias com a ferramenta Mover e arraste-as para fora da tela para removê-las.</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>Célula atual</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>Todos os quadros da camada</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>Quadros selecionados</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>Sprite inteiro</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>Altura do quadro</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>Largura do quadro</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>Colunas</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>Faixa horizontal</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>Importar</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} células, até {2} quadros</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>Tamanho da folha: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>Folha: {0} × {1} px, {2} quadro(s)</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>Layout</value>
+  </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Mesclar quadros idênticos</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>Gravar dados JSON (quadros, etiquetas e fatias)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Compactado</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>Preenchimento</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>Ignorar células vazias</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>Espaçamento</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Recortar o espaço vazio ao redor dos quadros</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} únicos</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>Faixa vertical</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>Pintar com a cor de fundo</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>Comandos</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>Ocultar ou mostrar todos os painéis</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>botão do meio do mouse</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Digite um atalho como Ctrl+Shift+E. Separe alternativas com vírgula; deixe um campo vazio para remover o atalho.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>Mover a visualização</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>Escolher uma cor enquanto pinta</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>Restaurar padrões</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>botão direito do mouse</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>Linha reta a partir do último ponto (lápis)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>roda do mouse</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Slice_CenterHeight" xml:space="preserve">
+    <value>Altura do centro</value>
+  </data>
+  <data name="Slice_CenterWidth" xml:space="preserve">
+    <value>Largura do centro</value>
+  </data>
+  <data name="Slice_CenterX" xml:space="preserve">
+    <value>Centro X</value>
+  </data>
+  <data name="Slice_CenterY" xml:space="preserve">
+    <value>Centro Y</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>Fatia {0}</value>
+  </data>
+  <data name="Slice_NineSlice" xml:space="preserve">
+    <value>Fatia de 9 partes</value>
+  </data>
+  <data name="Slice_Note" xml:space="preserve">
+    <value>O centro e o pivô são medidos a partir do canto superior esquerdo da fatia. Ambos são gravados nos metadados da folha de sprites.</value>
+  </data>
+  <data name="Slice_Pivot" xml:space="preserve">
+    <value>Ponto de pivô</value>
+  </data>
+  <data name="Slice_PivotX" xml:space="preserve">
+    <value>Pivô X</value>
+  </data>
+  <data name="Slice_PivotY" xml:space="preserve">
+    <value>Pivô Y</value>
+  </data>
+  <data name="Slice_Properties" xml:space="preserve">
+    <value>Propriedades da fatia</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>Área de transferência</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>Sprite-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>Limpar arquivos recentes</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>Novo sprite</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>Nenhum arquivo recente</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>Abrir</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>Recentes</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>Início rápido</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>Nenhum pixel dessa cor</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>Copiado para a área de transferência</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} exportado</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} arquivos exportados</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>Exportando...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} quadro(s) copiado(s)</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>A camada ativa está oculta</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>A camada ativa está bloqueada</value>
+  </data>
+  <data name="Status_LockToPaletteOn" xml:space="preserve">
+    <value>As cores pintadas agora se ajustam à cor mais próxima da paleta</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>Nada para copiar</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>Não há camada de pixels abaixo para mesclar</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>A célula está vazia</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>Recolorindo...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>Redimensionando...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} salvo</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>Selecione primeiro uma camada de pixels</value>
+  </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Selecione primeiro uma camada de mapa de blocos</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Seleção {0} × {1}</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   Quadro {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>A camada foi dividida em {0} bloco(s)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} bloco(s) não usado(s) removido(s)</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>Etiqueta {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>Bordas suaves</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>Negrito</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>Fonte:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>Itálico</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>O texto é colocado como uma seleção que você pode mover antes de fazer parte da camada.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Pintar altera todas as cópias de um bloco</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Quando desativado, pintar um bloco dá a essa célula um bloco novo em vez de alterar o bloco compartilhado.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>A camada ativa não é uma camada de mapa de blocos. Uma camada de mapa de blocos é feita de blocos de um mesmo tamanho: pintar um bloco o altera em todos os lugares em que é usado, e a ferramenta Carimbo de blocos coloca blocos na grade.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Bloco vazio (limpa células)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} blocos, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Bloco {0}</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>Duração</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>Por quanto tempo os quadros selecionados são exibidos, em milissegundos</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} quadros   {1:0.##} s   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>Camadas</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>Quadros {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maximizar</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Restaurar</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>Lata de tinta</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>Clique para preencher uma área de cor semelhante</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>Substituição de cor</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>Pinta a cor de primeiro plano apenas sobre pixels da cor de fundo; o clique direito faz o contrário</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>Contorno preenchido</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>Desenhe um contorno à mão livre; ele é fechado e preenchido ao soltar</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>Curva</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>Mova para curvar, clique para concluir, Esc para cancelar</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>Arraste uma linha, mova para curvá-la e clique para concluir</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>Elipse</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Letreiro elíptico</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Arraste para desenhar uma elipse. Shift faz um círculo, Ctrl desenha a partir do centro</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>Borracha</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>Arraste para apagar pixels</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>Conta-gotas</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>Clique para pegar a cor de primeiro plano e clique direito para a cor de fundo</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>Gradiente</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>Arraste para preencher com um degradê da cor de primeiro plano para a cor de fundo</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>Mão</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>Arraste para mover a visualização. Segure Espaço para mover com qualquer ferramenta</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>Laço</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>Arraste ao redor de uma área para selecioná-la</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>Linha</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>Arraste para desenhar uma linha. Shift ajusta a ângulos de pixel limpos</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>Varinha mágica</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>Clique para selecionar uma área de cor semelhante</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>Mover</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>Arraste para mover a seleção ou a célula. Arraste as alças para dimensionar e girar; Enter para aplicar</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>Lápis</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>Desenhe com a cor de primeiro plano; o clique direito desenha com a cor de fundo. Shift+clique traça uma linha a partir do último ponto</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>Laço poligonal</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>Clique para adicionar cantos; clique duas vezes ou pressione Enter para fechar a seleção</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Letreiro retangular</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>Retângulo</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>Arraste para desenhar um retângulo. Shift faz um quadrado, Ctrl desenha a partir do centro</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>Arraste para selecionar. Shift adiciona, Alt subtrai, Shift+Alt faz a interseção</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>Sombreamento</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>Arraste para clarear pixels seguindo a paleta; o clique direito escurece</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>Fatiar</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>Arraste para marcar uma área nomeada que é exportada com as folhas de sprites</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>Aerógrafo</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>Segure para borrifar pixels espalhados</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>Texto</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>Clique para adicionar texto</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Carimbo de blocos</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Clique ou arraste para colocar o bloco selecionado. Shift+clique preenche as células conectadas. O clique direito limpa células. Alt+clique pega o bloco sob o cursor.</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>Clique para ampliar; clique direito ou Alt+clique para reduzir</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>Cor de fundo</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>Recolher para uma coluna</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>Cores padrão</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>Expandir para duas colunas</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>Cor de primeiro plano</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>Alternar cores de primeiro plano e de fundo</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>Editor de pixels</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - Editor de pixels</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - Editor de pixels</value>
+  </data>
+</root>

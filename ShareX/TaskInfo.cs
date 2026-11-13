@@ -30,6 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ShareX
 {
@@ -150,6 +151,9 @@ namespace ShareX
         public Stopwatch UploadDuration { get; set; }
 
         public UploadResult Result { get; set; }
+
+        // Text recognized from the captured image, which is added to the history item when it finishes.
+        public Task<string> HistoryOCRTask { get; set; }
 
         public TaskInfo(TaskSettings taskSettings)
         {

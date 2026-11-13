@@ -605,6 +605,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
         double scaling = GetScreenScaling(_initialPosition);
         ConfigureGeometry(scaling);
         Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels);
+        WindowGeometryLog.Record(this, "Screen recording frame",
+            new DrawingRectangle(_initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels, 0, 0));
         ApplyToolWindowStyle();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
