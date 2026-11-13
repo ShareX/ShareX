@@ -454,7 +454,7 @@ public class EditorInputController
                 _isCreatingEffect = true;
                 break;
             case EditorTool.Magnify:
-                _currentShape = new MagnifyAnnotation { Amount = vm.EffectStrength, IsEllipse = vm.EffectEllipse, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) }.CreateVisual();
+                _currentShape = new MagnifyAnnotation { Amount = vm.EffectStrength, IsEllipse = vm.EffectEllipse, StrokeColor = vm.SelectedColor, StrokeWidth = vm.StrokeWidth, BorderStyle = vm.SelectedBorderStyle, StartPoint = ToSKPoint(_startPoint), EndPoint = ToSKPoint(_startPoint) }.CreateVisual();
                 _isCreatingEffect = true;
                 break;
             case EditorTool.Highlight:

@@ -488,6 +488,12 @@ namespace ShareX.ImageEditor.Presentation.Views
                         if (effect is MagnifyAnnotation magnify)
                         {
                             vm.EffectEllipse = magnify.IsEllipse;
+                            vm.SelectedColor = magnify.StrokeColor;
+                            vm.SelectedBorderStyle = magnify.BorderStyle;
+                            if (magnify.StrokeWidth > 0)
+                            {
+                                vm.StrokeWidth = (int)magnify.StrokeWidth;
+                            }
                         }
                         if (effect is HighlightAnnotation highlight)
                         {

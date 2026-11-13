@@ -26,6 +26,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Media;
+using ShareX.ImageEditor.Presentation.Rendering;
 
 namespace ShareX.ImageEditor.Core.Annotations;
 
@@ -36,13 +37,14 @@ public partial class MagnifyAnnotation
     /// </summary>
     public Control CreateVisual()
     {
-        return new Avalonia.Controls.Shapes.Rectangle
+        var rectangle = new Avalonia.Controls.Shapes.Rectangle
         {
-            Stroke = Brushes.Transparent,
-            StrokeThickness = 0,
             Fill = Brushes.Transparent,
             Tag = this
         };
+
+        AnnotationVisualHelpers.ApplyMagnifyBorder(rectangle, this);
+        return rectangle;
     }
 
     internal Control CreatePreviewVisual()

@@ -179,6 +179,11 @@ namespace ShareX.ImageEditor.Integration
         public float PixelateStrength { get; set; } = 20;
         public float MagnifierStrength { get; set; } = 2;
         public bool MagnifierEllipse { get; set; }
+        public string MagnifierBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);
+        [JsonIgnore]
+        public Color MagnifierBorderColor { get => HexToColor(MagnifierBorderColorHex); set => MagnifierBorderColorHex = ColorToHex(value); }
+        public int MagnifierThickness { get; set; } = 4;
+        public BorderStyle MagnifierBorderStyle { get; set; } = BorderStyle.Solid;
         public float SpotlightStrength { get; set; } = 30;
         public float SpotlightBlur { get; set; } = 0;
         public bool SpotlightEllipse { get; set; }
