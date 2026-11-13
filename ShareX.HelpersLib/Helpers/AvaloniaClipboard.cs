@@ -28,6 +28,7 @@ using Avalonia.Input.Platform;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Integration;
 using System;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,13 +42,38 @@ internal static class AvaloniaClipboard
         throw new PlatformNotSupportedException("Clipboard access is unavailable.");
 
     public static bool Clear() => DesktopServices.Run(async () => { await Clipboard.ClearAsync(); return true; });
-    public static string GetText() => DesktopServices.Run(() => Clipboard.TryGetTextAsync());
-    public static bool SetText(string text) => DesktopServices.Run(async () =>
+    public static string GetText()
     {
-        await Clipboard.SetTextAsync(text);
-        await Clipboard.FlushAsync();
-        return true;
-    });
+        try
+        {
+            string text = DesktopServices.Run(() => Clipboard.TryGetTextAsync());
+            if (!string.IsNullOrEmpty(text))
+                return text;
+        }
+        catch { }
+
+        if (OperatingSystem.IsLinux())
+        {
+            return TryGetTextLinux();
+        }
+
+        return null;
+    }
+
+    public static bool SetText(string text)
+    {
+        if (OperatingSystem.IsLinux() && TryCopyTextLinux(text))
+        {
+            return true;
+        }
+
+        return DesktopServices.Run(async () =>
+        {
+            await Clipboard.SetTextAsync(text);
+            await Clipboard.FlushAsync();
+            return true;
+        });
+    }
 
     public static string[] GetFiles() => DesktopServices.Run(async () =>
         (await Clipboard.TryGetFilesAsync())?.Select(x => x.TryGetLocalPath()).Where(x => !string.IsNullOrEmpty(x)).ToArray());
@@ -68,20 +94,179 @@ internal static class AvaloniaClipboard
         return true;
     });
 
-    public static bool SetImage(byte[] png, byte[] dib, string html) => DesktopServices.Run(async () =>
+    public static bool SetImage(byte[] png, byte[] dib, string html)
     {
         if (OperatingSystem.IsWindows())
         {
-            WindowsClipboard.SetImage(DesktopServices.GetWindow().TryGetPlatformHandle()?.Handle ?? IntPtr.Zero, png, dib, html);
+            return DesktopServices.Run(() =>
+            {
+                WindowsClipboard.SetImage(DesktopServices.GetWindow().TryGetPlatformHandle()?.Handle ?? IntPtr.Zero, png, dib, html);
+                return true;
+            });
+        }
+
+        if (OperatingSystem.IsLinux() && TryCopyImageLinux(png))
+        {
             return true;
         }
-        OwnedImageTransfer owned = CreateImageTransfer(png, html);
-        try { await Clipboard.SetDataAsync(owned); }
-        catch { owned.Dispose(); throw; }
-        // Ownership has passed to Avalonia even if persisting the clipboard fails.
-        await Clipboard.FlushAsync();
-        return true;
-    });
+
+        return DesktopServices.Run(async () =>
+        {
+            OwnedImageTransfer owned = CreateImageTransfer(png, html);
+            try { await Clipboard.SetDataAsync(owned); }
+            catch { owned.Dispose(); throw; }
+            // Ownership has passed to Avalonia even if persisting the clipboard fails.
+            await Clipboard.FlushAsync();
+            return true;
+        });
+    }
+
+    private static bool TryCopyImageLinux(byte[] png)
+    {
+        if (png == null || png.Length == 0) return false;
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("wl-copy", "--type image/png")
+            {
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                proc.StandardInput.BaseStream.Write(png, 0, png.Length);
+                proc.StandardInput.BaseStream.Flush();
+                proc.StandardInput.Close();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return true;
+                }
+            }
+        }
+        catch { }
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("xclip", "-selection clipboard -target image/png")
+            {
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                proc.StandardInput.BaseStream.Write(png, 0, png.Length);
+                proc.StandardInput.BaseStream.Flush();
+                proc.StandardInput.Close();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return true;
+                }
+            }
+        }
+        catch { }
+
+        return false;
+    }
+
+    private static bool TryCopyTextLinux(string text)
+    {
+        if (text == null) return false;
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("wl-copy")
+            {
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                proc.StandardInput.Write(text);
+                proc.StandardInput.Flush();
+                proc.StandardInput.Close();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return true;
+                }
+            }
+        }
+        catch { }
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("xclip", "-selection clipboard")
+            {
+                RedirectStandardInput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                proc.StandardInput.Write(text);
+                proc.StandardInput.Flush();
+                proc.StandardInput.Close();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return true;
+                }
+            }
+        }
+        catch { }
+
+        return false;
+    }
+
+    private static string TryGetTextLinux()
+    {
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("wl-paste", "--no-newline")
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                string res = proc.StandardOutput.ReadToEnd();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return res;
+                }
+            }
+        }
+        catch { }
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("xclip", "-selection clipboard -out")
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                string res = proc.StandardOutput.ReadToEnd();
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0)
+                {
+                    return res;
+                }
+            }
+        }
+        catch { }
+
+        return null;
+    }
 
     private static OwnedImageTransfer CreateImageTransfer(byte[] png, string html)
     {
@@ -114,16 +299,82 @@ internal static class AvaloniaClipboard
         };
     });
 
-    public static byte[] GetImage() => DesktopServices.Run(async () =>
+    private static byte[] TryGetImageLinux()
     {
-        byte[] png = await Clipboard.TryGetValueAsync(DataFormat.CreateBytesPlatformFormat(OperatingSystem.IsWindows() ? "PNG" : "image/png"));
-        if (png != null) return png;
-        using AvaloniaBitmap bitmap = await Clipboard.TryGetBitmapAsync();
-        if (bitmap == null) return null;
-        using MemoryStream stream = new();
-        bitmap.Save(stream, Avalonia.Media.Imaging.PngBitmapEncoderOptions.Default);
-        return stream.ToArray();
-    });
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("wl-paste", "--type image/png")
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                using MemoryStream ms = new MemoryStream();
+                proc.StandardOutput.BaseStream.CopyTo(ms);
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0 && ms.Length > 0)
+                {
+                    return ms.ToArray();
+                }
+            }
+        }
+        catch { }
+
+        try
+        {
+            using Process proc = new Process();
+            proc.StartInfo = new ProcessStartInfo("xclip", "-selection clipboard -t image/png")
+            {
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            if (proc.Start())
+            {
+                using MemoryStream ms = new MemoryStream();
+                proc.StandardOutput.BaseStream.CopyTo(ms);
+                if (proc.WaitForExit(1000) && proc.ExitCode == 0 && ms.Length > 0)
+                {
+                    return ms.ToArray();
+                }
+            }
+        }
+        catch { }
+
+        return null;
+    }
+
+    public static byte[] GetImage()
+    {
+        try
+        {
+            byte[] image = DesktopServices.Run(async () =>
+            {
+                byte[] png = await Clipboard.TryGetValueAsync(DataFormat.CreateBytesPlatformFormat(OperatingSystem.IsWindows() ? "PNG" : "image/png"));
+                if (png != null) return png;
+                using AvaloniaBitmap bitmap = await Clipboard.TryGetBitmapAsync();
+                if (bitmap == null) return null;
+                using MemoryStream stream = new();
+                bitmap.Save(stream, Avalonia.Media.Imaging.PngBitmapEncoderOptions.Default);
+                return stream.ToArray();
+            });
+
+            if (image != null && image.Length > 0)
+            {
+                return image;
+            }
+        }
+        catch { }
+
+        if (OperatingSystem.IsLinux())
+        {
+            return TryGetImageLinux();
+        }
+
+        return null;
+    }
 
     public static ClipboardData Capture() => DesktopServices.Run(async () =>
     {

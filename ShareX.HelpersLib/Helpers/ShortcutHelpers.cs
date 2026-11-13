@@ -85,14 +85,35 @@ namespace ShareX.HelpersLib
 
         private static string GetShortcutPath(Environment.SpecialFolder specialFolder, string shortcutName)
         {
-            string folderPath = Environment.GetFolderPath(specialFolder);
+            if (!OperatingSystem.IsWindows())
+            {
+                string home = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string folderPath;
+                if (specialFolder == Environment.SpecialFolder.Startup)
+                {
+                    folderPath = Path.Combine(home, ".config", "autostart");
+                }
+                else
+                {
+                    folderPath = Path.Combine(home, ".local", "share", "applications");
+                }
+
+                if (!shortcutName.EndsWith(".desktop", StringComparison.OrdinalIgnoreCase))
+                {
+                    shortcutName = Path.GetFileNameWithoutExtension(shortcutName) + ".desktop";
+                }
+
+                return Path.Combine(folderPath, shortcutName);
+            }
+
+            string winFolderPath = Environment.GetFolderPath(specialFolder);
 
             if (!shortcutName.EndsWith(".lnk", StringComparison.OrdinalIgnoreCase))
             {
                 shortcutName += ".lnk";
             }
 
-            return Path.Combine(folderPath, shortcutName);
+            return Path.Combine(winFolderPath, shortcutName);
         }
 
         private static bool CreateShortcut(string shortcutPath, string targetPath, string arguments = "")
@@ -100,6 +121,62 @@ namespace ShareX.HelpersLib
             if (!string.IsNullOrEmpty(shortcutPath) && !string.IsNullOrEmpty(targetPath) && File.Exists(targetPath))
             {
                 DeleteShortcut(shortcutPath);
+
+                if (!OperatingSystem.IsWindows())
+                {
+                    try
+                    {
+                        string dir = Path.GetDirectoryName(shortcutPath);
+                        if (!string.IsNullOrEmpty(dir) && !Directory.Exists(dir))
+                        {
+                            Directory.CreateDirectory(dir);
+                        }
+
+                        string name = Path.GetFileNameWithoutExtension(shortcutPath);
+                        string exec;
+                        if (targetPath.EndsWith(".dll", StringComparison.OrdinalIgnoreCase))
+                        {
+                            exec = string.IsNullOrEmpty(arguments) ? $"dotnet \"{targetPath}\"" : $"dotnet \"{targetPath}\" {arguments}";
+                        }
+                        else if (Path.GetFileNameWithoutExtension(targetPath).Equals("dotnet", StringComparison.OrdinalIgnoreCase))
+                        {
+                            string runSh = null;
+                            string searchDir = AppContext.BaseDirectory;
+                            while (!string.IsNullOrEmpty(searchDir))
+                            {
+                                string candidate = Path.Combine(searchDir, "run.sh");
+                                if (File.Exists(candidate))
+                                {
+                                    runSh = candidate;
+                                    break;
+                                }
+                                searchDir = Directory.GetParent(searchDir)?.FullName;
+                            }
+
+                            if (!string.IsNullOrEmpty(runSh))
+                            {
+                                exec = string.IsNullOrEmpty(arguments) ? $"\"{runSh}\"" : $"\"{runSh}\" {arguments}";
+                            }
+                            else
+                            {
+                                string dllPath = Path.Combine(AppContext.BaseDirectory, "ShareX.dll");
+                                exec = string.IsNullOrEmpty(arguments) ? $"dotnet \"{dllPath}\"" : $"dotnet \"{dllPath}\" {arguments}";
+                            }
+                        }
+                        else
+                        {
+                            exec = string.IsNullOrEmpty(arguments) ? $"\"{targetPath}\"" : $"\"{targetPath}\" {arguments}";
+                        }
+                        string content = $"[Desktop Entry]\nType=Application\nName={name}\nExec={exec}\nTerminal=false\nIcon=sharex\nComment=ShareX\n";
+                        File.WriteAllText(shortcutPath, content);
+                        return true;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugHelper.WriteException(ex);
+                        return false;
+                    }
+                }
 
                 WshShell shell = new WshShell();
                 IWshShortcut shortcut = ((IWshShell)shell).CreateShortcut(shortcutPath);
@@ -116,6 +193,39 @@ namespace ShareX.HelpersLib
 
         private static string GetShortcutTargetPath(string shortcutPath)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                if (!string.IsNullOrEmpty(shortcutPath) && File.Exists(shortcutPath))
+                {
+                    foreach (string line in File.ReadAllLines(shortcutPath))
+                    {
+                        if (line.StartsWith("Exec=", StringComparison.OrdinalIgnoreCase))
+                        {
+                            string exec = line.Substring(5).Trim();
+                            if (exec.StartsWith("dotnet ", StringComparison.OrdinalIgnoreCase))
+                            {
+                                string rem = exec.Substring(7).Trim();
+                                if (rem.StartsWith("\""))
+                                {
+                                    int nextQuote = rem.IndexOf('\"', 1);
+                                    if (nextQuote > 1) return rem.Substring(1, nextQuote - 1);
+                                }
+                                int spaceIdx = rem.IndexOf(' ');
+                                return spaceIdx > 0 ? rem.Substring(0, spaceIdx) : rem;
+                            }
+                            if (exec.StartsWith("\""))
+                            {
+                                int nextQuote = exec.IndexOf('\"', 1);
+                                if (nextQuote > 1) return exec.Substring(1, nextQuote - 1);
+                            }
+                            int sIdx = exec.IndexOf(' ');
+                            return sIdx > 0 ? exec.Substring(0, sIdx) : exec;
+                        }
+                    }
+                }
+                return string.Empty;
+            }
+
             WshShell shell = new WshShell();
             IWshShortcut shortcut = ((IWshShell)shell).CreateShortcut(shortcutPath);
             return shortcut.TargetPath;

@@ -37,11 +37,47 @@ internal static class AppPaths
     internal const string HistoryFileNameOld = "History.json";
     internal const string LogsFolderName = "Logs";
 
-    internal static readonly string DefaultPersonalFolder =
-        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationInfo.Name);
+    internal static readonly string DefaultPersonalFolder = GetDefaultPersonalFolder();
     internal static readonly string PortablePersonalFolder = FileHelpers.GetAbsolutePath(ApplicationInfo.Name);
     internal static readonly string PortableCheckFilePath = FileHelpers.GetAbsolutePath("Portable");
     internal static readonly string SteamInAppFilePath = FileHelpers.GetAbsolutePath("Steam");
+
+    private static string GetDefaultPersonalFolder()
+    {
+        if (OperatingSystem.IsLinux())
+        {
+            string homeDir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string legacyDir = Path.Combine(homeDir, ApplicationInfo.Name);
+
+            string configBase = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            if (string.IsNullOrEmpty(configBase))
+            {
+                configBase = Path.Combine(homeDir, ".config");
+            }
+
+            string xdgDir = Path.Combine(configBase, "sharex");
+            string xdgDirCap = Path.Combine(configBase, ApplicationInfo.Name);
+
+            if (Directory.Exists(xdgDir))
+            {
+                return xdgDir;
+            }
+
+            if (Directory.Exists(xdgDirCap))
+            {
+                return xdgDirCap;
+            }
+
+            if (Directory.Exists(legacyDir))
+            {
+                return legacyDir;
+            }
+
+            return xdgDir;
+        }
+
+        return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), ApplicationInfo.Name);
+    }
 
     internal static string PersonalFolder => string.IsNullOrEmpty(PersonalPathManager.CustomPersonalPath)
         ? DefaultPersonalFolder
@@ -93,8 +129,44 @@ internal static class AppPaths
                 }
             }
 
-            return Path.Combine(PersonalFolder, "Screenshots");
+            return GetDefaultScreenshotsParentFolder();
         }
+    }
+
+    private static string GetDefaultScreenshotsParentFolder()
+    {
+        if (OperatingSystem.IsLinux())
+        {
+            string homeDir = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string legacyDir = Path.Combine(homeDir, ApplicationInfo.Name, "Screenshots");
+            if (Directory.Exists(legacyDir))
+            {
+                return legacyDir;
+            }
+
+            string picturesDir = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            if (string.IsNullOrEmpty(picturesDir))
+            {
+                picturesDir = Path.Combine(homeDir, "Pictures");
+            }
+
+            string sharexPictures = Path.Combine(picturesDir, ApplicationInfo.Name);
+            string screenshotsPictures = Path.Combine(picturesDir, "Screenshots");
+
+            if (Directory.Exists(sharexPictures))
+            {
+                return sharexPictures;
+            }
+
+            if (Directory.Exists(screenshotsPictures))
+            {
+                return screenshotsPictures;
+            }
+
+            return sharexPictures;
+        }
+
+        return Path.Combine(PersonalFolder, "Screenshots");
     }
 
     internal static string ImageEffectsFolder => Path.Combine(PersonalFolder, "ImageEffects");

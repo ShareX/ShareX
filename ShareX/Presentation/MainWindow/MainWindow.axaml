@@ -7,7 +7,7 @@
         xmlns:local="using:ShareX"
         x:Class="ShareX.MainWindow"
         x:CompileBindings="False"
-        Title="ShareX"
+        Title="ShareX - Linux"
         Width="900"
         Height="720"
         MinWidth="760"

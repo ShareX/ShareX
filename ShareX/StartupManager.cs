@@ -47,6 +47,34 @@ namespace ShareX
 #if STEAM
                 return FileHelpers.GetAbsolutePath("../ShareX_Launcher.exe");
 #else
+                if (!OperatingSystem.IsWindows())
+                {
+                    string dir = AppContext.BaseDirectory;
+                    while (!string.IsNullOrEmpty(dir))
+                    {
+                        string runScript = System.IO.Path.Combine(dir, "run.sh");
+                        if (System.IO.File.Exists(runScript))
+                        {
+                            return runScript;
+                        }
+                        System.IO.DirectoryInfo parent = System.IO.Directory.GetParent(dir);
+                        dir = parent?.FullName;
+                    }
+
+                    string processPath = Environment.ProcessPath;
+                    if (!string.IsNullOrEmpty(processPath) && System.IO.Path.GetFileNameWithoutExtension(processPath).Equals("dotnet", StringComparison.OrdinalIgnoreCase))
+                    {
+                        string entryDll = typeof(StartupManager).Assembly.Location;
+                        if (string.IsNullOrEmpty(entryDll) || !System.IO.File.Exists(entryDll))
+                        {
+                            entryDll = System.IO.Path.Combine(AppContext.BaseDirectory, "ShareX.dll");
+                        }
+                        if (System.IO.File.Exists(entryDll))
+                        {
+                            return entryDll;
+                        }
+                    }
+                }
                 return Environment.ProcessPath;
 #endif
             }
@@ -59,22 +87,36 @@ namespace ShareX
 #if MicrosoftStore
                 return (StartupState)packageTask.State;
 #else
-                if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
+                if (OperatingSystem.IsWindows())
                 {
-                    if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
-                        "ShareX.lnk", null) is byte[] status && status.Length > 0 && status[0] == 3)
+                    if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
                     {
-                        return StartupState.DisabledByUser;
-                    }
-                    else
-                    {
-                        return StartupState.Enabled;
+                        if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
+                            "ShareX.lnk", null) is byte[] status && status.Length > 0 && status[0] == 3)
+                        {
+                            return StartupState.DisabledByUser;
+                        }
+                        else
+                        {
+                            return StartupState.Enabled;
+                        }
                     }
                 }
                 else
                 {
-                    return StartupState.Disabled;
+                    if (IsFlatpak)
+                    {
+                        return System.IO.File.Exists(FlatpakAutostartMarker) ? StartupState.Enabled : StartupState.Disabled;
+                    }
+
+                    string autostartDesktop = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "autostart", "ShareX.desktop");
+                    if (System.IO.File.Exists(autostartDesktop) || ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
+                    {
+                        return StartupState.Enabled;
+                    }
                 }
+
+                return StartupState.Disabled;
 #endif
             }
             set
@@ -95,13 +137,68 @@ namespace ShareX
 #else
                 if (value == StartupState.Enabled || value == StartupState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    if (!OperatingSystem.IsWindows() && IsFlatpak)
+                    {
+                        SetFlatpakAutostart(value == StartupState.Enabled);
+                    }
+                    else
+                    {
+                        ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    }
                 }
                 else
                 {
                     throw new NotSupportedException();
                 }
 #endif
+            }
+        }
+
+        private static bool IsFlatpak => !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("FLATPAK_ID")) || System.IO.File.Exists("/.flatpak-info");
+
+        private static string FlatpakAutostartMarker => System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), ".config", "autostart", "ShareX.desktop");
+
+        private static void SetFlatpakAutostart(bool enabled)
+        {
+            try
+            {
+                string marker = FlatpakAutostartMarker;
+                string dir = System.IO.Path.GetDirectoryName(marker);
+                if (enabled)
+                {
+                    if (!string.IsNullOrEmpty(dir) && !System.IO.Directory.Exists(dir))
+                    {
+                        System.IO.Directory.CreateDirectory(dir);
+                    }
+                    System.IO.File.WriteAllText(marker, "[Desktop Entry]\nType=Application\nName=ShareX\nExec=ShareX -silent\n");
+
+                    using System.Diagnostics.Process proc = new();
+                    proc.StartInfo.FileName = "gdbus";
+                    proc.StartInfo.Arguments = "call --session --dest org.freedesktop.portal.Desktop --object-path /org/freedesktop/portal/desktop --method org.freedesktop.portal.Background.RequestBackground \"\" \"{'reason': <'Start ShareX with system'>, 'autostart': <true>, 'commandline': <['ShareX', '-silent']>}\"";
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.CreateNoWindow = true;
+                    proc.Start();
+                    proc.WaitForExit(3000);
+                }
+                else
+                {
+                    if (System.IO.File.Exists(marker))
+                    {
+                        System.IO.File.Delete(marker);
+                    }
+
+                    using System.Diagnostics.Process proc = new();
+                    proc.StartInfo.FileName = "gdbus";
+                    proc.StartInfo.Arguments = "call --session --dest org.freedesktop.portal.Desktop --object-path /org/freedesktop/portal/desktop --method org.freedesktop.portal.Background.RequestBackground \"\" \"{'reason': <'Disable ShareX autostart'>, 'autostart': <false>, 'commandline': <['ShareX', '-silent']>}\"";
+                    proc.StartInfo.UseShellExecute = false;
+                    proc.StartInfo.CreateNoWindow = true;
+                    proc.Start();
+                    proc.WaitForExit(3000);
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugHelper.WriteException(ex);
             }
         }
     }

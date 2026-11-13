@@ -30,6 +30,71 @@ namespace ShareX.ImageEditor.Presentation.Helpers;
 
 internal static class FontFamilyHelper
 {
+    private static string? _cachedDefaultFontFamily;
+
+    public static string GetDefaultSystemFontFamily()
+    {
+        if (_cachedDefaultFontFamily != null)
+        {
+            return _cachedDefaultFontFamily;
+        }
+
+        if (OperatingSystem.IsWindows())
+        {
+            _cachedDefaultFontFamily = "Segoe UI";
+            return _cachedDefaultFontFamily;
+        }
+
+        if (OperatingSystem.IsMacOS())
+        {
+            _cachedDefaultFontFamily = "San Francisco";
+            return _cachedDefaultFontFamily;
+        }
+
+        // Linux preferred fonts
+        string[] preferred = ["Ubuntu", "Ubuntu Sans", "Noto Sans", "DejaVu Sans", "Liberation Sans", "Cantarell"];
+        try
+        {
+            var systemFonts = FontManager.Current.SystemFonts;
+            foreach (var pref in preferred)
+            {
+                if (systemFonts.Any(f => string.Equals(f.Name, pref, StringComparison.OrdinalIgnoreCase)))
+                {
+                    _cachedDefaultFontFamily = pref;
+                    return _cachedDefaultFontFamily;
+                }
+            }
+
+            var first = systemFonts.FirstOrDefault()?.Name;
+            if (!string.IsNullOrWhiteSpace(first))
+            {
+                _cachedDefaultFontFamily = first;
+                return _cachedDefaultFontFamily;
+            }
+        }
+        catch
+        {
+        }
+
+        _cachedDefaultFontFamily = "Ubuntu";
+        return _cachedDefaultFontFamily;
+    }
+
+    public static string ResolveFontFamily(string? name)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            return GetDefaultSystemFontFamily();
+        }
+
+        if (OperatingSystem.IsLinux() && string.Equals(name, "Segoe UI", StringComparison.OrdinalIgnoreCase))
+        {
+            return GetDefaultSystemFontFamily();
+        }
+
+        return name;
+    }
+
     public static bool TryCreateFontFamily(string? name, [NotNullWhen(true)] out FontFamily? fontFamily)
     {
         fontFamily = null;

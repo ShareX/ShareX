@@ -35,7 +35,7 @@ public static class BorderlessWindowManager
 
     public static bool ToggleBorderlessWindow(string windowTitle, bool useWorkingArea = false)
     {
-        if (string.IsNullOrWhiteSpace(windowTitle))
+        if (!OperatingSystem.IsWindows() || string.IsNullOrWhiteSpace(windowTitle))
         {
             return false;
         }
@@ -52,6 +52,11 @@ public static class BorderlessWindowManager
 
     public static void ToggleBorderlessWindow(IntPtr handle, bool useWorkingArea = false)
     {
+        if (!OperatingSystem.IsWindows() || handle == IntPtr.Zero)
+        {
+            return;
+        }
+
         if (BorderlessWindows.TryGetValue(handle, out BorderlessWindowInfo? info))
         {
             RestoreWindow(handle, info);
@@ -64,6 +69,11 @@ public static class BorderlessWindowManager
 
     private static void RestoreWindow(IntPtr handle, BorderlessWindowInfo info)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         WindowInfo window = new(handle);
         if (window.IsMinimized)
         {
@@ -79,6 +89,11 @@ public static class BorderlessWindowManager
 
     private static void MakeWindowBorderless(IntPtr handle, bool useWorkingArea)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         WindowInfo window = new(handle);
         if (window.IsMinimized)
         {

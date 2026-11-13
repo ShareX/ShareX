@@ -63,6 +63,11 @@ public static class InspectWindowService
 
     public static IntPtr GetWindowAtPoint(int x, int y, bool topLevel)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return IntPtr.Zero;
+        }
+
         IntPtr handle = WindowFromPoint(new POINT(x, y));
         return topLevel && handle != IntPtr.Zero ? GetAncestor(handle, GA_ROOT) : handle;
     }
@@ -70,6 +75,11 @@ public static class InspectWindowService
     public static IReadOnlyList<InspectWindowListItem> GetVisibleWindows(IntPtr ignoredHandle)
     {
         List<InspectWindowListItem> windows = [];
+
+        if (!OperatingSystem.IsWindows())
+        {
+            return windows;
+        }
 
         NativeMethods.EnumWindows((handle, _) =>
         {
@@ -121,7 +131,12 @@ public static class InspectWindowService
 
     public static AvaloniaBitmap? GetWindowIcon(IntPtr handle)
     {
-        return handle == IntPtr.Zero ? null : GetWindowIcon(new WindowInfo(handle));
+        if (!OperatingSystem.IsWindows() || handle == IntPtr.Zero)
+        {
+            return null;
+        }
+
+        return GetWindowIcon(new WindowInfo(handle));
     }
 
     private static AvaloniaBitmap? GetWindowIcon(WindowInfo window)

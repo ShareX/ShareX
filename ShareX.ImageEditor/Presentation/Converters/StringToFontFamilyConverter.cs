@@ -32,8 +32,6 @@ namespace ShareX.ImageEditor.Presentation.Converters
 {
     public class StringToFontFamilyConverter : IValueConverter
     {
-        private const string DefaultFontFamilyName = "Segoe UI";
-
         public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             string? fontFamilyName = value as string;
@@ -43,14 +41,11 @@ namespace ShareX.ImageEditor.Presentation.Converters
                 fontFamilyName = parameter as string;
             }
 
-            if (string.IsNullOrWhiteSpace(fontFamilyName))
-            {
-                fontFamilyName = DefaultFontFamilyName;
-            }
+            fontFamilyName = FontFamilyHelper.ResolveFontFamily(fontFamilyName);
 
             return FontFamilyHelper.TryCreateFontFamily(fontFamilyName, out var fontFamily)
                 ? fontFamily
-                : new FontFamily(DefaultFontFamilyName);
+                : new FontFamily(FontFamilyHelper.GetDefaultSystemFontFamily());
         }
 
         public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

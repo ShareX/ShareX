@@ -26,6 +26,7 @@
 using Avalonia.Media.Imaging;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using ShareX.HelpersLib;
 using ShareX.Icons;
 using SkiaSharp;
 using System.Collections.ObjectModel;
@@ -180,13 +181,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
         try
         {
             Directory.CreateDirectory(ModelsFolder);
-
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = ModelsFolder,
-                UseShellExecute = true
-            });
-
+            FileHelpers.OpenFolder(ModelsFolder);
             RefreshModels();
         }
         catch (Exception ex)
@@ -200,11 +195,7 @@ public sealed partial class BackgroundRemoverViewModel : ViewModelBase, IDisposa
     {
         try
         {
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = BackgroundRemoverGuideUrl,
-                UseShellExecute = true
-            });
+            URLHelpers.OpenURL(BackgroundRemoverGuideUrl);
         }
         catch (Exception ex)
         {

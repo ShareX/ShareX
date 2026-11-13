@@ -91,7 +91,10 @@ public static class DesktopServices
             icons = new TrayIcons();
             TrayIcon.SetIcons(application, icons);
         }
-        icons.Add(icon);
+        if (!icons.Contains(icon))
+        {
+            icons.Add(icon);
+        }
         return new TrayIconRegistration(icons, icon);
     }
 

@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:helpers="clr-namespace:ShareX.AvaloniaUI.Theming">
     
-    <FontFamily x:Key="ShareX.FontFamily.Default">Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter</FontFamily>
+    <FontFamily x:Key="ShareX.FontFamily.Default">Ubuntu, Noto Sans, Cantarell, Segoe UI, avares://Avalonia.Fonts.Inter/Assets#Inter</FontFamily>
+    <FontFamily x:Key="ShareX.FontFamily.Icon">avares://ShareX.Avalonia/Assets#lucide</FontFamily>
     <FontFamily x:Key="ShareX.FontFamily.Monospace">Cascadia Mono, Consolas, Courier New, Monospace</FontFamily>
     <x:Double x:Key="ShareX.FontSize.Default">13</x:Double>
     <x:Double x:Key="ShareX.Value.Accent.Foreground.DarkSwitchRatio">1.75</x:Double>

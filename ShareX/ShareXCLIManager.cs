@@ -128,27 +128,24 @@ namespace ShareX
 
         private async Task<bool> CheckCLIHotkey(CLICommand command)
         {
-            foreach (HotkeyType job in Helpers.GetEnums<HotkeyType>())
+            if (!string.IsNullOrEmpty(command?.Command) && Enum.TryParse<HotkeyType>(command.Command, true, out HotkeyType job))
             {
-                if (command.CheckCommand(job.ToString()))
+                string filePath = null;
+
+                try
                 {
-                    string filePath = null;
-
-                    try
-                    {
-                        filePath = CheckParameterForFilePath(command);
-                    }
-                    catch (Exception e)
-                    {
-                        DebugHelper.WriteException(e);
-
-                        return true;
-                    }
-
-                    await TaskHelpers.ExecuteJob(job, filePath);
+                    filePath = CheckParameterForFilePath(command);
+                }
+                catch (Exception e)
+                {
+                    DebugHelper.WriteException(e);
 
                     return true;
                 }
+
+                await TaskHelpers.ExecuteJob(job, filePath);
+
+                return true;
             }
 
             return false;

@@ -36,7 +36,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
     public partial class MainViewModel : ViewModelBase
     {
         private static EditorTool? _sessionLastUsedAnnotationTool;
-        private const string DefaultAnnotationFontFamily = "Segoe UI";
+        private static readonly string DefaultAnnotationFontFamily = FontFamilyHelper.GetDefaultSystemFontFamily();
         private const string SpotlightBlurOptionPropertyName = "SpotlightBlur";
         private static readonly IReadOnlyList<string> _availableFontFamilies = BuildAvailableFontFamilies();
         private static readonly IReadOnlyList<TextHorizontalAlignment> _availableTextHorizontalAlignments = BuildAvailableTextHorizontalAlignments();
@@ -1451,6 +1451,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         private static string NormalizeFontFamily(string? fontFamily)
         {
+            fontFamily = FontFamilyHelper.ResolveFontFamily(fontFamily);
             return !string.IsNullOrWhiteSpace(fontFamily) && FontFamilyHelper.TryCreateFontFamily(fontFamily, out _)
                 ? fontFamily
                 : DefaultAnnotationFontFamily;

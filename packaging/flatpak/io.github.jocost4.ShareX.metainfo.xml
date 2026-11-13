@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.jocost4.ShareX</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>ShareX</name>
+  <summary>Screen capture, file sharing and productivity tool</summary>
+  
+  <developer id="io.github.jocost4">
+    <name>jocost4 (Linux Port) &amp; ShareX Team (Original)</name>
+  </developer>
+
+  <description>
+    <p>
+      <em>Note: This is an unofficial, community-driven Linux port of ShareX by jocost4. Upstream ShareX is originally created and maintained by the ShareX Team (Jaex).</em>
+    </p>
+    <p>
+      ShareX is a free and open source program that lets you capture or record any area of your screen and share it with a single press of a key. It also allows uploading images, text or other types of files to many supported destinations you can choose from.
+    </p>
+    <p>Main capture methods supported:</p>
+    <ul>
+      <li>Fullscreen, active window, and active monitor</li>
+      <li>Interactive rectangular region, region light, and region transparent</li>
+      <li>Screen recording and animated GIF capture</li>
+      <li>Scrolling capture and webpage capture</li>
+      <li>Offline text recognition (OCR) with multilingual PaddleOCR ONNX models</li>
+    </ul>
+    <p>After capture automation and annotation tools:</p>
+    <ul>
+      <li>Advanced image annotator with arrows, rectangles, speech balloons, blur, pixelate, and text tools</li>
+      <li>Image effects, watermarks, filters, and color adjustments</li>
+      <li>Automatic upload to over 80 image, text, and file hosting destinations</li>
+      <li>URL shorteners and automatic QR code generation</li>
+      <li>Built-in productivity tools: color picker, screen color picker, ruler, image combiner, hash check, and directory indexer</li>
+      <li>Native Linux desktop integration supporting Wayland and X11 through modern XDG Desktop Portals and Avalonia UI</li>
+    </ul>
+  </description>
+
+  <launchable type="desktop-id">io.github.jocost4.ShareX.desktop</launchable>
+
+  <url type="homepage">https://getsharex.com</url>
+  <url type="bugtracker">https://github.com/jocost4/ShareX/issues</url>
+  <url type="vcs-browser">https://github.com/jocost4/ShareX</url>
+  <url type="donation">https://getsharex.com/donate</url>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://getsharex.com/img/ShareX_Screenshot.png</image>
+      <caption>Main window of ShareX</caption>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>Utility</category>
+    <category>Graphics</category>
+    <category>AudioVideo</category>
+    <category>RasterGraphics</category>
+  </categories>
+
+  <provides>
+    <binary>ShareX</binary>
+  </provides>
+
+  <releases>
+    <release version="22.4.0" date="2026-11-12">
+      <description>
+        <p>Updated with upstream ShareX v22.4.0 features and Linux fixes:</p>
+        <ul>
+          <li>Offline PaddleOCR ONNX engine support for multilingual text recognition</li>
+          <li>Real-time region capture coordinate &amp; size indicator</li>
+          <li>Automatic cleanup of portal screenshot temporary files in user pictures</li>
+          <li>Support for Wayland and X11 desktop environments via XDG Desktop Portals</li>
+        </ul>
+      </description>
+    </release>
+    <release version="22.0.0" date="2026-10-23">
+      <description>
+        <p>Initial Linux port powered by Avalonia UI and .NET 10.</p>
+      </description>
+    </release>
+  </releases>
+
+  <content_rating type="oars-1.1" />
+</component>

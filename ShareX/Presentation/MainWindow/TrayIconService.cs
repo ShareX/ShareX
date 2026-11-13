@@ -57,13 +57,23 @@ internal sealed class DesktopTrayIconService : ITrayIconService
 
     public bool Visible
     {
-        get => _windowsIcon?.Visible ?? _avaloniaIcon!.IsVisible;
-        set { if (_windowsIcon != null) _windowsIcon.Visible = value; else _avaloniaIcon!.IsVisible = value; }
+        get => _windowsIcon?.Visible ?? _avaloniaIcon?.IsVisible ?? false;
+        set
+        {
+            if (_disposed) return;
+            if (_windowsIcon != null) _windowsIcon.Visible = value;
+            else if (_avaloniaIcon != null && _avaloniaIcon.IsVisible != value) _avaloniaIcon.IsVisible = value;
+        }
     }
     public string ToolTipText
     {
-        get => _windowsIcon?.ToolTipText ?? _avaloniaIcon!.ToolTipText ?? string.Empty;
-        set { if (_windowsIcon != null) _windowsIcon.ToolTipText = value; else _avaloniaIcon!.ToolTipText = value; }
+        get => _windowsIcon?.ToolTipText ?? _avaloniaIcon?.ToolTipText ?? string.Empty;
+        set
+        {
+            if (_disposed) return;
+            if (_windowsIcon != null) _windowsIcon.ToolTipText = value;
+            else if (_avaloniaIcon != null && _avaloniaIcon.ToolTipText != value) _avaloniaIcon.ToolTipText = value;
+        }
     }
 
     public DesktopTrayIconService(IHotkeyHost host, byte[] icon, string text, bool visible)
@@ -84,6 +94,7 @@ internal sealed class DesktopTrayIconService : ITrayIconService
         {
             _avaloniaIcon = new Avalonia.Controls.TrayIcon { Menu = new Avalonia.Controls.NativeMenu(), IsVisible = false };
             _avaloniaIcon.Clicked += OnAvaloniaClick;
+            BuildNativeMenu(_avaloniaIcon.Menu, new MainMenuBuilder(true).BuildTrayMenu());
             _avaloniaIcon.Menu.Opening += (_, _) => BuildNativeMenu(_avaloniaIcon.Menu, new MainMenuBuilder(true).BuildTrayMenu());
         }
         ToolTipText = text;
@@ -94,11 +105,12 @@ internal sealed class DesktopTrayIconService : ITrayIconService
 
     public void SetIcon(byte[] bytes)
     {
+        if (_disposed) return;
         if (_windowsIcon != null) _windowsIcon.SetIcon(bytes);
-        else
+        else if (_avaloniaIcon != null)
         {
             using MemoryStream stream = new(bytes, writable: false);
-            _avaloniaIcon!.Icon = new Avalonia.Controls.WindowIcon(stream);
+            _avaloniaIcon.Icon = new Avalonia.Controls.WindowIcon(stream);
         }
     }
 
@@ -164,12 +176,13 @@ internal sealed class DesktopTrayIconService : ITrayIconService
             if (entry.CreateChildren != null)
             {
                 item.Menu = new Avalonia.Controls.NativeMenu();
+                BuildNativeMenu(item.Menu, entry.CreateChildren());
                 item.Menu.Opening += (_, _) => BuildNativeMenu(item.Menu, entry.CreateChildren());
             }
             else if (entry.CreateCategories != null)
             {
                 item.Menu = new Avalonia.Controls.NativeMenu();
-                item.Menu.Opening += (_, _) =>
+                Action populateCategories = () =>
                 {
                     item.Menu.Items.Clear();
                     foreach (MainMenuCategory category in entry.CreateCategories())
@@ -179,6 +192,8 @@ internal sealed class DesktopTrayIconService : ITrayIconService
                         item.Menu.Items.Add(categoryItem);
                     }
                 };
+                populateCategories();
+                item.Menu.Opening += (_, _) => populateCategories();
             }
             else item.Click += async (_, _) => { if (entry.ExecuteAsync != null) await entry.ExecuteAsync(); };
             menu.Items.Add(item);

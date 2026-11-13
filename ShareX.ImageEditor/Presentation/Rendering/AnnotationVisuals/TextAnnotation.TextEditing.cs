@@ -104,7 +104,7 @@ public partial class TextAnnotation
             BorderThickness = new Thickness(1),
             BorderBrush = Brushes.Gray,
             FontSize = FontSize,
-            FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(FontFamily) ? "Segoe UI" : FontFamily),
+            FontFamily = new Avalonia.Media.FontFamily(FontFamilyHelper.ResolveFontFamily(FontFamily)),
             FontWeight = IsBold ? FontWeight.Bold : FontWeight.Normal,
             FontStyle = IsItalic ? FontStyle.Italic : FontStyle.Normal,
             Padding = new Thickness(4),

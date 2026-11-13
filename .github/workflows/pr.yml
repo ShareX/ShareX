@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - "**"
+      - "!feature/linux*"
+      - "!linux*"
 
 permissions:
   contents: read

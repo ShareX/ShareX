@@ -40,11 +40,39 @@ namespace ShareX.HelpersLib
 
     public static partial class NativeMethods
     {
+        #region libc (Linux)
+
+        [DllImport("libc", EntryPoint = "kill", SetLastError = true)]
+        private static extern int PInvoke_kill(int pid, int sig);
+
+        public static int SendSignal(int pid, int sig)
+        {
+            if (OperatingSystem.IsLinux())
+            {
+                try
+                {
+                    return PInvoke_kill(pid, sig);
+                }
+                catch
+                {
+                }
+            }
+            return -1;
+        }
+
+        #endregion libc (Linux)
+
         #region user32.dll
 
-        [DllImport("user32.dll", SetLastError = true)]
+        [DllImport("user32.dll", EntryPoint = "SetWindowDisplayAffinity", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetWindowDisplayAffinity(IntPtr windowHandle, uint affinity);
+        private static extern bool PInvoke_SetWindowDisplayAffinity(IntPtr windowHandle, uint affinity);
+
+        public static bool SetWindowDisplayAffinity(IntPtr windowHandle, uint affinity)
+        {
+            if (!OperatingSystem.IsWindows()) return false;
+            return PInvoke_SetWindowDisplayAffinity(windowHandle, affinity);
+        }
 
         [DllImport("user32.dll", SetLastError = true)]
         [return: MarshalAs(UnmanagedType.Bool)]
@@ -128,18 +156,32 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern bool GetCursorInfo(out CursorInfo pci);
 
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll", EntryPoint = "GetCursorPos")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool GetCursorPos(out POINT lpPoint);
+        private static extern bool PInvoke_GetCursorPos(out POINT lpPoint);
+
+        public static bool GetCursorPos(out POINT lpPoint)
+        {
+            if (!OperatingSystem.IsWindows())
+            {
+                lpPoint = default;
+                return false;
+            }
+            return PInvoke_GetCursorPos(out lpPoint);
+        }
 
         [DllImport("user32.dll")]
         public static extern IntPtr GetDC(IntPtr hWnd);
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetDesktopWindow();
+        [DllImport("user32.dll", EntryPoint = "GetDesktopWindow")]
+        private static extern IntPtr PInvoke_GetDesktopWindow();
 
-        [DllImport("user32.dll")]
-        public static extern IntPtr GetForegroundWindow();
+        public static IntPtr GetDesktopWindow() => !OperatingSystem.IsWindows() ? IntPtr.Zero : PInvoke_GetDesktopWindow();
+
+        [DllImport("user32.dll", EntryPoint = "GetForegroundWindow")]
+        private static extern IntPtr PInvoke_GetForegroundWindow();
+
+        public static IntPtr GetForegroundWindow() => !OperatingSystem.IsWindows() ? IntPtr.Zero : PInvoke_GetForegroundWindow();
 
         [DllImport("user32.dll")]
         public static extern bool GetIconInfo(IntPtr hIcon, out IconInfo piconinfo);
@@ -271,15 +313,22 @@ namespace ShareX.HelpersLib
         [DllImport("user32.dll")]
         public static extern IntPtr SetActiveWindow(IntPtr hWnd);
 
-        [DllImport("user32.dll")]
-        public static extern bool SetCursorPos(int x, int y);
+        [DllImport("user32.dll", EntryPoint = "SetCursorPos")]
+        private static extern bool PInvoke_SetCursorPos(int x, int y);
 
-        [DllImport("user32.dll")]
+        public static bool SetCursorPos(int x, int y) => OperatingSystem.IsWindows() && PInvoke_SetCursorPos(x, y);
+
+        [DllImport("user32.dll", EntryPoint = "SetForegroundWindow")]
         [return: MarshalAs(UnmanagedType.Bool)]
-        public static extern bool SetForegroundWindow(IntPtr hWnd);
+        private static extern bool PInvoke_SetForegroundWindow(IntPtr hWnd);
 
-        [DllImport("user32.dll")]
-        public static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, SetWindowPosFlags uFlags);
+        public static bool SetForegroundWindow(IntPtr hWnd) => OperatingSystem.IsWindows() && PInvoke_SetForegroundWindow(hWnd);
+
+        [DllImport("user32.dll", EntryPoint = "SetWindowPos")]
+        private static extern bool PInvoke_SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, SetWindowPosFlags uFlags);
+
+        public static bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, SetWindowPosFlags uFlags) =>
+            OperatingSystem.IsWindows() && PInvoke_SetWindowPos(hWnd, hWndInsertAfter, X, Y, cx, cy, uFlags);
 
         [DllImport("user32.dll")]
         [return: MarshalAs(UnmanagedType.Bool)]

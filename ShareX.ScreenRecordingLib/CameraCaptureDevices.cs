@@ -35,6 +35,8 @@ public static unsafe class CameraCaptureDevices
 {
     public static IReadOnlyList<CameraCaptureDevice> GetCameras()
     {
+        if (!OperatingSystem.IsWindows()) return Array.Empty<CameraCaptureDevice>();
+
         HRESULT initialized = NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED);
         if (initialized.Value != unchecked((int)0x80010106)) initialized.ThrowOnFailure(); // UI may already be STA.
         bool started = false;

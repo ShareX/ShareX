@@ -32,6 +32,8 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.ScreenCaptureLib;
+using SkiaSharp;
 using System.Runtime.InteropServices;
 
 namespace ShareX.AvaloniaUI.Windows
@@ -47,6 +49,8 @@ namespace ShareX.AvaloniaUI.Windows
 
         private readonly ScreenColorPickerOptions _options;
         private readonly TaskCompletionSource<ScreenColorPickerResult?> _completionSource = new();
+        private SKBitmap? _screenSnapshot;
+        private PixelPoint _screenOffset = PixelPoint.Origin;
         private Border _pickerPreview = null!;
         private Border _colorPreview = null!;
         private Grid _magnifierPanel = null!;
@@ -89,7 +93,10 @@ namespace ShareX.AvaloniaUI.Windows
                     PixelFormat.Bgra8888,
                     AlphaFormat.Opaque);
                 _magnifierImage.Source = _magnifierBitmap;
-                InitializeMagnifierCapture();
+                if (OperatingSystem.IsWindows())
+                {
+                    InitializeMagnifierCapture();
+                }
             }
 
             Loaded += OnLoaded;
@@ -98,6 +105,11 @@ namespace ShareX.AvaloniaUI.Windows
         public Task<ScreenColorPickerResult?> PickAsync(Window? owner = null)
         {
             ConfigureOverlayBounds();
+
+            if (!OperatingSystem.IsWindows())
+            {
+                _screenSnapshot = LinuxCaptureHelper.CaptureFullscreen();
+            }
 
             if (owner != null)
             {
@@ -115,24 +127,30 @@ namespace ShareX.AvaloniaUI.Windows
         {
             _completionSource.TrySetResult(null);
             DisposeMagnifierCapture();
+            _screenSnapshot?.Dispose();
+            _screenSnapshot = null;
             base.OnClosed(e);
         }
 
         private void OnLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            if (!OperatingSystem.IsWindows())
-            {
-                Complete(null);
-                return;
-            }
-
             Activate();
             Focus();
 
-            if (GetCursorPos(out NativePoint cursorPosition))
+            if (OperatingSystem.IsWindows())
             {
-                var screenPoint = new PixelPoint(cursorPosition.X, cursorPosition.Y);
-                UpdatePicker(screenPoint, this.PointToClient(screenPoint));
+                if (GetCursorPos(out NativePoint cursorPosition))
+                {
+                    var screenPoint = new PixelPoint(cursorPosition.X, cursorPosition.Y);
+                    UpdatePicker(screenPoint, this.PointToClient(screenPoint));
+                }
+            }
+            else
+            {
+                if (_screenSnapshot == null)
+                {
+                    _screenSnapshot = LinuxCaptureHelper.CaptureFullscreen();
+                }
             }
         }
 
@@ -213,6 +231,7 @@ namespace ShareX.AvaloniaUI.Windows
             int right = screens.Max(screen => screen.Bounds.X + screen.Bounds.Width);
             int bottom = screens.Max(screen => screen.Bounds.Y + screen.Bounds.Height);
             var topLeft = new PixelPoint(left, top);
+            _screenOffset = topLeft;
             double scaling = Screens.ScreenFromPoint(topLeft)?.Scaling ?? screens[0].Scaling;
 
             Position = topLeft;
@@ -320,6 +339,106 @@ namespace ShareX.AvaloniaUI.Windows
 
         private unsafe bool TryUpdateMagnifier(PixelPoint center, WriteableBitmap bitmap, out Color color)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                if (_screenSnapshot == null)
+                {
+                    color = default;
+                    return false;
+                }
+
+                int radius = MagnifierPixelCount / 2;
+                int startX = center.X - radius;
+                int startY = center.Y - radius;
+
+                if (startX < 0 || startY < 0 || startX + MagnifierPixelCount > _screenSnapshot.Width || startY + MagnifierPixelCount > _screenSnapshot.Height)
+                {
+                    if (startX - _screenOffset.X >= 0 && startY - _screenOffset.Y >= 0 &&
+                        startX - _screenOffset.X + MagnifierPixelCount <= _screenSnapshot.Width &&
+                        startY - _screenOffset.Y + MagnifierPixelCount <= _screenSnapshot.Height)
+                    {
+                        startX -= _screenOffset.X;
+                        startY -= _screenOffset.Y;
+                    }
+                }
+
+                int centerX = startX + radius;
+                int centerY = startY + radius;
+
+                byte* srcBase = (byte*)_screenSnapshot.GetPixels().ToPointer();
+                int srcWidth = _screenSnapshot.Width;
+                int srcHeight = _screenSnapshot.Height;
+                int srcRowBytes = _screenSnapshot.RowBytes;
+                int bytesPerPixel = _screenSnapshot.BytesPerPixel;
+                bool isBgra = _screenSnapshot.ColorType == SKColorType.Bgra8888;
+
+                byte centerR = 0, centerG = 0, centerB = 0, centerA = 255;
+                if (srcBase != null && centerX >= 0 && centerX < srcWidth && centerY >= 0 && centerY < srcHeight)
+                {
+                    byte* p = srcBase + (centerY * srcRowBytes) + (centerX * bytesPerPixel);
+                    if (isBgra)
+                    {
+                        centerB = p[0];
+                        centerG = p[1];
+                        centerR = p[2];
+                        centerA = p[3];
+                    }
+                    else
+                    {
+                        centerR = p[0];
+                        centerG = p[1];
+                        centerB = p[2];
+                        centerA = p[3];
+                    }
+                }
+
+                color = Color.FromArgb(centerA, centerR, centerG, centerB);
+
+                using (ILockedFramebuffer framebuffer = bitmap.Lock())
+                {
+                    int destStride = framebuffer.RowBytes;
+                    byte* destPtr = (byte*)framebuffer.Address;
+
+                    for (int dy = 0; dy < MagnifierPixelCount; dy++)
+                    {
+                        int srcY = startY + dy;
+                        byte* rowPtr = destPtr + (dy * destStride);
+
+                        for (int dx = 0; dx < MagnifierPixelCount; dx++)
+                        {
+                            int srcX = startX + dx;
+                            byte b = 0, g = 0, r = 0, a = 255;
+
+                            if (srcBase != null && srcX >= 0 && srcX < srcWidth && srcY >= 0 && srcY < srcHeight)
+                            {
+                                byte* p = srcBase + (srcY * srcRowBytes) + (srcX * bytesPerPixel);
+                                if (isBgra)
+                                {
+                                    b = p[0];
+                                    g = p[1];
+                                    r = p[2];
+                                    a = p[3];
+                                }
+                                else
+                                {
+                                    r = p[0];
+                                    g = p[1];
+                                    b = p[2];
+                                    a = p[3];
+                                }
+                            }
+
+                            rowPtr[dx * 4 + 0] = b;
+                            rowPtr[dx * 4 + 1] = g;
+                            rowPtr[dx * 4 + 2] = r;
+                            rowPtr[dx * 4 + 3] = a;
+                        }
+                    }
+                }
+
+                return true;
+            }
+
             if (_magnifierDc == nint.Zero || _magnifierDib == nint.Zero || _magnifierBits == nint.Zero)
             {
                 color = default;
@@ -368,6 +487,10 @@ namespace ShareX.AvaloniaUI.Windows
 
         private void DisposeMagnifierCapture()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return;
+            }
             if (_magnifierDc != nint.Zero && _previousMagnifierObject != nint.Zero)
             {
                 SelectObject(_magnifierDc, _previousMagnifierObject);
@@ -388,8 +511,32 @@ namespace ShareX.AvaloniaUI.Windows
             }
         }
 
-        private static bool TryGetScreenColor(PixelPoint point, out Color color)
+        private bool TryGetScreenColor(PixelPoint point, out Color color)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                if (_screenSnapshot != null)
+                {
+                    int x = point.X;
+                    int y = point.Y;
+                    if (x < 0 || y < 0 || x >= _screenSnapshot.Width || y >= _screenSnapshot.Height)
+                    {
+                        x -= _screenOffset.X;
+                        y -= _screenOffset.Y;
+                    }
+
+                    if (x >= 0 && x < _screenSnapshot.Width && y >= 0 && y < _screenSnapshot.Height)
+                    {
+                        SKColor pixel = _screenSnapshot.GetPixel(x, y);
+                        color = Color.FromArgb(pixel.Alpha, pixel.Red, pixel.Green, pixel.Blue);
+                        return true;
+                    }
+                }
+
+                color = default;
+                return false;
+            }
+
             nint screenDc = GetDC(nint.Zero);
 
             if (screenDc == nint.Zero)

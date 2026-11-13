@@ -52,6 +52,11 @@ namespace ShareX.HelpersLib
             Position = Point.Empty;
             IsVisible = false;
 
+            if (!OperatingSystem.IsWindows())
+            {
+                return;
+            }
+
             CursorInfo cursorInfo = new CursorInfo();
             cursorInfo.cbSize = Marshal.SizeOf(cursorInfo);
 

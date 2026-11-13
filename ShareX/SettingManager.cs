@@ -180,7 +180,7 @@ namespace ShareX
             UploadersConfig = UploadersConfig.Load(UploadersConfigFilePath, BackupFolder, fallbackSupport);
             UploadersConfig.CreateBackup = true;
             UploadersConfig.CreateWeeklyBackup = true;
-            UploadersConfig.SupportDPAPIEncryption = true;
+            UploadersConfig.SupportDPAPIEncryption = OperatingSystem.IsWindows();
             UploadersConfigBackwardCompatibilityTasks();
         }
 

@@ -26,6 +26,9 @@
 #nullable enable
 
 using ShareX.AvaloniaUI.Integration;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using System;
@@ -46,6 +49,11 @@ internal static class Program
     [STAThread]
     private static void Main(string[] args)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            EnsureLinuxEnvironment();
+        }
+
         ApplicationDiagnostics.Initialize();
         _startTimer = Stopwatch.StartNew();
         ApplicationCommandLine.Initialize(args);
@@ -71,6 +79,10 @@ internal static class Program
             {
                 singleInstanceManager.ArgumentsReceived += SingleInstanceCommandRouter.ArgumentsReceived;
                 Run(args);
+            }
+            else
+            {
+                Environment.Exit(0);
             }
         }
 
@@ -137,8 +149,8 @@ internal static class Program
 
         await ApplicationSettingsRuntime.InitializeAsync(hotkeyHost);
 
-        bool showMainWindow = !(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) ||
-            !ApplicationState.Settings.ShowTray;
+        bool showMainWindow = !ApplicationCommandLine.HasCommands &&
+            (!(StartupOptions.SilentRun || ApplicationState.Settings.SilentRun) || !ApplicationState.Settings.ShowTray);
         MainWindowIntegration.Initialize(hotkeyHost.TrayIconService, showMainWindow);
         SingleInstanceCommandRouter.MarkReady();
 
@@ -161,5 +173,74 @@ internal static class Program
         }
 
         DebugHelper.WriteLine("Hotkey host init finished.");
+    }
+
+    private static void EnsureLinuxEnvironment()
+    {
+        try
+        {
+            string? currentTmp = Environment.GetEnvironmentVariable("TMPDIR");
+            if (string.IsNullOrEmpty(currentTmp) || currentTmp != "/tmp")
+            {
+                Environment.SetEnvironmentVariable("TMPDIR", "/tmp");
+            }
+
+            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DISPLAY")))
+            {
+                Environment.SetEnvironmentVariable("DISPLAY", ":0");
+            }
+
+            string? xauth = Environment.GetEnvironmentVariable("XAUTHORITY");
+            if (!string.IsNullOrEmpty(xauth) && File.Exists(xauth) && new FileInfo(xauth).Length > 0)
+            {
+                return;
+            }
+
+            if (File.Exists("/run/flatpak/Xauthority") && new FileInfo("/run/flatpak/Xauthority").Length > 0)
+            {
+                Environment.SetEnvironmentVariable("XAUTHORITY", "/run/flatpak/Xauthority");
+                return;
+            }
+
+            string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            string homeXauth = Path.Combine(userProfile, ".Xauthority");
+            if (File.Exists(homeXauth) && new FileInfo(homeXauth).Length > 0)
+            {
+                Environment.SetEnvironmentVariable("XAUTHORITY", homeXauth);
+                return;
+            }
+
+            string? runtimeDir = Environment.GetEnvironmentVariable("XDG_RUNTIME_DIR");
+            List<string> candidateDirs = new();
+            if (!string.IsNullOrEmpty(runtimeDir) && Directory.Exists(runtimeDir))
+            {
+                candidateDirs.Add(runtimeDir);
+            }
+            if (Directory.Exists("/run/user"))
+            {
+                candidateDirs.AddRange(Directory.GetDirectories("/run/user"));
+            }
+
+            foreach (string dir in candidateDirs)
+            {
+                try
+                {
+                    string[] authFiles = Directory.GetFiles(dir, ".mutter-Xwaylandauth*");
+                    string? validAuth = authFiles.FirstOrDefault(f => File.Exists(f) && new FileInfo(f).Length > 0);
+                    if (!string.IsNullOrEmpty(validAuth))
+                    {
+                        Environment.SetEnvironmentVariable("XAUTHORITY", validAuth);
+                        try
+                        {
+                            File.Copy(validAuth, homeXauth, true);
+                        }
+                        catch { }
+                        break;
+                    }
+                }
+                catch { }
+            }
+        }
+        catch { }
     }
 }

@@ -44,7 +44,8 @@ namespace ShareX.HelpersLib
         public bool IsFirstInstance { get; private set; }
 
         private const int MaxArgumentsLength = 100;
-        private const int ConnectTimeout = 5000;
+        private const int FastConnectTimeout = 150;
+        private const int ConnectTimeout = 2000;
 
         private readonly MutexManager mutex;
         private CancellationTokenSource cts;
@@ -59,20 +60,44 @@ namespace ShareX.HelpersLib
             PipeName = pipeName;
             IsSingleInstance = isSingleInstance;
 
+            if (!OperatingSystem.IsWindows())
+            {
+                string currentTmp = Environment.GetEnvironmentVariable("TMPDIR");
+                if (string.IsNullOrEmpty(currentTmp) || currentTmp != "/tmp")
+                {
+                    Environment.SetEnvironmentVariable("TMPDIR", "/tmp");
+                }
+            }
+
+            if (!IsSingleInstance)
+            {
+                IsFirstInstance = true;
+                return;
+            }
+
+            // Fast IPC check: if an existing instance is already running and responds on the pipe,
+            // forward arguments immediately, await confirmation (ACK), and exit without opening any window or UI.
+            if (TryRedirectArguments(args, FastConnectTimeout))
+            {
+                IsFirstInstance = false;
+                Environment.Exit(0);
+                return;
+            }
+
             mutex = new MutexManager(MutexName, 0);
             IsFirstInstance = mutex.HasHandle;
 
-            if (IsSingleInstance)
+            if (IsFirstInstance)
             {
-                if (IsFirstInstance)
-                {
-                    cts = new CancellationTokenSource();
+                cts = new CancellationTokenSource();
 
-                    Task.Run(ListenForConnectionsAsync, cts.Token);
-                }
-                else
+                Task.Run(ListenForConnectionsAsync, cts.Token);
+            }
+            else
+            {
+                if (RedirectArgumentsToFirstInstance(args))
                 {
-                    RedirectArgumentsToFirstInstance(args);
+                    Environment.Exit(0);
                 }
             }
         }
@@ -89,24 +114,31 @@ namespace ShareX.HelpersLib
         {
             while (!cts.IsCancellationRequested)
             {
-                bool namedPipeServerCreated = false;
-
                 try
                 {
-                    PipeSecurity pipeSecurity = new PipeSecurity();
+                    NamedPipeServerStream namedPipeServer;
 
-                    using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+                    if (OperatingSystem.IsWindows())
                     {
-                        pipeSecurity.AddAccessRule(new PipeAccessRule(identity.User, PipeAccessRights.ReadWrite, AccessControlType.Allow));
+                        PipeSecurity pipeSecurity = new PipeSecurity();
+
+                        using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+                        {
+                            pipeSecurity.AddAccessRule(new PipeAccessRule(identity.User, PipeAccessRights.ReadWrite, AccessControlType.Allow));
+                        }
+
+                        namedPipeServer = NamedPipeServerStreamAcl.Create(PipeName, PipeDirection.InOut, NamedPipeServerStream.MaxAllowedServerInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 0, 0, pipeSecurity);
+                    }
+                    else
+                    {
+                        namedPipeServer = new NamedPipeServerStream(PipeName, PipeDirection.InOut, NamedPipeServerStream.MaxAllowedServerInstances, PipeTransmissionMode.Byte, PipeOptions.Asynchronous);
                     }
 
-                    using (NamedPipeServerStream namedPipeServer = NamedPipeServerStreamAcl.Create(PipeName, PipeDirection.InOut, 1, PipeTransmissionMode.Byte, PipeOptions.Asynchronous, 0, 0, pipeSecurity))
+                    using (namedPipeServer)
                     {
-                        namedPipeServerCreated = true;
-
                         await namedPipeServer.WaitForConnectionAsync(cts.Token).ConfigureAwait(false);
 
-                        using (BinaryReader reader = new BinaryReader(namedPipeServer, Encoding.UTF8))
+                        using (BinaryReader reader = new BinaryReader(namedPipeServer, Encoding.UTF8, leaveOpen: true))
                         {
                             int length = reader.ReadInt32();
 
@@ -122,18 +154,36 @@ namespace ShareX.HelpersLib
                                 args[i] = reader.ReadString();
                             }
 
+                            try
+                            {
+                                using (BinaryWriter writer = new BinaryWriter(namedPipeServer, Encoding.UTF8, leaveOpen: true))
+                                {
+                                    writer.Write(true);
+                                    writer.Flush();
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                DebugHelper.WriteException(ex);
+                            }
+
                             OnArgumentsReceived(args);
                         }
                     }
                 }
                 catch (OperationCanceledException)
                 {
+                    break;
                 }
                 catch (Exception e)
                 {
                     DebugHelper.WriteException(e);
 
-                    if (!namedPipeServerCreated)
+                    try
+                    {
+                        await Task.Delay(300, cts.Token).ConfigureAwait(false);
+                    }
+                    catch (OperationCanceledException)
                     {
                         break;
                     }
@@ -141,17 +191,17 @@ namespace ShareX.HelpersLib
             }
         }
 
-        private void RedirectArgumentsToFirstInstance(string[] args)
+        private bool TryRedirectArguments(string[] args, int timeoutMs)
         {
             try
             {
-                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.Out))
+                using (NamedPipeClientStream namedPipeClient = new NamedPipeClientStream(".", PipeName, PipeDirection.InOut))
                 {
-                    namedPipeClient.Connect(ConnectTimeout);
+                    namedPipeClient.Connect(timeoutMs);
 
                     AllowFirstInstanceToSetForeground(namedPipeClient);
 
-                    using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8))
+                    using (BinaryWriter writer = new BinaryWriter(namedPipeClient, Encoding.UTF8, leaveOpen: true))
                     {
                         writer.Write(args.Length);
 
@@ -159,13 +209,51 @@ namespace ShareX.HelpersLib
                         {
                             writer.Write(argument);
                         }
+
+                        writer.Flush();
+                    }
+
+                    try
+                    {
+                        using (BinaryReader reader = new BinaryReader(namedPipeClient, Encoding.UTF8, leaveOpen: true))
+                        {
+                            bool ack = reader.ReadBoolean();
+                            if (ack)
+                            {
+                                DebugHelper.WriteLine("Arguments successfully sent to existing instance (ACK received).");
+                                return true;
+                            }
+                        }
+                    }
+                    catch (EndOfStreamException)
+                    {
+                        DebugHelper.WriteLine("Arguments sent to existing instance (stream closed without explicit ACK).");
+                        return true;
                     }
                 }
             }
             catch (Exception e)
             {
-                DebugHelper.WriteException(e);
+                DebugHelper.WriteLine($"IPC redirection probe ({timeoutMs}ms) failed: {e.Message}");
             }
+
+            return false;
+        }
+
+        private bool RedirectArgumentsToFirstInstance(string[] args)
+        {
+            const int maxRetries = 5;
+            for (int i = 0; i < maxRetries; i++)
+            {
+                if (TryRedirectArguments(args, 300))
+                {
+                    return true;
+                }
+
+                Thread.Sleep(50);
+            }
+
+            return false;
         }
 
         // Only the foreground process may bring a window to front; others just flash in the taskbar.

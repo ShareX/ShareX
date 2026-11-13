@@ -371,7 +371,7 @@
                             </Grid>
                             <Border Classes="section-card" controls:SettingsSearch.IsPanel="True">
                                 <StackPanel Spacing="4">
-                                    <TextBlock Classes="section-title" Text="{x:Static res:Strings.ApplicationSettingsWindow_Windows}"/>
+                                    <TextBlock Classes="section-title" Text="{Binding SystemIntegrationTitle}"/>
                                     <CheckBox Classes="setting" Content="{Binding StartWithWindowsText}" IsEnabled="{Binding StartWithWindowsEnabled}" IsChecked="{Binding StartWithWindows, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowUploadWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding ShellContextMenu, Mode=TwoWay}"/>
                                     <CheckBox Classes="setting" IsVisible="{Binding WindowsIntegrationVisible}" Content="{x:Static res:Strings.ApplicationSettingsWindow_ShowEditWithShareXButtonInWindowsExplorerContextMenu}" IsChecked="{Binding EditWithShareX, Mode=TwoWay}"/>
@@ -643,7 +643,7 @@
                                 <StackPanel Spacing="6">
                                     <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowImagePrintSettingsDialog}" IsChecked="{Binding DontShowPrintSettingsDialog, Mode=TwoWay}"/>
                                     <Button Classes="compact" HorizontalAlignment="Left" Content="{x:Static res:Strings.ApplicationSettingsWindow_ImagePrintSettings}" Click="OnImagePrintSettingsClick"/>
-                                    <CheckBox Classes="setting" Content="{x:Static res:Strings.ApplicationSettingsWindow_DontShowWindowsPrintDialog}" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
+                                    <CheckBox Classes="setting" Content="{Binding PrintDialogLabel}" IsChecked="{Binding DontShowWindowsPrintDialog, Mode=TwoWay}"/>
                                     <Grid ColumnDefinitions="190,*" ColumnSpacing="8" IsVisible="{Binding DefaultPrinterOverrideVisible}">
                                         <TextBlock Text="{x:Static res:Strings.ApplicationSettingsWindow_DefaultPrinterOverrideLabel}" VerticalAlignment="Center" FontWeight="Normal"/>
                                         <TextBox Grid.Column="1" Classes="form-control" Text="{Binding DefaultPrinterOverride, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

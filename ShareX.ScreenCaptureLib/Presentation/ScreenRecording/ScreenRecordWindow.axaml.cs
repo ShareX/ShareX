@@ -249,11 +249,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StartStopRecording()
     {
-        if (Status == ScreenRecordingStatus.Working)
-        {
-            AbortRecording();
-        }
-        else if (Status == ScreenRecordingStatus.Recording)
+        if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
         {
             Status = ScreenRecordingStatus.Stopped;
             OnStopRequested();
@@ -712,6 +708,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ApplyToolWindowStyle()
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
         {
@@ -728,6 +729,11 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     private void ApplyNativeWindowRegion()
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
         {

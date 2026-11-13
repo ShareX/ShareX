@@ -94,7 +94,7 @@ internal static class ApplicationLifecycle
     internal static void Restart(bool asAdmin = false)
     {
         _restartRequested = true;
-        _restartAsAdmin = asAdmin;
+        _restartAsAdmin = asAdmin && OperatingSystem.IsWindows();
         Exit();
     }
 
@@ -115,7 +115,7 @@ internal static class ApplicationLifecycle
             UseShellExecute = true
         };
 
-        if (_restartAsAdmin)
+        if (_restartAsAdmin && OperatingSystem.IsWindows())
         {
             startInfo.Arguments = "-silent";
             startInfo.Verb = "runas";

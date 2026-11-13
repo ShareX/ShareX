@@ -45,11 +45,31 @@ namespace ShareX.ScreenCaptureLib
         public bool DrawCursor { get; set; }
         public FFmpegOptions FFmpeg { get; set; } = new FFmpegOptions();
 
+        public bool IsWfRecorder =>
+            OperatingSystem.IsLinux() && CaptureHelpers.IsWaylandSession && (
+                FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.WfRecorder.Value, StringComparison.OrdinalIgnoreCase) ||
+                (FileHelpers.FindExecutable("wf-recorder") != null &&
+                 (string.IsNullOrEmpty(FFmpeg.VideoSource) ||
+                  FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.PipeWire.Value, StringComparison.OrdinalIgnoreCase) ||
+                  FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase)))
+            );
+
+        public string GetRecorderPath()
+        {
+            if (IsWfRecorder)
+            {
+                string wf = FileHelpers.FindExecutable("wf-recorder");
+                if (!string.IsNullOrEmpty(wf)) return wf;
+            }
+
+            return FFmpeg.FFmpegPath;
+        }
+
         public string GetFFmpegCommands()
         {
             string commands;
 
-            if (IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource) &&
+            if (OperatingSystem.IsWindows() && IsRecording && !string.IsNullOrEmpty(FFmpeg.VideoSource) &&
                 FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.ScreenCaptureRecorder.Value, StringComparison.OrdinalIgnoreCase))
             {
                 // https://github.com/rdp/screen-capture-recorder-to-video-windows-free
@@ -95,7 +115,98 @@ namespace ShareX.ScreenCaptureLib
 
             if (IsRecording)
             {
-                if (FFmpeg.IsVideoSourceSelected)
+                if (OperatingSystem.IsLinux())
+                {
+                    bool isWayland = CaptureHelpers.IsWaylandSession;
+                    if (IsWfRecorder)
+                    {
+                        string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
+                        string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
+                        string width = isCustom ? "$area_width$" : CaptureArea.Width.ToString();
+                        string height = isCustom ? "$area_height$" : CaptureArea.Height.ToString();
+
+                        args.Append($"-g \"{x},{y} {width}x{height}\" ");
+                        args.Append($"-r {framerate} ");
+
+                        if (FFmpeg.IsAudioSourceSelected)
+                        {
+                            string audioDev = !string.IsNullOrEmpty(FFmpeg.AudioSource) && FFmpeg.AudioSource != "default"
+                                ? $"={Helpers.EscapeCLIText(FFmpeg.AudioSource)}"
+                                : "";
+                            args.Append($"-a{audioDev} ");
+                        }
+
+                        if (FFmpeg.VideoCodec == FFmpegVideoCodec.libx265)
+                        {
+                            args.Append("-c libx265 ");
+                        }
+                        else if (FFmpeg.VideoCodec == FFmpegVideoCodec.libvpx_vp9)
+                        {
+                            args.Append("-c libvpx-vp9 ");
+                        }
+                        else
+                        {
+                            args.Append("-c libx264 ");
+                        }
+
+                        string wfOutput = isCustom ? "$output$" : Path.ChangeExtension(OutputPath, IsLossless ? "mp4" : FFmpeg.Extension);
+                        args.Append($"-f \"{wfOutput}\"");
+                        return args.ToString();
+                    }
+                    else
+                    {
+                        if (FFmpeg.IsAudioSourceSelected)
+                        {
+                            AppendInputDevice(args, "pulse", true);
+                            string audioDev = !string.IsNullOrEmpty(FFmpeg.AudioSource) ? FFmpeg.AudioSource : "default";
+                            args.Append($"-i {Helpers.EscapeCLIText(audioDev)} ");
+                        }
+
+                        if (FFmpeg.IsVideoSourceSelected)
+                        {
+                            string x = isCustom ? "$area_x$" : CaptureArea.X.ToString();
+                            string y = isCustom ? "$area_y$" : CaptureArea.Y.ToString();
+                            string width = isCustom ? "$area_width$" : CaptureArea.Width.ToString();
+                            string height = isCustom ? "$area_height$" : CaptureArea.Height.ToString();
+                            string cursor = isCustom ? "$cursor$" : DrawCursor ? "1" : "0";
+
+                            if (isWayland)
+                            {
+                                if (FFmpeg.VideoSource.Equals("kmsgrab", StringComparison.OrdinalIgnoreCase))
+                                {
+                                    AppendInputDevice(args, "kmsgrab", false);
+                                    args.Append($"-framerate {framerate} ");
+                                    args.Append("-i - ");
+                                }
+                                else
+                                {
+                                    string display = Environment.GetEnvironmentVariable("DISPLAY");
+                                    if (string.IsNullOrEmpty(display))
+                                    {
+                                        display = File.Exists("/tmp/.X11-unix/X0") ? ":0" :
+                                                  File.Exists("/tmp/.X11-unix/X1") ? ":1" : ":0";
+                                    }
+
+                                    AppendInputDevice(args, "x11grab", false);
+                                    args.Append($"-framerate {framerate} ");
+                                    args.Append($"-video_size {width}x{height} ");
+                                    args.Append($"-draw_mouse {cursor} ");
+                                    args.Append($"-i {display}+{x},{y} ");
+                                }
+                            }
+                            else
+                            {
+                                string display = Environment.GetEnvironmentVariable("DISPLAY") ?? ":0";
+                                AppendInputDevice(args, "x11grab", false);
+                                args.Append($"-framerate {framerate} ");
+                                args.Append($"-video_size {width}x{height} ");
+                                args.Append($"-draw_mouse {cursor} ");
+                                args.Append($"-i {display}+{x},{y} ");
+                            }
+                        }
+                    }
+                }
+                else if (FFmpeg.IsVideoSourceSelected)
                 {
                     if (FFmpeg.VideoSource.Equals(FFmpegCaptureDevice.GDIGrab.Value, StringComparison.OrdinalIgnoreCase))
                     {
@@ -341,11 +452,17 @@ namespace ShareX.ScreenCaptureLib
         {
             args.Append($"-f {inputDevice} ");
             args.Append("-thread_queue_size 1024 "); // This option sets the maximum number of queued packets when reading from the file or device.
-            args.Append("-rtbufsize 256M "); // Default real time buffer size is 3041280 (3M)
+            if (!OperatingSystem.IsLinux() || (inputDevice != "pulse" && inputDevice != "x11grab" && inputDevice != "kmsgrab"))
+            {
+                args.Append("-rtbufsize 256M "); // Default real time buffer size is 3041280 (3M)
+            }
 
             if (audioSource)
             {
-                args.Append("-audio_buffer_size 80 "); // Set audio device buffer size in milliseconds (which can directly impact latency, depending on the device).
+                if (!OperatingSystem.IsLinux())
+                {
+                    args.Append("-audio_buffer_size 80 "); // Set audio device buffer size in milliseconds (which can directly impact latency, depending on the device).
+                }
             }
         }
     }

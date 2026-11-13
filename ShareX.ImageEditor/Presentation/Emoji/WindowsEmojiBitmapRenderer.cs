@@ -179,9 +179,45 @@ public static class WindowsEmojiBitmapRenderer
         return CopyWicBitmapToSkBitmap(wicBitmap, canvasSize, canvasSize);
     }
 
+    private static SKTypeface GetEmojiTypeface(string glyph)
+    {
+        string[] candidateFamilies = OperatingSystem.IsWindows()
+            ? ["Segoe UI Emoji", "Segoe UI Symbol"]
+            : OperatingSystem.IsMacOS()
+                ? ["Apple Color Emoji"]
+                : ["Noto Color Emoji", "Apple Color Emoji", "Twitter Color Emoji", "EmojiOne Color", "JoyPixels", "Segoe UI Emoji"];
+
+        foreach (string family in candidateFamilies)
+        {
+            SKTypeface? tf = SKFontManager.Default.MatchFamily(family);
+            if (tf != null && !string.Equals(tf.FamilyName, SKTypeface.Default.FamilyName, StringComparison.OrdinalIgnoreCase))
+            {
+                return tf;
+            }
+        }
+
+        if (!string.IsNullOrEmpty(glyph))
+        {
+            try
+            {
+                int codePoint = char.ConvertToUtf32(glyph, 0);
+                SKTypeface? charTf = SKFontManager.Default.MatchCharacter(codePoint);
+                if (charTf != null)
+                {
+                    return charTf;
+                }
+            }
+            catch
+            {
+            }
+        }
+
+        return SKFontManager.Default.MatchFamily("Noto Color Emoji") ?? SKTypeface.Default;
+    }
+
     private static SKBitmap? RenderWithSkiaFallback(string glyph, int canvasSize)
     {
-        using SKTypeface? typeface = SKFontManager.Default.MatchFamily(EmojiFontFamily) ?? SKTypeface.Default;
+        using SKTypeface typeface = GetEmojiTypeface(glyph);
         using var rawBitmap = new SKBitmap(new SKImageInfo(canvasSize, canvasSize, SKColorType.Bgra8888, SKAlphaType.Premul));
         using var canvas = new SKCanvas(rawBitmap);
         using var font = new SKFont(typeface, canvasSize * 0.68f);
@@ -196,8 +232,8 @@ public static class WindowsEmojiBitmapRenderer
         SKRect bounds = default;
         font.MeasureText(glyph, out bounds);
 
-        float x = (canvasSize - bounds.Width) / 2f - bounds.Left;
-        float y = (canvasSize - bounds.Height) / 2f - bounds.Top;
+        float x = bounds.Width > 0 ? (canvasSize - bounds.Width) / 2f - bounds.Left : canvasSize * 0.15f;
+        float y = bounds.Height > 0 ? (canvasSize - bounds.Height) / 2f - bounds.Top : canvasSize * 0.75f;
 
         canvas.DrawText(glyph, x, y, font, paint);
         canvas.Flush();

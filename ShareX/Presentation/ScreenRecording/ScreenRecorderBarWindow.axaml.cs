@@ -468,7 +468,7 @@ internal partial class ScreenRecorderBarWindow : Window
         // Keep the outline behind the interactive bar when the windows overlap.
         IntPtr barHandle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         IntPtr regionHandle = _regionWindow.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
-        if (barHandle != IntPtr.Zero && regionHandle != IntPtr.Zero)
+        if (OperatingSystem.IsWindows() && barHandle != IntPtr.Zero && regionHandle != IntPtr.Zero)
         {
             NativeMethods.SetWindowPos(regionHandle, barHandle, 0, 0, 0, 0,
                 SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE | SetWindowPosFlags.SWP_NOACTIVATE);

@@ -7,8 +7,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Description>Offline OCR using PaddleOCR PP-OCRv6 ONNX models</Description>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition="'$(OS)' == 'Windows_NT'">
     <PackageReference Include="Microsoft.ML.OnnxRuntime.DirectML" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(OS)' != 'Windows_NT'">
+    <PackageReference Include="Microsoft.ML.OnnxRuntime" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="SkiaSharp" />
   </ItemGroup>
   <ItemGroup>

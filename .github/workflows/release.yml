@@ -1,0 +1,110 @@
+name: Release Linux
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-linux:
+    name: Build & Release Linux
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Determine Version
+        id: get_version
+        run: |
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/}"
+            VERSION="${VERSION#v}"
+          else
+            VERSION="22.0.0"
+          fi
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "Extracted version: $VERSION"
+
+      - name: Publish ShareX (Linux-x64 self-contained)
+        run: |
+          dotnet publish ShareX/ShareX.csproj -c Release -r linux-x64 --self-contained true -o ./publish
+          chmod +x ./publish/ShareX
+
+      - name: Package Standalone Tarball (tar.gz)
+        run: |
+          PKG_DIR="ShareX-Linux-x64"
+          mkdir -p "$PKG_DIR"
+          cp -r ./publish/* "$PKG_DIR/"
+          cp packaging/flatpak/io.github.jocost4.ShareX.desktop "$PKG_DIR/"
+          cp packaging/flatpak/io.github.jocost4.ShareX.png "$PKG_DIR/"
+          tar -czvf ShareX-Linux-x64.tar.gz "$PKG_DIR"
+
+      - name: Package Debian Installer (.deb)
+        run: |
+          DEB_DIR="pkg_deb"
+          mkdir -p "$DEB_DIR/DEBIAN"
+          mkdir -p "$DEB_DIR/usr/bin"
+          mkdir -p "$DEB_DIR/usr/lib/sharex"
+          mkdir -p "$DEB_DIR/usr/share/applications"
+          mkdir -p "$DEB_DIR/usr/share/icons/hicolor/256x256/apps"
+          mkdir -p "$DEB_DIR/usr/share/metainfo"
+
+          # Copy application binaries and assets
+          cp -r ./publish/* "$DEB_DIR/usr/lib/sharex/"
+          chmod +x "$DEB_DIR/usr/lib/sharex/ShareX"
+
+          # Launcher script in /usr/bin
+          cat << 'EOF' > "$DEB_DIR/usr/bin/sharex"
+          #!/bin/sh
+          exec /usr/lib/sharex/ShareX "$@"
+          EOF
+          chmod +x "$DEB_DIR/usr/bin/sharex"
+
+          # Desktop integration
+          cp packaging/flatpak/io.github.jocost4.ShareX.desktop "$DEB_DIR/usr/share/applications/"
+          cp packaging/flatpak/io.github.jocost4.ShareX.png "$DEB_DIR/usr/share/icons/hicolor/256x256/apps/"
+          cp packaging/flatpak/io.github.jocost4.ShareX.metainfo.xml "$DEB_DIR/usr/share/metainfo/"
+
+          # Debian control file
+          cat << EOF > "$DEB_DIR/DEBIAN/control"
+          Package: sharex
+          Version: $VERSION
+          Section: utils
+          Priority: optional
+          Architecture: amd64
+          Maintainer: jocost4 <https://github.com/jocost4/ShareX>
+          Depends: libc6, libfontconfig1, libgl1
+          Description: Screen capture, file sharing and productivity tool
+           ShareX is a free and open source program that lets you capture or record
+           any area of your screen and share it with a single press of a key.
+           It also allows uploading images, text or other types of files to many supported destinations.
+          EOF
+
+          dpkg-deb --build --root-owner-group "$DEB_DIR" ShareX-Linux-x64.deb
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: sharex-linux-x64-binaries
+          path: |
+            ShareX-Linux-x64.tar.gz
+            ShareX-Linux-x64.deb
+
+      - name: Publish to GitHub Releases
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            ShareX-Linux-x64.tar.gz
+            ShareX-Linux-x64.deb
+          generate_release_notes: true

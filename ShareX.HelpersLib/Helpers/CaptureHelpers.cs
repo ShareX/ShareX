@@ -31,6 +31,12 @@ namespace ShareX.HelpersLib
 {
     public static class CaptureHelpers
     {
+        public static bool IsWaylandSession =>
+            OperatingSystem.IsLinux() && (
+                string.Equals(Environment.GetEnvironmentVariable("XDG_SESSION_TYPE"), "wayland", StringComparison.OrdinalIgnoreCase) ||
+                !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WAYLAND_DISPLAY"))
+            );
+
         public static Rectangle GetScreenBounds()
         {
             return DesktopScreen.AllScreens.Select(x => x.Bounds).Combine();

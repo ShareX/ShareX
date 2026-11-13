@@ -32,6 +32,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Threading;
 using System.Globalization;
+using ShareX.ImageEditor.Presentation.Helpers;
 
 namespace ShareX.ImageEditor.Presentation.Controls
 {
@@ -40,7 +41,7 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public static readonly StyledProperty<string> SelectedFontFamilyProperty =
             AvaloniaProperty.Register<FontFamilyPickerDropdown, string>(
                 nameof(SelectedFontFamily),
-                defaultValue: "Segoe UI");
+                defaultValue: FontFamilyHelper.GetDefaultSystemFontFamily());
 
         public static readonly StyledProperty<IEnumerable<string>> FontFamilyOptionsProperty =
             AvaloniaProperty.Register<FontFamilyPickerDropdown, IEnumerable<string>>(

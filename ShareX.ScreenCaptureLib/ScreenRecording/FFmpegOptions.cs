@@ -75,6 +75,20 @@ namespace ShareX.ScreenCaptureLib
                     return FileHelpers.GetAbsolutePath(CLIPath);
                 }
 
+                if (OperatingSystem.IsLinux())
+                {
+                    string localPath = FileHelpers.GetAbsolutePath("ffmpeg");
+                    if (System.IO.File.Exists(localPath)) return localPath;
+
+                    string envPath = FileHelpers.FindExecutable("ffmpeg");
+                    if (!string.IsNullOrEmpty(envPath)) return envPath;
+
+                    if (System.IO.File.Exists("/usr/bin/ffmpeg")) return "/usr/bin/ffmpeg";
+                    if (System.IO.File.Exists("/usr/local/bin/ffmpeg")) return "/usr/local/bin/ffmpeg";
+
+                    return "/usr/bin/ffmpeg";
+                }
+
                 return FileHelpers.GetAbsolutePath("ffmpeg.exe");
             }
         }
@@ -153,6 +167,26 @@ namespace ShareX.ScreenCaptureLib
             if (AudioSource.Equals("None", StringComparison.OrdinalIgnoreCase))
             {
                 AudioSource = FFmpegCaptureDevice.None.Value;
+            }
+
+            if (OperatingSystem.IsLinux())
+            {
+                if (string.IsNullOrEmpty(VideoSource) ||
+                    VideoSource.Equals("gdigrab", StringComparison.OrdinalIgnoreCase) ||
+                    VideoSource.Equals("ddagrab", StringComparison.OrdinalIgnoreCase) ||
+                    VideoSource.Equals("screen-capture-recorder", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (CaptureHelpers.IsWaylandSession)
+                    {
+                        VideoSource = FileHelpers.FindExecutable("wf-recorder") != null
+                            ? FFmpegCaptureDevice.WfRecorder.Value
+                            : FFmpegCaptureDevice.PipeWire.Value;
+                    }
+                    else
+                    {
+                        VideoSource = FFmpegCaptureDevice.X11Grab.Value;
+                    }
+                }
             }
         }
     }

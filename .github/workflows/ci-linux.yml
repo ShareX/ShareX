@@ -1,0 +1,34 @@
+name: CI Linux
+
+on:
+  push:
+    branches:
+      - "feature/linux*"
+      - "linux*"
+  pull_request:
+    branches:
+      - "feature/linux*"
+      - "linux*"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build (Ubuntu)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore ShareX.sln
+
+      - name: Build ShareX Solution
+        run: dotnet build ShareX.sln -c Release --no-restore

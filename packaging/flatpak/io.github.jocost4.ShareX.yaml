@@ -1,0 +1,41 @@
+app-id: io.github.jocost4.ShareX
+runtime: org.freedesktop.Platform
+runtime-version: '25.08'
+sdk: org.freedesktop.Sdk
+command: ShareX
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --share=network
+  - --device=dri
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-download
+  - --filesystem=xdg-videos
+  - --filesystem=xdg-documents
+  - --talk-name=org.freedesktop.portal.Desktop
+  - --talk-name=org.freedesktop.portal.Screenshot
+  - --talk-name=org.freedesktop.portal.ScreenCast
+  - --talk-name=org.freedesktop.portal.Notifications
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --own-name=org.kde.StatusNotifierItem.*
+
+modules:
+  - name: sharex
+    buildsystem: simple
+    build-commands:
+      - install -d /app/bin /app/lib/ShareX
+      - cp -r * /app/lib/ShareX/
+      - chmod +x /app/lib/ShareX/ShareX
+      - ln -s /app/lib/ShareX/ShareX /app/bin/ShareX
+      - install -Dm644 io.github.jocost4.ShareX.desktop /app/share/applications/io.github.jocost4.ShareX.desktop
+      - install -Dm644 io.github.jocost4.ShareX.metainfo.xml /app/share/metainfo/io.github.jocost4.ShareX.metainfo.xml
+      - install -Dm644 io.github.jocost4.ShareX.png /app/share/icons/hicolor/256x256/apps/io.github.jocost4.ShareX.png
+    sources:
+      - type: archive
+        url: https://github.com/jocost4/ShareX/releases/download/v22.4.0-linux/ShareX-Linux-x64.tar.gz
+        sha256: 05d538edbbebfaae4e79c1e3cfadd9c2c3799f1dbf7b2bf612ce59c1697493f4
+      - type: file
+        path: io.github.jocost4.ShareX.metainfo.xml

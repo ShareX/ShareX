@@ -44,7 +44,7 @@ public partial class SpeechBalloonAnnotation
             CornerRadius = new CornerRadius(0),
             Foreground = foregroundBrush,
             FontSize = FontSize,
-            FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(FontFamily) ? "Segoe UI" : FontFamily),
+            FontFamily = new Avalonia.Media.FontFamily(FontFamilyHelper.ResolveFontFamily(FontFamily)),
             FontWeight = IsBold ? FontWeight.Bold : FontWeight.Normal,
             FontStyle = IsItalic ? FontStyle.Italic : FontStyle.Normal,
             Padding = new Thickness(TextPadding),
@@ -66,7 +66,7 @@ public partial class SpeechBalloonAnnotation
     internal void UpdateTextEditorAppearance(TextBox textBox)
     {
         textBox.FontSize = FontSize;
-        textBox.FontFamily = new Avalonia.Media.FontFamily(string.IsNullOrWhiteSpace(FontFamily) ? "Segoe UI" : FontFamily);
+        textBox.FontFamily = new Avalonia.Media.FontFamily(FontFamilyHelper.ResolveFontFamily(FontFamily));
         textBox.FontWeight = IsBold ? FontWeight.Bold : FontWeight.Normal;
         textBox.FontStyle = IsItalic ? FontStyle.Italic : FontStyle.Normal;
         textBox.TextAlignment = TextHorizontalAlignmentHelper.ToAvaloniaTextAlignment(HorizontalAlignment);

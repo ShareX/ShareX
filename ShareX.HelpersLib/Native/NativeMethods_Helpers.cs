@@ -561,6 +561,11 @@ namespace ShareX.HelpersLib
 
         public static SkiaSharp.SKBitmap GetFileThumbnail(string filePath, Size thumbnailSize)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return null;
+            }
+
             Guid guid = typeof(IShellItemImageFactory).GUID;
             IShellItemImageFactory imageFactory = null;
             IntPtr hbitmap = IntPtr.Zero;

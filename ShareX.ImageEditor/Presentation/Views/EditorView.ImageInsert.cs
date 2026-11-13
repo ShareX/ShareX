@@ -418,6 +418,11 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private Point? GetCursorScreenCenter(Visual relativeTo)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return null;
+            }
+
             TopLevel? topLevel = TopLevel.GetTopLevel(this);
             if (topLevel == null || !GetCursorPos(out NativePoint cursorPosition))
             {

@@ -94,6 +94,11 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void ApplyClickThroughToolWindowStyle()
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
         {
@@ -106,6 +111,11 @@ public partial class ScrollingCaptureRegionWindow : Window
 
     private void ApplyNativeFrameRegion()
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
         {

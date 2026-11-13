@@ -34,7 +34,7 @@ namespace ShareX;
 internal static class ApplicationInfo
 {
     internal const string Name = "ShareX";
-    internal const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
+    internal const string MutexName = "Global\\82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
     internal static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{Name}";
 
     internal const ShareXBuild Build =
@@ -50,7 +50,7 @@ internal static class ApplicationInfo
         ShareXBuild.Unknown;
 #endif
 
-    internal const bool Dev = true;
+    internal static readonly bool Dev = false;
 
     internal static string VersionText
     {
@@ -58,8 +58,7 @@ internal static class ApplicationInfo
         {
             StringBuilder versionText = new();
             Version version = Version.Parse(Helpers.GetApplicationVersion(true));
-            versionText.Append(version.Major).Append('.').Append(version.Minor);
-            if (version.Build > 0 || version.Revision > 0) versionText.Append('.').Append(version.Build);
+            versionText.Append(version.Major).Append('.').Append(version.Minor).Append('.').Append(Math.Max(0, version.Build));
             if (version.Revision > 0) versionText.Append('.').Append(version.Revision);
             if (Dev) versionText.Append(" Dev");
             if (StartupOptions.Portable) versionText.Append(" Portable");
@@ -71,7 +70,8 @@ internal static class ApplicationInfo
     {
         get
         {
-            string title = $"{Name} {VersionText}";
+            string platformSuffix = OperatingSystem.IsWindows() ? "" : " - Linux";
+            string title = $"{Name} {VersionText}{platformSuffix}";
             if (ApplicationState.SettingsOrNull is { DevMode: true })
             {
                 string info = Build.ToString();

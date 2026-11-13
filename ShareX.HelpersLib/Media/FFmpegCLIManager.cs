@@ -86,7 +86,7 @@ namespace ShareX.HelpersLib
 
         protected bool Run(string path, string args)
         {
-            if (!string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
+            if (OperatingSystem.IsWindows() && !string.Equals(Path.GetExtension(path), ".exe", StringComparison.OrdinalIgnoreCase))
             {
                 return false;
             }
@@ -116,6 +116,17 @@ namespace ShareX.HelpersLib
                 {
                     WriteInput("q");
 
+                    if (OperatingSystem.IsLinux())
+                    {
+                        try
+                        {
+                            NativeMethods.SendSignal(process.Id, 2); // SIGINT
+                        }
+                        catch
+                        {
+                        }
+                    }
+
                     closeTryCount++;
                 }
             }
@@ -131,7 +142,9 @@ namespace ShareX.HelpersLib
                 {
                     Output.AppendLine(data);
 
-                    if (!IsEncoding && data.Contains("Press [q] to stop", StringComparison.OrdinalIgnoreCase))
+                    if (!IsEncoding && (data.Contains("Press [q] to stop", StringComparison.OrdinalIgnoreCase) ||
+                        data.Contains("Output #0", StringComparison.OrdinalIgnoreCase) ||
+                        data.Contains("frame=", StringComparison.OrdinalIgnoreCase)))
                     {
                         IsEncoding = true;
 

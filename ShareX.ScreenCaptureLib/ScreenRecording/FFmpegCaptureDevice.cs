@@ -41,6 +41,9 @@ namespace ShareX.ScreenCaptureLib
         public static FFmpegCaptureDevice DDAGrab { get; } = new FFmpegCaptureDevice("ddagrab", "ddagrab (Desktop Duplication API)");
         public static FFmpegCaptureDevice ScreenCaptureRecorder { get; } = new FFmpegCaptureDevice("screen-capture-recorder", "dshow (screen-capture-recorder)");
         public static FFmpegCaptureDevice VirtualAudioCapturer { get; } = new FFmpegCaptureDevice("virtual-audio-capturer", "dshow (virtual-audio-capturer)");
+        public static FFmpegCaptureDevice X11Grab { get; } = new FFmpegCaptureDevice("x11grab", "x11grab (X11 screen capture)");
+        public static FFmpegCaptureDevice PipeWire { get; } = new FFmpegCaptureDevice("pipewire", "PipeWire (Wayland screen capture)");
+        public static FFmpegCaptureDevice WfRecorder { get; } = new FFmpegCaptureDevice("wf-recorder", "wf-recorder (Wayland screen recorder)");
 
         public override string ToString()
         {

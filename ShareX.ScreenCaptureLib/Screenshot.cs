@@ -25,6 +25,7 @@
 
 using ShareX.HelpersLib;
 using System;
+using System.Linq;
 using System.Drawing;
 using Bitmap = SkiaSharp.SKBitmap;
 
@@ -53,13 +54,30 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap CaptureFullscreen()
         {
-            Rectangle bounds = CaptureHelpers.GetScreenBounds();
+            if (!OperatingSystem.IsWindows())
+            {
+                return LinuxCaptureHelper.CaptureFullscreen();
+            }
 
+            Rectangle bounds = CaptureHelpers.GetScreenBounds();
             return CaptureRectangle(bounds);
         }
 
         public Bitmap CaptureWindow(IntPtr handle)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                if (handle != IntPtr.Zero)
+                {
+                    var win = new WindowsList().GetVisibleWindowsList().FirstOrDefault(w => w.Handle == handle);
+                    if (win != null && win.Rectangle.Width > 0 && win.Rectangle.Height > 0)
+                    {
+                        return LinuxCaptureHelper.CaptureRectangle(win.Rectangle);
+                    }
+                }
+                return LinuxCaptureHelper.CaptureInteractiveWindow();
+            }
+
             if (handle.ToInt32() > 0)
             {
                 Rectangle rect;
@@ -98,20 +116,38 @@ namespace ShareX.ScreenCaptureLib
 
         public Bitmap CaptureActiveWindow()
         {
-            IntPtr handle = NativeMethods.GetForegroundWindow();
+            if (!OperatingSystem.IsWindows())
+            {
+                var win = new WindowsList().GetVisibleWindowsList().FirstOrDefault();
+                if (win != null && win.Handle != IntPtr.Zero && win.Rectangle.Width > 0 && win.Rectangle.Height > 0)
+                {
+                    return CaptureWindow(win.Handle);
+                }
+                return LinuxCaptureHelper.CaptureInteractiveWindow();
+            }
 
+            IntPtr handle = NativeMethods.GetForegroundWindow();
             return CaptureWindow(handle);
         }
 
         public Bitmap CaptureActiveMonitor()
         {
-            Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
+            if (!OperatingSystem.IsWindows())
+            {
+                return LinuxCaptureHelper.CaptureFullscreen();
+            }
 
+            Rectangle bounds = CaptureHelpers.GetActiveScreenBounds();
             return CaptureRectangle(bounds);
         }
 
         private Bitmap CaptureRectangleNative(Rectangle rect, bool captureCursor = false)
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return LinuxCaptureHelper.CaptureRectangle(rect);
+            }
+
             IntPtr handle = NativeMethods.GetDesktopWindow();
             return CaptureRectangleNative(handle, rect, captureCursor);
         }

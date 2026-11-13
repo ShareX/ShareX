@@ -33,11 +33,13 @@ namespace ShareX.HelpersLib
     {
         public static void CreateRegistry(string path, string value, RegistryHive root = RegistryHive.CurrentUser)
         {
+            if (!OperatingSystem.IsWindows()) return;
             CreateRegistry(path, null, value, root);
         }
 
         public static void CreateRegistry(string path, string name, string value, RegistryHive root = RegistryHive.CurrentUser)
         {
+            if (!OperatingSystem.IsWindows()) return;
             using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path))
             {
                 if (rk != null)
@@ -49,11 +51,13 @@ namespace ShareX.HelpersLib
 
         public static void CreateRegistry(string path, int value, RegistryHive root = RegistryHive.CurrentUser)
         {
+            if (!OperatingSystem.IsWindows()) return;
             CreateRegistry(path, null, value, root);
         }
 
         public static void CreateRegistry(string path, string name, int value, RegistryHive root = RegistryHive.CurrentUser)
         {
+            if (!OperatingSystem.IsWindows()) return;
             using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default).CreateSubKey(path))
             {
                 if (rk != null)
@@ -65,6 +69,7 @@ namespace ShareX.HelpersLib
 
         public static void RemoveRegistry(string path, RegistryHive root = RegistryHive.CurrentUser)
         {
+            if (!OperatingSystem.IsWindows()) return;
             if (!string.IsNullOrEmpty(path))
             {
                 using (RegistryKey rk = RegistryKey.OpenBaseKey(root, RegistryView.Default))
@@ -76,6 +81,7 @@ namespace ShareX.HelpersLib
 
         public static object GetValue(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
+            if (!OperatingSystem.IsWindows()) return null;
             try
             {
                 using (RegistryKey baseKey = RegistryKey.OpenBaseKey(root, view))
@@ -97,16 +103,19 @@ namespace ShareX.HelpersLib
 
         public static string GetValueString(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
+            if (!OperatingSystem.IsWindows()) return null;
             return GetValue(path, name, root, view) as string;
         }
 
         public static int? GetValueDWord(string path, string name = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
+            if (!OperatingSystem.IsWindows()) return null;
             return (int?)GetValue(path, name, root, view);
         }
 
         public static bool CheckStringValue(string path, string name = null, string value = null, RegistryHive root = RegistryHive.CurrentUser, RegistryView view = RegistryView.Default)
         {
+            if (!OperatingSystem.IsWindows()) return false;
             string registryValue = GetValueString(path, name, root, view);
 
             return registryValue != null && (value == null || registryValue.Equals(value, StringComparison.OrdinalIgnoreCase));
@@ -114,6 +123,7 @@ namespace ShareX.HelpersLib
 
         public static string SearchProgramPath(string fileName)
         {
+            if (!OperatingSystem.IsWindows()) return null;
             // First method: HKEY_CLASSES_ROOT\Applications\{fileName}\shell\{command}\command
 
             string[] commands = new string[] { "open", "edit" };

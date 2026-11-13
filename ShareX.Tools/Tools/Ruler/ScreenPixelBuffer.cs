@@ -25,6 +25,7 @@
 
 using Avalonia;
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using SkiaSharp;
 
 using System.Runtime.InteropServices;
@@ -51,10 +52,20 @@ internal sealed class ScreenPixelBuffer
             throw new ArgumentOutOfRangeException(nameof(bounds));
         }
 
-        using SKBitmap bitmap = WindowsImageInterop.Capture(new DrawingRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
-        int[] pixels = new int[bitmap.Width * bitmap.Height];
-        for (int y = 0; y < bitmap.Height; y++)
-            Marshal.Copy(IntPtr.Add(bitmap.GetPixels(), y * bitmap.RowBytes), pixels, y * bitmap.Width, bitmap.Width);
+        using SKBitmap? bitmap = OperatingSystem.IsWindows()
+            ? WindowsImageInterop.Capture(new DrawingRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height))
+            : LinuxCaptureHelper.CaptureRectangle(new DrawingRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
+
+        using SKBitmap formatted = new SKBitmap(bounds.Width, bounds.Height, SKColorType.Bgra8888, SKAlphaType.Premul);
+        if (bitmap != null)
+        {
+            using SKCanvas canvas = new SKCanvas(formatted);
+            canvas.DrawBitmap(bitmap, 0, 0);
+        }
+
+        int[] pixels = new int[bounds.Width * bounds.Height];
+        for (int y = 0; y < bounds.Height; y++)
+            Marshal.Copy(IntPtr.Add(formatted.GetPixels(), y * formatted.RowBytes), pixels, y * bounds.Width, bounds.Width);
         return new ScreenPixelBuffer(bounds, pixels);
     }
 

@@ -108,7 +108,7 @@ internal sealed class MainMenuBuilder
             Item(Strings.MainMenuBuilder_History, AppIcons.History, () => Run(MainFormCommand.History)),
             Item(Strings.MainMenuBuilder_ImageHistory, AppIcons.ImageHistory, () => Run(MainFormCommand.ImageHistory)),
             MainMenuEntry.Separator(),
-            Item(Strings.MainMenuBuilder_RestartAsAdministrator, AppIcons.RestartAsAdmin, () => ApplicationLifecycle.Restart(true)),
+            Item(Strings.MainMenuBuilder_RestartAsAdministrator, AppIcons.RestartAsAdmin, () => ApplicationLifecycle.Restart(true), isVisible: OperatingSystem.IsWindows()),
             Parent(Strings.MainMenuBuilder_RecentItems, AppIcons.RecentItems, BuildRecentItemsMenu,
                 ApplicationState.Settings.RecentTasksSave && ApplicationState.Settings.RecentTasksShowInTrayMenu && TaskManager.RecentManager.Tasks.Count > 0),
             Item(Strings.MainMenuBuilder_ActionsToolbar, AppIcons.Toolbar, () => TaskHelpers.ToggleActionsToolbar()),
@@ -150,6 +150,14 @@ internal sealed class MainMenuBuilder
     {
         List<MainMenuEntry> items = new();
 
+        if (!OperatingSystem.IsWindows())
+        {
+            items.Add(Item(Strings.MainMenuBuilder_Window, AppIcons.Window,
+                () => new CaptureRegion().Capture(!_trayMenu)));
+            items.Add(MainMenuEntry.Separator());
+        }
+
+        int windowCount = 0;
         try
         {
             foreach (WindowInfo window in new WindowsList().GetVisibleWindowsList())
@@ -159,6 +167,7 @@ internal sealed class MainMenuBuilder
                 items.Add(Item(title, string.Empty,
                     () => new CaptureWindow(selectedWindow.Handle).Capture(!_trayMenu),
                     bitmapIcon: GetWindowIcon(selectedWindow)));
+                windowCount++;
             }
         }
         catch (Exception e)
@@ -166,7 +175,7 @@ internal sealed class MainMenuBuilder
             DebugHelper.WriteException(e);
         }
 
-        if (items.Count == 0)
+        if (windowCount == 0 && OperatingSystem.IsWindows())
         {
             items.Add(new MainMenuEntry(Strings.MainMenuBuilder_NoWindowsFound, AppIcons.Window, isEnabled: false));
         }
@@ -292,9 +301,17 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_AnimatedGifMaker), Strings.MainMenuBuilder_AnimatedGifMaker, AppIcons.AnimatedGifMaker, () => TaskHelpers.OpenAnimatedGifMaker()),
             Tool(nameof(Strings.MainMenuBuilder_AnimatedGifTrimmer), Strings.MainMenuBuilder_AnimatedGifTrimmer, AppIcons.ScissorsFrame, () => TaskHelpers.OpenAnimatedGifTrimmer()),
             Tool(nameof(Strings.MainMenuBuilder_VideoConverter), Strings.MainMenuBuilder_VideoConverter, AppIcons.VideoConverter, () => TaskHelpers.OpenVideoConverter()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, AppIcons.CirclePlay, () => TaskHelpers.OpenVideoPlayer()),
+            Tool(nameof(Strings.MainMenuBuilder_VideoPlayer), Strings.MainMenuBuilder_VideoPlayer, AppIcons.CirclePlay, () => TaskHelpers.OpenVideoPlayer(), isVisible: OperatingSystem.IsWindows()),
             Tool(nameof(Strings.MainMenuBuilder_VideoThumbnailer), Strings.MainMenuBuilder_VideoThumbnailer, AppIcons.Clapperboard, () => TaskHelpers.OpenVideoThumbnailer()),
-            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, AppIcons.Scissors, () => TaskHelpers.OpenVideoTrimmer())
+            Tool(nameof(Strings.MainMenuBuilder_VideoTrimmer), Strings.MainMenuBuilder_VideoTrimmer, AppIcons.Scissors, () => TaskHelpers.OpenVideoTrimmer(), isVisible: OperatingSystem.IsWindows())
+        ]),
+        new(Strings.MainMenuBuilder_ToolCategorySystem,
+        [
+            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, AppIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow(), isVisible: OperatingSystem.IsWindows()),
+            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, AppIcons.ClipboardViewer, () => TaskHelpers.OpenClipboardViewer()),
+            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, AppIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow(), isVisible: OperatingSystem.IsWindows()),
+            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, AppIcons.MonitorTest, () => TaskHelpers.OpenMonitorTest()),
+            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, AppIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
         ]),
         new(Strings.MainMenuBuilder_ToolCategoryData,
         [
@@ -305,14 +322,6 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, AppIcons.TextRecognition, async () => await TaskHelpers.OCRImage(autoHideMainWindow: !_trayMenu)),
             Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, AppIcons.QrCode, () => TaskHelpers.OpenQRCode()),
             Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, AppIcons.RemoteStorageBrowser, () => TaskHelpers.OpenRemoteStorageBrowser())
-        ]),
-        new(Strings.MainMenuBuilder_ToolCategorySystem,
-        [
-            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, AppIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, AppIcons.ClipboardViewer, () => TaskHelpers.OpenClipboardViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, AppIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow()),
-            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, AppIcons.MonitorTest, () => TaskHelpers.OpenMonitorTest()),
-            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, AppIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
         ])
     ];
 
@@ -608,11 +617,11 @@ internal sealed class MainMenuBuilder
     private static MainMenuEntry Item(string header, string icon, Func<Task> execute, bool isVisible = true) =>
         new(header, icon, execute, isVisible: isVisible);
 
-    private static MainMenuEntry Tool(string id, string header, string icon, Action execute, string? badgeText = null) =>
-        new(header, icon, execute, id: id, badgeText: badgeText);
+    private static MainMenuEntry Tool(string id, string header, string icon, Action execute, string? badgeText = null, bool isVisible = true) =>
+        new(header, icon, execute, id: id, badgeText: badgeText, isVisible: isVisible);
 
-    private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute) =>
-        new(header, icon, execute, id: id);
+    private static MainMenuEntry Tool(string id, string header, string icon, Func<Task> execute, bool isVisible = true) =>
+        new(header, icon, execute, id: id, isVisible: isVisible);
 
     private static MainMenuEntry Parent(string header, string icon, Func<IReadOnlyList<MainMenuEntry>> children, bool isVisible = true) =>
         new(header, icon, createChildren: children, isVisible: isVisible);

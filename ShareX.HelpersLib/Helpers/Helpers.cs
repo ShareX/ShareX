@@ -384,9 +384,18 @@ namespace ShareX.HelpersLib
                 Task.Run(() =>
                 {
                     using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
                     {
-                        soundPlayer.Play();
+                        if (OperatingSystem.IsWindows())
+                        {
+                            using (SoundPlayer soundPlayer = new SoundPlayer(stream))
+                            {
+                                soundPlayer.Play();
+                            }
+                        }
+                        else
+                        {
+                            PlaySoundStreamLinux(stream);
+                        }
                     }
                 });
             }
@@ -399,9 +408,18 @@ namespace ShareX.HelpersLib
                 Task.Run(() =>
                 {
                     using (stream)
-                    using (SoundPlayer soundPlayer = new SoundPlayer(stream))
                     {
-                        soundPlayer.PlaySync();
+                        if (OperatingSystem.IsWindows())
+                        {
+                            using (SoundPlayer soundPlayer = new SoundPlayer(stream))
+                            {
+                                soundPlayer.PlaySync();
+                            }
+                        }
+                        else
+                        {
+                            PlaySoundStreamLinux(stream);
+                        }
                     }
                 });
             }
@@ -413,11 +431,85 @@ namespace ShareX.HelpersLib
             {
                 Task.Run(() =>
                 {
-                    using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
+                    if (OperatingSystem.IsWindows())
                     {
-                        soundPlayer.PlaySync();
+                        using (SoundPlayer soundPlayer = new SoundPlayer(filePath))
+                        {
+                            soundPlayer.PlaySync();
+                        }
+                    }
+                    else
+                    {
+                        PlaySoundLinux(filePath);
                     }
                 });
+            }
+        }
+
+        private static readonly string[] LinuxAudioPlayers = new[] { "pw-play", "paplay", "aplay" };
+
+        private static void PlaySoundLinux(string filePath)
+        {
+            if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath)) return;
+
+            foreach (string player in LinuxAudioPlayers)
+            {
+                try
+                {
+                    using (Process process = new Process())
+                    {
+                        process.StartInfo = new ProcessStartInfo
+                        {
+                            FileName = player,
+                            Arguments = $"\"{filePath}\"",
+                            UseShellExecute = false,
+                            CreateNoWindow = true,
+                            RedirectStandardError = true,
+                            RedirectStandardOutput = true
+                        };
+
+                        if (process.Start())
+                        {
+                            process.WaitForExit(5000);
+                            if (process.ExitCode == 0)
+                            {
+                                return;
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                    // Fallback to next player or silent failure
+                }
+            }
+        }
+
+        private static void PlaySoundStreamLinux(Stream stream)
+        {
+            if (stream == null) return;
+
+            try
+            {
+                string tempFile = Path.Combine(Path.GetTempPath(), $"sharex_sound_{Guid.NewGuid():N}.wav");
+                using (FileStream fs = File.Create(tempFile))
+                {
+                    stream.CopyTo(fs);
+                }
+
+                PlaySoundLinux(tempFile);
+
+                try
+                {
+                    File.Delete(tempFile);
+                }
+                catch
+                {
+                }
+            }
+            catch
+            {
+                // Silent fallback
             }
         }
 

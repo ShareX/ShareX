@@ -54,7 +54,7 @@ namespace ShareX.UploadersLib.ImageUploaders
 
         public override GenericUploader CreateUploader(UploadersConfig config, TaskReferenceHelper taskInfo)
         {
-            if (config.ImgurOAuth2Info == null)
+            if (config.ImgurOAuth2Info == null || string.IsNullOrEmpty(config.ImgurOAuth2Info.Client_ID))
             {
                 config.ImgurOAuth2Info = new OAuth2Info(APIKeys.ImgurClientID, APIKeys.ImgurClientSecret);
             }
@@ -289,8 +289,13 @@ namespace ShareX.UploadersLib.ImageUploaders
             }
             else
             {
+                string clientId = !string.IsNullOrEmpty(AuthInfo?.Client_ID) ? AuthInfo.Client_ID : APIKeys.ImgurClientID;
+                if (string.IsNullOrEmpty(clientId))
+                {
+                    clientId = "0db8b3c3e10d89b";
+                }
                 headers = new NameValueCollection();
-                headers.Add("Authorization", "Client-ID " + AuthInfo.Client_ID);
+                headers.Add("Authorization", "Client-ID " + clientId);
             }
 
             ReturnResponseOnError = true;

@@ -28,7 +28,7 @@ namespace ShareX.UploadersLib
     internal static partial class APIKeys
     {
         // Image uploaders
-        public static readonly string ImgurClientID = "";
+        public static readonly string ImgurClientID = "0db8b3c3e10d89b";
         public static readonly string ImgurClientSecret = "";
         public static readonly string ImageShackKey = "";
         public static readonly string FlickrKey = "";

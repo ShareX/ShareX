@@ -405,7 +405,7 @@ namespace ShareX
         #region Capture / Screen recorder
 
         public FFmpegOptions FFmpegOptions = new FFmpegOptions();
-        public bool ScreenRecordUseNative = true;
+        public bool ScreenRecordUseNative = OperatingSystem.IsWindows();
         public bool ScreenRecordShowBar = true;
         public bool ScreenRecordSystemAudio = true;
         public string ScreenRecordSystemAudioDeviceId = "";

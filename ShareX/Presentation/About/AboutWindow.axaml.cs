@@ -69,6 +69,12 @@ public partial class AboutWindow : Window
         BuildText.Text = Strings.AboutWindow_MicrosoftStoreBuild;
         BuildText.IsVisible = true;
 #else
+        if (OperatingSystem.IsLinux())
+        {
+            BuildText.Text = "Linux Native";
+            BuildText.IsVisible = true;
+        }
+
         if (!SystemOptions.DisableUpdateCheck)
         {
             UpdatePanel.IsVisible = true;
@@ -135,6 +141,23 @@ public partial class AboutWindow : Window
 
     private static IReadOnlyList<AboutSection> CreateSections()
     {
+        List<AboutLinkItem> links = [
+            Link(Strings.AboutWindow_Website, Links.Website),
+            Link(Strings.AboutWindow_ProjectPage, Links.GitHub),
+            Link(Strings.AboutWindow_Changelog, Links.Changelog),
+            Link(Strings.AboutWindow_PrivacyPolicy, Links.PrivacyPolicy),
+            Link(Strings.AboutWindow_Donate, Links.Donate),
+            Link("X", Links.X),
+            Link("Discord", Links.Discord),
+            Link("Reddit", Links.Reddit),
+            Link("Steam", Links.Steam)
+        ];
+
+        if (OperatingSystem.IsWindows())
+        {
+            links.Add(Link("Microsoft Store", Links.MicrosoftStore));
+        }
+
         return
         [
             new AboutSection(Strings.AboutWindow_Team,
@@ -142,19 +165,7 @@ public partial class AboutWindow : Window
                 Link("Jaex", Links.Jaex),
                 Link("McoreD", Links.McoreD)
             ]),
-            new AboutSection(Strings.AboutWindow_Links,
-            [
-                Link(Strings.AboutWindow_Website, Links.Website),
-                Link(Strings.AboutWindow_ProjectPage, Links.GitHub),
-                Link(Strings.AboutWindow_Changelog, Links.Changelog),
-                Link(Strings.AboutWindow_PrivacyPolicy, Links.PrivacyPolicy),
-                Link(Strings.AboutWindow_Donate, Links.Donate),
-                Link("X", Links.X),
-                Link("Discord", Links.Discord),
-                Link("Reddit", Links.Reddit),
-                Link("Steam", Links.Steam),
-                Link("Microsoft Store", Links.MicrosoftStore)
-            ])
+            new AboutSection(Strings.AboutWindow_Links, links)
         ];
     }
 

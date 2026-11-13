@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ImageEditor.Presentation.Helpers;
 using SkiaSharp;
 using System.Text.Json.Serialization;
 
@@ -86,7 +87,7 @@ public partial class SpeechBalloonAnnotation : Annotation
     /// <summary>
     /// Font family for the balloon text
     /// </summary>
-    public string FontFamily { get; set; } = "Segoe UI";
+    public string FontFamily { get; set; } = FontFamilyHelper.GetDefaultSystemFontFamily();
 
     /// <summary>
     /// Text body color

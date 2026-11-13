@@ -47,22 +47,28 @@ namespace ShareX
 
         protected override TaskMetadata Execute(TaskSettings taskSettings)
         {
-            WindowInfo windowInfo = new WindowInfo(WindowHandle);
+            WindowInfo windowInfo = WindowHandle != IntPtr.Zero ? new WindowInfo(WindowHandle) : null;
 
-            if (windowInfo.IsMinimized)
+            if (windowInfo != null && OperatingSystem.IsWindows())
             {
-                windowInfo.Restore();
-                Thread.Sleep(250);
-            }
+                if (windowInfo.IsMinimized)
+                {
+                    windowInfo.Restore();
+                    Thread.Sleep(250);
+                }
 
-            if (!windowInfo.IsActive)
-            {
-                windowInfo.Activate();
-                Thread.Sleep(100);
+                if (!windowInfo.IsActive)
+                {
+                    windowInfo.Activate();
+                    Thread.Sleep(100);
+                }
             }
 
             TaskMetadata metadata = new TaskMetadata();
-            metadata.UpdateInfo(windowInfo);
+            if (windowInfo != null)
+            {
+                metadata.UpdateInfo(windowInfo);
+            }
 
             if (taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
             {

@@ -26,6 +26,7 @@
 using Avalonia.Media;
 using Newtonsoft.Json;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Presentation.Helpers;
 
 namespace ShareX.ImageEditor.Integration
 {
@@ -122,7 +123,7 @@ namespace ShareX.ImageEditor.Integration
 
         public int TextThickness { get; set; } = 8;
         public float TextFontSize { get; set; } = 48;
-        public string TextFontFamily { get; set; } = "Segoe UI";
+        public string TextFontFamily { get; set; } = FontFamilyHelper.GetDefaultSystemFontFamily();
         public TextHorizontalAlignment TextHorizontalAlignment { get; set; } = TextHorizontalAlignment.Center;
         public bool TextBold { get; set; } = true;
         public bool TextItalic { get; set; } = false;
@@ -142,7 +143,7 @@ namespace ShareX.ImageEditor.Integration
 
         public int SpeechBalloonThickness { get; set; } = 4;
         public float SpeechBalloonFontSize { get; set; } = 48;
-        public string SpeechBalloonFontFamily { get; set; } = "Segoe UI";
+        public string SpeechBalloonFontFamily { get; set; } = FontFamilyHelper.GetDefaultSystemFontFamily();
         public TextHorizontalAlignment SpeechBalloonTextHorizontalAlignment { get; set; } = TextHorizontalAlignment.Center;
         public bool SpeechBalloonTextBold { get; set; } = true;
         public bool SpeechBalloonTextItalic { get; set; } = false;

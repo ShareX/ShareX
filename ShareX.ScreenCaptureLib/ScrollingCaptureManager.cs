@@ -81,6 +81,12 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task<ScrollingCaptureStatus> StartCapture()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                DebugHelper.WriteLine("Scrolling capture is not supported on Linux.");
+                return ScrollingCaptureStatus.Failed;
+            }
+
             if (!IsCapturing && selectedWindow != null && !selectedRectangle.IsEmpty)
             {
                 IsCapturing = true;
@@ -107,8 +113,11 @@ namespace ShareX.ScreenCaptureLib
 
                     if (Options.AutoScrollTop)
                     {
-                        InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
-                        NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                        if (OperatingSystem.IsWindows())
+                        {
+                            InputHelpers.SendKeyPress(VirtualKeyCode.HOME);
+                            NativeMethods.SendMessage(selectedWindow.Handle, (int)WindowsMessages.VSCROLL, (int)ScrollBarCommands.SB_TOP, 0);
+                        }
 
                         await Task.Delay(Options.ScrollDelay);
                     }
@@ -124,6 +133,12 @@ namespace ShareX.ScreenCaptureLib
 
                         if (CompareLastTwoImages())
                         {
+                            break;
+                        }
+
+                        if (!OperatingSystem.IsWindows())
+                        {
+                            DebugHelper.WriteLine("Scrolling capture input is not supported on Linux.");
                             break;
                         }
 
@@ -225,13 +240,16 @@ namespace ShareX.ScreenCaptureLib
 
         private bool IsScrollReachedBottom(IntPtr handle)
         {
-            SCROLLINFO scrollInfo = new SCROLLINFO();
-            scrollInfo.cbSize = (uint)Marshal.SizeOf(scrollInfo);
-            scrollInfo.fMask = (uint)(ScrollInfoMask.SIF_RANGE | ScrollInfoMask.SIF_PAGE | ScrollInfoMask.SIF_TRACKPOS);
-
-            if (NativeMethods.GetScrollInfo(handle, (int)SBOrientation.SB_VERT, ref scrollInfo))
+            if (OperatingSystem.IsWindows())
             {
-                return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
+                SCROLLINFO scrollInfo = new SCROLLINFO();
+                scrollInfo.cbSize = (uint)Marshal.SizeOf(scrollInfo);
+                scrollInfo.fMask = (uint)(ScrollInfoMask.SIF_RANGE | ScrollInfoMask.SIF_PAGE | ScrollInfoMask.SIF_TRACKPOS);
+
+                if (NativeMethods.GetScrollInfo(handle, (int)SBOrientation.SB_VERT, ref scrollInfo))
+                {
+                    return scrollInfo.nMax == scrollInfo.nTrackPos + scrollInfo.nPage - 1;
+                }
             }
 
             return CompareLastTwoImages();

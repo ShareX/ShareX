@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using ShareX.ImageEditor.Presentation.Helpers;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.Annotations;
@@ -51,7 +52,7 @@ public partial class TextAnnotation : Annotation
     /// <summary>
     /// Font family
     /// </summary>
-    public string FontFamily { get; set; } = "Segoe UI";
+    public string FontFamily { get; set; } = FontFamilyHelper.GetDefaultSystemFontFamily();
 
     /// <summary>
     /// Bold style

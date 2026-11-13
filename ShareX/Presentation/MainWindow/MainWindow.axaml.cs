@@ -295,7 +295,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         try
         {
             CaptureHelpers.GetScreenBounds();
-            WindowsImageInterop.Capture(new System.Drawing.Rectangle(0, 0, 1, 1))?.Dispose();
+            if (OperatingSystem.IsWindows())
+            {
+                WindowsImageInterop.Capture(new System.Drawing.Rectangle(0, 0, 1, 1))?.Dispose();
+            }
         }
         catch (Exception e)
         {

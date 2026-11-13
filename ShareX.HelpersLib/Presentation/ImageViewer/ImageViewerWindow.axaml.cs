@@ -81,13 +81,9 @@ public partial class ImageViewerWindow : Window
         this.FindControl<Image>("PreviewImage")!.RenderTransform = _previewTransform;
         // Reset the zoom for a different image, but not for each frame of an animated GIF.
         _viewModel.ImageReplaced += (_, _) => _previewTransform.Matrix = Matrix.Identity;
-        System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
-        WindowStartupLocation = WindowStartupLocation.Manual;
-        Position = new PixelPoint(activeScreen.X, activeScreen.Y);
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;
-        Deactivated += OnDeactivated;
         Closed += (_, _) => _viewModel.Dispose();
     }
 
@@ -123,12 +119,7 @@ public partial class ImageViewerWindow : Window
 
     private void OnPreviewPointerReleased(object? sender, PointerReleasedEventArgs e)
     {
-        if (e.InitialPressMouseButton is MouseButton.Left or MouseButton.Right)
-        {
-            Close();
-            e.Handled = true;
-        }
-        else if (e.InitialPressMouseButton == MouseButton.Middle)
+        if (e.InitialPressMouseButton == MouseButton.Middle)
         {
             _previewTransform.Matrix = Matrix.Identity;
             e.Handled = true;

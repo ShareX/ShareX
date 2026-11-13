@@ -44,7 +44,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
 {
     private bool _startWithWindows;
     private bool _startWithWindowsEnabled;
-    private string _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+    private string _startWithWindowsText = OperatingSystem.IsWindows() ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text : "Iniciar com o sistema";
 
     private ApplicationConfig Settings => ApplicationState.Settings;
 
@@ -244,7 +244,7 @@ public sealed class StartScreenViewModel : INotifyPropertyChanged
 
     private void RefreshStartWithWindows()
     {
-        _startWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        _startWithWindowsText = OperatingSystem.IsWindows() ? Strings.ApplicationSettingsForm_cbStartWithWindows_Text : "Iniciar com o sistema";
         _startWithWindowsEnabled = false;
 
         try

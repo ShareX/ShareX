@@ -96,7 +96,7 @@ namespace ShareX
                 wait = true;
             }
 
-            if (autoHideForm && AllowAutoHideForm)
+            if (autoHideForm && AllowAutoHideForm && MainWindowIntegration.IsVisible)
             {
                 MainWindowIntegration.Hide();
                 showMainForm = true;
@@ -170,6 +170,11 @@ namespace ShareX
         protected TaskMetadata CreateMetadata(Rectangle insideRect, string ignoreProcess)
         {
             TaskMetadata metadata = new TaskMetadata();
+
+            if (!OperatingSystem.IsWindows())
+            {
+                return metadata;
+            }
 
             IntPtr handle = NativeMethods.GetForegroundWindow();
             WindowInfo windowInfo = new WindowInfo(handle);

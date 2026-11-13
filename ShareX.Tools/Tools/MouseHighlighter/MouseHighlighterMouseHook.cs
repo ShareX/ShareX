@@ -34,7 +34,7 @@ internal sealed class MouseHighlighterMouseHook : IDisposable
 {
     private readonly HookProc _callback;
     private readonly MouseHighlighterInputBuffer _input;
-    private readonly Thread _thread;
+    private readonly Thread? _thread;
     private IntPtr _handle;
     private uint _threadId;
     private int _stopRequested;
@@ -47,6 +47,13 @@ internal sealed class MouseHighlighterMouseHook : IDisposable
     {
         _input = input;
         _callback = OnMouseInput;
+
+        if (!OperatingSystem.IsWindows())
+        {
+            _thread = null;
+            return;
+        }
+
         TaskCompletionSource initialized = new(TaskCreationOptions.RunContinuationsAsynchronously);
         _thread = new Thread(() => Run(initialized))
         {
@@ -65,6 +72,11 @@ internal sealed class MouseHighlighterMouseHook : IDisposable
 
     private void Run(TaskCompletionSource initialized)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            initialized.SetResult();
+            return;
+        }
         try
         {
             _threadId = GetCurrentThreadId();
@@ -128,6 +140,7 @@ internal sealed class MouseHighlighterMouseHook : IDisposable
     {
         if (Interlocked.Exchange(ref _disposed, 1) != 0) return;
         Volatile.Write(ref _stopRequested, 1);
+        if (!OperatingSystem.IsWindows() || _thread == null) return;
         // The hook is removed by its owning thread. No UI dispatch is involved.
         PostThreadMessage(_threadId, 0x0012, IntPtr.Zero, IntPtr.Zero); // WM_QUIT
         if (Thread.CurrentThread != _thread)

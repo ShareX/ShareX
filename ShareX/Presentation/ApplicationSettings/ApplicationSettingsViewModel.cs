@@ -154,17 +154,9 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
         }
     }
 
-    public bool WindowsIntegrationVisible
-    {
-        get
-        {
-#if MicrosoftStore
-            return false;
-#else
-            return true;
-#endif
-        }
-    }
+    public bool WindowsIntegrationVisible => OperatingSystem.IsWindows();
+    public string SystemIntegrationTitle => OperatingSystem.IsWindows() ? Strings.ApplicationSettingsWindow_Windows : "Linux";
+    public string PrintDialogLabel => OperatingSystem.IsWindows() ? Strings.ApplicationSettingsWindow_DontShowWindowsPrintDialog : (System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pt" ? "Não exibir diálogo de impressão do sistema" : "Don't show system print dialog");
 
     public bool SteamIntegrationVisible
     {
@@ -1064,9 +1056,27 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
 #endif
     }
 
+    private static string GetStartupLabel()
+    {
+        if (OperatingSystem.IsWindows())
+        {
+            return Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        }
+
+        string lang = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
+        return lang switch
+        {
+            "pt" => "Executar o ShareX ao iniciar o sistema",
+            "es" => "Ejecutar ShareX al iniciar el sistema",
+            "fr" => "Lancer ShareX au démarrage du système",
+            "de" => "ShareX beim Systemstart ausführen",
+            _ => "Run ShareX at system startup"
+        };
+    }
+
     private void RefreshStartWithWindows()
     {
-        StartWithWindowsText = Strings.ApplicationSettingsForm_cbStartWithWindows_Text;
+        StartWithWindowsText = GetStartupLabel();
         StartWithWindowsEnabled = false;
 
         try

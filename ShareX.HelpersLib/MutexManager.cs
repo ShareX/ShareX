@@ -40,6 +40,11 @@ namespace ShareX.HelpersLib
 
         public MutexManager(string mutexName, int timeout)
         {
+            if (!OperatingSystem.IsWindows() && !mutexName.StartsWith("Global\\", StringComparison.OrdinalIgnoreCase))
+            {
+                mutexName = "Global\\" + mutexName;
+            }
+
             mutex = new Mutex(false, mutexName);
 
             try
@@ -54,6 +59,11 @@ namespace ShareX.HelpersLib
 
         public static bool IsRunning(string mutexName)
         {
+            if (!OperatingSystem.IsWindows() && !mutexName.StartsWith("Global\\", StringComparison.OrdinalIgnoreCase))
+            {
+                mutexName = "Global\\" + mutexName;
+            }
+
             try
             {
                 using (Mutex mutex = new Mutex(false, mutexName, out bool createdNew))

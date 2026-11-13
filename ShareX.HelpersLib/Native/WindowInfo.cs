@@ -33,18 +33,22 @@ namespace ShareX.HelpersLib
     {
         public IntPtr Handle { get; }
 
+        private string _linuxText;
+        private Rectangle _linuxRectangle;
+
         public bool IsHandleCreated => Handle != IntPtr.Zero;
 
-        public string Text => NativeMethods.GetWindowText(Handle);
+        public string Text => !OperatingSystem.IsWindows() ? (_linuxText ?? "") : NativeMethods.GetWindowText(Handle);
 
-        public string ClassName => NativeMethods.GetClassName(Handle);
+        public string ClassName => !OperatingSystem.IsWindows() ? "LinuxWindow" : NativeMethods.GetClassName(Handle);
 
-        public Process Process => NativeMethods.GetProcessByWindowHandle(Handle);
+        public Process Process => !OperatingSystem.IsWindows() ? null : NativeMethods.GetProcessByWindowHandle(Handle);
 
         public string ProcessName
         {
             get
             {
+                if (!OperatingSystem.IsWindows()) return "LinuxApp";
                 using (Process process = Process)
                 {
                     return process?.ProcessName;
@@ -56,6 +60,7 @@ namespace ShareX.HelpersLib
         {
             get
             {
+                if (!OperatingSystem.IsWindows()) return "";
                 using (Process process = Process)
                 {
                     return process?.MainModule?.FileName;
@@ -69,18 +74,19 @@ namespace ShareX.HelpersLib
         {
             get
             {
+                if (!OperatingSystem.IsWindows()) return 0;
                 using (Process process = Process)
                 {
-                    return process.Id;
+                    return process != null ? process.Id : 0;
                 }
             }
         }
 
-        public IntPtr Parent => NativeMethods.GetParent(Handle);
+        public IntPtr Parent => !OperatingSystem.IsWindows() ? IntPtr.Zero : NativeMethods.GetParent(Handle);
 
-        public Rectangle Rectangle => CaptureHelpers.GetWindowRectangle(Handle);
+        public Rectangle Rectangle => !OperatingSystem.IsWindows() ? _linuxRectangle : CaptureHelpers.GetWindowRectangle(Handle);
 
-        public Rectangle ClientRectangle => NativeMethods.GetClientRect(Handle);
+        public Rectangle ClientRectangle => !OperatingSystem.IsWindows() ? _linuxRectangle : NativeMethods.GetClientRect(Handle);
 
         public WindowStyles Style
         {
@@ -98,10 +104,12 @@ namespace ShareX.HelpersLib
         {
             get
             {
+                if (!OperatingSystem.IsWindows()) return (WindowStyles)0;
                 return (WindowStyles)(ulong)NativeMethods.GetWindowLong(Handle, NativeConstants.GWL_EXSTYLE);
             }
             set
             {
+                if (!OperatingSystem.IsWindows()) return;
                 NativeMethods.SetWindowLong(Handle, NativeConstants.GWL_EXSTYLE, (IntPtr)value);
             }
         }
@@ -164,26 +172,33 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public Icon Icon => NativeMethods.GetApplicationIcon(Handle);
+        public Icon Icon => !OperatingSystem.IsWindows() ? null : NativeMethods.GetApplicationIcon(Handle);
 
-        public bool IsMaximized => NativeMethods.IsZoomed(Handle);
+        public bool IsMaximized => !OperatingSystem.IsWindows() ? false : NativeMethods.IsZoomed(Handle);
 
-        public bool IsMinimized => NativeMethods.IsIconic(Handle);
+        public bool IsMinimized => !OperatingSystem.IsWindows() ? false : NativeMethods.IsIconic(Handle);
 
-        public bool IsVisible => NativeMethods.IsWindowVisible(Handle);
+        public bool IsVisible => !OperatingSystem.IsWindows() ? true : NativeMethods.IsWindowVisible(Handle);
 
-        public bool IsCloaked => NativeMethods.IsWindowCloaked(Handle);
+        public bool IsCloaked => !OperatingSystem.IsWindows() ? false : NativeMethods.IsWindowCloaked(Handle);
 
-        public bool IsActive => NativeMethods.IsActive(Handle);
+        public bool IsActive => !OperatingSystem.IsWindows() ? false : NativeMethods.IsActive(Handle);
 
         public WindowInfo(IntPtr handle)
         {
             Handle = handle;
         }
 
+        public WindowInfo(IntPtr handle, string text, Rectangle rectangle)
+        {
+            Handle = handle;
+            _linuxText = text;
+            _linuxRectangle = rectangle;
+        }
+
         public void Activate()
         {
-            if (IsHandleCreated)
+            if (IsHandleCreated && OperatingSystem.IsWindows())
             {
                 NativeMethods.SetForegroundWindow(Handle);
             }
@@ -191,7 +206,7 @@ namespace ShareX.HelpersLib
 
         public void BringToFront()
         {
-            if (IsHandleCreated)
+            if (IsHandleCreated && OperatingSystem.IsWindows())
             {
                 SetWindowPos(SetWindowPosFlags.SWP_NOMOVE | SetWindowPosFlags.SWP_NOSIZE);
             }
@@ -199,7 +214,7 @@ namespace ShareX.HelpersLib
 
         public void Restore()
         {
-            if (IsHandleCreated)
+            if (IsHandleCreated && OperatingSystem.IsWindows())
             {
                 NativeMethods.ShowWindow(Handle, (int)WindowShowStyle.Restore);
             }
@@ -222,7 +237,10 @@ namespace ShareX.HelpersLib
 
         public void SetWindowPos(IntPtr insertAfter, int x, int y, int width, int height, SetWindowPosFlags flags)
         {
-            NativeMethods.SetWindowPos(Handle, insertAfter, x, y, width, height, flags);
+            if (OperatingSystem.IsWindows())
+            {
+                NativeMethods.SetWindowPos(Handle, insertAfter, x, y, width, height, flags);
+            }
         }
 
         public override string ToString()

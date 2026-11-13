@@ -46,6 +46,7 @@ namespace ShareX
         public HotkeysToggledEventHandler HotkeysToggledTrigger;
 
         private IHotkeyHost hotkeyHost;
+        private readonly Dictionary<ushort, HotkeySettings> registeredHotkeys = new Dictionary<ushort, HotkeySettings>();
 
         public HotkeyManager(IHotkeyHost host)
         {
@@ -58,9 +59,7 @@ namespace ShareX
         {
             if (!IgnoreHotkeys && (!ApplicationState.Settings.DisableHotkeysOnFullscreen || !CaptureHelpers.IsActiveWindowFullscreen()))
             {
-                HotkeySettings hotkeySetting = Hotkeys.Find(x => x.HotkeyInfo.ID == id);
-
-                if (hotkeySetting != null)
+                if (registeredHotkeys.TryGetValue(id, out HotkeySettings hotkeySetting))
                 {
                     OnHotkeyTrigger(hotkeySetting);
                 }
@@ -109,6 +108,7 @@ namespace ShareX
 
                     if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
                     {
+                        registeredHotkeys[hotkeySetting.HotkeyInfo.ID] = hotkeySetting;
                         DebugHelper.WriteLine("Hotkey registered: " + hotkeySetting);
                     }
                     else if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Failed)
@@ -146,6 +146,8 @@ namespace ShareX
 
         public void UnregisterHotkey(HotkeySettings hotkeySetting, bool removeFromList = true)
         {
+            registeredHotkeys.Remove(hotkeySetting.HotkeyInfo.ID);
+
             if (hotkeySetting.HotkeyInfo.Status == HotkeyStatus.Registered)
             {
                 hotkeyHost.UnregisterHotkey(hotkeySetting.HotkeyInfo);

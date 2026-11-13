@@ -1,0 +1,22 @@
+[Desktop Entry]
+Name=ShareX
+GenericName=Screen Capture & Sharing Tool
+Comment=Screen capture, file sharing and productivity tool
+Exec=ShareX %U
+Icon=io.github.jocost4.ShareX
+Terminal=false
+Type=Application
+Categories=Utility;Graphics;AudioVideo;RasterGraphics;
+Keywords=screenshot;screencast;capture;recorder;upload;share;snipping;tool;
+StartupNotify=true
+StartupWMClass=ShareX
+MimeType=image/png;image/jpeg;image/bmp;image/gif;image/webp;
+Actions=CaptureRegion;CaptureScreen;
+
+[Desktop Action CaptureRegion]
+Name=Capture Region
+Exec=ShareX -RectangleRegion
+
+[Desktop Action CaptureScreen]
+Name=Capture Entire Screen
+Exec=ShareX -EntireScreen

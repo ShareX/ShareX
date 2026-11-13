@@ -50,6 +50,16 @@ namespace ShareX.HistoryLib
             connection.Open();
 
             SetBusyTimeout(5000);
+            EnableWalMode();
+        }
+
+        private void EnableWalMode()
+        {
+            using (SqliteCommand cmd = connection.CreateCommand())
+            {
+                cmd.CommandText = "PRAGMA journal_mode = WAL;";
+                cmd.ExecuteNonQuery();
+            }
         }
 
         private void SetBusyTimeout(int milliseconds)
@@ -91,21 +101,33 @@ CREATE TABLE IF NOT EXISTS History (
             using (SqliteCommand cmd = new SqliteCommand("SELECT * FROM History;", connection))
             using (SqliteDataReader reader = cmd.ExecuteReader())
             {
+                int idOrd = reader.GetOrdinal("Id");
+                int fileNameOrd = reader.GetOrdinal("FileName");
+                int filePathOrd = reader.GetOrdinal("FilePath");
+                int dateTimeOrd = reader.GetOrdinal("DateTime");
+                int typeOrd = reader.GetOrdinal("Type");
+                int hostOrd = reader.GetOrdinal("Host");
+                int urlOrd = reader.GetOrdinal("URL");
+                int thumbUrlOrd = reader.GetOrdinal("ThumbnailURL");
+                int delUrlOrd = reader.GetOrdinal("DeletionURL");
+                int shortUrlOrd = reader.GetOrdinal("ShortenedURL");
+                int tagsOrd = reader.GetOrdinal("Tags");
+
                 while (reader.Read())
                 {
                     HistoryItem item = new HistoryItem()
                     {
-                        Id = (long)reader["Id"],
-                        FileName = reader["FileName"].ToString(),
-                        FilePath = reader["FilePath"].ToString(),
-                        DateTime = DateTime.Parse(reader["DateTime"].ToString()),
-                        Type = reader["Type"].ToString(),
-                        Host = reader["Host"].ToString(),
-                        URL = reader["URL"].ToString(),
-                        ThumbnailURL = reader["ThumbnailURL"].ToString(),
-                        DeletionURL = reader["DeletionURL"].ToString(),
-                        ShortenedURL = reader["ShortenedURL"].ToString(),
-                        Tags = JsonConvert.DeserializeObject<Dictionary<string, string>>(reader["Tags"]?.ToString() ?? "{}")
+                        Id = reader.GetInt64(idOrd),
+                        FileName = reader.IsDBNull(fileNameOrd) ? null : reader.GetString(fileNameOrd),
+                        FilePath = reader.IsDBNull(filePathOrd) ? null : reader.GetString(filePathOrd),
+                        DateTime = reader.IsDBNull(dateTimeOrd) ? default : DateTime.Parse(reader.GetString(dateTimeOrd)),
+                        Type = reader.IsDBNull(typeOrd) ? null : reader.GetString(typeOrd),
+                        Host = reader.IsDBNull(hostOrd) ? null : reader.GetString(hostOrd),
+                        URL = reader.IsDBNull(urlOrd) ? null : reader.GetString(urlOrd),
+                        ThumbnailURL = reader.IsDBNull(thumbUrlOrd) ? null : reader.GetString(thumbUrlOrd),
+                        DeletionURL = reader.IsDBNull(delUrlOrd) ? null : reader.GetString(delUrlOrd),
+                        ShortenedURL = reader.IsDBNull(shortUrlOrd) ? null : reader.GetString(shortUrlOrd),
+                        Tags = reader.IsDBNull(tagsOrd) ? new Dictionary<string, string>() : JsonConvert.DeserializeObject<Dictionary<string, string>>(reader.GetString(tagsOrd) ?? "{}")
                     };
 
                     items.Add(item);
@@ -118,28 +140,40 @@ CREATE TABLE IF NOT EXISTS History (
         protected override bool Append(string dbPath, IEnumerable<HistoryItem> historyItems)
         {
             using (SqliteTransaction transaction = connection.BeginTransaction())
+            using (SqliteCommand cmd = connection.CreateCommand())
             {
-                foreach (HistoryItem item in historyItems)
-                {
-                    using (SqliteCommand cmd = connection.CreateCommand())
-                    {
-                        cmd.CommandText = @"
+                cmd.Transaction = transaction;
+                cmd.CommandText = @"
 INSERT INTO History
 (FileName, FilePath, DateTime, Type, Host, URL, ThumbnailURL, DeletionURL, ShortenedURL, Tags)
 VALUES (@FileName, @FilePath, @DateTime, @Type, @Host, @URL, @ThumbnailURL, @DeletionURL, @ShortenedURL, @Tags);
 SELECT last_insert_rowid();";
-                        cmd.Parameters.AddWithValue("@FileName", item.FileName ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@FilePath", item.FilePath ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@DateTime", item.DateTime.ToString("o") ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Type", item.Type ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Host", item.Host ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@URL", item.URL ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@ThumbnailURL", item.ThumbnailURL ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@DeletionURL", item.DeletionURL ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@ShortenedURL", item.ShortenedURL ?? (object)DBNull.Value);
-                        cmd.Parameters.AddWithValue("@Tags", item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : (object)DBNull.Value);
-                        item.Id = (long)cmd.ExecuteScalar();
-                    }
+
+                SqliteParameter fileNameParam = cmd.Parameters.Add("@FileName", SqliteType.Text);
+                SqliteParameter filePathParam = cmd.Parameters.Add("@FilePath", SqliteType.Text);
+                SqliteParameter dateTimeParam = cmd.Parameters.Add("@DateTime", SqliteType.Text);
+                SqliteParameter typeParam = cmd.Parameters.Add("@Type", SqliteType.Text);
+                SqliteParameter hostParam = cmd.Parameters.Add("@Host", SqliteType.Text);
+                SqliteParameter urlParam = cmd.Parameters.Add("@URL", SqliteType.Text);
+                SqliteParameter thumbUrlParam = cmd.Parameters.Add("@ThumbnailURL", SqliteType.Text);
+                SqliteParameter delUrlParam = cmd.Parameters.Add("@DeletionURL", SqliteType.Text);
+                SqliteParameter shortUrlParam = cmd.Parameters.Add("@ShortenedURL", SqliteType.Text);
+                SqliteParameter tagsParam = cmd.Parameters.Add("@Tags", SqliteType.Text);
+
+                foreach (HistoryItem item in historyItems)
+                {
+                    fileNameParam.Value = item.FileName ?? (object)DBNull.Value;
+                    filePathParam.Value = item.FilePath ?? (object)DBNull.Value;
+                    dateTimeParam.Value = item.DateTime.ToString("o") ?? (object)DBNull.Value;
+                    typeParam.Value = item.Type ?? (object)DBNull.Value;
+                    hostParam.Value = item.Host ?? (object)DBNull.Value;
+                    urlParam.Value = item.URL ?? (object)DBNull.Value;
+                    thumbUrlParam.Value = item.ThumbnailURL ?? (object)DBNull.Value;
+                    delUrlParam.Value = item.DeletionURL ?? (object)DBNull.Value;
+                    shortUrlParam.Value = item.ShortenedURL ?? (object)DBNull.Value;
+                    tagsParam.Value = item.Tags != null ? JsonConvert.SerializeObject(item.Tags) : (object)DBNull.Value;
+
+                    item.Id = (long)cmd.ExecuteScalar();
                 }
 
                 transaction.Commit();

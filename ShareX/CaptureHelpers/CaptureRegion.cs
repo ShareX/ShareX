@@ -66,6 +66,12 @@ namespace ShareX
                 ? screenshot.CaptureActiveMonitor()
                 : screenshot.CaptureFullscreen();
 
+            if (frozenScreenshot == null)
+            {
+                DebugHelper.WriteLine("CaptureRegion: Failed to capture screen (frozenScreenshot is null).");
+                return null;
+            }
+
             SKBitmap cursorBitmap = null;
             Point cursorPosition = Point.Empty;
 

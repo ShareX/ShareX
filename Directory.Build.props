@@ -11,11 +11,11 @@
     <Configurations>Release;Debug;Steam;MicrosoftStore;MicrosoftStoreDebug</Configurations>
     <Platforms>x64;ARM64</Platforms>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Platform)' == 'x64'">
+  <PropertyGroup Condition="'$(Platform)' == 'x64' and '$(OS)' == 'Windows_NT'">
     <RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Platform)' == 'ARM64'">
+  <PropertyGroup Condition="'$(Platform)' == 'ARM64' and '$(OS)' == 'Windows_NT'">
     <RuntimeIdentifier>win-arm64</RuntimeIdentifier>
     <PlatformTarget>ARM64</PlatformTarget>
   </PropertyGroup>

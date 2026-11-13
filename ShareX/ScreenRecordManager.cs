@@ -98,7 +98,8 @@ namespace ShareX
 
         private static async Task StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
         {
-            bool useNative = taskSettings.CaptureSettings.ScreenRecordUseNative;
+            bool useNative = taskSettings.CaptureSettings.ScreenRecordUseNative && OperatingSystem.IsWindows();
+            taskSettings.CaptureSettings.FFmpegOptions.FixSources();
             bool isGif = outputType == ScreenRecordOutput.GIF;
             if (!useNative && isGif)
             {
