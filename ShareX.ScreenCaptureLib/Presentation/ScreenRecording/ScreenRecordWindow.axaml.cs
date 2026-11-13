@@ -247,11 +247,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
 
     public void StartStopRecording()
     {
-        if (Status == ScreenRecordingStatus.Working)
-        {
-            AbortRecording();
-        }
-        else if (Status == ScreenRecordingStatus.Recording)
+        if (Status == ScreenRecordingStatus.Working || Status == ScreenRecordingStatus.Recording)
         {
             Status = ScreenRecordingStatus.Stopped;
             OnStopRequested();

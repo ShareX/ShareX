@@ -93,7 +93,10 @@ namespace ShareX.AvaloniaUI.Windows
                     PixelFormat.Bgra8888,
                     AlphaFormat.Opaque);
                 _magnifierImage.Source = _magnifierBitmap;
-                InitializeMagnifierCapture();
+                if (OperatingSystem.IsWindows())
+                {
+                    InitializeMagnifierCapture();
+                }
             }
 
             Loaded += OnLoaded;
@@ -484,6 +487,10 @@ namespace ShareX.AvaloniaUI.Windows
 
         private void DisposeMagnifierCapture()
         {
+            if (!OperatingSystem.IsWindows())
+            {
+                return;
+            }
             if (_magnifierDc != nint.Zero && _previousMagnifierObject != nint.Zero)
             {
                 SelectObject(_magnifierDc, _previousMagnifierObject);

@@ -80,6 +80,18 @@ public static class MouseHighlighterManager
     internal static void SetManualActive(bool active, MouseHighlighterOptions options)
     {
         if (_shutdown) return;
+        if (!OperatingSystem.IsWindows())
+        {
+            if (active)
+            {
+                ShareX.AvaloniaUI.MessageBox.Show(
+                    "O Marcador de Mouse em tempo real requer Windows devido às restrições do Wayland/X11.",
+                    "ShareX",
+                    ShareX.AvaloniaUI.MessageBoxButtons.OK,
+                    ShareX.AvaloniaUI.MessageBoxIcon.Information);
+            }
+            return;
+        }
         MouseHighlighterOptions? previous = _manualOptions;
         _manualOptions = active ? options : null;
         try { ApplyState(); }
@@ -105,6 +117,10 @@ public static class MouseHighlighterManager
     // first captured frame. Disposing the lease also waits for UI cleanup.
     public static async Task<IDisposable> BeginRecordingAsync(MouseHighlighterOptions options)
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return new NullSession();
+        }
         AvaloniaBootstrapper.EnsureInitialized();
         return await Dispatcher.UIThread.InvokeAsync(() =>
         {
@@ -167,6 +183,11 @@ public static class MouseHighlighterManager
             _service.UpdateOptions(options);
         }
         StateChanged?.Invoke();
+    }
+
+    private sealed class NullSession : IDisposable
+    {
+        public void Dispose() { }
     }
 
     private sealed class RecordingSession(MouseHighlighterOptions options) : IDisposable

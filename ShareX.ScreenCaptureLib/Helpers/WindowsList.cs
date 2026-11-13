@@ -69,6 +69,7 @@ namespace ShareX.ScreenCaptureLib
             List<WindowInfo> list = new List<WindowInfo>();
             try
             {
+                if (FileHelpers.FindExecutable("xwininfo") == null) return list;
                 using Process proc = new Process();
                 proc.StartInfo = new ProcessStartInfo("xwininfo", "-root -tree")
                 {

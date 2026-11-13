@@ -153,7 +153,7 @@ internal sealed class MainMenuBuilder
         if (!OperatingSystem.IsWindows())
         {
             items.Add(Item(Strings.MainMenuBuilder_Window, AppIcons.Window,
-                () => new CaptureWindow().Capture(!_trayMenu)));
+                () => new CaptureRegion().Capture(!_trayMenu)));
             items.Add(MainMenuEntry.Separator());
         }
 
@@ -320,14 +320,6 @@ internal sealed class MainMenuBuilder
             Tool(nameof(Strings.MainMenuBuilder_OCR), Strings.MainMenuBuilder_OCR, AppIcons.TextRecognition, async () => await TaskHelpers.OCRImage(autoHideMainWindow: !_trayMenu)),
             Tool(nameof(Strings.MainMenuBuilder_QRCode), Strings.MainMenuBuilder_QRCode, AppIcons.QrCode, () => TaskHelpers.OpenQRCode()),
             Tool(nameof(Strings.MainMenuBuilder_RemoteStorageBrowser), Strings.MainMenuBuilder_RemoteStorageBrowser, AppIcons.RemoteStorageBrowser, () => TaskHelpers.OpenRemoteStorageBrowser())
-        ]),
-        new(Strings.MainMenuBuilder_ToolCategorySystem,
-        [
-            Tool(nameof(Strings.MainMenuBuilder_BorderlessWindow), Strings.MainMenuBuilder_BorderlessWindow, AppIcons.BorderlessWindow, () => TaskHelpers.OpenBorderlessWindow(), isVisible: OperatingSystem.IsWindows()),
-            Tool(nameof(Strings.MainMenuBuilder_ClipboardViewer), Strings.MainMenuBuilder_ClipboardViewer, AppIcons.ClipboardViewer, () => TaskHelpers.OpenClipboardViewer()),
-            Tool(nameof(Strings.MainMenuBuilder_InspectWindow), Strings.MainMenuBuilder_InspectWindow, AppIcons.InspectWindow, () => TaskHelpers.OpenInspectWindow(), isVisible: OperatingSystem.IsWindows()),
-            Tool(nameof(Strings.MainMenuBuilder_MonitorTest), Strings.MainMenuBuilder_MonitorTest, AppIcons.MonitorTest, () => TaskHelpers.OpenMonitorTest()),
-            Tool(nameof(Strings.MainMenuBuilder_NetworkMonitor), Strings.MainMenuBuilder_NetworkMonitor, AppIcons.Activity, () => TaskHelpers.OpenNetworkMonitor())
         ])
     ];
 

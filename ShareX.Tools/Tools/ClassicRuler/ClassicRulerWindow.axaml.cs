@@ -33,6 +33,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
+using ShareX.ScreenCaptureLib;
 using ShareX.Tools.Controls;
 using SkiaSharp;
 using DrawingPoint = System.Drawing.Point;
@@ -93,9 +94,14 @@ public partial class ClassicRulerWindow : Window
         int bottom = screens.Max(screen => screen.Bounds.Bottom);
         _screenBounds = new PixelRect(left, top, right - left, bottom - top);
 
-        using (SKBitmap capture = WindowsImageInterop.Capture(new DrawingRectangle(left, top, _screenBounds.Width, _screenBounds.Height)))
+        using (SKBitmap? capture = OperatingSystem.IsWindows()
+            ? WindowsImageInterop.Capture(new DrawingRectangle(left, top, _screenBounds.Width, _screenBounds.Height))
+            : LinuxCaptureHelper.CaptureRectangle(new DrawingRectangle(left, top, _screenBounds.Width, _screenBounds.Height)))
         {
-            _screenshot = BitmapConversionHelpers.ToAvaloniBitmap(capture);
+            if (capture != null)
+            {
+                _screenshot = BitmapConversionHelpers.ToAvaloniBitmap(capture);
+            }
         }
 
         _screenshotImage.Source = _screenshot;

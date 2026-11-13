@@ -12,11 +12,14 @@
         x:Class="ShareX.HelpersLib.ImageViewerWindow"
         x:DataType="vm:ImageViewerViewModel"
         Title="{x:Static localization:Strings.ImageViewerWindow_Title}"
-        WindowState="FullScreen"
-        WindowDecorations="None"
-        CanResize="False"
-        CanMaximize="False"
-        Topmost="True">
+        Width="1024"
+        Height="720"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowDecorations="Full"
+        CanResize="True"
+        CanMaximize="True"
+        Topmost="False">
 
         <Grid Background="{DynamicResource ShareX.Brush.Background.Main}">
             <Border Background="{DynamicResource ShareX.Brush.Checkered}"

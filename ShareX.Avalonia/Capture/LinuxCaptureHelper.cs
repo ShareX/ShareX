@@ -233,7 +233,7 @@ public static class LinuxCaptureHelper
                 caller.WaitForExit(5000);
             }
 
-            int timeoutMs = interactive ? 60000 : 8000;
+            int timeoutMs = interactive ? 10000 : 5000;
             waitHandle.WaitOne(timeoutMs);
 
             foreach (var w in watchers)
