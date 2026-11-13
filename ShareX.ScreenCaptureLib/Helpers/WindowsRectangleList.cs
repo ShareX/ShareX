@@ -184,7 +184,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Rectangle clientRect = NativeMethods.GetClientRect(handle);
 
-                if (clientRect.IsValid() && clientRect != simpleWindowInfo.Rectangle)
+                if (clientRect.IsValid() && !IsSameAsWindowRectangle(clientRect, simpleWindowInfo.Rectangle))
                 {
                     windows.Add(new SimpleWindowInfo(handle, clientRect));
                 }
@@ -193,6 +193,24 @@ namespace ShareX.ScreenCaptureLib
             windows.Add(simpleWindowInfo);
 
             return true;
+        }
+
+        /// <summary>
+        /// Whether a client area covers its window except for a thin border, as in windows that draw their own title bar.
+        /// Such a client area isn't offered separately, otherwise it would always be picked instead of the whole window.
+        /// </summary>
+        private static bool IsSameAsWindowRectangle(Rectangle clientRect, Rectangle windowRect)
+        {
+            // Covers the 1 px window border up to 400% scaling, but stays well below the height of a real title bar.
+            const int tolerance = 8;
+
+            Rectangle visibleClientRect = Rectangle.Intersect(clientRect, windowRect);
+
+            return !visibleClientRect.IsEmpty &&
+                visibleClientRect.Left - windowRect.Left <= tolerance &&
+                visibleClientRect.Top - windowRect.Top <= tolerance &&
+                windowRect.Right - visibleClientRect.Right <= tolerance &&
+                windowRect.Bottom - visibleClientRect.Bottom <= tolerance;
         }
     }
 }
