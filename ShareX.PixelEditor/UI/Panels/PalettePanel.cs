@@ -30,6 +30,8 @@ using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.Media;
 
+using ShareX.PhotoEditor.UI.Theme;
+
 namespace ShareX.PixelEditor.UI.Panels;
 
 /// <summary>The sprite's palette: click a color for the foreground, right-click for the background.</summary>
@@ -41,6 +43,8 @@ public sealed class PalettePanel : EditorPanel
     private readonly TextBlock _count = new() { Classes = { "dim" }, FontSize = 11, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(6, 0) };
     private readonly List<(Border Swatch, uint Color)> _items = [];
     private IReadOnlyList<uint>? _shown;
+    private int _dragIndex = -1, _dropIndex = -1;
+    private Point _dragStart;
 
     public PalettePanel(PixelEditorWindow editor) : base(editor)
     {
@@ -146,19 +150,62 @@ public sealed class PalettePanel : EditorPanel
                     BorderThickness = new Thickness(1),
                     Child = new Border { Background = Argb.A(color) == 255 ? null : Ui.Brush(color), BorderThickness = new Thickness(1) }
                 };
-                ToolTip.SetTip(swatch, $"{index}: #{Argb.ToHex(color)}");
+                ToolTip.SetTip(swatch, $"{index}: #{Argb.ToHex(color)}" + Environment.NewLine + Strings.Palette_SwatchTip);
                 swatch.PointerPressed += (_, e) =>
                 {
                     PointerPointProperties properties = e.GetCurrentPoint(swatch).Properties;
                     if (properties.IsLeftButtonPressed)
                     {
                         if (e.ClickCount == 2 && Sprite != null) Commands.EditorCommands.EditPaletteColor(Editor, index);
-                        else Editor.ForegroundColor = color;
+                        else
+                        {
+                            Editor.ForegroundColor = color;
+                            // Dragging a swatch moves the color to another place in the palette.
+                            if (Sprite != null)
+                            {
+                                _dragIndex = index;
+                                _dropIndex = -1;
+                                _dragStart = e.GetPosition(_swatches);
+                                e.Pointer.Capture(swatch);
+                            }
+                        }
                     }
                     else if (properties.IsRightButtonPressed && e.KeyModifiers.HasFlag(KeyModifiers.Control)) SwatchMenu(index).Open(swatch);
                     else if (properties.IsRightButtonPressed) Editor.BackgroundColor = color;
                     else if (properties.IsMiddleButtonPressed) SwatchMenu(index).Open(swatch);
                     e.Handled = true;
+                };
+                swatch.PointerMoved += (_, e) =>
+                {
+                    if (_dragIndex < 0) return;
+                    Point p = e.GetPosition(_swatches);
+                    if (_dropIndex < 0 && Math.Abs(p.X - _dragStart.X) < 4 && Math.Abs(p.Y - _dragStart.Y) < 4) return;
+                    int target = DropIndex(p);
+                    if (target == _dropIndex) return;
+                    _dropIndex = target;
+                    RefreshSelection();
+                    if (_dropIndex >= 0 && _dropIndex < _items.Count) _items[_dropIndex].Swatch.BorderBrush = PhotoEditorTheme.AccentBorderBrush;
+                };
+                swatch.PointerReleased += (_, e) =>
+                {
+                    int from = _dragIndex, to = _dropIndex;
+                    _dragIndex = _dropIndex = -1;
+                    e.Pointer.Capture(null);
+                    if (from >= 0 && to >= 0 && from != to && Sprite != null)
+                    {
+                        List<uint> reordered = [.. Sprite.Palette];
+                        uint moved = reordered[from];
+                        reordered.RemoveAt(from);
+                        reordered.Insert(Math.Clamp(to, 0, reordered.Count), moved);
+                        Commands.EditorCommands.SetPalette(Editor, reordered, Strings.History_ReorderPalette);
+                    }
+                    else RefreshSelection();
+                };
+                swatch.PointerCaptureLost += (_, _) =>
+                {
+                    if (_dragIndex < 0) return;
+                    _dragIndex = _dropIndex = -1;
+                    RefreshSelection();
                 };
                 _items.Add((swatch, color));
                 _swatches.Children.Add(swatch);
@@ -166,6 +213,17 @@ public sealed class PalettePanel : EditorPanel
         }
         _count.Text = string.Format(Strings.Palette_Count, colors.Count);
         RefreshSelection();
+    }
+
+    /// <summary>The palette index under a point of the swatch area while a swatch is dragged.</summary>
+    private int DropIndex(Point p)
+    {
+        if (_items.Count == 0) return -1;
+        Rect first = _items[0].Swatch.Bounds;
+        int columns = Math.Max(1, (int)Math.Floor(_swatches.Bounds.Width / SwatchSize));
+        int column = Math.Clamp((int)Math.Floor((p.X - first.X) / SwatchSize), 0, columns - 1);
+        int row = Math.Max(0, (int)Math.Floor((p.Y - first.Y) / SwatchSize));
+        return Math.Clamp(row * columns + column, 0, _items.Count - 1);
     }
 
     /// <summary>Marks the swatches of the foreground (white frame) and background (dark frame with white corners) colors.</summary>

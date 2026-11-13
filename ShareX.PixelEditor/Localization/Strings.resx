@@ -822,6 +822,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Reorder Layer</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Reorder Palette</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Select</value>
   </data>
@@ -1145,6 +1148,9 @@
   </data>
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sort by Saturation</value>
+  </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Click: foreground color. Right-click: background color. Double-click: edit. Drag: reorder. Ctrl+right-click: more options.</value>
   </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Color</value>

@@ -2720,5 +2720,15 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Status_Selection", resourceCulture);
             }
         }
+        public static string History_ReorderPalette {
+            get {
+                return ResourceManager.GetString("History_ReorderPalette", resourceCulture);
+            }
+        }
+        public static string Palette_SwatchTip {
+            get {
+                return ResourceManager.GetString("Palette_SwatchTip", resourceCulture);
+            }
+        }
     }
 }
