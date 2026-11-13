@@ -176,7 +176,6 @@ public partial class RegionCaptureWindow : Window
             throw new InvalidOperationException("A capture request is required.");
         }
 
-        KeepScaleFixed();
         ConfigureInitialPixelBounds();
 
         try
@@ -2532,7 +2531,8 @@ public partial class RegionCaptureWindow : Window
 
         // Set Position exactly once, while the window is still small, on the monitor the system will take the overlay's DPI
         // from once it spans the desktop. Then move it into place without reassigning Position, which would let Avalonia
-        // change its cached scale. On macOS the bounds are already in points.
+        // change its cached scale. PositionAtAnchor keeps that scale only after the move: dropping DPI changes before it would
+        // leave Avalonia on the scale of the monitor the window was created on. On macOS the bounds are already in points.
         DrawingRectangle bounds = _request.ScreenBounds;
         if (PlatformServices.IsInitialized && PlatformServices.Current.Windows.PositionsWindowsInPoints)
         {
@@ -2556,19 +2556,6 @@ public partial class RegionCaptureWindow : Window
         {
             DrawingRectangle bounds = _request.ScreenBounds;
             PlatformServices.Current.Windows.CoverScreen(handle, new PlatformRectangle(bounds.X, bounds.Y, bounds.Width, bounds.Height));
-        }
-    }
-
-    /// <summary>
-    /// The overlay spans every monitor and is sized in device pixels. Where the system would switch it between the monitors'
-    /// scales as it moves or resizes (Windows with mixed scaling), keep the scale it was created with: following the switches
-    /// resized it again each time, so it flickered between scales and selections missed the screenshot.
-    /// </summary>
-    private void KeepScaleFixed()
-    {
-        if (PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
-        {
-            PlatformServices.Current.Windows.KeepScaleFixed(handle.ToInt64());
         }
     }
 
