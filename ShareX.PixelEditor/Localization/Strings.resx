@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Brushes</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Radius</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Remove Brush from Library</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Round tip</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Square tip</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standard brush (size and shape)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Click where the text should go</value>

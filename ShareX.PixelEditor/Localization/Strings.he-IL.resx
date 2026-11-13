@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>החלה</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>מברשות</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>ביטול</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>רדיוס</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>הסר מברשת מהספרייה</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>קצה עגול</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>קצה מרובע</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>מברשת רגילה (גודל וצורה)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>לחץ במקום שבו הטקסט אמור להופיע</value>

@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Anwenden</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Pinsel</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Radius</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Pinsel aus der Bibliothek entfernen</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Runde Spitze</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Quadratische Spitze</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standardpinsel (Größe und Form)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Dorthin klicken, wo der Text stehen soll</value>

@@ -2925,5 +2925,20 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Status_ExportedFiles", resourceCulture);
             }
         }
+        public static string Options_Brushes {
+            get {
+                return ResourceManager.GetString("Options_Brushes", resourceCulture);
+            }
+        }
+        public static string Options_RemoveBrush {
+            get {
+                return ResourceManager.GetString("Options_RemoveBrush", resourceCulture);
+            }
+        }
+        public static string Options_StandardBrush {
+            get {
+                return ResourceManager.GetString("Options_StandardBrush", resourceCulture);
+            }
+        }
     }
 }

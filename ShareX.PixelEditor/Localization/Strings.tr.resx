@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Uygula</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Fırçalar</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>İptal</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Yarıçap</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Fırçayı Kitaplıktan Kaldır</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Yuvarlak uç</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Kare uç</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standart fırça (boyut ve şekil)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Metnin yerleşeceği yere tıklayın</value>

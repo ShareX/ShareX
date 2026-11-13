@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Alkalmaz</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Ecsetek</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Mégse</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Sugár</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Ecset eltávolítása a könyvtárból</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Kerek hegy</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Négyzetes hegy</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Normál ecset (méret és alak)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Kattintson oda, ahová a szöveg kerüljön</value>

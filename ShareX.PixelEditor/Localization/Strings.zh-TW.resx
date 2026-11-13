@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>套用</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>筆刷</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>取消</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>半徑</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>從庫中移除筆刷</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>圓形筆尖</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>方形筆尖</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>標準筆刷（大小和形狀）</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>按一下要放置文字的位置</value>

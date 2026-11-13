@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Применить</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Кисти</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Радиус</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Удалить кисть из библиотеки</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Круглый наконечник</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Квадратный отпечаток</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Стандартная кисть (размер и форма)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Щёлкните там, где должен быть текст</value>

@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>اعمال</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>قلم‌موها</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>انصراف</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>شعاع</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>حذف قلم‌مو از کتابخانه</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>نوک گرد</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>نوک مربعی</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>قلم‌موی استاندارد (اندازه و شکل)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>جایی که متن باید قرار بگیرد کلیک کنید</value>

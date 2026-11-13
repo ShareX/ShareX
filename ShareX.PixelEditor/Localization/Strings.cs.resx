@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Použít</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Štětce</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Zrušit</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Poloměr</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Odebrat štětec z knihovny</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Kulatý hrot</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Čtvercová špička</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standardní štětec (velikost a tvar)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klikněte tam, kam má přijít text</value>

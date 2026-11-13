@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Застосувати</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Пензлі</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Скасувати</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Радіус</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Вилучити пензель із бібліотеки</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Круглий наконечник</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Квадратний відбиток</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Стандартний пензель (розмір і форма)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Клацніть там, де має бути текст</value>

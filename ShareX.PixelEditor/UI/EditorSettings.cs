@@ -112,6 +112,9 @@ public sealed class EditorSettings
     // Documents
     public const int MaxRecentColors = 16;
 
+    /// <summary>Brushes made from selections, each written as space-separated x,y offsets.</summary>
+    public List<string> Brushes { get; set; } = [];
+
     /// <summary>Colors painted with most recently, newest first.</summary>
     public List<uint> RecentColors { get; set; } = [];
 
@@ -191,6 +194,7 @@ public sealed class EditorSettings
         RecentFiles ??= [];
         RecentCommands ??= [];
         RecentColors ??= [];
+        Brushes ??= [];
         AutoSaveMinutes = Math.Clamp(AutoSaveMinutes, 0, 60);
         Shortcuts ??= [];
         Panels ??= [];

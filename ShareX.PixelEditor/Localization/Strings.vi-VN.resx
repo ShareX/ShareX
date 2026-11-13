@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Áp dụng</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Cọ vẽ</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Hủy</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Bán kính</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Xóa cọ khỏi thư viện</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Đầu tròn</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Đầu cọ vuông</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Cọ tiêu chuẩn (kích thước và hình dạng)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Bấm vào nơi cần đặt văn bản</value>

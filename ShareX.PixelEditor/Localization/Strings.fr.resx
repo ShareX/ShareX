@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Appliquer</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Pinceaux</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Annuler</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Rayon</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Retirer le pinceau de la bibliothèque</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Pointe ronde</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Pointe carrée</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Pinceau standard (taille et forme)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Cliquez à l'endroit où placer le texte</value>

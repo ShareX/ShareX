@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Toepassen</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Penselen</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Annuleren</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Straal</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Penseel uit bibliotheek verwijderen</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Ronde punt</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Vierkante punt</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Standaardpenseel (grootte en vorm)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klik waar de tekst moet komen</value>

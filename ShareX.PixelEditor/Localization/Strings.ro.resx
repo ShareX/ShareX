@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>Aplicare</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>Pensule</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>Anulare</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>Rază</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>Elimină pensula din bibliotecă</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>Vârf rotund</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Vârf pătrat</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>Pensulă standard (dimensiune și formă)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>Faceți clic acolo unde trebuie pus textul</value>

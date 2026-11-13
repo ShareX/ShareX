@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>適用</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>ブラシ</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>キャンセル</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>半径</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>ライブラリからブラシを削除</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>丸いブラシ先</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>正方形の先端</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>標準ブラシ (サイズと形)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>テキストを置く位置をクリックします</value>

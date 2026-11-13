@@ -1017,6 +1017,9 @@
   <data name="Options_Apply" xml:space="preserve">
     <value>लागू करें</value>
   </data>
+  <data name="Options_Brushes" xml:space="preserve">
+    <value>ब्रश</value>
+  </data>
   <data name="Options_Cancel" xml:space="preserve">
     <value>रद्द करें</value>
   </data>
@@ -1083,6 +1086,9 @@
   <data name="Options_Radius" xml:space="preserve">
     <value>त्रिज्या</value>
   </data>
+  <data name="Options_RemoveBrush" xml:space="preserve">
+    <value>लाइब्रेरी से ब्रश हटाएँ</value>
+  </data>
   <data name="Options_RoundTip" xml:space="preserve">
     <value>गोल नोक</value>
   </data>
@@ -1118,6 +1124,9 @@
   </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>वर्गाकार नोक</value>
+  </data>
+  <data name="Options_StandardBrush" xml:space="preserve">
+    <value>मानक ब्रश (आकार और आकृति)</value>
   </data>
   <data name="Options_TextHint" xml:space="preserve">
     <value>जहाँ पाठ रखना है वहाँ क्लिक करें</value>

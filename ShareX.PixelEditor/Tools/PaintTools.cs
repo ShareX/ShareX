@@ -89,6 +89,7 @@ public abstract class PaintToolBase : ToolBase
 
     protected void BrushOptions(OptionsBuilder options, bool ink = true)
     {
+        options.Root.Children.Add(BrushLibrary.CreatePicker(Editor));
         if (Editor.CustomTip != null)
         {
             options.Label(Strings.Options_CustomBrush);

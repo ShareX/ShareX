@@ -398,6 +398,7 @@ public static partial class EditorCommands
             }
             // The drawn pixels inside the selection shape the brush; an empty selection area gives its outline shape.
             w.CustomTip = (drawn.Count > 0 ? drawn : all).ToArray();
+            BrushLibrary.Add(w.Settings, w.CustomTip);
             if (w.Tools.Active is not PaintToolBase) w.Tools.Select(ToolId.Pencil);
             w.SetSelection(null);
             w.RefreshOptions();
