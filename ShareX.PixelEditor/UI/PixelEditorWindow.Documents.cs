@@ -98,6 +98,7 @@ public sealed partial class PixelEditorWindow
         }
         int index = _views.IndexOf(view);
         _views.Remove(view);
+        _recovery.Remove(view.Sprite);
         view.Dispose();
         if (_view == view)
         {
@@ -252,6 +253,60 @@ public sealed partial class PixelEditorWindow
         _view = null;
         foreach (SpriteView view in _views) view.Dispose();
         _views.Clear();
+    }
+
+    // ------------------------------------------------------------------ recovery
+
+    /// <summary>Starts or stops the timer that keeps recovery copies of unsaved sprites.</summary>
+    public void RestartAutoSave()
+    {
+        _autoSaveTimer.Stop();
+        if (Settings.AutoSaveMinutes <= 0) return;
+        _autoSaveTimer.Interval = TimeSpan.FromMinutes(Settings.AutoSaveMinutes);
+        _autoSaveTimer.Start();
+    }
+
+    private void BackupSprites()
+    {
+        // Waits for strokes and long operations to finish so a copy never holds half of an edit.
+        if (IsBusy || Canvas.IsToolPointerDown) return;
+        _recovery.Backup(_views.Select(v => v.Sprite));
+    }
+
+    /// <summary>Offers to reopen sprites that an editor which did not close normally had not saved.</summary>
+    private async Task RestoreRecoveredAsync()
+    {
+        List<RecoveredSprite> found = _recovery.FindAbandoned();
+        if (found.Count == 0) return;
+        string names = string.Join(Environment.NewLine, found.Take(8).Select(r => "• " + (string.IsNullOrEmpty(r.OriginalPath) ? r.Title : Path.GetFileName(r.OriginalPath)) + " (" + r.SavedAt.ToString("g") + ")"));
+        bool? restore = await DialogBuilder.ConfirmAsync(this, Strings.Window_Name, string.Format(Strings.Recovery_Prompt, found.Count) + Environment.NewLine + Environment.NewLine + names,
+            Strings.Recovery_Restore, Strings.Recovery_Discard);
+        if (restore == null) return;
+        int restored = 0;
+        if (restore == true)
+        {
+            foreach (RecoveredSprite item in found)
+            {
+                try
+                {
+                    Sprite sprite = SpriteFile.LoadProject(item.ProjectPath);
+                    sprite.FilePath = string.IsNullOrEmpty(item.OriginalPath) ? null : item.OriginalPath;
+                    if (!string.IsNullOrEmpty(item.Title)) sprite.Title = item.Title;
+                    OpenSprite(sprite, Strings.History_Recovered);
+                    sprite.History.MarkModified();
+                    restored++;
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+        _recovery.DiscardAbandoned();
+        if (restored > 0)
+        {
+            RefreshTabs();
+            BackupSprites();
+        }
     }
 
     private void ApplySavedWindowState()

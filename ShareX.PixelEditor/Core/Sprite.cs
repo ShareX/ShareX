@@ -458,6 +458,9 @@ public sealed class History
 
     public bool IsModified => Index >= 0 && !ReferenceEquals(_entries[Index].State, _saved);
 
+    /// <summary>The state the sprite is at; it is a different object after every change, undo or redo.</summary>
+    public object? CurrentState => Index >= 0 ? _entries[Index].State : null;
+
     public event Action? Changed;
 
     public void Initialize(string name)

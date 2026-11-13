@@ -115,6 +115,9 @@ public sealed class EditorSettings
     public string NewPalette { get; set; } = string.Empty;
     public List<string> RecentFiles { get; set; } = [];
 
+    /// <summary>Minutes between recovery copies of sprites with unsaved changes; 0 turns them off.</summary>
+    public int AutoSaveMinutes { get; set; } = 2;
+
     /// <summary>Command palette entries run most recently, newest first.</summary>
     public List<string> RecentCommands { get; set; } = [];
     public int HistoryStates { get; set; } = 100;
@@ -166,6 +169,7 @@ public sealed class EditorSettings
     {
         RecentFiles ??= [];
         RecentCommands ??= [];
+        AutoSaveMinutes = Math.Clamp(AutoSaveMinutes, 0, 60);
         Shortcuts ??= [];
         Panels ??= [];
         WindowState ??= new();

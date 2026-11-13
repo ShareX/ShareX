@@ -67,6 +67,8 @@ public sealed partial class PixelEditorWindow : Window
     private readonly Border _toolbarHost, _tabHost;
     private readonly StartScreen _startScreen;
     private readonly DispatcherTimer _playTimer = new();
+    private readonly DispatcherTimer _autoSaveTimer = new();
+    private readonly Recovery _recovery;
     private string? _statusOverride;
     private bool _panelsHidden, _closingConfirmed;
     private double _shownZoom;
@@ -76,6 +78,7 @@ public sealed partial class PixelEditorWindow : Window
     {
         Services = services;
         Settings = EditorSettings.Load(services.SettingsFilePath);
+        _recovery = new Recovery(services.SettingsFilePath);
         _foreground = EditorSettings.ParseColor(Settings.Foreground, Argb.Black);
         _background = EditorSettings.ParseColor(Settings.Background, Argb.White);
 
@@ -177,6 +180,7 @@ public sealed partial class PixelEditorWindow : Window
         AddHandler(DragDrop.DropEvent, OnDrop);
         DragDrop.SetAllowDrop(this, true);
         _playTimer.Tick += (_, _) => AdvancePlayback();
+        _autoSaveTimer.Tick += (_, _) => BackupSprites();
 
         ApplyVisibility();
         RefreshOptions();
@@ -186,10 +190,17 @@ public sealed partial class PixelEditorWindow : Window
         Closed += (_, _) =>
         {
             _playTimer.Stop();
+            _autoSaveTimer.Stop();
+            _recovery.Dispose();
             Canvas.StopTimers();
             (_dock.Get("preview") as PreviewPanel)?.Stop();
         };
-        Opened += (_, _) => _windowPlacementApplied = true;
+        Opened += (_, _) =>
+        {
+            _windowPlacementApplied = true;
+            RestartAutoSave();
+            Dispatcher.UIThread.Post(() => _ = RestoreRecoveredAsync(), DispatcherPriority.Background);
+        };
         Resized += (_, _) => QueueWindowPlacementSave();
         PositionChanged += (_, _) => QueueWindowPlacementSave();
     }

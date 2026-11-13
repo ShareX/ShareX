@@ -774,6 +774,9 @@
   <data name="History_Open" xml:space="preserve">
     <value>Open</value>
   </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Recovered</value>
+  </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Slice Properties</value>
   </data>
@@ -1137,6 +1140,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Vertical lines</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Recovery copy every (minutes, 0 = off)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Transparency checker</value>
   </data>
@@ -1160,6 +1166,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Play or pause the preview</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Discard</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>The Pixel editor did not close normally. {0} sprite(s) with unsaved changes can be restored.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Restore</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Nearest neighbor</value>

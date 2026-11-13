@@ -2595,5 +2595,30 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Command_LayerViaCut", resourceCulture);
             }
         }
+        public static string History_Recovered {
+            get {
+                return ResourceManager.GetString("History_Recovered", resourceCulture);
+            }
+        }
+        public static string Preferences_AutoSave {
+            get {
+                return ResourceManager.GetString("Preferences_AutoSave", resourceCulture);
+            }
+        }
+        public static string Recovery_Discard {
+            get {
+                return ResourceManager.GetString("Recovery_Discard", resourceCulture);
+            }
+        }
+        public static string Recovery_Prompt {
+            get {
+                return ResourceManager.GetString("Recovery_Prompt", resourceCulture);
+            }
+        }
+        public static string Recovery_Restore {
+            get {
+                return ResourceManager.GetString("Recovery_Restore", resourceCulture);
+            }
+        }
     }
 }

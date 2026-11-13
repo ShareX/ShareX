@@ -362,6 +362,7 @@ public static class PreferencesDialog
         Func<int> history = form.Number(Strings.Preferences_HistoryStates, 10, 1000, s.HistoryStates, 10);
         Func<int> cell = form.Number(Strings.Preferences_TimelineCell, 16, 48, s.TimelineCellSize);
         Func<bool> preview = form.Check(Strings.Command_BrushPreview, s.ShowBrushPreview);
+        Func<int> autoSave = form.Number(Strings.Preferences_AutoSave, 0, 60, s.AutoSaveMinutes);
         Func<bool> remember = form.Check(Strings.Preferences_RememberWindow, s.RememberWindowState);
         if (!await form.ShowAsync(Strings.Command_Preferences.Replace("...", string.Empty), 420)) return;
         (s.CheckerColor1, s.CheckerColor2) = (Checkers[checker()].Color1, Checkers[checker()].Color2);
@@ -371,6 +372,8 @@ public static class PreferencesDialog
         s.TimelineCellSize = cell();
         s.ShowBrushPreview = preview();
         s.RememberWindowState = remember();
+        s.AutoSaveMinutes = autoSave();
+        w.RestartAutoSave();
         foreach (SpriteView view in w.Views) view.Sprite.History.MaxStates = s.HistoryStates;
         w.SaveSettings();
         w.RefreshPanels();
