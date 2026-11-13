@@ -1316,8 +1316,7 @@ public partial class EditorSelectionController
             case global::Avalonia.Controls.Shapes.Rectangle { Tag: BaseEffectAnnotation effectAnnotation }:
                 annotation = effectAnnotation;
                 return true;
-            case global::Avalonia.Controls.Shapes.Rectangle { Tag: RectangleAnnotation rectangleAnnotation }
-                when rectangleAnnotation is not SmartEraserAnnotation:
+            case global::Avalonia.Controls.Shapes.Rectangle { Tag: RectangleAnnotation rectangleAnnotation }:
                 annotation = rectangleAnnotation;
                 return true;
             case global::Avalonia.Controls.Shapes.Ellipse { Tag: EllipseAnnotation ellipseAnnotation }:
