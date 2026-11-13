@@ -310,8 +310,7 @@ public static class SpriteOps
     {
         Cel? cel = sprite.GetCel(layer, frame);
         if (cel == null) return;
-        cel.Buffer.Frozen = true;
-        cel.Image = new CelImage(cel.Buffer);
+        cel.Image = cel.Image.Share();
         sprite.Touch();
     }
 
