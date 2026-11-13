@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>현재 프레임</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>파일 {0}개</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>형식</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>이 형식은 현재 프레임만 저장합니다.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>파일</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>레이어마다 파일 하나</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>파일 하나</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>태그마다 파일 하나</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>태그: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>{0}을(를) 내보냈습니다</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>파일 {0}개를 내보냈습니다</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>내보내는 중...</value>

@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Текущий кадр</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>Файлов: {0}</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Формат</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Этот формат сохраняет только текущий кадр.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Файлы</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Отдельный файл для каждого слоя</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Один файл</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Отдельный файл для каждой метки</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Метка: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>Экспортировано: {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>Экспортировано файлов: {0}</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Экспорт...</value>

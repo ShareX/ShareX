@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Aktuális képkocka</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} fájl</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Formátum</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Ez a formátum csak az aktuális képkockát menti.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Fájlok</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Rétegenként egy fájl</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Egy fájl</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Címkénként egy fájl</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Címke: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>Exportálva: {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} fájl exportálva</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportálás...</value>

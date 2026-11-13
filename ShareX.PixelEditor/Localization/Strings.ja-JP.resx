@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>現在のフレーム</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} 個のファイル</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>書式</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>この形式では現在のフレームのみ保存されます。</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>ファイル</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>レイヤーごとに 1 ファイル</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>1 つのファイル</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>タグごとに 1 ファイル</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>タグ: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>{0} を書き出しました</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} 個のファイルを書き出しました</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>書き出し中...</value>

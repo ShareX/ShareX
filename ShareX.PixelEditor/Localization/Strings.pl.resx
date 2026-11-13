@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Bieżąca klatka</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>Pliki: {0}</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Format</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Ten format zapisuje tylko bieżącą klatkę.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Pliki</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Jeden plik na warstwę</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Jeden plik</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Jeden plik na znacznik</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Znacznik: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>Wyeksportowano {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>Wyeksportowano pliki: {0}</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Eksportowanie...</value>

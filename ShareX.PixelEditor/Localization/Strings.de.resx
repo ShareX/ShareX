@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Aktuelles Einzelbild</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} Datei(en)</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Format</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Dieses Format speichert nur das aktuelle Einzelbild.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Dateien</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Eine Datei pro Ebene</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Eine Datei</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Eine Datei pro Etikett</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Etikett: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>{0} exportiert</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} Dateien exportiert</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Wird exportiert...</value>

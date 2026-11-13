@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>当前帧</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} 个文件</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>格式</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>此格式仅保存当前帧。</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>文件</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>每个图层一个文件</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>一个文件</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>每个标签一个文件</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>标签：{0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>已导出 {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>已导出 {0} 个文件</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>正在导出...</value>

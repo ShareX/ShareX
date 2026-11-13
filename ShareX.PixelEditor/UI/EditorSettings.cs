@@ -137,6 +137,9 @@ public sealed class EditorSettings
     public int HistoryStates { get; set; } = 100;
     public string ExportFormat { get; set; } = ".png";
     public int ExportScale { get; set; } = 1;
+
+    /// <summary>0 writes one file, 1 one file per layer, 2 one file per tag.</summary>
+    public int ExportSplit { get; set; }
     public SheetLayout SheetLayout { get; set; } = SheetLayout.Horizontal;
     public int SheetColumns { get; set; } = 8;
     public int SheetPadding { get; set; }

@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>เฟรมปัจจุบัน</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} ไฟล์</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>รูปแบบ</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>รูปแบบนี้บันทึกเฉพาะเฟรมปัจจุบัน</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>ไฟล์</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>หนึ่งไฟล์ต่อเลเยอร์</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>ไฟล์เดียว</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>หนึ่งไฟล์ต่อแท็ก</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>แท็ก: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>ส่งออก {0} แล้ว</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>ส่งออก {0} ไฟล์แล้ว</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>กำลังส่งออก...</value>

@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Khung hình hiện tại</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} tệp</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Định dạng</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Định dạng này chỉ lưu khung hình hiện tại.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Tệp</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Mỗi lớp một tệp</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Một tệp</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Mỗi thẻ một tệp</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Thẻ: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>Đã xuất {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>Đã xuất {0} tệp</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Đang xuất...</value>

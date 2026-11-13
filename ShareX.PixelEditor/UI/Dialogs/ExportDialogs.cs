@@ -90,6 +90,7 @@ public static class ExportDialog
         Func<int> frames = form.Combo(Strings.Export_Frames, FrameChoices.For(sprite), FrameChoices.Default(sprite));
         Func<int> scale = form.Number(Strings.Export_Scale, 1, 64, settings.ExportScale);
         Func<bool> loop = form.Check(Strings.Command_Loop, true);
+        Func<int> split = form.Combo(Strings.Export_Split, [(Strings.Export_SplitNone, 0), (Strings.Export_SplitLayers, 1), (Strings.Export_SplitTags, 2)], Math.Clamp(settings.ExportSplit, 0, 2));
         TextBlock info = new() { Classes = { "dim" }, TextWrapping = TextWrapping.Wrap };
         form.Add(info);
         void Update()
@@ -97,6 +98,8 @@ public static class ExportDialog
             bool single = kind() is Kind.Png or Kind.WebP or Kind.Jpeg;
             int count = single ? 1 : FrameChoices.Frames(sprite, frames()).Count;
             info.Text = string.Format(Strings.Export_Info, sprite.Width * scale(), sprite.Height * scale(), count) + (single && animated ? "  " + Strings.Export_SingleNote : string.Empty);
+            int files = Jobs(sprite, "x.png", split(), new ExportOptions { Frames = FrameChoices.Frames(sprite, frames()) }, sprite.ActiveFrame).Count;
+            if (split() != 0) info.Text += "  " + string.Format(Strings.Export_FileCount, files);
         }
         form.Changed += Update;
         Update();
@@ -124,29 +127,61 @@ public static class ExportDialog
         };
         settings.ExportScale = scale();
         ExportOptions options = new() { Scale = scale(), Loop = loop(), Frames = FrameChoices.Frames(sprite, frames()) };
-        int current = sprite.ActiveFrame;
+        settings.ExportSplit = split();
+        List<(string Path, ExportOptions Options, int Frame)> jobs = Jobs(sprite, path, split(), options, sprite.ActiveFrame);
         await w.RunBusyAsync(Strings.Status_Exporting, async progress =>
         {
             await Task.Run(() =>
             {
-                switch (chosen)
+                foreach ((string file, ExportOptions o, int frame) in jobs)
                 {
-                    case Kind.Gif:
-                        SpriteFile.ExportGif(sprite, path, options, progress);
-                        break;
-                    case Kind.Apng:
-                        SpriteFile.ExportApng(sprite, path, options, progress);
-                        break;
-                    case Kind.Sequence:
-                        SpriteFile.ExportSequence(sprite, path, options);
-                        break;
-                    default:
-                        SpriteFile.ExportImage(sprite, path, current, options);
-                        break;
+                    switch (chosen)
+                    {
+                        case Kind.Gif:
+                            SpriteFile.ExportGif(sprite, file, o, jobs.Count == 1 ? progress : null);
+                            break;
+                        case Kind.Apng:
+                            SpriteFile.ExportApng(sprite, file, o, jobs.Count == 1 ? progress : null);
+                            break;
+                        case Kind.Sequence:
+                            SpriteFile.ExportSequence(sprite, file, o);
+                            break;
+                        default:
+                            SpriteFile.ExportImage(sprite, file, frame, o);
+                            break;
+                    }
                 }
             });
-            w.SetStatus(string.Format(Strings.Status_Exported, Path.GetFileName(path)));
+            w.SetStatus(jobs.Count == 1 ? string.Format(Strings.Status_Exported, Path.GetFileName(jobs[0].Path)) : string.Format(Strings.Status_ExportedFiles, jobs.Count));
         });
+    }
+
+    /// <summary>The files an export writes: one, or one per visible layer or per tag, named after the chosen file.</summary>
+    private static List<(string Path, ExportOptions Options, int Frame)> Jobs(Sprite sprite, string path, int split, ExportOptions options, int current)
+    {
+        string directory = Path.GetDirectoryName(path) ?? string.Empty, name = Path.GetFileNameWithoutExtension(path), extension = Path.GetExtension(path);
+        string Named(string part) => Path.Combine(directory, $"{name}-{string.Concat(part.Select(c => Path.GetInvalidFileNameChars().Contains(c) ? '_' : c))}{extension}");
+        List<(string, ExportOptions, int)> jobs = [];
+        if (split == 1)
+        {
+            foreach (PixelLayer layer in sprite.PixelLayers.Where(l => l.IsEffectivelyVisible && !l.IsReference).Reverse())
+            {
+                PixelLayer captured = layer;
+                ExportOptions o = new() { Scale = options.Scale, Loop = options.Loop, Frames = options.Frames, LayerFilter = l => l == captured || l is GroupLayer g && captured.IsDescendantOf(g) };
+                jobs.Add((Named(layer.Name), o, current));
+            }
+        }
+        else if (split == 2)
+        {
+            foreach (Tag tag in sprite.Tags)
+            {
+                List<int> frames = SpriteOps.FrameSequence(tag.From, Math.Min(tag.To, sprite.Frames.Count - 1), tag.Direction);
+                ExportOptions o = new() { Scale = options.Scale, Loop = options.Loop, Frames = frames, LayerFilter = options.LayerFilter };
+                jobs.Add((Named(tag.Name), o, tag.From));
+            }
+        }
+        if (jobs.Count == 0) jobs.Add((path, options, current));
+        return jobs;
     }
 }
 

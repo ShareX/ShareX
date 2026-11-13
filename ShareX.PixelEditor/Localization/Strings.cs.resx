@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>Aktuální snímek</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>Souborů: {0}</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>Formát</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>Tento formát ukládá jen aktuální snímek.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>Soubory</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>Soubor pro každou vrstvu</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>Jeden soubor</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>Soubor pro každý štítek</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>Štítek: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>Exportováno: {0}</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>Exportováno souborů: {0}</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportování...</value>

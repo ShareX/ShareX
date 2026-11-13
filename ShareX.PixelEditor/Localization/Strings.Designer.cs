@@ -2895,5 +2895,35 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Slice_Properties", resourceCulture);
             }
         }
+        public static string Export_FileCount {
+            get {
+                return ResourceManager.GetString("Export_FileCount", resourceCulture);
+            }
+        }
+        public static string Export_Split {
+            get {
+                return ResourceManager.GetString("Export_Split", resourceCulture);
+            }
+        }
+        public static string Export_SplitLayers {
+            get {
+                return ResourceManager.GetString("Export_SplitLayers", resourceCulture);
+            }
+        }
+        public static string Export_SplitNone {
+            get {
+                return ResourceManager.GetString("Export_SplitNone", resourceCulture);
+            }
+        }
+        public static string Export_SplitTags {
+            get {
+                return ResourceManager.GetString("Export_SplitTags", resourceCulture);
+            }
+        }
+        public static string Status_ExportedFiles {
+            get {
+                return ResourceManager.GetString("Status_ExportedFiles", resourceCulture);
+            }
+        }
     }
 }

@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>فریم فعلی</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} فایل</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>فرمت</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>این قالب فقط فریم فعلی را ذخیره می‌کند.</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>فایل‌ها</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>یک فایل برای هر لایه</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>یک فایل</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>یک فایل برای هر برچسب</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>برچسب: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>{0} صادر شد</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} فایل برون‌بری شد</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>در حال برون‌بری...</value>

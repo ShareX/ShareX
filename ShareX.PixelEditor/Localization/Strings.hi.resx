@@ -738,6 +738,9 @@
   <data name="Export_CurrentFrame" xml:space="preserve">
     <value>वर्तमान फ़्रेम</value>
   </data>
+  <data name="Export_FileCount" xml:space="preserve">
+    <value>{0} फ़ाइलें</value>
+  </data>
   <data name="Export_Format" xml:space="preserve">
     <value>प्रारूप</value>
   </data>
@@ -764,6 +767,18 @@
   </data>
   <data name="Export_SingleNote" xml:space="preserve">
     <value>यह प्रारूप केवल वर्तमान फ़्रेम सहेजता है।</value>
+  </data>
+  <data name="Export_Split" xml:space="preserve">
+    <value>फ़ाइलें</value>
+  </data>
+  <data name="Export_SplitLayers" xml:space="preserve">
+    <value>हर लेयर के लिए एक फ़ाइल</value>
+  </data>
+  <data name="Export_SplitNone" xml:space="preserve">
+    <value>एक फ़ाइल</value>
+  </data>
+  <data name="Export_SplitTags" xml:space="preserve">
+    <value>हर टैग के लिए एक फ़ाइल</value>
   </data>
   <data name="Export_Tag" xml:space="preserve">
     <value>टैग: {0}</value>
@@ -1448,6 +1463,9 @@
   </data>
   <data name="Status_Exported" xml:space="preserve">
     <value>{0} निर्यात किया गया</value>
+  </data>
+  <data name="Status_ExportedFiles" xml:space="preserve">
+    <value>{0} फ़ाइलें निर्यात की गईं</value>
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>निर्यात हो रहा है...</value>
