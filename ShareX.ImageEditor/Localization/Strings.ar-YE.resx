@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>نمط السهم</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>ضبط الحجم تلقائيًا حسب النص</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>تشويش</value>
   </data>

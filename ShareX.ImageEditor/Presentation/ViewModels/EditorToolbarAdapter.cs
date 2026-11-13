@@ -246,6 +246,12 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
         set => _viewModel.SpeechBalloonTail = value;
     }
 
+    public bool SpeechBalloonAutoSize
+    {
+        get => _viewModel.SpeechBalloonAutoSize;
+        set => _viewModel.SpeechBalloonAutoSize = value;
+    }
+
     public bool EffectEllipse
     {
         get => _viewModel.EffectEllipse;
@@ -315,6 +321,7 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
     public bool ShowSpeechBalloonTail => _viewModel.ShowSpeechBalloonTail;
 
     public bool ShowImageResamplingMode => _viewModel.ShowImageResamplingMode;
+    public bool ShowSpeechBalloonAutoSize => _viewModel.ShowSpeechBalloonAutoSize;
 
     public bool ShowEffectEllipse => _viewModel.ShowEffectEllipse;
 

@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>Nyílstílus</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>Automatikus méretezés a szöveghez</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>Elmosás</value>
   </data>

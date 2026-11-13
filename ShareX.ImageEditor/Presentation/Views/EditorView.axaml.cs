@@ -42,6 +42,7 @@ using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Emoji;
 using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.ImageEditor.Presentation.Rendering.AnnotationVisuals;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 using System.ComponentModel;
@@ -445,6 +446,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         vm.FillColor = balloon.FillColor;
                         vm.CornerRadius = balloon.CornerRadius;
                         vm.SpeechBalloonTail = balloon.TailEnabled;
+                        vm.SpeechBalloonAutoSize = balloon.AutoSize;
                         if (!string.IsNullOrEmpty(balloon.TextColor))
                             vm.TextColorValue = Avalonia.Media.Color.Parse(balloon.TextColor);
                     }
@@ -658,9 +660,15 @@ namespace ShareX.ImageEditor.Presentation.Views
                         QueueAutoCopyImageToClipboard(vm);
                     }
                 }
-                else if (e.PropertyName == nameof(MainViewModel.Zoom))
+                else if (e.PropertyName == nameof(MainViewModel.Zoom) ||
+                    e.PropertyName == nameof(MainViewModel.EffectiveZoom))
                 {
-                    _zoomController.HandleZoomPropertyChanged(vm);
+                    if (e.PropertyName == nameof(MainViewModel.Zoom))
+                    {
+                        _zoomController.HandleZoomPropertyChanged(vm);
+                    }
+
+                    RefreshImageAnnotationDisplayScales(vm.EffectiveZoom);
                 }
                 else if (e.PropertyName == nameof(MainViewModel.ActiveTool))
                 {
@@ -683,6 +691,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         EnsureEffectBrowserPanel(vm).FocusSearchBox();
                     }
                 }
+
                 else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
                     vm.ModalContent is EmojiPickerDialogViewModel)
                 {
@@ -708,6 +717,23 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.SelectedStepType))
                 {
                     ApplyStepTypeToAnnotations(vm.SelectedStepType);
+                }
+            }
+        }
+
+        private void RefreshImageAnnotationDisplayScales(double displayScale)
+        {
+            var canvas = this.FindControl<Canvas>("AnnotationCanvas");
+            if (canvas == null)
+            {
+                return;
+            }
+
+            foreach (Control child in canvas.Children)
+            {
+                if (child is ResampledImageVisual image)
+                {
+                    image.SetDisplayScale(displayScale);
                 }
             }
         }
@@ -1212,7 +1238,8 @@ namespace ShareX.ImageEditor.Presentation.Views
                 return;
             }
 
-            if (_zoomController.ZoomToFit())
+            // Only shrink images that do not fit; small images open at 100% instead of being magnified.
+            if (_zoomController.ZoomToFit(maxZoom: 1.0))
             {
                 _pendingZoomToFitOnOpen = false;
                 return;

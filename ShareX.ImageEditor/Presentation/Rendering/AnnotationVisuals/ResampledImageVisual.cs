@@ -23,10 +23,13 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
+using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 using System.Diagnostics;
@@ -46,8 +49,10 @@ internal sealed class ResampledImageVisual : Image
     private long _requestVersion;
     private SKBitmap? _sourceBitmap;
     private SKBitmap? _fullResolutionSourceBitmap;
-    // Keep an original-resolution preview so an upscale never has to stretch a reduced preview.
     private Bitmap? _fullResolutionSource;
+    private double _logicalWidth;
+    private double _logicalHeight;
+    private double _displayScale = 1;
     private int _displayWidth;
     private int _displayHeight;
     private int _resampledWidth;
@@ -58,11 +63,59 @@ internal sealed class ResampledImageVisual : Image
     public ResampledImageVisual()
     {
         SizeChanged += OnSizeChanged;
+        AttachedToVisualTree += (_, _) => RefreshDisplayScale();
     }
 
     public void SetSource(SKBitmap? sourceBitmap, double width, double height, ImageResamplingMode resamplingMode)
     {
-        (int resampledWidth, int resampledHeight) = GetResampledSize(width, height);
+        _logicalWidth = width;
+        _logicalHeight = height;
+        UpdateSource(sourceBitmap, resamplingMode);
+    }
+
+    public void SetDisplayScale(double displayScale)
+    {
+        if (!double.IsFinite(displayScale) || displayScale <= 0 ||
+            Math.Abs(_displayScale - displayScale) < 0.0001)
+        {
+            return;
+        }
+
+        _displayScale = displayScale;
+        if (_hasSourceState)
+        {
+            UpdateSource(_sourceBitmap, _resamplingMode);
+        }
+    }
+
+    public void RefreshDisplayScale()
+    {
+        double displayScale = 1;
+        for (Visual? visual = this.GetVisualParent(); visual != null; visual = visual.GetVisualParent())
+        {
+            if (visual is LayoutTransformControl { LayoutTransform: ScaleTransform transform })
+            {
+                displayScale = transform.ScaleX;
+                break;
+            }
+        }
+
+        SetDisplayScale(displayScale);
+    }
+
+    private void UpdateSource(SKBitmap? sourceBitmap, ImageResamplingMode resamplingMode)
+    {
+        (int resampledWidth, int resampledHeight) = GetResampledSize(
+            sourceBitmap,
+            _logicalWidth,
+            _logicalHeight,
+            _displayScale,
+            resamplingMode);
+        RenderOptions.SetBitmapInterpolationMode(
+            this,
+            resamplingMode == ImageResamplingMode.NearestNeighbor
+                ? BitmapInterpolationMode.None
+                : BitmapInterpolationMode.HighQuality);
 
         if (_hasSourceState && !ReferenceEquals(_sourceBitmap, sourceBitmap))
         {
@@ -89,7 +142,8 @@ internal sealed class ResampledImageVisual : Image
             ReferenceEquals(_fullResolutionSourceBitmap, sourceBitmap) &&
             _fullResolutionSource != null)
         {
-            if (resampledWidth == sourceBitmap.Width && resampledHeight == sourceBitmap.Height)
+            if (resamplingMode == ImageResamplingMode.NearestNeighbor ||
+                (resampledWidth == sourceBitmap.Width && resampledHeight == sourceBitmap.Height))
             {
                 ReplaceSource(_fullResolutionSource, sourceBitmap.Width, sourceBitmap.Height);
                 return;
@@ -273,7 +327,9 @@ internal sealed class ResampledImageVisual : Image
             return;
         }
 
-        SetSource(_sourceBitmap, e.NewSize.Width, e.NewSize.Height, _resamplingMode);
+        _logicalWidth = e.NewSize.Width;
+        _logicalHeight = e.NewSize.Height;
+        UpdateSource(_sourceBitmap, _resamplingMode);
     }
 
     private sealed class PendingResample : IDisposable
@@ -307,13 +363,25 @@ internal sealed class ResampledImageVisual : Image
         public void Dispose() => SourceImage.Dispose();
     }
 
-    private static (int Width, int Height) GetResampledSize(double width, double height)
+    private static (int Width, int Height) GetResampledSize(
+        SKBitmap? sourceBitmap,
+        double width,
+        double height,
+        double displayScale,
+        ImageResamplingMode resamplingMode)
     {
         if (!double.IsFinite(width)) throw new ArgumentOutOfRangeException(nameof(width));
         if (!double.IsFinite(height)) throw new ArgumentOutOfRangeException(nameof(height));
 
+        if (sourceBitmap != null && resamplingMode == ImageResamplingMode.NearestNeighbor)
+        {
+            return (sourceBitmap.Width, sourceBitmap.Height);
+        }
+
         width = Math.Max(1, Math.Ceiling(width));
         height = Math.Max(1, Math.Ceiling(height));
+        width *= displayScale;
+        height *= displayScale;
         // Bound intermediate rasters; Avalonia scales the result to the annotation bounds.
         double scale = Math.Min(
             1,

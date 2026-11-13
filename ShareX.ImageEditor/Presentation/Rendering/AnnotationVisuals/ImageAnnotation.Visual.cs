@@ -67,8 +67,6 @@ public partial class ImageAnnotation
             Tag = this,
             Stretch = Stretch.Fill
         };
-        RenderOptions.SetBitmapInterpolationMode(image, BitmapInterpolationMode.HighQuality);
-
         var imageBounds = GetBounds();
         image.SetSource(ImageBitmap, imageBounds.Width, imageBounds.Height, ResamplingMode);
         image.Width = Math.Max(1, imageBounds.Width);

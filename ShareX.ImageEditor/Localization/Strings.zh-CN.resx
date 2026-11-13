@@ -15,6 +15,9 @@
   <data name="AnnotationToolbar_Arrowstyle" xml:space="preserve">
     <value>箭头样式</value>
   </data>
+  <data name="AnnotationToolbar_Autosizetotext" xml:space="preserve">
+    <value>根据文本自动调整大小</value>
+  </data>
   <data name="AnnotationToolbar_Blur" xml:space="preserve">
     <value>模糊</value>
   </data>
