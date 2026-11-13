@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Wit</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Recent gebruikt. Klik voor de voorgrondkleur, klik met rechts voor de achtergrondkleur.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Geen overeenkomende opdrachten</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Opdrachtenpalet...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Omzetten naar pixellaag</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Omzetten naar tegelkaartlaag...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieer</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Spritesheet exporteren...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Tegelkaart exporteren...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Vullen met voorgrondkleur</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nieuw label...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nieuwe tegelkaartlaag...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Volgend beeld</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Label verwijderen</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Ongebruikte tegels verwijderen</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Kleur vervangen...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Drempelwaarde</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Tegelhoogte</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Tegelbreedte</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Tegelkaartlagen bestaan uit tegels van één formaat. Schilderen op een tegel verandert die tegel overal waar hij wordt gebruikt.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Naar</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Laag herschikken</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Palet herschikken</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Selecteren</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Groep</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Tegelkaart</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Deze cel is gekoppeld aan andere beelden</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referentielaag: wordt niet geëxporteerd</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Tegelkaartlaag met tegels van {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Groep uit- of samenvouwen</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Tegelmodus</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Tegelkaart</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Weergave</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klik waar de tekst moet komen</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Tegel {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Naar transparant</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sorteren op verzadiging</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Klik: voorgrondkleur. Rechtsklik: achtergrondkleur. Dubbelklik: bewerken. Slepen: herschikken. Ctrl+rechtsklik: meer opties.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Kleur</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Voorbeeld</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Tegels</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Dambord</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Selecteer eerst een pixellaag</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Selecteer eerst een tegelkaartlaag</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Selectie {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Beeld {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>De laag is opgesplitst in {0} tegel(s)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} ongebruikte tegel(s) verwijderd</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Tekst</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Schilderen wijzigt elke kopie van een tegel</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Als dit uit staat, krijgt de cel bij het schilderen een nieuwe tegel in plaats van dat de gedeelde tegel verandert.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>De actieve laag is geen tegelkaartlaag. Een tegelkaartlaag bestaat uit tegels van één formaat: schilderen op een tegel verandert die overal waar hij wordt gebruikt, en het gereedschap Tegelstempel plaatst tegels op het raster.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Lege tegel (wist cellen)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} tegels, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Tegel {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Duur</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Klik om tekst toe te voegen</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Tegelstempel</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Klik of sleep om de geselecteerde tegel te plaatsen. Rechtsklik wist cellen. Alt+klik neemt de tegel onder de cursor over.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoomen</value>

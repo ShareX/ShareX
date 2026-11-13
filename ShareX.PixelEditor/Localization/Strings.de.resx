@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Weiß</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Zuletzt verwendet. Klicken für die Vordergrundfarbe, Rechtsklick für die Hintergrundfarbe.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Keine passenden Befehle</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Befehlspalette...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>In Pixelebene umwandeln</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>In Kachelkartenebene umwandeln...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieren</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Sprite-Sheet exportieren...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Kachelkarte exportieren...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Mit Vordergrundfarbe füllen</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Neues Etikett...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Neue Kachelkartenebene...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Nächstes Einzelbild</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Etikett entfernen</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Nicht verwendete Kacheln entfernen</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Farbe ersetzen...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Schwellenwert</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Kachelhöhe</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Kachelbreite</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Kachelkartenebenen bestehen aus Kacheln gleicher Größe. Wenn Sie auf einer Kachel malen, ändert sie sich überall, wo sie verwendet wird.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Zu</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Ebene neu anordnen</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Palette neu anordnen</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Auswählen</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Gruppe</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Kachelkarte</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Diese Zelle ist mit anderen Einzelbildern verknüpft</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referenzebene: wird nicht exportiert</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Kachelkartenebene mit Kacheln von {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Gruppe aus- oder einklappen</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Kachelmodus</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Kachelkarte</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Ansicht</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Dorthin klicken, wo der Text stehen soll</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Kachel {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Zu transparent</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Nach Sättigung sortieren</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Klick: Vordergrundfarbe. Rechtsklick: Hintergrundfarbe. Doppelklick: bearbeiten. Ziehen: neu anordnen. Strg+Rechtsklick: weitere Optionen.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Farbe</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Vorschau</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Kacheln</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Schachbrett</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Wählen Sie zuerst eine Pixelebene aus</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Wählen Sie zuerst eine Kachelkartenebene aus</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Auswahl {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Einzelbild {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Die Ebene wurde in {0} Kachel(n) aufgeteilt</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} nicht verwendete Kachel(n) entfernt</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Malen ändert jede Kopie einer Kachel</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Wenn dies aus ist, erhält die Zelle beim Malen eine neue Kachel, statt die gemeinsam genutzte Kachel zu ändern.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Die aktive Ebene ist keine Kachelkartenebene. Eine Kachelkartenebene besteht aus Kacheln gleicher Größe: Malen auf einer Kachel ändert sie überall, wo sie verwendet wird, und das Werkzeug „Kachelstempel“ setzt Kacheln ins Raster.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Leere Kachel (leert Zellen)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} Kacheln, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Kachel {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Dauer</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Klicken, um Text hinzuzufügen</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Kachelstempel</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Klicken oder ziehen, um die gewählte Kachel zu setzen. Rechtsklick leert Zellen. Alt+Klick übernimmt die Kachel unter dem Mauszeiger.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Strahlenförmig</value>

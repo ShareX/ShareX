@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>לבן</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>בשימוש לאחרונה. לחץ לצבע החזית, לחץ לחיצה ימנית לצבע הרקע.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>אין פקודות תואמות</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>לוח פקודות...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>המר לשכבת פיקסלים</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>המר לשכבת מפת אריחים...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>העתק</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>ייצא גיליון ספרייטים...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>ייצא מפת אריחים...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>מלא בצבע החזית</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>תגית חדשה...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>שכבת מפת אריחים חדשה...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>הפריים הבא</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>הסר תגית</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>הסר אריחים שאינם בשימוש</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>החלף צבע...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>סף</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>גובה אריח</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>רוחב אריח</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>שכבות מפת אריחים בנויות מאריחים בגודל אחד. ציור על אריח משנה אותו בכל מקום שבו הוא בשימוש.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>אל</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>סדר מחדש שכבה</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>סידור מחדש של לוח הצבעים</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>בחירה</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>קבוצה</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>מפת אריחים</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>תא זה מקושר לפריימים אחרים</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>שכבת ייחוס: לא מיוצאת</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>שכבת מפת אריחים עם אריחים בגודל {0} × {1} פיקסלים</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>הרחב או כווץ את הקבוצה</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>מצב ריצוף</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>מפת אריחים</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_תצוגה</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>לחץ במקום שבו הטקסט אמור להופיע</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>אריח {0}   {1} × {2} פיקסלים</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>לשקוף</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>מיין לפי רוויה</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>לחיצה: צבע חזית. לחיצה ימנית: צבע רקע. לחיצה כפולה: עריכה. גרירה: סידור מחדש. Ctrl+לחיצה ימנית: אפשרויות נוספות.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>צבע</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>תצוגה מקדימה</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>אריחים</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>לוח שחמט</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>בחר קודם שכבת פיקסלים</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>בחר תחילה שכבת מפת אריחים</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>בחירה {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} פיקסלים   פריים {2}/{3}   {4} אלפיות שנייה</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>השכבה חולקה ל-{0} אריחים</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>הוסרו {0} אריחים שאינם בשימוש</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>טקסט</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>ציור משנה כל עותק של אריח</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>כשהאפשרות כבויה, ציור על אריח נותן לתא אריח חדש במקום לשנות את האריח המשותף.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>השכבה הפעילה אינה שכבת מפת אריחים. שכבת מפת אריחים בנויה מאריחים בגודל אחד: ציור על אריח משנה אותו בכל מקום שבו הוא בשימוש, והכלי חותמת אריחים מניח אריחים ברשת.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>אריח ריק (מנקה תאים)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} אריחים, {1} × {2} פיקסלים</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>אריח {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>משך</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>לחץ כדי להוסיף טקסט</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>חותמת אריחים</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>לחץ או גרור כדי להניח את האריח שנבחר. לחיצה ימנית מנקה תאים. Alt+לחיצה בוחרת את האריח שמתחת לסמן.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>זום</value>

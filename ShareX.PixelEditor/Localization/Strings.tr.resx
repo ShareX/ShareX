@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Beyaz</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Son kullanılanlar. Ön plan rengi için tıklayın, arka plan rengi için sağ tıklayın.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Eşleşen komut yok</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Komut Paleti...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Piksel Katmanına Dönüştür</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Döşeme Haritası Katmanına Dönüştür...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopyala</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Sprite Sayfasını Dışa Aktar...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Döşeme Haritasını Dışa Aktar...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Ön Plan Rengiyle Doldur</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Yeni Etiket...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Yeni Döşeme Haritası Katmanı...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Sonraki Kare</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Etiketi Kaldır</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Kullanılmayan Döşemeleri Kaldır</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Rengi Değiştir...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Eşik</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Döşeme yüksekliği</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Döşeme genişliği</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Döşeme haritası katmanları tek boyutlu döşemelerden oluşur. Bir döşemeye boyamak onu kullanıldığı her yerde değiştirir.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Hedef</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Katmanı Yeniden Sırala</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Paleti Yeniden Sırala</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Seç</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grup</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Döşeme Haritası</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Bu hücre başka karelere bağlı</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referans katmanı: dışa aktarılmaz</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>{0} × {1} piksellik döşemeler içeren döşeme haritası katmanı</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Grubu genişlet veya daralt</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Döşeme Modu</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Döşeme Haritası</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>Gö_rünüm</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Metnin yerleşeceği yere tıklayın</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Döşeme {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Saydama doğru</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Doygunluğa Göre Sırala</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Tıklama: ön plan rengi. Sağ tıklama: arka plan rengi. Çift tıklama: düzenle. Sürükleme: yeniden sırala. Ctrl+sağ tıklama: diğer seçenekler.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Renk</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Önizleme</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Döşemeler</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Dama</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Önce bir piksel katmanı seçin</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Önce bir döşeme haritası katmanı seçin</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Seçim {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Kare {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Katman {0} döşemeye bölündü</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Kullanılmayan {0} döşeme kaldırıldı</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Metin</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Boyamak bir döşemenin tüm kopyalarını değiştirir</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Kapalıyken bir döşemeye boyamak, paylaşılan döşemeyi değiştirmek yerine o hücreye yeni bir döşeme verir.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Etkin katman bir döşeme haritası katmanı değil. Döşeme haritası katmanı tek boyutlu döşemelerden oluşur: bir döşemeye boyamak onu kullanıldığı her yerde değiştirir ve Döşeme Damgası aracı döşemeleri ızgaraya yerleştirir.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Boş döşeme (hücreleri temizler)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} döşeme, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Döşeme {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Süre</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Metin eklemek için tıklayın</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Döşeme Damgası</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Seçili döşemeyi yerleştirmek için tıklayın veya sürükleyin. Sağ tıklama hücreleri temizler. Alt+tıklama imlecin altındaki döşemeyi alır.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Yakınlaştırma</value>

@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Bílá</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Nedávno použité. Kliknutím nastavíte barvu popředí, kliknutím pravým tlačítkem barvu pozadí.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Žádné odpovídající příkazy</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Paleta příkazů...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Převést na pixelovou vrstvu</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Převést na vrstvu dlaždicové mapy...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopírovat</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Exportovat sprite sheet...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportovat dlaždicovou mapu...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Vyplnit barvou popředí</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nový štítek...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nová vrstva dlaždicové mapy...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Další snímek</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Odstranit štítek</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Odebrat nepoužité dlaždice</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Nahradit barvu...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Práh</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Výška dlaždice</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Šířka dlaždice</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Vrstvy dlaždicové mapy se skládají z dlaždic jedné velikosti. Kreslení na dlaždici ji změní všude, kde je použita.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Na</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Změna pořadí vrstvy</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Změna pořadí palety</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Výběr</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Skupina</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Dlaždicová mapa</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Tato buňka je propojená s dalšími snímky</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referenční vrstva: neexportuje se</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Vrstva dlaždicové mapy s dlaždicemi {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Rozbalit nebo sbalit skupinu</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Dlaždicový režim</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Dlaždicová mapa</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Zobrazení</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klikněte tam, kam má přijít text</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Dlaždice {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Do průhledna</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Seřadit podle sytosti</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Kliknutí: barva popředí. Pravé kliknutí: barva pozadí. Dvojklik: úpravy. Přetažení: změna pořadí. Ctrl+pravé kliknutí: další možnosti.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Barva</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Náhled</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Dlaždice</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Šachovnice</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Nejprve vyberte pixelovou vrstvu</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Nejprve vyberte vrstvu dlaždicové mapy</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Výběr {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Snímek {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Vrstva byla rozdělena na dlaždice: {0}</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Odebráno nepoužitých dlaždic: {0}</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Kreslení změní všechny kopie dlaždice</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Když je vypnuto, kreslení na dlaždici dá dané buňce novou dlaždici místo změny sdílené dlaždice.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Aktivní vrstva není vrstvou dlaždicové mapy. Vrstva dlaždicové mapy se skládá z dlaždic jedné velikosti: kreslení na dlaždici ji změní všude, kde je použita, a nástroj Razítko dlaždic umisťuje dlaždice do mřížky.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Prázdná dlaždice (vymaže buňky)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>Dlaždice: {0}, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Dlaždice {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Délka</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Kliknutím přidáte text</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Razítko dlaždic</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Kliknutím nebo tažením umístíte vybranou dlaždici. Pravé kliknutí vymaže buňky. Alt+kliknutí vybere dlaždici pod kurzorem.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zvětšení</value>

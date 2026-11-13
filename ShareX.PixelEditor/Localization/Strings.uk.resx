@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Білий</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Нещодавно використані. Клацання задає основний колір, клацання правою кнопкою — колір тла.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Немає відповідних команд</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Палітра команд...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Перетворити на піксельний шар</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Перетворити на шар тайлової карти...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Копіювати</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Експорт аркуша спрайтів...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Експорт тайлової карти...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Залити основним кольором</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Нова мітка...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Новий шар тайлової карти...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Наступний кадр</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Видалити мітку</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Вилучити невикористані тайли</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Замінити колір...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Поріг</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Висота тайла</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Ширина тайла</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Шари тайлової карти складаються з тайлів одного розміру. Малювання на тайлі змінює його всюди, де він використовується.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>На</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Зміна порядку шарів</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Зміна порядку палітри</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Вибрати</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Група</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Тайлова карта</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Ця комірка зв'язана з іншими кадрами</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Опорний шар: не експортується</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Шар тайлової карти з тайлами {0} × {1} пікс.</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Розгорнути або згорнути групу</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Режим мозаїки</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Тайлова карта</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Перегляд</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Клацніть там, де має бути текст</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Тайл {0}   {1} × {2} пікс.</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>У прозорість</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Сортувати за насиченістю</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Клацання: основний колір. Клацання правою кнопкою: колір тла. Подвійне клацання: змінити. Перетягування: змінити порядок. Ctrl+клацання правою кнопкою: інші параметри.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Колір</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Попередній перегляд</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Тайли</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Шаховий</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Спочатку виберіть піксельний шар</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Спочатку виберіть шар тайлової карти</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Виділення {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} пікс.   Кадр {2}/{3}   {4} мс</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Шар поділено на тайли: {0}</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Вилучено невикористаних тайлів: {0}</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Текст</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Малювання змінює всі копії тайла</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Якщо вимкнено, малювання на тайлі дає цій комірці новий тайл замість зміни спільного.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Активний шар не є шаром тайлової карти. Шар тайлової карти складається з тайлів одного розміру: малювання на тайлі змінює його всюди, де він використовується, а інструмент «Штамп тайлів» розміщує тайли на сітці.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Порожній тайл (очищає комірки)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>Тайлів: {0}, {1} × {2} пікс.</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Тайл {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Тривалість</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Клацніть, щоб додати текст</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Штамп тайлів</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Клацніть або перетягніть, щоб поставити вибраний тайл. Клацання правою кнопкою очищає комірки. Alt+клацання бере тайл під курсором.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Масштабування</value>

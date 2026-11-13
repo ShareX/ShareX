@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Vit</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Senast använda. Klicka för förgrundsfärg, högerklicka för bakgrundsfärg.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Inga matchande kommandon</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Kommandopalett...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Konvertera till pixellager</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Konvertera till brickkartelager...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiera</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Exportera sprite-ark...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportera brickkarta...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Fyll med förgrundsfärg</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Ny etikett...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nytt brickkartelager...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Nästa bildruta</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Ta bort etikett</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Ta bort oanvända brickor</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Ersätt färg...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Tröskelvärde</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Brickhöjd</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Brickbredd</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Brickkartelager består av brickor i en storlek. Om du målar på en bricka ändras den överallt där den används.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Till</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Ändra lagerordning</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Ordna om paletten</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Markera</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grupp</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Brickkarta</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Den här cellen är länkad till andra bildrutor</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referenslager: exporteras inte</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Brickkartelager med brickor på {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Visa eller dölj gruppens innehåll</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Kakelläge</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Brickkarta</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Visa</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klicka där texten ska placeras</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Bricka {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Till genomskinlig</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sortera efter mättnad</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Klick: förgrundsfärg. Högerklick: bakgrundsfärg. Dubbelklick: redigera. Dra: ordna om. Ctrl+högerklick: fler alternativ.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Färg</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Förhandsvisning</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Brickor</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Schackruta</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Markera först ett pixellager</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Välj först ett brickkartelager</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Markering {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Bildruta {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Lagret delades upp i {0} bricka/brickor</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} oanvända brickor togs bort</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Målning ändrar varje kopia av en bricka</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>När detta är av får cellen en ny bricka när du målar i stället för att den delade brickan ändras.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Det aktiva lagret är inte ett brickkartelager. Ett brickkartelager består av brickor i en storlek: om du målar på en bricka ändras den överallt där den används, och verktyget Brickstämpel placerar brickor i rutnätet.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Tom bricka (rensar celler)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} brickor, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Bricka {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Varaktighet</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Klicka för att lägga till text</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Brickstämpel</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Klicka eller dra för att placera den valda brickan. Högerklick rensar celler. Alt+klick hämtar brickan under markören.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zooma</value>

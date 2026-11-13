@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Alb</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Folosite recent. Clic pentru culoarea de prim-plan, clic dreapta pentru culoarea de fundal.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Nicio comandă potrivită</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Paleta de comenzi...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Convertește în strat de pixeli</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Convertește în strat de hartă de dale...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiere</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Exportă foaia de sprite-uri...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportă harta de dale...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Umple cu culoarea de prim-plan</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Etichetă nouă...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Strat nou de hartă de dale...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Cadrul următor</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Elimină eticheta</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Elimină dalele nefolosite</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Înlocuiește culoarea...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Prag</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Înălțimea dalei</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Lățimea dalei</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Straturile de hartă de dale sunt formate din dale de aceeași dimensiune. Pictarea unei dale o modifică peste tot unde este folosită.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>În</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Reordonează stratul</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Reordonează paleta</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Selectare</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grup</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Hartă de dale</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Această celulă este legată de alte cadre</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Strat de referință: nu se exportă</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Strat de hartă de dale cu dale de {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Extinde sau restrânge grupul</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Mod mozaic</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Hartă de dale</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Vizualizare</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Faceți clic acolo unde trebuie pus textul</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Dala {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Spre transparent</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sortează după saturație</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Clic: culoarea de prim-plan. Clic dreapta: culoarea de fundal. Dublu clic: editare. Glisare: reordonare. Ctrl+clic dreapta: mai multe opțiuni.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Culoare</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Previzualizare</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Dale</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Tablă de șah</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Selectați mai întâi un strat de pixeli</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Selectați mai întâi un strat de hartă de dale</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Selecție {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Cadrul {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Stratul a fost împărțit în {0} dale</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Au fost eliminate {0} dale nefolosite</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Pictura modifică fiecare copie a unei dale</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Când este dezactivat, pictarea unei dale îi dă celulei o dală nouă în loc să modifice dala comună.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Stratul activ nu este un strat de hartă de dale. Un strat de hartă de dale este format din dale de aceeași dimensiune: pictarea unei dale o modifică peste tot unde este folosită, iar instrumentul Ștampilă de dale plasează dale pe grilă.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Dală goală (golește celulele)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} dale, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Dala {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Durată</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Faceți clic pentru a adăuga text</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Ștampilă de dale</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Faceți clic sau glisați pentru a plasa dala selectată. Clic dreapta golește celulele. Alt+clic preia dala de sub cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

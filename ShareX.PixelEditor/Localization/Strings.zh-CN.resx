@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>白色</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>最近使用。单击设为前景色，右键单击设为背景色。</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>没有匹配的命令</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>命令面板...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>转换为像素图层</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>转换为瓦片地图图层...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>复制</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>导出精灵表...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>导出瓦片地图...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>用前景色填充</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>新建标签...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>新建瓦片地图图层...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>下一帧</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>移除标签</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>删除未使用的瓦片</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>替换颜色...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>阈值</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>瓦片高度</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>瓦片宽度</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>瓦片地图图层由相同大小的瓦片组成。在瓦片上绘画会改变所有使用该瓦片的位置。</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>新色</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>调整图层顺序</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>重新排列调色板</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>选择</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>组</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>瓦片地图</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>此单元格已链接到其他帧</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>参考图层：不导出</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>瓦片大小为 {0} × {1} 像素的瓦片地图图层</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>展开或折叠组</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>平铺模式</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>瓦片地图</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>视图(_V)</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>单击要放置文字的位置</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>瓦片 {0}   {1} × {2} 像素</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>到透明</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>按饱和度排序</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>单击：前景色。右键单击：背景色。双击：编辑。拖动：重新排列。Ctrl+右键单击：更多选项。</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>颜色</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>预览</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>瓦片</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>棋盘格</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>请先选择一个像素图层</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>请先选择一个瓦片地图图层</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>选区 {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} 像素   第 {2}/{3} 帧   {4} 毫秒</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>已将图层拆分为 {0} 个瓦片</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>已删除 {0} 个未使用的瓦片</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>文本</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>绘画会更改瓦片的所有副本</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>关闭后，在瓦片上绘画会为该格子创建新瓦片，而不是更改共用的瓦片。</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>当前图层不是瓦片地图图层。瓦片地图图层由相同大小的瓦片组成：在瓦片上绘画会改变所有使用该瓦片的位置，瓦片图章工具可将瓦片放到网格上。</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>空瓦片（清除格子）</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} 个瓦片，{1} × {2} 像素</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>瓦片 {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>时长</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>单击以添加文字</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>瓦片图章</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>单击或拖动以放置所选瓦片。右键单击清除格子。Alt+单击吸取光标下的瓦片。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>缩放</value>

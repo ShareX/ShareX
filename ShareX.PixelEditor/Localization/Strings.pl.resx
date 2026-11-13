@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Biały</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Ostatnio używane. Kliknij, aby ustawić kolor pierwszego planu, kliknij prawym przyciskiem, aby ustawić kolor tła.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Brak pasujących poleceń</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Paleta poleceń...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Konwertuj na warstwę pikseli</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Konwertuj na warstwę mapy kafelków...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiuj</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Eksportuj arkusz sprite'ów...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Eksportuj mapę kafelków...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Wypełnij kolorem pierwszoplanowym</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nowy znacznik...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nowa warstwa mapy kafelków...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Następna klatka</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Usuń znacznik</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Usuń nieużywane kafelki</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Zastąp kolor...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Próg</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Wysokość kafelka</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Szerokość kafelka</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Warstwy mapy kafelków składają się z kafelków jednego rozmiaru. Malowanie po kafelku zmienia go wszędzie, gdzie jest używany.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Na</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Zmiana kolejności warstwy</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Zmiana kolejności palety</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Wybierz</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grupa</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Mapa kafelków</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Ta komórka jest połączona z innymi klatkami</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Warstwa referencyjna: nie jest eksportowana</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Warstwa mapy kafelków z kafelkami {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Rozwiń lub zwiń grupę</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Tryb kafelkowy</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Mapa kafelków</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Widok</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Kliknij miejsce, w którym ma się znaleźć tekst</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Kafelek {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Do przezroczystości</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sortuj według nasycenia</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Kliknięcie: kolor pierwszego planu. Prawy przycisk: kolor tła. Dwukrotne kliknięcie: edycja. Przeciągnięcie: zmiana kolejności. Ctrl+prawy przycisk: więcej opcji.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Kolor</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Podgląd</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Kafelki</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Szachownica</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Najpierw zaznacz warstwę pikseli</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Najpierw wybierz warstwę mapy kafelków</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Zaznaczenie {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Klatka {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Warstwa została podzielona na kafelki: {0}</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Usunięto nieużywane kafelki: {0}</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Tekst</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Malowanie zmienia każdą kopię kafelka</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Gdy ta opcja jest wyłączona, malowanie po kafelku nadaje tej komórce nowy kafelek zamiast zmieniać wspólny.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Aktywna warstwa nie jest warstwą mapy kafelków. Warstwa mapy kafelków składa się z kafelków jednego rozmiaru: malowanie po kafelku zmienia go wszędzie, gdzie jest używany, a narzędzie Stempel kafelków umieszcza kafelki na siatce.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Pusty kafelek (czyści komórki)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>Kafelki: {0}, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Kafelek {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Czas trwania</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Kliknij, aby dodać tekst</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Stempel kafelków</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Kliknij lub przeciągnij, aby umieścić wybrany kafelek. Prawy przycisk czyści komórki. Alt+kliknięcie pobiera kafelek spod kursora.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Powiększenie</value>

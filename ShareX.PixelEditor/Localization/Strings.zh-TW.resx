@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>白色</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>最近使用。按一下設為前景色，按右鍵設為背景色。</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>沒有符合的命令</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>命令面板...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>轉換為像素圖層</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>轉換為圖塊地圖圖層...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>複製</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>匯出精靈圖表...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>匯出圖塊地圖...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>以前景色填滿</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>新增標籤...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>新增圖塊地圖圖層...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>下一個影格</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>移除標籤</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>移除未使用的圖塊</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>取代色彩...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>臨界值</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>圖塊高度</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>圖塊寬度</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>圖塊地圖圖層由相同大小的圖塊組成。在圖塊上繪畫會改變所有使用該圖塊的位置。</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>新色</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>調整圖層順序</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>重新排列調色盤</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>選取</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>群組</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>圖塊地圖</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>此單元格已連結到其他影格</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>參考圖層：不匯出</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>圖塊大小為 {0} × {1} 像素的圖塊地圖圖層</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>展開或收合群組</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>並排模式</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>圖塊地圖</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>檢視(_V)</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>按一下要放置文字的位置</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>圖塊 {0}   {1} × {2} 像素</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>到透明</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>依飽和度排序</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>按一下：前景色。按右鍵：背景色。按兩下：編輯。拖曳：重新排列。Ctrl+按右鍵：更多選項。</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>顏色</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>預覽</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>圖塊</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>棋盤格</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>請先選取像素圖層</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>請先選取一個圖塊地圖圖層</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>選取範圍 {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} 像素   影格 {2}/{3}   {4} 毫秒</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>已將圖層分割為 {0} 個圖塊</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>已移除 {0} 個未使用的圖塊</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>文字</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>繪畫會變更圖塊的所有副本</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>關閉後，在圖塊上繪畫會為該格建立新圖塊，而不是變更共用的圖塊。</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>目前圖層不是圖塊地圖圖層。圖塊地圖圖層由相同大小的圖塊組成：在圖塊上繪畫會改變所有使用該圖塊的位置，圖塊印章工具可將圖塊放到格點上。</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>空白圖塊（清除格子）</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} 個圖塊，{1} × {2} 像素</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>圖塊 {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>持續時間</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>按一下以加入文字</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>圖塊印章</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>按一下或拖曳以放置選取的圖塊。按右鍵清除格子。Alt+按一下吸取游標下的圖塊。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>縮放</value>

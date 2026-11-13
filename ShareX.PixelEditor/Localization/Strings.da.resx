@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Hvid</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Brugt for nylig. Klik for forgrundsfarve, højreklik for baggrundsfarve.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Ingen matchende kommandoer</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Kommandopalet...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Konvertér til pixellag</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Konvertér til flisekortlag...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiér</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Eksportér sprite-ark...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Eksportér flisekort...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Udfyld med forgrundsfarve</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nyt mærke...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nyt flisekortlag...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Næste billede</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Fjern mærke</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Fjern ubrugte fliser</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Erstat farve...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Tærskelværdi</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Flisehøjde</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Flisebredde</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Flisekortlag består af fliser i én størrelse. Når du maler på en flise, ændres den overalt, hvor den bruges.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Til</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Omarrangér lag</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Omarranger palet</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Markér</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Gruppe</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Flisekort</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Denne celle er sammenkædet med andre billeder</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referencelag: eksporteres ikke</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Flisekortlag med fliser på {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Udvid eller skjul gruppen</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Flisetilstand</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Flisekort</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Vis</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klik, hvor teksten skal stå</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Flise {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Til gennemsigtig</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sortér efter mætning</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Klik: forgrundsfarve. Højreklik: baggrundsfarve. Dobbeltklik: rediger. Træk: omarranger. Ctrl+højreklik: flere indstillinger.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Farve</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Forhåndsvisning</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Fliser</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Skakbræt</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Vælg først et pixellag</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Vælg først et flisekortlag</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Markering {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Billede {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Laget blev opdelt i {0} flise(r)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} ubrugt(e) flise(r) fjernet</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Tekst</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Maling ændrer alle kopier af en flise</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Når dette er slået fra, får cellen en ny flise, når du maler på den, i stedet for at den delte flise ændres.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Det aktive lag er ikke et flisekortlag. Et flisekortlag består af fliser i én størrelse: Når du maler på en flise, ændres den overalt, hvor den bruges, og værktøjet Flisestempel placerer fliser i gitteret.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Tom flise (rydder celler)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} fliser, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Flise {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Varighed</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Klik for at tilføje tekst</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Flisestempel</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Klik eller træk for at placere den valgte flise. Højreklik rydder celler. Alt+klik vælger flisen under markøren.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

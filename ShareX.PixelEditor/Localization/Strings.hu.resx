@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Fehér</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Nemrég használt. Kattintás: előtérszín, jobb kattintás: háttérszín.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Nincs egyező parancs</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Parancspaletta...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Átalakítás képpontréteggé</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Átalakítás csempetérkép-réteggé...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Másolás</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Sprite-lap exportálása...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Csempetérkép exportálása...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Kitöltés előtérszínnel</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Új címke...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Új csempetérkép-réteg...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Következő képkocka</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Címke eltávolítása</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Nem használt csempék eltávolítása</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Szín cseréje...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Küszöbérték</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Csempe magassága</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Csempe szélessége</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>A csempetérkép-rétegek azonos méretű csempékből állnak. Egy csempére festve az mindenhol megváltozik, ahol használva van.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Mire</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Réteg átrendezése</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Paletta átrendezése</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Kijelölés</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Csoport</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Csempetérkép</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Ez a cella más képkockákhoz van kapcsolva</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Referenciaréteg: nem kerül exportálásra</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Csempetérkép-réteg {0} × {1} képpontos csempékkel</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Csoport kibontása vagy összecsukása</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Csempe mód</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Csempetérkép</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Nézet</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Kattintson oda, ahová a szöveg kerüljön</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>{0}. csempe   {1} × {2} képpont</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Átlátszóba</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Rendezés telítettség szerint</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Kattintás: előtérszín. Jobb kattintás: háttérszín. Dupla kattintás: szerkesztés. Húzás: átrendezés. Ctrl+jobb kattintás: további lehetőségek.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Szín</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Előnézet</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Csempék</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Sakktábla</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Előbb jelöljön ki egy képpontréteget</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Először jelöljön ki egy csempetérkép-réteget</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Kijelölés: {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   {2}/{3}. képkocka   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>A réteg {0} csempére lett felosztva</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} nem használt csempe eltávolítva</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Szöveg</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>A festés a csempe minden példányát módosítja</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Kikapcsolva a csempére festés új csempét ad a cellának a közös csempe módosítása helyett.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Az aktív réteg nem csempetérkép-réteg. A csempetérkép-réteg azonos méretű csempékből áll: egy csempére festve az mindenhol megváltozik, ahol használva van, a Csempebélyegző eszköz pedig csempéket helyez a rácsra.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Üres csempe (cellákat töröl)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} csempe, {1} × {2} képpont</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>{0}. csempe</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Időtartam</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Kattintással szöveget ad hozzá</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Csempebélyegző</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Kattintással vagy húzással elhelyezi a kijelölt csempét. Jobb kattintás: cellák törlése. Alt+kattintás: a kurzor alatti csempe kiválasztása.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Nagyító</value>

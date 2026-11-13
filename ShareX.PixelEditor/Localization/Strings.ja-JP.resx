@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>ホワイト</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>最近使った色。クリックで描画色、右クリックで背景色に設定します。</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>一致するコマンドはありません</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>コマンドパレット...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>ピクセルレイヤーに変換</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>タイルマップレイヤーに変換...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>コピー</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>スプライトシートを書き出し...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>タイルマップを書き出し...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>描画色で塗りつぶし</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>新規タグ...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>新規タイルマップレイヤー...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>次のフレーム</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>タグを削除</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>未使用のタイルを削除</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>色の置き換え...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>しきい値</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>タイルの高さ</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>タイルの幅</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>タイルマップレイヤーは同じサイズのタイルでできています。タイルに描くと、そのタイルを使っているすべての場所が変わります。</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>変更後</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>レイヤーの順序を変更</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>パレットの並べ替え</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>選択</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>グループ</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>タイルマップ</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>このセルは他のフレームとリンクしています</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>参照レイヤー: 書き出されません</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>{0} × {1} px のタイルを使うタイルマップレイヤー</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>グループを展開/折りたたみ</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>タイルモード</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>タイルマップ</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>表示(_V)</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>テキストを置く位置をクリックします</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>タイル {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>透明へ</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>彩度で並べ替え</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>クリック: 描画色。右クリック: 背景色。ダブルクリック: 編集。ドラッグ: 並べ替え。Ctrl+右クリック: その他のオプション。</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>色</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>プレビュー</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>タイル</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>市松模様</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>先にピクセルレイヤーを選択してください</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>先にタイルマップレイヤーを選択してください</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>選択範囲 {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   フレーム {2}/{3}   {4} ミリ秒</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>レイヤーを {0} 個のタイルに分割しました</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>未使用のタイルを {0} 個削除しました</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>テキスト</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>描画するとタイルのすべてのコピーが変わる</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>オフのときは、タイルに描くと共有タイルを変更せずに、そのセルに新しいタイルを割り当てます。</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>アクティブなレイヤーはタイルマップレイヤーではありません。タイルマップレイヤーは同じサイズのタイルでできています。タイルに描くとそのタイルを使っているすべての場所が変わり、タイルスタンプツールでグリッドにタイルを配置できます。</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>空のタイル (セルを消去)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>タイル {0} 個、{1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>タイル {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>表示時間</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>クリックしてテキストを追加します</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>タイルスタンプ</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>クリックまたはドラッグで選択したタイルを配置します。右クリックでセルを消去、Alt+クリックでカーソル下のタイルを取得します。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>ズーム</value>

@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Trắng</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Đã dùng gần đây. Bấm để đặt màu tiền cảnh, bấm chuột phải để đặt màu nền.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Không có lệnh phù hợp</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Bảng lệnh...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Chuyển thành lớp điểm ảnh</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Chuyển thành lớp bản đồ ô lát...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Sao chép</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Xuất bảng sprite...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Xuất bản đồ ô lát...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Tô bằng màu tiền cảnh</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Thẻ mới...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Lớp bản đồ ô lát mới...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Khung hình sau</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Xóa thẻ</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Xóa các ô lát không dùng</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Thay thế màu...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Ngưỡng</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Chiều cao ô lát</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Chiều rộng ô lát</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Lớp bản đồ ô lát được tạo từ các ô lát cùng kích thước. Vẽ lên một ô lát sẽ thay đổi nó ở mọi nơi nó được dùng.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Thành</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Sắp xếp lại lớp</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Sắp xếp lại bảng màu</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Chọn</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Nhóm</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Bản đồ ô lát</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Ô này được liên kết với các khung hình khác</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Lớp tham chiếu: không được xuất</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Lớp bản đồ ô lát với ô lát {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Mở rộng hoặc thu gọn nhóm</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Chế độ lát gạch</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Bản đồ ô lát</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Xem</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Bấm vào nơi cần đặt văn bản</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Ô lát {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Đến trong suốt</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Sắp xếp theo độ bão hòa</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Bấm: màu tiền cảnh. Bấm chuột phải: màu nền. Bấm đúp: chỉnh sửa. Kéo: sắp xếp lại. Ctrl+bấm chuột phải: tùy chọn khác.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Màu</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Xem trước</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Ô lát</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Ô bàn cờ</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Hãy chọn một lớp điểm ảnh trước</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Hãy chọn một lớp bản đồ ô lát trước</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Vùng chọn {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Khung hình {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Đã chia lớp thành {0} ô lát</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>Đã xóa {0} ô lát không dùng</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Chữ</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Vẽ sẽ thay đổi mọi bản sao của ô lát</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Khi tắt, vẽ lên ô lát sẽ tạo ô lát mới cho ô đó thay vì thay đổi ô lát dùng chung.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Lớp đang hoạt động không phải lớp bản đồ ô lát. Lớp bản đồ ô lát được tạo từ các ô lát cùng kích thước: vẽ lên ô lát sẽ thay đổi nó ở mọi nơi nó được dùng, và công cụ Dấu ô lát đặt ô lát lên lưới.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Ô lát trống (xóa ô)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} ô lát, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Ô lát {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Thời lượng</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Bấm để thêm văn bản</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Dấu ô lát</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Bấm hoặc kéo để đặt ô lát đã chọn. Bấm chuột phải để xóa ô. Alt+bấm để lấy ô lát dưới con trỏ.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Thu phóng</value>

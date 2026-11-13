@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Blanc</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Utilisées récemment. Cliquez pour la couleur de premier plan, clic droit pour la couleur d'arrière-plan.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Aucune commande correspondante</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Palette de commandes...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Convertir en calque de pixels</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Convertir en calque de carte de tuiles...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copier</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Exporter la planche de sprites...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exporter la carte de tuiles...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Remplir avec la couleur de premier plan</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nouvelle étiquette...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nouveau calque de carte de tuiles...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Image suivante</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Supprimer l'étiquette</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Supprimer les tuiles inutilisées</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Remplacer la couleur...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Seuil</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Hauteur de tuile</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Largeur de tuile</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Les calques de carte de tuiles sont faits de tuiles d'une même taille. Peindre une tuile la modifie partout où elle est utilisée.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Vers</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Réorganiser le calque</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Réorganiser la palette</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Sélectionner</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Groupe</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Carte de tuiles</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Ce cellulo est lié à d'autres images</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Calque de référence : non exporté</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Calque de carte de tuiles avec des tuiles de {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Développer ou réduire le groupe</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Mode mosaïque</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Carte de tuiles</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Affichage</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Cliquez à l'endroit où placer le texte</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Tuile {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Vers transparent</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Trier par saturation</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Clic : couleur de premier plan. Clic droit : couleur d'arrière-plan. Double-clic : modifier. Glisser : réorganiser. Ctrl+clic droit : plus d'options.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Couleur</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Aperçu</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Tuiles</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Damier</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Sélectionnez d'abord un calque de pixels</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Sélectionnez d'abord un calque de carte de tuiles</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Sélection {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Image {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Le calque a été divisé en {0} tuile(s)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} tuile(s) inutilisée(s) supprimée(s)</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Texte</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Peindre modifie chaque copie d'une tuile</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Désactivé, peindre une tuile donne à cette case une nouvelle tuile au lieu de modifier la tuile partagée.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Le calque actif n'est pas un calque de carte de tuiles. Un calque de carte de tuiles est fait de tuiles d'une même taille : peindre une tuile la modifie partout où elle est utilisée, et l'outil Tampon de tuiles place des tuiles sur la grille.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Tuile vide (efface les cases)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} tuiles, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Tuile {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Durée</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Cliquez pour ajouter du texte</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Tampon de tuiles</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Cliquez ou faites glisser pour placer la tuile choisie. Le clic droit efface les cases. Alt+clic prélève la tuile sous le curseur.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

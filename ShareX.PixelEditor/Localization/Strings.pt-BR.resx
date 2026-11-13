@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Branco</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Usadas recentemente. Clique para a cor de primeiro plano e clique com o botão direito para a cor de fundo.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Nenhum comando correspondente</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Paleta de comandos...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Converter em camada de pixels</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Converter em camada de mapa de blocos...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Exportar folha de sprites...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Exportar mapa de blocos...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Preencher com a cor de primeiro plano</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Nova etiqueta...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Nova camada de mapa de blocos...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Próximo quadro</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Remover etiqueta</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Remover blocos não usados</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Substituir cor...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Limite</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Altura do bloco</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Largura do bloco</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Camadas de mapa de blocos são feitas de blocos de um mesmo tamanho. Pintar um bloco o altera em todos os lugares em que é usado.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Para</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Reordenar camada</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Reordenar paleta</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Selecionar</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grupo</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Mapa de blocos</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Esta célula está vinculada a outros quadros</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Camada de referência: não exportada</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Camada de mapa de blocos com blocos de {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Expandir ou recolher o grupo</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Modo lado a lado</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Mapa de blocos</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Visualizar</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Clique onde o texto deve ficar</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Bloco {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Para transparente</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Ordenar por saturação</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Clique: cor de primeiro plano. Clique direito: cor de fundo. Clique duplo: editar. Arrastar: reordenar. Ctrl+clique direito: mais opções.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Cor</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Prévia</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Blocos</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Xadrez</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Selecione primeiro uma camada de pixels</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Selecione primeiro uma camada de mapa de blocos</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Seleção {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Quadro {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>A camada foi dividida em {0} bloco(s)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} bloco(s) não usado(s) removido(s)</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Texto</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Pintar altera todas as cópias de um bloco</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Quando desativado, pintar um bloco dá a essa célula um bloco novo em vez de alterar o bloco compartilhado.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>A camada ativa não é uma camada de mapa de blocos. Uma camada de mapa de blocos é feita de blocos de um mesmo tamanho: pintar um bloco o altera em todos os lugares em que é usado, e a ferramenta Carimbo de blocos coloca blocos na grade.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Bloco vazio (limpa células)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} blocos, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Bloco {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Duração</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Clique para adicionar texto</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Carimbo de blocos</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Clique ou arraste para colocar o bloco selecionado. O clique direito limpa células. Alt+clique pega o bloco sob o cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

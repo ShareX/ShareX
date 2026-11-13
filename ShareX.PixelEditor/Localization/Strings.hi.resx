@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>सफ़ेद</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>हाल ही में उपयोग किए गए। अग्रभूमि रंग के लिए क्लिक करें, पृष्ठभूमि रंग के लिए राइट-क्लिक करें।</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>कोई मेल खाता कमांड नहीं</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>कमांड पैलेट...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>पिक्सेल लेयर में बदलें</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>टाइलमैप लेयर में बदलें...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>कॉपी करें</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>स्प्राइट शीट निर्यात करें...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>टाइलमैप निर्यात करें...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>अग्रभूमि रंग से भरें</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>नया टैग...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>नई टाइलमैप लेयर...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>अगला फ़्रेम</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>टैग हटाएँ</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>अप्रयुक्त टाइल हटाएँ</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>रंग बदलें...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>सीमा मान</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>टाइल की ऊँचाई</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>टाइल की चौड़ाई</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>टाइलमैप लेयर एक ही आकार की टाइलों से बनती हैं। किसी टाइल पर पेंट करने से वह हर जगह बदल जाती है जहाँ उसका उपयोग हुआ है।</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>में</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>परत का क्रम बदलें</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>पैलेट का क्रम बदलें</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>चयन करें</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>समूह</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>टाइलमैप</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>यह सेल अन्य फ़्रेम से लिंक है</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>संदर्भ परत: निर्यात नहीं होती</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>{0} × {1} px टाइलों वाली टाइलमैप लेयर</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>समूह फैलाएँ या समेटें</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>टाइल मोड</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>टाइलमैप</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>दृश्य(_V)</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>जहाँ पाठ रखना है वहाँ क्लिक करें</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>टाइल {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>पारदर्शी तक</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>संतृप्ति के अनुसार क्रमबद्ध करें</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>क्लिक: अग्रभूमि रंग। राइट-क्लिक: पृष्ठभूमि रंग। डबल-क्लिक: संपादित करें। खींचें: क्रम बदलें। Ctrl+राइट-क्लिक: अधिक विकल्प।</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>रंग</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>पूर्वावलोकन</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>टाइलें</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>चेकर</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>पहले एक पिक्सेल परत चुनें</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>पहले एक टाइलमैप लेयर चुनें</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>चयन {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   फ़्रेम {2}/{3}   {4} मि.से.</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>लेयर को {0} टाइलों में बाँटा गया</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} अप्रयुक्त टाइलें हटाई गईं</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>पाठ</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>पेंट करने से टाइल की हर प्रति बदलती है</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>बंद होने पर, टाइल पर पेंट करने से साझा टाइल बदलने के बजाय उस सेल को नई टाइल मिलती है।</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>सक्रिय लेयर टाइलमैप लेयर नहीं है। टाइलमैप लेयर एक ही आकार की टाइलों से बनती है: किसी टाइल पर पेंट करने से वह हर जगह बदलती है जहाँ उसका उपयोग हुआ है, और टाइल स्टैम्प टूल ग्रिड पर टाइलें रखता है।</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>खाली टाइल (सेल साफ़ करती है)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} टाइलें, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>टाइल {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>अवधि</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>पाठ जोड़ने के लिए क्लिक करें</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>टाइल स्टैम्प</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>चुनी गई टाइल रखने के लिए क्लिक करें या खींचें। राइट-क्लिक सेल साफ़ करता है। Alt+क्लिक कर्सर के नीचे की टाइल चुनता है।</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>ज़ूम</value>

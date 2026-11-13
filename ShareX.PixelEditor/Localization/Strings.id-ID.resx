@@ -84,6 +84,9 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Putih</value>
   </data>
+  <data name="Color_RecentTip" xml:space="preserve">
+    <value>Baru digunakan. Klik untuk warna latar depan, klik kanan untuk warna latar belakang.</value>
+  </data>
   <data name="CommandPalette_NoResults" xml:space="preserve">
     <value>Tidak ada perintah yang cocok</value>
   </data>
@@ -135,6 +138,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Palet Perintah...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Ubah ke Lapisan Piksel</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Ubah ke Lapisan Peta Ubin...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Salin</value>
   </data>
@@ -182,6 +191,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Ekspor Lembar Sprite...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Ekspor Peta Ubin...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Isi dengan Warna Latar Depan</value>
@@ -318,6 +330,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>Tag Baru...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>Lapisan Peta Ubin Baru...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Bingkai Berikutnya</value>
   </data>
@@ -368,6 +383,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Hapus Tag</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Hapus Ubin yang Tidak Dipakai</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Ganti Warna...</value>
@@ -642,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Ambang</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Tinggi ubin</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Lebar ubin</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Lapisan peta ubin dibuat dari ubin berukuran sama. Melukis pada ubin akan mengubahnya di semua tempat ubin itu digunakan.</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>Menjadi</value>
   </data>
@@ -819,6 +846,9 @@
   <data name="History_ReorderLayer" xml:space="preserve">
     <value>Urutkan Ulang Lapisan</value>
   </data>
+  <data name="History_ReorderPalette" xml:space="preserve">
+    <value>Urutkan Ulang Palet</value>
+  </data>
   <data name="History_Select" xml:space="preserve">
     <value>Pilih</value>
   </data>
@@ -861,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Grup</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Peta Ubin</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>Sel ini tertaut ke bingkai lain</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Lapisan referensi: tidak diekspor</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Lapisan peta ubin dengan ubin {0} × {1} px</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Bentangkan atau ciutkan grup</value>
@@ -923,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Mode Ubin</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Peta Ubin</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_Tampilan</value>
@@ -1068,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Klik tempat teks akan diletakkan</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Ubin {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>Ke transparan</value>
   </data>
@@ -1143,6 +1185,9 @@
   <data name="Palette_SortSaturation" xml:space="preserve">
     <value>Urutkan menurut Saturasi</value>
   </data>
+  <data name="Palette_SwatchTip" xml:space="preserve">
+    <value>Klik: warna latar depan. Klik kanan: warna latar belakang. Klik ganda: edit. Seret: ubah urutan. Ctrl+klik kanan: opsi lainnya.</value>
+  </data>
   <data name="Panel_Color" xml:space="preserve">
     <value>Warna</value>
   </data>
@@ -1157,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Pratinjau</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Ubin</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Papan catur</value>
@@ -1404,8 +1452,20 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Pilih lapisan piksel terlebih dahulu</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Pilih lapisan peta ubin terlebih dahulu</value>
+  </data>
+  <data name="Status_Selection" xml:space="preserve">
+    <value>Pilihan {0} × {1}</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Bingkai {2}/{3}   {4} md</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>Lapisan dibagi menjadi {0} ubin</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} ubin yang tidak dipakai dihapus</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1430,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Teks</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Melukis mengubah setiap salinan ubin</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>Jika nonaktif, melukis pada ubin memberi sel itu ubin baru alih-alih mengubah ubin yang dipakai bersama.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>Lapisan aktif bukan lapisan peta ubin. Lapisan peta ubin dibuat dari ubin berukuran sama: melukis pada ubin mengubahnya di semua tempat ubin itu dipakai, dan alat Stempel Ubin menempatkan ubin pada kisi.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Ubin kosong (mengosongkan sel)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} ubin, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Ubin {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Durasi</value>
@@ -1586,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Klik untuk menambahkan teks</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Stempel Ubin</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Klik atau seret untuk menempatkan ubin yang dipilih. Klik kanan mengosongkan sel. Alt+klik mengambil ubin di bawah kursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>
