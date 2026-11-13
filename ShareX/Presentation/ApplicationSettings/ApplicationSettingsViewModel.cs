@@ -708,8 +708,23 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
     public bool RecentTasksShowInMainWindow { get => Settings.RecentTasksShowInMainWindow; set => SetSetting(Settings.RecentTasksShowInMainWindow, value, x => Settings.RecentTasksShowInMainWindow = x); }
     public bool RecentTasksShowInTrayMenu { get => Settings.RecentTasksShowInTrayMenu; set => SetSetting(Settings.RecentTasksShowInTrayMenu, value, x => Settings.RecentTasksShowInTrayMenu = x); }
     public bool RecentTasksTrayMenuMostRecentFirst { get => Settings.RecentTasksTrayMenuMostRecentFirst; set => SetSetting(Settings.RecentTasksTrayMenuMostRecentFirst, value, x => Settings.RecentTasksTrayMenuMostRecentFirst = x); }
-    public bool TaskListLimitEnabled { get => Settings.TaskListLimitEnabled; set => SetSetting(Settings.TaskListLimitEnabled, value, x => Settings.TaskListLimitEnabled = x); }
-    public decimal TaskListLimit { get => Settings.TaskListLimit; set => SetSetting(Settings.TaskListLimit, decimal.ToInt32(value), x => Settings.TaskListLimit = x); }
+    public bool TaskListLimitEnabled
+    {
+        get => Settings.TaskListLimitEnabled;
+        set
+        {
+            if (SetSetting(Settings.TaskListLimitEnabled, value, x => Settings.TaskListLimitEnabled = x)) TaskManager.TrimTaskList();
+        }
+    }
+
+    public decimal TaskListLimit
+    {
+        get => Settings.TaskListLimit;
+        set
+        {
+            if (SetSetting(Settings.TaskListLimit, decimal.ToInt32(value), x => Settings.TaskListLimit = x)) TaskManager.TrimTaskList();
+        }
+    }
 
     public bool DontShowPrintSettingsDialog { get => Settings.DontShowPrintSettingsDialog; set => SetSetting(Settings.DontShowPrintSettingsDialog, value, x => Settings.DontShowPrintSettingsDialog = x); }
 

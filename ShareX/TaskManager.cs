@@ -91,7 +91,7 @@ namespace ShareX
             }
         }
 
-        private static void TrimTaskList()
+        public static void TrimTaskList()
         {
             if (!ApplicationState.Settings.TaskListLimitEnabled)
             {
@@ -134,7 +134,7 @@ namespace ShareX
 
         public static void StopAllTasks()
         {
-            foreach (WorkerTask task in Tasks)
+            foreach (WorkerTask task in Tasks.ToArray())
             {
                 if (task != null) task.Stop();
             }
@@ -451,6 +451,8 @@ namespace ShareX
                     WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
                     Start(task);
                 }
+
+                TrimTaskList();
             }
         }
     }
