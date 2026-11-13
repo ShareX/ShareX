@@ -798,6 +798,7 @@ public partial class RegionCaptureWindow : Window
         if (_resizeNode.HasValue)
         {
             SetInteraction(RegionInteraction.Resizing);
+            ResizeSelection(point);
         }
         else if (HasValidSelection() && _regionOverlay.Selection.Contains(point))
         {
