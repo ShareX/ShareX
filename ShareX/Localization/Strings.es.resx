@@ -1679,6 +1679,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>Anclar a la pantalla</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Editor de píxeles...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR código</value>
   </data>
@@ -1855,6 +1858,9 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>Editar en el editor de fotos...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>Editar en el editor de píxeles...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Archivo</value>

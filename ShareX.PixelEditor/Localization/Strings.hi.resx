@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>योग</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>रंग बर्न</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>रंग डॉज</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>गहरा करें</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>विभाजित करें</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>बहिष्करण</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>कठोर प्रकाश</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>हल्का करें</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>दीप्ति</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>गुणा करें</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>ओवरले</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>संतृप्ति</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>स्क्रीन</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>सौम्य प्रकाश</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>घटाएँ</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>काला</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>गहरा</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>हल्का</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>मध्यम</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>सफ़ेद</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>वास्तविक आकार (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>नरम किनारे हटाएँ...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>बॉर्डर...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>चमक/कंट्रास्ट...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>ब्रश का आकार बढ़ाएँ</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>ब्रश पूर्वावलोकन दिखाएँ</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>ब्रश का आकार घटाएँ</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>कैनवास आकार...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>सेल गुण...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>साफ़ करें</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>सेल साफ़ करें</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>बंद करें</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>सभी बंद करें</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>कॉपी करें</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>छवि को क्लिपबोर्ड पर कॉपी करें</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>मर्ज करके कॉपी करें</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>चयन तक क्रॉप करें</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>काटें</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>चयन से ब्रश बनाएँ</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>फ़्रेम हटाएँ</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>लेयर हटाएँ</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>चयन हटाएँ</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>ड्रॉप शैडो...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>लेयर डुप्लिकेट करें</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>स्प्राइट डुप्लिकेट करें</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>बाहर निकलें</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>निर्यात करें...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>स्प्राइट शीट निर्यात करें...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>अग्रभूमि रंग से भरें</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>पहला फ़्रेम</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>स्क्रीन पर फ़िट करें</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>परतें समतल करें</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>क्षैतिज पलटें</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>लंबवत पलटें</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>फ़्रेम गुण...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>पूर्ण स्क्रीन</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>रंगहीन करें</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>ग्रिड दिखाएँ</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>ग्रिड सेटिंग...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>बढ़ाएँ...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>ह्यू/संतृप्ति...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>छवियों को फ़्रेम के रूप में आयात करें...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>छवि को परत के रूप में आयात करें...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>स्प्राइट शीट आयात करें...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>रंग उलटें</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>चयन उलटें</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>अंतिम फ़्रेम</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>ऊपर की परत चुनें</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>नीचे की परत चुनें</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>लॉक किया हुआ</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>परत नीचे ले जाएँ</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>परत सबसे नीचे ले जाएँ</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>परत सबसे ऊपर ले जाएँ</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>परत ऊपर ले जाएँ</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>लेयर गुण...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>संदर्भ परत</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>दृश्यमान</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>सेल लिंक करें</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>लूप में चलाएँ</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>नीचे मर्ज करें</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>फ़्रेम बाएँ ले जाएँ</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>फ़्रेम दाएँ ले जाएँ</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>नया...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>नया खाली फ़्रेम</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>नया फ़्रेम</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड से नया</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>नया समूह</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>नई लेयर</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>नया लिंक किया फ़्रेम</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>नया टैग...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>अगला फ़्रेम</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>अनियन स्किन सेटिंग...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>अनियन स्किन</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>खोलें...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>आउटलाइन...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>चिपकाएँ</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>नई परत के रूप में पेस्ट करें</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>नए स्प्राइट के रूप में पेस्ट करें</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>पिक्सेल ग्रिड दिखाएँ</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>एनिमेशन चलाएँ/रोकें</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>केवल वर्तमान टैग चलाएँ</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>पोस्टराइज़...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>प्राथमिकताएँ...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>पिछला फ़्रेम</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>फिर से करें</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>रंग घटाएँ...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>टैग हटाएँ</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>रंग बदलें...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>कार्यक्षेत्र रीसेट करें</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>फ़्रेम क्रम उलटें</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>180° घुमाएँ</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>90° वामावर्त घुमाएँ</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>90° दक्षिणावर्त घुमाएँ</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>सहेजें</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>इस रूप में सहेजें...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>सब चुनें</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>अग्रभूमि रंग चुनें</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>सेल की सामग्री चुनें</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>नीचे खिसकाएँ</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>बाएँ खिसकाएँ</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>दाएँ खिसकाएँ</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>ऊपर खिसकाएँ</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>कीबोर्ड शॉर्टकट...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>विकल्प पट्टी</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>स्लाइस दिखाएँ</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>टाइमलाइन</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>टूलबार</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>सिकोड़ें...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>ग्रिड से स्नैप करें</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>स्प्राइट का आकार...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>चयन की रेखा खींचें</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>अक्ष की स्थिति सेट करें...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>क्षैतिज सममिति</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>अक्ष केंद्र में करें</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>ऊर्ध्वाधर सममिति</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>टैग गुण...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>क्षैतिज टाइल करें</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>टाइल मोड</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>ऊर्ध्वाधर टाइल करें</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>दो-स्तंभ टूलबार</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>मुक्त रूपांतरण</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>खाली किनारे काटें</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>पूर्ववत करें</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>सेल अनलिंक करें</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>छवि अपलोड करें</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>ज़ूम इन</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>ज़ूम आउट</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>सभी फ़्रेम पर लागू करें</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>हर पिक्सेल को पूरी तरह अपारदर्शी या पूरी तरह पारदर्शी बनाता है। आयातित छवियों के नरम किनारे साफ़ करने के लिए उपयोग करें।</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>एंकर</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>इस पर लागू करें</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>ऊर्ध्वाधर अक्ष (आधे पिक्सेल)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>क्षैतिज अक्ष (आधे पिक्सेल)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>आंशिक पारदर्शिता हटाएँ</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>ब्लेंड मोड</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>चमक</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>कंट्रास्ट</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>बनाएँ</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>दिशा</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>अवधि (मि.से.)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>फ़्रेम {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>फ़्रेम {0} से {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>से</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>इस फ़्रेम से</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>वर्ण</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>अनुपात बनाए रखें</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>स्तर</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>हल्कापन</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>विधि</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>नाम</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>नया स्प्राइट</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>ऑफ़सेट X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>ऑफ़सेट Y</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>बाद के फ़्रेम</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>पहले के फ़्रेम</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>पहले के फ़्रेम लाल और बाद के फ़्रेम नीले रंगें</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>विकर्ण कोने शामिल करें</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>आकृति के अंदर बनाएँ</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>प्रतिशत</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>पिक्सेल</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>प्रीसेट</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>पूरे स्प्राइट से इतने रंगों की पैलेट बनाता है और हर सेल को उससे दोबारा रंगता है। नई पैलेट मौजूदा पैलेट की जगह लेती है।</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>हर सेल को मौजूदा पैलेट के निकटतम रंगों से दोबारा रंगता है।</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>निकटतम पड़ोसी पिक्सेल को तीखा रखता है। पिक्सेल आर्ट स्केलिंग 2× या अधिक बड़ा करने पर सीढ़ीदार किनारों को भी चिकना करती है।</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>संतृप्ति</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>सम मान अक्ष को दो पिक्सेल के बीच रखता है; विषम मान उसे पिक्सेल के बीच से गुज़ारता है।</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>सीमा मान</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>में</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>इस फ़्रेम तक</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>पारदर्शी पृष्ठभूमि</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>आगे</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>आगे-पीछे</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>उलटा आगे-पीछे</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>उलटें</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>क्रमबद्ध 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>क्रमबद्ध 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>फ़्लॉयड–स्टाइनबर्ग</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>कोई नहीं</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>क्रमबद्ध</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>पैनल बंद करें</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>पैनल समूह संक्षिप्त करें</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>पैनल समूह विस्तृत करें</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>{0} वाले समूह में ले जाएँ</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>नए समूह में ले जाएँ</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>पैनल मेनू</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>सभी फ़्रेम</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>एनिमेटेड PNG</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>निर्यात</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>वर्तमान फ़्रेम</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>प्रारूप</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>फ़्रेम</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>एनिमेटेड GIF</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, {2} फ़्रेम</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>PNG छवि</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>मापक्रम</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>चयनित फ़्रेम</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>PNG अनुक्रम</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>यह प्रारूप केवल वर्तमान फ़्रेम सहेजता है।</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>टैग: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>सभी समर्थित फ़ाइलें</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>छवियाँ</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>पैलेट</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>ShareX पिक्सेल संपादक स्प्राइट</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>ब्लेंड मोड</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>स्लाइस हटाएँ</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>चयन हटाएँ</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>पैलेट रंग संपादित करें</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>फ़्रेम अवधि</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>लेयर छिपाएँ</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>पैलेट लोड करें</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>लेयर लॉक करें</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>चयन बदलें</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>ले जाएँ</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>फ़्रेम ले जाएँ</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>स्लाइस संपादित करें</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>नया</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>नया स्लाइस</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>परत की अपारदर्शिता</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>खोलें</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>स्लाइस गुण</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>परत का क्रम बदलें</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>चयन करें</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>लेयर दिखाएँ</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>केवल यह परत दिखाएँ</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>परत अनलॉक करें</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>पीछे</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>गहरा करें</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>हल्का करें</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>अल्फ़ा लॉक</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>सामान्य</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>बदलें</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} प्रति</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>लेयर</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>समतल</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>समूह</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>यह सेल अन्य फ़्रेम से लिंक है</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>संदर्भ परत: निर्यात नहीं होती</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>समूह फैलाएँ या समेटें</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>परत लॉक या अनलॉक करें</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>परत दिखाएँ या छिपाएँ</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>सेल</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>संपादन(_E)</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>प्र_भाव</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(खाली)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>फ़ाइल(_F)</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>फ़्रे_म</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_सहायता</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>लेयर(_L)</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>हाल की फ़ाइलें खोलें</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>पैनल</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>चयन(_S)</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>पिक्सेल खिसकाएँ (घुमाकर)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>स्_प्राइट</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>सममिति</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>टैग</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>टाइल मोड</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>दृश्य(_V)</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>क्लिपबोर्ड में कोई छवि नहीं है।</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>"{0}" पूरा नहीं हो सका: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>"{0}" नहीं खोला जा सका: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>"{0}" सहेजा नहीं जा सका: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>न सहेजें</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>कार्रवाई विफल रही: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>बंद करने से पहले "{0}" में किए गए परिवर्तन सहेजें?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>छवि बहुत बड़ी है। स्प्राइट अधिकतम {0} पिक्सेल चौड़े और ऊँचे हो सकते हैं।</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>सभी परतें</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>सक्रिय परत के बजाय सभी दृश्यमान परतों के रंगों के आधार पर भरें</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>कोण</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>लागू करें</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>रद्द करें</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>ब्रश रीसेट करें</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>संलग्न</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>केवल क्लिक किए गए पिक्सेल से जुड़े पिक्सेल; उस रंग का हर पिक्सेल लेने के लिए बंद करें</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>कस्टम ब्रश</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>घनत्व</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>विकर्ण</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>उन पिक्सेल से भी फैलें जो केवल कोनों पर छूते हैं</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>डिथर</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>क्लिक अग्रभूमि रंग चुनता है, राइट-क्लिक पृष्ठभूमि रंग</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>भरा हुआ</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>ऊँचाई</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>स्याही</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>रैखिक ग्रेडिएंट</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>चयन या सेल को ले जाने के लिए खींचें। प्रतिलिपि ले जाने के लिए Alt दबाए रखें।</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>अपारदर्शिता</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>रूपरेखा</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>पैटर्न</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>पिक्सेल परफ़ेक्ट</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>1 px ब्रश से खींची मुक्तहस्त रेखाओं के अतिरिक्त कोने वाले पिक्सेल हटाता है</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>रेडियल ग्रेडिएंट</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>त्रिज्या</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>गोल नोक</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>सक्रिय परत के बजाय सभी दृश्यमान परतों के रंग उपयोग करें</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>चयन में जोड़ें (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>चयन के साथ प्रतिच्छेदन (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>नया चयन</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>चयन से घटाएँ (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>क्लिक हल्का करता है, राइट-क्लिक गहरा करता है, पैलेट के अनुसार</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>आकार</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>स्लाइस बनाने के लिए खींचें। चुनने के लिए स्लाइस पर क्लिक करें, नाम बदलने के लिए डबल-क्लिक करें।</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>वर्गाकार नोक</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>जहाँ पाठ रखना है वहाँ क्लिक करें</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>पारदर्शी तक</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>अग्रभूमि रंग को पृष्ठभूमि रंग में मिलाने के बजाय धीरे-धीरे गायब करें</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>सहनशीलता</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>रूपांतरित करें</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>चौड़ाई</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>अग्रभूमि रंग को पैलेट में जोड़ें</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} रंग</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>रंग संपादित करें...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>स्प्राइट से पैलेट बनाएँ</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>पैलेट लोड करें...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>पैलेट मेनू</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>प्रीसेट</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>रंग क्रम जोड़ें...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>अग्रभूमि रंग से पृष्ठभूमि रंग तक रंगों का क्रम जोड़ता है।</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>चरण</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>स्प्राइट को पैलेट पर फिर से मैप करें...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>पैलेट से रंग हटाएँ</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>अप्रयुक्त रंग हटाएँ</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>अग्रभूमि रंग से बदलें</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>क्रम उलटें</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>पैलेट सहेजें...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>इस रंग के पिक्सेल चुनें</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>चमक के अनुसार क्रमबद्ध करें</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>ह्यू के अनुसार क्रमबद्ध करें</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>संतृप्ति के अनुसार क्रमबद्ध करें</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>रंग</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>इतिहास</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>लेयर</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>पैलेट</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>पूर्वावलोकन</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>चेकर</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>सघन</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>विकर्ण</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>बिंदु</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>क्षैतिज रेखाएँ</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>ठोस</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>विरल</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>लंबवत रेखाएँ</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>पारदर्शिता चेकर</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>खाने का आकार (पिक्सेल)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>इतिहास स्थितियाँ</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>इस ज़ूम से पिक्सेल ग्रिड दिखाएँ (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>विंडो का आकार और स्थिति याद रखें</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>टाइमलाइन सेल का आकार</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>फ़िट ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>पूर्वावलोकन चलाएँ या रोकें</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>निकटतम पड़ोसी</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>पिक्सेल आर्ट स्केलिंग</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>चिकना (बाइक्यूबिक)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>वर्तमान सेल</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>परत के सभी फ़्रेम</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>चयनित फ़्रेम</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>पूरा स्प्राइट</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>फ़्रेम की ऊँचाई</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>फ़्रेम की चौड़ाई</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>स्तंभ</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>ग्रिड</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>क्षैतिज पट्टी</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>आयात करें</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} खाने, अधिकतम {2} फ़्रेम</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>शीट का आकार: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>शीट: {0} × {1} px, {2} फ़्रेम</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>अभिन्यास</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>JSON डेटा लिखें (फ़्रेम, टैग और स्लाइस)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>पैडिंग</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>खाली खाने छोड़ें</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>अंतर</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>ऊर्ध्वाधर पट्टी</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>पृष्ठभूमि रंग से पेंट करें</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>आदेश</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>सभी पैनल छिपाएँ या दिखाएँ</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>माउस का मध्य बटन</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Ctrl+Shift+E जैसा शॉर्टकट लिखें। विकल्पों को अल्पविराम से अलग करें; शॉर्टकट हटाने के लिए फ़ील्ड खाली छोड़ें।</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>दृश्य खिसकाएँ</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>पेंट करते समय रंग चुनें</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>डिफ़ॉल्ट पर रीसेट करें</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>माउस का दायाँ बटन</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>अंतिम बिंदु से सीधी रेखा (पेंसिल)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>उपकरण</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>माउस व्हील</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>ज़ूम</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>स्लाइस {0}</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>स्लाइस का नाम बदलें</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>क्लिपबोर्ड</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>स्प्राइट-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>हाल की फ़ाइलें साफ़ करें</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>नया स्प्राइट</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>कोई हालिया फ़ाइल नहीं</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>खोलें</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>हाल के</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>त्वरित शुरुआत</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>उस रंग का कोई पिक्सेल नहीं</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>क्लिपबोर्ड पर कॉपी किया गया</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} निर्यात किया गया</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>निर्यात हो रहा है...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>सक्रिय परत छिपी है</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>सक्रिय परत लॉक है</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>कॉपी करने के लिए कुछ नहीं</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>नीचे विलय करने के लिए कोई पिक्सेल परत नहीं है</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>सेल खाली है</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>फिर से रंगा जा रहा है...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>आकार बदला जा रहा है...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} सहेजा गया</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>पहले एक पिक्सेल परत चुनें</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   फ़्रेम {2}/{3}   {4} मि.से.</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>टैग {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>चिकने किनारे</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>बोल्ड</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>फ़ॉन्ट</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>इटैलिक</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>पाठ एक चयन के रूप में रखा जाता है जिसे परत का हिस्सा बनने से पहले आप खिसका सकते हैं।</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>पाठ</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>अवधि</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>चयनित फ़्रेम कितनी देर दिखते हैं, मिलीसेकंड में</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} फ़्रेम   {1:0.##} से.   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>लेयर</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>फ़्रेम {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>अधिकतम करें</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>छोटा करना</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>पुनर्स्थापित करें</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>पेंट बकेट</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>समान रंग का क्षेत्र भरने के लिए क्लिक करें</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>रंग प्रतिस्थापन</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>केवल पृष्ठभूमि रंग वाले पिक्सेल पर अग्रभूमि रंग लगाता है; राइट-क्लिक इसका उल्टा करता है</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>भरी हुई रूपरेखा</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>मुक्तहस्त रूपरेखा बनाएँ; छोड़ने पर यह बंद होकर भर जाती है</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>वक्र</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>वक्र मोड़ने के लिए हिलाएँ, समाप्त करने के लिए क्लिक करें, रद्द करने के लिए Esc</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>एक रेखा खींचें, फिर उसे मोड़ने के लिए हिलाएँ और समाप्त करने के लिए क्लिक करें</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>दीर्घवृत्त</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>दीर्घवृत्ताकार मार्की</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>दीर्घवृत्त बनाने के लिए खींचें। Shift वृत्त बनाता है, Ctrl केंद्र से बनाता है</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>इरेज़र</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>पिक्सेल मिटाने के लिए खींचें</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>आईड्रॉपर</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>अग्रभूमि रंग चुनने के लिए क्लिक करें, पृष्ठभूमि रंग के लिए राइट-क्लिक करें</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>ग्रेडिएंट</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>अग्रभूमि से पृष्ठभूमि रंग तक ग्रेडिएंट भरने के लिए खींचें</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>हाथ</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>दृश्य खिसकाने के लिए खींचें। किसी भी टूल से खिसकाने के लिए Space दबाए रखें</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>लैसो</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>किसी क्षेत्र को चुनने के लिए उसके चारों ओर खींचें</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>रेखा</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>रेखा बनाने के लिए खींचें। Shift साफ़ पिक्सेल कोणों पर स्नैप करता है</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>मैजिक वैंड</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>समान रंग का क्षेत्र चुनने के लिए क्लिक करें</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>ले जाएँ</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>चयन या सेल ले जाने के लिए खींचें। स्केल और घुमाने के लिए हैंडल खींचें, लागू करने के लिए Enter</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>पेंसिल</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>अग्रभूमि रंग से बनाएँ; राइट-क्लिक पृष्ठभूमि रंग से बनाता है। Shift+क्लिक अंतिम बिंदु से रेखा बनाता है</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>बहुभुज लैसो</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>कोने जोड़ने के लिए क्लिक करें; चयन बंद करने के लिए डबल-क्लिक करें या Enter दबाएँ</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>आयताकार मार्की</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>आयत</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>आयत बनाने के लिए खींचें। Shift वर्ग बनाता है, Ctrl केंद्र से बनाता है</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>चयन के लिए खींचें। Shift जोड़ता है, Alt घटाता है, Shift+Alt प्रतिच्छेद करता है</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>छायांकन</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>पैलेट के अनुसार पिक्सेल हल्के करने के लिए खींचें; राइट-क्लिक गहरा करता है</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>खंड</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>एक नामित क्षेत्र चिह्नित करने के लिए खींचें जो स्प्राइट शीट के साथ निर्यात होता है</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>स्प्रे</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>बिखरे पिक्सेल छिड़कने के लिए दबाए रखें</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>पाठ</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>पाठ जोड़ने के लिए क्लिक करें</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>ज़ूम</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>ज़ूम इन के लिए क्लिक करें, ज़ूम आउट के लिए राइट-क्लिक या Alt+क्लिक करें</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>पृष्ठभूमि रंग</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>एक स्तंभ में समेटें</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>डिफ़ॉल्ट रंग</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>दो कॉलम में विस्तृत करें</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>अग्रभूमि रंग</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>अग्रभूमि और पृष्ठभूमि रंग अदला-बदली करें</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>पिक्सेल संपादक</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - पिक्सेल संपादक</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - पिक्सेल संपादक</value>
+  </data>
+</root>

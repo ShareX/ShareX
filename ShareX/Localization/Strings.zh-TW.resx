@@ -1679,6 +1679,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>釘選至螢幕</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>像素編輯器...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>二維碼</value>
   </data>
@@ -1855,6 +1858,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>在相片編輯器中編輯...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>在像素編輯器中編輯...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>檔案</value>

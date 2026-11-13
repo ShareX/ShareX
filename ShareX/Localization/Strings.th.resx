@@ -1679,6 +1679,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>ปักหมุดบนหน้าจอ...</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>ตัวแก้ไขพิกเซล...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR โค้ด...</value>
   </data>
@@ -1855,6 +1858,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>แก้ไขในตัวแก้ไขรูปภาพ...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>แก้ไขในตัวแก้ไขพิกเซล...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ไฟล์</value>

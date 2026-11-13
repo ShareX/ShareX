@@ -762,9 +762,6 @@ Do you still want to run it?</value>
   <data name="HotkeyType_PhotoEditor" xml:space="preserve">
     <value>Photo editor</value>
   </data>
-  <data name="HotkeyType_PixelEditor" xml:space="preserve">
-    <value>Pixel editor</value>
-  </data>
   <data name="HotkeyType_PinToScreen" xml:space="preserve">
     <value>Pin to screen</value>
   </data>
@@ -779,6 +776,9 @@ Do you still want to run it?</value>
   </data>
   <data name="HotkeyType_PinToScreenFromScreen" xml:space="preserve">
     <value>Pin to screen (From screen)</value>
+  </data>
+  <data name="HotkeyType_PixelEditor" xml:space="preserve">
+    <value>Pixel editor</value>
   </data>
   <data name="HotkeyType_PrintScreen" xml:space="preserve">
     <value>Capture entire screen</value>

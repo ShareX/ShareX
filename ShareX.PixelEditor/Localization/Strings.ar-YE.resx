@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>جمع</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>حرق اللون</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>تفتيح اللون</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>تغميق</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>الاختلاف</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>قسمة</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>استبعاد</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>ضوء قوي</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>تدرج اللون</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>تفتيح</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>السطوع</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>ضرب</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>تراكب</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>التشبع</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>شاشة</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>ضوء ناعم</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>طرح</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>أسود</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>داكن</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>فاتح</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>متوسط</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>أبيض</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>الحجم الفعلي (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>إزالة الحواف الناعمة...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>حد...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>السطوع/التباين...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>تكبير حجم الفرشاة</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>إظهار معاينة الفرشاة</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>تصغير حجم الفرشاة</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>حجم لوحة الرسم...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>خصائص الخلية...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>مسح</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>مسح الخلية</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>إغلاق</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>إغلاق الكل</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>نسخ</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>نسخ الصورة إلى الحافظة</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>نسخ مدمج</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>قص إلى التحديد</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>قص</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>تعريف فرشاة من التحديد</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>حذف الإطار</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>حذف الطبقة</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>إلغاء التحديد</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>ظل ساقط...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>تكرار الطبقة</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>تكرار السبرايت</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>تصدير...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>تصدير ورقة السبرايت...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>تعبئة بلون المقدمة</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>الإطار الأول</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>ملاءمة الشاشة</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>تسطيح الطبقات</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>قلب أفقي</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>قلب عمودي</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>خصائص الإطار...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>ملء الشاشة</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>إزالة التشبع</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>إظهار الشبكة</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>إعدادات الشبكة...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>توسيع...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>تدرج اللون/التشبع...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>استيراد صور كإطارات...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>استيراد صورة كطبقة...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>استيراد ورقة سبرايت...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>عكس الألوان</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>عكس التحديد</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>الإطار الأخير</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>تحديد الطبقة الأعلى</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>تحديد الطبقة الأسفل</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>مقفلة</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>تحريك الطبقة للأسفل</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>تحريك الطبقة إلى الأسفل</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>تحريك الطبقة إلى الأعلى</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>تحريك الطبقة للأعلى</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>خصائص الطبقة...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>طبقة مرجعية</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>مرئية</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>ربط الخلايا</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>تكرار التشغيل</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>دمج للأسفل</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>تحريك الإطارات يسارًا</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>تحريك الإطارات يمينًا</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>جديد...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>إطار فارغ جديد</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>إطار جديد</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>جديد من الحافظة</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>مجموعة جديدة</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>طبقة جديدة</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>إطار مرتبط جديد</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>وسم جديد...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>الإطار التالي</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>إعدادات قشرة البصل...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>قشرة البصل</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>فتح...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>حد خارجي...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>لصق</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>لصق كطبقة جديدة</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>لصق كسبرايت جديد</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>إظهار شبكة البكسلات</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>تشغيل/إيقاف الحركة</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>تشغيل الوسم الحالي فقط</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>تقليل التدرجات...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>التفضيلات...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>الإطار السابق</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>إعادة</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>تقليل الألوان...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>إزالة الوسم</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>استبدال اللون...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>إعادة تعيين مساحة العمل</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>عكس ترتيب الإطارات</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>تدوير 180°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>تدوير 90° عكس عقارب الساعة</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>تدوير 90° في اتجاه عقارب الساعة</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>حفظ</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>حفظ باسم...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>تحديد الكل</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>تحديد لون المقدمة</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>تحديد محتوى الخلية</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>إزاحة للأسفل</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>إزاحة لليسار</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>إزاحة لليمين</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>إزاحة للأعلى</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>اختصارات لوحة المفاتيح...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>شريط الخيارات</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>إظهار الشرائح</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>الخط الزمني</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>شريط الأدوات</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>تقليص...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>محاذاة إلى الشبكة</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>حجم السبرايت...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>تحديد حدود التحديد</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>تعيين موضع المحور...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>تناظر أفقي</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>توسيط المحاور</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>تناظر عمودي</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>خصائص الوسم...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>تكرار أفقي</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>وضع التكرار</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>تكرار عمودي</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>شريط أدوات بعمودين</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>تحويل حر</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>قص الحواف الفارغة</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>تراجع</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>فك ربط الخلايا</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>رفع الصورة</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>تصغير</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>تطبيق على كل الإطارات</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>يجعل كل بكسل إما معتمًا تمامًا أو شفافًا تمامًا. استخدمه لتنظيف الحواف الناعمة للصور المستوردة.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>نقطة الارتكاز</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>تطبيق على</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>المحور العمودي (أنصاف بكسل)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>المحور الأفقي (أنصاف بكسل)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>إزالة الشفافية الجزئية</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>وضع الدمج</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>السطوع</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>الألوان</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>التباين</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>إنشاء</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>الاتجاه</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>المدة (مللي ثانية)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>الإطار {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>الإطارات من {0} إلى {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>من</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>من الإطار</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>تدرج اللون</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>الحفاظ على التناسب</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>مستويات</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>الإضاءة</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>الطريقة</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>الاسم</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>سبرايت جديد</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>إزاحة X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>إزاحة Y</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>الإطارات اللاحقة</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>الإطارات السابقة</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>تلوين الإطارات السابقة بالأحمر واللاحقة بالأزرق</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>تضمين الزوايا القطرية</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>الرسم داخل الشكل</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>النسبة المئوية</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>البكسلات</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>الإعدادات المسبقة</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>ينشئ لوحة بهذا العدد من الألوان من السبرايت كله ويعيد تلوين كل خلية بها. اللوحة الجديدة تستبدل الحالية.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>يعيد تلوين كل خلية بأقرب ألوان اللوحة الحالية.</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>«أقرب جار» يحافظ على حدة البكسلات. تكبير فن البكسل ينعّم أيضًا الحواف المتدرجة عند التكبير مرتين أو أكثر.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>التشبع</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>القيمة الزوجية تضع المحور بين بكسلين؛ والقيمة الفردية تمرره عبر منتصف بكسل.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>العتبة</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>إلى</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>إلى الإطار</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>خلفية شفافة</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>للأمام</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>ذهاب وإياب</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>ذهاب وإياب معكوس</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>عكس</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>مرتّب 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>مرتّب 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>فلويد–ستاينبرغ</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>بدون</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>مرتّب</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>إغلاق اللوحة</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>طي مجموعة اللوحات</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>توسيع مجموعة اللوحات</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>نقل إلى المجموعة مع {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>نقل إلى مجموعة جديدة</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>قائمة اللوحة</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>كل الإطارات</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>PNG متحرك</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>تصدير</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>الإطار الحالي</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>الصيغة</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>الإطارات</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>GIF متحرك</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} بكسل، {2} إطار</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>صورة PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>تحجيم</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>الإطارات المحددة</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>تسلسل PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>هذا التنسيق يحفظ الإطار الحالي فقط.</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>الوسم: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>كل الملفات المدعومة</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>لوحات الألوان</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>سبرايت محرر البكسل في ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>وضع الدمج</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>حذف الشريحة</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>إلغاء التحديد</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>تعديل لون اللوحة</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>مدة الإطار</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>إخفاء الطبقة</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>تحميل لوحة ألوان</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>قفل الطبقة</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>تعديل التحديد</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>نقل</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>تحريك الإطارات</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>تحرير الشريحة</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>جديد</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>شريحة جديدة</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>عتامة الطبقة</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>خصائص الشريحة</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>إعادة ترتيب الطبقة</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>تحديد</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>إظهار الطبقة</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>إظهار هذه الطبقة فقط</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>فتح قفل الطبقة</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>خلف</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>تغميق</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>تفتيح</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>قفل الشفافية</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>عادي</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>استبدال</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>نسخة من {0}</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>طبقة</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>مسطّحة</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>مجموعة</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>هذه الخلية مرتبطة بإطارات أخرى</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>طبقة مرجعية: لا تُصدَّر</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>توسيع أو طي المجموعة</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>قفل أو فتح الطبقة</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>إظهار أو إخفاء الطبقة</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>خلية</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_تحرير</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>ال_تأثيرات</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(فارغ)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_ملف</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>إ_طار</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_مساعدة</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_طبقة</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>فتح الأخيرة</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>اللوحات</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_تحديد</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>إزاحة البكسلات (مع الالتفاف)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>_سبرايت</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>تناظر</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>العلامات</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>وضع التكرار</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_عرض</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>لا توجد صورة في الحافظة.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>تعذر إكمال "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>تعذر فتح "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>تعذر حفظ "{0}": {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>عدم الحفظ</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>فشلت العملية: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>هل تريد حفظ التغييرات على "{0}" قبل الإغلاق؟</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>الصورة كبيرة جدًا. يمكن أن يصل عرض وارتفاع السبرايت إلى {0} بكسل.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>كل الطبقات</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>التعبئة بناءً على ألوان كل الطبقات المرئية بدلًا من الطبقة النشطة</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>الزاوية</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>تطبيق</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>إعادة تعيين الفرشاة</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>متجاور</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>البكسلات المتصلة بالبكسل المنقور فقط؛ أوقفه لأخذ كل بكسل بذلك اللون</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>فرشاة مخصصة</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>الكثافة</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>قطري</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>الانتشار أيضًا عبر البكسلات التي تتلامس عند زواياها فقط</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>التنقيط</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>النقر يلتقط لون المقدمة، والنقر بالزر الأيمن يلتقط لون الخلفية</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>معبأ</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>الارتفاع</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>الحبر</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>تدرج خطي</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>اسحب لتحريك التحديد أو الخلية. اضغط Alt لتحريك نسخة.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>التعتيم</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>المخطط التفصيلي</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>نقش</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>بكسل مثالي</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>يزيل بكسلات الزوايا الزائدة من الخطوط الحرة المرسومة بفرشاة 1 بكسل</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>تدرج دائري</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>نصف القطر</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>رأس دائري</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>استخدام ألوان كل الطبقات المرئية بدلًا من الطبقة النشطة</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>إضافة إلى التحديد (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>التقاطع مع التحديد (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>تحديد جديد</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>الطرح من التحديد (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>النقر يفتّح والنقر بالزر الأيمن يغمّق، وفق لوحة الألوان</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>الحجم:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>اسحب لإنشاء شريحة. انقر على شريحة لتحديدها، وانقر نقرًا مزدوجًا لإعادة تسميتها.</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>رأس مربع</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>انقر حيث تريد وضع النص</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>إلى شفاف</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>تلاشي لون المقدمة تدريجيًا بدلًا من دمجه في لون الخلفية</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>التفاوت</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>تحويل</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>العرض</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>إضافة لون المقدمة إلى اللوحة</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} لون</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>تعديل اللون...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>إنشاء لوحة من السبرايت</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>تحميل لوحة...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>قائمة اللوحة</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>الإعدادات المسبقة</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>إضافة تدرج ألوان...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>يضيف تدرجًا من الألوان من لون المقدمة إلى لون الخلفية.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>الخطوات</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>إعادة تلوين السبرايت باللوحة...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>إزالة اللون من اللوحة</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>إزالة الألوان غير المستخدمة</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>استبدال بلون المقدمة</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>عكس الترتيب</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>حفظ اللوحة...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>تحديد بكسلات هذا اللون</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>ترتيب حسب السطوع</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>ترتيب حسب تدرج اللون</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>ترتيب حسب التشبع</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>اللون</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>السجل</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>الطبقات</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>اللوحة</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>المعاينة</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>رقعة شطرنج</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>كثيف</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>قطري</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>نقاط</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>خطوط أفقية</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>متصل</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>متفرق</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>خطوط عمودية</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>نقش الشفافية</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>حجم المربعات (بكسل)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>حالات السجل</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>إظهار شبكة البكسلات بدءًا من التكبير (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>تذكر حجم النافذة وموضعها</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>حجم خلية الخط الزمني</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>ملاءمة ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>تشغيل المعاينة أو إيقافها مؤقتًا</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>أقرب مجاور</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>تحجيم فن البكسل</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>ناعم (ثنائي التكعيب)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>الخلية الحالية</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>كل إطارات الطبقة</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>الإطارات المحددة</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>السبرايت بأكمله</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>ارتفاع الإطار</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>عرض الإطار</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>الأعمدة</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>الشبكة</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>شريط أفقي</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>استيراد</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} خلايا، حتى {2} إطار</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>حجم الورقة: {0} × {1} بكسل</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>الورقة: {0} × {1} بكسل، {2} إطار</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>التخطيط</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>كتابة بيانات JSON (الإطارات والوسوم والشرائح)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>الحشو</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>تخطي الخلايا الفارغة</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>التباعد</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>شريط عمودي</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>الرسم بلون الخلفية</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>الأوامر</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>إخفاء كل اللوحات أو إظهارها</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>زر الفأرة الأوسط</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>اكتب اختصارًا مثل Ctrl+Shift+E. افصل البدائل بفاصلة، واترك الحقل فارغًا لإزالة الاختصار.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>تحريك العرض</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>التقاط لون أثناء الرسم</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>استعادة الافتراضيات</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>زر الفأرة الأيمن</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>خط مستقيم من آخر نقطة (القلم)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>الأدوات</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>عجلة الفأرة</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>شريحة {0}</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>إعادة تسمية الشريحة</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>الحافظة</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>سبرايت-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>مسح الملفات الأخيرة</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>سبرايت جديد</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>لا توجد ملفات حديثة</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>فتح</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>الحديثة</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>بداية سريعة</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>لا توجد بكسلات بهذا اللون</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>تم النسخ إلى الحافظة</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>تم تصدير {0}</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>جارٍ التصدير...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>الطبقة النشطة مخفية</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>الطبقة النشطة مقفلة</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>لا يوجد ما يُنسخ</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>لا توجد طبقة بكسلات بالأسفل للدمج فيها</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>الخلية فارغة</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>جارٍ إعادة التلوين...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>جارٍ تغيير الحجم...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>تم حفظ {0}</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>حدد طبقة بكسلات أولًا</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} بكسل   الإطار {2}/{3}   {4} م.ث</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>س {0}  ص {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>وسم {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>حواف ناعمة</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>غامق</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>الخط:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>مائل</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>يوضع النص كتحديد يمكنك تحريكه قبل أن يصبح جزءًا من الطبقة.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>المدة</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>مدة عرض الإطارات المحددة بالمللي ثانية</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} إطار   {1:0.##} ث   {2:0.#} إطار/ث</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>الطبقات</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>الإطارات {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>تصغير</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>استعادة</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>دلو الطلاء</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>انقر لتعبئة منطقة ذات لون متشابه</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>استبدال اللون</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>يرسم بلون المقدمة فوق بكسلات لون الخلفية فقط؛ والنقر بالزر الأيمن يفعل العكس</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>محيط معبأ</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>ارسم محيطًا حرًا؛ يُغلق ويُعبّأ عند الإفلات</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>منحنى</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>حرّك لثني المنحنى، وانقر للإنهاء، وEsc للإلغاء</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>اسحب خطًا، ثم حرّك لثنيه وانقر للإنهاء</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>قطع ناقص</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>التحديد البيضاوي</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>اسحب لرسم شكل بيضاوي. Shift يرسم دائرة، وCtrl يرسم من المركز</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>الممحاة</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>اسحب لمسح البكسلات</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>القطارة</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>انقر لالتقاط لون المقدمة، وانقر بالزر الأيمن للون الخلفية</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>تدرج</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>اسحب للتعبئة بتدرج من لون المقدمة إلى لون الخلفية</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>يد</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>اسحب لتحريك العرض. اضغط مسافة للتحريك بأي أداة</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>اللاسو</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>اسحب حول منطقة لتحديدها</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>خط</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>اسحب لرسم خط. Shift يثبّت الزوايا على زوايا بكسل نظيفة</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>العصا السحرية</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>انقر لتحديد منطقة ذات لون متشابه</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>نقل</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>اسحب لتحريك التحديد أو الخلية. اسحب المقابض للتحجيم والتدوير، وEnter للتطبيق</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>قلم رصاص</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>ارسم بلون المقدمة؛ والنقر بالزر الأيمن يرسم بلون الخلفية. Shift+نقر يرسم خطًا من آخر نقطة</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>اللاسو المضلع</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>انقر لإضافة زوايا؛ انقر نقرًا مزدوجًا أو اضغط Enter لإغلاق التحديد</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>التحديد المستطيل</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>مستطيل</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>اسحب لرسم مستطيل. Shift يرسم مربعًا، وCtrl يرسم من المركز</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>اسحب للتحديد. Shift يضيف، وAlt يطرح، وShift+Alt يقاطع</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>التظليل</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>اسحب لتفتيح البكسلات وفق اللوحة؛ والنقر بالزر الأيمن يغمّق</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>تقطيع</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>اسحب لتمييز منطقة مسماة تُصدّر مع أوراق السبرايت</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>رذاذ</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>اضغط مطولًا لرش بكسلات متناثرة</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>النص</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>انقر لإضافة نص</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>تكبير</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>انقر للتكبير، وانقر بالزر الأيمن أو Alt+نقر للتصغير</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>لون الخلفية</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>طي إلى عمود واحد</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>الألوان الافتراضية</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>توسيع إلى عمودين</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>لون المقدمة</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>تبديل لوني المقدمة والخلفية</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>محرر البكسل</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - محرر البكسل</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - محرر البكسل</value>
+  </data>
+</root>

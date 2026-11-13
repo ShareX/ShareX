@@ -1679,6 +1679,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>An Bildschirm anheften</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>Pixeleditor...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>QR-Code</value>
   </data>
@@ -1855,6 +1858,9 @@ Bitte wähle ein anderes Tastenkürzel aus oder beende das widersprüchliche Pro
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>In Fotoeditor bearbeiten...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>In Pixeleditor bearbeiten...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>Datei</value>

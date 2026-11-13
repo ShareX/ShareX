@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>Összeadás</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>Színégetés</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>Színfakítás</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>Sötétítés</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>Különbség</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>Osztás</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>Kizárás</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>Kemény fény</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>Árnyalat</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>Világosítás</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>Fénysűrűség</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>Szorzás</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>Normál</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>Átfedés</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>Telítettség</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>Szitanyomás</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>Lágy fény</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>Kivonás</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>Fekete</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>Sötét</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>Világos</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>Közepes</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>Fehér</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>Tényleges méret (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>Lágy élek eltávolítása...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>Szegély...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>Fényerő/kontraszt...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>Ecsetméret növelése</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>Ecset előnézetének megjelenítése</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>Ecsetméret csökkentése</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>Vászonméret...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>Cella tulajdonságai...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>Cella törlése</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Bezárás</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>Összes bezárása</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>Másolás</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>Kép másolása a vágólapra</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>Egyesített másolása</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>Körülvágás a kijelölésre</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>Kivágás</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Ecset létrehozása a kijelölésből</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Törlés</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>Képkocka törlése</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>Réteg törlése</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>Kijelölés megszüntetése</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>Vetett árnyék...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>Réteg kettőzése</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Sprite megkettőzése</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>Kilépés</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Exportálás...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>Sprite-lap exportálása...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>Kitöltés előtérszínnel</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>Első képkocka</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>Igazítás a képernyőhöz</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>Rétegek egyesítése</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>Vízszintes tükrözés</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>Függőleges tükrözés</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>Képkocka tulajdonságai...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>Teljes képernyő</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>Telítetlenítés</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>Rács megjelenítése</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>Rács beállításai...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>Növelés...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>Színezet/telítettség...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Képek importálása képkockaként...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Kép importálása rétegként...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>Sprite-lap importálása...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>Színek invertálása</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>Kijelölés megfordítása</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>Utolsó képkocka</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>Fölötte lévő réteg kijelölése</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>Alatta lévő réteg kijelölése</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>Zárolt</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>Réteg lejjebb</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>Réteg legalulra</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>Réteg legfelülre</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>Réteg feljebb</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>Réteg tulajdonságai...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>Referenciaréteg</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>Látható</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>Cellák összekapcsolása</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>Lejátszás ismétlése</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>Egyesítés lefelé</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>Képkockák mozgatása balra</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>Képkockák mozgatása jobbra</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>Új...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>Új üres képkocka</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>Új képkocka</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>Új a vágólapról</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>Új csoport</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>Új réteg</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>Új kapcsolt képkocka</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>Új címke...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>Következő képkocka</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>Hagymahéj beállításai...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>Hagymahéj</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>Megnyitás...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>Körvonal...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>Beillesztés</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>Beillesztés új rétegként</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>Beillesztés új sprite-ként</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>Képpontrács megjelenítése</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>Animáció lejátszása/leállítása</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>Csak az aktuális címke lejátszása</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>Poszterizálás...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>Beállítások...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>Előző képkocka</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>Újra</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>Színek csökkentése...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>Címke eltávolítása</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>Szín cseréje...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>Munkaterület visszaállítása</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>Képkockák sorrendjének megfordítása</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>Elforgatás 180°-kal</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>Forgatás 90°-kal balra</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>Forgatás 90°-kal az óramutató járásával megegyezően</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>Mentés</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>Mentés másként...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>Összes kijelölése</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>Előtérszín kijelölése</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>Cella tartalmának kijelölése</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Eltolás lefelé</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Eltolás balra</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Eltolás jobbra</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Eltolás felfelé</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>Billentyűparancsok...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>Beállítássáv</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>Szeletek megjelenítése</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>Idővonal</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>Eszköztár</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>Szűkítés...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>Rácshoz illesztés</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>Sprite mérete...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>Kijelölés körberajzolása</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>Tengely helyének megadása...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>Vízszintes szimmetria</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>Tengelyek középre</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>Függőleges szimmetria</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>Címke tulajdonságai...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>Csempézés vízszintesen</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>Csempe mód</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>Csempézés függőlegesen</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>Kétoszlopos eszköztár</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>Szabad alakítás</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>Üres szélek levágása</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>Visszavonás</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>Cellák szétkapcsolása</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>Kép feltöltése</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>Nagyítás</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>Kicsinyítés</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>Alkalmazás minden képkockára</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>Minden képpontot teljesen átlátszatlanná vagy teljesen átlátszóvá tesz. Importált képek lágy éleinek megtisztítására használható.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>Horgony</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>Alkalmazás erre</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>Függőleges tengely (fél képpont)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>Vízszintes tengely (fél képpont)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>Részleges átlátszóság eltávolítása</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>Keverési mód</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>Fényerő</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>Színek</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>Kontraszt</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>Létrehozás</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>Irány</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>Időtartam (ms)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>{0}. keret</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>{0}–{1}. képkocka</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>Miről</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>Ettől a képkockától</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>Árnyalat</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>Arányok megtartása</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>Szintek</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>Világosság</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>Metódus</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>Név</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>Új sprite</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>X eltolás</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Y eltolás</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>Későbbi képkockák</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>Korábbi képkockák</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>A korábbi képkockák pirosak, a későbbiek kékek legyenek</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>Átlós sarkok is</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>Rajzolás az alakzaton belül</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>Százalék</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>Képpontok</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>Előbeállítások</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>A teljes sprite-ból ennyi színű palettát készít, és minden cellát ezzel színez újra. Az új paletta lecseréli a jelenlegit.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>Minden cellát a jelenlegi paletta legközelebbi színeivel színez újra.</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>A legközelebbi szomszéd élesen tartja a képpontokat. A pixel art skálázás 2×-es vagy nagyobb nagyításnál a lépcsős éleket is kisimítja.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>Telítettség</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>Páros érték esetén a tengely két képpont közé kerül, páratlan értéknél egy képpont közepén halad át.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>Küszöbérték</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>Mire</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>Eddig a képkockáig</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>Átlátszó háttér</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>Előre</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>Oda-vissza</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>Oda-vissza fordítva</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>Megfordítás</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>Rendezett 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>Rendezett 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>Floyd–Steinberg</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>Nincs</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>Rendezett</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>Panel bezárása</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>Panelcsoport összecsukása</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>Panelcsoport kibontása</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>Áthelyezés ebbe a csoportba: {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>Áthelyezés új csoportba</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>Panelmenü</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>Minden képkocka</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>Animált PNG</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>Exportálás</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>Aktuális képkocka</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>Formátum</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>Képkockák</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>Animált GIF</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, {2} képkocka</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>PNG-kép</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>Méretezés</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>Kijelölt képkockák</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>PNG-sorozat</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>Ez a formátum csak az aktuális képkockát menti.</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>Címke: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>Minden támogatott fájl</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>Képek</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>Paletták</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>ShareX képpontszerkesztő sprite</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>Keverési mód</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>Szelet törlése</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>Kijelölés megszüntetése</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>Palettaszín szerkesztése</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>Képkocka időtartama</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>Réteg elrejtése</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>Paletta betöltése</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>Réteg zárolása</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>Kijelölés módosítása</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>Áthelyezés</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>Képkockák áthelyezése</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>Szelet szerkesztése</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>Új</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>Új szelet</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>Réteg átlátszatlansága</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>Megnyitás</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>Szelet tulajdonságai</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>Réteg átrendezése</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>Kijelölés</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>Réteg megjelenítése</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Csak ez a réteg látszik</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>Réteg feloldása</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>Mögötte</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>Sötétítés</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>Világosítás</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>Alfa zárolása</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>Normál</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>Csere</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} másolat</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>Réteg</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>Egyesített</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>Csoport</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>Ez a cella más képkockákhoz van kapcsolva</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>Referenciaréteg: nem kerül exportálásra</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>Csoport kibontása vagy összecsukása</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>Réteg zárolása vagy feloldása</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>Réteg megjelenítése vagy elrejtése</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>Cella</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>S_zerkesztés</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>Effe_ktusok</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(Üres)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_Fájl</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>_Képkocka</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_Súgó</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_Réteg</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>Legutóbbiak megnyitása</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>Panelek</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_Kijelölés</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Képpontok eltolása (körbefordulva)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>S_prite</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>Szimmetria</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>Címkék</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>Csempe mód</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_Nézet</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>A vágólapon nincs kép.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>Nem sikerült befejezni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>Nem sikerült megnyitni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>Nem sikerült menteni ezt: „{0}”: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>Nem menti</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>A művelet nem sikerült: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>Menti a(z) „{0}” módosításait bezárás előtt?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>A kép túl nagy. A sprite legfeljebb {0} képpont széles és magas lehet.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>Minden réteg</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>Kitöltés az aktív réteg helyett az összes látható réteg színei alapján</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>Szög</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>Alkalmaz</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>Mégse</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Ecset visszaállítása</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>Összefüggő</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>Csak a kattintott képponthoz kapcsolódó képpontok; kikapcsolva az adott szín minden képpontja</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Egyéni ecset</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>Sűrűség</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>Átlós</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>A csak sarkuknál érintkező képpontokon át is terjedjen</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>Szórás</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>Kattintás: előtérszín felvétele, jobb kattintás: háttérszín</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>Kitöltött</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>Magasság</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>Tinta</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>Lineáris színátmenet</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>Húzással mozgathatja a kijelölést vagy a cellát. Az Alt nyomva tartásával másolatot mozgat.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>Átlátszatlanság</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>Körvonal</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>Minta</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>Képpontpontos</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>Eltávolítja az 1 px-es ecsettel rajzolt szabadkézi vonalak fölösleges sarokképpontjait</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>Sugaras színátmenet</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>Sugár</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>Kerek hegy</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>Az aktív réteg helyett az összes látható réteg színeinek használata</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>Hozzáadás a kijelöléshez (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>Metszet a kijelöléssel (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>Új kijelölés</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>Kivonás a kijelölésből (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>Kattintás világosít, jobb kattintás sötétít, a paletta szerint</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>Méret:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>Húzással szeletet hozhat létre. Kattintással kijelöli, dupla kattintással átnevezi a szeletet.</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>Négyzetes hegy</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>Kattintson oda, ahová a szöveg kerüljön</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>Átlátszóba</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>Az előtérszín elhalványul, ahelyett hogy a háttérszínbe menne át</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tűrés</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>Alakítás</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>Szélesség</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>Előtérszín hozzáadása a palettához</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} szín</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>Szín szerkesztése...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>Paletta létrehozása a sprite-ból</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>Paletta betöltése...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>Paletta menü</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>Előbeállítások</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>Színskála hozzáadása...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>Színskálát ad hozzá az előtérszíntől a háttérszínig.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>Lépések</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>Sprite átszínezése a palettára...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>Szín eltávolítása a palettáról</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>Nem használt színek eltávolítása</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>Csere az előtérszínre</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>Sorrend megfordítása</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>Paletta mentése...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>E szín képpontjainak kijelölése</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>Rendezés fényerő szerint</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>Rendezés színezet szerint</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>Rendezés telítettség szerint</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>Szín</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>Előzmények</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>Rétegek</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>Paletta</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>Előnézet</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>Sakktábla</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>Sűrű</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>Átlós</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>Pöttyök</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>Vízszintes vonalak</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>Folytonos</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>Ritka</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>Függőleges vonalak</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>Átlátszóság-minta</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>Mezőméret (képpont)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>Előzmény-állapotok</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>Képpontrács megjelenítése ettől a nagyítástól (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>Ablakméret és -pozíció megjegyzése</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>Idővonal cellamérete</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>Illesztés ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>Előnézet lejátszása vagy szüneteltetése</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>Legközelebbi szomszéd</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>Pixel art méretezés</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>Simított (bikubikus)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>Aktuális cella</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>A réteg minden képkockája</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>Kijelölt képkockák</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>Teljes sprite</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>Képkocka magassága</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>Képkocka szélessége</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>Oszlopok</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>Rács</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>Vízszintes sáv</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>Importálás</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} cella, legfeljebb {2} képkocka</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>Lap mérete: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>Lap: {0} × {1} px, {2} képkocka</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>Elrendezés</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>JSON-adatok írása (képkockák, címkék és szeletek)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>Belső margó</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>Üres cellák kihagyása</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>Térköz</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>Függőleges sáv</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>Festés háttérszínnel</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>Parancsok</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>Minden panel elrejtése vagy megjelenítése</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>középső egérgomb</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Írjon be egy billentyűparancsot, például Ctrl+Shift+E. A változatokat vesszővel válassza el; üres mező törli a parancsot.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>Nézet mozgatása</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>Szín felvétele festés közben</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>Alapértékek visszaállítása</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>jobb egérgomb</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>Egyenes vonal az utolsó ponttól (ceruza)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>egérgörgő</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>Nagyító</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>{0}. szelet</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>Szelet átnevezése</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>Vágólap</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>Sprite-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>Legutóbbi fájlok törlése</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>Új sprite</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>Nincsenek legutóbbi fájlok</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>Megnyitás</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>Legutóbbiak</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>Gyors kezdés</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>Nincs ilyen színű képpont</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>A vágólapra másolva</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>Exportálva: {0}</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>Exportálás...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>Az aktív réteg rejtett</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>Az aktív réteg zárolt</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>Nincs mit másolni</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>Nincs alatta képpontréteg, amelybe egyesíteni lehetne</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>A cella üres</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>Átszínezés...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>Átméretezés...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>Mentve: {0}</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>Előbb jelöljön ki egy képpontréteget</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   {2}/{3}. képkocka   {4} ms</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>{0}. címke</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>Simított élek</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>Félkövér</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>Betűtípus:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>Dőlt</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>A szöveg kijelölésként kerül a vászonra, amelyet áthelyezhet, mielőtt a réteg része lesz.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>Időtartam</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>A kijelölt képkockák megjelenítési ideje ezredmásodpercben</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} képkocka   {1:0.##} mp   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>Rétegek</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>{0}–{1}. képkocka</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Teljes méret</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Minimalizálás</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Visszaállítás</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>Festékesvödör</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>Kattintással kitölti a hasonló színű területet</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>Színcsere</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>Csak a háttérszínű képpontokra fest előtérszínnel; jobb kattintással fordítva</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>Kitöltött körvonal</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>Rajzoljon szabadkézi körvonalat; felengedéskor bezárul és kitöltődik</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>Görbe</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>Mozgatással hajlítja a görbét, kattintással befejezi, Esc a megszakítás</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>Húzzon egy vonalat, majd mozgatással hajlítsa meg, és kattintással fejezze be</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>Ellipszis</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Ellipszis alakú kijelölés</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Húzással ellipszist rajzol. Shift: kör, Ctrl: rajzolás a középpontból</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>Radír</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>Húzással képpontokat töröl</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>Pipetta</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>Kattintással előtérszínt, jobb kattintással háttérszínt vesz fel</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>Színátmenet</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>Húzással az előtérszíntől a háttérszínig tartó színátmenettel tölt ki</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>Kéz</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>Húzással mozgatja a nézetet. Szóköz nyomva tartásával bármely eszközzel mozgathat</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>Lasszó</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>Húzza körbe a területet a kijelöléséhez</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>Vonal</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>Húzással vonalat rajzol. A Shift tiszta képpontszögekhez igazít</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>Varázspálca</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>Kattintással kijelöli a hasonló színű területet</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>Áthelyezés</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>Húzással mozgatja a kijelölést vagy a cellát. A fogantyúkkal méretez és forgat, Enter alkalmaz</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>Ceruza</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>Rajzolás előtérszínnel; jobb kattintással háttérszínnel. Shift+kattintás vonalat húz az utolsó ponttól</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>Sokszöglasszó</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>Kattintással sarkokat ad hozzá; dupla kattintás vagy Enter lezárja a kijelölést</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Téglalap alakú kijelölés</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>Téglalap</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>Húzással téglalapot rajzol. Shift: négyzet, Ctrl: rajzolás a középpontból</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>Húzással jelöl ki. Shift: hozzáadás, Alt: kivonás, Shift+Alt: metszet</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>Árnyalás</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>Húzással a paletta szerint világosítja a képpontokat; jobb kattintással sötétít</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>Szeletelés</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>Húzással elnevezett területet jelöl, amely a sprite-lapokkal együtt exportálódik</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>Szórófesték</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>Lenyomva tartva szórt képpontokat permetez</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>Szöveg</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>Kattintással szöveget ad hozzá</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>Nagyító</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>Kattintással nagyít, jobb kattintással vagy Alt+kattintással kicsinyít</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>Háttér szín</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>Összecsukás egy oszlopra</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>Alapértelmezett színek</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>Kibontás két oszlopba</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>Előtérszín</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>Elő- és háttérszín felcserélése</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>Képpontszerkesztő</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - Képpontszerkesztő</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - Képpontszerkesztő</value>
+  </data>
+</root>

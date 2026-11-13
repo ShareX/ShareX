@@ -1679,6 +1679,9 @@
   <data name="MainMenuBuilder_PinToScreenDialog" xml:space="preserve">
     <value>تثيبت على الشاشة</value>
   </data>
+  <data name="MainMenuBuilder_PixelEditor" xml:space="preserve">
+    <value>محرر البكسل...</value>
+  </data>
   <data name="MainMenuBuilder_QRCode" xml:space="preserve">
     <value>قارئ QR</value>
   </data>
@@ -1855,6 +1858,9 @@
   </data>
   <data name="MainWindow_EditImageInPhotoEditor" xml:space="preserve">
     <value>تعديل في محرر الصور...</value>
+  </data>
+  <data name="MainWindow_EditImageInPixelEditor" xml:space="preserve">
+    <value>تعديل في محرر البكسل...</value>
   </data>
   <data name="MainWindow_File" xml:space="preserve">
     <value>ملف</value>

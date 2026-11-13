@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>Toplama</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>Renk yanması</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>Renk soldurma</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>Koyulaştır</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>Fark</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>Böl</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>Dışlama</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>Sert ışık</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>Renk tonu</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>Açıklaştır</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>Parlaklık</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>Çarp</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>Bindirme</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>Doygunluk</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>Ekran</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>Yumuşak ışık</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>Çıkar</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>Siyah</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>Koyu</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>Açık</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>Orta</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>Beyaz</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>Gerçek Boyut (%100)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>Yumuşak Kenarları Kaldır...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>Kenarlık...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>Parlaklık/Kontrast...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>Fırça Boyutunu Artır</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>Fırça Önizlemesini Göster</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>Fırça Boyutunu Azalt</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>Tuval boyutu...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>Hücre Özellikleri...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Temizle</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>Hücreyi Temizle</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Kapat</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>Tümünü kapat</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>Kopyala</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>Görüntüyü Panoya Kopyala</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>Birleştirilmiş kopyala</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>Seçime Kırp</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>Kes</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Seçimden Fırça Tanımla</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Sil</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>Kareyi Sil</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>Katmanı sil</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>Seçimi kaldır</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>Gölge...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>Katmanı çoğalt</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Sprite'ı Çoğalt</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>Çıkış</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Dışa aktar...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>Sprite Sayfasını Dışa Aktar...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>Ön Plan Rengiyle Doldur</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>İlk Kare</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>Ekrana sığdır</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>Katmanları Düzleştir</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>Yatay çevir</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>Dikey çevir</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>Kare Özellikleri...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>Tam Ekran</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>Doygunluğu azalt</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>Izgarayı göster</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>Izgara Ayarları...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>Genişlet...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>Ton/Doygunluk...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Görüntüleri Kare Olarak İçe Aktar...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Görüntüyü Katman Olarak İçe Aktar...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>Sprite Sayfasını İçe Aktar...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>Renkleri Ters Çevir</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>Seçimi Ters Çevir</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>Son Kare</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>Üstteki Katmanı Seç</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>Alttaki Katmanı Seç</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>Kilitli</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>Katmanı Aşağı Taşı</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>Katmanı En Alta Taşı</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>Katmanı En Üste Taşı</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>Katmanı Yukarı Taşı</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>Katman özellikleri...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>Referans Katmanı</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>Görünür</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>Hücreleri Bağla</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>Döngüsel Oynatma</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>Aşağı birleştir</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>Kareleri Sola Taşı</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>Kareleri Sağa Taşı</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>Yeni...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>Yeni Boş Kare</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>Yeni Kare</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>Panodan yeni</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>Yeni grup</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>Yeni katman</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>Yeni Bağlı Kare</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>Yeni Etiket...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>Sonraki Kare</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>Soğan Zarı Ayarları...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>Soğan Zarı</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>Aç...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>Dış Hat...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>Yapıştır</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>Yeni Katman Olarak Yapıştır</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>Yeni Sprite Olarak Yapıştır</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>Piksel Izgarasını Göster</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>Animasyonu Oynat/Durdur</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>Yalnızca Geçerli Etiketi Oynat</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>Posterleştir...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>Tercihler...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>Önceki Kare</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>Yeniden yap</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>Renkleri Azalt...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>Etiketi Kaldır</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>Rengi Değiştir...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>Çalışma Alanını Sıfırla</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>Kareleri Ters Çevir</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>180° döndür</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>90° Saat Yönünün Tersine Döndür</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>Saat yönünde 90° döndür</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>Kaydet</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>Farklı kaydet...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>Tümünü seç</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>Ön Plan Rengini Seç</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>Hücre İçeriğini Seç</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Aşağı Kaydır</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Sola Kaydır</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Sağa Kaydır</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Yukarı Kaydır</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>Klavye kısayolları...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>Seçenekler Çubuğu</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>Dilimleri Göster</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>Zaman Çizelgesi</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>Araç Çubuğu</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>Daralt...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>Izgaraya Yapıştır</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>Sprite Boyutu...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>Seçimi Konturla</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>Eksen Konumunu Ayarla...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>Yatay Simetri</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>Eksenleri Ortala</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>Dikey Simetri</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>Etiket Özellikleri...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>Yatay Döşe</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>Döşeme Modu</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>Dikey Döşe</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>İki Sütunlu Araç Çubuğu</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>Serbest dönüştürme</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>Boş Kenarları Kırp</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>Geri al</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>Hücre Bağlantısını Kaldır</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>Görüntüyü Yükle</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>Yakınlaştır</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>Uzaklaştır</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>Tüm karelere uygula</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>Her pikseli ya tamamen opak ya da tamamen saydam yapar. İçe aktarılan görüntülerin yumuşak kenarlarını temizlemek için kullanın.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>Çapa</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>Uygulanacak yer</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>Dikey eksen (yarım piksel)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>Yatay eksen (yarım piksel)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>Kısmi saydamlığı kaldır</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>Karışım modu</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>Parlaklık</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>Renkler</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>Kontrast</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>Oluştur</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>Yön</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>Süre (ms)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>Çerçeve {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>Kare {0} - {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>Kaynak</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>Başlangıç karesi</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>Renk tonu</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>Oranları koru</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>Düzeyler</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>Açıklık</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>Yöntem</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>Yeni Sprite</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>X uzaklığı</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Y uzaklığı</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>Sonraki kareler</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>Önceki kareler</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>Önceki kareleri kırmızıya, sonraki kareleri maviye boya</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>Çapraz köşeleri dahil et</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>Şeklin içine çiz</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>Yüzde</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>Pikseller</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>Ön ayarlar</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>Tüm sprite'tan bu kadar renkli bir palet oluşturur ve her hücreyi onunla yeniden renklendirir. Yeni palet geçerli paletin yerini alır.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>Her hücreyi geçerli paletin en yakın renkleriyle yeniden renklendirir.</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>En yakın komşu pikselleri keskin tutar. Piksel sanatı ölçeklemesi, 2× veya daha fazla büyütürken basamaklı kenarları da yumuşatır.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>Doygunluk</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>Çift değer ekseni iki pikselin arasına koyar; tek değer ekseni bir pikselin ortasından geçirir.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>Eşik</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>Hedef</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>Bitiş karesi</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>Saydam arka plan</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>İleri</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>Gidiş-dönüş</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>Ters gidiş-dönüş</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>Ters çevir</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>Sıralı 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>Sıralı 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>Floyd–Steinberg</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>Hiçbiri</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>Sıralı</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>Paneli Kapat</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>Panel grubunu daralt</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>Panel grubunu genişlet</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>{0} ile gruba taşı</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>Yeni gruba taşı</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>Panel menüsü</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>Tüm kareler</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>Animasyonlu PNG</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>Dışa aktar</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>Geçerli kare</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>Biçim</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>Kareler</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>Animasyonlu GIF</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, {2} kare</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>PNG görüntüsü</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>Ölçekle</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>Seçili kareler</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>PNG dizisi</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>Bu biçim yalnızca geçerli kareyi kaydeder.</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>Etiket: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>Desteklenen tüm dosyalar</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>Görseller</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>Paletler</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>ShareX Piksel düzenleyici sprite'ı</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>Karışım Modu</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>Dilimi sil</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>Seçimi kaldır</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>Palet Rengini Düzenle</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>Kare Süresi</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>Katmanı gizle</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>Palet Yükle</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>Katmanı kilitle</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>Seçimi Değiştir</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>Taşı</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>Kareleri Taşı</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>Dilimi düzenle</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>Yeni</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>Yeni Dilim</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>Katman Opaklığı</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>Aç</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>Dilim Özellikleri</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>Katmanı Yeniden Sırala</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>Seç</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>Katmanı göster</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Yalnızca Bu Katmanı Göster</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>Katman Kilidini Aç</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>Arkada</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>Koyulaştır</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>Açıklaştır</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>Alfayı Kilitle</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>Değiştir</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} kopya</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>Katman</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>Düzleştirilmiş</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>Bu hücre başka karelere bağlı</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>Referans katmanı: dışa aktarılmaz</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>Grubu genişlet veya daralt</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>Katmanı kilitle veya kilidini aç</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>Katmanı göster veya gizle</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>Hücre</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_Düzen</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>Efe_ktler</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(Boş)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_Dosya</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>_Kare</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_Yardım</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_Katman</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>Son kullanılanları aç</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>Paneller</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_Seç</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Pikselleri Kaydır (Sarmalı)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>S_prite</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>Simetri</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>Etiketler</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>Döşeme Modu</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>Gö_rünüm</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>Panoda görüntü yok.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>"{0}" tamamlanamadı: {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>"{0}" açılamadı: {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>"{0}" kaydedilemedi: {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>Kaydetme</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>İşlem başarısız oldu: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>"{0}" kapatılmadan önce değişiklikler kaydedilsin mi?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>Görüntü çok büyük. Sprite'lar en fazla {0} piksel genişliğinde ve yüksekliğinde olabilir.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>Tüm katmanlar</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>Etkin katman yerine görünür tüm katmanların renklerine göre doldur</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>Açı</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>Uygula</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Fırçayı Sıfırla</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>Bitişik</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>Yalnızca tıklanan piksele bağlı pikseller; o renkteki her pikseli almak için kapatın</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Özel fırça</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>Yoğunluk</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>Çapraz</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>Yalnızca köşelerinden değen piksellere de yayıl</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>Titreme</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>Tıklama ön plan rengini, sağ tıklama arka plan rengini alır</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>Dolu</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>Yükseklik</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>Mürekkep</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>Doğrusal gradyan</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>Seçimi veya hücreyi taşımak için sürükleyin. Bir kopyayı taşımak için Alt'ı basılı tutun.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>Opaklık</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>Dış çizgi</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>Desen</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>Piksel kusursuz</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>1 px fırçayla çizilen serbest çizgilerdeki fazla köşe piksellerini kaldırır</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>Dairesel gradyan</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>Yarıçap</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>Yuvarlak uç</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>Etkin katman yerine görünür tüm katmanların renklerini kullan</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>Seçime ekle (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>Seçimle kesiştir (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>Yeni seçim</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>Seçimden çıkar (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>Tıklama açar, sağ tıklama koyulaştırır; palete göre</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>Boyut:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>Dilim oluşturmak için sürükleyin. Seçmek için dilime tıklayın, yeniden adlandırmak için çift tıklayın.</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>Kare uç</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>Metnin yerleşeceği yere tıklayın</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>Saydama doğru</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>Ön plan rengini arka plan rengine karıştırmak yerine soldur</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerans</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>Dönüştür</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>Genişlik</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>Ön Plan Rengini Palete Ekle</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} renk</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>Rengi Düzenle...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>Sprite'tan Palet Oluştur</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>Palet Yükle...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>Palet menüsü</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>Ön ayarlar</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>Renk Rampası Ekle...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>Ön plan renginden arka plan rengine bir renk rampası ekler.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>Adımlar</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>Sprite'ı Palete Eşle...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>Rengi Paletten Kaldır</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>Kullanılmayan Renkleri Kaldır</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>Ön Plan Rengiyle Değiştir</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>Sırayı Ters Çevir</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>Paleti Kaydet...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>Bu Renkteki Pikselleri Seç</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>Parlaklığa Göre Sırala</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>Tona Göre Sırala</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>Doygunluğa Göre Sırala</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>Renk</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>Geçmiş</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>Katmanlar</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>Palet</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>Önizleme</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>Dama</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>Yoğun</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>Çapraz</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>Noktalar</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>Yatay çizgiler</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>Düz</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>Seyrek</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>Dikey çizgiler</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>Saydamlık dama deseni</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>Kare boyutu (piksel)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>Geçmiş durumları</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>Piksel ızgarasını bu yakınlaştırmadan itibaren göster (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>Pencere boyutunu ve konumunu hatırla</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>Zaman çizelgesi hücre boyutu</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>Sığdır ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>Önizlemeyi oynat veya duraklat</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>En yakın komşu</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>Piksel sanatı ölçekleme</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>Yumuşak (bikübik)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>Geçerli hücre</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>Katmanın tüm kareleri</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>Seçili kareler</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>Tüm sprite</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>Kare yüksekliği</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>Kare genişliği</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>Sütunlar</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>Izgara</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>Yatay şerit</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>İçe aktar</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} hücre, en fazla {2} kare</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>Sayfa boyutu: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>Sayfa: {0} × {1} px, {2} kare</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>Düzen</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>JSON verisi yaz (kareler, etiketler ve dilimler)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>İç boşluk</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>Boş hücreleri atla</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>Aralık</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>Dikey şerit</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>Arka plan rengiyle boya</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>Komutlar</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>Tüm panelleri gizle veya göster</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>farenin orta düğmesi</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Ctrl+Shift+E gibi bir kısayol yazın. Seçenekleri virgülle ayırın; kısayolu kaldırmak için alanı boş bırakın.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>Görünümü kaydır</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>Boyarken renk al</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>Varsayılanlara Sıfırla</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>farenin sağ düğmesi</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>Son noktadan düz çizgi (kalem)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>fare tekerleği</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>Yakınlaştırma</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>Dilim {0}</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>Dilimi Yeniden Adlandır</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>Pano</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>Sprite-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>Son dosyaları temizle</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>Yeni sprite</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>Son dosya yok</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>Aç</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>Son Kullanılanlar</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>Hızlı başlangıç</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>Bu renkte piksel yok</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>Panoya kopyalandı</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} dışa aktarıldı</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>Dışa aktarılıyor...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>Etkin katman gizli</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>Etkin katman kilitli</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>Kopyalanacak bir şey yok</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>Altta birleştirilecek piksel katmanı yok</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>Hücre boş</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>Yeniden renklendiriliyor...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>Yeniden boyutlandırılıyor...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} kaydedildi</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>Önce bir piksel katmanı seçin</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   Kare {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>Etiket {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>Yumuşak kenarlar</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>Kalın</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>Yazı tipi:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>İtalik</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>Metin, katmanın parçası olmadan önce taşıyabileceğiniz bir seçim olarak yerleştirilir.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>Süre</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>Seçili karelerin gösterim süresi (milisaniye)</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} kare   {1:0.##} sn   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>Katmanlar</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>Kare {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Ekranı kapla</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Küçült</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Geri yükle</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>Boya kovası</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>Benzer renkteki bir alanı doldurmak için tıklayın</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>Renk Değiştirme</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>Ön plan rengini yalnızca arka plan rengindeki piksellerin üzerine boyar; sağ tıklama tersini yapar</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>Dolu Kontur</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>Serbest bir kontur çizin; bıraktığınızda kapatılıp doldurulur</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>Eğri</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>Eğriyi bükmek için hareket ettirin, bitirmek için tıklayın, iptal için Esc</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>Bir çizgi sürükleyin, bükmek için hareket ettirin ve bitirmek için tıklayın</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>Elips</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Eliptik seçim çerçevesi</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Elips çizmek için sürükleyin. Shift daire yapar, Ctrl merkezden çizer</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>Silgi</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>Pikselleri silmek için sürükleyin</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>Damlalık</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>Ön plan rengini almak için tıklayın, arka plan rengi için sağ tıklayın</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>Gradyan</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>Ön plan renginden arka plan rengine gradyanla doldurmak için sürükleyin</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>El</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>Görünümü kaydırmak için sürükleyin. Herhangi bir araçla kaydırmak için Boşluk'u basılı tutun</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>Kement</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>Seçmek için bir alanın etrafında sürükleyin</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>Çizgi</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>Çizgi çizmek için sürükleyin. Shift temiz piksel açılarına hizalar</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>Sihirli değnek</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>Benzer renkteki bir alanı seçmek için tıklayın</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>Taşı</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>Seçimi veya hücreyi taşımak için sürükleyin. Ölçeklemek ve döndürmek için tutamaçları sürükleyin, uygulamak için Enter</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>Kurşun kalem</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>Ön plan rengiyle çizin; sağ tıklama arka plan rengiyle çizer. Shift+tıklama son noktadan çizgi çeker</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>Çokgen kement</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>Köşe eklemek için tıklayın; seçimi kapatmak için çift tıklayın veya Enter'a basın</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Dikdörtgen seçim çerçevesi</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>Dikdörtgen</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>Dikdörtgen çizmek için sürükleyin. Shift kare yapar, Ctrl merkezden çizer</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>Seçmek için sürükleyin. Shift ekler, Alt çıkarır, Shift+Alt kesiştirir</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>Gölgelendirme</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>Pikselleri palete göre açmak için sürükleyin; sağ tıklama koyulaştırır</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>Dilimle</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>Sprite sayfalarıyla dışa aktarılan adlandırılmış bir alanı işaretlemek için sürükleyin</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>Sprey</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>Dağınık pikseller püskürtmek için basılı tutun</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>Metin</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>Metin eklemek için tıklayın</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>Yakınlaştırma</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>Yakınlaştırmak için tıklayın, uzaklaştırmak için sağ tıklayın veya Alt+tıklayın</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>Arka plan rengi</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>Tek sütuna daralt</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>Varsayılan Renkler</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>İki sütuna genişlet</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>Ön plan rengi</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>Ön plan ve arka plan renklerini değiştir</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>Piksel Düzenleyici</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - Piksel düzenleyici</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - Piksel düzenleyici</value>
+  </data>
+</root>

@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>Penjumlahan</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>Bakar warna</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>Hindari warna</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>Gelapkan</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>Selisih</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>Bagi</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>Pengecualian</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>Cahaya keras</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>Rona</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>Terangkan</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>Luminositas</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>Kalikan</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>Hamparan</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>Saturasi</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>Layar</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>Cahaya lembut</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>Kurangi</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>Hitam</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>Gelap</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>Terang</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>Sedang</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>Putih</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>Ukuran Sebenarnya (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>Hapus Tepi Halus...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>Batas...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>Kecerahan/Kontras...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>Perbesar Ukuran Kuas</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>Tampilkan Pratinjau Kuas</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>Perkecil Ukuran Kuas</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>Ukuran kanvas...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>Properti Sel...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Bersihkan</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>Kosongkan Sel</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Tutup</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>Tutup semua</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>Salin</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>Salin Gambar ke Papan Klip</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>Salin gabungan</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>Pangkas ke Seleksi</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>Potong</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>Buat Kuas dari Seleksi</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>Hapus Bingkai</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>Hapus lapisan</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>Batalkan pilihan</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>Bayangan Jatuh...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>Duplikat lapisan</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>Duplikat Sprite</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>Keluar</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Ekspor pengaturan...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>Ekspor Lembar Sprite...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>Isi dengan Warna Latar Depan</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>Bingkai Pertama</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>Sesuaikan dengan layar</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>Ratakan Lapisan</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>Balik secara horizontal</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>Balik secara vertikal</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>Properti Bingkai...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>Layar Penuh</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>Hilangkan saturasi</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>Tampilkan kisi</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>Pengaturan Kisi...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>Perluas...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>Rona/Saturasi...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>Impor Gambar sebagai Bingkai...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>Impor Gambar sebagai Lapisan...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>Impor Lembar Sprite...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>Balikkan Warna</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>Balikkan Seleksi</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>Bingkai Terakhir</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>Pilih Lapisan di Atas</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>Pilih Lapisan di Bawah</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>Terkunci</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>Pindahkan Lapisan ke Bawah</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>Pindahkan Lapisan ke Paling Bawah</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>Pindahkan Lapisan ke Paling Atas</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>Pindahkan Lapisan ke Atas</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>Properti lapisan...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>Lapisan Referensi</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>Terlihat</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>Tautkan Sel</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>Putar Berulang</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>Gabungkan ke bawah</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>Pindahkan Bingkai ke Kiri</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>Pindahkan Bingkai ke Kanan</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>Baru...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>Bingkai Kosong Baru</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>Bingkai Baru</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>Baru dari papan klip</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>Grup baru</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>Lapisan baru</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>Bingkai Tertaut Baru</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>Tag Baru...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>Bingkai Berikutnya</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>Pengaturan Kulit Bawang...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>Kulit Bawang</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>Buka...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>Garis Tepi...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>Tempel</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>Tempel sebagai Lapisan Baru</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>Tempel sebagai Sprite Baru</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>Tampilkan Kisi Piksel</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>Putar/Hentikan Animasi</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>Putar Hanya Tag Saat Ini</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>Posterisasi...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>Preferensi...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>Bingkai Sebelumnya</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>Ulangi</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>Kurangi Warna...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>Hapus Tag</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>Ganti Warna...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>Atur Ulang Ruang Kerja</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>Balik Urutan Bingkai</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>Putar 180°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>Putar 90° Berlawanan Jarum Jam</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>Putar 90° searah jarum jam</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>Simpan sebagai...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>Pilih semua</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>Pilih Warna Latar Depan</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>Pilih Isi Sel</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>Geser ke Bawah</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>Geser ke Kiri</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>Geser ke Kanan</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>Geser ke Atas</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>Pintasan keyboard...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>Bilah Opsi</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>Tampilkan Irisan</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>Lini Masa</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>Bilah Alat</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>Perkecil...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>Tempel ke Kisi</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>Ukuran Sprite...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>Garisi Seleksi</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>Atur Posisi Sumbu...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>Simetri Horizontal</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>Tengahkan Sumbu</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>Simetri Vertikal</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>Properti Tag...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>Ubin Horizontal</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>Mode Ubin</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>Ubin Vertikal</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>Bilah Alat Dua Kolom</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>Transformasi bebas</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>Pangkas Tepi Kosong</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>Urungkan</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>Lepas Tautan Sel</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>Unggah Gambar</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>Perbesar</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>Perkecil</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>Terapkan ke semua bingkai</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>Membuat setiap piksel sepenuhnya buram atau sepenuhnya transparan. Gunakan untuk merapikan tepi halus pada gambar impor.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>Jangkar</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>Terapkan ke</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>Sumbu vertikal (setengah piksel)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>Sumbu horizontal (setengah piksel)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>Hapus transparansi sebagian</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>Mode campuran</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>Kecerahan</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>Kontras</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>Buat</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>Arah</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>Durasi (md)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>Bingkai {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>Bingkai {0} sampai {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>Dari</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>Dari bingkai</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>Rona</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>Pertahankan proporsi</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>Tingkat</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>Kecerahan (L)</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>Metode</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>Nama</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>Sprite Baru</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>Ofset X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>Ofset Y</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>Bingkai sesudah</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>Bingkai sebelum</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>Warnai bingkai sebelum dengan merah dan sesudah dengan biru</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>Sertakan sudut diagonal</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>Gambar di dalam bentuk</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>Persen</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>Piksel</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>Prasetel</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>Membuat palet dengan jumlah warna ini dari seluruh sprite dan mewarnai ulang setiap sel dengannya. Palet baru menggantikan palet saat ini.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>Mewarnai ulang setiap sel dengan warna terdekat dari palet saat ini.</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>Tetangga terdekat menjaga piksel tetap tajam. Penskalaan seni piksel juga menghaluskan tepi bergerigi saat memperbesar 2× atau lebih.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>Saturasi</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>Nilai genap menempatkan sumbu di antara dua piksel; nilai ganjil melewatkannya di tengah piksel.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>Ambang</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>Menjadi</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>Sampai bingkai</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>Latar belakang transparan</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>Maju</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>Bolak-balik</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>Bolak-balik terbalik</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>Balik</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>Teratur 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>Teratur 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>Floyd–Steinberg</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>Tidak ada</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>Teratur</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>Tutup Panel</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>Ciutkan grup panel</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>Perluas grup panel</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>Pindahkan ke grup bersama {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>Pindahkan ke grup baru</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>Menu panel</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>Semua bingkai</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>PNG animasi</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>Ekspor</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>Bingkai saat ini</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>Format</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>Bingkai</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>GIF animasi</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} px, {2} bingkai</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>Gambar PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>Skalakan</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>Bingkai terpilih</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>Urutan PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>Format ini hanya menyimpan bingkai saat ini.</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>Tag: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>Semua berkas yang didukung</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>Gambar</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>Palet</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>Sprite editor piksel ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>Mode Campuran</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>Hapus irisan</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>Batalkan pilihan</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>Sunting Warna Palet</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>Durasi Bingkai</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>Sembunyikan lapisan</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>Muat Palet</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>Kunci lapisan</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>Ubah Seleksi</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>Pindahkan</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>Pindahkan Bingkai</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>Edit irisan</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>Baru</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>Irisan Baru</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>Opasitas Lapisan</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>Buka</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>Properti Irisan</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>Urutkan Ulang Lapisan</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>Pilih</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>Tampilkan lapisan</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>Tampilkan Hanya Lapisan Ini</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>Buka Kunci Lapisan</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>Di belakang</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>Gelapkan</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>Terangkan</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>Kunci Alfa</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>Ganti</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} salinan</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>Lapisan</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>Diratakan</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>Grup</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>Sel ini tertaut ke bingkai lain</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>Lapisan referensi: tidak diekspor</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>Bentangkan atau ciutkan grup</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>Kunci atau buka kunci lapisan</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>Tampilkan atau sembunyikan lapisan</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>Sel</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_Edit</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>Efe_k</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(Kosong)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_File</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>_Bingkai</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>Ban_tuan</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_Lapisan</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>Buka terbaru</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>Panel</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_Pilih</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>Geser Piksel (Melingkar)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>S_prite</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>Simetri</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>Tag</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>Mode Ubin</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_Tampilan</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>Papan klip tidak berisi gambar.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>Tidak dapat menyelesaikan "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>Tidak dapat membuka "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>Tidak dapat menyimpan "{0}": {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>Jangan simpan</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>Operasi gagal: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>Simpan perubahan pada "{0}" sebelum menutup?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>Gambar terlalu besar. Sprite dapat berukuran hingga {0} piksel lebar dan tinggi.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>Semua lapisan</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>Isi berdasarkan warna semua lapisan yang terlihat, bukan lapisan aktif</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>Sudut</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>Terapkan</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>Batal</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>Atur Ulang Kuas</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>Bersebelahan</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>Hanya piksel yang terhubung dengan piksel yang diklik; matikan untuk mengambil semua piksel berwarna itu</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>Kuas khusus</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>Kerapatan</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>Diagonal</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>Sebarkan juga melalui piksel yang hanya bersentuhan di sudutnya</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>Dither</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>Klik mengambil warna latar depan, klik kanan warna latar belakang</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>Terisi</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>Tinggi</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>Tinta</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>Gradien linear</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>Seret untuk memindahkan seleksi atau sel. Tahan Alt untuk memindahkan salinan.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>Opasitas</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>Garis luar</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>Pola</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>Piksel sempurna</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>Menghapus piksel sudut berlebih dari garis bebas yang digambar dengan kuas 1 px</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>Gradien radial</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>Radius</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>Ujung bulat</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>Gunakan warna semua lapisan yang terlihat, bukan lapisan aktif</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>Tambahkan ke pilihan (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>Iriskan dengan pilihan (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>Pilihan baru</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>Kurangi dari pilihan (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>Klik mencerahkan, klik kanan menggelapkan, mengikuti palet</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>Ukuran:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>Seret untuk membuat irisan. Klik irisan untuk memilihnya, klik ganda untuk mengganti namanya.</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>Ujung persegi</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>Klik tempat teks akan diletakkan</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>Ke transparan</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>Pudarkan warna latar depan alih-alih membaurkannya ke warna latar belakang</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Toleransi</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>Transformasi</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>Lebar</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>Tambahkan Warna Latar Depan ke Palet</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} warna</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>Sunting Warna...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>Buat Palet dari Sprite</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>Muat Palet...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>Menu palet</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>Prasetel</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>Tambahkan Gradasi Warna...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>Menambahkan gradasi warna dari warna latar depan ke warna latar belakang.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>Langkah</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>Petakan Ulang Sprite ke Palet...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>Hapus Warna dari Palet</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>Hapus Warna yang Tidak Dipakai</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>Ganti dengan Warna Latar Depan</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>Balik Urutan</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>Simpan Palet...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>Pilih Piksel Berwarna Ini</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>Urutkan menurut Kecerahan</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>Urutkan menurut Rona</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>Urutkan menurut Saturasi</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>Warna</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>Riwayat</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>Lapisan</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>Palet</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>Pratinjau</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>Papan catur</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>Rapat</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>Diagonal</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>Titik-titik</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>Garis horizontal</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>Solid</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>Jarang</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>Garis vertikal</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>Pola transparansi</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>Ukuran kotak (piksel)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>Status riwayat</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>Tampilkan kisi piksel mulai zoom (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>Ingat ukuran dan posisi jendela</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>Ukuran sel lini masa</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>Pas ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>Putar atau jeda pratinjau</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>Tetangga terdekat</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>Penskalaan seni piksel</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>Halus (bikubik)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>Sel saat ini</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>Semua bingkai lapisan</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>Bingkai terpilih</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>Seluruh sprite</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>Tinggi bingkai</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>Lebar bingkai</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>Kolom</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>Kisi</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>Strip horizontal</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>Impor</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} sel, hingga {2} bingkai</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>Ukuran lembar: {0} × {1} px</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>Lembar: {0} × {1} px, {2} bingkai</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>Tata letak</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>Tulis data JSON (bingkai, tag, dan irisan)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>Padding</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>Lewati sel kosong</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>Jarak</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>Strip vertikal</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>Lukis dengan warna latar belakang</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>Perintah</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>Sembunyikan atau tampilkan semua panel</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>tombol tengah tetikus</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>Ketik pintasan seperti Ctrl+Shift+E. Pisahkan alternatif dengan koma; kosongkan kolom untuk menghapus pintasan.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>Geser tampilan</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>Ambil warna saat melukis</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>Atur Ulang ke Bawaan</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>tombol kanan tetikus</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>Garis lurus dari titik terakhir (pensil)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>Alat</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>roda tetikus</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>Irisan {0}</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>Ganti Nama Irisan</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>Papan klip</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>Sprite-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>Hapus file terbaru</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>Sprite baru</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>Tidak ada berkas terbaru</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>Buka</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>Terbaru</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>Mulai cepat</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>Tidak ada piksel berwarna itu</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>Disalin ke papan klip</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>{0} diekspor</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>Mengekspor...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>Lapisan aktif disembunyikan</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>Lapisan aktif terkunci</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>Tidak ada yang bisa disalin</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>Tidak ada lapisan piksel di bawah untuk digabungkan</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>Sel kosong</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>Mewarnai ulang...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>Mengubah ukuran...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>{0} disimpan</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>Pilih lapisan piksel terlebih dahulu</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} px   Bingkai {2}/{3}   {4} md</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>Tag {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>Tepi halus</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>Tebal</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>Huruf:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>Miring</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>Teks ditempatkan sebagai seleksi yang dapat dipindahkan sebelum menjadi bagian dari lapisan.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>Durasi</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>Berapa lama bingkai terpilih ditampilkan, dalam milidetik</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} bingkai   {1:0.##} dtk   {2:0.#} fps</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>Lapisan</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>Bingkai {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>Maksimalkan</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>Memperkecil</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>Pulihkan</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>Ember cat</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>Klik untuk mengisi area berwarna serupa</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>Penggantian Warna</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>Melukis warna latar depan hanya di atas piksel warna latar belakang; klik kanan sebaliknya</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>Kontur Terisi</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>Gambar kontur bebas; kontur ditutup dan diisi saat dilepas</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>Kurva</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>Gerakkan untuk melengkungkan kurva, klik untuk selesai, Esc untuk batal</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>Seret garis, lalu gerakkan untuk melengkungkannya dan klik untuk selesai</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>Elips</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>Bingkai pilih elips</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Seret untuk menggambar elips. Shift membuat lingkaran, Ctrl menggambar dari tengah</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>Penghapus</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>Seret untuk menghapus piksel</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>Pipet</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>Klik untuk mengambil warna latar depan, klik kanan untuk warna latar belakang</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>Gradien</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>Seret untuk mengisi dengan gradien dari warna latar depan ke latar belakang</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>Tangan</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>Seret untuk menggeser tampilan. Tahan Spasi untuk menggeser dengan alat apa pun</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>Laso</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>Seret mengelilingi area untuk memilihnya</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>Garis</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>Seret untuk menggambar garis. Shift menempel ke sudut piksel yang rapi</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>Tongkat ajaib</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>Klik untuk memilih area berwarna serupa</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>Pindahkan</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>Seret untuk memindahkan seleksi atau sel. Seret pegangan untuk menskalakan dan memutar, Enter untuk menerapkan</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>Pensil</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>Gambar dengan warna latar depan; klik kanan menggambar dengan warna latar belakang. Shift+klik menggambar garis dari titik terakhir</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>Laso poligonal</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>Klik untuk menambah sudut; klik ganda atau tekan Enter untuk menutup seleksi</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Bingkai pilih persegi panjang</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>Persegi panjang</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>Seret untuk menggambar persegi panjang. Shift membuat persegi, Ctrl menggambar dari tengah</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>Seret untuk memilih. Shift menambah, Alt mengurangi, Shift+Alt mengiris</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>Bayangan</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>Seret untuk mencerahkan piksel mengikuti palet; klik kanan menggelapkan</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>Iris</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>Seret untuk menandai area bernama yang diekspor bersama lembar sprite</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>Semprot</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>Tahan untuk menyemprotkan piksel acak</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>Teks</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>Klik untuk menambahkan teks</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>Zoom</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>Klik untuk memperbesar, klik kanan atau Alt+klik untuk memperkecil</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>Warna latar belakang</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>Ciutkan menjadi satu kolom</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>Warna Bawaan</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>Perluas menjadi dua kolom</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>Warna latar depan</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>Tukar warna latar depan dan latar belakang</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>Editor Piksel</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - Editor piksel</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - Editor piksel</value>
+  </data>
+</root>

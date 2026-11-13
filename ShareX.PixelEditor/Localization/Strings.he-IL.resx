@@ -1,0 +1,1530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Blend_Addition" xml:space="preserve">
+    <value>חיבור</value>
+  </data>
+  <data name="Blend_Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="Blend_ColorBurn" xml:space="preserve">
+    <value>צריבת צבע</value>
+  </data>
+  <data name="Blend_ColorDodge" xml:space="preserve">
+    <value>הבהרת צבע</value>
+  </data>
+  <data name="Blend_Darken" xml:space="preserve">
+    <value>הכהה</value>
+  </data>
+  <data name="Blend_Difference" xml:space="preserve">
+    <value>הפרש</value>
+  </data>
+  <data name="Blend_Divide" xml:space="preserve">
+    <value>חלוקה</value>
+  </data>
+  <data name="Blend_Exclusion" xml:space="preserve">
+    <value>החרגה</value>
+  </data>
+  <data name="Blend_HardLight" xml:space="preserve">
+    <value>אור חזק</value>
+  </data>
+  <data name="Blend_Hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="Blend_Lighten" xml:space="preserve">
+    <value>הבהר</value>
+  </data>
+  <data name="Blend_Luminosity" xml:space="preserve">
+    <value>עוצמת הארה</value>
+  </data>
+  <data name="Blend_Multiply" xml:space="preserve">
+    <value>הכפלה</value>
+  </data>
+  <data name="Blend_Normal" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="Blend_Overlay" xml:space="preserve">
+    <value>שכבת-על</value>
+  </data>
+  <data name="Blend_Saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="Blend_Screen" xml:space="preserve">
+    <value>מסך</value>
+  </data>
+  <data name="Blend_SoftLight" xml:space="preserve">
+    <value>אור רך</value>
+  </data>
+  <data name="Blend_Subtract" xml:space="preserve">
+    <value>חיסור</value>
+  </data>
+  <data name="Checker_Black" xml:space="preserve">
+    <value>שחור</value>
+  </data>
+  <data name="Checker_Dark" xml:space="preserve">
+    <value>כהה</value>
+  </data>
+  <data name="Checker_Light" xml:space="preserve">
+    <value>בהיר</value>
+  </data>
+  <data name="Checker_Medium" xml:space="preserve">
+    <value>בינוני</value>
+  </data>
+  <data name="Checker_White" xml:space="preserve">
+    <value>לבן</value>
+  </data>
+  <data name="Command_ActualSize" xml:space="preserve">
+    <value>גודל אמיתי (100%)</value>
+  </data>
+  <data name="Command_AlphaThreshold" xml:space="preserve">
+    <value>הסר קצוות רכים...</value>
+  </data>
+  <data name="Command_BorderSelection" xml:space="preserve">
+    <value>גבול...</value>
+  </data>
+  <data name="Command_BrightnessContrast" xml:space="preserve">
+    <value>בהירות/ניגודיות...</value>
+  </data>
+  <data name="Command_BrushLarger" xml:space="preserve">
+    <value>הגדל את המכחול</value>
+  </data>
+  <data name="Command_BrushPreview" xml:space="preserve">
+    <value>הצג תצוגה מקדימה של המכחול</value>
+  </data>
+  <data name="Command_BrushSmaller" xml:space="preserve">
+    <value>הקטן את המכחול</value>
+  </data>
+  <data name="Command_CanvasSize" xml:space="preserve">
+    <value>גודל הבד...</value>
+  </data>
+  <data name="Command_CelProperties" xml:space="preserve">
+    <value>מאפייני התא...</value>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>נקה</value>
+  </data>
+  <data name="Command_ClearCel" xml:space="preserve">
+    <value>נקה תא</value>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>סגור</value>
+  </data>
+  <data name="Command_CloseAll" xml:space="preserve">
+    <value>סגור הכול</value>
+  </data>
+  <data name="Command_Copy" xml:space="preserve">
+    <value>העתק</value>
+  </data>
+  <data name="Command_CopyImage" xml:space="preserve">
+    <value>העתק תמונה ללוח</value>
+  </data>
+  <data name="Command_CopyMerged" xml:space="preserve">
+    <value>העתק ממוזג</value>
+  </data>
+  <data name="Command_Crop" xml:space="preserve">
+    <value>חתוך לפי הבחירה</value>
+  </data>
+  <data name="Command_Cut" xml:space="preserve">
+    <value>גזור</value>
+  </data>
+  <data name="Command_DefineBrush" xml:space="preserve">
+    <value>הגדר מכחול מהבחירה</value>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="Command_DeleteFrame" xml:space="preserve">
+    <value>מחק פריים</value>
+  </data>
+  <data name="Command_DeleteLayer" xml:space="preserve">
+    <value>מחק שכבה</value>
+  </data>
+  <data name="Command_Deselect" xml:space="preserve">
+    <value>בטל בחירה</value>
+  </data>
+  <data name="Command_DropShadow" xml:space="preserve">
+    <value>הטלת צל...</value>
+  </data>
+  <data name="Command_DuplicateLayer" xml:space="preserve">
+    <value>שכפל שכבה</value>
+  </data>
+  <data name="Command_DuplicateSprite" xml:space="preserve">
+    <value>שכפל ספרייט</value>
+  </data>
+  <data name="Command_Exit" xml:space="preserve">
+    <value>יציאה</value>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>ייצוא...</value>
+  </data>
+  <data name="Command_ExportSheet" xml:space="preserve">
+    <value>ייצא גיליון ספרייטים...</value>
+  </data>
+  <data name="Command_Fill" xml:space="preserve">
+    <value>מלא בצבע החזית</value>
+  </data>
+  <data name="Command_FirstFrame" xml:space="preserve">
+    <value>פריים ראשון</value>
+  </data>
+  <data name="Command_FitOnScreen" xml:space="preserve">
+    <value>התאם למסך</value>
+  </data>
+  <data name="Command_Flatten" xml:space="preserve">
+    <value>שטח שכבות</value>
+  </data>
+  <data name="Command_FlipHorizontal" xml:space="preserve">
+    <value>הפוך אופקית</value>
+  </data>
+  <data name="Command_FlipVertical" xml:space="preserve">
+    <value>הפוך אנכית</value>
+  </data>
+  <data name="Command_FrameProperties" xml:space="preserve">
+    <value>מאפייני הפריים...</value>
+  </data>
+  <data name="Command_FullScreen" xml:space="preserve">
+    <value>מסך מלא</value>
+  </data>
+  <data name="Command_Grayscale" xml:space="preserve">
+    <value>הסר רוויה</value>
+  </data>
+  <data name="Command_Grid" xml:space="preserve">
+    <value>הצג רשת</value>
+  </data>
+  <data name="Command_GridSettings" xml:space="preserve">
+    <value>הגדרות רשת...</value>
+  </data>
+  <data name="Command_GrowSelection" xml:space="preserve">
+    <value>הרחב...</value>
+  </data>
+  <data name="Command_HueSaturation" xml:space="preserve">
+    <value>גוון/רוויה...</value>
+  </data>
+  <data name="Command_ImportFrames" xml:space="preserve">
+    <value>ייבא תמונות כפריימים...</value>
+  </data>
+  <data name="Command_ImportImage" xml:space="preserve">
+    <value>ייבא תמונה כשכבה...</value>
+  </data>
+  <data name="Command_ImportSheet" xml:space="preserve">
+    <value>ייבא גיליון ספרייטים...</value>
+  </data>
+  <data name="Command_Invert" xml:space="preserve">
+    <value>הפוך צבעים</value>
+  </data>
+  <data name="Command_InvertSelection" xml:space="preserve">
+    <value>הפוך בחירה</value>
+  </data>
+  <data name="Command_LastFrame" xml:space="preserve">
+    <value>פריים אחרון</value>
+  </data>
+  <data name="Command_LayerAbove" xml:space="preserve">
+    <value>בחר בשכבה שמעל</value>
+  </data>
+  <data name="Command_LayerBelow" xml:space="preserve">
+    <value>בחר בשכבה שמתחת</value>
+  </data>
+  <data name="Command_LayerLock" xml:space="preserve">
+    <value>נעולה</value>
+  </data>
+  <data name="Command_LayerMoveDown" xml:space="preserve">
+    <value>הזז שכבה למטה</value>
+  </data>
+  <data name="Command_LayerMoveToBottom" xml:space="preserve">
+    <value>העבר שכבה לתחתית</value>
+  </data>
+  <data name="Command_LayerMoveToTop" xml:space="preserve">
+    <value>העבר שכבה לראש</value>
+  </data>
+  <data name="Command_LayerMoveUp" xml:space="preserve">
+    <value>הזז שכבה למעלה</value>
+  </data>
+  <data name="Command_LayerProperties" xml:space="preserve">
+    <value>מאפייני שכבה...</value>
+  </data>
+  <data name="Command_LayerReference" xml:space="preserve">
+    <value>שכבת ייחוס</value>
+  </data>
+  <data name="Command_LayerVisible" xml:space="preserve">
+    <value>גלויה</value>
+  </data>
+  <data name="Command_LinkCels" xml:space="preserve">
+    <value>קשר תאים</value>
+  </data>
+  <data name="Command_Loop" xml:space="preserve">
+    <value>נגן בלולאה</value>
+  </data>
+  <data name="Command_MergeDown" xml:space="preserve">
+    <value>מזג למטה</value>
+  </data>
+  <data name="Command_MoveFrameLeft" xml:space="preserve">
+    <value>הזז פריימים שמאלה</value>
+  </data>
+  <data name="Command_MoveFrameRight" xml:space="preserve">
+    <value>הזז פריימים ימינה</value>
+  </data>
+  <data name="Command_New" xml:space="preserve">
+    <value>חדש...</value>
+  </data>
+  <data name="Command_NewEmptyFrame" xml:space="preserve">
+    <value>פריים ריק חדש</value>
+  </data>
+  <data name="Command_NewFrame" xml:space="preserve">
+    <value>פריים חדש</value>
+  </data>
+  <data name="Command_NewFromClipboard" xml:space="preserve">
+    <value>חדש מהלוח</value>
+  </data>
+  <data name="Command_NewGroup" xml:space="preserve">
+    <value>קבוצה חדשה</value>
+  </data>
+  <data name="Command_NewLayer" xml:space="preserve">
+    <value>שכבה חדשה</value>
+  </data>
+  <data name="Command_NewLinkedFrame" xml:space="preserve">
+    <value>פריים מקושר חדש</value>
+  </data>
+  <data name="Command_NewTag" xml:space="preserve">
+    <value>תגית חדשה...</value>
+  </data>
+  <data name="Command_NextFrame" xml:space="preserve">
+    <value>הפריים הבא</value>
+  </data>
+  <data name="Command_OnionSettings" xml:space="preserve">
+    <value>הגדרות קליפת בצל...</value>
+  </data>
+  <data name="Command_OnionSkin" xml:space="preserve">
+    <value>קליפת בצל</value>
+  </data>
+  <data name="Command_Open" xml:space="preserve">
+    <value>פתח...</value>
+  </data>
+  <data name="Command_Outline" xml:space="preserve">
+    <value>קו מתאר...</value>
+  </data>
+  <data name="Command_Paste" xml:space="preserve">
+    <value>הדבק</value>
+  </data>
+  <data name="Command_PasteNewLayer" xml:space="preserve">
+    <value>הדבק כשכבה חדשה</value>
+  </data>
+  <data name="Command_PasteNewSprite" xml:space="preserve">
+    <value>הדבק כספרייט חדש</value>
+  </data>
+  <data name="Command_PixelGrid" xml:space="preserve">
+    <value>הצג רשת פיקסלים</value>
+  </data>
+  <data name="Command_Play" xml:space="preserve">
+    <value>נגן/עצור הנפשה</value>
+  </data>
+  <data name="Command_PlayTagOnly" xml:space="preserve">
+    <value>נגן רק את התגית הנוכחית</value>
+  </data>
+  <data name="Command_Posterize" xml:space="preserve">
+    <value>פוסטריזציה...</value>
+  </data>
+  <data name="Command_Preferences" xml:space="preserve">
+    <value>העדפות...</value>
+  </data>
+  <data name="Command_PreviousFrame" xml:space="preserve">
+    <value>הפריים הקודם</value>
+  </data>
+  <data name="Command_Redo" xml:space="preserve">
+    <value>עשה מחדש</value>
+  </data>
+  <data name="Command_ReduceColors" xml:space="preserve">
+    <value>הפחת צבעים...</value>
+  </data>
+  <data name="Command_RemoveTag" xml:space="preserve">
+    <value>הסר תגית</value>
+  </data>
+  <data name="Command_ReplaceColor" xml:space="preserve">
+    <value>החלף צבע...</value>
+  </data>
+  <data name="Command_ResetPanels" xml:space="preserve">
+    <value>אפס סביבת עבודה</value>
+  </data>
+  <data name="Command_ReverseFrames" xml:space="preserve">
+    <value>הפוך סדר פריימים</value>
+  </data>
+  <data name="Command_Rotate180" xml:space="preserve">
+    <value>סיבוב ב־180°</value>
+  </data>
+  <data name="Command_Rotate90CCW" xml:space="preserve">
+    <value>סובב 90° נגד כיוון השעון</value>
+  </data>
+  <data name="Command_Rotate90CW" xml:space="preserve">
+    <value>סובב 90° עם כיוון השעון</value>
+  </data>
+  <data name="Command_Save" xml:space="preserve">
+    <value>שמירה</value>
+  </data>
+  <data name="Command_SaveAs" xml:space="preserve">
+    <value>שמור בשם...</value>
+  </data>
+  <data name="Command_SelectAll" xml:space="preserve">
+    <value>בחר הכול</value>
+  </data>
+  <data name="Command_SelectByColor" xml:space="preserve">
+    <value>בחר את צבע החזית</value>
+  </data>
+  <data name="Command_SelectCelContent" xml:space="preserve">
+    <value>בחר את תוכן התא</value>
+  </data>
+  <data name="Command_ShiftDown" xml:space="preserve">
+    <value>הסט למטה</value>
+  </data>
+  <data name="Command_ShiftLeft" xml:space="preserve">
+    <value>הסט שמאלה</value>
+  </data>
+  <data name="Command_ShiftRight" xml:space="preserve">
+    <value>הסט ימינה</value>
+  </data>
+  <data name="Command_ShiftUp" xml:space="preserve">
+    <value>הסט למעלה</value>
+  </data>
+  <data name="Command_Shortcuts" xml:space="preserve">
+    <value>קיצורי מקלדת...</value>
+  </data>
+  <data name="Command_ShowOptions" xml:space="preserve">
+    <value>סרגל אפשרויות</value>
+  </data>
+  <data name="Command_ShowSlices" xml:space="preserve">
+    <value>הצג פרוסות</value>
+  </data>
+  <data name="Command_ShowTimeline" xml:space="preserve">
+    <value>ציר זמן</value>
+  </data>
+  <data name="Command_ShowToolbar" xml:space="preserve">
+    <value>סרגל כלים</value>
+  </data>
+  <data name="Command_ShrinkSelection" xml:space="preserve">
+    <value>כווץ...</value>
+  </data>
+  <data name="Command_SnapToGrid" xml:space="preserve">
+    <value>הצמד לרשת</value>
+  </data>
+  <data name="Command_SpriteSize" xml:space="preserve">
+    <value>גודל הספרייט...</value>
+  </data>
+  <data name="Command_Stroke" xml:space="preserve">
+    <value>קו סביב הבחירה</value>
+  </data>
+  <data name="Command_SymmetryAxis" xml:space="preserve">
+    <value>קבע מיקום ציר...</value>
+  </data>
+  <data name="Command_SymmetryHorizontal" xml:space="preserve">
+    <value>סימטריה אופקית</value>
+  </data>
+  <data name="Command_SymmetryReset" xml:space="preserve">
+    <value>מרכז צירים</value>
+  </data>
+  <data name="Command_SymmetryVertical" xml:space="preserve">
+    <value>סימטריה אנכית</value>
+  </data>
+  <data name="Command_TagProperties" xml:space="preserve">
+    <value>מאפייני התגית...</value>
+  </data>
+  <data name="Command_TiledHorizontal" xml:space="preserve">
+    <value>ריצוף אופקי</value>
+  </data>
+  <data name="Command_TiledMode" xml:space="preserve">
+    <value>מצב ריצוף</value>
+  </data>
+  <data name="Command_TiledVertical" xml:space="preserve">
+    <value>ריצוף אנכי</value>
+  </data>
+  <data name="Command_ToolbarColumns" xml:space="preserve">
+    <value>סרגל כלים בשתי עמודות</value>
+  </data>
+  <data name="Command_Transform" xml:space="preserve">
+    <value>המרה חופשית</value>
+  </data>
+  <data name="Command_Trim" xml:space="preserve">
+    <value>חתוך שוליים ריקים</value>
+  </data>
+  <data name="Command_Undo" xml:space="preserve">
+    <value>בטל</value>
+  </data>
+  <data name="Command_UnlinkCels" xml:space="preserve">
+    <value>בטל קישור תאים</value>
+  </data>
+  <data name="Command_Upload" xml:space="preserve">
+    <value>העלה תמונה</value>
+  </data>
+  <data name="Command_ZoomIn" xml:space="preserve">
+    <value>התקרב</value>
+  </data>
+  <data name="Command_ZoomOut" xml:space="preserve">
+    <value>התרחק</value>
+  </data>
+  <data name="Dialog_AllFrames" xml:space="preserve">
+    <value>החל על כל הפריימים</value>
+  </data>
+  <data name="Dialog_AlphaThreshold_Note" xml:space="preserve">
+    <value>הופך כל פיקסל לאטום לגמרי או לשקוף לגמרי. שימושי לניקוי קצוות רכים בתמונות מיובאות.</value>
+  </data>
+  <data name="Dialog_Anchor" xml:space="preserve">
+    <value>עוגן</value>
+  </data>
+  <data name="Dialog_ApplyTo" xml:space="preserve">
+    <value>החל על</value>
+  </data>
+  <data name="Dialog_AxisX" xml:space="preserve">
+    <value>ציר אנכי (חצאי פיקסלים)</value>
+  </data>
+  <data name="Dialog_AxisY" xml:space="preserve">
+    <value>ציר אופקי (חצאי פיקסלים)</value>
+  </data>
+  <data name="Dialog_BinaryAlpha" xml:space="preserve">
+    <value>הסר שקיפות חלקית</value>
+  </data>
+  <data name="Dialog_BlendMode" xml:space="preserve">
+    <value>מצב מיזוג</value>
+  </data>
+  <data name="Dialog_Brightness" xml:space="preserve">
+    <value>בהירות</value>
+  </data>
+  <data name="Dialog_Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="Dialog_ColorCount" xml:space="preserve">
+    <value>צבעים</value>
+  </data>
+  <data name="Dialog_Contrast" xml:space="preserve">
+    <value>ניגודיות</value>
+  </data>
+  <data name="Dialog_Create" xml:space="preserve">
+    <value>צור</value>
+  </data>
+  <data name="Dialog_Direction" xml:space="preserve">
+    <value>כיוון</value>
+  </data>
+  <data name="Dialog_DurationMs" xml:space="preserve">
+    <value>משך (אלפיות שנייה)</value>
+  </data>
+  <data name="Dialog_FrameNumber" xml:space="preserve">
+    <value>מסגרת {0}</value>
+  </data>
+  <data name="Dialog_FrameRange" xml:space="preserve">
+    <value>פריימים {0} עד {1}</value>
+  </data>
+  <data name="Dialog_From" xml:space="preserve">
+    <value>מ־</value>
+  </data>
+  <data name="Dialog_FromFrame" xml:space="preserve">
+    <value>מפריים</value>
+  </data>
+  <data name="Dialog_Hue" xml:space="preserve">
+    <value>גוון</value>
+  </data>
+  <data name="Dialog_KeepProportions" xml:space="preserve">
+    <value>שמור על פרופורציות</value>
+  </data>
+  <data name="Dialog_Levels" xml:space="preserve">
+    <value>רמות</value>
+  </data>
+  <data name="Dialog_Lightness" xml:space="preserve">
+    <value>בהירות (L)</value>
+  </data>
+  <data name="Dialog_Method" xml:space="preserve">
+    <value>שיטה</value>
+  </data>
+  <data name="Dialog_Name" xml:space="preserve">
+    <value>שם</value>
+  </data>
+  <data name="Dialog_NewSprite" xml:space="preserve">
+    <value>ספרייט חדש</value>
+  </data>
+  <data name="Dialog_OffsetX" xml:space="preserve">
+    <value>היסט X</value>
+  </data>
+  <data name="Dialog_OffsetY" xml:space="preserve">
+    <value>היסט Y</value>
+  </data>
+  <data name="Dialog_OnionNext" xml:space="preserve">
+    <value>פריימים אחרי</value>
+  </data>
+  <data name="Dialog_OnionPrevious" xml:space="preserve">
+    <value>פריימים לפני</value>
+  </data>
+  <data name="Dialog_OnionTint" xml:space="preserve">
+    <value>צבע פריימים קודמים באדום ופריימים הבאים בכחול</value>
+  </data>
+  <data name="Dialog_OutlineCorners" xml:space="preserve">
+    <value>כלול פינות אלכסוניות</value>
+  </data>
+  <data name="Dialog_OutlineInside" xml:space="preserve">
+    <value>צייר בתוך הצורה</value>
+  </data>
+  <data name="Dialog_Percent" xml:space="preserve">
+    <value>אחוזים</value>
+  </data>
+  <data name="Dialog_Pixels" xml:space="preserve">
+    <value>פיקסלים</value>
+  </data>
+  <data name="Dialog_Presets" xml:space="preserve">
+    <value>הגדרות קבועות מראש</value>
+  </data>
+  <data name="Dialog_ReduceColors_Note" xml:space="preserve">
+    <value>בונה פלטה עם מספר צבעים זה מכל הספרייט וצובע בה מחדש כל תא. הפלטה החדשה מחליפה את הנוכחית.</value>
+  </data>
+  <data name="Dialog_Remap_Note" xml:space="preserve">
+    <value>צובע מחדש כל תא בצבעים הקרובים ביותר בפלטה הנוכחית.</value>
+  </data>
+  <data name="Dialog_ResizeNote" xml:space="preserve">
+    <value>«השכן הקרוב» שומר על פיקסלים חדים. קנה מידה לפיקסל ארט גם מחליק קצוות מדורגים בהגדלה של פי 2 ומעלה.</value>
+  </data>
+  <data name="Dialog_Saturation" xml:space="preserve">
+    <value>רוויה</value>
+  </data>
+  <data name="Dialog_SymmetryAxis_Note" xml:space="preserve">
+    <value>ערך זוגי ממקם את הציר בין שני פיקסלים; ערך אי־זוגי מעביר אותו באמצע פיקסל.</value>
+  </data>
+  <data name="Dialog_Threshold" xml:space="preserve">
+    <value>סף</value>
+  </data>
+  <data name="Dialog_To" xml:space="preserve">
+    <value>אל</value>
+  </data>
+  <data name="Dialog_ToFrame" xml:space="preserve">
+    <value>עד פריים</value>
+  </data>
+  <data name="Dialog_TransparentBackground" xml:space="preserve">
+    <value>רקע שקוף</value>
+  </data>
+  <data name="Direction_Forward" xml:space="preserve">
+    <value>קדימה</value>
+  </data>
+  <data name="Direction_PingPong" xml:space="preserve">
+    <value>הלוך ושוב</value>
+  </data>
+  <data name="Direction_PingPongReverse" xml:space="preserve">
+    <value>הלוך ושוב הפוך</value>
+  </data>
+  <data name="Direction_Reverse" xml:space="preserve">
+    <value>הפוך</value>
+  </data>
+  <data name="Dither_Bayer4" xml:space="preserve">
+    <value>מסודר 4×4</value>
+  </data>
+  <data name="Dither_Bayer8" xml:space="preserve">
+    <value>מסודר 8×8</value>
+  </data>
+  <data name="Dither_FloydSteinberg" xml:space="preserve">
+    <value>פלויד–סטיינברג</value>
+  </data>
+  <data name="Dither_None" xml:space="preserve">
+    <value>ללא</value>
+  </data>
+  <data name="Dither_Ordered" xml:space="preserve">
+    <value>מסודר</value>
+  </data>
+  <data name="Dock_ClosePanel" xml:space="preserve">
+    <value>סגור חלונית</value>
+  </data>
+  <data name="Dock_Collapse" xml:space="preserve">
+    <value>כווץ קבוצת חלוניות</value>
+  </data>
+  <data name="Dock_Expand" xml:space="preserve">
+    <value>הרחב קבוצת חלוניות</value>
+  </data>
+  <data name="Dock_MoveToGroup" xml:space="preserve">
+    <value>העבר לקבוצה עם {0}</value>
+  </data>
+  <data name="Dock_MoveToNewGroup" xml:space="preserve">
+    <value>העבר לקבוצה חדשה</value>
+  </data>
+  <data name="Dock_PanelMenu" xml:space="preserve">
+    <value>תפריט חלונית</value>
+  </data>
+  <data name="Export_AllFrames" xml:space="preserve">
+    <value>כל הפריימים</value>
+  </data>
+  <data name="Export_Apng" xml:space="preserve">
+    <value>PNG מונפש</value>
+  </data>
+  <data name="Export_Button" xml:space="preserve">
+    <value>ייצוא</value>
+  </data>
+  <data name="Export_CurrentFrame" xml:space="preserve">
+    <value>הפריים הנוכחי</value>
+  </data>
+  <data name="Export_Format" xml:space="preserve">
+    <value>פורמט</value>
+  </data>
+  <data name="Export_Frames" xml:space="preserve">
+    <value>פריימים</value>
+  </data>
+  <data name="Export_Gif" xml:space="preserve">
+    <value>GIF מונפש</value>
+  </data>
+  <data name="Export_Info" xml:space="preserve">
+    <value>{0} × {1} פיקסלים, {2} פריימים</value>
+  </data>
+  <data name="Export_Png" xml:space="preserve">
+    <value>תמונת PNG</value>
+  </data>
+  <data name="Export_Scale" xml:space="preserve">
+    <value>שינוי קנה מידה</value>
+  </data>
+  <data name="Export_SelectedFrames" xml:space="preserve">
+    <value>הפריימים שנבחרו</value>
+  </data>
+  <data name="Export_Sequence" xml:space="preserve">
+    <value>רצף PNG</value>
+  </data>
+  <data name="Export_SingleNote" xml:space="preserve">
+    <value>תבנית זו שומרת רק את הפריים הנוכחי.</value>
+  </data>
+  <data name="Export_Tag" xml:space="preserve">
+    <value>תגית: {0}</value>
+  </data>
+  <data name="File_AllSupported" xml:space="preserve">
+    <value>כל הקבצים הנתמכים</value>
+  </data>
+  <data name="File_Images" xml:space="preserve">
+    <value>תמונות</value>
+  </data>
+  <data name="File_Palettes" xml:space="preserve">
+    <value>פלטות</value>
+  </data>
+  <data name="File_Project" xml:space="preserve">
+    <value>ספרייט של עורך הפיקסלים של ShareX</value>
+  </data>
+  <data name="History_BlendMode" xml:space="preserve">
+    <value>מצב מיזוג</value>
+  </data>
+  <data name="History_DeleteSlice" xml:space="preserve">
+    <value>מחק פרוסה</value>
+  </data>
+  <data name="History_Deselect" xml:space="preserve">
+    <value>בטל בחירה</value>
+  </data>
+  <data name="History_EditPaletteColor" xml:space="preserve">
+    <value>ערוך צבע בפלטה</value>
+  </data>
+  <data name="History_FrameDuration" xml:space="preserve">
+    <value>משך הפריים</value>
+  </data>
+  <data name="History_HideLayer" xml:space="preserve">
+    <value>הסתר שכבה</value>
+  </data>
+  <data name="History_LoadPalette" xml:space="preserve">
+    <value>טען פלטה</value>
+  </data>
+  <data name="History_LockLayer" xml:space="preserve">
+    <value>נעל שכבה</value>
+  </data>
+  <data name="History_ModifySelection" xml:space="preserve">
+    <value>שנה בחירה</value>
+  </data>
+  <data name="History_Move" xml:space="preserve">
+    <value>הזז</value>
+  </data>
+  <data name="History_MoveFrames" xml:space="preserve">
+    <value>הזז פריימים</value>
+  </data>
+  <data name="History_MoveSlice" xml:space="preserve">
+    <value>ערוך פרוסה</value>
+  </data>
+  <data name="History_New" xml:space="preserve">
+    <value>חדש</value>
+  </data>
+  <data name="History_NewSlice" xml:space="preserve">
+    <value>פרוסה חדשה</value>
+  </data>
+  <data name="History_Opacity" xml:space="preserve">
+    <value>אטימות השכבה</value>
+  </data>
+  <data name="History_Open" xml:space="preserve">
+    <value>פתח</value>
+  </data>
+  <data name="History_RenameSlice" xml:space="preserve">
+    <value>מאפייני הפרוסה</value>
+  </data>
+  <data name="History_ReorderLayer" xml:space="preserve">
+    <value>סדר מחדש שכבה</value>
+  </data>
+  <data name="History_Select" xml:space="preserve">
+    <value>בחירה</value>
+  </data>
+  <data name="History_ShowLayer" xml:space="preserve">
+    <value>הצג שכבה</value>
+  </data>
+  <data name="History_SoloLayer" xml:space="preserve">
+    <value>הצג רק שכבה זו</value>
+  </data>
+  <data name="History_UnlockLayer" xml:space="preserve">
+    <value>בטל נעילת שכבה</value>
+  </data>
+  <data name="Ink_Behind" xml:space="preserve">
+    <value>מאחור</value>
+  </data>
+  <data name="Ink_Darken" xml:space="preserve">
+    <value>הכהה</value>
+  </data>
+  <data name="Ink_Lighten" xml:space="preserve">
+    <value>הבהר</value>
+  </data>
+  <data name="Ink_LockAlpha" xml:space="preserve">
+    <value>נעל אלפא</value>
+  </data>
+  <data name="Ink_Normal" xml:space="preserve">
+    <value>רגיל</value>
+  </data>
+  <data name="Ink_Replace" xml:space="preserve">
+    <value>החלף</value>
+  </data>
+  <data name="Layer_CopyName" xml:space="preserve">
+    <value>{0} עותק</value>
+  </data>
+  <data name="Layer_DefaultName" xml:space="preserve">
+    <value>שכבה</value>
+  </data>
+  <data name="Layer_Flattened" xml:space="preserve">
+    <value>משוטחת</value>
+  </data>
+  <data name="Layer_GroupName" xml:space="preserve">
+    <value>קבוצה</value>
+  </data>
+  <data name="Layers_LinkedBadge" xml:space="preserve">
+    <value>תא זה מקושר לפריימים אחרים</value>
+  </data>
+  <data name="Layers_ReferenceBadge" xml:space="preserve">
+    <value>שכבת ייחוס: לא מיוצאת</value>
+  </data>
+  <data name="Layers_ToggleGroup" xml:space="preserve">
+    <value>הרחב או כווץ את הקבוצה</value>
+  </data>
+  <data name="Layers_ToggleLock" xml:space="preserve">
+    <value>נעל או שחרר את השכבה</value>
+  </data>
+  <data name="Layers_ToggleVisibility" xml:space="preserve">
+    <value>הצג או הסתר את השכבה</value>
+  </data>
+  <data name="Menu_Cel" xml:space="preserve">
+    <value>תא</value>
+  </data>
+  <data name="Menu_Edit" xml:space="preserve">
+    <value>_עריכה</value>
+  </data>
+  <data name="Menu_Effects" xml:space="preserve">
+    <value>_אפקטים</value>
+  </data>
+  <data name="Menu_Empty" xml:space="preserve">
+    <value>(ריק)</value>
+  </data>
+  <data name="Menu_File" xml:space="preserve">
+    <value>_קובץ</value>
+  </data>
+  <data name="Menu_Frame" xml:space="preserve">
+    <value>_פריים</value>
+  </data>
+  <data name="Menu_Help" xml:space="preserve">
+    <value>_עזרה</value>
+  </data>
+  <data name="Menu_Layer" xml:space="preserve">
+    <value>_שכבה</value>
+  </data>
+  <data name="Menu_OpenRecent" xml:space="preserve">
+    <value>פתח אחרונים</value>
+  </data>
+  <data name="Menu_Panels" xml:space="preserve">
+    <value>חלוניות</value>
+  </data>
+  <data name="Menu_Select" xml:space="preserve">
+    <value>_בחירה</value>
+  </data>
+  <data name="Menu_Shift" xml:space="preserve">
+    <value>הסט פיקסלים (עם גלישה)</value>
+  </data>
+  <data name="Menu_Sprite" xml:space="preserve">
+    <value>_ספרייט</value>
+  </data>
+  <data name="Menu_Symmetry" xml:space="preserve">
+    <value>סימטריה</value>
+  </data>
+  <data name="Menu_Tags" xml:space="preserve">
+    <value>תגים</value>
+  </data>
+  <data name="Menu_Tiled" xml:space="preserve">
+    <value>מצב ריצוף</value>
+  </data>
+  <data name="Menu_View" xml:space="preserve">
+    <value>_תצוגה</value>
+  </data>
+  <data name="Message_ClipboardEmpty" xml:space="preserve">
+    <value>אין תמונה בלוח.</value>
+  </data>
+  <data name="Message_CommandFailed" xml:space="preserve">
+    <value>לא ניתן להשלים את "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotOpen" xml:space="preserve">
+    <value>לא ניתן לפתוח את "{0}": {1}</value>
+  </data>
+  <data name="Message_CouldNotSave" xml:space="preserve">
+    <value>לא ניתן לשמור את "{0}": {1}</value>
+  </data>
+  <data name="Message_DontSave" xml:space="preserve">
+    <value>אל תשמור</value>
+  </data>
+  <data name="Message_OperationFailed" xml:space="preserve">
+    <value>הפעולה נכשלה: {0}</value>
+  </data>
+  <data name="Message_SaveChanges" xml:space="preserve">
+    <value>לשמור את השינויים ב-"{0}" לפני הסגירה?</value>
+  </data>
+  <data name="Message_TooLarge" xml:space="preserve">
+    <value>התמונה גדולה מדי. ספרייטים יכולים להיות ברוחב ובגובה של עד {0} פיקסלים.</value>
+  </data>
+  <data name="Options_AllLayers" xml:space="preserve">
+    <value>כל השכבות</value>
+  </data>
+  <data name="Options_AllLayers_Tip" xml:space="preserve">
+    <value>מלא לפי הצבעים של כל השכבות הגלויות במקום השכבה הפעילה</value>
+  </data>
+  <data name="Options_Angle" xml:space="preserve">
+    <value>זווית</value>
+  </data>
+  <data name="Options_Apply" xml:space="preserve">
+    <value>החלה</value>
+  </data>
+  <data name="Options_Cancel" xml:space="preserve">
+    <value>ביטול</value>
+  </data>
+  <data name="Options_ClearCustomBrush" xml:space="preserve">
+    <value>אפס מכחול</value>
+  </data>
+  <data name="Options_Contiguous" xml:space="preserve">
+    <value>רציף</value>
+  </data>
+  <data name="Options_Contiguous_Tip" xml:space="preserve">
+    <value>רק פיקסלים המחוברים לפיקסל שנלחץ; כבה כדי לקחת כל פיקסל בצבע זה</value>
+  </data>
+  <data name="Options_CustomBrush" xml:space="preserve">
+    <value>מכחול מותאם אישית</value>
+  </data>
+  <data name="Options_Density" xml:space="preserve">
+    <value>צפיפות</value>
+  </data>
+  <data name="Options_Diagonal" xml:space="preserve">
+    <value>אלכסוני</value>
+  </data>
+  <data name="Options_Diagonal_Tip" xml:space="preserve">
+    <value>התפשט גם דרך פיקסלים שנוגעים רק בפינות</value>
+  </data>
+  <data name="Options_Dither" xml:space="preserve">
+    <value>דיתור</value>
+  </data>
+  <data name="Options_EyedropperHint" xml:space="preserve">
+    <value>לחיצה דוגמת את צבע החזית, לחיצה ימנית את צבע הרקע</value>
+  </data>
+  <data name="Options_Filled" xml:space="preserve">
+    <value>מלא</value>
+  </data>
+  <data name="Options_Height" xml:space="preserve">
+    <value>גובה</value>
+  </data>
+  <data name="Options_Ink" xml:space="preserve">
+    <value>דיו</value>
+  </data>
+  <data name="Options_Linear" xml:space="preserve">
+    <value>מעבר צבע קווי</value>
+  </data>
+  <data name="Options_MoveHint" xml:space="preserve">
+    <value>גרור כדי להזיז את הבחירה או את התא. החזק Alt כדי להזיז עותק.</value>
+  </data>
+  <data name="Options_Opacity" xml:space="preserve">
+    <value>אטימות</value>
+  </data>
+  <data name="Options_Outline" xml:space="preserve">
+    <value>קו מתאר</value>
+  </data>
+  <data name="Options_Pattern" xml:space="preserve">
+    <value>דוגמה</value>
+  </data>
+  <data name="Options_PixelPerfect" xml:space="preserve">
+    <value>פיקסל מושלם</value>
+  </data>
+  <data name="Options_PixelPerfect_Tip" xml:space="preserve">
+    <value>מסיר את פיקסלי הפינה העודפים בקווים חופשיים שצוירו במכחול של פיקסל אחד</value>
+  </data>
+  <data name="Options_Radial" xml:space="preserve">
+    <value>מעבר צבע מעגלי</value>
+  </data>
+  <data name="Options_Radius" xml:space="preserve">
+    <value>רדיוס</value>
+  </data>
+  <data name="Options_RoundTip" xml:space="preserve">
+    <value>קצה עגול</value>
+  </data>
+  <data name="Options_SampleAllLayers_Tip" xml:space="preserve">
+    <value>השתמש בצבעים של כל השכבות הגלויות במקום השכבה הפעילה</value>
+  </data>
+  <data name="Options_SelectAdd" xml:space="preserve">
+    <value>הוסף לבחירה (Shift)</value>
+  </data>
+  <data name="Options_SelectIntersect" xml:space="preserve">
+    <value>חתוך עם הבחירה (Shift+Alt)</value>
+  </data>
+  <data name="Options_SelectNew" xml:space="preserve">
+    <value>בחירה חדשה</value>
+  </data>
+  <data name="Options_SelectSubtract" xml:space="preserve">
+    <value>חסר מהבחירה (Alt)</value>
+  </data>
+  <data name="Options_ShadeHint" xml:space="preserve">
+    <value>לחיצה מבהירה, לחיצה ימנית מכהה, לפי הפלטה</value>
+  </data>
+  <data name="Options_Size" xml:space="preserve">
+    <value>גודל:</value>
+  </data>
+  <data name="Options_SliceHint" xml:space="preserve">
+    <value>גרור כדי ליצור פרוסה. לחץ על פרוסה כדי לבחור בה, לחץ פעמיים כדי לשנות את שמה.</value>
+  </data>
+  <data name="Options_SquareTip" xml:space="preserve">
+    <value>קצה מרובע</value>
+  </data>
+  <data name="Options_TextHint" xml:space="preserve">
+    <value>לחץ במקום שבו הטקסט אמור להופיע</value>
+  </data>
+  <data name="Options_ToTransparent" xml:space="preserve">
+    <value>לשקוף</value>
+  </data>
+  <data name="Options_ToTransparent_Tip" xml:space="preserve">
+    <value>העלם בהדרגה את צבע החזית במקום למזג אותו בצבע הרקע</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>סבילות</value>
+  </data>
+  <data name="Options_Transform" xml:space="preserve">
+    <value>המרה</value>
+  </data>
+  <data name="Options_Width" xml:space="preserve">
+    <value>רוחב</value>
+  </data>
+  <data name="Palette_AddColor" xml:space="preserve">
+    <value>הוסף את צבע החזית לפלטה</value>
+  </data>
+  <data name="Palette_Count" xml:space="preserve">
+    <value>{0} צבעים</value>
+  </data>
+  <data name="Palette_EditColor" xml:space="preserve">
+    <value>ערוך צבע...</value>
+  </data>
+  <data name="Palette_FromSprite" xml:space="preserve">
+    <value>צור פלטה מהספרייט</value>
+  </data>
+  <data name="Palette_Load" xml:space="preserve">
+    <value>טען פלטה...</value>
+  </data>
+  <data name="Palette_Menu" xml:space="preserve">
+    <value>תפריט פלטה</value>
+  </data>
+  <data name="Palette_Presets" xml:space="preserve">
+    <value>הגדרות קבועות מראש</value>
+  </data>
+  <data name="Palette_Ramp" xml:space="preserve">
+    <value>הוסף מדרג צבעים...</value>
+  </data>
+  <data name="Palette_Ramp_Note" xml:space="preserve">
+    <value>מוסיף מדרג צבעים מצבע החזית לצבע הרקע.</value>
+  </data>
+  <data name="Palette_Ramp_Steps" xml:space="preserve">
+    <value>שלבים</value>
+  </data>
+  <data name="Palette_RemapSprite" xml:space="preserve">
+    <value>מפה מחדש את הספרייט לפלטה...</value>
+  </data>
+  <data name="Palette_RemoveColor" xml:space="preserve">
+    <value>הסר צבע מהפלטה</value>
+  </data>
+  <data name="Palette_RemoveUnused" xml:space="preserve">
+    <value>הסר צבעים שלא בשימוש</value>
+  </data>
+  <data name="Palette_ReplaceWithForeground" xml:space="preserve">
+    <value>החלף בצבע החזית</value>
+  </data>
+  <data name="Palette_Reverse" xml:space="preserve">
+    <value>הפוך סדר</value>
+  </data>
+  <data name="Palette_Save" xml:space="preserve">
+    <value>שמור פלטה...</value>
+  </data>
+  <data name="Palette_SelectPixels" xml:space="preserve">
+    <value>בחר פיקסלים בצבע זה</value>
+  </data>
+  <data name="Palette_SortBrightness" xml:space="preserve">
+    <value>מיין לפי בהירות</value>
+  </data>
+  <data name="Palette_SortHue" xml:space="preserve">
+    <value>מיין לפי גוון</value>
+  </data>
+  <data name="Palette_SortSaturation" xml:space="preserve">
+    <value>מיין לפי רוויה</value>
+  </data>
+  <data name="Panel_Color" xml:space="preserve">
+    <value>צבע</value>
+  </data>
+  <data name="Panel_History" xml:space="preserve">
+    <value>היסטוריה</value>
+  </data>
+  <data name="Panel_Layers" xml:space="preserve">
+    <value>שכבות</value>
+  </data>
+  <data name="Panel_Palette" xml:space="preserve">
+    <value>פלטה</value>
+  </data>
+  <data name="Panel_Preview" xml:space="preserve">
+    <value>תצוגה מקדימה</value>
+  </data>
+  <data name="Pattern_Checker" xml:space="preserve">
+    <value>לוח שחמט</value>
+  </data>
+  <data name="Pattern_Dense" xml:space="preserve">
+    <value>צפוף</value>
+  </data>
+  <data name="Pattern_Diagonal" xml:space="preserve">
+    <value>אלכסוני</value>
+  </data>
+  <data name="Pattern_Dots" xml:space="preserve">
+    <value>נקודות</value>
+  </data>
+  <data name="Pattern_HorizontalLines" xml:space="preserve">
+    <value>קווים אופקיים</value>
+  </data>
+  <data name="Pattern_Solid" xml:space="preserve">
+    <value>רציף</value>
+  </data>
+  <data name="Pattern_Sparse" xml:space="preserve">
+    <value>דליל</value>
+  </data>
+  <data name="Pattern_VerticalLines" xml:space="preserve">
+    <value>קווים אנכיים</value>
+  </data>
+  <data name="Preferences_Checker" xml:space="preserve">
+    <value>דפוס שקיפות</value>
+  </data>
+  <data name="Preferences_CheckerSize" xml:space="preserve">
+    <value>גודל משבצת (פיקסלים)</value>
+  </data>
+  <data name="Preferences_HistoryStates" xml:space="preserve">
+    <value>מצבי היסטוריה</value>
+  </data>
+  <data name="Preferences_PixelGridZoom" xml:space="preserve">
+    <value>הצג רשת פיקסלים החל מהגדלה (×)</value>
+  </data>
+  <data name="Preferences_RememberWindow" xml:space="preserve">
+    <value>זכור את גודל ומיקום החלון</value>
+  </data>
+  <data name="Preferences_TimelineCell" xml:space="preserve">
+    <value>גודל תא בציר הזמן</value>
+  </data>
+  <data name="Preview_Fit" xml:space="preserve">
+    <value>התאם ({0})</value>
+  </data>
+  <data name="Preview_PlayPause" xml:space="preserve">
+    <value>הפעל או השהה את התצוגה המקדימה</value>
+  </data>
+  <data name="Resize_Nearest" xml:space="preserve">
+    <value>השכן הקרוב ביותר</value>
+  </data>
+  <data name="Resize_PixelArt" xml:space="preserve">
+    <value>קנה מידה לפיקסל ארט</value>
+  </data>
+  <data name="Resize_Smooth" xml:space="preserve">
+    <value>חלק (ביקובי)</value>
+  </data>
+  <data name="Scope_Cel" xml:space="preserve">
+    <value>התא הנוכחי</value>
+  </data>
+  <data name="Scope_Layer" xml:space="preserve">
+    <value>כל הפריימים של השכבה</value>
+  </data>
+  <data name="Scope_SelectedFrames" xml:space="preserve">
+    <value>הפריימים שנבחרו</value>
+  </data>
+  <data name="Scope_Sprite" xml:space="preserve">
+    <value>כל הספרייט</value>
+  </data>
+  <data name="Sheet_CellHeight" xml:space="preserve">
+    <value>גובה פריים</value>
+  </data>
+  <data name="Sheet_CellWidth" xml:space="preserve">
+    <value>רוחב פריים</value>
+  </data>
+  <data name="Sheet_Columns" xml:space="preserve">
+    <value>עמודות</value>
+  </data>
+  <data name="Sheet_Grid" xml:space="preserve">
+    <value>רשת</value>
+  </data>
+  <data name="Sheet_Horizontal" xml:space="preserve">
+    <value>רצועה אופקית</value>
+  </data>
+  <data name="Sheet_ImportButton" xml:space="preserve">
+    <value>ייבוא</value>
+  </data>
+  <data name="Sheet_ImportInfo" xml:space="preserve">
+    <value>{0} × {1} תאים, עד {2} פריימים</value>
+  </data>
+  <data name="Sheet_ImportSize" xml:space="preserve">
+    <value>גודל הגיליון: {0} × {1} פיקסלים</value>
+  </data>
+  <data name="Sheet_Info" xml:space="preserve">
+    <value>גיליון: {0} × {1} פיקסלים, {2} פריימים</value>
+  </data>
+  <data name="Sheet_Layout" xml:space="preserve">
+    <value>פריסה</value>
+  </data>
+  <data name="Sheet_Metadata" xml:space="preserve">
+    <value>כתוב נתוני JSON (פריימים, תגיות ופרוסות)</value>
+  </data>
+  <data name="Sheet_Padding" xml:space="preserve">
+    <value>ריווח פנימי</value>
+  </data>
+  <data name="Sheet_SkipEmpty" xml:space="preserve">
+    <value>דלג על תאים ריקים</value>
+  </data>
+  <data name="Sheet_Spacing" xml:space="preserve">
+    <value>מרווח</value>
+  </data>
+  <data name="Sheet_Vertical" xml:space="preserve">
+    <value>רצועה אנכית</value>
+  </data>
+  <data name="Shortcuts_BackgroundColor" xml:space="preserve">
+    <value>צייר בצבע הרקע</value>
+  </data>
+  <data name="Shortcuts_Commands" xml:space="preserve">
+    <value>פקודות</value>
+  </data>
+  <data name="Shortcuts_HidePanels" xml:space="preserve">
+    <value>הסתר או הצג את כל החלוניות</value>
+  </data>
+  <data name="Shortcuts_MiddleButton" xml:space="preserve">
+    <value>לחצן העכבר האמצעי</value>
+  </data>
+  <data name="Shortcuts_Note" xml:space="preserve">
+    <value>הקלד קיצור כמו Ctrl+Shift+E. הפרד חלופות בפסיק; השאר שדה ריק כדי להסיר את הקיצור.</value>
+  </data>
+  <data name="Shortcuts_Pan" xml:space="preserve">
+    <value>הזזת התצוגה</value>
+  </data>
+  <data name="Shortcuts_PickColor" xml:space="preserve">
+    <value>דגימת צבע בזמן ציור</value>
+  </data>
+  <data name="Shortcuts_Reset" xml:space="preserve">
+    <value>שחזר ברירות מחדל</value>
+  </data>
+  <data name="Shortcuts_RightButton" xml:space="preserve">
+    <value>לחצן העכבר הימני</value>
+  </data>
+  <data name="Shortcuts_StraightLine" xml:space="preserve">
+    <value>קו ישר מהנקודה האחרונה (עיפרון)</value>
+  </data>
+  <data name="Shortcuts_Tools" xml:space="preserve">
+    <value>כלים</value>
+  </data>
+  <data name="Shortcuts_Wheel" xml:space="preserve">
+    <value>גלגלת העכבר</value>
+  </data>
+  <data name="Shortcuts_Zoom" xml:space="preserve">
+    <value>זום</value>
+  </data>
+  <data name="Slice_DefaultName" xml:space="preserve">
+    <value>פרוסה {0}</value>
+  </data>
+  <data name="Slice_Rename" xml:space="preserve">
+    <value>שנה שם פרוסה</value>
+  </data>
+  <data name="Sprite_Clipboard" xml:space="preserve">
+    <value>לוח</value>
+  </data>
+  <data name="Sprite_Untitled" xml:space="preserve">
+    <value>ספרייט-{0}</value>
+  </data>
+  <data name="Start_ClearRecent" xml:space="preserve">
+    <value>נקה קבצים אחרונים</value>
+  </data>
+  <data name="Start_NewSprite" xml:space="preserve">
+    <value>ספרייט חדש</value>
+  </data>
+  <data name="Start_NoRecent" xml:space="preserve">
+    <value>אין קבצים אחרונים</value>
+  </data>
+  <data name="Start_Open" xml:space="preserve">
+    <value>פתח</value>
+  </data>
+  <data name="Start_Recent" xml:space="preserve">
+    <value>אחרונים</value>
+  </data>
+  <data name="Start_Templates" xml:space="preserve">
+    <value>התחלה מהירה</value>
+  </data>
+  <data name="Status_ColorNotFound" xml:space="preserve">
+    <value>אין פיקסלים בצבע זה</value>
+  </data>
+  <data name="Status_Copied" xml:space="preserve">
+    <value>הועתק ללוח</value>
+  </data>
+  <data name="Status_Exported" xml:space="preserve">
+    <value>יוצא {0}</value>
+  </data>
+  <data name="Status_Exporting" xml:space="preserve">
+    <value>מייצא...</value>
+  </data>
+  <data name="Status_LayerHidden" xml:space="preserve">
+    <value>השכבה הפעילה מוסתרת</value>
+  </data>
+  <data name="Status_LayerLocked" xml:space="preserve">
+    <value>השכבה הפעילה נעולה</value>
+  </data>
+  <data name="Status_NothingToCopy" xml:space="preserve">
+    <value>אין מה להעתיק</value>
+  </data>
+  <data name="Status_NothingToMerge" xml:space="preserve">
+    <value>אין שכבת פיקסלים מתחת למיזוג</value>
+  </data>
+  <data name="Status_NothingToMove" xml:space="preserve">
+    <value>התא ריק</value>
+  </data>
+  <data name="Status_ReducingColors" xml:space="preserve">
+    <value>צובע מחדש...</value>
+  </data>
+  <data name="Status_Resizing" xml:space="preserve">
+    <value>משנה גודל...</value>
+  </data>
+  <data name="Status_Saved" xml:space="preserve">
+    <value>נשמר {0}</value>
+  </data>
+  <data name="Status_SelectPixelLayer" xml:space="preserve">
+    <value>בחר קודם שכבת פיקסלים</value>
+  </data>
+  <data name="Status_SpriteInfo" xml:space="preserve">
+    <value>{0} × {1} פיקסלים   פריים {2}/{3}   {4} אלפיות שנייה</value>
+  </data>
+  <data name="Status_Transform" xml:space="preserve">
+    <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
+  </data>
+  <data name="Tag_DefaultName" xml:space="preserve">
+    <value>תגית {0}</value>
+  </data>
+  <data name="Text_Antialias" xml:space="preserve">
+    <value>קצוות חלקים</value>
+  </data>
+  <data name="Text_Bold" xml:space="preserve">
+    <value>מודגש</value>
+  </data>
+  <data name="Text_Font" xml:space="preserve">
+    <value>גופן:</value>
+  </data>
+  <data name="Text_Italic" xml:space="preserve">
+    <value>נטוי</value>
+  </data>
+  <data name="Text_Note" xml:space="preserve">
+    <value>הטקסט ממוקם כבחירה שאפשר להזיז לפני שהיא הופכת לחלק מהשכבה.</value>
+  </data>
+  <data name="Text_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="Timeline_Duration" xml:space="preserve">
+    <value>משך</value>
+  </data>
+  <data name="Timeline_Duration_Tip" xml:space="preserve">
+    <value>כמה זמן מוצגים הפריימים שנבחרו, באלפיות שנייה</value>
+  </data>
+  <data name="Timeline_Info" xml:space="preserve">
+    <value>{0} פריימים   {1:0.##} שניות   {2:0.#} פריימים לשנייה</value>
+  </data>
+  <data name="Timeline_Layers" xml:space="preserve">
+    <value>שכבות</value>
+  </data>
+  <data name="Timeline_Range" xml:space="preserve">
+    <value>פריימים {0}–{1}</value>
+  </data>
+  <data name="TitleBar_Maximize" xml:space="preserve">
+    <value>הגדל</value>
+  </data>
+  <data name="TitleBar_Minimize" xml:space="preserve">
+    <value>לְצַמְצֵם</value>
+  </data>
+  <data name="TitleBar_Restore" xml:space="preserve">
+    <value>שחזר</value>
+  </data>
+  <data name="Tool_Bucket" xml:space="preserve">
+    <value>דלי צבע</value>
+  </data>
+  <data name="Tool_Bucket_Hint" xml:space="preserve">
+    <value>לחץ כדי למלא אזור בצבע דומה</value>
+  </data>
+  <data name="Tool_ColorReplace" xml:space="preserve">
+    <value>החלפת צבע</value>
+  </data>
+  <data name="Tool_ColorReplace_Hint" xml:space="preserve">
+    <value>צובע בצבע החזית רק מעל פיקסלים בצבע הרקע; לחיצה ימנית עושה את ההפך</value>
+  </data>
+  <data name="Tool_Contour" xml:space="preserve">
+    <value>קו מתאר מלא</value>
+  </data>
+  <data name="Tool_Contour_Hint" xml:space="preserve">
+    <value>צייר קו מתאר ביד חופשית; הוא נסגר ומתמלא כשמשחררים</value>
+  </data>
+  <data name="Tool_Curve" xml:space="preserve">
+    <value>עקומה</value>
+  </data>
+  <data name="Tool_Curve_Bend" xml:space="preserve">
+    <value>הזז כדי לכופף את העקומה, לחץ לסיום, Esc לביטול</value>
+  </data>
+  <data name="Tool_Curve_Hint" xml:space="preserve">
+    <value>גרור קו, ואז הזז כדי לכופף אותו ולחץ לסיום</value>
+  </data>
+  <data name="Tool_Ellipse" xml:space="preserve">
+    <value>אליפסה</value>
+  </data>
+  <data name="Tool_EllipseSelect" xml:space="preserve">
+    <value>סימון אליפטי</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>גרור כדי לצייר אליפסה. Shift יוצר עיגול, Ctrl מצייר מהמרכז</value>
+  </data>
+  <data name="Tool_Eraser" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="Tool_Eraser_Hint" xml:space="preserve">
+    <value>גרור כדי למחוק פיקסלים</value>
+  </data>
+  <data name="Tool_Eyedropper" xml:space="preserve">
+    <value>טפטפת</value>
+  </data>
+  <data name="Tool_Eyedropper_Hint" xml:space="preserve">
+    <value>לחץ כדי לדגום את צבע החזית, לחיצה ימנית לצבע הרקע</value>
+  </data>
+  <data name="Tool_Gradient" xml:space="preserve">
+    <value>מעבר צבע</value>
+  </data>
+  <data name="Tool_Gradient_Hint" xml:space="preserve">
+    <value>גרור כדי למלא במעבר צבע מצבע החזית לצבע הרקע</value>
+  </data>
+  <data name="Tool_Hand" xml:space="preserve">
+    <value>יד</value>
+  </data>
+  <data name="Tool_Hand_Hint" xml:space="preserve">
+    <value>גרור כדי להזיז את התצוגה. החזק רווח כדי להזיז עם כל כלי</value>
+  </data>
+  <data name="Tool_Lasso" xml:space="preserve">
+    <value>לאסו</value>
+  </data>
+  <data name="Tool_Lasso_Hint" xml:space="preserve">
+    <value>גרור סביב אזור כדי לבחור אותו</value>
+  </data>
+  <data name="Tool_Line" xml:space="preserve">
+    <value>קו</value>
+  </data>
+  <data name="Tool_Line_Hint" xml:space="preserve">
+    <value>גרור כדי לצייר קו. Shift מצמיד לזוויות פיקסלים נקיות</value>
+  </data>
+  <data name="Tool_MagicWand" xml:space="preserve">
+    <value>מטה קסם</value>
+  </data>
+  <data name="Tool_MagicWand_Hint" xml:space="preserve">
+    <value>לחץ כדי לבחור אזור בצבע דומה</value>
+  </data>
+  <data name="Tool_Move" xml:space="preserve">
+    <value>הזז</value>
+  </data>
+  <data name="Tool_Move_Hint" xml:space="preserve">
+    <value>גרור כדי להזיז את הבחירה או את התא. גרור את הידיות לשינוי גודל וסיבוב, Enter להחלה</value>
+  </data>
+  <data name="Tool_Pencil" xml:space="preserve">
+    <value>עיפרון</value>
+  </data>
+  <data name="Tool_Pencil_Hint" xml:space="preserve">
+    <value>צייר בצבע החזית; לחיצה ימנית מציירת בצבע הרקע. Shift+לחיצה מצייר קו מהנקודה האחרונה</value>
+  </data>
+  <data name="Tool_PolygonLasso" xml:space="preserve">
+    <value>לאסו מצולע</value>
+  </data>
+  <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
+    <value>לחץ כדי להוסיף פינות; לחץ פעמיים או Enter כדי לסגור את הבחירה</value>
+  </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>סימון מלבני</value>
+  </data>
+  <data name="Tool_Rectangle" xml:space="preserve">
+    <value>מלבן</value>
+  </data>
+  <data name="Tool_Rectangle_Hint" xml:space="preserve">
+    <value>גרור כדי לצייר מלבן. Shift יוצר ריבוע, Ctrl מצייר מהמרכז</value>
+  </data>
+  <data name="Tool_Select_Hint" xml:space="preserve">
+    <value>גרור כדי לבחור. Shift מוסיף, Alt מחסיר, Shift+Alt חוצה</value>
+  </data>
+  <data name="Tool_Shade" xml:space="preserve">
+    <value>הצללה</value>
+  </data>
+  <data name="Tool_Shade_Hint" xml:space="preserve">
+    <value>גרור כדי להבהיר פיקסלים לפי הפלטה; לחיצה ימנית מכהה</value>
+  </data>
+  <data name="Tool_Slice" xml:space="preserve">
+    <value>חיתוך לרצועות</value>
+  </data>
+  <data name="Tool_Slice_Hint" xml:space="preserve">
+    <value>גרור כדי לסמן אזור בעל שם שמיוצא עם גיליונות ספרייטים</value>
+  </data>
+  <data name="Tool_Spray" xml:space="preserve">
+    <value>תרסיס</value>
+  </data>
+  <data name="Tool_Spray_Hint" xml:space="preserve">
+    <value>החזק כדי לרסס פיקסלים מפוזרים</value>
+  </data>
+  <data name="Tool_Text" xml:space="preserve">
+    <value>טקסט</value>
+  </data>
+  <data name="Tool_Text_Hint" xml:space="preserve">
+    <value>לחץ כדי להוסיף טקסט</value>
+  </data>
+  <data name="Tool_Zoom" xml:space="preserve">
+    <value>זום</value>
+  </data>
+  <data name="Tool_Zoom_Hint" xml:space="preserve">
+    <value>לחץ כדי להגדיל, לחיצה ימנית או Alt+לחיצה כדי להקטין</value>
+  </data>
+  <data name="Toolbar_BackgroundColor" xml:space="preserve">
+    <value>צבע רקע</value>
+  </data>
+  <data name="Toolbar_Collapse" xml:space="preserve">
+    <value>כווץ לעמודה אחת</value>
+  </data>
+  <data name="Toolbar_DefaultColors" xml:space="preserve">
+    <value>צבעי ברירת מחדל</value>
+  </data>
+  <data name="Toolbar_Expand" xml:space="preserve">
+    <value>הרחב לשתי עמודות</value>
+  </data>
+  <data name="Toolbar_ForegroundColor" xml:space="preserve">
+    <value>צבע חזית</value>
+  </data>
+  <data name="Toolbar_SwitchColors" xml:space="preserve">
+    <value>החלף בין הצבע הקדמי לצבע הרקע</value>
+  </data>
+  <data name="Window_Name" xml:space="preserve">
+    <value>עורך פיקסלים</value>
+  </data>
+  <data name="Window_Title" xml:space="preserve">
+    <value>ShareX - עורך פיקסלים</value>
+  </data>
+  <data name="Window_TitleWithSprite" xml:space="preserve">
+    <value>{0} - ShareX - עורך פיקסלים</value>
+  </data>
+</root>

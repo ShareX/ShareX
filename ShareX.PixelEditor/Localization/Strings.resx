@@ -999,14 +999,14 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Click where the text should go</value>
   </data>
-  <data name="Options_Tolerance" xml:space="preserve">
-    <value>Tolerance</value>
-  </data>
   <data name="Options_ToTransparent" xml:space="preserve">
     <value>To transparent</value>
   </data>
   <data name="Options_ToTransparent_Tip" xml:space="preserve">
     <value>Fade the foreground color out instead of blending into the background color</value>
+  </data>
+  <data name="Options_Tolerance" xml:space="preserve">
+    <value>Tolerance</value>
   </data>
   <data name="Options_Transform" xml:space="preserve">
     <value>Transform</value>
@@ -1392,11 +1392,11 @@
   <data name="Tool_Ellipse" xml:space="preserve">
     <value>Ellipse</value>
   </data>
-  <data name="Tool_Ellipse_Hint" xml:space="preserve">
-    <value>Drag to draw an ellipse. Shift makes a circle, Ctrl draws from the center</value>
-  </data>
   <data name="Tool_EllipseSelect" xml:space="preserve">
     <value>Elliptical Marquee</value>
+  </data>
+  <data name="Tool_Ellipse_Hint" xml:space="preserve">
+    <value>Drag to draw an ellipse. Shift makes a circle, Ctrl draws from the center</value>
   </data>
   <data name="Tool_Eraser" xml:space="preserve">
     <value>Eraser</value>
@@ -1458,14 +1458,14 @@
   <data name="Tool_PolygonLasso_Hint" xml:space="preserve">
     <value>Click to add corners; double-click or press Enter to close the selection</value>
   </data>
+  <data name="Tool_RectSelect" xml:space="preserve">
+    <value>Rectangular Marquee</value>
+  </data>
   <data name="Tool_Rectangle" xml:space="preserve">
     <value>Rectangle</value>
   </data>
   <data name="Tool_Rectangle_Hint" xml:space="preserve">
     <value>Drag to draw a rectangle. Shift makes a square, Ctrl draws from the center</value>
-  </data>
-  <data name="Tool_RectSelect" xml:space="preserve">
-    <value>Rectangular Marquee</value>
   </data>
   <data name="Tool_Select_Hint" xml:space="preserve">
     <value>Drag to select. Shift adds, Alt subtracts, Shift+Alt intersects</value>
