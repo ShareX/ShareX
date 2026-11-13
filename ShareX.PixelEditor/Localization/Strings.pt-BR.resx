@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copiar quadros</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Copiar imagem para a área de transferência</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Colar</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Colar quadros</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Colar como nova camada</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportando...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} quadro(s) copiado(s)</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>A camada ativa está oculta</value>

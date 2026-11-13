@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Copier</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copier les images</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Copier l'image dans le presse-papiers</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Coller</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Coller les images</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Coller comme nouveau calque</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportation...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} image(s) copiée(s)</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Le calque actif est masqué</value>

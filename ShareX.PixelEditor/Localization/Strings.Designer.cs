@@ -2970,5 +2970,20 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Ruler_Tip", resourceCulture);
             }
         }
+        public static string Command_CopyFrames {
+            get {
+                return ResourceManager.GetString("Command_CopyFrames", resourceCulture);
+            }
+        }
+        public static string Command_PasteFrames {
+            get {
+                return ResourceManager.GetString("Command_PasteFrames", resourceCulture);
+            }
+        }
+        public static string Status_FramesCopied {
+            get {
+                return ResourceManager.GetString("Status_FramesCopied", resourceCulture);
+            }
+        }
     }
 }

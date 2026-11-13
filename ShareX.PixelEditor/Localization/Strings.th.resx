@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>คัดลอก</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>คัดลอกเฟรม</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>คัดลอกรูปภาพไปยังคลิปบอร์ด</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>วาง</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>วางเฟรม</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>วางเป็นเลเยอร์ใหม่</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>กำลังส่งออก...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>คัดลอก {0} เฟรมแล้ว</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>เลเยอร์ที่ใช้งานถูกซ่อนอยู่</value>

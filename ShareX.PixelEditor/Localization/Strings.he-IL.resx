@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>העתק</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>העתק פריימים</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>העתק תמונה ללוח</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>הדבק</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>הדבק פריימים</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>הדבק כשכבה חדשה</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>מייצא...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>הועתקו {0} פריימים</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>השכבה הפעילה מוסתרת</value>

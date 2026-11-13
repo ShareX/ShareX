@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiere</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copiază cadrele</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Copiază imaginea în clipboard</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Lipire</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Lipește cadrele</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Lipește ca strat nou</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Se exportă...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Au fost copiate {0} cadre</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Stratul activ este ascuns</value>

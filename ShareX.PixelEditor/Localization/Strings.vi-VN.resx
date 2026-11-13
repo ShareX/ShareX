@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Sao chép</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Sao chép khung hình</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Sao chép ảnh vào bảng tạm</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Dán</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Dán khung hình</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Dán thành lớp mới</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Đang xuất...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Đã sao chép {0} khung hình</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Lớp đang chọn bị ẩn</value>

@@ -530,7 +530,7 @@ public sealed class TimelineGrid : Control
         if (right)
         {
             string[] items = p.Y < TopHeight
-                ? ["frame.new", "frame.newEmpty", "frame.delete", "", "frame.properties", "frame.reverse", "frame.moveLeft", "frame.moveRight", "", "frame.newTag"]
+                ? ["frame.new", "frame.newEmpty", "frame.delete", "", "frame.copy", "frame.paste", "", "frame.properties", "frame.reverse", "frame.moveLeft", "frame.moveRight", "", "frame.newTag"]
                 : ["frame.new", "frame.newEmpty", "frame.delete", "", "cel.clear", "cel.link", "cel.unlink", "cel.properties", "", "frame.properties", "frame.newTag"];
             Dispatcher.UIThread.Post(() => OpenMenu(items));
             return;

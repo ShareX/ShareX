@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>کپی</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>کپی فریم‌ها</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>کپی تصویر در کلیپ‌بورد</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>چسباندن</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>چسباندن فریم‌ها</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>چسباندن به‌عنوان لایه جدید</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>در حال برون‌بری...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} فریم کپی شد</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>لایه فعال پنهان است</value>

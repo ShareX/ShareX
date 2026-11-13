@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Salin</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Salin Bingkai</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Salin Gambar ke Papan Klip</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Tempel</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Tempel Bingkai</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Tempel sebagai Lapisan Baru</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Mengekspor...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} bingkai disalin</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Lapisan aktif disembunyikan</value>

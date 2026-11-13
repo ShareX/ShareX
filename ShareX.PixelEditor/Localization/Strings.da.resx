@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiér</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Kopiér billeder</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Kopiér billede til udklipsholder</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Indsæt</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Indsæt billeder</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Indsæt som nyt lag</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Eksporterer...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} billede(r) kopieret</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Det aktive lag er skjult</value>

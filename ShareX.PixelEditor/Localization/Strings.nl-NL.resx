@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieer</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Beelden kopiëren</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Afbeelding naar klembord kopiëren</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Plak</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Beelden plakken</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Plakken als nieuwe laag</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exporteren...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} beeld(en) gekopieerd</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>De actieve laag is verborgen</value>

@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiera</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Kopiera bildrutor</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Kopiera bild till urklipp</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Klistra in</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Klistra in bildrutor</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Klistra in som nytt lager</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exporterar...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} bildruta/bildrutor kopierades</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Det aktiva lagret är dolt</value>

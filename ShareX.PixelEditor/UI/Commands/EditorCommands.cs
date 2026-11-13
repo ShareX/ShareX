@@ -100,6 +100,7 @@ public static partial class EditorCommands
                 C("layer.above"), C("layer.below")),
             MenuNode.Sub(Strings.Menu_Frame,
                 C("frame.new"), C("frame.newEmpty"), C("frame.newLinked"), C("frame.delete"), S,
+                C("frame.copy"), C("frame.paste"), S,
                 C("frame.properties"), C("frame.reverse"), C("frame.moveLeft"), C("frame.moveRight"), S,
                 MenuNode.Sub(Strings.Menu_Cel, C("cel.clear"), C("cel.link"), C("cel.unlink"), C("cel.properties")),
                 MenuNode.Sub(Strings.Menu_Tags, C("frame.newTag"), C("frame.tagProperties"), C("frame.removeTag")), S,

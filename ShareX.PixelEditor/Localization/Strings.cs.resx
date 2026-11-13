@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopírovat</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Kopírovat snímky</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Kopírovat obrázek do schránky</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Vložit</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Vložit snímky</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Vložit jako novou vrstvu</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportování...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Zkopírováno snímků: {0}</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Aktivní vrstva je skrytá</value>

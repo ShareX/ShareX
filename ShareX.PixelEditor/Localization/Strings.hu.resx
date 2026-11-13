@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Másolás</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Képkockák másolása</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Kép másolása a vágólapra</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Beillesztés</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Képkockák beillesztése</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Beillesztés új rétegként</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportálás...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} képkocka másolva</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Az aktív réteg rejtett</value>

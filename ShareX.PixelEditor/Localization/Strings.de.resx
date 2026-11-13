@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieren</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Einzelbilder kopieren</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Bild in die Zwischenablage kopieren</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Einfügen</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Einzelbilder einfügen</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Als neue Ebene einfügen</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Wird exportiert...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} Einzelbild(er) kopiert</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Die aktive Ebene ist ausgeblendet</value>

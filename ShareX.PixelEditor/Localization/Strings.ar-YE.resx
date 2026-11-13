@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>نسخ</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>نسخ الإطارات</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>نسخ الصورة إلى الحافظة</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>لصق</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>لصق الإطارات</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>لصق كطبقة جديدة</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>جارٍ التصدير...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>تم نسخ {0} إطار</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>الطبقة النشطة مخفية</value>

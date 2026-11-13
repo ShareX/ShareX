@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiar</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copiar fotogramas</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Copiar imagen al portapapeles</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Pegar</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Pegar fotogramas</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Pegar como capa nueva</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exportando...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Se copiaron {0} fotograma(s)</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>La capa activa está oculta</value>

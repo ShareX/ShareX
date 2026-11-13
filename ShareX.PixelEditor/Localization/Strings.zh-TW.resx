@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>複製</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>拷貝影格</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>複製影像到剪貼簿</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>貼上</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>貼上影格</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>貼上為新圖層</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>正在匯出...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>已拷貝 {0} 個影格</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>目前圖層已隱藏</value>

@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Копіювати</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Копіювати кадри</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Копіювати зображення в буфер обміну</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Вставити</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Вставити кадри</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Вставити як новий шар</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Експорт...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>Скопійовано кадрів: {0}</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Активний шар приховано</value>

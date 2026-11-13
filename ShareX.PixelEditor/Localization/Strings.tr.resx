@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopyala</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Kareleri Kopyala</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Görüntüyü Panoya Kopyala</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Yapıştır</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Kareleri Yapıştır</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Yeni Katman Olarak Yapıştır</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Dışa aktarılıyor...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} kare kopyalandı</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>Etkin katman gizli</value>

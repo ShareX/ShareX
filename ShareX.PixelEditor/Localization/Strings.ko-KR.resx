@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>복사</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>프레임 복사</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>이미지를 클립보드에 복사</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>붙여넣기</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>프레임 붙여넣기</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>새 레이어로 붙여넣기</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>내보내는 중...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>프레임 {0}개를 복사했습니다</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>활성 레이어가 숨겨져 있습니다</value>

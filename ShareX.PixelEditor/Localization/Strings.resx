@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>Copy Frames</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>Copy Image to Clipboard</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>Paste</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>Paste Frames</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>Paste as New Layer</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>Exporting...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} frame(s) copied</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>The active layer is hidden</value>

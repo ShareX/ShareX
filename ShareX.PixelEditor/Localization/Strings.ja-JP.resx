@@ -150,6 +150,9 @@
   <data name="Command_Copy" xml:space="preserve">
     <value>コピー</value>
   </data>
+  <data name="Command_CopyFrames" xml:space="preserve">
+    <value>フレームをコピー</value>
+  </data>
   <data name="Command_CopyImage" xml:space="preserve">
     <value>画像をクリップボードにコピー</value>
   </data>
@@ -353,6 +356,9 @@
   </data>
   <data name="Command_Paste" xml:space="preserve">
     <value>貼り付け</value>
+  </data>
+  <data name="Command_PasteFrames" xml:space="preserve">
+    <value>フレームを貼り付け</value>
   </data>
   <data name="Command_PasteNewLayer" xml:space="preserve">
     <value>新規レイヤーとして貼り付け</value>
@@ -1496,6 +1502,9 @@
   </data>
   <data name="Status_Exporting" xml:space="preserve">
     <value>書き出し中...</value>
+  </data>
+  <data name="Status_FramesCopied" xml:space="preserve">
+    <value>{0} 個のフレームをコピーしました</value>
   </data>
   <data name="Status_LayerHidden" xml:space="preserve">
     <value>アクティブなレイヤーは非表示です</value>

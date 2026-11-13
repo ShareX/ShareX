@@ -281,7 +281,8 @@ public static partial class EditorCommands
             sprite.RemoveFrames(sprite.RangeFrom, sprite.RangeTo);
             w.Commit(Strings.Command_DeleteFrame);
         }, w => w.Sprite?.Frames.Count > 1);
-        R("frame.properties", Strings.Command_FrameProperties, "Alt+P", w => _ = SpriteDialogs.FramePropertiesAsync(w), HasSprite);
+        R("frame.copy", Strings.Command_CopyFrames, null, CopyFrames, HasSprite);
+        R("frame.paste", Strings.Command_PasteFrames, null, PasteFrames, w => HasSprite(w) && _frameClipboard != null);        R("frame.properties", Strings.Command_FrameProperties, "Alt+P", w => _ = SpriteDialogs.FramePropertiesAsync(w), HasSprite);
         R("frame.reverse", Strings.Command_ReverseFrames, null, w =>
         {
             Sprite sprite = w.Sprite!;
@@ -453,4 +454,74 @@ public static partial class EditorCommands
         }
         sprite.ActiveLayer = layer;
         w.Commit(cut ? Strings.Command_LayerViaCut : Strings.Command_LayerViaCopy);
-    }}
+    }
+
+    private sealed record CopiedLayer(string Name, Cel?[] Cels);
+
+    private sealed record CopiedFrames(List<FrameInfo> Frames, List<CopiedLayer> Layers);
+
+    private static CopiedFrames? _frameClipboard;
+
+    /// <summary>Remembers the selected frames with the cels of every pixel layer, to paste them into this or another sprite.</summary>
+    private static void CopyFrames(PixelEditorWindow w)
+    {
+        Sprite sprite = w.Sprite!;
+        int from = sprite.RangeFrom, count = sprite.RangeTo - sprite.RangeFrom + 1;
+        List<CopiedLayer> layers = [];
+        foreach (PixelLayer layer in sprite.PixelLayers)
+        {
+            Cel?[] cels = layer.Cels.GetRange(from, count).Select(c => c == null ? null : new Cel(c.Image.Share()) { Opacity = c.Opacity }).ToArray();
+            layers.Add(new CopiedLayer(layer.Name, cels));
+        }
+        _frameClipboard = new CopiedFrames(sprite.Frames.GetRange(from, count).Select(f => f.Clone()).ToList(), layers);
+        w.SetStatus(string.Format(Strings.Status_FramesCopied, count));
+    }
+
+    /// <summary>Inserts copied frames after the active frame; cels go to the layers with the same names, which are made when missing.</summary>
+    private static void PasteFrames(PixelEditorWindow w)
+    {
+        if (_frameClipboard is not CopiedFrames copied) return;
+        Sprite sprite = w.Sprite!;
+        w.CommitFloating();
+        int at = sprite.RangeTo + 1, count = copied.Frames.Count;
+        for (int i = 0; i < count; i++)
+        {
+            sprite.InsertFrame(at + i);
+            sprite.Frames[at + i] = copied.Frames[i].Clone();
+        }
+        foreach (CopiedLayer source in copied.Layers)
+        {
+            PixelLayer? target = sprite.PixelLayers.FirstOrDefault(l => l.Name == source.Name);
+            if (target == null)
+            {
+                target = sprite.CreatePixelLayer(source.Name);
+                sprite.AddLayer(target, sprite.ActiveLayer);
+            }
+            for (int i = 0; i < count && i < source.Cels.Length; i++)
+            {
+                if (source.Cels[i] is not Cel cel) continue;
+                CelImage image = cel.Image.Share();
+                if (image.Buffer.Width != sprite.Width || image.Buffer.Height != sprite.Height)
+                {
+                    // Frames from a sprite of another size keep their top-left corner.
+                    PixelBuffer fitted = new(sprite.Width, sprite.Height);
+                    fitted.Blit(image.Buffer, 0, 0, false);
+                    image = new CelImage(fitted);
+                }
+                if (target.Tileset != null)
+                {
+                    // The tiles are found again in this layer's own tileset.
+                    image.Map = null;
+                    image.Rendered = null;
+                }
+                target.Cels[at + i] = new Cel(image) { Opacity = cel.Opacity };
+            }
+        }
+        sprite.SetActiveFrame(at);
+        sprite.SetRange(at, at + count - 1, at);
+        w.Commit(Strings.Command_PasteFrames);
+        w.GoToFrame(at, false);
+        sprite.SetRange(at, at + count - 1, at);
+        w.RefreshTimeline();
+    }
+}
