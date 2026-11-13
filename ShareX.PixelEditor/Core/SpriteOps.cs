@@ -229,6 +229,57 @@ public static class SpriteOps
         return frames;
     }
 
+    /// <summary>Inserts copies of a block of frames at <paramref name="insertAt"/>, an index in the frame list before the copies are added.</summary>
+    public static void CopyFrames(Sprite sprite, int from, int to, int insertAt)
+    {
+        int count = to - from + 1;
+        insertAt = Math.Clamp(insertAt, 0, sprite.Frames.Count);
+        List<FrameInfo> infos = sprite.Frames.GetRange(from, count).Select(f => f.Clone()).ToList();
+        List<(PixelLayer Layer, Cel?[] Cels)> cels = sprite.PixelLayers.Select(l => (l, l.Cels.GetRange(from, count).ToArray())).ToList();
+        for (int i = 0; i < count; i++)
+        {
+            sprite.InsertFrame(insertAt + i);
+            sprite.Frames[insertAt + i] = infos[i];
+        }
+        foreach ((PixelLayer layer, Cel?[] source) in cels)
+        {
+            for (int i = 0; i < count; i++) layer.Cels[insertAt + i] = CopyCel(source[i]);
+        }
+        sprite.SetRange(insertAt, insertAt + count - 1, insertAt);
+        sprite.Touch();
+    }
+
+    /// <summary>
+    /// Moves or copies the cels of frames <paramref name="from"/>–<paramref name="to"/> of one layer so they start at
+    /// <paramref name="targetFrame"/> of another (or the same) layer. Cels that would land past the last frame are dropped.
+    /// </summary>
+    public static void MoveCels(Sprite sprite, PixelLayer source, int from, int to, PixelLayer target, int targetFrame, bool copy)
+    {
+        int count = to - from + 1;
+        Cel?[] block = source.Cels.GetRange(from, count).ToArray();
+        if (!copy)
+        {
+            for (int i = 0; i < count; i++) source.Cels[from + i] = null;
+        }
+        for (int i = 0; i < count; i++)
+        {
+            int frame = targetFrame + i;
+            if (frame < 0 || frame >= sprite.Frames.Count) continue;
+            target.Cels[frame] = copy ? CopyCel(block[i]) : block[i];
+        }
+        int last = Math.Clamp(targetFrame + count - 1, 0, sprite.Frames.Count - 1);
+        sprite.SetRange(Math.Clamp(targetFrame, 0, last), last, Math.Clamp(targetFrame, 0, last));
+        sprite.Touch();
+    }
+
+    /// <summary>An independent copy of a cel that shares the frozen pixels until one of them is painted.</summary>
+    private static Cel? CopyCel(Cel? cel)
+    {
+        if (cel == null) return null;
+        cel.Buffer.Frozen = true;
+        return new Cel(new CelImage(cel.Buffer)) { Opacity = cel.Opacity };
+    }
+
     /// <summary>The frames the whole animation plays: untagged frames in order, and each tagged range in its direction and repeated as many times as its tag asks.</summary>
     public static List<int> AnimationSequence(Sprite sprite)
     {

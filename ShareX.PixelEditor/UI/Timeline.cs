@@ -193,9 +193,22 @@ public sealed class TimelineGrid : Control
     private static readonly IBrush CelBrush = new SolidColorBrush(Color.FromRgb(0xC8, 0xC8, 0xC8));
     private static readonly IBrush EmptyBrush = new SolidColorBrush(Color.FromRgb(0x4A, 0x4A, 0x4A));
 
+    private enum DragMode
+    {
+        None,
+        Range,
+        Frames,
+        Cels
+    }
+
+    private const double DragThreshold = 4;
+
     private readonly PixelEditorWindow _editor;
     private readonly Timeline _timeline;
-    private bool _dragging;
+    private DragMode _drag;
+    private Point _pressPoint;
+    private bool _dragMoved;
+    private int _pressFrame, _grabOffset, _dropFrame, _dropRow;
 
     public TimelineGrid(PixelEditorWindow editor, Timeline timeline)
     {
@@ -262,6 +275,15 @@ public sealed class TimelineGrid : Control
                     }
                     if (activeRow && f == sprite.ActiveFrame) context.DrawRectangle(null, new Pen(accent, 2), rect.Deflate(1));
                 }
+            }
+            // Where dragged cels will land.
+            if (_drag == DragMode.Cels && _dragMoved && _dropRow >= 0)
+            {
+                int count = sprite.RangeTo - sprite.RangeFrom + 1;
+                double y = TopHeight + _dropRow * cell - scrollY;
+                double x = HeaderWidth + _dropFrame * cell - scrollX;
+                bool valid = _dropRow < rows.Count && rows[_dropRow] is PixelLayer;
+                context.DrawRectangle(new SolidColorBrush(PhotoEditorTheme.AccentBrush.Color, 0.25), new Pen(valid ? accent : Brushes.IndianRed, 2), new Rect(x + 1, y + 1, count * cell - 3, cell - 3));
             }
             // Playhead while the animation runs.
             if (_editor.IsPlaying)
@@ -335,6 +357,12 @@ public sealed class TimelineGrid : Control
         context.DrawText(corner, new Point(10, TagHeight + (NumberHeight - corner.Height) / 2));
         context.FillRectangle(RowLine, new Rect(HeaderWidth - 1, 0, 1, bounds.Height));
         context.FillRectangle(RowLine, new Rect(0, TopHeight - 1, bounds.Width, 1));
+        // Where dragged frames will be inserted.
+        if (_drag == DragMode.Frames && _dragMoved)
+        {
+            double x = HeaderWidth + _dropFrame * cell - scrollX - 1;
+            if (x >= HeaderWidth - 2) context.FillRectangle(accent, new Rect(x - 1, TagHeight, 3, bounds.Height - TagHeight));
+        }
     }
 
     private (int Row, int Frame) Hit(Point p)
@@ -398,7 +426,21 @@ public sealed class TimelineGrid : Control
         }
 
         bool insideRange = frame >= sprite.RangeFrom && frame <= sprite.RangeTo;
-        if (layer != null) _editor.SetActiveLayer(layer);
+        bool onHeader = p.Y < TopHeight;
+        // Pressing on the selected frames, or on a cel of them in the active layer, may start dragging them; a click without a drag still selects.
+        bool canDrag = !right && !shift && insideRange && (onHeader || layer is PixelLayer pixels && layer == sprite.ActiveLayer && pixels.Cels[frame] != null);
+        if (layer != null && !canDrag) _editor.SetActiveLayer(layer);
+        if (canDrag)
+        {
+            _drag = onHeader ? DragMode.Frames : DragMode.Cels;
+            _pressPoint = p;
+            _pressFrame = frame;
+            _grabOffset = frame - sprite.RangeFrom;
+            _dragMoved = false;
+            _dropRow = -1;
+            e.Pointer.Capture(this);
+            return;
+        }
         // A right-click inside the selected range keeps the range for the menu.
         if (!(right && insideRange)) _editor.GoToFrame(frame, shift);
         if (right)
@@ -414,7 +456,7 @@ public sealed class TimelineGrid : Control
             Dispatcher.UIThread.Post(() => _editor.Execute("frame.properties"));
             return;
         }
-        _dragging = true;
+        _drag = DragMode.Range;
         e.Pointer.Capture(this);
     }
 
@@ -443,17 +485,120 @@ public sealed class TimelineGrid : Control
     {
         base.OnPointerMoved(e);
         Sprite? sprite = _editor.Sprite;
-        if (!_dragging || sprite == null) return;
-        (_, int frame) = Hit(e.GetPosition(this));
-        frame = Math.Clamp(frame, 0, sprite.Frames.Count - 1);
-        if (frame != sprite.ActiveFrame) _editor.GoToFrame(frame, true);
+        if (_drag == DragMode.None || sprite == null) return;
+        Point p = e.GetPosition(this);
+        if (_drag == DragMode.Range)
+        {
+            (_, int frame) = Hit(p);
+            frame = Math.Clamp(frame, 0, sprite.Frames.Count - 1);
+            if (frame != sprite.ActiveFrame) _editor.GoToFrame(frame, true);
+            return;
+        }
+        if (!_dragMoved && Math.Abs(p.X - _pressPoint.X) < DragThreshold && Math.Abs(p.Y - _pressPoint.Y) < DragThreshold) return;
+        _dragMoved = true;
+        Cursor = new Cursor(StandardCursorType.DragMove);
+        int cell = Cell;
+        if (_drag == DragMode.Frames)
+        {
+            // The gap between frames nearest to the pointer.
+            _dropFrame = Math.Clamp((int)Math.Round((p.X - HeaderWidth + _timeline.ScrollX) / cell), 0, sprite.Frames.Count);
+        }
+        else
+        {
+            (int row, int frame) = Hit(p);
+            int count = sprite.RangeTo - sprite.RangeFrom + 1;
+            _dropFrame = Math.Clamp(frame - _grabOffset, 0, Math.Max(0, sprite.Frames.Count - count));
+            _dropRow = Math.Clamp(row, 0, Math.Max(0, sprite.Root.Rows().Count() - 1));
+        }
+        AutoScroll(p);
+        InvalidateVisual();
+    }
+
+    /// <summary>Scrolls the timeline while a drag nears its edges.</summary>
+    private void AutoScroll(Point p)
+    {
+        double dx = p.X < HeaderWidth + 8 ? -Cell / 2.0 : p.X > Bounds.Width - 8 ? Cell / 2.0 : 0;
+        double dy = p.Y < TopHeight + 4 && p.Y > TopHeight - 2 ? -Cell / 2.0 : p.Y > Bounds.Height - 6 ? Cell / 2.0 : 0;
+        if (dx != 0 || dy != 0) _timeline.ScrollBy(dx, dy);
     }
 
     protected override void OnPointerReleased(PointerReleasedEventArgs e)
     {
         base.OnPointerReleased(e);
-        _dragging = false;
+        DragMode mode = _drag;
+        bool moved = _dragMoved;
+        _drag = DragMode.None;
+        _dragMoved = false;
+        Cursor = null;
         e.Pointer.Capture(null);
+        Sprite? sprite = _editor.Sprite;
+        if (sprite == null || mode is DragMode.None or DragMode.Range) return;
+        if (!moved)
+        {
+            // A click on the selected frames without dragging selects just that frame.
+            _editor.GoToFrame(_pressFrame, false);
+            InvalidateVisual();
+            return;
+        }
+        bool copy = e.KeyModifiers.HasFlag(KeyModifiers.Control);
+        if (mode == DragMode.Frames) DropFrames(sprite, copy);
+        else DropCels(sprite, copy);
+        InvalidateVisual();
+    }
+
+    protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)
+    {
+        base.OnPointerCaptureLost(e);
+        if (_drag is DragMode.Frames or DragMode.Cels)
+        {
+            _drag = DragMode.None;
+            _dragMoved = false;
+            Cursor = null;
+            InvalidateVisual();
+        }
+        else _drag = DragMode.None;
+    }
+
+    private void DropFrames(Sprite sprite, bool copy)
+    {
+        int from = sprite.RangeFrom, to = sprite.RangeTo, count = to - from + 1, gap = _dropFrame;
+        _editor.CommitFloating();
+        _editor.StopPlayback();
+        if (copy)
+        {
+            SpriteOps.CopyFrames(sprite, from, to, gap);
+            _editor.GoToFrame(sprite.ActiveFrame, false);
+            sprite.SetRange(gap, gap + count - 1, gap);
+            _editor.Commit(Strings.History_CopyFrames);
+            return;
+        }
+        if (gap >= from && gap <= to + 1) return;
+        sprite.MoveFrames(from, to, gap > to ? gap - count : gap);
+        int start = sprite.RangeFrom;
+        _editor.GoToFrame(start, false);
+        sprite.SetRange(start, start + count - 1, start);
+        _editor.Commit(Strings.History_MoveFrames);
+    }
+
+    private void DropCels(Sprite sprite, bool copy)
+    {
+        List<Layer> rows = sprite.Root.Rows().ToList();
+        if (sprite.ActiveLayer is not PixelLayer source || _dropRow < 0 || _dropRow >= rows.Count || rows[_dropRow] is not PixelLayer target) return;
+        if (target == source && _dropFrame == sprite.RangeFrom) return;
+        if (target.IsEffectivelyLocked || !copy && source.IsEffectivelyLocked)
+        {
+            _editor.SetStatus(Strings.Status_LayerLocked);
+            return;
+        }
+        int from = sprite.RangeFrom, to = sprite.RangeTo, count = to - from + 1;
+        _editor.CommitFloating();
+        _editor.StopPlayback();
+        SpriteOps.MoveCels(sprite, source, from, to, target, _dropFrame, copy);
+        int start = Math.Clamp(_dropFrame, 0, sprite.Frames.Count - 1);
+        _editor.SetActiveLayer(target);
+        _editor.GoToFrame(start, false);
+        sprite.SetRange(start, Math.Min(sprite.Frames.Count - 1, start + count - 1), start);
+        _editor.Commit(copy ? Strings.History_CopyCels : Strings.History_MoveCels);
     }
 
     protected override void OnPointerWheelChanged(PointerWheelEventArgs e)

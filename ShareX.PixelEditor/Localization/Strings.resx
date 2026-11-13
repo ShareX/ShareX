@@ -729,6 +729,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Blend Mode</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Copy Cels</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Copy Frames</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Delete Slice</value>
   </data>
@@ -755,6 +761,9 @@
   </data>
   <data name="History_Move" xml:space="preserve">
     <value>Move</value>
+  </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Move Cels</value>
   </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Move Frames</value>

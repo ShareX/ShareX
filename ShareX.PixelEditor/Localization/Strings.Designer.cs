@@ -2620,5 +2620,20 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Recovery_Restore", resourceCulture);
             }
         }
+        public static string History_CopyCels {
+            get {
+                return ResourceManager.GetString("History_CopyCels", resourceCulture);
+            }
+        }
+        public static string History_CopyFrames {
+            get {
+                return ResourceManager.GetString("History_CopyFrames", resourceCulture);
+            }
+        }
+        public static string History_MoveCels {
+            get {
+                return ResourceManager.GetString("History_MoveCels", resourceCulture);
+            }
+        }
     }
 }
