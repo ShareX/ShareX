@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Effacer le cellulo</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Effacer les repères</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Fermer</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Rotation de 90° horaire</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Règles</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Enregistrer</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Lisse (bicubique)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Repère à {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Faites glisser sur la zone de travail pour ajouter un repère. Déplacez les repères avec l'outil Déplacement et faites-les glisser hors de la zone pour les supprimer.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Cellulo actuel</value>

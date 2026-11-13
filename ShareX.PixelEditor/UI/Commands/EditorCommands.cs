@@ -115,7 +115,7 @@ public static partial class EditorCommands
                 C("fx.replaceColor"), C("fx.gradientMap"), C("fx.outline"), C("fx.dropShadow"), C("fx.alphaThreshold")),
             MenuNode.Sub(Strings.Menu_View,
                 C("view.zoomIn"), C("view.zoomOut"), C("view.fit"), C("view.zoomSelection"), C("view.actualSize"), S,
-                C("view.pixelGrid"), C("view.grid"), C("view.snapToGrid"), C("view.gridSettings"), C("view.slices"), C("view.brushPreview"), S,
+                C("view.pixelGrid"), C("view.grid"), C("view.snapToGrid"), C("view.gridSettings"), C("view.rulers"), C("view.clearGuides"), C("view.slices"), C("view.brushPreview"), S,
                 MenuNode.Sub(Strings.Menu_Symmetry, C("view.symmetryHorizontal"), C("view.symmetryVertical"), C("view.symmetryReset"), C("view.symmetryAxis")),
                 MenuNode.Sub(Strings.Menu_Tiled, C("view.tiled"), C("view.tiledX"), C("view.tiledY")), S,
                 new MenuNode { Header = Strings.Menu_Panels, Dynamic = PanelItems },

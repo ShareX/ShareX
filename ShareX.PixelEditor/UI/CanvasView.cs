@@ -147,6 +147,8 @@ public sealed class CanvasView : Control
     private IBrush? _checker;
     private (string, string, int, double) _checkerKey;
     private Point? _panLast;
+    private Guide? _guideDrag;
+    private bool _guideCursor;
     private bool _spaceHeld, _toolDown, _toolRight, _hovering;
     private SKPointI _hoverPixel;
     private SKPointI[]? _tipSource;
@@ -261,6 +263,8 @@ public sealed class CanvasView : Control
             context.DrawRectangle(null, new Pen(new SolidColorBrush(Color.FromArgb(160, 255, 255, 255)), 1), new Rect(Math.Round(a.X) - 0.5, Math.Round(a.Y) - 0.5, Math.Round(b.X - a.X) + 1, Math.Round(b.Y - a.Y) + 1));
         }
         DrawSymmetry(context, view, settings);
+        DrawGuides(context, view);
+        _editor.SyncRulers();
 
         OverlayContext overlay = new(context, view);
         if (settings.ShowSlices)
@@ -289,6 +293,31 @@ public sealed class CanvasView : Control
             double sy = Math.Round(view.ToScreen(0, y).Y) + 0.5;
             context.DrawLine(pen, new Point(sx0, sy), new Point(sx1, sy));
         }
+    }
+
+    private void DrawGuides(DrawingContext context, SpriteView view)
+    {
+        if (view.Guides.Count == 0) return;
+        Pen pen = new(Ruler.GuideBrush, 1);
+        foreach (Guide guide in view.Guides)
+        {
+            Point at = view.ToScreen(guide.Position, guide.Position);
+            if (guide.Vertical) context.DrawLine(pen, new Point(Math.Round(at.X) + 0.5, 0), new Point(Math.Round(at.X) + 0.5, Bounds.Height));
+            else context.DrawLine(pen, new Point(0, Math.Round(at.Y) + 0.5), new Point(Bounds.Width, Math.Round(at.Y) + 0.5));
+        }
+    }
+
+    /// <summary>The guide within a few screen pixels of a point, for dragging it with the Move tool.</summary>
+    private Guide? GuideAt(Point position)
+    {
+        SpriteView? view = _editor.View;
+        if (view == null || !_editor.Settings.ShowRulers) return null;
+        foreach (Guide guide in view.Guides)
+        {
+            Point at = view.ToScreen(guide.Position, guide.Position);
+            if (guide.Vertical ? Math.Abs(at.X - position.X) <= 3 : Math.Abs(at.Y - position.Y) <= 3) return guide;
+        }
+        return null;
     }
 
     private void DrawSymmetry(DrawingContext context, SpriteView view, EditorSettings settings)
@@ -402,6 +431,12 @@ public sealed class CanvasView : Control
             return;
         }
         if (_toolDown || !point.Properties.IsLeftButtonPressed && !point.Properties.IsRightButtonPressed) return;
+        if (point.Properties.IsLeftButtonPressed && e.KeyModifiers == KeyModifiers.None && _editor.Tools.Active is MoveTool && _editor.Floating == null && GuideAt(point.Position) is Guide guide)
+        {
+            _guideDrag = guide;
+            e.Pointer.Capture(this);
+            return;
+        }
         bool right = point.Properties.IsRightButtonPressed;
         ToolPointer p = MakePointer(point.Position, right, e.KeyModifiers);
         e.Pointer.Capture(this);
@@ -425,6 +460,24 @@ public sealed class CanvasView : Control
             InvalidateVisual();
             return;
         }
+        if (_guideDrag != null)
+        {
+            (double gx, double gy) = view.ToDocument(position);
+            _guideDrag.Position = (int)Math.Round(_guideDrag.Vertical ? gx : gy);
+            _editor.SetStatus(string.Format(Strings.Ruler_GuideAt, _guideDrag.Position));
+            _editor.InvalidateRulers();
+            return;
+        }
+        if (!_toolDown && _editor.Tools.Active is MoveTool && GuideAt(position) is Guide hovered)
+        {
+            Cursor = new Cursor(hovered.Vertical ? StandardCursorType.SizeWestEast : StandardCursorType.SizeNorthSouth);
+            _guideCursor = true;
+        }
+        else if (_guideCursor)
+        {
+            _guideCursor = false;
+            UpdateCursor();
+        }
         ToolPointer p = MakePointer(position, _toolRight, e.KeyModifiers);
         _hovering = true;
         _hoverPixel = p.Pixel;
@@ -444,6 +497,17 @@ public sealed class CanvasView : Control
             UpdateCursor();
             return;
         }
+        if (_guideDrag != null)
+        {
+            // Dragging a guide off the canvas removes it.
+            Point p = e.GetPosition(this);
+            if (p.X < 0 || p.Y < 0 || p.X > Bounds.Width || p.Y > Bounds.Height) _editor.View?.Guides.Remove(_guideDrag);
+            _guideDrag = null;
+            e.Pointer.Capture(null);
+            _editor.SetStatus(null);
+            _editor.InvalidateRulers();
+            return;
+        }
         if (!_toolDown || _editor.View == null)
         {
             e.Pointer.Capture(null);
@@ -461,6 +525,7 @@ public sealed class CanvasView : Control
     {
         base.OnPointerCaptureLost(e);
         _panLast = null;
+        _guideDrag = null;
         if (_toolDown)
         {
             _toolDown = false;

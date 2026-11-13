@@ -70,6 +70,9 @@ public sealed class SpriteView : IDisposable
 
     public int AntsPhase { get; set; }
 
+    /// <summary>Guide lines dragged out of the rulers, at pixel edges of the sprite.</summary>
+    public List<Guide> Guides { get; } = [];
+
     /// <summary>The frame shown while the animation plays; null shows the active frame.</summary>
     public int? PlayFrame { get; set; }
 
@@ -254,4 +257,12 @@ public sealed class SpriteView : IDisposable
         Display?.Dispose();
         Display = null;
     }
+}
+
+/// <summary>A horizontal or vertical guide line at a pixel edge.</summary>
+public sealed class Guide
+{
+    public bool Vertical { get; init; }
+
+    public int Position { get; set; }
 }

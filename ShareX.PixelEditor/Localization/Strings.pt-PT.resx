@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Limpar célula</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Limpar guias</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Fechar</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Girar 90° no sentido horário</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Réguas</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Guardar</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Suave (bicúbico)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Guia em {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Arraste para a tela para adicionar uma guia. Mova as guias com a ferramenta Mover e arraste-as para fora da tela para removê-las.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Célula atual</value>

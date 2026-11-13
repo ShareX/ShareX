@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Xóa nội dung ô</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Xóa đường gióng</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Đóng</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Xoay 90° theo chiều kim đồng hồ</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Thước kẻ</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Lưu</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Mượt (song lập phương)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Đường gióng tại {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Kéo vào khung vẽ để thêm đường gióng. Di chuyển đường gióng bằng công cụ Di chuyển và kéo ra ngoài khung vẽ để xóa.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Ô hiện tại</value>

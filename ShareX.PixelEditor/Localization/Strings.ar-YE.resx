@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>مسح الخلية</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>مسح الأدلة</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>إغلاق</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>تدوير 90° في اتجاه عقارب الساعة</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>المساطر</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>حفظ</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>ناعم (ثنائي التكعيب)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>الدليل عند {0} بكسل</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>اسحب إلى اللوحة لإضافة دليل. حرّك الأدلة بأداة التحريك واسحبها خارج اللوحة لإزالتها.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>الخلية الحالية</value>

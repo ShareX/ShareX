@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Cel wissen</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Hulplijnen wissen</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Sluiten</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>90° rechtsom roteren</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Linialen</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Opslaan</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Vloeiend (bicubisch)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Hulplijn op {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Sleep naar het canvas om een hulplijn toe te voegen. Verplaats hulplijnen met het gereedschap Verplaatsen en sleep ze van het canvas om ze te verwijderen.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Huidige cel</value>

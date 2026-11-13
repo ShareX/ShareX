@@ -2950,5 +2950,25 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Export_SmoothScale", resourceCulture);
             }
         }
+        public static string Command_ClearGuides {
+            get {
+                return ResourceManager.GetString("Command_ClearGuides", resourceCulture);
+            }
+        }
+        public static string Command_Rulers {
+            get {
+                return ResourceManager.GetString("Command_Rulers", resourceCulture);
+            }
+        }
+        public static string Ruler_GuideAt {
+            get {
+                return ResourceManager.GetString("Ruler_GuideAt", resourceCulture);
+            }
+        }
+        public static string Ruler_Tip {
+            get {
+                return ResourceManager.GetString("Ruler_Tip", resourceCulture);
+            }
+        }
     }
 }

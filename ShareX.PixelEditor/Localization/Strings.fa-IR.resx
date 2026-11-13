@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>پاک کردن سل</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>پاک کردن راهنماها</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>بستن</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>چرخش ۹۰° در جهت عقربه‌های ساعت</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>خط‌کش‌ها</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>ذخیره</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>نرم (دومکعبی)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>راهنما در {0} پیکسل</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>برای افزودن راهنما، روی بوم بکشید. راهنماها را با ابزار جابه‌جایی حرکت دهید و برای حذف، آن‌ها را بیرون از بوم بکشید.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>سل فعلی</value>

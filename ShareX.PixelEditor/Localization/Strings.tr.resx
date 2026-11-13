@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Hücreyi Temizle</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Kılavuzları Temizle</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Kapat</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Saat yönünde 90° döndür</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Cetveller</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Kaydet</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Yumuşak (bikübik)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Kılavuz: {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Kılavuz eklemek için tuvale sürükleyin. Kılavuzları Taşı aracıyla taşıyın, kaldırmak için tuvalin dışına sürükleyin.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Geçerli hücre</value>

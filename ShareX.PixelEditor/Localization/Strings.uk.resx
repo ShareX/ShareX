@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Очистити комірку</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Видалити напрямні</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Закрити</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Повернути на 90° за годинниковою стрілкою</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Лінійки</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Зберегти</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Згладжене (бікубічне)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Напрямна: {0} пікс.</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Перетягніть на полотно, щоб додати напрямну. Переміщуйте напрямні інструментом «Переміщення» і перетягніть їх за межі полотна, щоб вилучити.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Поточна комірка</value>

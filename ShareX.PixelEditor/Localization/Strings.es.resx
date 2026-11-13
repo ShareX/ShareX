@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Vaciar celda</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Borrar guías</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Cerrar</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Girar 90° en sentido horario</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Reglas</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Guardar</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Suave (bicúbico)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Guía en {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Arrastre al lienzo para añadir una guía. Mueva las guías con la herramienta Mover y arrástrelas fuera del lienzo para quitarlas.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Celda actual</value>

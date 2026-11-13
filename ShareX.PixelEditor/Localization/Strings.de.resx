@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Zelle leeren</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Hilfslinien löschen</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Schließen</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>90° im Uhrzeigersinn drehen</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Lineale</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Speichern</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Glatt (bikubisch)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Hilfslinie bei {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Auf die Arbeitsfläche ziehen, um eine Hilfslinie hinzuzufügen. Hilfslinien mit dem Verschieben-Werkzeug bewegen und zum Entfernen von der Arbeitsfläche ziehen.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Aktuelle Zelle</value>

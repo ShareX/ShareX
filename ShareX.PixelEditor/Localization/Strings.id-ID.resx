@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Kosongkan Sel</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Hapus Garis Panduan</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Tutup</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Putar 90° searah jarum jam</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Penggaris</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Simpan</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Halus (bikubik)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Garis panduan di {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Seret ke kanvas untuk menambahkan garis panduan. Pindahkan garis panduan dengan alat Pindah dan seret keluar kanvas untuk menghapusnya.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Sel saat ini</value>

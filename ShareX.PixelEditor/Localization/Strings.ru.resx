@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Очистить ячейку</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Удалить направляющие</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Закрыть</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Повернуть на 90° по часовой стрелке</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Линейки</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Сохранить</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Сглаженное (бикубическое)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Направляющая: {0} пикс.</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Перетащите на холст, чтобы добавить направляющую. Перемещайте направляющие инструментом «Перемещение» и перетащите их за пределы холста, чтобы удалить.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Текущая ячейка</value>

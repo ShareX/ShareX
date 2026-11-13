@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>נקה תא</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>נקה קווי עזר</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>סגור</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>סובב 90° עם כיוון השעון</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>סרגלים</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>שמירה</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>חלק (ביקובי)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>קו עזר ב-{0} פיקסלים</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>גרור אל משטח הציור כדי להוסיף קו עזר. הזז קווי עזר בכלי ההזזה וגרור אותם אל מחוץ למשטח כדי להסיר אותם.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>התא הנוכחי</value>

@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>셀 지우기</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>안내선 지우기</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>닫기</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>시계 방향으로 90° 회전</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>눈금자</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>저장</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>부드럽게 (쌍입방)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>안내선 {0}px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>캔버스로 끌어 안내선을 추가합니다. 이동 도구로 안내선을 옮기고, 캔버스 밖으로 끌면 제거됩니다.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>현재 셀</value>

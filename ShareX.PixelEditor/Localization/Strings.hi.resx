@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>सेल साफ़ करें</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>गाइड साफ़ करें</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>बंद करें</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>90° दक्षिणावर्त घुमाएँ</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>रूलर</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>सहेजें</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>चिकना (बाइक्यूबिक)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>गाइड {0} px पर</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>गाइड जोड़ने के लिए कैनवास पर खींचें। मूव टूल से गाइड हिलाएँ और हटाने के लिए उन्हें कैनवास से बाहर खींचें।</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>वर्तमान सेल</value>

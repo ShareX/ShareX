@@ -54,6 +54,8 @@ public sealed class EditorSettings
     public bool ShowPixelGrid { get; set; } = true;
     public int PixelGridZoom { get; set; } = 8;
     public bool ShowGrid { get; set; }
+
+    public bool ShowRulers { get; set; }
     public int GridWidth { get; set; } = 16;
     public int GridHeight { get; set; } = 16;
     public string GridColor { get; set; } = "#00A0FF";

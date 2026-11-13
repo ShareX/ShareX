@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Ryd celle</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Ryd hjælpelinjer</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Luk</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Roter 90° med uret</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Linealer</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Gem</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Blød (bikubisk)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Hjælpelinje ved {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Træk ind på lærredet for at tilføje en hjælpelinje. Flyt hjælpelinjer med Flyt-værktøjet, og træk dem væk fra lærredet for at fjerne dem.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Aktuel celle</value>

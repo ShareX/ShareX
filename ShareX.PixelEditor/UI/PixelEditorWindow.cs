@@ -54,6 +54,9 @@ public sealed partial class PixelEditorWindow : Window
     private readonly TextBox _zoomBox = new() { Width = 54, MinHeight = 18, Height = 18, Padding = new Thickness(4, 0), FontSize = 11, VerticalContentAlignment = VerticalAlignment.Center, BorderThickness = new Thickness(0), Background = Brushes.Transparent };
     private readonly Border _busy;
     private readonly CommandPalette _palette;
+    private readonly Ruler _rulerTop, _rulerLeft;
+    private readonly Border _rulerCorner;
+    private (double Zoom, double X, double Y, int Guides) _rulerState;
     private readonly TextBlock _busyText = new() { Foreground = Brushes.White, FontSize = 14 };
     private readonly ProgressBar _busyProgress = new() { Width = 260, Minimum = 0, Maximum = 1 };
     private readonly ToolbarControl _toolbar;
@@ -103,8 +106,20 @@ public sealed partial class PixelEditorWindow : Window
 
         // Starts hidden so the first ApplyVisibility refreshes the recent files.
         _startScreen = new StartScreen(this) { IsVisible = false };
+        _rulerTop = new Ruler(this, false);
+        _rulerLeft = new Ruler(this, true);
+        _rulerCorner = new Border { Width = Ruler.Thickness, Height = Ruler.Thickness, Background = Ui.Gutter };
+        Grid rulers = new() { ColumnDefinitions = new ColumnDefinitions("Auto,*"), RowDefinitions = new RowDefinitions("Auto,*") };
+        Grid.SetColumn(_rulerTop, 1);
+        Grid.SetRow(_rulerLeft, 1);
+        Grid.SetRow(Canvas, 1);
+        Grid.SetColumn(Canvas, 1);
+        rulers.Children.Add(_rulerCorner);
+        rulers.Children.Add(_rulerTop);
+        rulers.Children.Add(_rulerLeft);
+        rulers.Children.Add(Canvas);
         Grid canvasStack = new();
-        canvasStack.Children.Add(Canvas);
+        canvasStack.Children.Add(rulers);
         canvasStack.Children.Add(_startScreen);
 
         _tabHost = new Border { Child = new ScrollViewer { Content = _tabs, HorizontalScrollBarVisibility = ScrollBarVisibility.Hidden, VerticalScrollBarVisibility = ScrollBarVisibility.Disabled }, Height = 28, Background = Ui.Deep };
@@ -302,6 +317,29 @@ public sealed partial class PixelEditorWindow : Window
     }
 
     /// <summary>Redraws overlays (selection, tool preview) and view readouts without recompositing.</summary>
+    /// <summary>Redraws the rulers.</summary>
+    public void InvalidateRulers()
+    {
+        _rulerTop.InvalidateVisual();
+        _rulerLeft.InvalidateVisual();
+        Canvas.InvalidateVisual();
+    }
+
+    /// <summary>Redraws the rulers when the view moved or zoomed since they were last drawn.</summary>
+    public void SyncRulers()
+    {
+        if (_view == null || !_rulerTop.IsVisible) return;
+        (double, double, double, int) state = (_view.Zoom, _view.PanX, _view.PanY, _view.Guides.Count);
+        if (state == _rulerState) return;
+        _rulerState = state;
+        // Called while the canvas renders, so the rulers are redrawn right after.
+        Dispatcher.UIThread.Post(() =>
+        {
+            _rulerTop.InvalidateVisual();
+            _rulerLeft.InvalidateVisual();
+        });
+    }
+
     public void InvalidateOverlay()
     {
         Canvas.InvalidateVisual();
@@ -384,12 +422,16 @@ public sealed partial class PixelEditorWindow : Window
         if (x is not int px || y is not int py)
         {
             _cursorInfo.Text = string.Empty;
+            _rulerTop.SetMarker(null);
+            _rulerLeft.SetMarker(null);
             return;
         }
         uint? color = SampleColor(px, py, true);
         string text = color is uint c && c >> 24 != 0 ? $"X: {px}  Y: {py}   #{Argb.ToHex(c)}" : $"X: {px}  Y: {py}";
         if (Sprite?.Selection is SelectionMask selection && !selection.IsEmpty) text += "   " + string.Format(Strings.Status_Selection, selection.Bounds.Width, selection.Bounds.Height);
         _cursorInfo.Text = text;
+        _rulerTop.SetMarker(px + 0.5);
+        _rulerLeft.SetMarker(py + 0.5);
     }
 
     public void RefreshStatus()
@@ -495,6 +537,8 @@ public sealed partial class PixelEditorWindow : Window
         _dockSplitter.IsVisible = _dock.IsVisible;
         _dockColumn.Width = _dock.IsVisible ? new GridLength(Math.Clamp(Settings.RightDockWidth, 220, 600)) : new GridLength(0);
         _dockColumn.MinWidth = _dock.IsVisible ? 200 : 0;
+        bool rulersShown = Settings.ShowRulers && hasSprite;
+        _rulerTop.IsVisible = _rulerLeft.IsVisible = _rulerCorner.IsVisible = rulersShown;
         bool timeline = panels && Settings.TimelineVisible && hasSprite;
         _timeline.IsVisible = timeline;
         _timelineSplitter.IsVisible = timeline;

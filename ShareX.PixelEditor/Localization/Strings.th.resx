@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>ล้างเซล</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>ล้างเส้นนำ</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>ปิด</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>หมุน 90° ตามเข็มนาฬิกา</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>ไม้บรรทัด</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>บันทึก</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>เรียบ (ไบคิวบิก)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>เส้นนำที่ {0} พิกเซล</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>ลากลงบนผืนผ้าใบเพื่อเพิ่มเส้นนำ ย้ายเส้นนำด้วยเครื่องมือย้าย และลากออกนอกผืนผ้าใบเพื่อลบ</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>เซลปัจจุบัน</value>

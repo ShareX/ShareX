@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>Svuota cella</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>Cancella guide</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>Chiudi</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>Ruota di 90° in senso orario</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>Righelli</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>Salva</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>Uniforme (bicubico)</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>Guida a {0} px</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>Trascina sulla tela per aggiungere una guida. Sposta le guide con lo strumento Sposta e trascinale fuori dalla tela per rimuoverle.</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>Cella corrente</value>

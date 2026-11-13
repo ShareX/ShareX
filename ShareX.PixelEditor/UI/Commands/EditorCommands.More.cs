@@ -168,6 +168,17 @@ public static partial class EditorCommands
         Toggle("view.pixelGrid", Strings.Command_PixelGrid, "Ctrl+Shift+OemQuotes", s => s.ShowPixelGrid, (s, v) => s.ShowPixelGrid = v);
         Toggle("view.grid", Strings.Command_Grid, "Ctrl+OemQuotes", s => s.ShowGrid, (s, v) => s.ShowGrid = v);
         Toggle("view.snapToGrid", Strings.Command_SnapToGrid, "Ctrl+Shift+OemSemicolon", s => s.SnapToGrid, (s, v) => s.SnapToGrid = v);
+        View("view.rulers", Strings.Command_Rulers, "Ctrl+R", w =>
+        {
+            w.Settings.ShowRulers = !w.Settings.ShowRulers;
+            w.ApplyVisibility();
+            w.InvalidateRulers();
+        }, null, w => w.Settings.ShowRulers);
+        View("view.clearGuides", Strings.Command_ClearGuides, null, w =>
+        {
+            w.View!.Guides.Clear();
+            w.InvalidateRulers();
+        }, w => w.View?.Guides.Count > 0);
         Toggle("view.slices", Strings.Command_ShowSlices, null, s => s.ShowSlices, (s, v) => s.ShowSlices = v);
         Toggle("view.brushPreview", Strings.Command_BrushPreview, null, s => s.ShowBrushPreview, (s, v) => s.ShowBrushPreview = v);
         R("view.gridSettings", Strings.Command_GridSettings, null, w => _ = SpriteDialogs.GridSettingsAsync(w), keepsFloating: true, stopsPlayback: false);

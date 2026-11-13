@@ -129,6 +129,9 @@
   <data name="Command_ClearCel" xml:space="preserve">
     <value>清除單元格</value>
   </data>
+  <data name="Command_ClearGuides" xml:space="preserve">
+    <value>清除參考線</value>
+  </data>
   <data name="Command_Close" xml:space="preserve">
     <value>關閉</value>
   </data>
@@ -404,6 +407,9 @@
   </data>
   <data name="Command_Rotate90CW" xml:space="preserve">
     <value>順時針旋轉 90°</value>
+  </data>
+  <data name="Command_Rulers" xml:space="preserve">
+    <value>尺標</value>
   </data>
   <data name="Command_Save" xml:space="preserve">
     <value>儲存</value>
@@ -1304,6 +1310,12 @@
   </data>
   <data name="Resize_Smooth" xml:space="preserve">
     <value>平滑（雙立方）</value>
+  </data>
+  <data name="Ruler_GuideAt" xml:space="preserve">
+    <value>參考線位於 {0} 像素</value>
+  </data>
+  <data name="Ruler_Tip" xml:space="preserve">
+    <value>拖曳到畫布上以新增參考線。用移動工具移動參考線，將其拖出畫布即可移除。</value>
   </data>
   <data name="Scope_Cel" xml:space="preserve">
     <value>目前單元格</value>
