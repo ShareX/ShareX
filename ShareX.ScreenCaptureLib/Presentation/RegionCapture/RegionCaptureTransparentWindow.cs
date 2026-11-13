@@ -82,6 +82,7 @@ public sealed class RegionCaptureTransparentWindow : Window
         }
 
         Opened += OnOpened;
+        ScalingChanged += (_, _) => ApplyPixelSize();
     }
 
     /// <summary>Shows the window and returns the selected screen rectangle, or null when cancelled.</summary>

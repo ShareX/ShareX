@@ -33,10 +33,12 @@ using System.Runtime.InteropServices;
 namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
 /// <summary>
-/// Keeps a region capture overlay at the scale it was created with while it is open. On Windows an overlay that spans
-/// monitors with different scaling is otherwise switched between their DPIs whenever it is moved or resized. The overlay is
-/// sized in device pixels, so following each switch only resizes it again: it flickers between scales and pointer positions
-/// map to the wrong screenshot pixels (selecting the empty area of the ShareX main window then captures its sidebar).
+/// Keeps a region capture overlay at its size in device pixels while it is open. On Windows an overlay that spans monitors
+/// with different scaling is switched between their DPIs when it is moved or resized, and WM_DPICHANGED suggests a rectangle
+/// scaled for the new DPI. Applying that rectangle resized the overlay, which switched the DPI back: it flickered between
+/// scales and pointer positions mapped to the wrong screenshot pixels. Dropping the message instead left Windows and Avalonia
+/// on different scales, which misplaced the toolbar and magnifier. The message now reaches Avalonia with the window's current
+/// rectangle, so the scale follows Windows while the size and position stay put.
 /// </summary>
 internal static unsafe partial class RegionCaptureFixedScale
 {
@@ -44,23 +46,26 @@ internal static unsafe partial class RegionCaptureFixedScale
     private const uint WM_DPICHANGED = 0x02E0;
     private const nuint SubclassId = 0x53585343; // "SXSC"
 
-    /// <summary>Drops WM_DPICHANGED for the window. Returns false where nothing was done.</summary>
+    /// <summary>Pins the window's rectangle across DPI changes. Returns false where nothing was done.</summary>
     public static bool Apply(IntPtr windowHandle) =>
         OperatingSystem.IsWindows() && windowHandle != IntPtr.Zero &&
         SetWindowSubclass(windowHandle, &WindowProcedure, SubclassId, 0);
 
     /// <summary>
-    /// Drops WM_DPICHANGED before Avalonia sees it, so the window keeps its scale and its size in device pixels. Windows does
-    /// not resize a window that leaves WM_DPICHANGED unhandled.
+    /// Replaces the rectangle WM_DPICHANGED suggests with the window's current one before Avalonia handles the message, so
+    /// Avalonia takes the new scale without moving or resizing the window.
     /// </summary>
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvStdcall) })]
     private static nint WindowProcedure(IntPtr hwnd, uint message, nuint wParam, nint lParam, nuint id, nuint data)
     {
         if (message == WM_DPICHANGED)
         {
-            // Recorded for display diagnostics: Windows has already switched the window's DPI, only Avalonia misses it.
-            WindowGeometryLog.NoteDpiChange(hwnd, (uint)(wParam & 0xFFFF), suppressed: true);
-            return 0;
+            WindowGeometryLog.NoteDpiChange(hwnd, (uint)(wParam & 0xFFFF), suppressed: false);
+
+            if (lParam != 0 && GetWindowRect(hwnd, out Rect current))
+            {
+                *(Rect*)lParam = current;
+            }
         }
 
         if (message == WM_NCDESTROY)
@@ -81,6 +86,19 @@ internal static unsafe partial class RegionCaptureFixedScale
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool RemoveWindowSubclass(IntPtr hwnd,
         delegate* unmanaged[Stdcall]<IntPtr, uint, nuint, nint, nuint, nuint, nint> procedure, nuint id);
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct Rect
+    {
+        public int Left;
+        public int Top;
+        public int Right;
+        public int Bottom;
+    }
+
+    [LibraryImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static partial bool GetWindowRect(IntPtr hwnd, out Rect rect);
 
     [LibraryImport("comctl32.dll")]
     private static partial nint DefSubclassProc(IntPtr hwnd, uint message, nuint wParam, nint lParam);

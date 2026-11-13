@@ -158,6 +158,29 @@ public partial class RegionCaptureWindow : Window
         }
         InitializeCaptureWorkspace();
         Opened += OnOpened;
+        ScalingChanged += OnScalingChanged;
+    }
+
+    /// <summary>
+    /// The overlay keeps its rectangle when Windows changes its DPI (see RegionCaptureFixedScale), so only the size in DIPs
+    /// and the pixel transforms follow the new scale.
+    /// </summary>
+    private void OnScalingChanged(object? sender, EventArgs e)
+    {
+        if (_request == null || _closing || GetRenderScaling() == _appliedPixelScaling)
+        {
+            return;
+        }
+
+        ApplyPixelSize();
+        UpdatePixelTransforms();
+
+        // Before the window opens, OnOpened places the toolbar.
+        if (IsVisible)
+        {
+            DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
+            UpdateToolbarPosition(new PixelPoint(cursorPosition.X, cursorPosition.Y));
+        }
     }
 
     public Task<AvaloniaRegionCaptureResult?> CaptureAsync()
