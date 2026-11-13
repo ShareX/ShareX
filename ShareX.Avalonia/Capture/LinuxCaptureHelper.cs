@@ -188,14 +188,12 @@ public static class LinuxCaptureHelper
 
     private static string? CaptureViaPortal(bool interactive = false)
     {
-        Process? monitor = null;
         List<FileSystemWatcher> watchers = new();
         try
         {
             DateTime startTime = DateTime.UtcNow;
             string? foundPath = null;
             using AutoResetEvent waitHandle = new AutoResetEvent(false);
-            Regex uriRegex = new Regex(@"file://([^\s""'<>()]+)");
 
             foreach (string dir in GetPicturesDirectories())
             {
@@ -221,36 +219,6 @@ public static class LinuxCaptureHelper
                 catch { }
             }
 
-            try
-            {
-                monitor = new Process();
-                monitor.StartInfo = new ProcessStartInfo("stdbuf", "-oL busctl --user monitor org.freedesktop.portal.Desktop")
-                {
-                    RedirectStandardOutput = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
-                monitor.OutputDataReceived += (s, e) =>
-                {
-                    if (!string.IsNullOrEmpty(e.Data))
-                    {
-                        Match m = uriRegex.Match(e.Data);
-                        if (m.Success)
-                        {
-                            foundPath = Uri.UnescapeDataString(m.Groups[1].Value);
-                            waitHandle.Set();
-                        }
-                    }
-                };
-                monitor.Start();
-                monitor.BeginOutputReadLine();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Optional busctl monitor not available: {ex.Message}");
-                monitor = null;
-            }
-
             using (Process caller = new Process())
             {
                 string interactiveArg = interactive ? "<true>" : "<false>";
@@ -273,13 +241,6 @@ public static class LinuxCaptureHelper
                 try { w.EnableRaisingEvents = false; w.Dispose(); } catch { }
             }
             watchers.Clear();
-
-            if (monitor != null)
-            {
-                try { monitor.Kill(); } catch { }
-                monitor.Dispose();
-                monitor = null;
-            }
 
             if (!string.IsNullOrEmpty(foundPath) && File.Exists(foundPath))
             {
@@ -321,11 +282,6 @@ public static class LinuxCaptureHelper
                 try { w.EnableRaisingEvents = false; w.Dispose(); } catch { }
             }
             watchers.Clear();
-            if (monitor != null)
-            {
-                try { monitor.Kill(); } catch { }
-                monitor.Dispose();
-            }
         }
 
         return null;
