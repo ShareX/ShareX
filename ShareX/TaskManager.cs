@@ -207,7 +207,7 @@ namespace ShareX
                                 !string.IsNullOrEmpty(info.Result.URL) || !string.IsNullOrEmpty(info.Result.ShortenedURL)))
                             {
                                 HistoryItem historyItem = info.GetHistoryItem();
-                                AppendHistoryItemAsync(historyItem);
+                                AppendHistoryItemAsync(historyItem, info.HistoryOCRTask);
                             }
 
                             RecentManager.Add(task);
@@ -408,10 +408,29 @@ namespace ShareX
             }
         }
 
-        private static void AppendHistoryItemAsync(HistoryItem historyItem)
+        private static void AppendHistoryItemAsync(HistoryItem historyItem, Task<string> ocrTask = null)
         {
-            Task.Run(() =>
+            Task.Run(async () =>
             {
+                if (ocrTask != null)
+                {
+                    try
+                    {
+                        string text = await ocrTask;
+
+                        if (!string.IsNullOrWhiteSpace(text))
+                        {
+                            historyItem.Tags ??= new Dictionary<string, string>();
+                            historyItem.Tags["OCR"] = text;
+                        }
+                    }
+                    catch (Exception e)
+                    {
+                        // The item is still added without its text, e.g. when the OCR models are missing.
+                        DebugHelper.WriteException(e, "OCR for history failed.");
+                    }
+                }
+
                 try
                 {
                     ApplicationState.HistoryManager.AppendHistoryItem(historyItem);

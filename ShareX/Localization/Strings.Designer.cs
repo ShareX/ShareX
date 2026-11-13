@@ -5760,5 +5760,6 @@ namespace ShareX.Localization {
         public static string StartScreen_ThankYou => ResourceManager.GetString("StartScreen_ThankYou", resourceCulture);
         public static string StartScreen_UseSystemSetting => ResourceManager.GetString("StartScreen_UseSystemSetting", resourceCulture);
         public static string StartScreen_Spacious => ResourceManager.GetString("StartScreen_Spacious", resourceCulture);
+        public static string ApplicationSettingsWindow_SaveOCRTextToHistory => ResourceManager.GetString("ApplicationSettingsWindow_SaveOCRTextToHistory", resourceCulture);
     }
 }

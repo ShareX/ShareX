@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>ذخیره</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>متن موجود در تصاویر گرفته‌شده در تاریخچه قابل جستجو شود</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>وظایف اخیر را ذخیره کن</value>
   </data>

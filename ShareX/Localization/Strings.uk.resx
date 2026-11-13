@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Зберегти</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Зробити текст на знімках доступним для пошуку в історії</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Зберегти останні завдання</value>
   </data>

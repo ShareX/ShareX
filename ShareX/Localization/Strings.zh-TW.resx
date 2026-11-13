@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>儲存</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>讓擷取畫面中的文字可在歷史記錄中搜尋</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>儲存最近的排程</value>
   </data>

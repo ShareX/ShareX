@@ -667,6 +667,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>सहेजें</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>कैप्चर में मौजूद टेक्स्ट को इतिहास में खोजने योग्य बनाएं</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>हाल के कार्य सहेजें</value>
   </data>

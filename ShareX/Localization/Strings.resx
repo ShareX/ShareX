@@ -668,6 +668,9 @@
   <data name="ApplicationSettingsWindow_Save" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="ApplicationSettingsWindow_SaveOCRTextToHistory" xml:space="preserve">
+    <value>Make text in captures searchable in history</value>
+  </data>
   <data name="ApplicationSettingsWindow_SaveRecentTasks" xml:space="preserve">
     <value>Save recent tasks</value>
   </data>
