@@ -98,7 +98,7 @@ public sealed partial class PixelEditorWindow : Window
         Canvas = new CanvasView(this);
         _toolbar = new ToolbarControl(this);
         _timeline = new Timeline(this);
-        _dock = new PanelDock(this, [new ColorPanel(this), new PalettePanel(this), new LayersPanel(this), new PreviewPanel(this), new HistoryPanel(this)]);
+        _dock = new PanelDock(this, [new ColorPanel(this), new PalettePanel(this), new LayersPanel(this), new PreviewPanel(this), new HistoryPanel(this), new TilesPanel(this)]);
         _titleBar = CreateTitleBar();
 
         // Starts hidden so the first ApplyVisibility refreshes the recent files.
@@ -249,6 +249,20 @@ public sealed partial class PixelEditorWindow : Window
             _toolbar.RefreshColors();
             _dock.Get("color")?.Refresh();
             (_dock.Get("palette") as PalettePanel)?.RefreshSelection();
+        }
+    }
+
+    private int _selectedTile = 1;
+
+    /// <summary>The tile the Tile Stamp tool places; 0 is the empty tile.</summary>
+    public int SelectedTile
+    {
+        get => _selectedTile;
+        set
+        {
+            _selectedTile = Math.Max(0, value);
+            (_dock.Get("tiles") as TilesPanel)?.RefreshSelection();
+            if (Tools.Active.Id == ToolId.TileStamp) RefreshOptions();
         }
     }
 

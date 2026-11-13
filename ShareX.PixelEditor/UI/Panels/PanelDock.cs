@@ -65,7 +65,7 @@ public sealed class PanelDock : UserControl
     public static List<DockGroupLayout> DefaultLayout() =>
     [
         new() { Panels = ["color"], Selected = "color", Height = 1.0 },
-        new() { Panels = ["palette"], Selected = "palette", Height = 1.0 },
+        new() { Panels = ["palette", "tiles"], Selected = "palette", Height = 1.0 },
         new() { Panels = ["layers", "history"], Selected = "layers", Height = 1.25 },
         new() { Panels = ["preview"], Selected = "preview", Height = 0.85 }
     ];

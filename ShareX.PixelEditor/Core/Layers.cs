@@ -57,6 +57,19 @@ public sealed class CelImage
     }
 
     public PixelBuffer Buffer { get; set; }
+
+    /// <summary>On a tilemap layer, the tile in each cell, row by row; null until the cel is split into tiles.</summary>
+    public int[]? Map { get; set; }
+
+    /// <summary>On a tilemap layer, the buffer last drawn from the tiles; a different buffer means the pixels were painted since.</summary>
+    public PixelBuffer? Rendered { get; set; }
+
+    /// <summary>A separate image with the same pixels and tiles; the pixels are frozen so either side copies them before painting.</summary>
+    public CelImage Share()
+    {
+        Buffer.Frozen = true;
+        return new CelImage(Buffer) { Map = Map, Rendered = Rendered };
+    }
 }
 
 /// <summary>The content of one layer in one frame.</summary>
@@ -134,9 +147,12 @@ public sealed class PixelLayer : Layer
     /// <summary>Reference layers are shown while editing but left out of exports.</summary>
     public bool IsReference { get; set; }
 
+    /// <summary>The tiles of a tilemap layer; null for a plain pixel layer.</summary>
+    public Tileset? Tileset { get; set; }
+
     public override Layer Clone(Dictionary<CelImage, CelImage> map)
     {
-        PixelLayer copy = new() { IsReference = IsReference };
+        PixelLayer copy = new() { IsReference = IsReference, Tileset = Tileset?.Clone() };
         CopyTo(copy);
         foreach (Cel? cel in Cels)
         {
@@ -147,8 +163,7 @@ public sealed class PixelLayer : Layer
             }
             if (!map.TryGetValue(cel.Image, out CelImage? image))
             {
-                cel.Image.Buffer.Frozen = true;
-                image = new CelImage(cel.Image.Buffer);
+                image = cel.Image.Share();
                 map[cel.Image] = image;
             }
             copy.Cels.Add(new Cel(image) { Opacity = cel.Opacity });

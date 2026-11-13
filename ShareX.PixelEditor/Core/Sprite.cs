@@ -147,8 +147,7 @@ public sealed class Sprite
             Cel? cel = null;
             if (copyFrom is int from && layer.Cels[from] is Cel original)
             {
-                original.Buffer.Frozen = true;
-                cel = new Cel(linked ? original.Image : new CelImage(original.Buffer)) { Opacity = original.Opacity };
+                cel = new Cel(linked ? original.Image : original.Image.Share()) { Opacity = original.Opacity };
             }
             layer.Cels.Insert(index, cel);
         }

@@ -100,4 +100,7 @@ public static class PixelEditorIcons
 
     // Interface, 16 px.
     public const string Thumbnails = Prefix + "thumbnails";
+
+    // Tools, 20 px.
+    public const string TileStamp = Prefix + "tile-stamp";
 }

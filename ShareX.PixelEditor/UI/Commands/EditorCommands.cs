@@ -93,6 +93,7 @@ public static partial class EditorCommands
                 C("sprite.reduceColors")),
             MenuNode.Sub(Strings.Menu_Layer,
                 C("layer.new"), C("layer.newGroup"), C("layer.duplicate"), C("layer.viaCopy"), C("layer.viaCut"), C("layer.importImage"), C("layer.delete"), S,
+                MenuNode.Sub(Strings.Menu_Tilemap, C("layer.newTilemap"), C("layer.convertToTilemap"), C("layer.convertToPixels"), S, C("tiles.removeUnused"), C("file.exportTilemap")), S,
                 C("layer.properties"), C("layer.visible"), C("layer.lock"), C("layer.reference"), S,
                 C("layer.mergeDown"), C("layer.flatten"), S,
                 C("layer.moveUp"), C("layer.moveDown"), C("layer.moveToTop"), C("layer.moveToBottom"), S,

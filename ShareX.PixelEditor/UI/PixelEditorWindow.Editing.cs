@@ -86,6 +86,8 @@ public sealed partial class PixelEditorWindow
     public void Commit(string historyName)
     {
         if (Sprite == null) return;
+        // Pixels painted on tilemap layers go back into their tiles before the state is recorded.
+        Tilemaps.Sync(Sprite, Settings.TileEditsShared);
         Sprite.History.Push(historyName);
         InvalidateCanvas();
         RefreshPanels();

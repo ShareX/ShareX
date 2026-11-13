@@ -2730,5 +2730,125 @@ namespace ShareX.PixelEditor.Localization {
                 return ResourceManager.GetString("Palette_SwatchTip", resourceCulture);
             }
         }
+        public static string Command_ConvertToPixelLayer {
+            get {
+                return ResourceManager.GetString("Command_ConvertToPixelLayer", resourceCulture);
+            }
+        }
+        public static string Command_ConvertToTilemap {
+            get {
+                return ResourceManager.GetString("Command_ConvertToTilemap", resourceCulture);
+            }
+        }
+        public static string Command_ExportTilemap {
+            get {
+                return ResourceManager.GetString("Command_ExportTilemap", resourceCulture);
+            }
+        }
+        public static string Command_NewTilemapLayer {
+            get {
+                return ResourceManager.GetString("Command_NewTilemapLayer", resourceCulture);
+            }
+        }
+        public static string Command_RemoveUnusedTiles {
+            get {
+                return ResourceManager.GetString("Command_RemoveUnusedTiles", resourceCulture);
+            }
+        }
+        public static string Dialog_TileHeight {
+            get {
+                return ResourceManager.GetString("Dialog_TileHeight", resourceCulture);
+            }
+        }
+        public static string Dialog_Tilemap_Note {
+            get {
+                return ResourceManager.GetString("Dialog_Tilemap_Note", resourceCulture);
+            }
+        }
+        public static string Dialog_TileWidth {
+            get {
+                return ResourceManager.GetString("Dialog_TileWidth", resourceCulture);
+            }
+        }
+        public static string Layer_TilemapName {
+            get {
+                return ResourceManager.GetString("Layer_TilemapName", resourceCulture);
+            }
+        }
+        public static string Menu_Tilemap {
+            get {
+                return ResourceManager.GetString("Menu_Tilemap", resourceCulture);
+            }
+        }
+        public static string Options_TileInfo {
+            get {
+                return ResourceManager.GetString("Options_TileInfo", resourceCulture);
+            }
+        }
+        public static string Panel_Tiles {
+            get {
+                return ResourceManager.GetString("Panel_Tiles", resourceCulture);
+            }
+        }
+        public static string Status_SelectTilemapLayer {
+            get {
+                return ResourceManager.GetString("Status_SelectTilemapLayer", resourceCulture);
+            }
+        }
+        public static string Status_TilesMade {
+            get {
+                return ResourceManager.GetString("Status_TilesMade", resourceCulture);
+            }
+        }
+        public static string Status_TilesRemoved {
+            get {
+                return ResourceManager.GetString("Status_TilesRemoved", resourceCulture);
+            }
+        }
+        public static string Tiles_EditsShared {
+            get {
+                return ResourceManager.GetString("Tiles_EditsShared", resourceCulture);
+            }
+        }
+        public static string Tiles_EditsShared_Tip {
+            get {
+                return ResourceManager.GetString("Tiles_EditsShared_Tip", resourceCulture);
+            }
+        }
+        public static string Tiles_Empty {
+            get {
+                return ResourceManager.GetString("Tiles_Empty", resourceCulture);
+            }
+        }
+        public static string Tiles_EmptyTile {
+            get {
+                return ResourceManager.GetString("Tiles_EmptyTile", resourceCulture);
+            }
+        }
+        public static string Tiles_Info {
+            get {
+                return ResourceManager.GetString("Tiles_Info", resourceCulture);
+            }
+        }
+        public static string Tiles_Tile {
+            get {
+                return ResourceManager.GetString("Tiles_Tile", resourceCulture);
+            }
+        }
+        public static string Tool_TileStamp {
+            get {
+                return ResourceManager.GetString("Tool_TileStamp", resourceCulture);
+            }
+        }
+        public static string Tool_TileStamp_Hint {
+            get {
+                return ResourceManager.GetString("Tool_TileStamp_Hint", resourceCulture);
+            }
+        }
+        public static string Layers_TilemapBadge {
+            get {
+                return ResourceManager.GetString("Layers_TilemapBadge", resourceCulture);
+            }
+        }
     }
 }

@@ -233,6 +233,7 @@ public sealed class LayersPanel : EditorPanel
         if (layer is PixelLayer pixels)
         {
             if (pixels.IsReference) badges.Children.Add(Badge(PixelEditorIcons.Reference, Strings.Layers_ReferenceBadge));
+            if (pixels.Tileset is Tileset set) badges.Children.Add(Badge(PixelEditorIcons.Grid, string.Format(Strings.Layers_TilemapBadge, set.TileWidth, set.TileHeight)));
             if (sprite.IsLinked(pixels, sprite.ActiveFrame)) badges.Children.Add(Badge(PixelEditorIcons.Link, Strings.Layers_LinkedBadge));
         }
         if (layer.Opacity < 255) badges.Children.Add(new TextBlock { Text = $"{layer.Opacity * 100 / 255}%", FontSize = 10, Classes = { "dim" }, VerticalAlignment = VerticalAlignment.Center });

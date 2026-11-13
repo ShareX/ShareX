@@ -134,6 +134,7 @@ public static class SpriteFile
     {
         public int Image { get; set; }
         public int Opacity { get; set; } = 255;
+        public int[]? Map { get; set; }
     }
 
     private sealed class LayerDto
@@ -149,6 +150,10 @@ public static class SpriteFile
         public BlendMode Blend { get; set; }
         public List<CelDto?>? Cels { get; set; }
         public List<LayerDto>? Children { get; set; }
+        public int? TileWidth { get; set; }
+        public int? TileHeight { get; set; }
+        public int? Tileset { get; set; }
+        public int? TileCount { get; set; }
     }
 
     public static void SaveProject(Sprite sprite, string path)
@@ -165,6 +170,7 @@ public static class SpriteFile
         };
         Dictionary<CelImage, int> images = [];
         List<(PixelBuffer Buffer, SKRectI Bounds)> pending = [];
+        List<PixelBuffer> tilesets = [];
 
         LayerDto Convert(Layer layer)
         {
@@ -178,6 +184,14 @@ public static class SpriteFile
             else if (layer is PixelLayer pixels)
             {
                 result.Reference = pixels.IsReference;
+                if (pixels.Tileset is Tileset set)
+                {
+                    result.TileWidth = set.TileWidth;
+                    result.TileHeight = set.TileHeight;
+                    result.TileCount = set.Tiles.Count - 1;
+                    result.Tileset = tilesets.Count;
+                    tilesets.Add(Tilemaps.RenderTileset(set, Math.Max(1, set.Tiles.Count - 1)));
+                }
                 result.Cels = [];
                 foreach (Cel? cel in pixels.Cels)
                 {
@@ -194,7 +208,7 @@ public static class SpriteFile
                         pending.Add((cel.Buffer, bounds.Value));
                         dto.Images.Add(new ImageDto { X = bounds.Value.Left, Y = bounds.Value.Top });
                     }
-                    result.Cels.Add(new CelDto { Image = index, Opacity = cel.Opacity });
+                    result.Cels.Add(new CelDto { Image = index, Opacity = cel.Opacity, Map = pixels.Tileset != null ? cel.Image.Map : null });
                 }
             }
             return result;
@@ -218,8 +232,33 @@ public static class SpriteFile
                 byte[] png = EncodeImage(cropped, ".png", 100);
                 entry.Write(png);
             }
+            for (int i = 0; i < tilesets.Count; i++)
+            {
+                using Stream entry = zip.CreateEntry($"tilesets/{i}.png", CompressionLevel.NoCompression).Open();
+                entry.Write(EncodeImage(tilesets[i], ".png", 100));
+            }
         }
         File.Move(temp, path, true);
+    }
+
+    /// <summary>Reads a tileset saved as one row of tiles; missing or damaged images give an empty tileset.</summary>
+    private static Tileset LoadTileset(ZipArchive zip, int index, int tileWidth, int tileHeight, int count)
+    {
+        Tileset set = new(tileWidth, tileHeight);
+        ZipArchiveEntry? entry = index >= 0 ? zip.GetEntry($"tilesets/{index}.png") : null;
+        if (entry == null || count <= 0) return set;
+        using MemoryStream memory = new();
+        using (Stream s = entry.Open()) s.CopyTo(memory);
+        using SKBitmap? bitmap = SKBitmap.Decode(memory.ToArray());
+        if (bitmap == null) return set;
+        PixelBuffer strip = PixelBuffer.FromBitmap(bitmap);
+        for (int i = 0; i < count; i++)
+        {
+            PixelBuffer tile = strip.Crop(SKRectI.Create(i * tileWidth, 0, tileWidth, tileHeight));
+            tile.Frozen = true;
+            set.Tiles.Add(tile);
+        }
+        return set;
     }
 
     public static Sprite LoadProject(string path)
@@ -271,9 +310,18 @@ public static class SpriteFile
             else
             {
                 PixelLayer pixels = new() { IsReference = source.Reference };
+                if (source.TileWidth is int tileWidth && source.TileHeight is int tileHeight && tileWidth > 0 && tileHeight > 0)
+                {
+                    pixels.Tileset = LoadTileset(zip, source.Tileset ?? -1, tileWidth, tileHeight, source.TileCount ?? 0);
+                }
                 foreach (CelDto? cel in source.Cels ?? [])
                 {
                     CelImage? image = cel != null ? LoadImage(cel.Image) : null;
+                    if (image != null && pixels.Tileset is Tileset set && cel!.Map is int[] map && map.Length == set.Columns(dto.Width) * set.Rows(dto.Height))
+                    {
+                        image.Map = map.Select(t => t >= 0 && t < set.Tiles.Count ? t : 0).ToArray();
+                        image.Rendered = image.Buffer;
+                    }
                     pixels.Cels.Add(image != null ? new Cel(image) { Opacity = Math.Clamp(cel!.Opacity, 0, 255) } : null);
                 }
                 layer = pixels;

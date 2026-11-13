@@ -129,6 +129,12 @@
   <data name="Command_CommandPalette" xml:space="preserve">
     <value>Command Palette...</value>
   </data>
+  <data name="Command_ConvertToPixelLayer" xml:space="preserve">
+    <value>Convert to Pixel Layer</value>
+  </data>
+  <data name="Command_ConvertToTilemap" xml:space="preserve">
+    <value>Convert to Tilemap Layer...</value>
+  </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copy</value>
   </data>
@@ -176,6 +182,9 @@
   </data>
   <data name="Command_ExportSheet" xml:space="preserve">
     <value>Export Sprite Sheet...</value>
+  </data>
+  <data name="Command_ExportTilemap" xml:space="preserve">
+    <value>Export Tilemap...</value>
   </data>
   <data name="Command_Fill" xml:space="preserve">
     <value>Fill with Foreground Color</value>
@@ -312,6 +321,9 @@
   <data name="Command_NewTag" xml:space="preserve">
     <value>New Tag...</value>
   </data>
+  <data name="Command_NewTilemapLayer" xml:space="preserve">
+    <value>New Tilemap Layer...</value>
+  </data>
   <data name="Command_NextFrame" xml:space="preserve">
     <value>Next Frame</value>
   </data>
@@ -362,6 +374,9 @@
   </data>
   <data name="Command_RemoveTag" xml:space="preserve">
     <value>Remove Tag</value>
+  </data>
+  <data name="Command_RemoveUnusedTiles" xml:space="preserve">
+    <value>Remove Unused Tiles</value>
   </data>
   <data name="Command_ReplaceColor" xml:space="preserve">
     <value>Replace Color...</value>
@@ -645,6 +660,15 @@
   <data name="Dialog_Threshold" xml:space="preserve">
     <value>Threshold</value>
   </data>
+  <data name="Dialog_TileHeight" xml:space="preserve">
+    <value>Tile height</value>
+  </data>
+  <data name="Dialog_Tilemap_Note" xml:space="preserve">
+    <value>Tilemap layers are made of tiles of one size. Painting a tile changes it everywhere it is used.</value>
+  </data>
+  <data name="Dialog_TileWidth" xml:space="preserve">
+    <value>Tile width</value>
+  </data>
   <data name="Dialog_To" xml:space="preserve">
     <value>To</value>
   </data>
@@ -867,11 +891,17 @@
   <data name="Layer_GroupName" xml:space="preserve">
     <value>Group</value>
   </data>
+  <data name="Layer_TilemapName" xml:space="preserve">
+    <value>Tilemap</value>
+  </data>
   <data name="Layers_LinkedBadge" xml:space="preserve">
     <value>This cel is linked to other frames</value>
   </data>
   <data name="Layers_ReferenceBadge" xml:space="preserve">
     <value>Reference layer: not exported</value>
+  </data>
+  <data name="Layers_TilemapBadge" xml:space="preserve">
+    <value>Tilemap layer with {0} × {1} px tiles</value>
   </data>
   <data name="Layers_ToggleGroup" xml:space="preserve">
     <value>Expand or collapse the group</value>
@@ -929,6 +959,9 @@
   </data>
   <data name="Menu_Tiled" xml:space="preserve">
     <value>Tiled Mode</value>
+  </data>
+  <data name="Menu_Tilemap" xml:space="preserve">
+    <value>Tilemap</value>
   </data>
   <data name="Menu_View" xml:space="preserve">
     <value>_View</value>
@@ -1074,6 +1107,9 @@
   <data name="Options_TextHint" xml:space="preserve">
     <value>Click where the text should go</value>
   </data>
+  <data name="Options_TileInfo" xml:space="preserve">
+    <value>Tile {0}   {1} × {2} px</value>
+  </data>
   <data name="Options_Tolerance" xml:space="preserve">
     <value>Tolerance</value>
   </data>
@@ -1166,6 +1202,9 @@
   </data>
   <data name="Panel_Preview" xml:space="preserve">
     <value>Preview</value>
+  </data>
+  <data name="Panel_Tiles" xml:space="preserve">
+    <value>Tiles</value>
   </data>
   <data name="Pattern_Checker" xml:space="preserve">
     <value>Checker</value>
@@ -1416,8 +1455,17 @@
   <data name="Status_SelectPixelLayer" xml:space="preserve">
     <value>Select a pixel layer first</value>
   </data>
+  <data name="Status_SelectTilemapLayer" xml:space="preserve">
+    <value>Select a tilemap layer first</value>
+  </data>
   <data name="Status_SpriteInfo" xml:space="preserve">
     <value>{0} × {1} px   Frame {2}/{3}   {4} ms</value>
+  </data>
+  <data name="Status_TilesMade" xml:space="preserve">
+    <value>The layer was split into {0} tile(s)</value>
+  </data>
+  <data name="Status_TilesRemoved" xml:space="preserve">
+    <value>{0} unused tile(s) removed</value>
   </data>
   <data name="Status_Transform" xml:space="preserve">
     <value>X {0}  Y {1}   {2} × {3}   {4}°</value>
@@ -1442,6 +1490,24 @@
   </data>
   <data name="Text_Text" xml:space="preserve">
     <value>Text</value>
+  </data>
+  <data name="Tiles_EditsShared" xml:space="preserve">
+    <value>Painting changes every copy of a tile</value>
+  </data>
+  <data name="Tiles_EditsShared_Tip" xml:space="preserve">
+    <value>When this is off, painting on a tile gives that cell a new tile instead of changing the shared one.</value>
+  </data>
+  <data name="Tiles_Empty" xml:space="preserve">
+    <value>The active layer is not a tilemap layer. A tilemap layer is built from tiles of one size: painting a tile changes it everywhere it is used, and the Tile Stamp tool places tiles on the grid.</value>
+  </data>
+  <data name="Tiles_EmptyTile" xml:space="preserve">
+    <value>Empty tile (clears cells)</value>
+  </data>
+  <data name="Tiles_Info" xml:space="preserve">
+    <value>{0} tiles, {1} × {2} px</value>
+  </data>
+  <data name="Tiles_Tile" xml:space="preserve">
+    <value>Tile {0}</value>
   </data>
   <data name="Timeline_Duration" xml:space="preserve">
     <value>Duration</value>
@@ -1598,6 +1664,12 @@
   </data>
   <data name="Tool_Text_Hint" xml:space="preserve">
     <value>Click to add text</value>
+  </data>
+  <data name="Tool_TileStamp" xml:space="preserve">
+    <value>Tile Stamp</value>
+  </data>
+  <data name="Tool_TileStamp_Hint" xml:space="preserve">
+    <value>Click or drag to place the selected tile. Right-click clears cells. Alt+click picks the tile under the cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

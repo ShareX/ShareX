@@ -101,7 +101,29 @@ public static partial class EditorCommands
             SpriteOps.Duplicate(sprite, sprite.ActiveLayer!, string.Format(Strings.Layer_CopyName, sprite.ActiveLayer!.Name));
             w.Commit(Strings.Command_DuplicateLayer);
         }, w => w.Sprite?.ActiveLayer != null);
-        R("layer.viaCopy", Strings.Command_LayerViaCopy, "Ctrl+Alt+J", w => LayerViaSelection(w, false), w => HasSelection(w) && w.Sprite!.ActiveLayer is PixelLayer);
+        R("layer.newTilemap", Strings.Command_NewTilemapLayer, null, w => _ = TilemapDialogs.NewLayerAsync(w), HasSprite);
+        R("layer.convertToTilemap", Strings.Command_ConvertToTilemap, null, w => _ = TilemapDialogs.ConvertAsync(w), w => w.Sprite?.ActiveLayer is PixelLayer { Tileset: null });
+        R("layer.convertToPixels", Strings.Command_ConvertToPixelLayer, null, w =>
+        {
+            if (w.Sprite?.ActiveLayer is not PixelLayer { Tileset: not null } layer) return;
+            layer.Tileset = null;
+            foreach (Cel? cel in layer.Cels)
+            {
+                if (cel == null) continue;
+                cel.Image.Map = null;
+                cel.Image.Rendered = null;
+            }
+            w.Commit(Strings.Command_ConvertToPixelLayer);
+        }, w => w.Sprite?.ActiveLayer is PixelLayer { Tileset: not null });
+        R("tiles.removeUnused", Strings.Command_RemoveUnusedTiles, null, w =>
+        {
+            if (w.Sprite?.ActiveLayer is not PixelLayer { Tileset: not null } layer) return;
+            int removed = Tilemaps.RemoveUnused(layer);
+            w.SelectedTile = Math.Min(w.SelectedTile, layer.Tileset!.Tiles.Count - 1);
+            if (removed > 0) w.Commit(Strings.Command_RemoveUnusedTiles);
+            w.SetStatus(string.Format(Strings.Status_TilesRemoved, removed));
+        }, w => w.Sprite?.ActiveLayer is PixelLayer { Tileset: not null });
+        R("file.exportTilemap", Strings.Command_ExportTilemap, null, w => _ = TilemapDialogs.ExportAsync(w), w => w.Sprite?.ActiveLayer is PixelLayer { Tileset: not null });        R("layer.viaCopy", Strings.Command_LayerViaCopy, "Ctrl+Alt+J", w => LayerViaSelection(w, false), w => HasSelection(w) && w.Sprite!.ActiveLayer is PixelLayer);
         R("layer.viaCut", Strings.Command_LayerViaCut, "Ctrl+Shift+J", w => LayerViaSelection(w, true), w => HasSelection(w) && w.Sprite!.ActiveLayer is PixelLayer);        R("layer.importImage", Strings.Command_ImportImage, null, async w =>
         {
             IReadOnlyList<string> files = await w.PickOpenFilesAsync(Strings.Command_ImportImage.Replace("...", string.Empty), false, (Strings.File_Images, SpriteFile.ImageExtensions));

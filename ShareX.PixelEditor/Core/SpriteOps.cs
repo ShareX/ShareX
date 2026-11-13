@@ -275,9 +275,7 @@ public static class SpriteOps
     /// <summary>An independent copy of a cel that shares the frozen pixels until one of them is painted.</summary>
     private static Cel? CopyCel(Cel? cel)
     {
-        if (cel == null) return null;
-        cel.Buffer.Frozen = true;
-        return new Cel(new CelImage(cel.Buffer)) { Opacity = cel.Opacity };
+        return cel == null ? null : new Cel(cel.Image.Share()) { Opacity = cel.Opacity };
     }
 
     /// <summary>The frames the whole animation plays: untagged frames in order, and each tagged range in its direction and repeated as many times as its tag asks.</summary>

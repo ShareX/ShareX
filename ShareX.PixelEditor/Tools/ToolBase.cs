@@ -51,6 +51,7 @@ public enum ToolId
     Contour,
     Text,
     Slice,
+    TileStamp,
     Hand,
     Zoom
 }
@@ -215,6 +216,7 @@ public sealed class ToolManager
             new ToolGroup(2, new RectangleTool(editor), new EllipseTool(editor), new ContourTool(editor)),
             new ToolGroup(2, new TextTool(editor)),
             new ToolGroup(2, new SliceTool(editor)),
+            new ToolGroup(2, new TileStampTool(editor)),
             new ToolGroup(3, new HandTool(editor)),
             new ToolGroup(3, new ZoomTool(editor))
         ];

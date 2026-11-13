@@ -232,6 +232,11 @@ public sealed class CanvasView : Control
             Color grid = Argb.ToAvalonia(EditorSettings.ParseColor(settings.GridColor, 0xFF00A0FF));
             DrawGrid(context, view, settings.GridWidth, settings.GridHeight, new Pen(new SolidColorBrush(grid, 0.55), 1), clip);
         }
+        // The cells of the active tilemap layer.
+        if (sprite.ActiveLayer is PixelLayer { Tileset: Tileset tiles } && tiles.TileWidth * view.Zoom >= 4 && tiles.TileHeight * view.Zoom >= 4)
+        {
+            DrawGrid(context, view, tiles.TileWidth, tiles.TileHeight, new Pen(new SolidColorBrush(Color.FromRgb(0xFF, 0x9F, 0x1C), 0.85), 1, new DashStyle([4, 2], 0)), clip);
+        }
         if (tileX || tileY)
         {
             // Mark the real sprite among its repeats.

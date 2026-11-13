@@ -123,6 +123,9 @@ public sealed class EditorSettings
     public string NewPalette { get; set; } = string.Empty;
     public List<string> RecentFiles { get; set; } = [];
 
+    /// <summary>Painting on a tile of a tilemap layer changes that tile everywhere it is used, instead of giving the cell a tile of its own.</summary>
+    public bool TileEditsShared { get; set; } = true;
+
     /// <summary>Rotating moved pixels by angles other than right angles smooths their edges.</summary>
     public bool SmoothRotation { get; set; } = true;
 
