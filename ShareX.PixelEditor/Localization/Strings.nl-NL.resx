@@ -1714,7 +1714,7 @@
     <value>Tegelstempel</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Klik of sleep om de geselecteerde tegel te plaatsen. Rechtsklik wist cellen. Alt+klik neemt de tegel onder de cursor over.</value>
+    <value>Klik of sleep om de geselecteerde tegel te plaatsen. Shift+klik vult aaneengesloten cellen. Rechtsklik wist cellen. Alt+klik neemt de tegel onder de cursor over.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoomen</value>

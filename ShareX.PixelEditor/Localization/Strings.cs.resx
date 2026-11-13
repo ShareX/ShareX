@@ -1714,7 +1714,7 @@
     <value>Razítko dlaždic</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Kliknutím nebo tažením umístíte vybranou dlaždici. Pravé kliknutí vymaže buňky. Alt+kliknutí vybere dlaždici pod kurzorem.</value>
+    <value>Kliknutím nebo tažením umístíte vybranou dlaždici. Shift+kliknutí vyplní propojené buňky. Pravé kliknutí vymaže buňky. Alt+kliknutí vybere dlaždici pod kurzorem.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zvětšení</value>

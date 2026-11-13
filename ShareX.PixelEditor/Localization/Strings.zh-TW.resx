@@ -1714,7 +1714,7 @@
     <value>圖塊印章</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>按一下或拖曳以放置選取的圖塊。按右鍵清除格子。Alt+按一下吸取游標下的圖塊。</value>
+    <value>按一下或拖曳以放置選取的圖塊。Shift+按一下填滿相連的格子。按右鍵清除格子。Alt+按一下吸取游標下的圖塊。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>縮放</value>

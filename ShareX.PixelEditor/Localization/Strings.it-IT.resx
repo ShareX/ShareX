@@ -1714,7 +1714,7 @@
     <value>Timbro tasselli</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Fai clic o trascina per posizionare il tassello selezionato. Il clic destro svuota le celle. Alt+clic preleva il tassello sotto il cursore.</value>
+    <value>Fai clic o trascina per posizionare il tassello selezionato. Maiusc+clic riempie le celle collegate. Il clic destro svuota le celle. Alt+clic preleva il tassello sotto il cursore.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

@@ -1714,7 +1714,7 @@
     <value>瓦片图章</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>单击或拖动以放置所选瓦片。右键单击清除格子。Alt+单击吸取光标下的瓦片。</value>
+    <value>单击或拖动以放置所选瓦片。Shift+单击填充相连的格子。右键单击清除格子。Alt+单击吸取光标下的瓦片。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>缩放</value>

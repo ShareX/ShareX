@@ -1714,7 +1714,7 @@
     <value>Kachelstempel</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Klicken oder ziehen, um die gewählte Kachel zu setzen. Rechtsklick leert Zellen. Alt+Klick übernimmt die Kachel unter dem Mauszeiger.</value>
+    <value>Klicken oder ziehen, um die gewählte Kachel zu setzen. Umschalt+Klick füllt zusammenhängende Zellen. Rechtsklick leert Zellen. Alt+Klick übernimmt die Kachel unter dem Mauszeiger.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Strahlenförmig</value>

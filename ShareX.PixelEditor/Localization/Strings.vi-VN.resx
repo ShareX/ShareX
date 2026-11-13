@@ -1714,7 +1714,7 @@
     <value>Dấu ô lát</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Bấm hoặc kéo để đặt ô lát đã chọn. Bấm chuột phải để xóa ô. Alt+bấm để lấy ô lát dưới con trỏ.</value>
+    <value>Bấm hoặc kéo để đặt ô lát đã chọn. Shift+bấm để tô các ô liền kề. Bấm chuột phải để xóa ô. Alt+bấm để lấy ô lát dưới con trỏ.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Thu phóng</value>

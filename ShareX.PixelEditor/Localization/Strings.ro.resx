@@ -1714,7 +1714,7 @@
     <value>Ștampilă de dale</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Faceți clic sau glisați pentru a plasa dala selectată. Clic dreapta golește celulele. Alt+clic preia dala de sub cursor.</value>
+    <value>Faceți clic sau glisați pentru a plasa dala selectată. Shift+clic umple celulele conectate. Clic dreapta golește celulele. Alt+clic preia dala de sub cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

@@ -1714,7 +1714,7 @@
     <value>Csempebélyegző</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Kattintással vagy húzással elhelyezi a kijelölt csempét. Jobb kattintás: cellák törlése. Alt+kattintás: a kurzor alatti csempe kiválasztása.</value>
+    <value>Kattintással vagy húzással elhelyezi a kijelölt csempét. Shift+kattintás: összefüggő cellák kitöltése. Jobb kattintás: cellák törlése. Alt+kattintás: a kurzor alatti csempe kiválasztása.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Nagyító</value>

@@ -1714,7 +1714,7 @@
     <value>タイルスタンプ</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>クリックまたはドラッグで選択したタイルを配置します。右クリックでセルを消去、Alt+クリックでカーソル下のタイルを取得します。</value>
+    <value>クリックまたはドラッグで選択したタイルを配置します。Shift+クリックでつながったセルを塗りつぶし、右クリックでセルを消去、Alt+クリックでカーソル下のタイルを取得します。</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>ズーム</value>

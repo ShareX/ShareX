@@ -1714,7 +1714,7 @@
     <value>Carimbo de blocos</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Clique ou arraste para colocar o bloco selecionado. O clique direito limpa células. Alt+clique pega o bloco sob o cursor.</value>
+    <value>Clique ou arraste para colocar o bloco selecionado. Shift+clique preenche as células conectadas. O clique direito limpa células. Alt+clique pega o bloco sob o cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

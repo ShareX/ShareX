@@ -1714,7 +1714,7 @@
     <value>ختم البلاطات</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>انقر أو اسحب لوضع البلاطة المحددة. النقر بزر الماوس الأيمن يمسح الخلايا. Alt+نقرة تلتقط البلاطة تحت المؤشر.</value>
+    <value>انقر أو اسحب لوضع البلاطة المحددة. Shift+نقرة تملأ الخلايا المتصلة. النقر بزر الماوس الأيمن يمسح الخلايا. Alt+نقرة تلتقط البلاطة تحت المؤشر.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>تكبير</value>

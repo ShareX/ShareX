@@ -1714,7 +1714,7 @@
     <value>Stempel Ubin</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Klik atau seret untuk menempatkan ubin yang dipilih. Klik kanan mengosongkan sel. Alt+klik mengambil ubin di bawah kursor.</value>
+    <value>Klik atau seret untuk menempatkan ubin yang dipilih. Shift+klik mengisi sel yang terhubung. Klik kanan mengosongkan sel. Alt+klik mengambil ubin di bawah kursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

@@ -1714,7 +1714,7 @@
     <value>مهر کاشی</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>برای قرار دادن کاشی انتخاب‌شده کلیک کنید یا بکشید. راست‌کلیک خانه‌ها را پاک می‌کند. Alt+کلیک کاشی زیر نشانگر را برمی‌دارد.</value>
+    <value>برای قرار دادن کاشی انتخاب‌شده کلیک کنید یا بکشید. Shift+کلیک خانه‌های متصل را پر می‌کند. راست‌کلیک خانه‌ها را پاک می‌کند. Alt+کلیک کاشی زیر نشانگر را برمی‌دارد.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>زوم</value>

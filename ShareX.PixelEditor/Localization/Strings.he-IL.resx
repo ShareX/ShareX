@@ -1714,7 +1714,7 @@
     <value>חותמת אריחים</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>לחץ או גרור כדי להניח את האריח שנבחר. לחיצה ימנית מנקה תאים. Alt+לחיצה בוחרת את האריח שמתחת לסמן.</value>
+    <value>לחץ או גרור כדי להניח את האריח שנבחר. Shift+לחיצה ממלאת תאים מחוברים. לחיצה ימנית מנקה תאים. Alt+לחיצה בוחרת את האריח שמתחת לסמן.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>זום</value>

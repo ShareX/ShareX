@@ -1714,7 +1714,7 @@
     <value>Tile Stamp</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Click or drag to place the selected tile. Right-click clears cells. Alt+click picks the tile under the cursor.</value>
+    <value>Click or drag to place the selected tile. Shift+click fills connected cells. Right-click clears cells. Alt+click picks the tile under the cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

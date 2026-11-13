@@ -1714,7 +1714,7 @@
     <value>타일 도장</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>클릭하거나 끌어서 선택한 타일을 배치합니다. 마우스 오른쪽 클릭은 칸을 지우고, Alt+클릭은 커서 아래의 타일을 가져옵니다.</value>
+    <value>클릭하거나 끌어서 선택한 타일을 배치합니다. Shift+클릭은 연결된 칸을 채우고, 마우스 오른쪽 클릭은 칸을 지우며, Alt+클릭은 커서 아래의 타일을 가져옵니다.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>확대/축소</value>

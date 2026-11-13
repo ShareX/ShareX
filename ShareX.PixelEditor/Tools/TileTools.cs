@@ -66,6 +66,11 @@ public sealed class TileStampTool : ToolBase
         if (Editor.EditableLayer() == null) return;
         Editor.StopPlayback();
         Editor.CommitFloating();
+        if (p.Shift)
+        {
+            Fill(p);
+            return;
+        }
         _down = true;
         _changed = false;
         _lastColumn = _lastRow = int.MinValue;
@@ -121,6 +126,44 @@ public sealed class TileStampTool : ToolBase
         Tilemaps.SetTile(sprite, layer, cel.Image, column, row, tile);
         _changed = true;
         Editor.InvalidateCanvas();
+    }
+
+    /// <summary>Puts the tile into every connected cell that holds the same tile as the clicked one.</summary>
+    private void Fill(ToolPointer p)
+    {
+        Sprite? sprite = Sprite;
+        if (sprite?.ActiveLayer is not PixelLayer { Tileset: Tileset set } layer) return;
+        int columns = set.Columns(sprite.Width), rows = set.Rows(sprite.Height);
+        (int column, int row) = Cell(p, set);
+        if (column < 0 || row < 0 || column >= columns || row >= rows) return;
+        int tile = p.Right ? 0 : Math.Clamp(Editor.SelectedTile, 0, set.Tiles.Count - 1);
+        Cel? cel = sprite.GetCel(layer, sprite.ActiveFrame);
+        if (cel == null)
+        {
+            if (tile == 0) return;
+            sprite.GetWritable(layer, sprite.ActiveFrame);
+            cel = sprite.GetCel(layer, sprite.ActiveFrame)!;
+        }
+        int[] map = cel.Image.Map is int[] existing && existing.Length == columns * rows ? (int[])existing.Clone() : Tilemaps.BuildMap(set, cel.Image.Buffer);
+        int target = map[row * columns + column];
+        if (target == tile) return;
+        Stack<int> pending = new();
+        pending.Push(row * columns + column);
+        while (pending.Count > 0)
+        {
+            int index = pending.Pop();
+            if (map[index] != target) continue;
+            map[index] = tile;
+            int x = index % columns, y = index / columns;
+            if (x > 0) pending.Push(index - 1);
+            if (x < columns - 1) pending.Push(index + 1);
+            if (y > 0) pending.Push(index - columns);
+            if (y < rows - 1) pending.Push(index + columns);
+        }
+        cel.Image.Map = map;
+        cel.Image.Buffer = Tilemaps.Render(set, map, sprite.Width, sprite.Height);
+        cel.Image.Rendered = cel.Image.Buffer;
+        Editor.Commit(Name);
     }
 
     private void UpdateHover(ToolPointer p)

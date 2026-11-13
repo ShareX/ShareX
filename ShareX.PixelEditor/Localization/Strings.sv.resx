@@ -1714,7 +1714,7 @@
     <value>Brickstämpel</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Klicka eller dra för att placera den valda brickan. Högerklick rensar celler. Alt+klick hämtar brickan under markören.</value>
+    <value>Klicka eller dra för att placera den valda brickan. Skift+klick fyller sammanhängande celler. Högerklick rensar celler. Alt+klick hämtar brickan under markören.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zooma</value>

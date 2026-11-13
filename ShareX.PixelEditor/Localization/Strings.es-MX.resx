@@ -1714,7 +1714,7 @@
     <value>Sello de mosaicos</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Haga clic o arrastre para colocar el mosaico seleccionado. El clic derecho borra celdas. Alt+clic toma el mosaico bajo el cursor.</value>
+    <value>Haga clic o arrastre para colocar el mosaico seleccionado. Mayús+clic rellena las celdas conectadas. El clic derecho borra celdas. Alt+clic toma el mosaico bajo el cursor.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

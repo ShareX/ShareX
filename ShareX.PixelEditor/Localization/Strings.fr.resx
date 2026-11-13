@@ -1714,7 +1714,7 @@
     <value>Tampon de tuiles</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Cliquez ou faites glisser pour placer la tuile choisie. Le clic droit efface les cases. Alt+clic prélève la tuile sous le curseur.</value>
+    <value>Cliquez ou faites glisser pour placer la tuile choisie. Maj+clic remplit les cases contiguës. Le clic droit efface les cases. Alt+clic prélève la tuile sous le curseur.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Zoom</value>

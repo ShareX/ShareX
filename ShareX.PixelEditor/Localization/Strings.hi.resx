@@ -1714,7 +1714,7 @@
     <value>टाइल स्टैम्प</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>चुनी गई टाइल रखने के लिए क्लिक करें या खींचें। राइट-क्लिक सेल साफ़ करता है। Alt+क्लिक कर्सर के नीचे की टाइल चुनता है।</value>
+    <value>चुनी गई टाइल रखने के लिए क्लिक करें या खींचें। Shift+क्लिक जुड़े हुए सेल भरता है। राइट-क्लिक सेल साफ़ करता है। Alt+क्लिक कर्सर के नीचे की टाइल चुनता है।</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>ज़ूम</value>

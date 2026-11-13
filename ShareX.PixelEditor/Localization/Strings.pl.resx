@@ -1714,7 +1714,7 @@
     <value>Stempel kafelków</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Kliknij lub przeciągnij, aby umieścić wybrany kafelek. Prawy przycisk czyści komórki. Alt+kliknięcie pobiera kafelek spod kursora.</value>
+    <value>Kliknij lub przeciągnij, aby umieścić wybrany kafelek. Shift+kliknięcie wypełnia połączone komórki. Prawy przycisk czyści komórki. Alt+kliknięcie pobiera kafelek spod kursora.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Powiększenie</value>

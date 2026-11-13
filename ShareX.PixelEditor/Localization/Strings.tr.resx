@@ -1714,7 +1714,7 @@
     <value>Döşeme Damgası</value>
   </data>
   <data name="Tool_TileStamp_Hint" xml:space="preserve">
-    <value>Seçili döşemeyi yerleştirmek için tıklayın veya sürükleyin. Sağ tıklama hücreleri temizler. Alt+tıklama imlecin altındaki döşemeyi alır.</value>
+    <value>Seçili döşemeyi yerleştirmek için tıklayın veya sürükleyin. Shift+tıklama bağlantılı hücreleri doldurur. Sağ tıklama hücreleri temizler. Alt+tıklama imlecin altındaki döşemeyi alır.</value>
   </data>
   <data name="Tool_Zoom" xml:space="preserve">
     <value>Yakınlaştırma</value>
