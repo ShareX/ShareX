@@ -726,6 +726,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Leg laatste regio vast</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Handmatige scrollende opname starten/voltooien</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metagegevens</value>
   </data>

@@ -427,6 +427,27 @@
   <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
     <value>Źródło wideo</value>
   </data>
+  <data name="ManualScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>Anuluj</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Captured" xml:space="preserve">
+    <value>Przechwycono {0:N0} px</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Finish" xml:space="preserve">
+    <value>Zakończ</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_LostTrack" xml:space="preserve">
+    <value>Utracono pozycję, przewiń z powrotem do miejsca, w którym przerwano</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_MaxHeight" xml:space="preserve">
+    <value>Osiągnięto maksymalną wysokość</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_ScrollDown" xml:space="preserve">
+    <value>Przewijaj powoli w dół</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>Ręczne przechwytywanie przewijania</value>
+  </data>
   <data name="Pause" xml:space="preserve">
     <value>Pauza</value>
   </data>

@@ -427,6 +427,27 @@
   <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
     <value>視訊來源</value>
   </data>
+  <data name="ManualScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Captured" xml:space="preserve">
+    <value>已擷取 {0:N0} 像素</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Finish" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_LostTrack" xml:space="preserve">
+    <value>位置遺失，請捲動回停下的位置</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_MaxHeight" xml:space="preserve">
+    <value>已達最大高度</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_ScrollDown" xml:space="preserve">
+    <value>請緩慢向下捲動</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>手動捲動擷取</value>
+  </data>
   <data name="Pause" xml:space="preserve">
     <value>暫停</value>
   </data>

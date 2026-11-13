@@ -726,6 +726,9 @@
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>ضبط آخرین ناحیه</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>شروع/پایان ضبط پیمایشی دستی</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>فراداده</value>
   </data>

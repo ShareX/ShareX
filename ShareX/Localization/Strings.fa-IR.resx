@@ -1643,6 +1643,9 @@ Please select a different hotkey or quit the conflicting application and reبا�
   <data name="MainMenuBuilder_LastRegion" xml:space="preserve">
     <value>آخرین ناحیه</value>
   </data>
+  <data name="MainMenuBuilder_ManualScrollingCapture" xml:space="preserve">
+    <value>ضبط پیمایشی دستی...</value>
+  </data>
   <data name="MainMenuBuilder_Metadata" xml:space="preserve">
     <value>فراداده</value>
   </data>

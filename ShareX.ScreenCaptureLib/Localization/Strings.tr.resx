@@ -427,6 +427,27 @@
   <data name="FFmpegOptionsWindow_Video_source" xml:space="preserve">
     <value>Video kaynağı</value>
   </data>
+  <data name="ManualScrollingCaptureWindow_Cancel" xml:space="preserve">
+    <value>İptal</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Captured" xml:space="preserve">
+    <value>{0:N0} px yakalandı</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Finish" xml:space="preserve">
+    <value>Bitir</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_LostTrack" xml:space="preserve">
+    <value>Konum kayboldu, durduğunuz yere geri kaydırın</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_MaxHeight" xml:space="preserve">
+    <value>Maksimum yüksekliğe ulaşıldı</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_ScrollDown" xml:space="preserve">
+    <value>Yavaşça aşağı kaydırın</value>
+  </data>
+  <data name="ManualScrollingCaptureWindow_Title" xml:space="preserve">
+    <value>Elle kaydırarak yakalama</value>
+  </data>
   <data name="Pause" xml:space="preserve">
     <value>Duraklat</value>
   </data>

@@ -1,0 +1,83 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        mc:Ignorable="d"
+        d:DesignWidth="540"
+        d:DesignHeight="42"
+        x:Class="ShareX.ScreenCaptureLib.ManualScrollingCaptureWindow"
+        Title="{x:Static localization:Strings.ManualScrollingCaptureWindow_Title}"
+        Width="540"
+        Height="42"
+        CanResize="False"
+        ShowInTaskbar="False"
+        ShowActivated="False"
+        Topmost="True"
+        WindowDecorations="None"
+        TransparencyLevelHint="Transparent"
+        Background="Transparent">
+
+    <Window.Styles>
+        <Style Selector="Button.toolbar-action">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="Padding" Value="12,4"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style Selector="Button.toolbar-action /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="CornerRadius" Value="0"/>
+        </Style>
+        <Style Selector="Button.toolbar-action.right-rounded">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
+        </Style>
+        <Style Selector="Button.toolbar-action.right-rounded /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="CornerRadius" Value="0,7,7,0"/>
+        </Style>
+        <Style Selector="controls|IconPresenter.action-icon">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Styles>
+
+    <Border Padding="0"
+            CornerRadius="8"
+            ClipToBounds="True"
+            Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+            BorderBrush="{DynamicResource ShareX.Brush.Border}"
+            BorderThickness="1">
+        <Grid ColumnDefinitions="*,Auto,Auto">
+            <Border Grid.Column="0"
+                    CornerRadius="7,0,0,7"
+                    Background="{DynamicResource ShareX.Brush.Background.Panel}"
+                    Padding="12,0">
+                <StackPanel Orientation="Horizontal" Spacing="9" VerticalAlignment="Center">
+                    <Border x:Name="StatusIndicator" Width="8" Height="8" CornerRadius="4" Background="LimeGreen"/>
+                    <TextBlock x:Name="StatusText"
+                               Text="{x:Static localization:Strings.ManualScrollingCaptureWindow_ScrollDown}"
+                               VerticalAlignment="Center"
+                               TextTrimming="CharacterEllipsis"/>
+                </StackPanel>
+            </Border>
+            <Button x:Name="FinishButton" Grid.Column="1" Classes="toolbar-action">
+                <StackPanel Orientation="Horizontal" Spacing="7">
+                    <controls:IconPresenter Classes="action-icon" Icon="{x:Static icons:AppIcons.Check}"/>
+                    <TextBlock Text="{x:Static localization:Strings.ManualScrollingCaptureWindow_Finish}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button x:Name="CancelButton" Grid.Column="2" Classes="toolbar-action right-rounded">
+                <StackPanel Orientation="Horizontal" Spacing="7">
+                    <controls:IconPresenter Classes="action-icon" Icon="{x:Static icons:AppIcons.Close}"/>
+                    <TextBlock Text="{x:Static localization:Strings.ManualScrollingCaptureWindow_Cancel}" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

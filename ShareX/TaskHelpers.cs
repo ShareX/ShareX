@@ -147,6 +147,9 @@ namespace ShareX
                 case HotkeyType.ScrollingCapture:
                     await OpenScrollingCapture(safeTaskSettings);
                     break;
+                case HotkeyType.ManualScrollingCapture:
+                    await OpenManualScrollingCapture(safeTaskSettings);
+                    break;
                 case HotkeyType.AutoCapture:
                     OpenAutoCapture(safeTaskSettings);
                     break;
@@ -885,6 +888,14 @@ namespace ShareX
             await ScrollingCaptureWindowIntegration.StartStopAsync(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
                 img => UploadManager.RunImageTask(img, taskSettings),
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
+        }
+
+        public static async Task OpenManualScrollingCapture(TaskSettings taskSettings = null)
+        {
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            await ManualScrollingCaptureIntegration.StartFinishAsync(img => UploadManager.RunImageTask(img, taskSettings),
+                () => PlayNotificationSoundAsync(NotificationSound.Capture, taskSettings));
         }
 
         public static void OpenAutoCapture(TaskSettings taskSettings = null)
@@ -2458,6 +2469,7 @@ namespace ShareX
                 HotkeyType.CustomRegion => AppIcons.Crop,
                 HotkeyType.LastRegion => AppIcons.LastRegion,
                 HotkeyType.ScrollingCapture => AppIcons.ScrollingCapture,
+                HotkeyType.ManualScrollingCapture => AppIcons.Mouse,
                 HotkeyType.AutoCapture => AppIcons.AutoCapture,
                 HotkeyType.StartAutoCapture => AppIcons.CirclePlay,
                 HotkeyType.StopAutoCapture => AppIcons.TimerOff,

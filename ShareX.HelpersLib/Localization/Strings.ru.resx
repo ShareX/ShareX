@@ -726,6 +726,9 @@
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Захват последней области</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Начать/завершить ручной захват с прокруткой</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Метаданные</value>
   </data>

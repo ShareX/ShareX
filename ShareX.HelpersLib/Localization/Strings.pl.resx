@@ -726,6 +726,9 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="HotkeyType_LastRegion" xml:space="preserve">
     <value>Przechwytywanie ostatniego regionu</value>
   </data>
+  <data name="HotkeyType_ManualScrollingCapture" xml:space="preserve">
+    <value>Rozpocznij/zakończ ręczne przechwytywanie przewijania</value>
+  </data>
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>Metadane</value>
   </data>
