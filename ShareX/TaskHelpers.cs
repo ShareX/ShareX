@@ -1436,13 +1436,15 @@ namespace ShareX
             }
         }
 
+        // Takes ownership of bmp; the editor works on its own copy.
         public static void AnnotateImageAsync(Bitmap bmp, string filePath, TaskSettings taskSettings)
         {
             ThreadWorker worker = new ThreadWorker();
 
             worker.DoWork += () =>
             {
-                bmp = AnnotateImage(bmp, filePath, taskSettings);
+                using Bitmap source = bmp;
+                bmp = AnnotateImage(source, filePath, taskSettings);
             };
 
             worker.Completed += () =>
