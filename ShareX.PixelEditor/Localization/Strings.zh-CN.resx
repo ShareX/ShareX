@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>白色</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>没有匹配的命令</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>搜索命令、工具和面板</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>工具</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>实际大小 (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>全部关闭</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>命令面板...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>复制</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>全屏</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>渐变映射...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>去色</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>参考图层</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>通过拷贝新建图层</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>通过剪切新建图层</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>可见</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>垂直平铺</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>单元格缩略图</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>双列工具栏</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>起始帧</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>颜色来源</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>两种颜色</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>调色板，按亮度</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>阴影</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>高光</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>反转颜色顺序</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>按亮度重新着色像素，从最暗像素的颜色到最亮像素的颜色。</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>色相</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>用当前调色板中最接近的颜色重新着色每个单元格。</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>重复次数</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>最近邻可保持像素清晰。像素画缩放在放大 2 倍或以上时还会平滑阶梯状边缘。</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>动画 PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>按播放顺序的动画</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>导出</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>混合模式</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>拷贝单元格</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>拷贝帧</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>删除切片</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>移动</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>移动单元格</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>移动帧</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>打开</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>已恢复</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>切片属性</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>拖动以创建切片。单击切片可选中，双击可重命名。</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>平滑旋转</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>让旋转后的像素画线条保持整洁，而不是出现锯齿</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>方形笔尖</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>垂直线</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>恢复副本间隔（分钟，0 = 关闭）</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>透明棋盘格</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>播放或暂停预览</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>丢弃</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>像素编辑器未正常关闭。可以恢复 {0} 个有未保存更改的精灵。</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>恢复</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>最近邻</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>布局</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>合并相同的帧</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>写入 JSON 数据（帧、标签和切片）</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>紧凑排列</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>内边距</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>间距</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>裁去帧周围的空白</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} 个不重复</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>垂直条带</value>

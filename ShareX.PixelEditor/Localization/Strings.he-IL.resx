@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>לבן</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>אין פקודות תואמות</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>חפש פקודות, כלים וחלוניות</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>כלים</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>גודל אמיתי (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>סגור הכול</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>לוח פקודות...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>העתק</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>מסך מלא</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>מפת מעבר צבע...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>הסר רוויה</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>שכבת ייחוס</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>שכבה חדשה באמצעות העתקה</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>שכבה חדשה באמצעות גזירה</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>גלויה</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>ריצוף אנכי</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>תמונות ממוזערות של תאים</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>סרגל כלים בשתי עמודות</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>מפריים</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>צבעים מתוך</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>שני צבעים</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>לוח צבעים, לפי בהירות</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>צללים</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>הבהרות</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>הפוך את הצבעים</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>צובע מחדש פיקסלים לפי הבהירות שלהם, מהצבע של הפיקסלים הכהים ביותר לצבע של הבהירים ביותר.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>גוון</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>צובע מחדש כל תא בצבעים הקרובים ביותר בפלטה הנוכחית.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>חזרות</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>«השכן הקרוב» שומר על פיקסלים חדים. קנה מידה לפיקסל ארט גם מחליק קצוות מדורגים בהגדלה של פי 2 ומעלה.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG מונפש</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>האנימציה כפי שהיא מתנגנת</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>ייצוא</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>מצב מיזוג</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>העתק תאים</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>העתק פריימים</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>מחק פרוסה</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>הזז</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>הזז תאים</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>הזז פריימים</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>פתח</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>שוחזר</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>מאפייני הפרוסה</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>גרור כדי ליצור פרוסה. לחץ על פרוסה כדי לבחור בה, לחץ פעמיים כדי לשנות את שמה.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>סיבוב חלק</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>שומר על קווים נקיים בפיקסל ארט מסובב במקום קווים משוננים</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>קצה מרובע</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>קווים אנכיים</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>עותק שחזור כל (דקות, 0 = כבוי)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>דפוס שקיפות</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>הפעל או השהה את התצוגה המקדימה</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>מחק</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>עורך הפיקסלים לא נסגר כרגיל. ניתן לשחזר {0} ספרייטים עם שינויים שלא נשמרו.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>שחזר</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>השכן הקרוב ביותר</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>פריסה</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>מזג פריימים זהים</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>כתוב נתוני JSON (פריימים, תגיות ופרוסות)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>דחוס</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>ריווח פנימי</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>מרווח</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>חתוך שטח ריק סביב פריימים</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} ייחודיים</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>רצועה אנכית</value>

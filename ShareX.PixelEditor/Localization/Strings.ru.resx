@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Белый</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Нет подходящих команд</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Поиск команд, инструментов и панелей</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Инструменты</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Реальный размер (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Закрыть все</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Палитра команд...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Копировать</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Полный экран</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Карта градиента...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Обесцветить</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Опорный слой</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Новый слой через копирование</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Новый слой через вырезание</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Видимый</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Замостить по вертикали</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Миниатюры ячеек</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Панель инструментов в два столбца</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>С кадра</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Цвета из</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Два цвета</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Палитра, по яркости</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Тени</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Света</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Обратить порядок цветов</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Перекрашивает пиксели по их яркости: от цвета для самых тёмных пикселей до цвета для самых светлых.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Тон</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Перекрашивает каждую ячейку ближайшими цветами текущей палитры.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Повторы</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>«Ближайший сосед» сохраняет пиксели чёткими. Масштабирование пиксель-арта также сглаживает ступенчатые края при увеличении в 2 раза и более.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Анимированный PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Анимация в порядке воспроизведения</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Экспорт</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Режим наложения</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Копирование ячеек</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Копирование кадров</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Удалить фрагмент</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Перемещение</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Перемещение ячеек</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Перемещение кадров</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Открыть</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Восстановлено</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Свойства фрагмента</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Перетащите, чтобы создать фрагмент. Щёлкните фрагмент, чтобы выбрать его, дважды щёлкните, чтобы переименовать.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Плавный поворот</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Сохраняет линии повёрнутого пиксель-арта чистыми, а не зубчатыми</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Квадратный отпечаток</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Вертикальные линии</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Копия для восстановления каждые (минуты, 0 = выкл.)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Шахматка прозрачности</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Воспроизвести или приостановить предпросмотр</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Отбросить</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Пиксельный редактор не был закрыт нормально. Можно восстановить спрайты с несохранёнными изменениями: {0}.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Восстановить</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Ближайший сосед</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Макет</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Объединять одинаковые кадры</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Записать данные JSON (кадры, метки и фрагменты)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Плотная упаковка</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Отступы</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Интервал</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Обрезать пустое пространство вокруг кадров</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>уникальных: {0}</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Вертикальная полоса</value>

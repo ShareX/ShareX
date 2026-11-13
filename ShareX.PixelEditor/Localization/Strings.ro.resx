@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Alb</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Nicio comandă potrivită</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Căutați comenzi, instrumente și panouri</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Dimensiune reală (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Închideți tot</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta de comenzi...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiere</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Ecran complet</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Hartă de degrade...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Desaturare</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Strat de referință</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Strat nou prin copiere</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Strat nou prin decupare</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Vizibil</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Repetă pe verticală</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniaturi ale celulelor</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Bară de instrumente pe două coloane</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>De la cadrul</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Culori din</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Două culori</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paletă, după luminozitate</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Umbre</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Lumini</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Inversează culorile</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Recolorează pixelii după luminozitate, de la culoarea pentru cei mai întunecați pixeli la culoarea pentru cei mai luminoși.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Nuanță</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Recolorează fiecare celulă cu cele mai apropiate culori din paleta curentă.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Repetări</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Cel mai apropiat vecin păstrează pixelii clari. Scalarea pixel art netezește și marginile în trepte la mărirea de 2× sau mai mult.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG animat</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animația așa cum este redată</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Export</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Mod de amestec</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Copiază celulele</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Copiază cadrele</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Șterge felia</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Mută</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Mută celulele</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Mută cadrele</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Deschide</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Recuperat</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Proprietățile feliei</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Trageți pentru a crea o felie. Faceți clic pe o felie pentru a o selecta, dublu clic pentru a o redenumi.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Rotire lină</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Păstrează curate liniile pixel art-ului rotit în loc să fie zimțate</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Vârf pătrat</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Linii verticale</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Copie de recuperare la fiecare (minute, 0 = oprit)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Model de transparență</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Redă sau întrerupe previzualizarea</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Renunță</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Editorul de pixeli nu s-a închis normal. Pot fi restaurate {0} sprite-uri cu modificări nesalvate.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Restaurează</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Cel mai apropiat vecin</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Aspect</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Îmbină cadrele identice</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Scrie date JSON (cadre, etichete și felii)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Compact</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Spațiere interioară</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Spațiere</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Decupează spațiul gol din jurul cadrelor</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} unice</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Bandă verticală</value>

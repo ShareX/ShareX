@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Beyaz</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Eşleşen komut yok</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Komut, araç ve panel ara</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Araçlar</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Gerçek Boyut (%100)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Tümünü kapat</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Komut Paleti...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopyala</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Tam Ekran</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Degrade Haritası...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Doygunluğu azalt</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referans Katmanı</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Kopyalayarak Yeni Katman</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Keserek Yeni Katman</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Görünür</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Dikey Döşe</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Hücre Küçük Resimleri</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>İki Sütunlu Araç Çubuğu</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Başlangıç karesi</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Renk kaynağı</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>İki renk</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palet, parlaklığa göre</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Gölgeler</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Vurgular</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Renkleri ters çevir</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Pikselleri parlaklıklarına göre yeniden renklendirir; en koyu pikseller için olan renkten en açık pikseller için olan renge kadar.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Renk tonu</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Her hücreyi geçerli paletin en yakın renkleriyle yeniden renklendirir.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Tekrar</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>En yakın komşu pikselleri keskin tutar. Piksel sanatı ölçeklemesi, 2× veya daha fazla büyütürken basamaklı kenarları da yumuşatır.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animasyonlu PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Oynatıldığı gibi animasyon</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Dışa aktar</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Karışım Modu</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Hücreleri Kopyala</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kareleri Kopyala</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Dilimi sil</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Taşı</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Hücreleri Taşı</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Kareleri Taşı</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Aç</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Kurtarıldı</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Dilim Özellikleri</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Dilim oluşturmak için sürükleyin. Seçmek için dilime tıklayın, yeniden adlandırmak için çift tıklayın.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Yumuşak döndürme</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Döndürülen piksel sanatının çizgilerini tırtıklı yerine temiz tutar</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Kare uç</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Dikey çizgiler</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Kurtarma kopyası sıklığı (dakika, 0 = kapalı)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Saydamlık dama deseni</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Önizlemeyi oynat veya duraklat</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>At</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Piksel Düzenleyici normal şekilde kapanmadı. Kaydedilmemiş değişiklikleri olan {0} sprite geri yüklenebilir.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Geri yükle</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>En yakın komşu</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Düzen</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Aynı kareleri birleştir</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON verisi yaz (kareler, etiketler ve dilimler)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Sıkıştırılmış</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>İç boşluk</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Aralık</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Karelerin çevresindeki boşluğu kırp</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} benzersiz</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Dikey şerit</value>

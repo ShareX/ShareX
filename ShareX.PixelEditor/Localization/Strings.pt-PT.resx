@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Branco</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Nenhum comando correspondente</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Pesquisar comandos, ferramentas e painéis</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Ferramentas</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Tamanho real (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Fechar tudo</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta de comandos...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Copiar</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Tela cheia</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Mapa de degradê...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Dessaturar</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Camada de referência</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nova camada via cópia</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nova camada via recorte</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Visível</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Repetir na vertical</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniaturas das células</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Barra de ferramentas em duas colunas</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Do quadro</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Cores de</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Duas cores</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paleta, por brilho</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Sombras</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Realces</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Inverter as cores</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Recolore os pixels pelo brilho, da cor dos pixels mais escuros à cor dos mais claros.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Matiz</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Recolore cada célula com as cores mais próximas da paleta atual.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Repetições</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Vizinho mais próximo mantém os pixels nítidos. O dimensionamento de pixel art também suaviza bordas em escada ao ampliar 2× ou mais.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG animado</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animação como é reproduzida</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exportar</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Modo de mesclagem</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Copiar células</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Copiar quadros</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Eliminar fatia</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Mover</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Mover células</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Mover quadros</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Abrir</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Recuperado</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Propriedades da fatia</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Arraste para criar uma fatia. Clique em uma fatia para selecioná-la; clique duas vezes para renomeá-la.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Rotação suave</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Mantém limpas as linhas da pixel art girada em vez de serrilhadas</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Ponta quadrada</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Linhas verticais</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Cópia de recuperação a cada (minutos, 0 = desligada)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Xadrez de transparência</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Reproduzir ou pausar a pré-visualização</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Descartar</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>O editor de pixels não foi fechado normalmente. É possível restaurar {0} sprite(s) com alterações não salvas.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Restaurar</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Vizinho mais próximo</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Layout</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Mesclar quadros idênticos</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Gravar dados JSON (quadros, etiquetas e fatias)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Compactado</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Preenchimento</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Espaçamento</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Recortar o espaço vazio ao redor dos quadros</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} únicos</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Faixa vertical</value>

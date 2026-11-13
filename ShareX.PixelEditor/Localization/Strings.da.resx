@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Hvid</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Ingen matchende kommandoer</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Søg i kommandoer, værktøjer og paneler</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Værktøjer</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Faktisk størrelse (100 %)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Luk alle</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Kommandopalet...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiér</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Fuld skærm</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Forløbskort...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Fjern mætning</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referencelag</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nyt lag via kopi</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nyt lag via klip</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Synlig</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Gentag lodret</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniaturer af celler</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Værktøjslinje med to kolonner</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Fra billede</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Farver fra</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>To farver</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palet, efter lysstyrke</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Skygger</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Højlys</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Vend farverne om</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Farvelægger pixels efter deres lysstyrke, fra farven til de mørkeste pixels til farven til de lyseste.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Nuance</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Omfarver hver celle med de nærmeste farver i den aktuelle palet.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Gentagelser</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Nærmeste nabo holder pixels skarpe. Pixel art-skalering udglatter også trappekanter ved forstørrelse på 2× eller mere.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animeret PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animationen som den afspilles</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Eksporter</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Blandingstilstand</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Kopiér celler</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kopiér billeder</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Slet udsnit</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Flyt</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Flyt celler</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Flyt billeder</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Åbn</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Gendannet</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Udsnitsegenskaber</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Træk for at oprette et udsnit. Klik på et udsnit for at vælge det, dobbeltklik for at omdøbe det.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Jævn rotation</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Holder linjerne i roteret pixelkunst rene i stedet for takkede</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Firkantet spids</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Lodrette linjer</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Gendannelseskopi hver (minutter, 0 = fra)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Gennemsigtighedsmønster</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Afspil eller sæt forhåndsvisningen på pause</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Kassér</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Pixel-editor blev ikke lukket normalt. {0} sprite(s) med ikke-gemte ændringer kan gendannes.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Gendan</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Nærmeste nabo</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Layout</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Flet identiske billeder</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Skriv JSON-data (billeder, mærker og udsnit)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Pakket</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Polstring</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Mellemrum</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Beskær tom plads omkring billeder</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} unikke</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Lodret strimmel</value>

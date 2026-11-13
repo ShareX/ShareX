@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>أبيض</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>لا توجد أوامر مطابقة</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>ابحث في الأوامر والأدوات واللوحات</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>الأدوات</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>الحجم الفعلي (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>إغلاق الكل</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>لوحة الأوامر...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>نسخ</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>ملء الشاشة</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>خريطة التدرج...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>إزالة التشبع</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>طبقة مرجعية</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>طبقة جديدة عبر النسخ</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>طبقة جديدة عبر القص</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>مرئية</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>تكرار عمودي</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>صور مصغرة للخلايا</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>شريط أدوات بعمودين</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>من الإطار</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>الألوان من</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>لونان</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>اللوحة، حسب السطوع</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>الظلال</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>الإضاءات</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>عكس الألوان</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>يعيد تلوين البكسلات حسب سطوعها، من لون أغمق البكسلات إلى لون أفتحها.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>تدرج اللون</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>يعيد تلوين كل خلية بأقرب ألوان اللوحة الحالية.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>التكرار</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>«أقرب جار» يحافظ على حدة البكسلات. تكبير فن البكسل ينعّم أيضًا الحواف المتدرجة عند التكبير مرتين أو أكثر.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG متحرك</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>الرسوم المتحركة كما تُشغَّل</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>تصدير</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>وضع الدمج</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>نسخ الخلايا</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>نسخ الإطارات</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>حذف الشريحة</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>نقل</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>تحريك الخلايا</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>تحريك الإطارات</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>فتح</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>مُستعاد</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>خصائص الشريحة</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>اسحب لإنشاء شريحة. انقر على شريحة لتحديدها، وانقر نقرًا مزدوجًا لإعادة تسميتها.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>تدوير سلس</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>يُبقي خطوط فن البكسل المُدوَّر نظيفة بدلًا من أن تكون متعرجة</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>رأس مربع</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>خطوط عمودية</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>نسخة استرداد كل (دقائق، 0 = إيقاف)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>نقش الشفافية</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>تشغيل المعاينة أو إيقافها مؤقتًا</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>تجاهل</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>لم يُغلق محرر البكسل بشكل طبيعي. يمكن استعادة {0} من السبرايتات ذات التغييرات غير المحفوظة.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>استعادة</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>أقرب مجاور</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>التخطيط</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>دمج الإطارات المتطابقة</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>كتابة بيانات JSON (الإطارات والوسوم والشرائح)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>مضغوط</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>الحشو</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>التباعد</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>قص المساحة الفارغة حول الإطارات</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} فريدة</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>شريط عمودي</value>

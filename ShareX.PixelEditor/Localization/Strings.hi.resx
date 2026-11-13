@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>सफ़ेद</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>कोई मेल खाता कमांड नहीं</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>कमांड, टूल और पैनल खोजें</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>टूल</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>वास्तविक आकार (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>सभी बंद करें</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>कमांड पैलेट...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>कॉपी करें</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>पूर्ण स्क्रीन</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>ग्रेडिएंट मैप...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>रंगहीन करें</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>संदर्भ परत</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>कॉपी से नई लेयर</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>कट से नई लेयर</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>दृश्यमान</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>ऊर्ध्वाधर टाइल करें</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>सेल थंबनेल</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>दो-स्तंभ टूलबार</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>इस फ़्रेम से</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>रंग स्रोत</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>दो रंग</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>पैलेट, चमक के अनुसार</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>छाया</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>हाइलाइट</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>रंगों का क्रम उलटें</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>पिक्सेल को उनकी चमक के अनुसार फिर से रंगता है, सबसे गहरे पिक्सेल के रंग से सबसे हल्के पिक्सेल के रंग तक।</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>वर्ण</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>हर सेल को मौजूदा पैलेट के निकटतम रंगों से दोबारा रंगता है।</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>दोहराव</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>निकटतम पड़ोसी पिक्सेल को तीखा रखता है। पिक्सेल आर्ट स्केलिंग 2× या अधिक बड़ा करने पर सीढ़ीदार किनारों को भी चिकना करती है।</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>एनिमेटेड PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>चलने के क्रम में एनिमेशन</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>निर्यात</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>ब्लेंड मोड</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>सेल कॉपी करें</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>फ़्रेम कॉपी करें</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>स्लाइस हटाएँ</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>ले जाएँ</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>सेल ले जाएँ</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>फ़्रेम ले जाएँ</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>खोलें</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>पुनर्प्राप्त</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>स्लाइस गुण</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>स्लाइस बनाने के लिए खींचें। चुनने के लिए स्लाइस पर क्लिक करें, नाम बदलने के लिए डबल-क्लिक करें।</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>स्मूद घुमाव</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>घुमाए गए पिक्सेल आर्ट की रेखाओं को दाँतेदार के बजाय साफ़ रखता है</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>वर्गाकार नोक</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>लंबवत रेखाएँ</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>पुनर्प्राप्ति प्रति हर (मिनट, 0 = बंद)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>पारदर्शिता चेकर</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>पूर्वावलोकन चलाएँ या रोकें</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>हटाएँ</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>पिक्सेल संपादक सामान्य रूप से बंद नहीं हुआ। बिना सहेजे गए बदलावों वाले {0} स्प्राइट पुनर्स्थापित किए जा सकते हैं।</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>पुनर्स्थापित करें</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>निकटतम पड़ोसी</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>अभिन्यास</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>एक जैसे फ़्रेम मर्ज करें</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON डेटा लिखें (फ़्रेम, टैग और स्लाइस)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>पैक किया हुआ</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>पैडिंग</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>अंतर</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>फ़्रेम के आसपास की खाली जगह काटें</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} अद्वितीय</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>ऊर्ध्वाधर पट्टी</value>

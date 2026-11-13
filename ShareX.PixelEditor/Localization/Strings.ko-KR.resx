@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>흰색</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>일치하는 명령이 없습니다</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>명령, 도구 및 패널 검색</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>도구</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>실제 크기 (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>모두 닫기</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>명령 팔레트...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>복사</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>전체 화면</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>그레이디언트 맵...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>채도 감소</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>참조 레이어</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>복사한 레이어</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>잘라낸 레이어</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>표시</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>세로로 타일 배열</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>셀 축소판</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>2열 도구 모음</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>시작 프레임</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>색 출처</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>두 가지 색</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>팔레트 (밝기순)</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>어두운 영역</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>밝은 영역</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>색 순서 반전</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>픽셀을 밝기에 따라 다시 칠합니다. 가장 어두운 픽셀의 색부터 가장 밝은 픽셀의 색까지 사용합니다.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>색조</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>모든 셀을 현재 팔레트에서 가장 가까운 색으로 다시 칠합니다.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>반복 횟수</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>최근접 이웃은 픽셀을 선명하게 유지합니다. 픽셀 아트 스케일링은 2배 이상 확대할 때 계단 모양 가장자리도 부드럽게 합니다.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>애니메이션 PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>재생되는 대로의 애니메이션</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>내보내기</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>혼합 모드</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>셀 복사</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>프레임 복사</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>분할 영역 삭제</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>이동</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>셀 이동</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>프레임 이동</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>열기</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>복구됨</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>분할 영역 속성</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>드래그하여 분할 영역을 만듭니다. 클릭하면 선택하고, 두 번 클릭하면 이름을 바꿉니다.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>부드러운 회전</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>회전한 픽셀 아트의 선이 들쭉날쭉하지 않고 깔끔하게 유지됩니다</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>사각형 팁</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>세로선</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>복구용 사본 간격(분, 0 = 끄기)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>투명 체크무늬</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>미리 보기 재생/일시 정지</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>버리기</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>픽셀 편집기가 정상적으로 종료되지 않았습니다. 저장하지 않은 변경 내용이 있는 스프라이트 {0}개를 복원할 수 있습니다.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>복원</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>최근접 이웃</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>레이아웃</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>동일한 프레임 병합</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON 데이터 쓰기 (프레임, 태그, 분할 영역)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>빽빽하게</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>안쪽 여백</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>간격</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>프레임 주변의 빈 공간 자르기</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>고유 {0}개</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>세로 줄</value>

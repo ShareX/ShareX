@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>سفید</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>هیچ فرمان منطبقی یافت نشد</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>جست‌وجوی فرمان‌ها، ابزارها و پنل‌ها</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>ابزارها</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>اندازه واقعی (۱۰۰٪)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>بستن همه</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>پالت فرمان‌ها...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>کپی</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>تمام‌صفحه</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>نگاشت گرادیان...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>حذف اشباع</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>لایه مرجع</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>لایه جدید با کپی</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>لایه جدید با برش</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>نمایان</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>تکرار عمودی</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>تصاویر کوچک سل‌ها</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>نوار ابزار دوستونی</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>از فریم</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>رنگ‌ها از</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>دو رنگ</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>پالت، بر اساس روشنایی</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>سایه‌ها</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>روشنایی‌ها</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>معکوس کردن رنگ‌ها</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>پیکسل‌ها را بر اساس روشنایی‌شان دوباره رنگ می‌کند، از رنگ تیره‌ترین پیکسل‌ها تا رنگ روشن‌ترین‌ها.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>فام</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>همه سل‌ها را با نزدیک‌ترین رنگ‌های پالت فعلی دوباره رنگ می‌کند.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>تکرار</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>«نزدیک‌ترین همسایه» پیکسل‌ها را واضح نگه می‌دارد. مقیاس‌دهی پیکسل‌آرت هنگام بزرگ‌نمایی ۲ برابر یا بیشتر لبه‌های پله‌ای را هم صاف می‌کند.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG متحرک</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>پویانمایی همان‌طور که پخش می‌شود</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>صادر کردن</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>حالت آمیختگی</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>کپی سل‌ها</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>کپی فریم‌ها</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>حذف قطعه</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>جابه‌جایی</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>جابه‌جایی سل‌ها</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>جابه‌جایی فریم‌ها</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>باز کردن</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>بازیابی‌شده</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>ویژگی‌های برش</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>برای ساخت برش بکشید. برای انتخاب روی برش کلیک و برای تغییر نام دوبار کلیک کنید.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>چرخش نرم</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>خطوط پیکسل‌آرت چرخیده را به‌جای دندانه‌دار، تمیز نگه می‌دارد</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>نوک مربعی</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>خطوط عمودی</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>نسخه بازیابی هر (دقیقه، 0 = خاموش)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>الگوی شفافیت</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>پخش یا مکث پیش‌نمایش</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>دور انداختن</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>ویرایشگر پیکسل به‌طور عادی بسته نشد. {0} اسپرایت با تغییرات ذخیره‌نشده قابل بازیابی است.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>بازیابی</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>نزدیک‌ترین همسایه</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>چیدمان</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>ادغام فریم‌های یکسان</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>نوشتن داده JSON (فریم‌ها، برچسب‌ها و برش‌ها)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>فشرده</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>فاصله داخلی</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>فاصله</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>برش فضای خالی اطراف فریم‌ها</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} یکتا</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>نوار عمودی</value>

@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Fehér</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Nincs egyező parancs</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Parancsok, eszközök és panelek keresése</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Eszközök</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Tényleges méret (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Összes bezárása</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Parancspaletta...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Másolás</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Teljes képernyő</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Színátmenet-leképezés...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Telítetlenítés</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referenciaréteg</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Új réteg másolással</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Új réteg kivágással</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Látható</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Csempézés függőlegesen</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Cellabélyegképek</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Kétoszlopos eszköztár</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Ettől a képkockától</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Színek forrása</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Két szín</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paletta, fényesség szerint</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Árnyékok</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Csúcsfények</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Színek megfordítása</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>A képpontokat fényességük szerint színezi át, a legsötétebbek színétől a legvilágosabbak színéig.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Árnyalat</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Minden cellát a jelenlegi paletta legközelebbi színeivel színez újra.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Ismétlés</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>A legközelebbi szomszéd élesen tartja a képpontokat. A pixel art skálázás 2×-es vagy nagyobb nagyításnál a lépcsős éleket is kisimítja.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animált PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animáció lejátszás szerint</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exportálás</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Keverési mód</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Cellák másolása</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Képkockák másolása</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Szelet törlése</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Áthelyezés</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Cellák áthelyezése</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Képkockák áthelyezése</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Megnyitás</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Helyreállítva</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Szelet tulajdonságai</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Húzással szeletet hozhat létre. Kattintással kijelöli, dupla kattintással átnevezi a szeletet.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Sima forgatás</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Az elforgatott pixel art vonalait tisztán tartja recés helyett</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Négyzetes hegy</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Függőleges vonalak</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Helyreállítási másolat (percenként, 0 = ki)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Átlátszóság-minta</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Előnézet lejátszása vagy szüneteltetése</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Elvetés</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>A képpontszerkesztő nem a szokásos módon zárult be. {0} nem mentett módosításokat tartalmazó sprite állítható helyre.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Helyreállítás</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Legközelebbi szomszéd</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Elrendezés</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Azonos képkockák egyesítése</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON-adatok írása (képkockák, címkék és szeletek)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Tömörített</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Belső margó</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Térköz</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Üres terület levágása a képkockák körül</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} egyedi</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Függőleges sáv</value>

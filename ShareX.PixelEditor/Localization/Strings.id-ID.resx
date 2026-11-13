@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Putih</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Tidak ada perintah yang cocok</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Cari perintah, alat, dan panel</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Alat</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Ukuran Sebenarnya (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Tutup semua</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Palet Perintah...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Salin</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Layar Penuh</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Peta Gradien...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Hilangkan saturasi</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Lapisan Referensi</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Lapisan Baru melalui Salin</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Lapisan Baru melalui Potong</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Terlihat</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Ubin Vertikal</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Gambar Mini Sel</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Bilah Alat Dua Kolom</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Dari bingkai</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Warna dari</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Dua warna</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palet, menurut kecerahan</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Bayangan</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Sorotan</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Balik urutan warna</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Mewarnai ulang piksel menurut kecerahannya, dari warna untuk piksel tergelap hingga warna untuk yang paling terang.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Rona</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Mewarnai ulang setiap sel dengan warna terdekat dari palet saat ini.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Pengulangan</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Tetangga terdekat menjaga piksel tetap tajam. Penskalaan seni piksel juga menghaluskan tepi bergerigi saat memperbesar 2× atau lebih.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG animasi</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animasi sesuai pemutaran</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Ekspor</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Mode Campuran</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Salin Sel</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Salin Bingkai</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Hapus irisan</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Pindahkan</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Pindahkan Sel</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Pindahkan Bingkai</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Buka</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Dipulihkan</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Properti Irisan</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Seret untuk membuat irisan. Klik irisan untuk memilihnya, klik ganda untuk mengganti namanya.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Rotasi halus</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Menjaga garis pixel art yang diputar tetap bersih, bukan bergerigi</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Ujung persegi</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Garis vertikal</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Salinan pemulihan setiap (menit, 0 = mati)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Pola transparansi</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Putar atau jeda pratinjau</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Buang</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Editor Piksel tidak ditutup dengan normal. {0} sprite dengan perubahan yang belum disimpan dapat dipulihkan.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Pulihkan</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Tetangga terdekat</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Tata letak</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Gabungkan bingkai yang identik</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Tulis data JSON (bingkai, tag, dan irisan)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Rapat</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Padding</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Jarak</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Pangkas ruang kosong di sekitar bingkai</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} unik</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Strip vertikal</value>

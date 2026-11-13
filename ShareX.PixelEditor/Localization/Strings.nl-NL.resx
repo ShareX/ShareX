@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Wit</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Geen overeenkomende opdrachten</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Zoeken in opdrachten, gereedschappen en panelen</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Gereedschappen</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Werkelijke grootte (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Alles sluiten</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Opdrachtenpalet...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieer</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Volledig scherm</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Verloop toewijzen...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Verzadiging verwijderen</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referentielaag</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nieuwe laag via kopiëren</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nieuwe laag via knippen</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Zichtbaar</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Verticaal herhalen</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Celminiaturen</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Werkbalk met twee kolommen</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Vanaf beeld</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Kleuren uit</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Twee kleuren</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palet, op helderheid</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Schaduwen</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Hooglichten</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Kleuren omkeren</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Kleurt pixels opnieuw op basis van hun helderheid, van de kleur voor de donkerste pixels tot de kleur voor de lichtste.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Tint</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Kleurt elke cel opnieuw met de dichtstbijzijnde kleuren van het huidige palet.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Herhalingen</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Naaste buur houdt pixels scherp. Pixelart-schaling maakt bij 2× of meer vergroten ook trapranden vloeiender.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Geanimeerde PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animatie zoals afgespeeld</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exporteren</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Overvloeimodus</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Cellen kopiëren</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Beelden kopiëren</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Segment verwijderen</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Verplaatsen</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Cellen verplaatsen</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Beelden verplaatsen</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Openen</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Hersteld</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Segmenteigenschappen</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Sleep om een segment te maken. Klik op een segment om het te selecteren, dubbelklik om de naam te wijzigen.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Vloeiend draaien</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Houdt de lijnen van gedraaide pixelart strak in plaats van gekarteld</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Vierkante punt</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Verticale lijnen</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Herstelkopie elke (minuten, 0 = uit)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Transparantieraster</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Voorbeeld afspelen of pauzeren</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>De pixeleditor is niet normaal afgesloten. {0} sprite(s) met niet-opgeslagen wijzigingen kunnen worden hersteld.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Herstellen</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Dichtstbijzijnde buur</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Indeling</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Identieke beelden samenvoegen</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON-gegevens schrijven (beelden, labels en segmenten)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Compact</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Opvulling</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Afstand</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Lege ruimte rond beelden bijsnijden</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} uniek</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Verticale strook</value>

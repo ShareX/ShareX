@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Bílá</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Žádné odpovídající příkazy</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Hledat příkazy, nástroje a panely</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Nástroje</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Skutečná velikost (100 %)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Zavřít vše</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta příkazů...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopírovat</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Celá obrazovka</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Mapa přechodu...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Odbarvit</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referenční vrstva</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nová vrstva kopírováním</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nová vrstva vyjmutím</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Viditelná</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Opakovat svisle</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Náhledy buněk</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Dvousloupcový panel nástrojů</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Od snímku</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Barvy z</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Dvě barvy</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paleta, podle jasu</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Stíny</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Světla</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Obrátit pořadí barev</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Přebarví pixely podle jejich jasu, od barvy pro nejtmavší pixely po barvu pro nejsvětlejší.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Odstín</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Přebarví každou buňku nejbližšími barvami současné palety.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Opakování</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Nejbližší soused zachová ostré pixely. Škálování pixel artu navíc při zvětšení 2× a více vyhladí schodovité hrany.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animovaný PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animace tak, jak se přehrává</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exportovat</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Režim prolnutí</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Kopírování buněk</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kopírování snímků</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Odstranit řez</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Přesunout</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Přesun buněk</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Přesun snímků</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Otevřít</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Obnoveno</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Vlastnosti řezu</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Tažením vytvoříte řez. Kliknutím řez vyberete, dvojklikem ho přejmenujete.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Hladké otáčení</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Udržuje čáry otočeného pixel artu čisté místo zubatých</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Čtvercová špička</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Svislé čáry</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Záložní kopie každých (minut, 0 = vypnuto)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Šachovnice průhlednosti</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Přehrát nebo pozastavit náhled</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Zahodit</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Pixelový editor nebyl správně ukončen. Lze obnovit spritů s neuloženými změnami: {0}.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Obnovit</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Nejbližší soused</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Rozložení</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Sloučit stejné snímky</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Zapsat data JSON (snímky, štítky a řezy)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Těsně</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Vnitřní odsazení</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Mezery</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Oříznout prázdné místo kolem snímků</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>jedinečných: {0}</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Svislý pás</value>

@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Weiß</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Keine passenden Befehle</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Befehle, Werkzeuge und Bedienfelder suchen</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Werkzeuge</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Tatsächliche Größe (100 %)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Alle schließen</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Befehlspalette...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopieren</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Vollbild</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Verlaufsumsetzung...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Sättigung verringern</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referenzebene</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Neue Ebene durch Kopie</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Neue Ebene durch Ausschneiden</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Sichtbar</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Vertikal kacheln</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Zellen-Miniaturen</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Zweispaltige Werkzeugleiste</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Von Einzelbild</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Farben aus</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Zwei Farben</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palette, nach Helligkeit</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Tiefen</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Lichter</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Farben umkehren</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Färbt Pixel nach ihrer Helligkeit um, von der Farbe für die dunkelsten bis zur Farbe für die hellsten Pixel.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Farbton</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Färbt jede Zelle mit den ähnlichsten Farben der aktuellen Palette neu ein.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Wiederholungen</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>„Nächster Nachbar“ hält Pixel scharf. Die Pixel-Art-Skalierung glättet zusätzlich Treppenkanten bei Vergrößerung um das 2-Fache oder mehr.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animiertes PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animation wie abgespielt</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exportieren</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Mischmodus</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Zellen kopieren</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Einzelbilder kopieren</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Slice löschen</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Verschieben</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Zellen verschieben</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Einzelbilder verschieben</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Öffnen</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Wiederhergestellt</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Slice-Eigenschaften</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Ziehen, um ein Slice zu erstellen. Ein Slice anklicken, um es auszuwählen, doppelklicken, um es umzubenennen.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Glatte Drehung</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Hält die Linien gedrehter Pixel-Art sauber statt gezackt</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Quadratische Spitze</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Vertikale Linien</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Wiederherstellungskopie alle (Minuten, 0 = aus)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Transparenzraster</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Vorschau abspielen oder anhalten</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Verwerfen</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Der Pixeleditor wurde nicht normal beendet. {0} Sprite(s) mit nicht gespeicherten Änderungen können wiederhergestellt werden.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Wiederherstellen</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Nächster Nachbar</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Layout</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Identische Einzelbilder zusammenführen</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>JSON-Daten schreiben (Einzelbilder, Etiketten und Slices)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Gepackt</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Innenabstand</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Abstand</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Leeren Rand um Einzelbilder entfernen</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} eindeutige</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Vertikaler Streifen</value>

@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Biały</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Brak pasujących poleceń</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Szukaj poleceń, narzędzi i paneli</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Narzędzia</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Rzeczywisty rozmiar (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Zamknij wszystko</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Paleta poleceń...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiuj</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Pełny ekran</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Mapa gradientu...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Usuń nasycenie</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Warstwa referencyjna</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nowa warstwa przez kopiowanie</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nowa warstwa przez wycinanie</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Widoczna</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Kafelkuj w pionie</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniatury komórek</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Dwukolumnowy pasek narzędzi</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Od klatki</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Kolory z</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Dwa kolory</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Paleta, według jasności</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Cienie</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Światła</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Odwróć kolejność kolorów</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Zmienia kolory pikseli według ich jasności, od koloru dla najciemniejszych pikseli do koloru dla najjaśniejszych.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Odcień</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Przebarwia każdą komórkę najbliższymi kolorami bieżącej palety.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Powtórzenia</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Najbliższy sąsiad zachowuje ostre piksele. Skalowanie pixel artu dodatkowo wygładza schodkowe krawędzie przy powiększeniu 2× lub większym.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animowany PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animacja w kolejności odtwarzania</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Eksportuj</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Tryb mieszania</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Kopiowanie komórek</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kopiowanie klatek</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Usuń plasterek</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Przesuń</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Przeniesienie komórek</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Przeniesienie klatek</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Otwórz</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Odzyskano</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Właściwości plasterka</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Przeciągnij, aby utworzyć plasterek. Kliknij plasterek, aby go zaznaczyć, kliknij dwukrotnie, aby zmienić nazwę.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Gładki obrót</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Zachowuje czyste linie obróconej grafiki pikselowej zamiast poszarpanych</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Kwadratowa końcówka</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Linie pionowe</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Kopia odzyskiwania co (minuty, 0 = wył.)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Szachownica przezroczystości</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Odtwórz lub wstrzymaj podgląd</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Odrzuć</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Edytor pikseli nie został prawidłowo zamknięty. Można przywrócić sprite'y z niezapisanymi zmianami: {0}.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Przywróć</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Najbliższy sąsiad</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Układ</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Scal identyczne klatki</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Zapisz dane JSON (klatki, znaczniki i plasterki)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Upakowany</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Dopełnienie</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Odstęp</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Przytnij pustą przestrzeń wokół klatek</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>unikalnych: {0}</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Pasek pionowy</value>

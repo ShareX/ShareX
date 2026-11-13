@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>ขาว</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>ไม่พบคำสั่งที่ตรงกัน</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>ค้นหาคำสั่ง เครื่องมือ และแผง</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>เครื่องมือ</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>ขนาดจริง (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>ปิดทั้งหมด</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>จานคำสั่ง...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>คัดลอก</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>เต็มหน้าจอ</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>แผนที่ไล่ระดับสี...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>ลดความอิ่มตัว</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>เลเยอร์อ้างอิง</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>เลเยอร์ใหม่ผ่านการคัดลอก</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>เลเยอร์ใหม่ผ่านการตัด</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>มองเห็น</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>เรียงต่อแนวตั้ง</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>ภาพย่อของเซล</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>แถบเครื่องมือสองคอลัมน์</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>จากเฟรม</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>สีจาก</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>สองสี</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>จานสี ตามความสว่าง</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>เงา</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>ไฮไลต์</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>กลับลำดับสี</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>เปลี่ยนสีพิกเซลตามความสว่าง ตั้งแต่สีสำหรับพิกเซลที่มืดที่สุดไปจนถึงสีสำหรับพิกเซลที่สว่างที่สุด</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>เฉดสี</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>ลงสีทุกเซลใหม่ด้วยสีที่ใกล้เคียงที่สุดในจานสีปัจจุบัน</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>จำนวนครั้งที่เล่นซ้ำ</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>เพื่อนบ้านใกล้สุดช่วยให้พิกเซลคมชัด การปรับขนาดแบบพิกเซลอาร์ตยังช่วยให้ขอบขั้นบันไดเรียบขึ้นเมื่อขยาย 2 เท่าขึ้นไป</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG แบบเคลื่อนไหว</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>แอนิเมชันตามที่เล่น</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>ส่งออก</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>โหมดผสม</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>คัดลอกเซล</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>คัดลอกเฟรม</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>ลบชิ้นส่วน</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>ย้าย</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>ย้ายเซล</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>ย้ายเฟรม</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>เปิด</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>กู้คืนแล้ว</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>คุณสมบัติสไลซ์</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>ลากเพื่อสร้างสไลซ์ คลิกสไลซ์เพื่อเลือก ดับเบิลคลิกเพื่อเปลี่ยนชื่อ</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>การหมุนแบบเรียบ</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>ทำให้เส้นของพิกเซลอาร์ตที่หมุนแล้วเรียบร้อย ไม่เป็นรอยหยัก</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>ปลายเหลี่ยม</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>เส้นแนวตั้ง</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>สำเนากู้คืนทุก ๆ (นาที, 0 = ปิด)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>ลายตารางความโปร่งใส</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>เล่นหรือหยุดตัวอย่างชั่วคราว</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>ทิ้ง</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>ตัวแก้ไขพิกเซลไม่ได้ปิดตามปกติ สามารถกู้คืนสไปรต์ที่มีการเปลี่ยนแปลงที่ยังไม่ได้บันทึกได้ {0} รายการ</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>กู้คืน</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>เพื่อนบ้านใกล้สุด</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>เค้าโครง</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>รวมเฟรมที่เหมือนกัน</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>เขียนข้อมูล JSON (เฟรม แท็ก และสไลซ์)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>แบบอัดแน่น</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>ระยะเติม</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>ระยะห่าง</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>ตัดพื้นที่ว่างรอบเฟรม</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>ไม่ซ้ำ {0} รายการ</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>แถบแนวตั้ง</value>

@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Trắng</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Không có lệnh phù hợp</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Tìm lệnh, công cụ và bảng</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Công cụ</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Kích thước thực (100%)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Đóng tất cả</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Bảng lệnh...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Sao chép</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Toàn màn hình</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Ánh xạ dải màu...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Khử bão hòa</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Lớp tham chiếu</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Lớp mới qua sao chép</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Lớp mới qua cắt</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Hiển thị</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Lát dọc</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Hình thu nhỏ của ô</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Thanh công cụ hai cột</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Từ khung hình</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Màu từ</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Hai màu</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Bảng màu, theo độ sáng</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Vùng tối</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Vùng sáng</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Đảo ngược thứ tự màu</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Tô lại màu các điểm ảnh theo độ sáng, từ màu cho điểm ảnh tối nhất đến màu cho điểm ảnh sáng nhất.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Sắc độ</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Tô lại mọi ô bằng các màu gần nhất trong bảng màu hiện tại.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Số lần lặp</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Láng giềng gần nhất giữ điểm ảnh sắc nét. Co giãn pixel art còn làm mượt cạnh bậc thang khi phóng to từ 2× trở lên.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>PNG động</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Hoạt ảnh theo thứ tự phát</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Xuất</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Chế độ hòa trộn</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Sao chép các ô</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Sao chép khung hình</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Xóa lát cắt</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Di chuyển</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Di chuyển các ô</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Di chuyển khung hình</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Mở</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Đã khôi phục</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Thuộc tính lát cắt</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Kéo để tạo lát cắt. Bấm vào lát cắt để chọn, bấm đúp để đổi tên.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Xoay mượt</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Giữ các đường nét của pixel art đã xoay gọn gàng thay vì răng cưa</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Đầu cọ vuông</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Đường dọc</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Bản sao khôi phục mỗi (phút, 0 = tắt)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Ô bàn cờ trong suốt</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Phát hoặc tạm dừng xem trước</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Bỏ đi</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Trình chỉnh sửa điểm ảnh đã không đóng bình thường. Có thể khôi phục {0} sprite có thay đổi chưa lưu.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Khôi phục</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Lân cận gần nhất</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Bố cục</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Gộp các khung hình giống nhau</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Ghi dữ liệu JSON (khung hình, thẻ và lát cắt)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Xếp gọn</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Khoảng đệm</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Khoảng cách</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Cắt bỏ khoảng trống quanh khung hình</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} khung riêng biệt</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Dải dọc</value>

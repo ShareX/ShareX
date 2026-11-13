@@ -84,6 +84,15 @@
   <data name="Checker_White" xml:space="preserve">
     <value>Vit</value>
   </data>
+  <data name="CommandPalette_NoResults" xml:space="preserve">
+    <value>Inga matchande kommandon</value>
+  </data>
+  <data name="CommandPalette_Placeholder" xml:space="preserve">
+    <value>Sök efter kommandon, verktyg och paneler</value>
+  </data>
+  <data name="CommandPalette_Tool" xml:space="preserve">
+    <value>Verktyg</value>
+  </data>
   <data name="Command_ActualSize" xml:space="preserve">
     <value>Verklig storlek (100 %)</value>
   </data>
@@ -122,6 +131,9 @@
   </data>
   <data name="Command_CloseAll" xml:space="preserve">
     <value>Stäng alla</value>
+  </data>
+  <data name="Command_CommandPalette" xml:space="preserve">
+    <value>Kommandopalett...</value>
   </data>
   <data name="Command_Copy" xml:space="preserve">
     <value>Kopiera</value>
@@ -195,6 +207,9 @@
   <data name="Command_FullScreen" xml:space="preserve">
     <value>Helskärm</value>
   </data>
+  <data name="Command_GradientMap" xml:space="preserve">
+    <value>Övertoningsmappning...</value>
+  </data>
   <data name="Command_Grayscale" xml:space="preserve">
     <value>Minska mättnad</value>
   </data>
@@ -254,6 +269,12 @@
   </data>
   <data name="Command_LayerReference" xml:space="preserve">
     <value>Referenslager</value>
+  </data>
+  <data name="Command_LayerViaCopy" xml:space="preserve">
+    <value>Nytt lager via kopiering</value>
+  </data>
+  <data name="Command_LayerViaCut" xml:space="preserve">
+    <value>Nytt lager via urklipp</value>
   </data>
   <data name="Command_LayerVisible" xml:space="preserve">
     <value>Synlig</value>
@@ -444,6 +465,9 @@
   <data name="Command_TiledVertical" xml:space="preserve">
     <value>Upprepa lodrätt</value>
   </data>
+  <data name="Command_TimelineThumbnails" xml:space="preserve">
+    <value>Miniatyrer av celler</value>
+  </data>
   <data name="Command_ToolbarColumns" xml:space="preserve">
     <value>Verktygsfält med två kolumner</value>
   </data>
@@ -525,6 +549,27 @@
   <data name="Dialog_FromFrame" xml:space="preserve">
     <value>Från bildruta</value>
   </data>
+  <data name="Dialog_GradientMapColors" xml:space="preserve">
+    <value>Färger från</value>
+  </data>
+  <data name="Dialog_GradientMapColorsGradient" xml:space="preserve">
+    <value>Två färger</value>
+  </data>
+  <data name="Dialog_GradientMapColorsPalette" xml:space="preserve">
+    <value>Palett, efter ljusstyrka</value>
+  </data>
+  <data name="Dialog_GradientMapDark" xml:space="preserve">
+    <value>Skuggor</value>
+  </data>
+  <data name="Dialog_GradientMapLight" xml:space="preserve">
+    <value>Högdagrar</value>
+  </data>
+  <data name="Dialog_GradientMapReverse" xml:space="preserve">
+    <value>Vänd på färgerna</value>
+  </data>
+  <data name="Dialog_GradientMap_Note" xml:space="preserve">
+    <value>Färgar om pixlar efter ljusstyrka, från färgen för de mörkaste pixlarna till färgen för de ljusaste.</value>
+  </data>
   <data name="Dialog_Hue" xml:space="preserve">
     <value>Nyans</value>
   </data>
@@ -581,6 +626,9 @@
   </data>
   <data name="Dialog_Remap_Note" xml:space="preserve">
     <value>Färgar om varje cell med de närmaste färgerna i den aktuella paletten.</value>
+  </data>
+  <data name="Dialog_Repeat" xml:space="preserve">
+    <value>Upprepningar</value>
   </data>
   <data name="Dialog_ResizeNote" xml:space="preserve">
     <value>Närmaste granne håller pixlarna skarpa. Pixel art-skalning jämnar också ut trappstegskanter vid förstoring 2× eller mer.</value>
@@ -654,6 +702,9 @@
   <data name="Export_Apng" xml:space="preserve">
     <value>Animerad PNG</value>
   </data>
+  <data name="Export_AsPlayed" xml:space="preserve">
+    <value>Animeringen som den spelas upp</value>
+  </data>
   <data name="Export_Button" xml:space="preserve">
     <value>Exportera</value>
   </data>
@@ -705,6 +756,12 @@
   <data name="History_BlendMode" xml:space="preserve">
     <value>Blandningsläge</value>
   </data>
+  <data name="History_CopyCels" xml:space="preserve">
+    <value>Kopiera celler</value>
+  </data>
+  <data name="History_CopyFrames" xml:space="preserve">
+    <value>Kopiera bildrutor</value>
+  </data>
   <data name="History_DeleteSlice" xml:space="preserve">
     <value>Ta bort segment</value>
   </data>
@@ -732,6 +789,9 @@
   <data name="History_Move" xml:space="preserve">
     <value>Flytta</value>
   </data>
+  <data name="History_MoveCels" xml:space="preserve">
+    <value>Flytta celler</value>
+  </data>
   <data name="History_MoveFrames" xml:space="preserve">
     <value>Flytta bildrutor</value>
   </data>
@@ -749,6 +809,9 @@
   </data>
   <data name="History_Open" xml:space="preserve">
     <value>Öppna</value>
+  </data>
+  <data name="History_Recovered" xml:space="preserve">
+    <value>Återställd</value>
   </data>
   <data name="History_RenameSlice" xml:space="preserve">
     <value>Segmentegenskaper</value>
@@ -993,6 +1056,12 @@
   <data name="Options_SliceHint" xml:space="preserve">
     <value>Dra för att skapa ett segment. Klicka på ett segment för att markera det, dubbelklicka för att byta namn.</value>
   </data>
+  <data name="Options_SmoothRotation" xml:space="preserve">
+    <value>Mjuk rotation</value>
+  </data>
+  <data name="Options_SmoothRotationTip" xml:space="preserve">
+    <value>Håller linjerna i roterad pixelkonst rena i stället för taggiga</value>
+  </data>
   <data name="Options_SquareTip" xml:space="preserve">
     <value>Fyrkantig spets</value>
   </data>
@@ -1113,6 +1182,9 @@
   <data name="Pattern_VerticalLines" xml:space="preserve">
     <value>Lodräta linjer</value>
   </data>
+  <data name="Preferences_AutoSave" xml:space="preserve">
+    <value>Återställningskopia var (minuter, 0 = av)</value>
+  </data>
   <data name="Preferences_Checker" xml:space="preserve">
     <value>Genomskinlighetsmönster</value>
   </data>
@@ -1136,6 +1208,15 @@
   </data>
   <data name="Preview_PlayPause" xml:space="preserve">
     <value>Spela upp eller pausa förhandsvisningen</value>
+  </data>
+  <data name="Recovery_Discard" xml:space="preserve">
+    <value>Släng</value>
+  </data>
+  <data name="Recovery_Prompt" xml:space="preserve">
+    <value>Pixelredigeraren stängdes inte normalt. {0} sprite(s) med osparade ändringar kan återställas.</value>
+  </data>
+  <data name="Recovery_Restore" xml:space="preserve">
+    <value>Återställ</value>
   </data>
   <data name="Resize_Nearest" xml:space="preserve">
     <value>Närmaste granne</value>
@@ -1188,8 +1269,14 @@
   <data name="Sheet_Layout" xml:space="preserve">
     <value>Layout</value>
   </data>
+  <data name="Sheet_MergeDuplicates" xml:space="preserve">
+    <value>Slå ihop identiska bildrutor</value>
+  </data>
   <data name="Sheet_Metadata" xml:space="preserve">
     <value>Skriv JSON-data (bildrutor, etiketter och segment)</value>
+  </data>
+  <data name="Sheet_Packed" xml:space="preserve">
+    <value>Packad</value>
   </data>
   <data name="Sheet_Padding" xml:space="preserve">
     <value>Utfyllnad</value>
@@ -1199,6 +1286,12 @@
   </data>
   <data name="Sheet_Spacing" xml:space="preserve">
     <value>Mellanrum</value>
+  </data>
+  <data name="Sheet_Trim" xml:space="preserve">
+    <value>Beskär tomt utrymme runt bildrutor</value>
+  </data>
+  <data name="Sheet_Unique" xml:space="preserve">
+    <value>{0} unika</value>
   </data>
   <data name="Sheet_Vertical" xml:space="preserve">
     <value>Lodrät remsa</value>
