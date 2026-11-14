@@ -267,13 +267,21 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (e.Key == Key.Enter && HasAnyRegion() && !e.Handled &&
+        if (e.Key == Key.Enter && !e.Handled &&
             _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
             FocusManager?.GetFocusedElement() is not TextBox)
         {
-            e.Handled = true;
-            CompleteSelection();
-            return;
+            if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
+            {
+                SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
+            }
+
+            if (HasAnyRegion())
+            {
+                e.Handled = true;
+                CompleteSelection();
+                return;
+            }
         }
 
         if (_regionToolActive && e.Key == Key.Space)
