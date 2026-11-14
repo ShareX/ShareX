@@ -1977,6 +1977,16 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst", resourceCulture);
             }
         }
+        public static string ApplicationSettingsWindow_LimitTasksInMainWindow {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_LimitTasksInMainWindow", resourceCulture);
+            }
+        }
+        public static string ApplicationSettingsWindow_MaximumTasksInMainWindowLabel {
+            get {
+                return ResourceManager.GetString("ApplicationSettingsWindow_MaximumTasksInMainWindowLabel", resourceCulture);
+            }
+        }
         public static string ApplicationSettingsWindow_Print {
             get {
                 return ResourceManager.GetString("ApplicationSettingsWindow_Print", resourceCulture);

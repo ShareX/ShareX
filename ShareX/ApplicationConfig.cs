@@ -152,6 +152,9 @@ namespace ShareX
         public bool RecentTasksShowInTrayMenu = true;
         public bool RecentTasksTrayMenuMostRecentFirst = false;
 
+        public bool TaskListLimitEnabled = false;
+        public int TaskListLimit = 10;
+
         public HistorySettings HistorySettings = new HistorySettings();
         public ImageHistorySettings ImageHistorySettings = new ImageHistorySettings();
 
