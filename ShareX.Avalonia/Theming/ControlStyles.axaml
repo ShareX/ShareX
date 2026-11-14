@@ -1,7 +1,8 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="using:ShareX.AvaloniaUI.Controls"
-        xmlns:icons="using:ShareX.Icons">
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -52,6 +53,12 @@
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+
+    <!-- Screen readers use the tooltip text when a control has no accessible name of its own. -->
+    <Style Selector="Button, ToggleButton, RepeatButton, DropDownButton, SplitButton, ComboBox, Slider, NumericUpDown, :is(UserControl)">
+        <Setter Property="AutomationProperties.Name"
+                Value="{Binding $self.(ToolTip.Tip), Converter={x:Static theming:ToolTipTextConverter.Instance}}"/>
+    </Style>
     <Style Selector=":is(Window)">
         <Setter Property="Icon" Value="{DynamicResource ShareX.WindowIcon}"/>
     </Style>
