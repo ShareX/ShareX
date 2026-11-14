@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia;
+using Avalonia.Automation;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Media;
@@ -203,7 +204,8 @@ internal partial class MessageBoxWindow : Window
 
         if (!string.IsNullOrEmpty(checkBoxText))
         {
-            OptionCheckBox.Content = checkBoxText;
+            OptionCheckBox.Content = WithAccessKey(checkBoxText);
+            AutomationProperties.SetName(OptionCheckBox, checkBoxText);
             OptionCheckBox.IsVisible = true;
         }
 
@@ -216,7 +218,7 @@ internal partial class MessageBoxWindow : Window
             (DialogResult result, string buttonText) = buttonDefinitions[index];
             Button button = new()
             {
-                Content = buttonText,
+                Content = WithAccessKey(buttonText),
                 MinWidth = 88,
                 Height = 36,
                 IsDefault = index == defaultButtonIndex,
@@ -228,6 +230,7 @@ internal partial class MessageBoxWindow : Window
                 button.Classes.Add("active");
             }
 
+            AutomationProperties.SetName(button, buttonText);
             button.Click += (_, _) => CloseWithResult(result);
             ButtonPanel.Children.Add(button);
 
@@ -269,6 +272,19 @@ internal partial class MessageBoxWindow : Window
     // The icon sits on the dialog background, so it uses the accent icon color.
     private IBrush GetAccentBrush() =>
         this.FindResource("ShareX.Brush.Accent.Icon") as IBrush ?? Brushes.DodgerBlue;
+
+    // Underlines the first letter so Alt+letter presses the button, in any language.
+    private static string WithAccessKey(string text)
+    {
+        string escaped = text.Replace("_", "__");
+        int index = 0;
+        while (index < escaped.Length && !char.IsLetterOrDigit(escaped[index]))
+        {
+            index++;
+        }
+
+        return index < escaped.Length ? escaped.Insert(index, "_") : escaped;
+    }
 
     private static (DialogResult Result, string Text)[] GetButtonDefinitions(MessageBoxButtons buttons) => buttons switch
     {
