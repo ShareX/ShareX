@@ -283,6 +283,14 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        if (_regionToolActive && e.Key == Key.C && e.KeyModifiers == KeyModifiers.Control &&
+            e.Source is not TextBox && FocusManager?.GetFocusedElement() is not TextBox)
+        {
+            e.Handled = true;
+            ClipboardHelpers.CopyText(HasValidSelection() ? _selectionInfoText.Text ?? string.Empty : GetPointerInfoText(_lastPointerPoint));
+            return;
+        }
+
         if (_regionToolActive && e.Key == Key.OemTilde)
         {
             e.Handled = true;
