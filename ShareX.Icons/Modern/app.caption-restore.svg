@@ -1,6 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">
-  <path d="M11 6L10 6L10 5L4 5L4 6L3 6L3 12L4 12L4 13L10 13L10 12L11 12L11 6ZM10 12L4 12L4 6L10 6L10 12Z" fill="currentColor" stroke="none"/>
-  <path d="M4 5L3 5L3 6L4 6L4 5ZM11 5L10 5L10 6L11 6L11 5ZM3 12L4 12L4 13L3 13L3 12ZM11 12L10 12L10 13L11 13L11 12Z" fill="currentColor" stroke="none" opacity="0.45"/>
-  <path d="M12 4L13 4L13 10L12 10L12 4ZM6 4L6 3L12 3L12 4L6 4ZM6 5L6 4L5 4L5 5L6 5ZM11 10L12 10L12 11L11 11L11 10Z" fill="currentColor" stroke="none"/>
-  <path d="M5 3L6 3L6 4L5 4L5 3ZM12 3L13 3L13 4L12 4L12 3ZM12 10L13 10L13 11L12 11L12 10Z" fill="currentColor" stroke="none" opacity="0.45"/>
+  <path d="M7 3h4v1H7ZM6 4h1v1H6ZM11 4h1v1H11ZM5 5h4v1H5ZM12 5h1v4H12ZM4 6h1v1H4ZM9 6h1v1H9ZM3 7h1v4H3ZM10 7h1v2H10ZM10 9h2v1H10ZM10 10h1v1H10ZM4 11h1v1H4ZM9 11h1v1H9ZM5 12h4v1H5Z" fill="currentColor" stroke="none"/>
+  <path d="M6 3h1v1H6ZM11 3h1v1H11ZM5 4h1v1H5ZM12 4h1v1H12ZM4 5h1v1H4ZM9 5h1v1H9ZM3 6h1v1H3ZM10 6h1v1H10ZM12 9h1v1H12ZM11 10h1v1H11ZM3 11h1v1H3ZM10 11h1v1H10ZM4 12h1v1H4ZM9 12h1v1H9Z" fill="currentColor" stroke="none" opacity="0.45"/>
 </svg>

@@ -1,4 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="1" stroke-linecap="butt" stroke-linejoin="round">
-  <circle cx="7.5" cy="7.5" r="3"/>
-  <path d="M7.5 1v2M7.5 12v2M1 7.5h2M12 7.5h2M3.25 3.25l1.25 1.25M10.5 10.5l1.25 1.25M3.25 11.75l1.25-1.25M10.5 4.5l1.25-1.25"/>
+  <path d="M7 2h1v1H7ZM3 3h1v1H3ZM11 3h1v1H11ZM6 4h3v1H6ZM5 5h1v1H5ZM9 5h1v1H9ZM4 6h1v3H4ZM10 6h1v3H10ZM2 7h1v1H2ZM12 7h1v1H12ZM5 9h1v1H5ZM9 9h1v1H9ZM6 10h3v1H6ZM3 11h1v1H3ZM11 11h1v1H11ZM7 12h1v1H7Z" fill="currentColor" stroke="none"/>
+  <path d="M7 1h1v1H7ZM2 2h1v1H2ZM12 2h1v1H12ZM5 4h1v1H5ZM9 4h1v1H9ZM4 5h1v1H4ZM10 5h1v1H10ZM1 7h1v1H1ZM13 7h1v1H13ZM4 9h1v1H4ZM10 9h1v1H10ZM5 10h1v1H5ZM9 10h1v1H9ZM2 12h1v1H2ZM12 12h1v1H12ZM7 13h1v1H7Z" fill="currentColor" stroke="none" opacity="0.45"/>
 </svg>
