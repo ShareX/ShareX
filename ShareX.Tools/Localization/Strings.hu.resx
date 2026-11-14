@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>A kezdéshez nyisson meg vagy húzzon ide egy animált GIF-et</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Húzzon az előnézeten a körülvágáshoz</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Ez a vágás olyan képkockával kezdődik, amelyhez korábbi képkockák szükségesek. Válasszon másik kezdő képkockát a veszteségmentes exportáláshoz.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Újrakódolás</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Körülvágás és méret visszaállítása</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Kimeneti méret</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Mentse a vágott GIF-et más fájlnévvel vagy másik mappába.</value>

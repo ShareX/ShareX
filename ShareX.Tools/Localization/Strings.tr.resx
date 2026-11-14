@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Başlamak için animasyonlu bir GIF açın veya sürükleyip bırakın</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Kırpmak için önizlemede sürükleyin</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Bu kesim, önceki karelere ihtiyaç duyan bir kareyle başlıyor. Kayıpsız dışa aktarmak için başka bir başlangıç karesi seçin.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Yeniden kodla</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Kırpmayı ve boyutu sıfırla</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Çıktı boyutu</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Kırpılmış GIF'i farklı bir dosya adıyla veya başka bir klasöre kaydedin.</value>

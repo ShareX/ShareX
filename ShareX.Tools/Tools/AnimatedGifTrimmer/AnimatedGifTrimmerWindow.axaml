@@ -27,12 +27,13 @@
             </Border>
 
             <Border Grid.Row="1" Classes="tool-panel">
-                <Grid RowDefinitions="*,Auto,Auto,Auto,Auto" RowSpacing="8">
+                <Grid RowDefinitions="*,Auto,Auto,Auto,Auto,Auto" RowSpacing="8">
                     <Border Background="{DynamicResource ShareX.Brush.Background.Main}" CornerRadius="4" ClipToBounds="True">
                         <Grid>
                             <Image Source="{Binding Preview}" Stretch="Uniform" StretchDirection="DownOnly"
                                    HorizontalAlignment="Center" VerticalAlignment="Center"
                                    RenderOptions.BitmapInterpolationMode="HighQuality"/>
+                            <local:AnimatedGifTrimmerCropOverlay Accent="{DynamicResource ShareX.Brush.Accent}"/>
                             <StackPanel IsVisible="{Binding !HasGif}" Spacing="12"
                                         HorizontalAlignment="Center" VerticalAlignment="Center" IsHitTestVisible="False">
                                 <controls:IconPresenter Icon="{x:Static icons:AppIcons.Film}"
@@ -118,6 +119,24 @@
                             <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
                         </Button>
                     </Grid>
+
+                    <Grid Grid.Row="5" ColumnDefinitions="Auto,120,Auto,120,Auto,*" ColumnSpacing="8" IsEnabled="{Binding CanEdit}">
+                        <TextBlock Classes="row-label" Text="{x:Static loc:Strings.AnimatedGifTrimmer_Size}"/>
+                        <NumericUpDown Grid.Column="1" Minimum="1" Maximum="65535" FormatString="0"
+                                       Value="{Binding OutputWidth}"
+                                       AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_Size}"/>
+                        <TextBlock Grid.Column="2" Text="×" FontWeight="Normal" VerticalAlignment="Center"/>
+                        <NumericUpDown Grid.Column="3" Minimum="1" Maximum="65535" FormatString="0"
+                                       Value="{Binding OutputHeight}"
+                                       AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_Size}"/>
+                        <Button Grid.Column="4" Command="{Binding ResetCropCommand}" IsEnabled="{Binding IsTransformed}" Width="40"
+                                ToolTip.Tip="{x:Static loc:Strings.AnimatedGifTrimmer_ResetCrop}"
+                                AutomationProperties.Name="{x:Static loc:Strings.AnimatedGifTrimmer_ResetCrop}">
+                            <controls:IconPresenter Icon="{x:Static icons:AppIcons.Reset}"/>
+                        </Button>
+                        <TextBlock Grid.Column="5" Text="{x:Static loc:Strings.AnimatedGifTrimmer_CropHint}" FontWeight="Normal"
+                                   VerticalAlignment="Center" TextTrimming="CharacterEllipsis"/>
+                    </Grid>
                 </Grid>
             </Border>
 
@@ -125,7 +144,7 @@
                 <Grid ColumnDefinitions="Auto,Auto,Auto,*" ColumnSpacing="16">
                     <TextBlock Classes="row-label" Text="{x:Static loc:Strings.VideoTrimmer_TrimMode}"/>
                     <RadioButton Grid.Column="1" GroupName="GifTrimMode" IsChecked="{Binding Lossless, Mode=TwoWay}"
-                                 IsEnabled="{Binding CanBrowse}" VerticalAlignment="Center">
+                                 IsEnabled="{Binding CanUseLossless}" VerticalAlignment="Center">
                         <TextBlock Text="{x:Static loc:Strings.AnimatedGifTrimmer_Lossless}" FontWeight="Normal"/>
                     </RadioButton>
                     <RadioButton Grid.Column="2" GroupName="GifTrimMode" IsChecked="{Binding Reencode, Mode=TwoWay}"
