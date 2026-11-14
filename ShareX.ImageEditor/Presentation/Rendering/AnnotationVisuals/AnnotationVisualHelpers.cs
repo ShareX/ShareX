@@ -27,6 +27,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.ImageEditor.Presentation.Helpers;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Presentation.Rendering;
@@ -47,9 +48,35 @@ internal static class AnnotationVisualHelpers
 
         if (control.Tag is MagnifyAnnotation magnifyAnnotation)
         {
-            control.Clip = magnifyAnnotation.IsEllipse
-                ? new EllipseGeometry(new Rect(0, 0, Math.Max(1, width), Math.Max(1, height)))
-                : null;
+            ApplyMagnifyShape(control, magnifyAnnotation, width, height);
+        }
+    }
+
+    internal static void ApplyMagnifyBorder(Avalonia.Controls.Shapes.Rectangle rectangle, MagnifyAnnotation annotation)
+    {
+        Color color = Color.Parse(annotation.StrokeColor);
+
+        // The fill is inset by half the stroke, so a transparent border must have no width.
+        rectangle.Stroke = new SolidColorBrush(color);
+        rectangle.StrokeThickness = color.A == 0 ? 0 : Math.Max(0, annotation.StrokeWidth);
+        rectangle.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(annotation.BorderStyle);
+        rectangle.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(annotation.BorderStyle);
+    }
+
+    internal static void ApplyMagnifyShape(Control control, MagnifyAnnotation annotation, double width, double height)
+    {
+        width = Math.Max(1, width);
+        height = Math.Max(1, height);
+
+        control.Clip = annotation.IsEllipse ? new EllipseGeometry(new Rect(0, 0, width, height)) : null;
+
+        if (control is Avalonia.Controls.Shapes.Rectangle rectangle)
+        {
+            ApplyMagnifyBorder(rectangle, annotation);
+
+            bool roundBorder = annotation.IsEllipse && rectangle.StrokeThickness > 0;
+            rectangle.RadiusX = roundBorder ? Math.Max(0, width - rectangle.StrokeThickness) / 2 : 0;
+            rectangle.RadiusY = roundBorder ? Math.Max(0, height - rectangle.StrokeThickness) / 2 : 0;
         }
     }
 

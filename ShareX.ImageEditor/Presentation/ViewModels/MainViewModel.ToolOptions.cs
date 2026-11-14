@@ -121,6 +121,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case EditorTool.Text:
                     Options.TextBorderColor = color;
                     break;
+                case EditorTool.Magnify:
+                    Options.MagnifierBorderColor = color;
+                    break;
                 default:
                     Options.BorderColor = color;
                     break;
@@ -144,11 +147,16 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 Options.TextThickness = value;
             }
+            else if (ActiveTool == EditorTool.Magnify)
+            {
+                Options.MagnifierThickness = value;
+            }
             else if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
             {
                 if (SelectedAnnotation is NumberAnnotation) Options.StepThickness = value;
                 else if (SelectedAnnotation is SpeechBalloonAnnotation) Options.SpeechBalloonThickness = value;
                 else if (SelectedAnnotation is TextAnnotation) Options.TextThickness = value;
+                else if (SelectedAnnotation is MagnifyAnnotation) Options.MagnifierThickness = value;
                 else if (SelectedAnnotation is SmartEraserAnnotation) return;
                 else Options.Thickness = value;
             }
@@ -434,16 +442,15 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 return;
             }
 
-            bool supportsBorderStyle = ActiveTool is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand;
+            EditorTool tool = ActiveTool == EditorTool.Select && SelectedAnnotation != null ? SelectedAnnotation.ToolType : ActiveTool;
 
-            if (ActiveTool == EditorTool.Select && SelectedAnnotation != null)
-            {
-                supportsBorderStyle = SelectedAnnotation.ToolType is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand;
-            }
-
-            if (supportsBorderStyle)
+            if (tool is EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand)
             {
                 Options.BorderStyle = normalizedBorderStyle;
+            }
+            else if (tool == EditorTool.Magnify)
+            {
+                Options.MagnifierBorderStyle = normalizedBorderStyle;
             }
         }
 
@@ -863,10 +870,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         {
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step or EditorTool.Magnify => true,
                 _ => false
             },
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Text or EditorTool.Step or EditorTool.Magnify => true,
             _ => false
         };
 
@@ -895,11 +902,11 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public bool ShowThickness => ActiveTool switch
         {
             EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text or EditorTool.Magnify => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
                 EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Arrow
-                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text => true,
+                    or EditorTool.Freehand or EditorTool.SpeechBalloon or EditorTool.Step or EditorTool.Text or EditorTool.Magnify => true,
                 _ => false
             },
             _ => false
@@ -944,10 +951,10 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         public bool ShowBorderStyle => ActiveTool switch
         {
-            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand => true,
+            EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand or EditorTool.Magnify => true,
             EditorTool.Select => _selectedAnnotation != null && _selectedAnnotation.ToolType switch
             {
-                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand => true,
+                EditorTool.Rectangle or EditorTool.Ellipse or EditorTool.Line or EditorTool.Freehand or EditorTool.Magnify => true,
                 _ => false
             },
             _ => false
@@ -1335,6 +1342,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                 case EditorTool.Magnify:
                     EffectStrength = Options.MagnifierStrength;
                     EffectEllipse = Options.MagnifierEllipse;
+                    SelectedColorValue = Options.MagnifierBorderColor;
+                    StrokeWidth = Options.MagnifierThickness;
+                    SelectedBorderStyle = NormalizeBorderStyle(Options.MagnifierBorderStyle);
                     break;
                 case EditorTool.Spotlight:
                     EffectStrength = Options.SpotlightStrength;

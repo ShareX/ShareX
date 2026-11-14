@@ -32,6 +32,8 @@ namespace ShareX.ImageEditor.Core.Annotations;
 /// </summary>
 public partial class MagnifyAnnotation : BaseEffectAnnotation
 {
+    public BorderStyle BorderStyle { get; set; } = BorderStyle.Solid;
+
     public MagnifyAnnotation()
     {
         ToolType = EditorTool.Magnify;
