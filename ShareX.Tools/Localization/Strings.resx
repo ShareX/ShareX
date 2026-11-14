@@ -326,7 +326,7 @@
     <value>Reset crop and size</value>
   </data>
   <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
-    <value>Size</value>
+    <value>Output size</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Save the trimmed GIF with a different file name or in another folder.</value>

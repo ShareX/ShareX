@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Deschide sau trage aici un GIF animat pentru a începe</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Trageți pe previzualizare pentru a decupa</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Această decupare începe cu un cadru care necesită cadre anterioare. Alege un alt cadru de început pentru exportul fără pierderi.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Recodificare</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Resetează decuparea și dimensiunea</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Dimensiune de ieșire</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Salvează GIF-ul decupat cu un alt nume de fișier sau în alt dosar.</value>

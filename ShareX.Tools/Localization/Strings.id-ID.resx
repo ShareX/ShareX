@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Buka atau seret dan lepas GIF animasi untuk memulai</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Seret pada pratinjau untuk memangkas</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Potongan ini dimulai pada bingkai yang memerlukan bingkai sebelumnya. Pilih bingkai awal lain untuk ekspor tanpa kehilangan.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Kode ulang</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Atur ulang pangkasan dan ukuran</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Ukuran keluaran</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Simpan GIF yang dipangkas dengan nama file berbeda atau di folder lain.</value>

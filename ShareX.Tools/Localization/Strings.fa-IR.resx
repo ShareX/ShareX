@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>برای شروع، یک GIF متحرک را باز کنید یا بکشید و رها کنید</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>برای برش، روی پیش‌نمایش بکشید</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>این برش از فریمی آغاز می‌شود که به فریم‌های قبلی نیاز دارد. برای خروجی بدون افت کیفیت، فریم شروع دیگری انتخاب کنید.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>کدگذاری مجدد</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>بازنشانی برش و اندازه</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>اندازه خروجی</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>GIF برش‌خورده را با نام فایل دیگری یا در پوشه‌ای دیگر ذخیره کنید.</value>

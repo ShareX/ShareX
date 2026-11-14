@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Відкрийте або перетягніть анімований GIF, щоб почати</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Перетягніть на попередньому перегляді, щоб обрізати</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Цей фрагмент починається з кадру, якому потрібні попередні кадри. Виберіть інший початковий кадр для експорту без втрат.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Перекодування</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Скинути обрізання та розмір</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Розмір на виході</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Збережіть обрізаний GIF з іншою назвою файлу або в іншій теці.</value>

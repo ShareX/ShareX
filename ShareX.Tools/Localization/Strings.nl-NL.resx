@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Open of sleep een geanimeerde GIF hierheen om te beginnen</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Sleep in het voorbeeld om bij te snijden</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Deze uitsnede begint met een frame dat eerdere frames nodig heeft. Kies een ander beginframe voor verliesvrije export.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Opnieuw coderen</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Bijsnijden en grootte herstellen</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Uitvoergrootte</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Sla de bijgesneden GIF op met een andere bestandsnaam of in een andere map.</value>

@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Zum Starten ein animiertes GIF öffnen oder hier ablegen</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>In der Vorschau ziehen, um zuzuschneiden</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Dieser Ausschnitt beginnt mit einem Einzelbild, das frühere Einzelbilder benötigt. Wählen Sie für den verlustfreien Export ein anderes Startbild.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Neu kodieren</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Zuschnitt und Größe zurücksetzen</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Ausgabegröße</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Speichern Sie das zugeschnittene GIF unter einem anderen Dateinamen oder in einem anderen Ordner.</value>
