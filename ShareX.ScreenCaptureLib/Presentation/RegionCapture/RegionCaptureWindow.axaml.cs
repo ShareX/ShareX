@@ -800,6 +800,7 @@ public partial class RegionCaptureWindow : Window
         if (_resizeNode.HasValue)
         {
             SetInteraction(RegionInteraction.Resizing);
+            ResizeSelection(point);
         }
         else if (HasValidSelection() && _regionOverlay.Selection.Contains(point))
         {
@@ -1828,10 +1829,10 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Vector delta = point - _pressPoint;
-        Rect resized = SelectionResizeNode.Resize(_regionOverlay.SelectionRectangle, _resizeNode.Value, delta);
+        Rect start = _interactionStartRegion.Bounds;
+        Vector delta = point - SelectionResizeNode.GetPosition(start, _resizeNode.Value);
+        Rect resized = SelectionResizeNode.Resize(start, _resizeNode.Value, delta);
         SetSelection(resized, null);
-        _pressPoint = point;
     }
 
     private void UpdateHud(Point imagePoint)
