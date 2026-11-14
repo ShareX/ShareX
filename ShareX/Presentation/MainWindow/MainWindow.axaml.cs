@@ -34,6 +34,7 @@ using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Controls;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -164,6 +165,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         PositionChanged += (_, _) => SaveWindowBounds();
         Resized += (_, _) => SaveWindowBounds();
         KeyDown += OnWindowKeyDown;
+        ThumbnailPanel.AddHandler(KeyDownEvent, OnThumbnailPanelKeyDown, RoutingStrategies.Tunnel);
 
         Dispatcher.UIThread.Post(WarmUpTrayMenu, DispatcherPriority.Background);
         DispatcherTimer.RunOnce(() => Dispatcher.UIThread.Post(WarmUpRegionCapture, DispatcherPriority.ApplicationIdle),
@@ -2067,6 +2069,33 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         TaskManager.RecentManager.Clear();
     }
 
+    // Handles arrow keys before the scroll viewer around the tasks uses them for scrolling.
+    private void OnThumbnailPanelKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (!e.KeyModifiers.HasFlag(KeyModifiers.Control) && !e.KeyModifiers.HasFlag(KeyModifiers.Alt) &&
+            TryMoveListSelection(e.Key, e.KeyModifiers.HasFlag(KeyModifiers.Shift)))
+        {
+            e.Handled = true;
+        }
+    }
+
+    private void OnThumbnailPanelGotFocus(object? sender, FocusChangedEventArgs e)
+    {
+        ItemsControl list = IsListView ? TaskList : ThumbnailList;
+        if (e.Source != ThumbnailPanel || e.NavigationMethod != NavigationMethod.Tab || ThumbnailItems.Count == 0)
+        {
+            return;
+        }
+
+        ThumbnailItemViewModel item = _selectionOrder.LastOrDefault(x => x.IsSelected) ?? ThumbnailItems[0];
+        if (!item.IsSelected)
+        {
+            SelectOnly(item);
+        }
+
+        FocusTaskItem(list, ThumbnailItems.IndexOf(item));
+    }
+
     private void OnMainContentPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         PointerUpdateKind pointerUpdateKind = e.GetCurrentPoint(this).Properties.PointerUpdateKind;
@@ -2152,10 +2181,14 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         int count = ThumbnailItems.Count;
 
-        if (count == 0 || !TaskList.IsEffectivelyVisible || !ThumbnailPanel.IsKeyboardFocusWithin)
+        ItemsControl list = IsListView ? TaskList : ThumbnailList;
+
+        if (count == 0 || !ThumbnailPanel.IsKeyboardFocusWithin)
         {
             return false;
         }
+
+        bool isThumbnailView = list == ThumbnailList;
 
         ThumbnailItemViewModel? focused = _selectionOrder.LastOrDefault(x => x.IsSelected);
         int current = focused == null ? -1 : ThumbnailItems.IndexOf(focused);
@@ -2164,6 +2197,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         {
             Key.Up => current < 0 ? count - 1 : current - 1,
             Key.Down => current + 1,
+            Key.Left when isThumbnailView => current < 0 ? count - 1 : current - 1,
+            Key.Right when isThumbnailView => current + 1,
             Key.Home => 0,
             Key.End => count - 1,
             _ => int.MinValue
@@ -2198,8 +2233,19 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             SelectOnly(item);
         }
 
-        TaskList.ScrollIntoView(target);
+        list.ScrollIntoView(target);
+        FocusTaskItem(list, target);
         return true;
+    }
+
+    // Moves keyboard focus onto the selected row or thumbnail, so screen readers announce its file name.
+    private static void FocusTaskItem(ItemsControl list, int index)
+    {
+        Dispatcher.UIThread.Post(() =>
+        {
+            Control? item = list.ContainerFromIndex(index)?.GetVisualDescendants().OfType<Border>().FirstOrDefault(x => x.Focusable);
+            item?.Focus(NavigationMethod.Directional);
+        }, DispatcherPriority.Loaded);
     }
 
     private void OnDragEnter(object? sender, DragEventArgs e) => UpdateDropOverlay(e);
