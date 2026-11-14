@@ -62,6 +62,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
         [ObservableProperty]
         private bool _isVisible = true;
 
+        public int BestScore { get; private set; }
+
         public EffectCategory(string name, bool showCount = true, bool keepVisibleWhenEmpty = false, string? headerHint = null)
         {
             Name = name;
@@ -159,18 +161,21 @@ namespace ShareX.ImageEditor.Presentation.Controls
             VisibleEffects.Clear();
             if (string.IsNullOrWhiteSpace(searchText))
             {
+                BestScore = 0;
                 foreach (var effect in AllEffects) VisibleEffects.Add(effect);
             }
             else
             {
-                foreach (var effect in AllEffects)
-                {
-                    if (effect.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
-                        effect.Description.Contains(searchText, StringComparison.OrdinalIgnoreCase))
-                    {
-                        VisibleEffects.Add(effect);
-                    }
-                }
+                var matches = AllEffects
+                    .Select(effect => (Effect: effect, Score: EffectSearch.Score(searchText, effect.Name, effect.Description, effect.EffectId)))
+                    .Where(match => match.Score > 0)
+                    .OrderByDescending(match => match.Score)
+                    .ThenBy(match => match.Effect.Name.Length)
+                    .ThenBy(match => match.Effect.Name, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                BestScore = matches.Count > 0 ? matches[0].Score : 0;
+                foreach (var match in matches) VisibleEffects.Add(match.Effect);
             }
 
             IsVisible = VisibleEffects.Count > 0 || (_keepVisibleWhenEmpty && string.IsNullOrWhiteSpace(searchText));
@@ -276,6 +281,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public event EventHandler<EffectDialogRequestedEventArgs>? EffectDialogRequested;
 
         public ObservableCollection<EffectCategory> Categories { get; } = new();
+
+        private List<EffectCategory>? _defaultCategoryOrder;
 
         private readonly EffectCategory _recentCategory = new(Strings.EffectBrowserPanel_Recent, headerHint: Strings.EffectBrowserPanel_RecentHint);
         private readonly EffectCategory _favoritesCategory = new(Strings.EffectBrowserPanel_Favorites, headerHint: Strings.EffectBrowserPanel_FavoritesHint);
@@ -593,6 +600,29 @@ namespace ShareX.ImageEditor.Presentation.Controls
             foreach (var category in Categories)
             {
                 category.Filter(searchText);
+            }
+
+            OrderCategoriesByBestMatch(!string.IsNullOrWhiteSpace(searchText));
+        }
+
+        // While searching, the category with the best match comes first. Recent and favorites stay on top.
+        private void OrderCategoriesByBestMatch(bool searching)
+        {
+            _defaultCategoryOrder ??= Categories.ToList();
+
+            List<EffectCategory> order = searching
+                ? _defaultCategoryOrder.Where(IsPinnedCategory)
+                    .Concat(_defaultCategoryOrder.Where(category => !IsPinnedCategory(category)).OrderByDescending(category => category.BestScore))
+                    .ToList()
+                : _defaultCategoryOrder;
+
+            for (int i = 0; i < order.Count; i++)
+            {
+                int current = Categories.IndexOf(order[i]);
+                if (current >= 0 && current != i)
+                {
+                    Categories.Move(current, i);
+                }
             }
         }
 
