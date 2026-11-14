@@ -1,6 +1,7 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:ShareX.AvaloniaUI.Controls">
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:icons="using:ShareX.Icons">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -1132,6 +1133,16 @@
 
     <Style Selector="MenuItem.compact-menu-item:pointerover controls|IconPresenter.accent-menu-icon">
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
+    </Style>
+
+    <Style Selector="MenuItem:checked:toggle /template/ ContentControl#PART_ToggleIconPresenter">
+        <Setter Property="Content">
+            <Template>
+                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Check}" FontSize="16"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Template>
+        </Setter>
     </Style>
 
     <Style Selector="MenuItem.bold-when-checked">
