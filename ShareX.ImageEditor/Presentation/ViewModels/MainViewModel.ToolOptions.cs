@@ -26,6 +26,7 @@
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.AvaloniaUI.Imaging;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
 using ShareX.ImageEditor.Presentation.Helpers;
@@ -45,6 +46,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private static readonly IReadOnlyList<CursorType> _availableCursorTypes = BuildAvailableCursorTypes();
         private static readonly IReadOnlyList<int> _availableStepStartNumbers = Enumerable.Range(1, 10).ToArray();
         private static readonly IReadOnlyList<StepType> _availableStepTypes = BuildAvailableStepTypes();
+        private static readonly IReadOnlyList<ImageResamplingMode> _availableImageResamplingModes = Enum.GetValues<ImageResamplingMode>();
         private static readonly PropertyInfo? _spotlightBlurOptionProperty = typeof(ImageEditorOptions).GetProperty(SpotlightBlurOptionPropertyName);
 
         public IReadOnlyList<string> AvailableFontFamilies => _availableFontFamilies;
@@ -54,6 +56,23 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         public IReadOnlyList<CursorType> AvailableCursorTypes => _availableCursorTypes;
         public IReadOnlyList<int> AvailableStepStartNumbers => _availableStepStartNumbers;
         public IReadOnlyList<StepType> AvailableStepTypes => _availableStepTypes;
+        public IReadOnlyList<ImageResamplingMode> AvailableImageResamplingModes => _availableImageResamplingModes;
+
+        public event Action<ImageAnnotation>? ImageResamplingModeChanged;
+
+        [ObservableProperty]
+        private ImageResamplingMode _selectedImageResamplingMode = ImageResamplingMode.CatmullRom;
+
+        partial void OnSelectedImageResamplingModeChanged(ImageResamplingMode value)
+        {
+            if (SelectedAnnotation is ImageAnnotation imageAnnotation &&
+                imageAnnotation.ToolType is EditorTool.Image or EditorTool.Clone &&
+                imageAnnotation.ResamplingMode != value)
+            {
+                imageAnnotation.ResamplingMode = value;
+                ImageResamplingModeChanged?.Invoke(imageAnnotation);
+            }
+        }
 
         [ObservableProperty]
         private string _selectedColor = "#EF4444";
@@ -1032,6 +1051,9 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             _ => false
         };
 
+        public bool ShowImageResamplingMode =>
+            SelectedAnnotation is ImageAnnotation { ToolType: EditorTool.Image or EditorTool.Clone };
+
         public bool ShowSpeechBalloonAutoSize => ActiveTool switch
         {
             EditorTool.SpeechBalloon => true,
@@ -1154,6 +1176,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OnPropertyChanged(nameof(ShowTextItalic));
             OnPropertyChanged(nameof(ShowShadow));
             OnPropertyChanged(nameof(ShowSpeechBalloonTail));
+            OnPropertyChanged(nameof(ShowImageResamplingMode));
             OnPropertyChanged(nameof(ShowSpeechBalloonAutoSize));
             OnPropertyChanged(nameof(ActiveToolIcon));
             OnPropertyChanged(nameof(ActiveToolName));
@@ -1161,7 +1184,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             OnPropertyChanged(nameof(ShowToolOptionsSeparator));
         }
 
-        public bool ShowToolOptionsSeparator => ShowBorderColor || ShowFillColor || ShowTextColor || ShowThickness || ShowFontSize || ShowStepStartNumber || ShowStepType || ShowTextHorizontalAlignment || ShowFontFamily || ShowBorderStyle || ShowArrowStyle || ShowCursorType || ShowCornerRadius || ShowStrength || ShowSpotlightBlur || ShowEffectEllipse || ShowTextStyle || ShowShadow || ShowSpeechBalloonTail || ShowSpeechBalloonAutoSize;
+        public bool ShowToolOptionsSeparator => ShowBorderColor || ShowFillColor || ShowTextColor || ShowThickness || ShowFontSize || ShowStepStartNumber || ShowStepType || ShowTextHorizontalAlignment || ShowFontFamily || ShowBorderStyle || ShowArrowStyle || ShowCursorType || ShowCornerRadius || ShowStrength || ShowSpotlightBlur || ShowEffectEllipse || ShowTextStyle || ShowShadow || ShowSpeechBalloonTail || ShowImageResamplingMode || ShowSpeechBalloonAutoSize;
 
         [ObservableProperty]
         private EditorTool _activeTool = EditorTool.Rectangle;

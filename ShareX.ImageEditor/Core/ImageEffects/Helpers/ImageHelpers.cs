@@ -25,6 +25,7 @@
 
 using ShareX.ImageEditor.Core.ImageEffects.Filters;
 using ShareX.ImageEditor.Core.ImageEffects.Manipulations;
+using ShareX.AvaloniaUI.Imaging;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Helpers;
@@ -179,12 +180,19 @@ public static class ImageHelpers
     /// <param name="width">Target width</param>
     /// <param name="height">Target height</param>
     /// <param name="maintainAspectRatio">If true, scales proportionally to fit within width/height</param>
-    /// <param name="quality">Filter quality for scaling</param>
+    /// <param name="sampling">Filter quality for scaling</param>
     /// <returns>New resized bitmap</returns>
     public static SKBitmap Resize(SKBitmap source, int width, int height, bool maintainAspectRatio = false, SKSamplingOptions sampling = default)
     {
-        // Quality ignored in Effect currently or hardcoded to High
-        return new ResizeImageEffect { Width = width, Height = height, MaintainAspectRatio = maintainAspectRatio }.Apply(source);
+        ArgumentNullException.ThrowIfNull(source);
+
+        ResizeImageEffect effect = new() { Width = width, Height = height, MaintainAspectRatio = maintainAspectRatio };
+        SKSizeI targetSize = effect.GetTargetSize(source);
+        SKImageInfo info = new(targetSize.Width, targetSize.Height, source.ColorType, source.AlphaType, source.ColorSpace);
+        SKSamplingOptions resolvedSampling = sampling.Equals(default(SKSamplingOptions))
+            ? ImageResampling.GetSamplingOptions(ImageResamplingMode.CatmullRom)
+            : sampling;
+        return source.Resize(info, resolvedSampling);
     }
 
     /// <summary>

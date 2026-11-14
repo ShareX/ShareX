@@ -1179,6 +1179,24 @@
   <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
     <value>फ़ॉन्ट खोजें...</value>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>रैखिक</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>मिपमैप के साथ रैखिक</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>रीसैंपलिंग मोड</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>निकटतम पड़ोसी</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>छवि को नीचे सम्मिलित करें</value>
   </data>

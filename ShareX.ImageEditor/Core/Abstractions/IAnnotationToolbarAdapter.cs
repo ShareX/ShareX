@@ -26,6 +26,7 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 using ShareX.ImageEditor.Core.Annotations;
+using ShareX.AvaloniaUI.Imaging;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
@@ -54,6 +55,8 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     IReadOnlyList<CursorType> AvailableCursorTypes { get; }
     IReadOnlyList<int> AvailableStepStartNumbers { get; }
     IReadOnlyList<StepType> AvailableStepTypes { get; }
+    IReadOnlyList<ImageResamplingMode> AvailableImageResamplingModes { get; }
+    ImageResamplingMode SelectedImageResamplingMode { get; set; }
     IBrush SelectedColorBrush { get; set; }
     IBrush FillColorBrush { get; set; }
     IBrush TextColorBrush { get; set; }
@@ -105,6 +108,7 @@ public interface IAnnotationToolbarAdapter : INotifyPropertyChanged
     bool ShowArrowRoundedCorners { get; }
     bool ShowFreehandArrow { get; }
     bool ShowSpeechBalloonTail { get; }
+    bool ShowImageResamplingMode { get; }
     bool ShowSpeechBalloonAutoSize { get; }
     bool ShowEffectEllipse { get; }
     bool ShowToolOptions { get; }

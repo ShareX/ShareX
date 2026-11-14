@@ -1179,6 +1179,24 @@
   <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
     <value>搜尋字型...</value>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>線性</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>含 mipmap 的線性</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>重新取樣模式</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>最鄰近</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>在下方插入影像</value>
   </data>

@@ -826,6 +826,9 @@ ShareX|ApplicationSettingsWindow_SpacingMenusLabel|5ba58caf54539d68edfaf4f959a43
 ShareX|TaskSettingsWindow_NativeRecorderHDRToneMapping|271782613fc25f9ba4f77c49471d6e8116b452d71bee48808ce579d1675ea22f|da,de,nl-NL
 ShareX.HistoryLib|HistoryWindow_Tag|1503916a2ab2b0fd6768d3455fd8f2d9aa3b31333a8507dadcad983704a975d7|de,id-ID,nl-NL,pl
 ShareX|TaskSettingsWindow_Monitor|e7628a65ec7ed4440649f94b31b95b0bc2f78d5569645a59cb96147f745f9056|cs,de,es-MX,es,hu,id-ID,it-IT,pl,pt-BR,pt-PT,ro
+ShareX.ImageEditor|ImageResamplingMode_CatmullRom|e817551fdce462530f3a943bbce204200a5032ad126f4c5acab904c269a13cc4|ar-YE,cs,da,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,th,tr,uk,vi-VN,zh-CN,zh-TW
+ShareX.ImageEditor|ImageResamplingMode_Mitchell|6a8d69ab8a2178044f11ca192d5f91191667c8e8ed52f41eea618eb8fb16dba4|ar-YE,cs,da,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,th,tr,uk,vi-VN,zh-CN,zh-TW
+ShareX.ImageEditor|ImageResamplingMode_Linear|e6950b45d25c2027b1ecae90490570d89bb0285e606df6ea24c16377fb0f2cf1|de,id-ID,pt-BR,pt-PT
 ShareX.PixelEditor|Blend_Color|6b73191a0a4b67420e61d51c9f207c35277eaf18fbbf5beb52a320a23fe09653|es-MX,es
 ShareX.PixelEditor|Blend_Exclusion|425a8ed2ef6bec40cacb5683d5fd3cff6e796fd4fa1ab2764cfa35d817a0613d|fr
 ShareX.PixelEditor|Blend_Normal|a7248eeb45eb1ce247f81693283e22e8b39e8a50890cecd22d02e75025547d90|da,de,es-MX,es,fr,id-ID,pt-BR,pt-PT,ro,sv,tr

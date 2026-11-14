@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using SkiaSharp;
+using ShareX.AvaloniaUI.Imaging;
 using System;
 using System.Drawing;
 using System.IO;
@@ -35,12 +36,15 @@ public enum ImageFileFormat { Png, Jpeg, Gif, Bmp, Webp }
 /// <summary>Image operations that own their pixels independently of the source file or stream.</summary>
 public static partial class SkiaImageHelpers
 {
-    public static readonly SKSamplingOptions HighQualitySampling = new(SKCubicResampler.Mitchell);
+    public static readonly SKSamplingOptions HighQualitySampling = ImageResampling.GetSamplingOptions(ImageResamplingMode.Mitchell);
 
     public static SKSamplingOptions GetSampling(ImageInterpolationMode mode) => mode switch
     {
-        ImageInterpolationMode.NearestNeighbor => new(SKFilterMode.Nearest),
-        ImageInterpolationMode.Bilinear or ImageInterpolationMode.HighQualityBilinear => new(SKFilterMode.Linear),
+        ImageInterpolationMode.NearestNeighbor => ImageResampling.GetSamplingOptions(ImageResamplingMode.NearestNeighbor),
+        ImageInterpolationMode.Bilinear => ImageResampling.GetSamplingOptions(ImageResamplingMode.Linear),
+        ImageInterpolationMode.HighQualityBilinear => ImageResampling.GetSamplingOptions(ImageResamplingMode.LinearWithMipmaps),
+        ImageInterpolationMode.Bicubic => ImageResampling.GetSamplingOptions(ImageResamplingMode.Mitchell),
+        ImageInterpolationMode.HighQualityBicubic => ImageResampling.GetSamplingOptions(ImageResamplingMode.CatmullRom),
         _ => HighQualitySampling
     };
 

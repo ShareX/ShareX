@@ -138,18 +138,6 @@ internal static class DrawingEffectHelpers
         return new SKSizeI(newWidth, newHeight);
     }
 
-    public static SKSamplingOptions GetSamplingOptions(DrawingInterpolationMode interpolationMode)
-    {
-        return interpolationMode switch
-        {
-            DrawingInterpolationMode.Bicubic => new SKSamplingOptions(SKCubicResampler.Mitchell),
-            DrawingInterpolationMode.HighQualityBilinear => new SKSamplingOptions(SKCubicResampler.Mitchell),
-            DrawingInterpolationMode.Bilinear => new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.None),
-            DrawingInterpolationMode.NearestNeighbor => new SKSamplingOptions(SKFilterMode.Nearest, SKMipmapMode.None),
-            _ => new SKSamplingOptions(SKCubicResampler.CatmullRom)
-        };
-    }
-
     public static SKBlendMode GetBlendMode(DrawingCompositingMode compositingMode)
     {
         return compositingMode == DrawingCompositingMode.SourceCopy

@@ -24,7 +24,10 @@
 #endregion License Information (GPL v3)
 
 using ShareX.Icons;
+using ShareX.AvaloniaUI.Imaging;
+using ShareX.ImageEditor.Core.ImageEffects.Helpers;
 using ShareX.ImageEditor.Core.ImageEffects.Parameters;
+using ShareX.ImageEditor.Localization;
 using SkiaSharp;
 
 namespace ShareX.ImageEditor.Core.ImageEffects.Manipulations;
@@ -47,12 +50,25 @@ public sealed class ResizeImageEffect : ImageEffectBase
     [
         EffectParameters.IntNumeric<ResizeImageEffect>("width", "Width", 0, 10000, 0, (e, v) => e.Width = v),
         EffectParameters.IntNumeric<ResizeImageEffect>("height", "Height", 0, 10000, 0, (e, v) => e.Height = v),
-        EffectParameters.Bool<ResizeImageEffect>("maintain_aspect_ratio", "Maintain aspect ratio", false, (e, v) => e.MaintainAspectRatio = v)
+        EffectParameters.Bool<ResizeImageEffect>("maintain_aspect_ratio", "Maintain aspect ratio", false, (e, v) => e.MaintainAspectRatio = v),
+        EffectParameters.Enum<ResizeImageEffect, ImageResamplingMode>(
+            "interpolation_mode",
+            Strings.ImageResamplingMode_Name,
+            ImageResamplingMode.CatmullRom,
+            (e, v) => e.ResamplingMode = v,
+            [
+                (Strings.ImageResamplingMode_CatmullRom, ImageResamplingMode.CatmullRom),
+                (Strings.ImageResamplingMode_Mitchell, ImageResamplingMode.Mitchell),
+                (Strings.ImageResamplingMode_LinearWithMipmaps, ImageResamplingMode.LinearWithMipmaps),
+                (Strings.ImageResamplingMode_Linear, ImageResamplingMode.Linear),
+                (Strings.ImageResamplingMode_NearestNeighbor, ImageResamplingMode.NearestNeighbor)
+            ])
     ];
 
     public int Width { get; set; }
     public int Height { get; set; }
     public bool MaintainAspectRatio { get; set; }
+    public ImageResamplingMode ResamplingMode { get; set; } = ImageResamplingMode.CatmullRom;
     public ResizeImageEffectAspectRatioAnchor AspectRatioAnchor { get; set; } = ResizeImageEffectAspectRatioAnchor.LargestDimension;
 
     public SKSizeI GetTargetSize(SKBitmap source)
@@ -126,6 +142,6 @@ public sealed class ResizeImageEffect : ImageEffectBase
         SKSizeI targetSize = GetTargetSize(source);
 
         SKImageInfo info = new SKImageInfo(targetSize.Width, targetSize.Height, source.ColorType, source.AlphaType, source.ColorSpace);
-        return source.Resize(info, new SKSamplingOptions(SKCubicResampler.CatmullRom));
+        return source.Resize(info, ImageResampling.GetSamplingOptions(ResamplingMode));
     }
 }

@@ -16,6 +16,7 @@
     <UserControl.Resources>
         <ResourceDictionary>
             <converters:EqualsConverter x:Key="EqualsConverter"/>
+            <converters:ImageResamplingModeDisplayConverter x:Key="ImageResamplingModeDisplayConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -359,6 +360,19 @@
                                                        MaxWidth="180"
                                                        IsVisible="{Binding ShowCursorType}"
                                                        ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Cursortype}"/>
+
+                    <ComboBox ItemsSource="{Binding AvailableImageResamplingModes}"
+                              SelectedItem="{Binding SelectedImageResamplingMode, Mode=TwoWay}"
+                              IsVisible="{Binding ShowImageResamplingMode}"
+                              MinWidth="190"
+                              VerticalAlignment="Center"
+                              ToolTip.Tip="{x:Static res:Strings.ImageResamplingMode_Name}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate x:CompileBindings="False">
+                                <TextBlock Text="{Binding Converter={StaticResource ImageResamplingModeDisplayConverter}}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
 
                     <controls:FontSizePickerDropdown x:Name="FontSizePicker"
                                                      SelectedFontSize="{Binding FontSize, Mode=TwoWay}"

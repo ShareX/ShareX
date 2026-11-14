@@ -42,6 +42,7 @@ using ShareX.ImageEditor.Presentation.Controllers;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Emoji;
 using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.ImageEditor.Presentation.Rendering.AnnotationVisuals;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
 using System.ComponentModel;
@@ -377,6 +378,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                 vm.HasSelectedAnnotation = hasSelection;
                 var annotation = _selectionController.SelectedShape?.Tag as Annotation;
                 vm.SelectedAnnotation = annotation;
+                if (annotation is ImageAnnotation { ToolType: EditorTool.Image or EditorTool.Clone } imageAnnotation)
+                {
+                    vm.SelectedImageResamplingMode = imageAnnotation.ResamplingMode;
+                }
 
                 // Sync selection to EditorCore so z-order operations work
                 if (annotation != null)
@@ -494,6 +499,20 @@ namespace ShareX.ImageEditor.Presentation.Views
                             vm.FillColor = highlight.FillColor;
                         }
                     }
+                }
+            }
+        }
+
+        private void OnImageResamplingModeChanged(ImageAnnotation annotation)
+        {
+            if (_selectionController.SelectedShape is { } selectedShape &&
+                ReferenceEquals(selectedShape.Tag, annotation))
+            {
+                AnnotationVisualFactory.UpdateVisualControl(selectedShape, annotation);
+
+                if (DataContext is MainViewModel vm)
+                {
+                    vm.IsDirty = true;
                 }
             }
         }
@@ -641,9 +660,15 @@ namespace ShareX.ImageEditor.Presentation.Views
                         QueueAutoCopyImageToClipboard(vm);
                     }
                 }
-                else if (e.PropertyName == nameof(MainViewModel.Zoom))
+                else if (e.PropertyName == nameof(MainViewModel.Zoom) ||
+                    e.PropertyName == nameof(MainViewModel.EffectiveZoom))
                 {
-                    _zoomController.HandleZoomPropertyChanged(vm);
+                    if (e.PropertyName == nameof(MainViewModel.Zoom))
+                    {
+                        _zoomController.HandleZoomPropertyChanged(vm);
+                    }
+
+                    RefreshImageAnnotationDisplayScales(vm.EffectiveZoom);
                 }
                 else if (e.PropertyName == nameof(MainViewModel.ActiveTool))
                 {
@@ -666,6 +691,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         EnsureEffectBrowserPanel(vm).FocusSearchBox();
                     }
                 }
+
                 else if (e.PropertyName == nameof(MainViewModel.ModalContent) &&
                     vm.ModalContent is EmojiPickerDialogViewModel)
                 {
@@ -691,6 +717,23 @@ namespace ShareX.ImageEditor.Presentation.Views
                 else if (e.PropertyName == nameof(MainViewModel.SelectedStepType))
                 {
                     ApplyStepTypeToAnnotations(vm.SelectedStepType);
+                }
+            }
+        }
+
+        private void RefreshImageAnnotationDisplayScales(double displayScale)
+        {
+            var canvas = this.FindControl<Canvas>("AnnotationCanvas");
+            if (canvas == null)
+            {
+                return;
+            }
+
+            foreach (Control child in canvas.Children)
+            {
+                if (child is ResampledImageVisual image)
+                {
+                    image.SetDisplayScale(displayScale);
                 }
             }
         }

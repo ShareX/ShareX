@@ -1179,6 +1179,24 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
     <value>Buscar fuentes...</value>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>Lineal</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>Lineal con mipmaps</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>Modo de remuestreo</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>Vecino más cercano</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Insertar imagen debajo</value>
   </data>

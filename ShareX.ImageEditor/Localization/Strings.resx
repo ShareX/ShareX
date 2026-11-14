@@ -1181,6 +1181,24 @@ Clipboard does not contain an image.</value>
     <value>Search fonts...</value>
     <comment>Placeholder of the search box at the top of the font family dropdown in the annotation toolbar.</comment>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>Linear with mipmaps</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>Resampling mode</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>Nearest neighbor</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Insert image below</value>
   </data>

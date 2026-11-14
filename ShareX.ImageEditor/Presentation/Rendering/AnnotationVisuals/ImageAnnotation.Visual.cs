@@ -26,6 +26,8 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using ShareX.AvaloniaUI.Imaging;
+using ShareX.ImageEditor.Presentation.Rendering.AnnotationVisuals;
 using static ShareX.ImageEditor.Presentation.Rendering.AnnotationVisualHelpers;
 
 namespace ShareX.ImageEditor.Core.Annotations;
@@ -34,12 +36,13 @@ public partial class ImageAnnotation
 {
     internal virtual void UpdateVisual(Image imageControl, bool useInteractiveRender = false)
     {
-        if (ImageBitmap != null)
-        {
-            ReplaceImageSource(imageControl, BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap));
-        }
-
         var imageBounds = GetBounds();
+        if (imageControl is not ResampledImageVisual resampledImage)
+        {
+            throw new InvalidOperationException("Image annotations require a resampled image visual.");
+        }
+        resampledImage.SetSource(ImageBitmap, imageBounds.Width, imageBounds.Height, ResamplingMode);
+
         Canvas.SetLeft(imageControl, imageBounds.Left);
         Canvas.SetTop(imageControl, imageBounds.Top);
         imageControl.Width = Math.Max(1, imageBounds.Width);
@@ -59,18 +62,13 @@ public partial class ImageAnnotation
     public virtual Control CreateVisual()
     {
         // Fill, like ShareX 21, so dragging a side handle stretches the image instead of adding empty space around it.
-        var image = new Image
+        var image = new ResampledImageVisual
         {
             Tag = this,
             Stretch = Stretch.Fill
         };
-
-        if (ImageBitmap != null)
-        {
-            ReplaceImageSource(image, BitmapConversionHelpers.ToAvaloniBitmap(ImageBitmap));
-        }
-
         var imageBounds = GetBounds();
+        image.SetSource(ImageBitmap, imageBounds.Width, imageBounds.Height, ResamplingMode);
         image.Width = Math.Max(1, imageBounds.Width);
         image.Height = Math.Max(1, imageBounds.Height);
         ApplyRotationTransform(image, RotationAngle);

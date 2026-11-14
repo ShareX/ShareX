@@ -1179,6 +1179,24 @@
   <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
     <value>جستجوی قلم‌ها...</value>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>خطی</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>خطی با میپ‌مپ‌ها</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>حالت بازنمونه‌گیری</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>نزدیک‌ترین همسایه</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>درج تصویر در پایین</value>
   </data>

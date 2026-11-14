@@ -1179,6 +1179,24 @@
   <data name="FontFamilyPickerDropdown_SearchfontsEllipsis" xml:space="preserve">
     <value>Поиск шрифтов...</value>
   </data>
+  <data name="ImageResamplingMode_CatmullRom" xml:space="preserve">
+    <value>Catmull-Rom</value>
+  </data>
+  <data name="ImageResamplingMode_Linear" xml:space="preserve">
+    <value>Линейный</value>
+  </data>
+  <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
+    <value>Линейная фильтрация с mipmap</value>
+  </data>
+  <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
+    <value>Mitchell-Netravali</value>
+  </data>
+  <data name="ImageResamplingMode_Name" xml:space="preserve">
+    <value>Режим передискретизации</value>
+  </data>
+  <data name="ImageResamplingMode_NearestNeighbor" xml:space="preserve">
+    <value>Ближайший сосед</value>
+  </data>
   <data name="InsertImageDialogView_Below" xml:space="preserve">
     <value>Вставить изображение снизу</value>
   </data>
