@@ -182,6 +182,12 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         if (!IsVisible)
         {
+            // Sleep or a display change can leave the hidden window where no monitor is anymore.
+            if (!IsOnScreen(Position))
+            {
+                CenterOnActiveScreen();
+            }
+
             Show();
         }
 
@@ -2490,11 +2496,32 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         }
 
         DrawingPoint savedPosition = ApplicationState.Settings.MainFormPosition;
-        if (ApplicationState.Settings.RememberMainFormPosition && !savedPosition.IsEmpty)
+        if (ApplicationState.Settings.RememberMainFormPosition && !savedPosition.IsEmpty &&
+            IsOnScreen(new PixelPoint(savedPosition.X, savedPosition.Y)))
         {
             Position = new PixelPoint(savedPosition.X, savedPosition.Y);
             WindowStartupLocation = WindowStartupLocation.Manual;
         }
+    }
+
+    private bool IsOnScreen(PixelPoint position)
+    {
+        PixelRect bounds = new(position, PixelSize.FromSize(new Size(Width, Height), DesktopScaling));
+        return Screens.All.Any(screen => screen.WorkingArea.Intersects(bounds));
+    }
+
+    private void CenterOnActiveScreen()
+    {
+        DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
+        Avalonia.Platform.Screen? screen = Screens.ScreenFromPoint(new PixelPoint(cursorPosition.X, cursorPosition.Y)) ?? Screens.Primary;
+        if (screen == null)
+        {
+            return;
+        }
+
+        PixelRect workingArea = screen.WorkingArea;
+        PixelSize size = PixelSize.FromSize(new Size(Width, Height), screen.Scaling);
+        Position = new PixelPoint(workingArea.X + (workingArea.Width - size.Width) / 2, workingArea.Y + (workingArea.Height - size.Height) / 2);
     }
 
     private void SaveWindowBounds()
