@@ -295,6 +295,12 @@
                                                     Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
                     </Border>
 
+                    <controls:StrengthSlider x:Name="EffectStrengthSlider"
+                                             Maximum="{Binding EffectStrengthMaximum}"
+                                             SelectedStrength="{Binding EffectStrength, Mode=TwoWay}"
+                                             IsVisible="{Binding ShowStrength}"
+                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
+
                     <controls:ColorPickerDropdown x:Name="StrokeColorPicker"
                                                   SelectedColor="{Binding SelectedColorBrush, Mode=TwoWay}"
                                                   IsVisible="{Binding ShowBorderColor}"
@@ -391,12 +397,6 @@
                                                    SelectedNumber="{Binding StepStartNumber, Mode=TwoWay}"
                                                    IsVisible="{Binding ShowStepStartNumber}"
                                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Startingnumber}"/>
-
-                    <controls:StrengthSlider x:Name="EffectStrengthSlider"
-                                             Maximum="{Binding EffectStrengthMaximum}"
-                                             SelectedStrength="{Binding EffectStrength, Mode=TwoWay}"
-                                             IsVisible="{Binding ShowStrength}"
-                                             ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_Effectstrength}"/>
 
                     <Border Classes="option-indicator"
                             IsVisible="{Binding ShowSpotlightBlur}"
