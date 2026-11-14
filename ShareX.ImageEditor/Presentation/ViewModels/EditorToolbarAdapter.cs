@@ -415,6 +415,10 @@ public sealed class EditorToolbarAdapter : IAnnotationToolbarAdapter, IDisposabl
 
     public ICommand SaveAsCommand => _viewModel.SaveAsCommand;
 
+    public ICommand SaveAndCopyFilePathCommand => _viewModel.SaveAndCopyFilePathCommand;
+
+    public ICommand CopyFilePathCommand => _viewModel.CopyFilePathCommand;
+
     public ICommand ExitEditorCommand => _viewModel.ExitEditorCommand;
 
     public void ExecuteToolbarItem(ToolbarCustomizationItemViewModel item) => _viewModel.ExecuteToolbarItem(item);

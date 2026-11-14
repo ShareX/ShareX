@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>颜色</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>复制文件路径</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>圆角半径</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>保存</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>保存并复制文件路径</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>另存为...</value>
@@ -383,6 +389,9 @@
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>圆角</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>保存图像并复制文件路径</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>图像另存为</value>
@@ -1227,6 +1236,9 @@
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>继续 (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>文件路径已复制到剪贴板。</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>文件路径：{0}</value>
   </data>
@@ -1283,6 +1295,9 @@
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>图像已旋转 {0} 度。</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>图像已保存，文件路径已复制到剪贴板。</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>图像已保存到文件。</value>

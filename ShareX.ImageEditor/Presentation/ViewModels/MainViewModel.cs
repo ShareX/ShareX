@@ -290,9 +290,12 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
         private Func<Task<string?>>? _saveRequested;
         public event Func<Task<string?>>? SaveRequested
         {
-            add { _saveRequested += value; SaveCommand.NotifyCanExecuteChanged(); }
-            remove { _saveRequested -= value; SaveCommand.NotifyCanExecuteChanged(); }
+            add { _saveRequested += value; SaveCommand.NotifyCanExecuteChanged(); SaveAndCopyFilePathCommand.NotifyCanExecuteChanged(); }
+            remove { _saveRequested -= value; SaveCommand.NotifyCanExecuteChanged(); SaveAndCopyFilePathCommand.NotifyCanExecuteChanged(); }
         }
+
+        /// <summary>Raised with the saved file path, so the view can put it on the clipboard.</summary>
+        public event Func<string, Task>? FilePathCopyRequested;
         public bool HasHostSaveHandler { get; set; }
         public bool CanSave() => _saveRequested != null && HasPreviewImage;
 
@@ -365,6 +368,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
                     CopyCommand.NotifyCanExecuteChanged();
                     SaveCommand.NotifyCanExecuteChanged();
                     SaveAsCommand.NotifyCanExecuteChanged();
+                    SaveAndCopyFilePathCommand.NotifyCanExecuteChanged();
                     PrintCommand.NotifyCanExecuteChanged();
                     PinToScreenCommand.NotifyCanExecuteChanged();
                     UploadCommand.NotifyCanExecuteChanged();
@@ -883,6 +887,7 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
 
         [ObservableProperty]
         [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
+        [NotifyCanExecuteChangedFor(nameof(CopyFilePathCommand))]
         private string? _imageFilePath;
 
         public static MainViewModel Current { get; private set; } = null!;
@@ -1329,6 +1334,47 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             string? savedPath = await RequestSaveAsync();
             ShowSaveNotification(savedPath, EditorIcons.ActionSave);
             CloseAfterTaskActionIfEnabled();
+        }
+
+        [RelayCommand(CanExecute = nameof(CanSave))]
+        private async Task SaveAndCopyFilePath()
+        {
+            string? savedPath = await RequestSaveAsync();
+
+            if (string.IsNullOrWhiteSpace(savedPath))
+            {
+                return;
+            }
+
+            if (FilePathCopyRequested != null)
+            {
+                await FilePathCopyRequested(savedPath);
+            }
+
+            ShowTaskActionNotification(BuildFilePathNotification(Strings.MainViewModel_ImageSavedAndFilePathCopied, savedPath),
+                EditorIcons.ActionSaveAndCopyFilePath);
+            CloseAfterTaskActionIfEnabled();
+        }
+
+        public bool CanCopyFilePath() => !string.IsNullOrWhiteSpace(ImageFilePath);
+
+        [RelayCommand(CanExecute = nameof(CanCopyFilePath))]
+        private async Task CopyFilePath()
+        {
+            string? filePath = ImageFilePath;
+
+            if (string.IsNullOrWhiteSpace(filePath))
+            {
+                return;
+            }
+
+            if (FilePathCopyRequested != null)
+            {
+                await FilePathCopyRequested(filePath);
+            }
+
+            ShowTaskActionNotification(BuildFilePathNotification(Strings.MainViewModel_FilePathCopiedToClipboard, filePath),
+                EditorIcons.ActionCopyFilePath);
         }
 
         [RelayCommand(CanExecute = nameof(CanSaveAs))]

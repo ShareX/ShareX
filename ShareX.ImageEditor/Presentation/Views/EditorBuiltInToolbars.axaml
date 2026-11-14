@@ -124,6 +124,17 @@
                                                 FontSize="20"/>
                 </Button>
 
+                <Button Command="{Binding SaveAndCopyFilePathCommand}"
+                        Width="40"
+                        Padding="0"
+                        IsVisible="{Binding ShowBottomToolbar}"
+                        ToolTip.Tip="{x:Static res:Strings.EditorView_SaveImageAndCopyFilePath}"
+                        ToolTip.Placement="Top"
+                        ToolTip.VerticalOffset="-5">
+                    <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionSaveAndCopyFilePath}"
+                                                FontSize="20"/>
+                </Button>
+
                 <Button Command="{Binding PinToScreenCommand}"
                         IsEnabled="{Binding HasPreviewImage}"
                         Width="40"

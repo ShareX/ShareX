@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Farbe</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Dateipfad kopieren</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Eckenradius</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Speichern</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Speichern und Dateipfad kopieren</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Speichern unter...</value>
@@ -383,6 +389,9 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Abgerundete Ecke</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Bild speichern und Dateipfad kopieren</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Bild speichern unter</value>
@@ -1227,6 +1236,9 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Fortfahren (Eingabe)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Dateipfad in die Zwischenablage kopiert.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Dateipfad: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Bild um {0} Grad gedreht.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Bild gespeichert, Dateipfad in die Zwischenablage kopiert.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Bild in Datei gespeichert.</value>

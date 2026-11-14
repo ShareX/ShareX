@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>Culoare</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>Copiere cale fișier</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>Rază colț</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>Salvează</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>Salvează și copiază calea fișierului</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>Salvare ca...</value>
@@ -383,6 +389,9 @@ Clipboardul nu conține nicio imagine.</value>
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>Colț rotunjit</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>Salvare imagine și copiere cale fișier</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>Salvează imaginea ca</value>
@@ -1227,6 +1236,9 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>Continuă (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>Calea fișierului copiată în clipboard.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>Calea fișierului: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@ Clipboardul nu conține nicio imagine.</value>
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>Imagine rotită cu {0} grade.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>Imagine salvată, calea fișierului copiată în clipboard.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>Imagine salvată în fișier.</value>

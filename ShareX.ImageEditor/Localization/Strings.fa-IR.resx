@@ -33,6 +33,9 @@
   <data name="AnnotationToolbar_Color" xml:space="preserve">
     <value>رنگ</value>
   </data>
+  <data name="AnnotationToolbar_CopyFilePath" xml:space="preserve">
+    <value>کپی مسیر فایل</value>
+  </data>
   <data name="AnnotationToolbar_Cornerradius" xml:space="preserve">
     <value>شعاع گوشه</value>
   </data>
@@ -92,6 +95,9 @@
   </data>
   <data name="AnnotationToolbar_Save" xml:space="preserve">
     <value>ذخیره</value>
+  </data>
+  <data name="AnnotationToolbar_SaveAndCopyFilePath" xml:space="preserve">
+    <value>ذخیره و کپی مسیر فایل</value>
   </data>
   <data name="AnnotationToolbar_SaveasEllipsis" xml:space="preserve">
     <value>ذخیره با نام...</value>
@@ -383,6 +389,9 @@
   </data>
   <data name="EditorView_RoundedCorner" xml:space="preserve">
     <value>گوشه گرد</value>
+  </data>
+  <data name="EditorView_SaveImageAndCopyFilePath" xml:space="preserve">
+    <value>ذخیره تصویر و کپی مسیر فایل</value>
   </data>
   <data name="EditorView_SaveImageAs" xml:space="preserve">
     <value>ذخیره تصویر به‌عنوان</value>
@@ -1227,6 +1236,9 @@
   <data name="MainViewModel_ContinueEnter" xml:space="preserve">
     <value>ادامه (Enter)</value>
   </data>
+  <data name="MainViewModel_FilePathCopiedToClipboard" xml:space="preserve">
+    <value>مسیر فایل در کلیپ‌بورد کپی شد.</value>
+  </data>
   <data name="MainViewModel_FilePathFormat" xml:space="preserve">
     <value>مسیر فایل: {0}</value>
   </data>
@@ -1283,6 +1295,9 @@
   </data>
   <data name="MainViewModel_ImageRotatedByDegrees" xml:space="preserve">
     <value>تصویر {0} درجه چرخید.</value>
+  </data>
+  <data name="MainViewModel_ImageSavedAndFilePathCopied" xml:space="preserve">
+    <value>تصویر ذخیره شد و مسیر فایل در کلیپ‌بورد کپی شد.</value>
   </data>
   <data name="MainViewModel_ImageSavedToFile" xml:space="preserve">
     <value>تصویر در فایل ذخیره شد.</value>
