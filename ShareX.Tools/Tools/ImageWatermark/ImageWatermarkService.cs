@@ -138,19 +138,82 @@ public static class ImageWatermarkService
     private static SKBitmap? CreateTextWatermark(ImageWatermarkOptions options)
     {
         if (string.IsNullOrWhiteSpace(options.Text)) return null;
-        using SKFont font = new(SKTypeface.Default, Math.Max(1, options.TextSize));
         string[] lines = options.Text.Replace("\r", "").Split('\n');
-        float width = lines.Max(line => font.MeasureText(line));
-        SKFontMetrics metrics = font.Metrics;
-        float lineHeight = metrics.Descent - metrics.Ascent + metrics.Leading;
+        using FallbackFonts fonts = new(Math.Max(1, options.TextSize));
+        List<List<(string Text, SKFont Font)>> runs = lines.Select(fonts.SplitRuns).ToList();
+        float width = runs.Max(line => line.Sum(run => run.Font.MeasureText(run.Text)));
+        float ascent = fonts.Used.Min(font => font.Metrics.Ascent);
+        float lineHeight = fonts.Used.Max(font => font.Metrics.Descent + font.Metrics.Leading) - ascent;
         SKBitmap watermark = SkiaImageHelpers.CreateBitmap(Math.Max(1, (int)Math.Ceiling(width) + 4),
             Math.Max(1, (int)Math.Ceiling(lineHeight * lines.Length) + 4));
         using SKCanvas canvas = new(watermark);
         byte alpha = (byte)Math.Round(Math.Clamp(options.Opacity, 0, 100) / 100d * 255);
         using SKPaint paint = new() { Color = options.TextColor.ToSKColor().WithAlpha(alpha), IsAntialias = true };
-        for (int index = 0; index < lines.Length; index++)
-            canvas.DrawText(lines[index], 2, 2 - metrics.Ascent + index * lineHeight, font, paint);
+        for (int index = 0; index < runs.Count; index++)
+        {
+            float x = 2;
+            foreach ((string text, SKFont font) in runs[index])
+            {
+                canvas.DrawText(text, x, 2 - ascent + index * lineHeight, font, paint);
+                x += font.MeasureText(text);
+            }
+        }
         return watermark;
+    }
+
+    // Skia does not fall back to other fonts by itself, so characters the default font lacks (such as CJK)
+    // are drawn with a system font that has them.
+    private sealed class FallbackFonts(float size) : IDisposable
+    {
+        private readonly SKFont _defaultFont = new(SKTypeface.Default, size);
+        private readonly Dictionary<string, SKFont> _fallbacks = new();
+
+        public IEnumerable<SKFont> Used => _fallbacks.Values.Prepend(_defaultFont);
+
+        public List<(string Text, SKFont Font)> SplitRuns(string line)
+        {
+            List<(string Text, SKFont Font)> runs = new();
+            System.Text.StringBuilder text = new();
+            SKFont? current = null;
+            foreach (System.Text.Rune rune in line.EnumerateRunes())
+            {
+                SKFont font = GetFont(rune.Value);
+                if (current != null && font != current)
+                {
+                    runs.Add((text.ToString(), current));
+                    text.Clear();
+                }
+                current = font;
+                text.Append(rune.ToString());
+            }
+            if (current != null) runs.Add((text.ToString(), current));
+            return runs;
+        }
+
+        private SKFont GetFont(int codepoint)
+        {
+            if (SKTypeface.Default.ContainsGlyph(codepoint)) return _defaultFont;
+            SKTypeface? typeface = SKFontManager.Default.MatchCharacter(codepoint);
+            if (typeface == null) return _defaultFont;
+            if (_fallbacks.TryGetValue(typeface.FamilyName, out SKFont? font))
+            {
+                typeface.Dispose();
+                return font;
+            }
+            font = new SKFont(typeface, size);
+            _fallbacks[typeface.FamilyName] = font;
+            return font;
+        }
+
+        public void Dispose()
+        {
+            _defaultFont.Dispose();
+            foreach (SKFont font in _fallbacks.Values)
+            {
+                font.Typeface.Dispose();
+                font.Dispose();
+            }
+        }
     }
 
     private static SKBitmap? CreateImageWatermark(SKBitmap? watermarkImage, Size canvasSize,
