@@ -104,6 +104,9 @@ public partial class ImageViewerWindow : Window
         Title = Localization.Strings.ImageViewerWindow_Title;
         KeyDown += OnKeyDown;
         Deactivated += OnDeactivated;
+        // A closing window is deactivated on its way out. Closing it again from there reaches Avalonia while the
+        // native window is already gone, which crashes ShareX on macOS when the viewer has an owner.
+        Closing += (_, e) => _closeOnDeactivate &= e.Cancel;
         Closed += (_, _) => _viewModel.Dispose();
     }
 
