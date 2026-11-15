@@ -57,6 +57,9 @@ namespace ShareX.ImageEditor.Integration
         public bool IsWindowMaximized { get; set; } = true;
         public double WindowWidth { get; set; } = 1280;
         public double WindowHeight { get; set; } = 720;
+        // The normal (not maximized) window's position in screen pixels, when Remember window state is on.
+        public int? WindowX { get; set; }
+        public int? WindowY { get; set; }
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
