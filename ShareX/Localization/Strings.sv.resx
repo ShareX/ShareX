@@ -553,6 +553,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Visa de senaste uppgifterna först i meddelandefältsmenyn</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Begränsa hur många slutförda uppgifter som stannar i huvudfönstret</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Högsta antal slutförda uppgifter (0 = ta bort när klar):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Installera utvecklingsversion...</value>
   </data>

@@ -553,6 +553,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>הצג תחילה את המשימות האחרונות ביותר בתפריט המגש</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>הגבל את מספר המשימות שהסתיימו שנשארות בחלון הראשי</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>מספר מקסימלי של משימות שהסתיימו (0 = הסר בסיום):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>התקן את ה-dev build...</value>
   </data>

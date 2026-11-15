@@ -553,6 +553,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Hiện tác vụ gần đây trước trên menu khay hệ thống</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Giới hạn số tác vụ đã xong còn lại ở cửa sổ chính</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Số tác vụ đã xong tối đa (0 = xóa khi xong):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Cài đặt phiên bản cho lập trình viên...</value>
   </data>
