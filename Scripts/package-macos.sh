@@ -121,6 +121,17 @@ notarytool() {
   fi
 }
 
+# Stapling downloads the ticket from Apple, and the connection drops now and then on GitHub's runners ("The network
+# connection was lost", error 68); a retry a few seconds later works.
+staple() {
+  for attempt in 1 2 3 4; do
+    xcrun stapler staple "$1" && return 0
+    [ "$attempt" = 4 ] || sleep 15
+  done
+  echo "Could not staple $1" >&2
+  return 1
+}
+
 # Submits a file and polls for Apple's verdict, retrying through network drops (notarytool --wait gives up on the first one).
 # Returns 0 when accepted, 1 when rejected (the log is printed), and 2 when Apple is still reviewing after
 # MACOS_NOTARY_TIMEOUT seconds: a new Developer ID team's first submissions can take hours. The file is signed either way, and
@@ -200,7 +211,7 @@ if command -v hdiutil >/dev/null; then
     if can_notarize; then
       rc=0; notarize "$dmg_path" || rc=$?
       case $rc in
-        0) xcrun stapler staple "$dmg_path"; xcrun stapler staple "$app"; signed="$signed, notarized" ;;
+        0) staple "$dmg_path"; staple "$app"; signed="$signed, notarized" ;;
         2) signed="$signed, notarization pending" ;;
         *) exit 1 ;;
       esac
