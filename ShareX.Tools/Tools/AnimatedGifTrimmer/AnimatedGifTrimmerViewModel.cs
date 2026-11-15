@@ -458,6 +458,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             if (saved)
             {
                 OutputFilePath = output;
+                ResetCrop();
                 Progress = 100;
                 StatusText = string.Format(Strings.VideoTrimmer_Saved, output);
                 _playNotificationSound?.Invoke();
