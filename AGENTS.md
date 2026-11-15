@@ -70,6 +70,23 @@ Evidence first, adapted from Cursor's pstack principles (github.com/cursor/plugi
 - **Migrate callers, then delete.** When code moves behind `ShareX.Platform`, switch every caller and remove the old path in the same change; no parallel copies.
 - **Encode lessons in structure.** A mistake found once becomes a test, an analyzer setting or a rule here, and a line in `docs/cross-platform-learnings.md`.
 
+## Avalonia source
+
+When a question about Avalonia (layout, rendering, input, windowing, DPI, the XAML compiler) can be answered by reading its code, read the code. Don't rely on docs or memory. The ShareX organization forks every Avalonia repository whose code ships in ShareX or builds it. Each fork's `shipped` branch is the commit behind the package version in `Directory.Packages.props`. Read that branch, not `master`. When the Avalonia version changes, move `shipped` and update this table in the same change.
+
+| Fork | Upstream | Shipped commit | What ShareX gets from it |
+| --- | --- | --- | --- |
+| [ShareX/Avalonia](https://github.com/ShareX/Avalonia) | AvaloniaUI/Avalonia | tag `12.1.6` (`cf8e56467`) | Every `Avalonia.*` 12.1.6 package: core, controls, ColorPicker, Fluent theme, Inter font, Skia and HarfBuzz backends, Win32, X11, FreeDesktop, Native (macOS) |
+| [ShareX/XamlX](https://github.com/ShareX/XamlX) | kekekeks/XamlX | `d7e37ca` | The XAML compiler that compiles `.axaml` at build time (Avalonia's `external/XamlX` submodule) |
+| [ShareX/Avalonia.DBus](https://github.com/ShareX/Avalonia.DBus) | AvaloniaUI/Avalonia.DBus | `cada3ec` | D-Bus inside `Avalonia.FreeDesktop` on Linux (Avalonia's `external/Avalonia.DBus` submodule) |
+| [ShareX/MicroCom](https://github.com/ShareX/MicroCom) | kekekeks/MicroCom | `76785ef` (0.11.6) | `MicroCom.Runtime`, the COM interop under `Avalonia.Native` and `Avalonia.Win32` |
+| [ShareX/angle](https://github.com/ShareX/angle) | AvaloniaUI/angle | `1c8980590` | `Avalonia.Angle.Windows.Natives`, the OpenGL ES over Direct3D layer Avalonia renders through on Windows |
+| [ShareX/Avalonia.BuildServices](https://github.com/ShareX/Avalonia.BuildServices) | AvaloniaUI/Avalonia.BuildServices | `777f975` (11.3.2) | A build-time MSBuild task that every Avalonia package pulls in |
+
+`AvaloniaUI.DiagnosticsSupport` (the developer tools hook) has no public source. SkiaSharp and HarfBuzzSharp come from mono/SkiaSharp, not from Avalonia.
+
+On McoreD's machine the forks are cloned next to this repository (`../Avalonia`, `../XamlX`, …) with `shipped` checked out and an `upstream` remote. They are read-only references. Propose Avalonia fixes upstream; ShareX never builds against a fork.
+
 ## Checks before pushing
 
 - `dotnet build ShareX.sln -c Release -p:Platform=x64` passes and every test project passes.
