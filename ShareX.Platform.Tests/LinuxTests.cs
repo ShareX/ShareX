@@ -355,7 +355,8 @@ public class LinuxFileAssociationTests : IDisposable
         Assert.False(service.IsBrowserHostRegistered(host));
     }
 
-    [Fact]
+    // AppImages are Linux only, and the launcher's paths and file mode are Unix ones.
+    [LinuxFact]
     public void BrowserHosts_FromAnAppImageGoThroughALauncherThatSurvivesTheNextMount()
     {
         string manifest = Path.Combine(root, "host-manifest-chrome.json");
