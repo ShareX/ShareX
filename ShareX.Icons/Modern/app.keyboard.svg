@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="2" y="5" width="20" height="14" rx="2.5"/>
-  <circle cx="6.5" cy="9.5" r="1.1" fill="currentColor" stroke="none"/>
-  <circle cx="10.25" cy="9.5" r="1.1" fill="currentColor" stroke="none"/>
-  <circle cx="13.75" cy="9.5" r="1.1" fill="currentColor" stroke="none"/>
-  <circle cx="17.5" cy="9.5" r="1.1" fill="currentColor" stroke="none"/>
-  <path d="M7.5 14.5h9"/>
+  <rect x="2" y="5" width="20" height="14" rx="3" fill="currentColor" stroke="none" opacity="0.3"/>
+  <rect x="2" y="5" width="20" height="14" rx="3"/>
+  <g fill="currentColor" stroke="none">
+    <circle cx="6.5" cy="9.25" r="1.1"/>
+    <circle cx="10.25" cy="9.25" r="1.1"/>
+    <circle cx="13.75" cy="9.25" r="1.1"/>
+    <circle cx="17.5" cy="9.25" r="1.1"/>
+    <circle cx="6.5" cy="12.25" r="1.1"/>
+    <circle cx="17.5" cy="12.25" r="1.1"/>
+  </g>
+  <path d="M9.5 15h5"/>
 </svg>

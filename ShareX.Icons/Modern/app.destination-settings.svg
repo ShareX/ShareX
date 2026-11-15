@@ -6,6 +6,7 @@
     </mask>
   </defs>
   <g mask="url(#gap)">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z" fill="currentColor" stroke="none" opacity="0.3"/>
     <circle cx="12" cy="12" r="10"/>
     <ellipse cx="12" cy="12" rx="4.5" ry="10"/>
     <path d="M2.5 12h19"/>
