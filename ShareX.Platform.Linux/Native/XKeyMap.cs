@@ -48,6 +48,8 @@ internal static class XKeyMap
         [VirtualKeys.Right] = (0xFF53, "Right"),
         [VirtualKeys.Down] = (0xFF54, "Down"),
         [VirtualKeys.PrintScreen] = (0xFF61, "Print"),
+        // VK_PRINT: what ShareX saved for the Print Screen key before it mapped Avalonia's Print to PrintScreen.
+        [0x2A] = (0xFF61, "Print"),
         [VirtualKeys.Insert] = (0xFF63, "Insert"),
         [VirtualKeys.Delete] = (0xFFFF, "Delete"),
         [VirtualKeys.Multiply] = (0xFFAA, "KP_Multiply"),
