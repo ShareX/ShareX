@@ -3008,6 +3008,9 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>غیرفعال کردن حاشیه‌نویسی ثبت ناحیه</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>تنظیم اندازه پنجره متناسب با تصویر</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>به خاطر سپردن وضعیت پنجره</value>
   </data>
