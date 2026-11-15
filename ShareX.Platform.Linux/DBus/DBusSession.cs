@@ -160,6 +160,36 @@ internal static class DBusSession
         }
     }
 
+    /// <summary>
+    /// Whether the desktop's lock screen is showing, asked of GNOME's screen saver and then of the freedesktop.org one that
+    /// KDE Plasma and others provide. False when neither answers.
+    /// </summary>
+    public static bool IsScreenLocked()
+    {
+        if (!IsAvailable)
+        {
+            return false;
+        }
+
+        foreach ((string name, string path) in new[] { ("org.gnome.ScreenSaver", "/org/gnome/ScreenSaver"), ("org.freedesktop.ScreenSaver", "/org/freedesktop/ScreenSaver") })
+        {
+            try
+            {
+                return RunSync(async () =>
+                {
+                    DBusConnection bus = await GetConnectionAsync().ConfigureAwait(false);
+                    MessageBuffer call = CreateMethodCall(bus, name, path, name, "GetActive", null, null);
+                    return await bus.CallMethodAsync(call, static (Message message, object? state) => message.GetBodyReader().ReadBool(), null).ConfigureAwait(false);
+                }, TimeSpan.FromSeconds(2));
+            }
+            catch (Exception e) when (e is TimeoutException || IsExpectedFailure(e is AggregateException { InnerException: Exception inner } ? inner : e))
+            {
+            }
+        }
+
+        return false;
+    }
+
     public delegate void BodyWriter(ref MessageWriter writer);
 
     public static MessageBuffer CreateMethodCall(DBusConnection bus, string destination, string path, string @interface, string member,

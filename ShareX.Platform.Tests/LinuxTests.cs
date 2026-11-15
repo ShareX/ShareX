@@ -740,11 +740,48 @@ public class LinuxParsingTests
         Assert.EndsWith("-video_size 3840x2160 -i :0+0,0", input.InputArguments);
     }
 
+    [Fact]
+    public void TrayHostMonitor_KeepsTheTrayWhileTheScreenIsLockedAndJustAfter()
+    {
+        bool host = true, locked = false;
+        DateTime time = new DateTime(2026, 11, 13, 9, 0, 0, DateTimeKind.Utc);
+        Linux.Desktop.TrayHostMonitor monitor = new Linux.Desktop.TrayHostMonitor(() => host, () => locked, () => time, TimeSpan.FromSeconds(20));
+        Assert.True(monitor.IsHostAvailable());
+
+        // GNOME switches the AppIndicator extension off with the lock screen, for as long as it shows.
+        host = false;
+        locked = true;
+        time = time.AddHours(2);
+        Assert.True(monitor.IsHostAvailable());
+
+        // Unlocked: the extension comes back a moment later.
+        locked = false;
+        time = time.AddSeconds(5);
+        Assert.True(monitor.IsHostAvailable());
+        host = true;
+        Assert.True(monitor.IsHostAvailable());
+
+        // The user removes the tray host for good.
+        host = false;
+        Assert.True(monitor.IsHostAvailable());
+        time = time.AddSeconds(21);
+        Assert.False(monitor.IsHostAvailable());
+    }
+
+    [Fact]
+    public void TrayHostMonitor_ReportsNoTrayAtOnceWhenThereNeverWasOne()
+    {
+        Linux.Desktop.TrayHostMonitor monitor = new Linux.Desktop.TrayHostMonitor(() => false, () => true);
+        Assert.False(monitor.IsHostAvailable());
+    }
+
     [Theory]
     [InlineData(VirtualKeys.A, HotkeyModifiers.Control | HotkeyModifiers.Shift, "CTRL+SHIFT+a")]
     [InlineData(VirtualKeys.F1 + 11, HotkeyModifiers.Super, "LOGO+F12")]
     [InlineData(VirtualKeys.D0 + 5, HotkeyModifiers.Alt, "ALT+5")]
     [InlineData(VirtualKeys.NumPad0 + 3, HotkeyModifiers.None, "KP_3")]
+    [InlineData(VirtualKeys.PrintScreen, HotkeyModifiers.Shift, "SHIFT+Print")]
+    [InlineData(0x2A, HotkeyModifiers.None, "Print")] // saved by builds that stored Avalonia's Print key as VK_PRINT
     public void XKeyMap_FormatsPortalTriggers(int key, HotkeyModifiers modifiers, string expected)
     {
         Assert.Equal(expected, Linux.Native.XKeyMap.ToShortcutTrigger(new PlatformHotkey(key, modifiers)));

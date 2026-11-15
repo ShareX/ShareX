@@ -134,7 +134,10 @@ public sealed class LinuxPlatformServices : IPlatformServices
     public IApplicationSessionService Session { get; } = new UnsupportedApplicationSessionService("Linux desktops restore applications through their own session settings.");
 
     // Avalonia's Linux tray is a StatusNotifierItem; it shows only where a host runs the StatusNotifierWatcher.
-    public ITrayService Tray { get; } = new UnsupportedTrayService(() => DBus.DBusSession.NameHasOwner("org.kde.StatusNotifierWatcher")
+    private static readonly TrayHostMonitor trayHost = new TrayHostMonitor(
+        () => DBus.DBusSession.NameHasOwner("org.kde.StatusNotifierWatcher"), DBus.DBusSession.IsScreenLocked);
+
+    public ITrayService Tray { get; } = new UnsupportedTrayService(() => trayHost.IsHostAvailable()
         ? FeatureSupport.Supported
         : FeatureSupport.NotSupported("This desktop has no tray area for ShareX's icon, so ShareX keeps its window open."));
 
