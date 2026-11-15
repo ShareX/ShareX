@@ -1157,6 +1157,10 @@
         <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Menu.SeparatorMargin}"/>
     </Style>
 
+    <Style Selector="ContextMenu, MenuFlyoutPresenter">
+        <Setter Property="MaxWidth" Value="Infinity"/>
+    </Style>
+
     <Style Selector="FlyoutPresenter.tool-grid-flyout">
         <Setter Property="Background" Value="{DynamicResource MenuFlyoutPresenterBackground}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>

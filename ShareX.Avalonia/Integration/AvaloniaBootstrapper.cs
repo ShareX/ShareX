@@ -52,6 +52,8 @@ public sealed class ShareXAvaloniaApplication : Application
         {
             Source = new Uri("avares://ShareX.Avalonia/Theming/ToolStyles.axaml")
         });
+
+        MenuItem.SubmenuOpenedEvent.AddClassHandler<MenuItem>((item, _) => item.Resources["FlyoutThemeMaxWidth"] = double.PositiveInfinity);
     }
 
     public override void OnFrameworkInitializationCompleted()
