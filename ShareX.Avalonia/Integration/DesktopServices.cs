@@ -28,6 +28,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Platform;
 using Avalonia.Threading;
+using System.Runtime.InteropServices;
 
 namespace ShareX.AvaloniaUI.Integration;
 
@@ -59,21 +60,62 @@ public static class DesktopServices
 
     /// <summary>
     /// Call before the window is first shown. When the ShareX main window is visible, the window opens
-    /// centered on the main window's screen, unless its saved position is already on that screen.
+    /// centered on the main window's screen, otherwise on the screen under the mouse cursor, unless its
+    /// saved position is already on that screen.
     /// </summary>
     public static void PlaceOnMainWindowScreen(Window window)
     {
         Dispatcher.UIThread.VerifyAccess();
-        if (Application.Current?.ApplicationLifetime is not IClassicDesktopStyleApplicationLifetime { MainWindow: { IsVisible: true } mainWindow } ||
-            ReferenceEquals(mainWindow, window)) return;
-        Screen? screen = mainWindow.Screens.ScreenFromTopLevel(mainWindow);
-        if (screen == null) return;
-        if (window.WindowStartupLocation == WindowStartupLocation.Manual &&
-            window.Screens.ScreenFromPoint(window.Position)?.Bounds == screen.Bounds) return;
-        // Without an owner, CenterScreen centers on the screen that contains the window's position.
+        Window? mainWindow = (Application.Current?.ApplicationLifetime as IClassicDesktopStyleApplicationLifetime)?.MainWindow;
+        if (ReferenceEquals(mainWindow, window)) return;
+        Screen? screen = mainWindow is { IsVisible: true } ? mainWindow.Screens.ScreenFromTopLevel(mainWindow) : GetCursorScreen(window);
+        PlaceOnScreen(window, screen);
+    }
+
+    /// <summary>
+    /// Call before the window is first shown. The window opens centered on the screen under the mouse cursor,
+    /// which after a capture is the screen the capture was taken on, unless its saved position is already on
+    /// that screen. ShareX 21 opened its windows there.
+    /// </summary>
+    public static void PlaceOnCursorScreen(Window window)
+    {
+        Dispatcher.UIThread.VerifyAccess();
+        PlaceOnScreen(window, GetCursorScreen(window));
+    }
+
+    private static void PlaceOnScreen(Window window, Screen? screen)
+    {
+        Screen? savedScreen = window.WindowStartupLocation == WindowStartupLocation.Manual ? window.Screens.ScreenFromPoint(window.Position) : null;
+        if (screen == null)
+        {
+            // A saved position on a screen that is no longer connected would open the window out of sight.
+            if (window.WindowStartupLocation == WindowStartupLocation.Manual && savedScreen == null)
+                window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            return;
+        }
+        if (savedScreen?.Bounds == screen.Bounds) return;
+        // Without an owner, CenterScreen centers on the screen that contains the window's position, which for a
+        // new window is the primary screen. Windows Forms, which ShareX 21 used, centered on the cursor's screen.
         window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         window.Position = screen.WorkingArea.Position;
     }
+
+    private static Screen? GetCursorScreen(Window window)
+    {
+        if (!OperatingSystem.IsWindows() || !GetCursorPos(out NativePoint point)) return null;
+        return window.Screens.ScreenFromPoint(new PixelPoint(point.X, point.Y));
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private struct NativePoint
+    {
+        public int X;
+        public int Y;
+    }
+
+    [DllImport("user32.dll")]
+    [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool GetCursorPos(out NativePoint point);
 
     /// <summary>
     /// Attaches a dynamic tray icon to the application. Disposing the registration

@@ -106,6 +106,12 @@ namespace ShareX.ImageEditor.Presentation.Views
                 Height = _options.WindowHeight;
             }
 
+            if (_options.WindowX is int x && _options.WindowY is int y)
+            {
+                WindowStartupLocation = WindowStartupLocation.Manual;
+                Position = new PixelPoint(x, y);
+            }
+
             WindowState = _options.IsWindowMaximized ? WindowState.Maximized : WindowState.Normal;
         }
 
@@ -139,6 +145,9 @@ namespace ShareX.ImageEditor.Presentation.Views
                 _options.WindowWidth = windowSize.Width;
                 _options.WindowHeight = windowSize.Height;
             }
+
+            _options.WindowX = Position.X;
+            _options.WindowY = Position.Y;
         }
 
         private void OnWindowLoaded(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
