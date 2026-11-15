@@ -50,4 +50,36 @@ public sealed class PlatformImageConverterTests
         Assert.False(converted.IsOpaque);
         Assert.Equal(slow.Bytes, fast.Bytes);
     }
+
+    [Fact]
+    public void DecodeToSrgb_ConvertsACaptureInTheDisplaysColourProfile()
+    {
+        // What macOS screencapture writes on a Display P3 screen: P3 pixel values and the profile that says so.
+        using SKColorSpace displayP3 = SKColorSpace.CreateRgb(SKColorSpaceTransferFn.Srgb, SKColorSpaceXyz.DisplayP3);
+        using SKBitmap capture = new SKBitmap(new SKImageInfo(2, 2, SKColorType.Bgra8888, SKAlphaType.Opaque, displayP3));
+        // Written as bytes (blue, green, red, alpha): drawing calls would convert the colour into the profile.
+        System.Runtime.InteropServices.Marshal.Copy(Enumerable.Repeat(new byte[] { 50, 100, 200, 255 }, 4).SelectMany(x => x).ToArray(), 0, capture.GetPixels(), 16);
+        using SKData png = capture.Encode(SKEncodedImageFormat.Png, 100);
+
+        using SKBitmap decoded = PlatformImageConverter.DecodeToSrgb(png.ToArray());
+
+        Assert.True(decoded.ColorSpace == null || decoded.ColorSpace.IsSrgb);
+        SKColor pixel = decoded.GetPixel(1, 1);
+        // The same colour needs more red and less green and blue in sRGB, whose primaries are less saturated.
+        Assert.InRange(pixel.Red, 208, 222);
+        Assert.InRange(pixel.Green, 88, 99);
+        Assert.InRange(pixel.Blue, 25, 45);
+    }
+
+    [Fact]
+    public void DecodeToSrgb_LeavesAnSrgbCaptureUnchanged()
+    {
+        using SKBitmap capture = new SKBitmap(new SKImageInfo(2, 2, SKColorType.Bgra8888, SKAlphaType.Opaque));
+        capture.Erase(new SKColor(200, 100, 50));
+        using SKData png = capture.Encode(SKEncodedImageFormat.Png, 100);
+
+        using SKBitmap decoded = PlatformImageConverter.DecodeToSrgb(png.ToArray());
+
+        Assert.Equal(new SKColor(200, 100, 50), decoded.GetPixel(0, 0));
+    }
 }

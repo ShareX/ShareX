@@ -43,7 +43,39 @@ namespace ShareX.HelpersLib
                 return ToSKBitmap(result.Pixels);
             }
 
-            return SKBitmap.Decode(result.Png) ?? throw new InvalidOperationException("The captured image could not be decoded.");
+            return DecodeToSrgb(result.Png);
+        }
+
+        /// <summary>
+        /// Decodes an encoded capture into sRGB. macOS captures carry the display's colour profile (Display P3 on most Macs).
+        /// ShareX's image processing does not keep profiles, so an image left in the display's colours lost its profile at the
+        /// first crop, which is why region captures came out with shifted colours.
+        /// </summary>
+        public static SKBitmap DecodeToSrgb(byte[] encoded)
+        {
+            ArgumentNullException.ThrowIfNull(encoded);
+
+            using SKData data = SKData.CreateCopy(encoded);
+            using SKCodec codec = SKCodec.Create(data) ?? throw new InvalidOperationException("The captured image could not be decoded.");
+
+            if (codec.Info.ColorSpace is not SKColorSpace profile || profile.IsSrgb)
+            {
+                return SKBitmap.Decode(codec) ?? throw new InvalidOperationException("The captured image could not be decoded.");
+            }
+
+            using SKColorSpace srgb = SKColorSpace.CreateSrgb();
+            SKAlphaType alpha = codec.Info.AlphaType == SKAlphaType.Opaque ? SKAlphaType.Opaque : SKAlphaType.Premul;
+            SKBitmap bitmap = new SKBitmap(new SKImageInfo(codec.Info.Width, codec.Info.Height, SKColorType.Bgra8888, alpha, srgb));
+            SKCodecResult decoded = codec.GetPixels(bitmap.Info, bitmap.GetPixels());
+
+            if (decoded is not (SKCodecResult.Success or SKCodecResult.IncompleteInput))
+            {
+                bitmap.Dispose();
+                throw new InvalidOperationException($"The captured image could not be decoded ({decoded}).");
+            }
+
+            bitmap.NotifyPixelsChanged();
+            return bitmap;
         }
 
         public static unsafe SKBitmap ToSKBitmap(PixelBuffer pixels)
