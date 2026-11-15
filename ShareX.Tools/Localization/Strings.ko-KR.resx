@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>애니메이션 GIF를 열거나 끌어다 놓아 시작하세요</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>미리 보기에서 끌어서 자르기</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>이 구간은 이전 프레임이 필요한 프레임에서 시작합니다. 무손실로 내보내려면 다른 시작 프레임을 선택하세요.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>재인코딩</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>자르기 및 크기 재설정</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>출력 크기</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>잘라낸 GIF를 다른 파일 이름이나 다른 폴더에 저장하세요.</value>

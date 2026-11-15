@@ -28,6 +28,7 @@ using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.Tools.Localization;
+using SkiaSharp;
 
 namespace ShareX.Tools;
 
@@ -48,6 +49,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     private int _endIndex;
     private long _previewRequestVersion;
     private long _displayedPreviewRequestVersion;
+    private SKRectI _crop;
+    private double _scale = 1;
     private bool _disposed;
 
     [ObservableProperty] private string _inputFilePath = string.Empty;
@@ -75,7 +78,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     public bool CanBrowse => !IsExporting;
     public bool CanEdit => HasGif && !IsLoading && !IsExporting;
     public bool CanPlay => CanEdit && _endIndex - _startIndex > 1;
-    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount);
+    public bool CanTrim => CanEdit && (_startIndex > 0 || _endIndex < _document!.FrameCount || IsTransformed);
     public bool IsWorking => IsLoading || IsExporting;
     public bool HasOutput => !string.IsNullOrEmpty(OutputFilePath);
     public bool CanUsePrimaryAction => IsExporting || CanTrim;
@@ -99,6 +102,68 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     public string FrameText => _document == null ? string.Empty :
         string.Format(Strings.AnimatedGifTrimmer_Frame, _positionIndex + 1, _document.FrameCount);
     public string InputDisplay => string.IsNullOrEmpty(InputFilePath) ? Strings.AnimatedGifTrimmer_ChooseGif : InputFilePath;
+
+    /// <summary>Area of the GIF to keep, in GIF pixels. The whole GIF when nothing is cropped.</summary>
+    public SKRectI Crop => _crop;
+    public int SourceWidth => _document?.Width ?? 0;
+    public int SourceHeight => _document?.Height ?? 0;
+    private SKSizeI OutputSize => new(Math.Clamp((int)Math.Round(_crop.Width * _scale), 1, 65535),
+        Math.Clamp((int)Math.Round(_crop.Height * _scale), 1, 65535));
+    public bool IsTransformed => _document != null &&
+        (_crop != SKRectI.Create(_document.Width, _document.Height) || OutputSize != _crop.Size);
+    public bool CanUseLossless => CanBrowse && !IsTransformed;
+
+    /// <summary>Width of the saved GIF. Changing it scales the cropped area and keeps its aspect ratio.</summary>
+    public decimal? OutputWidth
+    {
+        get => _document == null ? null : OutputSize.Width;
+        set { if (value is > 0 && _crop.Width > 0) SetScale((double)value.Value / _crop.Width); }
+    }
+
+    public decimal? OutputHeight
+    {
+        get => _document == null ? null : OutputSize.Height;
+        set { if (value is > 0 && _crop.Height > 0) SetScale((double)value.Value / _crop.Height); }
+    }
+
+    public void SetCrop(SKRectI rect)
+    {
+        if (_document == null) return;
+        rect.Intersect(SKRectI.Create(_document.Width, _document.Height));
+        if (rect.Width < 1 || rect.Height < 1 || rect == _crop) return;
+        _crop = rect;
+        OnPropertyChanged(nameof(Crop));
+        NotifyTransformChanged();
+    }
+
+    private void SetScale(double scale)
+    {
+        if (Math.Abs(scale - _scale) < 1e-9) return;
+        _scale = scale;
+        NotifyTransformChanged();
+    }
+
+    private void NotifyTransformChanged()
+    {
+        // Lossless mode copies the original frames, so it can't crop or resize.
+        if (IsTransformed) Reencode = true;
+        OnPropertyChanged(nameof(OutputWidth));
+        OnPropertyChanged(nameof(OutputHeight));
+        OnPropertyChanged(nameof(IsTransformed));
+        OnPropertyChanged(nameof(CanUseLossless));
+        OnPropertyChanged(nameof(CanTrim));
+        OnPropertyChanged(nameof(CanUsePrimaryAction));
+    }
+
+    [RelayCommand]
+    private void ResetCrop()
+    {
+        if (_document == null) return;
+        _scale = 1;
+        _crop = SKRectI.Create(_document.Width, _document.Height);
+        OnPropertyChanged(nameof(Crop));
+        NotifyTransformChanged();
+    }
 
     public void Seek(double seconds)
     {
@@ -229,6 +294,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
             _document = document;
             _positionIndex = _startIndex = 0;
             _endIndex = document.FrameCount;
+            _crop = SKRectI.Create(document.Width, document.Height);
+            _scale = 1;
             NotifyDocumentChanged();
             byte[] previewBytes = await Task.Run(() => document.RenderFrame(0, token, int.MaxValue), token);
             token.ThrowIfCancellationRequested();
@@ -376,6 +443,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         {
             AnimatedGifTrimmerDocument document = _document;
             int first = _startIndex, end = _endIndex;
+            SKRectI crop = _crop;
+            SKSizeI size = OutputSize;
             IProgress<double> progress = new Progress<double>(value =>
             {
                 if (cancellation.IsCancellationRequested || _disposed) return;
@@ -385,7 +454,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
                         Progress = Math.Max(Progress, Math.Clamp(value, 0, 100));
                 });
             });
-            bool saved = await Task.Run(() => document.Export(output, first, end, reencode, progress, cancellation.Token), cancellation.Token);
+            bool saved = await Task.Run(() => document.Export(output, first, end, reencode, crop, size, progress, cancellation.Token), cancellation.Token);
             if (saved)
             {
                 OutputFilePath = output;
@@ -423,6 +492,10 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         OnPropertyChanged(nameof(DurationText));
         OnPropertyChanged(nameof(PositionText));
         OnPropertyChanged(nameof(FrameText));
+        OnPropertyChanged(nameof(Crop));
+        OnPropertyChanged(nameof(SourceWidth));
+        OnPropertyChanged(nameof(SourceHeight));
+        NotifyTransformChanged();
         NotifySelectionChanged();
     }
 
@@ -437,6 +510,8 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
         _document?.Dispose();
         _document = null;
         _positionIndex = _startIndex = _endIndex = 0;
+        _crop = default;
+        _scale = 1;
         OnPropertyChanged(nameof(Thumbnails));
         NotifyDocumentChanged();
     }
@@ -461,6 +536,7 @@ public sealed partial class AnimatedGifTrimmerViewModel : ViewModelBase, IDispos
     {
         OnPropertyChanged(nameof(IsWorking));
         OnPropertyChanged(nameof(CanBrowse));
+        OnPropertyChanged(nameof(CanUseLossless));
         OnPropertyChanged(nameof(CanEdit));
         OnPropertyChanged(nameof(CanPlay));
         OnPropertyChanged(nameof(CanTrim));
