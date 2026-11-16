@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
@@ -76,6 +77,7 @@ public partial class OCRWindow : Window
 
         ApplySavedWindowState();
         Opened += OnOpened;
+        KeyDown += OnWindowKeyDown;
         Closing += (_, _) => SaveWindowState();
         Closed += (_, _) => _viewModel.Dispose();
         Resized += (_, _) => SaveNormalWindowBounds();
@@ -151,6 +153,26 @@ public partial class OCRWindow : Window
         _windowPlacementApplied = true;
         Opened -= OnOpened;
         await _viewModel.StartAsync();
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None)
+        {
+            return;
+        }
+
+        e.Handled = true;
+
+        // Escape backs out of the service editor before it closes the window.
+        if (_viewModel.IsEditingServices)
+        {
+            _viewModel.CloseServiceEditorCommand.Execute(null);
+        }
+        else
+        {
+            Close();
+        }
     }
 
     private async Task<byte[]?> SelectRegionAsync()
