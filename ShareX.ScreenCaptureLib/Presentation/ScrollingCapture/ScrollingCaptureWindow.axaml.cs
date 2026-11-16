@@ -56,16 +56,17 @@ public partial class ScrollingCaptureWindow : Window
     private Vector _panStartOffset;
 
     public ScrollingCaptureWindow()
-        : this(new ScrollingCaptureOptions(), null, null)
+        : this(new ScrollingCaptureOptions(), null, null, null)
     {
     }
 
     public ScrollingCaptureWindow(
         ScrollingCaptureOptions options,
         Action<DrawingBitmap>? uploadRequested,
-        Action? playNotificationSound)
+        Action? playNotificationSound,
+        RegionCaptureOptions? regionCaptureOptions)
     {
-        _service = new ScrollingCaptureService(options);
+        _service = new ScrollingCaptureService(options, regionCaptureOptions);
         _uploadRequested = uploadRequested;
         _playNotificationSound = playNotificationSound;
 

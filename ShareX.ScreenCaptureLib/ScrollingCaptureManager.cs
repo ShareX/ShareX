@@ -47,10 +47,12 @@ namespace ShareX.ScreenCaptureLib
         private int bestMatchCount, bestMatchIndex, bestIgnoreBottomOffset;
         private WindowInfo selectedWindow;
         private Rectangle selectedRectangle;
+        private readonly RegionCaptureOptions regionCaptureOptions;
 
-        public ScrollingCaptureManager(ScrollingCaptureOptions options)
+        public ScrollingCaptureManager(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions = null)
         {
             Options = options;
+            this.regionCaptureOptions = regionCaptureOptions;
         }
 
         public void Dispose()
@@ -212,7 +214,13 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task<bool> SelectWindowAsync()
         {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
+            // Window detection must stay on to select a window to scroll, so only the active monitor setting is taken from the user's region capture options.
+            RegionCaptureOptions selectionOptions = new RegionCaptureOptions()
+            {
+                ActiveMonitorMode = regionCaptureOptions != null && regionCaptureOptions.ActiveMonitorMode
+            };
+
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(selectionOptions);
             if (selection == null)
             {
                 return false;
