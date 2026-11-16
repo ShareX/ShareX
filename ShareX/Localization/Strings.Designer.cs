@@ -3615,6 +3615,11 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageEditor", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_AutoSizeWindow {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_AutoSizeWindow", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_RememberWindowState {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_RememberWindowState", resourceCulture);

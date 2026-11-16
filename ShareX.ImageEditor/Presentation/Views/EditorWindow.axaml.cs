@@ -26,6 +26,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Platform;
+using Avalonia.Threading;
+using Avalonia.VisualTree;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.ViewModels;
 using SkiaSharp;
@@ -40,6 +43,7 @@ namespace ShareX.ImageEditor.Presentation.Views
         private readonly MainViewModel _viewModel;
         private string? _pendingFilePath;
         private bool _allowClose;
+        private bool _autoSizePending;
 
         public EditorWindow() : this(null)
         {
@@ -57,6 +61,19 @@ namespace ShareX.ImageEditor.Presentation.Views
             _viewModel = new MainViewModel(options);
             DataContext = _viewModel;
             _viewModel.WindowTitle = GetWindowTitle(null);
+
+            if (_options?.AutoSizeWindow == true)
+            {
+                _autoSizePending = true;
+                Opened += (_, _) => QueueAutoSize(10);
+                _viewModel.PropertyChanged += (_, e) =>
+                {
+                    if (e.PropertyName == nameof(MainViewModel.HasPreviewImage) && _viewModel.HasPreviewImage)
+                    {
+                        QueueAutoSize(10);
+                    }
+                };
+            }
 
             // Defer image loading until EditorView is loaded and subscribed
             this.Loaded += OnWindowLoaded;
@@ -95,7 +112,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void ApplySavedWindowState()
         {
-            if (_options?.RememberWindowState != true)
+            if (_options?.RememberWindowState != true || _options.AutoSizeWindow)
             {
                 return;
             }
@@ -113,6 +130,76 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             WindowState = _options.IsWindowMaximized ? WindowState.Maximized : WindowState.Normal;
+        }
+
+        private void QueueAutoSize(int retries)
+        {
+            Dispatcher.UIThread.Post(() =>
+            {
+                if (!TryAutoSize() && retries > 0)
+                {
+                    QueueAutoSize(retries - 1);
+                }
+            }, DispatcherPriority.Background);
+        }
+
+        private bool TryAutoSize()
+        {
+            if (!_autoSizePending || !IsVisible || !_viewModel.HasPreviewImage)
+            {
+                return !_autoSizePending;
+            }
+
+            EditorView? view = this.FindControl<EditorView>("EditorViewControl");
+            ScrollViewer? scrollViewer = view?.FindControl<ScrollViewer>("CanvasScrollViewer");
+            Border? previewFrame = view?.FindControl<Border>("PreviewFrame");
+            Screen? screen = Screens.ScreenFromWindow(this) ?? Screens.Primary;
+
+            if (scrollViewer == null || previewFrame == null || screen == null ||
+                scrollViewer.Viewport.Width <= 0 || previewFrame.Bounds.Width <= 0 || FrameSize == null)
+            {
+                return false;
+            }
+
+            _autoSizePending = false;
+
+            double scaling = screen.Scaling;
+            double imageWidth = previewFrame.Bounds.Width / scaling;
+            double imageHeight = previewFrame.Bounds.Height / scaling;
+
+            // The toolbars float over the canvas, so leave room for them above and below the centered image.
+            double toolbarWidth = 0, toolbarHeight = 0;
+            foreach (Border host in view!.GetVisualDescendants().OfType<Border>().Where(x => x.Classes.Contains("editor-toolbar-host")))
+            {
+                if (host.GetVisualParent() is not Visual parent) continue;
+                toolbarWidth = Math.Max(toolbarWidth, host.Bounds.Width);
+                toolbarHeight = Math.Max(toolbarHeight, host.VerticalAlignment == Avalonia.Layout.VerticalAlignment.Bottom
+                    ? parent.Bounds.Height - host.Bounds.Top : host.Bounds.Bottom);
+            }
+
+            const double margin = 24;
+            Size frameExtra = FrameSize.Value - ClientSize;
+            double width = Math.Max(imageWidth, toolbarWidth) + margin + (ClientSize.Width - scrollViewer.Viewport.Width);
+            double height = imageHeight + (toolbarHeight * 2) + margin + (ClientSize.Height - scrollViewer.Viewport.Height);
+            width = Math.Max(width, MinWidth);
+            height = Math.Max(height, MinHeight);
+
+            PixelRect workingArea = screen.WorkingArea;
+            double outerWidth = (width + frameExtra.Width) * scaling;
+            double outerHeight = (height + frameExtra.Height) * scaling;
+
+            if (outerWidth > workingArea.Width || outerHeight > workingArea.Height)
+            {
+                WindowState = WindowState.Maximized;
+                return true;
+            }
+
+            WindowState = WindowState.Normal;
+            Width = width;
+            Height = height;
+            Position = new PixelPoint(workingArea.X + (int)((workingArea.Width - outerWidth) / 2),
+                workingArea.Y + (int)((workingArea.Height - outerHeight) / 2));
+            return true;
         }
 
         private void OnWindowResized(object? sender, WindowResizedEventArgs e)

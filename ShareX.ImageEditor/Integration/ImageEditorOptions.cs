@@ -60,6 +60,7 @@ namespace ShareX.ImageEditor.Integration
         // The normal (not maximized) window's position in screen pixels, when Remember window state is on.
         public int? WindowX { get; set; }
         public int? WindowY { get; set; }
+        public bool AutoSizeWindow { get; set; } = false;
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
