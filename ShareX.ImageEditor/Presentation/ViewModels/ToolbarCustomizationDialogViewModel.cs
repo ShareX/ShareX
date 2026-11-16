@@ -33,11 +33,19 @@ namespace ShareX.ImageEditor.Presentation.ViewModels;
 
 public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 {
+    /// <summary>An item, or a spacer of the given width and line when <see cref="Item"/> is null.</summary>
+    private readonly record struct LayoutToken(ToolbarCustomizationItemViewModel? Item, int SpacerWidth = 0, bool ShowLine = true)
+    {
+        public bool IsSpacer => Item == null;
+    }
+
     private readonly Action<IReadOnlyList<ToolbarCustomizationItemViewModel>> _onSave;
     private readonly Action _onCancel;
     private readonly Func<IReadOnlyList<ToolbarCustomizationItemViewModel>> _createDefaultItems;
+    private readonly Dictionary<string, int> _defaultOrder;
     private string _validationMessage = "";
     private ToolbarCustomizationItemViewModel? _selectedItem;
+    private bool _isUpdatingLayout;
 
     public ToolbarCustomizationDialogViewModel(
         IEnumerable<ToolbarCustomizationItemViewModel> sourceItems,
@@ -48,6 +56,13 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
         _onSave = onSave;
         _onCancel = onCancel;
         _createDefaultItems = createDefaultItems ?? ToolbarCustomizationItemViewModel.CreateDefaultItems;
+        _defaultOrder = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+
+        foreach (ToolbarCustomizationItemViewModel item in _createDefaultItems())
+        {
+            _defaultOrder.TryAdd(item.Id, _defaultOrder.Count);
+        }
+
         Items = new ObservableCollection<ToolbarCustomizationItemViewModel>(sourceItems.Select(item => item.Clone()));
         Items.CollectionChanged += OnItemsCollectionChanged;
 
@@ -60,11 +75,22 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
         OkCommand = new RelayCommand(Ok, () => CanSave);
         CancelCommand = new RelayCommand(Cancel);
 
-        RefreshMoveStates();
+        RebuildLayout();
+        SelectedItem = Items.FirstOrDefault(item => item.IsVisible);
         RefreshValidation();
     }
 
+    /// <summary>Every item in toolbar order. Once the layout is edited, hidden items follow the visible ones.</summary>
     public ObservableCollection<ToolbarCustomizationItemViewModel> Items { get; }
+
+    /// <summary>The visible items and the spacers between them, as the toolbar shows them.</summary>
+    public ObservableCollection<ToolbarLayoutSlot> ToolbarSlots { get; } = new();
+
+    /// <summary>A spacer with a line, one without, and the hidden items, all of which can be dragged onto the toolbar.</summary>
+    public ObservableCollection<ToolbarLayoutSlot> AvailableSlots { get; } = new();
+
+    public bool HasHiddenItems => AvailableSlots.Any(slot => slot.IsItem);
+
     public IRelayCommand ResetCommand { get; }
     public IRelayCommand OkCommand { get; }
     public IRelayCommand CancelCommand { get; }
@@ -72,8 +98,17 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
     public ToolbarCustomizationItemViewModel? SelectedItem
     {
         get => _selectedItem;
-        set => SetProperty(ref _selectedItem, value);
+        set
+        {
+            if (SetProperty(ref _selectedItem, value))
+            {
+                OnPropertyChanged(nameof(HasSelectedItem));
+                RefreshSelection();
+            }
+        }
     }
+
+    public bool HasSelectedItem => SelectedItem != null;
 
     public string ValidationMessage
     {
@@ -92,58 +127,244 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
     public bool HasValidationMessage => !string.IsNullOrEmpty(ValidationMessage);
     public bool CanSave => !HasValidationMessage;
 
-    public void MoveUp(ToolbarCustomizationItemViewModel? item)
+    /// <summary>
+    /// Puts <paramref name="item"/> on the toolbar before the slot at <paramref name="slotIndex"/>, or at the end when
+    /// the index equals the slot count. An item already on the toolbar moves there.
+    /// </summary>
+    public void PlaceItem(ToolbarCustomizationItemViewModel item, int slotIndex)
     {
-        if (item == null)
+        List<LayoutToken> tokens = GetLayoutTokens();
+        int oldIndex = tokens.FindIndex(token => token.Item == item);
+
+        if (oldIndex >= 0)
         {
-            return;
+            tokens.RemoveAt(oldIndex);
+
+            if (oldIndex < slotIndex)
+            {
+                slotIndex--;
+            }
         }
 
-        int index = Items.IndexOf(item);
-        if (index <= 0)
-        {
-            return;
-        }
-
-        Items.Move(index, index - 1);
+        tokens.Insert(Math.Clamp(slotIndex, 0, tokens.Count), new LayoutToken(item));
+        ApplyLayoutTokens(tokens);
         SelectedItem = item;
-        RefreshMoveStates();
     }
 
-    public void MoveDown(ToolbarCustomizationItemViewModel? item)
+    /// <summary>
+    /// Puts a spacer before the slot at <paramref name="slotIndex"/>. When <paramref name="fromSlotIndex"/> is a
+    /// spacer on the toolbar, that spacer moves, keeping its width and line, instead of a new one being added with
+    /// <paramref name="showLine"/>.
+    /// </summary>
+    public void PlaceSpacer(int slotIndex, int? fromSlotIndex = null, bool showLine = true)
+    {
+        List<LayoutToken> tokens = GetLayoutTokens();
+        LayoutToken spacer = new(null, ShowLine: showLine);
+
+        if (fromSlotIndex is int fromIndex && fromIndex >= 0 && fromIndex < tokens.Count && tokens[fromIndex].IsSpacer)
+        {
+            spacer = tokens[fromIndex];
+            tokens.RemoveAt(fromIndex);
+
+            if (fromIndex < slotIndex)
+            {
+                slotIndex--;
+            }
+        }
+
+        tokens.Insert(Math.Clamp(slotIndex, 0, tokens.Count), spacer);
+        ApplyLayoutTokens(tokens);
+    }
+
+    /// <summary>Sets the extra space of the spacer at <paramref name="slotIndex"/>.</summary>
+    public void SetSpacerWidth(int slotIndex, int width)
+    {
+        if (slotIndex < 0 || slotIndex >= ToolbarSlots.Count - 1 || !ToolbarSlots[slotIndex].IsSpacer ||
+            ToolbarSlots[slotIndex + 1].Item is not { } item)
+        {
+            return;
+        }
+
+        // The item after a spacer stores its width.
+        item.SpacerWidth = width;
+        ToolbarSlots[slotIndex].SpacerWidth = item.SpacerWidth;
+    }
+
+    /// <summary>Takes the spacer or item at <paramref name="slotIndex"/> off the toolbar. Items taken off are hidden.</summary>
+    public void RemoveSlot(int slotIndex)
+    {
+        if (slotIndex < 0 || slotIndex >= ToolbarSlots.Count || !ToolbarSlots[slotIndex].CanRemove)
+        {
+            return;
+        }
+
+        List<LayoutToken> tokens = GetLayoutTokens();
+        tokens.RemoveAt(slotIndex);
+        ApplyLayoutTokens(tokens);
+    }
+
+    public void MoveLeft(ToolbarCustomizationItemViewModel? item)
+    {
+        int index = IndexOfSlot(item);
+        if (item != null && index > 0)
+        {
+            PlaceItem(item, index - 1);
+        }
+    }
+
+    public void MoveRight(ToolbarCustomizationItemViewModel? item)
+    {
+        int index = IndexOfSlot(item);
+        if (item != null && index >= 0 && index < ToolbarSlots.Count - 1)
+        {
+            PlaceItem(item, index + 2);
+        }
+    }
+
+    public int IndexOfSlot(ToolbarCustomizationItemViewModel? item)
     {
         if (item == null)
         {
-            return;
+            return -1;
         }
 
-        int index = Items.IndexOf(item);
-        if (index < 0 || index >= Items.Count - 1)
+        for (int i = 0; i < ToolbarSlots.Count; i++)
         {
-            return;
+            if (ToolbarSlots[i].Item == item)
+            {
+                return i;
+            }
         }
 
-        Items.Move(index, index + 1);
-        SelectedItem = item;
+        return -1;
+    }
+
+    private List<LayoutToken> GetLayoutTokens()
+    {
+        return ToolbarSlots.Select(slot => new LayoutToken(slot.Item, slot.SpacerWidth, slot.ShowLine)).ToList();
+    }
+
+    /// <summary>
+    /// Writes a toolbar layout back to the items. A spacer becomes <see
+    /// cref="ToolbarCustomizationItemViewModel.BeginGroup"/> and <see cref="ToolbarCustomizationItemViewModel.SpacerWidth"/>
+    /// on the item after it, so neighboring spacers merge into the widest of them, with a line if either has one, and a
+    /// spacer at the end, with no item after it, is dropped. Items left out of the layout are hidden.
+    /// </summary>
+    private void ApplyLayoutTokens(IReadOnlyList<LayoutToken> tokens)
+    {
+        _isUpdatingLayout = true;
+
+        try
+        {
+            List<ToolbarCustomizationItemViewModel> order = new();
+            bool beginGroup = false;
+            int spacerWidth = 0;
+            bool showLine = true;
+
+            foreach (LayoutToken token in tokens)
+            {
+                if (token.Item is not { } item)
+                {
+                    spacerWidth = beginGroup ? Math.Max(spacerWidth, token.SpacerWidth) : token.SpacerWidth;
+                    showLine = beginGroup ? showLine || token.ShowLine : token.ShowLine;
+                    beginGroup = true;
+                    continue;
+                }
+
+                item.IsVisible = true;
+                item.BeginGroup = beginGroup;
+                item.SpacerWidth = beginGroup ? spacerWidth : 0;
+                item.ShowSpacerLine = !beginGroup || showLine;
+                beginGroup = false;
+                order.Add(item);
+            }
+
+            HashSet<ToolbarCustomizationItemViewModel> visibleItems = new(order);
+            foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => !visibleItems.Contains(item)).OrderBy(GetDefaultOrder).ToList())
+            {
+                item.IsVisible = false;
+                item.BeginGroup = false;
+                item.SpacerWidth = 0;
+                item.ShowSpacerLine = true;
+                order.Add(item);
+            }
+
+            for (int i = 0; i < order.Count; i++)
+            {
+                int currentIndex = Items.IndexOf(order[i]);
+                if (currentIndex != i)
+                {
+                    Items.Move(currentIndex, i);
+                }
+            }
+        }
+        finally
+        {
+            _isUpdatingLayout = false;
+        }
+
+        RebuildLayout();
+    }
+
+    private int GetDefaultOrder(ToolbarCustomizationItemViewModel item)
+    {
+        return _defaultOrder.TryGetValue(item.Id, out int index) ? index : int.MaxValue;
+    }
+
+    private void RebuildLayout()
+    {
+        ToolbarSlots.Clear();
+
+        foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => item.IsVisible))
+        {
+            if (item.BeginGroup)
+            {
+                ToolbarSlots.Add(new ToolbarLayoutSlot(null, item.SpacerWidth, item.ShowSpacerLine));
+            }
+
+            ToolbarSlots.Add(new ToolbarLayoutSlot(item));
+        }
+
+        AvailableSlots.Clear();
+        AvailableSlots.Add(new ToolbarLayoutSlot(null));
+        AvailableSlots.Add(new ToolbarLayoutSlot(null, showLine: false));
+
+        foreach (ToolbarCustomizationItemViewModel item in Items.Where(item => !item.IsVisible).OrderBy(GetDefaultOrder))
+        {
+            AvailableSlots.Add(new ToolbarLayoutSlot(item));
+        }
+
+        OnPropertyChanged(nameof(HasHiddenItems));
         RefreshMoveStates();
+        RefreshSelection();
     }
 
     private void Reset()
     {
-        foreach (ToolbarCustomizationItemViewModel item in Items)
+        _isUpdatingLayout = true;
+
+        try
         {
-            item.PropertyChanged -= OnItemPropertyChanged;
+            // Clear() reports no old items, so stop listening to them first.
+            foreach (ToolbarCustomizationItemViewModel item in Items)
+            {
+                item.PropertyChanged -= OnItemPropertyChanged;
+            }
+
+            Items.Clear();
+
+            foreach (ToolbarCustomizationItemViewModel item in _createDefaultItems())
+            {
+                Items.Add(item);
+            }
+        }
+        finally
+        {
+            _isUpdatingLayout = false;
         }
 
-        Items.Clear();
-
-        foreach (ToolbarCustomizationItemViewModel item in _createDefaultItems())
-        {
-            Items.Add(item);
-        }
-
-        SelectedItem = Items.FirstOrDefault();
-        RefreshMoveStates();
+        RebuildLayout();
+        SelectedItem = Items.FirstOrDefault(item => item.IsVisible);
         RefreshValidation();
     }
 
@@ -193,8 +414,11 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
             }
         }
 
-        RefreshMoveStates();
-        RefreshValidation();
+        if (!_isUpdatingLayout)
+        {
+            RebuildLayout();
+            RefreshValidation();
+        }
     }
 
     private void OnItemPropertyChanged(object? sender, PropertyChangedEventArgs e)
@@ -203,14 +427,40 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
         {
             RefreshValidation();
         }
+        else if (e.PropertyName is nameof(ToolbarCustomizationItemViewModel.IsVisible) or nameof(ToolbarCustomizationItemViewModel.BeginGroup)
+            && !_isUpdatingLayout)
+        {
+            RebuildLayout();
+        }
+        else if (e.PropertyName is nameof(ToolbarCustomizationItemViewModel.SpacerWidth) or nameof(ToolbarCustomizationItemViewModel.ShowSpacerLine)
+            && sender is ToolbarCustomizationItemViewModel item)
+        {
+            // Update the spacer in place so a spacer width box being typed in keeps its focus.
+            int index = IndexOfSlot(item);
+            if (index > 0 && ToolbarSlots[index - 1].IsSpacer)
+            {
+                ToolbarSlots[index - 1].SpacerWidth = item.SpacerWidth;
+                ToolbarSlots[index - 1].ShowLine = item.ShowSpacerLine;
+            }
+        }
     }
 
+    /// <summary>Tells the Move left and Move right buttons whether the item can move further along the toolbar.</summary>
     private void RefreshMoveStates()
     {
-        for (int i = 0; i < Items.Count; i++)
+        foreach (ToolbarCustomizationItemViewModel item in Items)
         {
-            Items[i].CanMoveUp = i > 0;
-            Items[i].CanMoveDown = i < Items.Count - 1;
+            int index = IndexOfSlot(item);
+            item.CanMoveUp = index > 0;
+            item.CanMoveDown = index >= 0 && index < ToolbarSlots.Count - 1;
+        }
+    }
+
+    private void RefreshSelection()
+    {
+        foreach (ToolbarLayoutSlot slot in ToolbarSlots.Concat(AvailableSlots))
+        {
+            slot.IsSelected = slot.Item != null && slot.Item == SelectedItem;
         }
     }
 

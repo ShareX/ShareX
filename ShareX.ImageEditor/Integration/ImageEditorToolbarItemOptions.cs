@@ -29,6 +29,13 @@ namespace ShareX.ImageEditor.Integration
     {
         public string Id { get; set; } = "";
         public bool? BeginGroup { get; set; }
+
+        /// <summary>Extra space in pixels around the group separator before this item. Only used when the item begins a group.</summary>
+        public int SpacerWidth { get; set; }
+
+        /// <summary>Leaves out the line of the group separator before this item, keeping only its space.</summary>
+        public bool HideSpacerLine { get; set; }
+
         public bool IsVisible { get; set; } = true;
         public string Hotkey { get; set; } = "";
 

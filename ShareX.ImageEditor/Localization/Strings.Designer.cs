@@ -660,16 +660,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_CustomizeToolbar", resourceCulture);
             }
         }
-        public static string ToolbarCustomizationDialogView_Movedown {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Movedown", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_Moveup {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Moveup", resourceCulture);
-            }
-        }
         public static string ToolbarCustomizationDialogView_OK {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_OK", resourceCulture);
@@ -2503,6 +2493,56 @@ namespace ShareX.ImageEditor.Localization {
         public static string AnnotationToolbar_Autosizetotext {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Autosizetotext", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_AllItemsOnToolbar {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AllItemsOnToolbar", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_AvailableItems {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AvailableItems", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_DragHint {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_DragHint", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_MoveLeft {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_MoveLeft", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_MoveRight {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_MoveRight", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_Spacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Spacer", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_SpacerToolTip {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerToolTip", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_SpacerWidth {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerWidth", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_BlankSpacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_BlankSpacer", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_ShowSpacerLine {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowSpacerLine", resourceCulture);
             }
         }
     }
