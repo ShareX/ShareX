@@ -1365,9 +1365,6 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Fejlesztői</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Előzetes kiadás</value>
   </data>

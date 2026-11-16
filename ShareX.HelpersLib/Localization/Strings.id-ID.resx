@@ -1365,9 +1365,6 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Pencarian Gambar Google</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Pra-rilis</value>
   </data>

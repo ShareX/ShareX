@@ -1365,9 +1365,6 @@
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>डेवलपमेंट</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>पूर्व-रिलीज़</value>
   </data>

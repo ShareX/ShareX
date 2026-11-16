@@ -1365,9 +1365,6 @@ Vil du stadig køre den?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Udvikling</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Forhåndsversion</value>
   </data>
