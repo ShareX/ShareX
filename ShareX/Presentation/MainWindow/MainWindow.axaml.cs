@@ -1983,8 +1983,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
     private IReadOnlyList<MainMenuEntry> BuildCombineImagesMenu() => new List<MainMenuEntry>
     {
-            Item(Strings.MainWindow_Horizontally, AppIcons.Rows, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
-            Item(Strings.MainWindow_Vertically, AppIcons.Columns, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
+            Item(Strings.MainWindow_Horizontally, AppIcons.Columns, () => _uploadInfoManager.CombineImages(ImageOrientation.Horizontal)),
+            Item(Strings.MainWindow_Vertically, AppIcons.Rows, () => _uploadInfoManager.CombineImages(ImageOrientation.Vertical))
     };
 
     private void RemoveSelectedTasks()
