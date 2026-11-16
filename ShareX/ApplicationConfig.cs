@@ -42,7 +42,7 @@ namespace ShareX
         public bool ShowIconPackPrompt = true;
         public string FileUploadDefaultDirectory = "";
         public int NameParserAutoIncrementNumber = 0;
-        public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+        public List<QuickTaskInfo> QuickTaskPresets = QuickTaskInfo.GetDefaultPresets();
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;

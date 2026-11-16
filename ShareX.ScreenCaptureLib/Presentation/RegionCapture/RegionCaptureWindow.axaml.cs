@@ -2383,7 +2383,7 @@ public partial class RegionCaptureWindow : Window
     {
         if (_selectedCandidate is { IsWindow: true })
         {
-            return _selectedCandidate.WindowInfo;
+            return _selectedCandidate.GetWindowInfo();
         }
 
         // Prefer the window under the cursor (the clicked window), because the selection center can be covered by another window.
@@ -2398,7 +2398,7 @@ public partial class RegionCaptureWindow : Window
                 selectedRectangle.Top + selectedRectangle.Height / 2);
         }
 
-        return _windows.FirstOrDefault(window => window.IsWindow && window.Rectangle.Contains(point))?.WindowInfo;
+        return _windows.FirstOrDefault(window => window.IsWindow && window.Rectangle.Contains(point))?.GetWindowInfo();
     }
 
     private void CancelCapture()

@@ -139,7 +139,7 @@ namespace ShareX.HelpersLib
         {
         }
 
-        public static ShareXTheme DarkTheme => new ShareXTheme()
+        public static ShareXTheme GetDarkTheme() => new ShareXTheme()
         {
             Name = "Dark",
             BackgroundColor = Color.FromArgb(39, 39, 39),
@@ -158,7 +158,7 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(31, 31, 31)
         };
 
-        public static ShareXTheme LightTheme => new ShareXTheme()
+        public static ShareXTheme GetLightTheme() => new ShareXTheme()
         {
             Name = "Light",
             BackgroundColor = Color.FromArgb(242, 242, 242),
@@ -177,7 +177,7 @@ namespace ShareX.HelpersLib
             SeparatorDarkColor = Color.FromArgb(189, 189, 189)
         };
 
-        public static ShareXTheme NightTheme => new ShareXTheme()
+        public static ShareXTheme GetNightTheme() => new ShareXTheme()
         {
             Name = "Night",
             BackgroundColor = Color.FromArgb(42, 47, 56),
@@ -197,7 +197,7 @@ namespace ShareX.HelpersLib
         };
 
         // https://www.nordtheme.com
-        public static ShareXTheme NordDarkTheme => new ShareXTheme()
+        public static ShareXTheme GetNordDarkTheme() => new ShareXTheme()
         {
             Name = "Nord Dark",
             BackgroundColor = Color.FromArgb(46, 52, 64),
@@ -217,7 +217,7 @@ namespace ShareX.HelpersLib
         };
 
         // https://www.nordtheme.com
-        public static ShareXTheme NordLightTheme => new ShareXTheme()
+        public static ShareXTheme GetNordLightTheme() => new ShareXTheme()
         {
             Name = "Nord Light",
             BackgroundColor = Color.FromArgb(229, 233, 240),
@@ -237,7 +237,7 @@ namespace ShareX.HelpersLib
         };
 
         // https://draculatheme.com
-        public static ShareXTheme DraculaTheme => new ShareXTheme()
+        public static ShareXTheme GetDraculaTheme() => new ShareXTheme()
         {
             Name = "Dracula",
             BackgroundColor = Color.FromArgb(40, 42, 54),
@@ -258,7 +258,7 @@ namespace ShareX.HelpersLib
 
         public static List<ShareXTheme> GetDefaultThemes()
         {
-            return new List<ShareXTheme>() { DarkTheme, LightTheme, NightTheme, NordDarkTheme, NordLightTheme, DraculaTheme };
+            return new List<ShareXTheme>() { GetDarkTheme(), GetLightTheme(), GetNightTheme(), GetNordDarkTheme(), GetNordLightTheme(), GetDraculaTheme() };
         }
 
         public override string ToString()

@@ -35,12 +35,9 @@ namespace ShareX.ScreenCaptureLib
         public Rectangle Rectangle { get; set; }
         public bool IsWindow { get; set; }
 
-        public WindowInfo WindowInfo
+        public WindowInfo GetWindowInfo()
         {
-            get
-            {
-                return new WindowInfo(Handle);
-            }
+            return new WindowInfo(Handle);
         }
 
         public SimpleWindowInfo(IntPtr handle)
