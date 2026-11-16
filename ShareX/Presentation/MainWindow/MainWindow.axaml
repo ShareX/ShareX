@@ -335,6 +335,7 @@
               Grid.Column="1"
               ClipToBounds="True"
               Focusable="True"
+              GotFocus="OnThumbnailPanelGotFocus"
               PointerPressed="OnMainContentPointerPressed"
               PointerReleased="OnMainContentPointerReleased">
                 <DockPanel IsVisible="{Binding IsListView}">
@@ -403,8 +404,11 @@
                             </ItemsControl.ItemsPanel>
                             <ItemsControl.ItemTemplate>
                                 <DataTemplate DataType="local:ThumbnailItemViewModel">
-                                    <Border Classes="task-row"
+                                    <local:TaskTile Classes="task-row"
                                             Classes.selected="{Binding IsSelected}"
+                                            Focusable="True"
+                                            IsTabStop="False"
+                                            AutomationProperties.Name="{Binding Title}"
                                             PointerPressed="OnThumbnailPointerPressed"
                                             PointerMoved="OnThumbnailPointerMoved"
                                             PointerReleased="OnTaskRowPointerReleased"
@@ -440,7 +444,7 @@
                                                        Text="{Binding ListUrl}"
                                                        ToolTip.Tip="{Binding ListUrlToolTip}"/>
                                         </DockPanel>
-                                    </Border>
+                                    </local:TaskTile>
                                 </DataTemplate>
                             </ItemsControl.ItemTemplate>
                         </ItemsControl>
@@ -449,7 +453,7 @@
                 </DockPanel>
 
                 <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <ItemsControl ItemsSource="{Binding ThumbnailItems}" Margin="6">
+                    <ItemsControl x:Name="ThumbnailList" ItemsSource="{Binding ThumbnailItems}" Margin="6">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <WrapPanel Orientation="Horizontal"/>
@@ -457,8 +461,11 @@
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="local:ThumbnailItemViewModel">
-                                <Border Classes="thumbnail-card"
+                                <local:TaskTile Classes="thumbnail-card"
                                         Classes.selected="{Binding IsSelected}"
+                                        Focusable="True"
+                                        IsTabStop="False"
+                                        AutomationProperties.Name="{Binding Title}"
                                         PointerPressed="OnThumbnailPointerPressed"
                                         PointerMoved="OnThumbnailPointerMoved"
                                         PointerReleased="OnThumbnailPointerReleased"
@@ -615,7 +622,7 @@
                                                        MaxLines="1"/>
                                         </Border>
                                     </StackPanel>
-                                </Border>
+                                </local:TaskTile>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
