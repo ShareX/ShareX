@@ -1104,6 +1104,9 @@ Doriți totuși să îl executați?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Capturarea ultimei regiuni</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Capturează regiunea selectată</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Nu faceți nimic</value>
   </data>

@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>캡처 last 영역</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>선택한 영역 캡처</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>아무것도 하지 않기</value>
   </data>

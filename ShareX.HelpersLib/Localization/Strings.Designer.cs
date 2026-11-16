@@ -1366,5 +1366,6 @@ namespace ShareX.HelpersLib.Localization {
         public static string ToastWindowMonitor_ActiveMonitor => ResourceManager.GetString("ToastWindowMonitor_ActiveMonitor", resourceCulture);
         public static string ToastWindowMonitor_PrimaryMonitor => ResourceManager.GetString("ToastWindowMonitor_PrimaryMonitor", resourceCulture);
         public static string HotkeyType_PixelEditor => ResourceManager.GetString("HotkeyType_PixelEditor", resourceCulture);
+        public static string RegionCaptureAction_CaptureSelection => ResourceManager.GetString("RegionCaptureAction_CaptureSelection", resourceCulture);
     }
 }

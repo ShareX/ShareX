@@ -1104,6 +1104,9 @@ Ainda assim, pretende executá-lo?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Captura last região</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Capturar região selecionada</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Não fazer nada</value>
   </data>

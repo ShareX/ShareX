@@ -1104,6 +1104,9 @@ Chcete jej přesto spustit?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Zachytit poslední oblast</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Zachytit vybranou oblast</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Nedělat nic</value>
   </data>

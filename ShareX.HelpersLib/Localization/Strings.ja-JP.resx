@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>最近使用した領域をキャプチャー</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>選択した領域をキャプチャー</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>何もしない</value>
   </data>

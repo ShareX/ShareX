@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Захват последней области</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Захват выделенной области</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ничего не делать</value>
   </data>

@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>पिछला क्षेत्र कैप्चर करें</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>चयनित क्षेत्र कैप्चर करें</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>कुछ न करें</value>
   </data>

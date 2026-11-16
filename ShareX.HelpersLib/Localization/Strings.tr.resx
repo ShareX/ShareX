@@ -1104,6 +1104,9 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Son bölgeyi yakala</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Seçili bölgeyi yakala</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Hiçbir şey yapma</value>
   </data>

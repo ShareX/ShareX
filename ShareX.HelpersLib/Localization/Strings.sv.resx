@@ -1104,6 +1104,9 @@ Vill du ändå köra det?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Ta bild av senaste området</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Ta bild av markerat område</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Gör ingenting</value>
   </data>
