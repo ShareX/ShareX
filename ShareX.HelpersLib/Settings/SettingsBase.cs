@@ -227,10 +227,20 @@ namespace ShareX.HelpersLib
                     fallbackFilePaths.Add(backupFilePath);
 
                     string fileNameNoExt = Path.GetFileNameWithoutExtension(fileName);
-                    string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
-                    if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+
+                    try
                     {
-                        fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                        string lastWeeklyBackupFilePath = Directory.GetFiles(backupFolder, fileNameNoExt + "-*").OrderBy(x => x).LastOrDefault();
+                        if (!string.IsNullOrEmpty(lastWeeklyBackupFilePath))
+                        {
+                            fallbackFilePaths.Add(lastWeeklyBackupFilePath);
+                        }
+                    }
+                    catch (Exception e) when (e is IOException or UnauthorizedAccessException)
+                    {
+                        // A backup folder that cannot be listed (for example a cloud-synced folder whose provider is not
+                        // running) only means there is no weekly backup to fall back on. It must not stop the settings loading.
+                        DebugHelper.WriteException(e, "Unable to list the settings backup folder: " + backupFolder);
                     }
                 }
             }
