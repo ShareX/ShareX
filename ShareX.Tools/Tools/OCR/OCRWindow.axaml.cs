@@ -25,6 +25,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
@@ -85,6 +86,18 @@ public partial class OCRWindow : Window
     private void InitializeComponent()
     {
         AvaloniaXamlLoader.Load(this);
+    }
+
+    protected override void OnKeyDown(KeyEventArgs e)
+    {
+        base.OnKeyDown(e);
+
+        // Controls that use Escape themselves, such as an open drop-down, mark it handled first.
+        if (!e.Handled && e.Key == Key.Escape && e.KeyModifiers == KeyModifiers.None)
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private ColumnDefinition ResultPanelColumn => this.FindControl<Grid>("ContentGrid")!.ColumnDefinitions[2];
