@@ -189,6 +189,12 @@ jobs:
           [ -f "$RUNNER_TEMP/signing.keychain-db" ] && security delete-keychain "$RUNNER_TEMP/signing.keychain-db" || true
           rm -f "$RUNNER_TEMP/notary.p8"
 
+      # The test job's Mac is Apple silicon. AppKit calls that return structures use another calling convention on Intel, so
+      # the platform tests also run on the Intel runner.
+      - name: Test platform layer on Intel
+        if: matrix.arch == 'x64'
+        run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"
+
   linux:
     name: Linux packages (${{ matrix.arch }})
     runs-on: ${{ matrix.runner }}
