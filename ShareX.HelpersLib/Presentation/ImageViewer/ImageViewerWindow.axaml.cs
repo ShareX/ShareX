@@ -82,7 +82,11 @@ public partial class ImageViewerWindow : Window
         this.FindControl<Image>("PreviewImage")!.RenderTransform = _previewTransform;
         // Reset the zoom for a different image, but not for each frame of an animated GIF.
         _viewModel.ImageReplaced += (_, _) => _previewTransform.Matrix = Matrix.Identity;
-        System.Drawing.Rectangle activeScreen = CaptureHelpers.GetActiveScreenBounds();
+        DesktopScreen screen = DesktopScreen.FromPoint(CaptureHelpers.GetCursorPosition());
+        System.Drawing.Rectangle activeScreen = screen.Bounds;
+        // Keep the file information below the camera housing of a MacBook, which would hide it.
+        Border statusPanel = this.FindControl<Border>("StatusPanel")!;
+        statusPanel.Margin = new Thickness(statusPanel.Margin.Left, statusPanel.Margin.Top + screen.ObscuredTop, statusPanel.Margin.Right, statusPanel.Margin.Bottom);
         WindowStartupLocation = WindowStartupLocation.Manual;
         Position = new PixelPoint(activeScreen.X, activeScreen.Y);
         if (PlatformServices.IsInitialized && PlatformServices.Current.Windows.FullScreenUsesSeparateSpace)

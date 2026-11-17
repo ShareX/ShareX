@@ -51,6 +51,8 @@ public sealed class DesktopScreen
     public string DeviceName { get; }
     /// <summary>Monitor model name, when known; several monitors can share it.</summary>
     public string DisplayName { get; }
+    /// <summary>Height at the top of <see cref="Bounds"/> hidden by the display itself (a MacBook's camera housing); 0 elsewhere.</summary>
+    public int ObscuredTop { get; }
 
     private DesktopScreen(Avalonia.Platform.Screen screen)
     {
@@ -68,6 +70,7 @@ public sealed class DesktopScreen
             new Rectangle(screen.WorkingArea.X, screen.WorkingArea.Y, screen.WorkingArea.Width, screen.WorkingArea.Height);
         Primary = screen.IsPrimary;
         DeviceName = screen.Id;
+        ObscuredTop = screen.ObscuredTop;
         DisplayName = screen.Name == screen.Id ? null : screen.Name;
     }
 

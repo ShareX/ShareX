@@ -284,6 +284,46 @@ public class MacServicesTests
     }
 
     [Fact]
+    public void Screens_WorkingAreaLeavesOutTheMenuBarAndTheDock()
+    {
+        // AppKit measures from the bottom left: a 1512x982 screen with a 38 point menu bar at the top and a 70 point Dock below.
+        CoreGraphics.CGRect frame = new CoreGraphics.CGRect { X = 0, Y = 0, Width = 1512, Height = 982 };
+        CoreGraphics.CGRect visible = new CoreGraphics.CGRect { X = 0, Y = 70, Width = 1512, Height = 874 };
+
+        PlatformRectangle edges = MacScreenCaptureService.GetEdgeInsets(frame, visible);
+
+        Assert.Equal(new PlatformRectangle(0, 38, 0, 70), edges);
+        // Core Graphics measures from the top left; a second screen to the right keeps its own origin.
+        Assert.Equal(new PlatformRectangle(1512, 38, 1512, 874), MacScreenCaptureService.ApplyInsets(new PlatformRectangle(1512, 0, 1512, 982), edges));
+    }
+
+    [Fact]
+    public void Screens_WorkingAreaFallsBackToTheBoundsWhenTheInsetsLeaveNothing()
+    {
+        PlatformRectangle bounds = new PlatformRectangle(0, 0, 100, 100);
+
+        Assert.Equal(bounds, MacScreenCaptureService.ApplyInsets(bounds, new PlatformRectangle(0, 60, 0, 60)));
+    }
+
+    /// <summary>Reads NSScreen, which returns structures and so depends on the processor's calling convention.</summary>
+    [MacOSFact]
+    public void Screens_ReportAWorkingAreaInsideTheirBounds()
+    {
+        if (!OperatingSystem.IsMacOS()) return;
+        var screens = new MacScreenCaptureService(CommandRunner.Default).GetScreens();
+
+        Assert.NotEmpty(screens);
+        Assert.All(screens, screen =>
+        {
+            Assert.True(screen.WorkingArea.Width > 0 && screen.WorkingArea.Height > 0);
+            Assert.True(screen.WorkingArea.X >= screen.Bounds.X && screen.WorkingArea.Y >= screen.Bounds.Y);
+            Assert.True(screen.WorkingArea.Right <= screen.Bounds.Right && screen.WorkingArea.Bottom <= screen.Bounds.Bottom);
+            Assert.InRange(screen.ObscuredTop, 0, screen.Bounds.Height / 2);
+            Console.WriteLine($"Screen {screen.Id}: bounds {screen.Bounds}, working area {screen.WorkingArea}, obscured top {screen.ObscuredTop}");
+        });
+    }
+
+    [Fact]
     public void WindowManagement_ReportsWhatMacOSDoesNotAllow()
     {
         MacWindowManagementService service = new MacWindowManagementService(null!);

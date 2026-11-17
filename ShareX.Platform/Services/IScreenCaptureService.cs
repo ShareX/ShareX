@@ -35,7 +35,14 @@ namespace ShareX.Platform;
 /// <param name="Bounds">Bounds on the virtual desktop in physical pixels.</param>
 /// <param name="WorkingArea">Bounds minus task bars, docks and panels. Equal to <paramref name="Bounds"/> when unknown.</param>
 /// <param name="ScaleFactor">Ratio of physical pixels to logical units, for example 2 on a Retina display.</param>
-public sealed record ScreenInfo(string Id, string Name, PlatformRectangle Bounds, PlatformRectangle WorkingArea, bool IsPrimary, double ScaleFactor);
+public sealed record ScreenInfo(string Id, string Name, PlatformRectangle Bounds, PlatformRectangle WorkingArea, bool IsPrimary, double ScaleFactor)
+{
+    /// <summary>
+    /// Height at the top of <see cref="Bounds"/> that the display itself hides, in the units of <see cref="Bounds"/>: the camera
+    /// housing (notch) of a MacBook. Windows that cover the whole screen keep their controls below it. 0 on other displays.
+    /// </summary>
+    public int ObscuredTop { get; init; }
+}
 
 public enum ScreenCaptureMode
 {

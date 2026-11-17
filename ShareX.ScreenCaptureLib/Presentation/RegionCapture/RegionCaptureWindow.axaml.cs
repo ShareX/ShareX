@@ -1174,7 +1174,9 @@ public partial class RegionCaptureWindow : Window
 
         _captureToolbarScreenBounds = screen.Bounds;
         Rect monitor = ScreenToImage(screen.Bounds);
-        SetCaptureToolbarAnchor((monitor.X + monitor.Width / 2d) / scale, monitor.Y / scale);
+        // Below the camera housing of a MacBook, which would hide the middle of the toolbar.
+        double top = ScreenToImage(new DrawingPoint(screen.Bounds.X, screen.Bounds.Y + screen.ObscuredTop)).Y;
+        SetCaptureToolbarAnchor((monitor.X + monitor.Width / 2d) / scale, top / scale);
     }
 
     /// <summary>

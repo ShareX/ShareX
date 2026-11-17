@@ -89,6 +89,7 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
 
         uint main = CoreGraphics.CGMainDisplayID();
         List<ScreenInfo> screens = new List<ScreenInfo>((int)count);
+        Dictionary<uint, (PlatformRectangle WorkingArea, int ObscuredTop)> insets = GetScreenInsets();
 
         for (int i = 0; i < count; i++)
         {
@@ -97,10 +98,88 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
             PlatformRectangle rectangle = bounds.ToRectangle();
             // screencapture -D numbers displays from 1 in CGGetActiveDisplayList order.
             string id = (i + 1).ToString(CultureInfo.InvariantCulture);
-            screens.Add(new ScreenInfo(id, $"Display {id}", rectangle, rectangle, displays[i] == main, Math.Max(1, scale)));
+            PlatformRectangle workingArea = rectangle;
+            int obscuredTop = 0;
+
+            if (insets.TryGetValue(displays[i], out (PlatformRectangle WorkingArea, int ObscuredTop) inset))
+            {
+                workingArea = ApplyInsets(rectangle, inset.WorkingArea);
+                obscuredTop = Math.Clamp(inset.ObscuredTop, 0, rectangle.Height / 2);
+            }
+
+            screens.Add(new ScreenInfo(id, $"Display {id}", rectangle, workingArea, displays[i] == main, Math.Max(1, scale)) { ObscuredTop = obscuredTop });
         }
 
         return screens;
+    }
+
+    /// <summary>
+    /// For each display: how far the menu bar and the Dock reach in from its left, top, right and bottom edges (held in a
+    /// rectangle as X, Y, Width and Height), and the height of its camera housing. Core Graphics knows neither, so they come
+    /// from AppKit's NSScreen.
+    /// </summary>
+    private static Dictionary<uint, (PlatformRectangle WorkingArea, int ObscuredTop)> GetScreenInsets() => ObjC.WithAutoreleasePool(() =>
+    {
+        Dictionary<uint, (PlatformRectangle, int)> result = new Dictionary<uint, (PlatformRectangle, int)>();
+        IntPtr screens = ObjC.Send(ObjC.GetClass("NSScreen"), "screens");
+
+        if (screens == IntPtr.Zero)
+        {
+            return result;
+        }
+
+        IntPtr key = CoreFoundation.CreateString("NSScreenNumber");
+
+        try
+        {
+            nint count = ObjC.SendNInt(screens, "count");
+
+            for (nint i = 0; i < count; i++)
+            {
+                IntPtr screen = ObjC.Send(screens, "objectAtIndex:", (IntPtr)i);
+                IntPtr number = ObjC.Send(ObjC.Send(screen, "deviceDescription"), "objectForKey:", key);
+
+                if (number == IntPtr.Zero)
+                {
+                    continue;
+                }
+
+                PlatformRectangle edges = GetEdgeInsets(ObjC.SendRect(screen, "frame"), ObjC.SendRect(screen, "visibleFrame"));
+                // safeAreaInsets is macOS 12 and later.
+                double top = ObjC.RespondsTo(screen, "safeAreaInsets") ? ObjC.SendEdgeInsets(screen, "safeAreaInsets").Top : 0;
+                result[ObjC.SendUInt32(number, "unsignedIntValue")] = (edges, double.IsFinite(top) ? (int)Math.Ceiling(top) : 0);
+            }
+        }
+        finally
+        {
+            CoreFoundation.CFRelease(key);
+        }
+
+        return result;
+    });
+
+    /// <summary>
+    /// The distance of <paramref name="visible"/> from each edge of <paramref name="frame"/> as X (left), Y (top), Width (right)
+    /// and Height (bottom). AppKit's rectangles have their origin at the bottom left, so the top inset is measured from the
+    /// frame's upper edge.
+    /// </summary>
+    internal static PlatformRectangle GetEdgeInsets(CoreGraphics.CGRect frame, CoreGraphics.CGRect visible)
+    {
+        static int Inset(double value) => double.IsFinite(value) ? Math.Max(0, (int)Math.Round(value)) : 0;
+
+        return new PlatformRectangle(
+            Inset(visible.X - frame.X),
+            Inset(frame.Y + frame.Height - (visible.Y + visible.Height)),
+            Inset(frame.X + frame.Width - (visible.X + visible.Width)),
+            Inset(visible.Y - frame.Y));
+    }
+
+    /// <summary><paramref name="bounds"/> without the edges <see cref="GetEdgeInsets"/> measured, or the bounds when nothing would be left.</summary>
+    internal static PlatformRectangle ApplyInsets(PlatformRectangle bounds, PlatformRectangle edges)
+    {
+        int width = bounds.Width - edges.X - edges.Width;
+        int height = bounds.Height - edges.Y - edges.Height;
+        return width > 0 && height > 0 ? new PlatformRectangle(bounds.X + edges.X, bounds.Y + edges.Y, width, height) : bounds;
     }
 
     /// <summary>

@@ -31,7 +31,8 @@
                        StretchDirection="DownOnly"/>
             </Border>
 
-            <Border Classes="tool-panel"
+            <Border x:Name="StatusPanel"
+                    Classes="tool-panel"
                     Padding="10,7"
                     Margin="16"
                     HorizontalAlignment="Center"

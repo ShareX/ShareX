@@ -37,6 +37,12 @@ internal static unsafe partial class ObjC
     private static readonly Lazy<bool> appKitLoaded = new Lazy<bool>(() => NativeLibrary.TryLoad(AppKit, out _));
     private static readonly IntPtr msgSend = NativeLibrary.GetExport(NativeLibrary.Load(LibObjC), "objc_msgSend");
 
+    // Structures larger than two registers (NSRect, NSEdgeInsets) come back through a hidden pointer on x86-64, which needs
+    // objc_msgSend_stret. arm64 returns four doubles in registers and has no _stret variant.
+    private static readonly IntPtr msgSendStruct = RuntimeInformation.ProcessArchitecture == Architecture.X64
+        ? NativeLibrary.GetExport(NativeLibrary.Load(LibObjC), "objc_msgSend_stret")
+        : msgSend;
+
     [LibraryImport(LibObjC, StringMarshalling = StringMarshalling.Utf8)]
     private static partial IntPtr objc_getClass(string name);
 
@@ -118,6 +124,26 @@ internal static unsafe partial class ObjC
     /// <summary>Methods returning NSPoint or NSSize. Two doubles come back in registers on both arm64 and x86-64, so no _stret variant.</summary>
     public static CoreGraphics.CGPoint SendPoint(IntPtr receiver, string selector) =>
         ((delegate* unmanaged<IntPtr, IntPtr, CoreGraphics.CGPoint>)msgSend)(receiver, Selector(selector));
+
+    /// <summary>Methods returning NSRect, such as -[NSScreen frame].</summary>
+    public static CoreGraphics.CGRect SendRect(IntPtr receiver, string selector) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, CoreGraphics.CGRect>)msgSendStruct)(receiver, Selector(selector));
+
+    /// <summary>Methods returning NSEdgeInsets, such as -[NSScreen safeAreaInsets].</summary>
+    public static NSEdgeInsets SendEdgeInsets(IntPtr receiver, string selector) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, NSEdgeInsets>)msgSendStruct)(receiver, Selector(selector));
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct NSEdgeInsets
+    {
+        public double Top;
+        public double Left;
+        public double Bottom;
+        public double Right;
+    }
+
+    public static uint SendUInt32(IntPtr receiver, string selector) =>
+        ((delegate* unmanaged<IntPtr, IntPtr, uint>)msgSend)(receiver, Selector(selector));
 
     /// <summary>Whether a class or object implements <paramref name="selector"/>, checked before calling a method that may be missing.</summary>
     public static bool RespondsTo(IntPtr receiver, string selector) => SendBool(receiver, "respondsToSelector:", Selector(selector));
