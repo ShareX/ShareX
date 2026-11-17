@@ -93,10 +93,21 @@ public partial class OCRWindow : Window
         base.OnKeyDown(e);
 
         // Controls that use Escape themselves, such as an open drop-down, mark it handled first.
-        if (!e.Handled && e.Key == Key.Escape && e.KeyModifiers == KeyModifiers.None)
+        if (e.Handled || e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None)
+        {
+            return;
+        }
+
+        e.Handled = true;
+
+        // Escape backs out of the service editor before it closes the window.
+        if (_viewModel.IsEditingServices)
+        {
+            _viewModel.CloseServiceEditorCommand.Execute(null);
+        }
+        else
         {
             Close();
-            e.Handled = true;
         }
     }
 
