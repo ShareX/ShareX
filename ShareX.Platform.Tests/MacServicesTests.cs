@@ -311,8 +311,17 @@ public class MacServicesTests
     {
         if (!OperatingSystem.IsMacOS()) return;
         var screens = new MacScreenCaptureService(CommandRunner.Default).GetScreens();
+        var appKitScreens = MacScreenCaptureService.ReadNSScreens();
 
         Assert.NotEmpty(screens);
+        // A structure read with the wrong calling convention would not give the size Core Graphics reports for the same display.
+        Assert.NotEmpty(appKitScreens);
+        Assert.All(appKitScreens, pair =>
+        {
+            CoreGraphics.CGRect bounds = CoreGraphics.CGDisplayBounds(pair.Key);
+            Assert.Equal(bounds.Width, pair.Value.Frame.Width);
+            Assert.Equal(bounds.Height, pair.Value.Frame.Height);
+        });
         Assert.All(screens, screen =>
         {
             Assert.True(screen.WorkingArea.Width > 0 && screen.WorkingArea.Height > 0);

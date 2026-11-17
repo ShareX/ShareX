@@ -89,7 +89,17 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
 
         uint main = CoreGraphics.CGMainDisplayID();
         List<ScreenInfo> screens = new List<ScreenInfo>((int)count);
-        Dictionary<uint, (PlatformRectangle WorkingArea, int ObscuredTop)> insets = GetScreenInsets();
+        Dictionary<uint, (CoreGraphics.CGRect Frame, PlatformRectangle Edges, int ObscuredTop)> insets;
+
+        try
+        {
+            insets = ReadNSScreens();
+        }
+        catch (Exception e) when (e is PlatformNotSupportedException or EntryPointNotFoundException)
+        {
+            // Without AppKit the screens are still listed, with their whole bounds as the working area.
+            insets = new Dictionary<uint, (CoreGraphics.CGRect, PlatformRectangle, int)>();
+        }
 
         for (int i = 0; i < count; i++)
         {
@@ -101,9 +111,9 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
             PlatformRectangle workingArea = rectangle;
             int obscuredTop = 0;
 
-            if (insets.TryGetValue(displays[i], out (PlatformRectangle WorkingArea, int ObscuredTop) inset))
+            if (insets.TryGetValue(displays[i], out (CoreGraphics.CGRect Frame, PlatformRectangle Edges, int ObscuredTop) inset))
             {
-                workingArea = ApplyInsets(rectangle, inset.WorkingArea);
+                workingArea = ApplyInsets(rectangle, inset.Edges);
                 obscuredTop = Math.Clamp(inset.ObscuredTop, 0, rectangle.Height / 2);
             }
 
@@ -114,13 +124,13 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
     }
 
     /// <summary>
-    /// For each display: how far the menu bar and the Dock reach in from its left, top, right and bottom edges (held in a
-    /// rectangle as X, Y, Width and Height), and the height of its camera housing. Core Graphics knows neither, so they come
-    /// from AppKit's NSScreen.
+    /// For each display: its frame in AppKit's coordinates, how far the menu bar and the Dock reach in from its left, top,
+    /// right and bottom edges (held in a rectangle as X, Y, Width and Height), and the height of its camera housing. Core
+    /// Graphics knows neither of the last two, so they come from AppKit's NSScreen.
     /// </summary>
-    private static Dictionary<uint, (PlatformRectangle WorkingArea, int ObscuredTop)> GetScreenInsets() => ObjC.WithAutoreleasePool(() =>
+    internal static Dictionary<uint, (CoreGraphics.CGRect Frame, PlatformRectangle Edges, int ObscuredTop)> ReadNSScreens() => ObjC.WithAutoreleasePool(() =>
     {
-        Dictionary<uint, (PlatformRectangle, int)> result = new Dictionary<uint, (PlatformRectangle, int)>();
+        Dictionary<uint, (CoreGraphics.CGRect, PlatformRectangle, int)> result = new Dictionary<uint, (CoreGraphics.CGRect, PlatformRectangle, int)>();
         IntPtr screens = ObjC.Send(ObjC.GetClass("NSScreen"), "screens");
 
         if (screens == IntPtr.Zero)
@@ -144,10 +154,11 @@ public sealed class MacScreenCaptureService : IScreenCaptureService
                     continue;
                 }
 
-                PlatformRectangle edges = GetEdgeInsets(ObjC.SendRect(screen, "frame"), ObjC.SendRect(screen, "visibleFrame"));
+                CoreGraphics.CGRect frame = ObjC.SendRect(screen, "frame");
+                PlatformRectangle edges = GetEdgeInsets(frame, ObjC.SendRect(screen, "visibleFrame"));
                 // safeAreaInsets is macOS 12 and later.
                 double top = ObjC.RespondsTo(screen, "safeAreaInsets") ? ObjC.SendEdgeInsets(screen, "safeAreaInsets").Top : 0;
-                result[ObjC.SendUInt32(number, "unsignedIntValue")] = (edges, double.IsFinite(top) ? (int)Math.Ceiling(top) : 0);
+                result[ObjC.SendUInt32(number, "unsignedIntValue")] = (frame, edges, double.IsFinite(top) ? (int)Math.Ceiling(top) : 0);
             }
         }
         finally
