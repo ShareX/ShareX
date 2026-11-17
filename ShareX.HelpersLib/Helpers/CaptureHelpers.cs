@@ -149,8 +149,15 @@ namespace ShareX.HelpersLib
                 ScreenCaptureResult result = PlatformServices.Current.ScreenCapture
                     .CaptureAsync(ScreenCaptureRequest.ForRegion(new PlatformRectangle(x, y, 1, 1)))
                     .GetAwaiter().GetResult();
-                PixelBuffer pixels = result.Pixels ?? PngCodec.Decode(result.Png);
-                return Color.FromArgb(pixels.Pixels[2], pixels.Pixels[1], pixels.Pixels[0]);
+                if (result.Pixels is PixelBuffer pixels)
+                {
+                    return Color.FromArgb(pixels.Pixels[2], pixels.Pixels[1], pixels.Pixels[0]);
+                }
+
+                // An encoded capture can carry the display's colour profile (macOS); read the colour as sRGB, like captures.
+                using SkiaSharp.SKBitmap bitmap = PlatformImageConverter.DecodeToSrgb(result.Png);
+                SkiaSharp.SKColor color = bitmap.GetPixel(0, 0);
+                return Color.FromArgb(color.Red, color.Green, color.Blue);
             }
             catch (Exception e) when (e is ArgumentException or InvalidOperationException or PlatformNotSupportedException)
             {
