@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>כדי להתחיל, יש לפתוח או לגרור לכאן GIF מונפש</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>גרור על התצוגה המקדימה כדי לחתוך</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>הקטע הזה מתחיל בתמונה שדורשת תמונות קודמות. יש לבחור תמונת התחלה אחרת לייצוא ללא אובדן.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>קידוד מחדש</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>איפוס חיתוך וגודל</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>גודל פלט</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>יש לשמור את ה־GIF החתוך בשם קובץ אחר או בתיקייה אחרת.</value>

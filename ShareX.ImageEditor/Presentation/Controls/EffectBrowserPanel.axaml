@@ -8,6 +8,20 @@
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
              mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="600"
              x:Class="ShareX.ImageEditor.Presentation.Controls.EffectBrowserPanel">
+    <UserControl.Styles>
+        <Style Selector="Button.effect-item">
+            <Style.Animations>
+                <Animation Duration="0:0:0.12" Easing="CubicEaseOut">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Opacity" Value="0"/>
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="1"/>
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+    </UserControl.Styles>
     <Grid RowDefinitions="Auto,*">
         <!-- Search Box -->
         <TextBox x:Name="SearchBox"

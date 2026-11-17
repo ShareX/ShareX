@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Media;
+using Avalonia.Media.Immutable;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using ShareX.HelpersLib;
@@ -67,8 +68,8 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
     [ObservableProperty] private decimal _minimizeHeight;
 
     public Action<bool>? CloseRequested { get; set; }
-    public IBrush BackgroundColorBrush => new SolidColorBrush(BackgroundColor);
-    public IBrush BorderColorBrush => new SolidColorBrush(BorderColor);
+    public IBrush BackgroundColorBrush { get; private set; }
+    public IBrush BorderColorBrush { get; private set; }
 
     public PinToScreenOptionsViewModel(PinToScreenOptions options)
     {
@@ -89,6 +90,8 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
         _borderColor = ToAvalonia(options.BorderColor);
         _minimizeWidth = options.MinimizeSize.Width;
         _minimizeHeight = options.MinimizeSize.Height;
+        BackgroundColorBrush = new ImmutableSolidColorBrush(_backgroundColor);
+        BorderColorBrush = new ImmutableSolidColorBrush(_borderColor);
     }
 
     [RelayCommand]
@@ -115,8 +118,17 @@ public sealed partial class PinToScreenOptionsViewModel : ViewModelBase
     [RelayCommand]
     private void Cancel() => CloseRequested?.Invoke(false);
 
-    partial void OnBackgroundColorChanged(Color value) => OnPropertyChanged(nameof(BackgroundColorBrush));
-    partial void OnBorderColorChanged(Color value) => OnPropertyChanged(nameof(BorderColorBrush));
+    partial void OnBackgroundColorChanged(Color value)
+    {
+        BackgroundColorBrush = new ImmutableSolidColorBrush(value);
+        OnPropertyChanged(nameof(BackgroundColorBrush));
+    }
+
+    partial void OnBorderColorChanged(Color value)
+    {
+        BorderColorBrush = new ImmutableSolidColorBrush(value);
+        OnPropertyChanged(nameof(BorderColorBrush));
+    }
 
     private static Color ToAvalonia(System.Drawing.Color color) => Color.FromArgb(color.A, color.R, color.G, color.B);
     private static System.Drawing.Color ToDrawing(Color color) => System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);

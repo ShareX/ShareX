@@ -36,9 +36,9 @@ McoreD has handed the `cross-platform` branch to the coding agent that maintains
 | `ShareX.Platform.Windows` | Windows-only code: Win32 and COM P/Invoke, registry, DPAPI, GDI capture, DWM, shell and Explorer integration, WinRT (OCR), HDR and transparent window capture. | Public types other than the service implementations and the models they need. Keep Win32 declarations `internal`. |
 | `ShareX.Platform.Linux` | X11, Wayland portals and compositor IPC, D-Bus, freedesktop.org specifications, and optional distribution programs detected at run time. Per-desktop implementations live under `Desktop/`, chosen by `LinuxDesktop`. | Code other platforms need. |
 | `ShareX.Platform.MacOS` | AppKit, CoreGraphics, Carbon, Vision, ImageIO, Keychain, LaunchAgents, QuickLook. | Code other platforms need. |
-| Everything else (`ShareX`, `HelpersLib`, `UploadersLib`, `HistoryLib`, `ScreenCaptureLib`, `ImageEffectsLib`, `Tools`, `ImageEditor`, `ShareX.Avalonia`, `NativeMessagingHost`) | Shared code that targets plain `net10.0` and reaches the operating system only through `PlatformServices.Current`. | Anything in the list below. |
+| Everything else (`ShareX`, `HelpersLib`, `UploadersLib`, `HistoryLib`, `ScreenCaptureLib`, `ImageEffectsLib`, `Tools`, `ImageEditor`, `ShareX.Avalonia`, `NativeMessagingHost`) | Shared code that targets plain `net11.0` and reaches the operating system only through `PlatformServices.Current`. | Anything in the list below. |
 
-Exceptions: `ShareX.Setup` (Windows installer) and `ShareX.Steam` (`net48` launcher) are Windows-only. The `ShareX` application also builds `net10.0-windows10.0.22621.0` on Windows so the release gets WinRT features from `ShareX.Platform.Windows`; it contains no Windows code itself. The `MicrosoftStore` build flavour keeps its StartupTask code under that build flag.
+Exceptions: `ShareX.Setup` (Windows installer) and `ShareX.Steam` (`net48` launcher) are Windows-only. The `ShareX` application also builds `net11.0-windows10.0.22621.0` on Windows so the release gets WinRT features from `ShareX.Platform.Windows`; it contains no Windows code itself. The `MicrosoftStore` build flavour keeps its StartupTask code under that build flag.
 
 ### Forbidden in shared code
 

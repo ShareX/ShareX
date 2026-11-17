@@ -43,10 +43,10 @@ public sealed class ScrollingCaptureService : IDisposable
     /// <summary>Why the last capture stopped early because the desktop no longer allowed it, or null.</summary>
     public string? FailureReason => _manager.FailureReason;
 
-    public ScrollingCaptureService(ScrollingCaptureOptions options)
+    public ScrollingCaptureService(ScrollingCaptureOptions options, RegionCaptureOptions? regionCaptureOptions = null)
     {
         Options = options;
-        _manager = new ScrollingCaptureManager(options);
+        _manager = new ScrollingCaptureManager(options, regionCaptureOptions);
     }
 
     public Task<bool> SelectWindowAsync() => _manager.SelectWindowAsync();

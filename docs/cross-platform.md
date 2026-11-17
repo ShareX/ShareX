@@ -2,19 +2,19 @@
 
 ShareX moves operating system specific code behind a platform abstraction layer so the same application runs on Windows, macOS and Linux. Requirements are tracked in [#8867](https://github.com/ShareX/ShareX/issues/8867). Work happens on `cross-platform` (called `cross-platform-v2` until 2026-11-04); progress is in [cross-platform-roadmap.md](cross-platform-roadmap.md), and why things are done this way is in [cross-platform-learnings.md](cross-platform-learnings.md).
 
-This document describes the **target** architecture. At the branch point (`develop` `fd61635f2`) WinForms and GDI+ are already gone, the platform projects are not on this branch yet (task M1), and the libraries still target `net10.0-windows`. The migration debt list in [AGENTS.md](../AGENTS.md) tracks the gap.
+This document describes the **target** architecture. At the branch point (`develop` `fd61635f2`) WinForms and GDI+ are already gone, the platform projects are not on this branch yet (task M1), and the libraries still target `net11.0-windows`. The migration debt list in [AGENTS.md](../AGENTS.md) tracks the gap.
 
 ## Projects
 
 | Project | Target | Purpose |
 | --- | --- | --- |
-| `ShareX.Platform` | `net10.0` | Interfaces, `PlatformServices`, `PlatformDetector`, `PlatformInfo`, `LinuxDistribution`, `LinuxPackages`, portable models and helpers. No operating system calls. |
-| `ShareX.Platform.Windows` | `net10.0` and `net10.0-windows10.0.22621.0` | Win32, COM and WinRT implementations. Behaviour is identical to the code they replace. The Windows SDK target adds WinRT features (the native screen recorder). |
-| `ShareX.Platform.MacOS` | `net10.0` | AppKit, CoreGraphics, Carbon, Keychain and LaunchAgent implementations. |
-| `ShareX.Platform.Linux` | `net10.0` | X11, Wayland (portals, wlroots tools, Hyprland and sway IPC), freedesktop.org (XDG, D-Bus, Secret Service, thumbnails). |
-| `ShareX.Platform.Tests` | `net10.0` | xUnit tests for parsers and argument building; run on all three operating systems. |
-| `ShareX.HelpersLib`, `ShareX.UploadersLib`, `ShareX.HistoryLib`, `ShareX.ImageEffectsLib`, `ShareX.ScreenCaptureLib`, `ShareX.Tools`, `ShareX.ImageEditor`, `ShareX.Avalonia`, `ShareX.NativeMessagingHost` | `net10.0` | Portable code. Anything that needs the operating system goes through `PlatformServices.Current`. |
-| `ShareX` | `net10.0` and `net10.0-windows10.0.22621.0` | The application. Chooses the platform services at start up; contains no operating system code itself. |
+| `ShareX.Platform` | `net11.0` | Interfaces, `PlatformServices`, `PlatformDetector`, `PlatformInfo`, `LinuxDistribution`, `LinuxPackages`, portable models and helpers. No operating system calls. |
+| `ShareX.Platform.Windows` | `net11.0` and `net11.0-windows10.0.22621.0` | Win32, COM and WinRT implementations. Behaviour is identical to the code they replace. The Windows SDK target adds WinRT features (the native screen recorder). |
+| `ShareX.Platform.MacOS` | `net11.0` | AppKit, CoreGraphics, Carbon, Keychain and LaunchAgent implementations. |
+| `ShareX.Platform.Linux` | `net11.0` | X11, Wayland (portals, wlroots tools, Hyprland and sway IPC), freedesktop.org (XDG, D-Bus, Secret Service, thumbnails). |
+| `ShareX.Platform.Tests` | `net11.0` | xUnit tests for parsers and argument building; run on all three operating systems. |
+| `ShareX.HelpersLib`, `ShareX.UploadersLib`, `ShareX.HistoryLib`, `ShareX.ImageEffectsLib`, `ShareX.ScreenCaptureLib`, `ShareX.Tools`, `ShareX.ImageEditor`, `ShareX.Avalonia`, `ShareX.NativeMessagingHost` | `net11.0` | Portable code. Anything that needs the operating system goes through `PlatformServices.Current`. |
+| `ShareX` | `net11.0` and `net11.0-windows10.0.22621.0` | The application. Chooses the platform services at start up; contains no operating system code itself. |
 | `ShareX.Setup`, `ShareX.Steam` | Windows only | Installer and Steam launcher. |
 
 ## Services
@@ -97,7 +97,7 @@ The Cross-platform workflow packages and starts the app for arm64 (`macos-latest
 
 ## Building
 
-.NET 10 SDK on every operating system.
+.NET 11 SDK on every operating system.
 
 ```sh
 dotnet build ShareX.sln -c Release -p:Platform=x64

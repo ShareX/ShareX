@@ -3038,6 +3038,9 @@
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>השבתת הערות בלכידת אזור</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>התאם את גודל החלון לתמונה</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>זכור את מצב החלון</value>
   </data>

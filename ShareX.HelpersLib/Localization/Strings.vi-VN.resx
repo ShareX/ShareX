@@ -1368,9 +1368,6 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Tìm kiếm hình ảnh trên Google</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Phát triển</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Bản phát hành trước</value>
   </data>

@@ -1304,9 +1304,6 @@ namespace ShareX.HelpersLib.Localization {
         public static string ToastClickAction_Upload {
             get { return ResourceManager.GetString("ToastClickAction_Upload", resourceCulture); }
         }
-        public static string UpdateChannel_Dev {
-            get { return ResourceManager.GetString("UpdateChannel_Dev", resourceCulture); }
-        }
         public static string UpdateChannel_PreRelease {
             get { return ResourceManager.GetString("UpdateChannel_PreRelease", resourceCulture); }
         }

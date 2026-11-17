@@ -403,7 +403,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
 
             modalHost.RenderTransform = null;
-            Point? targetCenter = GetCursorScreenCenter(this);
+            Point? targetCenter = GetCursorScreenCenterInView();
             if (!targetCenter.HasValue)
             {
                 return;
@@ -424,6 +424,32 @@ namespace ShareX.ImageEditor.Presentation.Views
                 modalHost.ClearValue(MaxWidthProperty);
                 modalHost.ClearValue(MaxHeightProperty);
             }
+        }
+
+        private Point? GetCursorScreenCenterInView()
+        {
+            TopLevel? topLevel = TopLevel.GetTopLevel(this);
+            if (topLevel == null || !PlatformServices.IsInitialized ||
+                PlatformServices.Current.Windows.GetCursorPosition() is not PlatformPoint cursorPosition)
+            {
+                return null;
+            }
+
+            Screen? screen = topLevel.Screens?.ScreenFromPoint(new PixelPoint(cursorPosition.X, cursorPosition.Y));
+            if (screen == null)
+            {
+                return null;
+            }
+
+            Point? topLeft = topLevel.TranslatePoint(topLevel.PointToClient(screen.Bounds.TopLeft), this);
+            Point? bottomRight = topLevel.TranslatePoint(topLevel.PointToClient(screen.Bounds.BottomRight), this);
+            if (!topLeft.HasValue || !bottomRight.HasValue)
+            {
+                return null;
+            }
+
+            Rect visible = new Rect(topLeft.Value, bottomRight.Value).Intersect(new Rect(Bounds.Size));
+            return visible.Width > 0 && visible.Height > 0 ? visible.Center : null;
         }
 
         private Point? GetCursorScreenCenter(Visual relativeTo)

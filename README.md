@@ -136,7 +136,7 @@ For the safest download options, use the official links below.
 
 ## Windows, Linux and macOS (cross-platform branch)
 
-The `cross-platform` branch makes ShareX run on Windows, Linux and macOS from one code base: .NET 10 and Avalonia, with each operating system behind a platform layer (`ShareX.Platform.Windows`, `.Linux`, `.MacOS`). Architecture, building and per-desktop notes are in [docs/cross-platform.md](docs/cross-platform.md); detailed progress is in [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md).
+The `cross-platform` branch makes ShareX run on Windows, Linux and macOS from one code base: .NET 11 and Avalonia, with each operating system behind a platform layer (`ShareX.Platform.Windows`, `.Linux`, `.MacOS`). Architecture, building and per-desktop notes are in [docs/cross-platform.md](docs/cross-platform.md); detailed progress is in [docs/cross-platform-roadmap.md](docs/cross-platform-roadmap.md).
 
 Progress as of 4 November 2026:
 

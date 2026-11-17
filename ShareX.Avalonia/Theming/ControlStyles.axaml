@@ -1,6 +1,8 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:controls="using:ShareX.AvaloniaUI.Controls">
+        xmlns:controls="using:ShareX.AvaloniaUI.Controls"
+        xmlns:icons="using:ShareX.Icons"
+        xmlns:theming="using:ShareX.AvaloniaUI.Theming">
     <!--
         Application-wide style entry point.
         Keep reusable selectors and style classes here so views stay focused on layout and behavior.
@@ -51,6 +53,12 @@
     </Styles.Resources>
 
     <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
+
+    <!-- Screen readers use the tooltip text when a control has no accessible name of its own. -->
+    <Style Selector="Button, ToggleButton, RepeatButton, DropDownButton, SplitButton, ComboBox, Slider, NumericUpDown, :is(UserControl)">
+        <Setter Property="AutomationProperties.Name"
+                Value="{Binding $self.(ToolTip.Tip), Converter={x:Static theming:ToolTipTextConverter.Instance}}"/>
+    </Style>
     <Style Selector=":is(Window)">
         <Setter Property="Icon" Value="{DynamicResource ShareX.WindowIcon}"/>
     </Style>
@@ -1134,6 +1142,16 @@
         <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Icon}"/>
     </Style>
 
+    <Style Selector="MenuItem:checked:toggle /template/ ContentControl#PART_ToggleIconPresenter">
+        <Setter Property="Content">
+            <Template>
+                <controls:IconPresenter Icon="{x:Static icons:AppIcons.Check}" FontSize="16"
+                                        Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                        HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Template>
+        </Setter>
+    </Style>
+
     <Style Selector="MenuItem.bold-when-checked">
         <Setter Property="FontWeight" Value="Normal"/>
     </Style>
@@ -1144,6 +1162,10 @@
 
     <Style Selector="Separator.compact-menu-separator">
         <Setter Property="Margin" Value="{DynamicResource ShareX.Density.Menu.SeparatorMargin}"/>
+    </Style>
+
+    <Style Selector="ContextMenu, MenuFlyoutPresenter">
+        <Setter Property="MaxWidth" Value="Infinity"/>
     </Style>
 
     <Style Selector="FlyoutPresenter.tool-grid-flyout">

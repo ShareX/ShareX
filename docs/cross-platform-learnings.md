@@ -18,13 +18,13 @@ The first attempt lived on a branch also named `cross-platform` (frozen at `55e0
 9. **CA1416 as an error in every shared project** turns a Linux run time crash into a build error. Do not suppress it; move the code behind a service.
 10. **Model results with portable types.** `PlatformWindow`, `SnapTarget`, `ScreenInfo`, `PlatformRectangle`, `PixelBuffer` (straight-alpha BGRA). Handles cross the interface as `long` and mean nothing outside their platform.
 11. **Keep pixels, not PNGs,** when a capture backend already has pixels (`ScreenCaptureResult.Pixels`). Encoding 4K captures to PNG just to decode them again was measurable.
-12. **WinRT needs the Windows SDK target framework.** WinRT code (the native screen recorder; `Windows.Media.Ocr` until PaddleOCR replaced it) only compiles for `net10.0-windows10.0.22621.0`. `ShareX.Platform.Windows` builds both `net10.0` (for hosts that run everywhere) and the Windows SDK target; the Windows application builds the Windows SDK target.
+12. **WinRT needs the Windows SDK target framework.** WinRT code (the native screen recorder; `Windows.Media.Ocr` until PaddleOCR replaced it) only compiles for `net11.0-windows10.0.22621.0`. `ShareX.Platform.Windows` builds both `net11.0` (for hosts that run everywhere) and the Windows SDK target; the Windows application builds the Windows SDK target.
 13. **The application chooses its platform at start up** (`PlatformServices.Initialize`) and nothing else does.
 
 ## Build and tooling
 
 14. **`Directory.Build.props` is case sensitive on Linux and macOS.** `develop` names it `Directory.build.props`, which MSBuild ignores on case-sensitive file systems. Rename it (and `Directory.Build.targets`).
-15. **Set `EnableWindowsTargeting` on non-Windows hosts** so `net10.0-windows` projects still compile on Linux while they are being migrated.
+15. **Set `EnableWindowsTargeting` on non-Windows hosts** so `net11.0-windows` projects still compile on Linux while they are being migrated.
 16. **Build with `-p:Platform=x64`.** A plain `dotnet build ShareX.sln` uses `Any CPU`, which the projects do not configure.
 17. **Windows-only projects:** `ShareX.Setup` (installer) and `ShareX.Steam` (`net48` launcher) stay Windows-only by design.
 

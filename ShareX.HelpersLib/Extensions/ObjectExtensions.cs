@@ -54,6 +54,8 @@ namespace ShareX.HelpersLib
             if (visited.ContainsKey(originalObject)) return visited[originalObject];
             if (typeof(Delegate).IsAssignableFrom(typeToReflect)) return null;
             object cloneObject = CloneMethod.Invoke(originalObject, null);
+            // Register before copying array elements so arrays that reference themselves don't recurse forever.
+            visited.Add(originalObject, cloneObject);
             if (typeToReflect.IsArray)
             {
                 Type arrayType = typeToReflect.GetElementType();
@@ -63,7 +65,6 @@ namespace ShareX.HelpersLib
                     clonedArray.ForEach((array, indices) => array.SetValue(InternalCopy(clonedArray.GetValue(indices), visited), indices));
                 }
             }
-            visited.Add(originalObject, cloneObject);
             CopyFields(originalObject, visited, cloneObject, typeToReflect);
             RecursiveCopyBaseTypePrivateFields(originalObject, visited, cloneObject, typeToReflect);
             return cloneObject;

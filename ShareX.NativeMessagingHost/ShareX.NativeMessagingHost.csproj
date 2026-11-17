@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net11.0</TargetFramework>
     <WarningsAsErrors>$(WarningsAsErrors);CA1416</WarningsAsErrors>
     <OutputType>WinExe</OutputType>
     <AssemblyName>ShareX_NativeMessagingHost</AssemblyName>
@@ -11,7 +11,7 @@
     <ProjectReference Include="..\ShareX.Platform.Linux\ShareX.Platform.Linux.csproj" />
     <ProjectReference Include="..\ShareX.Platform.MacOS\ShareX.Platform.MacOS.csproj" />
   </ItemGroup>
-  <!-- Build dependencies separately so this plain-net10.0 host cannot overwrite the application's
+  <!-- Build dependencies separately so this plain-net11.0 host cannot overwrite the application's
        Windows SDK platform DLL. ShareX supplies their runtime copies; deploy only the host's own files. -->
   <Target Name="CopyNativeMessagingHostToApplication" AfterTargets="Build">
     <ItemGroup>

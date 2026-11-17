@@ -3038,6 +3038,9 @@
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>ปิดใช้งาน การจับภาพพื้นที่ คำอธิบายประกอบ</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ปรับขนาดหน้าต่างให้พอดีกับรูปภาพ</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>จดจำ หน้าต่าง สถานะ</value>
   </data>

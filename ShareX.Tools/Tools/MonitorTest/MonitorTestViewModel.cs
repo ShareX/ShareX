@@ -24,6 +24,7 @@
 #endregion License Information (GPL v3)
 
 using Avalonia.Media;
+using Avalonia.Media.Immutable;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace ShareX.Tools;
@@ -90,14 +91,21 @@ public sealed partial class MonitorTestViewModel : ViewModelBase
     private double _blue;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(GradientStartBrush))]
     [NotifyPropertyChangedFor(nameof(GradientStartText))]
     private Color _gradientStart = Colors.White;
 
     [ObservableProperty]
-    [NotifyPropertyChangedFor(nameof(GradientEndBrush))]
     [NotifyPropertyChangedFor(nameof(GradientEndText))]
     private Color _gradientEnd = Colors.Black;
+
+    [ObservableProperty]
+    private IBrush _rgbBrush;
+
+    [ObservableProperty]
+    private IBrush _gradientStartBrush;
+
+    [ObservableProperty]
+    private IBrush _gradientEndBrush;
 
     [ObservableProperty]
     private MonitorGradientDirection _gradientDirection = MonitorGradientDirection.Vertical;
@@ -137,18 +145,24 @@ public sealed partial class MonitorTestViewModel : ViewModelBase
                 _updatingRgb = false;
             }
             OnPropertyChanged();
-            OnPropertyChanged(nameof(RgbBrush));
+            RgbBrush = new ImmutableSolidColorBrush(RgbColor);
             OnPropertyChanged(nameof(RgbText));
         }
     }
 
-    public IBrush RgbBrush => new SolidColorBrush(RgbColor);
     public string RgbText => $"#{RgbColor.R:X2}{RgbColor.G:X2}{RgbColor.B:X2}";
-    public IBrush GradientStartBrush => new SolidColorBrush(GradientStart);
-    public IBrush GradientEndBrush => new SolidColorBrush(GradientEnd);
     public string GradientStartText => $"#{GradientStart.R:X2}{GradientStart.G:X2}{GradientStart.B:X2}";
     public string GradientEndText => $"#{GradientEnd.R:X2}{GradientEnd.G:X2}{GradientEnd.B:X2}";
 
+    public MonitorTestViewModel()
+    {
+        _rgbBrush = new ImmutableSolidColorBrush(RgbColor);
+        _gradientStartBrush = new ImmutableSolidColorBrush(_gradientStart);
+        _gradientEndBrush = new ImmutableSolidColorBrush(_gradientEnd);
+    }
+
+    partial void OnGradientStartChanged(Color value) => GradientStartBrush = new ImmutableSolidColorBrush(value);
+    partial void OnGradientEndChanged(Color value) => GradientEndBrush = new ImmutableSolidColorBrush(value);
     partial void OnRedChanged(double value) => NotifyRgbChanged();
     partial void OnGreenChanged(double value) => NotifyRgbChanged();
     partial void OnBlueChanged(double value) => NotifyRgbChanged();
@@ -169,7 +183,7 @@ public sealed partial class MonitorTestViewModel : ViewModelBase
         if (!_updatingRgb)
         {
             OnPropertyChanged(nameof(RgbColor));
-            OnPropertyChanged(nameof(RgbBrush));
+            RgbBrush = new ImmutableSolidColorBrush(RgbColor);
             OnPropertyChanged(nameof(RgbText));
         }
     }

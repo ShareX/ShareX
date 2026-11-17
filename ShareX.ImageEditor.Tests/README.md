@@ -23,7 +23,7 @@ Windows application checks use the real Release build output:
 ```powershell
 dotnet build ShareX.sln -c Release -p:Platform=x64
 $env:SHAREX_TEST_WINDOWS_APPLICATION_DIRECTORY = Join-Path (Get-Location) 'ShareX/bin/Release/win-x64'
-$env:SHAREX_TEST_WINDOWS_SDK_PLATFORM_ASSEMBLY = Join-Path (Get-Location) 'ShareX.Platform.Windows/bin/Release/net10.0-windows10.0.22621.0/win-x64/ShareX.Platform.Windows.dll'
+$env:SHAREX_TEST_WINDOWS_SDK_PLATFORM_ASSEMBLY = Join-Path (Get-Location) 'ShareX.Platform.Windows/bin/Release/net11.0-windows10.0.22621.0/win-x64/ShareX.Platform.Windows.dll'
 dotnet test ShareX.ImageEditor.Tests -c Release -p:Platform=x64
 ```
 

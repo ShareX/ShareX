@@ -3038,6 +3038,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Annotaties bij gebiedsopname uitschakelen</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Venstergrootte aanpassen aan afbeelding</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Vensterstatus onthouden</value>
   </data>

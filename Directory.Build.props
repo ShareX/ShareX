@@ -11,7 +11,7 @@
     <Configurations>Release;Debug;Steam;MicrosoftStore;MicrosoftStoreDebug</Configurations>
     <Platforms>x64;ARM64</Platforms>
   </PropertyGroup>
-  <!-- Lets net10.0-windows projects compile on Linux and macOS while they are being made portable. -->
+  <!-- Lets net11.0-windows projects compile on Linux and macOS while they are being made portable. -->
   <PropertyGroup Condition="!$([MSBuild]::IsOSPlatform('Windows'))">
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
   </PropertyGroup>

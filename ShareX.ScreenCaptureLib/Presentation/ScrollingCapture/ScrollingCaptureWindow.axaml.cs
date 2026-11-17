@@ -60,16 +60,17 @@ public partial class ScrollingCaptureWindow : Window
     public bool IsCapturing => !_viewModel.IsClosed && _service.IsCapturing;
 
     public ScrollingCaptureWindow()
-        : this(new ScrollingCaptureOptions(), null, null)
+        : this(new ScrollingCaptureOptions(), null, null, null)
     {
     }
 
     public ScrollingCaptureWindow(
         ScrollingCaptureOptions options,
         Action<SKBitmap>? uploadRequested,
-        Action? playNotificationSound)
+        Action? playNotificationSound,
+        RegionCaptureOptions? regionCaptureOptions)
     {
-        _service = new ScrollingCaptureService(options);
+        _service = new ScrollingCaptureService(options, regionCaptureOptions);
         _viewModel = new ScrollingCaptureWindowViewModel();
         _uploadRequested = uploadRequested;
         _playNotificationSound = playNotificationSound;

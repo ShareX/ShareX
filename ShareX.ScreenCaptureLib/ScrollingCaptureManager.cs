@@ -44,7 +44,7 @@ namespace ShareX.ScreenCaptureLib
         public virtual IInputService Input => PlatformServices.Current.Input;
         public virtual void ActivateWindow(long handle) => PlatformServices.Current.Windows.ActivateWindow(handle);
         public virtual Task<SKBitmap?> CaptureAsync(Rectangle rectangle) => new Screenshot { CaptureCursor = false }.CaptureRectangleAsync(rectangle);
-        public virtual Task<(Rectangle Rectangle, PlatformWindow? Window)?> SelectAsync() => RegionCaptureTasks.GetRectangleRegionAsync(new RegionCaptureOptions());
+        public virtual Task<(Rectangle Rectangle, PlatformWindow? Window)?> SelectAsync(RegionCaptureOptions options) => RegionCaptureTasks.GetRectangleRegionAsync(options);
         public virtual Task Delay(int milliseconds, CancellationToken cancellationToken) => Task.Delay(Math.Max(0, milliseconds), cancellationToken);
 
         public virtual IDisposable? ShowRegion(Rectangle rectangle)
@@ -80,9 +80,11 @@ namespace ShareX.ScreenCaptureLib
         private int bestMatchCount, bestMatchIndex, bestIgnoreBottomOffset;
         private PlatformWindow? selectedWindow;
         private Rectangle selectedRectangle;
+        private readonly RegionCaptureOptions? regionCaptureOptions;
 
-        public ScrollingCaptureManager(ScrollingCaptureOptions options) : this(options, new ScrollingCaptureHost())
+        public ScrollingCaptureManager(ScrollingCaptureOptions options, RegionCaptureOptions? regionCaptureOptions = null) : this(options, new ScrollingCaptureHost())
         {
+            this.regionCaptureOptions = regionCaptureOptions;
         }
 
         internal ScrollingCaptureManager(ScrollingCaptureOptions options, ScrollingCaptureHost host)
@@ -301,7 +303,11 @@ namespace ShareX.ScreenCaptureLib
 
         public async Task<bool> SelectWindowAsync()
         {
-            var selection = await host.SelectAsync();
+            // Window detection must stay on to select a window to scroll, so only the active monitor setting is taken from the user's region capture options.
+            var selection = await host.SelectAsync(new RegionCaptureOptions
+            {
+                ActiveMonitorMode = regionCaptureOptions != null && regionCaptureOptions.ActiveMonitorMode
+            });
 
             // The selector cannot be cancelled from here; if the capture was closed meanwhile, ignore what it returns.
             if (selection == null || disposed)

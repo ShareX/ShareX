@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>Mở hoặc kéo thả một GIF động để bắt đầu</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>Kéo trên bản xem trước để cắt</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>Đoạn cắt này bắt đầu ở một khung hình cần các khung hình trước đó. Chọn khung hình bắt đầu khác để xuất mà không mất dữ liệu.</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>Mã hóa lại</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>Đặt lại vùng cắt và kích thước</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>Kích thước đầu ra</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>Lưu GIF đã cắt với tên tệp khác hoặc trong thư mục khác.</value>

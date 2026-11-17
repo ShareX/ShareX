@@ -1368,9 +1368,6 @@
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google 图片搜索</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>开发版</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>预览版</value>
   </data>

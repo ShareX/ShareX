@@ -67,7 +67,7 @@ public sealed class ScrollingCaptureBackendTests
         public override void ActivateWindow(long handle) { }
         public override IDisposable? ShowRegion(Rectangle rectangle) => null;
         public override Task Delay(int milliseconds, CancellationToken cancellationToken) => OnDelay(milliseconds, cancellationToken);
-        public override Task<(Rectangle Rectangle, PlatformWindow? Window)?> SelectAsync() => OnSelect();
+        public override Task<(Rectangle Rectangle, PlatformWindow? Window)?> SelectAsync(RegionCaptureOptions options) => OnSelect();
 
         public override Task<SKBitmap?> CaptureAsync(Rectangle rectangle)
         {

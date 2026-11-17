@@ -1368,9 +1368,6 @@
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Buscar con Google Imágenes</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Desarrollo</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Versión preliminar</value>
   </data>

@@ -271,6 +271,9 @@
   <data name="AnimatedGifTrimmer_ChooseGif" xml:space="preserve">
     <value>शुरू करने के लिए एनिमेटेड GIF खोलें या खींचकर छोड़ें</value>
   </data>
+  <data name="AnimatedGifTrimmer_CropHint" xml:space="preserve">
+    <value>क्रॉप करने के लिए पूर्वावलोकन पर खींचें</value>
+  </data>
   <data name="AnimatedGifTrimmer_DependentFrame" xml:space="preserve">
     <value>यह कट ऐसे फ़्रेम से शुरू होता है जिसके लिए पिछले फ़्रेम चाहिए। हानिरहित निर्यात के लिए कोई दूसरा शुरुआती फ़्रेम चुनें।</value>
   </data>
@@ -318,6 +321,12 @@
   </data>
   <data name="AnimatedGifTrimmer_Reencode" xml:space="preserve">
     <value>दोबारा एन्कोड</value>
+  </data>
+  <data name="AnimatedGifTrimmer_ResetCrop" xml:space="preserve">
+    <value>क्रॉप और आकार रीसेट करें</value>
+  </data>
+  <data name="AnimatedGifTrimmer_Size" xml:space="preserve">
+    <value>आउटपुट आकार</value>
   </data>
   <data name="AnimatedGifTrimmer_SourceOverwrite" xml:space="preserve">
     <value>ट्रिम किए गए GIF को किसी दूसरे फ़ाइल नाम से या दूसरे फ़ोल्डर में सहेजें।</value>

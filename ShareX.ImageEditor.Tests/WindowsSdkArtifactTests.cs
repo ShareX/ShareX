@@ -48,7 +48,7 @@ public sealed class WindowsSdkArtifactTests
         string portableAssembly = typeof(WindowsPlatformServices).Assembly.Location;
         Assert.True(File.Exists(sdkAssembly), $"Build the Windows SDK platform target: {sdkAssembly}");
         Assert.True(File.Exists(applicationAssembly), $"Build the Windows application: {applicationAssembly}");
-        Assert.False(ContainsSdkOnlyType(portableAssembly), "The net10.0 host must use the portable platform assembly.");
+        Assert.False(ContainsSdkOnlyType(portableAssembly), "The net11.0 host must use the portable platform assembly.");
         Assert.True(ContainsSdkOnlyType(sdkAssembly), "The SDK target must contain the Windows Runtime services.");
         Assert.True(ContainsSdkOnlyType(applicationAssembly), "The Windows application must retain its Windows Runtime services.");
         Assert.Equal(SHA256.HashData(File.ReadAllBytes(sdkAssembly)), SHA256.HashData(File.ReadAllBytes(applicationAssembly)));

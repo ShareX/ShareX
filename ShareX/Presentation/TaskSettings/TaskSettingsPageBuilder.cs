@@ -976,6 +976,7 @@ internal sealed class TaskSettingsPageBuilder
         return Page("tools-image-editor", Strings.TaskSettingsWindow_ImageEditor, AppIcons.Image,
             EnabledCard(_toolsOverride, Strings.TaskSettingsWindow_General,
                 Check(Strings.TaskSettingsWindow_RememberWindowState, () => options.RememberWindowState, value => options.RememberWindowState = value),
+                Check(Strings.TaskSettingsWindow_AutoSizeWindow, () => options.AutoSizeWindow, value => options.AutoSizeWindow = value),
                 Check(Strings.TaskSettingsWindow_ShowExitConfirmation, () => options.ShowExitConfirmation, value => options.ShowExitConfirmation = value),
                 Check(Strings.TaskSettingsWindow_ZoomToFitOnOpen, () => options.ZoomToFitOnOpen, value => options.ZoomToFitOnOpen = value),
                 Check(Strings.TaskSettingsWindow_QuickCrop, () => options.QuickCrop, value => options.QuickCrop = value),

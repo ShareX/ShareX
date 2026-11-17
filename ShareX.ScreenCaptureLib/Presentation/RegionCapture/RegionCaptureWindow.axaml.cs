@@ -276,13 +276,21 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        if (e.Key == Key.Enter && HasAnyRegion() && !e.Handled &&
+        if (e.Key == Key.Enter && !e.Handled &&
             _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
             FocusManager?.GetFocusedElement() is not TextBox)
         {
-            e.Handled = true;
-            CompleteSelection();
-            return;
+            if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
+            {
+                SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
+            }
+
+            if (HasAnyRegion())
+            {
+                e.Handled = true;
+                CompleteSelection();
+                return;
+            }
         }
 
         if (_regionToolActive && e.Key == Key.Space)
@@ -815,6 +823,7 @@ public partial class RegionCaptureWindow : Window
         if (_resizeNode.HasValue)
         {
             SetInteraction(RegionInteraction.Resizing);
+            ResizeSelection(point);
         }
         else if (HasValidSelection() && _regionOverlay.Selection.Contains(point))
         {
@@ -1868,10 +1877,10 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Vector delta = point - _pressPoint;
-        Rect resized = SelectionResizeNode.Resize(_regionOverlay.SelectionRectangle, _resizeNode.Value, delta);
+        Rect start = _interactionStartRegion.Bounds;
+        Vector delta = point - SelectionResizeNode.GetPosition(start, _resizeNode.Value);
+        Rect resized = SelectionResizeNode.Resize(start, _resizeNode.Value, delta);
         SetSelection(resized, null);
-        _pressPoint = point;
     }
 
     private void UpdateHud(Point imagePoint)

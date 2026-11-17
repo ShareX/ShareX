@@ -134,7 +134,7 @@ public partial class QuickTaskMenuEditorWindow : Window
 
     private void OnConfirmResetClick(object? sender, RoutedEventArgs e)
     {
-        ApplicationState.Settings.QuickTaskPresets = QuickTaskInfo.DefaultPresets;
+        ApplicationState.Settings.QuickTaskPresets = QuickTaskInfo.GetDefaultPresets();
         ResetConfirmationOverlay.IsVisible = false;
         ReloadItems();
         SaveSettings();

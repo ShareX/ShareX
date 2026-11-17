@@ -1368,9 +1368,6 @@
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>구글 이미지 검색</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>개발</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>사전 릴리스</value>
   </data>

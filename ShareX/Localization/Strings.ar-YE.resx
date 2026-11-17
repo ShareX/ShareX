@@ -3038,6 +3038,9 @@
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>تعطيل التعليقات التوضيحية لالتقاط المنطقة</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ضبط حجم النافذة لتناسب الصورة</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>تذكر حالة النافذة</value>
   </data>

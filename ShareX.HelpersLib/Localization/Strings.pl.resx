@@ -1368,9 +1368,6 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google Lens</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Deweloperski</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Wersja przedpremierowa</value>
   </data>

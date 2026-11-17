@@ -29,7 +29,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 10.0.x
+          dotnet-version: 11.0.x
 
       # The test host must match the runner's CPU (macos-latest is Apple silicon).
       - name: Pick test platform
@@ -76,7 +76,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 10.0.x
+          dotnet-version: 11.0.x
 
       # Windows-only projects compile on any OS through EnableWindowsTargeting (set in Directory.Build.props). They cannot run off Windows yet.
       - name: Build ShareX.sln
@@ -113,7 +113,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 10.0.x
+          dotnet-version: 11.0.x
 
       # A release build is signed with Developer ID and notarized when the repository has these secrets: MACOS_CERTIFICATE (the
       # Developer ID Application .p12, base64), MACOS_CERTIFICATE_PASSWORD, MACOS_SIGN_IDENTITY, and MACOS_NOTARY_KEY (an App
@@ -223,7 +223,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: 10.0.x
+          dotnet-version: 11.0.x
 
       # The test job covers the libraries on every system; this checks the whole solution once.
       - name: Build ShareX.sln

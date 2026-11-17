@@ -62,6 +62,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
         [ObservableProperty]
         private bool _isVisible = true;
 
+        public int BestScore { get; private set; }
+
         public EffectCategory(string name, bool showCount = true, bool keepVisibleWhenEmpty = false, string? headerHint = null)
         {
             Name = name;
@@ -156,24 +158,81 @@ namespace ShareX.ImageEditor.Presentation.Controls
 
         public void Filter(string searchText)
         {
-            VisibleEffects.Clear();
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                foreach (var effect in AllEffects) VisibleEffects.Add(effect);
+                BestScore = 0;
+                SyncVisibleEffects(AllEffects);
             }
             else
             {
-                foreach (var effect in AllEffects)
-                {
-                    if (effect.Name.Contains(searchText, StringComparison.OrdinalIgnoreCase) ||
-                        effect.Description.Contains(searchText, StringComparison.OrdinalIgnoreCase))
-                    {
-                        VisibleEffects.Add(effect);
-                    }
-                }
+                var matches = AllEffects
+                    .Select(effect => (Effect: effect, Score: EffectSearch.Score(searchText, effect.Name, effect.Description, effect.EffectId)))
+                    .Where(match => match.Score > 0)
+                    .OrderByDescending(match => match.Score)
+                    .ThenBy(match => match.Effect.Name.Length)
+                    .ThenBy(match => match.Effect.Name, StringComparer.OrdinalIgnoreCase)
+                    .ToList();
+
+                BestScore = matches.Count > 0 ? matches[0].Score : 0;
+                SyncVisibleEffects(matches.Select(match => match.Effect).ToList());
             }
 
             IsVisible = VisibleEffects.Count > 0 || (_keepVisibleWhenEmpty && string.IsNullOrWhiteSpace(searchText));
+        }
+
+        // Updates the list in place so effects that stay visible keep their buttons instead of all being rebuilt on every key press.
+        private void SyncVisibleEffects(IReadOnlyList<EffectItem> desired)
+        {
+            Dictionary<EffectItem, int> desiredIndex = new();
+            for (int i = 0; i < desired.Count; i++) desiredIndex[desired[i]] = i;
+
+            for (int i = VisibleEffects.Count - 1; i >= 0; i--)
+            {
+                if (!desiredIndex.ContainsKey(VisibleEffects[i])) VisibleEffects.RemoveAt(i);
+            }
+
+            HashSet<EffectItem> inOrder = LongestInOrderRun(VisibleEffects, desiredIndex);
+            for (int i = VisibleEffects.Count - 1; i >= 0; i--)
+            {
+                if (!inOrder.Contains(VisibleEffects[i])) VisibleEffects.RemoveAt(i);
+            }
+
+            for (int i = 0; i < desired.Count; i++)
+            {
+                if (i >= VisibleEffects.Count || !ReferenceEquals(VisibleEffects[i], desired[i]))
+                {
+                    VisibleEffects.Insert(i, desired[i]);
+                }
+            }
+        }
+
+        // The largest set of shown effects that is already in the wanted order; only the others need to move.
+        private static HashSet<EffectItem> LongestInOrderRun(IList<EffectItem> items, Dictionary<EffectItem, int> desiredIndex)
+        {
+            int count = items.Count;
+            int[] tails = new int[count];
+            int[] previous = new int[count];
+            int length = 0;
+
+            for (int i = 0; i < count; i++)
+            {
+                int value = desiredIndex[items[i]];
+                int low = 0, high = length;
+                while (low < high)
+                {
+                    int mid = (low + high) / 2;
+                    if (desiredIndex[items[tails[mid]]] < value) low = mid + 1;
+                    else high = mid;
+                }
+
+                previous[i] = low > 0 ? tails[low - 1] : -1;
+                tails[low] = i;
+                if (low == length) length++;
+            }
+
+            HashSet<EffectItem> result = new();
+            for (int i = length > 0 ? tails[length - 1] : -1; i >= 0; i = previous[i]) result.Add(items[i]);
+            return result;
         }
     }
 
@@ -276,6 +335,8 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public event EventHandler<EffectDialogRequestedEventArgs>? EffectDialogRequested;
 
         public ObservableCollection<EffectCategory> Categories { get; } = new();
+
+        private List<EffectCategory>? _defaultCategoryOrder;
 
         private readonly EffectCategory _recentCategory = new(Strings.EffectBrowserPanel_Recent, headerHint: Strings.EffectBrowserPanel_RecentHint);
         private readonly EffectCategory _favoritesCategory = new(Strings.EffectBrowserPanel_Favorites, headerHint: Strings.EffectBrowserPanel_FavoritesHint);
@@ -593,6 +654,29 @@ namespace ShareX.ImageEditor.Presentation.Controls
             foreach (var category in Categories)
             {
                 category.Filter(searchText);
+            }
+
+            OrderCategoriesByBestMatch(!string.IsNullOrWhiteSpace(searchText));
+        }
+
+        // While searching, the category with the best match comes first. Recent and favorites stay on top.
+        private void OrderCategoriesByBestMatch(bool searching)
+        {
+            _defaultCategoryOrder ??= Categories.ToList();
+
+            List<EffectCategory> order = searching
+                ? _defaultCategoryOrder.Where(IsPinnedCategory)
+                    .Concat(_defaultCategoryOrder.Where(category => !IsPinnedCategory(category)).OrderByDescending(category => category.BestScore))
+                    .ToList()
+                : _defaultCategoryOrder;
+
+            for (int i = 0; i < order.Count; i++)
+            {
+                int current = Categories.IndexOf(order[i]);
+                if (current >= 0 && current != i)
+                {
+                    Categories.Move(current, i);
+                }
             }
         }
 

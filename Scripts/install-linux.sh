@@ -6,7 +6,7 @@
 #   ./install.sh                                inside an extracted package: install it (no SDK needed)
 #   Scripts/install-linux.sh --uninstall        remove it again (settings and screenshots are kept)
 #
-# Set PREFIX to install somewhere else than ~/.local. Building needs the .NET 10 SDK; the installed copy is self-contained.
+# Set PREFIX to install somewhere else than ~/.local. Building needs the .NET 11 SDK; the installed copy is self-contained.
 # Set DESTDIR as well to stage the files under another root, as Scripts/package-linux.sh does for the .deb, .rpm and AppImage:
 #   DESTDIR=/tmp/root PREFIX=/usr ./install.sh       files land in /tmp/root/usr, and refer to /usr
 # "Start ShareX when I log in" is a setting inside ShareX.
@@ -108,7 +108,7 @@ if $packaged; then
   source_app="$here/app"
   icon_source="$here/sharex.png"
 else
-  command -v dotnet >/dev/null || { echo "The .NET 10 SDK is required (https://dot.net)." >&2; exit 1; }
+  command -v dotnet >/dev/null || { echo "The .NET 11 SDK is required (https://dot.net)." >&2; exit 1; }
 
   echo "Building ShareX for $rid..."
   dotnet publish "$repo/ShareX/ShareX.csproj" -c Release -r "$rid" --self-contained true \

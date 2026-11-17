@@ -3038,6 +3038,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>영역 캡처 주석 비활성화</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>창 크기를 이미지에 맞춤</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>창 상태 기억</value>
   </data>

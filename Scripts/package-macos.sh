@@ -3,7 +3,7 @@
 #
 #   Scripts/package-macos.sh [arm64|x64] [OUTPUT_DIR]     default: arm64 into ./artifacts
 #
-# Needs the .NET 10 SDK. Runs on macOS or Linux. On a Mac the bundle is signed with codesign: ad hoc by default, which Apple
+# Needs the .NET 11 SDK. Runs on macOS or Linux. On a Mac the bundle is signed with codesign: ad hoc by default, which Apple
 # silicon requires before it runs any arm64 program, or for release with a Developer ID and the hardened runtime when
 # MACOS_SIGN_IDENTITY is set (for example "Developer ID Application: ShareX Team (TEAMID)", already in the keychain).
 # A signed build is notarized and stapled when one of these is set as well:
