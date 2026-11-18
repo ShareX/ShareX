@@ -105,7 +105,15 @@ namespace ShareX
             {
                 Bitmap output = null;
 
-                if (result.WindowHandle != IntPtr.Zero && taskSettings.CaptureSettings.CaptureTransparent)
+                if (result.WindowHandle != IntPtr.Zero && !result.ImageModified &&
+                    taskSettings.CaptureSettings.UseWindowsGraphicsCapture &&
+                    !taskSettings.CaptureSettings.CaptureTransparent && !taskSettings.CaptureSettings.CaptureClientArea)
+                {
+                    screenshot.CaptureCursor = taskSettings.CaptureSettings.ShowCursor;
+                    output = screenshot.CaptureWindow(result.WindowHandle);
+                }
+
+                if (output == null && result.WindowHandle != IntPtr.Zero && taskSettings.CaptureSettings.CaptureTransparent)
                 {
                     output = await CaptureWindowTransparentAsync(taskSettings, result);
                 }

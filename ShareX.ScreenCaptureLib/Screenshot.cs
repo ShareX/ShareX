@@ -105,6 +105,15 @@ namespace ShareX.ScreenCaptureLib
                     rect = CaptureHelpers.GetWindowRectangle(handle);
                 }
 
+                if (UseWindowsGraphicsCapture && !CaptureClientArea)
+                {
+                    Bitmap bitmap = CaptureWindowWindowsGraphicsCapture(handle, rect.Location, CaptureCursor);
+                    if (bitmap != null)
+                    {
+                        return bitmap;
+                    }
+                }
+
                 bool isTaskbarHide = false;
 
                 try
@@ -126,6 +135,26 @@ namespace ShareX.ScreenCaptureLib
             }
 
             return null;
+        }
+
+        private Bitmap CaptureWindowWindowsGraphicsCapture(IntPtr handle, Point location, bool captureCursor)
+        {
+            try
+            {
+                Bitmap bitmap = Task.Run(() => WindowsGraphicsCapture.CaptureWindow(handle, HDRScreenshotColorCorrection)).GetAwaiter().GetResult();
+                if (bitmap != null && captureCursor)
+                {
+                    try { new CursorData().DrawCursor(bitmap, location); }
+                    catch (Exception exception) { DebugHelper.WriteException(exception, "Cursor capture failed."); }
+                }
+
+                return bitmap;
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception, "Windows Graphics Capture window screenshot failed. Falling back to GDI.");
+                return null;
+            }
         }
 
         public Bitmap CaptureActiveWindow()

@@ -114,14 +114,25 @@ internal sealed unsafe class GraphicsCapture : IDisposable
     {
         if (region.Width <= 0 || region.Height <= 0) throw new ArgumentException("The capture region must not be empty.", nameof(region));
 
+        return CaptureBitmap(new RecordingOptions { OutputPath = "screenshot.gif", Region = region, HdrToneMapping = hdrToneMapping });
+    }
+
+    internal static SKBitmap CaptureWindowBitmap(nint windowHandle, bool hdrToneMapping)
+    {
+        if (windowHandle == 0) throw new ArgumentException("The window handle must not be zero.", nameof(windowHandle));
+
+        return CaptureBitmap(new RecordingOptions { OutputPath = "screenshot.gif", WindowHandle = windowHandle, HdrToneMapping = hdrToneMapping });
+    }
+
+    private static SKBitmap CaptureBitmap(RecordingOptions options)
+    {
         NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED).ThrowOnFailure();
         try
         {
-            RecordingOptions options = new() { OutputPath = "screenshot.gif", Region = region, HdrToneMapping = hdrToneMapping };
             List<Target> targets = GetTargets(options, out int width, out int height);
             using GraphicsDevice graphics = new(targets[0].Monitor);
             using GpuVideoProcessor processor = new(graphics, width, height, 30, false);
-            using GraphicsCapture capture = new(graphics, processor, targets, false, 30, hdrToneMapping);
+            using GraphicsCapture capture = new(graphics, processor, targets, false, 30, options.HdrToneMapping);
             capture.Start();
 
             Stopwatch timeout = Stopwatch.StartNew();
@@ -380,4 +391,6 @@ internal sealed unsafe class GraphicsCapture : IDisposable
 public static class WindowsGraphicsCapture
 {
     public static SKBitmap Capture(Rectangle region, bool hdrToneMapping = false) => GraphicsCapture.CaptureBitmap(region, hdrToneMapping);
+
+    public static SKBitmap CaptureWindow(nint windowHandle, bool hdrToneMapping = false) => GraphicsCapture.CaptureWindowBitmap(windowHandle, hdrToneMapping);
 }

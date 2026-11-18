@@ -28,6 +28,7 @@
 using ShareX.HelpersLib;
 using ShareX.ImageEditor.Integration;
 using ShareX.ScreenCaptureLib.Presentation.RegionCapture;
+using ShareX.ScreenRecordingLib.Video;
 using SkiaSharp;
 using System.Collections.Generic;
 using System.Drawing;
@@ -49,7 +50,8 @@ public static class RegionCaptureTasks
 
         using (result.Image)
         {
-            return result.Image.Copy();
+            (Bitmap image, _) = await CaptureResultImageAsync(result, useWindowsGraphicsCapture, hdrToneMapping);
+            return image;
         }
     }
 
@@ -64,7 +66,7 @@ public static class RegionCaptureTasks
 
         using (result.Image)
         {
-            return (result.Image.Copy(), result.ScreenRectangle);
+            return await CaptureResultImageAsync(result, useWindowsGraphicsCapture, hdrToneMapping);
         }
     }
 
@@ -160,5 +162,29 @@ public static class RegionCaptureTasks
         };
 
         return await RegionCaptureIntegration.CaptureAsync(request);
+    }
+
+    private static async Task<(Bitmap Image, Rectangle Rectangle)> CaptureResultImageAsync(AvaloniaRegionCaptureResult result,
+        bool useWindowsGraphicsCapture, bool hdrToneMapping)
+    {
+        if (useWindowsGraphicsCapture && result.WindowHandle != System.IntPtr.Zero && !result.ImageModified)
+        {
+            try
+            {
+                Bitmap? windowImage = await Task.Run(() => WindowsGraphicsCapture.CaptureWindow(result.WindowHandle, hdrToneMapping));
+                if (windowImage != null)
+                {
+                    Rectangle windowRectangle = CaptureHelpers.GetWindowRectangle(result.WindowHandle);
+                    windowRectangle.Size = new Size(windowImage.Width, windowImage.Height);
+                    return (windowImage, windowRectangle);
+                }
+            }
+            catch (System.Exception exception)
+            {
+                DebugHelper.WriteException(exception, "Windows Graphics Capture region window screenshot failed. Keeping the selected screen image.");
+            }
+        }
+
+        return (result.Image.Copy(), result.ScreenRectangle);
     }
 }
