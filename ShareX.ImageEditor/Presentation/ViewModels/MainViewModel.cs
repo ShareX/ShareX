@@ -146,7 +146,6 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 _captureRegionHandler = value;
                 OnPropertyChanged(nameof(CanCaptureRegion));
-                OnPropertyChanged(nameof(CanCaptureScreenshot));
                 NewFromScreenshotRegionCommand.NotifyCanExecuteChanged();
             }
         }
@@ -162,14 +161,12 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             {
                 _captureFullscreenHandler = value;
                 OnPropertyChanged(nameof(CanCaptureFullscreen));
-                OnPropertyChanged(nameof(CanCaptureScreenshot));
                 NewFromScreenshotFullscreenCommand.NotifyCanExecuteChanged();
             }
         }
 
         public bool CanCaptureRegion => _captureRegionHandler != null;
         public bool CanCaptureFullscreen => _captureFullscreenHandler != null;
-        public bool CanCaptureScreenshot => CanCaptureRegion || CanCaptureFullscreen;
 
         [ObservableProperty]
         private bool _useContinueWorkflow;
