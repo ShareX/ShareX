@@ -132,7 +132,7 @@ public partial class EditorBuiltInToolbars : UserControl
         }
 
         Point delta = e.GetPosition(this) - _topToolbarDragStartPointer;
-        if (delta != default)
+        if (_topToolbarMoved || delta != default)
         {
             _topToolbarMoved = true;
             _topToolbarOffset = _topToolbarDragStartOffset + delta;
