@@ -45,6 +45,7 @@ public partial class EditorBuiltInToolbars : UserControl
     // The offset the user chose; the drawn offset is clamped so the toolbar stays inside the view.
     private Point _topToolbarOffset;
     private bool _draggingTopToolbar;
+    private bool _topToolbarMoved;
     private Point _topToolbarDragStartPointer;
     private Point _topToolbarDragStartOffset;
 
@@ -114,11 +115,12 @@ public partial class EditorBuiltInToolbars : UserControl
             return;
         }
 
-        // Start from where the toolbar is drawn, which may be clamped inside the view.
-        _topToolbarOffset = new Point(_topToolbarTransform.X, _topToolbarTransform.Y);
-        _topToolbarDragStartOffset = _topToolbarOffset;
+        // Start from where the toolbar is drawn, which may be clamped inside the view. A click without a move keeps
+        // the remembered offset, so a larger window can still restore it.
+        _topToolbarDragStartOffset = new Point(_topToolbarTransform.X, _topToolbarTransform.Y);
         _topToolbarDragStartPointer = e.GetPosition(this);
         _draggingTopToolbar = true;
+        _topToolbarMoved = false;
         e.Pointer.Capture(handle);
     }
 
@@ -129,8 +131,14 @@ public partial class EditorBuiltInToolbars : UserControl
             return;
         }
 
-        _topToolbarOffset = _topToolbarDragStartOffset + (e.GetPosition(this) - _topToolbarDragStartPointer);
-        ApplyTopToolbarOffset();
+        Point delta = e.GetPosition(this) - _topToolbarDragStartPointer;
+        if (delta != default)
+        {
+            _topToolbarMoved = true;
+            _topToolbarOffset = _topToolbarDragStartOffset + delta;
+            ApplyTopToolbarOffset();
+        }
+
         e.Handled = true;
     }
 
@@ -159,6 +167,10 @@ public partial class EditorBuiltInToolbars : UserControl
         }
 
         _draggingTopToolbar = false;
+        if (!_topToolbarMoved)
+        {
+            return;
+        }
 
         // Save where the toolbar ended up after clamping, not where the pointer was released.
         _topToolbarOffset = new Point(_topToolbarTransform.X, _topToolbarTransform.Y);
@@ -185,15 +197,15 @@ public partial class EditorBuiltInToolbars : UserControl
         _topToolbarTransform.Y = y;
 
         // Docked to the top edge the toolbar keeps its flat top; anywhere else it is a floating panel.
-        AnnotationToolbar.MainToolbarCornerRadius = y > 0.5 ? FloatingTopToolbarCornerRadius : DockedTopToolbarCornerRadius;
+        AnnotationToolbar.MainToolbarCornerRadius = y > 0 ? FloatingTopToolbarCornerRadius : DockedTopToolbarCornerRadius;
     }
 
     private void SaveTopToolbarOffset()
     {
         if (GetOptions() is { } options)
         {
-            options.TopToolbarOffsetX = Math.Round(_topToolbarOffset.X);
-            options.TopToolbarOffsetY = Math.Round(_topToolbarOffset.Y);
+            options.TopToolbarOffsetX = _topToolbarOffset.X;
+            options.TopToolbarOffsetY = _topToolbarOffset.Y;
         }
     }
 

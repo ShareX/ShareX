@@ -28,6 +28,7 @@
                 Classes.hidden="{Binding AreToolbarsHidden}"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Center"
+                ZIndex="1"
                 IsHitTestVisible="{Binding ShowToolbars}">
             <!-- The hide animation uses the host's RenderTransform, so a drag moves the toolbar inside it instead. -->
             <controls:AnnotationToolbar x:Name="AnnotationToolbarControl"
