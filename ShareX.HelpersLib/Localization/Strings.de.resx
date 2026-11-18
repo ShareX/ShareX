@@ -1365,9 +1365,6 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Google-Bildersuche</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Vorabversion</value>
   </data>

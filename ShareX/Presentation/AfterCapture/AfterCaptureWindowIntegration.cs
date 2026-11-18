@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Threading;
+using ShareX.AvaloniaUI.Integration;
 using ShareX.HelpersLib;
 using System;
 
@@ -45,6 +46,7 @@ public static class AfterCaptureWindowIntegration
             {
                 AfterCaptureWindow window = new(taskSettings, metadata, filePath);
                 window.Closed += (_, _) => completed(window.Result);
+                DesktopServices.PlaceOnCursorScreen(window);
                 window.Show();
             }
             catch (Exception exception)

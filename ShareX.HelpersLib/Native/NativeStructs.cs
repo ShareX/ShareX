@@ -855,7 +855,7 @@ namespace ShareX.HelpersLib
         public int dwThreadId;
     }
 
-    [StructLayout(LayoutKind.Sequential)]
+    [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
     public struct SHFILEINFO
     {
         public const int NAMESIZE = 80;

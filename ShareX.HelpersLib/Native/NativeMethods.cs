@@ -461,7 +461,7 @@ namespace ShareX.HelpersLib
         [DllImport("shell32.dll", EntryPoint = "#727")]
         public extern static int SHGetImageList(int iImageList, ref Guid riid, ref IImageList ppv);
 
-        [DllImport("shell32.dll", CharSet = CharSet.Auto)]
+        [DllImport("shell32.dll", CharSet = CharSet.Unicode)]
         public static extern IntPtr SHGetFileInfo(string pszPath, uint dwFileAttributes, ref SHFILEINFO psfi, uint cbFileInfo, uint uFlags);
 
         [DllImport("shell32.dll")]

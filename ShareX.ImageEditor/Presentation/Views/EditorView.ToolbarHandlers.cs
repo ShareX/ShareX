@@ -389,6 +389,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     {
                         balloon.InvalidateVisual();
                     }
+                    else if (shape.Tag is MagnifyAnnotation magnifyAnnotation)
+                    {
+                        ApplyMagnifyShape(shape, magnifyAnnotation);
+                    }
                     break;
                 case OutlinedTextControl textBox:
                     textBox.InvalidateVisual();
@@ -508,6 +512,10 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 case Shape shape:
                     shape.StrokeThickness = width;
+                    if (shape.Tag is MagnifyAnnotation magnifyAnnotation)
+                    {
+                        ApplyMagnifyShape(shape, magnifyAnnotation);
+                    }
                     break;
                 case OutlinedTextControl textBox:
                     textBox.InvalidateMeasure();
@@ -716,6 +724,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     rectangle.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(borderStyle);
                     rectangle.StrokeLineCap = BorderStyleDashHelper.CreateStrokeLineCap(borderStyle);
                     break;
+                case MagnifyAnnotation magnifyAnnotation:
+                    magnifyAnnotation.BorderStyle = borderStyle;
+                    ApplyMagnifyShape(selected, magnifyAnnotation);
+                    break;
                 case EllipseAnnotation ellipseAnnotation when selected is global::Avalonia.Controls.Shapes.Ellipse ellipse:
                     ellipseAnnotation.BorderStyle = borderStyle;
                     ellipse.StrokeDashArray = BorderStyleDashHelper.CreateStrokeDashArray(borderStyle);
@@ -791,7 +803,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             if (selected?.Tag is MagnifyAnnotation magnifyAnnotation)
             {
                 magnifyAnnotation.IsEllipse = isEllipse;
-                selected.Clip = CreateEllipseClipIfNeeded(selected, isEllipse);
+                ApplyMagnifyShape(selected, magnifyAnnotation);
                 OnRequestUpdateEffect(selected);
                 _selectionController.UpdateSelectionHandles();
             }
@@ -803,22 +815,17 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private static Geometry? CreateEllipseClipIfNeeded(Control control, bool isEllipse)
+        private static void ApplyMagnifyShape(Control control, MagnifyAnnotation annotation)
         {
-            if (!isEllipse)
-            {
-                return null;
-            }
-
-            double width = Math.Max(1, control.Width);
-            double height = Math.Max(1, control.Height);
+            double width = control.Width;
+            double height = control.Height;
             if (double.IsNaN(width) || double.IsNaN(height))
             {
-                width = Math.Max(1, control.Bounds.Width);
-                height = Math.Max(1, control.Bounds.Height);
+                width = control.Bounds.Width;
+                height = control.Bounds.Height;
             }
 
-            return new EllipseGeometry(new Rect(0, 0, width, height));
+            AnnotationVisualHelpers.ApplyMagnifyShape(control, annotation, width, height);
         }
 
         private void ApplySelectedShadowState(bool isEnabled)

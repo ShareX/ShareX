@@ -57,6 +57,10 @@ namespace ShareX.ImageEditor.Integration
         public bool IsWindowMaximized { get; set; } = true;
         public double WindowWidth { get; set; } = 1280;
         public double WindowHeight { get; set; } = 720;
+        // The normal (not maximized) window's position in screen pixels, when Remember window state is on.
+        public int? WindowX { get; set; }
+        public int? WindowY { get; set; }
+        public bool AutoSizeWindow { get; set; } = false;
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;
@@ -179,6 +183,11 @@ namespace ShareX.ImageEditor.Integration
         public float PixelateStrength { get; set; } = 20;
         public float MagnifierStrength { get; set; } = 2;
         public bool MagnifierEllipse { get; set; }
+        public string MagnifierBorderColorHex { get; set; } = ColorToHex(Colors.Transparent);
+        [JsonIgnore]
+        public Color MagnifierBorderColor { get => HexToColor(MagnifierBorderColorHex); set => MagnifierBorderColorHex = ColorToHex(value); }
+        public int MagnifierThickness { get; set; } = 4;
+        public BorderStyle MagnifierBorderStyle { get; set; } = BorderStyle.Solid;
         public float SpotlightStrength { get; set; } = 30;
         public float SpotlightBlur { get; set; } = 0;
         public bool SpotlightEllipse { get; set; }

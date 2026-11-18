@@ -3008,6 +3008,9 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Desativar anotações da captura de região</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Ajustar o tamanho da janela à imagem</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Lembrar estado da janela</value>
   </data>

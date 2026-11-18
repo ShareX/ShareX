@@ -40,6 +40,8 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
     private bool _disposed;
 
     public string FilePath { get; }
+    public int Width => _image.Width;
+    public int Height => _image.Height;
     public int FrameCount => _delays.Length;
     public double Duration => _starts[^1] / 100d;
     public double FrameStart(int index) => _starts[index] / 100d;
@@ -142,12 +144,18 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         return stream.ToArray();
     }
 
+    /// <param name="crop">Area of the GIF to keep, in GIF pixels.</param>
+    /// <param name="size">Size of the saved GIF; the cropped area is scaled to it.</param>
     /// <returns>False when the selected lossless cut needs frames before its start.</returns>
-    public bool Export(string output, int firstFrame, int endFrameExclusive, bool reencode,
+    public bool Export(string output, int firstFrame, int endFrameExclusive, bool reencode, SKRectI crop, SKSizeI size,
         IProgress<double>? progress, CancellationToken token)
     {
         if (firstFrame < 0 || endFrameExclusive > FrameCount || firstFrame >= endFrameExclusive)
             throw new ArgumentOutOfRangeException(nameof(firstFrame));
+        if (crop.IsEmpty || !SKRectI.Create(Width, Height).Contains(crop) || size.Width < 1 || size.Height < 1)
+            throw new ArgumentOutOfRangeException(nameof(crop));
+        // Cropping and resizing change the pixels, so they always need a re-encode.
+        if (crop != SKRectI.Create(Width, Height) || size != crop.Size) reencode = true;
         if (string.Equals(Path.GetFullPath(FilePath), Path.GetFullPath(output), StringComparison.OrdinalIgnoreCase))
             throw new InvalidOperationException(Strings.AnimatedGifTrimmer_SourceOverwrite);
         if (!string.Equals(Path.GetExtension(output), ".gif", StringComparison.OrdinalIgnoreCase))
@@ -158,7 +166,7 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
             $".sharex-gif-trim-{Guid.NewGuid():N}.gif");
         try
         {
-            if (reencode) Reencode(temporary, firstFrame, endFrameExclusive, progress, token);
+            if (reencode) Reencode(temporary, firstFrame, endFrameExclusive, crop, size, progress, token);
             else _gif.Copy(FilePath, temporary, firstFrame, endFrameExclusive, progress, token);
             token.ThrowIfCancellationRequested();
             if (!reencode && _gif.NeedsVisualValidation(firstFrame) &&
@@ -172,9 +180,10 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         }
     }
 
-    private void Reencode(string temporary, int firstFrame, int endFrameExclusive,
+    private void Reencode(string temporary, int firstFrame, int endFrameExclusive, SKRectI crop, SKSizeI size,
         IProgress<double>? progress, CancellationToken token)
     {
+        bool transform = crop != SKRectI.Create(Width, Height) || size != crop.Size;
         using SkiaAnimatedImage image = new SkiaAnimatedImage(FilePath);
         using AnimatedGifCreator creator = new(temporary, _delays[firstFrame] * 10,
             _gif.RepeatCount, _gif.Loop);
@@ -182,9 +191,19 @@ internal sealed class AnimatedGifTrimmerDocument : IDisposable
         {
             token.ThrowIfCancellationRequested();
             using SKBitmap frame = image.GetFrame(i);
-            creator.AddFrame(frame, _delays[i] * 10, GIFQuality.Adaptive);
+            using SKBitmap? transformed = transform ? CropAndResize(frame, crop, size) : null;
+            creator.AddFrame(transformed ?? frame, _delays[i] * 10, GIFQuality.Adaptive);
             progress?.Report((i - firstFrame + 1d) / (endFrameExclusive - firstFrame) * 100);
         }
+    }
+
+    private static SKBitmap CropAndResize(SKBitmap source, SKRectI crop, SKSizeI size)
+    {
+        SKBitmap output = SkiaImageHelpers.CreateBitmap(size.Width, size.Height);
+        using SKCanvas canvas = new(output);
+        using SKImage image = SKImage.FromBitmap(source);
+        canvas.DrawImage(image, crop, SKRect.Create(size.Width, size.Height), SkiaImageHelpers.HighQualitySampling);
+        return output;
     }
 
     private static SKBitmap DrawFrame(SKBitmap source, int maxDimension = int.MaxValue)

@@ -64,7 +64,7 @@ namespace ShareX.HelpersLib
             }
         }
 
-        public static ShareXTheme Theme { get; set; } = ShareXTheme.DarkTheme;
+        public static ShareXTheme Theme { get; set; } = ShareXTheme.GetDarkTheme();
 
     }
 }

@@ -3008,6 +3008,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Tắt chú thích chụp vùng</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Chỉnh kích thước cửa sổ vừa với ảnh</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Ghi nhớ trạng thái cửa sổ</value>
   </data>

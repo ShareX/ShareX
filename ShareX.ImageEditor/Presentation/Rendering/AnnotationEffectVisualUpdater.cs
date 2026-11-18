@@ -114,8 +114,13 @@ public static class AnnotationEffectVisualUpdater
 
     public static void ApplyEffectClip(Control shape, BaseEffectAnnotation annotation, Rect bounds)
     {
-        shape.Clip = annotation is MagnifyAnnotation { IsEllipse: true }
-            ? new EllipseGeometry(new Rect(0, 0, Math.Max(1, bounds.Width), Math.Max(1, bounds.Height)))
-            : null;
+        if (annotation is MagnifyAnnotation magnifyAnnotation)
+        {
+            AnnotationVisualHelpers.ApplyMagnifyShape(shape, magnifyAnnotation, bounds.Width, bounds.Height);
+        }
+        else
+        {
+            shape.Clip = null;
+        }
     }
 }

@@ -1365,9 +1365,6 @@
   <data name="URLSharingServices_GoogleImageSearch" xml:space="preserve">
     <value>Поиск по картинке в Google</value>
   </data>
-  <data name="UpdateChannel_Dev" xml:space="preserve">
-    <value>Dev</value>
-  </data>
   <data name="UpdateChannel_PreRelease" xml:space="preserve">
     <value>Предварительный выпуск</value>
   </data>

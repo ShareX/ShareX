@@ -3008,6 +3008,9 @@ Vill du avbryta den aktiva skärminspelningen?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Inaktivera anteckningar vid områdesbildtagning</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Anpassa fönstrets storlek efter bilden</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Kom ihåg fönstrets tillstånd</value>
   </data>

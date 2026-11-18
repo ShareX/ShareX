@@ -888,7 +888,8 @@ namespace ShareX
 
             await ScrollingCaptureWindowIntegration.StartStopAsync(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
                 img => UploadManager.RunImageTask(img, taskSettings),
-                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings));
+                () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
+                taskSettings.CaptureSettingsReference.RegionCaptureOptions);
         }
 
         public static void OpenAutoCapture(TaskSettings taskSettings = null)

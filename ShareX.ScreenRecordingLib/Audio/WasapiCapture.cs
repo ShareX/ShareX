@@ -102,8 +102,11 @@ internal sealed unsafe class WasapiCapture : IDisposable
                 wBitsPerSample = 32,
                 cbSize = 0
             };
-            const uint eventCallback = 0x00040000, loopbackFlag = 0x00020000, autoConvert = 0x80000000, srcQuality = 0x08000000;
-            uint flags = eventCallback | autoConvert | srcQuality | (loopback ? loopbackFlag : 0);
+            const uint eventCallback = 0x00040000, loopbackFlag = 0x00020000, autoConvert = 0x80000000, srcQuality = 0x08000000, sessionHidden = 0x20000000;
+            // System audio is captured in its own hidden audio session. In ShareX's default session, muting or
+            // lowering ShareX in the Windows volume mixer would also silence the recording.
+            uint flags = eventCallback | autoConvert | srcQuality | (loopback ? loopbackFlag | sessionHidden : 0);
+            Guid session = loopback ? Guid.NewGuid() : Guid.Empty;
             bool initialized = false;
             if (!loopback)
             {
@@ -123,7 +126,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
                 }
             }
             // Loopback and devices with a locked engine period use the supported default period (typically 10 ms).
-            if (!initialized) client.Pointer->Initialize(AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_SHARED, flags, 0, 0, &format, null).ThrowOnFailure();
+            if (!initialized) client.Pointer->Initialize(AUDCLNT_SHAREMODE.AUDCLNT_SHAREMODE_SHARED, flags, 0, 0, &format, loopback ? &session : null).ThrowOnFailure();
             client.Pointer->SetEventHandle(ready.SafeWaitHandle.DangerousGetHandle()).ThrowOnFailure();
             Guid iid = typeof(IAudioCaptureClient).GUID;
             void* rawCapture;

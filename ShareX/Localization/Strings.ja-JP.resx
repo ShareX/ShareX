@@ -3008,6 +3008,9 @@
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>範囲キャプチャの注釈を無効化</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ウィンドウのサイズを画像に合わせる</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>ウィンドウの状態を記憶</value>
   </data>

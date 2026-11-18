@@ -45,8 +45,7 @@ namespace ShareX
     public enum UpdateChannel // Localized
     {
         Release,
-        PreRelease,
-        Dev
+        PreRelease
     }
 
     public enum SupportedLanguage

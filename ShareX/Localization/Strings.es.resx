@@ -3008,6 +3008,9 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Desactivar anotaciones en la captura de región</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Ajustar el tamaño de la ventana a la imagen</value>
+  </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Recordar estado de la ventana</value>
   </data>
