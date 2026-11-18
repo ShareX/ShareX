@@ -450,7 +450,8 @@ internal sealed class TaskSettingsPageBuilder
 
         Button selectRegion = Button(Strings.TaskSettingsWindow_SelectRegionWithEllipsis, async () =>
         {
-            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(capture.RegionCaptureOptions);
+            var selection = await RegionCaptureTasks.GetRectangleRegionAsync(capture.RegionCaptureOptions, capture.UseWindowsGraphicsCapture,
+                capture.HDRScreenshotColorCorrection);
             if (selection != null)
             {
                 DrawingRectangle rectangle = selection.Value.Rectangle;
@@ -481,6 +482,8 @@ internal sealed class TaskSettingsPageBuilder
             OverrideCard(_captureOverride, Strings.TaskSettingsWindow_OverrideCaptureSettings),
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Screenshots,
                 Check(Strings.TaskSettingsWindow_ShowCursorInScreenshots, () => capture.ShowCursor, value => capture.ShowCursor = value),
+                Check(Strings.TaskSettingsWindow_UseWindowsGraphicsCaptureForScreenshots, () => capture.UseWindowsGraphicsCapture,
+                    value => capture.UseWindowsGraphicsCapture = value),
                 Row(Strings.TaskSettingsWindow_ScreenshotDelaySeconds, Number(() => capture.ScreenshotDelay, value => capture.ScreenshotDelay = value, 0, 60, 0.1m)),
                 Check(Strings.TaskSettingsWindow_CaptureWindowWithTransparency, transparent), shadow,
                 Row(Strings.TaskSettingsWindow_ShadowOffset, shadowOffset),

@@ -208,7 +208,8 @@ public partial class AutoCaptureWindow : Window
 
     private async Task SelectRegionAsync()
     {
-        var selection = await RegionCaptureTasks.GetRectangleRegionAsync(TaskSettings.CaptureSettings.RegionCaptureOptions);
+        var selection = await RegionCaptureTasks.GetRectangleRegionAsync(TaskSettings.CaptureSettings.RegionCaptureOptions,
+            TaskSettings.CaptureSettings.UseWindowsGraphicsCapture, TaskSettings.CaptureSettings.HDRScreenshotColorCorrection);
         if (selection != null)
         {
             ApplicationState.Settings.AutoCaptureRegion = selection.Value.Rectangle;

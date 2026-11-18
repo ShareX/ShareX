@@ -3098,6 +3098,9 @@
   <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
     <value>スクリーンショットにカーソルを表示</value>
   </data>
+  <data name="TaskSettingsWindow_UseWindowsGraphicsCaptureForScreenshots" xml:space="preserve">
+    <value>スクリーンショットに Windows Graphics Capture を使用</value>
+  </data>
   <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
     <value>終了確認を表示</value>
   </data>

@@ -38,9 +38,10 @@ namespace ShareX.ScreenCaptureLib;
 
 public static class RegionCaptureTasks
 {
-    public static async Task<Bitmap?> GetRegionImageAsync(RegionCaptureOptions? options = null)
+    public static async Task<Bitmap?> GetRegionImageAsync(RegionCaptureOptions? options = null, bool useWindowsGraphicsCapture = false,
+        bool hdrToneMapping = false)
     {
-        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options, useWindowsGraphicsCapture, hdrToneMapping);
         if (result == null)
         {
             return null;
@@ -53,9 +54,9 @@ public static class RegionCaptureTasks
     }
 
     public static async Task<(Bitmap Image, Rectangle Rectangle)?> GetRegionImageWithRectangleAsync(
-        RegionCaptureOptions? options = null)
+        RegionCaptureOptions? options = null, bool useWindowsGraphicsCapture = false, bool hdrToneMapping = false)
     {
-        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options, useWindowsGraphicsCapture, hdrToneMapping);
         if (result == null)
         {
             return null;
@@ -68,9 +69,9 @@ public static class RegionCaptureTasks
     }
 
     public static async Task<(Rectangle Rectangle, WindowInfo? WindowInfo)?> GetRectangleRegionAsync(
-        RegionCaptureOptions? options = null)
+        RegionCaptureOptions? options = null, bool useWindowsGraphicsCapture = false, bool hdrToneMapping = false)
     {
-        AvaloniaRegionCaptureResult? result = await CaptureAsync(options);
+        AvaloniaRegionCaptureResult? result = await CaptureAsync(options, useWindowsGraphicsCapture, hdrToneMapping);
         if (result == null)
         {
             return null;
@@ -126,13 +127,16 @@ public static class RegionCaptureTasks
         return result;
     }
 
-    private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options)
+    private static async Task<AvaloniaRegionCaptureResult?> CaptureAsync(RegionCaptureOptions? options, bool useWindowsGraphicsCapture,
+        bool hdrToneMapping)
     {
         options ??= new RegionCaptureOptions();
 
         Screenshot screenshot = new Screenshot
         {
-            CaptureCursor = false
+            CaptureCursor = false,
+            UseWindowsGraphicsCapture = useWindowsGraphicsCapture,
+            HDRScreenshotColorCorrection = hdrToneMapping
         };
 
         Rectangle screenBounds = options.ActiveMonitorMode

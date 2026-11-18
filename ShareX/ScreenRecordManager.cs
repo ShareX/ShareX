@@ -144,7 +144,9 @@ namespace ShareX
             {
                 case ScreenRecordStartMethod.Region:
                     var selection = await RegionCaptureTasks.GetRectangleRegionAsync(
-                        taskSettings.CaptureSettings.RegionCaptureOptions);
+                        taskSettings.CaptureSettings.RegionCaptureOptions,
+                        taskSettings.CaptureSettings.UseWindowsGraphicsCapture,
+                        taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
                     if (selection != null)
                     {
                         captureRectangle = selection.Value.Rectangle;

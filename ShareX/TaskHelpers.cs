@@ -1523,7 +1523,8 @@ namespace ShareX
                     Bitmap bmp = skBitmap.Copy();
                     UploadImageOnUiThread(bmp, taskSettings);
                 },
-                CaptureRegionRequested = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureRegionRequested = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions,
+                    taskSettings.CaptureSettings.UseWindowsGraphicsCapture, taskSettings.CaptureSettings.HDRScreenshotColorCorrection),
                 CaptureFullscreenRequested = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
 
@@ -1622,7 +1623,8 @@ namespace ShareX
                     Bitmap copy = skBitmap.Copy();
                     InvokeOnUiThread(() => UploadManager.RunImageTask(copy, taskSettings));
                 },
-                CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions),
+                CaptureRegion = async () => await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions,
+                    taskSettings.CaptureSettings.UseWindowsGraphicsCapture, taskSettings.CaptureSettings.HDRScreenshotColorCorrection),
                 CaptureFullscreen = () => Task.FromResult(GetScreenshot(taskSettings).CaptureFullscreen())
             };
         }
@@ -1905,9 +1907,11 @@ namespace ShareX
         {
             using Bitmap bitmap = mode switch
             {
-                QRCodeScanMode.Screen => new Screenshot().CaptureFullscreen(),
+                QRCodeScanMode.Screen => GetScreenshot(TaskSettings.GetDefaultTaskSettings()).CaptureFullscreen(),
                 QRCodeScanMode.Region => await RegionCaptureTasks.GetRegionImageAsync(
-                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions),
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.RegionCaptureOptions,
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.UseWindowsGraphicsCapture,
+                    TaskSettings.GetDefaultTaskSettings().CaptureSettings.HDRScreenshotColorCorrection),
                 QRCodeScanMode.ImageFile when !string.IsNullOrWhiteSpace(filePath) => SkiaImageHelpers.LoadImage(filePath),
                 _ => null
             };
@@ -2045,7 +2049,8 @@ namespace ShareX
                 options,
                 async () =>
                 {
-                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+                    using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions,
+                        taskSettings.CaptureSettings.UseWindowsGraphicsCapture, taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
                     if (region == null)
                     {
                         return null;
@@ -2072,7 +2077,8 @@ namespace ShareX
 
             try
             {
-                bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+                bmp = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions,
+                    taskSettings.CaptureSettings.UseWindowsGraphicsCapture, taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
             }
             finally
             {
@@ -2138,7 +2144,8 @@ namespace ShareX
                             },
                             async () =>
                             {
-                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions);
+                                using Bitmap region = await RegionCaptureTasks.GetRegionImageAsync(taskSettings.CaptureSettings.RegionCaptureOptions,
+                                    taskSettings.CaptureSettings.UseWindowsGraphicsCapture, taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
                                 if (region == null)
                                 {
                                     return null;
@@ -2215,7 +2222,9 @@ namespace ShareX
             {
                 CaptureRegionAsync = async () =>
                 {
-                    var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync();
+                    var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync(
+                        useWindowsGraphicsCapture: taskSettings.CaptureSettings.UseWindowsGraphicsCapture,
+                        hdrToneMapping: taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
                     if (selection == null)
                     {
                         return null;
@@ -2277,7 +2286,11 @@ namespace ShareX
 
         public static async Task PinToScreenFromScreen(TaskSettings taskSettings = null)
         {
-            var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync();
+            if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
+
+            var selection = await RegionCaptureTasks.GetRegionImageWithRectangleAsync(
+                useWindowsGraphicsCapture: taskSettings.CaptureSettings.UseWindowsGraphicsCapture,
+                hdrToneMapping: taskSettings.CaptureSettings.HDRScreenshotColorCorrection);
             if (selection == null)
             {
                 return;
@@ -2587,7 +2600,8 @@ namespace ShareX
                 CaptureShadow = taskSettings.CaptureSettings.CaptureShadow,
                 ShadowOffset = taskSettings.CaptureSettings.CaptureShadowOffset,
                 AutoHideTaskbar = taskSettings.CaptureSettings.CaptureAutoHideTaskbar,
-                HDRScreenshotColorCorrection = taskSettings.CaptureSettings.HDRScreenshotColorCorrection
+                HDRScreenshotColorCorrection = taskSettings.CaptureSettings.HDRScreenshotColorCorrection,
+                UseWindowsGraphicsCapture = taskSettings.CaptureSettings.UseWindowsGraphicsCapture
             };
 
             return screenshot;

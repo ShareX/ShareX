@@ -391,6 +391,7 @@ namespace ShareX
         public bool CaptureAutoHideTaskbar = false;
         public bool CaptureAutoHideDesktopIcons = false;
         public bool HDRScreenshotColorCorrection = false;
+        public bool UseWindowsGraphicsCapture = false;
         public Rectangle CaptureCustomRegion = new Rectangle(0, 0, 0, 0);
         public string CaptureCustomWindow = "";
 

@@ -26,6 +26,8 @@
 using ShareX.HelpersLib;
 using System;
 using System.Drawing;
+using System.Threading.Tasks;
+using ShareX.ScreenRecordingLib.Video;
 using Bitmap = SkiaSharp.SKBitmap;
 
 namespace ShareX.ScreenCaptureLib
@@ -39,6 +41,7 @@ namespace ShareX.ScreenCaptureLib
         public int ShadowOffset { get; set; } = 20;
         public bool AutoHideTaskbar { get; set; } = false;
         public bool HDRScreenshotColorCorrection { get; set; } = false;
+        public bool UseWindowsGraphicsCapture { get; set; } = false;
 
         public Bitmap CaptureRectangle(Rectangle rect)
         {
@@ -48,7 +51,36 @@ namespace ShareX.ScreenCaptureLib
                 rect = Rectangle.Intersect(bounds, rect);
             }
 
+            if (UseWindowsGraphicsCapture)
+            {
+                Bitmap bitmap = CaptureRectangleWindowsGraphicsCapture(rect, CaptureCursor);
+                if (bitmap != null)
+                {
+                    return bitmap;
+                }
+            }
+
             return CaptureRectangleNative(rect, CaptureCursor);
+        }
+
+        private Bitmap CaptureRectangleWindowsGraphicsCapture(Rectangle rect, bool captureCursor)
+        {
+            try
+            {
+                Bitmap bitmap = Task.Run(() => WindowsGraphicsCapture.Capture(rect, HDRScreenshotColorCorrection)).GetAwaiter().GetResult();
+                if (bitmap != null && captureCursor)
+                {
+                    try { new CursorData().DrawCursor(bitmap, rect.Location); }
+                    catch (Exception exception) { DebugHelper.WriteException(exception, "Cursor capture failed."); }
+                }
+
+                return bitmap;
+            }
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception, "Windows Graphics Capture screenshot failed. Falling back to GDI.");
+                return null;
+            }
         }
 
         public Bitmap CaptureFullscreen()

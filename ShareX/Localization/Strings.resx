@@ -3107,6 +3107,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_ShowCursorInScreenshots" xml:space="preserve">
     <value>Show cursor in screenshots</value>
   </data>
+  <data name="TaskSettingsWindow_UseWindowsGraphicsCaptureForScreenshots" xml:space="preserve">
+    <value>Use Windows Graphics Capture for screenshots</value>
+  </data>
   <data name="TaskSettingsWindow_ShowExitConfirmation" xml:space="preserve">
     <value>Show exit confirmation</value>
   </data>

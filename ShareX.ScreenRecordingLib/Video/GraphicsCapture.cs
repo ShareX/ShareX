@@ -24,9 +24,11 @@
 #endregion License Information (GPL v3)
 
 using ShareX.ScreenRecordingLib.Native;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SkiaSharp;
 using Vortice.Direct3D11;
 using Vortice.DXGI;
 using Windows.Graphics.Capture;
@@ -106,6 +108,74 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         }
         if (targets.Count == 0) throw new ArgumentException("The capture region does not intersect a display.");
         return targets;
+    }
+
+    internal static SKBitmap CaptureBitmap(Rectangle region, bool hdrToneMapping)
+    {
+        if (region.Width <= 0 || region.Height <= 0) throw new ArgumentException("The capture region must not be empty.", nameof(region));
+
+        NativeMethods.CoInitializeEx(null, COINIT.COINIT_MULTITHREADED).ThrowOnFailure();
+        try
+        {
+            RecordingOptions options = new() { OutputPath = "screenshot.gif", Region = region, HdrToneMapping = hdrToneMapping };
+            List<Target> targets = GetTargets(options, out int width, out int height);
+            using GraphicsDevice graphics = new(targets[0].Monitor);
+            using GpuVideoProcessor processor = new(graphics, width, height, 30, false);
+            using GraphicsCapture capture = new(graphics, processor, targets, false, 30, hdrToneMapping);
+            capture.Start();
+
+            Stopwatch timeout = Stopwatch.StartNew();
+            while (!capture.HasFrame)
+            {
+                capture.Update();
+                if (capture.HasEnded) throw new IOException("The capture target closed or changed size before the first frame.");
+                if (timeout.Elapsed > TimeSpan.FromSeconds(10))
+                    throw new TimeoutException("Windows did not deliver a capture frame.");
+                Thread.Sleep(5);
+            }
+
+            return ReadBitmap(graphics, processor.Canvas, width, height);
+        }
+        finally
+        {
+            NativeMethods.CoUninitialize();
+        }
+    }
+
+    private static SKBitmap ReadBitmap(GraphicsDevice graphics, ID3D11Texture2D texture, int width, int height)
+    {
+        using ID3D11Texture2D staging = graphics.Device.CreateTexture2D(new Texture2DDescription
+        {
+            Width = (uint)width,
+            Height = (uint)height,
+            MipLevels = 1,
+            ArraySize = 1,
+            Format = Format.B8G8R8A8_UNorm,
+            SampleDescription = new(1, 0),
+            Usage = ResourceUsage.Staging,
+            CPUAccessFlags = CpuAccessFlags.Read
+        });
+
+        SKBitmap bitmap = new(new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Opaque));
+        try
+        {
+            graphics.Context.CopyResource(staging, texture);
+            graphics.Context.Map(staging, 0, MapMode.Read, Vortice.Direct3D11.MapFlags.None, out MappedSubresource mapped).CheckError();
+            try
+            {
+                int rowBytes = width * 4;
+                byte* destination = (byte*)bitmap.GetPixels().ToPointer();
+                for (int y = 0; y < height; y++)
+                    Buffer.MemoryCopy((byte*)mapped.DataPointer + y * mapped.RowPitch, destination + y * bitmap.RowBytes, bitmap.RowBytes, rowBytes);
+            }
+            finally { graphics.Context.Unmap(staging, 0); }
+            return bitmap;
+        }
+        catch
+        {
+            bitmap.Dispose();
+            throw;
+        }
     }
 
     [UnmanagedCallersOnly(CallConvs = [typeof(CallConvStdcall)])]
@@ -305,4 +375,9 @@ internal sealed unsafe class GraphicsCapture : IDisposable
         DisposeSources();
         toneMapper?.Dispose();
     }
+}
+
+public static class WindowsGraphicsCapture
+{
+    public static SKBitmap Capture(Rectangle region, bool hdrToneMapping = false) => GraphicsCapture.CaptureBitmap(region, hdrToneMapping);
 }
