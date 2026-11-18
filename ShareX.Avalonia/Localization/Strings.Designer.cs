@@ -29,7 +29,7 @@ namespace ShareX.AvaloniaUI.Localization {
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Strings() {
+        public Strings() {
         }
         
         /// <summary>
@@ -131,55 +131,82 @@ namespace ShareX.AvaloniaUI.Localization {
                 return ResourceManager.GetString("CursorAssetLoader_Unsupported_cursor_bitmap_header", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Abort.
+        /// </summary>
         public static string MessageBox_Abort {
             get {
                 return ResourceManager.GetString("MessageBox_Abort", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
         public static string MessageBox_Cancel {
             get {
                 return ResourceManager.GetString("MessageBox_Cancel", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
         public static string MessageBox_Continue {
             get {
                 return ResourceManager.GetString("MessageBox_Continue", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ignore.
+        /// </summary>
         public static string MessageBox_Ignore {
             get {
                 return ResourceManager.GetString("MessageBox_Ignore", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No.
+        /// </summary>
         public static string MessageBox_No {
             get {
                 return ResourceManager.GetString("MessageBox_No", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
         public static string MessageBox_OK {
             get {
                 return ResourceManager.GetString("MessageBox_OK", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Retry.
+        /// </summary>
         public static string MessageBox_Retry {
             get {
                 return ResourceManager.GetString("MessageBox_Retry", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Try again.
+        /// </summary>
         public static string MessageBox_Try_again {
             get {
                 return ResourceManager.GetString("MessageBox_Try_again", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yes.
+        /// </summary>
         public static string MessageBox_Yes {
             get {
                 return ResourceManager.GetString("MessageBox_Yes", resourceCulture);
