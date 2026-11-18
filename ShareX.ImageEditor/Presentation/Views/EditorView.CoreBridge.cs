@@ -27,10 +27,12 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.VisualTree;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Presentation.Controls;
 using ShareX.ImageEditor.Presentation.Rendering;
+using ShareX.ImageEditor.Presentation.Rendering.AnnotationVisuals;
 using ShareX.ImageEditor.Presentation.ViewModels;
 
 namespace ShareX.ImageEditor.Presentation.Views
@@ -133,6 +135,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             try
             {
+                using IDisposable snapshotSources = BeginImageAnnotationSnapshotRender(snapshotTarget);
                 snapshotTarget.Measure(Size.Infinity);
 
                 int pixelWidth = 0;
@@ -169,8 +172,10 @@ namespace ShareX.ImageEditor.Presentation.Views
                     pixelHeight = Math.Max(1, (int)Math.Round(height, MidpointRounding.AwayFromZero));
                 }
 
-                // Force layout at native resolution (un-zoomed)
+                snapshotTarget.InvalidateMeasure();
+                snapshotTarget.Measure(new Size(pixelWidth, pixelHeight));
                 snapshotTarget.Arrange(new Rect(0, 0, pixelWidth, pixelHeight));
+                ArrangeImageAnnotationSnapshotVisuals(snapshotTarget);
 
                 // Render Avalonia visual tree to bitmap
                 using var rtb = new RenderTargetBitmap(
@@ -255,8 +260,11 @@ namespace ShareX.ImageEditor.Presentation.Views
 
             try
             {
-                previewFrame.Measure(Size.Infinity);
+                using IDisposable snapshotSources = BeginImageAnnotationSnapshotRender(previewFrame);
+                previewFrame.InvalidateMeasure();
+                previewFrame.Measure(new Size(sourceImage.Width, sourceImage.Height));
                 previewFrame.Arrange(new Rect(0, 0, sourceImage.Width, sourceImage.Height));
+                ArrangeImageAnnotationSnapshotVisuals(previewFrame);
 
                 using RenderTargetBitmap renderTarget = new(
                     new PixelSize(width, height),
@@ -285,6 +293,81 @@ namespace ShareX.ImageEditor.Presentation.Views
 
                 previewFrame.InvalidateMeasure();
                 previewFrame.InvalidateArrange();
+            }
+        }
+
+        private static void ArrangeImageAnnotationSnapshotVisuals(Control snapshotTarget)
+        {
+            foreach (ResampledImageVisual image in snapshotTarget.GetVisualDescendants().OfType<ResampledImageVisual>())
+            {
+                double left = Canvas.GetLeft(image);
+                double top = Canvas.GetTop(image);
+                double width = image.Width;
+                double height = image.Height;
+
+                if (!double.IsFinite(left)) left = 0;
+                if (!double.IsFinite(top)) top = 0;
+                if (!double.IsFinite(width) || width < 0 || !double.IsFinite(height) || height < 0)
+                {
+                    throw new InvalidOperationException("Image annotation has invalid snapshot bounds.");
+                }
+
+                image.Measure(new Size(width, height));
+                image.Arrange(new Rect(left, top, width, height));
+            }
+        }
+
+        private static IDisposable BeginImageAnnotationSnapshotRender(Control snapshotTarget)
+        {
+            List<IDisposable> snapshotSources = [];
+            try
+            {
+                foreach (ResampledImageVisual image in snapshotTarget.GetVisualDescendants().OfType<ResampledImageVisual>())
+                {
+                    IDisposable? snapshotSource = image.BeginSnapshotRender();
+                    if (snapshotSource != null)
+                    {
+                        image.InvalidateMeasure();
+                        image.InvalidateArrange();
+                        snapshotSources.Add(snapshotSource);
+                    }
+                }
+
+                return new SnapshotSourceScope(snapshotSources);
+            }
+            catch
+            {
+                for (int i = snapshotSources.Count - 1; i >= 0; i--)
+                {
+                    snapshotSources[i].Dispose();
+                }
+
+                throw;
+            }
+        }
+
+        private sealed class SnapshotSourceScope : IDisposable
+        {
+            private List<IDisposable>? _snapshotSources;
+
+            public SnapshotSourceScope(List<IDisposable> snapshotSources)
+            {
+                _snapshotSources = snapshotSources;
+            }
+
+            public void Dispose()
+            {
+                List<IDisposable>? snapshotSources = _snapshotSources;
+                _snapshotSources = null;
+                if (snapshotSources == null)
+                {
+                    return;
+                }
+
+                for (int i = snapshotSources.Count - 1; i >= 0; i--)
+                {
+                    snapshotSources[i].Dispose();
+                }
             }
         }
 

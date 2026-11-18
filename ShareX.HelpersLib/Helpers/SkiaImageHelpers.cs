@@ -42,9 +42,9 @@ public static partial class SkiaImageHelpers
     {
         ImageInterpolationMode.NearestNeighbor => ImageResampling.GetSamplingOptions(ImageResamplingMode.NearestNeighbor),
         ImageInterpolationMode.Bilinear => ImageResampling.GetSamplingOptions(ImageResamplingMode.Linear),
-        ImageInterpolationMode.HighQualityBilinear => ImageResampling.GetSamplingOptions(ImageResamplingMode.LinearWithMipmaps),
+        ImageInterpolationMode.HighQualityBilinear => ImageResampling.GetSamplingOptions(ImageResamplingMode.Linear),
         ImageInterpolationMode.Bicubic => ImageResampling.GetSamplingOptions(ImageResamplingMode.Mitchell),
-        ImageInterpolationMode.HighQualityBicubic => ImageResampling.GetSamplingOptions(ImageResamplingMode.CatmullRom),
+        ImageInterpolationMode.HighQualityBicubic => ImageResampling.GetSamplingOptions(ImageResamplingMode.Mitchell),
         _ => HighQualitySampling
     };
 

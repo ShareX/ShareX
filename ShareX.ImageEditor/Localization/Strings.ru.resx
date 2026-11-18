@@ -1183,10 +1183,10 @@
     <value>Catmull-Rom</value>
   </data>
   <data name="ImageResamplingMode_Linear" xml:space="preserve">
-    <value>Линейный</value>
+    <value>Линейная фильтрация</value>
   </data>
   <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
-    <value>Линейная фильтрация с mipmap</value>
+    <value>Линейная фильтрация с mip-картами</value>
   </data>
   <data name="ImageResamplingMode_Mitchell" xml:space="preserve">
     <value>Mitchell-Netravali</value>

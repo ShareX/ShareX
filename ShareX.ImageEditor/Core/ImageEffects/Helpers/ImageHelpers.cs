@@ -182,16 +182,14 @@ public static class ImageHelpers
     /// <param name="maintainAspectRatio">If true, scales proportionally to fit within width/height</param>
     /// <param name="sampling">Filter quality for scaling</param>
     /// <returns>New resized bitmap</returns>
-    public static SKBitmap Resize(SKBitmap source, int width, int height, bool maintainAspectRatio = false, SKSamplingOptions sampling = default)
+    public static SKBitmap Resize(SKBitmap source, int width, int height, bool maintainAspectRatio = false, SKSamplingOptions? sampling = null)
     {
         ArgumentNullException.ThrowIfNull(source);
 
         ResizeImageEffect effect = new() { Width = width, Height = height, MaintainAspectRatio = maintainAspectRatio };
         SKSizeI targetSize = effect.GetTargetSize(source);
         SKImageInfo info = new(targetSize.Width, targetSize.Height, source.ColorType, source.AlphaType, source.ColorSpace);
-        SKSamplingOptions resolvedSampling = sampling.Equals(default(SKSamplingOptions))
-            ? ImageResampling.GetSamplingOptions(ImageResamplingMode.CatmullRom)
-            : sampling;
+        SKSamplingOptions resolvedSampling = sampling ?? ImageResampling.GetSamplingOptions(ImageResamplingMode.CatmullRom);
         return source.Resize(info, resolvedSampling);
     }
 

@@ -92,11 +92,11 @@ public sealed class DrawImageEffect : ImageEffectBase
             (e, v) => e.ResamplingMode = v,
             new (string Label, ImageResamplingMode Value)[]
             {
-                (Strings.ImageResamplingMode_CatmullRom, ImageResamplingMode.CatmullRom),
-                (Strings.ImageResamplingMode_Mitchell, ImageResamplingMode.Mitchell),
-                (Strings.ImageResamplingMode_LinearWithMipmaps, ImageResamplingMode.LinearWithMipmaps),
-                (Strings.ImageResamplingMode_Linear, ImageResamplingMode.Linear),
-                (Strings.ImageResamplingMode_NearestNeighbor, ImageResamplingMode.NearestNeighbor)
+                ("High quality bicubic", ImageResamplingMode.CatmullRom),
+                ("Bicubic", ImageResamplingMode.Mitchell),
+                ("High quality bilinear", ImageResamplingMode.LinearWithMipmaps),
+                ("Bilinear", ImageResamplingMode.Linear),
+                ("Nearest neighbor", ImageResamplingMode.NearestNeighbor)
             }),
         EffectParameters.Enum<DrawImageEffect, DrawingCompositingMode>(
             "compositing_mode", "Compositing mode", DrawingCompositingMode.SourceOver, (e, v) => e.CompositingMode = v,

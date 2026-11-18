@@ -674,7 +674,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                         _zoomController.HandleZoomPropertyChanged(vm);
                     }
 
-                    RefreshImageAnnotationDisplayScales(vm.EffectiveZoom);
+                    RefreshImageAnnotationPhysicalTargets();
                 }
                 else if (e.PropertyName == nameof(MainViewModel.ActiveTool))
                 {
@@ -727,7 +727,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private void RefreshImageAnnotationDisplayScales(double displayScale)
+        private void RefreshImageAnnotationPhysicalTargets()
         {
             var canvas = this.FindControl<Canvas>("AnnotationCanvas");
             if (canvas == null)
@@ -739,7 +739,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             {
                 if (child is ResampledImageVisual image)
                 {
-                    image.SetDisplayScale(displayScale);
+                    image.RefreshPhysicalTarget();
                 }
             }
         }
@@ -1157,7 +1157,11 @@ namespace ShareX.ImageEditor.Presentation.Views
 
                 foreach (Control control in canvas.Children)
                 {
-                    if (control is Image { Tag: ImageAnnotation } image)
+                    if (control is ResampledImageVisual resampledImage)
+                    {
+                        resampledImage.ReleaseDisplayBitmaps();
+                    }
+                    else if (control is Image { Tag: ImageAnnotation } image)
                     {
                         var source = image.Source;
                         image.Source = null;
@@ -1692,10 +1696,11 @@ namespace ShareX.ImageEditor.Presentation.Views
                         _editorCore.DeleteSelected();
                     }
 
-                    // Dispose annotation resources before removing from view
+                    canvas.Children.Remove(selected);
+
+                    // detach image visuals before disposing their source bitmap.
                     (selected.Tag as IDisposable)?.Dispose();
 
-                    canvas.Children.Remove(selected);
                     RefreshSpotlightOverlay();
 
                     _selectionController.ClearSelection();

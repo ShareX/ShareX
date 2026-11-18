@@ -25,7 +25,6 @@
 
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
@@ -48,11 +47,12 @@ internal sealed class ResampledImageVisual : Image
     private long _lastResampleTimestamp;
     private long _requestVersion;
     private SKBitmap? _sourceBitmap;
+    private SKBitmap? _cachedSourceBitmap;
+    private CachedSourceImage? _cachedSourceImage;
     private SKBitmap? _fullResolutionSourceBitmap;
     private Bitmap? _fullResolutionSource;
     private double _logicalWidth;
     private double _logicalHeight;
-    private double _displayScale = 1;
     private int _displayWidth;
     private int _displayHeight;
     private int _resampledWidth;
@@ -63,7 +63,9 @@ internal sealed class ResampledImageVisual : Image
     public ResampledImageVisual()
     {
         SizeChanged += OnSizeChanged;
-        AttachedToVisualTree += (_, _) => RefreshDisplayScale();
+        DataContextChanged += (_, _) => RefreshPhysicalTarget();
+        AttachedToVisualTree += OnAttachedToVisualTree;
+        DetachedFromVisualTree += OnDetachedFromVisualTree;
     }
 
     public void SetSource(SKBitmap? sourceBitmap, double width, double height, ImageResamplingMode resamplingMode)
@@ -73,53 +75,85 @@ internal sealed class ResampledImageVisual : Image
         UpdateSource(sourceBitmap, resamplingMode);
     }
 
-    public void SetDisplayScale(double displayScale)
+    public void RefreshPhysicalTarget()
     {
-        if (!double.IsFinite(displayScale) || displayScale <= 0 ||
-            Math.Abs(_displayScale - displayScale) < 0.0001)
-        {
-            return;
-        }
-
-        _displayScale = displayScale;
         if (_hasSourceState)
         {
             UpdateSource(_sourceBitmap, _resamplingMode);
         }
+        else
+        {
+            UpdateBitmapInterpolationMode(Source);
+        }
     }
 
-    public void RefreshDisplayScale()
+    public IDisposable? BeginSnapshotRender()
     {
-        double displayScale = 1;
-        for (Visual? visual = this.GetVisualParent(); visual != null; visual = visual.GetVisualParent())
+        if (_sourceBitmap == null)
         {
-            if (visual is LayoutTransformControl { LayoutTransform: ScaleTransform transform })
-            {
-                displayScale = transform.ScaleX;
-                break;
-            }
+            return null;
         }
 
-        SetDisplayScale(displayScale);
+        int width = GetSnapshotPixelDimension(_logicalWidth);
+        int height = GetSnapshotPixelDimension(_logicalHeight);
+        Bitmap snapshotSource = CreateSnapshotBitmap(_sourceBitmap, width, height);
+        IImage? previousSource = Source;
+        UpdateBitmapInterpolationMode(snapshotSource, width, height, hasPhysicalTarget: true);
+        Source = snapshotSource;
+        return new SnapshotSourceLease(this, previousSource, snapshotSource);
+    }
+
+    public void ReleaseDisplayBitmaps()
+    {
+        Interlocked.Increment(ref _requestVersion);
+
+        lock (_resampleLock)
+        {
+            _pendingResample?.Dispose();
+            _pendingResample = null;
+        }
+
+        ClearCachedSourceImage();
+
+        IImage? source = Source;
+        Source = null;
+        Bitmap? fullResolutionSource = _fullResolutionSource;
+        _fullResolutionSource = null;
+        _fullResolutionSourceBitmap = null;
+
+        if (!ReferenceEquals(source, fullResolutionSource))
+        {
+            (source as IDisposable)?.Dispose();
+        }
+
+        fullResolutionSource?.Dispose();
+        _sourceBitmap = null;
+        _hasSourceState = false;
+        UpdateBitmapInterpolationMode(Source);
+        _displayWidth = 0;
+        _displayHeight = 0;
+        _resampledWidth = 0;
+        _resampledHeight = 0;
     }
 
     private void UpdateSource(SKBitmap? sourceBitmap, ImageResamplingMode resamplingMode)
     {
-        (int resampledWidth, int resampledHeight) = GetResampledSize(
-            sourceBitmap,
+        bool hasPhysicalTarget = TryGetPhysicalTargetSize(
             _logicalWidth,
             _logicalHeight,
-            _displayScale,
-            resamplingMode);
-        RenderOptions.SetBitmapInterpolationMode(
-            this,
-            resamplingMode == ImageResamplingMode.NearestNeighbor
-                ? BitmapInterpolationMode.None
-                : BitmapInterpolationMode.HighQuality);
+            out double physicalWidth,
+            out double physicalHeight);
+        (int resampledWidth, int resampledHeight) = GetResampledSize(
+            sourceBitmap,
+            physicalWidth,
+            physicalHeight,
+            hasPhysicalTarget);
+        UpdateBitmapInterpolationMode(Source, physicalWidth, physicalHeight, hasPhysicalTarget);
 
         if (_hasSourceState && !ReferenceEquals(_sourceBitmap, sourceBitmap))
         {
             ClearFullResolutionSource();
+            ClearCachedSourceImage();
         }
 
         if (_hasSourceState &&
@@ -142,16 +176,15 @@ internal sealed class ResampledImageVisual : Image
             ReferenceEquals(_fullResolutionSourceBitmap, sourceBitmap) &&
             _fullResolutionSource != null)
         {
-            if (resamplingMode == ImageResamplingMode.NearestNeighbor ||
-                (resampledWidth == sourceBitmap.Width && resampledHeight == sourceBitmap.Height))
+            if (resampledWidth == sourceBitmap.Width && resampledHeight == sourceBitmap.Height)
             {
-                ReplaceSource(_fullResolutionSource, sourceBitmap.Width, sourceBitmap.Height);
+                ReplaceSource(_fullResolutionSource);
                 return;
             }
 
             if (resampledWidth > _displayWidth || resampledHeight > _displayHeight)
             {
-                ReplaceSource(_fullResolutionSource, sourceBitmap.Width, sourceBitmap.Height);
+                ReplaceSource(_fullResolutionSource);
             }
         }
 
@@ -168,7 +201,8 @@ internal sealed class ResampledImageVisual : Image
         }
 
         // Keep the source pixels alive while the background worker uses them.
-        SKImage sourceImage = SKImage.FromBitmap(sourceBitmap);
+        CachedSourceImage.SourceImageLease sourceImage = GetSourceImageLease(sourceBitmap);
+        // Natural-size images are copied without filtering; the selected mode applies when their bounds change.
         PendingResample request = new(
             requestVersion,
             sourceImage,
@@ -254,7 +288,7 @@ internal sealed class ResampledImageVisual : Image
                             _fullResolutionSourceBitmap = request.SourceBitmap;
                         }
 
-                        ReplaceSource(nextSource, request.Width, request.Height);
+                        ReplaceSource(nextSource);
                         nextSource = null;
                     }
                 }, DispatcherPriority.Render);
@@ -282,20 +316,139 @@ internal sealed class ResampledImageVisual : Image
         using SKBitmap resampledBitmap = new(imageInfo);
         using SKPixmap pixmap = resampledBitmap.PeekPixels();
 
-        if (!request.SourceImage.ScalePixels(pixmap, request.SamplingOptions))
+        bool succeeded = request.Width == request.SourceInfo.Width &&
+            request.Height == request.SourceInfo.Height
+                ? request.SourceImage.Image.ReadPixels(pixmap)
+                : request.SourceImage.Image.ScalePixels(pixmap, request.SamplingOptions);
+        if (!succeeded)
         {
-            throw new InvalidOperationException("Failed to resample image annotation bitmap.");
+            throw new InvalidOperationException("Failed to copy or resample image annotation bitmap.");
         }
 
         return BitmapConversionHelpers.ToAvaloniBitmap(resampledBitmap);
     }
 
-    private void ReplaceSource(Bitmap? nextSource, int width = 0, int height = 0)
+    private Bitmap CreateSnapshotBitmap(SKBitmap sourceBitmap, int width, int height)
+    {
+        if (width == sourceBitmap.Width && height == sourceBitmap.Height)
+        {
+            return BitmapConversionHelpers.ToAvaloniBitmap(sourceBitmap);
+        }
+
+        SKImageInfo imageInfo = new(
+            width,
+            height,
+            sourceBitmap.ColorType,
+            sourceBitmap.AlphaType,
+            sourceBitmap.ColorSpace);
+        using SKBitmap resampledBitmap = new(imageInfo);
+        using SKPixmap pixmap = resampledBitmap.PeekPixels();
+        using CachedSourceImage.SourceImageLease sourceImage = GetSourceImageLease(sourceBitmap);
+
+        if (!sourceImage.Image.ScalePixels(pixmap, ImageResampling.GetSamplingOptions(_resamplingMode)))
+        {
+            throw new InvalidOperationException("Failed to resample image annotation for snapshot.");
+        }
+
+        return BitmapConversionHelpers.ToAvaloniBitmap(resampledBitmap);
+    }
+
+    private static int GetSnapshotPixelDimension(double size)
+    {
+        if (!double.IsFinite(size) || size > int.MaxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(size));
+        }
+
+        return Math.Max(1, (int)Math.Ceiling(size));
+    }
+
+    private CachedSourceImage.SourceImageLease GetSourceImageLease(SKBitmap sourceBitmap)
+    {
+        if (!ReferenceEquals(_cachedSourceBitmap, sourceBitmap) || _cachedSourceImage == null)
+        {
+            ClearCachedSourceImage();
+            _cachedSourceBitmap = sourceBitmap;
+            _cachedSourceImage = new CachedSourceImage(SKImage.FromBitmap(sourceBitmap));
+        }
+
+        return _cachedSourceImage!.Acquire();
+    }
+
+    private void ClearCachedSourceImage()
+    {
+        CachedSourceImage? cachedSourceImage = _cachedSourceImage;
+        _cachedSourceImage = null;
+        _cachedSourceBitmap = null;
+        cachedSourceImage?.Dispose();
+    }
+
+    private bool TryGetPhysicalTargetSize(
+        double width,
+        double height,
+        out double physicalWidth,
+        out double physicalHeight)
+    {
+        physicalWidth = 0;
+        physicalHeight = 0;
+
+        TopLevel? topLevel = TopLevel.GetTopLevel(this);
+        Matrix? transform = topLevel == null ? null : this.TransformToVisual(topLevel);
+        if (transform == null || !double.IsFinite(topLevel!.RenderScaling) || topLevel.RenderScaling <= 0)
+        {
+            return false;
+        }
+
+        Point origin = transform.Value.Transform(new Point(0, 0));
+        Point horizontal = transform.Value.Transform(new Point(1, 0));
+        Point vertical = transform.Value.Transform(new Point(0, 1));
+        double scaleX = Math.Sqrt(
+            Math.Pow(horizontal.X - origin.X, 2) +
+            Math.Pow(horizontal.Y - origin.Y, 2)) * topLevel.RenderScaling;
+        double scaleY = Math.Sqrt(
+            Math.Pow(vertical.X - origin.X, 2) +
+            Math.Pow(vertical.Y - origin.Y, 2)) * topLevel.RenderScaling;
+
+        double visualWidth = Bounds.Width > 0 && double.IsFinite(Bounds.Width) ? Bounds.Width : width;
+        double visualHeight = Bounds.Height > 0 && double.IsFinite(Bounds.Height) ? Bounds.Height : height;
+        physicalWidth = visualWidth * scaleX;
+        physicalHeight = visualHeight * scaleY;
+        return double.IsFinite(physicalWidth) && double.IsFinite(physicalHeight) &&
+            physicalWidth > 0 && physicalHeight > 0;
+    }
+
+    private void UpdateBitmapInterpolationMode(IImage? image)
+    {
+        bool hasPhysicalTarget = TryGetPhysicalTargetSize(
+            _logicalWidth,
+            _logicalHeight,
+            out double physicalWidth,
+            out double physicalHeight);
+        UpdateBitmapInterpolationMode(image, physicalWidth, physicalHeight, hasPhysicalTarget);
+    }
+
+    private void UpdateBitmapInterpolationMode(
+        IImage? image,
+        double physicalWidth,
+        double physicalHeight,
+        bool hasPhysicalTarget)
+    {
+        bool isPixelExact = hasPhysicalTarget &&
+            image is Bitmap bitmap &&
+            Math.Abs(physicalWidth - bitmap.PixelSize.Width) < 1 &&
+            Math.Abs(physicalHeight - bitmap.PixelSize.Height) < 1;
+        RenderOptions.SetBitmapInterpolationMode(
+            this,
+            isPixelExact ? BitmapInterpolationMode.None : BitmapInterpolationMode.HighQuality);
+    }
+
+    private void ReplaceSource(Bitmap? nextSource)
     {
         IImage? previousSource = Source;
+        UpdateBitmapInterpolationMode(nextSource);
         Source = nextSource;
-        _displayWidth = width;
-        _displayHeight = height;
+        _displayWidth = nextSource?.PixelSize.Width ?? 0;
+        _displayHeight = nextSource?.PixelSize.Height ?? 0;
 
         if (!ReferenceEquals(previousSource, _fullResolutionSource) &&
             !ReferenceEquals(previousSource, nextSource))
@@ -332,11 +485,128 @@ internal sealed class ResampledImageVisual : Image
         UpdateSource(_sourceBitmap, _resamplingMode);
     }
 
+    private void OnAttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        RefreshPhysicalTarget();
+    }
+
+    private void OnDetachedFromVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        ReleaseDisplayBitmaps();
+    }
+
+    private sealed class SnapshotSourceLease : IDisposable
+    {
+        private ResampledImageVisual? _owner;
+        private readonly IImage? _previousSource;
+        private readonly Bitmap _snapshotSource;
+
+        public SnapshotSourceLease(ResampledImageVisual owner, IImage? previousSource, Bitmap snapshotSource)
+        {
+            _owner = owner;
+            _previousSource = previousSource;
+            _snapshotSource = snapshotSource;
+        }
+
+        public void Dispose()
+        {
+            ResampledImageVisual? owner = Interlocked.Exchange(ref _owner, null);
+            if (owner == null)
+            {
+                return;
+            }
+
+            if (ReferenceEquals(owner.Source, _snapshotSource))
+            {
+                owner.Source = _previousSource;
+                owner.UpdateBitmapInterpolationMode(owner.Source);
+            }
+
+            _snapshotSource.Dispose();
+        }
+    }
+
+    private sealed class CachedSourceImage : IDisposable
+    {
+        private readonly object _sync = new();
+        private SKImage? _image;
+        private int _referenceCount = 1;
+        private bool _ownerDisposed;
+
+        public CachedSourceImage(SKImage image)
+        {
+            _image = image;
+        }
+
+        public SourceImageLease Acquire()
+        {
+            lock (_sync)
+            {
+                if (_ownerDisposed || _image == null)
+                {
+                    throw new ObjectDisposedException(nameof(CachedSourceImage));
+                }
+
+                _referenceCount++;
+                return new SourceImageLease(this, _image);
+            }
+        }
+
+        public void Dispose()
+        {
+            ReleaseReference(owner: true);
+        }
+
+        private void ReleaseReference(bool owner = false)
+        {
+            SKImage? imageToDispose = null;
+            lock (_sync)
+            {
+                if (owner)
+                {
+                    if (_ownerDisposed)
+                    {
+                        return;
+                    }
+
+                    _ownerDisposed = true;
+                }
+
+                _referenceCount--;
+                if (_referenceCount == 0)
+                {
+                    imageToDispose = _image;
+                    _image = null;
+                }
+            }
+
+            imageToDispose?.Dispose();
+        }
+
+        public sealed class SourceImageLease : IDisposable
+        {
+            private CachedSourceImage? _owner;
+
+            internal SourceImageLease(CachedSourceImage owner, SKImage image)
+            {
+                _owner = owner;
+                Image = image;
+            }
+
+            public SKImage Image { get; }
+
+            public void Dispose()
+            {
+                Interlocked.Exchange(ref _owner, null)?.ReleaseReference();
+            }
+        }
+    }
+
     private sealed class PendingResample : IDisposable
     {
         public PendingResample(
             long version,
-            SKImage sourceImage,
+            CachedSourceImage.SourceImageLease sourceImage,
             SKBitmap sourceBitmap,
             SKImageInfo sourceInfo,
             int width,
@@ -353,7 +623,7 @@ internal sealed class ResampledImageVisual : Image
         }
 
         public long Version { get; }
-        public SKImage SourceImage { get; }
+        public CachedSourceImage.SourceImageLease SourceImage { get; }
         public SKBitmap SourceBitmap { get; }
         public SKImageInfo SourceInfo { get; }
         public int Width { get; }
@@ -365,24 +635,28 @@ internal sealed class ResampledImageVisual : Image
 
     private static (int Width, int Height) GetResampledSize(
         SKBitmap? sourceBitmap,
-        double width,
-        double height,
-        double displayScale,
-        ImageResamplingMode resamplingMode)
+        double physicalWidth,
+        double physicalHeight,
+        bool hasPhysicalTarget)
     {
-        if (!double.IsFinite(width)) throw new ArgumentOutOfRangeException(nameof(width));
-        if (!double.IsFinite(height)) throw new ArgumentOutOfRangeException(nameof(height));
-
-        if (sourceBitmap != null && resamplingMode == ImageResamplingMode.NearestNeighbor)
+        if (sourceBitmap == null)
         {
-            return (sourceBitmap.Width, sourceBitmap.Height);
+            return (0, 0);
         }
 
-        width = Math.Max(1, Math.Ceiling(width));
-        height = Math.Max(1, Math.Ceiling(height));
-        width *= displayScale;
-        height *= displayScale;
-        // Bound intermediate rasters; Avalonia scales the result to the annotation bounds.
+        double width = hasPhysicalTarget ? physicalWidth : sourceBitmap.Width;
+        double height = hasPhysicalTarget ? physicalHeight : sourceBitmap.Height;
+        if (!double.IsFinite(width) || !double.IsFinite(height))
+        {
+            throw new ArgumentOutOfRangeException(nameof(physicalWidth));
+        }
+
+        if (hasPhysicalTarget)
+        {
+            if (Math.Abs(width - sourceBitmap.Width) < 1) width = sourceBitmap.Width;
+            if (Math.Abs(height - sourceBitmap.Height) < 1) height = sourceBitmap.Height;
+        }
+
         double scale = Math.Min(
             1,
             Math.Min(
@@ -390,7 +664,7 @@ internal sealed class ResampledImageVisual : Image
                 Math.Sqrt((double)MaxResampledPixelCount / width / height)));
 
         return (
-            Math.Max(1, (int)Math.Floor(width * scale)),
-            Math.Max(1, (int)Math.Floor(height * scale)));
+            Math.Clamp((int)Math.Round(width * scale), 1, MaxResampledDimension),
+            Math.Clamp((int)Math.Round(height * scale), 1, MaxResampledDimension));
     }
 }

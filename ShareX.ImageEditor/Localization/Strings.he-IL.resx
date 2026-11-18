@@ -1183,7 +1183,7 @@
     <value>Catmull-Rom</value>
   </data>
   <data name="ImageResamplingMode_Linear" xml:space="preserve">
-    <value>לינארי</value>
+    <value>ליניארי</value>
   </data>
   <data name="ImageResamplingMode_LinearWithMipmaps" xml:space="preserve">
     <value>ליניארי עם מפות mipmap</value>
