@@ -94,8 +94,6 @@ namespace ShareX.ScreenCaptureLib
                 bestMatchIndex = 0;
                 bestIgnoreBottomOffset = 0;
                 Reset();
-                ResultWindowTitle = selectedWindow.Text;
-                ResultProcessName = selectedWindow.ProcessName;
 
                 ScrollingCaptureRegionWindow regionWindow = null;
 
@@ -107,6 +105,9 @@ namespace ShareX.ScreenCaptureLib
 
                 try
                 {
+                    ResultWindowTitle = selectedWindow.Text;
+                    ResultProcessName = selectedWindow.ProcessName;
+
                     selectedWindow.Activate();
 
                     await Task.Delay(Options.StartDelay);
