@@ -7,16 +7,49 @@
              xmlns:controls="using:ShareX.ImageEditor.Presentation.Controls"
              x:Class="ShareX.ImageEditor.Presentation.Views.EditorBuiltInToolbars"
              x:DataType="vm:MainViewModel">
+    <UserControl.Styles>
+        <Style Selector="Border.toolbar-drag-handle">
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+
+        <Style Selector="Border.toolbar-drag-handle > Path">
+            <Setter Property="Fill" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+        </Style>
+
+        <Style Selector="Border.toolbar-drag-handle:pointerover > Path">
+            <Setter Property="Fill" Value="{DynamicResource ShareX.Brush.Text}"/>
+        </Style>
+    </UserControl.Styles>
+
     <Grid>
-        <Border Classes="editor-toolbar-host top"
+        <Border x:Name="TopToolbarHost"
+                Classes="editor-toolbar-host top"
                 Classes.hidden="{Binding AreToolbarsHidden}"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Center"
                 IsHitTestVisible="{Binding ShowToolbars}">
+            <!-- The hide animation uses the host's RenderTransform, so a drag moves the toolbar inside it instead. -->
             <controls:AnnotationToolbar x:Name="AnnotationToolbarControl"
                                         DataContext="{Binding ToolbarAdapter}"
                                         ShowEditingActions="False"
-                                        MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
+                                        MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                <controls:AnnotationToolbar.MainToolbarLeadingContent>
+                    <Border x:Name="TopToolbarDragHandle"
+                            Classes="toolbar-drag-handle"
+                            Cursor="SizeAll"
+                            PointerPressed="OnTopToolbarDragHandlePointerPressed"
+                            PointerMoved="OnTopToolbarDragHandlePointerMoved"
+                            PointerReleased="OnTopToolbarDragHandlePointerReleased"
+                            PointerCaptureLost="OnTopToolbarDragHandlePointerCaptureLost"
+                            ToolTip.Tip="{x:Static res:Strings.EditorBuiltInToolbars_MoveToolbar}"
+                            AutomationProperties.Name="{x:Static res:Strings.EditorBuiltInToolbars_MoveToolbar}">
+                        <Path Data="M0,0h2v2h-2z M4,0h2v2h-2z M0,4h2v2h-2z M4,4h2v2h-2z M0,8h2v2h-2z M4,8h2v2h-2z M0,12h2v2h-2z M4,12h2v2h-2z"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Center"/>
+                    </Border>
+                </controls:AnnotationToolbar.MainToolbarLeadingContent>
+            </controls:AnnotationToolbar>
         </Border>
 
         <Border Classes="editor-toolbar-host bottom"

@@ -2505,5 +2505,10 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_Autosizetotext", resourceCulture);
             }
         }
+        public static string EditorBuiltInToolbars_MoveToolbar {
+            get {
+                return ResourceManager.GetString("EditorBuiltInToolbars_MoveToolbar", resourceCulture);
+            }
+        }
     }
 }

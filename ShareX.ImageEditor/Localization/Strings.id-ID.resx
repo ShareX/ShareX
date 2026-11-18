@@ -267,6 +267,9 @@ Simpan perubahan sebelum menutup editor gambar?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kursor tunggu</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Seret untuk memindahkan bilah alat, klik dua kali untuk mengatur ulang posisinya</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Pencapaian terbuka!</value>
   </data>
