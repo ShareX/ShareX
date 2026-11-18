@@ -32,8 +32,10 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using MessageBox = ShareX.AvaloniaUI.MessageBox;
+using DialogResult = ShareX.AvaloniaUI.DialogResult;
 using MessageBoxButtons = ShareX.AvaloniaUI.MessageBoxButtons;
 using MessageBoxIcon = ShareX.AvaloniaUI.MessageBoxIcon;
+using HardwareEncoderUnavailableException = ShareX.ScreenRecordingLib.HardwareEncoderUnavailableException;
 using NativeRecordingOptions = ShareX.ScreenRecordingLib.RecordingOptions;
 using NativeScreenRecorder = ShareX.ScreenRecordingLib.ScreenRecorder;
 
@@ -481,8 +483,10 @@ namespace ShareX
             // HandleExistsFile has already applied the user's overwrite policy. Commit a completed
             // recording afterward so aborts, restarts and startup errors preserve an existing file.
             string recordingPath = Path.Combine(Path.GetDirectoryName(path), $"{Path.GetFileNameWithoutExtension(path)}-recording-{Guid.NewGuid():N}{Path.GetExtension(path)}");
+            bool retryWithSoftwareEncoding = false;
             while (true)
             {
+                retryWithSoftwareEncoding = false;
                 bool completed = false;
                 NativeRecordingOptions options = new()
                 {
@@ -558,11 +562,21 @@ namespace ShareX
                 {
                     // A stop during preparation or before the first frame removes the incomplete file.
                 }
+                catch (HardwareEncoderUnavailableException) when (options.RequireHardwareEncoder && AskDisableHardwareEncoder(settings))
+                {
+                    // Nothing was captured yet (preparation failed). Retry with software encoding.
+                    retryWithSoftwareEncoding = true;
+                }
                 finally
                 {
                     await nativeRecorder.DisposeAsync();
                     nativeRecorder = null;
                     recordForm.ChangeState(ScreenRecordState.RecordingEnd);
+                }
+                if (retryWithSoftwareEncoding)
+                {
+                    FileHelpers.DeleteFile(recordingPath);
+                    continue;
                 }
                 if (recordForm.RestartRequested)
                 {
@@ -582,6 +596,27 @@ namespace ShareX
                 }
                 return aborted || !completed;
             }
+        }
+
+        /// <summary>Asks whether to allow software encoding. On Yes, the setting is saved permanently.</summary>
+        private static bool AskDisableHardwareEncoder(TaskSettings settings)
+        {
+            bool yes = false;
+            recordForm.InvokeSafe(() => yes = MessageBox.Show(
+                "Your GPU does not provide hardware video encoding, which is currently required.\r\n\r\n" +
+                "Do you want to turn off \"require hardware encoder\" (ScreenRecordRequireHardwareEncoder) and record using Windows software encoding instead? " +
+                "This setting will be saved.",
+                "ShareX", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes);
+            if (!yes) return false;
+
+            settings.CaptureSettings.ScreenRecordRequireHardwareEncoder = false;
+            TaskSettings origin = settings.TaskSettingsReference ?? settings;
+            TaskSettingsCapture persisted = origin.UseDefaultCaptureSettings
+                ? ApplicationState.DefaultTaskSettings.CaptureSettings : origin.CaptureSettings;
+            persisted.ScreenRecordRequireHardwareEncoder = false;
+            SettingManager.SaveApplicationConfigAsync();
+            SettingManager.SaveHotkeysConfigAsync();
+            return true;
         }
 
         private static NativeScreenRecorder CreateNativeRecorder(NativeRecordingOptions options)
