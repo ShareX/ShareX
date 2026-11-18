@@ -81,6 +81,7 @@ public sealed class RegionCaptureTransparentWindow : Window
             Helpers.LockCursorToWindow(this);
         }
 
+        ApplyToolWindowStyle();
         Opened += OnOpened;
     }
 
@@ -210,7 +211,6 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        ApplyToolWindowStyle();
         ApplyPixelSize();
         Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
         WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds, trackDpiChanges: true);
@@ -294,12 +294,21 @@ public sealed class RegionCaptureTransparentWindow : Window
     /// <summary>
     /// Chrome treats a window covering it as occluding unless it is a tool window, and stops showing video while
     /// occluded, so without this a YouTube video loaded under the selection does not appear.
+    /// Apply it before the window is first shown: tools such as MicaForEveryone put a system backdrop on new windows
+    /// as they appear unless they are tool windows, which fills the transparent selection area.
     /// </summary>
     private void ApplyToolWindowStyle()
     {
+        if (!OperatingSystem.IsWindows())
+        {
+            return;
+        }
+
+        Win32Properties.AddWindowStylesCallback(this, (style, exStyle) => (style, exStyle | (uint)WindowStyles.WS_EX_TOOLWINDOW));
+
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
 
-        if (OperatingSystem.IsWindows() && handle != IntPtr.Zero)
+        if (handle != IntPtr.Zero)
         {
             WindowInfo info = new(handle);
             info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
