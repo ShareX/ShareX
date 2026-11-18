@@ -45,9 +45,9 @@ public partial class EditorBuiltInToolbars : UserControl
     // The offset the user chose; the drawn offset is clamped so the toolbar stays inside the view.
     private Point _topToolbarOffset;
     private bool _draggingTopToolbar;
-    private bool _topToolbarMoved;
     private Point _topToolbarDragStartPointer;
     private Point _topToolbarDragStartOffset;
+    private Point _topToolbarOffsetBeforeDrag;
 
     public AnnotationToolbar AnnotationToolbar { get; private set; } = null!;
 
@@ -115,12 +115,12 @@ public partial class EditorBuiltInToolbars : UserControl
             return;
         }
 
-        // Start from where the toolbar is drawn, which may be clamped inside the view. A click without a move keeps
-        // the remembered offset, so a larger window can still restore it.
+        // Start from where the toolbar is drawn, which may be clamped inside the view. A drag that ends where it
+        // started keeps the remembered offset, so a larger window can still restore it.
         _topToolbarDragStartOffset = new Point(_topToolbarTransform.X, _topToolbarTransform.Y);
         _topToolbarDragStartPointer = e.GetPosition(this);
+        _topToolbarOffsetBeforeDrag = _topToolbarOffset;
         _draggingTopToolbar = true;
-        _topToolbarMoved = false;
         e.Pointer.Capture(handle);
     }
 
@@ -132,13 +132,8 @@ public partial class EditorBuiltInToolbars : UserControl
         }
 
         Point delta = e.GetPosition(this) - _topToolbarDragStartPointer;
-        if (_topToolbarMoved || delta != default)
-        {
-            _topToolbarMoved = true;
-            _topToolbarOffset = _topToolbarDragStartOffset + delta;
-            ApplyTopToolbarOffset();
-        }
-
+        _topToolbarOffset = delta == default ? _topToolbarOffsetBeforeDrag : _topToolbarDragStartOffset + delta;
+        ApplyTopToolbarOffset();
         e.Handled = true;
     }
 
@@ -167,7 +162,7 @@ public partial class EditorBuiltInToolbars : UserControl
         }
 
         _draggingTopToolbar = false;
-        if (!_topToolbarMoved)
+        if (_topToolbarOffset == _topToolbarOffsetBeforeDrag)
         {
             return;
         }
