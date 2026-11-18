@@ -39,7 +39,8 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
-        public WindowInfo SelectedWindow => selectedWindow;
+        public string ResultWindowTitle { get; private set; }
+        public string ResultProcessName { get; private set; }
 
         private Bitmap lastScreenshot;
         private Bitmap previousScreenshot;
@@ -93,6 +94,8 @@ namespace ShareX.ScreenCaptureLib
                 bestMatchIndex = 0;
                 bestIgnoreBottomOffset = 0;
                 Reset();
+                ResultWindowTitle = selectedWindow.Text;
+                ResultProcessName = selectedWindow.ProcessName;
 
                 ScrollingCaptureRegionWindow regionWindow = null;
 
