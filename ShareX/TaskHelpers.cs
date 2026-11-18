@@ -887,7 +887,12 @@ namespace ShareX
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             await ScrollingCaptureWindowIntegration.StartStopAsync(taskSettings.CaptureSettingsReference.ScrollingCaptureOptions,
-                img => UploadManager.RunImageTask(img, taskSettings),
+                (img, window) =>
+                {
+                    TaskMetadata metadata = new TaskMetadata(img);
+                    metadata.UpdateInfo(window);
+                    UploadManager.RunImageTask(metadata, taskSettings);
+                },
                 () => PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings),
                 taskSettings.CaptureSettingsReference.RegionCaptureOptions);
         }

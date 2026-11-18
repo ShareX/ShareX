@@ -39,6 +39,7 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
+        public WindowInfo SelectedWindow => selectedWindow;
 
         private Bitmap lastScreenshot;
         private Bitmap previousScreenshot;

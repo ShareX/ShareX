@@ -36,6 +36,7 @@ public sealed class ScrollingCaptureService : IDisposable
     public ScrollingCaptureOptions Options { get; }
     public Bitmap Result => _manager.Result;
     public bool IsCapturing => _manager.IsCapturing;
+    public ShareX.HelpersLib.WindowInfo SelectedWindow => _manager.SelectedWindow;
 
     public ScrollingCaptureService(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions = null)
     {
