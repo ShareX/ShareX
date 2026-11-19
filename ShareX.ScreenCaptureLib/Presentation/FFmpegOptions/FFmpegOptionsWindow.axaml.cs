@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Platform.Storage;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
@@ -72,6 +73,7 @@ public partial class FFmpegOptionsWindow : Window
 
         Opened += OnOpened;
         Closed += (_, _) => _closed = true;
+        KeyDown += OnWindowKeyDown;
     }
 
     private void PopulateLists()
@@ -595,6 +597,25 @@ public partial class FFmpegOptionsWindow : Window
     {
         NormalFooterPanel.IsVisible = !show;
         ResetConfirmationPanel.IsVisible = show;
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (ResetConfirmationPanel.IsVisible)
+        {
+            ShowResetConfirmation(false);
+            e.Handled = true;
+        }
+        else
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private static bool EqualsSource(FFmpegCaptureDevice device, string? value)

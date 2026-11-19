@@ -79,6 +79,7 @@ public partial class CustomUploaderSettingsWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        KeyDown += OnWindowKeyDown;
     }
 
     public CustomUploaderSettingsWindow(UploadersConfig config) : this()
@@ -266,5 +267,24 @@ public partial class CustomUploaderSettingsWindow : Window
         textBox.Text = text.Remove(start, end - start).Insert(start, token);
         textBox.CaretIndex = start + token.Length;
         textBox.Focus();
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (_viewModel?.IsSyntaxTestVisible == true)
+        {
+            _viewModel.CloseSyntaxTest();
+            e.Handled = true;
+        }
+        else
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 }

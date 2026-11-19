@@ -51,6 +51,7 @@ public partial class HotkeySettingsWindow : Window
         // Tunnel handlers see the key first, so combinations with those keys can be captured.
         AddHandler(KeyDownEvent, OnHotkeyKeyDown, RoutingStrategies.Tunnel);
         AddHandler(KeyUpEvent, OnHotkeyKeyUp, RoutingStrategies.Tunnel);
+        KeyDown += OnWindowKeyDown;
     }
 
     // Translated toolbar labels can be wider than the default window, which cuts off the Reset button.
@@ -175,6 +176,25 @@ public partial class HotkeySettingsWindow : Window
         {
             _viewModel?.ToggleCapture(item);
             button.Focus();
+        }
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (_viewModel?.IsResetConfirmationVisible == true)
+        {
+            _viewModel.IsResetConfirmationVisible = false;
+            e.Handled = true;
+        }
+        else
+        {
+            Close();
+            e.Handled = true;
         }
     }
 
