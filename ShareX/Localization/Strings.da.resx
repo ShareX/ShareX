@@ -2963,6 +2963,30 @@ Vil du afbryde den aktive skærmoptagelse?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Mønster:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Trykkede taster</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Vis tastetryk i optagelsen</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Vis også skrevet tekst</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Når den er slået fra, vises kun genveje og taster som Enter, Esc og F1. Skrevet tekst kan indeholde adgangskoder, undtagen i Windows-adgangskodefelter.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Skriftstørrelse:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Tekstfarve:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Skjul efter (sekunder):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>Nederst i midten</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Placering:</value>
   </data>

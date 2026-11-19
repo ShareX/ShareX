@@ -184,6 +184,12 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             Camera = camera?.Info;
             using CameraOverlay? cameraOverlay = camera == null ? null : new(graphics, camera.Info, camera.Subtype,
                 camera.Stride, camera.YuvMatrix, camera.NominalRange, options, width, height);
+            List<PixelOverlay> pixelOverlays = [];
+            using OverlayList overlayResources = new(pixelOverlays);
+            foreach (IRecordingOverlay overlay in options.Overlays) pixelOverlays.Add(new PixelOverlay(graphics, overlay, width, height));
+            List<IVideoFrameOverlay> frameOverlays = [];
+            if (cameraOverlay != null) frameOverlays.Add(cameraOverlay);
+            frameOverlays.AddRange(pixelOverlays);
             AudioMixer mixer = new(clock);
             using WasapiCapture? audio = options.HasAudio ? new(options, mixer) : null;
             prepared.TrySetResult();
@@ -303,9 +309,10 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                                 camera.Dispose();
                             }
                         }
+                        foreach (PixelOverlay overlay in pixelOverlays) overlay.Update();
                         if (gifWriter != null)
                         {
-                            if (!gifWriter.TryWriteVideo(processor.GetBgraFrame(cameraOverlay), timestamp))
+                            if (!gifWriter.TryWriteVideo(processor.GetBgraFrame(frameOverlays), timestamp))
                             {
                                 dropped++;
                                 nextFrame++;
@@ -314,7 +321,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                         }
                         else
                         {
-                            try { processor.Convert(slot!.View, (uint)nextFrame, cameraOverlay); }
+                            try { processor.Convert(slot!.View, (uint)nextFrame, frameOverlays); }
                             catch { textures!.Return(slot!); throw; }
                             using var sample = textures!.CreateSample(slot!);
                             writer!.WriteVideo(sample, timestamp, end - timestamp, discontinuity);
@@ -416,5 +423,10 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
         RequestStop();
         if (worker != null) { try { await Completion.ConfigureAwait(false); } catch { } }
         Dispose();
+    }
+
+    private sealed class OverlayList(List<PixelOverlay> overlays) : IDisposable
+    {
+        public void Dispose() => overlays.ForEach(overlay => overlay.Dispose());
     }
 }

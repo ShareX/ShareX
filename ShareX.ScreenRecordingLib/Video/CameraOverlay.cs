@@ -32,7 +32,7 @@ using Vortice.MediaFoundation;
 namespace ShareX.ScreenRecordingLib.Video;
 
 /// <summary>Converts only new camera frames to a reusable small BGRA tile, entirely on the GPU.</summary>
-internal sealed unsafe class CameraOverlay : IDisposable
+internal sealed unsafe class CameraOverlay : IVideoFrameOverlay, IDisposable
 {
     private readonly GraphicsDevice graphics;
     private readonly CameraCaptureInfo info;

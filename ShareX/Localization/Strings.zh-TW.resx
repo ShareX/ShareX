@@ -2963,6 +2963,30 @@
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>模式：</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>按下的按鍵</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>在錄製中顯示按下的按鍵</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>同時顯示輸入的文字</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>關閉時只顯示快速鍵和 Enter、Esc、F1 等按鍵。輸入的文字可能包含密碼（Windows 密碼方塊除外）。</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>字型大小：</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>文字色彩：</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>隱藏前等待（秒）：</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>底部置中</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>位置：</value>
   </data>

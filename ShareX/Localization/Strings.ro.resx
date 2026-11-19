@@ -2963,6 +2963,30 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Model:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Taste apăsate</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Afișează tastele apăsate în înregistrare</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Afișează și textul tastat</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Când este dezactivat, sunt afișate doar comenzile rapide și taste precum Enter, Esc și F1. Textul tastat poate include parole, cu excepția casetelor de parolă Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Dimensiune font:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Culoare text:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Ascunde după (secunde):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>Jos la mijloc</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Poziționare:</value>
   </data>

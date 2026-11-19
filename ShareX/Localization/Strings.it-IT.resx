@@ -2963,6 +2963,30 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Modello:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Tasti premuti</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Mostra i tasti premuti nella registrazione</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Mostra anche il testo digitato</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Se disattivato, vengono mostrati solo le scorciatoie e tasti come Invio, Esc e F1. Il testo digitato può includere password, tranne nei campi password di Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Dimensione carattere:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Colore testo:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Nascondi dopo (secondi):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>In basso al centro</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Posizione:</value>
   </data>

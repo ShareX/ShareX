@@ -2963,6 +2963,30 @@ Czy chcesz przerwać aktywne nagrywanie ekranu?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Wzorzec:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Naciśnięte klawisze</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Pokazuj naciśnięte klawisze w nagraniu</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Pokazuj też wpisywany tekst</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Gdy wyłączone, pokazywane są tylko skróty i klawisze takie jak Enter, Esc i F1. Wpisywany tekst może zawierać hasła, z wyjątkiem pól haseł systemu Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Rozmiar czcionki:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Kolor tekstu:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Ukryj po (sekundach):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>Na dole pośrodku</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Położenie:</value>
   </data>

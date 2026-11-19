@@ -2963,6 +2963,30 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Patroon:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Ingedrukte toetsen</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Ingedrukte toetsen in de opname tonen</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Ook getypte tekst tonen</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Uit: alleen sneltoetsen en toetsen zoals Enter, Esc en F1 worden getoond. Getypte tekst kan wachtwoorden bevatten, behalve in Windows-wachtwoordvakken.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Lettergrootte:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Tekstkleur:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Verbergen na (seconden):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>Midden onder</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Plaatsing:</value>
   </data>
