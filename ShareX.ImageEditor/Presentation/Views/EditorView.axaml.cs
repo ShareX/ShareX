@@ -1698,7 +1698,7 @@ namespace ShareX.ImageEditor.Presentation.Views
 
                     canvas.Children.Remove(selected);
 
-                    // detach image visuals before disposing their source bitmap.
+                    // detach image visuals before disposing their source bitmap. (it crashed on dispose)
                     (selected.Tag as IDisposable)?.Dispose();
 
                     RefreshSpotlightOverlay();

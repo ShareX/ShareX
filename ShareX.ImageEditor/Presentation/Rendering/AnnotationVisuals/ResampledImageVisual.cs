@@ -30,6 +30,7 @@ using Avalonia.Media.Imaging;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Imaging;
+using ShareX.ImageEditor.Core.Annotations;
 using SkiaSharp;
 using System.Diagnostics;
 
@@ -87,16 +88,25 @@ internal sealed class ResampledImageVisual : Image
         }
     }
 
-    public IDisposable? BeginSnapshotRender()
+    public IDisposable BeginSnapshotRender()
     {
-        if (_sourceBitmap == null)
+        if (Tag is not ImageAnnotation annotation)
         {
-            return null;
+            throw new InvalidOperationException("Image annotation visual is missing its annotation model.");
         }
 
-        int width = GetSnapshotPixelDimension(_logicalWidth);
-        int height = GetSnapshotPixelDimension(_logicalHeight);
-        Bitmap snapshotSource = CreateSnapshotBitmap(_sourceBitmap, width, height);
+        SKBitmap sourceBitmap = annotation.ImageBitmap
+            ?? throw new InvalidOperationException("Image annotation has no source bitmap for snapshot rendering.");
+        SKRect bounds = annotation.GetBounds();
+        int width = GetSnapshotPixelDimension(bounds.Width);
+        int height = GetSnapshotPixelDimension(bounds.Height);
+        bool sourceWasUnavailable = !_hasSourceState || !ReferenceEquals(_sourceBitmap, sourceBitmap);
+        Bitmap snapshotSource = CreateSnapshotBitmap(sourceBitmap, width, height, annotation.ResamplingMode);
+        if (sourceWasUnavailable)
+        {
+            ClearCachedSourceImage();
+        }
+
         IImage? previousSource = Source;
         UpdateBitmapInterpolationMode(snapshotSource, width, height, hasPhysicalTarget: true);
         Source = snapshotSource;
@@ -328,7 +338,11 @@ internal sealed class ResampledImageVisual : Image
         return BitmapConversionHelpers.ToAvaloniBitmap(resampledBitmap);
     }
 
-    private Bitmap CreateSnapshotBitmap(SKBitmap sourceBitmap, int width, int height)
+    private Bitmap CreateSnapshotBitmap(
+        SKBitmap sourceBitmap,
+        int width,
+        int height,
+        ImageResamplingMode resamplingMode)
     {
         if (width == sourceBitmap.Width && height == sourceBitmap.Height)
         {
@@ -345,7 +359,7 @@ internal sealed class ResampledImageVisual : Image
         using SKPixmap pixmap = resampledBitmap.PeekPixels();
         using CachedSourceImage.SourceImageLease sourceImage = GetSourceImageLease(sourceBitmap);
 
-        if (!sourceImage.Image.ScalePixels(pixmap, ImageResampling.GetSamplingOptions(_resamplingMode)))
+        if (!sourceImage.Image.ScalePixels(pixmap, ImageResampling.GetSamplingOptions(resamplingMode)))
         {
             throw new InvalidOperationException("Failed to resample image annotation for snapshot.");
         }
@@ -487,7 +501,15 @@ internal sealed class ResampledImageVisual : Image
 
     private void OnAttachedToVisualTree(object? sender, VisualTreeAttachmentEventArgs e)
     {
-        RefreshPhysicalTarget();
+        if (Tag is ImageAnnotation annotation)
+        {
+            SKRect bounds = annotation.GetBounds();
+            SetSource(annotation.ImageBitmap, bounds.Width, bounds.Height, annotation.ResamplingMode);
+        }
+        else
+        {
+            RefreshPhysicalTarget();
+        }
     }
 
     private void OnDetachedFromVisualTree(object? sender, VisualTreeAttachmentEventArgs e)

@@ -127,7 +127,15 @@ namespace ShareX.ImageEditor.Presentation.Views
             var canvasContainer = this.FindControl<Grid>("CanvasContainer");
             var overlayCanvas = this.FindControl<Canvas>("OverlayCanvas");
             Control? snapshotTarget = previewFrame as Control ?? canvasContainer;
-            if (snapshotTarget == null) return _editorCore.GetSnapshot();
+            if (snapshotTarget == null)
+            {
+                if (_editorCore.Annotations.Count > 0)
+                {
+                    throw new InvalidOperationException("Unable to render annotations because the snapshot target is unavailable.");
+                }
+
+                return _editorCore.GetSnapshot();
+            }
 
             // Hide OverlayCanvas (selection handles, crop overlay) during capture
             bool overlayWasVisible = overlayCanvas?.IsVisible ?? false;
@@ -249,7 +257,7 @@ namespace ShareX.ImageEditor.Presentation.Views
             Canvas? overlayCanvas = this.FindControl<Canvas>("OverlayCanvas");
             if (previewFrame == null)
             {
-                return null;
+                throw new InvalidOperationException("Unable to render annotations because the snapshot target is unavailable.");
             }
 
             bool overlayWasVisible = overlayCanvas?.IsVisible ?? false;
@@ -317,20 +325,27 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private static IDisposable BeginImageAnnotationSnapshotRender(Control snapshotTarget)
+        private IDisposable BeginImageAnnotationSnapshotRender(Control snapshotTarget)
         {
             List<IDisposable> snapshotSources = [];
             try
             {
-                foreach (ResampledImageVisual image in snapshotTarget.GetVisualDescendants().OfType<ResampledImageVisual>())
+                ImageAnnotation[] annotations = _editorCore.Annotations.OfType<ImageAnnotation>().ToArray();
+                ResampledImageVisual[] imageVisuals = snapshotTarget.GetVisualDescendants()
+                    .OfType<ResampledImageVisual>()
+                    .ToArray();
+                if (annotations.Length != imageVisuals.Length ||
+                    annotations.Any(annotation => !imageVisuals.Any(image => ReferenceEquals(image.Tag, annotation))))
                 {
-                    IDisposable? snapshotSource = image.BeginSnapshotRender();
-                    if (snapshotSource != null)
-                    {
-                        image.InvalidateMeasure();
-                        image.InvalidateArrange();
-                        snapshotSources.Add(snapshotSource);
-                    }
+                    throw new InvalidOperationException("Unable to render every image annotation in the snapshot.");
+                }
+
+                foreach (ResampledImageVisual image in imageVisuals)
+                {
+                    IDisposable snapshotSource = image.BeginSnapshotRender();
+                    snapshotSources.Add(snapshotSource);
+                    image.InvalidateMeasure();
+                    image.InvalidateArrange();
                 }
 
                 return new SnapshotSourceScope(snapshotSources);
