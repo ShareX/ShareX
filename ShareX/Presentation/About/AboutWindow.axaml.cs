@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using ShareX.AvaloniaUI.Theming;
 using ShareX.HelpersLib;
 using ShareX.Localization;
@@ -82,6 +83,7 @@ public partial class AboutWindow : Window
             _clicker.Dispose();
             _logoBitmap.Dispose();
         };
+        KeyDown += OnWindowKeyDown;
     }
 
     private async void OnOpened(object? sender, EventArgs e)
@@ -130,6 +132,15 @@ public partial class AboutWindow : Window
         if (sender is HyperlinkButton { DataContext: AboutLinkItem item })
         {
             URLHelpers.OpenURL(item.Uri.AbsoluteUri);
+        }
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
+        {
+            e.Handled = true;
+            Close();
         }
     }
 
