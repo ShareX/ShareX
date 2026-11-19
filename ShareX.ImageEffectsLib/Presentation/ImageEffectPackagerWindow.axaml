@@ -31,7 +31,7 @@
             <Grid Grid.Row="2" ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                 <Button Content="{x:Static localization:Strings.ImageEffectPackagerWindow_Open_effects_folder}" Click="OnOpenFolderClick"/>
                 <Button Grid.Column="1" Content="{x:Static localization:Strings.ImageEffectPackagerWindow_Create_package}" Click="OnPackageClick"/>
-                <Button Grid.Column="2" Content="{x:Static localization:Strings.ImageEffectPackagerWindow_Close}" Click="OnCloseClick"/>
+                <Button Grid.Column="2" Content="{x:Static localization:Strings.ImageEffectPackagerWindow_Close}" IsCancel="True" Click="OnCloseClick"/>
             </Grid>
         </Grid>
     </Grid>
