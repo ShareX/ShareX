@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Захоплення останньої області</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Захоплення виділеної області</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Нічого не робити</value>
   </data>

@@ -1104,6 +1104,9 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Letzten Bereich aufnehmen</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Ausgewählten Bereich aufnehmen</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Nichts tun</value>
   </data>

@@ -271,15 +271,9 @@ public partial class RegionCaptureWindow : Window
             _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
             FocusManager?.GetFocusedElement() is not TextBox)
         {
-            if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
-            {
-                SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
-            }
-
-            if (HasAnyRegion())
+            if (TryCompleteSelection())
             {
                 e.Handled = true;
-                CompleteSelection();
                 return;
             }
         }
@@ -1526,6 +1520,22 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        if (updateKind is PointerUpdateKind.XButton1Pressed or PointerUpdateKind.XButton2Pressed)
+        {
+            if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
+            {
+                return;
+            }
+
+            e.Handled = true;
+            RunAnnotationCaptureAction(
+                updateKind == PointerUpdateKind.XButton1Pressed
+                    ? _request.RegionCaptureOptions.RegionCaptureActionX1Click
+                    : _request.RegionCaptureOptions.RegionCaptureActionX2Click,
+                e.GetPosition(_editorWorkspace));
+            return;
+        }
+
         if (updateKind == PointerUpdateKind.RightButtonPressed)
         {
             if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
@@ -2194,7 +2204,30 @@ public partial class RegionCaptureWindow : Window
             case RegionCaptureAction.CaptureLastRegion:
                 CompleteLastRegion();
                 break;
+            case RegionCaptureAction.CaptureSelection:
+                TryCompleteSelection();
+                break;
         }
+    }
+
+    /// <summary>
+    /// Captures the current selection and any added regions, or the hovered window or control when nothing is
+    /// selected yet. Returns false when there is nothing to capture.
+    /// </summary>
+    private bool TryCompleteSelection()
+    {
+        if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
+        {
+            SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
+        }
+
+        if (!HasAnyRegion())
+        {
+            return false;
+        }
+
+        CompleteSelection();
+        return true;
     }
 
     private void CompleteLastRegion()

@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>擷取上個區域</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>擷取選取的區域</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>什麼都不做</value>
   </data>

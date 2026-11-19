@@ -1104,6 +1104,9 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Rögzítés last terület</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Kijelölt terület rögzítése</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Ne tegyen semmit</value>
   </data>

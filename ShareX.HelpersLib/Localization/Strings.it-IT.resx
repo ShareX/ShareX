@@ -1104,6 +1104,9 @@ Vuoi eseguirlo comunque?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Acquisizione last area</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Acquisisci area selezionata</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Niente</value>
   </data>
