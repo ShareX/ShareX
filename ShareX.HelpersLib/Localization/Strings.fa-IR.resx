@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>ضبط last ناحیه</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>ضبط ناحیه انتخاب‌شده</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>هیچ کاری انجام نده</value>
   </data>

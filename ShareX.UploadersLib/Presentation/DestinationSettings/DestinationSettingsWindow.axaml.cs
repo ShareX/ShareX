@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using ShareX.AvaloniaUI.Theming;
 using System;
 using System.Collections.Generic;
@@ -42,6 +43,7 @@ public partial class DestinationSettingsWindow : Window
     {
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        KeyDown += OnWindowKeyDown;
     }
 
     public DestinationSettingsWindow(UploadersConfig config, Action? openRemoteStorageBrowser = null) : this()
@@ -73,6 +75,15 @@ public partial class DestinationSettingsWindow : Window
         foreach ((string id, Control page) in _pages)
         {
             page.IsVisible = id == pageId;
+        }
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
+        {
+            e.Handled = true;
+            Close();
         }
     }
 }

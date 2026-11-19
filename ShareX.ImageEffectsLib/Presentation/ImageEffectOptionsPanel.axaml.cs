@@ -144,7 +144,12 @@ public partial class ImageEffectOptionsPanel : UserControl
             return toggle;
         }
 
-        if (type.IsEnum && type.GetCustomAttribute<FlagsAttribute>() == null)
+        if (type.IsEnum && type.GetCustomAttribute<FlagsAttribute>() != null)
+        {
+            return CreateFlagsEditor(property, type, value);
+        }
+
+        if (type.IsEnum)
         {
             object[] values = Enum.GetValues(type).Cast<object>().ToArray();
             ComboBox combo = new()
@@ -415,6 +420,32 @@ public partial class ImageEffectOptionsPanel : UserControl
         {
             _validationText.Text = ex.Message;
         }
+    }
+
+    // Flags enums such as image sides get one check box per flag, so several can be picked at once.
+    private Control CreateFlagsEditor(PropertyDescriptor property, Type type, object? value)
+    {
+        long current = value == null ? 0 : Convert.ToInt64(value, CultureInfo.InvariantCulture);
+        WrapPanel panel = new() { Orientation = Orientation.Horizontal };
+        foreach (object flag in Enum.GetValues(type))
+        {
+            long bit = Convert.ToInt64(flag, CultureInfo.InvariantCulture);
+            if (bit == 0 || (bit & (bit - 1)) != 0) continue;
+            CheckBox box = new()
+            {
+                Content = ImageEffectsLocalization.GetEnumValue(type, flag),
+                IsChecked = (current & bit) != 0,
+                FontWeight = FontWeight.Normal,
+                Margin = new Thickness(0, 0, 12, 0)
+            };
+            box.IsCheckedChanged += (_, _) =>
+            {
+                current = box.IsChecked == true ? current | bit : current & ~bit;
+                Apply(property, Enum.ToObject(type, current));
+            };
+            panel.Children.Add(box);
+        }
+        return panel;
     }
 
     private void ApplyConvertedNumber(PropertyDescriptor property, Type type, decimal value)

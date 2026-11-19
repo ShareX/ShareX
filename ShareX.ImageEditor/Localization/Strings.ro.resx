@@ -267,6 +267,9 @@ Doriți să salvați modificările înainte de a închide editorul de imagini?</
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Cursor de așteptare</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Trageți pentru a muta bara de instrumente, faceți dublu clic pentru a-i reseta poziția</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Realizare deblocată!</value>
   </data>

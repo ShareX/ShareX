@@ -273,6 +273,11 @@ public partial class TaskSettingsWindow : Window
             HideActionEditor();
             e.Handled = true;
         }
+        else
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private void OnEditorOverlayPointerPressed(object? sender, PointerPressedEventArgs e)

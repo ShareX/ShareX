@@ -267,6 +267,9 @@ Voulez-vous les enregistrer avant de fermer l’éditeur d’images ?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Curseur d’attente</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Faites glisser pour déplacer la barre d'outils, double-cliquez pour réinitialiser sa position</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Succès débloqué !</value>
   </data>

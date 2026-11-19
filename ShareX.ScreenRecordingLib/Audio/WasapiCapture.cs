@@ -155,7 +155,15 @@ internal sealed unsafe class WasapiCapture : IDisposable
             uint taskIndex = 0;
             mmcss = NativeMethods.AvSetMmThreadCharacteristics("Audio", ref taskIndex);
             using IMMDeviceEnumerator enumerator = new();
-            if (options.CaptureSystemAudio) endpoints.Add(Open(enumerator, true, options.SystemAudioDeviceId, options.SystemAudioGain));
+            if (options.CaptureSystemAudio)
+            {
+                // With no active output device (nothing plugged in) there is no system audio to capture, so record without it.
+                try { endpoints.Add(Open(enumerator, true, options.SystemAudioDeviceId, options.SystemAudioGain)); }
+                catch (Exception ex) when (ex is InvalidOperationException or SharpGenException)
+                {
+                    ShareX.HelpersLib.DebugHelper.WriteException(ex, "System audio is not available, recording without it.");
+                }
+            }
             if (options.CaptureMicrophone) endpoints.Add(Open(enumerator, false, options.MicrophoneDeviceId, options.MicrophoneGain));
             prepared.TrySetResult();
             if (WaitHandle.WaitAny([stop, start]) == 0) return;

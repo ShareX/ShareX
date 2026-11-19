@@ -1104,6 +1104,9 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Chụp vùng cuối cùng</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Chụp vùng đã chọn</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Không làm gì</value>
   </data>

@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>รอ เคอร์เซอร์</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>ลากเพื่อย้ายแถบเครื่องมือ ดับเบิลคลิกเพื่อรีเซ็ตตำแหน่ง</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>ความสำเร็จ ปลดล็อกแล้ว!</value>
   </data>

@@ -1104,6 +1104,9 @@ Wilt u het toch uitvoeren?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Opname last gebied</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Geselecteerd gebied vastleggen</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Niets doen</value>
   </data>

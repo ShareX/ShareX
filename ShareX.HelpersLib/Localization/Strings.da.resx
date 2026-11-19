@@ -1104,6 +1104,9 @@ Vil du stadig køre den?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Tag billede af Seneste område</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Tag billede af markeret område</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Gør intet</value>
   </data>

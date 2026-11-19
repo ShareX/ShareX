@@ -267,6 +267,9 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Con trỏ chờ</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Kéo để di chuyển thanh công cụ, nhấp đúp để đặt lại vị trí</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Đã mở khóa thành tựu!</value>
   </data>

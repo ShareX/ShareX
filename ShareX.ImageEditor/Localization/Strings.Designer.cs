@@ -2535,5 +2535,10 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ImageResamplingMode_NearestNeighbor", resourceCulture);
             }
         }
+        public static string EditorBuiltInToolbars_MoveToolbar {
+            get {
+                return ResourceManager.GetString("EditorBuiltInToolbars_MoveToolbar", resourceCulture);
+            }
+        }
     }
 }

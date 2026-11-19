@@ -1104,6 +1104,9 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>Tangkap wilayah terakhir</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>Tangkap wilayah yang dipilih</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>Jangan lakukan apapun</value>
   </data>

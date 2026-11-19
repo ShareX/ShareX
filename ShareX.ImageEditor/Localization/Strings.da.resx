@@ -267,6 +267,9 @@ Vil du gemme ændringerne, før billededitoren lukkes?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Ventemarkør</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Træk for at flytte værktøjslinjen, dobbeltklik for at nulstille dens placering</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Præstation låst op!</value>
   </data>

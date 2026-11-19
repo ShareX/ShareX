@@ -1104,6 +1104,9 @@
   <data name="RegionCaptureAction_CaptureLastRegion" xml:space="preserve">
     <value>จับภาพ ล่าสุด พื้นที่</value>
   </data>
+  <data name="RegionCaptureAction_CaptureSelection" xml:space="preserve">
+    <value>จับภาพพื้นที่ที่เลือก</value>
+  </data>
   <data name="RegionCaptureAction_None" xml:space="preserve">
     <value>อย่าhing</value>
   </data>

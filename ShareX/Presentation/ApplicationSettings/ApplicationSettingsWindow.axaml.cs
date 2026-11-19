@@ -182,6 +182,7 @@ public partial class ApplicationSettingsWindow : Window
             : Strings.ApplicationSettingsWindow_EditClipboardFormat;
         ClipboardFormatDescriptionBox.Text = format?.Description ?? string.Empty;
         ClipboardFormatTextBox.Text = format?.Format ?? string.Empty;
+        ClipboardFormatEditorErrorText.IsVisible = false;
         ClipboardFormatEditorOverlay.IsVisible = true;
 
         Dispatcher.UIThread.Post(() =>
@@ -202,6 +203,18 @@ public partial class ApplicationSettingsWindow : Window
         string description = ClipboardFormatDescriptionBox.Text ?? string.Empty;
         string format = ClipboardFormatTextBox.Text ?? string.Empty;
 
+        if (string.IsNullOrWhiteSpace(description))
+        {
+            ShowClipboardFormatEditorError(Strings.ApplicationSettingsWindow_DescriptionCantBeEmpty, ClipboardFormatDescriptionBox);
+            return;
+        }
+
+        if (string.IsNullOrWhiteSpace(format))
+        {
+            ShowClipboardFormatEditorError(Strings.ApplicationSettingsWindow_FormatCantBeEmpty, ClipboardFormatTextBox);
+            return;
+        }
+
         if (_editedClipboardFormat == null)
         {
             ViewModel.AddClipboardFormat(description, format);
@@ -215,13 +228,31 @@ public partial class ApplicationSettingsWindow : Window
         HideClipboardFormatEditor();
     }
 
+    private void ShowClipboardFormatEditorError(string message, TextBox field)
+    {
+        ClipboardFormatEditorErrorText.Text = message;
+        ClipboardFormatEditorErrorText.IsVisible = true;
+        field.Focus();
+        field.SelectAll();
+    }
+
     private void OnCancelClipboardFormatClick(object? sender, RoutedEventArgs e) => HideClipboardFormatEditor();
 
     private void OnWindowKeyDown(object? sender, KeyEventArgs e)
     {
-        if (e.Key == Key.Escape && ClipboardFormatEditorOverlay.IsVisible)
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (ClipboardFormatEditorOverlay.IsVisible)
         {
             HideClipboardFormatEditor();
+            e.Handled = true;
+        }
+        else
+        {
+            Close();
             e.Handled = true;
         }
     }

@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>待機カーソル</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>ドラッグでツールバーを移動、ダブルクリックで位置をリセット</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>実績を解除しました！</value>
   </data>

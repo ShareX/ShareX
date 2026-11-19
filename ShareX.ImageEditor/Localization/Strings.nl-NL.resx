@@ -267,6 +267,9 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Wachtcursor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Sleep om de werkbalk te verplaatsen, dubbelklik om de positie te herstellen</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Prestatie ontgrendeld!</value>
   </data>
