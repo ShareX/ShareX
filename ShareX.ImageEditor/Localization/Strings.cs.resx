@@ -267,6 +267,9 @@ Chcete před zavřením editoru obrázků změny uložit?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kurzor čekání</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Přetažením přesunete panel nástrojů, poklepáním obnovíte jeho pozici</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Úspěch odemčen!</value>
   </data>

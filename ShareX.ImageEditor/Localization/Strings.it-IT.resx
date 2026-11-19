@@ -267,6 +267,9 @@ Salvare le modifiche prima di chiudere l'editor di immagini?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Cursore di attesa</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Trascina per spostare la barra degli strumenti, fai doppio clic per ripristinarne la posizione</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Obiettivo sbloccato!</value>
   </data>

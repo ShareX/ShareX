@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>مؤشر انتظار</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>اسحب لنقل شريط الأدوات، وانقر نقرًا مزدوجًا لإعادة تعيين موضعه</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>تم فتح الإنجاز!</value>
   </data>

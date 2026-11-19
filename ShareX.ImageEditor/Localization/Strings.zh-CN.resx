@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>等待光标</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>拖动以移动工具栏，双击以重置其位置</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>成就已解锁！</value>
   </data>

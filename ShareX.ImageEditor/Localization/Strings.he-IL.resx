@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>סמן המתנה</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>גרור כדי להזיז את סרגל הכלים, לחץ פעמיים כדי לאפס את מיקומו</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>הישג נפתח!</value>
   </data>

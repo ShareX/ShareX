@@ -267,6 +267,9 @@ Resim düzenleyiciyi kapatmadan önce değişiklikleri kaydetmek ister misiniz?<
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Bekleme imleci</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Araç çubuğunu taşımak için sürükleyin, konumunu sıfırlamak için çift tıklayın</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Başarımın kilidi açıldı!</value>
   </data>

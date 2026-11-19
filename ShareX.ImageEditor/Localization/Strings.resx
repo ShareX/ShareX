@@ -267,6 +267,9 @@ Would you like to save the changes before closing the image editor?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Wait cursor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Drag to move the toolbar, double-click to reset its position</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Achievement unlocked!</value>
   </data>

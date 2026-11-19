@@ -267,6 +267,9 @@ Opciones de sombra (Clic derecho)</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Cursor de espera</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Arrastra para mover la barra de herramientas; haz doble clic para restablecer su posición</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>¡Logro desbloqueado!</value>
   </data>

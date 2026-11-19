@@ -195,6 +195,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Position = _initialPosition;
+        ApplyToolWindowStyle();
 
         _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _refreshTimer.Tick += (_, _) => UpdateTimer();
@@ -607,7 +608,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         Helpers.EnsureWindowPosition(this, _initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels);
         WindowGeometryLog.Record(this, "Screen recording frame",
             new DrawingRectangle(_initialPosition.X - _frameLeftPixels, _initialPosition.Y - _frameTopPixels, 0, 0));
-        ApplyToolWindowStyle();
+        ApplyCaptureExclusion();
         ApplyNativeWindowRegion();
         Dispatcher.UIThread.Post(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
 
@@ -710,7 +711,22 @@ public partial class ScreenRecordWindow : Window, IDisposable
         return Screens.ScreenFromPoint(point)?.Scaling ?? Screens.Primary?.Scaling ?? 1;
     }
 
+    // Mark the frame as a tool window before it is first shown, and keep the style whenever Avalonia rewrites it.
+    // Tools such as MicaForEveryone put a system backdrop on new windows as they appear unless they are tool windows,
+    // which fills the transparent recording area.
     private void ApplyToolWindowStyle()
+    {
+        Win32Properties.AddWindowStylesCallback(this, (style, exStyle) => (style, exStyle | (uint)WindowStyles.WS_EX_TOOLWINDOW));
+
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+        if (handle != IntPtr.Zero)
+        {
+            WindowInfo info = new(handle);
+            info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
+        }
+    }
+
+    private void ApplyCaptureExclusion()
     {
         IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
         if (handle == IntPtr.Zero)
@@ -718,8 +734,6 @@ public partial class ScreenRecordWindow : Window, IDisposable
             return;
         }
 
-        WindowInfo info = new(handle);
-        info.ExStyle |= WindowStyles.WS_EX_TOOLWINDOW;
         if (ExcludeFromCapture && !NativeMethods.SetWindowDisplayAffinity(handle, 0x11)) // WDA_EXCLUDEFROMCAPTURE
         {
             DebugHelper.WriteLine("Could not exclude the recording controls from capture. Win32 error: {0}", Marshal.GetLastWin32Error());

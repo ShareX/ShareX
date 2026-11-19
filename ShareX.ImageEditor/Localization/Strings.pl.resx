@@ -267,6 +267,9 @@ Czy zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kursor oczekiwania</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Przeciągnij, aby przenieść pasek narzędzi; kliknij dwukrotnie, aby przywrócić jego położenie</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Osiągnięcie odblokowane!</value>
   </data>

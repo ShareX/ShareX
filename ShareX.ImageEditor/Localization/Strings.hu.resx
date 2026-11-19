@@ -267,6 +267,9 @@ Szeretné menteni a módosításokat a képszerkesztő bezárása előtt?</value
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Várakozó kurzor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Húzza az eszköztár áthelyezéséhez, kattintson duplán a helyzete visszaállításához</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Teljesítmény feloldva!</value>
   </data>

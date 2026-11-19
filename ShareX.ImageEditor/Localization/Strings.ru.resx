@@ -267,6 +267,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Курсор ожидания</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Перетащите, чтобы переместить панель инструментов; дважды щёлкните, чтобы сбросить её положение</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Достижение разблокировано!</value>
   </data>
