@@ -93,7 +93,7 @@ public static class AvaloniaBootstrapper
             Args = args,
             ShutdownMode = ShutdownMode.OnExplicitShutdown
         };
-        desktop.Startup += async (_, _) => await startup();
+        desktop.Startup += (_, _) => Dispatcher.UIThread.Post(async () => await startup());
         desktop.Exit += (_, _) =>
         {
             Interlocked.Exchange(ref _shutdownStarted, 1);
