@@ -61,6 +61,9 @@ namespace ShareX.ImageEditor.Integration
         public int? WindowX { get; set; }
         public int? WindowY { get; set; }
         public bool AutoSizeWindow { get; set; } = false;
+        // How far the user dragged the top toolbar from its default top center position, in DIPs.
+        public double TopToolbarOffsetX { get; set; }
+        public double TopToolbarOffsetY { get; set; }
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;

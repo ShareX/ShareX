@@ -267,6 +267,9 @@ Pretende guardar as alterações antes de fechar o editor de imagens?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Cursor de espera</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Arraste para mover a barra de ferramentas; faça duplo clique para repor a posição</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Conquista desbloqueada!</value>
   </data>

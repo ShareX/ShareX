@@ -267,6 +267,9 @@ Möchten Sie die Änderungen speichern, bevor Sie den Bildeditor schließen?</va
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Wartecursor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Ziehen, um die Symbolleiste zu verschieben; Doppelklick setzt ihre Position zurück</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Erfolg freigeschaltet!</value>
   </data>
