@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Neueste Aufgaben im Infobereich-Menü zuerst anzeigen</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Anzahl abgeschlossener Aufgaben im Hauptfenster begrenzen</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Maximale abgeschlossene Aufgaben (0 = nach Abschluss entfernen):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Entwicklerversion installieren...</value>
   </data>

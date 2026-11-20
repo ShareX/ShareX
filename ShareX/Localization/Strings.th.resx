@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>แสดงงานล่าสุดก่อนในเมนูถาดระบบ</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>จำกัดจำนวนงานที่เสร็จแล้วที่แสดงในหน้าต่างหลัก</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>จำนวนงานที่เสร็จแล้วสูงสุด (0 = ลบเมื่อเสร็จ):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>ติดตั้ง dev รุ่น...</value>
   </data>

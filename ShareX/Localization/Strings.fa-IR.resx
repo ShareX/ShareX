@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>در Tray Menu ابتدا وظایفی را که اخیرا انجام شده اند نشان بده</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>محدود کردن تعداد وظایف تمام‌شده در پنجره اصلی</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>حداکثر وظایف تمام‌شده (0 = حذف پس از اتمام):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>نصب نسخه برنامه نویس ...</value>
   </data>
