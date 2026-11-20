@@ -45,11 +45,12 @@ internal sealed class GpuVideoProcessor : IDisposable
     private ID3D11VideoProcessorInputView? cameraInput, compositeInput;
     private ID3D11Texture2D? composite;
     private bool supportsCameraComposition;
+    private RawRect destRect;
     public ID3D11Texture2D Canvas { get; private set; } = null!;
     public ID3D11RenderTargetView CanvasView => canvasView;
     public int Width { get; }
     public int Height { get; }
-    /// <summary>NV12 output size. Smaller than the canvas when the encoder cannot accept the capture size.</summary>
+    /// <summary>NV12 output size. Scaled or padded when the encoder cannot accept the capture size directly.</summary>
     public int OutputWidth { get; }
     public int OutputHeight { get; }
 
@@ -93,12 +94,33 @@ internal sealed class GpuVideoProcessor : IDisposable
             videoContext.VideoProcessorSetOutputColorSpace(processor, new VideoProcessorColorSpace { YCbCr_Matrix = 1, Nominal_Range = 1 });
             videoContext.VideoProcessorSetStreamFrameFormat(processor, 0, VideoFrameFormat.Progressive);
             videoContext.VideoProcessorSetStreamAutoProcessingMode(processor, 0, false);
-            RawRect output = new(0, 0, OutputWidth, OutputHeight);
+            (int destLeft, int destTop, int destRight, int destBottom) = ComputeDestRect(width, height, OutputWidth, OutputHeight);
+            destRect = new RawRect(destLeft, destTop, destRight, destBottom);
+            if (destLeft != 0 || destTop != 0 || destRight != OutputWidth || destBottom != OutputHeight)
+                videoContext.VideoProcessorSetOutputBackgroundColor(processor, true, new VideoColor { YCbCr = new() { Y = 16f / 255f, Cb = 128f / 255f, Cr = 128f / 255f, A = 1f } });
             videoContext.VideoProcessorSetStreamSourceRect(processor, 0, true, new RawRect(0, 0, width, height));
-            videoContext.VideoProcessorSetStreamDestRect(processor, 0, true, output);
-            videoContext.VideoProcessorSetOutputTargetRect(processor, true, output);
+            videoContext.VideoProcessorSetStreamDestRect(processor, 0, true, destRect);
+            videoContext.VideoProcessorSetOutputTargetRect(processor, true, new RawRect(0, 0, OutputWidth, OutputHeight));
         }
         catch { Dispose(); throw; }
+    }
+
+    internal static (int Left, int Top, int Right, int Bottom) ComputeDestRect(int sourceWidth, int sourceHeight, int outputWidth, int outputHeight)
+    {
+        if (outputWidth == sourceWidth && outputHeight == sourceHeight)
+            return (0, 0, outputWidth, outputHeight);
+        if (outputWidth >= sourceWidth && outputHeight >= sourceHeight)
+        {
+            int left = ((outputWidth - sourceWidth) / 2) & ~1;
+            int top = ((outputHeight - sourceHeight) / 2) & ~1;
+            return (left, top, left + sourceWidth, top + sourceHeight);
+        }
+        double scale = Math.Min((double)outputWidth / sourceWidth, (double)outputHeight / sourceHeight);
+        int scaledWidth = Math.Clamp((int)Math.Round(sourceWidth * scale) & ~1, 2, outputWidth);
+        int scaledHeight = Math.Clamp((int)Math.Round(sourceHeight * scale) & ~1, 2, outputHeight);
+        int destLeft = ((outputWidth - scaledWidth) / 2) & ~1;
+        int destTop = ((outputHeight - scaledHeight) / 2) & ~1;
+        return (destLeft, destTop, destLeft + scaledWidth, destTop + scaledHeight);
     }
 
     public void Clear() => graphics.Context.ClearRenderTargetView(canvasView, new Color4(0, 0, 0, 1));
@@ -136,11 +158,15 @@ internal sealed class GpuVideoProcessor : IDisposable
                         videoContext.VideoProcessorSetStreamAutoProcessingMode(processor, 1, false);
                         videoContext.VideoProcessorSetStreamColorSpace(processor, 1, new VideoProcessorColorSpace { RGB_Range = 0, Nominal_Range = 2 });
                         videoContext.VideoProcessorSetStreamSourceRect(processor, 1, true, new RawRect(0, 0, camera.Bounds.Width, camera.Bounds.Height));
-                        // Bounds are canvas pixels; scale them with the screen when the output is downscaled.
+                        // Bounds are canvas pixels; map them into the same destination rectangle as the screen.
                         var rect = camera.Bounds;
+                        int destWidth = destRect.Right - destRect.Left;
+                        int destHeight = destRect.Bottom - destRect.Top;
                         videoContext.VideoProcessorSetStreamDestRect(processor, 1, true, new RawRect(
-                            (int)((long)rect.Left * OutputWidth / Width), (int)((long)rect.Top * OutputHeight / Height),
-                            (int)((long)rect.Right * OutputWidth / Width), (int)((long)rect.Bottom * OutputHeight / Height)));
+                            destRect.Left + (int)((long)rect.Left * destWidth / Width),
+                            destRect.Top + (int)((long)rect.Top * destHeight / Height),
+                            destRect.Left + (int)((long)rect.Right * destWidth / Width),
+                            destRect.Top + (int)((long)rect.Bottom * destHeight / Height)));
                     }
                     streams[1] = new() { Enable = true, InputSurface = cameraInput };
                     videoContext.VideoProcessorBlt(processor, output, frameNumber, 2, streams).CheckError();
