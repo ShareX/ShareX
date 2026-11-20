@@ -453,13 +453,22 @@
                 </DockPanel>
 
                 <ScrollViewer IsVisible="{Binding IsThumbnailView}" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                    <ItemsControl x:Name="ThumbnailList" ItemsSource="{Binding ThumbnailItems}" Margin="6">
+                    <!-- Cards are grouped into rows so the rows can be virtualized: a WrapPanel would keep a card for every task. -->
+                    <ItemsControl x:Name="ThumbnailList" ItemsSource="{Binding ThumbnailRows}" Margin="6" SizeChanged="OnThumbnailListSizeChanged">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <WrapPanel Orientation="Horizontal"/>
+                                <VirtualizingStackPanel/>
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
+                            <DataTemplate DataType="local:ThumbnailRowViewModel">
+                            <ItemsControl ItemsSource="{Binding Items}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
                             <DataTemplate DataType="local:ThumbnailItemViewModel">
                                 <local:TaskTile Classes="thumbnail-card"
                                         Classes.selected="{Binding IsSelected}"
@@ -499,7 +508,8 @@
                                                 CornerRadius="4"
                                                 ClipToBounds="True"
                                                 PointerEntered="OnThumbnailPreviewPointerEntered"
-                                                PointerExited="OnThumbnailPreviewPointerExited">
+                                                PointerExited="OnThumbnailPreviewPointerExited"
+                                                DetachedFromVisualTree="OnThumbnailPreviewDetached">
                                             <Grid>
                                                 <Image Source="{Binding Thumbnail}"
                                                        IsVisible="{Binding ShowStillThumbnail}"
@@ -623,6 +633,9 @@
                                         </Border>
                                     </StackPanel>
                                 </local:TaskTile>
+                            </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                            </ItemsControl>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>

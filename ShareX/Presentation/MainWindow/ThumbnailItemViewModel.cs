@@ -68,7 +68,8 @@ internal sealed class ThumbnailItemViewModel : INotifyPropertyChanged, IDisposab
 
     public WorkerTask Task { get; }
     private static bool IsListView => ApplicationState.Settings.TaskViewMode == TaskViewMode.ListView;
-    public int Width => Math.Max(96, ApplicationState.Settings.ThumbnailSize.Width);
+    internal static int ThumbnailWidth => Math.Max(96, ApplicationState.Settings.ThumbnailSize.Width);
+    public int Width => ThumbnailWidth;
     public int Height => Math.Max(72, ApplicationState.Settings.ThumbnailSize.Height);
     public bool ShowTitle => ApplicationState.Settings.ShowThumbnailTitle;
     public bool ShowTitleAbove => ShowTitle && ApplicationState.Settings.ThumbnailTitleLocation == ThumbnailTitleLocation.Top;

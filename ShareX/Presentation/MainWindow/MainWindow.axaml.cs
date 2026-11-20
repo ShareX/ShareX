@@ -78,6 +78,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private int _thumbnailDragVersion;
     private ThumbnailItemViewModel? _thumbnailDragSource;
     private ThumbnailItemViewModel? _thumbnailCombineTarget;
+    private ThumbnailItemViewModel? _hoverAnimationItem;
+    private int _thumbnailColumns = 1;
     private bool _suppressThumbnailClickAction;
     private bool _allowClose;
     private bool _disposed;
@@ -92,6 +94,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private bool _imagePreviewUpdatePending;
 
     internal ObservableCollection<ThumbnailItemViewModel> ThumbnailItems { get; } = new();
+    // ThumbnailItems split into rows of _thumbnailColumns for the thumbnail view.
+    internal ObservableCollection<ThumbnailRowViewModel> ThumbnailRows { get; } = new();
     internal ObservableCollection<HotkeyTipViewModel> HotkeyTips { get; } = new();
     public AvaloniaBitmap? TitleBarIcon { get; private set; }
     public bool IsEmpty => ThumbnailItems.Count == 0;
@@ -147,6 +151,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         ConfigureWindowHeightFromNavigation();
         RestoreWindowBounds();
         RefreshHotkeyTips();
+
+        ThumbnailItems.CollectionChanged += (_, _) => UpdateThumbnailRows();
 
         foreach (WorkerTask task in TaskManager.Tasks)
         {
@@ -385,6 +391,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             item.RefreshSettings();
         }
 
+        UpdateThumbnailColumns();
         NotifyTaskViewModeChanged();
         NotifyTaskCollectionChanged();
     }
@@ -392,10 +399,66 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     private void OnScalingChanged(object? sender, EventArgs e)
     {
         ThumbnailItemViewModel.RenderScaling = RenderScaling;
+        UpdateThumbnailColumns();
 
         foreach (ThumbnailItemViewModel item in ThumbnailItems)
         {
             item.Refresh();
+        }
+    }
+
+    private void OnThumbnailListSizeChanged(object? sender, SizeChangedEventArgs e) => UpdateThumbnailColumns();
+
+    private void UpdateThumbnailColumns()
+    {
+        double availableWidth = ThumbnailList.Bounds.Width;
+
+        if (availableWidth <= 0)
+        {
+            return;
+        }
+
+        // The card's width plus the Border.thumbnail-card style's 4 px margin, 1 px border and 4 px padding on both sides,
+        // each rounded to device pixels as layout rounding does, so the last card of a row is never cut off.
+        double scaling = RenderScaling > 0 ? RenderScaling : 1;
+        double Round(double value) => Math.Round(value * scaling) / scaling;
+        double cardWidth = Round(ThumbnailItemViewModel.ThumbnailWidth) + 2 * (Round(4) + Round(1) + Round(4));
+        int columns = Math.Max(1, (int)Math.Floor((availableWidth + 0.001) / cardWidth));
+
+        if (columns != _thumbnailColumns)
+        {
+            _thumbnailColumns = columns;
+            UpdateThumbnailRows();
+        }
+    }
+
+    private void UpdateThumbnailRows()
+    {
+        int columns = _thumbnailColumns;
+        int rowCount = (ThumbnailItems.Count + columns - 1) / columns;
+
+        while (ThumbnailRows.Count > rowCount)
+        {
+            ThumbnailRows.RemoveAt(ThumbnailRows.Count - 1);
+        }
+
+        while (ThumbnailRows.Count < rowCount)
+        {
+            ThumbnailRows.Add(new ThumbnailRowViewModel());
+        }
+
+        List<ThumbnailItemViewModel> rowItems = new(columns);
+
+        for (int row = 0; row < rowCount; row++)
+        {
+            rowItems.Clear();
+
+            for (int i = row * columns; i < Math.Min((row + 1) * columns, ThumbnailItems.Count); i++)
+            {
+                rowItems.Add(ThumbnailItems[i]);
+            }
+
+            ThumbnailRows[row].SetItems(rowItems);
         }
     }
 
@@ -1507,6 +1570,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     {
         if (sender is Control { DataContext: ThumbnailItemViewModel item })
         {
+            _hoverAnimationItem?.StopHoverAnimation();
+            _hoverAnimationItem = item;
             item.StartHoverAnimation();
         }
     }
@@ -1516,6 +1581,23 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (sender is Control { DataContext: ThumbnailItemViewModel item })
         {
             item.StopHoverAnimation();
+
+            if (ReferenceEquals(_hoverAnimationItem, item))
+            {
+                _hoverAnimationItem = null;
+            }
+        }
+    }
+
+    // A card scrolled out of view or moved to another row is removed without a pointer exit, so stop its animation here.
+    private void OnThumbnailPreviewDetached(object? sender, VisualTreeAttachmentEventArgs e)
+    {
+        object? dataContext = (sender as Control)?.DataContext;
+
+        if (_hoverAnimationItem != null && (dataContext == null || ReferenceEquals(dataContext, _hoverAnimationItem)))
+        {
+            _hoverAnimationItem.StopHoverAnimation();
+            _hoverAnimationItem = null;
         }
     }
 
@@ -2093,7 +2175,9 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             SelectOnly(item);
         }
 
-        FocusTaskItem(list, ThumbnailItems.IndexOf(item));
+        // The item's card only exists while it is in view.
+        ScrollTaskIntoView(list, ThumbnailItems.IndexOf(item));
+        FocusTaskItem(list, item);
     }
 
     private void OnMainContentPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -2233,18 +2317,25 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             SelectOnly(item);
         }
 
-        list.ScrollIntoView(target);
-        FocusTaskItem(list, target);
+        ScrollTaskIntoView(list, target);
+        FocusTaskItem(list, item);
         return true;
     }
 
+    // The thumbnail view lists rows of thumbnails, so it scrolls to the row that holds the task.
+    private void ScrollTaskIntoView(ItemsControl list, int index)
+    {
+        list.ScrollIntoView(list == ThumbnailList ? index / _thumbnailColumns : index);
+    }
+
     // Moves keyboard focus onto the selected row or thumbnail, so screen readers announce its file name.
-    private static void FocusTaskItem(ItemsControl list, int index)
+    private static void FocusTaskItem(ItemsControl list, ThumbnailItemViewModel item)
     {
         Dispatcher.UIThread.Post(() =>
         {
-            Control? item = list.ContainerFromIndex(index)?.GetVisualDescendants().OfType<Border>().FirstOrDefault(x => x.Focusable);
-            item?.Focus(NavigationMethod.Directional);
+            TaskTile? tile = list.GetVisualDescendants().OfType<TaskTile>()
+                .FirstOrDefault(x => x.IsEffectivelyVisible && ReferenceEquals(x.DataContext, item));
+            tile?.Focus(NavigationMethod.Directional);
         }, DispatcherPriority.Loaded);
     }
 
