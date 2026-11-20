@@ -175,11 +175,13 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
             ownsOutput = true;
             using GraphicsDevice graphics = new(targets[0].Monitor);
             using MediaFoundationWriter? writer = options.IsGif ? null : MediaFoundationWriter.Create(graphics, options, width, height);
-            using GpuVideoProcessor processor = new(graphics, width, height, options.FramesPerSecond, !options.IsGif, writer?.Width ?? width, writer?.Height ?? height);
+            if (writer?.AdjustmentNote is string adjustment) ReportDiagnostic(adjustment);
+            int fps = writer?.FramesPerSecond ?? options.FramesPerSecond;
+            using GpuVideoProcessor processor = new(graphics, width, height, fps, !options.IsGif, writer?.Width ?? width, writer?.Height ?? height);
             using GifWriter? gifWriter = options.IsGif ? new(graphics, options, width, height) : null;
             Encoder = writer?.Encoder ?? GifWriter.Encoder;
             using VideoTexturePool? textures = writer == null ? null : new(graphics, processor, writer.EncoderBindFlags);
-            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, options.FramesPerSecond, options.HdrToneMapping);
+            using GraphicsCapture capture = new(graphics, processor, targets, options.IncludeCursor, fps, options.HdrToneMapping);
             using CameraCapture? camera = options.CaptureCamera ? new(graphics, options) : null;
             Camera = camera?.Info;
             using CameraOverlay? cameraOverlay = camera == null ? null : new(graphics, camera.Info, camera.Subtype,
@@ -255,11 +257,11 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                 }
                 long elapsed = clock.Elapsed;
                 if (options.Duration > TimeSpan.Zero && elapsed >= options.Duration.Ticks) break;
-                long frameTime = nextFrame * TimeSpan.TicksPerSecond / options.FramesPerSecond;
+                long frameTime = nextFrame * TimeSpan.TicksPerSecond / fps;
                 if (elapsed >= frameTime)
                 {
                     // Skip overdue frame slots. Never accelerate playback or queue a catch-up burst.
-                    long dueFrame = elapsed * options.FramesPerSecond / TimeSpan.TicksPerSecond;
+                    long dueFrame = elapsed * fps / TimeSpan.TicksPerSecond;
                     if (written > 0 && dueFrame > nextFrame)
                     {
                         dropped += dueFrame - nextFrame;
@@ -267,9 +269,9 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                         discontinuity = true;
                     }
                     capture.Update();
-                    long timestamp = nextFrame * TimeSpan.TicksPerSecond / options.FramesPerSecond;
+                    long timestamp = nextFrame * TimeSpan.TicksPerSecond / fps;
                     if (capture.HasEnded) break;
-                    long end = (nextFrame + 1) * TimeSpan.TicksPerSecond / options.FramesPerSecond;
+                    long end = (nextFrame + 1) * TimeSpan.TicksPerSecond / fps;
                     VideoTexturePool.Slot? slot = null;
                     if (textures == null || textures.TryRent(out slot))
                     {
@@ -329,7 +331,7 @@ public sealed class ScreenRecorder : IDisposable, IAsyncDisposable
                 }
                 // Allow 50 ms for WASAPI packets to arrive; timestamps remain aligned with video.
                 WriteAudioUntil(writer, mixer, audioBlock, ref audioFrame, Math.Max(0, clock.Elapsed - TimeSpan.FromMilliseconds(50).Ticks), options.HasAudio);
-                long remaining = nextFrame * TimeSpan.TicksPerSecond / options.FramesPerSecond - clock.Elapsed;
+                long remaining = nextFrame * TimeSpan.TicksPerSecond / fps - clock.Elapsed;
                 timer.Arm(remaining);
                 if (WaitHandle.WaitAny(waits) == 0) break;
             }
