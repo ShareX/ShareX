@@ -60,7 +60,14 @@ public sealed class KeyHighlighterSession : IDisposable
             }
             string? text = null;
             bool password = false;
-            if (settings.ShowAllKeys && KeyStrokeFormatter.IsTextKey(virtualKey))
+            bool altGr = (GetAsyncKeyState(0xA5) & 0x8000) != 0 && (GetAsyncKeyState(0x11) & 0x8000) != 0;
+            if (altGr && KeyStrokeFormatter.IsTextKey(virtualKey))
+            {
+                password = settings.ShowAllKeys && KeyHighlighterKeyboardHook.IsPasswordFieldFocused();
+                text = KeyHighlighterKeyboardHook.GetAltGrText(virtualKey, (GetAsyncKeyState(0x10) & 0x8000) != 0,
+                    (GetKeyState(0x14) & 1) != 0);
+            }
+            else if (settings.ShowAllKeys && KeyStrokeFormatter.IsTextKey(virtualKey))
             {
                 password = KeyHighlighterKeyboardHook.IsPasswordFieldFocused();
                 if (!password)

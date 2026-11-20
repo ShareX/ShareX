@@ -68,7 +68,9 @@ public sealed class KeyStrokeFormatter
         bool repeat = !down.Add(virtualKey);
         if (IsModifier(virtualKey)) return;
 
-        bool command = IsDown(VK_CONTROL) || IsDown(VK_MENU) || IsDown(VK_LWIN);
+        bool altGrTyping = down.Contains(VK_RMENU) && IsDown(VK_CONTROL) && !IsDown(VK_LWIN) && IsTextKey(virtualKey) &&
+            !string.IsNullOrEmpty(text);
+        bool command = !altGrTyping && (IsDown(VK_CONTROL) || IsDown(VK_MENU) || IsDown(VK_LWIN));
         string? name = GetKeyName(virtualKey, text);
         if (name == null) return;
 
@@ -137,7 +139,7 @@ public sealed class KeyStrokeFormatter
 
     private static string Tail(string text) => text.Length <= MaxTypedLength ? text : text[^MaxTypedLength..];
 
-    private const int VK_SHIFT = 0x10, VK_CONTROL = 0x11, VK_MENU = 0x12, VK_LWIN = 0x5B;
+    private const int VK_SHIFT = 0x10, VK_CONTROL = 0x11, VK_MENU = 0x12, VK_LWIN = 0x5B, VK_RMENU = 0xA5;
 
     private static bool IsModifier(int key) => key is >= 0x10 and <= 0x12 or >= 0xA0 and <= 0xA5 or 0x5B or 0x5C or 0x14 or 0x90 or 0x91;
 

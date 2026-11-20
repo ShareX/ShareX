@@ -117,6 +117,21 @@ internal sealed class KeyHighlighterKeyboardHook : IDisposable
         return shift ? null : text;
     }
 
+    /// <summary>The character AltGr (right Alt) types with <paramref name="virtualKey"/> in the current layout, such as "€", or null.</summary>
+    public static string? GetAltGrText(int virtualKey, bool shift, bool capsLock)
+    {
+        IntPtr foreground = NativeMethods.GetForegroundWindow();
+        IntPtr layout = GetKeyboardLayout(GetWindowThreadProcessId(foreground, IntPtr.Zero));
+        byte[] state = new byte[256];
+        state[0x11] = state[0xA2] = state[0x12] = state[0xA5] = 0x80;
+        if (shift) state[0x10] = state[0xA0] = 0x80;
+        if (capsLock) state[0x14] = 0x01;
+        StringBuilder buffer = new(8);
+        const uint DoNotChangeKeyboardState = 0x4;
+        int count = ToUnicodeEx((uint)virtualKey, 0, state, buffer, buffer.Capacity, DoNotChangeKeyboardState, layout);
+        return count == 1 && !char.IsControl(buffer[0]) ? buffer.ToString(0, 1) : null;
+    }
+
     /// <summary>True when the focused control is a Windows edit box that hides its text.</summary>
     public static bool IsPasswordFieldFocused()
     {
@@ -190,6 +205,10 @@ internal sealed class KeyHighlighterKeyboardHook : IDisposable
 
     [DllImport("user32.dll", CharSet = CharSet.Unicode)]
     private static extern uint MapVirtualKeyEx(uint code, uint mapType, IntPtr layout);
+
+    [DllImport("user32.dll", CharSet = CharSet.Unicode)]
+    private static extern int ToUnicodeEx(uint virtualKey, uint scanCode, byte[] keyState, StringBuilder buffer, int bufferSize,
+        uint flags, IntPtr layout);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]
