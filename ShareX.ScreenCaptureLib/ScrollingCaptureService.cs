@@ -36,6 +36,8 @@ public sealed class ScrollingCaptureService : IDisposable
     public ScrollingCaptureOptions Options { get; }
     public Bitmap Result => _manager.Result;
     public bool IsCapturing => _manager.IsCapturing;
+    public string ResultWindowTitle => _manager.ResultWindowTitle;
+    public string ResultProcessName => _manager.ResultProcessName;
 
     public ScrollingCaptureService(ScrollingCaptureOptions options, RegionCaptureOptions regionCaptureOptions = null)
     {
