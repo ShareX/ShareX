@@ -1386,8 +1386,17 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Rechts</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Alle Elemente sind in der Symbolleiste.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Verfügbare Elemente</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Gruppe beginnen</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Leerer Abstandhalter</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Abbrechen</value>
@@ -1398,17 +1407,20 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Symbolleiste anpassen</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Ziehe Elemente in die Symbolleiste, um sie anzuzeigen, oder heraus, um sie auszublenden. Ziehe einen Abstandhalter zwischen Elemente, um sie in Gruppen zu teilen.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} und {1} verwenden dieselbe Tastenkombination ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Ungültige Tastenkombination für {0}. Verwenden Sie Formate wie R, Ctrl+R oder Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Nach unten</value>
+  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
+    <value>Nach links verschieben</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Nach oben</value>
+  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
+    <value>Nach rechts verschieben</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1424,6 +1436,18 @@ Die Zwischenablage enthält kein Bild.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Anzeigen / Ausblenden</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
+    <value>Linie des Abstandhalters anzeigen</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Abstandhalter</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Abstandhalter. Ziehe am rechten Rand, um die Breite zu ändern.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Abstandhalterbreite</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pfeil</value>

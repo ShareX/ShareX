@@ -1386,8 +1386,17 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Derecha</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Todos los elementos están en la barra de herramientas.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Elementos disponibles</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Iniciar grupo</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Separador en blanco</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Cancelar</value>
@@ -1398,17 +1407,20 @@ El portapapeles no contiene ninguna imagen.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Personalizar barra de herramientas</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Arrastra elementos a la barra de herramientas para mostrarlos, o fuera de ella para ocultarlos. Arrastra un separador entre elementos para dividirlos en grupos.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} y {1} usan el mismo atajo ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Atajo no válido para {0}. Usa formatos como R, Ctrl+R o Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Mover abajo</value>
+  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
+    <value>Mover a la izquierda</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Mover arriba</value>
+  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
+    <value>Mover a la derecha</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Aceptar</value>
@@ -1424,6 +1436,18 @@ El portapapeles no contiene ninguna imagen.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Mostrar / Ocultar</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
+    <value>Mostrar la línea del separador</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Separador</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Separador. Arrastra su borde derecho para cambiar su ancho.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Ancho del separador</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Flecha</value>

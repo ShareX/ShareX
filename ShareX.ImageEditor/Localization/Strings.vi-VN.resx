@@ -1386,8 +1386,17 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Phải</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Tất cả các mục đều đã có trên thanh công cụ.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Các mục có sẵn</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Bắt đầu nhóm</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Dấu phân cách trống</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Hủy</value>
@@ -1398,17 +1407,20 @@ Bảng nhớ tạm không chứa ảnh.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Tùy chỉnh Thanh công cụ</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Kéo các mục vào thanh công cụ để hiển thị, hoặc kéo ra ngoài để ẩn. Kéo một dấu phân cách vào giữa các mục để chia chúng thành nhóm.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} và {1} sử dụng cùng một phím tắt ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Phím tắt không hợp lệ cho {0}. Dùng định dạng như R, Ctrl+R hoặc Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Di chuyển xuống</value>
+  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
+    <value>Di chuyển sang trái</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Di chuyển lên</value>
+  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
+    <value>Di chuyển sang phải</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1424,6 +1436,18 @@ Bảng nhớ tạm không chứa ảnh.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Hiện / Ẩn</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
+    <value>Hiện đường phân cách</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Dấu phân cách</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Dấu phân cách. Kéo cạnh phải để thay đổi độ rộng.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Độ rộng dấu phân cách</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Mũi tên</value>

@@ -1386,8 +1386,17 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Dreapta</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Toate elementele sunt în bara de instrumente.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Elemente disponibile</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Începe grupul</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Separator gol</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Anulare</value>
@@ -1398,17 +1407,20 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Personalizare bară de instrumente</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Trage elementele în bara de instrumente pentru a le afișa sau în afara ei pentru a le ascunde. Trage un separator între elemente pentru a le împărți în grupuri.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} și {1} folosesc aceeași scurtătură ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Scurtătură nevalidă pentru {0}. Folosiți formate precum R, Ctrl+R sau Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Mută în jos</value>
+  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
+    <value>Mută la stânga</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Mută în sus</value>
+  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
+    <value>Mută la dreapta</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1424,6 +1436,18 @@ Clipboardul nu conține nicio imagine.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Afișare / Ascundere</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
+    <value>Afișează linia separatorului</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Separator</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Separator. Trage de marginea din dreapta pentru a-i schimba lățimea.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Lățimea separatorului</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Săgeată</value>

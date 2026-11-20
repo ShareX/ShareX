@@ -1386,8 +1386,17 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Droite</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Tous les éléments sont dans la barre d'outils.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Éléments disponibles</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
     <value>Commencer un groupe</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Séparateur vide</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Annuler</value>
@@ -1398,17 +1407,20 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Personnaliser la barre d’outils</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Faites glisser des éléments dans la barre d'outils pour les afficher, ou hors de celle-ci pour les masquer. Faites glisser un séparateur entre des éléments pour les répartir en groupes.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} et {1} utilisent le même raccourci ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Raccourci non valide pour {0}. Utilisez des formats comme R, Ctrl+R ou Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Descendre</value>
+  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
+    <value>Déplacer à gauche</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Monter</value>
+  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
+    <value>Déplacer à droite</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1424,6 +1436,18 @@ Le presse-papiers ne contient aucune image.</value>
   </data>
   <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
     <value>Afficher / Masquer</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
+    <value>Afficher la ligne du séparateur</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Séparateur</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Séparateur. Faites glisser son bord droit pour modifier sa largeur.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Largeur du séparateur</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Flèche</value>
