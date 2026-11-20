@@ -220,6 +220,18 @@
                                                         <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSaveAs}"/>
                                                     </MenuItem.Icon>
                                                 </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SaveAndCopyFilePath}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.SaveAndCopyFilePathCommand}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionSaveAndCopyFilePath}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
+                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_CopyFilePath}"
+                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.CopyFilePathCommand}">
+                                                    <MenuItem.Icon>
+                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCopyFilePath}"/>
+                                                    </MenuItem.Icon>
+                                                </MenuItem>
                                                 <Separator/>
                                                 <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
                                                           Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"

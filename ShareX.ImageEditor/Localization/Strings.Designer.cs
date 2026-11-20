@@ -380,6 +380,16 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("AnnotationToolbar_SaveasEllipsis", resourceCulture);
             }
         }
+        public static string AnnotationToolbar_SaveAndCopyFilePath {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_SaveAndCopyFilePath", resourceCulture);
+            }
+        }
+        public static string AnnotationToolbar_CopyFilePath {
+            get {
+                return ResourceManager.GetString("AnnotationToolbar_CopyFilePath", resourceCulture);
+            }
+        }
         public static string AnnotationToolbar_Shadow {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Shadow", resourceCulture);
@@ -583,6 +593,11 @@ namespace ShareX.ImageEditor.Localization {
         public static string EditorView_SaveimageasEllipsisCtrlShiftS {
             get {
                 return ResourceManager.GetString("EditorView_SaveimageasEllipsisCtrlShiftS", resourceCulture);
+            }
+        }
+        public static string EditorView_SaveImageAndCopyFilePath {
+            get {
+                return ResourceManager.GetString("EditorView_SaveImageAndCopyFilePath", resourceCulture);
             }
         }
         public static string EditorView_SaveimageCtrlS {
@@ -1153,6 +1168,16 @@ namespace ShareX.ImageEditor.Localization {
         public static string MainViewModel_ImageSavedToFile {
             get {
                 return ResourceManager.GetString("MainViewModel_ImageSavedToFile", resourceCulture);
+            }
+        }
+        public static string MainViewModel_ImageSavedAndFilePathCopied {
+            get {
+                return ResourceManager.GetString("MainViewModel_ImageSavedAndFilePathCopied", resourceCulture);
+            }
+        }
+        public static string MainViewModel_FilePathCopiedToClipboard {
+            get {
+                return ResourceManager.GetString("MainViewModel_FilePathCopiedToClipboard", resourceCulture);
             }
         }
         public static string MainViewModel_FilePathFormat {

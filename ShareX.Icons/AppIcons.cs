@@ -110,6 +110,7 @@ public static class AppIcons
     public const string FilePath = Prefix + "file-path";
     public const string Save = Prefix + "save";
     public const string SaveAs = Prefix + "save-as";
+    public const string SaveCopyPath = Prefix + "save-copy-path";
     public const string Printer = Prefix + "printer";
     public const string Trash = Prefix + "trash";
 
