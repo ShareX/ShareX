@@ -33,6 +33,29 @@ namespace ShareX.ScreenRecordingLib.Encoding;
 
 internal sealed unsafe class MediaFoundationWriter : IDisposable
 {
+    private const int H264MaxWidth = 4096;
+    private const int H264MaxHeight = 2304;
+    private const long H264MaxPixels = (long)H264MaxWidth * H264MaxHeight; // H.264 Level 5.2 MaxFS (36,864 MB)
+    private const long H264MaxPixelsPerSecond = 2_073_600L * 256; // H.264 Level 5.2 MaxMBPS
+    private const int HevcMaxWidth = 8192;
+    private const int HevcMaxHeight = 4352;
+    private const long HevcMaxPixels = (long)HevcMaxWidth * HevcMaxHeight; // HEVC Level 6.2 MaxLumaPS
+    private const long HevcMaxPixelsPerSecond = 4_278_190_080L; // HEVC Level 6.2 MaxLumaSR
+    private const int MinEncoderWidth = 160; // Multiple of 16; satisfies NVENC (145), AMD AMF (128), Intel QSV and MS H.264 minimums
+    private const int MinEncoderHeight = 128; // Multiple of 16; satisfies AMD AMF (128), NVENC, Intel QSV and MS H.264 minimums
+    private const int HighCompatibilityBitrate = 50_000_000;
+    private const int CompatibilityBitrate = 20_000_000;
+    private const int BaselineCompatibilityBitrate = 10_000_000;
+
+    internal readonly record struct EncoderAttempt(
+        Guid Codec,
+        int Width,
+        int Height,
+        int FramesPerSecond,
+        int VideoBitrate,
+        bool FullMediaType,
+        bool EnableHardwareTransforms);
+
     private IMFSinkWriter writer = null!;
     private IMFDXGIDeviceManager deviceManager = null!;
     private int videoStream, audioStream;
@@ -41,47 +64,166 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
     public BindFlags EncoderBindFlags { get; private set; }
     public int Width { get; }
     public int Height { get; }
+    public int FramesPerSecond { get; }
+    public string? AdjustmentNote { get; private set; }
 
-    /// <summary>H.264 when the capture fits its limits. Otherwise HEVC at full size, or H.264 downscaled to fit
-    /// when Windows has no HEVC encoder that accepts the size.</summary>
+    /// <summary>H.264 when the capture fits its limits. Otherwise HEVC at full size, or negotiated fallbacks
+    /// when a Windows Media Foundation encoder rejects the media type with MF_E_INVALIDMEDIATYPE.</summary>
     public static MediaFoundationWriter Create(GraphicsDevice graphics, RecordingOptions options, int width, int height)
     {
-        (int h264Width, int h264Height) = FitSize(width, height, 4096, 4096 * 2304); // H.264 Level 5.2 and common hardware limits
-        if (h264Width != width || h264Height != height)
+        IReadOnlyList<EncoderAttempt> attempts = BuildAttempts(width, height, options.FramesPerSecond, options.VideoBitrate, options.RequireHardwareEncoder);
+        SharpGenException? lastInvalidMediaType = null;
+        for (int i = 0; i < attempts.Count; i++)
         {
-            (int hevcWidth, int hevcHeight) = FitSize(width, height, 8192, 8192 * 4352); // HEVC Level 6.2 and common hardware limits
-            try { return new(graphics, options, hevcWidth, hevcHeight, VideoFormatGuids.Hevc); }
-            catch (Exception ex) when (ex is SharpGenException or NotSupportedException)
+            EncoderAttempt attempt = attempts[i];
+            try
             {
-                // No usable HEVC encoder for this size. Fall back to downscaled H.264 below.
+                MediaFoundationWriter created = new(graphics, options, attempt);
+                if (i > 0 || attempt.Width != width || attempt.Height != height || attempt.FramesPerSecond != options.FramesPerSecond ||
+                    attempt.VideoBitrate != options.VideoBitrate || attempt.Codec != VideoFormatGuids.H264 || !attempt.FullMediaType || !attempt.EnableHardwareTransforms)
+                {
+                    string codecName = attempt.Codec == VideoFormatGuids.Hevc ? "HEVC" : "H.264";
+                    created.AdjustmentNote = $"Encoder negotiated {codecName} {attempt.Width}x{attempt.Height} @ {attempt.FramesPerSecond} FPS, {attempt.VideoBitrate / 1000} kbps"
+                        + (attempt.FullMediaType ? "" : " (minimal media type)")
+                        + (attempt.EnableHardwareTransforms ? "" : " (software MFT)");
+                }
+                return created;
+            }
+            catch (SharpGenException ex) when (attempt.Codec == VideoFormatGuids.Hevc || IsInvalidMediaType(ex))
+            {
+                if (IsInvalidMediaType(ex)) lastInvalidMediaType = ex;
+            }
+            catch (NotSupportedException) when (attempt.Codec == VideoFormatGuids.Hevc)
+            {
+                // No usable HEVC encoder for this size/rate. Fall back to H.264 attempts below.
             }
         }
-        return new(graphics, options, h264Width, h264Height, VideoFormatGuids.H264);
+        throw new NotSupportedException(
+            $"Windows Media Foundation rejected the video format ({width}x{height} at {options.FramesPerSecond} FPS, {options.VideoBitrate / 1000} kbps). " +
+            "Update your graphics driver, install the Windows Media Feature Pack if using a Windows N edition, or disable the built-in screen recorder to use FFmpeg.",
+            lastInvalidMediaType);
     }
 
-    private MediaFoundationWriter(GraphicsDevice graphics, RecordingOptions options, int width, int height, Guid codec)
+    internal static IReadOnlyList<EncoderAttempt> BuildAttempts(int width, int height, int fps, int bitrate, bool requireHardwareEncoder)
     {
-        Width = width;
-        Height = height;
+        List<EncoderAttempt> attempts = [];
+        HashSet<EncoderAttempt> seen = [];
+        void Add(Guid codec, int w, int h, int rate, int bps, bool fullMediaType, bool enableHardware)
+        {
+            EncoderAttempt candidate = new(codec, w, h, rate, bps, fullMediaType, enableHardware);
+            if (seen.Add(candidate)) attempts.Add(candidate);
+        }
+
+        (int h264Width, int h264Height) = FitSize(width, height, H264MaxWidth, H264MaxHeight, H264MaxPixels, fps, H264MaxPixelsPerSecond);
+        bool exceedsH264Limits = h264Width != width || h264Height != height;
+
+        // 1. If the capture exceeds H.264 Level 5.2 (size, height, or macroblock rate), try HEVC at full resolution/FPS first.
+        if (exceedsH264Limits)
+        {
+            (int hevcWidth, int hevcHeight) = FitSize(width, height, HevcMaxWidth, HevcMaxHeight, HevcMaxPixels, fps, HevcMaxPixelsPerSecond);
+            Add(VideoFormatGuids.Hevc, hevcWidth, hevcHeight, fps, bitrate, true, true);
+            Add(VideoFormatGuids.Hevc, hevcWidth, hevcHeight, fps, bitrate, false, true);
+        }
+
+        // 2. Primary H.264 attempt at target dimensions/FPS/bitrate, then without optional profile/colorimetry attributes.
+        Add(VideoFormatGuids.H264, h264Width, h264Height, fps, bitrate, true, true);
+        Add(VideoFormatGuids.H264, h264Width, h264Height, fps, bitrate, false, true);
+
+        // 3. Pad small regions to hardware minimums (160x128) and align to 16-pixel macroblock boundaries.
+        (int alignedWidth, int alignedHeight) = AlignAndPad(h264Width, h264Height, H264MaxWidth, H264MaxHeight, H264MaxPixels, fps, H264MaxPixelsPerSecond);
+        Add(VideoFormatGuids.H264, alignedWidth, alignedHeight, fps, bitrate, true, true);
+        Add(VideoFormatGuids.H264, alignedWidth, alignedHeight, fps, bitrate, false, true);
+
+        // 4. For high-resolution or high-FPS captures that fit Level 5.2 on paper but were rejected by the GPU's H.264 MFT, try HEVC before degrading.
+        if (!exceedsH264Limits && (width > 1920 || height > 1088 || fps > 60) && width >= MinEncoderWidth && height >= MinEncoderHeight)
+        {
+            Add(VideoFormatGuids.Hevc, width, height, fps, bitrate, true, true);
+            Add(VideoFormatGuids.Hevc, width, height, fps, bitrate, false, true);
+        }
+
+        // 5. Clamp high bitrates that exceed hardware/level limits.
+        int highCompatBitrate = Math.Min(bitrate, HighCompatibilityBitrate);
+        if (highCompatBitrate < bitrate)
+        {
+            Add(VideoFormatGuids.H264, h264Width, h264Height, fps, highCompatBitrate, false, true);
+            Add(VideoFormatGuids.H264, alignedWidth, alignedHeight, fps, highCompatBitrate, false, true);
+        }
+        int compatBitrate = Math.Min(bitrate, CompatibilityBitrate);
+        if (compatBitrate < highCompatBitrate)
+        {
+            Add(VideoFormatGuids.H264, h264Width, h264Height, fps, compatBitrate, false, true);
+            Add(VideoFormatGuids.H264, alignedWidth, alignedHeight, fps, compatBitrate, false, true);
+        }
+
+        // 6. Cap frame rate at 60 FPS for encoders that reject >60 FPS, restoring full resolution when possible.
+        if (fps > 60)
+        {
+            (int w60, int h60) = FitSize(width, height, H264MaxWidth, H264MaxHeight, H264MaxPixels, 60, H264MaxPixelsPerSecond);
+            (int aw60, int ah60) = AlignAndPad(w60, h60, H264MaxWidth, H264MaxHeight, H264MaxPixels, 60, H264MaxPixelsPerSecond);
+            Add(VideoFormatGuids.H264, w60, h60, 60, compatBitrate, true, true);
+            Add(VideoFormatGuids.H264, aw60, ah60, 60, compatBitrate, false, true);
+        }
+
+        // 7. Step down to common lower hardware ceilings (4K UHD 3840x2160, then 1080p 1920x1088).
+        int fallbackFps = Math.Min(fps, 60);
+        foreach ((int capWidth, int capHeight) in new[] { (3840, 2160), (1920, 1088) })
+        {
+            (int cw, int ch) = FitSize(width, height, capWidth, capHeight, (long)capWidth * capHeight, fallbackFps, H264MaxPixelsPerSecond);
+            (int acw, int ach) = AlignAndPad(cw, ch, capWidth, capHeight, (long)capWidth * capHeight, fallbackFps, H264MaxPixelsPerSecond);
+            Add(VideoFormatGuids.H264, acw, ach, fallbackFps, compatBitrate, false, true);
+        }
+        if (fallbackFps > 30)
+        {
+            (int cw30, int ch30) = FitSize(width, height, 1920, 1088, 1920L * 1088, 30, H264MaxPixelsPerSecond);
+            (int acw30, int ach30) = AlignAndPad(cw30, ch30, 1920, 1088, 1920L * 1088, 30, H264MaxPixelsPerSecond);
+            Add(VideoFormatGuids.H264, acw30, ach30, 30, Math.Min(bitrate, BaselineCompatibilityBitrate), false, true);
+        }
+
+        // 8. When software encoding is allowed, bypass hardware MFTs if a driver's hardware MFT rejected all media types.
+        if (!requireHardwareEncoder)
+        {
+            (int swW, int swH) = FitSize(width, height, H264MaxWidth, H264MaxHeight, H264MaxPixels, fallbackFps, H264MaxPixelsPerSecond);
+            (int aswW, int aswH) = AlignAndPad(swW, swH, H264MaxWidth, H264MaxHeight, H264MaxPixels, fallbackFps, H264MaxPixelsPerSecond);
+            Add(VideoFormatGuids.H264, swW, swH, fallbackFps, compatBitrate, true, false);
+            Add(VideoFormatGuids.H264, aswW, aswH, fallbackFps, compatBitrate, false, false);
+            (int sw1080W, int sw1080H) = FitSize(width, height, 1920, 1088, 1920L * 1088, Math.Min(fps, 30), H264MaxPixelsPerSecond);
+            (int asw1080W, int asw1080H) = AlignAndPad(sw1080W, sw1080H, 1920, 1088, 1920L * 1088, Math.Min(fps, 30), H264MaxPixelsPerSecond);
+            Add(VideoFormatGuids.H264, asw1080W, asw1080H, Math.Min(fps, 30), Math.Min(bitrate, BaselineCompatibilityBitrate), false, false);
+        }
+
+        return attempts;
+    }
+
+    private static bool IsInvalidMediaType(SharpGenException ex) =>
+        ex.ResultCode.Code == Vortice.MediaFoundation.ResultCode.Invalidmediatype.Code;
+
+    private MediaFoundationWriter(GraphicsDevice graphics, RecordingOptions options, EncoderAttempt attempt)
+    {
+        Width = attempt.Width;
+        Height = attempt.Height;
+        FramesPerSecond = attempt.FramesPerSecond;
         try
         {
             deviceManager = MediaFactory.MFCreateDXGIDeviceManager();
             deviceManager.ResetDevice(graphics.Device).CheckError();
             using IMFAttributes attributes = MediaFactory.MFCreateAttributes(5);
-            attributes.Set(SinkWriterAttributeKeys.ReadwriteEnableHardwareTransforms, 1u).CheckError();
-            attributes.Set(SinkWriterAttributeKeys.LowLatency, 1u).CheckError();
+            if (attempt.EnableHardwareTransforms)
+                attributes.Set(SinkWriterAttributeKeys.ReadwriteEnableHardwareTransforms, 1u).CheckError();
+            if (attempt.FullMediaType)
+                attributes.Set(SinkWriterAttributeKeys.LowLatency, 1u).CheckError();
             // The fixed-size GPU pool bounds in-flight samples. Do not make WriteSample wait for presentation time.
             attributes.Set(SinkWriterAttributeKeys.DisableThrottling, 1u).CheckError();
             attributes.Set(TranscodeAttributeKeys.TranscodeContainertype, TranscodeContainerTypeGuids.Mpeg4).CheckError();
             attributes.Set(SinkWriterAttributeKeys.D3DManager, deviceManager).CheckError();
             writer = MediaFactory.MFCreateSinkWriterFromURL(options.OutputPath, null!, attributes);
-            using IMFMediaType videoOut = CreateVideoType(codec, width, height, options.FramesPerSecond);
-            videoOut.Set(MediaTypeAttributeKeys.AvgBitrate, (uint)options.VideoBitrate).CheckError();
-            videoOut.Set(MediaTypeAttributeKeys.Mpeg2Profile, codec == VideoFormatGuids.Hevc ? 1u : 77u).CheckError(); // HEVC Main / H.264 Main
+            using IMFMediaType videoOut = CreateVideoType(attempt.Codec, attempt.Width, attempt.Height, attempt.FramesPerSecond, attempt.FullMediaType);
+            videoOut.Set(MediaTypeAttributeKeys.AvgBitrate, (uint)attempt.VideoBitrate).CheckError();
+            if (attempt.FullMediaType)
+                videoOut.Set(MediaTypeAttributeKeys.Mpeg2Profile, attempt.Codec == VideoFormatGuids.Hevc ? 1u : 77u).CheckError(); // HEVC Main / H.264 Main
             videoStream = writer.AddStream(videoOut);
-            using IMFMediaType videoIn = CreateVideoType(VideoFormatGuids.NV12, width, height, options.FramesPerSecond);
+            using IMFMediaType videoIn = CreateVideoType(VideoFormatGuids.NV12, attempt.Width, attempt.Height, attempt.FramesPerSecond, attempt.FullMediaType);
             writer.SetInputMediaType(videoStream, videoIn, null!);
-            if (options.HasAudio) AddAudio(options.AudioBitrate);
+            if (options.HasAudio) AddAudio(options.AudioBitrate, attempt.FullMediaType);
             Encoder = InspectVideoEncoder();
             if (options.RequireHardwareEncoder && (!Encoder.IsHardwareAccelerated || !Encoder.IsD3D11Aware))
                 throw new NotSupportedException($"Windows selected '{Encoder.Name}', which does not provide D3D11 hardware video encoding on this GPU. Disable RequireHardwareEncoder to allow Windows software encoding.");
@@ -91,12 +233,43 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
         catch { Dispose(); throw; }
     }
 
-    /// <summary>Downscale to the encoder's frame limits, keeping the aspect ratio. Encoders reject larger frames.</summary>
-    private static (int Width, int Height) FitSize(int width, int height, int maxSide, int maxPixels)
+    /// <summary>Downscale to the encoder's frame and macroblock-rate limits, keeping the aspect ratio.</summary>
+    internal static (int Width, int Height) FitSize(int width, int height, int maxWidth, int maxHeight,
+        long maxPixels, int fps, long maxPixelsPerSecond, int alignment = 2)
     {
-        double scale = Math.Min(1, Math.Min((double)maxSide / Math.Max(width, height), Math.Sqrt((double)maxPixels / ((long)width * height))));
-        if (scale >= 1) return (width, height);
-        return (Math.Max(2, (int)(width * scale) & ~1), Math.Max(2, (int)(height * scale) & ~1));
+        long effectiveMaxPixels = Math.Min(maxPixels, maxPixelsPerSecond / Math.Max(1, fps));
+        double scale = Math.Min(1.0, Math.Min(
+            Math.Min((double)maxWidth / width, (double)maxHeight / height),
+            Math.Sqrt((double)effectiveMaxPixels / ((long)width * height))));
+        if (scale >= 1.0 && width % alignment == 0 && height % alignment == 0)
+            return (width, height);
+        int mask = ~(alignment - 1);
+        int fittedWidth = Math.Max(alignment, (int)(width * scale) & mask);
+        int fittedHeight = Math.Max(alignment, (int)(height * scale) & mask);
+        while ((long)fittedWidth * fittedHeight > effectiveMaxPixels && (fittedWidth > alignment || fittedHeight > alignment))
+        {
+            if (fittedWidth >= fittedHeight && fittedWidth > alignment) fittedWidth -= alignment;
+            else if (fittedHeight > alignment) fittedHeight -= alignment;
+        }
+        return (fittedWidth, fittedHeight);
+    }
+
+    /// <summary>Pad tiny regions to hardware minimums and round up to 16-pixel macroblock alignment within encoder limits.</summary>
+    internal static (int Width, int Height) AlignAndPad(int width, int height, int maxWidth, int maxHeight,
+        long maxPixels, int fps, long maxPixelsPerSecond)
+    {
+        int alignedWidth = Math.Max(MinEncoderWidth, (width + 15) & ~15);
+        int alignedHeight = Math.Max(MinEncoderHeight, (height + 15) & ~15);
+        if (alignedWidth > maxWidth) alignedWidth = Math.Max(MinEncoderWidth, maxWidth & ~15);
+        if (alignedHeight > maxHeight) alignedHeight = Math.Max(MinEncoderHeight, maxHeight & ~15);
+        long effectiveMaxPixels = Math.Min(maxPixels, maxPixelsPerSecond / Math.Max(1, fps));
+        if ((long)alignedWidth * alignedHeight > effectiveMaxPixels)
+        {
+            (alignedWidth, alignedHeight) = FitSize(alignedWidth, alignedHeight, maxWidth, maxHeight, maxPixels, fps, maxPixelsPerSecond, alignment: 16);
+            alignedWidth = Math.Max(MinEncoderWidth, alignedWidth);
+            alignedHeight = Math.Max(MinEncoderHeight, alignedHeight);
+        }
+        return (alignedWidth, alignedHeight);
     }
 
     private static IMFMediaType CreateType(Guid major, Guid subtype)
@@ -111,7 +284,7 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
         catch { type.Dispose(); throw; }
     }
 
-    private static IMFMediaType CreateVideoType(Guid subtype, int width, int height, int fps)
+    private static IMFMediaType CreateVideoType(Guid subtype, int width, int height, int fps, bool includeColorInfo)
     {
         IMFMediaType type = CreateType(MediaTypeGuids.Video, subtype);
         try
@@ -120,16 +293,19 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
             SetRatio(type, MediaTypeAttributeKeys.FrameSize, (uint)width, (uint)height);
             SetRatio(type, MediaTypeAttributeKeys.FrameRate, (uint)fps, 1);
             SetRatio(type, MediaTypeAttributeKeys.PixelAspectRatio, 1, 1);
-            type.Set(MediaTypeAttributeKeys.VideoPrimaries, 2u).CheckError(); // BT.709
-            type.Set(MediaTypeAttributeKeys.TransferFunction, 5u).CheckError(); // BT.709
-            type.Set(MediaTypeAttributeKeys.YuvMatrix, 1u).CheckError(); // BT.709
-            type.Set(MediaTypeAttributeKeys.VideoNominalRange, 2u).CheckError(); // 16–235
+            if (includeColorInfo)
+            {
+                type.Set(MediaTypeAttributeKeys.VideoPrimaries, 2u).CheckError(); // BT.709
+                type.Set(MediaTypeAttributeKeys.TransferFunction, 5u).CheckError(); // BT.709
+                type.Set(MediaTypeAttributeKeys.YuvMatrix, 1u).CheckError(); // BT.709
+                type.Set(MediaTypeAttributeKeys.VideoNominalRange, 2u).CheckError(); // 16–235
+            }
             return type;
         }
         catch { type.Dispose(); throw; }
     }
 
-    private void AddAudio(int bitrate)
+    private void AddAudio(int bitrate, bool includeProfileLevel)
     {
         using IMFMediaType output = CreateType(MediaTypeGuids.Audio, AudioFormatGuids.Aac);
         output.Set(MediaTypeAttributeKeys.AudioNumChannels, 2u).CheckError();
@@ -137,7 +313,8 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
         output.Set(MediaTypeAttributeKeys.AudioBitsPerSample, 16u).CheckError();
         output.Set(MediaTypeAttributeKeys.AudioAvgBytesPerSecond, (uint)(bitrate / 8)).CheckError();
         output.Set(MediaTypeAttributeKeys.AacPayloadType, 0u).CheckError();
-        output.Set(MediaTypeAttributeKeys.AacAudioProfileLevelIndication, 0x29u).CheckError();
+        if (includeProfileLevel)
+            output.Set(MediaTypeAttributeKeys.AacAudioProfileLevelIndication, 0x29u).CheckError();
         audioStream = writer.AddStream(output);
         using IMFMediaType input = CreateType(MediaTypeGuids.Audio, AudioFormatGuids.Pcm);
         input.Set(MediaTypeAttributeKeys.AudioNumChannels, 2u).CheckError();
