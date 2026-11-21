@@ -26,6 +26,7 @@
 using Avalonia;
 using Avalonia.Media;
 using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace ShareX.AvaloniaUI.Windows;
@@ -114,22 +115,58 @@ public static partial class ScreenColorPickerTextFormatter
             key);
     }
 
+    // Web colors from AliceBlue to YellowGreen, skipping system colors (theme dependent) and Transparent.
+    private static readonly System.Drawing.Color[] NamedColors = Enumerable
+        .Range((int)System.Drawing.KnownColor.AliceBlue,
+            System.Drawing.KnownColor.YellowGreen - System.Drawing.KnownColor.AliceBlue + 1)
+        .Select(knownColor => System.Drawing.Color.FromKnownColor((System.Drawing.KnownColor)knownColor))
+        .ToArray();
+
+    // Same result as ColorHelpers.GetColorName: the closest named color, e.g. "Alice blue".
     private static string GetColorName(Color color)
     {
-        System.Drawing.Color drawingColor = System.Drawing.Color.FromArgb(color.A, color.R, color.G, color.B);
+        System.Drawing.Color closest = System.Drawing.Color.Black;
+        int closestDifference = ColorDifference(color, closest);
 
-        foreach (System.Drawing.KnownColor knownColor in Enum.GetValues<System.Drawing.KnownColor>())
+        foreach (System.Drawing.Color candidate in NamedColors)
         {
-            System.Drawing.Color candidate = System.Drawing.Color.FromKnownColor(knownColor);
+            int difference = ColorDifference(color, candidate);
 
-            if (candidate.A == drawingColor.A && candidate.R == drawingColor.R &&
-                candidate.G == drawingColor.G && candidate.B == drawingColor.B)
+            if (difference < closestDifference)
             {
-                return candidate.Name;
+                closest = candidate;
+                closestDifference = difference;
             }
         }
 
-        return string.Empty;
+        return GetProperName(closest.Name);
+    }
+
+    private static int ColorDifference(Color color, System.Drawing.Color candidate)
+    {
+        return Math.Abs(color.R - candidate.R) + Math.Abs(color.G - candidate.G) + Math.Abs(color.B - candidate.B);
+    }
+
+    private static string GetProperName(string name)
+    {
+        StringBuilder sb = new();
+
+        for (int i = 0; i < name.Length; i++)
+        {
+            char c = name[i];
+
+            if (i > 0 && char.IsUpper(c))
+            {
+                sb.Append(' ');
+                sb.Append(char.ToLowerInvariant(c));
+            }
+            else
+            {
+                sb.Append(c);
+            }
+        }
+
+        return sb.ToString();
     }
 
     [GeneratedRegex(@"\$(r|g|b)1(?:\{(\d+)\})?", RegexOptions.IgnoreCase)]
