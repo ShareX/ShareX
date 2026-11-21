@@ -42,12 +42,12 @@ public static class RegionCaptureToolbar
     public const string EllipseRegionItemId = "RegionEllipse";
     public const string FreehandRegionItemId = "RegionFreehand";
 
-    // The rectangle region tool is always shown, with Tab and the ShareX 21 NumPad0 key. The ShareX 21 ellipse and
-    // freehand region tools are hidden until turned on in the toolbar customization.
+    // The rectangle region tool has Tab and the ShareX 21 NumPad0 key, which keep working when it is hidden. The
+    // ShareX 21 ellipse and freehand region tools are hidden until turned on in the toolbar customization.
     private static IReadOnlyList<ToolbarHostItemDefinition> CreateRegionItems() =>
     [
         new(RectangleRegionItemId, Strings.RegionCaptureWindow_RectangleRegion, ImageEditorIcons.Region, "Tab",
-            DefaultSecondaryHotkey: "NumPad0", CanHide: false),
+            DefaultSecondaryHotkey: "NumPad0"),
         new(EllipseRegionItemId, Strings.RegionCaptureWindow_EllipseRegion, ImageEditorIcons.RegionEllipse, IsVisibleByDefault: false),
         new(FreehandRegionItemId, Strings.RegionCaptureWindow_FreehandRegion, ImageEditorIcons.RegionFreehand, IsVisibleByDefault: false)
     ];
