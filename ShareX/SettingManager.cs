@@ -267,6 +267,18 @@ namespace ShareX
                     Settings.UpdateChannel = UpdateChannel.PreRelease;
                 }
             }
+
+            if (IsUpgradeFromBeforeScreenRecorderBar(Settings))
+            {
+                DefaultTaskSettings.CaptureSettings.ScreenRecordShowBar = false;
+            }
+        }
+
+        // The screen recorder bar arrived in 22.0.0 and is on by default. Users upgrading from an older version keep
+        // the recording flow they are used to, so the bar starts off for them. Fresh installs keep the bar on.
+        private static bool IsUpgradeFromBeforeScreenRecorderBar<T>(SettingsBase<T> settings) where T : SettingsBase<T>, new()
+        {
+            return settings.IsUpgrade && Helpers.CompareVersion(settings.ApplicationVersion, "22.0.0") < 0;
         }
 
         public static void HistoryConnect()
@@ -348,6 +360,19 @@ namespace ShareX
                     {
                         taskSettings.CaptureSettings.ScrollingCaptureOptions = new ScrollingCaptureOptions();
                         taskSettings.CaptureSettings.FFmpegOptions.FixSources();
+                    }
+                }
+            }
+
+            // Uses the hotkeys file's own version: the application config may already have been saved with the new
+            // version while the hotkeys config loads in the background.
+            if (IsUpgradeFromBeforeScreenRecorderBar(HotkeysConfig))
+            {
+                foreach (TaskSettings taskSettings in HotkeysConfig.Hotkeys.Select(x => x.TaskSettings))
+                {
+                    if (taskSettings != null && taskSettings.CaptureSettings != null)
+                    {
+                        taskSettings.CaptureSettings.ScreenRecordShowBar = false;
                     }
                 }
             }
