@@ -285,6 +285,65 @@ public class MacServicesTests
         Console.WriteLine($"Captured {result.Bounds.Width}x{result.Bounds.Height} with {result.Backend}");
     }
 
+    private const UnixFileMode ReadOnlyFolder = UnixFileMode.UserRead | UnixFileMode.UserExecute;
+    private const UnixFileMode WritableFolder = UnixFileMode.UserRead | UnixFileMode.UserWrite | UnixFileMode.UserExecute;
+
+    private static BrowserHost CreateBrowserHost(string library)
+    {
+        string manifest = Path.Combine(library, "host.json");
+        File.WriteAllText(manifest, """{ "name": "x", "path": "ShareX_NativeMessagingHost", "type": "stdio", "allowed_origins": ["chrome-extension://abc/"] }""");
+        return new BrowserHost(BrowserFamily.Chromium, "com.getsharex.sharex", manifest, Path.Combine(library, "ShareX_NativeMessagingHost"));
+    }
+
+    /// <summary>macOS refuses changes to another application's folder ("Operation not permitted"); ShareX must start anyway and write the folders it can.</summary>
+    [UnixFact]
+    public void BrowserHost_SkipsABrowserFolderItCannotWriteAndWritesTheOthers()
+    {
+        string library = Path.Combine(Path.GetTempPath(), "sharex-mac-" + Guid.NewGuid().ToString("N"));
+        string support = Path.Combine(library, "Application Support");
+        string chrome = Path.Combine(support, "Google", "Chrome");
+        string brave = Path.Combine(support, "BraveSoftware", "Brave-Browser");
+        Directory.CreateDirectory(chrome);
+        Directory.CreateDirectory(brave);
+        BrowserHost host = CreateBrowserHost(library);
+        File.SetUnixFileMode(chrome, ReadOnlyFolder);
+
+        try
+        {
+            new MacShellIntegrationService(library).RegisterBrowserHost(host);
+
+            Assert.False(Directory.Exists(Path.Combine(chrome, "NativeMessagingHosts")));
+            Assert.True(File.Exists(Path.Combine(brave, "NativeMessagingHosts", "com.getsharex.sharex.json")));
+        }
+        finally
+        {
+            File.SetUnixFileMode(chrome, WritableFolder);
+            Directory.Delete(library, true);
+        }
+    }
+
+    [UnixFact]
+    public void BrowserHost_WithNoBrowserInstalledAndNoRightToCreateOneRegistersNothingWithoutFailing()
+    {
+        string library = Path.Combine(Path.GetTempPath(), "sharex-mac-" + Guid.NewGuid().ToString("N"));
+        string support = Path.Combine(library, "Application Support");
+        Directory.CreateDirectory(support);
+        BrowserHost host = CreateBrowserHost(library);
+        File.SetUnixFileMode(support, ReadOnlyFolder);
+
+        try
+        {
+            new MacShellIntegrationService(library).RegisterBrowserHost(host);
+
+            Assert.False(Directory.Exists(Path.Combine(support, "Google")));
+        }
+        finally
+        {
+            File.SetUnixFileMode(support, WritableFolder);
+            Directory.Delete(library, true);
+        }
+    }
+
     [Fact]
     public void Screens_WorkingAreaLeavesOutTheMenuBarAndTheDock()
     {

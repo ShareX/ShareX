@@ -156,8 +156,17 @@ public sealed class MacShellIntegrationService : IShellIntegrationService
 
         foreach (string path in GetBrowserHostManifestPaths(host))
         {
-            Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-            File.WriteAllText(path, manifest, new UTF8Encoding(false));
+            try
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+                File.WriteAllText(path, manifest, new UTF8Encoding(false));
+            }
+            catch (Exception e) when (e is UnauthorizedAccessException or IOException)
+            {
+                // macOS keeps other applications' folders in Application Support from being changed ("Operation not permitted")
+                // unless the user allows it, which is the case for a browser's folder when it is not installed yet. The other
+                // browsers still get their manifest, and ShareX must not fail to start over one folder it cannot write.
+            }
         }
     }
 
