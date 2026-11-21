@@ -1394,9 +1394,6 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Available items</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Begin group</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Blank spacer</value>
   </data>
@@ -1418,12 +1415,6 @@ Clipboard does not contain an image.</value>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Invalid hotkey for {0}. Use formats like R, Ctrl+R, or Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Move left</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Move right</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -1438,20 +1429,11 @@ Clipboard does not contain an image.</value>
     <value>Secondary</value>
     <comment>Column header in the Customize Toolbar dialog for the alternate keyboard shortcut of a tool.</comment>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Show / Hide</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Show spacer line</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Spacer</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Spacer. Drag its right edge to change its width.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Spacer width</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Arrow</value>

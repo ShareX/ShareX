@@ -640,11 +640,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("SchemaDrivenEffectDialog_Cancel", resourceCulture);
             }
         }
-        public static string ToolbarCustomizationDialogView_Begingroup {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Begingroup", resourceCulture);
-            }
-        }
         public static string ToolbarCustomizationDialogView_Cancel {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Cancel", resourceCulture);
@@ -668,11 +663,6 @@ namespace ShareX.ImageEditor.Localization {
         public static string ToolbarCustomizationDialogView_Resettoolbartodefault {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Resettoolbartodefault", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_ShowHide {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowHide", resourceCulture);
             }
         }
         public static string ZoomPickerDropdown_ZoomtoFit {
@@ -2520,21 +2510,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_DragHint", resourceCulture);
             }
         }
-        public static string ToolbarCustomizationDialogView_MoveLeft {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_MoveLeft", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_MoveRight {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_MoveRight", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_ShowSpacerLine {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowSpacerLine", resourceCulture);
-            }
-        }
         public static string ToolbarCustomizationDialogView_Spacer {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Spacer", resourceCulture);
@@ -2543,11 +2518,6 @@ namespace ShareX.ImageEditor.Localization {
         public static string ToolbarCustomizationDialogView_SpacerToolTip {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerToolTip", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_SpacerWidth {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerWidth", resourceCulture);
             }
         }
     }

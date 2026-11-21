@@ -1392,9 +1392,6 @@
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Доступные элементы</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Начать группу</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Пустой разделитель</value>
   </data>
@@ -1416,12 +1413,6 @@
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Недопустимое сочетание для {0}. Используйте формат R, Ctrl+R или Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Переместить влево</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Переместить вправо</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>ОК</value>
   </data>
@@ -1434,20 +1425,11 @@
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Дополнительное</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Показать / Скрыть</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Показывать линию разделителя</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Разделитель</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Разделитель. Перетащите его правый край, чтобы изменить ширину.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Ширина разделителя</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Стрелка</value>

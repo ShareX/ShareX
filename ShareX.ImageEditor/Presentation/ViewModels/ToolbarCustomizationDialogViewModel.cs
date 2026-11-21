@@ -335,7 +335,6 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
         }
 
         OnPropertyChanged(nameof(HasHiddenItems));
-        RefreshMoveStates();
         RefreshSelection();
     }
 
@@ -435,24 +434,13 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
         else if (e.PropertyName is nameof(ToolbarCustomizationItemViewModel.SpacerWidth) or nameof(ToolbarCustomizationItemViewModel.ShowSpacerLine)
             && sender is ToolbarCustomizationItemViewModel item)
         {
-            // Update the spacer in place so a spacer width box being typed in keeps its focus.
+            // Update the spacer in place so the slot being resized keeps its button.
             int index = IndexOfSlot(item);
             if (index > 0 && ToolbarSlots[index - 1].IsSpacer)
             {
                 ToolbarSlots[index - 1].SpacerWidth = item.SpacerWidth;
                 ToolbarSlots[index - 1].ShowLine = item.ShowSpacerLine;
             }
-        }
-    }
-
-    /// <summary>Tells the Move left and Move right buttons whether the item can move further along the toolbar.</summary>
-    private void RefreshMoveStates()
-    {
-        foreach (ToolbarCustomizationItemViewModel item in Items)
-        {
-            int index = IndexOfSlot(item);
-            item.CanMoveUp = index > 0;
-            item.CanMoveDown = index >= 0 && index < ToolbarSlots.Count - 1;
         }
     }
 

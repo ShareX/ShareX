@@ -144,16 +144,6 @@ namespace ShareX.ImageEditor.Presentation.Views
             }
         }
 
-        private void OnMoveLeftClick(object? sender, RoutedEventArgs e)
-        {
-            ViewModel?.MoveLeft(ViewModel.SelectedItem);
-        }
-
-        private void OnMoveRightClick(object? sender, RoutedEventArgs e)
-        {
-            ViewModel?.MoveRight(ViewModel.SelectedItem);
-        }
-
         #region Dragging
 
         private void OnPreviewPointerPressed(object? sender, PointerPressedEventArgs e)

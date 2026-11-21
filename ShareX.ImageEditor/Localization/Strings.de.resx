@@ -1392,9 +1392,6 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Verfügbare Elemente</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Gruppe beginnen</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Leerer Abstandhalter</value>
   </data>
@@ -1416,12 +1413,6 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Ungültige Tastenkombination für {0}. Verwenden Sie Formate wie R, Ctrl+R oder Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Nach links verschieben</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Nach rechts verschieben</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -1434,20 +1425,11 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Sekundär</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Anzeigen / Ausblenden</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Linie des Abstandhalters anzeigen</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Abstandhalter</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Abstandhalter. Ziehe am rechten Rand, um die Breite zu ändern.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Abstandhalterbreite</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pfeil</value>

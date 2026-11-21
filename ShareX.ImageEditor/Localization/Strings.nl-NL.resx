@@ -1392,9 +1392,6 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Beschikbare items</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Groep beginnen</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Lege scheiding</value>
   </data>
@@ -1416,12 +1413,6 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Ongeldige sneltoets voor {0}. Gebruik indelingen zoals R, Ctrl+R of Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Naar links verplaatsen</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Naar rechts verplaatsen</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
   </data>
@@ -1434,20 +1425,11 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Secundair</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Tonen / Verbergen</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Scheidingslijn tonen</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Scheiding</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Scheiding. Sleep de rechterrand om de breedte te wijzigen.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Breedte van scheiding</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pijl</value>

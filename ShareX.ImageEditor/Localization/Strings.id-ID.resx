@@ -1392,9 +1392,6 @@ Papan klip tidak berisi gambar.</value>
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Item yang tersedia</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Mulai grup</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Pemisah kosong</value>
   </data>
@@ -1416,12 +1413,6 @@ Papan klip tidak berisi gambar.</value>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Pintasan tidak valid untuk {0}. Gunakan format seperti R, Ctrl+R, atau Ctrl+Shift+R.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Pindah ke kiri</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Pindah ke kanan</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Oke</value>
   </data>
@@ -1434,20 +1425,11 @@ Papan klip tidak berisi gambar.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Sekunder</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Tampilkan / Sembunyikan</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Tampilkan garis pemisah</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Pemisah</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Pemisah. Seret tepi kanannya untuk mengubah lebarnya.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Lebar pemisah</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Panah</value>
