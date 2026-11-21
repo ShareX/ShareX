@@ -448,8 +448,8 @@
     <value>Drag to move the toolbar, double-click to reset its position</value>
     <comment>Tooltip of the grip handle at the left end of the region capture toolbar.</comment>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>Rectangle region (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>Rectangle region</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Resume</value>

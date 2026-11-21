@@ -303,7 +303,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     {
         List<ToolbarItemDefinition> definitions = hostItems
             .Select(item => new ToolbarItemDefinition(item.Id, null, item.Name, item.Icon, item.DefaultHotkey, true, true,
-                item.BeginGroupByDefault, IsVisibleByDefault: item.IsVisibleByDefault, IsHostItem: true))
+                item.BeginGroupByDefault, item.DefaultSecondaryHotkey, item.IsVisibleByDefault, IsHostItem: true))
             .Concat(ItemDefinitions)
             .ToList();
 

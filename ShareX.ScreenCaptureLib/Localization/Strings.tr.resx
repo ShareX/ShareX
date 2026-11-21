@@ -439,8 +439,8 @@
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Araç çubuğunu taşımak için sürükleyin, konumunu sıfırlamak için çift tıklayın</value>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>Bölge yakala (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>Bölge yakala</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Devam et</value>
