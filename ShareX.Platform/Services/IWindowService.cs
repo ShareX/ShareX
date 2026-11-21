@@ -151,6 +151,12 @@ public interface IWindowService
     bool HidesInsteadOfMinimizing => false;
 
     /// <summary>
+    /// Whether windows with a custom title bar keep the system's own window buttons (macOS traffic lights on the left) instead
+    /// of drawing minimize, maximize and close buttons on the right.
+    /// </summary>
+    bool UsesSystemWindowButtons => false;
+
+    /// <summary>
     /// Puts one of ShareX's full-screen overlays (region capture) exactly over <paramref name="screenBounds"/>, above the menu bar
     /// and the Dock. False where the window manager already does this for a top-most window of that size (Windows, X11).
     /// </summary>

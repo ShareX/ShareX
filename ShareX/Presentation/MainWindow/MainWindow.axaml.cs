@@ -111,6 +111,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     public double ImagePreviewPaneWidth => IsImagePreviewAtBottom ? double.NaN : ImagePreviewWidth;
     public double ImagePreviewPaneHeight => IsImagePreviewAtBottom ? ImagePreviewHeight : double.NaN;
     public bool IsWindowMaximized => WindowState == Avalonia.Controls.WindowState.Maximized;
+    public bool UsesSystemWindowButtons => ShareX.Platform.PlatformServices.IsInitialized && ShareX.Platform.PlatformServices.Current.Windows.UsesSystemWindowButtons;
+    public bool ShowCustomCaptionButtons => !UsesSystemWindowButtons;
+    public Thickness TitleBarContentMargin => UsesSystemWindowButtons && WindowState != Avalonia.Controls.WindowState.FullScreen
+        ? new Thickness(78, 0, 12, 0)
+        : new Thickness(14, 0, 12, 0);
 
     // Dropped while maximized so the caption buttons reach the screen edge.
     private const double WindowFrameThickness = 1;
@@ -130,6 +135,11 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         _trayMenuBuilder = new MainMenuBuilder(trayMenu: true);
 
         InitializeComponent();
+        if (UsesSystemWindowButtons)
+        {
+            WindowDecorations = Avalonia.Controls.WindowDecorations.Full;
+            WindowFrame.BorderThickness = new Thickness(0);
+        }
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Title = ApplicationInfo.Title;
         UpdateTitleBarIcon();
@@ -2613,7 +2623,8 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         if (change.Property == WindowStateProperty)
         {
             OnPropertyChanged(nameof(IsWindowMaximized));
-            WindowFrame.BorderThickness = new Thickness(IsWindowMaximized ? 0 : WindowFrameThickness);
+            OnPropertyChanged(nameof(TitleBarContentMargin));
+            WindowFrame.BorderThickness = new Thickness(IsWindowMaximized || UsesSystemWindowButtons ? 0 : WindowFrameThickness);
         }
         else if (change.Property == IconProperty)
         {

@@ -250,6 +250,8 @@ public sealed class MacWindowService : IWindowService
 
     public bool HidesInsteadOfMinimizing => true;
 
+    public bool UsesSystemWindowButtons => true;
+
     // NSStatusWindowLevel: above the Dock (20) and the menu bar (24), below Avalonia's pop-up menus (101).
     private const nint OverlayWindowLevel = 25;
 

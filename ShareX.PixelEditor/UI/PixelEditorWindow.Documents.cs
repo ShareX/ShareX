@@ -367,11 +367,12 @@ public sealed partial class PixelEditorWindow
     /// <summary>Builds the custom title bar: icon and menu on the left, sprite name centered, caption buttons on the right.</summary>
     private Border CreateTitleBar()
     {
+        bool systemButtons = ShareX.Platform.PlatformServices.IsInitialized && ShareX.Platform.PlatformServices.Current.Windows.UsesSystemWindowButtons;
         ExtendClientAreaToDecorationsHint = true;
         ExtendClientAreaTitleBarHeightHint = TitleBarHeight;
-        WindowDecorations = WindowDecorations.BorderOnly;
+        WindowDecorations = systemButtons ? WindowDecorations.Full : WindowDecorations.BorderOnly;
 
-        Image icon = new() { Width = 16, Height = 16, Margin = new Thickness(10, 0, 4, 0), Source = LoadTitleBarIcon(), IsHitTestVisible = false, VerticalAlignment = VerticalAlignment.Center };
+        Image icon = new() { Width = 16, Height = 16, Margin = new Thickness(systemButtons ? 74 : 10, 0, 4, 0), Source = LoadTitleBarIcon(), IsHitTestVisible = false, VerticalAlignment = VerticalAlignment.Center };
         RenderOptions.SetBitmapInterpolationMode(icon, BitmapInterpolationMode.HighQuality);
         _menuHost = new Border { Child = CreateMenu(), VerticalAlignment = VerticalAlignment.Center };
         StackPanel left = new() { Orientation = Orientation.Horizontal };
@@ -380,15 +381,6 @@ public sealed partial class PixelEditorWindow
 
         _titleText = new TextBlock { TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0), Text = Strings.Window_Name, Classes = { "dim" } };
 
-        Button minimize = CreateCaptionButton(Strings.TitleBar_Minimize, "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
-        minimize.Click += (_, _) => WindowState = WindowState.Minimized;
-        Button maximize = CreateCaptionButton(Strings.TitleBar_Maximize, MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
-        _maximizeButton = maximize;
-        _maximizeGlyph = (Shape)maximize.Content!;
-        maximize.Click += (_, _) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-        Button close = CreateCaptionButton(Strings.Command_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
-        close.Classes.Add("close");
-        close.Click += (_, _) => Close();
         string? searchGesture = CommandRegistry.GetGesture("help.commandPalette", Settings);
         Button search = Ui.IconButton(PixelEditorIcons.Zoom, Strings.Command_CommandPalette.Replace("...", string.Empty) + (searchGesture != null ? $" ({searchGesture})" : string.Empty), ShowCommandPalette, 14);
         search.Focusable = false;
@@ -397,9 +389,21 @@ public sealed partial class PixelEditorWindow
         WindowDecorationProperties.SetElementRole(search, WindowDecorationsElementRole.User);
         StackPanel right = new() { Orientation = Orientation.Horizontal };
         right.Children.Add(search);
-        right.Children.Add(minimize);
-        right.Children.Add(maximize);
-        right.Children.Add(close);
+        if (!systemButtons)
+        {
+            Button minimize = CreateCaptionButton(Strings.TitleBar_Minimize, "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
+            minimize.Click += (_, _) => WindowState = WindowState.Minimized;
+            Button maximize = CreateCaptionButton(Strings.TitleBar_Maximize, MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
+            _maximizeButton = maximize;
+            _maximizeGlyph = (Shape)maximize.Content!;
+            maximize.Click += (_, _) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            Button close = CreateCaptionButton(Strings.Command_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
+            close.Classes.Add("close");
+            close.Click += (_, _) => Close();
+            right.Children.Add(minimize);
+            right.Children.Add(maximize);
+            right.Children.Add(close);
+        }
 
         TitleBarPanel content = new();
         content.Children.Add(left);
@@ -410,7 +414,14 @@ public sealed partial class PixelEditorWindow
 
         PropertyChanged += (_, e) =>
         {
-            if (e.Property == WindowStateProperty) UpdateMaximizeGlyph();
+            if (e.Property == WindowStateProperty)
+            {
+                UpdateMaximizeGlyph();
+                if (systemButtons)
+                {
+                    icon.Margin = new Thickness(WindowState == WindowState.FullScreen ? 10 : 74, 0, 4, 0);
+                }
+            }
         };
         UpdateMaximizeGlyph();
         return bar;
@@ -418,6 +429,7 @@ public sealed partial class PixelEditorWindow
 
     private void UpdateMaximizeGlyph()
     {
+        if (_maximizeButton == null || _maximizeGlyph == null) return;
         bool maximized = WindowState == WindowState.Maximized;
         _maximizeGlyph.Data = Geometry.Parse(maximized ? RestoreGlyph : MaximizeGlyph);
         ToolTip.SetTip(_maximizeButton, maximized ? Strings.TitleBar_Restore : Strings.TitleBar_Maximize);

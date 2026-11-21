@@ -237,7 +237,7 @@
                     BorderThickness="0,0,0,1"
                     chrome:WindowDecorationProperties.ElementRole="TitleBar">
                 <Grid ColumnDefinitions="*,Auto">
-                    <StackPanel Margin="14,0,12,0"
+                    <StackPanel Margin="{Binding TitleBarContentMargin}"
                                 Orientation="Horizontal"
                                 Spacing="9"
                                 VerticalAlignment="Center"
@@ -284,6 +284,7 @@
                             </Grid>
                         </Button>
                         <Button Classes="caption-button"
+                                IsVisible="{Binding ShowCustomCaptionButtons}"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_Minimize}"
                                 Click="OnMinimizeClick"
                                 chrome:WindowDecorationProperties.ElementRole="MinimizeButton">
@@ -291,6 +292,7 @@
                                                     FontSize="16"/>
                         </Button>
                         <Button Classes="caption-button"
+                                IsVisible="{Binding ShowCustomCaptionButtons}"
                                 AutomationProperties.Name="{x:Static res:Strings.MainWindow_MaximizeOrRestore}"
                                 Click="OnMaximizeRestoreClick"
                                 chrome:WindowDecorationProperties.ElementRole="MaximizeButton">
@@ -304,6 +306,7 @@
                             </Grid>
                         </Button>
                         <Button Classes="caption-button caption-close"
+                                IsVisible="{Binding ShowCustomCaptionButtons}"
                                 Classes.maximized="{Binding IsWindowMaximized}"
                                 AutomationProperties.Name="{x:Static res:Strings.ActionsToolbarWindow_Close}"
                                 Click="OnCloseClick"

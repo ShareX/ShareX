@@ -195,10 +195,12 @@ public class MacServicesTests
         Assert.True(mac.PrefersSystemCursors);
         Assert.True(mac.FullScreenUsesSeparateSpace);
         Assert.True(mac.HidesInsteadOfMinimizing);
+        Assert.True(mac.UsesSystemWindowButtons);
         Assert.False(other.PositionsWindowsInPoints);
         Assert.False(other.PrefersSystemCursors);
         Assert.False(other.FullScreenUsesSeparateSpace);
         Assert.False(other.HidesInsteadOfMinimizing);
+        Assert.False(other.UsesSystemWindowButtons);
         Assert.False(other.CoverScreen(0, new PlatformRectangle(0, 0, 10, 10)));
     }
 

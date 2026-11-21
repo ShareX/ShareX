@@ -31,6 +31,7 @@ using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using ShareX.PhotoEditor.UI.Commands;
+using ShareX.Platform;
 using Path = Avalonia.Controls.Shapes.Path;
 
 namespace ShareX.PhotoEditor.UI;
@@ -38,21 +39,23 @@ namespace ShareX.PhotoEditor.UI;
 public sealed partial class PhotoEditorWindow
 {
     private const double TitleBarHeight = 32;
+    private const double MacTrafficLightInset = 74;
 
     private Border _titleBar = null!;
     private Border _menuHost = null!;
     private TextBlock _titleText = null!;
-    private Button _maximizeButton = null!;
-    private Path _maximizeGlyph = null!;
+    private Button? _maximizeButton;
+    private Path? _maximizeGlyph;
 
     /// <summary>Builds the custom title bar: icon and menu on the left, document name centered, caption buttons on the right.</summary>
     private Border CreateTitleBar()
     {
+        bool systemButtons = PlatformServices.IsInitialized && PlatformServices.Current.Windows.UsesSystemWindowButtons;
         ExtendClientAreaToDecorationsHint = true;
         ExtendClientAreaTitleBarHeightHint = TitleBarHeight;
-        WindowDecorations = WindowDecorations.BorderOnly;
+        WindowDecorations = systemButtons ? WindowDecorations.Full : WindowDecorations.BorderOnly;
 
-        Image icon = new() { Width = 16, Height = 16, Margin = new Thickness(10, 0, 4, 0), Source = LoadTitleBarIcon(), IsHitTestVisible = false, VerticalAlignment = VerticalAlignment.Center };
+        Image icon = new() { Width = 16, Height = 16, Margin = new Thickness(systemButtons ? MacTrafficLightInset : 10, 0, 4, 0), Source = LoadTitleBarIcon(), IsHitTestVisible = false, VerticalAlignment = VerticalAlignment.Center };
         RenderOptions.SetBitmapInterpolationMode(icon, BitmapInterpolationMode.HighQuality);
         _menuHost = new Border { Child = CreateMenu(), VerticalAlignment = VerticalAlignment.Center };
         StackPanel left = new() { Orientation = Orientation.Horizontal };
@@ -61,19 +64,22 @@ public sealed partial class PhotoEditorWindow
 
         _titleText = new TextBlock { TextTrimming = TextTrimming.CharacterEllipsis, VerticalAlignment = VerticalAlignment.Center, Margin = new Thickness(12, 0), Text = Strings.PhotoEditorWindow_PhotoEditor, Classes = { "dim" } };
 
-        Button minimize = CreateCaptionButton(Strings.TitleBar_Minimize, "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
-        minimize.Click += (_, _) => WindowState = WindowState.Minimized;
-        Button maximize = CreateCaptionButton(Strings.TitleBar_Maximize, MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
-        _maximizeButton = maximize;
-        _maximizeGlyph = (Path)maximize.Content!;
-        maximize.Click += (_, _) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
-        Button close = CreateCaptionButton(Strings.EditorCommands_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
-        close.Classes.Add("close");
-        close.Click += (_, _) => Close();
         StackPanel right = new() { Orientation = Orientation.Horizontal };
-        right.Children.Add(minimize);
-        right.Children.Add(maximize);
-        right.Children.Add(close);
+        if (!systemButtons)
+        {
+            Button minimize = CreateCaptionButton(Strings.TitleBar_Minimize, "M0 5.5 H10", WindowDecorationsElementRole.MinimizeButton);
+            minimize.Click += (_, _) => WindowState = WindowState.Minimized;
+            Button maximize = CreateCaptionButton(Strings.TitleBar_Maximize, MaximizeGlyph, WindowDecorationsElementRole.MaximizeButton);
+            _maximizeButton = maximize;
+            _maximizeGlyph = (Path)maximize.Content!;
+            maximize.Click += (_, _) => WindowState = WindowState == WindowState.Maximized ? WindowState.Normal : WindowState.Maximized;
+            Button close = CreateCaptionButton(Strings.EditorCommands_Close, "M0 0 L10 10 M10 0 L0 10", WindowDecorationsElementRole.CloseButton);
+            close.Classes.Add("close");
+            close.Click += (_, _) => Close();
+            right.Children.Add(minimize);
+            right.Children.Add(maximize);
+            right.Children.Add(close);
+        }
 
         TitleBarPanel content = new();
         content.Children.Add(left);
@@ -85,7 +91,14 @@ public sealed partial class PhotoEditorWindow
 
         PropertyChanged += (_, e) =>
         {
-            if (e.Property == WindowStateProperty) UpdateMaximizeGlyph();
+            if (e.Property == WindowStateProperty)
+            {
+                UpdateMaximizeGlyph();
+                if (systemButtons)
+                {
+                    icon.Margin = new Thickness(WindowState == WindowState.FullScreen ? 10 : MacTrafficLightInset, 0, 4, 0);
+                }
+            }
         };
         UpdateMaximizeGlyph();
         return bar;
@@ -96,6 +109,7 @@ public sealed partial class PhotoEditorWindow
 
     private void UpdateMaximizeGlyph()
     {
+        if (_maximizeButton == null || _maximizeGlyph == null) return;
         bool maximized = WindowState == WindowState.Maximized;
         _maximizeGlyph.Data = Geometry.Parse(maximized ? RestoreGlyph : MaximizeGlyph);
         ToolTip.SetTip(_maximizeButton, maximized ? Strings.TitleBar_Restore : Strings.TitleBar_Maximize);
