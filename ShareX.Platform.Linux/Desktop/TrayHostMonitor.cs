@@ -44,13 +44,16 @@ internal sealed class TrayHostMonitor
     private readonly TimeSpan grace;
     private readonly object syncRoot = new object();
     private bool hadHost;
+    private bool wasLocked;
     private DateTime? missingSince;
 
     public TrayHostMonitor(Func<bool> hostPresent, Func<bool> screenLocked, Func<DateTime>? now = null, TimeSpan? grace = null)
     {
         this.hostPresent = hostPresent;
         this.screenLocked = screenLocked;
-        this.now = now ?? (() => DateTime.UtcNow);
+        // Environment.TickCount64 reads CLOCK_MONOTONIC on Linux, which pauses while the machine is suspended so sleeping
+        // through a lock screen never burns the post-unlock grace period.
+        this.now = now ?? (() => DateTime.UnixEpoch + TimeSpan.FromMilliseconds(Environment.TickCount64));
         this.grace = grace ?? TimeSpan.FromSeconds(20);
     }
 
@@ -61,6 +64,7 @@ internal sealed class TrayHostMonitor
             if (hostPresent())
             {
                 hadHost = true;
+                wasLocked = false;
                 missingSince = null;
                 return true;
             }
@@ -74,7 +78,15 @@ internal sealed class TrayHostMonitor
 
             if (screenLocked())
             {
-                // The wait starts when the screen is unlocked.
+                wasLocked = true;
+                missingSince = null;
+                return true;
+            }
+
+            if (wasLocked)
+            {
+                // The wait starts on the first check after unlocking, even if the system suspended while locked.
+                wasLocked = false;
                 missingSince = time;
                 return true;
             }

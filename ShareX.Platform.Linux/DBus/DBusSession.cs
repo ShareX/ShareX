@@ -42,6 +42,8 @@ internal static class DBusSession
 
     private static readonly SemaphoreSlim connectLock = new SemaphoreSlim(1, 1);
     private static DBusConnection? connection;
+    private static readonly SemaphoreSlim systemConnectLock = new SemaphoreSlim(1, 1);
+    private static DBusConnection? systemConnection;
 
     /// <summary>Null when registration succeeded or was not needed; otherwise why the portal did not accept ShareX's application id.</summary>
     public static string? RegistrationError { get; private set; }
@@ -160,34 +162,141 @@ internal static class DBusSession
         }
     }
 
+    /// <summary>Shared connection to the system bus (for systemd-logind session state).</summary>
+    public static async Task<DBusConnection> GetSystemConnectionAsync(CancellationToken cancellationToken = default)
+    {
+        DBusConnection? existing = Volatile.Read(ref systemConnection);
+
+        if (existing != null)
+        {
+            return existing;
+        }
+
+        await systemConnectLock.WaitAsync(cancellationToken).ConfigureAwait(false);
+
+        try
+        {
+            if (systemConnection == null)
+            {
+                string? address = DBusAddress.System;
+
+                if (string.IsNullOrEmpty(address))
+                {
+                    throw new PlatformNotSupportedException("No D-Bus system bus is available.");
+                }
+
+                DBusConnection created = new DBusConnection(address);
+
+                try
+                {
+                    await created.ConnectAsync().ConfigureAwait(false);
+                }
+                catch
+                {
+                    created.Dispose();
+                    throw;
+                }
+
+                Volatile.Write(ref systemConnection, created);
+            }
+
+            return systemConnection;
+        }
+        finally
+        {
+            systemConnectLock.Release();
+        }
+    }
+
     /// <summary>
-    /// Whether the desktop's lock screen is showing, asked of GNOME's screen saver and then of the freedesktop.org one that
-    /// KDE Plasma and others provide. False when neither answers.
+    /// Whether the desktop's lock screen is showing, asked of GNOME's screen saver / screen shield, the freedesktop.org screen
+    /// saver, and systemd-logind's LockedHint on the system bus. False when none reports locked.
     /// </summary>
     public static bool IsScreenLocked()
     {
-        if (!IsAvailable)
+        if (IsAvailable)
+        {
+            foreach ((string destination, string path, string iface) in new[]
+            {
+                ("org.gnome.ScreenSaver", "/org/gnome/ScreenSaver", "org.gnome.ScreenSaver"),
+                ("org.gnome.Shell.ScreenShield", "/org/gnome/ScreenSaver", "org.gnome.ScreenSaver"),
+                ("org.freedesktop.ScreenSaver", "/org/freedesktop/ScreenSaver", "org.freedesktop.ScreenSaver")
+            })
+            {
+                try
+                {
+                    bool active = RunSync(async () =>
+                    {
+                        DBusConnection bus = await GetConnectionAsync().ConfigureAwait(false);
+                        MessageBuffer call = CreateMethodCall(bus, destination, path, iface, "GetActive", null, null);
+                        return await bus.CallMethodAsync(call, static (Message message, object? state) => message.GetBodyReader().ReadBool(), null).ConfigureAwait(false);
+                    }, TimeSpan.FromSeconds(2));
+
+                    if (active)
+                    {
+                        return true;
+                    }
+                }
+                catch (Exception e) when (e is TimeoutException || IsExpectedFailure(e is AggregateException { InnerException: Exception inner } ? inner : e))
+                {
+                }
+            }
+        }
+
+        return IsLogindSessionLocked();
+    }
+
+    /// <summary>
+    /// Checks systemd-logind's <c>LockedHint</c> for the current graphical session on the system bus. GNOME Shell updates this
+    /// property whenever its lock shield activates or unlocks, including when legacy ScreenSaver proxies are unavailable.
+    /// </summary>
+    internal static bool IsLogindSessionLocked()
+    {
+        if (string.IsNullOrEmpty(DBusAddress.System))
         {
             return false;
         }
 
-        foreach ((string name, string path) in new[] { ("org.gnome.ScreenSaver", "/org/gnome/ScreenSaver"), ("org.freedesktop.ScreenSaver", "/org/freedesktop/ScreenSaver") })
+        try
         {
-            try
+            return RunSync(async () =>
             {
-                return RunSync(async () =>
-                {
-                    DBusConnection bus = await GetConnectionAsync().ConfigureAwait(false);
-                    MessageBuffer call = CreateMethodCall(bus, name, path, name, "GetActive", null, null);
-                    return await bus.CallMethodAsync(call, static (Message message, object? state) => message.GetBodyReader().ReadBool(), null).ConfigureAwait(false);
-                }, TimeSpan.FromSeconds(2));
-            }
-            catch (Exception e) when (e is TimeoutException || IsExpectedFailure(e is AggregateException { InnerException: Exception inner } ? inner : e))
-            {
-            }
-        }
+                DBusConnection bus = await GetSystemConnectionAsync().ConfigureAwait(false);
 
-        return false;
+                try
+                {
+                    return await ReadLogindLockedHintAsync(bus, "/org/freedesktop/login1/session/auto").ConfigureAwait(false);
+                }
+                catch (Exception e) when (IsExpectedFailure(e))
+                {
+                }
+
+                MessageBuffer lookup = CreateMethodCall(bus, "org.freedesktop.login1", "/org/freedesktop/login1",
+                    "org.freedesktop.login1.Manager", "GetSessionByPID", "u",
+                    (ref MessageWriter writer) => writer.WriteUInt32((uint)Environment.ProcessId));
+                ObjectPath sessionPath = await bus.CallMethodAsync(lookup,
+                    static (Message message, object? state) => message.GetBodyReader().ReadObjectPath(), null).ConfigureAwait(false);
+
+                return await ReadLogindLockedHintAsync(bus, sessionPath.ToString()).ConfigureAwait(false);
+            }, TimeSpan.FromSeconds(2));
+        }
+        catch (Exception e) when (e is TimeoutException || IsExpectedFailure(e is AggregateException { InnerException: Exception inner } ? inner : e))
+        {
+            return false;
+        }
+    }
+
+    private static Task<bool> ReadLogindLockedHintAsync(DBusConnection bus, string sessionPath)
+    {
+        MessageBuffer call = CreateMethodCall(bus, "org.freedesktop.login1", sessionPath,
+            "org.freedesktop.DBus.Properties", "Get", "ss",
+            (ref MessageWriter writer) =>
+            {
+                writer.WriteString("org.freedesktop.login1.Session");
+                writer.WriteString("LockedHint");
+            });
+
+        return bus.CallMethodAsync(call, static (Message message, object? state) => message.GetBodyReader().ReadVariantValue().GetBool(), null);
     }
 
     public delegate void BodyWriter(ref MessageWriter writer);

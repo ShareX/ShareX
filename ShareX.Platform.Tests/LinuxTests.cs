@@ -1309,3 +1309,39 @@ public class KWinWindowPlacementTests
         Assert.Contains("const caption=null;", script);
     }
 }
+
+public class TrayHostMonitorLockTests
+{
+    [Fact]
+    public void TrayHostMonitor_StartsGracePeriodAfterUnlockEvenAfterLongGap()
+    {
+        bool host = true, locked = false;
+        DateTime time = new DateTime(2026, 11, 17, 22, 0, 0, DateTimeKind.Utc);
+        Linux.Desktop.TrayHostMonitor monitor = new Linux.Desktop.TrayHostMonitor(() => host, () => locked, () => time, TimeSpan.FromSeconds(20));
+        Assert.True(monitor.IsHostAvailable());
+
+        // Lock screen appears and GNOME disables the AppIndicator extension.
+        host = false;
+        locked = true;
+        Assert.True(monitor.IsHostAvailable());
+
+        // Laptop suspends for two hours, then wakes and the user authenticates before the extension re-enables.
+        time = time.AddHours(2);
+        locked = false;
+        Assert.True(monitor.IsHostAvailable());
+
+        // Grace window starts at unlock, not before suspend.
+        time = time.AddSeconds(10);
+        Assert.True(monitor.IsHostAvailable());
+
+        host = true;
+        Assert.True(monitor.IsHostAvailable());
+    }
+
+    [LinuxFact]
+    public void DBusSession_LogindLockCheckRunsCleanly()
+    {
+        // Verifies the system bus query for org.freedesktop.login1 LockedHint runs without throwing.
+        _ = ShareX.Platform.Linux.DBus.DBusSession.IsLogindSessionLocked();
+    }
+}
