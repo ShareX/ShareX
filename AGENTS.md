@@ -24,7 +24,8 @@ McoreD has handed the `cross-platform` branch to the coding agent that maintains
 
 ## Git
 
-- Work on `cross-platform` (named `cross-platform-v2` until 2026-11-04; the first attempt that used this name is gone). `develop` is the release line (v22.x, the Photo Editor, the native Windows recorder); merge it into `cross-platform` whenever it moves, porting new Windows-only code behind `ShareX.Platform`.
+- **Before making any modifications on `cross-platform`, always fetch `origin` and merge the latest `origin/develop` into `cross-platform` first** (porting any new Windows-only code behind `ShareX.Platform` and verifying the Release build and all test projects pass).
+- Work on `cross-platform` (named `cross-platform-v2` until 2026-11-04; the first attempt that used this name is gone). `develop` is the release line (v22.x, the Photo Editor, the native Windows recorder); keep it merged into `cross-platform` whenever it moves.
 - Pull before starting and rebase before pushing. **Never force push** and never rewrite pushed history; undo with `git revert`.
 - When a merge or rebase conflicts in this file or the docs, combine both sides; do not throw away the other side's text.
 
