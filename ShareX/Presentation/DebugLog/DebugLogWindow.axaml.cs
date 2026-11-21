@@ -51,6 +51,7 @@ public partial class DebugLogWindow : Window
 
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        KeyDown += OnWindowKeyDown;
     }
 
     public DebugLogWindow(Logger logger, Action<string>? uploadRequested, string uploadWarning) : this()
@@ -179,6 +180,25 @@ public partial class DebugLogWindow : Window
     private void OnClosed(object? sender, EventArgs e)
     {
         _logger.MessageAdded -= OnLoggerMessageAdded;
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key != Key.Escape)
+        {
+            return;
+        }
+
+        if (UploadConfirmationOverlay.IsVisible)
+        {
+            UploadConfirmationOverlay.IsVisible = false;
+            e.Handled = true;
+        }
+        else
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private static string? GetUrlAtCaret(string text, int caretIndex)

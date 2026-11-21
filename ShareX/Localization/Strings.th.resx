@@ -430,6 +430,9 @@
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>คำอธิบาย</value>
   </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>คำอธิบายต้องไม่ว่างเปล่า</value>
+  </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>โหมดนักพัฒนา</value>
   </data>
@@ -507,6 +510,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>รูปแบบ</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>รูปแบบต้องไม่ว่างเปล่า</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>ทั่วไป</value>

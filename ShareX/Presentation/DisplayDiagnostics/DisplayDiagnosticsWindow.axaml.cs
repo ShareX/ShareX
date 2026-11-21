@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Input.Platform;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
@@ -62,6 +63,7 @@ public partial class DisplayDiagnosticsWindow : Window
 
         Opened += (_, _) => RefreshReport();
         Closed += (_, _) => _statusTimer.Stop();
+        KeyDown += OnWindowKeyDown;
     }
 
     private void RefreshReport()
@@ -151,5 +153,14 @@ public partial class DisplayDiagnosticsWindow : Window
         StatusPanel.Opacity = 1;
         _statusTimer.Stop();
         _statusTimer.Start();
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
+        {
+            e.Handled = true;
+            Close();
+        }
     }
 }

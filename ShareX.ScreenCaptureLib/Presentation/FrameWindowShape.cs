@@ -103,11 +103,25 @@ internal static class FrameWindowShape
         }
     }
 
+    // WS_EX_TOOLWINDOW: keeps Chrome from treating transparent capture overlays as occluding, and keeps tools like
+    // MicaForEveryone from putting a system backdrop onto newly shown transparent capture frames on Windows (#9242).
+    private const uint Win32ExStyleToolWindow = 0x00000080;
+
+    /// <summary>
+    /// Marks a capture frame or overlay as a tool window before it is first shown and preserves the style whenever Avalonia
+    /// rewrites window styles on Windows. Harmless on non-Windows backends.
+    /// </summary>
+    public static void PrepareToolWindowStyle(Window window)
+    {
+        Win32Properties.AddWindowStylesCallback(window, (style, exStyle) => (style, exStyle | Win32ExStyleToolWindow));
+        SetOverlayStyle(window, clickThrough: false);
+    }
+
     public static void SetOverlayStyle(Window window, bool clickThrough)
     {
         long handle = GetHandle(window);
 
-        if (handle != 0)
+        if (handle != 0 && PlatformServices.IsInitialized)
         {
             PlatformServices.Current.Windows.SetOverlayStyle(handle, clickThrough);
         }

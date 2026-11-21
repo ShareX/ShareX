@@ -93,11 +93,13 @@ namespace ShareX.ImageEditor.Presentation.ViewModels
             IsModalOpen = true;
         }
 
-        internal bool TrySelectToolForToolbarHotkey(Key key, KeyModifiers modifiers)
+        /// <summary>Uses the toolbar item with this hotkey, if there is one.</summary>
+        public bool TrySelectToolForToolbarHotkey(Key key, KeyModifiers modifiers)
         {
+            // Items hidden from the toolbar keep their shortcuts, so a tool can be used from the keyboard without a button.
             foreach (ToolbarCustomizationItemViewModel item in _toolbarItems)
             {
-                if (item.IsVisible && item.Hotkeys.Any(hotkey => ToolbarHotkeyHelper.Matches(hotkey, key, modifiers)))
+                if (item.Hotkeys.Any(hotkey => ToolbarHotkeyHelper.Matches(hotkey, key, modifiers)))
                 {
                     ExecuteToolbarItem(item);
                     return true;

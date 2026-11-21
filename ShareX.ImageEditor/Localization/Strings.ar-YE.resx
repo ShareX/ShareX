@@ -273,6 +273,9 @@
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>مؤشر انتظار</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>اسحب لنقل شريط الأدوات، وانقر نقرًا مزدوجًا لإعادة تعيين موضعه</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>تم فتح الإنجاز!</value>
   </data>
@@ -1389,8 +1392,14 @@
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>يمين</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>بدء مجموعة</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>كل العناصر موجودة على شريط الأدوات.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>العناصر المتاحة</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>فاصل فارغ</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>إلغاء</value>
@@ -1401,17 +1410,14 @@
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>تخصيص شريط الأدوات</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>اسحب العناصر إلى شريط الأدوات لإظهارها، أو خارجه لإخفائها. اسحب فاصلًا بين العناصر لتقسيمها إلى مجموعات.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>يستخدم {0} و{1} الاختصار نفسه ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>اختصار غير صالح لـ {0}. استخدم تنسيقات مثل R أو Ctrl+R أو Ctrl+Shift+R.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>تحريك لأسفل</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>تحريك لأعلى</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>موافق</value>
@@ -1425,8 +1431,11 @@
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>ثانوي</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>إظهار / إخفاء</value>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>فاصل</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>فاصل. اسحب حافته اليمنى لتغيير عرضه.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>سهم</value>

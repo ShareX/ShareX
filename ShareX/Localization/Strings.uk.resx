@@ -430,6 +430,9 @@
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Опис</value>
   </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>Опис не може бути порожнім.</value>
+  </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Режим розробника</value>
   </data>
@@ -507,6 +510,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Формат</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>Формат не може бути порожнім.</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>Загальні</value>

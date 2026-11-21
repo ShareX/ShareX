@@ -430,6 +430,9 @@
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Descripción</value>
   </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>La descripción no puede estar vacía.</value>
+  </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Modo desarrollador</value>
   </data>
@@ -507,6 +510,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Formato</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>El formato no puede estar vacío.</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>General</value>

@@ -36,4 +36,5 @@ public sealed record ToolbarHostItemDefinition(
     string Icon,
     string DefaultHotkey = "",
     bool IsVisibleByDefault = true,
-    bool BeginGroupByDefault = false);
+    bool BeginGroupByDefault = false,
+    string DefaultSecondaryHotkey = "");

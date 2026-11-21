@@ -44,6 +44,11 @@
             <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
         </Style>
 
+        <!-- A blank spacer keeps the separator's space but not its line. -->
+        <Style Selector="Border.toolbar-separator.line-hidden">
+            <Setter Property="Opacity" Value="0"/>
+        </Style>
+
         <Style Selector="Border.option-indicator">
             <Setter Property="Width" Value="40"/>
             <Setter Property="Height" Value="40"/>
@@ -146,8 +151,12 @@
                         <ItemsControl.ItemTemplate>
                             <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
                                 <StackPanel Classes="toolbar-row">
-                                    <Border Classes="toolbar-separator"
-                                            IsVisible="{Binding IsGroupSeparatorVisible}"/>
+                                    <!-- The panel adds the group's extra spacer width around the line. -->
+                                    <Panel Margin="{Binding SpacerMargin}"
+                                           IsVisible="{Binding IsGroupSeparatorVisible}">
+                                        <Border Classes="toolbar-separator"
+                                                Classes.line-hidden="{Binding !ShowSpacerLine}"/>
+                                    </Panel>
                                     <Button Classes="toolbar-button"
                                             ToolTip.Tip="{Binding ToolTip}"
                                             x:Name="FileMenuButton"

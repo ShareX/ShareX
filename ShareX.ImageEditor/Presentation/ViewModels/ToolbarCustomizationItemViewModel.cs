@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using Avalonia;
 using ShareX.ImageEditor.Core.Annotations;
 using ShareX.ImageEditor.Integration;
 using ShareX.ImageEditor.Localization;
@@ -35,6 +36,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     public const string BackgroundItemId = "Background";
     public const string ImageEffectsItemId = "ImageEffects";
     public const string CanvasSizeItemId = "CanvasSize";
+
+    /// <summary>The most extra space a group separator can have, in pixels.</summary>
+    public const int MaxSpacerWidth = 96;
 
     private sealed record ToolbarItemDefinition(
         string Id,
@@ -84,9 +88,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     private bool _isVisible = true;
     private bool _isActive;
-    private bool _canMoveUp;
-    private bool _canMoveDown;
     private bool _beginGroup;
+    private int _spacerWidth;
+    private bool _showSpacerLine = true;
     private string _hotkey = "";
     private string _secondaryHotkey = "";
 
@@ -99,6 +103,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         string secondaryHotkey,
         bool isVisible,
         bool beginGroup,
+        int spacerWidth,
+        bool showSpacerLine,
         bool isHotkeyEditable,
         bool isVisibilityEditable,
         bool isHostItem)
@@ -111,6 +117,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         _secondaryHotkey = secondaryHotkey;
         _isVisible = isVisible;
         _beginGroup = beginGroup;
+        _spacerWidth = ClampSpacerWidth(spacerWidth);
+        _showSpacerLine = showSpacerLine;
         IsHotkeyEditable = isHotkeyEditable;
         IsVisibilityEditable = isVisibilityEditable;
         IsHostItem = isHostItem;
@@ -177,18 +185,6 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         set => SetProperty(ref _isActive, value);
     }
 
-    public bool CanMoveUp
-    {
-        get => _canMoveUp;
-        set => SetProperty(ref _canMoveUp, value);
-    }
-
-    public bool CanMoveDown
-    {
-        get => _canMoveDown;
-        set => SetProperty(ref _canMoveDown, value);
-    }
-
     public bool BeginGroup
     {
         get => _beginGroup;
@@ -200,6 +196,31 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             }
         }
     }
+
+    /// <summary>Extra space in pixels around the group separator before this item.</summary>
+    public int SpacerWidth
+    {
+        get => _spacerWidth;
+        set
+        {
+            if (SetProperty(ref _spacerWidth, ClampSpacerWidth(value)))
+            {
+                OnPropertyChanged(nameof(SpacerMargin));
+            }
+        }
+    }
+
+    /// <summary>Whether the group separator before this item draws its line. Without it only the space is left.</summary>
+    public bool ShowSpacerLine
+    {
+        get => _showSpacerLine;
+        set => SetProperty(ref _showSpacerLine, value);
+    }
+
+    /// <summary>Splits <see cref="SpacerWidth"/> evenly to both sides of the separator line.</summary>
+    public Thickness SpacerMargin => new(SpacerWidth / 2, 0, SpacerWidth - SpacerWidth / 2, 0);
+
+    public static int ClampSpacerWidth(int width) => Math.Clamp(width, 0, MaxSpacerWidth);
 
     public bool IsButtonVisible => IsVisible;
     public bool IsGroupSeparatorVisible => IsVisible && BeginGroup;
@@ -242,11 +263,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     public ToolbarCustomizationItemViewModel Clone()
     {
-        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, IsHotkeyEditable, IsVisibilityEditable, IsHostItem)
+        return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, SpacerWidth, ShowSpacerLine, IsHotkeyEditable, IsVisibilityEditable, IsHostItem)
         {
-            IsActive = IsActive,
-            CanMoveUp = CanMoveUp,
-            CanMoveDown = CanMoveDown
+            IsActive = IsActive
         };
     }
 
@@ -256,6 +275,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         {
             Id = Id,
             BeginGroup = BeginGroup,
+            SpacerWidth = BeginGroup ? SpacerWidth : 0,
+            HideSpacerLine = BeginGroup && !ShowSpacerLine,
             IsVisible = !IsVisibilityEditable || IsVisible,
             Hotkey = IsHotkeyEditable ? Hotkey.Trim() : "",
             SecondaryHotkey = IsHotkeyEditable ? SecondaryHotkey.Trim() : ""
@@ -282,7 +303,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     {
         List<ToolbarItemDefinition> definitions = hostItems
             .Select(item => new ToolbarItemDefinition(item.Id, null, item.Name, item.Icon, item.DefaultHotkey, true, true,
-                item.BeginGroupByDefault, IsVisibleByDefault: item.IsVisibleByDefault, IsHostItem: true))
+                item.BeginGroupByDefault, item.DefaultSecondaryHotkey, item.IsVisibleByDefault, IsHostItem: true))
             .Concat(ItemDefinitions)
             .ToList();
 
@@ -312,7 +333,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         {
             if (definitionsById.TryGetValue(option.Id, out ToolbarItemDefinition? definition))
             {
-                items.Add(CreateItem(definition, option.IsVisible, option.Hotkey, option.SecondaryHotkey, option.BeginGroup));
+                items.Add(CreateItem(definition, option.IsVisible, option.Hotkey, option.SecondaryHotkey, option.BeginGroup, option.SpacerWidth, !option.HideSpacerLine));
                 usedToolIds.Add(option.Id);
             }
         }
@@ -339,7 +360,9 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         bool? isVisible = null,
         string? hotkey = null,
         string? secondaryHotkey = null,
-        bool? beginGroup = null)
+        bool? beginGroup = null,
+        int spacerWidth = 0,
+        bool showSpacerLine = true)
     {
         return new ToolbarCustomizationItemViewModel(
             definition.Id,
@@ -350,6 +373,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
             definition.IsHotkeyEditable ? secondaryHotkey ?? definition.DefaultSecondaryHotkey : "",
             definition.IsVisibilityEditable ? isVisible ?? definition.IsVisibleByDefault : true,
             beginGroup ?? definition.BeginGroupByDefault,
+            spacerWidth,
+            showSpacerLine,
             definition.IsHotkeyEditable,
             definition.IsVisibilityEditable,
             definition.IsHostItem);

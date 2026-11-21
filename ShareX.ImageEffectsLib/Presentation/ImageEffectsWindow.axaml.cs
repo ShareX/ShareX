@@ -183,6 +183,11 @@ public partial class ImageEffectsWindow : Window
             ViewModel.RefreshPreviewCommand.Execute(null);
             e.Handled = true;
         }
+        else if (e.Key == Key.Escape)
+        {
+            Close();
+            e.Handled = true;
+        }
     }
 
     private void OnDragOver(object? sender, DragEventArgs e)

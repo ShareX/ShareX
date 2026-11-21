@@ -114,7 +114,7 @@ public static class AvaloniaBootstrapper
         ClassicDesktopStyleApplicationLifetime desktop = _earlyDesktopLifetime ?? new();
         desktop.Args = args;
         desktop.ShutdownMode = ShutdownMode.OnExplicitShutdown;
-        desktop.Startup += async (_, _) => await startup();
+        desktop.Startup += (_, _) => Dispatcher.UIThread.Post(async () => await startup());
         desktop.Exit += (_, _) =>
         {
             Interlocked.Exchange(ref _shutdownStarted, 1);

@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media.Imaging;
 using ShareX.AvaloniaUI.Imaging;
@@ -59,6 +60,7 @@ public partial class StatsWindow : Window
         _historyManager = null!;
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
+        KeyDown += OnWindowKeyDown;
     }
 
     public StatsWindow(HistoryManagerSQLite historyManager, Action<SKBitmap>? shareImage) : this()
@@ -400,5 +402,14 @@ public partial class StatsWindow : Window
         }.Where(part => part.Item2 > 0).Select(part => $"{StatsFormat.SeriesName(part.Item1)} {StatsFormat.Number(part.Item2)}");
 
         return string.Join(" · ", parts);
+    }
+
+    private void OnWindowKeyDown(object? sender, KeyEventArgs e)
+    {
+        if (e.Key == Key.Escape)
+        {
+            e.Handled = true;
+            Close();
+        }
     }
 }

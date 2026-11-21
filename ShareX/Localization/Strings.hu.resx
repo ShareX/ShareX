@@ -430,6 +430,9 @@
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Leírás</value>
   </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>A leírás nem lehet üres.</value>
+  </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Fejlesztői mód</value>
   </data>
@@ -507,6 +510,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Formátum</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>A formátum nem lehet üres.</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>Általános</value>

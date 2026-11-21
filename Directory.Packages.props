@@ -12,7 +12,7 @@
     <PackageVersion Include="Microsoft.Win32.SystemEvents" Version="10.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageVersion Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageVersion Include="SSH.NET" Version="2026.0.0" />
+    <PackageVersion Include="SSH.NET" Version="2026.0.1" />
     <PackageVersion Include="System.Drawing.Common" Version="10.0.0" />
     <PackageVersion Include="System.Security.Cryptography.ProtectedData" Version="10.0.0" />
     <PackageVersion Include="Tmds.DBus.Protocol" Version="0.94.1" />

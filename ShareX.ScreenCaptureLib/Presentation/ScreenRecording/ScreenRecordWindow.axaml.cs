@@ -196,6 +196,7 @@ public partial class ScreenRecordWindow : Window, IDisposable
         InitializeComponent();
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         Position = _initialPosition;
+        ApplyToolWindowStyle();
 
         _refreshTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(50) };
         _refreshTimer.Tick += (_, _) => UpdateTimer();
@@ -615,7 +616,8 @@ public partial class ScreenRecordWindow : Window, IDisposable
         Helpers.EnsureWindowPosition(this, _frameLayout.Position.X, _frameLayout.Position.Y);
         WindowGeometryLog.Record(this, "Screen recording frame",
             new DrawingRectangle(_frameLayout.Position.X, _frameLayout.Position.Y, 0, 0));
-        ApplyToolWindowStyle();
+        FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
+        ApplyCaptureExclusion();
         ApplyNativeWindowRegion();
         RunOnUIThread(ApplyNativeWindowRegion, DispatcherPriority.Loaded);
 
@@ -703,9 +705,16 @@ public partial class ScreenRecordWindow : Window, IDisposable
         RunOnUIThread(() => ConfigureGeometry(GetRenderScaling()), DispatcherPriority.Loaded);
     }
 
+    // Mark the frame as a tool window before it is first shown, and keep the style whenever Avalonia rewrites it.
+    // Tools such as MicaForEveryone put a system backdrop on new windows as they appear unless they are tool windows,
+    // which fills the transparent recording area.
     private void ApplyToolWindowStyle()
     {
-        FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
+        FrameWindowShape.PrepareToolWindowStyle(this);
+    }
+
+    private void ApplyCaptureExclusion()
+    {
         if (ExcludeFromCapture && !FrameWindowShape.ExcludeFromCapture(this))
         {
             DebugHelper.WriteLine("Could not exclude the recording controls from capture.");

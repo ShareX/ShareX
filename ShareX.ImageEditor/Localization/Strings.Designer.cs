@@ -640,11 +640,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("SchemaDrivenEffectDialog_Cancel", resourceCulture);
             }
         }
-        public static string ToolbarCustomizationDialogView_Begingroup {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Begingroup", resourceCulture);
-            }
-        }
         public static string ToolbarCustomizationDialogView_Cancel {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Cancel", resourceCulture);
@@ -660,16 +655,6 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_CustomizeToolbar", resourceCulture);
             }
         }
-        public static string ToolbarCustomizationDialogView_Movedown {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Movedown", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_Moveup {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_Moveup", resourceCulture);
-            }
-        }
         public static string ToolbarCustomizationDialogView_OK {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_OK", resourceCulture);
@@ -678,11 +663,6 @@ namespace ShareX.ImageEditor.Localization {
         public static string ToolbarCustomizationDialogView_Resettoolbartodefault {
             get {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_Resettoolbartodefault", resourceCulture);
-            }
-        }
-        public static string ToolbarCustomizationDialogView_ShowHide {
-            get {
-                return ResourceManager.GetString("ToolbarCustomizationDialogView_ShowHide", resourceCulture);
             }
         }
         public static string ZoomPickerDropdown_ZoomtoFit {
@@ -2513,6 +2493,41 @@ namespace ShareX.ImageEditor.Localization {
         public static string AnnotationToolbar_Autosizetotext {
             get {
                 return ResourceManager.GetString("AnnotationToolbar_Autosizetotext", resourceCulture);
+            }
+        }
+        public static string EditorBuiltInToolbars_MoveToolbar {
+            get {
+                return ResourceManager.GetString("EditorBuiltInToolbars_MoveToolbar", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_AllItemsOnToolbar {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AllItemsOnToolbar", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_AvailableItems {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_AvailableItems", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_BlankSpacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_BlankSpacer", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_DragHint {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_DragHint", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_Spacer {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_Spacer", resourceCulture);
+            }
+        }
+        public static string ToolbarCustomizationDialogView_SpacerToolTip {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerToolTip", resourceCulture);
             }
         }
     }

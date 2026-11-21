@@ -13,211 +13,343 @@
              x:Name="ToolbarCustomizationDialogRoot"
              x:DataType="vm:ToolbarCustomizationDialogViewModel">
 
-    <!-- ShareX's .active styles only target Button, so give the checked "Begin group" toggle the same accent
-         fill with readable content instead of Fluent's defaults. -->
     <UserControl.Styles>
-        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <!-- Toolbar slots and available item tiles: flat buttons that can be dragged. -->
+        <Style Selector="Button.slot">
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="MinWidth" Value="0"/>
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text}"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
-        <Style Selector="ToggleButton:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <Style Selector="Button.slot /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
-        <Style Selector="ToggleButton:checked:pressed /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <Style Selector="Button.slot:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
         </Style>
-        <Style Selector="ToggleButton:checked iconControls|IconPresenter">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
+        <Style Selector="Button.slot.selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        </Style>
+        <Style Selector="Button.slot.dragging">
+            <Setter Property="Opacity" Value="0.35"/>
+        </Style>
+        <Style Selector="Button.toolbar-slot">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+        <Style Selector="Button.toolbar-slot.file">
+            <Setter Property="Width" Value="54"/>
+        </Style>
+        <!-- A spacer slot is as wide as its content, which follows the spacer width. -->
+        <Style Selector="Button.toolbar-slot.spacer">
+            <Setter Property="Width" Value="NaN"/>
+        </Style>
+        <Style Selector="Border.spacer-grip">
+            <Setter Property="Width" Value="6"/>
+            <Setter Property="Margin" Value="0,6"/>
+            <Setter Property="CornerRadius" Value="2"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Cursor" Value="SizeWestEast"/>
+        </Style>
+        <Style Selector="Button.toolbar-slot.spacer:pointerover Border.spacer-grip, Button.toolbar-slot.spacer.resizing Border.spacer-grip">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Border}"/>
+        </Style>
+        <Style Selector="Border.spacer-grip:pointerover, Button.toolbar-slot.spacer.resizing Border.spacer-grip">
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
+        </Style>
+        <Style Selector="Button.palette-tile">
+            <Setter Property="Width" Value="84"/>
+            <Setter Property="Height" Value="72"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+        <Style Selector="Border.spacer-line">
+            <Setter Property="Width" Value="1"/>
+            <Setter Property="Height" Value="26"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Separator}"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <!-- A blank spacer has no line on the real toolbar; a dashed one here keeps it easy to find and drag. -->
+        <Style Selector="Line.spacer-dash">
+            <Setter Property="StartPoint" Value="0.5,0"/>
+            <Setter Property="EndPoint" Value="0.5,26"/>
+            <Setter Property="Stroke" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
+            <Setter Property="StrokeThickness" Value="1"/>
+            <Setter Property="StrokeDashArray" Value="2,3"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <Style Selector="Border.drop-area">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="CornerRadius" Value="4"/>
+        </Style>
+        <Style Selector="Border.drop-area.drop-target">
+            <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Accent}"/>
+            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Control.Background.Hover}"/>
+        </Style>
+        <Style Selector="TextBlock.caption">
+            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Text.Secondary}"/>
         </Style>
     </UserControl.Styles>
 
-    <Border Background="{DynamicResource ShareX.Brush.Background.Popup}"
-            BorderBrush="{DynamicResource ShareX.Brush.Border}"
-            BorderThickness="1"
-            CornerRadius="4"
-            Padding="0"
-            Width="720"
-            MaxHeight="620"
-            BoxShadow="0 4 10 0 #40000000">
-        <Grid RowDefinitions="Auto,*,Auto" Background="{DynamicResource ShareX.Brush.Background.Panel}">
-            <Border Grid.Row="0"
-                    Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="0,0,0,1"
-                    Padding="14,8">
-                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
-                    <TextBlock Text="{x:Static res:Strings.ToolbarCustomizationDialogView_CustomizeToolbar}" FontSize="15" VerticalAlignment="Center"/>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
-                        <Button
-                                Command="{Binding ResetCommand}"
-                                Height="32"
-                                Padding="10,0"
-                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Resettoolbartodefault}"/>
-                    </StackPanel>
-                </Grid>
-            </Border>
-
-            <Grid Grid.Row="1" Margin="14">
-                <Border
+    <Panel>
+        <!-- The width follows the space the host gives the dialog; see MeasureOverride. -->
+        <Border x:Name="DialogBorder"
+                Background="{DynamicResource ShareX.Brush.Background.Popup}"
+                BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                BorderThickness="1"
+                CornerRadius="4"
+                Padding="0"
+                Width="720"
+                MaxHeight="640"
+                BoxShadow="0 4 10 0 #40000000">
+            <Grid RowDefinitions="Auto,*,Auto,Auto" Background="{DynamicResource ShareX.Brush.Background.Panel}">
+                <Border Grid.Row="0"
+                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                         BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                        BorderThickness="1"
-                        CornerRadius="4">
-                    <DockPanel>
-                        <Border DockPanel.Dock="Top"
-                                BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                                BorderThickness="0,0,0,1"
-                                Padding="8,6,16,6">
-                            <StackPanel Orientation="Horizontal"
-                                        Spacing="8"
-                                        HorizontalAlignment="Right">
-                                <TextBlock Width="130"
-                                           TextAlignment="Center"
-                                           TextTrimming="CharacterEllipsis"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           Text="{x:Static res:Strings.ToolbarCustomizationDialogView_Primary}"/>
-                                <TextBlock Width="130"
-                                           TextAlignment="Center"
-                                           TextTrimming="CharacterEllipsis"
-                                           Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                           Text="{x:Static res:Strings.ToolbarCustomizationDialogView_Secondary}"/>
-                            </StackPanel>
-                        </Border>
-                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Padding="0,0,8,0">
-                            <ItemsControl ItemsSource="{Binding Items}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
-                                        <Border BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                                                BorderThickness="0,0,0,1"
-                                                Padding="8">
-                                            <DockPanel LastChildFill="True"
-                                                       VerticalAlignment="Center">
-                                                <StackPanel DockPanel.Dock="Right"
-                                                            Orientation="Horizontal"
-                                                            Spacing="8"
-                                                            VerticalAlignment="Center">
-                                                    <TextBox Width="130"
-                                                             Text="{Binding HotkeyDisplayText, Mode=OneWay}"
-                                                             IsEnabled="{Binding IsHotkeyEditable}"
-                                                             TextAlignment="Center"
-                                                             IsReadOnly="True"
-                                                             VerticalAlignment="Center"
-                                                             VerticalContentAlignment="Center"
-                                                             ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
-                                                    <TextBox Width="130"
-                                                             Tag="Secondary"
-                                                             Text="{Binding SecondaryHotkeyDisplayText, Mode=OneWay}"
-                                                             IsEnabled="{Binding IsHotkeyEditable}"
-                                                             TextAlignment="Center"
-                                                             IsReadOnly="True"
-                                                             VerticalAlignment="Center"
-                                                             VerticalContentAlignment="Center"
-                                                             ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
-                                                </StackPanel>
+                        BorderThickness="0,0,0,1"
+                        Padding="14,8">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                        <TextBlock Text="{x:Static res:Strings.ToolbarCustomizationDialogView_CustomizeToolbar}" FontSize="15" VerticalAlignment="Center"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="6">
+                            <Button Command="{Binding ResetCommand}"
+                                    Height="32"
+                                    Padding="10,0"
+                                    Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Resettoolbartodefault}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
 
-                                                <StackPanel DockPanel.Dock="Left"
-                                                            Orientation="Horizontal"
-                                                            Spacing="10"
-                                                            Margin="0,0,10,0"
-                                                            VerticalAlignment="Center">
-                                                    <Button
-                                                            Width="32"
-                                                            Height="32"
-                                                            Padding="0"
-                                                            IsEnabled="{Binding CanMoveUp}"
-                                                            Click="OnMoveUpClick"
-                                                            ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Moveup}">
-                                                        <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronUp}"
-                                                                                    HorizontalAlignment="Center"
+                <ScrollViewer x:Name="LayoutScrollViewer"
+                              Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="14" Spacing="10">
+                        <TextBlock Classes="caption"
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static res:Strings.ToolbarCustomizationDialogView_DragHint}"/>
+
+                        <!-- The toolbar as it will look. Items and spacers are dragged within it, onto it and off it.
+                             Like the real toolbar it is a single row, shrunk to fit when it is wider than the dialog. -->
+                        <Border x:Name="ToolbarDropArea"
+                                Classes="drop-area"
+                                Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                                MinHeight="50"
+                                Padding="4">
+                            <Viewbox Stretch="Uniform"
+                                     StretchDirection="DownOnly"
+                                     HorizontalAlignment="Left">
+                                <ItemsControl x:Name="ToolbarSlotsControl" ItemsSource="{Binding ToolbarSlots}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal" Spacing="1"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:ToolbarLayoutSlot">
+                                            <Button Classes="slot toolbar-slot"
+                                                    Classes.selected="{Binding IsSelected}"
+                                                    Classes.spacer="{Binding IsSpacer}"
+                                                    Classes.file="{Binding Item.IsFileMenu, FallbackValue=False}"
+                                                    ToolTip.Tip="{Binding ToolbarToolTip}"
+                                                    Click="OnSlotClick">
+                                                <Panel>
+                                                    <Panel Width="{Binding SlotWidth}" IsVisible="{Binding IsSpacer}">
+                                                        <Border Classes="spacer-line" IsVisible="{Binding ShowLine}"/>
+                                                        <Line Classes="spacer-dash" IsVisible="{Binding !ShowLine}"/>
+                                                        <Border Classes="spacer-grip"/>
+                                                    </Panel>
+                                                    <StackPanel Orientation="Horizontal"
+                                                                Spacing="4"
+                                                                IsVisible="{Binding IsItem}">
+                                                        <iconControls:IconPresenter Icon="{Binding Icon}"
+                                                                                    FontSize="20"
                                                                                     VerticalAlignment="Center"/>
-                                                    </Button>
-
-                                                    <Button
-                                                            Width="32"
-                                                            Height="32"
-                                                            Padding="0"
-                                                            IsEnabled="{Binding CanMoveDown}"
-                                                            Click="OnMoveDownClick"
-                                                            ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Movedown}">
                                                         <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronDown}"
-                                                                                    HorizontalAlignment="Center"
-                                                                                    VerticalAlignment="Center"/>
-                                                    </Button>
+                                                                                    FontSize="10"
+                                                                                    Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                                    VerticalAlignment="Center"
+                                                                                    IsVisible="{Binding Item.IsFileMenu, FallbackValue=False}"/>
+                                                    </StackPanel>
+                                                </Panel>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Viewbox>
+                        </Border>
 
-                                                    <ToggleButton
-                                                                  Width="32"
-                                                                  Height="32"
-                                                                  Padding="0"
-                                                                  IsChecked="{Binding BeginGroup, Mode=TwoWay}"
-                                                                  HorizontalAlignment="Center"
-                                                                  VerticalAlignment="Center"
-                                                                  ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Begingroup}">
-                                                        <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRightFromLine}"
-                                                                                    HorizontalAlignment="Center"
-                                                                                    VerticalAlignment="Center"/>
-                                                    </ToggleButton>
+                        <TextBlock Classes="caption"
+                                   Margin="0,4,0,0"
+                                   Text="{x:Static res:Strings.ToolbarCustomizationDialogView_AvailableItems}"/>
 
-                                                    <ToggleSwitch Width="44"
-                                                                  OnContent=""
-                                                                  OffContent=""
-                                                                  IsChecked="{Binding IsVisible, Mode=TwoWay}"
-                                                                  IsEnabled="{Binding IsVisibilityEditable}"
-                                                                  HorizontalAlignment="Center"
-                                                                  VerticalAlignment="Center"
-                                                                  ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ShowHide}"/>
-                                                </StackPanel>
-
-                                                <Grid ColumnDefinitions="32,*"
-                                                      ColumnSpacing="10"
-                                                      VerticalAlignment="Center"
-                                                      Margin="0,0,10,0">
+                        <!-- The spacer and the hidden items. Dropping a toolbar item here hides it. -->
+                        <Border x:Name="PaletteDropArea"
+                                Classes="drop-area"
+                                Background="{DynamicResource ShareX.Brush.Background.Main}"
+                                MinHeight="82"
+                                Padding="4">
+                            <WrapPanel ItemSpacing="4" LineSpacing="4">
+                                <ItemsControl x:Name="PaletteControl" ItemsSource="{Binding AvailableSlots}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel ItemSpacing="4" LineSpacing="4"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate x:DataType="vm:ToolbarLayoutSlot">
+                                            <Button Classes="slot palette-tile"
+                                                    Classes.selected="{Binding IsSelected}"
+                                                    ToolTip.Tip="{Binding Name}"
+                                                    Click="OnSlotClick"
+                                                    DoubleTapped="OnPaletteTileDoubleTapped">
+                                                <Grid RowDefinitions="30,*">
+                                                    <Panel IsVisible="{Binding IsSpacer}">
+                                                        <Border Classes="spacer-line" Height="24" IsVisible="{Binding ShowLine}"/>
+                                                        <Line Classes="spacer-dash" EndPoint="0.5,24" IsVisible="{Binding !ShowLine}"/>
+                                                    </Panel>
                                                     <iconControls:IconPresenter Icon="{Binding Icon}"
-                                                                                FontSize="18"
-                                                                                Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                                                FontSize="20"
                                                                                 HorizontalAlignment="Center"
-                                                                                VerticalAlignment="Center"/>
-                                                    <TextBlock Grid.Column="1"
+                                                                                VerticalAlignment="Center"
+                                                                                IsVisible="{Binding IsItem}"/>
+                                                    <TextBlock Grid.Row="1"
                                                                Text="{Binding Name}"
-                                                               Foreground="{DynamicResource ShareX.Brush.Text}"
-                                                               VerticalAlignment="Center"/>
+                                                               FontSize="12"
+                                                               TextAlignment="Center"
+                                                               TextWrapping="Wrap"
+                                                               TextTrimming="CharacterEllipsis"
+                                                               MaxLines="2"
+                                                               VerticalAlignment="Top"/>
                                                 </Grid>
-                                            </DockPanel>
-                                        </Border>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-                        </ScrollViewer>
-                    </DockPanel>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <TextBlock Classes="caption"
+                                           Margin="8,0"
+                                           VerticalAlignment="Center"
+                                           IsVisible="{Binding !HasHiddenItems}"
+                                           Text="{x:Static res:Strings.ToolbarCustomizationDialogView_AllItemsOnToolbar}"/>
+                            </WrapPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- Settings of the selected item. -->
+                <Border Grid.Row="2"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="0,1,0,0"
+                        Padding="14,10"
+                        IsVisible="{Binding HasSelectedItem}">
+                    <Panel DataContext="{Binding SelectedItem}">
+                        <Grid x:Name="SelectedItemPanel"
+                              x:DataType="vm:ToolbarCustomizationItemViewModel"
+                              ColumnDefinitions="*,Auto"
+                              ColumnSpacing="16">
+                            <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                                <iconControls:IconPresenter Icon="{Binding Icon}"
+                                                            FontSize="20"
+                                                            Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                            VerticalAlignment="Center"/>
+                                <TextBlock Text="{Binding Name}"
+                                           VerticalAlignment="Center"
+                                           TextTrimming="CharacterEllipsis"/>
+                            </StackPanel>
+
+                            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <StackPanel Spacing="2">
+                                    <TextBlock Classes="caption"
+                                               Text="{x:Static res:Strings.ToolbarCustomizationDialogView_Primary}"/>
+                                    <TextBox Width="100"
+                                             Text="{Binding HotkeyDisplayText, Mode=OneWay}"
+                                             IsEnabled="{Binding IsHotkeyEditable}"
+                                             TextAlignment="Center"
+                                             IsReadOnly="True"
+                                             VerticalContentAlignment="Center"
+                                             ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
+                                </StackPanel>
+                                <StackPanel Spacing="2">
+                                    <TextBlock Classes="caption"
+                                               Text="{x:Static res:Strings.ToolbarCustomizationDialogView_Secondary}"/>
+                                    <TextBox Width="100"
+                                             Tag="Secondary"
+                                             Text="{Binding SecondaryHotkeyDisplayText, Mode=OneWay}"
+                                             IsEnabled="{Binding IsHotkeyEditable}"
+                                             TextAlignment="Center"
+                                             IsReadOnly="True"
+                                             VerticalContentAlignment="Center"
+                                             ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Grid>
+                    </Panel>
+                </Border>
+
+                <Border Grid.Row="3"
+                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="0,1,0,0"
+                        Padding="10">
+                    <Grid ColumnDefinitions="*,Auto">
+                        <TextBlock Text="{Binding ValidationMessage}"
+                                   IsVisible="{Binding HasValidationMessage}"
+                                   Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                   TextWrapping="Wrap"
+                                   VerticalAlignment="Center"
+                                   Margin="4,0,16,0"/>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
+                            <Button Padding="20,0"
+                                    Content="{x:Static res:Strings.ToolbarCustomizationDialogView_OK}"
+                                    Command="{Binding OkCommand}"
+                                    HorizontalContentAlignment="Center"/>
+                            <Button Padding="20,0"
+                                    Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Cancel}"
+                                    Command="{Binding CancelCommand}"
+                                    HorizontalContentAlignment="Center"/>
+                        </StackPanel>
+                    </Grid>
                 </Border>
             </Grid>
+        </Border>
 
-            <Border Grid.Row="2"
+        <!-- Drawn above the dialog while dragging: the item under the pointer and where it will land. -->
+        <Canvas x:Name="DragLayer" IsHitTestVisible="False">
+            <Border x:Name="DropIndicator"
+                    Width="3"
+                    CornerRadius="1.5"
+                    Background="{DynamicResource ShareX.Brush.Accent}"
+                    IsVisible="False"/>
+            <Border x:Name="DragGhost"
+                    Width="40"
+                    Height="40"
+                    CornerRadius="4"
+                    Opacity="0.9"
                     Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
-                    BorderBrush="{DynamicResource ShareX.Brush.Border}"
-                    BorderThickness="0,1,0,0"
-                    Padding="10">
-                <Grid ColumnDefinitions="*,Auto">
-                    <TextBlock Text="{Binding ValidationMessage}"
-                               IsVisible="{Binding HasValidationMessage}"
-                               Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
-                               TextWrapping="Wrap"
-                               VerticalAlignment="Center"
-                               Margin="4,0,16,0"/>
-                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right">
-                        <Button
-                                Padding="20,0"
-                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_OK}"
-                                Command="{Binding OkCommand}"
-                                HorizontalContentAlignment="Center"/>
-                        <Button
-                                Padding="20,0"
-                                Content="{x:Static res:Strings.ToolbarCustomizationDialogView_Cancel}"
-                                Command="{Binding CancelCommand}"
-                                HorizontalContentAlignment="Center"/>
-                    </StackPanel>
-                </Grid>
+                    BorderBrush="{DynamicResource ShareX.Brush.Accent}"
+                    BorderThickness="1"
+                    BoxShadow="0 3 8 0 #50000000"
+                    IsVisible="False">
+                <Panel>
+                    <Border x:Name="DragGhostSpacer" Classes="spacer-line"/>
+                    <Line x:Name="DragGhostDash" Classes="spacer-dash"/>
+                    <iconControls:IconPresenter x:Name="DragGhostIcon"
+                                                FontSize="20"
+                                                Foreground="{DynamicResource ShareX.Brush.Text}"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"/>
+                </Panel>
             </Border>
-        </Grid>
-    </Border>
+        </Canvas>
+    </Panel>
 </UserControl>

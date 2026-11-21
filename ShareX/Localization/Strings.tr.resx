@@ -430,6 +430,9 @@
   <data name="ApplicationSettingsWindow_Description" xml:space="preserve">
     <value>Açıklama</value>
   </data>
+  <data name="ApplicationSettingsWindow_DescriptionCantBeEmpty" xml:space="preserve">
+    <value>Açıklama boş olamaz.</value>
+  </data>
   <data name="ApplicationSettingsWindow_DevMode" xml:space="preserve">
     <value>Geliştirici modu</value>
   </data>
@@ -507,6 +510,9 @@
   </data>
   <data name="ApplicationSettingsWindow_Format" xml:space="preserve">
     <value>Biçim</value>
+  </data>
+  <data name="ApplicationSettingsWindow_FormatCantBeEmpty" xml:space="preserve">
+    <value>Biçim boş olamaz.</value>
   </data>
   <data name="ApplicationSettingsWindow_General" xml:space="preserve">
     <value>Genel</value>

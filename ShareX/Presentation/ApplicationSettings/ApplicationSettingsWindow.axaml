@@ -915,6 +915,12 @@
                                 <TextBlock x:Name="ClipboardFormatSupportedVariablesText"
                                            Classes="hint"
                                            TextWrapping="Wrap"/>
+
+                                <TextBlock x:Name="ClipboardFormatEditorErrorText"
+                                           IsVisible="False"
+                                           Foreground="{DynamicResource ShareX.Brush.TaskMode.Cancel.Border}"
+                                           FontWeight="Normal"
+                                           TextWrapping="Wrap"/>
                             </StackPanel>
                         </ScrollViewer>
 

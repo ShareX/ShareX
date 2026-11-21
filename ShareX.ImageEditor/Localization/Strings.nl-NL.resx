@@ -273,6 +273,9 @@ Wilt u de wijzigingen opslaan voordat u de afbeeldingseditor sluit?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Wachtcursor</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Sleep om de werkbalk te verplaatsen, dubbelklik om de positie te herstellen</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Prestatie ontgrendeld!</value>
   </data>
@@ -1389,8 +1392,14 @@ Het klembord bevat geen afbeelding.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Rechts</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Groep beginnen</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Alle items staan op de werkbalk.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Beschikbare items</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Lege scheiding</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Annuleren</value>
@@ -1401,17 +1410,14 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Werkbalk aanpassen</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Sleep items naar de werkbalk om ze te tonen, of eraf om ze te verbergen. Sleep een scheiding tussen items om ze in groepen te verdelen.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} en {1} gebruiken dezelfde sneltoets ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Ongeldige sneltoets voor {0}. Gebruik indelingen zoals R, Ctrl+R of Ctrl+Shift+R.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Omlaag</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Omhoog</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1425,8 +1431,11 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Secundair</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Tonen / Verbergen</value>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Scheiding</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Scheiding. Sleep de rechterrand om de breedte te wijzigen.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pijl</value>

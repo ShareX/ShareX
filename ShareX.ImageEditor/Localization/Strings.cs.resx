@@ -273,6 +273,9 @@ Chcete před zavřením editoru obrázků změny uložit?</value>
   <data name="CursorTypeDisplayNameConverter_WaitCursor" xml:space="preserve">
     <value>Kurzor čekání</value>
   </data>
+  <data name="EditorBuiltInToolbars_MoveToolbar" xml:space="preserve">
+    <value>Přetažením přesunete panel nástrojů, poklepáním obnovíte jeho pozici</value>
+  </data>
   <data name="EditorView_AchievementUnlocked" xml:space="preserve">
     <value>Úspěch odemčen!</value>
   </data>
@@ -1389,8 +1392,14 @@ Schránka neobsahuje obrázek.</value>
   <data name="TextHorizontalAlignmentHelper_Right" xml:space="preserve">
     <value>Vpravo</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Začít skupinu</value>
+  <data name="ToolbarCustomizationDialogView_AllItemsOnToolbar" xml:space="preserve">
+    <value>Všechny položky jsou na panelu nástrojů.</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
+    <value>Dostupné položky</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
+    <value>Prázdný oddělovač</value>
   </data>
   <data name="ToolbarCustomizationDialogView_Cancel" xml:space="preserve">
     <value>Zrušit</value>
@@ -1401,17 +1410,14 @@ Schránka neobsahuje obrázek.</value>
   <data name="ToolbarCustomizationDialogView_CustomizeToolbar" xml:space="preserve">
     <value>Přizpůsobit panel nástrojů</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_DragHint" xml:space="preserve">
+    <value>Přetažením položek na panel nástrojů je zobrazíte, přetažením mimo něj je skryjete. Přetažením oddělovače mezi položky je rozdělíte do skupin.</value>
+  </data>
   <data name="ToolbarCustomizationDialogView_DuplicateHotkey" xml:space="preserve">
     <value>{0} a {1} používají stejnou klávesovou zkratku ({2}).</value>
   </data>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>Neplatná klávesová zkratka pro {0}. Použijte formát jako R, Ctrl+R nebo Ctrl+Shift+R.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Movedown" xml:space="preserve">
-    <value>Posunout dolů</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_Moveup" xml:space="preserve">
-    <value>Posunout nahoru</value>
   </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>OK</value>
@@ -1425,8 +1431,11 @@ Schránka neobsahuje obrázek.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>Sekundární</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Zobrazit / skrýt</value>
+  <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
+    <value>Oddělovač</value>
+  </data>
+  <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
+    <value>Oddělovač. Přetažením pravého okraje změníte jeho šířku.</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Šipka</value>

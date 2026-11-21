@@ -77,7 +77,6 @@ public partial class RegionCaptureWindow : Window
     private double _captureToolbarMonitorScale = 1;
     private double _appliedCaptureToolbarScale = 1;
     private AnnotationToolbar _annotationToolbar = null!;
-    private Button _regionToolButton = null!;
     private StackPanel _magnifierPanel = null!;
     private Grid _magnifierView = null!;
     private Image _magnifierImage = null!;
@@ -245,11 +244,11 @@ public partial class RegionCaptureWindow : Window
 
     protected override void OnKeyDown(KeyEventArgs e)
     {
-        if (_keyboardInputEnabled && !_closing && _request != null &&
-            e.KeyModifiers == KeyModifiers.None && _viewModel?.IsModalOpen != true &&
-            (e.Key == Key.Tab || (e.Key == Key.NumPad0 && !e.Handled))) // NumPad0 matches ShareX 21; a toolbar hotkey on it wins.
+        // Focus navigation takes Tab before the editor's toolbar hotkeys see it, so a toolbar hotkey on Tab, such as
+        // the rectangle region's default one, is used here.
+        if (_keyboardInputEnabled && !_closing && _request != null && e.Key == Key.Tab &&
+            _viewModel is { IsModalOpen: false } viewModel && viewModel.TrySelectToolForToolbarHotkey(e.Key, e.KeyModifiers))
         {
-            ActivateRegionTool();
             e.Handled = true;
             return;
         }
@@ -280,15 +279,9 @@ public partial class RegionCaptureWindow : Window
             _viewModel?.IsModalOpen != true && e.Source is not TextBox &&
             FocusManager?.GetFocusedElement() is not TextBox)
         {
-            if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
-            {
-                SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
-            }
-
-            if (HasAnyRegion())
+            if (TryCompleteSelection())
             {
                 e.Handled = true;
-                CompleteSelection();
                 return;
             }
         }
@@ -385,7 +378,6 @@ public partial class RegionCaptureWindow : Window
         _captureToolbar.LayoutUpdated += OnCaptureToolbarLayoutUpdated;
         _captureToolbarScale = this.FindControl<LayoutTransformControl>("CaptureToolbarScale")!;
         _annotationToolbar = this.FindControl<AnnotationToolbar>("CaptureAnnotationToolbar")!;
-        _regionToolButton = this.FindControl<Button>("RegionToolButton")!;
         _magnifierPanel = this.FindControl<StackPanel>("MagnifierPanel")!;
         _magnifierPanel.RenderTransformOrigin = RelativePoint.TopLeft;
         _magnifierPanel.RenderTransform = new TransformGroup { Children = { _magnifierScale, _magnifierTransform } };
@@ -450,7 +442,7 @@ public partial class RegionCaptureWindow : Window
         ApplyMagnifierShape();
         _pointerInfoPanel.IsVisible = _request.RegionCaptureOptions.ShowInfo;
         _magnifierPanel.IsVisible = _magnifierView.IsVisible || _pointerInfoPanel.IsVisible;
-        _regionToolButton.Classes.Set("active", true);
+        _viewModel.SetActiveHostToolbarItem(RegionCaptureToolbar.GetItemId(_regionShape));
         _viewModel.SetHostToolbarToolsActive(false);
         Title = Localization.Strings.BaseRegionForm_InitializeComponent_Region_capture;
     }
@@ -686,12 +678,6 @@ public partial class RegionCaptureWindow : Window
         ActivateAnnotationTool();
     }
 
-    private void OnRegionToolClick(object? sender, RoutedEventArgs e)
-    {
-        ActivateRegionTool(RegionShape.Rectangle);
-        e.Handled = true;
-    }
-
     private void OnHostToolbarItemRequested(object? sender, string id)
     {
         if (RegionCaptureToolbar.GetRegionShape(id) is RegionShape shape)
@@ -717,7 +703,6 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.IsVisible = true;
         _regionOverlay.ShowCursorCrosshair = _request?.RegionCaptureOptions.ShowScreenCrosshair == true;
         SetRegionResizeNodesVisible(!IsQuickCapture && CanResizeSelection());
-        _regionToolButton.Classes.Set("active", _regionShape == RegionShape.Rectangle);
         _viewModel?.SetHostToolbarToolsActive(false);
         _viewModel?.SetActiveHostToolbarItem(RegionCaptureToolbar.GetItemId(_regionShape));
         _annotationToolbar.ShowToolOptions = false;
@@ -750,7 +735,6 @@ public partial class RegionCaptureWindow : Window
         SetRegionResizeNodesVisible(false);
         _regionOverlay.HoverRectangle = default;
         _hoverCandidate = null;
-        _regionToolButton.Classes.Set("active", false);
         _viewModel?.SetActiveHostToolbarItem(null);
         _viewModel?.SetHostToolbarToolsActive(true);
         _annotationToolbar.ShowToolOptions = true;
@@ -1350,7 +1334,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        double buttonHeight = _regionToolButton.Bounds.Height;
+        double buttonHeight = GetToolbarButtonHeight();
         if (!double.IsFinite(buttonHeight) || buttonHeight <= 0)
         {
             return;
@@ -1360,6 +1344,15 @@ public partial class RegionCaptureWindow : Window
             RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
         _captureToolbarScaleFactor = buttonSize / buttonHeight;
         ApplyCaptureToolbarScale();
+    }
+
+    /// <summary>Returns the unscaled height of the toolbar buttons, or 0 before the toolbar is laid out.</summary>
+    private double GetToolbarButtonHeight()
+    {
+        return _annotationToolbar.GetVisualDescendants()
+            .OfType<Button>()
+            .FirstOrDefault(button => button.Classes.Contains("toolbar-button") && button.IsEffectivelyVisible)?
+            .Bounds.Height ?? 0;
     }
 
     /// <summary>
@@ -1376,7 +1369,7 @@ public partial class RegionCaptureWindow : Window
         RegionCaptureOptions options = _request.RegionCaptureOptions;
         int currentSize = options.UseCustomToolbarButtonSize
             ? options.ToolbarButtonSize
-            : (int)Math.Round(_regionToolButton.Bounds.Height);
+            : (int)Math.Round(GetToolbarButtonHeight());
         int newSize = Math.Clamp(currentSize + (e.Delta.Y > 0 ? ToolbarButtonSizeWheelStep : -ToolbarButtonSizeWheelStep),
             RegionCaptureOptions.ToolbarButtonSizeMinimum, RegionCaptureOptions.ToolbarButtonSizeMaximum);
 
@@ -1564,6 +1557,22 @@ public partial class RegionCaptureWindow : Window
             e.Handled = true;
             RunAnnotationCaptureAction(
                 _request.RegionCaptureOptions.RegionCaptureActionMiddleClick,
+                e.GetPosition(_editorWorkspace));
+            return;
+        }
+
+        if (updateKind is PointerUpdateKind.XButton1Pressed or PointerUpdateKind.XButton2Pressed)
+        {
+            if (_viewModel?.IsModalOpen == true || IsEditorNotificationSource(e.Source))
+            {
+                return;
+            }
+
+            e.Handled = true;
+            RunAnnotationCaptureAction(
+                updateKind == PointerUpdateKind.XButton1Pressed
+                    ? _request.RegionCaptureOptions.RegionCaptureActionX1Click
+                    : _request.RegionCaptureOptions.RegionCaptureActionX2Click,
                 e.GetPosition(_editorWorkspace));
             return;
         }
@@ -2230,7 +2239,30 @@ public partial class RegionCaptureWindow : Window
             case RegionCaptureAction.CaptureLastRegion:
                 CompleteLastRegion();
                 break;
+            case RegionCaptureAction.CaptureSelection:
+                TryCompleteSelection();
+                break;
         }
+    }
+
+    /// <summary>
+    /// Captures the current selection and any added regions, or the hovered window or control when nothing is
+    /// selected yet. Returns false when there is nothing to capture.
+    /// </summary>
+    private bool TryCompleteSelection()
+    {
+        if (!HasAnyRegion() && _regionToolActive && RegionSelectionOverlay.IsValid(_regionOverlay.HoverRectangle))
+        {
+            SetSelection(new CaptureRegion(_regionOverlay.HoverShape, _regionOverlay.HoverRectangle), _hoverCandidate);
+        }
+
+        if (!HasAnyRegion())
+        {
+            return false;
+        }
+
+        CompleteSelection();
+        return true;
     }
 
     private void CompleteLastRegion()
