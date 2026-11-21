@@ -1392,9 +1392,6 @@
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>उपलब्ध आइटम</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>समूह आरंभ करें</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>खाली स्पेसर</value>
   </data>
@@ -1416,12 +1413,6 @@
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>{0} के लिए अमान्य हॉटकी। R, Ctrl+R या Ctrl+Shift+R जैसे प्रारूप उपयोग करें।</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>बाएँ ले जाएँ</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>दाएँ ले जाएँ</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>ठीक है</value>
   </data>
@@ -1434,20 +1425,11 @@
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>द्वितीयक</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>दिखाएँ / छिपाएँ</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>स्पेसर की रेखा दिखाएँ</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>स्पेसर</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>स्पेसर। इसकी चौड़ाई बदलने के लिए इसका दायाँ किनारा खींचें।</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>स्पेसर की चौड़ाई</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>तीर</value>

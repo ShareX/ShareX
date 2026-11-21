@@ -1392,9 +1392,6 @@
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>موارد موجود</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>آغاز گروه</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>جداکننده خالی</value>
   </data>
@@ -1416,12 +1413,6 @@
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>میانبر {0} نامعتبر است. از قالب‌هایی مانند R، Ctrl+R یا Ctrl+Shift+R استفاده کنید.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>انتقال به چپ</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>انتقال به راست</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>تأیید</value>
   </data>
@@ -1434,20 +1425,11 @@
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>ثانویه</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>نمایش / پنهان کردن</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>نمایش خط جداکننده</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>جداکننده</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>جداکننده. لبه راست آن را بکشید تا عرضش تغییر کند.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>عرض جداکننده</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>پیکان</value>

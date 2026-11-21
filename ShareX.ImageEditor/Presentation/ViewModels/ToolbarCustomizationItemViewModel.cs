@@ -88,8 +88,6 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
 
     private bool _isVisible = true;
     private bool _isActive;
-    private bool _canMoveUp;
-    private bool _canMoveDown;
     private bool _beginGroup;
     private int _spacerWidth;
     private bool _showSpacerLine = true;
@@ -187,18 +185,6 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         set => SetProperty(ref _isActive, value);
     }
 
-    public bool CanMoveUp
-    {
-        get => _canMoveUp;
-        set => SetProperty(ref _canMoveUp, value);
-    }
-
-    public bool CanMoveDown
-    {
-        get => _canMoveDown;
-        set => SetProperty(ref _canMoveDown, value);
-    }
-
     public bool BeginGroup
     {
         get => _beginGroup;
@@ -279,9 +265,7 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
     {
         return new ToolbarCustomizationItemViewModel(Id, Tool, Name, Icon, Hotkey, SecondaryHotkey, IsVisible, BeginGroup, SpacerWidth, ShowSpacerLine, IsHotkeyEditable, IsVisibilityEditable, IsHostItem)
         {
-            IsActive = IsActive,
-            CanMoveUp = CanMoveUp,
-            CanMoveDown = CanMoveDown
+            IsActive = IsActive
         };
     }
 

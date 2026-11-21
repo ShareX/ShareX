@@ -1392,9 +1392,6 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>Kullanılabilir öğeler</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>Grubu başlat</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>Boş ayırıcı</value>
   </data>
@@ -1416,12 +1413,6 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>{0} için geçersiz kısayol. R, Ctrl+R veya Ctrl+Shift+R gibi biçimler kullanın.</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>Sola taşı</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>Sağa taşı</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>Tamam</value>
   </data>
@@ -1434,20 +1425,11 @@ Panoda görüntü yok.</value>
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>İkincil</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>Göster / Gizle</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>Ayırıcı çizgisini göster</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>Ayırıcı</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Ayırıcı. Genişliğini değiştirmek için sağ kenarını sürükleyin.</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>Ayırıcı genişliği</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Ok</value>

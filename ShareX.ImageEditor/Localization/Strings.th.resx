@@ -1392,9 +1392,6 @@
   <data name="ToolbarCustomizationDialogView_AvailableItems" xml:space="preserve">
     <value>รายการที่ใช้ได้</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_Begingroup" xml:space="preserve">
-    <value>เริ่ม กลุ่ม</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_BlankSpacer" xml:space="preserve">
     <value>ตัวคั่นว่าง</value>
   </data>
@@ -1416,12 +1413,6 @@
   <data name="ToolbarCustomizationDialogView_InvalidHotkey" xml:space="preserve">
     <value>ปุ่มลัดสำหรับ {0} ไม่ถูกต้อง ใช้รูปแบบ เช่น R, Ctrl+R หรือ Ctrl+Shift+R</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_MoveLeft" xml:space="preserve">
-    <value>ย้ายไปทางซ้าย</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_MoveRight" xml:space="preserve">
-    <value>ย้ายไปทางขวา</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_OK" xml:space="preserve">
     <value>ตกลง</value>
   </data>
@@ -1434,20 +1425,11 @@
   <data name="ToolbarCustomizationDialogView_Secondary" xml:space="preserve">
     <value>รอง</value>
   </data>
-  <data name="ToolbarCustomizationDialogView_ShowHide" xml:space="preserve">
-    <value>แสดง / ซ่อน</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_ShowSpacerLine" xml:space="preserve">
-    <value>แสดงเส้นตัวคั่น</value>
-  </data>
   <data name="ToolbarCustomizationDialogView_Spacer" xml:space="preserve">
     <value>ตัวคั่น</value>
   </data>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>ตัวคั่น ลากขอบด้านขวาเพื่อเปลี่ยนความกว้าง</value>
-  </data>
-  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
-    <value>ความกว้างของตัวคั่น</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>ลูกศร</value>

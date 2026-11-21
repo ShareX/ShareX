@@ -14,24 +14,6 @@
              x:DataType="vm:ToolbarCustomizationDialogViewModel">
 
     <UserControl.Styles>
-        <!-- ShareX's .active styles only target Button, so give the checked "Begin group" toggle the same accent
-             fill with readable content instead of Fluent's defaults. -->
-        <Style Selector="ToggleButton:checked /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
-        <Style Selector="ToggleButton:checked:pointerover /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
-        <Style Selector="ToggleButton:checked:pressed /template/ ContentPresenter#PART_ContentPresenter">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent}"/>
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
-        <Style Selector="ToggleButton:checked iconControls|IconPresenter">
-            <Setter Property="Foreground" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
-
         <!-- Toolbar slots and available item tiles: flat buttons that can be dragged. -->
         <Style Selector="Button.slot">
             <Setter Property="Padding" Value="0"/>
@@ -105,19 +87,6 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
-        <!-- The line drawn on the Show spacer line toggle. -->
-        <Style Selector="Border.line-glyph">
-            <Setter Property="Width" Value="2"/>
-            <Setter Property="Height" Value="16"/>
-            <Setter Property="CornerRadius" Value="1"/>
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Text}"/>
-        </Style>
-        <Style Selector="ToggleButton:checked Border.line-glyph">
-            <Setter Property="Background" Value="{DynamicResource ShareX.Brush.Accent.Foreground}"/>
-        </Style>
-        <Style Selector="ToggleButton:disabled Border.line-glyph">
-            <Setter Property="Opacity" Value="0.4"/>
-        </Style>
         <Style Selector="Border.drop-area">
             <Setter Property="BorderBrush" Value="{DynamicResource ShareX.Brush.Border}"/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -286,7 +255,7 @@
                     <Panel DataContext="{Binding SelectedItem}">
                         <Grid x:Name="SelectedItemPanel"
                               x:DataType="vm:ToolbarCustomizationItemViewModel"
-                              ColumnDefinitions="*,Auto,Auto"
+                              ColumnDefinitions="*,Auto"
                               ColumnSpacing="16">
                             <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
                                 <iconControls:IconPresenter Icon="{Binding Icon}"
@@ -322,73 +291,6 @@
                                              VerticalContentAlignment="Center"
                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ClickandpressashortcutBackspaceorDeleteclearsit}"/>
                                 </StackPanel>
-                                <StackPanel Spacing="2">
-                                    <TextBlock Classes="caption"
-                                               Text="{x:Static res:Strings.ToolbarCustomizationDialogView_SpacerWidth}"/>
-                                    <NumericUpDown x:Name="SpacerWidthBox"
-                                                   Width="116"
-                                                   Minimum="0"
-                                                   Maximum="96"
-                                                   Increment="4"
-                                                   FormatString="0"
-                                                   ClipValueToMinMax="True"
-                                                   Value="{Binding SpacerWidth, Mode=TwoWay}"
-                                                   IsEnabled="{Binding IsGroupSeparatorVisible}"
-                                                   ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_SpacerWidth}"/>
-                                </StackPanel>
-                            </StackPanel>
-
-                            <StackPanel Grid.Column="2"
-                                        Orientation="Horizontal"
-                                        Spacing="6"
-                                        VerticalAlignment="Bottom">
-                                <Button Width="32"
-                                        Height="32"
-                                        Padding="0"
-                                        IsEnabled="{Binding CanMoveUp}"
-                                        Click="OnMoveLeftClick"
-                                        ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_MoveLeft}">
-                                    <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronLeft}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"/>
-                                </Button>
-                                <Button Width="32"
-                                        Height="32"
-                                        Padding="0"
-                                        IsEnabled="{Binding CanMoveDown}"
-                                        Click="OnMoveRightClick"
-                                        ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_MoveRight}">
-                                    <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ChevronRight}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"/>
-                                </Button>
-                                <ToggleButton Width="32"
-                                              Height="32"
-                                              Padding="0"
-                                              IsChecked="{Binding BeginGroup, Mode=TwoWay}"
-                                              IsEnabled="{Binding IsVisible}"
-                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_Begingroup}">
-                                    <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.ArrowRightFromLine}"
-                                                                HorizontalAlignment="Center"
-                                                                VerticalAlignment="Center"/>
-                                </ToggleButton>
-                                <ToggleButton x:Name="ShowSpacerLineToggle"
-                                              Width="32"
-                                              Height="32"
-                                              Padding="0"
-                                              IsChecked="{Binding ShowSpacerLine, Mode=TwoWay}"
-                                              IsEnabled="{Binding IsGroupSeparatorVisible}"
-                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ShowSpacerLine}">
-                                    <Border Classes="line-glyph"/>
-                                </ToggleButton>
-                                <ToggleSwitch Width="44"
-                                              MinWidth="44"
-                                              OnContent=""
-                                              OffContent=""
-                                              IsChecked="{Binding IsVisible, Mode=TwoWay}"
-                                              IsEnabled="{Binding IsVisibilityEditable}"
-                                              VerticalAlignment="Center"
-                                              ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_ShowHide}"/>
                             </StackPanel>
                         </Grid>
                     </Panel>
