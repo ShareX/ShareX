@@ -43,7 +43,8 @@ namespace ShareX.HelpersLib
         {
             lock (lockObject)
             {
-                IWebProxy proxy = HelpersOptions.CurrentProxy.GetWebProxy();
+                ProxyInfo proxyInfo = HelpersOptions.CurrentProxy;
+                IWebProxy proxy = proxyInfo.GetWebProxy();
                 string currentProxyKey = GetProxyKey();
 
                 if (!string.Equals(proxyKey, currentProxyKey, StringComparison.Ordinal))
@@ -62,10 +63,16 @@ namespace ShareX.HelpersLib
                         ConnectTimeout = TimeSpan.FromSeconds(30),
                         PooledConnectionIdleTimeout = TimeSpan.FromMinutes(2),
                         PooledConnectionLifetime = TimeSpan.FromMinutes(10),
+                        // A null Proxy with UseProxy enabled uses the system proxy.
                         Proxy = proxy,
                         UseCookies = false,
-                        UseProxy = proxy != null
+                        UseProxy = proxyInfo.ProxyMethod != ProxyMethod.None
                     };
+
+                    if (proxyInfo.ProxyMethod == ProxyMethod.Automatic && !string.IsNullOrEmpty(proxyInfo.Username))
+                    {
+                        handler.DefaultProxyCredentials = new NetworkCredential(proxyInfo.Username, proxyInfo.Password);
+                    }
 
                     client = new HttpClient(handler)
                     {

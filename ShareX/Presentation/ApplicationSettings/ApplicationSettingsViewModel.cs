@@ -737,13 +737,6 @@ public sealed class ApplicationSettingsViewModel : INotifyPropertyChanged, IDisp
                 return;
             }
 
-            if (value.Value == ProxyMethod.Automatic)
-            {
-                Settings.ProxySettings.IsValidProxy();
-                OnPropertyChanged(nameof(ProxyHost));
-                OnPropertyChanged(nameof(ProxyPort));
-            }
-
             OnPropertyChanged(nameof(ProxyCredentialsEnabled));
             OnPropertyChanged(nameof(ManualProxyEnabled));
         }
