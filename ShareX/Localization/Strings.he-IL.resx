@@ -2963,6 +2963,30 @@
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>תבנית:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>מקשים שנלחצו</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>הצג מקשים שנלחצו בהקלטה</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>הצג גם טקסט מוקלד</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>כשכבוי, מוצגים רק קיצורים ומקשים כמו Enter,‏ Esc ו-F1. טקסט מוקלד עלול לכלול סיסמאות, למעט בתיבות סיסמה של Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>גודל גופן:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>צבע טקסט:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>הסתר אחרי (שניות):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>למטה במרכז</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>מיקום:</value>
   </data>

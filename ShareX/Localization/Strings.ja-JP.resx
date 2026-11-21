@@ -2963,6 +2963,30 @@
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>パターン:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>押されたキー</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>録画に押されたキーを表示する</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>入力したテキストも表示する</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>オフの場合、ショートカットと Enter、Esc、F1 などのキーだけを表示します。入力したテキストにはパスワードが含まれる場合があります (Windows のパスワード ボックスは除く)。</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>フォント サイズ:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>文字の色:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>非表示までの時間 (秒):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>下中央</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>配置:</value>
   </data>

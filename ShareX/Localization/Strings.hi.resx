@@ -2963,6 +2963,30 @@
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>पैटर्न:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>दबाई गई कुंजियाँ</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>रिकॉर्डिंग में दबाई गई कुंजियाँ दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>टाइप किया गया टेक्स्ट भी दिखाएँ</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>बंद होने पर केवल शॉर्टकट और Enter, Esc और F1 जैसी कुंजियाँ दिखती हैं। टाइप किए गए टेक्स्ट में पासवर्ड हो सकते हैं, Windows पासवर्ड बॉक्स को छोड़कर।</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>फ़ॉन्ट आकार:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>टेक्स्ट रंग:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>इसके बाद छिपाएँ (सेकंड):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>नीचे बीच में</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>स्थान:</value>
   </data>

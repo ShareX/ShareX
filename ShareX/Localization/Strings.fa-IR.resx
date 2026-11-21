@@ -2963,6 +2963,30 @@ Do you want to abort the active ضبط صفحه?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>الگو:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>کلیدهای فشرده‌شده</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>نمایش کلیدهای فشرده‌شده در ضبط</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>نمایش متن تایپ‌شده نیز</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>وقتی خاموش است، فقط میان‌برها و کلیدهایی مانند Enter، Esc و F1 نمایش داده می‌شوند. متن تایپ‌شده ممکن است شامل گذرواژه باشد، به‌جز در کادرهای گذرواژه ویندوز.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>اندازه قلم:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>رنگ متن:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>پنهان کردن پس از (ثانیه):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>پایین وسط</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>جای‌گذاری:</value>
   </data>
