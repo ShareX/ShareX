@@ -729,7 +729,7 @@ namespace ShareX.UploadersLib
 
             sb.AppendLine();
             sb.AppendLine(Localization.Strings.Uploader_Stack_trace);
-            sb.Append(exception.ToString());
+            sb.Append(exception);
 
             string errorText = sb.ToString();
             Errors ??= new UploaderErrorManager();
