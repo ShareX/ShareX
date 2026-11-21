@@ -2520,5 +2520,10 @@ namespace ShareX.ImageEditor.Localization {
                 return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerToolTip", resourceCulture);
             }
         }
+        public static string ToolbarCustomizationDialogView_SpacerWidth {
+            get {
+                return ResourceManager.GetString("ToolbarCustomizationDialogView_SpacerWidth", resourceCulture);
+            }
+        }
     }
 }

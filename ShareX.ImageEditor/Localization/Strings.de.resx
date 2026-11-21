@@ -1431,6 +1431,9 @@ Die Zwischenablage enthält kein Bild.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Abstandhalter. Ziehe am rechten Rand, um die Breite zu ändern.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Abstandhalterbreite</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pfeil</value>
   </data>

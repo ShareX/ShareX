@@ -1431,6 +1431,9 @@ Le presse-papiers ne contient aucune image.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Séparateur. Faites glisser son bord droit pour modifier sa largeur.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Largeur du séparateur</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Flèche</value>
   </data>

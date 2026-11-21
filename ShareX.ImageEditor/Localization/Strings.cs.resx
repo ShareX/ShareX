@@ -1431,6 +1431,9 @@ Schránka neobsahuje obrázek.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Oddělovač. Přetažením pravého okraje změníte jeho šířku.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Šířka oddělovače</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Šipka</value>
   </data>

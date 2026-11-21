@@ -1431,6 +1431,9 @@
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>구분자. 오른쪽 가장자리를 끌어 너비를 바꿉니다.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>구분자 너비</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>화살표</value>
   </data>

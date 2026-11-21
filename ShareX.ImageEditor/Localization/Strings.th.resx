@@ -1431,6 +1431,9 @@
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>ตัวคั่น ลากขอบด้านขวาเพื่อเปลี่ยนความกว้าง</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>ความกว้างของตัวคั่น</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>ลูกศร</value>
   </data>
