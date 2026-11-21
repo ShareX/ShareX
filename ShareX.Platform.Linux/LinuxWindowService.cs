@@ -179,24 +179,33 @@ public sealed class LinuxWindowService : IWindowService
     internal static string FormatHyprlandAddress(long handle) => HyprlandDispatcher.Address(handle);
 
     /// <summary>
-    /// KWin on Wayland ignores the position of an XWayland window larger than one monitor and moves the region capture overlay onto
-    /// the primary or active monitor (issue #8867), so ShareX asks KWin to place it. Other desktops place it where Avalonia asked.
+    /// Wayland compositors ignore or clamp the requested position of an XWayland window larger than one monitor, moving the
+    /// region capture overlay onto the primary or active output instead of the virtual desktop's top-left (issue #8867). Ask
+    /// KWin (via scripting D-Bus) or Hyprland (via its openwindow event and move dispatcher) to place it.
     /// </summary>
     public bool CoverScreen(long windowHandle, PlatformRectangle screenBounds)
     {
+        if (platform is { IsWayland: true, DesktopEnvironment: DesktopEnvironment.Hyprland } && backend is HyprlandWindowBackend hyprland)
+        {
+            string? caption = ReadX11WindowTitle(windowHandle);
+            HyprlandWindowPlacement.Place(hyprland.Commands, hyprland.Dispatcher, Environment.ProcessId,
+                string.IsNullOrEmpty(caption) ? null : caption, screenBounds);
+            return true;
+        }
+
         if (platform is not { IsWayland: true, DesktopEnvironment: DesktopEnvironment.Kde } || !DBus.DBusSession.IsAvailable)
         {
             return false;
         }
 
-        string? caption = null;
+        string? kdeCaption = null;
         PlatformRectangle xDesktop = screenBounds;
 
         using (X11Display? display = X11Display.TryOpen())
         {
             if (display != null)
             {
-                caption = display.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display.GetStringProperty((nuint)windowHandle, "WM_NAME");
+                kdeCaption = display.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display.GetStringProperty((nuint)windowHandle, "WM_NAME");
                 IReadOnlyList<ScreenInfo> monitors = display.GetMonitors();
 
                 if (monitors.Count > 0)
@@ -208,8 +217,19 @@ public sealed class LinuxWindowService : IWindowService
             }
         }
 
-        KWinWindowPlacement.Place(Environment.ProcessId, string.IsNullOrEmpty(caption) ? null : caption, screenBounds, xDesktop);
+        KWinWindowPlacement.Place(Environment.ProcessId, string.IsNullOrEmpty(kdeCaption) ? null : kdeCaption, screenBounds, xDesktop);
         return true;
+    }
+
+    private static string? ReadX11WindowTitle(long windowHandle)
+    {
+        if (windowHandle == 0)
+        {
+            return null;
+        }
+
+        using X11Display? display = X11Display.TryOpen();
+        return display?.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display?.GetStringProperty((nuint)windowHandle, "WM_NAME");
     }
 
     // ShareX's own windows are X11 windows (Avalonia uses X11, through XWayland on Wayland sessions), so the SHAPE extension works

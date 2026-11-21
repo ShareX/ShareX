@@ -44,6 +44,8 @@ internal sealed class HyprlandWindowBackend(CompositorCommands commands) : IDesk
 
     internal HyprlandDispatcher Dispatcher => dispatcher;
 
+    internal CompositorCommands Commands => commands;
+
     public IReadOnlyList<PlatformWindow> GetWindows() => commands.ReadList("hyprctl", ["clients", "-j"], LinuxWindowService.ParseHyprlandClients);
 
     public IReadOnlyList<ScreenInfo> GetScreens() => commands.ReadList("hyprctl", ["monitors", "-j"], LinuxScreenCaptureService.ParseHyprlandMonitors);

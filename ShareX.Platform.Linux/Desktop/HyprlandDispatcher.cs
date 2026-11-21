@@ -45,6 +45,12 @@ internal sealed class HyprlandDispatcher(CompositorCommands commands)
         string.Create(CultureInfo.InvariantCulture, $"hl.dsp.cursor.move({{ x = {position.X}, y = {position.Y} }})"),
         ["movecursor", position.X.ToString(CultureInfo.InvariantCulture), position.Y.ToString(CultureInfo.InvariantCulture)]);
 
+    /// <summary>Moves a floating window to exact layout coordinates.</summary>
+    public bool MoveWindow(long windowHandle, PlatformPoint position) => Dispatch(
+        string.Create(CultureInfo.InvariantCulture,
+            $"hl.dsp.window.move({{ window = {Lua(Address(windowHandle))}, x = {position.X}, y = {position.Y}, relative = false }})"),
+        ["movewindowpixel", string.Create(CultureInfo.InvariantCulture, $"exact {position.X} {position.Y},{Address(windowHandle)}")]);
+
     /// <summary>Toggles "pinned" (shown on every workspace, above tiled windows) for a floating window.</summary>
     public bool TogglePin(long windowHandle) => Dispatch(
         $"hl.dsp.window.pin({{ window = {Lua(Address(windowHandle))} }})", ["pin", Address(windowHandle)]);

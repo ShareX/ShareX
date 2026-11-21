@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -210,6 +210,7 @@ public sealed class RegionCaptureTransparentWindow : Window
     {
         ApplyToolWindowStyle();
         ApplyPixelSize();
+        CoverScreen();
         Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
         WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds, trackDpiChanges: true);
         DisableWindowTransitions();
@@ -217,6 +218,15 @@ public sealed class RegionCaptureTransparentWindow : Window
 
         Activate();
         Focus();
+    }
+
+    private void CoverScreen()
+    {
+        if (PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
+        {
+            PlatformServices.Current.Windows.CoverScreen(handle,
+                new PlatformRectangle(_screenBounds.X, _screenBounds.Y, _screenBounds.Width, _screenBounds.Height));
+        }
     }
 
     private void UpdateSelection(DrawingPoint position)

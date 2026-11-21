@@ -1310,6 +1310,105 @@ public class KWinWindowPlacementTests
     }
 }
 
+public class HyprlandWindowPlacementTests
+{
+    [Fact]
+    public void MoveWindow_UsesAbsoluteLuaDispatcherAndClassicMoveWindowPixel()
+    {
+        ScriptedRunner luaRunner = new ScriptedRunner();
+        luaRunner.Respond("hyprctl eval return true", "ok\n");
+        luaRunner.Respond("hyprctl dispatch hl.dsp.window.move({ window = \"address:0x55a4\", x = 0, y = 0, relative = false })", "ok\n");
+        ShareX.Platform.Linux.Desktop.HyprlandDispatcher luaDispatcher = new(new ShareX.Platform.Linux.Desktop.CompositorCommands(luaRunner));
+
+        Assert.True(luaDispatcher.MoveWindow(0x55a4, new PlatformPoint(0, 0)));
+
+        ScriptedRunner classicRunner = new ScriptedRunner();
+        classicRunner.Respond("hyprctl eval return true", "invalid dispatcher\n");
+        classicRunner.Respond("hyprctl dispatch movewindowpixel exact -1920 0,address:0x55a4", "ok\n");
+        ShareX.Platform.Linux.Desktop.HyprlandDispatcher classicDispatcher = new(new ShareX.Platform.Linux.Desktop.CompositorCommands(classicRunner));
+
+        Assert.True(classicDispatcher.MoveWindow(0x55a4, new PlatformPoint(-1920, 0)));
+    }
+
+    [Fact]
+    public void TryParseOpenWindowAddress_ParsesHexAddressFromSocketEvent()
+    {
+        Assert.True(ShareX.Platform.Linux.Desktop.HyprlandWindowPlacement.TryParseOpenWindowAddress(
+            "openwindow>>55a494bb3c90,1,ShareX,Region capture", out long address));
+        Assert.Equal(0x55a494bb3c90, address);
+        Assert.False(ShareX.Platform.Linux.Desktop.HyprlandWindowPlacement.TryParseOpenWindowAddress("closewindow>>55a494bb3c90", out _));
+        Assert.False(ShareX.Platform.Linux.Desktop.HyprlandWindowPlacement.TryParseOpenWindowAddress("openwindow>>,1,ShareX,Region capture", out _));
+    }
+
+    [Fact]
+    public void TryPlaceExisting_MovesOnlyClampedRegionOverlayToVirtualDesktopTopLeft()
+    {
+        const string clientsJson = """
+            [
+              { "address": "0x1111", "mapped": true, "pid": 4242, "xwayland": true, "floating": false, "title": "ShareX", "at": [100, 100], "size": [900, 720] },
+              { "address": "0x2222", "mapped": true, "pid": 4242, "xwayland": true, "floating": true, "title": "Region capture", "at": [-1920, -56], "size": [3200, 1080] }
+            ]
+            """;
+
+        ScriptedRunner runner = new ScriptedRunner();
+        runner.Respond("hyprctl clients -j", clientsJson);
+        runner.Respond("hyprctl eval return true", "ok\n");
+        runner.Respond("hyprctl dispatch hl.dsp.window.move({ window = \"address:0x2222\", x = 0, y = 0, relative = false })", "ok\n");
+
+        ShareX.Platform.Linux.Desktop.CompositorCommands commands = new(runner);
+        ShareX.Platform.Linux.Desktop.HyprlandDispatcher dispatcher = new(commands);
+
+        Assert.True(ShareX.Platform.Linux.Desktop.HyprlandWindowPlacement.TryPlaceExisting(
+            commands, dispatcher, 4242, "Region capture", new PlatformPoint(0, 0)));
+        Assert.Contains("hyprctl dispatch hl.dsp.window.move({ window = \"address:0x2222\", x = 0, y = 0, relative = false })", runner.Calls);
+        Assert.DoesNotContain(runner.Calls, c => c.Contains("0x1111", StringComparison.Ordinal));
+    }
+
+    [Fact]
+    public void TryPlaceExisting_SkipsMoveWhenAlreadyAtTarget()
+    {
+        const string clientsJson = """
+            [
+              { "address": "0x2222", "mapped": true, "pid": 4242, "xwayland": true, "floating": true, "title": "Region capture", "at": [0, 0], "size": [3200, 1080] }
+            ]
+            """;
+
+        ScriptedRunner runner = new ScriptedRunner();
+        runner.Respond("hyprctl clients -j", clientsJson);
+
+        ShareX.Platform.Linux.Desktop.CompositorCommands commands = new(runner);
+        ShareX.Platform.Linux.Desktop.HyprlandDispatcher dispatcher = new(commands);
+
+        Assert.True(ShareX.Platform.Linux.Desktop.HyprlandWindowPlacement.TryPlaceExisting(
+            commands, dispatcher, 4242, "Region capture", new PlatformPoint(0, 0)));
+        Assert.DoesNotContain(runner.Calls, c => c.StartsWith("hyprctl dispatch", StringComparison.Ordinal));
+    }
+
+    private sealed class ScriptedRunner : Diagnostics.ICommandRunner
+    {
+        private readonly Dictionary<string, string> responses = new(StringComparer.Ordinal);
+
+        public List<string> Calls { get; } = new();
+
+        public void Respond(string commandLine, string stdout) => responses[commandLine] = stdout;
+
+        public bool Exists(string command) => command == "hyprctl";
+
+        public System.Threading.Tasks.Task<Diagnostics.CommandResult> RunAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default)
+        {
+            string line = command + " " + string.Join(" ", arguments);
+            Calls.Add(line);
+            return responses.TryGetValue(line, out string? stdout)
+                ? System.Threading.Tasks.Task.FromResult(new Diagnostics.CommandResult(0, System.Text.Encoding.UTF8.GetBytes(stdout), ""))
+                : System.Threading.Tasks.Task.FromResult(new Diagnostics.CommandResult(1, [], "unexpected: " + line));
+        }
+
+        public System.Threading.Tasks.Task<int> RunForkingAsync(string command, IReadOnlyList<string> arguments, byte[]? standardInput = null,
+            TimeSpan? timeout = null, System.Threading.CancellationToken cancellationToken = default) => throw new NotSupportedException();
+    }
+}
+
 public class TrayHostMonitorLockTests
 {
     [Fact]
