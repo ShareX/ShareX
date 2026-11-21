@@ -439,8 +439,8 @@
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Перетягніть, щоб перемістити панель інструментів; двічі клацніть, щоб скинути її положення</value>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>Захоплення області (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>Захоплення області</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Продовжити</value>

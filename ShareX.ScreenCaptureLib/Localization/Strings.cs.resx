@@ -439,8 +439,8 @@
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Přetažením přesunete panel nástrojů, poklepáním obnovíte jeho pozici</value>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>Zachytit oblast (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>Zachytit oblast</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Pokračovat</value>

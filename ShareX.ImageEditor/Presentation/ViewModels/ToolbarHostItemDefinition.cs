@@ -27,8 +27,8 @@ namespace ShareX.ImageEditor.Presentation.ViewModels;
 
 /// <summary>
 /// A toolbar button that an embedding host, such as region capture, adds in front of the editor's own items. It can
-/// be shown, hidden, moved and given hotkeys in the toolbar customization like the editor's items; using it raises
-/// <see cref="MainViewModel.HostToolbarItemRequested"/>.
+/// be moved and given hotkeys in the toolbar customization like the editor's items, and shown or hidden unless
+/// <paramref name="CanHide"/> is false; using it raises <see cref="MainViewModel.HostToolbarItemRequested"/>.
 /// </summary>
 public sealed record ToolbarHostItemDefinition(
     string Id,
@@ -36,4 +36,6 @@ public sealed record ToolbarHostItemDefinition(
     string Icon,
     string DefaultHotkey = "",
     bool IsVisibleByDefault = true,
-    bool BeginGroupByDefault = false);
+    bool BeginGroupByDefault = false,
+    string DefaultSecondaryHotkey = "",
+    bool CanHide = true);

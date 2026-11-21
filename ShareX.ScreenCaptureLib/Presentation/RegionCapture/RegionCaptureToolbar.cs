@@ -38,12 +38,16 @@ namespace ShareX.ScreenCaptureLib.Presentation.RegionCapture;
 
 public static class RegionCaptureToolbar
 {
+    public const string RectangleRegionItemId = "RegionRectangle";
     public const string EllipseRegionItemId = "RegionEllipse";
     public const string FreehandRegionItemId = "RegionFreehand";
 
-    // The ShareX 21 ellipse and freehand region tools. Hidden until turned on in the toolbar customization.
+    // The rectangle region tool is always shown, with Tab and the ShareX 21 NumPad0 key. The ShareX 21 ellipse and
+    // freehand region tools are hidden until turned on in the toolbar customization.
     private static IReadOnlyList<ToolbarHostItemDefinition> CreateRegionItems() =>
     [
+        new(RectangleRegionItemId, Strings.RegionCaptureWindow_RectangleRegion, ImageEditorIcons.Region, "Tab",
+            DefaultSecondaryHotkey: "NumPad0", CanHide: false),
         new(EllipseRegionItemId, Strings.RegionCaptureWindow_EllipseRegion, ImageEditorIcons.RegionEllipse, IsVisibleByDefault: false),
         new(FreehandRegionItemId, Strings.RegionCaptureWindow_FreehandRegion, ImageEditorIcons.RegionFreehand, IsVisibleByDefault: false)
     ];
@@ -58,6 +62,11 @@ public static class RegionCaptureToolbar
 
     internal static RegionShape? GetRegionShape(string id)
     {
+        if (string.Equals(id, RectangleRegionItemId, StringComparison.OrdinalIgnoreCase))
+        {
+            return RegionShape.Rectangle;
+        }
+
         if (string.Equals(id, EllipseRegionItemId, StringComparison.OrdinalIgnoreCase))
         {
             return RegionShape.Ellipse;
@@ -71,11 +80,11 @@ public static class RegionCaptureToolbar
         return null;
     }
 
-    /// <summary>Returns the toolbar item of a region shape, or null for the rectangle region, which has its own button.</summary>
-    internal static string? GetItemId(RegionShape shape) => shape switch
+    /// <summary>Returns the toolbar item of a region shape.</summary>
+    internal static string GetItemId(RegionShape shape) => shape switch
     {
         RegionShape.Ellipse => EllipseRegionItemId,
         RegionShape.Freehand => FreehandRegionItemId,
-        _ => null
+        _ => RectangleRegionItemId
     };
 }

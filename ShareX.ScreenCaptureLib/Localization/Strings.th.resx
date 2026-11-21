@@ -439,8 +439,8 @@
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>ลากเพื่อย้ายแถบเครื่องมือ ดับเบิลคลิกเพื่อรีเซ็ตตำแหน่ง</value>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>จับภาพ พื้นที่ (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>จับภาพ พื้นที่</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>ทำต่อ</value>

@@ -439,8 +439,8 @@
   <data name="RegionCaptureWindow_MoveToolbar" xml:space="preserve">
     <value>Trageți pentru a muta bara de instrumente, faceți dublu clic pentru a-i reseta poziția</value>
   </data>
-  <data name="RegionCaptureWindow_RectangleRegionTab" xml:space="preserve">
-    <value>Regiune de captură (Tab)</value>
+  <data name="RegionCaptureWindow_RectangleRegion" xml:space="preserve">
+    <value>Regiune de captură</value>
   </data>
   <data name="Resume" xml:space="preserve">
     <value>Reia</value>

@@ -302,8 +302,8 @@ public sealed class ToolbarCustomizationItemViewModel : ViewModelBase
         IReadOnlyList<ToolbarHostItemDefinition> hostItems)
     {
         List<ToolbarItemDefinition> definitions = hostItems
-            .Select(item => new ToolbarItemDefinition(item.Id, null, item.Name, item.Icon, item.DefaultHotkey, true, true,
-                item.BeginGroupByDefault, IsVisibleByDefault: item.IsVisibleByDefault, IsHostItem: true))
+            .Select(item => new ToolbarItemDefinition(item.Id, null, item.Name, item.Icon, item.DefaultHotkey, true, item.CanHide,
+                item.BeginGroupByDefault, item.DefaultSecondaryHotkey, item.IsVisibleByDefault, IsHostItem: true))
             .Concat(ItemDefinitions)
             .ToList();
 

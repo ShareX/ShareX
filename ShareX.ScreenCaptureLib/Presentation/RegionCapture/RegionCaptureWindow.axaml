@@ -4,8 +4,6 @@
         xmlns:editorControls="using:ShareX.ImageEditor.Presentation.Controls"
         xmlns:capture="using:ShareX.ScreenCaptureLib.Presentation.RegionCapture"
         xmlns:localization="using:ShareX.ScreenCaptureLib.Localization"
-        xmlns:icons="using:ShareX.Icons"
-        xmlns:iconControls="using:ShareX.AvaloniaUI.Controls"
         x:Class="ShareX.ScreenCaptureLib.Presentation.RegionCapture.RegionCaptureWindow"
         WindowDecorations="None"
         CanResize="False"
@@ -152,13 +150,6 @@
                                           HorizontalAlignment="Center"
                                           VerticalAlignment="Center"/>
                                 </Border>
-                                <Button x:Name="RegionToolButton"
-                                        Classes="toolbar-button active"
-                                        Click="OnRegionToolClick"
-                                        ToolTip.Tip="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}"
-                                        AutomationProperties.Name="{x:Static localization:Strings.RegionCaptureWindow_RectangleRegionTab}">
-                                    <iconControls:IconPresenter Icon="{x:Static icons:ImageEditorIcons.Region}"/>
-                                </Button>
                             </StackPanel>
                         </editorControls:AnnotationToolbar.MainToolbarLeadingContent>
                     </editorControls:AnnotationToolbar>

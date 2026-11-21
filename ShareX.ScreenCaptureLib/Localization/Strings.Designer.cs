@@ -305,8 +305,8 @@ namespace ShareX.ScreenCaptureLib.Localization {
         public static string BaseRegionForm_InitializeComponent_Region_capture {
             get { return ResourceManager.GetString("BaseRegionForm_InitializeComponent_Region_capture", resourceCulture); }
         }
-        public static string RegionCaptureWindow_RectangleRegionTab {
-            get { return ResourceManager.GetString("RegionCaptureWindow_RectangleRegionTab", resourceCulture); }
+        public static string RegionCaptureWindow_RectangleRegion {
+            get { return ResourceManager.GetString("RegionCaptureWindow_RectangleRegion", resourceCulture); }
         }
         public static string ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_ {
             get { return ResourceManager.GetString("ScreenRecordForm_StartRecording_Click_tray_icon_to_stop_recording_", resourceCulture); }
