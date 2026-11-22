@@ -296,6 +296,43 @@
                     </Panel>
                 </Border>
 
+                <!-- Settings of the selected spacer, which are stored on the item after it. -->
+                <Border Grid.Row="2"
+                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                        BorderThickness="0,1,0,0"
+                        Padding="14,10"
+                        IsVisible="{Binding HasSelectedSpacer}">
+                    <Grid ColumnDefinitions="*,Auto" ColumnSpacing="16">
+                        <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                            <Panel Width="20" Height="20" VerticalAlignment="Center">
+                                <Border Classes="spacer-line"
+                                        Height="20"
+                                        IsVisible="{Binding SelectedSpacerItem.ShowSpacerLine, FallbackValue=True}"/>
+                                <Line Classes="spacer-dash"
+                                      EndPoint="0.5,20"
+                                      IsVisible="{Binding !SelectedSpacerItem.ShowSpacerLine, FallbackValue=False}"/>
+                            </Panel>
+                            <TextBlock Text="{Binding SelectedSpacerName}"
+                                       VerticalAlignment="Center"
+                                       TextTrimming="CharacterEllipsis"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1" Spacing="2" VerticalAlignment="Center">
+                            <TextBlock Classes="caption"
+                                       Text="{x:Static res:Strings.ToolbarCustomizationDialogView_SpacerWidth}"/>
+                            <NumericUpDown x:Name="SpacerWidthBox"
+                                           Width="116"
+                                           Minimum="0"
+                                           Maximum="96"
+                                           Increment="4"
+                                           FormatString="0"
+                                           ClipValueToMinMax="True"
+                                           Value="{Binding SelectedSpacerItem.SpacerWidth, Mode=TwoWay}"
+                                           ToolTip.Tip="{x:Static res:Strings.ToolbarCustomizationDialogView_SpacerWidth}"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
                 <Border Grid.Row="3"
                         Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                         BorderBrush="{DynamicResource ShareX.Brush.Border}"

@@ -45,6 +45,7 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
     private readonly Dictionary<string, int> _defaultOrder;
     private string _validationMessage = "";
     private ToolbarCustomizationItemViewModel? _selectedItem;
+    private ToolbarCustomizationItemViewModel? _selectedSpacerItem;
     private bool _isUpdatingLayout;
 
     public ToolbarCustomizationDialogViewModel(
@@ -103,12 +104,58 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
             if (SetProperty(ref _selectedItem, value))
             {
                 OnPropertyChanged(nameof(HasSelectedItem));
+
+                if (value != null)
+                {
+                    SelectedSpacerItem = null;
+                }
+
                 RefreshSelection();
             }
         }
     }
 
     public bool HasSelectedItem => SelectedItem != null;
+
+    /// <summary>
+    /// The item after the selected spacer, which stores the spacer's width, or null when no spacer is selected. Only
+    /// one of this and <see cref="SelectedItem"/> is set at a time.
+    /// </summary>
+    public ToolbarCustomizationItemViewModel? SelectedSpacerItem
+    {
+        get => _selectedSpacerItem;
+        private set
+        {
+            if (SetProperty(ref _selectedSpacerItem, value))
+            {
+                OnPropertyChanged(nameof(HasSelectedSpacer));
+                OnPropertyChanged(nameof(SelectedSpacerName));
+
+                if (value != null)
+                {
+                    SelectedItem = null;
+                }
+
+                RefreshSelection();
+            }
+        }
+    }
+
+    public bool HasSelectedSpacer => SelectedSpacerItem != null;
+
+    public string SelectedSpacerName => SelectedSpacerItem?.ShowSpacerLine == false
+        ? Strings.ToolbarCustomizationDialogView_BlankSpacer
+        : Strings.ToolbarCustomizationDialogView_Spacer;
+
+    /// <summary>Selects the spacer at <paramref name="slotIndex"/> on the toolbar so its width can be typed in.</summary>
+    public void SelectSpacer(int slotIndex)
+    {
+        if (slotIndex >= 0 && slotIndex < ToolbarSlots.Count - 1 && ToolbarSlots[slotIndex].IsSpacer &&
+            ToolbarSlots[slotIndex + 1].Item is { } item)
+        {
+            SelectedSpacerItem = item;
+        }
+    }
 
     public string ValidationMessage
     {
@@ -152,9 +199,9 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
     }
 
     /// <summary>
-    /// Puts a spacer before the slot at <paramref name="slotIndex"/>. When <paramref name="fromSlotIndex"/> is a
-    /// spacer on the toolbar, that spacer moves, keeping its width and line, instead of a new one being added with
-    /// <paramref name="showLine"/>.
+    /// Puts a spacer before the slot at <paramref name="slotIndex"/> and selects it. When <paramref
+    /// name="fromSlotIndex"/> is a spacer on the toolbar, that spacer moves, keeping its width and line, instead of a
+    /// new one being added with <paramref name="showLine"/>.
     /// </summary>
     public void PlaceSpacer(int slotIndex, int? fromSlotIndex = null, bool showLine = true)
     {
@@ -172,8 +219,17 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
             }
         }
 
-        tokens.Insert(Math.Clamp(slotIndex, 0, tokens.Count), spacer);
+        slotIndex = Math.Clamp(slotIndex, 0, tokens.Count);
+        tokens.Insert(slotIndex, spacer);
+
+        // The spacer is stored on the next item, merging with any spacers in between. At the end it is dropped.
+        ToolbarCustomizationItemViewModel? nextItem = tokens.Skip(slotIndex + 1).FirstOrDefault(token => !token.IsSpacer).Item;
         ApplyLayoutTokens(tokens);
+
+        if (nextItem != null)
+        {
+            SelectedSpacerItem = nextItem;
+        }
     }
 
     /// <summary>Sets the extra space of the spacer at <paramref name="slotIndex"/>.</summary>
@@ -446,9 +502,24 @@ public sealed class ToolbarCustomizationDialogViewModel : ViewModelBase
 
     private void RefreshSelection()
     {
-        foreach (ToolbarLayoutSlot slot in ToolbarSlots.Concat(AvailableSlots))
+        // A selected spacer that was moved, merged or removed is no longer selected.
+        if (SelectedSpacerItem is { } spacerItem && !(spacerItem.IsVisible && spacerItem.BeginGroup))
+        {
+            SelectedSpacerItem = null;
+            return;
+        }
+
+        foreach (ToolbarLayoutSlot slot in AvailableSlots)
         {
             slot.IsSelected = slot.Item != null && slot.Item == SelectedItem;
+        }
+
+        for (int i = 0; i < ToolbarSlots.Count; i++)
+        {
+            ToolbarLayoutSlot slot = ToolbarSlots[i];
+            slot.IsSelected = slot.Item is { } item
+                ? item == SelectedItem
+                : SelectedSpacerItem != null && i + 1 < ToolbarSlots.Count && ToolbarSlots[i + 1].Item == SelectedSpacerItem;
         }
     }
 
