@@ -7,6 +7,8 @@
 # Needs nfpm (https://nfpm.goreleaser.com) for the .deb and .rpm, and appimagetool with a type 2 runtime for the AppImage:
 #   NFPM=nfpm  APPIMAGETOOL=appimagetool  APPIMAGE_RUNTIME=path/to/runtime-<cpu>
 # SHAREX_PRERELEASE (for example dev42) marks preview builds as older than the release of the same version: 22.4.0~dev42.
+# Optional RPM OpenPGP signing (for Fedora 44 / RPM 6.0):
+#   LINUX_GPG_KEY_FILE=path/to/private.key  LINUX_GPG_PASSPHRASE=...  LINUX_GPG_KEY_ID=hexid
 set -euo pipefail
 
 tarball="${1:?usage: package-linux.sh ShareX-<version>-linux-<arch>.tar.gz OUTDIR}"
@@ -78,8 +80,41 @@ rpm:
   summary: Screenshot, screen recording and file sharing tool
 NFPM
 
+if [ -n "${LINUX_GPG_KEY_FILE:-}" ]; then
+  [ -f "$LINUX_GPG_KEY_FILE" ] || { echo "LINUX_GPG_KEY_FILE not found: $LINUX_GPG_KEY_FILE" >&2; exit 2; }
+  {
+    echo "  signature:"
+    printf '    key_file: "%s"\n' "$LINUX_GPG_KEY_FILE"
+    if [ -n "${LINUX_GPG_KEY_ID:-}" ]; then
+      printf '    key_id: "%s"\n' "$LINUX_GPG_KEY_ID"
+    fi
+  } >>"$staging/nfpm.yaml"
+fi
+
+nfpm_env=()
+if [ -n "${LINUX_GPG_KEY_FILE:-}" ]; then
+  rpm_pass="${NFPM_RPM_PASSPHRASE:-${LINUX_GPG_PASSPHRASE:-}}"
+  [ -n "$rpm_pass" ] && nfpm_env+=(NFPM_RPM_PASSPHRASE="$rpm_pass")
+fi
+
 "$nfpm" package --config "$staging/nfpm.yaml" --packager deb --target "$out/$name.deb"
-"$nfpm" package --config "$staging/nfpm.yaml" --packager rpm --target "$out/$name.rpm"
+env "${nfpm_env[@]}" "$nfpm" package --config "$staging/nfpm.yaml" --packager rpm --target "$out/$name.rpm"
+
+if [ -n "${LINUX_GPG_KEY_FILE:-}" ] && command -v gpg >/dev/null 2>&1; then
+  mkdir -p "$staging/gnupg"
+  chmod 700 "$staging/gnupg"
+  gpg_log="$(GNUPGHOME="$staging/gnupg" gpg --batch --import "$LINUX_GPG_KEY_FILE" 2>&1 || true)"
+  if [ -n "${LINUX_GPG_KEY_ID:-}" ]; then
+    GNUPGHOME="$staging/gnupg" gpg --batch --yes --armor --export "$LINUX_GPG_KEY_ID" >"$out/RPM-GPG-KEY-ShareX.asc"
+  else
+    GNUPGHOME="$staging/gnupg" gpg --batch --yes --armor --export >"$out/RPM-GPG-KEY-ShareX.asc"
+  fi
+  if [ ! -s "$out/RPM-GPG-KEY-ShareX.asc" ]; then
+    echo "Failed to export public RPM GPG key: $gpg_log" >&2
+    rm -f "$out/RPM-GPG-KEY-ShareX.asc"
+    exit 2
+  fi
+fi
 
 # The AppImage runs ShareX from its mounted image. ShareX writes its own hidden sharex.desktop at start, which the portal
 # needs for screenshots and hotkeys, so the menu entry here is only for AppImage launchers that integrate it.

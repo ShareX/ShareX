@@ -198,6 +198,8 @@ jobs:
   linux:
     name: Linux packages (${{ matrix.arch }})
     runs-on: ${{ matrix.runner }}
+    env:
+      HAS_LINUX_GPG_KEY: ${{ secrets.LINUX_GPG_KEY != '' }}
 
     strategy:
       fail-fast: false
@@ -221,6 +223,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Import Linux GPG signing key
+        if: env.HAS_LINUX_GPG_KEY == 'true'
+        env:
+          LINUX_GPG_KEY: ${{ secrets.LINUX_GPG_KEY }}
+        run: |
+          key_file="$RUNNER_TEMP/linux-signing.key"
+          if [[ "$LINUX_GPG_KEY" == *"-----BEGIN PGP"* ]]; then
+            printf '%s\n' "$LINUX_GPG_KEY" > "$key_file"
+          else
+            printf '%s' "$LINUX_GPG_KEY" | base64 --decode > "$key_file"
+          fi
+          chmod 600 "$key_file"
+          echo "LINUX_GPG_KEY_FILE=$key_file" >> "$GITHUB_ENV"
 
       - name: Read version
         shell: bash
@@ -268,6 +284,8 @@ jobs:
           # The runner has no FUSE for appimagetool's own AppImage.
           APPIMAGE_EXTRACT_AND_RUN: 1
           SHAREX_PRERELEASE: dev${{ github.run_number }}
+          LINUX_GPG_PASSPHRASE: ${{ secrets.LINUX_GPG_PASSPHRASE }}
+          LINUX_GPG_KEY_ID: ${{ secrets.LINUX_GPG_KEY_ID }}
         run: |
           Scripts/install-linux.sh --package "$RUNNER_TEMP/package"
           Scripts/package-linux.sh "$RUNNER_TEMP/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.tar.gz" "$RUNNER_TEMP/package"
@@ -294,8 +312,17 @@ jobs:
 
       - name: Install the .rpm on Fedora
         run: |
-          docker run --rm -v "$RUNNER_TEMP/package:/package:ro" fedora:latest \
-            dnf install -yq "/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.rpm"
+          if [ "${{ env.HAS_LINUX_GPG_KEY }}" = "true" ]; then
+            docker run --rm -v "$RUNNER_TEMP/package:/package:ro" fedora:latest bash -euo pipefail -c '
+              rpmkeys --import /package/RPM-GPG-KEY-ShareX.asc
+              rpmkeys -K "/package/ShareX-$0-linux-$1.rpm"
+              rpm -i --test "/package/ShareX-$0-linux-$1.rpm"
+              dnf install -yq "/package/ShareX-$0-linux-$1.rpm"
+            ' "$SHAREX_VERSION" "${{ matrix.arch }}"
+          else
+            docker run --rm -v "$RUNNER_TEMP/package:/package:ro" fedora:latest \
+              dnf install -yq "/package/ShareX-$SHAREX_VERSION-linux-${{ matrix.arch }}.rpm"
+          fi
 
       # One artifact per format, so each download holds only the file wanted. The names are the file names; the tarball keeps
       # the extensionless name earlier builds used.
@@ -320,9 +347,21 @@ jobs:
           path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.rpm
           if-no-files-found: error
 
+      - name: Upload RPM GPG public key
+        if: env.HAS_LINUX_GPG_KEY == 'true' && matrix.arch == 'x64'
+        uses: actions/upload-artifact@v4
+        with:
+          name: RPM-GPG-KEY-ShareX.asc
+          path: ${{ runner.temp }}/package/RPM-GPG-KEY-ShareX.asc
+          if-no-files-found: error
+
       - name: Upload AppImage
         uses: actions/upload-artifact@v4
         with:
           name: ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.AppImage
           path: ${{ runner.temp }}/package/ShareX-${{ env.SHAREX_VERSION }}-linux-${{ matrix.arch }}.AppImage
           if-no-files-found: error
+
+      - name: Remove Linux GPG signing key
+        if: always()
+        run: rm -f "$RUNNER_TEMP/linux-signing.key"
