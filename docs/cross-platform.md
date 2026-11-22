@@ -83,6 +83,14 @@ On sway, GNOME and KDE scrolling capture is reported unsupported with the Waylan
 
 `Scripts/install-linux.sh` builds and installs ShareX for the current user under `~/.local` (no root). `Scripts/install-linux.sh --package DIR` makes a self-contained `ShareX-<version>-linux-x64.tar.gz` (or `-arm64`); users extract it and run `./install.sh`, which needs neither the .NET SDK nor root, and `./install.sh --uninstall` removes it while keeping settings and screenshots. Flatpak is deferred: its sandbox blocks the compositor IPC, X11 window access and grim that capture relies on. The `Linux` workflow builds, tests, packages and runs the installed application headless on every push.
 
+On Fedora (including Fedora 44 with RPM 6.0), install the `.rpm` with `sudo dnf install ./ShareX-*.rpm`, or import `RPM-GPG-KEY-ShareX.asc` (`sudo rpmkeys --import RPM-GPG-KEY-ShareX.asc`) before `sudo rpm -i` when the package is signed; unsigned local/CI `.rpm` packages require `sudo rpm -i --nosignature` under RPM 6.0. `Scripts/package-linux.sh` and the Cross-platform workflow sign `.rpm` packages with SHA-256 OpenPGP via `nfpm` and publish `RPM-GPG-KEY-ShareX.asc` when the repository has these secrets:
+
+| Variable / Secret | Value |
+| --- | --- |
+| `LINUX_GPG_KEY` (script: `LINUX_GPG_KEY_FILE`) | OpenPGP private key (armored or base64 in workflow; file path in script) |
+| `LINUX_GPG_PASSPHRASE` | Private key passphrase, if encrypted (forwarded to `NFPM_RPM_PASSPHRASE`) |
+| `LINUX_GPG_KEY_ID` | Optional hex key id |
+
 ## macOS release
 
 `Scripts/package-macos.sh arm64|x64 [DIR]` builds `ShareX-<version>-macos-<arch>.zip` and, on a Mac, `ShareX-<version>-macos-<arch>.dmg` (ShareX.app beside a link to Applications). Without signing settings the bundle is signed ad hoc, which runs locally but which Gatekeeper rejects after a download. For a release the script signs every Mach-O file with a Developer ID and the hardened runtime, using `Scripts/macos/ShareX.entitlements` (JIT and unsigned executable memory for .NET, library validation off for its native libraries, microphone, Apple Events), then notarizes and staples the app and the disk image:
@@ -122,3 +130,5 @@ Recommended packages: FFmpeg (recording), wl-clipboard (Wayland) or xclip (X11),
 Hyprland's GlobalShortcuts portal registers ShareX's hotkeys but does not assign keys to them, so ShareX binds each hotkey's keys itself at run time (`hyprctl eval` with `hl.bind` on Lua configurations, `hyprctl keyword bind` on classic ones). Key combinations the configuration already uses, such as Omarchy's Print Screen, are left alone and reported as in use, like a hotkey another application holds on Windows; choose another key in ShareX's hotkey settings. The binds are not written to the configuration, are removed when ShareX exits and are added again after `hyprctl reload`. `hyprctl binds` lists them with "ShareX:" descriptions.
 
 With `xwayland:force_zero_scaling`, ShareX's windows use device pixels; the platform layer converts between them and Hyprland's layout coordinates.
+
+For region capture (and transparent region selection) on Wayland sessions that expose `zwlr_layer_shell_v1` (such as Hyprland and sway), `WaylandLayerOverlayWindow` maps one native Wayland surface per output on the `overlay` layer (level 3) with `exclusive_zone = -1`, `keyboard_interactivity = EXCLUSIVE`, `wl_surface.frame` pacing, and unified pointer coordinates across monitor seams so selection drags can start over `top`-layer bars (`Waybar`, `Quickshell`) and cross monitors. Setting `SHAREX_DISABLE_WAYLAND_LAYER_OVERLAY=1` (or running on a compositor without `zwlr_layer_shell_v1`) falls back to the XWayland overlay placed via `HyprlandWindowPlacement` / `KWinWindowPlacement`.
