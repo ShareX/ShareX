@@ -294,6 +294,9 @@ public sealed class LinuxWindowService : IWindowService
     public IScreenOverlay CreateOverlay(PlatformRectangle screenBounds) =>
         OverlaySupport.IsSupported ? new X11ScreenOverlay(screenBounds) : throw new PlatformNotSupportedException(OverlaySupport.Reason);
 
+    public IPlatformOverlayWindow? TryCreateOverlayWindow(OverlayWindowOptions options) =>
+        platform is { IsWayland: true } ? Wayland.WaylandLayerOverlayWindow.TryCreate(options) : null;
+
     public long GetActiveWindowHandle() => GetActiveWindow()?.Handle ?? 0;
 
     public PlatformRectangle? GetWindowBounds(long windowHandle) => backend.GetWindowBounds(windowHandle);

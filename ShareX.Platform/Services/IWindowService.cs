@@ -268,4 +268,11 @@ public interface IWindowService
 
     /// <summary>Creates a hidden overlay for the screen at <paramref name="screenBounds"/>.</summary>
     IScreenOverlay CreateOverlay(PlatformRectangle screenBounds);
+
+    /// <summary>
+    /// Creates an interactive native overlay window that stacks above compositor panels and top bars across one or more
+    /// monitors (for example via Wayland wlr-layer-shell on the overlay layer). Returns null where ordinary windows already
+    /// cover the full screen or no such protocol is available.
+    /// </summary>
+    IPlatformOverlayWindow? TryCreateOverlayWindow(OverlayWindowOptions options) => null;
 }
