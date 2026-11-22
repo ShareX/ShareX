@@ -345,6 +345,40 @@ public class MacServicesTests
     }
 
     [Fact]
+    public void DisplayWait_ReturnsAsSoonAsADisplayIsThere()
+    {
+        TimeSpan clock = TimeSpan.Zero;
+        int polls = 0;
+
+        bool found = MacDisplayWait.WaitFor(() => ++polls >= 4, TimeSpan.FromSeconds(60), TimeSpan.FromMilliseconds(500),
+            sleep: pause => clock += pause, elapsed: () => clock);
+
+        Assert.True(found);
+        Assert.Equal(TimeSpan.FromMilliseconds(1500), clock);
+    }
+
+    [Fact]
+    public void DisplayWait_GivesUpWhenTheTimeIsUp()
+    {
+        TimeSpan clock = TimeSpan.Zero;
+
+        bool found = MacDisplayWait.WaitFor(() => false, TimeSpan.FromSeconds(2), TimeSpan.FromMilliseconds(500),
+            sleep: pause => clock += pause, elapsed: () => clock);
+
+        Assert.False(found);
+        Assert.Equal(TimeSpan.FromSeconds(2), clock);
+    }
+
+    [Fact]
+    public void DisplayWait_DoesNotWaitWhenADisplayIsAlreadyThere()
+    {
+        TimeSpan clock = TimeSpan.Zero;
+
+        Assert.True(MacDisplayWait.WaitFor(() => true, TimeSpan.FromSeconds(60), TimeSpan.FromSeconds(1), sleep: pause => clock += pause));
+        Assert.Equal(TimeSpan.Zero, clock);
+    }
+
+    [Fact]
     public void Screens_WorkingAreaLeavesOutTheMenuBarAndTheDock()
     {
         // AppKit measures from the bottom left: a 1512x982 screen with a 38 point menu bar at the top and a 70 point Dock below.

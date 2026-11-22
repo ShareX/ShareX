@@ -119,6 +119,13 @@ internal static class Program
         FileTypeRegistration.RegisterMissingExtensions();
         ApplicationDiagnostics.WriteStartupFlags();
 
+        // Avalonia cannot start without an active display, which a closed MacBook has until its screen wakes. Wait for one
+        // rather than aborting (AvaloniaUI/Avalonia#18895); this returns at once everywhere else.
+        if (PlatformServices.IsInitialized && !PlatformServices.Current.Windows.WaitForActiveDisplay(TimeSpan.FromSeconds(60)))
+        {
+            DebugHelper.WriteLine("No active display after 60 seconds; starting anyway.");
+        }
+
         DebugHelper.WriteLine("Avalonia application initializing.");
         AvaloniaBootstrapper.Initialize(args, StartApplicationAsync, ApplicationLifecycle.OnAvaloniaStopped);
         ApplicationDiagnostics.InitializeAvalonia();

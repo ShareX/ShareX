@@ -178,6 +178,13 @@ public interface IWindowService
     PlatformPoint GetOverlayDpiAnchor(PlatformRectangle bounds) => new(bounds.X, bounds.Y);
 
     /// <summary>
+    /// Waits until the system has a display ShareX can start its user interface on, for at most <paramref name="timeout"/>.
+    /// A MacBook with its lid closed and no screen awake has none, and Avalonia cannot start then. Returns false when the
+    /// time ran out. Systems where this is no concern answer true at once.
+    /// </summary>
+    bool WaitForActiveDisplay(TimeSpan timeout) => true;
+
+    /// <summary>
     /// Where the window actually is, for the display diagnostics report. Null where the system does not report it.
     /// </summary>
     NativeWindowGeometry? ReadNativeWindowGeometry(long windowHandle) => null;

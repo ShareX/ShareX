@@ -250,6 +250,20 @@ public sealed class MacWindowService : IWindowService
 
     public bool HidesInsteadOfMinimizing => true;
 
+    /// <summary>
+    /// Avalonia's render timer is a CVDisplayLink over the active displays and fails with "not able to start the RenderTimer"
+    /// (error -6661, AvaloniaUI/Avalonia#18895) when there are none, as with a closed lid and the screen asleep. A display counts
+    /// once Core Graphics lists one as active and names a main display.
+    /// </summary>
+    public bool WaitForActiveDisplay(TimeSpan timeout) =>
+        MacDisplayWait.WaitFor(HasActiveDisplay, timeout, TimeSpan.FromMilliseconds(500));
+
+    private static unsafe bool HasActiveDisplay()
+    {
+        uint* displays = stackalloc uint[8];
+        return CoreGraphics.CGGetActiveDisplayList(8, displays, out uint count) == 0 && count > 0 && CoreGraphics.CGMainDisplayID() != 0;
+    }
+
     public bool UsesSystemWindowButtons => true;
 
     // NSStatusWindowLevel: above the Dock (20) and the menu bar (24), below Avalonia's pop-up menus (101).
