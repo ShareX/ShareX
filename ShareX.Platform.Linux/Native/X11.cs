@@ -52,6 +52,11 @@ internal static unsafe partial class X11
 
     public static readonly nuint AnyPropertyType = 0;
     public static readonly nuint AllPlanes = nuint.MaxValue;
+    public static readonly nuint PointerRoot = 1;
+
+    public static bool IsInvalidWindowHandle(nuint window) => window == 0 || window == PointerRoot;
+
+    public static bool IsInvalidWindowHandle(long windowHandle) => windowHandle <= 0 || (nuint)windowHandle == PointerRoot;
 
     [StructLayout(LayoutKind.Sequential)]
     public struct XImage
@@ -152,6 +157,9 @@ internal static unsafe partial class X11
     }
 
     [LibraryImport(LibX11)]
+    public static partial int XInitThreads();
+
+    [LibraryImport(LibX11)]
     public static partial IntPtr XOpenDisplay(IntPtr displayName);
 
     [LibraryImport(LibX11)]
@@ -245,7 +253,20 @@ internal static unsafe partial class X11
     [ThreadStatic]
     private static int lastErrorCode;
 
+    private static int threadsInitialized;
     private static int errorHandlerInstalled;
+
+    /// <summary>
+    /// Enables Xlib internal locking before the first X11 connection opens. Under Avalonia.Wayland,
+    /// Avalonia.X11 never initializes so XInitThreads would otherwise never be called.
+    /// </summary>
+    public static void EnsureThreadsInitialized()
+    {
+        if (Interlocked.Exchange(ref threadsInitialized, 1) == 0)
+        {
+            XInitThreads();
+        }
+    }
 
     /// <summary>
     /// Xlib's default error handler terminates the process. Install one that records the error instead, so
@@ -277,6 +298,7 @@ internal static unsafe partial class X11
     /// <summary>Opens the default display. Returns an invalid handle when no X server is reachable.</summary>
     public static DisplayHandle OpenDisplay()
     {
+        EnsureThreadsInitialized();
         EnsureErrorHandler();
         return new DisplayHandle(XOpenDisplay(IntPtr.Zero));
     }

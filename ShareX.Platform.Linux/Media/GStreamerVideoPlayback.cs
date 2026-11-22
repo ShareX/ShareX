@@ -60,16 +60,32 @@ internal sealed unsafe class GStreamerVideoPlayback : IVideoPlayback
 
     public GStreamerVideoPlayback(nuint parent, SynchronizationContext context, string sinkFactory)
     {
+        if (X11.IsInvalidWindowHandle(parent))
+        {
+            throw new ArgumentOutOfRangeException(nameof(parent), "A valid X11 parent window handle is required.");
+        }
+
         _context = context;
         _sinkFactory = sinkFactory;
+        X11.EnsureThreadsInitialized();
+        X11.EnsureErrorHandler();
         _display = X11.XOpenDisplay(IntPtr.Zero);
         if (_display == IntPtr.Zero) throw new InvalidOperationException("Cannot connect to the X server.");
 
         X11.XSetWindowAttributes attributes = new X11.XSetWindowAttributes { background_pixel = 0, event_mask = ButtonEvents };
+        X11.TakeLastError();
         // depth 0 and a null visual: CopyFromParent.
         _window = X11.XCreateWindow(_display, parent, 0, 0, 1, 1, 0, 0, X11.InputOutput, IntPtr.Zero, WindowAttributes, &attributes);
-        if (_window == 0)
+        X11.XSync(_display, false);
+        if (_window == 0 || X11.TakeLastError() != X11.Success)
         {
+            if (_window != 0)
+            {
+                X11.XDestroyWindow(_display, _window);
+                X11.TakeLastError();
+                _window = 0;
+            }
+
             X11.XCloseDisplay(_display);
             throw new InvalidOperationException("Cannot create the video window.");
         }

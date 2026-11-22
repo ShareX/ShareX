@@ -80,7 +80,7 @@ public sealed class LinuxWindowService : IWindowService
     /// </summary>
     public bool RequestAttention(long windowHandle, int count)
     {
-        if (windowHandle == 0)
+        if (X11.IsInvalidWindowHandle(windowHandle))
         {
             return false;
         }
@@ -205,7 +205,11 @@ public sealed class LinuxWindowService : IWindowService
         {
             if (display != null)
             {
-                kdeCaption = display.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display.GetStringProperty((nuint)windowHandle, "WM_NAME");
+                if (!X11.IsInvalidWindowHandle(windowHandle))
+                {
+                    kdeCaption = display.GetStringProperty((nuint)windowHandle, "_NET_WM_NAME") ?? display.GetStringProperty((nuint)windowHandle, "WM_NAME");
+                }
+
                 IReadOnlyList<ScreenInfo> monitors = display.GetMonitors();
 
                 if (monitors.Count > 0)
@@ -223,7 +227,7 @@ public sealed class LinuxWindowService : IWindowService
 
     private static string? ReadX11WindowTitle(long windowHandle)
     {
-        if (windowHandle == 0)
+        if (X11.IsInvalidWindowHandle(windowHandle))
         {
             return null;
         }
@@ -236,7 +240,7 @@ public sealed class LinuxWindowService : IWindowService
     // in both kinds of session. Hiding from the task bar is left to Avalonia's ShowInTaskbar.
     public bool SetOverlayStyle(long windowHandle, bool clickThrough)
     {
-        if (!clickThrough)
+        if (!clickThrough || X11.IsInvalidWindowHandle(windowHandle))
         {
             return false;
         }
@@ -252,6 +256,10 @@ public sealed class LinuxWindowService : IWindowService
 
     public bool SetWindowShape(long windowHandle, IReadOnlyList<PlatformRectangle> visibleAreas)
     {
+        if (X11.IsInvalidWindowHandle(windowHandle))
+        {
+            return false;
+        }
         // A click through window stays click through, as WS_EX_TRANSPARENT wins over the window region on Windows.
         lock (clickThroughWindows)
         {

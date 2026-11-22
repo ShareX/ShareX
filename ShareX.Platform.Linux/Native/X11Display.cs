@@ -112,6 +112,11 @@ internal sealed unsafe class X11Display : IDisposable
     /// <summary>Reads a 32 bit format property (CARDINAL, WINDOW, ATOM). Xlib returns those as C longs.</summary>
     public nuint[] GetLongProperty(nuint window, string property, int maxItems = 4096)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return Array.Empty<nuint>();
+        }
+
         if (X11.XGetWindowProperty(Display, window, GetAtom(property), 0, maxItems, false, X11.AnyPropertyType,
             out _, out int format, out nuint count, out _, out IntPtr data) != X11.Success || data == IntPtr.Zero)
         {
@@ -137,6 +142,11 @@ internal sealed unsafe class X11Display : IDisposable
 
     public string? GetStringProperty(nuint window, string property)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return null;
+        }
+
         if (X11.XGetWindowProperty(Display, window, GetAtom(property), 0, 1024, false, X11.AnyPropertyType,
             out _, out int format, out nuint count, out _, out IntPtr data) != X11.Success || data == IntPtr.Zero)
         {
@@ -218,10 +228,17 @@ internal sealed unsafe class X11Display : IDisposable
             throw new ArgumentException("The capture area is outside the screen.", nameof(area));
         }
 
+        X11.TakeLastError();
         X11.XImage* image = X11.XGetImage(Display, Root, area.X, area.Y, (uint)area.Width, (uint)area.Height, X11.AllPlanes, X11.ZPixmap);
+        int error = X11.TakeLastError();
 
-        if (image == null)
+        if (image == null || error != X11.Success)
         {
+            if (image != null)
+            {
+                X11.DestroyImage(image);
+            }
+
             throw new InvalidOperationException("XGetImage failed.");
         }
 
@@ -334,6 +351,11 @@ internal sealed unsafe class X11Display : IDisposable
 
     public PlatformRectangle? GetWindowBounds(nuint window, bool includeFrame)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return null;
+        }
+
         if (X11.XGetGeometry(Display, window, out _, out _, out _, out uint width, out uint height, out _, out _) == 0)
         {
             X11.TakeLastError();
@@ -366,6 +388,11 @@ internal sealed unsafe class X11Display : IDisposable
     /// <summary>Asks the window manager to raise and focus a window (EWMH _NET_ACTIVE_WINDOW, source indication 2: a pager).</summary>
     public bool RequestActivation(nuint window)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return false;
+        }
+
         X11.XClientMessageEventPadded message = default;
         message.xclient.type = X11.ClientMessage;
         message.xclient.window = window;
@@ -383,6 +410,11 @@ internal sealed unsafe class X11Display : IDisposable
     /// </summary>
     public bool ChangeWmState(nuint window, int action, string state, string? secondState = null)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return false;
+        }
+
         X11.XClientMessageEventPadded message = default;
         message.xclient.type = X11.ClientMessage;
         message.xclient.window = window;
@@ -400,6 +432,11 @@ internal sealed unsafe class X11Display : IDisposable
 
     public bool SetCardinalProperty(nuint window, string property, uint value)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return false;
+        }
+
         // Format 32 data is passed as C longs.
         nuint data = value;
         X11.XChangeProperty(Display, window, GetAtom(property), X11.XA_CARDINAL, 32, X11.PropModeReplace, &data, 1);
@@ -410,6 +447,10 @@ internal sealed unsafe class X11Display : IDisposable
     /// <summary>Limits where a window receives mouse input. An empty list makes it click through.</summary>
     public bool SetInputShape(nuint window, IReadOnlyList<PlatformRectangle> areas)
     {
+        if (X11.IsInvalidWindowHandle(window))
+        {
+            return false;
+        }
         X11.XRectangle* rectangles = stackalloc X11.XRectangle[Math.Max(areas.Count, 1)];
 
         for (int i = 0; i < areas.Count; i++)

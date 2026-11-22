@@ -47,6 +47,20 @@ public class GStreamerVideoTests
     }
 
     [LinuxFact]
+    public void CreatePlayback_RejectsInvalidParentHandlesWhenSupported()
+    {
+        GStreamerVideoPlaybackService service = new GStreamerVideoPlaybackService(() => !string.IsNullOrEmpty(Environment.GetEnvironmentVariable("DISPLAY")));
+        if (!service.Support.IsSupported)
+        {
+            return;
+        }
+
+        Assert.Throws<ArgumentOutOfRangeException>(() => service.CreatePlayback(0));
+        Assert.Throws<ArgumentOutOfRangeException>(() => service.CreatePlayback((long)ShareX.Platform.Linux.Native.X11.PointerRoot));
+        Assert.Throws<ArgumentOutOfRangeException>(() => service.CreatePlayback(-1));
+    }
+
+    [LinuxFact]
     public async Task Thumbnails_AreFramesOfTheVideoAtItsAspectRatio()
     {
         string? video = CreateTestVideo();

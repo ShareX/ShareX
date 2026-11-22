@@ -89,7 +89,7 @@ internal sealed class X11WindowBackend : IDesktopWindowBackend
         }
 
         nuint[] active = display.GetLongProperty(display.Root, "_NET_ACTIVE_WINDOW", 1);
-        return active.Length == 1 && active[0] != 0 ? ReadWindow(display, active[0]) : null;
+        return active.Length == 1 && !X11.IsInvalidWindowHandle(active[0]) ? ReadWindow(display, active[0]) : null;
     }
 
     public PlatformPoint? GetCursorPosition()
@@ -114,12 +114,22 @@ internal sealed class X11WindowBackend : IDesktopWindowBackend
 
     public bool ActivateWindow(long windowHandle)
     {
+        if (X11.IsInvalidWindowHandle(windowHandle))
+        {
+            return false;
+        }
+
         using X11Display? display = X11Display.TryOpen();
         return display != null && display.RequestActivation((nuint)windowHandle);
     }
 
     public PlatformRectangle? GetWindowBounds(long windowHandle)
     {
+        if (X11.IsInvalidWindowHandle(windowHandle))
+        {
+            return null;
+        }
+
         using X11Display? display = X11Display.TryOpen();
         return display?.GetWindowBounds((nuint)windowHandle, includeFrame: true);
     }
@@ -127,6 +137,11 @@ internal sealed class X11WindowBackend : IDesktopWindowBackend
     /// <summary>X11 knows the client window without the frame the window manager adds.</summary>
     public PlatformRectangle? GetClientBounds(long windowHandle)
     {
+        if (X11.IsInvalidWindowHandle(windowHandle))
+        {
+            return null;
+        }
+
         using X11Display? display = X11Display.TryOpen();
         return display?.GetWindowBounds((nuint)windowHandle, includeFrame: false);
     }

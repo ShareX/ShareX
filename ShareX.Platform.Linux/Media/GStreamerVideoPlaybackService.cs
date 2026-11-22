@@ -64,6 +64,10 @@ public sealed class GStreamerVideoPlaybackService : IVideoPlaybackService
     public IVideoPlayback CreatePlayback(long parentWindowHandle)
     {
         if (!Support.IsSupported) throw new PlatformNotSupportedException(Support.Reason);
+        if (X11.IsInvalidWindowHandle(parentWindowHandle))
+        {
+            throw new ArgumentOutOfRangeException(nameof(parentWindowHandle), "A valid X11 parent window handle is required.");
+        }
         return new GStreamerVideoPlayback((nuint)parentWindowHandle,
             SynchronizationContext.Current ?? throw new InvalidOperationException("Create the video player on the UI thread."), state.Value.Sink!);
     }

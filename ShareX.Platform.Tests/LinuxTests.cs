@@ -1444,3 +1444,69 @@ public class TrayHostMonitorLockTests
         _ = ShareX.Platform.Linux.DBus.DBusSession.IsLogindSessionLocked();
     }
 }
+
+public class X11WaylandSafetyTests
+{
+    [Theory]
+    [InlineData(0UL, true)]
+    [InlineData(1UL, true)]
+    [InlineData(0x200001UL, false)]
+    public void IsInvalidWindowHandle_UnsignedRejectsZeroAndPointerRoot(ulong handle, bool expectedInvalid)
+    {
+        Assert.Equal(expectedInvalid, ShareX.Platform.Linux.Native.X11.IsInvalidWindowHandle((nuint)handle));
+    }
+
+    [Theory]
+    [InlineData(-1L, true)]
+    [InlineData(0L, true)]
+    [InlineData(1L, true)]
+    [InlineData(0x200001L, false)]
+    public void IsInvalidWindowHandle_SignedRejectsNonPositiveAndPointerRoot(long handle, bool expectedInvalid)
+    {
+        Assert.Equal(expectedInvalid, ShareX.Platform.Linux.Native.X11.IsInvalidWindowHandle(handle));
+    }
+
+    [Theory]
+    [InlineData(-1L)]
+    [InlineData(0L)]
+    [InlineData(1L)]
+    public void WindowServices_RejectInvalidHandlesWithoutTouchingX11(long handle)
+    {
+        Linux.Desktop.X11WindowBackend backend = new();
+        LinuxWindowService service = new(backend);
+
+        Assert.False(service.RequestAttention(handle, 1));
+        Assert.False(service.SetOverlayStyle(handle, clickThrough: true));
+        Assert.False(service.SetWindowShape(handle, Array.Empty<PlatformRectangle>()));
+        Assert.False(backend.ActivateWindow(handle));
+        Assert.Null(backend.GetWindowBounds(handle));
+        Assert.Null(backend.GetClientBounds(handle));
+    }
+
+    [LinuxFact]
+    public void X11Display_HandlesInvalidAndBogusWindowHandlesWithoutCrashing()
+    {
+        using ShareX.Platform.Linux.Native.X11Display? display = ShareX.Platform.Linux.Native.X11Display.TryOpen();
+        if (display == null)
+        {
+            return;
+        }
+
+        nuint[] guardedHandles = [0, ShareX.Platform.Linux.Native.X11.PointerRoot];
+        foreach (nuint handle in guardedHandles)
+        {
+            Assert.Null(display.GetWindowBounds(handle, includeFrame: true));
+            Assert.Null(display.GetStringProperty(handle, "WM_NAME"));
+            Assert.Empty(display.GetLongProperty(handle, "_NET_WM_PID", 1));
+            Assert.False(display.SetInputShape(handle, Array.Empty<PlatformRectangle>()));
+            Assert.False(display.ChangeWmState(handle, 1, "_NET_WM_STATE_DEMANDS_ATTENTION"));
+            Assert.False(display.RequestActivation(handle));
+        }
+
+        const nuint bogusWindow = 0x7FFFFFFFu;
+        Assert.Null(display.GetWindowBounds(bogusWindow, includeFrame: true));
+        Assert.Null(display.GetStringProperty(bogusWindow, "WM_NAME"));
+        Assert.Empty(display.GetLongProperty(bogusWindow, "_NET_WM_PID", 1));
+        Assert.False(display.SetInputShape(bogusWindow, Array.Empty<PlatformRectangle>()));
+    }
+}
