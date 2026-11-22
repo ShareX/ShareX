@@ -1,0 +1,21 @@
+name: ShareX Avalonia packages
+description: >-
+  Puts the NuGet packages of the ShareX/Avalonia fork, built by the avalonia-packages job of platform.yml, into
+  ../Avalonia/artifacts/nuget, the folder NuGet.config restores them from.
+
+runs:
+  using: composite
+  steps:
+    - name: Download the Avalonia packages
+      uses: actions/download-artifact@v4
+      with:
+        name: avalonia-nuget
+        path: ${{ runner.temp }}/avalonia-nuget
+
+    - name: Place them where NuGet.config looks
+      shell: bash
+      run: |
+        dest="$(cd "$GITHUB_WORKSPACE/.." && pwd)/Avalonia/artifacts/nuget"
+        mkdir -p "$dest"
+        cp "$RUNNER_TEMP"/avalonia-nuget/*.nupkg "$dest"/
+        echo "$(ls "$dest" | wc -l) packages in $dest"

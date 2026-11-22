@@ -107,6 +107,8 @@ The Cross-platform workflow packages and starts the app for arm64 (`macos-latest
 
 .NET 11 SDK on every operating system.
 
+ShareX uses its own build of Avalonia (the `ShareX/Avalonia` fork: Wayland support and the fixes ShareX needs). `Directory.Packages.props` names the package version and `NuGet.config` restores it from `../Avalonia/artifacts/nuget`, next to this checkout, before nuget.org. The package version has no NuGet feed behind it. To build locally, clone `ShareX/Avalonia` next to ShareX at the commit that `AVALONIA_FORK_REF` in `.github/workflows/platform.yml` names, then run `./build.sh --target CreateNugetPackages --configuration Release --pack-desktop-only --skip-tests --force-nuget-version <version>` there (macOS also needs `--target CompileNative` first, on a Mac, for `libAvalonia.Native.OSX.dylib`). The Cross-platform workflow does exactly that in its `avalonia-native` and `avalonia-packages` jobs, caches the result by commit, and hands the packages to every other job. When the fork moves, change the package version in `Directory.Packages.props` and `AVALONIA_FORK_REF` together.
+
 ```sh
 dotnet build ShareX.sln -c Release -p:Platform=x64
 dotnet test ShareX.Platform.Tests

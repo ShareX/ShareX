@@ -9,8 +9,128 @@ on:
 permissions:
   contents: read
 
+env:
+  # The ShareX fork of Avalonia (Wayland, the fixes ShareX needs). Directory.Packages.props names the package version; this is
+  # the commit of ShareX/Avalonia those packages are built from. Change both together. NuGet.config restores them from
+  # ../Avalonia/artifacts/nuget, which the avalonia-packages job below fills, so nothing has to be published anywhere.
+  AVALONIA_FORK_REF: eda0808950ad367249cd68015d49dd756f7846a9
+
 jobs:
+  # Avalonia's macOS native library has to be built on a Mac, so the fork's packages are made in two steps. Both are cached by
+  # the fork's commit, so after the first run this costs a minute or two.
+  avalonia-native:
+    name: Avalonia native library (macOS)
+    runs-on: macos-26
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+
+    steps:
+      - name: Cached native library
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: avalonia-native
+          key: avalonia-native-${{ env.AVALONIA_FORK_REF }}
+
+      - name: Checkout ShareX/Avalonia
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: ShareX/Avalonia
+          ref: ${{ env.AVALONIA_FORK_REF }}
+          submodules: recursive
+          path: Avalonia
+
+      - name: Setup .NET
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+          global-json-file: Avalonia/global.json
+
+      - name: Build the AvaloniaNative library
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: Avalonia
+        run: |
+          ./build.sh --target CompileNative --configuration Release
+          mkdir -p "$GITHUB_WORKSPACE/avalonia-native"
+          cp artifacts/native/Release/libAvalonia.Native.OSX.dylib "$GITHUB_WORKSPACE/avalonia-native/"
+
+      - name: Upload the native library
+        uses: actions/upload-artifact@v4
+        with:
+          name: avalonia-native
+          path: avalonia-native/libAvalonia.Native.OSX.dylib
+          if-no-files-found: error
+
+  avalonia-packages:
+    name: Avalonia packages
+    needs: avalonia-native
+    runs-on: ubuntu-24.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Read the package version
+        id: version
+        run: |
+          version=$(sed -n 's:.*<PackageVersion Include="Avalonia" Version="\([^"]*\)".*:\1:p' Directory.Packages.props | head -1)
+          [ -n "$version" ] || { echo "No Avalonia version in Directory.Packages.props" >&2; exit 1; }
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Cached packages
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: avalonia-nuget
+          key: avalonia-nuget-${{ env.AVALONIA_FORK_REF }}-${{ steps.version.outputs.version }}
+
+      - name: Checkout ShareX/Avalonia
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v6
+        with:
+          repository: ShareX/Avalonia
+          ref: ${{ env.AVALONIA_FORK_REF }}
+          submodules: recursive
+          path: Avalonia
+
+      - name: Setup .NET
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+          global-json-file: Avalonia/global.json
+
+      - name: Download the native library
+        if: steps.cache.outputs.cache-hit != 'true'
+        uses: actions/download-artifact@v4
+        with:
+          name: avalonia-native
+          path: Avalonia/artifacts/native/Release
+
+      - name: Pack the desktop packages
+        if: steps.cache.outputs.cache-hit != 'true'
+        working-directory: Avalonia
+        run: |
+          ./build.sh \
+            --target CreateNugetPackages \
+            --configuration Release \
+            --pack-desktop-only \
+            --skip-tests \
+            --force-nuget-version "${{ steps.version.outputs.version }}"
+          mkdir -p "$GITHUB_WORKSPACE/avalonia-nuget"
+          cp artifacts/nuget/*.nupkg "$GITHUB_WORKSPACE/avalonia-nuget/"
+
+      - name: Upload the packages
+        uses: actions/upload-artifact@v4
+        with:
+          name: avalonia-nuget
+          path: avalonia-nuget/*.nupkg
+          if-no-files-found: error
+
   test:
+    needs: avalonia-packages
     name: Test (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
 
@@ -25,6 +145,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Avalonia packages
+        uses: ./.github/actions/avalonia-packages
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
@@ -59,6 +182,7 @@ jobs:
         run: dotnet test ShareX.ImageEffectsLib.Tests/ShareX.ImageEffectsLib.Tests.csproj --configuration Release -p:Platform=${{ env.TEST_PLATFORM }} --logger "console;verbosity=normal"
 
   build-solution:
+    needs: avalonia-packages
     name: Build solution (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
 
@@ -73,6 +197,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - name: Avalonia packages
+        uses: ./.github/actions/avalonia-packages
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v5
         with:
@@ -83,6 +210,7 @@ jobs:
         run: dotnet build ShareX.sln --configuration Release -p:Platform=x64
 
   macos-app:
+    needs: avalonia-packages
     name: macOS app (${{ matrix.arch }})
     runs-on: ${{ matrix.runner }}
     env:
@@ -105,6 +233,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Avalonia packages
+        uses: ./.github/actions/avalonia-packages
 
       - name: Read version
         shell: bash
@@ -196,6 +327,7 @@ jobs:
         run: dotnet test ShareX.Platform.Tests/ShareX.Platform.Tests.csproj --configuration Release --logger "console;verbosity=normal"
 
   linux:
+    needs: avalonia-packages
     name: Linux packages (${{ matrix.arch }})
     runs-on: ${{ matrix.runner }}
     env:
@@ -223,6 +355,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+
+      - name: Avalonia packages
+        uses: ./.github/actions/avalonia-packages
 
       - name: Import Linux GPG signing key
         if: env.HAS_LINUX_GPG_KEY == 'true'
