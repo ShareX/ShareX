@@ -52,7 +52,7 @@
     <PackageReference Include="CommunityToolkit.Mvvm" />
     <PackageReference Include="Newtonsoft.Json" />
     <PackageReference Include="SkiaSharp" />
-    <PackageReference Include="SkiaSharp.HarfBuzz" VersionOverride="3.119.4" />
+    <PackageReference Include="SkiaSharp.HarfBuzz" />
     <PackageReference Include="HarfBuzzSharp.NativeAssets.Linux" VersionOverride="8.3.1.5" />
   </ItemGroup>
 </Project>
