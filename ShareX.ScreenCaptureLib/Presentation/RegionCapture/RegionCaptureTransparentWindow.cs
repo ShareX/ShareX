@@ -56,6 +56,7 @@ public sealed class RegionCaptureTransparentWindow : Window
     private readonly DrawingRectangle _screenBounds;
     private readonly SelectionSurface _surface;
     private PlatformOverlayWindowHost? _overlayHost;
+    private bool _usesNativeWaylandLayerShell;
     private DrawingPoint _startPoint;
     private bool _isSelecting;
     private bool _suppressRightRelease;
@@ -87,12 +88,21 @@ public sealed class RegionCaptureTransparentWindow : Window
         IPlatformOverlayWindow? overlay = customOverlay;
         if (overlay == null && allowPlatformOverlay)
         {
-            overlay = PlatformOverlayWindowHost.TryCreateOverlay(
-                new PlatformRectangle(screenBounds.X, screenBounds.Y, screenBounds.Width, screenBounds.Height),
-                Math.Max(1, screenBounds.Width),
-                Math.Max(1, screenBounds.Height),
-                transparent: true,
+            _usesNativeWaylandLayerShell = WaylandLayerOverlayHelper.TryConfigure(
+                this,
+                screenBounds,
+                activeMonitorMode: false,
                 "sharex-region-capture");
+
+            if (!_usesNativeWaylandLayerShell)
+            {
+                overlay = PlatformOverlayWindowHost.TryCreateOverlay(
+                    new PlatformRectangle(screenBounds.X, screenBounds.Y, screenBounds.Width, screenBounds.Height),
+                    Math.Max(1, screenBounds.Width),
+                    Math.Max(1, screenBounds.Height),
+                    transparent: true,
+                    "sharex-region-capture");
+            }
         }
 
         if (overlay != null)
@@ -108,6 +118,11 @@ public sealed class RegionCaptureTransparentWindow : Window
         }
         else
         {
+            if (_usesNativeWaylandLayerShell)
+            {
+                TransparencyBackgroundFallback = Brushes.Transparent;
+            }
+
             // Fully transparent pixels let clicks through to the windows below, so keep an invisible alpha of 1.
             Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
         }
@@ -115,14 +130,21 @@ public sealed class RegionCaptureTransparentWindow : Window
         _surface = new SelectionSurface { IsHitTestVisible = false };
         Content = _surface;
 
-        if (_overlayHost == null && lockCursorToWindow)
+        if (_overlayHost == null && !_usesNativeWaylandLayerShell && lockCursorToWindow)
         {
             Helpers.LockCursorToWindow(this);
         }
 
         if (_overlayHost == null)
         {
-            ApplyToolWindowStyle();
+            if (!_usesNativeWaylandLayerShell)
+            {
+                ApplyToolWindowStyle();
+            }
+            else
+            {
+                ScalingChanged += OnWindowScalingChanged;
+            }
             Opened += OnOpened;
         }
     }
@@ -154,6 +176,14 @@ public sealed class RegionCaptureTransparentWindow : Window
             return _completionSource.Task;
         }
 
+        if (_usesNativeWaylandLayerShell)
+        {
+            Width = double.NaN;
+            Height = double.NaN;
+            Show();
+            return _completionSource.Task;
+        }
+
         // Set Position once while the window is still small, on the monitor the system takes the spanning window's DPI from.
         // Keep that DPI while the window spans monitors with different scaling, as region capture does.
         RegionCaptureDpi.PositionAtAnchor(this, new PlatformRectangle(_screenBounds.X, _screenBounds.Y, _screenBounds.Width, _screenBounds.Height));
@@ -165,6 +195,7 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     protected override void OnClosed(EventArgs e)
     {
+        ScalingChanged -= OnWindowScalingChanged;
         _overlayHost?.Dispose();
         _overlayHost = null;
         _completionSource.TrySetResult(_result);
@@ -276,7 +307,7 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        if (_overlayHost == null)
+        if (_overlayHost == null && !_usesNativeWaylandLayerShell)
         {
             FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
             ApplyPixelSize();
@@ -295,6 +326,14 @@ public sealed class RegionCaptureTransparentWindow : Window
         }
     }
 
+    private void OnWindowScalingChanged(object? sender, EventArgs e)
+    {
+        if (!_closing)
+        {
+            Cursor = CursorAssetLoader.GetCrosshairCursor(GetScaling());
+        }
+    }
+
     private void CoverScreen()
     {
         if (PlatformServices.IsInitialized && TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
@@ -307,15 +346,16 @@ public sealed class RegionCaptureTransparentWindow : Window
     private void UpdateSelection(DrawingPoint position)
     {
         DrawingRectangle selection = GetSelectionRectangle(position);
-        double scaling = GetScaling();
+        double surfaceScaling = GetScaling();
+        (double scaleX, double scaleY) = GetCoordinateScale();
 
-        _surface.Scaling = scaling;
+        _surface.Scaling = surfaceScaling;
         _surface.Selection = IsValidSelection(selection)
             ? new Rect(
-                (selection.X - _screenBounds.X) / scaling,
-                (selection.Y - _screenBounds.Y) / scaling,
-                selection.Width / scaling,
-                selection.Height / scaling)
+                (selection.X - _screenBounds.X) / scaleX,
+                (selection.Y - _screenBounds.Y) / scaleY,
+                selection.Width / scaleX,
+                selection.Height / scaleY)
             : null;
     }
 
@@ -333,12 +373,23 @@ public sealed class RegionCaptureTransparentWindow : Window
     /// <summary>Converts a window position to the screen pixel under it, clamped to the screen bounds.</summary>
     private DrawingPoint ToScreenPixel(Point position)
     {
-        double scaling = GetScaling();
-        int x = _screenBounds.X + (int)Math.Floor(position.X * scaling + 0.001);
-        int y = _screenBounds.Y + (int)Math.Floor(position.Y * scaling + 0.001);
+        (double scaleX, double scaleY) = GetCoordinateScale();
+        int x = _screenBounds.X + (int)Math.Floor(position.X * scaleX + 0.001);
+        int y = _screenBounds.Y + (int)Math.Floor(position.Y * scaleY + 0.001);
         return new DrawingPoint(
             Math.Clamp(x, _screenBounds.Left, _screenBounds.Right - 1),
             Math.Clamp(y, _screenBounds.Top, _screenBounds.Bottom - 1));
+    }
+
+    private (double ScaleX, double ScaleY) GetCoordinateScale()
+    {
+        if (_usesNativeWaylandLayerShell && ClientSize.Width > 0 && ClientSize.Height > 0)
+        {
+            return (_screenBounds.Width / ClientSize.Width, _screenBounds.Height / ClientSize.Height);
+        }
+
+        double scaling = GetScaling();
+        return (scaling, scaling);
     }
 
     private static bool IsValidSelection(DrawingRectangle selection)
@@ -365,6 +416,11 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private void ApplyPixelSize()
     {
+        if (_usesNativeWaylandLayerShell)
+        {
+            return;
+        }
+
         double scaling = GetScaling();
         Width = _screenBounds.Width / scaling;
         Height = _screenBounds.Height / scaling;

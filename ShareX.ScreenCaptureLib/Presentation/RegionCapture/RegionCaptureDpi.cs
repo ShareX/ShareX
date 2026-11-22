@@ -49,6 +49,11 @@ internal static class RegionCaptureDpi
         PlatformPoint anchor = Anchor(bounds);
         window.Position = new PixelPoint(anchor.X, anchor.Y);
 
+        if (OperatingSystem.IsWindows())
+        {
+            Win32Properties.SetIgnoreDpiChangeResize(window, true);
+        }
+
         if (PlatformServices.IsInitialized && window.TryGetPlatformHandle()?.Handle is IntPtr handle && handle != IntPtr.Zero)
         {
             PlatformServices.Current.Windows.KeepScaleFixed(handle.ToInt64());

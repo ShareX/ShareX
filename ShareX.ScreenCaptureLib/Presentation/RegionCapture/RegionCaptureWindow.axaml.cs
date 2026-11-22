@@ -140,6 +140,7 @@ public partial class RegionCaptureWindow : Window
     private Exception? _startupException;
     private double _appliedPixelScaling;
     private PlatformOverlayWindowHost? _overlayHost;
+    private bool _usesNativeWaylandLayerShell;
 
     public RegionCaptureWindow()
     {
@@ -176,17 +177,30 @@ public partial class RegionCaptureWindow : Window
         IPlatformOverlayWindow? overlay = customOverlay;
         if (overlay == null && allowPlatformOverlay)
         {
-            overlay = PlatformOverlayWindowHost.TryCreateOverlay(
-                new PlatformRectangle(request.ScreenBounds.X, request.ScreenBounds.Y, request.ScreenBounds.Width, request.ScreenBounds.Height),
-                _imageWidth,
-                _imageHeight,
-                transparent: false,
+            _usesNativeWaylandLayerShell = WaylandLayerOverlayHelper.TryConfigure(
+                this,
+                request.ScreenBounds,
+                request.RegionCaptureOptions.ActiveMonitorMode,
                 "sharex-region-capture");
+
+            if (!_usesNativeWaylandLayerShell)
+            {
+                overlay = PlatformOverlayWindowHost.TryCreateOverlay(
+                    new PlatformRectangle(request.ScreenBounds.X, request.ScreenBounds.Y, request.ScreenBounds.Width, request.ScreenBounds.Height),
+                    _imageWidth,
+                    _imageHeight,
+                    transparent: false,
+                    "sharex-region-capture");
+            }
         }
 
         if (overlay != null)
         {
             _overlayHost = new PlatformOverlayWindowHost(this, overlay, _imageWidth, _imageHeight, CancelCapture);
+        }
+        else if (_usesNativeWaylandLayerShell)
+        {
+            ScalingChanged += OnWindowScalingChanged;
         }
         else if (request.RegionCaptureOptions.ActiveMonitorMode)
         {
@@ -276,6 +290,7 @@ public partial class RegionCaptureWindow : Window
         {
             _magnifierBitmap?.Dispose();
             _magnifierBitmap = null;
+            ScalingChanged -= OnWindowScalingChanged;
             _captureToolbar.LayoutUpdated -= OnCaptureToolbarLayoutUpdated;
             _editorWorkspace.DetachHostAnnotationToolbar(_annotationToolbar);
 
@@ -386,11 +401,14 @@ public partial class RegionCaptureWindow : Window
             int dx = e.Key == Key.Left ? -distance : e.Key == Key.Right ? distance : 0;
             int dy = e.Key == Key.Up ? -distance : e.Key == Key.Down ? distance : 0;
             // Platforms that do not let applications move the pointer (most Wayland compositors) ignore this.
-            IWindowService windowService = PlatformServices.Current.Windows;
-
-            if (windowService.GetCursorPosition() is PlatformPoint cursor)
+            if (PlatformServices.IsInitialized)
             {
-                windowService.SetCursorPosition(new PlatformPoint(cursor.X + dx, cursor.Y + dy));
+                IWindowService windowService = PlatformServices.Current.Windows;
+
+                if (windowService.GetCursorPosition() is PlatformPoint cursor)
+                {
+                    windowService.SetCursorPosition(new PlatformPoint(cursor.X + dx, cursor.Y + dy));
+                }
             }
             e.Handled = true;
             return;
@@ -664,7 +682,7 @@ public partial class RegionCaptureWindow : Window
             }
 
             ApplyPixelSize();
-            if (_overlayHost == null)
+            if (_overlayHost == null && !_usesNativeWaylandLayerShell)
             {
                 CoverScreen();
                 Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
@@ -690,7 +708,10 @@ public partial class RegionCaptureWindow : Window
             {
                 // After a global hotkey another application is in front; on macOS the overlay only gets the keyboard (Esc to cancel)
                 // once ShareX itself is active.
-                PlatformServices.Current.Windows.ActivateOwnApplication();
+                if (PlatformServices.IsInitialized)
+                {
+                    PlatformServices.Current.Windows.ActivateOwnApplication();
+                }
                 Activate();
                 Focus();
             }
@@ -725,7 +746,7 @@ public partial class RegionCaptureWindow : Window
 
     private async Task LoadWindowRegionsAsync()
     {
-        if (_request == null || !_request.RegionCaptureOptions.DetectWindows)
+        if (_request == null || !_request.RegionCaptureOptions.DetectWindows || !PlatformServices.IsInitialized)
         {
             return;
         }
@@ -1322,6 +1343,11 @@ public partial class RegionCaptureWindow : Window
         if (_overlayHost?.GetOutputScalingAt(desktopPoint) is double overlayScaling)
         {
             return overlayScaling;
+        }
+
+        if (_usesNativeWaylandLayerShell)
+        {
+            return GetWindowScaling();
         }
 
         double scaling = Screens.ScreenFromPoint(desktopPoint)?.Scaling ?? 0;
@@ -2506,7 +2532,8 @@ public partial class RegionCaptureWindow : Window
         RegionCaptureIntegration.SetLastRegion(screenRectangle, regions.Select(ToScreenRectangle).ToArray());
         _closing = true;
 
-        if (windowHandle != 0 && TryGetPlatformHandle()?.Handle is IntPtr overlay && overlay != IntPtr.Zero)
+        if (windowHandle != 0 && PlatformServices.IsInitialized &&
+            TryGetPlatformHandle()?.Handle is IntPtr overlay && overlay != IntPtr.Zero)
         {
             // The window may be captured again from the screen right after this one closes, so it must not fade out.
             PlatformServices.Current.Windows.DisableTransitions(overlay.ToInt64());
@@ -2668,6 +2695,13 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
+        if (_usesNativeWaylandLayerShell)
+        {
+            Width = double.NaN;
+            Height = double.NaN;
+            return;
+        }
+
         // Set Position exactly once, while the window is still small, on the monitor the system will take the overlay's DPI
         // from once it spans the desktop. Then move it into place without reassigning Position, which would let Avalonia
         // change its cached scale. PositionAtAnchor keeps that scale only after the move: dropping DPI changes before it would
@@ -2700,7 +2734,7 @@ public partial class RegionCaptureWindow : Window
 
     private void ApplyPixelSize()
     {
-        if (_request == null)
+        if (_usesNativeWaylandLayerShell || _request == null)
         {
             return;
         }
@@ -2708,6 +2742,14 @@ public partial class RegionCaptureWindow : Window
         double scaling = GetRenderScaling();
         Width = _imageWidth / scaling;
         Height = _imageHeight / scaling;
+    }
+
+    private void OnWindowScalingChanged(object? sender, EventArgs e)
+    {
+        if (!_closing && GetRenderScaling() != _appliedPixelScaling)
+        {
+            UpdatePixelTransforms();
+        }
     }
 
     private double GetRenderScaling()
