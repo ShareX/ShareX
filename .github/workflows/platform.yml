@@ -52,6 +52,12 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: Avalonia
         run: |
+          # The fork's nukebuild/Build.cs asks for Avalonia.Native.macOS.csproj, but the project file is named .proj (as in
+          # upstream Avalonia, whose Build.cs agrees). Give it the name the script looks for.
+          native=native/Avalonia.Native
+          if [ ! -f "$native/Avalonia.Native.macOS.csproj" ] && [ -f "$native/Avalonia.Native.macOS.proj" ]; then
+            cp "$native/Avalonia.Native.macOS.proj" "$native/Avalonia.Native.macOS.csproj"
+          fi
           ./build.sh --target CompileNative --configuration Release
           mkdir -p "$GITHUB_WORKSPACE/avalonia-native"
           cp artifacts/native/Release/libAvalonia.Native.OSX.dylib "$GITHUB_WORKSPACE/avalonia-native/"
