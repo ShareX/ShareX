@@ -92,7 +92,11 @@ public sealed class VideoView : NativeControlHost, IDisposable
 
     protected override IPlatformHandle CreateNativeControlCore(IPlatformHandle parent)
     {
-        if (_disposed || !IsSupported) return base.CreateNativeControlCore(parent);
+        if (_disposed || !IsSupported || parent.Handle == IntPtr.Zero ||
+            string.Equals(parent.HandleDescriptor, "WAYLAND", StringComparison.Ordinal))
+        {
+            return base.CreateNativeControlCore(parent);
+        }
 
         IVideoPlayback playback = PlatformServices.Current.VideoPlayback.CreatePlayback(parent.Handle);
         playback.Volume = _volume;

@@ -197,13 +197,34 @@ public static class AvaloniaBootstrapper
     private static AppBuilder BuildAvaloniaApp()
     {
         AppBuilder builder = AppBuilder.Configure<ShareXAvaloniaApplication>()
-            .UsePlatformDetect()
-            .WithInterFont();
+            .UsePlatformDetect();
+
+        if (OperatingSystem.IsLinux() && ShouldUseWaylandBackend())
+        {
+            builder = builder
+                .With(new WaylandPlatformOptions { AppId = "sharex" })
+                .UseWaylandWithFallback();
+        }
+
+        builder = builder.WithInterFont();
 
 #if DEBUG
         builder = builder.LogToTrace();
 #endif
 
         return builder;
+    }
+
+    public static bool ShouldUseWaylandBackend()
+    {
+        string? disableWayland = Environment.GetEnvironmentVariable("SHAREX_DISABLE_WAYLAND");
+        if (string.IsNullOrWhiteSpace(disableWayland))
+        {
+            return true;
+        }
+
+        string trimmed = disableWayland.Trim();
+        return !string.Equals(trimmed, "1", StringComparison.Ordinal) &&
+               !string.Equals(trimmed, "true", StringComparison.OrdinalIgnoreCase);
     }
 }

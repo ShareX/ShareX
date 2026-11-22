@@ -1,4 +1,4 @@
-﻿#region License Information (GPL v3)
+#region License Information (GPL v3)
 
 /*
     ShareX - A program that allows you to take screenshots and share any file type
@@ -62,8 +62,16 @@ namespace ShareX.ImageEditor.App
         public static AppBuilder BuildAvaloniaApp()
         {
             AppBuilder builder = AppBuilder.Configure<App>()
-                .UsePlatformDetect()
-                .WithInterFont();
+                .UsePlatformDetect();
+
+            if (OperatingSystem.IsLinux() && ShareX.AvaloniaUI.Integration.AvaloniaBootstrapper.ShouldUseWaylandBackend())
+            {
+                builder = builder
+                    .With(new WaylandPlatformOptions { AppId = "sharex-image-editor" })
+                    .UseWaylandWithFallback();
+            }
+
+            builder = builder.WithInterFont();
 
 #if DEBUG
             builder = builder.LogToTrace().WithDeveloperTools();
