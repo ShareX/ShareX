@@ -77,7 +77,7 @@ When a question about Avalonia (layout, rendering, input, windowing, DPI, the XA
 
 | Fork | Upstream | Shipped commit | What ShareX gets from it |
 | --- | --- | --- | --- |
-| [ShareX/Avalonia](https://github.com/ShareX/Avalonia) | AvaloniaUI/Avalonia | tag `12.1.6` (`cf8e56467`) | Every `Avalonia.*` 12.1.6 package: core, controls, ColorPicker, Fluent theme, Inter font, Skia and HarfBuzz backends, Win32, X11, FreeDesktop, Native (macOS) |
+| [ShareX/Avalonia](https://github.com/ShareX/Avalonia) | AvaloniaUI/Avalonia | `eda0808950ad367249cd68015d49dd756f7846a9` (branch `xerahs/12.1.6`, packages `12.1.7-sharex.1`) | Every `Avalonia.*` package ShareX uses: core, controls, ColorPicker, Fluent theme, Inter font, Skia, Win32, X11, Wayland, FreeDesktop, Native (macOS). The Cross-platform workflow builds them from this commit (`AVALONIA_FORK_REF` in `.github/workflows/platform.yml`) |
 | [ShareX/XamlX](https://github.com/ShareX/XamlX) | kekekeks/XamlX | `d7e37ca` | The XAML compiler that compiles `.axaml` at build time (Avalonia's `external/XamlX` submodule) |
 | [ShareX/Avalonia.DBus](https://github.com/ShareX/Avalonia.DBus) | AvaloniaUI/Avalonia.DBus | `cada3ec` | D-Bus inside `Avalonia.FreeDesktop` on Linux (Avalonia's `external/Avalonia.DBus` submodule) |
 | [ShareX/MicroCom](https://github.com/ShareX/MicroCom) | kekekeks/MicroCom | `76785ef` (0.11.6) | `MicroCom.Runtime`, the COM interop under `Avalonia.Native` and `Avalonia.Win32` |
@@ -86,7 +86,9 @@ When a question about Avalonia (layout, rendering, input, windowing, DPI, the XA
 
 `AvaloniaUI.DiagnosticsSupport` (the developer tools hook) has no public source. SkiaSharp and HarfBuzzSharp come from mono/SkiaSharp, not from Avalonia.
 
-On McoreD's machine the forks are cloned next to this repository (`../Avalonia`, `../XamlX`, …) with `shipped` checked out and an `upstream` remote. They are read-only references. Propose Avalonia fixes upstream; ShareX never builds against a fork.
+On McoreD's machine the forks are cloned next to this repository (`../Avalonia`, `../XamlX`, …) with an `upstream` remote.
+
+**Fix Avalonia problems in our own fork, directly.** ShareX builds against its fork of Avalonia, so a bug or a missing feature in Avalonia is ours to fix, not something to work around in ShareX or wait for upstream to fix. Change the fork at once (on the branch the package version comes from), build the packages, move `AVALONIA_FORK_REF` and the package version in `Directory.Packages.props` together, and update the table above in the same change. Keep each fork change small and separate, so it can be rebased onto the next upstream release, and offer a general fix to `AvaloniaUI/Avalonia` as a pull request afterwards. Search upstream's issues first and link the one you find. A workaround inside ShareX is only for what Avalonia cannot reasonably do.
 
 ## Checks before pushing
 
