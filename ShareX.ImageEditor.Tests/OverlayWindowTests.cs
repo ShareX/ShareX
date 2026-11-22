@@ -26,6 +26,7 @@
 #nullable enable
 
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Input;
@@ -102,6 +103,19 @@ public sealed class OverlayWindowTests
         await RunOverlayFixtureProcessAsync("live-hyprland");
     }
 
+    [Fact]
+    public async Task LiveHyprland_RegionCaptureWindowUsesNativeAvaloniaLayerShell()
+    {
+        if (!OperatingSystem.IsLinux() ||
+            Environment.GetEnvironmentVariable("SHAREX_WAYLAND_OVERLAY_TEST") != "1" ||
+            string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WAYLAND_DISPLAY")))
+        {
+            return;
+        }
+
+        await RunOverlayFixtureProcessAsync("live-hyprland-native");
+    }
+
     private static async Task RunOverlayFixtureProcessAsync(string mode)
     {
         ProcessStartInfo info = new("dotnet")
@@ -161,6 +175,9 @@ public sealed class OverlayWindowTests
                             break;
                         case "live-hyprland":
                             await VerifyLiveHyprlandRegionCaptureOverlayAsync();
+                            break;
+                        case "live-hyprland-native":
+                            await VerifyLiveHyprlandNativeAvaloniaLayerShellAsync();
                             break;
                         default:
                             throw new ArgumentOutOfRangeException(nameof(args), mode, "Unknown overlay fixture mode.");
@@ -408,6 +425,102 @@ public sealed class OverlayWindowTests
         Thread.Sleep(100);
         Assert.False(IsLayerMapped("sharex-region-capture", expectedLevel: 3),
             "'sharex-region-capture' remained mapped after RegionCaptureWindow closed.");
+    }
+
+    private static async Task VerifyLiveHyprlandNativeAvaloniaLayerShellAsync()
+    {
+        using Process proc = Process.Start(new ProcessStartInfo("hyprctl", "monitors -j")
+        {
+            UseShellExecute = false,
+            RedirectStandardOutput = true
+        }) ?? throw new InvalidOperationException("Failed to start hyprctl.");
+        string json = proc.StandardOutput.ReadToEnd();
+        proc.WaitForExit();
+        Assert.Equal(0, proc.ExitCode);
+
+        using JsonDocument doc = JsonDocument.Parse(json);
+        JsonElement monitor = doc.RootElement.EnumerateArray().FirstOrDefault(m =>
+            m.TryGetProperty("focused", out JsonElement focused) && focused.GetBoolean());
+        if (monitor.ValueKind == JsonValueKind.Undefined)
+        {
+            monitor = doc.RootElement.EnumerateArray().First();
+        }
+
+        int x = (int)Math.Round(monitor.GetProperty("x").GetDouble());
+        int y = (int)Math.Round(monitor.GetProperty("y").GetDouble());
+        int width = monitor.GetProperty("width").GetInt32();
+        int height = monitor.GetProperty("height").GetInt32();
+        double scale = monitor.TryGetProperty("scale", out JsonElement scaleProp) && scaleProp.GetDouble() > 0
+            ? scaleProp.GetDouble()
+            : 1;
+        int logicalWidth = Math.Max(1, (int)Math.Round(width / scale));
+        int logicalHeight = Math.Max(1, (int)Math.Round(height / scale));
+
+        SKBitmap screenshot = new(Math.Max(1, width), Math.Max(1, height), SKColorType.Bgra8888, SKAlphaType.Premul);
+        screenshot.Erase(new SKColor(28, 36, 48, 255));
+
+        AvaloniaRegionCaptureRequest request = new()
+        {
+            Screenshot = screenshot,
+            ScreenshotIsOpaque = true,
+            ScreenBounds = new DrawingRectangle(x, y, logicalWidth, logicalHeight),
+            EnableAnnotations = false,
+            RegionCaptureOptions = new RegionCaptureOptions
+            {
+                QuickCapture = true,
+                DetectWindows = false,
+                ShowInfo = false,
+                ShowMagnifier = false,
+                ActiveMonitorMode = true
+            },
+            ImageEditorOptions = new ImageEditorOptions()
+        };
+
+        RegionCaptureWindow window = new(request, allowPlatformOverlay: true, customOverlay: null);
+        Assert.True(WaylandProperties.IsWaylandBackend(window));
+        Assert.True(WaylandProperties.IsLayerShellSupported(window));
+        Assert.Equal(WaylandLayer.Overlay, WaylandProperties.GetLayer(window));
+
+        Task<AvaloniaRegionCaptureResult?> captureTask = window.CaptureAsync();
+        await PumpUiAsync(DispatcherPriority.Render);
+        await Task.Delay(200);
+
+        Assert.False(captureTask.IsFaulted, captureTask.Exception?.ToString());
+        Assert.True(IsLayerMapped("sharex-region-capture", expectedLevel: 3),
+            "Expected native Avalonia.Wayland layer-shell 'sharex-region-capture' on Hyprland overlay layer 3.");
+
+        window.Close();
+        AvaloniaRegionCaptureResult? result = await captureTask.WaitAsync(Timeout);
+        Assert.Null(result);
+
+        await Task.Delay(120);
+        Assert.False(IsLayerMapped("sharex-region-capture", expectedLevel: 3),
+            "Native layer-shell 'sharex-region-capture' remained mapped after RegionCaptureWindow closed.");
+
+        RegionCaptureTransparentWindow transparentWindow = new(
+            new DrawingRectangle(x, y, logicalWidth, logicalHeight),
+            lockCursorToWindow: false,
+            customOverlay: null,
+            allowPlatformOverlay: true);
+        Assert.True(WaylandProperties.IsWaylandBackend(transparentWindow));
+        Assert.True(WaylandProperties.IsLayerShellSupported(transparentWindow));
+        Assert.Equal(WaylandLayer.Overlay, WaylandProperties.GetLayer(transparentWindow));
+
+        Task<DrawingRectangle?> selectTask = transparentWindow.SelectAsync();
+        await PumpUiAsync(DispatcherPriority.Render);
+        await Task.Delay(200);
+
+        Assert.False(selectTask.IsFaulted, selectTask.Exception?.ToString());
+        Assert.True(IsLayerMapped("sharex-region-capture", expectedLevel: 3),
+            "Expected native Avalonia.Wayland layer-shell 'sharex-region-capture' on Hyprland overlay layer 3 for RegionCaptureTransparentWindow.");
+
+        transparentWindow.Close();
+        DrawingRectangle? rect = await selectTask.WaitAsync(Timeout);
+        Assert.Null(rect);
+
+        await Task.Delay(120);
+        Assert.False(IsLayerMapped("sharex-region-capture", expectedLevel: 3),
+            "Native layer-shell 'sharex-region-capture' remained mapped after RegionCaptureTransparentWindow closed.");
     }
 
     private static IPlatformOverlayWindow? TryCreateRealWaylandOverlay(OverlayWindowOptions options)
