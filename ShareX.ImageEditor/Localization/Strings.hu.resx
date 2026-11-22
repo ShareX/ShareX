@@ -1431,6 +1431,9 @@ A vágólap nem tartalmaz képet.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Elválasztó. A szélesség módosításához húzd a jobb szélét.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Elválasztó szélessége</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Nyíl</value>
   </data>

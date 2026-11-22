@@ -1431,6 +1431,9 @@ Clipboardul nu conține nicio imagine.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Separator. Trage de marginea din dreapta pentru a-i schimba lățimea.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Lățimea separatorului</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Săgeată</value>
   </data>

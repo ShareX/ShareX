@@ -1431,6 +1431,9 @@ Schowek nie zawiera obrazu.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Separator. Przeciągnij prawą krawędź, aby zmienić jego szerokość.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Szerokość separatora</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Strzałka</value>
   </data>

@@ -1431,6 +1431,9 @@
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>فاصل. اسحب حافته اليمنى لتغيير عرضه.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>عرض الفاصل</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>سهم</value>
   </data>

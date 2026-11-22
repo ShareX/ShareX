@@ -1431,6 +1431,9 @@
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>स्पेसर। इसकी चौड़ाई बदलने के लिए इसका दायाँ किनारा खींचें।</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>स्पेसर की चौड़ाई</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>तीर</value>
   </data>

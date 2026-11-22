@@ -129,9 +129,18 @@ namespace ShareX.ImageEditor.Presentation.Views
 
         private void OnSlotClick(object? sender, RoutedEventArgs e)
         {
-            if (ViewModel is { } vm && sender is Control { DataContext: ToolbarLayoutSlot { Item: { } item } })
+            if (ViewModel is not { } vm || sender is not Control { DataContext: ToolbarLayoutSlot slot } control)
+            {
+                return;
+            }
+
+            if (slot.Item is { } item)
             {
                 vm.SelectedItem = item;
+            }
+            else if (control.Classes.Contains("toolbar-slot"))
+            {
+                vm.SelectSpacer(vm.ToolbarSlots.IndexOf(slot));
             }
         }
 
@@ -299,6 +308,7 @@ namespace ShareX.ImageEditor.Presentation.Views
                 _resizeScale = 1;
             }
             _resizingPointer = e.Pointer;
+            vm.SelectSpacer(index);
 
             // Capturing here and handling the press keeps the spacer button from being pressed or clicked.
             button.Classes.Add("resizing");

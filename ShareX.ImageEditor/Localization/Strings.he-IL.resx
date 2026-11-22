@@ -1431,6 +1431,9 @@
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>מפריד. גרור את הקצה הימני שלו כדי לשנות את רוחבו.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>רוחב המפריד</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>חץ</value>
   </data>

@@ -1431,6 +1431,9 @@ Gli appunti non contengono un’immagine.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Separatore. Trascina il bordo destro per cambiarne la larghezza.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Larghezza separatore</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Freccia</value>
   </data>

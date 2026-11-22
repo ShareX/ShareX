@@ -1431,6 +1431,9 @@ Het klembord bevat geen afbeelding.</value>
   <data name="ToolbarCustomizationDialogView_SpacerToolTip" xml:space="preserve">
     <value>Scheiding. Sleep de rechterrand om de breedte te wijzigen.</value>
   </data>
+  <data name="ToolbarCustomizationDialogView_SpacerWidth" xml:space="preserve">
+    <value>Breedte van scheiding</value>
+  </data>
   <data name="ToolbarCustomizationItemViewModel_Arrow" xml:space="preserve">
     <value>Pijl</value>
   </data>
