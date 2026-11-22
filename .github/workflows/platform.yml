@@ -90,7 +90,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: avalonia-nuget
-          key: avalonia-nuget-${{ env.AVALONIA_FORK_REF }}-${{ steps.version.outputs.version }}
+          # v2: the first packages were built without the macOS library and must not be reused.
+          key: avalonia-nuget-v2-${{ env.AVALONIA_FORK_REF }}-${{ steps.version.outputs.version }}
 
       - name: Checkout ShareX/Avalonia
         if: steps.cache.outputs.cache-hit != 'true'
@@ -119,14 +120,24 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: Avalonia
         run: |
+          # The fork's Compile target depends on Clean, which empties artifacts/ and with it the native library downloaded above,
+          # so the Avalonia.Native package came out without it. A fresh checkout has nothing to clean.
           ./build.sh \
             --target CreateNugetPackages \
+            --skip Clean \
             --configuration Release \
             --pack-desktop-only \
             --skip-tests \
             --force-nuget-version "${{ steps.version.outputs.version }}"
           mkdir -p "$GITHUB_WORKSPACE/avalonia-nuget"
           cp artifacts/nuget/*.nupkg "$GITHUB_WORKSPACE/avalonia-nuget/"
+
+      - name: Check the macOS library is in the Avalonia.Native package
+        run: |
+          unzip -l avalonia-nuget/Avalonia.Native.*.nupkg | grep -q "runtimes/osx/native/libAvaloniaNative.dylib" || {
+            echo "Avalonia.Native has no runtimes/osx/native/libAvaloniaNative.dylib; the macOS app would not start." >&2
+            exit 1
+          }
 
       - name: Upload the packages
         uses: actions/upload-artifact@v4
