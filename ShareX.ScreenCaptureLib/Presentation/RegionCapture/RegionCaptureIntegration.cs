@@ -120,7 +120,7 @@ public static class RegionCaptureIntegration
                     ScreenBounds = new Rectangle(0, 0, size, size),
                     RegionCaptureOptions = new RegionCaptureOptions(),
                     ImageEditorOptions = new ImageEditorOptions()
-                });
+                }, allowPlatformOverlay: false);
             }
             catch
             {

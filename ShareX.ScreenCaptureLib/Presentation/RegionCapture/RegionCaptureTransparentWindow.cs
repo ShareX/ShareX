@@ -30,8 +30,10 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Media;
 using Avalonia.Media.Immutable;
+using Avalonia.Platform;
 using Avalonia.Threading;
 using ShareX.AvaloniaUI.Input;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.Platform;
 using System;
@@ -53,6 +55,7 @@ public sealed class RegionCaptureTransparentWindow : Window
         new(TaskCreationOptions.RunContinuationsAsynchronously);
     private readonly DrawingRectangle _screenBounds;
     private readonly SelectionSurface _surface;
+    private PlatformOverlayWindowHost? _overlayHost;
     private DrawingPoint _startPoint;
     private bool _isSelecting;
     private bool _suppressRightRelease;
@@ -60,6 +63,15 @@ public sealed class RegionCaptureTransparentWindow : Window
     private DrawingRectangle? _result;
 
     public RegionCaptureTransparentWindow(DrawingRectangle screenBounds, bool lockCursorToWindow)
+        : this(screenBounds, lockCursorToWindow, customOverlay: null, allowPlatformOverlay: true)
+    {
+    }
+
+    internal RegionCaptureTransparentWindow(
+        DrawingRectangle screenBounds,
+        bool lockCursorToWindow,
+        IPlatformOverlayWindow? customOverlay = null,
+        bool allowPlatformOverlay = true)
     {
         _screenBounds = screenBounds;
 
@@ -71,24 +83,77 @@ public sealed class RegionCaptureTransparentWindow : Window
         Topmost = true;
 #endif
         TransparencyLevelHint = [WindowTransparencyLevel.Transparent];
-        // Fully transparent pixels let clicks through to the windows below, so keep an invisible alpha of 1.
-        Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
+
+        IPlatformOverlayWindow? overlay = customOverlay;
+        if (overlay == null && allowPlatformOverlay)
+        {
+            overlay = PlatformOverlayWindowHost.TryCreateOverlay(
+                new PlatformRectangle(screenBounds.X, screenBounds.Y, screenBounds.Width, screenBounds.Height),
+                Math.Max(1, screenBounds.Width),
+                Math.Max(1, screenBounds.Height),
+                transparent: true,
+                "sharex-region-capture");
+        }
+
+        if (overlay != null)
+        {
+            TransparencyBackgroundFallback = Brushes.Transparent;
+            Background = Brushes.Transparent;
+            _overlayHost = new PlatformOverlayWindowHost(
+                this,
+                overlay,
+                Math.Max(1, screenBounds.Width),
+                Math.Max(1, screenBounds.Height),
+                () => Complete(null));
+        }
+        else
+        {
+            // Fully transparent pixels let clicks through to the windows below, so keep an invisible alpha of 1.
+            Background = new SolidColorBrush(Color.FromArgb(1, 0, 0, 0));
+        }
 
         _surface = new SelectionSurface { IsHitTestVisible = false };
         Content = _surface;
 
-        if (lockCursorToWindow)
+        if (_overlayHost == null && lockCursorToWindow)
         {
             Helpers.LockCursorToWindow(this);
         }
 
-        ApplyToolWindowStyle();
-        Opened += OnOpened;
+        if (_overlayHost == null)
+        {
+            ApplyToolWindowStyle();
+            Opened += OnOpened;
+        }
+    }
+
+    protected override void IsVisibleChanged(AvaloniaPropertyChangedEventArgs e)
+    {
+        if (_overlayHost != null)
+        {
+            return;
+        }
+
+        base.IsVisibleChanged(e);
     }
 
     /// <summary>Shows the window and returns the selected screen rectangle, or null when cancelled.</summary>
     public Task<DrawingRectangle?> SelectAsync()
     {
+        if (_overlayHost != null)
+        {
+            ApplyPixelSize();
+            EnsureInitialized();
+            ApplyStyling();
+            ApplyTemplate();
+            ClientSize = _overlayHost.LogicalSize;
+            IsVisible = true;
+            _overlayHost.Start();
+            OnOpened(this, EventArgs.Empty);
+            _overlayHost.RequestRender();
+            return _completionSource.Task;
+        }
+
         // Set Position once while the window is still small, on the monitor the system takes the spanning window's DPI from.
         // Keep that DPI while the window spans monitors with different scaling, as region capture does.
         RegionCaptureDpi.PositionAtAnchor(this, new PlatformRectangle(_screenBounds.X, _screenBounds.Y, _screenBounds.Width, _screenBounds.Height));
@@ -100,6 +165,8 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     protected override void OnClosed(EventArgs e)
     {
+        _overlayHost?.Dispose();
+        _overlayHost = null;
         _completionSource.TrySetResult(_result);
         base.OnClosed(e);
     }
@@ -209,16 +276,23 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private void OnOpened(object? sender, EventArgs e)
     {
-        FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
-        ApplyPixelSize();
-        CoverScreen();
-        Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
-        WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds, trackDpiChanges: true);
-        DisableWindowTransitions();
+        if (_overlayHost == null)
+        {
+            FrameWindowShape.SetOverlayStyle(this, clickThrough: false);
+            ApplyPixelSize();
+            CoverScreen();
+            Helpers.EnsureWindowPosition(this, _screenBounds.X, _screenBounds.Y);
+            WindowGeometryLog.Record(this, "Region selection (transparent)", _screenBounds, trackDpiChanges: true);
+            DisableWindowTransitions();
+        }
+
         Cursor = CursorAssetLoader.GetCrosshairCursor(GetScaling());
 
-        Activate();
-        Focus();
+        if (_overlayHost == null)
+        {
+            Activate();
+            Focus();
+        }
     }
 
     private void CoverScreen()
@@ -283,6 +357,7 @@ public sealed class RegionCaptureTransparentWindow : Window
         _result = result;
         _isSelecting = false;
         _surface.Selection = null;
+        _overlayHost?.RenderNow();
 
         // Let the cleared overlay render before the window goes away, so no border is left on screen.
         Dispatcher.UIThread.Post(Close, DispatcherPriority.Background);
@@ -297,6 +372,11 @@ public sealed class RegionCaptureTransparentWindow : Window
 
     private double GetScaling()
     {
+        if (_overlayHost != null)
+        {
+            return _overlayHost.RenderScaling;
+        }
+
         return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
     }
 

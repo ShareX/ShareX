@@ -36,6 +36,7 @@ using Avalonia.Platform;
 using Avalonia.VisualTree;
 using ShareX.AvaloniaUI.Input;
 using ShareX.AvaloniaUI.Theming;
+using ShareX.AvaloniaUI.Windows;
 using ShareX.HelpersLib;
 using ShareX.Platform;
 using ShareX.ImageEditor.Core.Annotations;
@@ -138,6 +139,7 @@ public partial class RegionCaptureWindow : Window
     private bool _closing;
     private Exception? _startupException;
     private double _appliedPixelScaling;
+    private PlatformOverlayWindowHost? _overlayHost;
 
     public RegionCaptureWindow()
     {
@@ -153,19 +155,56 @@ public partial class RegionCaptureWindow : Window
         AddHandler(KeyDownEvent, OnCaptureHostKeyDown, RoutingStrategies.Tunnel, handledEventsToo: true);
     }
 
-    public RegionCaptureWindow(AvaloniaRegionCaptureRequest request) : this()
+    public RegionCaptureWindow(AvaloniaRegionCaptureRequest request)
+        : this(request, allowPlatformOverlay: true, customOverlay: null)
     {
-        _request = request ?? throw new ArgumentNullException(nameof(request));
+    }
+
+    internal RegionCaptureWindow(
+        AvaloniaRegionCaptureRequest request,
+        bool allowPlatformOverlay,
+        IPlatformOverlayWindow? customOverlay = null)
+        : this()
+    {
+        ArgumentNullException.ThrowIfNull(request);
+        _request = request;
         _imageWidth = Math.Max(1, request.Screenshot.Width);
         _imageHeight = Math.Max(1, request.Screenshot.Height);
         _pixelsPerScreenX = request.ScreenBounds.Width > 0 ? _imageWidth / (double)request.ScreenBounds.Width : 1;
         _pixelsPerScreenY = request.ScreenBounds.Height > 0 ? _imageHeight / (double)request.ScreenBounds.Height : 1;
-        if (request.RegionCaptureOptions.ActiveMonitorMode)
+
+        IPlatformOverlayWindow? overlay = customOverlay;
+        if (overlay == null && allowPlatformOverlay)
+        {
+            overlay = PlatformOverlayWindowHost.TryCreateOverlay(
+                new PlatformRectangle(request.ScreenBounds.X, request.ScreenBounds.Y, request.ScreenBounds.Width, request.ScreenBounds.Height),
+                _imageWidth,
+                _imageHeight,
+                transparent: false,
+                "sharex-region-capture");
+        }
+
+        if (overlay != null)
+        {
+            _overlayHost = new PlatformOverlayWindowHost(this, overlay, _imageWidth, _imageHeight, CancelCapture);
+        }
+        else if (request.RegionCaptureOptions.ActiveMonitorMode)
         {
             Helpers.LockCursorToWindow(this);
         }
+
         InitializeCaptureWorkspace();
         Opened += OnOpened;
+    }
+
+    protected override void IsVisibleChanged(AvaloniaPropertyChangedEventArgs e)
+    {
+        if (_overlayHost != null)
+        {
+            return;
+        }
+
+        base.IsVisibleChanged(e);
     }
 
     public Task<AvaloniaRegionCaptureResult?> CaptureAsync()
@@ -173,6 +212,25 @@ public partial class RegionCaptureWindow : Window
         if (_request == null)
         {
             throw new InvalidOperationException("A capture request is required.");
+        }
+
+        if (_overlayHost != null)
+        {
+            ApplyPixelSize();
+
+            try
+            {
+                PrepareWorkspace();
+            }
+            catch (Exception ex)
+            {
+                _startupException = ex;
+                Close();
+                return _completionSource.Task;
+            }
+
+            ShowOverlay();
+            return _completionSource.Task;
         }
 
         ConfigureInitialPixelBounds();
@@ -191,6 +249,23 @@ public partial class RegionCaptureWindow : Window
 
         Show();
         return _completionSource.Task;
+    }
+
+    private void ShowOverlay()
+    {
+        if (_overlayHost == null)
+        {
+            return;
+        }
+
+        EnsureInitialized();
+        ApplyStyling();
+        ApplyTemplate();
+        ClientSize = _overlayHost.LogicalSize;
+        IsVisible = true;
+        _overlayHost.Start();
+        OnOpened(this, EventArgs.Empty);
+        _overlayHost.RequestRender();
     }
 
     protected override void OnClosed(EventArgs e)
@@ -229,6 +304,9 @@ public partial class RegionCaptureWindow : Window
         }
         finally
         {
+            _overlayHost?.Dispose();
+            _overlayHost = null;
+
             if (closeException != null)
             {
                 _completionSource.TrySetException(closeException);
@@ -586,32 +664,44 @@ public partial class RegionCaptureWindow : Window
             }
 
             ApplyPixelSize();
-            CoverScreen();
-            Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
+            if (_overlayHost == null)
+            {
+                CoverScreen();
+                Helpers.EnsureWindowPosition(this, _request.ScreenBounds.X, _request.ScreenBounds.Y);
+            }
+
             if (GetRenderScaling() != _appliedPixelScaling)
             {
                 UpdatePixelTransforms();
             }
 
-            WindowGeometryLog.Record(this, "Region capture", _request.ScreenBounds,
-                new System.Drawing.Size(_imageWidth, _imageHeight), GetGeometryChecks, trackDpiChanges: true);
+            if (_overlayHost == null)
+            {
+                WindowGeometryLog.Record(this, "Region capture", _request.ScreenBounds,
+                    new System.Drawing.Size(_imageWidth, _imageHeight), GetGeometryChecks, trackDpiChanges: true);
+            }
 
             if (_request.CursorBitmap != null)
             {
                 ActivateRegionTool();
             }
 
-            // After a global hotkey another application is in front; on macOS the overlay only gets the keyboard (Esc to cancel)
-            // once ShareX itself is active.
-            PlatformServices.Current.Windows.ActivateOwnApplication();
-            Activate();
-            Focus();
+            if (_overlayHost == null)
+            {
+                // After a global hotkey another application is in front; on macOS the overlay only gets the keyboard (Esc to cancel)
+                // once ShareX itself is active.
+                PlatformServices.Current.Windows.ActivateOwnApplication();
+                Activate();
+                Focus();
+            }
+
             _regionInputSurface.Focus();
 
             DrawingPoint cursorPosition = CaptureHelpers.GetCursorPosition();
             _lastPointerPoint = ClampPoint(ScreenToImage(cursorPosition));
             UpdateToolbarPosition(cursorPosition);
             UpdateHud(_lastPointerPoint);
+            _overlayHost?.RequestRender();
 
             _ = LoadWindowRegionsAsync();
 
@@ -657,6 +747,7 @@ public partial class RegionCaptureWindow : Window
             {
                 _windows = result;
                 UpdateHover(_lastPointerPoint);
+                _overlayHost?.RequestRender();
             }
         }
         catch (Exception ex)
@@ -1222,12 +1313,17 @@ public partial class RegionCaptureWindow : Window
 
     private double GetWindowScaling()
     {
-        return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        return GetRenderScaling();
     }
 
     /// <summary>Scaling of the monitor at the given desktop point, or of the window when the point is not on a monitor.</summary>
     private double GetMonitorScaling(PixelPoint desktopPoint)
     {
+        if (_overlayHost?.GetOutputScalingAt(desktopPoint) is double overlayScaling)
+        {
+            return overlayScaling;
+        }
+
         double scaling = Screens.ScreenFromPoint(desktopPoint)?.Scaling ?? 0;
         return double.IsFinite(scaling) && scaling > 0 ? scaling : GetWindowScaling();
     }
@@ -1919,7 +2015,7 @@ public partial class RegionCaptureWindow : Window
             _magnifierPanel.IsVisible = true;
             _pointerInfoText.Text = GetPointerInfoText(imagePoint);
 
-            double scale = Math.Max(1, RenderScaling);
+            double scale = Math.Max(1, GetRenderScaling());
             Point pointer = new Point(imagePoint.X / scale, imagePoint.Y / scale);
             double monitorScale = GetMonitorScaleFactor(imagePoint);
             _magnifierScale.ScaleX = monitorScale;
@@ -2049,7 +2145,7 @@ public partial class RegionCaptureWindow : Window
 
     private int NormalizeMagnifierPixelCount(int requestedCount)
     {
-        double scale = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        double scale = GetRenderScaling();
         int magnifierSize = Math.Clamp(_request?.RegionCaptureOptions.MagnifierSize ?? RegionCaptureOptions.MagnifierSizeMinimum,
             RegionCaptureOptions.MagnifierSizeMinimum,
             RegionCaptureOptions.MagnifierSizeMaximum);
@@ -2097,7 +2193,7 @@ public partial class RegionCaptureWindow : Window
         _selectionInfoText.Text = $"X: {screenPosition.X} Y: {screenPosition.Y} W: {width} H: {height}";
         _selectionInfoPanel.IsVisible = true;
 
-        double scale = Math.Max(1, RenderScaling);
+        double scale = Math.Max(1, GetRenderScaling());
         double baseWidth = _selectionInfoPanel.Bounds.Width > 0 ? _selectionInfoPanel.Bounds.Width : 100;
         double baseHeight = _selectionInfoPanel.Bounds.Height > 0 ? _selectionInfoPanel.Bounds.Height : 36;
         double left = selection.Left / scale;
@@ -2149,7 +2245,7 @@ public partial class RegionCaptureWindow : Window
             return windowBounds;
         }
 
-        double scale = Math.Max(1, RenderScaling);
+        double scale = Math.Max(1, GetRenderScaling());
         Rect monitor = ScreenToImage(screen.Bounds);
         Rect monitorBounds = new Rect(monitor.X / scale, monitor.Y / scale, monitor.Width / scale, monitor.Height / scale)
             .Intersect(windowBounds);
@@ -2183,7 +2279,7 @@ public partial class RegionCaptureWindow : Window
 
         if (isMagnifierPanel)
         {
-            double scale = Math.Max(1, RenderScaling);
+            double scale = Math.Max(1, GetRenderScaling());
             targetX = Math.Round(targetX * scale) / scale;
             targetY = Math.Round(targetY * scale) / scale;
             _magnifierTransform.X = targetX;
@@ -2609,12 +2705,20 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        double scaling = double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+        double scaling = GetRenderScaling();
         Width = _imageWidth / scaling;
         Height = _imageHeight / scaling;
     }
 
-    private double GetRenderScaling() => double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+    private double GetRenderScaling()
+    {
+        if (_overlayHost != null)
+        {
+            return _overlayHost.RenderScaling;
+        }
+
+        return double.IsFinite(RenderScaling) && RenderScaling > 0 ? RenderScaling : 1;
+    }
 
     private void UpdatePixelTransforms()
     {
@@ -2637,6 +2741,11 @@ public partial class RegionCaptureWindow : Window
 
     private double GetInitialScaling()
     {
+        if (_overlayHost != null)
+        {
+            return _overlayHost.RenderScaling;
+        }
+
         if (_request == null)
         {
             return 1;

@@ -41,6 +41,8 @@ internal static class NativeProcessFixture
             return ClipboardUploadPreviewTests.RunFixture(args.Skip(1).ToArray());
         if (args.FirstOrDefault() == "--avalonia-bootstrapper")
             return AvaloniaStartupLifetimeTests.RunFixture(args.Skip(1).ToArray());
+        if (args.FirstOrDefault() == "--overlay-window")
+            return OverlayWindowTests.RunFixture(args.Skip(1).ToArray());
         if (!OperatingSystem.IsWindows() || args.Length == 0) return 0;
         try
         {
