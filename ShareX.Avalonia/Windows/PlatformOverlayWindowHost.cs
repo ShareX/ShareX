@@ -90,6 +90,17 @@ public sealed class PlatformOverlayWindowHost : IDisposable
     private bool _frameDirty;
     private bool _frameScheduled;
     private bool _isRendering;
+    private bool _throttledRenderQueued;
+    private readonly System.Diagnostics.Stopwatch _clock = System.Diagnostics.Stopwatch.StartNew();
+    private TimeSpan _lastRenderStart = TimeSpan.FromHours(-1);
+    private TimeSpan _lastRenderCost = TimeSpan.Zero;
+
+    // The newest pointer move that has not reached the UI thread yet. A mouse reports hundreds of moves a second and
+    // only the last one matters, so moves overwrite each other here instead of each getting a queue entry.
+    private readonly object _pendingMoveLock = new();
+    private OverlayPointerEvent? _pendingMove;
+    private bool _moveDrainQueued;
+    private int _moveGeneration;
     private DateTime _keepAliveUntilUtc;
 
     private IInputElement? _pointerOverElement;
@@ -233,6 +244,7 @@ public sealed class PlatformOverlayWindowHost : IDisposable
         }
 
         _isRendering = true;
+        _lastRenderStart = _clock.Elapsed;
         try
         {
             EnsureLayout();
@@ -247,7 +259,44 @@ public sealed class PlatformOverlayWindowHost : IDisposable
         finally
         {
             _isRendering = false;
+            _lastRenderCost = _clock.Elapsed - _lastRenderStart;
         }
+    }
+
+    /// <summary>
+    /// Renders unless the last frame was too recent. A frame renders and reads back the whole desktop, which can take longer
+    /// than the 16 ms between frames; rendering again straight away would leave the UI thread no time for input, so the
+    /// gap is at least as long as the last frame took, and the rest of the time goes to the mouse and keyboard.
+    /// </summary>
+    private void RenderThrottled()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        TimeSpan gap = TimeSpan.FromTicks(Math.Max(TimeSpan.FromMilliseconds(16).Ticks, Math.Min(_lastRenderCost.Ticks * 2, TimeSpan.FromMilliseconds(100).Ticks)));
+        TimeSpan wait = _lastRenderStart + gap - _clock.Elapsed;
+        if (wait <= TimeSpan.Zero)
+        {
+            RenderNow();
+            return;
+        }
+
+        if (_throttledRenderQueued)
+        {
+            return;
+        }
+
+        _throttledRenderQueued = true;
+        DispatcherTimer.RunOnce(() =>
+        {
+            _throttledRenderQueued = false;
+            if (!_disposed && _frameDirty)
+            {
+                RenderThrottled();
+            }
+        }, wait, DispatcherPriority.Background);
     }
 
     public void Dispose()
@@ -305,7 +354,7 @@ public sealed class PlatformOverlayWindowHost : IDisposable
 
         if (_frameDirty)
         {
-            RenderNow();
+            RenderThrottled();
         }
 
         if (!_disposed && DateTime.UtcNow < _keepAliveUntilUtc && !_keepAliveTimer.IsEnabled)
@@ -322,7 +371,8 @@ public sealed class PlatformOverlayWindowHost : IDisposable
             return;
         }
 
-        RenderNow();
+        _frameDirty = true;
+        RenderThrottled();
     }
 
     private void OnWindowLayoutUpdated(object? sender, EventArgs e)
@@ -389,11 +439,105 @@ public sealed class PlatformOverlayWindowHost : IDisposable
         _host.PresentFrame(fb.Address, fb.Size.Width, fb.Size.Height, fb.RowBytes);
     }
 
-    private void OnHostPointerEvent(OverlayPointerEvent ev) => PostToUi(() => HandlePointerEvent(ev));
+    private void OnHostPointerEvent(OverlayPointerEvent ev)
+    {
+        if (ev.Kind != OverlayPointerEventKind.Move)
+        {
+            // A button or leave event goes after any move that came before it, so the selection ends where the user let go.
+            OverlayPointerEvent? earlier = TakePendingMove();
+            PostToUi(() =>
+            {
+                if (earlier.HasValue)
+                {
+                    HandlePointerEvent(earlier.Value);
+                }
 
-    private void OnHostWheelEvent(OverlayWheelEvent ev) => PostToUi(() => HandleWheelEvent(ev));
+                HandlePointerEvent(ev);
+            });
+            return;
+        }
 
-    private void OnHostKeyEvent(OverlayKeyEvent ev) => PostToUi(() => HandleKeyEvent(ev));
+        int generation = 0;
+        bool post;
+        lock (_pendingMoveLock)
+        {
+            _pendingMove = ev;
+            post = !_moveDrainQueued;
+            if (post)
+            {
+                _moveDrainQueued = true;
+                generation = _moveGeneration;
+            }
+        }
+
+        if (post)
+        {
+            PostToUi(() => DrainPendingMove(generation));
+        }
+    }
+
+    // Takes the move that is waiting and starts a new generation, so a drain queued before this call does not pick up a move
+    // that arrives after it and handle it ahead of the event the caller is about to post.
+    private OverlayPointerEvent? TakePendingMove()
+    {
+        lock (_pendingMoveLock)
+        {
+            OverlayPointerEvent? move = _pendingMove;
+            _pendingMove = null;
+            _moveDrainQueued = false;
+            _moveGeneration++;
+            return move;
+        }
+    }
+
+    private void DrainPendingMove(int generation)
+    {
+        OverlayPointerEvent? move;
+        lock (_pendingMoveLock)
+        {
+            if (generation != _moveGeneration)
+            {
+                return;
+            }
+
+            move = _pendingMove;
+            _pendingMove = null;
+            _moveDrainQueued = false;
+        }
+
+        if (move.HasValue)
+        {
+            HandlePointerEvent(move.Value);
+        }
+    }
+
+    private void OnHostWheelEvent(OverlayWheelEvent ev)
+    {
+        OverlayPointerEvent? earlier = TakePendingMove();
+        PostToUi(() =>
+        {
+            if (earlier.HasValue)
+            {
+                HandlePointerEvent(earlier.Value);
+            }
+
+            HandleWheelEvent(ev);
+        });
+    }
+
+    private void OnHostKeyEvent(OverlayKeyEvent ev)
+    {
+        OverlayPointerEvent? earlier = TakePendingMove();
+        PostToUi(() =>
+        {
+            if (earlier.HasValue)
+            {
+                HandlePointerEvent(earlier.Value);
+            }
+
+            HandleKeyEvent(ev);
+        });
+    }
 
     private void OnHostKeyRepeatInfoChanged(int rate, int delay) => PostToUi(() =>
     {
