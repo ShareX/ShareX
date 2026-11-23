@@ -13,7 +13,7 @@ env:
   # The ShareX fork of Avalonia (Wayland, the fixes ShareX needs). Directory.Packages.props names the package version; this is
   # the commit of ShareX/Avalonia those packages are built from. Change both together. NuGet.config restores them from
   # ../Avalonia/artifacts/nuget, which the avalonia-packages job below fills, so nothing has to be published anywhere.
-  AVALONIA_FORK_REF: eda0808950ad367249cd68015d49dd756f7846a9
+  AVALONIA_FORK_REF: de26e5177dd3727a2b20b45a833370bf502b938c
 
 jobs:
   # Avalonia's macOS native library has to be built on a Mac, so the fork's packages are made in two steps. Both are cached by
@@ -52,12 +52,6 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: Avalonia
         run: |
-          # The fork's nukebuild/Build.cs asks for Avalonia.Native.macOS.csproj, but the project file is named .proj (as in
-          # upstream Avalonia, whose Build.cs agrees). Give it the name the script looks for.
-          native=native/Avalonia.Native
-          if [ ! -f "$native/Avalonia.Native.macOS.csproj" ] && [ -f "$native/Avalonia.Native.macOS.proj" ]; then
-            cp "$native/Avalonia.Native.macOS.proj" "$native/Avalonia.Native.macOS.csproj"
-          fi
           ./build.sh --target CompileNative --configuration Release
           mkdir -p "$GITHUB_WORKSPACE/avalonia-native"
           cp artifacts/native/Release/libAvalonia.Native.OSX.dylib "$GITHUB_WORKSPACE/avalonia-native/"
@@ -120,8 +114,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         working-directory: Avalonia
         run: |
-          # The fork's Compile target depends on Clean, which empties artifacts/ and with it the native library downloaded above,
-          # so the Avalonia.Native package came out without it. A fresh checkout has nothing to clean.
+          # The fork's Compile target depends on Clean, which empties artifacts/ and with it the native library downloaded above.
+          # The native library was built in another job, so Clean has to be skipped here; a fresh checkout has nothing to clean.
           ./build.sh \
             --target CreateNugetPackages \
             --skip Clean \
