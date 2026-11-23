@@ -369,7 +369,9 @@ public sealed partial class PixelEditorWindow
     {
         ExtendClientAreaToDecorationsHint = true;
         ExtendClientAreaTitleBarHeightHint = TitleBarHeight;
-        WindowDecorations = WindowDecorations.BorderOnly;
+        WindowDecorations = WindowDecorations.Full;
+        // Avalonia 12.2+:
+        // WindowDrawnDecorations.SetTitleBarDecorations(this, TitleBarDecorations.None);
 
         Image icon = new() { Width = 16, Height = 16, Margin = new Thickness(10, 0, 4, 0), Source = LoadTitleBarIcon(), IsHitTestVisible = false, VerticalAlignment = VerticalAlignment.Center };
         RenderOptions.SetBitmapInterpolationMode(icon, BitmapInterpolationMode.HighQuality);

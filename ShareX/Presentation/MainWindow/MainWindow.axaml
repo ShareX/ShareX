@@ -1,3 +1,4 @@
+<!-- Avalonia 12.2+: add WindowDrawnDecorations.TitleBarDecorations="None" to the Window tag. -->
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:chrome="using:Avalonia.Controls.Chrome"
@@ -13,7 +14,7 @@
         MinWidth="760"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaTitleBarHeightHint="38"
-        WindowDecorations="BorderOnly"
+        WindowDecorations="Full"
         WindowStartupLocation="CenterScreen"
         DragDrop.AllowDrop="True"
         DragDrop.DragEnter="OnDragEnter"
