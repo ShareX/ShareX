@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>อัตโนมัติ URL กำลังย่อ ความยาว</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ปรับขนาดหน้าต่างให้พอดีกับรูปภาพ</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>อัตโนมัติ JPEG</value>
   </data>
@@ -2599,6 +2602,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>นามสกุล:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>ใช้กับตัวบันทึก FFmpeg เท่านั้น ปิดตัวบันทึกหน้าจอในตัวเพื่อเปลี่ยนค่านี้</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>บัญชี FTP:</value>
@@ -3013,9 +3019,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>ปิดใช้งาน การจับภาพพื้นที่ คำอธิบายประกอบ</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>ปรับขนาดหน้าต่างให้พอดีกับรูปภาพ</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>จดจำ หน้าต่าง สถานะ</value>
