@@ -70,6 +70,7 @@ public partial class NotificationWindow : Window
     private readonly DoubleTransition _opacityTransition = new() { Property = OpacityProperty };
     private readonly TransformOperationsTransition _slideTransition = new() { Property = RenderTransformProperty };
     private bool _isFading;
+    private bool _hasAppeared;
     private NotificationWindowConfig? _config;
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
@@ -348,7 +349,7 @@ public partial class NotificationWindow : Window
 
     private void PlayShowAnimation()
     {
-        if (_isFading || !IsVisible)
+        if (!IsVisible)
         {
             return;
         }
@@ -356,9 +357,25 @@ public partial class NotificationWindow : Window
         SetAnimationState(0, GetSlideOffset(), null, null);
         WaitForSteadyFrames(() =>
         {
-            if (!_isFading)
+            if (!IsVisible)
             {
-                SetAnimationState(1, 0, ShowAnimationDuration, new CubicEaseOut());
+                return;
+            }
+
+            _hasAppeared = true;
+            SetAnimationState(1, 0, ShowAnimationDuration, new CubicEaseOut());
+
+            // The duration can end before the window appears, for example when it is 0, so the
+            // fade that was held back starts once the window is fully shown.
+            if (_durationEnded && !_pointerInside)
+            {
+                DispatcherTimer.RunOnce(() =>
+                {
+                    if (IsVisible && _durationEnded && !_pointerInside && !_isFading)
+                    {
+                        StartFade();
+                    }
+                }, ShowAnimationDuration);
             }
         });
     }
@@ -502,7 +519,7 @@ public partial class NotificationWindow : Window
 
     private void StartFade()
     {
-        if (_config == null || _isFileDragActive)
+        if (_config == null || _isFileDragActive || !_hasAppeared)
         {
             return;
         }
@@ -524,7 +541,7 @@ public partial class NotificationWindow : Window
     {
         _fadeTimer.Stop();
 
-        if (_isFading || AnimationRoot.Opacity < 1)
+        if (_isFading)
         {
             _isFading = false;
             SetAnimationState(1, 0, RestoreAnimationDuration, new CubicEaseOut());
