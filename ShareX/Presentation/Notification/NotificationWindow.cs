@@ -26,11 +26,14 @@
 #nullable enable
 
 using Avalonia;
+using Avalonia.Animation;
+using Avalonia.Animation.Easings;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
+using Avalonia.Media.Transformation;
 using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
@@ -41,6 +44,7 @@ using ShareX.HelpersLib;
 using ShareX.Icons;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,12 +59,17 @@ public partial class NotificationWindow : Window
     private const double ShadowMargin = 14;
     private const double MinimumTextWidth = 240;
     private const double MaximumTextWidth = 520;
+    private const double SlideDistance = 12;
+    private static readonly TimeSpan ShowAnimationDuration = TimeSpan.FromMilliseconds(220);
+    private static readonly TimeSpan RestoreAnimationDuration = TimeSpan.FromMilliseconds(150);
     private static NotificationWindow? _instance;
 
     private readonly DispatcherTimer _durationTimer;
     private readonly DispatcherTimer _fadeTimer;
     private readonly DispatcherTimer _hoverTimer;
-    private readonly Stopwatch _fadeStopwatch = new();
+    private readonly DoubleTransition _opacityTransition = new() { Property = OpacityProperty };
+    private readonly TransformOperationsTransition _slideTransition = new() { Property = RenderTransformProperty };
+    private bool _isFading;
     private NotificationWindowConfig? _config;
     private Bitmap? _previewBitmap;
     private bool _durationEnded;
@@ -83,12 +92,17 @@ public partial class NotificationWindow : Window
 
         _durationTimer = new DispatcherTimer();
         _durationTimer.Tick += OnDurationElapsed;
-        _fadeTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(16) };
-        _fadeTimer.Tick += OnFadeTick;
+        _fadeTimer = new DispatcherTimer();
+        _fadeTimer.Tick += OnFadeElapsed;
         _hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(40) };
         _hoverTimer.Tick += OnHoverTick;
 
         ApplyToolWindowStyle();
+
+        // Opacity and position are animated by Avalonia transitions, which advance on every rendered
+        // frame. The window starts hidden and slides in once it has been positioned.
+        AnimationRoot.Transitions = [_opacityTransition, _slideTransition];
+        SetAnimationState(0, SlideDistance, null, null);
 
         Opened += OnOpened;
         Closed += OnClosed;
@@ -162,12 +176,14 @@ public partial class NotificationWindow : Window
     public void LoadConfig(NotificationWindowConfig config)
     {
         _durationTimer.Stop();
-        _fadeTimer.Stop();
-        _fadeStopwatch.Reset();
         _durationEnded = false;
         _pointerInside = false;
         ResetPointerInteraction();
-        Opacity = 1;
+
+        if (IsVisible)
+        {
+            CancelFade();
+        }
 
         _previewBitmap?.Dispose();
         _previewBitmap = null;
@@ -327,6 +343,88 @@ public partial class NotificationWindow : Window
         _hoverTimer.Start();
         Dispatcher.UIThread.Post(PositionWindow, DispatcherPriority.Loaded);
         Dispatcher.UIThread.Post(UpdatePointerInside, DispatcherPriority.Loaded);
+        Dispatcher.UIThread.Post(PlayShowAnimation, DispatcherPriority.Loaded);
+    }
+
+    private void PlayShowAnimation()
+    {
+        if (_isFading || !IsVisible)
+        {
+            return;
+        }
+
+        SetAnimationState(0, GetSlideOffset(), null, null);
+        WaitForSteadyFrames(() =>
+        {
+            if (!_isFading)
+            {
+                SetAnimationState(1, 0, ShowAnimationDuration, new CubicEaseOut());
+            }
+        });
+    }
+
+    // The first frames of a new window can take much longer than a normal frame while it is
+    // created, positioned and its preview uploaded. Starting the animation before then would skip
+    // most of it, so wait until two frames in a row arrive at a normal pace.
+    private void WaitForSteadyFrames(Action onReady)
+    {
+        const double SteadyFrameMilliseconds = 34;
+        const int MaxFrames = 30;
+        Stopwatch stopwatch = Stopwatch.StartNew();
+        double lastFrameTime = -1;
+        int frameCount = 0;
+        int steadyFrames = 0;
+
+        void OnFrame(TimeSpan _)
+        {
+            double now = stopwatch.Elapsed.TotalMilliseconds;
+            steadyFrames = lastFrameTime >= 0 && now - lastFrameTime < SteadyFrameMilliseconds ? steadyFrames + 1 : 0;
+            lastFrameTime = now;
+            frameCount++;
+
+            if (steadyFrames >= 2 || frameCount >= MaxFrames || !IsVisible)
+            {
+                onReady();
+            }
+            else
+            {
+                RequestAnimationFrame(OnFrame);
+            }
+        }
+
+        RequestAnimationFrame(OnFrame);
+    }
+
+    private double GetSlideOffset() => _config?.Placement switch
+    {
+        DrawingContentAlignment.TopLeft or DrawingContentAlignment.TopCenter or DrawingContentAlignment.TopRight => -SlideDistance,
+        _ => SlideDistance
+    };
+
+    private void SetAnimationState(double opacity, double offsetY, TimeSpan? duration, Easing? easing)
+    {
+        Transitions? transitions = AnimationRoot.Transitions;
+
+        if (duration == null)
+        {
+            AnimationRoot.Transitions = null;
+        }
+        else
+        {
+            _opacityTransition.Duration = duration.Value;
+            _opacityTransition.Easing = easing ?? new LinearEasing();
+            _slideTransition.Duration = duration.Value;
+            _slideTransition.Easing = easing ?? new LinearEasing();
+        }
+
+        AnimationRoot.Opacity = opacity;
+        AnimationRoot.RenderTransform = TransformOperations.Parse(
+            string.Format(CultureInfo.InvariantCulture, "translateY({0}px)", offsetY));
+
+        if (duration == null)
+        {
+            AnimationRoot.Transitions = transitions;
+        }
     }
 
     private void PositionWindow()
@@ -415,26 +513,31 @@ public partial class NotificationWindow : Window
             return;
         }
 
-        _fadeStopwatch.Restart();
+        TimeSpan fadeDuration = TimeSpan.FromMilliseconds(_config.FadeDuration);
+        _isFading = true;
+        SetAnimationState(0, GetSlideOffset() / 2, fadeDuration, new CubicEaseInOut());
+        _fadeTimer.Interval = fadeDuration;
         _fadeTimer.Start();
     }
 
-    private void OnFadeTick(object? sender, EventArgs e)
+    private void CancelFade()
     {
-        if (_config == null)
+        _fadeTimer.Stop();
+
+        if (_isFading || AnimationRoot.Opacity < 1)
         {
-            return;
+            _isFading = false;
+            SetAnimationState(1, 0, RestoreAnimationDuration, new CubicEaseOut());
         }
+    }
 
-        double progress = _fadeStopwatch.Elapsed.TotalMilliseconds / _config.FadeDuration;
+    private void OnFadeElapsed(object? sender, EventArgs e)
+    {
+        _fadeTimer.Stop();
 
-        if (progress >= 1)
+        if (_isFading)
         {
             Close();
-        }
-        else
-        {
-            Opacity = 1 - progress;
         }
     }
 
@@ -464,9 +567,7 @@ public partial class NotificationWindow : Window
 
         if (isInside)
         {
-            _fadeTimer.Stop();
-            _fadeStopwatch.Reset();
-            Opacity = 1;
+            CancelFade();
         }
         else
         {
@@ -514,9 +615,7 @@ public partial class NotificationWindow : Window
         _fileDragStarted = true;
         PointerPressedEventArgs dragEvent = _dragEvent;
         _isFileDragActive = true;
-        _fadeTimer.Stop();
-        _fadeStopwatch.Reset();
-        Opacity = 1;
+        CancelFade();
 
         try
         {
