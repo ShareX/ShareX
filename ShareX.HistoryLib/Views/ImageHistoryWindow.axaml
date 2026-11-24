@@ -342,6 +342,13 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
 
+                        <Canvas x:Name="MarqueeLayer" IsHitTestVisible="False">
+                            <Border x:Name="MarqueeOutline"
+                                    BorderBrush="{DynamicResource ShareX.Brush.Accent.Border}"
+                                    BorderThickness="1"
+                                    IsVisible="False"/>
+                        </Canvas>
+
                         <StackPanel x:Name="LoadingState"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
