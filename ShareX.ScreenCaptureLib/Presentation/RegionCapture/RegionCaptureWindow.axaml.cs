@@ -46,6 +46,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using AvaloniaCanvas = Avalonia.Controls.Canvas;
 using DrawingColor = System.Drawing.Color;
@@ -586,6 +587,7 @@ public partial class RegionCaptureWindow : Window
             }
 
             Activate();
+            EnsureForegroundWindow();
             Focus();
             _regionInputSurface.Focus();
 
@@ -2614,6 +2616,27 @@ public partial class RegionCaptureWindow : Window
 
         System.Drawing.Point anchor = RegionCaptureFixedScale.GetDpiAnchor(_request.ScreenBounds);
         return Screens.ScreenFromPoint(new PixelPoint(anchor.X, anchor.Y))?.Scaling ?? Screens.Primary?.Scaling ?? 1;
+    }
+
+    // Windows ignores SetForegroundWindow from a process that did not receive the last input event, so the
+    // overlay could open without keyboard focus and Esc went to the window behind it. Sending an empty
+    // mouse input first lifts that restriction for this process.
+    private void EnsureForegroundWindow()
+    {
+        IntPtr handle = TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+
+        if (handle == IntPtr.Zero || NativeMethods.GetForegroundWindow() == handle)
+        {
+            return;
+        }
+
+        INPUT input = new INPUT { Type = InputType.InputMouse };
+        NativeMethods.SendInput(1, ref input, Marshal.SizeOf<INPUT>());
+        NativeMethods.SetForegroundWindow(handle);
+
+        DebugHelper.WriteLine(NativeMethods.GetForegroundWindow() == handle
+            ? "Region capture window was not in the foreground and has been activated."
+            : "Region capture window could not be brought to the foreground.");
     }
 
     private static byte GetDimAlpha(RegionCaptureOptions options)
