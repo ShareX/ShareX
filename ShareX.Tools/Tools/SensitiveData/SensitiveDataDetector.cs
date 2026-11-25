@@ -89,6 +89,11 @@ public sealed class SensitiveDataDetector
     private static readonly Regex EmailRegex = Create(
         @"(?<![\w.%+-])[\w.%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}?(?:(?![\w-])|(?<=[a-z])(?=[A-Z][a-z]{2}|\d))");
 
+    // Apps often shorten a long address with an ellipsis that hides the "@" ("fulano.sil…gmail.com"), and the rest
+    // still shows most of it. The domain must end in lowercase letters, so "assim...depois.Mas" in prose is left alone.
+    private static readonly Regex ShortenedEmailRegex = Create(
+        @"(?<![\w.%+-])[\w%+-][\w.%+-]{2,}?(?:…|\.{2,3})@?[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[a-z]{2,}?(?:(?![\w-])|(?<=[a-z])(?=[A-Z][a-z]{2}|\d))");
+
     private static readonly Regex CreditCardRegex = Create(@"(?<![\d-])(?:\d[ -]?){12,18}\d(?![\d-])");
 
     private static readonly Regex CPFRegex = Create(@"(?<!\d|\d[.\-/])\d{3}[. ]?\d{3}[. ]?\d{3}[-–. ]?\d{2}(?!\d|[.\-/]\d)");
@@ -132,6 +137,7 @@ public sealed class SensitiveDataDetector
         if (options.CensorEmailAddresses)
         {
             _rules.Add(new Rule(SensitiveDataType.EmailAddress, EmailRegex));
+            _rules.Add(new Rule(SensitiveDataType.EmailAddress, ShortenedEmailRegex));
         }
 
         if (options.CensorCreditCardNumbers)
