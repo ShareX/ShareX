@@ -94,6 +94,18 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Reconhecer texto (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_CensorSensitiveData" xml:space="preserve">
+    <value>Censurar dados sensíveis</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Fill" xml:space="preserve">
+    <value>Tarja sólida</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Pixelate" xml:space="preserve">
+    <value>Pixelizar</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Blur" xml:space="preserve">
+    <value>Desfocar</value>
+  </data>
   <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
     <value>Abrir no editor de fotos</value>
   </data>

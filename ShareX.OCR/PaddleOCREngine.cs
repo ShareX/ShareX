@@ -132,16 +132,17 @@ public sealed class PaddleOCREngine : IDisposable
             return new OCRResult([]);
         }
 
-        (string Text, float Score)[] texts = _recognizer.Recognize(image, boxes);
+        RecognizedText[] texts = _recognizer.Recognize(image, boxes);
         List<OCRTextRegion> regions = [];
 
         for (int i = 0; i < boxes.Count; i++)
         {
-            string text = texts[i].Text.Trim();
+            // The recognizer has already trimmed the text, keeping its character positions lined up with it.
+            string text = texts[i].Text;
 
             if (text.Length > 0 && texts[i].Score >= minScore)
             {
-                regions.Add(new OCRTextRegion(boxes[i], text, texts[i].Score));
+                regions.Add(new OCRTextRegion(boxes[i], text, texts[i].Score) { Characters = texts[i].Characters });
             }
         }
 

@@ -36,8 +36,6 @@ internal sealed class TextRecognizer : IDisposable
 {
     private const int BatchSize = 6;
     private const int MaxInputWidth = 3200;
-    // Lines this much taller than wide are vertical text and are turned to read left to right.
-    private const float VerticalTextRatio = 1.5f;
     private static readonly float[] Mean = [0.5f, 0.5f, 0.5f];
     private static readonly float[] Std = [0.5f, 0.5f, 0.5f];
 
@@ -67,10 +65,10 @@ internal sealed class TextRecognizer : IDisposable
         _inputName = _session.InputMetadata.Keys.First();
     }
 
-    public (string Text, float Score)[] Recognize(SKImage image, IReadOnlyList<SKPoint[]> boxes)
+    public RecognizedText[] Recognize(SKImage image, IReadOnlyList<SKPoint[]> boxes)
     {
         LineImage[] lines = [.. boxes.Select(GetLineImage)];
-        (string Text, float Score)[] results = new (string, float)[boxes.Count];
+        RecognizedText[] results = new RecognizedText[boxes.Count];
 
         // Lines of similar width are batched together so less of each batch is padding.
         int[] order = [.. Enumerable.Range(0, lines.Length).OrderBy(i => lines[i].AspectRatio)];
@@ -84,16 +82,18 @@ internal sealed class TextRecognizer : IDisposable
         return results;
     }
 
-    private void RecognizeBatch(SKImage image, LineImage[] lines, int[] batch, (string Text, float Score)[] results)
+    private void RecognizeBatch(SKImage image, LineImage[] lines, int[] batch, RecognizedText[] results)
     {
         float maxAspectRatio = Math.Max((float)_minInputWidth / _inputHeight, batch.Max(i => lines[i].AspectRatio));
         int inputWidth = Math.Min((int)(_inputHeight * maxAspectRatio), MaxInputWidth);
         DenseTensor<float> input = new([batch.Length, 3, _inputHeight, inputWidth]);
+        int[] widths = new int[batch.Length];
 
         for (int i = 0; i < batch.Length; i++)
         {
             LineImage line = lines[batch[i]];
             int width = Math.Clamp((int)Math.Ceiling(_inputHeight * line.AspectRatio), 1, inputWidth);
+            widths[i] = width;
             using SKBitmap crop = ImageTensor.Crop(image, line.Origin, line.XEdge, line.YEdge, width, _inputHeight);
             ImageTensor.Fill(input.Buffer.Span, i, inputWidth, _inputHeight, crop, Mean, Std);
         }
@@ -106,17 +106,22 @@ internal sealed class TextRecognizer : IDisposable
 
         for (int i = 0; i < batch.Length; i++)
         {
-            results[batch[i]] = Decode(probabilities.AsSpan(i * steps * classes, steps * classes), steps, classes);
+            // The steps cover the whole input, padding included, and the line fills only the first part of it.
+            float stepShare = (float)inputWidth / steps / widths[i];
+            results[batch[i]] = Decode(probabilities.AsSpan(i * steps * classes, steps * classes), steps, classes, stepShare);
         }
     }
 
-    // Greedy CTC decoding: take the likeliest class at each step, merge repeats, drop blanks.
-    private (string Text, float Score) Decode(ReadOnlySpan<float> probabilities, int steps, int classes)
+    // Greedy CTC decoding: take the likeliest class at each step, merge repeats, drop blanks. Each character is placed
+    // at the middle of the steps that read it, as a share of the line length, so the text can be found in the image.
+    private RecognizedText Decode(ReadOnlySpan<float> probabilities, int steps, int classes, float stepShare)
     {
         StringBuilder text = new();
+        List<(int Length, int FirstStep, int LastStep)> tokens = [];
         float scoreSum = 0;
         int scoreCount = 0;
         int previous = -1;
+        bool previousRead = false;
 
         for (int step = 0; step < steps; step++)
         {
@@ -131,34 +136,87 @@ internal sealed class TextRecognizer : IDisposable
                 }
             }
 
-            if (best != 0 && best != previous && best < _characters.Length)
+            if (best == previous && previousRead)
             {
-                text.Append(_characters[best]);
+                tokens[^1] = tokens[^1] with { LastStep = step };
+            }
+            else if (best != 0 && best != previous && best < _characters.Length)
+            {
+                string character = _characters[best];
+                text.Append(character);
+                tokens.Add((character.Length, step, step));
                 scoreSum += stepProbabilities[best];
                 scoreCount++;
+                previousRead = true;
+            }
+            else
+            {
+                previousRead = false;
             }
 
             previous = best;
         }
 
-        return (text.ToString(), scoreCount > 0 ? scoreSum / scoreCount : 0);
+        float score = scoreCount > 0 ? scoreSum / scoreCount : 0;
+
+        if (tokens.Count == 0)
+        {
+            return new RecognizedText(string.Empty, score, []);
+        }
+
+        // A dictionary entry can be more than one UTF-16 unit long, so every unit of it gets the span of the entry.
+        OCRCharacterSpan[] tokenSpans = GetSpans([.. tokens.Select(token => (token.FirstStep + token.LastStep + 1) / 2f * stepShare)]);
+        List<OCRCharacterSpan> spans = new(text.Length);
+
+        for (int i = 0; i < tokens.Count; i++)
+        {
+            spans.AddRange(Enumerable.Repeat(tokenSpans[i], tokens[i].Length));
+        }
+
+        // Trimmed the same way as string.Trim, so the spans stay lined up with the characters.
+        string value = text.ToString();
+        int start = 0;
+        int end = value.Length;
+
+        while (start < end && char.IsWhiteSpace(value[start]))
+        {
+            start++;
+        }
+
+        while (end > start && char.IsWhiteSpace(value[end - 1]))
+        {
+            end--;
+        }
+
+        return new RecognizedText(value[start..end], score, [.. spans.GetRange(start, end - start)]);
     }
 
     // Where to sample a box from: its origin corner and the edges that become the line's x and y axes.
     private static LineImage GetLineImage(SKPoint[] box)
     {
-        float width = Math.Max(SKPoint.Distance(box[0], box[1]), SKPoint.Distance(box[3], box[2]));
-        float height = Math.Max(SKPoint.Distance(box[0], box[3]), SKPoint.Distance(box[1], box[2]));
-        width = Math.Max(width, 1);
-        height = Math.Max(height, 1);
+        (SKPoint origin, SKPoint xEdge, SKPoint yEdge, float aspectRatio) = Geometry.GetReadingAxis(box);
+        return new LineImage(origin, xEdge, yEdge, aspectRatio);
+    }
 
-        if (height / width >= VerticalTextRatio)
+    // Each character spans from halfway to the character before it to halfway to the character after it. The first
+    // and last characters reach out by the same distance on their outer side.
+    private static OCRCharacterSpan[] GetSpans(List<float> centers)
+    {
+        if (centers.Count == 1)
         {
-            // Turned a quarter counter-clockwise: the top-right corner becomes the origin and the right edge the x axis.
-            return new LineImage(box[1], box[2] - box[1], box[0] - box[1], height / width);
+            return [new OCRCharacterSpan(0, 1)];
         }
 
-        return new LineImage(box[0], box[1] - box[0], box[3] - box[0], width / height);
+        OCRCharacterSpan[] spans = new OCRCharacterSpan[centers.Count];
+
+        for (int i = 0; i < centers.Count; i++)
+        {
+            float start = i > 0 ? (centers[i - 1] + centers[i]) / 2 : centers[0] - ((centers[1] - centers[0]) / 2);
+            float end = i < centers.Count - 1 ? (centers[i] + centers[i + 1]) / 2 : centers[i] + ((centers[i] - centers[i - 1]) / 2);
+            spans[i] = new OCRCharacterSpan(Math.Clamp(start, 0, 1), Math.Clamp(end, 0, 1));
+        }
+
+        return spans;
     }
 
     public void Dispose()
@@ -168,3 +226,6 @@ internal sealed class TextRecognizer : IDisposable
 
     private readonly record struct LineImage(SKPoint Origin, SKPoint XEdge, SKPoint YEdge, float AspectRatio);
 }
+
+// The text read from one box, with where each of its characters sits along the box.
+internal readonly record struct RecognizedText(string Text, float Score, OCRCharacterSpan[] Characters);

@@ -177,7 +177,7 @@ public partial class AfterCaptureWindow : Window
 
         // Tasks that belong to a goal are chosen through the goal, not as extras.
 
-        return Helpers.GetEnums<AfterCaptureTasks>()
+        return TaskHelpers.GetAfterCaptureTasks()
             .Where(task => !ignored.Contains(task) && !AfterCaptureGoals.GoalCaptureTasks.HasFlag(task))
             .Select(task => new AfterCaptureTaskOption(task, task.GetLocalizedDescription(), selected.HasFlag(task)))
             .ToArray();

@@ -79,6 +79,7 @@ public sealed class TaskSettingsViewModel : INotifyPropertyChanged
             Child("general-notifications", Strings.TaskSettingsWindow_Notifications, AppIcons.Bell)));
         NavigationItems.Add(Parent("image", Strings.TaskSettingsWindow_Image, AppIcons.Image,
             Child("image-effects", Strings.TaskSettingsWindow_Effects, AppIcons.MagicWand),
+            Child("image-sensitive-data", Strings.TaskSettingsWindow_SensitiveData, AppIcons.Shield),
             Child("image-thumbnail", Strings.TaskSettingsWindow_Thumbnail, AppIcons.Images)));
         NavigationItems.Add(Parent("capture", Strings.TaskSettingsWindow_Capture, AppIcons.Camera,
             Child("capture-region", Strings.TaskSettingsWindow_RegionCapture, AppIcons.Crop),

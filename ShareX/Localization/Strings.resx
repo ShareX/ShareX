@@ -2330,6 +2330,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - Custom uploader confirmation</value>
   </data>
+  <data name="TaskHelpers_CensorSensitiveDataFailed" xml:space="preserve">
+    <value>The image could not be checked for sensitive data, so the task was stopped instead of sharing it uncensored.</value>
+  </data>
   <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
     <value>File does not exist:
 {0}</value>
@@ -2682,6 +2685,48 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
     <value>Image effects</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveData" xml:space="preserve">
+    <value>Sensitive data</value>
+  </data>
+  <data name="TaskSettingsWindow_CensorSensitiveData" xml:space="preserve">
+    <value>Censor sensitive data</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataPasswords" xml:space="preserve">
+    <value>Passwords and secrets written after a label (password:, token=, API_KEY=...)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataAPIKeys" xml:space="preserve">
+    <value>API keys and access tokens</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataIPAddresses" xml:space="preserve">
+    <value>IP addresses (IPv4 and IPv6)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataEmailAddresses" xml:space="preserve">
+    <value>Email addresses</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCreditCardNumbers" xml:space="preserve">
+    <value>Credit card numbers</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCPF" xml:space="preserve">
+    <value>CPF numbers (Brazil)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCNPJ" xml:space="preserve">
+    <value>CNPJ numbers (Brazil)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataPhoneNumbers" xml:space="preserve">
+    <value>Phone numbers</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCensorMethod" xml:space="preserve">
+    <value>Censor with:</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataHint" xml:space="preserve">
+    <value>The text of the image is read on this computer and what is found is hidden before the image is shown, copied, saved or uploaded. You can enable or disable it from "After capture tasks" → "Censor sensitive data". A solid box is the safest choice: pixelated or blurred text can sometimes be read back.</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCustomPatterns" xml:space="preserve">
+    <value>Custom patterns</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCustomPatternsHint" xml:space="preserve">
+    <value>One regular expression per line. When a pattern has a group named "censor", only that group is hidden, for example: client: (?&lt;censor&gt;.+)</value>
   </data>
   <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
     <value>Image effects configuration...</value>

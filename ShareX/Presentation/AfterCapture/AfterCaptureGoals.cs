@@ -144,7 +144,8 @@ public static class AfterCaptureGoals
         {
             // These work on the image in memory; a recording is already a saved file.
             AfterCaptureTasks.SaveImageToFile or AfterCaptureTasks.SaveImageToFileWithDialog
-                or AfterCaptureTasks.SaveThumbnailImageToFile or AfterCaptureTasks.BeautifyImage or AfterCaptureTasks.AddImageEffects
+                or AfterCaptureTasks.SaveThumbnailImageToFile or AfterCaptureTasks.CensorSensitiveData
+                or AfterCaptureTasks.BeautifyImage or AfterCaptureTasks.AddImageEffects
                 or AfterCaptureTasks.AnnotateImage or AfterCaptureTasks.OpenInPhotoEditor or AfterCaptureTasks.PinToScreen
                 or AfterCaptureTasks.SendImageToPrinter when fileAlreadySaved => false,
             // Required for these goals, so it is not optional.

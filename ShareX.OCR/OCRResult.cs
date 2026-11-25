@@ -33,11 +33,41 @@ namespace ShareX.OCR;
 public sealed record OCRTextRegion(SKPoint[] Points, string Text, float Score)
 {
     public SKRect Bounds { get; } = Geometry.GetBounds(Points);
+
+    // One span for each character of Text, from where the recognition model read it. Empty when it is not known.
+    public IReadOnlyList<OCRCharacterSpan> Characters { get; init; } = [];
+
+    // The corners of the part of the box that holds the given characters of Text, in the same order as Points. The
+    // character positions are used when they are known; otherwise the box is shared evenly between the characters.
+    public SKPoint[] GetTextBox(int start, int length)
+    {
+        start = Math.Clamp(start, 0, Text.Length);
+        int end = Math.Clamp(start + length, start, Text.Length);
+
+        if (end == start)
+        {
+            return [.. Points];
+        }
+
+        if (Characters.Count == Text.Length)
+        {
+            return Geometry.GetSubBox(Points, Characters[start].Start, Characters[end - 1].End);
+        }
+
+        return Geometry.GetSubBox(Points, (float)start / Text.Length, (float)end / Text.Length);
+    }
 }
+
+// Where one character sits along the reading direction of its box, from 0 at the start of the box to 1 at its end.
+public readonly record struct OCRCharacterSpan(float Start, float End);
 
 // Regions that sit side by side, joined in reading order. Height is the typical text height of the line.
 // StartsParagraph is true when the line is set apart from the one above it, so it begins a new block of text.
-public sealed record OCRTextLine(string Text, SKRect Bounds, float Height, bool StartsParagraph);
+public sealed record OCRTextLine(string Text, SKRect Bounds, float Height, bool StartsParagraph)
+{
+    // The regions of the line in reading order. Text is their texts joined with one space.
+    public IReadOnlyList<OCRTextRegion> Regions { get; init; } = [];
+}
 
 public sealed class OCRResult
 {
@@ -128,7 +158,7 @@ public sealed class OCRResult
 
         // The median keeps one tall or short box, such as a symbol, from deciding the height of the whole line.
         float height = Median(ordered.Select(region => region.Bounds.Height));
-        return new OCRTextLine(text, bounds, height, false);
+        return new OCRTextLine(text, bounds, height, false) { Regions = ordered };
     }
 
     private static bool IsSameLine(List<OCRTextRegion> line, OCRTextRegion region)

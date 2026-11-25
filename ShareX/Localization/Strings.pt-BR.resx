@@ -2323,6 +2323,9 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="TaskHelpers_CustomUploaderConfirmationTitle" xml:space="preserve">
     <value>ShareX - Confirmação de carregador personalizado</value>
   </data>
+  <data name="TaskHelpers_CensorSensitiveDataFailed" xml:space="preserve">
+    <value>Não foi possível procurar dados sensíveis na imagem, então a tarefa foi interrompida para não compartilhá-la sem censura.</value>
+  </data>
   <data name="TaskHelpers_FileDoesNotExist" xml:space="preserve">
     <value>O arquivo não existe:
 {0}</value>
@@ -2674,6 +2677,48 @@ Deseja interromper a gravação de tela ativa?</value>
   </data>
   <data name="TaskSettingsWindow_ImageEffects" xml:space="preserve">
     <value>Efeitos de imagem</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveData" xml:space="preserve">
+    <value>Dados sensíveis</value>
+  </data>
+  <data name="TaskSettingsWindow_CensorSensitiveData" xml:space="preserve">
+    <value>Censurar dados sensíveis</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataPasswords" xml:space="preserve">
+    <value>Senhas e segredos escritos após um rótulo (senha:, token=, API_KEY=...)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataAPIKeys" xml:space="preserve">
+    <value>Chaves de API e tokens de acesso</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataIPAddresses" xml:space="preserve">
+    <value>Endereços IP (IPv4 e IPv6)</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataEmailAddresses" xml:space="preserve">
+    <value>Endereços de e-mail</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCreditCardNumbers" xml:space="preserve">
+    <value>Números de cartão de crédito</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCPF" xml:space="preserve">
+    <value>Números de CPF</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCNPJ" xml:space="preserve">
+    <value>Números de CNPJ</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataPhoneNumbers" xml:space="preserve">
+    <value>Números de telefone</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCensorMethod" xml:space="preserve">
+    <value>Censurar com:</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataHint" xml:space="preserve">
+    <value>O texto da imagem é lido neste computador e o que for encontrado é escondido antes de a imagem ser mostrada, copiada, salva ou enviada. Você pode ativar ou desativar em "Tarefas após a captura" → "Censurar dados sensíveis". A tarja sólida é a opção mais segura: texto pixelizado ou desfocado às vezes pode ser recuperado.</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCustomPatterns" xml:space="preserve">
+    <value>Padrões personalizados</value>
+  </data>
+  <data name="TaskSettingsWindow_SensitiveDataCustomPatternsHint" xml:space="preserve">
+    <value>Uma expressão regular por linha. Quando o padrão tem um grupo chamado "censor", só esse grupo é escondido, por exemplo: cliente: (?&lt;censor&gt;.+)</value>
   </data>
   <data name="TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis" xml:space="preserve">
     <value>Configuração de efeitos de imagem...</value>

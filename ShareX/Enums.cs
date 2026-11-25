@@ -161,7 +161,10 @@ namespace ShareX
         DoOCR = 1 << 19,
         ShowBeforeUploadWindow = 1 << 20,
         UploadImageToHost = 1 << 21,
-        DeleteFile = 1 << 22
+        DeleteFile = 1 << 22,
+        // Runs first, before any other task can show, copy, save or upload the image. Its value is the next free flag
+        // so saved settings keep their meaning; TaskHelpers.GetAfterCaptureTasks lists it with the image tasks.
+        CensorSensitiveData = 1 << 23
     }
 
     [Flags]

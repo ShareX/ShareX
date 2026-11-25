@@ -451,6 +451,18 @@ namespace ShareX.HelpersLib.Localization {
         public static string AfterCaptureTasks_DoOCR {
             get { return ResourceManager.GetString("AfterCaptureTasks_DoOCR", resourceCulture); }
         }
+        public static string AfterCaptureTasks_CensorSensitiveData {
+            get { return ResourceManager.GetString("AfterCaptureTasks_CensorSensitiveData", resourceCulture); }
+        }
+        public static string SensitiveDataCensorMethod_Fill {
+            get { return ResourceManager.GetString("SensitiveDataCensorMethod_Fill", resourceCulture); }
+        }
+        public static string SensitiveDataCensorMethod_Pixelate {
+            get { return ResourceManager.GetString("SensitiveDataCensorMethod_Pixelate", resourceCulture); }
+        }
+        public static string SensitiveDataCensorMethod_Blur {
+            get { return ResourceManager.GetString("SensitiveDataCensorMethod_Blur", resourceCulture); }
+        }
         public static string AfterCaptureTasks_PerformActions {
             get { return ResourceManager.GetString("AfterCaptureTasks_PerformActions", resourceCulture); }
         }

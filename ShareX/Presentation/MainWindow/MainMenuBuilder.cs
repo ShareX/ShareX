@@ -372,7 +372,7 @@ internal sealed class MainMenuBuilder
 
     internal static IReadOnlyList<(AfterCaptureTasks Task, string Header, string Icon)> GetAfterCaptureTaskMenuOptions(bool includeUploadTasks = true)
     {
-        IEnumerable<AfterCaptureTasks> tasks = Helpers.GetEnums<AfterCaptureTasks>().Skip(1);
+        IEnumerable<AfterCaptureTasks> tasks = TaskHelpers.GetAfterCaptureTasks().Skip(1);
         if (!includeUploadTasks)
         {
             tasks = tasks.Except(new[] { AfterCaptureTasks.ShowBeforeUploadWindow, AfterCaptureTasks.UploadImageToHost });
@@ -434,6 +434,7 @@ internal sealed class MainMenuBuilder
     {
         AfterCaptureTasks.ShowQuickTaskMenu => AppIcons.Menu,
         AfterCaptureTasks.ShowAfterCaptureWindow => AppIcons.Window,
+        AfterCaptureTasks.CensorSensitiveData => AppIcons.Shield,
         AfterCaptureTasks.BeautifyImage => AppIcons.ImageBeautifier,
         AfterCaptureTasks.AddImageEffects => AppIcons.MagicWand,
         AfterCaptureTasks.AnnotateImage => AppIcons.ImageEditor,
