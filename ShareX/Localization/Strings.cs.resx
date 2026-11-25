@@ -2528,6 +2528,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Po otevření odkazu služby zavřít okno OCR</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Kompaktní panel nástrojů editoru obrázků</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>Kompaktní panel nástrojů zachycení oblasti</value>
   </data>

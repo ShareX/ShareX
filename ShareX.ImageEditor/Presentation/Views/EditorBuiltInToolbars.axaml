@@ -20,6 +20,113 @@
         <Style Selector="Border.toolbar-drag-handle:pointerover > Path">
             <Setter Property="Fill" Value="{DynamicResource ShareX.Brush.Text}"/>
         </Style>
+
+        <!-- Bottom toolbar sizes; the compact class shrinks them to match the compact top toolbar. -->
+        <Style Selector="Border#BottomToolbarHost">
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="CornerRadius" Value="4,4,0,0"/>
+
+            <Style Selector="^ StackPanel.bottom-toolbar-row">
+                <Setter Property="Spacing" Value="4"/>
+            </Style>
+
+            <Style Selector="^ controls|ZoomPickerDropdown">
+                <Setter Property="Height" Value="40"/>
+            </Style>
+
+            <Style Selector="^ Border.bottom-toolbar-separator">
+                <Setter Property="Height" Value="38"/>
+                <Setter Property="Margin" Value="4,0"/>
+            </Style>
+
+            <Style Selector="^ Grid.task-buttons">
+                <Setter Property="Width" Value="90"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Margin" Value="4,0,10,0"/>
+            </Style>
+
+            <Style Selector="^ Button.cancel-task">
+                <Setter Property="Width" Value="55"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="Padding" Value="27,0,10,0"/>
+                <Setter Property="CornerRadius" Value="0,4,4,0"/>
+            </Style>
+
+            <Style Selector="^ Button.continue-task">
+                <Setter Property="Width" Value="56"/>
+                <Setter Property="Height" Value="56"/>
+                <Setter Property="CornerRadius" Value="28"/>
+                <Setter Property="Margin" Value="0,0,0,-8"/>
+            </Style>
+
+            <Style Selector="^ Button.continue-task > iconControls|IconPresenter">
+                <Setter Property="Margin" Value="4,0,0,0"/>
+            </Style>
+
+            <Style Selector="^ Button.bottom-toolbar-button">
+                <Setter Property="Width" Value="40"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style Selector="^ iconControls|IconPresenter.bottom-toolbar-icon">
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+        </Style>
+
+        <Style Selector="Border#BottomToolbarHost.compact">
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="CornerRadius" Value="3,3,0,0"/>
+
+            <Style Selector="^ StackPanel.bottom-toolbar-row">
+                <Setter Property="Spacing" Value="1"/>
+            </Style>
+
+            <Style Selector="^ controls|ZoomPickerDropdown">
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="IsCompact" Value="True"/>
+            </Style>
+
+            <Style Selector="^ Border.bottom-toolbar-separator">
+                <Setter Property="Height" Value="22"/>
+                <Setter Property="Margin" Value="2,0"/>
+            </Style>
+
+            <Style Selector="^ Grid.task-buttons">
+                <Setter Property="Width" Value="62"/>
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="Margin" Value="2,0,4,0"/>
+            </Style>
+
+            <Style Selector="^ Button.cancel-task">
+                <Setter Property="Width" Value="40"/>
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="Padding" Value="18,0,6,0"/>
+                <Setter Property="CornerRadius" Value="0,3,3,0"/>
+            </Style>
+
+            <Style Selector="^ Button.continue-task">
+                <Setter Property="Width" Value="32"/>
+                <Setter Property="Height" Value="32"/>
+                <Setter Property="CornerRadius" Value="16"/>
+                <Setter Property="Margin" Value="0,0,0,-2"/>
+                <Setter Property="Padding" Value="0"/>
+            </Style>
+
+            <Style Selector="^ Button.continue-task > iconControls|IconPresenter">
+                <Setter Property="Margin" Value="2,0,0,0"/>
+            </Style>
+
+            <Style Selector="^ Button.bottom-toolbar-button">
+                <Setter Property="Width" Value="28"/>
+                <Setter Property="MinWidth" Value="28"/>
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+
+            <Style Selector="^ iconControls|IconPresenter.bottom-toolbar-icon">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+        </Style>
     </UserControl.Styles>
 
     <Grid>
@@ -53,145 +160,125 @@
             </controls:AnnotationToolbar>
         </Border>
 
-        <Border Classes="editor-toolbar-host bottom"
+        <Border x:Name="BottomToolbarHost"
+                Classes="editor-toolbar-host bottom"
                 Classes.hidden="{Binding AreToolbarsHidden}"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Center"
-                Padding="4"
                 Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
                 BorderBrush="{DynamicResource ShareX.Brush.Border}"
                 BorderThickness="1"
-                CornerRadius="4,4,0,0"
                 MaxWidth="{Binding Bounds.Width, RelativeSource={RelativeSource AncestorType=UserControl}}"
                 ClipToBounds="False"
                 IsHitTestVisible="{Binding ShowToolbars}">
-            <StackPanel Orientation="Horizontal" Spacing="4" ClipToBounds="False">
+            <StackPanel Classes="bottom-toolbar-row" Orientation="Horizontal" ClipToBounds="False">
                 <controls:ZoomPickerDropdown SelectedZoom="{Binding Zoom}"
                                              ZoomChanged="OnZoomChanged"
                                              ZoomToFitRequested="OnZoomToFitRequested"
-                                             Height="40"
                                              ToolTip.Tip="{x:Static res:Strings.EditorView_ZoomCtrlWheel}"
                                              ToolTip.Placement="Top"
                                              ToolTip.VerticalOffset="-5"/>
 
-                <Border Width="1"
-                        Height="38"
+                <Border Classes="bottom-toolbar-separator"
+                        Width="1"
                         Background="{DynamicResource ShareX.Brush.Separator}"
-                        Margin="4,0"
                         IsVisible="{Binding ShowBottomToolbar}"/>
 
-                <Grid Width="90"
-                      Height="40"
-                      Margin="4,0,10,0"
+                <Grid Classes="task-buttons"
                       ClipToBounds="False"
                       VerticalAlignment="Bottom"
                       IsVisible="{Binding ShowTaskButtons}">
                     <Button Command="{Binding CancelCommand}"
-                            Classes="task-mode-button danger"
+                            Classes="task-mode-button danger cancel-task"
                             BorderThickness="1"
-                            Height="40"
                             VerticalAlignment="Bottom"
                             HorizontalAlignment="Right"
-                            Width="55"
-                            Padding="27,0,10,0"
-                            CornerRadius="0,4,4,0"
                             ToolTip.Tip="{x:Static res:Strings.EditorView_CancelEsc}"
                             ToolTip.Placement="Top"
                             ToolTip.VerticalOffset="-5"
                             ZIndex="0">
                         <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionCancel}"
-                                                    FontSize="20"
+                                                    Classes="bottom-toolbar-icon"
                                                     VerticalAlignment="Center"/>
                     </Button>
 
                     <Button Command="{Binding ContinueCommand}"
-                            Classes="task-mode-button success"
-                            Width="56"
-                            Height="56"
-                            CornerRadius="28"
+                            Classes="task-mode-button success continue-task"
                             BorderThickness="1"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Bottom"
-                            Margin="0,0,0,-8"
                             ToolTip.Tip="{Binding ContinueButtonTooltip}"
                             ToolTip.Placement="Top"
                             ToolTip.VerticalOffset="-5"
                             ZIndex="20">
                         <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionContinue}"
-                                                    FontSize="20"
+                                                    Classes="bottom-toolbar-icon"
                                                     HorizontalAlignment="Center"
-                                                    VerticalAlignment="Center"
-                                                    Margin="4,0,0,0"/>
+                                                    VerticalAlignment="Center"/>
                     </Button>
                 </Grid>
 
-                <Button Command="{Binding CopyCommand}"
-                        Width="40"
-                        Padding="0"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding CopyCommand}"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_CopyimagetoclipboardCtrlC}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionCopy}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
 
-                <Button Command="{Binding SaveCommand}"
-                        Width="40"
-                        Padding="0"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding SaveCommand}"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageCtrlS}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionSave}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
 
-                <Button Command="{Binding SaveAsCommand}"
-                        Width="40"
-                        Padding="0"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding SaveAsCommand}"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_SaveimageasEllipsisCtrlShiftS}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionSaveAs}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
 
-                <Button Command="{Binding PinToScreenCommand}"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding PinToScreenCommand}"
                         IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_PinimagetoscreenCtrlP}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionPinToScreen}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
 
-                <Button Command="{Binding PrintCommand}"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding PrintCommand}"
                         IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_PrintimageEllipsisCtrlShiftP}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionPrint}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
 
-                <Button Command="{Binding UploadCommand}"
+                <Button Classes="bottom-toolbar-button"
+                        Command="{Binding UploadCommand}"
                         IsEnabled="{Binding HasPreviewImage}"
-                        Width="40"
-                        Padding="0"
                         IsVisible="{Binding ShowBottomToolbar}"
                         ToolTip.Tip="{x:Static res:Strings.EditorView_UploadimageCtrlU}"
                         ToolTip.Placement="Top"
                         ToolTip.VerticalOffset="-5">
                     <iconControls:IconPresenter Icon="{x:Static editorTheming:EditorIcons.ActionUpload}"
-                                                FontSize="20"/>
+                                                Classes="bottom-toolbar-icon"/>
                 </Button>
             </StackPanel>
         </Border>

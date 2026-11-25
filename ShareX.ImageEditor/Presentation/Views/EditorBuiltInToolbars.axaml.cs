@@ -38,8 +38,11 @@ public partial class EditorBuiltInToolbars : UserControl
 {
     private static readonly CornerRadius DockedTopToolbarCornerRadius = new(0, 0, 4, 4);
     private static readonly CornerRadius FloatingTopToolbarCornerRadius = new(4);
+    private static readonly CornerRadius CompactDockedTopToolbarCornerRadius = new(0, 0, 3, 3);
+    private static readonly CornerRadius CompactFloatingTopToolbarCornerRadius = new(3);
 
     private readonly Border _topToolbarHost;
+    private readonly Border _bottomToolbarHost;
     private readonly TranslateTransform _topToolbarTransform = new();
 
     // The offset the user chose; the drawn offset is clamped so the toolbar stays inside the view.
@@ -59,6 +62,7 @@ public partial class EditorBuiltInToolbars : UserControl
         AvaloniaXamlLoader.Load(this);
         AnnotationToolbar = this.FindControl<AnnotationToolbar>("AnnotationToolbarControl")!;
         _topToolbarHost = this.FindControl<Border>("TopToolbarHost")!;
+        _bottomToolbarHost = this.FindControl<Border>("BottomToolbarHost")!;
 
         AnnotationToolbar.RenderTransform = _topToolbarTransform;
         _topToolbarHost.PropertyChanged += (_, e) =>
@@ -76,10 +80,16 @@ public partial class EditorBuiltInToolbars : UserControl
     {
         base.OnDataContextChanged(e);
 
+        ImageEditorOptions? options = GetOptions();
         _draggingTopToolbar = false;
-        _topToolbarOffset = GetOptions() is { } options
+        _topToolbarOffset = options != null
             ? new Point(SanitizeOffset(options.TopToolbarOffsetX), SanitizeOffset(options.TopToolbarOffsetY))
             : default;
+        // Compact mode follows the ShareX 21 editor: one short toolbar row and a smaller bottom bar.
+        bool compact = options?.CompactToolbar ?? false;
+        AnnotationToolbar.IsCompact = compact;
+        AnnotationToolbar.InlineToolOptions = compact;
+        _bottomToolbarHost.Classes.Set("compact", compact);
         ApplyTopToolbarOffset();
     }
 
@@ -192,7 +202,10 @@ public partial class EditorBuiltInToolbars : UserControl
         _topToolbarTransform.Y = y;
 
         // Docked to the top edge the toolbar keeps its flat top; anywhere else it is a floating panel.
-        AnnotationToolbar.MainToolbarCornerRadius = y > 0 ? FloatingTopToolbarCornerRadius : DockedTopToolbarCornerRadius;
+        bool floating = y > 0;
+        AnnotationToolbar.MainToolbarCornerRadius = AnnotationToolbar.IsCompact
+            ? floating ? CompactFloatingTopToolbarCornerRadius : CompactDockedTopToolbarCornerRadius
+            : floating ? FloatingTopToolbarCornerRadius : DockedTopToolbarCornerRadius;
     }
 
     private void SaveTopToolbarOffset()

@@ -2528,6 +2528,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>ปิดหน้าต่าง OCR หลังเปิดลิงก์บริการ</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>แถบเครื่องมือตัวแก้ไขรูปภาพแบบกะทัดรัด</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>แถบเครื่องมือจับภาพพื้นที่แบบกะทัดรัด</value>
   </data>

@@ -2528,6 +2528,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Đóng cửa sổ OCR sau khi mở liên kết dịch vụ</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Thanh công cụ trình chỉnh sửa ảnh thu gọn</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>Thanh công cụ chụp vùng thu gọn</value>
   </data>
