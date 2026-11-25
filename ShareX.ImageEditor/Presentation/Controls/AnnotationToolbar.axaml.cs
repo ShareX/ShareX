@@ -66,13 +66,13 @@ public partial class AnnotationToolbar : UserControl
     // Moving back to a single row needs this much spare room, so a toolbar right at the limit does not flip back and forth.
     private const double InlineToolOptionsHysteresis = 8;
 
-    private StackPanel _mainToolbarRow = null!;
-    private Panel _inlineToolOptionsArea = null!;
-    private ContentControl _inlineToolOptionsHost = null!;
-    private ScrollViewer _toolOptionsScrollViewer = null!;
-    private Control _toolOptionsPanel = null!;
-    private ContentControl _toolOptionsOverflowHost = null!;
-    private Popup _toolOptionsOverflowPopup = null!;
+    private readonly StackPanel _mainToolbarRow;
+    private readonly Panel _inlineToolOptionsArea;
+    private readonly ContentControl _inlineToolOptionsHost;
+    private readonly ScrollViewer _toolOptionsScrollViewer;
+    private readonly Control _toolOptionsPanel;
+    private readonly ContentControl _toolOptionsOverflowHost;
+    private readonly Popup _toolOptionsOverflowPopup;
     private bool _inlineToolOptionsFit = true;
 
     public event EventHandler<IBrush>? ColorChanged;
