@@ -84,7 +84,10 @@ public sealed class SensitiveDataDetector
     // OCR often drops the space before an address ("IPv62001:db8::1"), so a letter or digit may come right before it.
     private static readonly Regex IPv6Regex = Create(@"(?<!:)(?:[0-9A-Fa-f]{0,4}:){2,7}[0-9A-Fa-f]{0,4}(?![0-9A-Fa-f:])");
 
-    private static readonly Regex EmailRegex = Create(@"(?<![\w.%+-])[\w.%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}(?![\w-])");
+    // OCR often drops the space after an address ("fulano@example.comCartao:"), so the last part also ends where a
+    // capitalized word or a digit starts right after a lowercase letter.
+    private static readonly Regex EmailRegex = Create(
+        @"(?<![\w.%+-])[\w.%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}?(?:(?![\w-])|(?<=[a-z])(?=[A-Z][a-z]{2}|\d))");
 
     private static readonly Regex CreditCardRegex = Create(@"(?<![\d-])(?:\d[ -]?){12,18}\d(?![\d-])");
 

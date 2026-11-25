@@ -429,7 +429,8 @@ internal sealed class TaskSettingsPageBuilder
 
         return Page("image-sensitive-data", Strings.TaskSettingsWindow_SensitiveData, AppIcons.Shield,
             EnabledCard(_imageOverride, Strings.TaskSettingsWindow_CensorSensitiveData,
-                Check(Strings.TaskSettingsWindow_SensitiveDataPasswords, () => options.CensorPasswords, value => options.CensorPasswords = value),
+                // A check box label treats "_" as an access key, so "API_KEY=" needs it doubled to show it.
+                Check(Strings.TaskSettingsWindow_SensitiveDataPasswords.Replace("_", "__"), () => options.CensorPasswords, value => options.CensorPasswords = value),
                 Check(Strings.TaskSettingsWindow_SensitiveDataAPIKeys, () => options.CensorAPIKeys, value => options.CensorAPIKeys = value),
                 Check(Strings.TaskSettingsWindow_SensitiveDataIPAddresses, () => options.CensorIPAddresses, value => options.CensorIPAddresses = value),
                 Check(Strings.TaskSettingsWindow_SensitiveDataEmailAddresses, () => options.CensorEmailAddresses, value => options.CensorEmailAddresses = value),
