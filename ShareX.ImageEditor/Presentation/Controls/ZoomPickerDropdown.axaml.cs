@@ -43,6 +43,16 @@ namespace ShareX.ImageEditor.Presentation.Controls
                 nameof(ZoomLevels),
                 defaultValue: GetDefaultZoomLevels());
 
+        public static readonly StyledProperty<bool> IsCompactProperty =
+            AvaloniaProperty.Register<ZoomPickerDropdown, bool>(nameof(IsCompact));
+
+        /// <summary>Uses a smaller icon and minimum width, for the compact editor toolbar.</summary>
+        public bool IsCompact
+        {
+            get => GetValue(IsCompactProperty);
+            set => SetValue(IsCompactProperty, value);
+        }
+
         public double SelectedZoom
         {
             get => GetValue(SelectedZoomProperty);
@@ -61,6 +71,16 @@ namespace ShareX.ImageEditor.Presentation.Controls
         public ZoomPickerDropdown()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (change.Property == IsCompactProperty)
+            {
+                PseudoClasses.Set(":compact", change.GetNewValue<bool>());
+            }
         }
 
         private void OnDropdownButtonClick(object? sender, RoutedEventArgs e)

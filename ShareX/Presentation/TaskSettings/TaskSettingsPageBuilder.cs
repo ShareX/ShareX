@@ -943,6 +943,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_AutoExpandCanvas, () => options.AutoExpandCanvas, value => options.AutoExpandCanvas = value),
                 Row(Strings.TaskSettingsWindow_CanvasFillColor, CanvasFillColorPicker(options)),
                 Check(Strings.TaskSettingsWindow_ShowNotifications, () => options.ShowNotifications, value => options.ShowNotifications = value),
+                Check(Strings.TaskSettingsWindow_CompactImageEditorToolbar, () => options.CompactToolbar, value => options.CompactToolbar = value),
                 Button(Strings.TaskSettingsWindow_CustomizeToolbarWithEllipsis, () => _window.ShowImageEditorToolbarEditor(options))));
     }
 

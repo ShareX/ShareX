@@ -5784,6 +5784,7 @@ namespace ShareX.Localization {
         public static string MainWindow_EditImageInPixelEditor => ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
         public static string ApplicationSettingsWindow_DescriptionCantBeEmpty => ResourceManager.GetString("ApplicationSettingsWindow_DescriptionCantBeEmpty", resourceCulture);
         public static string ApplicationSettingsWindow_FormatCantBeEmpty => ResourceManager.GetString("ApplicationSettingsWindow_FormatCantBeEmpty", resourceCulture);
+        public static string TaskSettingsWindow_CompactImageEditorToolbar => ResourceManager.GetString("TaskSettingsWindow_CompactImageEditorToolbar", resourceCulture);
         public static string TaskSettingsWindow_FFmpegRecorderOnly => ResourceManager.GetString("TaskSettingsWindow_FFmpegRecorderOnly", resourceCulture);
     }
 }
