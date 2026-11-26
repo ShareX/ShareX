@@ -68,6 +68,8 @@ namespace ShareX.ImageEditor.Presentation.Theming
         public const string ActionSendToBack = AppIcons.SendToBack;
         public const string ActionSave = AppIcons.Save;
         public const string ActionSaveAs = AppIcons.SaveAs;
+        public const string ActionSaveAndCopyFilePath = AppIcons.SaveCopyPath;
+        public const string ActionCopyFilePath = AppIcons.ClipboardCopy;
         public const string ActionPrint = AppIcons.Printer;
         public const string ActionDownload = AppIcons.Download;
         public const string ActionPinToScreen = AppIcons.Pin;
