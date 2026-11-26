@@ -2460,6 +2460,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Automatic URL shortening length</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Size window to fit image</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>Automatic JPEG</value>
   </data>
@@ -3029,9 +3032,6 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Disable region capture annotations</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Size window to fit image</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Remember window state</value>
