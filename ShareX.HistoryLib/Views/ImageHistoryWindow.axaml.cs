@@ -27,6 +27,7 @@
 
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Presenters;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Platform.Storage;
@@ -73,6 +74,7 @@ public partial class ImageHistoryWindow : Window
     private Point _dragStart;
     private bool _dragStarted;
     private bool _suppressThumbnailClickAction;
+    private (IPointer Pointer, ScrollContentPresenter Viewport, Point Start)? _marquee;
     private bool _historyLoaded;
     private bool _windowPlacementApplied;
     private bool _virtualListLayoutRefreshPending;
@@ -89,6 +91,10 @@ public partial class ImageHistoryWindow : Window
         RequestedThemeVariant = ThemeManager.GetCurrentTheme();
         ThumbnailRows.ItemsSource = _rows;
         ThumbnailRows.AddHandler(KeyDownEvent, OnWindowKeyDown, RoutingStrategies.Tunnel);
+        ThumbnailRows.AddHandler(PointerPressedEvent, OnMarqueePointerPressed, RoutingStrategies.Tunnel);
+        ThumbnailRows.AddHandler(PointerMovedEvent, OnMarqueePointerMoved, RoutingStrategies.Tunnel);
+        ThumbnailRows.AddHandler(PointerReleasedEvent, OnMarqueePointerReleased, RoutingStrategies.Tunnel);
+        ThumbnailRows.PointerCaptureLost += OnMarqueePointerCaptureLost;
         _filterTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(220) };
         _filterTimer.Tick += OnFilterTimerTick;
         _thumbnailLoader.RenderScaling = RenderScaling;
@@ -138,6 +144,7 @@ public partial class ImageHistoryWindow : Window
 
     private void OnClosed(object? sender, EventArgs e)
     {
+        CancelMarquee();
         _filterTimer.Stop();
         _filterCancellation?.Cancel();
         _filterCancellation?.Dispose();
@@ -322,6 +329,7 @@ public partial class ImageHistoryWindow : Window
 
     private void ResetLoadedEntries()
     {
+        CancelMarquee();
         foreach (ImageHistoryEntry entry in _loadedEntries) entry.Dispose();
         _realizedControls.Clear();
         _loadedEntries.Clear();
@@ -444,6 +452,80 @@ public partial class ImageHistoryWindow : Window
     private void DetachThumbnailControl(Control? control)
     {
         if (control != null && _realizedControls.Remove(control, out ImageHistoryEntry? entry)) entry.Unrealize();
+    }
+
+    private void OnMarqueePointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (_marquee != null || _loadedEntries.Count == 0 || ModalOverlay.IsVisible ||
+            e.Pointer.Type != PointerType.Mouse || e.KeyModifiers != KeyModifiers.None ||
+            e.GetCurrentPoint(ThumbnailRows).Properties.PointerUpdateKind != PointerUpdateKind.LeftButtonPressed ||
+            e.Source is not Visual source) return;
+
+        var ancestors = source.GetSelfAndVisualAncestors();
+        if (ancestors.OfType<Border>().Any(border => border.Classes.Contains("thumbnail-card")) ||
+            ancestors.OfType<ScrollContentPresenter>().FirstOrDefault() is not { } viewport) return;
+
+        _marquee = (e.Pointer, viewport, e.GetPosition(viewport));
+    }
+
+    private void OnMarqueePointerMoved(object? sender, PointerEventArgs e)
+    {
+        if (_marquee is not { } marquee || e.Pointer != marquee.Pointer ||
+            !e.GetCurrentPoint(marquee.Viewport).Properties.IsLeftButtonPressed) return;
+
+        Point current = e.GetPosition(marquee.Viewport);
+        if (!MarqueeOutline.IsVisible && Math.Abs(current.X - marquee.Start.X) < 5 &&
+            Math.Abs(current.Y - marquee.Start.Y) < 5) return;
+        if (marquee.Viewport.TranslatePoint(default, MarqueeLayer) is not { } origin) return;
+
+        if (!MarqueeOutline.IsVisible) e.Pointer.Capture(ThumbnailRows);
+        Rect area = GetMarqueeArea(marquee.Start, current, marquee.Viewport);
+        Canvas.SetLeft(MarqueeOutline, origin.X + area.X);
+        Canvas.SetTop(MarqueeOutline, origin.Y + area.Y);
+        MarqueeOutline.Width = area.Width;
+        MarqueeOutline.Height = area.Height;
+        MarqueeOutline.IsVisible = true;
+        e.Handled = true;
+    }
+
+    private void OnMarqueePointerReleased(object? sender, PointerReleasedEventArgs e)
+    {
+        if (_marquee is not { } marquee || e.Pointer != marquee.Pointer ||
+            e.GetCurrentPoint(marquee.Viewport).Properties.PointerUpdateKind != PointerUpdateKind.LeftButtonReleased) return;
+
+        if (MarqueeOutline.IsVisible)
+        {
+            Rect area = GetMarqueeArea(marquee.Start, e.GetPosition(marquee.Viewport), marquee.Viewport);
+            HashSet<ImageHistoryEntry> selected = [];
+            foreach ((Control card, ImageHistoryEntry entry) in _realizedControls)
+            {
+                if (card.TranslatePoint(default, marquee.Viewport) is { } position &&
+                    new Rect(position, card.Bounds.Size).Intersects(area)) selected.Add(entry);
+            }
+
+            foreach (ImageHistoryEntry entry in _loadedEntries) entry.IsSelected = selected.Contains(entry);
+            _selectionAnchor = _loadedEntries.FindIndex(entry => entry.IsSelected);
+            e.Handled = true;
+        }
+
+        CancelMarquee();
+    }
+
+    private static Rect GetMarqueeArea(Point start, Point end, ScrollContentPresenter viewport) =>
+        new Rect(Math.Min(start.X, end.X), Math.Min(start.Y, end.Y),
+            Math.Abs(start.X - end.X), Math.Abs(start.Y - end.Y)).Intersect(new Rect(viewport.Bounds.Size));
+
+    private void OnMarqueePointerCaptureLost(object? sender, PointerCaptureLostEventArgs e)
+    {
+        if (_marquee is { } marquee && e.Pointer == marquee.Pointer) CancelMarquee();
+    }
+
+    private void CancelMarquee()
+    {
+        IPointer? pointer = _marquee?.Pointer;
+        _marquee = null;
+        MarqueeOutline.IsVisible = false;
+        if (pointer?.Captured == ThumbnailRows) pointer.Capture(null);
     }
 
     private void OnThumbnailPointerPressed(object? sender, PointerPressedEventArgs e)
