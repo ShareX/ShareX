@@ -2528,6 +2528,9 @@ Ejecute ShareX como administrador y cambie la ubicación de la carpeta personal.
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Cerrar la ventana de OCR después de abrir el enlace del servicio</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Barra de herramientas compacta del editor de imágenes</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>Barra de herramientas compacta de captura de región</value>
   </data>

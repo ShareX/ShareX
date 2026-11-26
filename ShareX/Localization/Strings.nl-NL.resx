@@ -2528,6 +2528,9 @@ Do you want to abort the active scherm opname?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>OCR-venster sluiten na openen van servicelink</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Compacte werkbalk voor de afbeeldingseditor</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>Compacte werkbalk voor gebiedsopname</value>
   </data>

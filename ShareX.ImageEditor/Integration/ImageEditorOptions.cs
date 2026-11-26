@@ -64,6 +64,8 @@ namespace ShareX.ImageEditor.Integration
         // How far the user dragged the top toolbar from its default top center position, in DIPs.
         public double TopToolbarOffsetX { get; set; }
         public double TopToolbarOffsetY { get; set; }
+        // Uses the smaller, denser toolbar layout of ShareX 21, like the compact region capture toolbar.
+        public bool CompactToolbar { get; set; } = false;
         public bool ShowExitConfirmation { get; set; } = true;
         public bool ZoomToFitOnOpen { get; set; } = false;
         public bool QuickCrop { get; set; } = true;

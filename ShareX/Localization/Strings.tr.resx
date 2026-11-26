@@ -2528,6 +2528,9 @@ Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>Hizmet bağlantısını açtıktan sonra OCR penceresini kapat</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>Kompakt resim düzenleyici araç çubuğu</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>Kompakt bölge yakalama araç çubuğu</value>
   </data>

@@ -5,25 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:theming="using:ShareX.ImageEditor.Presentation.Theming"
+             xmlns:local="using:ShareX.ImageEditor.Presentation.Controls"
              mc:Ignorable="d" d:DesignWidth="120" d:DesignHeight="40"
              x:Class="ShareX.ImageEditor.Presentation.Controls.ZoomPickerDropdown"
              x:Name="ZoomPickerDropdownRoot">
+    <UserControl.Styles>
+        <Style Selector="Button#DropdownButton">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="MinWidth" Value="80"/>
+        </Style>
+
+        <Style Selector="controls|IconPresenter#ZoomIcon">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,0,6,0"/>
+        </Style>
+
+        <Style Selector="local|ZoomPickerDropdown:compact">
+            <Style Selector="^ Button#DropdownButton">
+                <Setter Property="Height" Value="28"/>
+                <Setter Property="MinWidth" Value="0"/>
+                <Setter Property="Padding" Value="6,0,2,0"/>
+                <Setter Property="CornerRadius" Value="2"/>
+            </Style>
+
+            <Style Selector="^ controls|IconPresenter#ZoomIcon">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="0,0,4,0"/>
+            </Style>
+        </Style>
+    </UserControl.Styles>
 
     <Grid>
         <!-- Dropdown Button -->
         <Button x:Name="DropdownButton"
                 Click="OnDropdownButtonClick"
-                Height="40"
-                MinWidth="80"
                 HorizontalContentAlignment="Stretch">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 <!-- Zoom Icon -->
-                <controls:IconPresenter Grid.Column="0"
+                <controls:IconPresenter x:Name="ZoomIcon"
+                                        Grid.Column="0"
                                         Icon="{x:Static theming:EditorIcons.Zoom}"
-                                        FontSize="20"
                                         Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                        VerticalAlignment="Center"
-                                        Margin="0,0,6,0"/>
+                                        VerticalAlignment="Center"/>
 
                 <!-- Zoom Display -->
                 <TextBlock Grid.Column="1"

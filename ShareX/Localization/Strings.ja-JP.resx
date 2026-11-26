@@ -2528,6 +2528,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>サービスリンクを開いた後に OCR ウィンドウを閉じる</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>画像エディターのツールバーをコンパクトにする</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>領域キャプチャのツールバーをコンパクトにする</value>
   </data>

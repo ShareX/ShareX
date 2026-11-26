@@ -2528,6 +2528,9 @@
   <data name="TaskSettingsWindow_CloseOCRWindowAfterOpeningServiceLink" xml:space="preserve">
     <value>סגירת חלון OCR לאחר פתיחת קישור השירות</value>
   </data>
+  <data name="TaskSettingsWindow_CompactImageEditorToolbar" xml:space="preserve">
+    <value>סרגל כלים קומפקטי לעורך התמונה</value>
+  </data>
   <data name="TaskSettingsWindow_CompactRegionCaptureToolbar" xml:space="preserve">
     <value>סרגל כלים קומפקטי ללכידת אזור</value>
   </data>

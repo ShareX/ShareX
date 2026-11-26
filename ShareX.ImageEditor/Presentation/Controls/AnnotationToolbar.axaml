@@ -25,8 +25,37 @@
             <Setter Property="Padding" Value="6"/>
         </Style>
 
+        <Style Selector="Button.toolbar-button.file-menu">
+            <Setter Property="MinWidth" Value="54"/>
+        </Style>
+
+        <Style Selector="iconControls|IconPresenter.file-menu-icon">
+            <Setter Property="FontSize" Value="24"/>
+        </Style>
+
         <Style Selector="Border#MainToolbarBorder">
             <Setter Property="Padding" Value="4"/>
+        </Style>
+
+        <Style Selector="Panel#InlineToolOptionsArea, Panel#ToolOptionsOverflowArea">
+            <Setter Property="IsVisible" Value="False"/>
+        </Style>
+
+        <Style Selector="controls|AnnotationToolbar:inline-options Panel#InlineToolOptionsArea">
+            <Setter Property="IsVisible" Value="True"/>
+        </Style>
+
+        <Style Selector="controls|AnnotationToolbar:overflow-options Panel#ToolOptionsOverflowArea">
+            <Setter Property="IsVisible" Value="True"/>
+        </Style>
+
+        <!-- Tool options in the main row or its popup: the toolbar row already shows the active tool. -->
+        <Style Selector="controls|AnnotationToolbar:inline-options Panel#ToolOptionsArea, controls|AnnotationToolbar:overflow-options Panel#ToolOptionsArea">
+            <Setter Property="IsVisible" Value="False"/>
+        </Style>
+
+        <Style Selector="controls|AnnotationToolbar:inline-options Border#ActiveToolIndicator, controls|AnnotationToolbar:overflow-options Border#ActiveToolIndicator">
+            <Setter Property="IsVisible" Value="False"/>
         </Style>
 
         <Style Selector="Border#ToolOptionsBorder">
@@ -92,6 +121,21 @@
                 <Setter Property="CornerRadius" Value="2"/>
             </Style>
 
+            <!-- Room for the 16px icon and the chevron next to it. -->
+            <Style Selector="^ Button.toolbar-button.file-menu">
+                <Setter Property="MinWidth" Value="40"/>
+                <Setter Property="Padding" Value="4,0"/>
+            </Style>
+
+            <Style Selector="^ Button.toolbar-button.tool-options-menu">
+                <Setter Property="MinWidth" Value="40"/>
+                <Setter Property="Padding" Value="4,0"/>
+            </Style>
+
+            <Style Selector="^ iconControls|IconPresenter.file-menu-icon">
+                <Setter Property="FontSize" Value="16"/>
+            </Style>
+
             <Style Selector="^ Button.toolbar-button:not(.active) /template/ ContentPresenter#PART_ContentPresenter">
                 <Setter Property="Background" Value="Transparent"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
@@ -137,156 +181,214 @@
                 BorderThickness="{Binding MainToolbarBorderThickness, ElementName=AnnotationToolbarRoot}"
                 CornerRadius="{Binding MainToolbarCornerRadius, ElementName=AnnotationToolbarRoot}"
                 HorizontalAlignment="Center">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto"
-                          VerticalScrollBarVisibility="Disabled">
-                <StackPanel Classes="toolbar-row">
-                    <ContentControl x:Name="MainToolbarLeadingContentHost"
-                                    IsVisible="False"/>
-                    <ItemsControl ItemsSource="{ReflectionBinding VisibleToolbarItems}">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Classes="toolbar-row"/>
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
-                                <StackPanel Classes="toolbar-row">
-                                    <!-- The panel adds the group's extra spacer width around the line. -->
-                                    <Panel Margin="{Binding SpacerMargin}"
-                                           IsVisible="{Binding IsGroupSeparatorVisible}">
-                                        <Border Classes="toolbar-separator"
-                                                Classes.line-hidden="{Binding !ShowSpacerLine}"/>
-                                    </Panel>
-                                    <Button Classes="toolbar-button"
-                                            ToolTip.Tip="{Binding ToolTip}"
-                                            x:Name="FileMenuButton"
-                                            MinWidth="54"
-                                            HorizontalContentAlignment="Stretch"
-                                            IsVisible="{Binding IsFileMenu}">
-                                        <Grid ColumnDefinitions="Auto,*,Auto">
-                                            <iconControls:IconPresenter Grid.Column="0"
-                                                                        Icon="{Binding Icon}"
-                                                                        FontSize="24"
-                                                                        VerticalAlignment="Center"/>
-                                            <Border Grid.Column="1"/>
-                                            <iconControls:IconPresenter Grid.Column="2"
-                                                                        Classes="dropdown-chevron"
-                                                                        Classes.open="{Binding #FileMenuButton.Flyout.IsOpen}"
-                                                                        Icon="{x:Static theming:EditorIcons.ChevronDown}"
-                                                                        FontSize="10"
-                                                                        Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
-                                                                        VerticalAlignment="Center"/>
-                                        </Grid>
-                                        <Button.Flyout>
-                                            <MenuFlyout Placement="BottomEdgeAlignedLeft" VerticalOffset="4">
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_NewEllipsis}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewImageCommand}"
-                                                          InputGesture="Ctrl+N">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileNew}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_OpenEllipsis}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.OpenImageCommand}"
-                                                          InputGesture="Ctrl+O">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileOpen}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Openrecent}"
-                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.HasRecentImageFiles}"
-                                                          ItemsSource="{Binding #AnnotationToolbarRoot.DataContext.RecentImageMenuItems}">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.History}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotRegionEllipsis}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotRegionCommand}"
-                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureRegion}">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureRegion}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotFullScreen}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotFullscreenCommand}"
-                                                          IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureFullscreen}">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureFullscreen}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <Separator/>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Save}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"
-                                                          InputGesture="Ctrl+S">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSave}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SaveasEllipsis}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.SaveAsCommand}"
-                                                          InputGesture="Ctrl+Shift+S">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSaveAs}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                                <Separator/>
-                                                <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
-                                                          Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
-                                                          InputGesture="Escape">
-                                                    <MenuItem.Icon>
-                                                        <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileExit}"/>
-                                                    </MenuItem.Icon>
-                                                </MenuItem>
-                                            </MenuFlyout>
-                                        </Button.Flyout>
-                                    </Button>
-                                    <Button Classes="toolbar-button"
-                                            Tag="{Binding}"
-                                            Classes.active="{Binding IsActive}"
-                                            Click="OnToolbarItemClick"
-                                            PointerPressed="OnToolbarItemPointerPressed"
-                                            IsVisible="{Binding IsRegularButton}"
-                                            ToolTip.Tip="{Binding ToolTip}"
-                                            AutomationProperties.Name="{Binding ToolTip}">
-                                        <iconControls:IconPresenter Icon="{Binding Icon}"/>
-                                    </Button>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-
+            <DockPanel>
+                <!-- When the tool options do not fit, this button opens them in a popup instead, so the toolbar stays
+                     one row high. It sits outside the scroll viewer so it stays in view when the row has to scroll. -->
+                <Panel x:Name="ToolOptionsOverflowArea"
+                       DockPanel.Dock="Right">
                     <StackPanel Classes="toolbar-row"
-                                IsVisible="{Binding ShowEditingActions, ElementName=AnnotationToolbarRoot}">
+                                IsVisible="{Binding ShowToolOptionsSeparator}">
                         <Border Classes="toolbar-separator"/>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding CanUndo}"
-                                Click="OnUndoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}">
-                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionUndo}"/>
-                        </Button>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding CanRedo}"
-                                Click="OnRedoClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}">
-                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionRedo}"/>
-                        </Button>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding HasSelection}"
-                                Click="OnDeleteClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}">
-                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionDelete}"/>
-                        </Button>
-                        <Button Classes="toolbar-button"
-                                IsEnabled="{Binding HasAnnotations}"
-                                Click="OnClearClick"
-                                ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}">
-                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionClearAll}"/>
-                        </Button>
+                        <Panel>
+                            <Button x:Name="ToolOptionsOverflowButton"
+                                    Classes="toolbar-button tool-options-menu"
+                                    Click="OnToolOptionsOverflowClick"
+                                    ToolTip.Tip="{Binding ActiveToolName}"
+                                    AutomationProperties.Name="{Binding ActiveToolName}">
+                                <StackPanel Orientation="Horizontal"
+                                            Spacing="4">
+                                    <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
+                                                                Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"
+                                                                VerticalAlignment="Center"/>
+                                    <iconControls:IconPresenter Classes="dropdown-chevron"
+                                                                Classes.open="{Binding #ToolOptionsOverflowPopup.IsOpen}"
+                                                                Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                                                FontSize="10"
+                                                                Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Popup x:Name="ToolOptionsOverflowPopup"
+                                   PlacementTarget="{Binding #MainToolbarBorder}"
+                                   Placement="Bottom"
+                                   IsLightDismissEnabled="True"
+                                   VerticalOffset="4">
+                                <Border Classes="popup-border popup-surface"
+                                        Classes.open="{Binding #ToolOptionsOverflowPopup.IsOpen}"
+                                        Background="{DynamicResource ShareX.Brush.Background.Toolbar}"
+                                        BorderBrush="{DynamicResource ShareX.Brush.Border}"
+                                        BorderThickness="1"
+                                        CornerRadius="3"
+                                        Padding="2">
+                                    <ContentControl x:Name="ToolOptionsOverflowHost"/>
+                                </Border>
+                            </Popup>
+                        </Panel>
                     </StackPanel>
-                </StackPanel>
-            </ScrollViewer>
+                </Panel>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Disabled">
+                    <StackPanel x:Name="MainToolbarRow"
+                                Classes="toolbar-row">
+                        <ContentControl x:Name="MainToolbarLeadingContentHost"
+                                        IsVisible="False"/>
+                        <ItemsControl ItemsSource="{ReflectionBinding VisibleToolbarItems}">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Classes="toolbar-row"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="vm:ToolbarCustomizationItemViewModel">
+                                    <StackPanel Classes="toolbar-row">
+                                        <!-- The panel adds the group's extra spacer width around the line. -->
+                                        <Panel Margin="{Binding SpacerMargin}"
+                                               IsVisible="{Binding IsGroupSeparatorVisible}">
+                                            <Border Classes="toolbar-separator"
+                                                    Classes.line-hidden="{Binding !ShowSpacerLine}"/>
+                                        </Panel>
+                                        <Button Classes="toolbar-button file-menu"
+                                                ToolTip.Tip="{Binding ToolTip}"
+                                                x:Name="FileMenuButton"
+                                                HorizontalContentAlignment="Stretch"
+                                                IsVisible="{Binding IsFileMenu}">
+                                            <Grid ColumnDefinitions="Auto,*,Auto">
+                                                <iconControls:IconPresenter Grid.Column="0"
+                                                                            Classes="file-menu-icon"
+                                                                            Icon="{Binding Icon}"
+                                                                            VerticalAlignment="Center"/>
+                                                <Border Grid.Column="1"/>
+                                                <iconControls:IconPresenter Grid.Column="2"
+                                                                            Classes="dropdown-chevron"
+                                                                            Classes.open="{Binding #FileMenuButton.Flyout.IsOpen}"
+                                                                            Icon="{x:Static theming:EditorIcons.ChevronDown}"
+                                                                            FontSize="10"
+                                                                            Foreground="{DynamicResource ShareX.Brush.Text.Secondary}"
+                                                                            VerticalAlignment="Center"/>
+                                            </Grid>
+                                            <Button.Flyout>
+                                                <MenuFlyout Placement="BottomEdgeAlignedLeft" VerticalOffset="4">
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_NewEllipsis}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.NewImageCommand}"
+                                                              InputGesture="Ctrl+N">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileNew}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_OpenEllipsis}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.OpenImageCommand}"
+                                                              InputGesture="Ctrl+O">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileOpen}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Openrecent}"
+                                                              IsVisible="{Binding #AnnotationToolbarRoot.DataContext.HasRecentImageFiles}"
+                                                              ItemsSource="{Binding #AnnotationToolbarRoot.DataContext.RecentImageMenuItems}">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static icons:AppIcons.History}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotRegionEllipsis}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotRegionCommand}"
+                                                              IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureRegion}">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureRegion}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <MenuItem Header="{x:Static res:Strings.EditorView_NewFromScreenshotFullScreen}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.NewFromScreenshotFullscreenCommand}"
+                                                              IsVisible="{Binding #AnnotationToolbarRoot.DataContext.CanCaptureFullscreen}">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionCaptureFullscreen}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <Separator/>
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Save}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.SaveCommand}"
+                                                              InputGesture="Ctrl+S">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSave}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_SaveasEllipsis}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.SaveAsCommand}"
+                                                              InputGesture="Ctrl+Shift+S">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileSaveAs}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                    <Separator/>
+                                                    <MenuItem Header="{x:Static res:Strings.AnnotationToolbar_Exit}"
+                                                              Command="{Binding #AnnotationToolbarRoot.DataContext.ExitEditorCommand}"
+                                                              InputGesture="Escape">
+                                                        <MenuItem.Icon>
+                                                            <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.FileExit}"/>
+                                                        </MenuItem.Icon>
+                                                    </MenuItem>
+                                                </MenuFlyout>
+                                            </Button.Flyout>
+                                        </Button>
+                                        <Button Classes="toolbar-button"
+                                                Tag="{Binding}"
+                                                Classes.active="{Binding IsActive}"
+                                                Click="OnToolbarItemClick"
+                                                PointerPressed="OnToolbarItemPointerPressed"
+                                                IsVisible="{Binding IsRegularButton}"
+                                                ToolTip.Tip="{Binding ToolTip}"
+                                                AutomationProperties.Name="{Binding ToolTip}">
+                                            <iconControls:IconPresenter Icon="{Binding Icon}"/>
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                        <StackPanel Classes="toolbar-row"
+                                    IsVisible="{Binding ShowEditingActions, ElementName=AnnotationToolbarRoot}">
+                            <Border Classes="toolbar-separator"/>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding CanUndo}"
+                                    Click="OnUndoClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_UndoCtrlZ}">
+                                <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionUndo}"/>
+                            </Button>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding CanRedo}"
+                                    Click="OnRedoClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_RedoCtrlY}">
+                                <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionRedo}"/>
+                            </Button>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding HasSelection}"
+                                    Click="OnDeleteClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteDelete}">
+                                <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionDelete}"/>
+                            </Button>
+                            <Button Classes="toolbar-button"
+                                    IsEnabled="{Binding HasAnnotations}"
+                                    Click="OnClearClick"
+                                    ToolTip.Tip="{x:Static res:Strings.AnnotationToolbar_DeleteallShiftDelete}">
+                                <iconControls:IconPresenter Icon="{x:Static theming:EditorIcons.ActionClearAll}"/>
+                            </Button>
+                        </StackPanel>
+
+                        <!-- With InlineToolOptions the tool options move here, so the toolbar is a single row
+                             whenever it fits. -->
+                        <Panel x:Name="InlineToolOptionsArea">
+                            <StackPanel Classes="toolbar-row"
+                                        IsVisible="{Binding ShowToolOptionsSeparator}">
+                                <Border Classes="toolbar-separator"/>
+                                <ContentControl x:Name="InlineToolOptionsHost"/>
+                            </StackPanel>
+                        </Panel>
+
+                    </StackPanel>
+                </ScrollViewer>
+            </DockPanel>
         </Border>
 
+        <Panel x:Name="ToolOptionsArea">
         <Grid IsVisible="{Binding ShowToolOptions, ElementName=AnnotationToolbarRoot}">
             <Border x:Name="ToolOptionsBorder"
                     Margin="0,-1,0,0"
@@ -295,10 +397,13 @@
                     BorderThickness="1,0,1,1"
                     HorizontalAlignment="Center"
                     IsVisible="{Binding ShowToolOptionsSeparator}">
-            <ScrollViewer HorizontalScrollBarVisibility="Auto"
+            <ScrollViewer x:Name="ToolOptionsScrollViewer"
+                          HorizontalScrollBarVisibility="Auto"
                           VerticalScrollBarVisibility="Disabled">
-                <StackPanel Classes="toolbar-row">
-                    <Border Classes="option-indicator"
+                <StackPanel x:Name="ToolOptionsPanel"
+                            Classes="toolbar-row">
+                    <Border x:Name="ActiveToolIndicator"
+                            Classes="option-indicator"
                             ToolTip.Tip="{Binding ActiveToolName}">
                         <iconControls:IconPresenter Icon="{Binding ActiveToolIcon}"
                                                     Foreground="{DynamicResource ShareX.Brush.Accent.Icon}"/>
@@ -557,5 +662,6 @@
                 </ScrollViewer>
             </Border>
         </Grid>
+        </Panel>
     </StackPanel>
 </UserControl>
