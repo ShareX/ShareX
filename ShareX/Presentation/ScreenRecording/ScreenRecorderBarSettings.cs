@@ -79,6 +79,12 @@ internal sealed class ScreenRecorderBarSettings
         target.GIFFPS = Capture.GIFFPS;
         target.ScreenRecordShowCursor = Capture.ScreenRecordShowCursor;
         target.ScreenRecordMouseHighlighter = Capture.ScreenRecordMouseHighlighter;
+        target.ScreenRecordShowKeys = Capture.ScreenRecordShowKeys;
+        target.ScreenRecordKeysShowAll = Capture.ScreenRecordKeysShowAll;
+        target.ScreenRecordKeysPosition = Capture.ScreenRecordKeysPosition;
+        target.ScreenRecordKeysFontSize = Capture.ScreenRecordKeysFontSize;
+        target.ScreenRecordKeysTextColor = Capture.ScreenRecordKeysTextColor;
+        target.ScreenRecordKeysDuration = Capture.ScreenRecordKeysDuration;
         target.ScreenRecordShowTimer = Capture.ScreenRecordShowTimer;
         target.ScreenRecordShowButtonLabels = Capture.ScreenRecordShowButtonLabels;
         target.ScreenRecordStartDelayEnabled = Capture.ScreenRecordStartDelayEnabled;

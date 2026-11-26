@@ -618,6 +618,7 @@ internal sealed class TaskSettingsPageBuilder
         foreach (Control control in cameraControls) cameraContent.Children.Add(control);
         BindEnabled(cameraContent, native);
         Control cameraPanel = EnabledCard(_captureOverride, Strings.TaskSettingsWindow_NativeRecorderCamera, cameraContent);
+        Control keysPanel = BuildKeyHighlighterCard(capture, native);
         Control twoPass = Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value);
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
         foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate, hdrToneMapping }) BindEnabled(control, native);
@@ -636,6 +637,7 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_NativeRecorderEnabled, native),
                 systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate, hdrToneMapping),
             cameraPanel,
+            keysPanel,
             EnabledCard(_captureOverride, Strings.TaskSettingsWindow_Recording,
                 Check(Strings.ScreenRecorderBar_ShowBeforeRecording, () => capture.ScreenRecordShowBar, value => capture.ScreenRecordShowBar = value),
                 Row(Strings.TaskSettingsWindow_ScreenRecordingFPS, Number(() => capture.ScreenRecordFPS, value => capture.ScreenRecordFPS = (int)value, 1, 120)),
@@ -651,6 +653,56 @@ internal sealed class TaskSettingsPageBuilder
                 twoPass,
                 Check(Strings.TaskSettingsWindow_AskForConfirmationWhenAborting, () => capture.ScreenRecordAskConfirmationOnAbort, value => capture.ScreenRecordAskConfirmationOnAbort = value),
                 legacyOptions));
+    }
+
+    private Control BuildKeyHighlighterCard(TaskSettingsCapture capture, BoundValue<bool> native)
+    {
+        BoundValue<bool> showKeys = new(capture.ScreenRecordShowKeys, value => capture.ScreenRecordShowKeys = value);
+        Control showAll = Check(Strings.TaskSettingsWindow_KeyHighlighter_ShowAllKeys, () => capture.ScreenRecordKeysShowAll,
+            value => capture.ScreenRecordKeysShowAll = value);
+        ToolTip.SetTip(showAll, Strings.TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip);
+        Control position = Row(Strings.TaskSettingsWindow_Placement,
+            ObjectCombo(Enum.GetValues<KeyHighlighterPosition>(), () => capture.ScreenRecordKeysPosition,
+                value => capture.ScreenRecordKeysPosition = value, value => value switch
+                {
+                    KeyHighlighterPosition.TopLeft => Strings.ApplicationSettingsWindow_TopLeft,
+                    KeyHighlighterPosition.TopRight => Strings.ApplicationSettingsWindow_TopRight,
+                    KeyHighlighterPosition.BottomCenter => Strings.TaskSettingsWindow_KeyHighlighter_BottomCenter,
+                    KeyHighlighterPosition.BottomRight => Strings.ApplicationSettingsWindow_BottomRight,
+                    _ => Strings.ApplicationSettingsWindow_BottomLeft
+                }));
+        Control fontSize = Row(Strings.TaskSettingsWindow_KeyHighlighter_FontSize,
+            Number(() => capture.ScreenRecordKeysFontSize, value => capture.ScreenRecordKeysFontSize = (int)value, 8, 96));
+        Control textColor = Row(Strings.TaskSettingsWindow_KeyHighlighter_TextColor, KeyHighlighterColorPicker(capture));
+        Control duration = Row(Strings.TaskSettingsWindow_KeyHighlighter_Duration,
+            Number(() => (decimal)capture.ScreenRecordKeysDuration, value => capture.ScreenRecordKeysDuration = (double)value, 0.5m, 10, 0.5m));
+        Control[] controls = [showAll, position, fontSize, textColor, duration];
+        foreach (Control control in controls) BindEnabled(control, showKeys);
+        StackPanel content = new() { Spacing = 4 };
+        content.Children.Add(Check(Strings.TaskSettingsWindow_KeyHighlighter_Enabled, showKeys));
+        foreach (Control control in controls) content.Children.Add(control);
+        BindEnabled(content, native);
+        return EnabledCard(_captureOverride, Strings.TaskSettingsWindow_KeyHighlighter, content);
+    }
+
+    private static Control KeyHighlighterColorPicker(TaskSettingsCapture capture)
+    {
+        System.Drawing.Color color = capture.ScreenRecordKeysTextColor;
+        var picker = new ShareX.ImageEditor.Presentation.Controls.ColorPickerDropdown
+        {
+            SelectedColorValue = Color.FromArgb(color.A, color.R, color.G, color.B),
+            HorizontalAlignment = HorizontalAlignment.Left,
+            VerticalAlignment = VerticalAlignment.Center,
+            MinWidth = 130
+        };
+        picker.ColorChanged += (_, brush) =>
+        {
+            if (brush is ISolidColorBrush solid)
+            {
+                capture.ScreenRecordKeysTextColor = System.Drawing.Color.FromArgb(solid.Color.A, solid.Color.R, solid.Color.G, solid.Color.B);
+            }
+        };
+        return picker;
     }
 
     private async Task ShowScreenRecordingOptions()

@@ -2963,6 +2963,30 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>패턴:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>누른 키</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>녹화에 누른 키 표시</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>입력한 텍스트도 표시</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>끄면 단축키와 Enter, Esc, F1 같은 키만 표시됩니다. 입력한 텍스트에는 비밀번호가 포함될 수 있습니다(Windows 비밀번호 상자 제외).</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>글꼴 크기:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>텍스트 색:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>숨기기까지(초):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>아래 가운데</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>위치:</value>
   </data>

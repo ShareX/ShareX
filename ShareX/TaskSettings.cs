@@ -428,6 +428,12 @@ namespace ShareX
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
         public bool ScreenRecordMouseHighlighter = false;
+        public bool ScreenRecordShowKeys = false;
+        public bool ScreenRecordKeysShowAll = false;
+        public KeyHighlighterPosition ScreenRecordKeysPosition = KeyHighlighterPosition.BottomLeft;
+        public int ScreenRecordKeysFontSize = 24;
+        public System.Drawing.Color ScreenRecordKeysTextColor = System.Drawing.Color.White;
+        public double ScreenRecordKeysDuration = 1.5;
         public bool ScreenRecordShowTimer = true;
         public bool ScreenRecordShowButtonLabels = false;
         public bool ScreenRecordStartDelayEnabled = false;

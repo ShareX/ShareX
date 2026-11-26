@@ -65,6 +65,8 @@ public sealed record RecordingOptions
     /// <summary>For MP4, reject a software video encoder rather than silently increasing CPU usage.</summary>
     public bool RequireHardwareEncoder { get; init; } = true;
     public TimeSpan Duration { get; init; }
+    /// <summary>Images drawn into the video only, such as pressed keys, in order. The camera is drawn first.</summary>
+    public IReadOnlyList<IRecordingOverlay> Overlays { get; init; } = [];
 
     internal bool IsGif => Path.GetExtension(OutputPath).Equals(".gif", StringComparison.OrdinalIgnoreCase);
     internal bool HasAudio => !IsGif && (CaptureSystemAudio || CaptureMicrophone);

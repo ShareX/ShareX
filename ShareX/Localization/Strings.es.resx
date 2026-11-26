@@ -2963,6 +2963,30 @@ Do you want to abort the active grabación de pantalla?</value>
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>Patrón:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>Teclas pulsadas</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>Mostrar las teclas pulsadas en la grabación</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>Mostrar también el texto escrito</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>Si está desactivado, solo se muestran atajos y teclas como Intro, Esc y F1. El texto escrito puede incluir contraseñas, excepto en los cuadros de contraseña de Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>Tamaño de fuente:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>Color del texto:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>Ocultar después de (segundos):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>Abajo en el centro</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>Ubicación:</value>
   </data>

@@ -5784,5 +5784,13 @@ namespace ShareX.Localization {
         public static string MainWindow_EditImageInPixelEditor => ResourceManager.GetString("MainWindow_EditImageInPixelEditor", resourceCulture);
         public static string ApplicationSettingsWindow_DescriptionCantBeEmpty => ResourceManager.GetString("ApplicationSettingsWindow_DescriptionCantBeEmpty", resourceCulture);
         public static string ApplicationSettingsWindow_FormatCantBeEmpty => ResourceManager.GetString("ApplicationSettingsWindow_FormatCantBeEmpty", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_BottomCenter => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_BottomCenter", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_Duration => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_Duration", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_Enabled => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_Enabled", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_FontSize => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_FontSize", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_ShowAllKeys => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_ShowAllKeys", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip", resourceCulture);
+        public static string TaskSettingsWindow_KeyHighlighter_TextColor => ResourceManager.GetString("TaskSettingsWindow_KeyHighlighter_TextColor", resourceCulture);
     }
 }

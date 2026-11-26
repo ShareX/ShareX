@@ -2963,6 +2963,30 @@
   <data name="TaskSettingsWindow_Pattern" xml:space="preserve">
     <value>النمط:</value>
   </data>
+  <data name="TaskSettingsWindow_KeyHighlighter" xml:space="preserve">
+    <value>المفاتيح المضغوطة</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Enabled" xml:space="preserve">
+    <value>إظهار المفاتيح المضغوطة في التسجيل</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeys" xml:space="preserve">
+    <value>إظهار النص المكتوب أيضًا</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_ShowAllKeysTip" xml:space="preserve">
+    <value>عند الإيقاف، تظهر الاختصارات ومفاتيح مثل Enter وEsc وF1 فقط. قد يتضمن النص المكتوب كلمات مرور، باستثناء مربعات كلمات المرور في Windows.</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_FontSize" xml:space="preserve">
+    <value>حجم الخط:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_TextColor" xml:space="preserve">
+    <value>لون النص:</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_Duration" xml:space="preserve">
+    <value>الإخفاء بعد (ثوانٍ):</value>
+  </data>
+  <data name="TaskSettingsWindow_KeyHighlighter_BottomCenter" xml:space="preserve">
+    <value>أسفل الوسط</value>
+  </data>
   <data name="TaskSettingsWindow_Placement" xml:space="preserve">
     <value>الموضع:</value>
   </data>

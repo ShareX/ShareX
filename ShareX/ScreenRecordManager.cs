@@ -484,8 +484,11 @@ namespace ShareX
             while (true)
             {
                 bool completed = false;
+                KeyHighlighterRecordingOverlay keyHighlighter = settings.CaptureSettings.ScreenRecordShowKeys
+                    ? new KeyHighlighterRecordingOverlay(settings.CaptureSettings) : null;
                 NativeRecordingOptions options = new()
                 {
+                    Overlays = keyHighlighter == null ? [] : [keyHighlighter],
                     OutputPath = recordingPath,
                     Region = recordForm.RecordingRegion,
                     WindowHandle = captureWindow,
@@ -537,6 +540,7 @@ namespace ShareX
                     recordForm.ChangeState(ScreenRecordState.AfterStart);
                     using (IDisposable highlighter = settings.CaptureSettings.ScreenRecordMouseHighlighter
                         ? await MouseHighlighterManager.BeginRecordingAsync(settings.ToolsSettings.MouseHighlighterOptions) : null)
+                    using (IDisposable keys = keyHighlighter?.Begin())
                     {
                         nativeRecorder.EncodingProgressChanged += progress =>
                         {

@@ -129,17 +129,54 @@ internal sealed class GpuVideoProcessor : IDisposable
         videoDevice.CreateVideoProcessorOutputView(texture, enumerator,
             new VideoProcessorOutputViewDescription { ViewDimension = VideoProcessorOutputViewDimension.Texture2D });
 
-    public ID3D11Texture2D GetBgraFrame(CameraOverlay? camera)
+    public ID3D11Texture2D GetBgraFrame(IReadOnlyList<IVideoFrameOverlay> overlays)
     {
-        if (camera?.HasFrame != true) return Canvas;
+        if (!overlays.Any(overlay => overlay.HasFrame)) return Canvas;
         composite ??= graphics.CreateTexture(Width, Height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
-        ID3D11Texture2D overlay = camera.GetCompositionTexture(Canvas);
         graphics.Context.CopyResource(composite, Canvas);
-        graphics.Context.CopySubresourceRegion(composite, 0, (uint)camera.Bounds.X, (uint)camera.Bounds.Y, 0, overlay, 0);
+        CopyOverlays(overlays, composite);
         return composite;
     }
 
-    public void Convert(ID3D11VideoProcessorOutputView output, uint frameNumber, CameraOverlay? camera = null)
+    // Each tile is blended against the screen canvas, so later tiles must not overlap earlier ones.
+    private void CopyOverlays(IReadOnlyList<IVideoFrameOverlay> overlays, ID3D11Texture2D target)
+    {
+        foreach (IVideoFrameOverlay overlay in overlays)
+        {
+            if (!overlay.HasFrame) continue;
+            ID3D11Texture2D tile = overlay.GetCompositionTexture(Canvas);
+            graphics.Context.CopySubresourceRegion(target, 0, (uint)overlay.Bounds.X, (uint)overlay.Bounds.Y, 0, tile, 0);
+        }
+    }
+
+    public void Convert(ID3D11VideoProcessorOutputView output, uint frameNumber, IReadOnlyList<IVideoFrameOverlay> overlays)
+    {
+        List<IVideoFrameOverlay> active = overlays.Where(overlay => overlay.HasFrame).ToList();
+        if (active.Count > 1 || (active.Count == 1 && active[0] is not CameraOverlay))
+        {
+            // Several tiles, or a tile that is not the camera, use the GPU copy path. The camera alone keeps its
+            // video-processor stream below.
+            streams[0].InputSurface = input;
+            if (streams.Length > 1) streams[1].Enable = false;
+            EnsureComposite();
+            graphics.Context.CopyResource(composite, Canvas);
+            CopyOverlays(active, composite!);
+            streams[0].InputSurface = compositeInput!;
+            videoContext.VideoProcessorBlt(processor, output, frameNumber, 1, streams).CheckError();
+            return;
+        }
+        ConvertCamera(output, frameNumber, active.Count == 1 ? (CameraOverlay)active[0] : null);
+    }
+
+    private void EnsureComposite()
+    {
+        if (compositeInput != null) return;
+        composite ??= graphics.CreateTexture(Width, Height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
+        compositeInput = videoDevice.CreateVideoProcessorInputView(composite, enumerator,
+            new VideoProcessorInputViewDescription { ViewDimension = VideoProcessorInputViewDimension.Texture2D });
+    }
+
+    private void ConvertCamera(ID3D11VideoProcessorOutputView output, uint frameNumber, CameraOverlay? camera)
     {
         streams[0].InputSurface = input;
         if (streams.Length > 1) streams[1].Enable = false;
@@ -183,17 +220,12 @@ internal sealed class GpuVideoProcessor : IDisposable
             }
             // Devices limited to one input still composite on the GPU. Never modify the
             // persistent screen canvas: a stopped camera must reveal the original screen.
-            if (composite == null)
-            {
-                composite = graphics.CreateTexture(Width, Height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
-                compositeInput = videoDevice.CreateVideoProcessorInputView(composite, enumerator,
-                    new VideoProcessorInputViewDescription { ViewDimension = VideoProcessorInputViewDimension.Texture2D });
-            }
+            EnsureComposite();
             graphics.Context.CopyResource(composite, Canvas);
             graphics.Context.CopySubresourceRegion(composite, 0, (uint)camera.Bounds.X, (uint)camera.Bounds.Y, 0, overlayTexture, 0);
             streams[0].InputSurface = compositeInput!;
         }
-        else if (composite != null)
+        else if (compositeInput != null)
         {
             // Keep the fallback input surface stable after camera loss. Some drivers retain
             // the previous output when switching back to an unchanged screen canvas.
