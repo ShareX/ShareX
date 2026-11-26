@@ -347,7 +347,8 @@
     <value>Tło usunięto w {0} ms.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Obraz zapisano.\nŚcieżka pliku: {0}</value>
+    <value>Obraz zapisano.
+Ścieżka pliku: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Wybierz obraz</value>
@@ -470,7 +471,9 @@
     <value>1 format</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Nie można wyświetlić podglądu tego formatu schowka.\n\n{0}</value>
+    <value>Nie można wyświetlić podglądu tego formatu schowka.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Podgląd niedostępny</value>
@@ -482,7 +485,8 @@
     <value>Tekst  |  {0:N0} znaków</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Nie można odczytać schowka\n{0}</value>
+    <value>Nie można odczytać schowka
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Wyczyść</value>
@@ -1343,10 +1347,12 @@
     <value>Znaczniki: {0:N0}</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Nie można odczytać metadanych\n{0}</value>
+    <value>Nie można odczytać metadanych
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Nie można usunąć metadanych\n{0}</value>
+    <value>Nie można usunąć metadanych
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX — metadane</value>

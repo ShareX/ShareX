@@ -347,7 +347,8 @@
     <value>تمت إزالة الخلفية خلال {0} مللي ثانية.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>تم حفظ الصورة.\nمسار الملف: {0}</value>
+    <value>تم حفظ الصورة.
+مسار الملف: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>تحديد صورة</value>
@@ -470,7 +471,9 @@
     <value>تنسيق واحد</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>تعذّرت معاينة تنسيق الحافظة هذا.\n\n{0}</value>
+    <value>تعذّرت معاينة تنسيق الحافظة هذا.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>المعاينة غير متاحة</value>
@@ -482,7 +485,8 @@
     <value>نص  |  {0:N0} من الأحرف</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>تعذّرت قراءة الحافظة\n{0}</value>
+    <value>تعذّرت قراءة الحافظة
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>مسح</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} من العلامات</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>تعذّرت قراءة البيانات الوصفية\n{0}</value>
+    <value>تعذّرت قراءة البيانات الوصفية
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>تعذّرت إزالة البيانات الوصفية\n{0}</value>
+    <value>تعذّرت إزالة البيانات الوصفية
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - البيانات الوصفية</value>

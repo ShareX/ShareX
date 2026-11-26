@@ -1465,7 +1465,8 @@
     <value>絵文字</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nお気に入りの画像効果 (右クリック)</value>
+    <value>{0}
+お気に入りの画像効果 (右クリック)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>ファイル</value>

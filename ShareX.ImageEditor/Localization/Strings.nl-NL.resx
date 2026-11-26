@@ -1465,7 +1465,8 @@ Het klembord bevat geen afbeelding.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nFavoriete afbeeldingseffecten (Rechtsklik)</value>
+    <value>{0}
+Favoriete afbeeldingseffecten (Rechtsklik)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Bestand</value>

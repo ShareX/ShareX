@@ -1109,7 +1109,9 @@
     <value>ชื่อผู้ใช้หรือรหัสผ่าน ownCloud ว่างเปล่า</value>
   </data>
   <data name="OwnCloud_Error_details" xml:space="preserve">
-    <value>สถานะ: {0}\r\nรหัสสถานะ: {1}\r\nข้อความ: {2}</value>
+    <value>สถานะ: {0}
+รหัสสถานะ: {1}
+ข้อความ: {2}</value>
   </data>
   <data name="OwnCloud_Host_is_empty" xml:space="preserve">
     <value>ownCloud โฮสต์ ว่าง.</value>
@@ -1301,7 +1303,8 @@
     <value>Seafile การรับรองความถูกต้อง โทเค็น ว่าง.</value>
   </data>
   <data name="SendSpace_Error_details" xml:space="preserve">
-    <value>โค้ด: {0}, วิธี: {1}\r\nข้อความ: {2}</value>
+    <value>โค้ด: {0}, วิธี: {1}
+ข้อความ: {2}</value>
   </data>
   <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
     <value>เซสชัน คีย์ หายไป.</value>

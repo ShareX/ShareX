@@ -1465,7 +1465,8 @@ A vágólap nem tartalmaz képet.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nKedvenc képeffektusok (Jobb kattintás)</value>
+    <value>{0}
+Kedvenc képeffektusok (Jobb kattintás)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Fájl</value>

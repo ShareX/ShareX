@@ -347,7 +347,8 @@
     <value>Đã xóa nền trong {0} ms.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Đã lưu hình ảnh.\nĐường dẫn tệp: {0}</value>
+    <value>Đã lưu hình ảnh.
+Đường dẫn tệp: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Chọn ảnh</value>
@@ -470,7 +471,9 @@
     <value>1 định dạng</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Không thể xem trước định dạng bảng tạm này.\n\n{0}</value>
+    <value>Không thể xem trước định dạng bảng tạm này.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Không có bản xem trước</value>
@@ -482,7 +485,8 @@
     <value>Văn bản  |  {0:N0} ký tự</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Không thể đọc bảng tạm\n{0}</value>
+    <value>Không thể đọc bảng tạm
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Xóa</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} thẻ</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Không thể đọc siêu dữ liệu\n{0}</value>
+    <value>Không thể đọc siêu dữ liệu
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Không thể xóa siêu dữ liệu\n{0}</value>
+    <value>Không thể xóa siêu dữ liệu
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - Siêu dữ liệu</value>

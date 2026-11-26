@@ -1465,7 +1465,8 @@
     <value>Емодзі</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nОбрані ефекти зображення (Права кнопка)</value>
+    <value>{0}
+Обрані ефекти зображення (Права кнопка)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Файл</value>

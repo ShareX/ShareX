@@ -1465,7 +1465,8 @@ Schowek nie zawiera obrazu.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nUlubione efekty obrazu (Prawy przycisk)</value>
+    <value>{0}
+Ulubione efekty obrazu (Prawy przycisk)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Plik</value>

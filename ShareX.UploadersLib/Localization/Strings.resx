@@ -1109,7 +1109,9 @@
     <value>The ownCloud username or password is empty.</value>
   </data>
   <data name="OwnCloud_Error_details" xml:space="preserve">
-    <value>Status: {0}\r\nStatus code: {1}\r\nMessage: {2}</value>
+    <value>Status: {0}
+Status code: {1}
+Message: {2}</value>
   </data>
   <data name="OwnCloud_Host_is_empty" xml:space="preserve">
     <value>The ownCloud host is empty.</value>
@@ -1301,7 +1303,8 @@
     <value>The Seafile authentication token is empty.</value>
   </data>
   <data name="SendSpace_Error_details" xml:space="preserve">
-    <value>Code: {0}, Method: {1}\r\nText: {2}</value>
+    <value>Code: {0}, Method: {1}
+Text: {2}</value>
   </data>
   <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
     <value>The session key is missing.</value>

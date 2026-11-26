@@ -1465,7 +1465,8 @@ Gli appunti non contengono un’immagine.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEffetti immagine preferiti (Clic destro)</value>
+    <value>{0}
+Effetti immagine preferiti (Clic destro)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>File</value>

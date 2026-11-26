@@ -347,7 +347,8 @@
     <value>A háttér eltávolítása {0} ms alatt megtörtént.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>A kép mentve.\nFájl elérési útja: {0}</value>
+    <value>A kép mentve.
+Fájl elérési útja: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Kép kiválasztása</value>
@@ -470,7 +471,9 @@
     <value>1 formátum</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Ez a vágólapformátum nem jeleníthető meg előnézetben.\n\n{0}</value>
+    <value>Ez a vágólapformátum nem jeleníthető meg előnézetben.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Az előnézet nem érhető el</value>
@@ -482,7 +485,8 @@
     <value>Szöveg  |  {0:N0} karakter</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>A vágólap nem olvasható\n{0}</value>
+    <value>A vágólap nem olvasható
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Törlés</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} címke</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>A metaadatok nem olvashatók\n{0}</value>
+    <value>A metaadatok nem olvashatók
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>A metaadatok nem távolíthatók el\n{0}</value>
+    <value>A metaadatok nem távolíthatók el
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX – Metaadatok</value>

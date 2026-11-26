@@ -1465,7 +1465,8 @@ A área de transferência não contém uma imagem.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEfeitos de imagem favoritos (Clique direito)</value>
+    <value>{0}
+Efeitos de imagem favoritos (Clique direito)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Arquivo</value>

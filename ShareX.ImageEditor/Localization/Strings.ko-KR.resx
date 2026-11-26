@@ -1465,7 +1465,8 @@
     <value>이모지</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\n즐겨찾는 이미지 효과 (오른쪽 클릭)</value>
+    <value>{0}
+즐겨찾는 이미지 효과 (오른쪽 클릭)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>파일</value>

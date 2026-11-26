@@ -1465,7 +1465,8 @@ El portapapeles no contiene ninguna imagen.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEfectos de imagen favoritos (Clic derecho)</value>
+    <value>{0}
+Efectos de imagen favoritos (Clic derecho)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Archivo</value>

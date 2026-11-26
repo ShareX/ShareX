@@ -347,7 +347,8 @@
     <value>ลบพื้นหลังใน {0} ms แล้ว</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>รูปภาพ บันทึกแล้ว.\nเส้นทางไฟล์: {0}</value>
+    <value>รูปภาพ บันทึกแล้ว.
+เส้นทางไฟล์: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>เลือกรูปภาพ</value>
@@ -470,7 +471,9 @@
     <value>1 รูปแบบ</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>ไม่สามารถแสดงตัวอย่างรูปแบบคลิปบอร์ดนี้ได้\n\n{0}</value>
+    <value>ไม่สามารถแสดงตัวอย่างรูปแบบคลิปบอร์ดนี้ได้
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>ตัวอย่าง ไม่พร้อมใช้งาน</value>
@@ -482,7 +485,8 @@
     <value>ข้อความ | {0:N0} อักขระ</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>ไม่สามารถ อ่าน คลิปบอร์ด\n{0}</value>
+    <value>ไม่สามารถ อ่าน คลิปบอร์ด
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>ล้าง</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} แท็ก</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>ไม่สามารถ อ่าน ข้อมูลเมตา\n{0}</value>
+    <value>ไม่สามารถ อ่าน ข้อมูลเมตา
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>ไม่สามารถลบข้อมูลเมตาได้\n{0}</value>
+    <value>ไม่สามารถลบข้อมูลเมตาได้
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - ข้อมูลเมตา</value>

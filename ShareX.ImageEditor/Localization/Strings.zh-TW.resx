@@ -1465,7 +1465,8 @@
     <value>表情符號</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\n最愛的影像效果（按右鍵）</value>
+    <value>{0}
+最愛的影像效果（按右鍵）</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>檔案</value>

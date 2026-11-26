@@ -1465,7 +1465,8 @@ Die Zwischenablage enthält kein Bild.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nBevorzugte Bildeffekte (Rechtsklick)</value>
+    <value>{0}
+Bevorzugte Bildeffekte (Rechtsklick)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Datei</value>

@@ -347,7 +347,8 @@
     <value>{0}ms 만에 배경을 제거했습니다.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>이미지를 저장했습니다.\n파일 경로: {0}</value>
+    <value>이미지를 저장했습니다.
+파일 경로: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>이미지 선택</value>
@@ -470,7 +471,9 @@
     <value>형식 1개</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>이 클립보드 형식을 미리 볼 수 없습니다.\n\n{0}</value>
+    <value>이 클립보드 형식을 미리 볼 수 없습니다.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>미리 보기를 사용할 수 없음</value>
@@ -482,7 +485,8 @@
     <value>텍스트  |  {0:N0}자</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>클립보드를 읽을 수 없습니다\n{0}</value>
+    <value>클립보드를 읽을 수 없습니다
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>지우기</value>
@@ -1343,10 +1347,12 @@
     <value>태그 {0:N0}개</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>메타데이터를 읽을 수 없습니다\n{0}</value>
+    <value>메타데이터를 읽을 수 없습니다
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>메타데이터를 제거할 수 없습니다\n{0}</value>
+    <value>메타데이터를 제거할 수 없습니다
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - 메타데이터</value>

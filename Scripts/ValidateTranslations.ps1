@@ -507,6 +507,10 @@ foreach ($project in $projects)
             {
                 Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' is empty."
             }
+            if ($localized.Values[$key] -match '\\[rn]')
+            {
+                Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' contains a literal \n or \r escape; use a real line break."
+            }
             if (-not (Test-SequenceEqual (Get-FormatPlaceholders $default.Values[$key]) (Get-FormatPlaceholders $localized.Values[$key])))
             {
                 Add-ValidationError "$($project.Name)/Strings.$culture.resx: '$key' has different format placeholders."
@@ -554,6 +558,10 @@ foreach ($project in $projects)
             if ([string]::IsNullOrWhiteSpace($default.Values[$key]))
             {
                 Add-ValidationError "$($project.Name)/Strings.resx: '$key' is empty."
+            }
+            if ($default.Values[$key] -match '\\[rn]')
+            {
+                Add-ValidationError "$($project.Name)/Strings.resx: '$key' contains a literal \n or \r escape; use a real line break."
             }
         }
 

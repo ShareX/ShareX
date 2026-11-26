@@ -1109,7 +1109,9 @@
     <value>El nombre de usuario o la contraseña de ownCloud están vacíos.</value>
   </data>
   <data name="OwnCloud_Error_details" xml:space="preserve">
-    <value>Estado: {0}\r\nCódigo de estado: {1}\r\nMensaje: {2}</value>
+    <value>Estado: {0}
+Código de estado: {1}
+Mensaje: {2}</value>
   </data>
   <data name="OwnCloud_Host_is_empty" xml:space="preserve">
     <value>El servidor de ownCloud está vacío.</value>
@@ -1301,7 +1303,8 @@
     <value>El token de autenticación de Seafile está vacío.</value>
   </data>
   <data name="SendSpace_Error_details" xml:space="preserve">
-    <value>Código: {0}, Método: {1}\r\nTexto: {2}</value>
+    <value>Código: {0}, Método: {1}
+Texto: {2}</value>
   </data>
   <data name="SendSpace_Session_key_is_missing" xml:space="preserve">
     <value>Falta la clave de sesión.</value>

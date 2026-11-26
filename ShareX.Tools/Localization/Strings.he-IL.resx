@@ -347,7 +347,8 @@
     <value>הרקע הוסר בתוך {0} אלפיות שנייה.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>התמונה נשמרה.\nנתיב הקובץ: {0}</value>
+    <value>התמונה נשמרה.
+נתיב הקובץ: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>בחירת תמונה</value>
@@ -470,7 +471,9 @@
     <value>תבנית אחת</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>לא ניתן להציג תצוגה מקדימה של תבנית לוח זו.\n\n{0}</value>
+    <value>לא ניתן להציג תצוגה מקדימה של תבנית לוח זו.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>תצוגה מקדימה אינה זמינה</value>
@@ -482,7 +485,8 @@
     <value>טקסט  |  {0:N0} תווים</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>לא ניתן לקרוא את הלוח\n{0}</value>
+    <value>לא ניתן לקרוא את הלוח
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>נקה</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} תגים</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>לא ניתן לקרוא מטא-נתונים\n{0}</value>
+    <value>לא ניתן לקרוא מטא-נתונים
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>לא ניתן להסיר מטא-נתונים\n{0}</value>
+    <value>לא ניתן להסיר מטא-נתונים
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - מטא-נתונים</value>

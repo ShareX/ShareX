@@ -347,7 +347,8 @@
     <value>پس‌زمینه در {0} میلی‌ثانیه حذف شد.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>تصویر ذخیره شد.\nمسیر فایل: {0}</value>
+    <value>تصویر ذخیره شد.
+مسیر فایل: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>انتخاب تصویر</value>
@@ -470,7 +471,9 @@
     <value>۱ قالب</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>پیش‌نمایش این قالب حافظه موقت ممکن نیست.\n\n{0}</value>
+    <value>پیش‌نمایش این قالب حافظه موقت ممکن نیست.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>پیش‌نمایش در دسترس نیست</value>
@@ -482,7 +485,8 @@
     <value>متن  |  {0:N0} نویسه</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>خواندن حافظه موقت ممکن نیست\n{0}</value>
+    <value>خواندن حافظه موقت ممکن نیست
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>پاک کردن</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} برچسب</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>خواندن فراداده ممکن نیست\n{0}</value>
+    <value>خواندن فراداده ممکن نیست
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>حذف فراداده ممکن نیست\n{0}</value>
+    <value>حذف فراداده ممکن نیست
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - فراداده</value>

@@ -1465,7 +1465,8 @@ Papan klip tidak berisi gambar.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEfek gambar favorit (Klik kanan)</value>
+    <value>{0}
+Efek gambar favorit (Klik kanan)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>File</value>

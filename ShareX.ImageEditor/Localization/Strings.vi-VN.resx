@@ -1465,7 +1465,8 @@ Bảng nhớ tạm không chứa ảnh.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nHiệu ứng hình ảnh yêu thích (Nhấp phải)</value>
+    <value>{0}
+Hiệu ứng hình ảnh yêu thích (Nhấp phải)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Tệp</value>

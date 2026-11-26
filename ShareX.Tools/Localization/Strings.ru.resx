@@ -347,7 +347,8 @@
     <value>Фон удалён за {0} мс.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Изображение сохранено.\nПуть к файлу: {0}</value>
+    <value>Изображение сохранено.
+Путь к файлу: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Выбрать изображение</value>
@@ -470,7 +471,9 @@
     <value>1 формат</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Не удалось просмотреть этот формат буфера обмена.\n\n{0}</value>
+    <value>Не удалось просмотреть этот формат буфера обмена.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Предварительный просмотр недоступен</value>
@@ -482,7 +485,8 @@
     <value>Текст  |  {0:N0} символов</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Не удалось прочитать буфер обмена\n{0}</value>
+    <value>Не удалось прочитать буфер обмена
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Очистить</value>
@@ -1343,10 +1347,12 @@
     <value>Тегов: {0:N0}</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Не удалось прочитать метаданные\n{0}</value>
+    <value>Не удалось прочитать метаданные
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Не удалось удалить метаданные\n{0}</value>
+    <value>Не удалось удалить метаданные
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX — метаданные</value>

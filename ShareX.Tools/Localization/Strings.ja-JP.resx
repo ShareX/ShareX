@@ -347,7 +347,8 @@
     <value>{0} ms で背景を削除しました。</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>画像を保存しました。\nファイル パス: {0}</value>
+    <value>画像を保存しました。
+ファイル パス: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>画像を選択</value>
@@ -470,7 +471,9 @@
     <value>1 個の形式</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>このクリップボード形式をプレビューできませんでした。\n\n{0}</value>
+    <value>このクリップボード形式をプレビューできませんでした。
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>プレビューできません</value>
@@ -482,7 +485,8 @@
     <value>テキスト  |  {0:N0} 文字</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>クリップボードを読み取れません\n{0}</value>
+    <value>クリップボードを読み取れません
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>クリア</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} 個のタグ</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>メタデータを読み取れません\n{0}</value>
+    <value>メタデータを読み取れません
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>メタデータを削除できません\n{0}</value>
+    <value>メタデータを削除できません
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - メタデータ</value>

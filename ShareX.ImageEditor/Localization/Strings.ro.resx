@@ -1465,7 +1465,8 @@ Clipboardul nu conține nicio imagine.</value>
     <value>Emoji</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_FavoriteImageEffectsRightClick" xml:space="preserve">
-    <value>{0}\nEfecte de imagine favorite (Clic dreapta)</value>
+    <value>{0}
+Efecte de imagine favorite (Clic dreapta)</value>
   </data>
   <data name="ToolbarCustomizationItemViewModel_File" xml:space="preserve">
     <value>Fișier</value>

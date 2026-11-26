@@ -347,7 +347,8 @@
     <value>Latar belakang dihapus dalam {0} md.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Gambar disimpan.\nJalur file: {0}</value>
+    <value>Gambar disimpan.
+Jalur file: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Pilih gambar</value>
@@ -470,7 +471,9 @@
     <value>1 format</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Format papan klip ini tidak dapat dipratinjau.\n\n{0}</value>
+    <value>Format papan klip ini tidak dapat dipratinjau.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Pratinjau tidak tersedia</value>
@@ -482,7 +485,8 @@
     <value>Teks  |  {0:N0} karakter</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Tidak dapat membaca papan klip\n{0}</value>
+    <value>Tidak dapat membaca papan klip
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Bersihkan</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} tag</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Tidak dapat membaca metadata\n{0}</value>
+    <value>Tidak dapat membaca metadata
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Tidak dapat menghapus metadata\n{0}</value>
+    <value>Tidak dapat menghapus metadata
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - Metadata</value>

@@ -347,7 +347,8 @@
     <value>Fundalul a fost eliminat în {0} ms.</value>
   </data>
   <data name="BackgroundRemoverViewModel_Image_saved_file_path" xml:space="preserve">
-    <value>Imagine salvată.\nCalea fișierului: {0}</value>
+    <value>Imagine salvată.
+Calea fișierului: {0}</value>
   </data>
   <data name="BackgroundRemoverViewModel_Select_image_dialog" xml:space="preserve">
     <value>Selectează imaginea</value>
@@ -470,7 +471,9 @@
     <value>1 format</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_failed" xml:space="preserve">
-    <value>Acest format de clipboard nu a putut fi previzualizat.\n\n{0}</value>
+    <value>Acest format de clipboard nu a putut fi previzualizat.
+
+{0}</value>
   </data>
   <data name="ClipboardViewerViewModel_Preview_unavailable" xml:space="preserve">
     <value>Previzualizarea nu este disponibilă</value>
@@ -482,7 +485,8 @@
     <value>Text  |  {0:N0} caractere</value>
   </data>
   <data name="ClipboardViewerViewModel_Unable_read_clipboard" xml:space="preserve">
-    <value>Nu se poate citi clipboardul\n{0}</value>
+    <value>Nu se poate citi clipboardul
+{0}</value>
   </data>
   <data name="ClipboardViewerWindow_Clear" xml:space="preserve">
     <value>Golește</value>
@@ -1343,10 +1347,12 @@
     <value>{0:N0} etichete</value>
   </data>
   <data name="MetadataViewModel_Unable_read" xml:space="preserve">
-    <value>Nu se pot citi metadatele\n{0}</value>
+    <value>Nu se pot citi metadatele
+{0}</value>
   </data>
   <data name="MetadataViewModel_Unable_strip" xml:space="preserve">
-    <value>Nu se pot elimina metadatele\n{0}</value>
+    <value>Nu se pot elimina metadatele
+{0}</value>
   </data>
   <data name="MetadataViewModel_Window_title" xml:space="preserve">
     <value>ShareX - Metadate</value>
