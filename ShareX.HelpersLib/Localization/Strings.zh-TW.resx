@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>釘選至螢幕</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>儲存圖片</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>圖片另存新檔...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>上傳檔案</value>
   </data>

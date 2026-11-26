@@ -1329,6 +1329,12 @@ Voulez-vous quand même l’exécuter ?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Epingler à l'écran</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Enregistrer l’image</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Enregistrer l’image sous...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Téléverser le fichier</value>
   </data>

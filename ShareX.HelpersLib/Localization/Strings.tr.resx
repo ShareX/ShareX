@@ -1329,6 +1329,12 @@ Yine de çalıştırmak istiyor musunuz?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Ekrana sabitle</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Resmi kaydet</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Resmi farklı kaydet...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Karşıya dosya yükle</value>
   </data>

@@ -381,6 +381,8 @@ namespace ShareX
         CloseNotification,
         AnnotateImage,
         CopyImageToClipboard,
+        SaveImage,
+        SaveImageAs,
         CopyFile,
         CopyFilePath,
         CopyUrl,

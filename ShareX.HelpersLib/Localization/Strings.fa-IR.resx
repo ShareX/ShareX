@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>سنجاق به صفحه</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>ذخیره تصویر</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>ذخیره تصویر با نام...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>بارگذاری فایل</value>
   </data>

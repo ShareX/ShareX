@@ -1329,6 +1329,12 @@ Apakah Anda tetap ingin menjalankannya?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Sematkan ke layar</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Simpan gambar</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Simpan gambar sebagai...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Unggah file</value>
   </data>

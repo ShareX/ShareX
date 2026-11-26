@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>最前面に固定</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>画像を保存</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>名前を付けて画像を保存...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>ファイルをアップロード</value>
   </data>

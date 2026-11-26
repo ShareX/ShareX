@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Fijar a pantalla</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Guardar imagen</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Guardar imagen como...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Subir archivo</value>
   </data>

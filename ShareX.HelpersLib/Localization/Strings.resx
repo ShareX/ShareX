@@ -1329,6 +1329,12 @@ Do you still want to run it?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Pin to screen</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Save image</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Save image as...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Upload file</value>
   </data>

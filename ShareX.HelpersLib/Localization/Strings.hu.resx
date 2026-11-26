@@ -1329,6 +1329,12 @@ Ennek ellenére szeretné futtatni?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Pin to képernyő</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Kép mentése</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Kép mentése másként...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Feltöltés fájl</value>
   </data>
