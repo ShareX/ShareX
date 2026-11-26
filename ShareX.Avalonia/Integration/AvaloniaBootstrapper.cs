@@ -81,42 +81,44 @@ public static class AvaloniaBootstrapper
         ArgumentNullException.ThrowIfNull(startup);
         ArgumentNullException.ThrowIfNull(shutdown);
 
-        if (Application.Current != null || _desktopLifetime != null)
+        lock (SyncRoot)
         {
-            throw new InvalidOperationException("Avalonia is already initialized.");
+            if (_args != null)
+            {
+                throw new InvalidOperationException("Avalonia is already initialized.");
+            }
+
+            // A message box shown before startup (for example when the personal folder can't be created)
+            // already set up Avalonia through EnsureInitialized, so reuse the lifetime it created.
+            ClassicDesktopStyleApplicationLifetime desktop = _desktopLifetime ?? Setup();
+
+            Interlocked.Exchange(ref _shutdownStarted, 0);
+
+            desktop.Args = args;
+            desktop.Startup += (_, _) => Dispatcher.UIThread.Post(async () => await startup());
+            desktop.Exit += (_, _) =>
+            {
+                Interlocked.Exchange(ref _shutdownStarted, 1);
+                shutdown();
+            };
+
+            _args = args;
         }
-
-        Interlocked.Exchange(ref _shutdownStarted, 0);
-
-        ClassicDesktopStyleApplicationLifetime desktop = new()
-        {
-            Args = args,
-            ShutdownMode = ShutdownMode.OnExplicitShutdown
-        };
-        desktop.Startup += (_, _) => Dispatcher.UIThread.Post(async () => await startup());
-        desktop.Exit += (_, _) =>
-        {
-            Interlocked.Exchange(ref _shutdownStarted, 1);
-            shutdown();
-        };
-
-        BuildAvaloniaApp().SetupWithLifetime(desktop);
-        _desktopLifetime = desktop;
-        _args = args;
     }
 
     public static int Run()
     {
-        ClassicDesktopStyleApplicationLifetime desktop = _desktopLifetime ??
+        if (_desktopLifetime == null || _args == null)
+        {
             throw new InvalidOperationException("Avalonia must be initialized before its application lifetime is started.");
-        string[] args = _args ?? [];
+        }
 
-        return desktop.Start(args);
+        return _desktopLifetime.Start(_args);
     }
 
     /// <summary>
-    /// Initializes Avalonia for a legacy host that owns its own application lifetime and message loop.
-    /// The ShareX desktop application should use <see cref="Initialize"/> followed by <see cref="Run"/> instead.
+    /// Sets up Avalonia if it isn't set up yet, so windows can be shown before <see cref="Initialize"/> is called
+    /// or from a host that owns its own message loop.
     /// </summary>
     public static void EnsureInitialized()
     {
@@ -129,10 +131,26 @@ public static class AvaloniaBootstrapper
         {
             if (Application.Current == null)
             {
-                BuildAvaloniaApp().SetupWithoutStarting();
-                ThemeManager.Refresh();
+                Setup();
             }
         }
+    }
+
+    private static ClassicDesktopStyleApplicationLifetime Setup()
+    {
+        if (Application.Current != null)
+        {
+            throw new InvalidOperationException("Avalonia is already initialized.");
+        }
+
+        ClassicDesktopStyleApplicationLifetime desktop = new()
+        {
+            ShutdownMode = ShutdownMode.OnExplicitShutdown
+        };
+
+        BuildAvaloniaApp().SetupWithLifetime(desktop);
+        _desktopLifetime = desktop;
+        return desktop;
     }
 
     public static void Shutdown()
