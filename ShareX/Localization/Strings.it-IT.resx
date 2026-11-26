@@ -2453,6 +2453,9 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Lunghezza abbreviamento URL automatico</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Adatta dimensioni finestra all’immagine</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>JPEG automatico</value>
   </data>
@@ -2602,6 +2605,9 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Estensioni:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Usato solo dal registratore FFmpeg. Disattiva il registratore dello schermo integrato per modificarlo.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>Account FTP:</value>
@@ -3016,9 +3022,6 @@ Do you want to abort the active registrazione schermo?</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Disattiva annotazioni acquisizione regione</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Adatta dimensioni finestra all’immagine</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Ricorda stato finestra</value>

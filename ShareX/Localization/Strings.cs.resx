@@ -2453,6 +2453,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Délka pro automatické zkrácení URL</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Přizpůsobit velikost okna obrázku</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>Automatický JPEG</value>
   </data>
@@ -2602,6 +2605,9 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Přípony:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Používá se pouze se záznamem přes FFmpeg. Chcete-li to změnit, vypněte vestavěný záznam obrazovky.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>Účet FTP:</value>
@@ -3016,9 +3022,6 @@ Chcete aktivní nahrávání obrazovky přerušit?</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Zakázat poznámky při zachycení oblasti</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Přizpůsobit velikost okna obrázku</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Zapamatovat stav okna</value>

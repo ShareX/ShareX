@@ -2453,6 +2453,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Longueur de raccourcissement automatique des URL</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Ajuster la taille de la fenêtre à l’image</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>JPEG automatique</value>
   </data>
@@ -2602,6 +2605,9 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Extensions :</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Utilisé uniquement par l’enregistreur FFmpeg. Désactivez l’enregistreur d’écran intégré pour modifier ce paramètre.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>Compte FTP :</value>
@@ -3016,9 +3022,6 @@ Voulez-vous annuler l'enregistrement d'écran en cours ?</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Désactiver les annotations de capture de région</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Ajuster la taille de la fenêtre à l’image</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Mémoriser l’état de la fenêtre</value>

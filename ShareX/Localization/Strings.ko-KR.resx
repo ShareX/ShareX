@@ -2453,6 +2453,9 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>자동 URL 단축 길이</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>창 크기를 이미지에 맞춤</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>자동 JPEG</value>
   </data>
@@ -2602,6 +2605,9 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>확장자:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>FFmpeg 녹화에서만 사용됩니다. 변경하려면 내장 화면 녹화 기능을 끄세요.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP 계정:</value>
@@ -3016,9 +3022,6 @@ Do you want to abort the active 화면 녹화?</value>
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>영역 캡처 주석 비활성화</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>창 크기를 이미지에 맞춤</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>창 상태 기억</value>

@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>طول الاختصار التلقائي لعناوين URL</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>ضبط حجم النافذة لتناسب الصورة</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>JPEG تلقائي</value>
   </data>
@@ -2602,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>الامتدادات:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>يُستخدم فقط مع مسجل FFmpeg. أوقف تشغيل مسجل الشاشة المدمج لتغيير هذا الإعداد.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>حساب FTP:</value>
@@ -3016,9 +3022,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>تعطيل التعليقات التوضيحية لالتقاط المنطقة</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>ضبط حجم النافذة لتناسب الصورة</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>تذكر حالة النافذة</value>

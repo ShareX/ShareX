@@ -2453,6 +2453,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Độ dài rút gọn URL tự động</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Chỉnh kích thước cửa sổ vừa với ảnh</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>JPEG tự động</value>
   </data>
@@ -2602,6 +2605,9 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Phần mở rộng:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Chỉ được trình ghi FFmpeg sử dụng. Tắt trình ghi màn hình tích hợp để thay đổi.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>Tài khoản FTP:</value>
@@ -3016,9 +3022,6 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Tắt chú thích chụp vùng</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Chỉnh kích thước cửa sổ vừa với ảnh</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Ghi nhớ trạng thái cửa sổ</value>

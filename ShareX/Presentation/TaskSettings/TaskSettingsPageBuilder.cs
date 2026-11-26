@@ -28,6 +28,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Data;
+using Avalonia.Data.Converters;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Platform.Storage;
@@ -621,8 +622,11 @@ internal sealed class TaskSettingsPageBuilder
         Control twoPass = Check(Strings.TaskSettingsWindow_RecordLosslesslyFirstThenApplyEncodingOptions, () => capture.ScreenRecordTwoPassEncoding, value => capture.ScreenRecordTwoPassEncoding = value);
         Control legacyOptions = Button(Strings.TaskSettingsWindow_ScreenRecordingOptionsWithEllipsis, ShowScreenRecordingOptions);
         foreach (Control control in new[] { systemAudio, systemAudioDevice, microphone, microphoneDevice, hardware, bitrate, hdrToneMapping }) BindEnabled(control, native);
-        BindEnabled(twoPass, native, invert: true);
-        BindEnabled(legacyOptions, native, invert: true);
+        foreach (Control control in new[] { twoPass, legacyOptions })
+        {
+            BindEnabled(control, native, invert: true);
+            BindDisabledTip(control, native, Strings.TaskSettingsWindow_FFmpegRecorderOnly);
+        }
         BoundValue<bool> fixedDuration = new(capture.ScreenRecordFixedDuration, value => capture.ScreenRecordFixedDuration = value);
         NumericUpDown duration = Number(() => (decimal)capture.ScreenRecordDuration, value => capture.ScreenRecordDuration = (float)value, 0, 86400, 0.1m);
         BindEnabled(duration, fixedDuration);
@@ -2012,6 +2016,17 @@ internal sealed class TaskSettingsPageBuilder
         {
             Source = value,
             Converter = invert ? InverseBooleanConverter.Instance : null
+        });
+    }
+
+    // Explains why a control is disabled. The tooltip only exists while the value that disables it is true.
+    private static void BindDisabledTip(Control control, BoundValue<bool> disabledWhen, string tooltip)
+    {
+        ToolTip.SetShowOnDisabled(control, true);
+        control.Bind(ToolTip.TipProperty, new Binding(nameof(BoundValue<bool>.Value))
+        {
+            Source = disabledWhen,
+            Converter = new FuncValueConverter<bool, string?>(value => value ? tooltip : null)
         });
     }
 

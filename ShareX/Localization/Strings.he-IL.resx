@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>אורך לקיצור URL אוטומטי</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>התאם את גודל החלון לתמונה</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>JPEG אוטומטי</value>
   </data>
@@ -2602,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>סיומות:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>בשימוש רק על ידי מקליט FFmpeg. כבו את מקליט המסך המובנה כדי לשנות זאת.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>חשבון FTP:</value>
@@ -3016,9 +3022,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>השבתת הערות בלכידת אזור</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>התאם את גודל החלון לתמונה</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>זכור את מצב החלון</value>

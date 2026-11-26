@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>Довжина для автоматичного скорочення URL</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>Підганяти розмір вікна під зображення</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>Автоматичний JPEG</value>
   </data>
@@ -2602,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Розширення:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Використовується лише під час запису через FFmpeg. Щоб змінити, вимкніть вбудований запис екрана.</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>Обліковий запис FTP:</value>
@@ -3016,9 +3022,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>Вимкнути анотації під час захоплення області</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>Підганяти розмір вікна під зображення</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>Запам’ятовувати стан вікна</value>

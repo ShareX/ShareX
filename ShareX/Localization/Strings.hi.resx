@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>स्वचालित URL संक्षिप्तीकरण लंबाई</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>विंडो का आकार छवि के अनुसार करें</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>स्वचालित JPEG</value>
   </data>
@@ -2602,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>एक्सटेंशन:</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>केवल FFmpeg रिकॉर्डर द्वारा उपयोग किया जाता है। इसे बदलने के लिए अंतर्निहित स्क्रीन रिकॉर्डर बंद करें।</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP खाता:</value>
@@ -3016,9 +3022,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>क्षेत्र कैप्चर टिप्पणी अक्षम करें</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>विंडो का आकार छवि के अनुसार करें</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>विंडो स्थिति याद रखें</value>

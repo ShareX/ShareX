@@ -2453,6 +2453,9 @@
   <data name="TaskSettingsWindow_AutoShortenURLLength" xml:space="preserve">
     <value>自動 URL 縮短長度</value>
   </data>
+  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
+    <value>調整視窗大小以符合影像</value>
+  </data>
   <data name="TaskSettingsWindow_AutomaticJPEG" xml:space="preserve">
     <value>自動 JPEG</value>
   </data>
@@ -2602,6 +2605,9 @@
   </data>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>副檔名：</value>
+  </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>僅供 FFmpeg 錄製器使用。若要變更此項，請關閉內建螢幕錄製功能。</value>
   </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP 帳戶：</value>
@@ -3016,9 +3022,6 @@
   </data>
   <data name="TaskSettingsWindow_RegionCaptureDisableAnnotation" xml:space="preserve">
     <value>停用區域擷取註解</value>
-  </data>
-  <data name="TaskSettingsWindow_AutoSizeWindow" xml:space="preserve">
-    <value>調整視窗大小以符合影像</value>
   </data>
   <data name="TaskSettingsWindow_RememberWindowState" xml:space="preserve">
     <value>記住視窗狀態</value>

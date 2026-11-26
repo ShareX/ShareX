@@ -2612,6 +2612,9 @@ Do you want to abort the active screen recording?</value>
   <data name="TaskSettingsWindow_Extensions" xml:space="preserve">
     <value>Extensions:</value>
   </data>
+  <data name="TaskSettingsWindow_FFmpegRecorderOnly" xml:space="preserve">
+    <value>Only used by the FFmpeg recorder. Turn off the built-in screen recorder to change this.</value>
+  </data>
   <data name="TaskSettingsWindow_FTPAccount" xml:space="preserve">
     <value>FTP account:</value>
   </data>
