@@ -202,7 +202,6 @@ ShareX.HelpersLib|Translator_ASCII|481868aabe586b2a08c07657e7c2deb37bfa054baedf4
 ShareX.HelpersLib|Translator_Base64|f03d8fe5a6319b92d1237146c5663cab4a21484be21b572f56c60895cf60930d|ar-YE,cs,da,de,es-MX,es,fa-IR,fr,he-IL,hi,hu,id-ID,it-IT,ja-JP,ko-KR,nl-NL,pl,pt-BR,pt-PT,ro,ru,sv,tr,uk,vi-VN,zh-CN,zh-TW
 ShareX.HelpersLib|Translator_Hexadecimal|51ba9460bf0f6b232cbc3ac8b732d1137b7cd5b92a62c8be3d55189cf486510b|es-MX,es,pt-BR,pt-PT
 ShareX.HelpersLib|Translator_Text|71988c4d8e0803ba4519f0b2864c1331c14a1890bf8694e251379177bfedb5c3|cs,de,ro,sv
-ShareX.HelpersLib|UpdateChannel_Dev|9c24f45a7ea9e4668ee31dc18bd0a9153f1413ceb3fad18b0a07e16e6a9bc587|de,es,id-ID,it-IT,pt-PT,ro,ru,tr,uk
 ShareX.HelpersLib|UpdateChannel_PreRelease|a90d2f735a495e65d2bb734e3283d4c12572dc80282157bcc3e20639dd26dd6c|es,it-IT
 ShareX.HelpersLib|UpdateChannel_Release|e020e3c67bd0c31227720bd8eb2c3a777d162e0987e8fd8438b007c170266476|de,es,it-IT,nl-NL
 ShareX.HelpersLib|URLSharingServices_Email|969ccbd3cf6300ecd5c880459d81ae9027df7517563184a1b8b15282db230621|cs,de,es,hu,id-ID,it-IT,nl-NL,pl,pt-BR,pt-PT,ro,vi-VN
