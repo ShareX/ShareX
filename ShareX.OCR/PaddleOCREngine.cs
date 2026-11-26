@@ -74,9 +74,13 @@ public sealed class PaddleOCREngine : IDisposable
 
     public PaddleOCREngine(string modelsFolder)
     {
+        // The engine is kept for the life of the process, so the memory ONNX Runtime keeps between runs would stay in
+        // use too. Its CPU arena holds on to as much as the largest image needed (1.8 GB after a 1920x1080 screenshot),
+        // so it is turned off and each run gives its memory back. Runs take the same time.
         using SessionOptions sessionOptions = new()
         {
-            GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
+            GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL,
+            EnableCpuMemArena = false
         };
 
         DetectionModelFolder = FindModelFolder(modelsFolder, DetectionModelNames, BuiltInDetectionModelName);
