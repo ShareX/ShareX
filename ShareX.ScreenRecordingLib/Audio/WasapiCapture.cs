@@ -39,6 +39,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
         public required AutoResetEvent Ready;
         public required int Source;
         public required float Gain;
+        public MicrophoneMonoMixer? MonoMixer;
         public bool Started;
         public long NextPacketTime;
         public void Dispose()
@@ -131,7 +132,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
             Guid iid = typeof(IAudioCaptureClient).GUID;
             void* rawCapture;
             client.Pointer->GetService(&iid, &rawCapture).ThrowOnFailure();
-            return new() { Client = client, Capture = new((IAudioCaptureClient*)rawCapture), Ready = ready, Source = loopback ? 0 : 1, Gain = gain };
+            return new() { Client = client, Capture = new((IAudioCaptureClient*)rawCapture), Ready = ready, Source = loopback ? 0 : 1, Gain = gain, MonoMixer = loopback ? null : new() };
         }
         catch { ready.Dispose(); client.Dispose(); throw; }
     }
@@ -202,6 +203,7 @@ internal sealed unsafe class WasapiCapture : IDisposable
                 endpoint.NextPacketTime = packetTime + frames * TimeSpan.TicksPerSecond / AudioMixer.SampleRate;
                 // Silent packets still advance the sample clock; their buffer pointer must not be read.
                 ReadOnlySpan<float> packet = (flags & 2) == 0 ? new(data, checked((int)frames * 2)) : ReadOnlySpan<float>.Empty;
+                if (endpoint.MonoMixer != null) packet = endpoint.MonoMixer.Process(packet);
                 mixer.Write(endpoint.Source, packetTime, checked((int)frames), packet, endpoint.Gain, (flags & 1) != 0);
             }
             finally { endpoint.Capture.Pointer->ReleaseBuffer(frames).ThrowOnFailure(); }
