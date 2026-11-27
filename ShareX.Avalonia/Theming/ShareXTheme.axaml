@@ -230,4 +230,22 @@
         </ResourceDictionary>
 
     </ResourceDictionary.ThemeDictionaries>
+
+    <!-- Fix for #9308 until ShareX moves to Avalonia 12.2. Then this block can be removed and TitleBarDecorations="None" be used instead
+    Avalonia PR: https://github.com/AvaloniaUI/Avalonia/pull/21969
+    
+    Files to change:
+    ShareX/Presentation/MainWindow.axaml
+    ShareX.PixelEditor/UI/PixelEditorWindow.Documents.cs
+    ShareX.PhotoEditor/UI/PhotoEditorWindow.TitleBar.cs
+    -->
+    <ControlTheme x:Key="{x:Type WindowDrawnDecorations}"
+               TargetType="WindowDrawnDecorations">
+        <Setter Property="Template">
+            <WindowDrawnDecorationsTemplate>
+                <WindowDrawnDecorationsContent />
+            </WindowDrawnDecorationsTemplate>
+        </Setter>
+    </ControlTheme>
+
 </ResourceDictionary>
