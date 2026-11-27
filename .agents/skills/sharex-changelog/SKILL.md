@@ -18,7 +18,7 @@ Work from the ShareX repository root. Fetch tags first so a release tagged on Gi
 ```powershell
 git fetch --tags --quiet origin
 $tag = git tag --merged HEAD --list 'v[0-9]*' --sort=-v:refname | Select-Object -First 1
-git --no-pager log "$tag..HEAD" --no-merges --reverse --date=short --format='%h | %an | %ad | %s%n%b'
+git --no-pager log "$tag..HEAD" --no-merges --reverse --date=short --format='%h | %an <%ae> | %ad | %s%n%b'
 git --no-pager log "$tag..HEAD" --merges --reverse --format='%h | %s'
 ```
 
@@ -105,11 +105,20 @@ Do not write an intro paragraph unless the user asks for one. Only rare, milesto
 
 ## Credit contributors
 
-Add a badge at the end of an entry, after the period, when an outside contributor wrote that feature. The maintainer (`Jaex`) never gets one.
+Add a badge at the end of an entry, after the period, when an outside contributor wrote that feature.
 
 ```html
 <a class="badge" href="https://github.com/LOGIN"><i class="fa-brands fa-github"></i>LOGIN</a>
 ```
+
+Each entry credits at most one person: whoever wrote the feature's code. Never put two badges on one entry.
+
+- Credit the git author (`%an`), not whoever merged the PR or committed it. A maintainer merging a contributor's PR does not take the credit.
+- When several people wrote commits in the group, credit the author of the commit that introduced the feature, and ignore follow-up fixes and polish by others.
+- When a commit lists several authors, credit the first listed: the git author, before any `Co-Authored-By` lines.
+- When that person is a maintainer, the entry gets no badge. Do not pass the credit to the next author.
+
+The maintainers are `Jaex` and `McoreD`, and they never get a badge. Check the email (`%ae`) as well as the name, and do not confuse `Michael D` (`McoreD`) with `Michael Burr` (`CubityFirst`).
 
 The badge needs a GitHub login, and `%an` is a display name: `Michael Burr` commits as `CubityFirst`. Resolve the login in this order, and never guess it from the name:
 
