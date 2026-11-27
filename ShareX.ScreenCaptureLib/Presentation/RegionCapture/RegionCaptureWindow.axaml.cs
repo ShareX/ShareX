@@ -62,6 +62,7 @@ public partial class RegionCaptureWindow : Window
     private AvaloniaRegionCaptureRequest? _request;
     private AvaloniaRegionCaptureResult? _pendingResult;
     private EditorView _editorWorkspace = null!;
+    private AvaloniaCanvas? _annotationCanvas;
     private MainViewModel? _viewModel;
     private Grid _regionInputSurface = null!;
     private RegionSelectionOverlay _regionOverlay = null!;
@@ -656,6 +657,10 @@ public partial class RegionCaptureWindow : Window
         {
             ActivateAnnotationTool();
         }
+        else if (e.PropertyName == nameof(MainViewModel.Zoom) && !_regionToolActive)
+        {
+            UpdateHud(_lastPointerPoint);
+        }
     }
 
     private void OnAnnotationToolSelected(object? sender, EditorTool tool)
@@ -723,9 +728,44 @@ public partial class RegionCaptureWindow : Window
         _viewModel?.SetActiveHostToolbarItem(null);
         _viewModel?.SetHostToolbarToolsActive(true);
         _annotationToolbar.ShowToolOptions = true;
-        _magnifierPanel.IsVisible = false;
         _selectionInfoPanel.IsVisible = false;
+        // UpdateHud hides the magnifier unless the active tool is placed on exact pixels.
+        UpdateHud(_lastPointerPoint);
         _editorWorkspace.Focus();
+    }
+
+    /// <summary>
+    /// Like ShareX 21, the magnifier and cursor info stay visible with the region tool and with the tools that are
+    /// placed on exact pixels (blur, pixelate and smart eraser), and are hidden for the other annotation tools.
+    /// They are also hidden while the editor is zoomed (Ctrl+wheel), because the screen no longer shows the
+    /// screenshot pixel for pixel then.
+    /// </summary>
+    private bool IsHudShownForActiveTool =>
+        _regionToolActive ||
+        ((_viewModel?.ActiveTool is EditorTool.Blur or EditorTool.Pixelate or EditorTool.SmartEraser) &&
+            Math.Abs(_viewModel.Zoom - 1) < 0.001);
+
+    /// <summary>
+    /// While an annotation tool is active the editor gets the pointer events instead of the region input surface,
+    /// so the magnifier follows the window's pointer moves instead.
+    /// </summary>
+    private void UpdateHudForAnnotationTool(PointerEventArgs e)
+    {
+        if (_regionToolActive || _closing || _request == null || !IsHudShownForActiveTool ||
+            _viewModel?.IsModalOpen == true || !IsEditorWorkspaceSource(e.Source))
+        {
+            return;
+        }
+
+        // The annotation canvas is in screenshot pixels, so this is the pixel the tool starts on.
+        _annotationCanvas ??= _editorWorkspace.FindControl<AvaloniaCanvas>("AnnotationCanvas");
+        if (_annotationCanvas == null)
+        {
+            return;
+        }
+
+        _lastPointerPoint = ClampPoint(e.GetPosition(_annotationCanvas));
+        UpdateHud(_lastPointerPoint);
     }
 
     private void OnRegionPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -1551,6 +1591,7 @@ public partial class RegionCaptureWindow : Window
     private void OnCaptureHostPointerMoved(object? sender, PointerEventArgs e)
     {
         FollowPointerWithCaptureToolbar(e);
+        UpdateHudForAnnotationTool(e);
 
         if (!_annotationMiddleButtonPressed)
         {
@@ -1862,8 +1903,9 @@ public partial class RegionCaptureWindow : Window
         _regionOverlay.CursorPosition = imagePoint;
         UpdateCursorScaling(imagePoint);
 
-        bool showMagnifier = IsMagnifierShown;
-        bool showInfo = _request.RegionCaptureOptions.ShowInfo;
+        bool showHud = IsHudShownForActiveTool;
+        bool showMagnifier = showHud && IsMagnifierShown;
+        bool showInfo = showHud && _request.RegionCaptureOptions.ShowInfo;
 
         if (showMagnifier || showInfo)
         {
@@ -1890,7 +1932,11 @@ public partial class RegionCaptureWindow : Window
             _magnifierPanel.IsVisible = false;
         }
 
-        UpdateSelectionInfo();
+        // The selection size label belongs to the region tool and stays hidden while drawing.
+        if (_regionToolActive)
+        {
+            UpdateSelectionInfo();
+        }
     }
 
     private string GetPointerInfoText(Point imagePoint)
