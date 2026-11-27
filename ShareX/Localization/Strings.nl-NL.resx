@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Nieuwste taken eerst weergeven in systeemvakmenu</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Aantal voltooide taken in het hoofdvenster beperken</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Maximumaantal voltooide taken (0 = verwijderen na voltooiing):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Ontwikkelaarsbuild installeren...</value>
   </data>

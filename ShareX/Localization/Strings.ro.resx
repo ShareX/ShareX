@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>În bară, afișați mai întâi cele mai recente sarcini</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Limitează câte sarcini finalizate rămân în fereastra principală</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Numărul maxim de sarcini finalizate (0 = elimină la finalizare):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Instalați versiune de dezvoltare...</value>
   </data>

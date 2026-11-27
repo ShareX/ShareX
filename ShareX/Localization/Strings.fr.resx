@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Afficher les tâches les plus récentes en premier dans ce menu</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Limiter le nombre de tâches terminées dans la fenêtre principale</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Nombre maximal de tâches terminées (0 = retirer une fois terminées) :</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Installer la version de développement...</value>
   </data>

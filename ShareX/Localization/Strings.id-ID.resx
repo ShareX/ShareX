@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>Di menu baki, tampilkan tugas terbaru terlebih dulu</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>Batasi jumlah tugas selesai yang tetap di jendela utama</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>Maksimum tugas selesai (0 = hapus saat selesai):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>Instal build pengembangan...</value>
   </data>

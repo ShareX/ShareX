@@ -559,6 +559,12 @@
   <data name="ApplicationSettingsWindow_InTrayMenuShowMostRecentTasksFirst" xml:space="preserve">
     <value>عرض المهم الأخيرة أولًا في أيقونة الإشعارات</value>
   </data>
+  <data name="ApplicationSettingsWindow_LimitTasksInMainWindow" xml:space="preserve">
+    <value>تحديد عدد المهام المكتملة التي تبقى في النافذة الرئيسية</value>
+  </data>
+  <data name="ApplicationSettingsWindow_MaximumTasksInMainWindowLabel" xml:space="preserve">
+    <value>أقصى عدد للمهام المكتملة (0 = الإزالة عند الاكتمال):</value>
+  </data>
   <data name="ApplicationSettingsWindow_InstallDevBuild" xml:space="preserve">
     <value>تثبيت إصدار التطوير...</value>
   </data>

@@ -91,6 +91,22 @@ namespace ShareX
             }
         }
 
+        public static void TrimTaskList()
+        {
+            if (!ApplicationState.Settings.TaskListLimitEnabled)
+            {
+                return;
+            }
+
+            WorkerTask[] finished = Tasks.Where(x => x.Status is TaskStatus.Completed or TaskStatus.Stopped or TaskStatus.History).ToArray();
+            int removeCount = finished.Length - Math.Max(0, ApplicationState.Settings.TaskListLimit);
+
+            foreach (WorkerTask task in finished.Take(removeCount))
+            {
+                Remove(task);
+            }
+        }
+
         private static void StartTasks()
         {
             int workingTasksCount = Tasks.Count(x => x.IsWorking);
@@ -118,7 +134,7 @@ namespace ShareX
 
         public static void StopAllTasks()
         {
-            foreach (WorkerTask task in Tasks)
+            foreach (WorkerTask task in Tasks.ToArray())
             {
                 if (task != null) task.Stop();
             }
@@ -306,6 +322,8 @@ namespace ShareX
             {
                 TaskChanged?.Invoke(task);
 
+                TrimTaskList();
+
                 if (!IsBusy && StartupOptions.AutoClose)
                 {
                     ApplicationLifecycle.Exit();
@@ -460,6 +478,8 @@ namespace ShareX
                     WorkerTask task = WorkerTask.CreateHistoryTask(recentTask);
                     Start(task);
                 }
+
+                TrimTaskList();
             }
         }
     }

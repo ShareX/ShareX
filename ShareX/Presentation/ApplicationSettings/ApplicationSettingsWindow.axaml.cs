@@ -85,6 +85,9 @@ public partial class ApplicationSettingsWindow : Window
     {
         ThemeManager.ThemeChanged -= OnThemeChanged;
         ViewModel.Dispose();
+
+        // The limit box updates on every keystroke, so trimming on each change would remove tasks for numbers that are only half typed.
+        TaskManager.TrimTaskList();
     }
 
     private void OnRestartClick(object? sender, RoutedEventArgs e) => ViewModel.Restart();
