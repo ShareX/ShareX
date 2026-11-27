@@ -47,25 +47,28 @@
 
     <Grid x:Name="RootGrid" Background="Black">
         <!-- The shared editor workspace owns the frozen screenshot and annotations. -->
-        <views:EditorView x:Name="EditorWorkspace"/>
+        <views:EditorView x:Name="EditorWorkspace" IsHitTestVisible="False"/>
 
-        <!-- The region overlay uses image-pixel coordinates and is scaled once to physical pixels. -->
-        <LayoutTransformControl x:Name="RegionTransform"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center">
-            <Grid x:Name="RegionInputSurface"
-                  Background="Transparent"
-                  Focusable="True"
-                  PointerPressed="OnRegionPointerPressed"
-                  PointerMoved="OnRegionPointerMoved"
-                  PointerReleased="OnRegionPointerReleased"
-                  PointerWheelChanged="OnRegionPointerWheelChanged">
-                <capture:RegionSelectionOverlay x:Name="RegionOverlay"
-                                                AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
-                                                IsHitTestVisible="False"/>
-                <Canvas x:Name="RegionResizeNodeCanvas" IsVisible="False"/>
-            </Grid>
-        </LayoutTransformControl>
+        <!-- Stretches over the full window so edge/sub-pixel layout rounding never falls through to EditorWorkspace. -->
+        <Grid x:Name="RegionInputSurface"
+              Background="Transparent"
+              Focusable="True"
+              PointerPressed="OnRegionPointerPressed"
+              PointerMoved="OnRegionPointerMoved"
+              PointerReleased="OnRegionPointerReleased"
+              PointerWheelChanged="OnRegionPointerWheelChanged">
+            <!-- The region overlay uses image-pixel coordinates and is scaled once to physical pixels. -->
+            <LayoutTransformControl x:Name="RegionTransform"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                <Grid x:Name="RegionPixelSurface">
+                    <capture:RegionSelectionOverlay x:Name="RegionOverlay"
+                                                    AccentBrush="{DynamicResource ShareX.Brush.Accent.Start}"
+                                                    IsHitTestVisible="False"/>
+                    <Canvas x:Name="RegionResizeNodeCanvas" IsVisible="False"/>
+                </Grid>
+            </LayoutTransformControl>
+        </Grid>
 
         <!-- HUD is deliberately separate from the image-pixel transform. -->
         <Canvas x:Name="HudCanvas" IsHitTestVisible="False">

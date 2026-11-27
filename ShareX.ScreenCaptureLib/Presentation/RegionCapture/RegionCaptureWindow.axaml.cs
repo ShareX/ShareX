@@ -64,6 +64,7 @@ public partial class RegionCaptureWindow : Window
     private EditorView _editorWorkspace = null!;
     private MainViewModel? _viewModel;
     private Grid _regionInputSurface = null!;
+    private Grid _regionPixelSurface = null!;
     private RegionSelectionOverlay _regionOverlay = null!;
     private AvaloniaCanvas _regionResizeNodeCanvas = null!;
     private LayoutTransformControl _regionTransform = null!;
@@ -356,6 +357,7 @@ public partial class RegionCaptureWindow : Window
     {
         _editorWorkspace = this.FindControl<EditorView>("EditorWorkspace")!;
         _regionInputSurface = this.FindControl<Grid>("RegionInputSurface")!;
+        _regionPixelSurface = this.FindControl<Grid>("RegionPixelSurface")!;
         _regionOverlay = this.FindControl<RegionSelectionOverlay>("RegionOverlay")!;
         _regionResizeNodeCanvas = this.FindControl<AvaloniaCanvas>("RegionResizeNodeCanvas")!;
         _regionTransform = this.FindControl<LayoutTransformControl>("RegionTransform")!;
@@ -404,6 +406,7 @@ public partial class RegionCaptureWindow : Window
         _editorWorkspace.DataContext = _viewModel;
         _annotationToolbar.DataContext = _viewModel.ToolbarAdapter;
         _editorWorkspace.AttachHostAnnotationToolbar(_annotationToolbar);
+        _editorWorkspace.IsHitTestVisible = false;
         _annotationToolbar.IsVisible = _request.EnableAnnotations;
         _annotationToolbar.ShowToolOptions = false;
 
@@ -413,8 +416,8 @@ public partial class RegionCaptureWindow : Window
             _annotationToolbar.MainToolbarCornerRadius = new CornerRadius(3);
         }
 
-        _regionInputSurface.Width = _imageWidth;
-        _regionInputSurface.Height = _imageHeight;
+        _regionPixelSurface.Width = _imageWidth;
+        _regionPixelSurface.Height = _imageHeight;
         _regionOverlay.DimAlpha = GetDimAlpha(_request.RegionCaptureOptions);
         _regionOverlay.DimAllExceptSelection = _request.RegionCaptureOptions.DimAllExceptSelection;
         _regionOverlay.ShowCenterCrosshair = _request.RegionCaptureOptions.ShowCenterCrosshair;
@@ -683,6 +686,7 @@ public partial class RegionCaptureWindow : Window
         _regionShape = shape ?? _regionShape;
         _regionOverlay.HoverShape = _regionShape == RegionShape.Ellipse ? RegionShape.Ellipse : RegionShape.Rectangle;
         _regionToolActive = true;
+        _editorWorkspace.IsHitTestVisible = false;
         _regionInputSurface.IsVisible = true;
         _regionInputSurface.IsHitTestVisible = true;
         _regionOverlay.IsVisible = true;
@@ -711,6 +715,7 @@ public partial class RegionCaptureWindow : Window
         }
 
         _regionToolActive = false;
+        _editorWorkspace.IsHitTestVisible = true;
         SetInteraction(RegionInteraction.None);
         bool showSelection = !IsQuickCapture && HasAnyRegion();
         _regionInputSurface.IsVisible = showSelection;
@@ -735,7 +740,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Point point = ClampPoint(e.GetPosition(_regionInputSurface));
+        Point point = ClampPoint(e.GetPosition(_regionPixelSurface));
         _lastPointerPoint = point;
         PointerPointProperties properties = e.GetCurrentPoint(_regionInputSurface).Properties;
 
@@ -857,7 +862,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Point point = ClampPoint(e.GetPosition(_regionInputSurface));
+        Point point = ClampPoint(e.GetPosition(_regionPixelSurface));
         _lastPointerPoint = point;
 
         if (TryCancelRegionCreation(e, point))
@@ -910,7 +915,7 @@ public partial class RegionCaptureWindow : Window
             return;
         }
 
-        Point point = ClampPoint(e.GetPosition(_regionInputSurface));
+        Point point = ClampPoint(e.GetPosition(_regionPixelSurface));
         _lastPointerPoint = point;
 
         if (TryCancelRegionCreation(e, point))
