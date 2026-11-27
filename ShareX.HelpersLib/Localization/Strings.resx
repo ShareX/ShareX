@@ -94,6 +94,18 @@
   <data name="AfterCaptureTasks_DoOCR" xml:space="preserve">
     <value>Recognize text (OCR)</value>
   </data>
+  <data name="AfterCaptureTasks_CensorSensitiveData" xml:space="preserve">
+    <value>Censor sensitive data</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Fill" xml:space="preserve">
+    <value>Solid box</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Pixelate" xml:space="preserve">
+    <value>Pixelate</value>
+  </data>
+  <data name="SensitiveDataCensorMethod_Blur" xml:space="preserve">
+    <value>Blur</value>
+  </data>
   <data name="AfterCaptureTasks_OpenInPhotoEditor" xml:space="preserve">
     <value>Open in photo editor</value>
   </data>

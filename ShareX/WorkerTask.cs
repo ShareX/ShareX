@@ -567,6 +567,16 @@ namespace ShareX
                 return true;
             }
 
+            if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.CensorSensitiveData))
+            {
+                // When the image cannot be checked the task stops, rather than going on to share it uncensored.
+                if (!TaskHelpers.CensorSensitiveData(Image, Info.TaskSettings, out string error))
+                {
+                    AddErrorMessage(error);
+                    return false;
+                }
+            }
+
             if (Info.TaskSettings.AfterCaptureJob.HasFlag(AfterCaptureTasks.BeautifyImage))
             {
                 Image = TaskHelpers.BeautifyImage(Image, Info.TaskSettings);

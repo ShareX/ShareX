@@ -146,6 +146,7 @@ internal sealed class TaskSettingsPageBuilder
         pages.Add("general-notifications", BuildNotificationsPage());
         pages.Add("image", BuildImagePage());
         pages.Add("image-effects", BuildImageEffectsPage());
+        pages.Add("image-sensitive-data", BuildSensitiveDataPage());
         pages.Add("image-thumbnail", BuildThumbnailPage());
         pages.Add("capture", BuildCapturePage());
         pages.Add("capture-region", BuildRegionCapturePage());
@@ -413,6 +414,36 @@ internal sealed class TaskSettingsPageBuilder
                 Check(Strings.TaskSettingsWindow_UseRandomImageEffect, () => image.UseRandomImageEffect, value => image.UseRandomImageEffect = value),
                 Button(Strings.TaskSettingsWindow_ImageEffectsConfigurationWithEllipsis, () => TaskHelpers.OpenImageEffectsSingleton(_settings)),
                 Hint(Strings.TaskSettingsWindow_YouCanEnableOrDisableImageEffectsFromAfterCaptureTasksAddImageEffects)));
+    }
+
+    private Control BuildSensitiveDataPage()
+    {
+        SensitiveDataOptions options = _settings.ImageSettings.SensitiveDataOptions ??= new SensitiveDataOptions();
+
+        // One pattern per line. Lines are not trimmed, since spaces can be part of a pattern.
+        TextBox customPatterns = Text(() => string.Join(Environment.NewLine, options.CustomPatterns),
+            value => options.CustomPatterns = value.Split(['\r', '\n'], StringSplitOptions.RemoveEmptyEntries)
+                .Where(pattern => !string.IsNullOrWhiteSpace(pattern)).ToList());
+        customPatterns.AcceptsReturn = true;
+        customPatterns.TextWrapping = TextWrapping.NoWrap;
+        customPatterns.MinHeight = 80;
+
+        return Page("image-sensitive-data", Strings.TaskSettingsWindow_SensitiveData, AppIcons.Shield,
+            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_CensorSensitiveData,
+                // A check box label treats "_" as an access key, so "API_KEY=" needs it doubled to show it.
+                Check(Strings.TaskSettingsWindow_SensitiveDataPasswords.Replace("_", "__"), () => options.CensorPasswords, value => options.CensorPasswords = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataAPIKeys, () => options.CensorAPIKeys, value => options.CensorAPIKeys = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataIPAddresses, () => options.CensorIPAddresses, value => options.CensorIPAddresses = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataEmailAddresses, () => options.CensorEmailAddresses, value => options.CensorEmailAddresses = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataCreditCardNumbers, () => options.CensorCreditCardNumbers, value => options.CensorCreditCardNumbers = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataCPF, () => options.CensorCPF, value => options.CensorCPF = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataCNPJ, () => options.CensorCNPJ, value => options.CensorCNPJ = value),
+                Check(Strings.TaskSettingsWindow_SensitiveDataPhoneNumbers, () => options.CensorPhoneNumbers, value => options.CensorPhoneNumbers = value),
+                Row(Strings.TaskSettingsWindow_SensitiveDataCensorMethod, EnumCombo(() => options.CensorMethod, value => options.CensorMethod = value)),
+                Hint(Strings.TaskSettingsWindow_SensitiveDataHint)),
+            EnabledCard(_imageOverride, Strings.TaskSettingsWindow_SensitiveDataCustomPatterns,
+                customPatterns,
+                Hint(Strings.TaskSettingsWindow_SensitiveDataCustomPatternsHint)));
     }
 
     private Control BuildThumbnailPage()

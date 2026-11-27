@@ -752,6 +752,44 @@ namespace ShareX
             }
         }
 
+        // Reads the text of the image and hides passwords, keys, IP addresses, CPF numbers and the other kinds of data
+        // chosen in the task settings, in place. Returns false with an error when the image could not be checked.
+        public static bool CensorSensitiveData(Bitmap bmp, TaskSettings taskSettings, out string error)
+        {
+            error = null;
+
+            try
+            {
+                SensitiveDataOptions options = taskSettings.ImageSettingsReference.SensitiveDataOptions ?? new SensitiveDataOptions();
+
+                foreach ((string pattern, string message) in new SensitiveDataDetector(options).InvalidPatterns)
+                {
+                    DebugHelper.WriteLine($"Censor sensitive data: custom pattern \"{pattern}\" is not valid and was skipped: {message}");
+                }
+
+                IReadOnlyList<SensitiveDataArea> areas = SensitiveDataCensor.Censor(bmp, options);
+                DebugHelper.WriteLine($"Censor sensitive data: {areas.Count} area(s) censored" +
+                    (areas.Count > 0 ? $" ({string.Join(", ", areas.GroupBy(area => area.Type).Select(group => $"{group.Key}: {group.Count()}"))})." : "."));
+                return true;
+            }
+            catch (Exception e)
+            {
+                DebugHelper.WriteException(e, "Censor sensitive data failed");
+                error = Strings.TaskHelpers_CensorSensitiveDataFailed + Environment.NewLine + e.Message;
+                return false;
+            }
+        }
+
+        // The after capture tasks in the order they are listed. Censoring runs before the other image tasks, so it is
+        // listed with them rather than at the end, where its flag value would put it.
+        public static AfterCaptureTasks[] GetAfterCaptureTasks()
+        {
+            List<AfterCaptureTasks> tasks = Helpers.GetEnums<AfterCaptureTasks>().ToList();
+            tasks.Remove(AfterCaptureTasks.CensorSensitiveData);
+            tasks.Insert(tasks.IndexOf(AfterCaptureTasks.BeautifyImage), AfterCaptureTasks.CensorSensitiveData);
+            return tasks.ToArray();
+        }
+
         public static Bitmap ApplyImageEffects(Bitmap bmp, TaskSettingsImage taskSettingsImage)
         {
             if (bmp != null)

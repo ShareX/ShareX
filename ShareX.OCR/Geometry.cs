@@ -177,6 +177,36 @@ internal static class Geometry
         return (OrderBox(result), Math.Min(halfWidth, halfHeight) * 2);
     }
 
+    // Boxes this much taller than wide are vertical text, read top to bottom along the right edge.
+    public const float VerticalTextRatio = 1.5f;
+
+    // The direction a box is read in: the corner reading starts from, the edge along the text and the edge across it.
+    public static (SKPoint Origin, SKPoint XEdge, SKPoint YEdge, float AspectRatio) GetReadingAxis(SKPoint[] box)
+    {
+        float width = Math.Max(SKPoint.Distance(box[0], box[1]), SKPoint.Distance(box[3], box[2]));
+        float height = Math.Max(SKPoint.Distance(box[0], box[3]), SKPoint.Distance(box[1], box[2]));
+        width = Math.Max(width, 1);
+        height = Math.Max(height, 1);
+
+        if (height / width >= VerticalTextRatio)
+        {
+            // Turned a quarter counter-clockwise: the top-right corner becomes the origin and the right edge the x axis.
+            return (box[1], box[2] - box[1], box[0] - box[1], height / width);
+        }
+
+        return (box[0], box[1] - box[0], box[3] - box[0], width / height);
+    }
+
+    // The part of a box between two points along its reading direction, given as shares of its length from 0 to 1.
+    // The corners are ordered like the box: top-left, top-right, bottom-right, bottom-left.
+    public static SKPoint[] GetSubBox(SKPoint[] box, float from, float to)
+    {
+        (SKPoint origin, SKPoint xEdge, SKPoint yEdge, _) = GetReadingAxis(box);
+        SKPoint start = origin + new SKPoint(xEdge.X * from, xEdge.Y * from);
+        SKPoint end = origin + new SKPoint(xEdge.X * to, xEdge.Y * to);
+        return OrderBox([start, end, end + yEdge, start + yEdge]);
+    }
+
     public static SKRect GetBounds(SKPoint[] points)
     {
         float left = float.MaxValue, top = float.MaxValue, right = float.MinValue, bottom = float.MinValue;

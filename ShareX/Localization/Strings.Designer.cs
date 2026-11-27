@@ -3440,6 +3440,76 @@ namespace ShareX.Localization {
                 return ResourceManager.GetString("TaskSettingsWindow_ImageEffects", resourceCulture);
             }
         }
+        public static string TaskSettingsWindow_SensitiveData {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveData", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_CensorSensitiveData {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_CensorSensitiveData", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataPasswords {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataPasswords", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataAPIKeys {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataAPIKeys", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataIPAddresses {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataIPAddresses", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataEmailAddresses {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataEmailAddresses", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCreditCardNumbers {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCreditCardNumbers", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCPF {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCPF", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCNPJ {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCNPJ", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataPhoneNumbers {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataPhoneNumbers", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCensorMethod {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCensorMethod", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataHint", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCustomPatterns {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCustomPatterns", resourceCulture);
+            }
+        }
+        public static string TaskSettingsWindow_SensitiveDataCustomPatternsHint {
+            get {
+                return ResourceManager.GetString("TaskSettingsWindow_SensitiveDataCustomPatternsHint", resourceCulture);
+            }
+        }
         public static string TaskSettingsWindow_Thumbnail {
             get {
                 return ResourceManager.GetString("TaskSettingsWindow_Thumbnail", resourceCulture);
@@ -5183,6 +5253,11 @@ namespace ShareX.Localization {
         public static string CustomUploaderSettingsWindow_XPathResponseValue {
             get {
                 return ResourceManager.GetString("CustomUploaderSettingsWindow_XPathResponseValue", resourceCulture);
+            }
+        }
+        public static string TaskHelpers_CensorSensitiveDataFailed {
+            get {
+                return ResourceManager.GetString("TaskHelpers_CensorSensitiveDataFailed", resourceCulture);
             }
         }
         public static string TaskHelpers_FileDoesNotExist {

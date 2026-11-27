@@ -368,6 +368,12 @@ namespace ShareX
 
         #endregion Image / Effects
 
+        #region Image / Sensitive data
+
+        public SensitiveDataOptions SensitiveDataOptions = new SensitiveDataOptions();
+
+        #endregion Image / Sensitive data
+
         #region Image / Thumbnail
 
         public int ThumbnailWidth = 200;

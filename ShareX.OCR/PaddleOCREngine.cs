@@ -74,9 +74,13 @@ public sealed class PaddleOCREngine : IDisposable
 
     public PaddleOCREngine(string modelsFolder)
     {
+        // The engine is kept for the life of the process, so the memory ONNX Runtime keeps between runs would stay in
+        // use too. Its CPU arena holds on to as much as the largest image needed (1.8 GB after a 1920x1080 screenshot),
+        // so it is turned off and each run gives its memory back. Runs take the same time.
         using SessionOptions sessionOptions = new()
         {
-            GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL
+            GraphOptimizationLevel = GraphOptimizationLevel.ORT_ENABLE_ALL,
+            EnableCpuMemArena = false
         };
 
         DetectionModelFolder = FindModelFolder(modelsFolder, DetectionModelNames, BuiltInDetectionModelName);
@@ -132,16 +136,17 @@ public sealed class PaddleOCREngine : IDisposable
             return new OCRResult([]);
         }
 
-        (string Text, float Score)[] texts = _recognizer.Recognize(image, boxes);
+        RecognizedText[] texts = _recognizer.Recognize(image, boxes);
         List<OCRTextRegion> regions = [];
 
         for (int i = 0; i < boxes.Count; i++)
         {
-            string text = texts[i].Text.Trim();
+            // The recognizer has already trimmed the text, keeping its character positions lined up with it.
+            string text = texts[i].Text;
 
             if (text.Length > 0 && texts[i].Score >= minScore)
             {
-                regions.Add(new OCRTextRegion(boxes[i], text, texts[i].Score));
+                regions.Add(new OCRTextRegion(boxes[i], text, texts[i].Score) { Characters = texts[i].Characters });
             }
         }
 
