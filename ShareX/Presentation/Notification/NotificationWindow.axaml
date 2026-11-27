@@ -49,7 +49,7 @@
         </Style>
     </Window.Styles>
 
-    <Grid Margin="14">
+    <Grid x:Name="AnimationRoot" Margin="14">
         <Border Background="Transparent"
                 CornerRadius="4"
                 BoxShadow="0 0 15 #80000000">
@@ -105,6 +105,11 @@
                         CornerRadius="3,3,0,0"
                         Background="#C01B1B1B"
                         IsHitTestVisible="False">
+                    <Border.Transitions>
+                        <Transitions>
+                            <DoubleTransition Property="Opacity" Duration="0:0:0.15" Easing="CubicEaseOut"/>
+                        </Transitions>
+                    </Border.Transitions>
                     <StackPanel Spacing="2">
                         <TextBlock x:Name="ImageTitleText"
                                    FontSize="13"
@@ -127,6 +132,11 @@
                         VerticalAlignment="Bottom"
                         CornerRadius="0,0,3,3"
                         Background="#C01B1B1B">
+                    <Border.Transitions>
+                        <Transitions>
+                            <DoubleTransition Property="Opacity" Duration="0:0:0.15" Easing="CubicEaseOut"/>
+                        </Transitions>
+                    </Border.Transitions>
                     <WrapPanel x:Name="ActionButtons"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"/>
