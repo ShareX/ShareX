@@ -1329,6 +1329,12 @@ Chcete jej přesto spustit?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Připnout na obrazovku</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Uložit obrázek</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Uložit obrázek jako...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Nahrát soubor</value>
   </data>

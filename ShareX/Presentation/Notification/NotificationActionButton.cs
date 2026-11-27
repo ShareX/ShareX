@@ -78,6 +78,8 @@ public sealed class NotificationActionButton
     {
         ToastClickAction.AnnotateImage => AppIcons.Annotate,
         ToastClickAction.CopyImageToClipboard => AppIcons.Copy,
+        ToastClickAction.SaveImage => AppIcons.Save,
+        ToastClickAction.SaveImageAs => AppIcons.SaveAs,
         ToastClickAction.CopyFile => AppIcons.Files,
         ToastClickAction.CopyFilePath => AppIcons.Clipboard,
         ToastClickAction.CopyUrl => AppIcons.Link,

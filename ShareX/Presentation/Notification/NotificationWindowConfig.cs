@@ -54,6 +54,13 @@ namespace ShareX
         public string Text { get; set; }
         public string FilePath { get; set; }
         public string URL { get; set; }
+
+        // What the Save image action needs to save an image that wasn't saved yet: the task's settings, and the
+        // file name and screenshots folder worked out when the task finished.
+        public TaskSettings TaskSettings { get; set; }
+        public string FileName { get; set; }
+        public string ScreenshotsFolder { get; set; }
+
         public ToastClickAction LeftClickAction { get; set; }
         public ToastClickAction RightClickAction { get; set; }
         public ToastClickAction MiddleClickAction { get; set; }

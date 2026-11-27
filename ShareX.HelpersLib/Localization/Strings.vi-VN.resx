@@ -1329,6 +1329,12 @@ Bạn vẫn muốn chạy tệp này chứ?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Ghim vào màn hình</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Lưu hình ảnh</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Lưu hình ảnh thành...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Tải file lên</value>
   </data>

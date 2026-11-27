@@ -1329,6 +1329,12 @@ Vuoi eseguirlo comunque?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Fissa allo schermo</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Salva immagine</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Salva immagine con nome...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Carica file</value>
   </data>

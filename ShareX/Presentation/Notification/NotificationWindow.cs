@@ -618,10 +618,14 @@ public partial class NotificationWindow : Window
         return () => ExecuteAction(action, config, image);
     }
 
+    // Save image as uses the image in memory even when the capture was saved, so that saving it in another
+    // format starts from the captured pixels and not from a file that may already be compressed.
     private static bool UsesImageInMemory(ToastClickAction action, NotificationWindowConfig config) =>
-        (action is ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen or
-            ToastClickAction.Upload) &&
-        string.IsNullOrWhiteSpace(config.FilePath) && config.Image != null;
+        config.Image != null &&
+        (action == ToastClickAction.SaveImageAs ||
+            ((action is ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen or
+                ToastClickAction.Upload or ToastClickAction.SaveImage) &&
+            string.IsNullOrWhiteSpace(config.FilePath)));
 
     private static void ExecuteAction(ToastClickAction action, NotificationWindowConfig config, DrawingBitmap? image)
     {
@@ -650,6 +654,24 @@ public partial class NotificationWindow : Window
                     else if (!string.IsNullOrEmpty(config.FilePath))
                     {
                         ClipboardHelpers.CopyImageFromFile(config.FilePath);
+                    }
+                    break;
+                case ToastClickAction.SaveImage:
+                    if (image != null)
+                    {
+                        using (image)
+                        {
+                            SaveImageToScreenshotsFolder(image, config);
+                        }
+                    }
+                    break;
+                case ToastClickAction.SaveImageAs:
+                    using (DrawingBitmap? imageToSave = image ?? SkiaImageHelpers.LoadImage(config.FilePath))
+                    {
+                        if (imageToSave != null)
+                        {
+                            SkiaImageHelpers.SaveImageFileDialog(imageToSave, GetSaveImageAsFilePath(config));
+                        }
                     }
                     break;
                 case ToastClickAction.CopyFile:
@@ -728,11 +750,16 @@ public partial class NotificationWindow : Window
         bool hasImageFile = hasFile && FileHelpers.IsImageFile(config.FilePath);
         bool hasTarget = hasFile || !string.IsNullOrWhiteSpace(config.URL);
         bool hasImageInMemory = !hasFile && config.Image != null;
+        bool canSaveToScreenshotsFolder = config.TaskSettings != null && !string.IsNullOrEmpty(config.FileName) &&
+            !string.IsNullOrEmpty(config.ScreenshotsFolder);
 
         return action switch
         {
             ToastClickAction.AnnotateImage or ToastClickAction.CopyImageToClipboard or ToastClickAction.PinToScreen =>
                 hasImageFile || hasImageInMemory,
+            // Save image is only for an image that wasn't saved yet; Save image as also saves a copy of a saved one.
+            ToastClickAction.SaveImage => hasImageInMemory && canSaveToScreenshotsFolder,
+            ToastClickAction.SaveImageAs => hasImageFile || config.Image != null,
             ToastClickAction.Upload => hasFile || hasImageInMemory,
             ToastClickAction.CopyFile or ToastClickAction.CopyFilePath or ToastClickAction.OpenFile or
                 ToastClickAction.OpenFolder or ToastClickAction.DeleteFile => hasFile,
@@ -740,6 +767,37 @@ public partial class NotificationWindow : Window
             ToastClickAction.CloseNotification => true,
             _ => false
         };
+    }
+
+    // Saves the image as the "Save image to file" after capture task would have: in the task's image format,
+    // with the file name and screenshots folder worked out when the task finished.
+    private static void SaveImageToScreenshotsFolder(DrawingBitmap image, NotificationWindowConfig config)
+    {
+        using ImageData imageData = TaskHelpers.PrepareImage(image, config.TaskSettings);
+        string fileName = Path.ChangeExtension(config.FileName, imageData.ImageFormat.GetFileExtension());
+        string filePath = TaskHelpers.HandleExistsFile(config.ScreenshotsFolder, fileName, config.TaskSettings);
+
+        if (!string.IsNullOrEmpty(filePath) && imageData.Write(filePath))
+        {
+            DebugHelper.WriteLine("Image saved to file from notification: " + filePath);
+        }
+    }
+
+    // The save dialog suggests the saved file's name, or for an unsaved image the name Save image would use.
+    private static string GetSaveImageAsFilePath(NotificationWindowConfig config)
+    {
+        if (!string.IsNullOrEmpty(config.FilePath))
+        {
+            return config.FilePath;
+        }
+
+        if (config.TaskSettings == null || string.IsNullOrEmpty(config.FileName))
+        {
+            return "";
+        }
+
+        string fileName = Path.ChangeExtension(config.FileName, config.TaskSettings.ImageSettings.ImageFormat.GetFileExtension());
+        return Path.Combine(config.ScreenshotsFolder ?? "", fileName);
     }
 
     private static Avalonia.Media.Color ToAvaloniaColor(DrawingColor color) =>

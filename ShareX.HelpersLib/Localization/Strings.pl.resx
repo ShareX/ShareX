@@ -1329,6 +1329,12 @@ Czy mimo to chcesz go uruchomić?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Przypnij do ekranu</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Zapisz obraz</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Zapisz obraz jako...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Prześlij plik</value>
   </data>

@@ -1329,6 +1329,12 @@ Doriți totuși să îl executați?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Fixează pe ecran</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Salvare imagine</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Salvare imagine ca...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Încărcați fișierul</value>
   </data>

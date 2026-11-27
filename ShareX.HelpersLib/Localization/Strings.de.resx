@@ -1329,6 +1329,12 @@ Möchten Sie es dennoch ausführen?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>An Bildschirm anheften</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Bild speichern</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Bild speichern unter...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Datei hochladen</value>
   </data>

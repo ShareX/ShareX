@@ -1329,6 +1329,12 @@ Vil du stadig køre den?</value>
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>Fastgør på skærmen</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>Gem billede</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>Gem billede som...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>Upload fil</value>
   </data>

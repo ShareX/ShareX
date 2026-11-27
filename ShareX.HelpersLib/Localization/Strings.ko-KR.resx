@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>화면에 고정</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>이미지 저장</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>다른 이름으로 이미지 저장...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>업로드 파일</value>
   </data>

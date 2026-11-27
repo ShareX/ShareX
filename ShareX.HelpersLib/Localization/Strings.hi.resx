@@ -1329,6 +1329,12 @@
   <data name="ToastClickAction_PinToScreen" xml:space="preserve">
     <value>स्क्रीन पर पिन करें</value>
   </data>
+  <data name="ToastClickAction_SaveImage" xml:space="preserve">
+    <value>छवि सहेजें</value>
+  </data>
+  <data name="ToastClickAction_SaveImageAs" xml:space="preserve">
+    <value>छवि इस रूप में सहेजें...</value>
+  </data>
   <data name="ToastClickAction_Upload" xml:space="preserve">
     <value>फ़ाइल अपलोड करें</value>
   </data>
