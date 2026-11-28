@@ -39,6 +39,8 @@ namespace ShareX.ScreenCaptureLib
         public ScrollingCaptureOptions Options { get; private set; }
         public Bitmap Result { get; private set; }
         public bool IsCapturing { get; private set; }
+        public string ResultWindowTitle { get; private set; }
+        public string ResultProcessName { get; private set; }
 
         private Bitmap lastScreenshot;
         private Bitmap previousScreenshot;
@@ -103,6 +105,9 @@ namespace ShareX.ScreenCaptureLib
 
                 try
                 {
+                    ResultWindowTitle = selectedWindow.Text;
+                    ResultProcessName = selectedWindow.ProcessName;
+
                     selectedWindow.Activate();
 
                     await Task.Delay(Options.StartDelay);

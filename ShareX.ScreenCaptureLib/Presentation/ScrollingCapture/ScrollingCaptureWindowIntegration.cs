@@ -39,7 +39,7 @@ public static class ScrollingCaptureWindowIntegration
 
     public static Task StartStopAsync(
         ScrollingCaptureOptions options,
-        Action<Bitmap>? uploadRequested = null,
+        Action<Bitmap, string?, string?>? uploadRequested = null,
         Action? playNotificationSound = null,
         RegionCaptureOptions? regionCaptureOptions = null)
     {

@@ -46,7 +46,7 @@ public partial class ScrollingCaptureWindow : Window
     private static readonly Cursor PanCursor = new(StandardCursorType.SizeAll);
 
     private readonly ScrollingCaptureService _service;
-    private readonly Action<DrawingBitmap>? _uploadRequested;
+    private readonly Action<DrawingBitmap, string?, string?>? _uploadRequested;
     private readonly Action? _playNotificationSound;
     private AvaloniaBitmap? _previewBitmap;
     private bool _captureOperation;
@@ -62,7 +62,7 @@ public partial class ScrollingCaptureWindow : Window
 
     public ScrollingCaptureWindow(
         ScrollingCaptureOptions options,
-        Action<DrawingBitmap>? uploadRequested,
+        Action<DrawingBitmap, string?, string?>? uploadRequested,
         Action? playNotificationSound,
         RegionCaptureOptions? regionCaptureOptions)
     {
@@ -279,7 +279,7 @@ public partial class ScrollingCaptureWindow : Window
     {
         if (_service.Result != null)
         {
-            _uploadRequested?.Invoke((DrawingBitmap)_service.Result.Copy());
+            _uploadRequested?.Invoke((DrawingBitmap)_service.Result.Copy(), _service.ResultWindowTitle, _service.ResultProcessName);
         }
     }
 
