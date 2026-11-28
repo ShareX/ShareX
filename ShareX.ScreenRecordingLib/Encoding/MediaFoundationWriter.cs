@@ -226,7 +226,7 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
             if (options.HasAudio) AddAudio(options.AudioBitrate, attempt.FullMediaType);
             Encoder = InspectVideoEncoder();
             if (options.RequireHardwareEncoder && (!Encoder.IsHardwareAccelerated || !Encoder.IsD3D11Aware))
-                throw new NotSupportedException($"Windows selected '{Encoder.Name}', which does not provide D3D11 hardware video encoding on this GPU. Disable RequireHardwareEncoder to allow Windows software encoding.");
+                throw new HardwareEncoderUnavailableException(Encoder.Name);
             writer.BeginWriting();
             started = true;
         }
